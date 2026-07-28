@@ -1,0 +1,25 @@
+# The bundled Composer trees under link/google-api/ and link/svg-sanitize/ ARE
+# committed on purpose: a WordPress plugin has to work the moment it is dropped
+# into wp-content/plugins/, so the shipped .zip must already contain them.
+# Do not add them here.
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Build and dev leftovers
+node_modules/
+*.log
+*.bak
+*.orig
+_probe*
+.composer/
+
+# Local analysis output
+.phpcs-cache
+phpcs-report.*

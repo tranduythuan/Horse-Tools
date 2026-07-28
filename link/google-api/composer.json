@@ -1,0 +1,32 @@
+{
+    "name": "horse-tools/google-api",
+    "description": "Bundled Google API client for the Horse Tools WordPress plugin.",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=8.1",
+        "google/apiclient": "^2.18"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "platform": {
+            "php": "8.1.0"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Google\\Task\\Composer::cleanup"
+        ],
+        "post-update-cmd": [
+            "Google\\Task\\Composer::cleanup"
+        ]
+    },
+    "extra": {
+        "google/apiclient-services": [
+            "Indexing",
+            "Oauth2",
+            "SearchConsole"
+        ]
+    }
+}

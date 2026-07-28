@@ -1,0 +1,91 @@
+<?php 
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+global $horsetools_options; ?>
+<h2><?php _e('GOOGLE', 'horse-tools'); ?></h2>
+<div class="ht-on">
+<label class="nut-hton">
+<input class="toggle-checkbox" id="check11" data-target="play11" type="checkbox" name="horsetools_settings[goo]" value="1" <?php if ( isset($horsetools_options['goo']) && 1 == $horsetools_options['goo'] ) echo 'checked="checked"'; ?> />
+<span class="htder"></span></label>
+<label class="ht-on-right"><?php _e('ON/OFF', 'horse-tools'); ?></label>
+</div>
+<div id="play11" class="ht-card toggle-div">
+  <h3><i class="fa-regular fa-arrow-right-to-arc"></i> <?php _e('Sign in with Google account', 'horse-tools') ?></h3>
+	<label class="nut-switch">
+	<input type="checkbox" name="horsetools_settings[goo-log1]" value="1" <?php if ( isset($horsetools_options['goo-log1']) && 1 == $horsetools_options['goo-log1'] ) echo 'checked="checked"'; ?> />
+	<span class="slider"></span></label>
+	<label class="ht-label-right"><?php _e('Enable to use', 'horse-tools'); ?></label>
+	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enable and configure the functions below to enable Google sign-in to work', 'horse-tools'); ?></p>
+	<p>
+	<input class="ht-input-big ht-view-in" type="text" value="<?php echo home_url(); ?>/wp-admin/admin-ajax.php?action=horsetools_login_google"/>
+	</p>
+	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Copy the link below to add it to the Authorized redirect URLs in your Google Developers project', 'horse-tools'); ?><br>
+	<a target="_blank" href="https://console.developers.google.com">Google Developers Console</a>
+	</p>
+	<h4><?php _e('Registration role options', 'horse-tools'); ?></h4>
+	<?php
+	$roles = get_editable_roles();
+	echo '<select name="horsetools_settings[goo-role1]">';
+	echo '<option value="">Default</option>';
+	foreach ($roles as $role_name => $role_info) {
+		if ($role_name != 'administrator' && $role_name != 'editor') {
+		if(isset($horsetools_options['goo-role1']) && $horsetools_options['goo-role1'] == $role_name) { $selected = 'selected="selected"'; } else { $selected = NULL; }
+		echo '<option value="'. $role_name .'" '. $selected .'>'. $role_name .'</option>';
+		}
+	}
+	echo '</select>';
+	?>
+	<label class="ht-right-text"><?php _e('Role', 'horse-tools'); ?></label>
+	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can customize the role of successful registrants, with the default role being "subscriber"', 'horse-tools'); ?></p>
+	<h4><?php _e('Add Google API', 'horse-tools'); ?></h4>
+	<p>
+	<input class="ht-input-big" placeholder="<?php _e('Client ID', 'horse-tools'); ?>" name="horsetools_settings[goo-log11]" type="text" value="<?php if(!empty($horsetools_options['goo-log11'])){echo sanitize_text_field($horsetools_options['goo-log11']);} ?>"/>
+	</p>
+	<p>
+	<input class="ht-input-big" placeholder="<?php _e('Client Secret', 'horse-tools'); ?>" name="horsetools_settings[goo-log12]" type="text" value="<?php if(!empty($horsetools_options['goo-log12'])){echo sanitize_text_field($horsetools_options['goo-log12']);} ?>"/>
+	</p>
+	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Retrieve the API Client ID and Client Secret from your Google Developers project and add them to the two fields above', 'horse-tools'); ?></p>
+	
+	<h4><?php _e('Display options', 'horse-tools'); ?></h4>
+	<p>
+	<input class="ht-input-big ht-view-in" type="text" value="[google-login]"/>
+	</p>
+	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can paste the shortcode into the position where you want the login button to appear', 'horse-tools'); ?></p>
+	<label class="nut-switch">
+	<input type="checkbox" name="horsetools_settings[goo-log13]" value="1" <?php if ( isset($horsetools_options['goo-log13']) && 1 == $horsetools_options['goo-log13'] ) echo 'checked="checked"'; ?> />
+	<span class="slider"></span></label>
+	<label class="ht-label-right"><?php _e('Display on the default login form', 'horse-tools'); ?></label>
+	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enable to display the Google login button on the default WordPress login form', 'horse-tools'); ?></p>
+	
+	<label class="nut-switch">
+	<input type="checkbox" name="horsetools_settings[goo-log14]" value="1" <?php if ( isset($horsetools_options['goo-log14']) && 1 == $horsetools_options['goo-log14'] ) echo 'checked="checked"'; ?> />
+	<span class="slider"></span></label>
+	<label class="ht-label-right"><?php _e('Display on the WooCommerce login form', 'horse-tools'); ?></label>
+	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enable to display the Google login button on the WooCommerce login form', 'horse-tools'); ?></p>
+	
+  <h3><i class="fa-regular fa-arrow-right-to-arc"></i> <?php _e('Block login spam with Google reCAPTCHA', 'horse-tools') ?></h3>
+	<p>
+	<?php $styles = array('None', 'V2', 'V3'); ?>
+	<select name="horsetools_settings[goo-cap1]"> 
+	<?php foreach($styles as $style) { ?> 
+	<?php if(isset($horsetools_options['goo-cap1']) && $horsetools_options['goo-cap1'] == $style) { $selected = 'selected="selected"'; } else { $selected = ''; } ?>
+	<option value="<?php echo $style; ?>" <?php echo $selected; ?>><?php echo $style; ?></option> 
+	<?php } ?> 
+	</select>
+	<label class="ht-right-text"><?php _e('Off / select', 'horse-tools'); ?></label>
+	</p>
+	<p>
+	<input class="ht-input-big" placeholder="<?php _e('Site key', 'horse-tools'); ?>" name="horsetools_settings[goo-cap11]" type="text" value="<?php if(!empty($horsetools_options['goo-cap11'])){echo sanitize_text_field($horsetools_options['goo-cap11']);} ?>"/>
+	</p>
+	<p>
+	<input class="ht-input-big" placeholder="<?php _e('Secret key', 'horse-tools'); ?>" name="horsetools_settings[goo-cap12]" type="text" value="<?php if(!empty($horsetools_options['goo-cap12'])){echo sanitize_text_field($horsetools_options['goo-cap12']);} ?>"/>
+	</p>
+	<p>
+	<input class="ht-input-small" name="horsetools_settings[goo-cap13]" type="number" step="0.05" min="0" max="1" placeholder="0.5" value="<?php if(!empty($horsetools_options['goo-cap13'])){echo esc_attr($horsetools_options['goo-cap13']);} ?>"/>
+	<label class="ht-right-text"><?php _e('v3 score threshold (0 – 1)', 'horse-tools'); ?></label>
+	</p>
+	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Retrieve the Site Key and Secret Key from your Google reCAPTCHA project and add them to the two fields above', 'horse-tools'); ?><br>
+	<?php _e('The score threshold applies to reCAPTCHA v3 only. Google returns 1.0 for traffic it is confident is human and 0.0 for traffic it is confident is a bot; 0.5 is the recommended starting point. Raise it to block more aggressively, lower it if real visitors are being turned away.', 'horse-tools'); ?><br>
+	<?php _e('If the Secret key is empty the check is skipped entirely rather than rejecting every login.', 'horse-tools'); ?><br>
+	<a target="_blank" href="https://www.google.com/recaptcha">Google reCAPTCHA</a>
+	</p>
+</div>		

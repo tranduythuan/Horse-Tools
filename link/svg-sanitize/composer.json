@@ -1,0 +1,12 @@
+{
+    "name": "horse-tools/svg-sanitize",
+    "description": "Bundled SVG sanitiser for the Horse Tools WordPress plugin.",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=8.1",
+        "ext-dom": "*",
+        "enshrined/svg-sanitize": "^0.22"
+    },
+    "config": { "optimize-autoloader": true, "sort-packages": true, "platform": { "php": "8.1.0" } }
+}
