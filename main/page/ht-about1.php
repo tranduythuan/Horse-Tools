@@ -53,7 +53,8 @@ global $horsetools_options; ?>
 	</div>
   <h3><i class="fa-regular fa-star"></i> <?php _e('Plugin development', 'horse-tools') ?></h3>
 	<div class="ht-card-note">
-	<p><?php _e('Author and maintainer:', 'horse-tools') ?> <b>Trần Duy Thuận</b></p>
+	<p><?php _e('Author and maintainer:', 'horse-tools') ?> <b><a target="_blank" rel="noopener" href="https://tranduythuan.com/">Trần Duy Thuận</a></b></p>
+	<p><?php _e('Source code and issues:', 'horse-tools') ?> <b><a target="_blank" rel="noopener" href="https://github.com/tranduythuan/Horse-Tools">github.com/tranduythuan/Horse-Tools</a></b></p>
 	<p><?php _e('Licence:', 'horse-tools') ?> <b>GPLv2 or later</b></p>
 	<p><?php
 		/* translators: %s: name of the original plugin and its author. */

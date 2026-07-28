@@ -13,7 +13,7 @@ function horsetools_font_options_page() {
 	  <div class="ht-box">
 		<div class="ht-menu">
 			<div class="ht-logo ht-logoquay">
-			<a class="ht-logoquaya" href="https://example.com" target="_blank">
+			<a class="ht-logoquaya" href="https://tranduythuan.com/" target="_blank">
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>

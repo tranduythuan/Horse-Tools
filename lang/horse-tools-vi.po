@@ -4066,3 +4066,30 @@ msgstr "Ngưỡng điểm chỉ áp dụng cho reCAPTCHA v3. Google trả về 1
 
 msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
 msgstr "Nếu để trống Secret key thì bước kiểm tra sẽ được bỏ qua hoàn toàn, thay vì từ chối mọi lượt đăng nhập."
+
+msgid "Source code and issues:"
+msgstr "Mã nguồn và báo lỗi:"
+
+msgid "Search settings…"
+msgstr "Tìm trong cài đặt…"
+
+msgid "No setting matches that."
+msgstr "Không có cài đặt nào khớp."
+
+msgid "Currently enabled"
+msgstr "Đang bật"
+
+msgid "Nothing on this page is enabled yet."
+msgstr "Trang này chưa bật cài đặt nào."
+
+msgid "%d enabled"
+msgstr "Đang bật %d"
+
+msgid "You have unsaved changes."
+msgstr "Bạn có thay đổi chưa lưu."
+
+msgid "Save changes"
+msgstr "Lưu thay đổi"
+
+msgid "Discard"
+msgstr "Bỏ thay đổi"

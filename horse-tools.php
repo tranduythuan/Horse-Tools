@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Horse Tools
- * Plugin URI: https://example.com
+ * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
  * Version: 1.0.0
  * Author: Trần Duy Thuận
- * Author URI: https://example.com
+ * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
  * Domain Path: /lang
  * Requires PHP: 8.1

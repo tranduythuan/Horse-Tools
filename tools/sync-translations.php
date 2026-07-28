@@ -77,6 +77,24 @@ $vi = array(
         => 'Ngưỡng điểm chỉ áp dụng cho reCAPTCHA v3. Google trả về 1.0 khi chắc chắn là người thật và 0.0 khi chắc chắn là bot; nên bắt đầu từ 0.5. Tăng lên để chặn gắt hơn, giảm xuống nếu khách thật bị chặn nhầm.',
     'If the Secret key is empty the check is skipped entirely rather than rejecting every login.'
         => 'Nếu để trống Secret key thì bước kiểm tra sẽ được bỏ qua hoàn toàn, thay vì từ chối mọi lượt đăng nhập.',
+    'Source code and issues:'
+        => 'Mã nguồn và báo lỗi:',
+    'Search settings…'
+        => 'Tìm trong cài đặt…',
+    'No setting matches that.'
+        => 'Không có cài đặt nào khớp.',
+    'Currently enabled'
+        => 'Đang bật',
+    'Nothing on this page is enabled yet.'
+        => 'Trang này chưa bật cài đặt nào.',
+    '%d enabled'
+        => 'Đang bật %d',
+    'You have unsaved changes.'
+        => 'Bạn có thay đổi chưa lưu.',
+    'Save changes'
+        => 'Lưu thay đổi',
+    'Discard'
+        => 'Bỏ thay đổi',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

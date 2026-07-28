@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Horse Tools\n"
-"Report-Msgid-Bugs-To: https://example.com\n"
+"Report-Msgid-Bugs-To: https://github.com/tranduythuan/Horse-Tools/issues\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,6 +16,10 @@ msgstr ""
 
 #: main/page/12chat.php:259 main/page/12chat.php:272
 msgid "#id or .class"
+msgstr ""
+
+#: inc/ui.php:233
+msgid "%d enabled"
 msgstr ""
 
 #: inc/post.php:259
@@ -102,7 +106,7 @@ msgstr ""
 msgid "Add CSS to your website"
 msgstr ""
 
-#: main/page/3tool.php:29
+#: main/page/3tool.php:26
 msgid "Add Classic Editor button"
 msgstr ""
 
@@ -198,7 +202,7 @@ msgstr ""
 msgid "Add nofollow and _blank for external links"
 msgstr ""
 
-#: main/page/5media.php:189
+#: main/page/5media.php:193
 msgid "Add picture frame link here"
 msgstr ""
 
@@ -206,11 +210,11 @@ msgstr ""
 msgid "Add the image logo link here"
 msgstr ""
 
-#: main/page/5media.php:232
+#: main/page/5media.php:236
 msgid "Add the logo image link here"
 msgstr ""
 
-#: main/page/5media.php:215
+#: main/page/5media.php:219
 msgid "Add watermark to images upon upload"
 msgstr ""
 
@@ -266,15 +270,15 @@ msgstr ""
 msgid "Allow displaying member IDs on the profile management page"
 msgstr ""
 
-#: main/page/5media.php:114
+#: main/page/5media.php:118
 msgid "Allow uploading AVIF image format"
 msgstr ""
 
-#: main/page/5media.php:73
+#: main/page/5media.php:77
 msgid "Allow uploading JFIF files"
 msgstr ""
 
-#: main/page/5media.php:66
+#: main/page/5media.php:70
 msgid "Allow uploading SVG files"
 msgstr ""
 
@@ -298,7 +302,7 @@ msgstr ""
 msgid "App password"
 msgstr ""
 
-#: main/page/3tool.php:99
+#: main/page/3tool.php:85
 msgid "Attach copyright content"
 msgstr ""
 
@@ -314,11 +318,11 @@ msgstr ""
 msgid "Automatic initialization after <span id=\"sogiay\" style=\"padding: 5px;\">3</span>s"
 msgstr ""
 
-#: main/page/5media.php:41
+#: main/page/5media.php:38
 msgid "Automatic name"
 msgstr ""
 
-#: main/page/5media.php:147
+#: main/page/5media.php:151
 msgid "Automatically add a frame when uploading an image"
 msgstr ""
 
@@ -338,7 +342,7 @@ msgstr ""
 msgid "Background"
 msgstr ""
 
-#: main/page/10custom.php:59 main/page/4main.php:89 main/toc.php:194
+#: main/page/10custom.php:59 main/page/4main.php:86 main/toc.php:194
 msgid "Background color"
 msgstr ""
 
@@ -354,11 +358,11 @@ msgstr ""
 msgid "Bar background color"
 msgstr ""
 
-#: main/page/4main.php:93
+#: main/page/4main.php:90
 msgid "Bar color"
 msgstr ""
 
-#: main/page/4main.php:101
+#: main/page/4main.php:98
 msgid "Bar size"
 msgstr ""
 
@@ -370,11 +374,11 @@ msgstr ""
 msgid "Border color"
 msgstr ""
 
-#: main/page/12chat.php:198 main/page/4main.php:71 main/toc.php:281
+#: main/page/12chat.php:198 main/page/4main.php:69 main/toc.php:281
 msgid "Border distance"
 msgstr ""
 
-#: main/notify.php:153 main/page/10custom.php:116 main/page/12chat.php:206 main/page/4main.php:97
+#: main/notify.php:153 main/page/10custom.php:116 main/page/12chat.php:206 main/page/4main.php:94
 #: main/shortcode.php:164 main/toc.php:248
 msgid "Border radius"
 msgstr ""
@@ -455,7 +459,7 @@ msgstr ""
 msgid "Change login link"
 msgstr ""
 
-#: main/page/1speed.php:124
+#: main/page/1speed.php:117
 msgid "Change save interval"
 msgstr ""
 
@@ -534,15 +538,15 @@ msgstr ""
 msgid "Completed"
 msgstr ""
 
-#: main/page/1speed.php:61
+#: main/page/1speed.php:60
 msgid "Compress HTML into a single line"
 msgstr ""
 
-#: main/page/5media.php:75
+#: main/page/5media.php:79
 msgid "Compress JPG images upon upload"
 msgstr ""
 
-#: main/page/5media.php:84 main/page/5media.php:104 main/page/5media.php:124
+#: main/page/5media.php:88 main/page/5media.php:108 main/page/5media.php:128
 msgid "Compression level ("
 msgstr ""
 
@@ -554,7 +558,7 @@ msgstr ""
 msgid "Configure SMTP mail"
 msgstr ""
 
-#: main/page/5media.php:210
+#: main/page/5media.php:214
 msgid "Configure adding a watermark to images upon upload"
 msgstr ""
 
@@ -598,35 +602,35 @@ msgstr ""
 msgid "Continue"
 msgstr ""
 
-#: main/page/5media.php:127
+#: main/page/5media.php:131
 msgid "Convert JPG and PNG images to AVIF upon upload, and compress the images according to the configuration you enter"
 msgstr ""
 
-#: main/page/5media.php:107
+#: main/page/5media.php:111
 msgid "Convert JPG and PNG images to WEBP upon upload, and compress the images according to the configuration you enter"
 msgstr ""
 
-#: main/page/5media.php:119
+#: main/page/5media.php:123
 msgid "Convert JPG and PNG to AVIF"
 msgstr ""
 
-#: main/page/5media.php:100
+#: main/page/5media.php:104
 msgid "Convert JPG and PNG to WEBP"
 msgstr ""
 
-#: main/page/5media.php:94
+#: main/page/5media.php:98
 msgid "Convert PNG images to JPG upon upload, and compress the images according to the JPG configuration"
 msgstr ""
 
-#: main/page/5media.php:93
+#: main/page/5media.php:97
 msgid "Convert PNG to JPG"
 msgstr ""
 
-#: main/page/5media.php:109
+#: main/page/5media.php:113
 msgid "Convert images to AVIF upon upload"
 msgstr ""
 
-#: main/page/5media.php:95
+#: main/page/5media.php:99
 msgid "Convert images to WEBP upon upload"
 msgstr ""
 
@@ -642,7 +646,7 @@ msgstr ""
 msgid "Cookies"
 msgstr ""
 
-#: main/page/3tool.php:94
+#: main/page/3tool.php:81
 msgid "Copy pre-set content"
 msgstr ""
 
@@ -650,7 +654,7 @@ msgstr ""
 msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
 msgstr ""
 
-#: main/page/2scuri.php:75
+#: main/page/2scuri.php:71
 msgid "Correct, hiding the version of resources such as JS, CSS, and WordPress is a common security measure to prevent hackers from exploiting known vulnerabilities in older versions"
 msgstr ""
 
@@ -668,6 +672,10 @@ msgstr ""
 
 #: main/page/7mail.php:144
 msgid "Create welcome email for registered users"
+msgstr ""
+
+#: inc/ui.php:230
+msgid "Currently enabled"
 msgstr ""
 
 #: main/page/10custom.php:28
@@ -722,7 +730,7 @@ msgstr ""
 msgid "Customize icons and positions"
 msgstr ""
 
-#: main/page/4main.php:81
+#: main/page/4main.php:78
 msgid "Customize scroll bar"
 msgstr ""
 
@@ -862,19 +870,19 @@ msgstr ""
 msgid "Demo"
 msgstr ""
 
-#: main/page/1speed.php:29
+#: main/page/1speed.php:26
 msgid "Disable Classic CSS"
 msgstr ""
 
-#: main/page/1speed.php:35
+#: main/page/1speed.php:32
 msgid "Disable Emoji"
 msgstr ""
 
-#: main/page/1speed.php:23
+#: main/page/1speed.php:20
 msgid "Disable Gutenberg CSS"
 msgstr ""
 
-#: main/page/2scuri.php:17
+#: main/page/2scuri.php:14
 msgid "Disable REST API"
 msgstr ""
 
@@ -882,19 +890,19 @@ msgstr ""
 msgid "Disable WordPress info widget"
 msgstr ""
 
-#: main/page/2scuri.php:29
+#: main/page/2scuri.php:26
 msgid "Disable Wp-Embed"
 msgstr ""
 
-#: main/page/2scuri.php:35
+#: main/page/2scuri.php:32
 msgid "Disable X-Pingback"
 msgstr ""
 
-#: main/page/2scuri.php:23
+#: main/page/2scuri.php:20
 msgid "Disable XML RPC"
 msgstr ""
 
-#: main/page/3tool.php:78
+#: main/page/3tool.php:66
 msgid "Disable automatic update checking (core, language packs, themes, plugins)"
 msgstr ""
 
@@ -902,7 +910,7 @@ msgstr ""
 msgid "Disable automatic updates"
 msgstr ""
 
-#: main/page/3tool.php:45
+#: main/page/3tool.php:41
 msgid "Disable core updates"
 msgstr ""
 
@@ -910,11 +918,11 @@ msgstr ""
 msgid "Disable health widget"
 msgstr ""
 
-#: main/page/1speed.php:17
+#: main/page/1speed.php:14
 msgid "Disable jQuery Migrate"
 msgstr ""
 
-#: main/page/3tool.php:52
+#: main/page/3tool.php:46
 msgid "Disable language pack updates"
 msgstr ""
 
@@ -926,11 +934,11 @@ msgstr ""
 msgid "Disable numbers in front of tags"
 msgstr ""
 
-#: main/page/2scuri.php:47
+#: main/page/2scuri.php:44
 msgid "Disable other data sources"
 msgstr ""
 
-#: main/page/3tool.php:66
+#: main/page/3tool.php:56
 msgid "Disable plugin updates"
 msgstr ""
 
@@ -950,11 +958,11 @@ msgstr ""
 msgid "Disable the Admin Bar"
 msgstr ""
 
-#: main/page/3tool.php:59
+#: main/page/3tool.php:51
 msgid "Disable theme updates"
 msgstr ""
 
-#: main/page/2scuri.php:48
+#: main/page/2scuri.php:47
 msgid "Disable unnecessary data sources"
 msgstr ""
 
@@ -966,7 +974,7 @@ msgstr ""
 msgid "Disable unused widgets"
 msgstr ""
 
-#: main/page/3tool.php:72
+#: main/page/3tool.php:61
 msgid "Disable update & maintenance notifications"
 msgstr ""
 
@@ -978,8 +986,12 @@ msgstr ""
 msgid "Disabled TOC"
 msgstr ""
 
-#: main/page/3tool.php:88
+#: main/page/3tool.php:75
 msgid "Disallow text copying and access to DevTools"
+msgstr ""
+
+#: inc/ui.php:236
+msgid "Discard"
 msgstr ""
 
 #: main/page/9user.php:31
@@ -1018,7 +1030,7 @@ msgstr ""
 msgid "Display text if the price is 0"
 msgstr ""
 
-#: main/page/4main.php:53 main/shortcode.php:115
+#: main/page/4main.php:51 main/shortcode.php:115
 msgid "Display type"
 msgstr ""
 
@@ -1030,7 +1042,7 @@ msgstr ""
 msgid "Distance above"
 msgstr ""
 
-#: main/page/1speed.php:68
+#: main/page/1speed.php:66
 msgid "Do not enable if you are using optimization plugins with similar functionality (conflict)"
 msgstr ""
 
@@ -1106,7 +1118,7 @@ msgstr ""
 msgid "Empty trash"
 msgstr ""
 
-#: main/page/4main.php:86
+#: main/page/4main.php:80
 msgid "Enable"
 msgstr ""
 
@@ -1134,15 +1146,15 @@ msgstr ""
 msgid "Enable Adsense"
 msgstr ""
 
-#: main/page/3tool.php:17
+#: main/page/3tool.php:14
 msgid "Enable Classic Editor"
 msgstr ""
 
-#: main/page/3tool.php:110
+#: main/page/3tool.php:96
 msgid "Enable Classic Editor in category description"
 msgstr ""
 
-#: main/page/3tool.php:36
+#: main/page/3tool.php:33
 msgid "Enable Classic Widget"
 msgstr ""
 
@@ -1150,15 +1162,15 @@ msgstr ""
 msgid "Enable GGET shortcode"
 msgstr ""
 
-#: main/page/1speed.php:66
+#: main/page/1speed.php:62
 msgid "Enable HTML compression"
 msgstr ""
 
-#: main/page/1speed.php:43
+#: main/page/1speed.php:40
 msgid "Enable Instant-page"
 msgstr ""
 
-#: inc/media.php:1028 main/page/5media.php:80
+#: inc/media.php:1028 main/page/5media.php:84
 msgid "Enable JPG image compression"
 msgstr ""
 
@@ -1170,7 +1182,7 @@ msgstr ""
 msgid "Enable SMTP mail to allow SMTP mail to function and send emails when you perform a test"
 msgstr ""
 
-#: main/page/1speed.php:49
+#: main/page/1speed.php:46
 msgid "Enable Smooth-scroll"
 msgstr ""
 
@@ -1210,7 +1222,7 @@ msgstr ""
 msgid "Enable and configure the functions below to enable Google sign-in to work"
 msgstr ""
 
-#: main/page/2scuri.php:56
+#: main/page/2scuri.php:53
 msgid "Enable blocking uploads of non-image files"
 msgstr ""
 
@@ -1246,7 +1258,7 @@ msgstr ""
 msgid "Enable customization"
 msgstr ""
 
-#: main/page/4main.php:39
+#: main/page/4main.php:35
 msgid "Enable dark mode"
 msgstr ""
 
@@ -1266,7 +1278,7 @@ msgstr ""
 msgid "Enable email sending"
 msgstr ""
 
-#: main/page/4main.php:17
+#: main/page/4main.php:14
 msgid "Enable font Awesome"
 msgstr ""
 
@@ -1278,7 +1290,7 @@ msgstr ""
 msgid "Enable if you want to hide categories"
 msgstr ""
 
-#: main/page/1speed.php:57
+#: main/page/1speed.php:54
 msgid "Enable image lazy loading"
 msgstr ""
 
@@ -1310,7 +1322,7 @@ msgstr ""
 msgid "Enable quick search"
 msgstr ""
 
-#: main/page/1speed.php:113
+#: main/page/1speed.php:102
 msgid "Enable revision limit"
 msgstr ""
 
@@ -1338,7 +1350,7 @@ msgstr ""
 msgid "Enable the contact bar and configure the content below for use"
 msgstr ""
 
-#: main/page/5media.php:153
+#: main/page/5media.php:157
 msgid "Enable the picture frame"
 msgstr ""
 
@@ -1346,11 +1358,11 @@ msgstr ""
 msgid "Enable this feature and enter the login link suffix"
 msgstr ""
 
-#: main/page/5media.php:74
+#: main/page/5media.php:78
 msgid "Enable this feature if you want JFIF format images to be uploaded to the media. The uploaded images will be converted to JPG or WEBP format according to the configuration"
 msgstr ""
 
-#: main/page/5media.php:67
+#: main/page/5media.php:71
 msgid "Enable this feature if you want SVG images to be uploaded to the media"
 msgstr ""
 
@@ -1366,11 +1378,11 @@ msgstr ""
 msgid "Enable this feature if you want the original image size to be selected by default whenever adding images to the post"
 msgstr ""
 
-#: main/page/3tool.php:24
+#: main/page/3tool.php:23
 msgid "Enable this feature if you want to add additional functionalities to the Classic Editor to enhance professional editing"
 msgstr ""
 
-#: main/page/3tool.php:30
+#: main/page/3tool.php:29
 msgid "Enable this feature if you want to add the Classic Editor button in the post and page management interface. With this feature, you dont need to set the Classic Editor as default but can use it in parallel"
 msgstr ""
 
@@ -1394,7 +1406,7 @@ msgstr ""
 msgid "Enable to use"
 msgstr ""
 
-#: main/page/5media.php:53
+#: main/page/5media.php:50
 msgid "Enable upload size limit"
 msgstr ""
 
@@ -1406,7 +1418,7 @@ msgstr ""
 msgid "Enabled TOC"
 msgstr ""
 
-#: main/page/3tool.php:23
+#: main/page/3tool.php:20
 msgid "Enhance features for Classic Editor"
 msgstr ""
 
@@ -1443,11 +1455,11 @@ msgstr ""
 msgid "Enter code here"
 msgstr ""
 
-#: main/page/5media.php:223
+#: main/page/5media.php:227
 msgid "Enter content"
 msgstr ""
 
-#: main/notify.php:61 main/notify.php:82 main/page/3tool.php:102 main/redirects.php:124
+#: main/notify.php:61 main/notify.php:82 main/page/3tool.php:91 main/redirects.php:124
 msgid "Enter content here"
 msgstr ""
 
@@ -1526,7 +1538,7 @@ msgstr ""
 msgid "Enter the number of posts or products to be displayed when searching"
 msgstr ""
 
-#: main/page/1speed.php:117
+#: main/page/1speed.php:107
 msgid "Enter the number of revisions"
 msgstr ""
 
@@ -1636,7 +1648,7 @@ msgstr ""
 msgid "Find and delete all 404 thumbnail images in media"
 msgstr ""
 
-#: main/page/5media.php:197
+#: main/page/5media.php:201
 msgid "Flip photo"
 msgstr ""
 
@@ -1660,7 +1672,7 @@ msgstr ""
 msgid "Forced ad clicks — removed"
 msgstr ""
 
-#: main/page/ht-about1.php:62
+#: main/page/ht-about1.php:63
 msgid "Foxtool by Fox Theme (Nguyễn Ngọc Hoàn)"
 msgstr ""
 
@@ -1762,7 +1774,7 @@ msgstr ""
 msgid "Hide post categories from homepage"
 msgstr ""
 
-#: main/page/3tool.php:113
+#: main/page/3tool.php:102
 msgid "Hide the tools you want"
 msgstr ""
 
@@ -1774,7 +1786,7 @@ msgstr ""
 msgid "Horse Tools"
 msgstr ""
 
-#: main/page/ht-about1.php:61
+#: main/page/ht-about1.php:62
 msgid "Horse Tools is built on %s, which is no longer maintained by its author. That original work is gratefully acknowledged and this fork continues under the same GPLv2 licence."
 msgstr ""
 
@@ -1810,7 +1822,7 @@ msgstr ""
 msgid "Icon border radius"
 msgstr ""
 
-#: main/page/4main.php:43 main/search.php:78 main/toc.php:238
+#: main/page/4main.php:41 main/search.php:78 main/toc.php:238
 msgid "Icon color"
 msgstr ""
 
@@ -1822,7 +1834,7 @@ msgstr ""
 msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
 msgstr ""
 
-#: main/page/3tool.php:104
+#: main/page/3tool.php:93
 msgid "If users copy content on the page, instead of receiving the content, they will receive the content you have set"
 msgstr ""
 
@@ -1842,15 +1854,15 @@ msgstr ""
 msgid "If you find the Admin Bar distracting every time you view the website, you can turn it off (there is an option for you to turn off all or only turn off for users)"
 msgstr ""
 
-#: main/page/3tool.php:37
+#: main/page/3tool.php:36
 msgid "If you find the new Widget Manager too difficult to use, then revert it to the Classic Widget version"
 msgstr ""
 
-#: main/page/3tool.php:18
+#: main/page/3tool.php:17
 msgid "If you find the new editor too difficult to use, then revert it to the Classic Editor version"
 msgstr ""
 
-#: main/page/3tool.php:127
+#: main/page/3tool.php:116
 msgid "If you find the tools above unnecessary, you can hide them to make the WP admin interface cleaner. This function only hides them without blocking access to their links"
 msgstr ""
 
@@ -1858,7 +1870,7 @@ msgstr ""
 msgid "If you had it enabled it is now inactive. The AdSense and ads.txt tools on the other tabs are unaffected."
 msgstr ""
 
-#: main/page/5media.php:60
+#: main/page/5media.php:64
 msgid "If you have members and do not want them to upload images with excessively large sizes, causing storage space usage, you can limit the maximum size allowed for upload"
 msgstr ""
 
@@ -1870,27 +1882,27 @@ msgstr ""
 msgid "If you not using REST API, it recommended to disable it for security purposes"
 msgstr ""
 
-#: main/page/2scuri.php:30
+#: main/page/2scuri.php:29
 msgid "If you not using Wp-Embed, it recommended to disable it for security purposes"
 msgstr ""
 
-#: main/page/2scuri.php:36
+#: main/page/2scuri.php:35
 msgid "If you not using X-Pingback, it recommended to disable it for security purposes"
 msgstr ""
 
-#: main/page/2scuri.php:24
+#: main/page/2scuri.php:23
 msgid "If you not using XML RPC, it recommended to disable it for security purposes"
 msgstr ""
 
-#: main/page/1speed.php:30
+#: main/page/1speed.php:29
 msgid "If you not using it, you can disable Classic CSS on the homepage"
 msgstr ""
 
-#: main/page/1speed.php:36
+#: main/page/1speed.php:35
 msgid "If you not using it, you can disable Emoji"
 msgstr ""
 
-#: main/page/1speed.php:24
+#: main/page/1speed.php:23
 msgid "If you not using it, you can disable Gutenberg CSS on the homepage"
 msgstr ""
 
@@ -1914,7 +1926,7 @@ msgstr ""
 msgid "If you want to hide a specific Administrator account, select the user"
 msgstr ""
 
-#: main/page/1speed.php:58
+#: main/page/1speed.php:57
 msgid "If you want to lazy load images every time the page loads, then turn it on. This function helps your website load faster"
 msgstr ""
 
@@ -1922,7 +1934,7 @@ msgstr ""
 msgid "If you want to use font Awesome, you can enable it (it an icon font). You can search for icons at:"
 msgstr ""
 
-#: main/page/5media.php:275
+#: main/page/5media.php:279
 msgid "If you want your uploaded images to be watermarked, please use this function and configure it above. Watermark (PNG, JPG)"
 msgstr ""
 
@@ -1930,7 +1942,7 @@ msgstr ""
 msgid "If youre tired of WordPress default search tool because its too slow, try out our lightning-fast search feature to give your users an exceptional and speedy search experience"
 msgstr ""
 
-#: main/page/5media.php:46
+#: main/page/5media.php:43
 msgid "Ignore 8-bit png"
 msgstr ""
 
@@ -1958,7 +1970,7 @@ msgstr ""
 msgid "Input / select box color"
 msgstr ""
 
-#: main/page/1speed.php:44
+#: main/page/1speed.php:43
 msgid "Instant-page is a library that allows you to preload the content of a linked page into the browser memory simply by hovering over the link. When you click on the link, it provides a remarkably fast loading experience"
 msgstr ""
 
@@ -1985,7 +1997,7 @@ msgstr ""
 msgid "Leverage Google’s Indexing API to speed up the indexing of your website on Google’s search engine. You can add as many API keys as you like for unlimited indexing capacity"
 msgstr ""
 
-#: main/page/ht-about1.php:57
+#: main/page/ht-about1.php:58
 msgid "Licence:"
 msgstr ""
 
@@ -1997,15 +2009,15 @@ msgstr ""
 msgid "Limit Horse Tools display"
 msgstr ""
 
-#: main/page/5media.php:136
+#: main/page/5media.php:140
 msgid "Limit JPG, PNG, WEBP, AVIF images"
 msgstr ""
 
-#: main/page/5media.php:145
+#: main/page/5media.php:149
 msgid "Limits the maximum width and height of JPG, PNG, WEBP images upon upload. You can leave it blank if you want to keep the original size"
 msgstr ""
 
-#: main/page/5media.php:131
+#: main/page/5media.php:135
 msgid "Limits the size of JPG, PNG, WEBP, AVIF images when uploading"
 msgstr ""
 
@@ -2025,7 +2037,7 @@ msgstr ""
 msgid "List is hidden by default"
 msgstr ""
 
-#: main/notify.php:187 main/page/4main.php:63 main/toc.php:182
+#: main/notify.php:187 main/page/4main.php:61 main/toc.php:182
 msgid "Location"
 msgstr ""
 
@@ -2045,7 +2057,7 @@ msgstr ""
 msgid "MAINTENANCE MODE"
 msgstr ""
 
-#: main/page/5media.php:57 main/page/ht-about2.php:10
+#: main/page/5media.php:55 main/page/ht-about2.php:10
 msgid "MB"
 msgstr ""
 
@@ -2073,15 +2085,15 @@ msgstr ""
 msgid "Maintenance mode for developers (503)"
 msgstr ""
 
-#: main/page/3tool.php:83
+#: main/page/3tool.php:73
 msgid "Management tool"
 msgstr ""
 
-#: main/page/5media.php:142
+#: main/page/5media.php:146
 msgid "Max height"
 msgstr ""
 
-#: main/notify.php:158 main/page/5media.php:140
+#: main/notify.php:158 main/page/5media.php:144
 msgid "Max width"
 msgstr ""
 
@@ -2089,7 +2101,7 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: main/page/1speed.php:74
+#: main/page/1speed.php:68
 msgid "Minify Inline JavaScript"
 msgstr ""
 
@@ -2133,6 +2145,10 @@ msgstr ""
 msgid "No results found"
 msgstr ""
 
+#: inc/ui.php:229
+msgid "No setting matches that."
+msgstr ""
+
 #: inc/clean.php:298
 msgid "No size"
 msgstr ""
@@ -2151,6 +2167,10 @@ msgstr ""
 
 #: main/clean.php:50
 msgid "Note: deleting \"Content links\" will delete all comments that have a link in the body or url input field"
+msgstr ""
+
+#: inc/ui.php:231
+msgid "Nothing on this page is enabled yet."
 msgstr ""
 
 #: main/notify.php:70
@@ -2207,7 +2227,7 @@ msgstr ""
 msgid "Only notify, do not block access"
 msgstr ""
 
-#: main/page/5media.php:128
+#: main/page/5media.php:132
 msgid "Only supported from PHP 8.1 and above"
 msgstr ""
 
@@ -2227,7 +2247,7 @@ msgstr ""
 msgid "Optimize deletion of content in the database"
 msgstr ""
 
-#: main/page/1speed.php:108
+#: main/page/1speed.php:100
 msgid "Optimize saving post content into the database"
 msgstr ""
 
@@ -2239,7 +2259,7 @@ msgstr ""
 msgid "Option to display the Admin bar"
 msgstr ""
 
-#: main/page/ht-about1.php:65
+#: main/page/ht-about1.php:66
 msgid "Original contributors:"
 msgstr ""
 
@@ -2251,7 +2271,7 @@ msgstr ""
 msgid "Outstanding color"
 msgstr ""
 
-#: main/page/5media.php:201
+#: main/page/5media.php:205
 msgid "Overlay color"
 msgstr ""
 
@@ -2316,11 +2336,11 @@ msgstr ""
 msgid "Popup save time (.. hours)"
 msgstr ""
 
-#: main/page/2scuri.php:82
+#: main/page/2scuri.php:75
 msgid "Prevent SQL injection, cross-site scripting (XSS)"
 msgstr ""
 
-#: main/page/5media.php:159 main/page/5media.php:220
+#: main/page/5media.php:163 main/page/5media.php:224
 msgid "Process cropped images"
 msgstr ""
 
@@ -2364,11 +2384,11 @@ msgstr ""
 msgid "Registration role options"
 msgstr ""
 
-#: main/page/2scuri.php:72
+#: main/page/2scuri.php:66
 msgid "Remove WordPress version"
 msgstr ""
 
-#: main/page/1speed.php:86
+#: main/page/1speed.php:78
 msgid "Remove XHTML closing tags from empty elements in HTML5"
 msgstr ""
 
@@ -2376,7 +2396,7 @@ msgstr ""
 msgid "Remove category slug from permalink"
 msgstr ""
 
-#: main/page/1speed.php:80
+#: main/page/1speed.php:73
 msgid "Remove comments from HTML, JavaScript, and CSS"
 msgstr ""
 
@@ -2384,11 +2404,11 @@ msgstr ""
 msgid "Remove img tag attributes"
 msgstr ""
 
-#: main/page/1speed.php:98
+#: main/page/1speed.php:88
 msgid "Remove protocols (HTTP: and HTTPS:) from all URLs"
 msgstr ""
 
-#: main/page/1speed.php:92
+#: main/page/1speed.php:83
 msgid "Remove relative domain from internal URLs"
 msgstr ""
 
@@ -2396,11 +2416,11 @@ msgstr ""
 msgid "Remove tag slug from permalink"
 msgstr ""
 
-#: main/page/2scuri.php:41
+#: main/page/2scuri.php:38
 msgid "Remove unnecessary header information"
 msgstr ""
 
-#: main/page/2scuri.php:42
+#: main/page/2scuri.php:41
 msgid "Remove unnecessary header information if desired"
 msgstr ""
 
@@ -2408,7 +2428,7 @@ msgstr ""
 msgid "Remove version"
 msgstr ""
 
-#: main/page/2scuri.php:65
+#: main/page/2scuri.php:61
 msgid "Remove version from JS and CSS"
 msgstr ""
 
@@ -2470,11 +2490,15 @@ msgstr ""
 msgid "SVG uploads are unavailable: the sanitiser library is missing."
 msgstr ""
 
+#: inc/ui.php:235
+msgid "Save changes"
+msgstr ""
+
 #: main/page/6post.php:17
 msgid "Save images to media when copying from another source"
 msgstr ""
 
-#: main/page/1speed.php:128
+#: main/page/1speed.php:122
 msgid "Save interval (minutes)"
 msgstr ""
 
@@ -2490,11 +2514,15 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
+#: inc/ui.php:228
+msgid "Search settings…"
+msgstr ""
+
 #: main/page/11google.php:80
 msgid "Secret key"
 msgstr ""
 
-#: main/page/2scuri.php:77
+#: main/page/2scuri.php:73
 msgid "Secure access data"
 msgstr ""
 
@@ -2527,7 +2555,7 @@ msgid "Select icon color"
 msgstr ""
 
 #: main/notify.php:126 main/page/10custom.php:39 main/page/10custom.php:64 main/page/10custom.php:148
-#: main/page/5media.php:190 main/page/5media.php:233 main/page/6post.php:42
+#: main/page/5media.php:194 main/page/5media.php:237 main/page/6post.php:42
 msgid "Select image"
 msgstr ""
 
@@ -2591,7 +2619,7 @@ msgstr ""
 msgid "Set up the ads.txt file"
 msgstr ""
 
-#: horse-tools.php:114
+#: horse-tools.php:118
 msgid "Settings"
 msgstr ""
 
@@ -2639,11 +2667,15 @@ msgstr ""
 msgid "Site key"
 msgstr ""
 
-#: main/page/1speed.php:50
+#: main/page/1speed.php:49
 msgid "Smooth-scroll is a library that enables you to create a smooth scrolling effect, providing users with a perception of faster page navigation"
 msgstr ""
 
-#: main/page/12chat.php:194 main/page/4main.php:67
+#: main/page/ht-about1.php:57
+msgid "Source code and issues:"
+msgstr ""
+
+#: main/page/12chat.php:194 main/page/4main.php:65
 msgid "Spacing below"
 msgstr ""
 
@@ -2671,7 +2703,7 @@ msgstr ""
 msgid "Stop cropping"
 msgstr ""
 
-#: main/page/5media.php:17
+#: main/page/5media.php:14
 msgid "Stop cropping all"
 msgstr ""
 
@@ -2679,7 +2711,7 @@ msgstr ""
 msgid "Success"
 msgstr ""
 
-#: main/page/1speed.php:104
+#: main/page/1speed.php:93
 msgid "Support multi-byte UTF-8 encoding (if you see strange characters)"
 msgstr ""
 
@@ -2723,7 +2755,7 @@ msgstr ""
 msgid "Test SMTP email sending from your website"
 msgstr ""
 
-#: main/page/5media.php:228
+#: main/page/5media.php:232
 msgid "Text color"
 msgstr ""
 
@@ -2759,7 +2791,7 @@ msgstr ""
 msgid "The debug file does not exist"
 msgstr ""
 
-#: main/page/5media.php:208
+#: main/page/5media.php:212
 msgid "The feature adds advanced functions when uploading images, such as adding frames, flipping images... allowing you to automatically customize your images during upload. Picture frame (PNG)"
 msgstr ""
 
@@ -2827,7 +2859,7 @@ msgstr ""
 msgid "This feature allows you to add Shortcode to post titles, which is very convenient for using custom tools"
 msgstr ""
 
-#: main/page/3tool.php:111
+#: main/page/3tool.php:99
 msgid "This feature allows you to add the Classic Editor to the category description box when editing posts or products"
 msgstr ""
 
@@ -2855,7 +2887,7 @@ msgstr ""
 msgid "This feature helps optimize cleanup tasks such as clearing content, comments, and the media library. It makes your website cleaner and more optimized"
 msgstr ""
 
-#: main/page/2scuri.php:83
+#: main/page/2scuri.php:78
 msgid "This feature helps protect the website against attacks such as SQL injection, cross-site scripting (XSS)"
 msgstr ""
 
@@ -2871,7 +2903,7 @@ msgstr ""
 msgid "This feature will add nofollow and _blank to external links on your site"
 msgstr ""
 
-#: main/page/2scuri.php:57
+#: main/page/2scuri.php:56
 msgid "This feature will block uploads of all files that are not image formats, from media, plugins, themes, etc"
 msgstr ""
 
@@ -2883,7 +2915,7 @@ msgstr ""
 msgid "This feature will use the title of the post as the description for the image when uploaded"
 msgstr ""
 
-#: main/page/4main.php:103
+#: main/page/4main.php:100
 msgid "This function allows you to customize the color of the scrollbar to your liking"
 msgstr ""
 
@@ -2891,7 +2923,7 @@ msgstr ""
 msgid "This function allows you to delete images attached to posts when deleting the posts themselves. Note that if multiple posts use the same image, it will also be deleted when removing the post"
 msgstr ""
 
-#: main/page/4main.php:80
+#: main/page/4main.php:77
 msgid "This function allows you to initiate a dark mode library, enabling the website to switch between light and dark modes"
 msgstr ""
 
@@ -2899,7 +2931,7 @@ msgstr ""
 msgid "This function allows you to redirect 301 links to the target page"
 msgstr ""
 
-#: main/page/3tool.php:89
+#: main/page/3tool.php:78
 msgid "This function prevents users from copying text, accessing right-click options, and accessing DevTools"
 msgstr ""
 
@@ -2963,7 +2995,7 @@ msgstr ""
 msgid "Total:"
 msgstr ""
 
-#: main/page/12chat.php:202 main/page/5media.php:205 main/page/5media.php:273
+#: main/page/12chat.php:202 main/page/5media.php:209 main/page/5media.php:277
 msgid "Transparency level"
 msgstr ""
 
@@ -3031,7 +3063,7 @@ msgstr ""
 msgid "Use fonts on the web"
 msgstr ""
 
-#: main/page/4main.php:77 main/search.php:66 main/toc.php:66
+#: main/page/4main.php:71 main/search.php:66 main/toc.php:66
 msgid "Use shortcodes"
 msgstr ""
 
@@ -3075,7 +3107,7 @@ msgstr ""
 msgid "Wait..."
 msgstr ""
 
-#: main/page/5media.php:269
+#: main/page/5media.php:273
 msgid "Watermark image compared to main image"
 msgstr ""
 
@@ -3095,7 +3127,7 @@ msgstr ""
 msgid "Widget title"
 msgstr ""
 
-#: main/page/1speed.php:67
+#: main/page/1speed.php:65
 msgid "With this feature, HTML will be compressed into a single line, removing unnecessary characters and whitespace to speed up page loading"
 msgstr ""
 
@@ -3127,7 +3159,7 @@ msgstr ""
 msgid "You are not logged in"
 msgstr ""
 
-#: main/page/5media.php:87
+#: main/page/5media.php:91
 msgid "You can adjust the compression level of the image from 5 to 100 (100 being no compression)"
 msgstr ""
 
@@ -3143,7 +3175,7 @@ msgstr ""
 msgid "You can disable default widgets on the dashboard that you dont use"
 msgstr ""
 
-#: main/page/3tool.php:81
+#: main/page/3tool.php:71
 msgid "You can disable the automatic update feature of WordPress"
 msgstr ""
 
@@ -3181,6 +3213,10 @@ msgstr ""
 
 #: inc/tool.php:171
 msgid "You have successfully copied"
+msgstr ""
+
+#: inc/ui.php:234
+msgid "You have unsaved changes."
 msgstr ""
 
 #: inc/notify.php:59
@@ -3227,7 +3263,7 @@ msgstr ""
 msgid "images"
 msgstr ""
 
-#: main/page/1speed.php:18
+#: main/page/1speed.php:17
 msgid "jQuery Migrate is a library used to maintain the operation of certain themes, plugins that rely on older code. If your website no longer relies on this library, you can disable it"
 msgstr ""
 

@@ -1,6 +1,8 @@
 === Horse Tools ===
 Contributors: tranduythuan
 Author: Trần Duy Thuận
+Author URI: https://tranduythuan.com/
+Plugin URI: https://github.com/tranduythuan/Horse-Tools
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: all-in-one, tools, optimization, security, media
@@ -56,9 +58,13 @@ No site URL, administrator e-mail, licence check or usage statistic is transmitt
 
 If you previously used Foxtool on this site, Horse Tools imports its settings automatically the first time you activate it. Nothing is overwritten if Horse Tools settings already exist.
 
+== Support ==
+
+Source code, issue tracker and releases: https://github.com/tranduythuan/Horse-Tools
+
 == Credits ==
 
-Horse Tools is developed and maintained by **Trần Duy Thuận**.
+Horse Tools is developed and maintained by **Trần Duy Thuận** (https://tranduythuan.com/).
 
 It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 licence. Fox Theme built the original feature set over several years and it remains the foundation of this plugin; that work is gratefully acknowledged here. The original project is no longer maintained by its author, and Horse Tools continues its development independently — rebranded, security-hardened, with its dependencies refreshed and its interface rebuilt.
 

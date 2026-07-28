@@ -128,7 +128,7 @@ $out[] = '# This file is distributed under the GPLv2 or later.';
 $out[] = 'msgid ""';
 $out[] = 'msgstr ""';
 $out[] = '"Project-Id-Version: Horse Tools\\n"';
-$out[] = '"Report-Msgid-Bugs-To: https://example.com\\n"';
+$out[] = '"Report-Msgid-Bugs-To: https://github.com/tranduythuan/Horse-Tools/issues\\n"';
 $out[] = '"MIME-Version: 1.0\\n"';
 $out[] = '"Content-Type: text/plain; charset=UTF-8\\n"';
 $out[] = '"Content-Transfer-Encoding: 8bit\\n"';
