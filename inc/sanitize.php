@@ -437,6 +437,27 @@ function horsetools_sanitize_settings_array( $input ) {
 
 function horsetools_sanitize_main( $input )      { return horsetools_sanitize_settings_array( $input ); }
 function horsetools_sanitize_ads( $input )       { return horsetools_sanitize_settings_array( $input ); }
+
+/**
+ * The Clean scheduling option holds only cron-<target> => frequency slug. Each
+ * value must be one of the known frequencies; anything else becomes 'off' so a
+ * tampered form can never make a target run on an unexpected schedule.
+ */
+function horsetools_sanitize_clean( $input ) {
+	if ( ! is_array( $input ) ) {
+		return array();
+	}
+	$allowed = array( 'off', 'daily', 'weekly', 'monthly' );
+	$clean   = array();
+	foreach ( $input as $key => $value ) {
+		$key = sanitize_key( $key );
+		if ( 0 !== strpos( $key, 'cron-' ) ) {
+			continue;
+		}
+		$clean[ $key ] = in_array( $value, $allowed, true ) ? $value : 'off';
+	}
+	return $clean;
+}
 function horsetools_sanitize_code( $input )      { return horsetools_sanitize_settings_array( $input ); }
 function horsetools_sanitize_debug( $input )     { return horsetools_sanitize_settings_array( $input ); }
 function horsetools_sanitize_extend( $input )    { return horsetools_sanitize_settings_array( $input ); }

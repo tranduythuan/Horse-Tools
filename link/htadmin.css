@@ -1733,3 +1733,63 @@ article.ht-box-font {
 @media (max-width: 782px) {
 	.ht-dirty-bar { left: 0; right: 0; border-radius: 0; }
 }
+
+/* ---------------------------------------------------------------------------
+   Clean screen: counts, confirmation modal, result messages
+   ------------------------------------------------------------------------ */
+.ht-clean-count {
+	font-weight: normal;
+	opacity: 0.85;
+}
+.ht-clean-btn.ht-clean-empty {
+	opacity: 0.45;
+	cursor: default;
+	pointer-events: none;
+}
+.ht-clean-result {
+	margin-top: 10px;
+	min-height: 1.4em;
+}
+.ht-clean-ok  { color: #2c6b17; font-weight: bold; }   /* success is green, a status */
+.ht-clean-err { color: #b32d2e; font-weight: bold; }   /* error is red, a status */
+
+/* The confirm dialog reuses .ht-updated-main / .ht-updated-card, but its icon
+   is a warning rather than the success tick, so it must not be gold. */
+.ht-confirm .ht-updated-card i {
+	color: #b32d2e;
+}
+.ht-confirm-ack {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	text-align: left;
+	margin: 16px 0;
+	font-size: 14px;
+	cursor: pointer;
+}
+.ht-confirm-ack input { margin-top: 3px; }
+.ht-confirm-actions {
+	display: flex;
+	gap: 10px;
+}
+.ht-confirm-actions button {
+	flex: 1;
+	padding: 10px;
+	border-radius: 7px;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+}
+.ht-confirm-cancel {
+	background: #0a0a0a10;
+	color: #333;
+}
+.ht-confirm-go {
+	background: #b32d2e;
+	color: #fff;
+	border-bottom: 3px solid #7a1c1d;
+}
+.ht-confirm-go:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}

@@ -4093,3 +4093,90 @@ msgstr "Lưu thay đổi"
 
 msgid "Discard"
 msgstr "Bỏ thay đổi"
+
+msgid "SCHEDULE"
+msgstr "LỊCH"
+
+msgid "Automatic cleanup"
+msgstr "Dọn dẹp tự động"
+
+msgid "Save schedule"
+msgstr "Lưu lịch"
+
+msgid "Off"
+msgstr "Tắt"
+
+msgid "Daily"
+msgstr "Hằng ngày"
+
+msgid "Weekly"
+msgstr "Hằng tuần"
+
+msgid "Monthly"
+msgstr "Hằng tháng"
+
+msgid "Cancel"
+msgstr "Huỷ"
+
+msgid "Confirm deletion"
+msgstr "Xác nhận xoá"
+
+msgid "Pending comments"
+msgstr "Bình luận chờ duyệt"
+
+msgid "Spam comments"
+msgstr "Bình luận spam"
+
+msgid "Trashed comments"
+msgstr "Bình luận trong thùng rác"
+
+msgid "Comments containing links"
+msgstr "Bình luận chứa liên kết"
+
+msgid "I understand this permanently deletes data."
+msgstr "Tôi hiểu thao tác này xoá dữ liệu vĩnh viễn."
+
+msgid "Nothing to delete."
+msgstr "Không có gì để xoá."
+
+msgid "Error — nothing was deleted."
+msgstr "Lỗi — không xoá được gì."
+
+msgid "up to %s"
+msgstr "tối đa %s"
+
+msgid "Deleted: %s"
+msgstr "Đã xoá: %s"
+
+msgid "Deleted %1$s of %2$s scanned"
+msgstr "Đã xoá %1$s trong %2$s đã quét"
+
+msgid "Next automatic check: %s"
+msgstr "Lần kiểm tra tự động kế tiếp: %s"
+
+msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
+msgstr "Xoá vĩnh viễn %1$s từ “%2$s”? Không thể hoàn tác."
+
+msgid "Run “%s” now? This permanently deletes matching items and cannot be undone."
+msgstr "Chạy “%s” ngay bây giờ? Thao tác xoá vĩnh viễn các mục khớp và không thể hoàn tác."
+
+msgid "Deleting is permanent. Revisions, autosaves and trashed content (posts, pages, products) are removed together with their metadata and attached files."
+msgstr "Xoá là vĩnh viễn. Bản nháp, bản lưu tự động và nội dung trong thùng rác (bài viết, trang, sản phẩm) bị xoá cùng metadata và tệp đính kèm."
+
+msgid "\"Comments containing links\" matches links in the comment body only. The figure shown is the total comment count, not a match count, so confirm carefully."
+msgstr "“Bình luận chứa liên kết” chỉ khớp liên kết trong nội dung bình luận. Con số hiển thị là tổng số bình luận, không phải số khớp, nên hãy xác nhận cẩn thận."
+
+msgid "Removes attachments whose file is missing from disk. Every attachment is scanned, so the count is known only after it runs."
+msgstr "Xoá các tệp đính kèm có file đã mất khỏi ổ đĩa. Mọi tệp đính kèm đều được quét, nên chỉ biết số lượng sau khi chạy."
+
+msgid "Removes metadata entries for thumbnail files that are missing from disk. It does not delete images."
+msgstr "Xoá các mục metadata của ảnh thu nhỏ đã mất khỏi ổ đĩa. Nó không xoá ảnh."
+
+msgid "Use with care: your theme may need several image sizes to display correctly."
+msgstr "Dùng thận trọng: giao diện của bạn có thể cần nhiều kích thước ảnh để hiển thị đúng."
+
+msgid "Cleanup runs on WordPress cron, which only fires when your site receives traffic. Weekly and monthly are measured from the last run."
+msgstr "Việc dọn dẹp chạy bằng cron của WordPress, vốn chỉ kích hoạt khi website có lượt truy cập. Hằng tuần và hằng tháng được tính từ lần chạy gần nhất."
+
+msgid "Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action."
+msgstr "Việc xoá bình luận theo mẫu liên kết được cố ý loại khỏi dọn dẹp tự động — nó vẫn là thao tác thủ công."

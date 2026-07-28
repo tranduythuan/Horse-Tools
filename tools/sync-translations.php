@@ -95,6 +95,57 @@ $vi = array(
         => 'Lưu thay đổi',
     'Discard'
         => 'Bỏ thay đổi',
+    // Clean screen — schedule + confirmation
+    'SCHEDULE'
+        => 'LỊCH',
+    'Automatic cleanup'
+        => 'Dọn dẹp tự động',
+    'Save schedule'
+        => 'Lưu lịch',
+    'Off'     => 'Tắt',
+    'Daily'   => 'Hằng ngày',
+    'Weekly'  => 'Hằng tuần',
+    'Monthly' => 'Hằng tháng',
+    'Cancel'  => 'Huỷ',
+    'Confirm deletion'
+        => 'Xác nhận xoá',
+    'Pending comments'  => 'Bình luận chờ duyệt',
+    'Spam comments'     => 'Bình luận spam',
+    'Trashed comments'  => 'Bình luận trong thùng rác',
+    'Comments containing links'
+        => 'Bình luận chứa liên kết',
+    'I understand this permanently deletes data.'
+        => 'Tôi hiểu thao tác này xoá dữ liệu vĩnh viễn.',
+    'Nothing to delete.'
+        => 'Không có gì để xoá.',
+    'Error — nothing was deleted.'
+        => 'Lỗi — không xoá được gì.',
+    'up to %s'
+        => 'tối đa %s',
+    'Deleted: %s'
+        => 'Đã xoá: %s',
+    'Deleted %1$s of %2$s scanned'
+        => 'Đã xoá %1$s trong %2$s đã quét',
+    'Next automatic check: %s'
+        => 'Lần kiểm tra tự động kế tiếp: %s',
+    'Permanently delete %1$s from “%2$s”? This cannot be undone.'
+        => 'Xoá vĩnh viễn %1$s từ “%2$s”? Không thể hoàn tác.',
+    'Run “%s” now? This permanently deletes matching items and cannot be undone.'
+        => 'Chạy “%s” ngay bây giờ? Thao tác xoá vĩnh viễn các mục khớp và không thể hoàn tác.',
+    'Deleting is permanent. Revisions, autosaves and trashed content (posts, pages, products) are removed together with their metadata and attached files.'
+        => 'Xoá là vĩnh viễn. Bản nháp, bản lưu tự động và nội dung trong thùng rác (bài viết, trang, sản phẩm) bị xoá cùng metadata và tệp đính kèm.',
+    '"Comments containing links" matches links in the comment body only. The figure shown is the total comment count, not a match count, so confirm carefully.'
+        => '“Bình luận chứa liên kết” chỉ khớp liên kết trong nội dung bình luận. Con số hiển thị là tổng số bình luận, không phải số khớp, nên hãy xác nhận cẩn thận.',
+    'Removes attachments whose file is missing from disk. Every attachment is scanned, so the count is known only after it runs.'
+        => 'Xoá các tệp đính kèm có file đã mất khỏi ổ đĩa. Mọi tệp đính kèm đều được quét, nên chỉ biết số lượng sau khi chạy.',
+    'Removes metadata entries for thumbnail files that are missing from disk. It does not delete images.'
+        => 'Xoá các mục metadata của ảnh thu nhỏ đã mất khỏi ổ đĩa. Nó không xoá ảnh.',
+    'Use with care: your theme may need several image sizes to display correctly.'
+        => 'Dùng thận trọng: giao diện của bạn có thể cần nhiều kích thước ảnh để hiển thị đúng.',
+    'Cleanup runs on WordPress cron, which only fires when your site receives traffic. Weekly and monthly are measured from the last run.'
+        => 'Việc dọn dẹp chạy bằng cron của WordPress, vốn chỉ kích hoạt khi website có lượt truy cập. Hằng tuần và hằng tháng được tính từ lần chạy gần nhất.',
+    'Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action.'
+        => 'Việc xoá bình luận theo mẫu liên kết được cố ý loại khỏi dọn dẹp tự động — nó vẫn là thao tác thủ công.',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

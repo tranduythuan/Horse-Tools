@@ -169,3 +169,13 @@ function horsetools_activation() {
 	horsetools_migrate_legacy_options();
 }
 register_activation_hook( __FILE__, 'horsetools_activation' );
+
+/**
+ * On deactivation, drop the scheduled cleanup event. wp_clear_scheduled_hook()
+ * is always available, so this works whether or not the Clean module was
+ * loaded this request.
+ */
+function horsetools_deactivation() {
+	wp_clear_scheduled_hook( 'horsetools_scheduled_clean' );
+}
+register_deactivation_hook( __FILE__, 'horsetools_deactivation' );

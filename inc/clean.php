@@ -300,5 +300,258 @@ function horsetools_delete_images_by_size_callback() {
 }
 add_action('wp_ajax_horsetools_delete_images_by_size', 'horsetools_delete_images_by_size_callback');
 
+/* =========================================================================
+ * Count-before-you-delete
+ *
+ * Every button on the Clean screen used to fire blind: no number beforehand,
+ * a hardcoded "done" message afterwards, and — for three of them — a success
+ * report even when nothing was deleted. This adds a preview so the button can
+ * read "Delete 4,182 revisions (~31 MB)" before it is pressed and report the
+ * real figure after.
+ * ====================================================================== */
+
+/**
+ * The cleanup targets, each with a human label, a count callback and the work
+ * to perform. `schedulable` marks the ones safe to run unattended on cron;
+ * `comments_links` is deliberately not schedulable because it deletes by a
+ * content pattern and must stay a conscious, one-off action.
+ *
+ * @return array<string,array>
+ */
+function horsetools_clean_targets() {
+	return array(
+		'revisions' => array(
+			'label'       => __( 'Delete revisions', 'horse-tools' ),
+			'count'       => 'horsetools_clean_count_revisions',
+			'run'         => 'horsetools_clean_run_revisions',
+			'schedulable' => true,
+			'group'       => 'content',
+		),
+		'auto_drafts' => array(
+			'label'       => __( 'Delete autosaves', 'horse-tools' ),
+			'count'       => 'horsetools_clean_count_auto_drafts',
+			'run'         => 'horsetools_clean_run_auto_drafts',
+			'schedulable' => true,
+			'group'       => 'content',
+		),
+		'trashed_posts' => array(
+			'label'       => __( 'Empty trash', 'horse-tools' ),
+			'count'       => 'horsetools_clean_count_trashed_posts',
+			'run'         => 'horsetools_clean_run_trashed_posts',
+			'schedulable' => true,
+			'group'       => 'content',
+		),
+		'comments_pending' => array(
+			'label'       => __( 'Pending comments', 'horse-tools' ),
+			'count'       => 'horsetools_clean_count_comments_pending',
+			'run'         => 'horsetools_clean_run_comments_pending',
+			'schedulable' => false,
+			'group'       => 'comment',
+		),
+		'comments_spam' => array(
+			'label'       => __( 'Spam comments', 'horse-tools' ),
+			'count'       => 'horsetools_clean_count_comments_spam',
+			'run'         => 'horsetools_clean_run_comments_spam',
+			'schedulable' => true,
+			'group'       => 'comment',
+		),
+		'comments_trash' => array(
+			'label'       => __( 'Trashed comments', 'horse-tools' ),
+			'count'       => 'horsetools_clean_count_comments_trash',
+			'run'         => 'horsetools_clean_run_comments_trash',
+			'schedulable' => true,
+			'group'       => 'comment',
+		),
+		'comments_links' => array(
+			'label'       => __( 'Comments containing links', 'horse-tools' ),
+			'count'       => 'horsetools_clean_count_comments_links',
+			'run'         => null, // manual only; keeps its own AJAX handler
+			'schedulable' => false,
+			'group'       => 'comment',
+		),
+		// The two media targets need a per-file disk check, so a precise count
+		// is impossible up front. They report the total attachment count as an
+		// upper bound (estimated) and are not schedulable.
+		'media_404' => array(
+			'label'       => __( 'Delete all 404 images', 'horse-tools' ),
+			'count'       => 'horsetools_clean_count_media',
+			'run'         => null,
+			'schedulable' => false,
+			'group'       => 'media',
+		),
+		'media_thumbs_404' => array(
+			'label'       => __( 'Delete all 404 thumbnail images', 'horse-tools' ),
+			'count'       => 'horsetools_clean_count_media',
+			'run'         => null,
+			'schedulable' => false,
+			'group'       => 'media',
+		),
+	);
+}
+
+/** Count callbacks. Each returns array( count, estimated, size ). */
+
+function horsetools_clean_count_revisions() {
+	global $wpdb;
+	$count = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = %s", 'revision' ) );
+	$size  = (int) $wpdb->get_var( $wpdb->prepare( "SELECT SUM(LENGTH(post_content)) FROM {$wpdb->posts} WHERE post_type = %s", 'revision' ) );
+	return array( 'count' => $count, 'estimated' => false, 'size' => $size );
+}
+
+function horsetools_clean_count_auto_drafts() {
+	global $wpdb;
+	$count = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_status = %s", 'auto-draft' ) );
+	return array( 'count' => $count, 'estimated' => false, 'size' => 0 );
+}
+
+function horsetools_clean_count_trashed_posts() {
+	global $wpdb;
+	$count = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_status = %s", 'trash' ) );
+	return array( 'count' => $count, 'estimated' => false, 'size' => 0 );
+}
+
+function horsetools_clean_count_comments_pending() {
+	$c = wp_count_comments();
+	return array( 'count' => (int) $c->moderated, 'estimated' => false, 'size' => 0 );
+}
+
+function horsetools_clean_count_comments_spam() {
+	$c = wp_count_comments();
+	return array( 'count' => (int) $c->spam, 'estimated' => false, 'size' => 0 );
+}
+
+function horsetools_clean_count_comments_trash() {
+	$c = wp_count_comments();
+	return array( 'count' => (int) $c->trash, 'estimated' => false, 'size' => 0 );
+}
+
+function horsetools_clean_count_comments_links() {
+	// A real count would scan every comment body. Report the total as an upper
+	// bound and mark it estimated so the UI does not present it as exact.
+	$c = wp_count_comments();
+	return array( 'count' => (int) $c->total_comments, 'estimated' => true, 'size' => 0 );
+}
+
+function horsetools_clean_count_media() {
+	global $wpdb;
+	$count = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = %s", 'attachment' ) );
+	return array( 'count' => $count, 'estimated' => true, 'size' => 0 );
+}
+
+/** Run callbacks, shared by the AJAX handlers and the cron driver. */
+
+function horsetools_clean_run_revisions() {
+	return horsetools_delete_posts_where( array( 'post_type' => 'revision', 'post_status' => 'any' ) );
+}
+function horsetools_clean_run_auto_drafts() {
+	return horsetools_delete_posts_where( array( 'post_type' => 'any', 'post_status' => 'auto-draft' ) );
+}
+function horsetools_clean_run_trashed_posts() {
+	return horsetools_delete_posts_where( array( 'post_type' => 'any', 'post_status' => 'trash' ) );
+}
+function horsetools_clean_run_comments_pending() {
+	return horsetools_delete_comments_by_status( 'hold' );
+}
+function horsetools_clean_run_comments_spam() {
+	return horsetools_delete_comments_by_status( 'spam' );
+}
+function horsetools_clean_run_comments_trash() {
+	return horsetools_delete_comments_by_status( 'trash' );
+}
+
+/**
+ * Preview endpoint: every target's current count in one response.
+ */
+function horsetools_clean_preview_ajax() {
+	check_ajax_referer( 'horsetools_clean_preview', 'security' );
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error( 'forbidden', 403 );
+	}
+	$out = array();
+	foreach ( horsetools_clean_targets() as $id => $target ) {
+		$out[ $id ] = call_user_func( $target['count'] );
+	}
+	wp_send_json_success( $out );
+}
+add_action( 'wp_ajax_horsetools_clean_preview', 'horsetools_clean_preview_ajax' );
+
+/* =========================================================================
+ * Scheduled cleanup
+ *
+ * One daily cron tick. Each schedulable target carries a frequency
+ * (off/daily/weekly/monthly) in horsetools_settings under a clean-cron-<id>
+ * key, plus a last-run timestamp in a separate option. On each tick a target
+ * runs only if its interval has elapsed, so weekly and monthly work off a
+ * daily wake without needing several scheduled events.
+ * ====================================================================== */
+
+/**
+ * @return array<string,int> frequency slug => interval in seconds (0 = off).
+ */
+function horsetools_clean_cron_intervals() {
+	return array(
+		'off'     => 0,
+		'daily'   => DAY_IN_SECONDS,
+		'weekly'  => WEEK_IN_SECONDS,
+		'monthly' => MONTH_IN_SECONDS,
+	);
+}
+
+/**
+ * Keep the daily event scheduled while any target is set to auto-run, and
+ * cleared when none is. Called on admin_init, cheap and idempotent.
+ */
+function horsetools_clean_cron_sync() {
+	$intervals = horsetools_clean_cron_intervals();
+	$wanted    = false;
+	foreach ( horsetools_clean_targets() as $id => $target ) {
+		if ( empty( $target['schedulable'] ) ) {
+			continue;
+		}
+		$freq = horsetools_opt( 'clean', 'cron-' . $id, 'off' );
+		if ( isset( $intervals[ $freq ] ) && $intervals[ $freq ] > 0 ) {
+			$wanted = true;
+			break;
+		}
+	}
+	$scheduled = (bool) wp_next_scheduled( 'horsetools_scheduled_clean' );
+	if ( $wanted && ! $scheduled ) {
+		wp_schedule_event( time() + HOUR_IN_SECONDS, 'daily', 'horsetools_scheduled_clean' );
+	} elseif ( ! $wanted && $scheduled ) {
+		wp_clear_scheduled_hook( 'horsetools_scheduled_clean' );
+	}
+}
+add_action( 'admin_init', 'horsetools_clean_cron_sync' );
+
+/**
+ * The cron driver. Runs each due target and records when it ran.
+ */
+function horsetools_scheduled_clean_run() {
+	$intervals = horsetools_clean_cron_intervals();
+	$last      = get_option( 'horsetools_clean_cron_last', array() );
+	if ( ! is_array( $last ) ) {
+		$last = array();
+	}
+	$now = time();
+
+	foreach ( horsetools_clean_targets() as $id => $target ) {
+		if ( empty( $target['schedulable'] ) || empty( $target['run'] ) ) {
+			continue;
+		}
+		$freq = horsetools_opt( 'clean', 'cron-' . $id, 'off' );
+		if ( empty( $intervals[ $freq ] ) ) {
+			continue;
+		}
+		$due = ! isset( $last[ $id ] ) || ( $now - (int) $last[ $id ] ) >= $intervals[ $freq ];
+		if ( ! $due ) {
+			continue;
+		}
+		call_user_func( $target['run'] );
+		$last[ $id ] = $now;
+	}
+	update_option( 'horsetools_clean_cron_last', $last, false );
+}
+add_action( 'horsetools_scheduled_clean', 'horsetools_scheduled_clean_run' );
+
 
 

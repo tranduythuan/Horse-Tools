@@ -10,3263 +10,3297 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Domain: horse-tools\n"
 
-#: main/page/12chat.php:262
+#: main/cleanphp:103
+msgid "\"Comments containing links\" matches links in the comment body only. The figure shown is the total comment count, not a match count, so confirm carefully."
+msgstr ""
+
+#: main/page/12chatphp:262
 msgid "\"Enter link\" left blank if you want to call the chat list"
 msgstr ""
 
-#: main/page/12chat.php:259 main/page/12chat.php:272
+#: main/page/12chatphp:259 main/page/12chatphp:272
 msgid "#id or .class"
 msgstr ""
 
-#: inc/ui.php:250
+#: inc/uiphp:250
 msgid "%d enabled"
 msgstr ""
 
-#: inc/post.php:259
+#: inc/postphp:259
 msgid "(duplicate)"
 msgstr ""
 
-#: main/redirects.php:18 main/redirects.php:33
+#: main/redirectsphp:18 main/redirectsphp:33
 msgid "301"
 msgstr ""
 
-#: main/page/12chat.php:263
+#: main/page/12chatphp:263
 msgid "4 customizable buttons"
 msgstr ""
 
-#: main/redirects.php:19 main/redirects.php:76
+#: main/redirectsphp:19 main/redirectsphp:76
 msgid "404"
 msgstr ""
 
-#: main/redirects.php:78
+#: main/redirectsphp:78
 msgid "404 redirects"
 msgstr ""
 
-#: main/redirects.php:20 main/redirects.php:109
+#: main/redirectsphp:20 main/redirectsphp:109
 msgid "503"
 msgstr ""
 
-#: main/page/5media.php:47
+#: main/page/5mediaphp:47
 msgid "8-bit PNG images are not supported by the GD library, and this format already has perfect compression and does not need further processing"
 msgstr ""
 
-#: main/about.php:17 main/page/ht-about1.php:4
+#: main/aboutphp:17 main/page/ht-about1php:4
 msgid "ABOUT"
 msgstr ""
 
-#: main/font.php:20 main/font.php:38
+#: main/fontphp:20 main/fontphp:38
 msgid "ADD FONT"
 msgstr ""
 
-#: main/ads.php:20 main/ads.php:97
+#: main/adsphp:20 main/adsphp:97
 msgid "ADS.TXT"
 msgstr ""
 
-#: main/ads.php:19 main/ads.php:45
+#: main/adsphp:19 main/adsphp:45
 msgid "ADSENSE"
 msgstr ""
 
-#: main/page/8woo.php:37
+#: main/page/8woophp:37
 msgid "API Token"
 msgstr ""
 
-#: main/about.php:41
+#: main/aboutphp:41
 msgid "About"
 msgstr ""
 
-#: main/font.php:47
+#: main/fontphp:47
 msgid "Accepted Font Format : woff2, ttf, otf, off | Font Size: Upto 25 MB"
 msgstr ""
 
-#: main/page/4main.php:19
+#: main/page/4mainphp:19
 msgid "Access Font Awesome to find icons"
 msgstr ""
 
-#: inc/custom.php:205 main/page/7mail.php:34 main/page/7mail.php:35
+#: inc/customphp:205 main/page/7mailphp:34 main/page/7mailphp:35
 msgid "Account"
 msgstr ""
 
-#: inc/notify.php:33
+#: inc/notifyphp:33
 msgid "Ad-blocker detection"
 msgstr ""
 
-#: main/page/6post.php:101
+#: main/page/6postphp:101
 msgid "Add .html for page"
 msgstr ""
 
-#: main/code.php:49
+#: main/codephp:49
 msgid "Add CSS for mobile size"
 msgstr ""
 
-#: main/code.php:44
+#: main/codephp:44
 msgid "Add CSS for tablet size"
 msgstr ""
 
-#: main/code.php:39
+#: main/codephp:39
 msgid "Add CSS to your website"
 msgstr ""
 
-#: main/page/3tool.php:26
+#: main/page/3toolphp:26
 msgid "Add Classic Editor button"
 msgstr ""
 
-#: main/page/11google.php:39
+#: main/page/11googlephp:39
 msgid "Add Google API"
 msgstr ""
 
-#: main/gindex.php:95
+#: main/gindexphp:95
 msgid "Add Google json code"
 msgstr ""
 
-#: main/ads.php:82
+#: main/adsphp:82
 msgid "Add ads at the bottom of the article"
 msgstr ""
 
-#: main/ads.php:91
+#: main/adsphp:91
 msgid "Add ads to custom post placement"
 msgstr ""
 
-#: main/ads.php:79
+#: main/adsphp:79
 msgid "Add ads to the top of the article"
 msgstr ""
 
-#: main/page/9user.php:53
+#: main/page/9userphp:53
 msgid "Add avatar upload functionality"
 msgstr ""
 
-#: main/page/10custom.php:61
+#: main/page/10customphp:61
 msgid "Add background image link"
 msgstr ""
 
-#: main/code.php:147 main/extend.php:35
+#: main/codephp:147 main/extendphp:35
 msgid "Add code"
 msgstr ""
 
-#: main/code.php:71
+#: main/codephp:71
 msgid "Add code to WP body"
 msgstr ""
 
-#: main/code.php:82
+#: main/codephp:82
 msgid "Add code to WP footer"
 msgstr ""
 
-#: main/code.php:60
+#: main/codephp:60
 msgid "Add code to WP head"
 msgstr ""
 
-#: main/code.php:93
+#: main/codephp:93
 msgid "Add code to WP login"
 msgstr ""
 
-#: main/page/6post.php:40
+#: main/page/6postphp:40
 msgid "Add default featured image"
 msgstr ""
 
-#: main/page/6post.php:55
+#: main/page/6postphp:55
 msgid "Add duplicate button"
 msgstr ""
 
-#: main/page/12chat.php:95
+#: main/page/12chatphp:95
 msgid "Add field"
 msgstr ""
 
-#: main/page/4main.php:12
+#: main/page/4mainphp:12
 msgid "Add font Awesome to the website"
 msgstr ""
 
-#: main/font.php:40
+#: main/fontphp:40
 msgid "Add fonts"
 msgstr ""
 
-#: main/extend.php:75
+#: main/extendphp:75
 msgid "Add fonts to your website with just a few simple steps. Additionally, it allows you to quickly set fonts in the specific areas you want to change, offering great convenience"
 msgstr ""
 
-#: main/notify.php:121
+#: main/notifyphp:121
 msgid "Add images"
 msgstr ""
 
-#: main/gindex.php:114
+#: main/gindexphp:114
 msgid "Add json"
 msgstr ""
 
-#: main/redirects.php:71
+#: main/redirectsphp:71
 msgid "Add link"
 msgstr ""
 
-#: main/page/10custom.php:136
+#: main/page/10customphp:136
 msgid "Add logo link"
 msgstr ""
 
-#: main/page/6post.php:117
+#: main/page/6postphp:117
 msgid "Add nofollow and _blank for external links"
 msgstr ""
 
-#: main/page/5media.php:188
+#: main/page/5mediaphp:188
 msgid "Add picture frame link here"
 msgstr ""
 
-#: main/page/10custom.php:36
+#: main/page/10customphp:36
 msgid "Add the image logo link here"
 msgstr ""
 
-#: main/page/5media.php:227
+#: main/page/5mediaphp:227
 msgid "Add the logo image link here"
 msgstr ""
 
-#: main/page/5media.php:209
+#: main/page/5mediaphp:209
 msgid "Add watermark to images upon upload"
 msgstr ""
 
-#: main/page/6post.php:123
+#: main/page/6postphp:123
 msgid "Additional feature"
 msgstr ""
 
-#: main/ads.php:130 main/extend.php:125
+#: main/adsphp:130 main/extendphp:125
 msgid "Ads"
 msgstr ""
 
-#: main/toc.php:68
+#: main/tocphp:68
 msgid "Advanced configuration"
 msgstr ""
 
-#: main/page/6post.php:146
+#: main/page/6postphp:146
 msgid "Advanced image viewing feature in posts"
 msgstr ""
 
-#: main/page/5media.php:37
+#: main/page/5mediaphp:37
 msgid "Advanced photo upload"
 msgstr ""
 
-#: main/page/ht-setting.php:5
+#: main/page/ht-settingphp:5
 msgid "Advanced settings"
 msgstr ""
 
-#: inc/notify.php:45 inc/notify.php:96
+#: inc/notifyphp:45 inc/notifyphp:96
 msgid "Agree"
 msgstr ""
 
-#: main/clean.php:137
-msgid "All autosaves have been deleted"
-msgstr ""
-
-#: main/clean.php:158
-msgid "All items in the trash have been deleted"
-msgstr ""
-
-#: main/redirects.php:116
+#: main/redirectsphp:116
 msgid "All links on your website will redirect to the maintenance page, and only logged-in admin accounts can view the content"
 msgstr ""
 
-#: main/clean.php:116
-msgid "All revisions have been deleted"
-msgstr ""
-
-#: main/page/9user.php:55
+#: main/page/9userphp:55
 msgid "Allow avatar upload"
 msgstr ""
 
-#: main/page/9user.php:31
+#: main/page/9userphp:31
 msgid "Allow displaying member IDs on the profile management page"
 msgstr ""
 
-#: main/page/5media.php:115
+#: main/page/5mediaphp:115
 msgid "Allow uploading AVIF image format"
 msgstr ""
 
-#: main/page/5media.php:74
+#: main/page/5mediaphp:74
 msgid "Allow uploading JFIF files"
 msgstr ""
 
-#: main/page/5media.php:67
+#: main/page/5mediaphp:67
 msgid "Allow uploading SVG files"
 msgstr ""
 
-#: main/page/6post.php:125
+#: main/page/6postphp:125
 msgid "Allow using Shortcode in post titles"
 msgstr ""
 
-#: inc/media.php:1048
+#: inc/mediaphp:1048
 msgid "Allows uploading AVIF photos"
 msgstr ""
 
-#: inc/gindex.php:121 inc/gindex.php:229
+#: inc/gindexphp:121 inc/gindexphp:229
 msgid "Already declared"
 msgstr ""
 
-#: inc/media.php:1179
+#: inc/mediaphp:1179
 msgid "An error occurred"
 msgstr ""
 
-#: main/page/7mail.php:37 main/page/7mail.php:38
+#: main/page/7mailphp:37 main/page/7mailphp:38
 msgid "App password"
 msgstr ""
 
-#: main/page/3tool.php:85
+#: main/page/3toolphp:85
 msgid "Attach copyright content"
 msgstr ""
 
-#: main/page/7mail.php:65
+#: main/page/7mailphp:65
 msgid "Authenticate outgoing mail"
 msgstr ""
 
-#: main/page/ht-about1.php:56
+#: main/page/ht-about1php:56
 msgid "Author and maintainer:"
 msgstr ""
 
-#: main/search.php:39
+#: main/cleanphp:151
+msgid "Automatic cleanup"
+msgstr ""
+
+#: main/searchphp:39
 msgid "Automatic initialization after <span id=\"sogiay\" style=\"padding: 5px;\">3</span>s"
 msgstr ""
 
-#: main/page/5media.php:38
+#: main/page/5mediaphp:38
 msgid "Automatic name"
 msgstr ""
 
-#: main/page/5media.php:150
+#: main/page/5mediaphp:150
 msgid "Automatically add a frame when uploading an image"
 msgstr ""
 
-#: main/toc.php:147
+#: main/tocphp:147
 msgid "Automatically open popup when scrolling down"
 msgstr ""
 
-#: main/notify.php:18 main/notify.php:34
+#: main/notifyphp:18 main/notifyphp:34
 msgid "BLOCKER"
 msgstr ""
 
-#: main/font.php:46
+#: main/fontphp:46
 msgid "BROWSE FILE"
 msgstr ""
 
-#: main/page/10custom.php:51
+#: main/page/10customphp:51
 msgid "Background"
 msgstr ""
 
-#: main/page/10custom.php:57 main/page/4main.php:86 main/toc.php:186
+#: main/page/10customphp:57 main/page/4mainphp:86 main/tocphp:186
 msgid "Background color"
 msgstr ""
 
-#: main/page/10custom.php:76
+#: main/page/10customphp:76
 msgid "Background color of the input form"
 msgstr ""
 
-#: main/toc.php:212
+#: main/tocphp:212
 msgid "Background title"
 msgstr ""
 
-#: main/page/12chat.php:380
+#: main/page/12chatphp:380
 msgid "Bar background color"
 msgstr ""
 
-#: main/page/4main.php:90
+#: main/page/4mainphp:90
 msgid "Bar color"
 msgstr ""
 
-#: main/page/4main.php:98
+#: main/page/4mainphp:98
 msgid "Bar size"
 msgstr ""
 
-#: main/page/11google.php:65
+#: main/page/11googlephp:65
 msgid "Block login spam with Google reCAPTCHA"
 msgstr ""
 
-#: main/toc.php:190
+#: main/tocphp:190
 msgid "Border color"
 msgstr ""
 
-#: main/page/12chat.php:198 main/page/4main.php:69 main/toc.php:273
+#: main/page/12chatphp:198 main/page/4mainphp:69 main/tocphp:273
 msgid "Border distance"
 msgstr ""
 
-#: main/notify.php:149 main/page/10custom.php:111 main/page/12chat.php:206 main/page/4main.php:94
-#: main/shortcode.php:158 main/toc.php:240
+#: main/notifyphp:149 main/page/10customphp:111 main/page/12chatphp:206 main/page/4mainphp:94
+#: main/shortcodephp:158 main/tocphp:240
 msgid "Border radius"
 msgstr ""
 
-#: main/shortcode.php:154
+#: main/shortcodephp:154
 msgid "Border size"
 msgstr ""
 
-#: main/notify.php:36
+#: main/notifyphp:36
 msgid "Browser ad-block notification"
 msgstr ""
 
-#: main/page/10custom.php:91
+#: main/page/10customphp:91
 msgid "Button color"
 msgstr ""
 
-#: main/shortcode.php:162 main/shortcode.php:163
+#: main/shortcodephp:162 main/shortcodephp:163
 msgid "Button name"
 msgstr ""
 
-#: main/page/12chat.php:189
+#: main/page/12chatphp:189
 msgid "Button position"
 msgstr ""
 
-#: main/page/10custom.php:96
+#: main/page/10customphp:96
 msgid "Button text color"
 msgstr ""
 
-#: inc/woo.php:77
+#: inc/woophp:77
 msgid "Buyer"
 msgstr ""
 
-#: main/admin.php:30 main/page/12chat.php:4
+#: main/adminphp:30 main/page/12chatphp:4
 msgid "CHAT"
 msgstr ""
 
-#: main/gindex.php:64
+#: main/gindexphp:64
 msgid "CHECK"
 msgstr ""
 
-#: main/ads.php:18 main/ads.php:33
+#: main/adsphp:18 main/adsphp:33
 msgid "CLICK"
 msgstr ""
 
-#: main/clean.php:18 main/clean.php:39
+#: main/cleanphp:64 main/cleanphp:90
 msgid "COMMENT"
 msgstr ""
 
-#: main/admin.php:24 main/clean.php:17 main/clean.php:24 main/page/6post.php:4
+#: main/adminphp:24 main/cleanphp:63 main/cleanphp:72 main/page/6postphp:4
 msgid "CONTENT"
 msgstr ""
 
-#: main/notify.php:21 main/notify.php:162
+#: main/notifyphp:21 main/notifyphp:162
 msgid "COOKIE"
 msgstr ""
 
-#: main/code.php:19 main/code.php:37
+#: main/codephp:19 main/codephp:37
 msgid "CSS"
 msgstr ""
 
-#: main/admin.php:28 main/page/10custom.php:4
+#: main/adminphp:28 main/page/10customphp:4
 msgid "CUSTOM"
 msgstr ""
 
-#: main/shortcode.php:135
+#: main/cleanphp:203
+msgid "Cancel"
+msgstr ""
+
+#: main/shortcodephp:135
 msgid "Center-align button on page"
 msgstr ""
 
-#: main/page/10custom.php:126
+#: main/page/10customphp:126
 msgid "Change WordPress logo in the Admin bar"
 msgstr ""
 
-#: main/page/ht-setting.php:138
+#: main/page/ht-settingphp:138
 msgid "Change display name and icon to your preference"
 msgstr ""
 
-#: main/page/10custom.php:12
+#: main/page/10customphp:12
 msgid "Change login link"
 msgstr ""
 
-#: main/page/1speed.php:117
+#: main/page/1speedphp:117
 msgid "Change save interval"
 msgstr ""
 
-#: main/page/8woo.php:14
+#: main/page/8woophp:14
 msgid "Change the Buy Now text on the single product page"
 msgstr ""
 
-#: main/search.php:63
+#: main/searchphp:63
 msgid "Change the color of the search box to your preferences"
 msgstr ""
 
-#: main/page/8woo.php:38
+#: main/page/8woophp:38
 msgid "Chat ID"
 msgstr ""
 
-#: main/page/12chat.php:384
+#: main/page/12chatphp:384
 msgid "Chat background color"
 msgstr ""
 
-#: main/page/12chat.php:388
+#: main/page/12chatphp:388
 msgid "Chat text color"
 msgstr ""
 
-#: main/font.php:93 main/font.php:94 main/font.php:95 main/font.php:96
-#: main/font.php:97 main/font.php:98 main/font.php:99 main/font.php:100
-#: main/font.php:101 main/font.php:102 main/font.php:103 main/font.php:104
-#: main/font.php:105 main/font.php:106
+#: main/fontphp:93 main/fontphp:94 main/fontphp:95 main/fontphp:96
+#: main/fontphp:97 main/fontphp:98 main/fontphp:99 main/fontphp:100
+#: main/fontphp:101 main/fontphp:102 main/fontphp:103 main/fontphp:104
+#: main/fontphp:105 main/fontphp:106
 msgid "Choose a font for the"
 msgstr ""
 
-#: main/page/4main.php:32
+#: main/page/4mainphp:32
 msgid "Choose decorations for the website, such as Christmas or Lunar New Year (If any effects cause issues on your website, it may be due to javascript conflicts. You can switch to other effects to use)"
 msgstr ""
 
-#: main/page/ht-setting.php:123
+#: main/page/ht-settingphp:123
 msgid "Choose display interface according to your preference"
 msgstr ""
 
-#: inc/tool.php:120
+#: inc/toolphp:120
 msgid "Classic Editor"
 msgstr ""
 
-#: inc/tool.php:98
+#: inc/toolphp:98
 msgid "Classic editing"
 msgstr ""
 
-#: main/clean.php:328 main/extend.php:50
+#: main/cleanphp:376 main/extendphp:50
 msgid "Clean"
 msgstr ""
 
-#: main/debug.php:97
+#: main/debugphp:97
 msgid "Cleaned the screen"
 msgstr ""
 
-#: main/debug.php:56
+#: main/cleanphp:175
+msgid "Cleanup runs on WordPress cron, which only fires when your site receives traffic. Weekly and monthly are measured from the last run."
+msgstr ""
+
+#: main/debugphp:56
 msgid "Clear all"
 msgstr ""
 
-#: main/page/11google.php:41
+#: main/page/11googlephp:41
 msgid "Client ID"
 msgstr ""
 
-#: main/page/11google.php:44
+#: main/page/11googlephp:44
 msgid "Client Secret"
 msgstr ""
 
-#: inc/woo.php:76
+#: inc/woophp:76
 msgid "Code orders"
 msgstr ""
 
-#: main/page/7mail.php:155
+#: main/page/7mailphp:155
 msgid "Comment notification"
 msgstr ""
 
-#: main/completed.php:5
+#: inc/cleanphp:366
+msgid "Comments containing links"
+msgstr ""
+
+#: main/completedphp:5
 msgid "Completed"
 msgstr ""
 
-#: main/page/1speed.php:60
+#: main/page/1speedphp:60
 msgid "Compress HTML into a single line"
 msgstr ""
 
-#: main/page/5media.php:79
+#: main/page/5mediaphp:79
 msgid "Compress JPG images upon upload"
 msgstr ""
 
-#: main/page/5media.php:88 main/page/5media.php:108 main/page/5media.php:127
+#: main/page/5mediaphp:88 main/page/5mediaphp:108 main/page/5mediaphp:127
 msgid "Compression level ("
 msgstr ""
 
-#: main/gindex.php:74
+#: main/gindexphp:74
 msgid "Configure Google index API"
 msgstr ""
 
-#: main/page/7mail.php:13 main/page/7mail.php:15
+#: main/page/7mailphp:13 main/page/7mailphp:15
 msgid "Configure SMTP mail"
 msgstr ""
 
-#: main/page/5media.php:207
+#: main/page/5mediaphp:207
 msgid "Configure adding a watermark to images upon upload"
 msgstr ""
 
-#: main/page/12chat.php:50
+#: main/page/12chatphp:50
 msgid "Configure buttons"
 msgstr ""
 
-#: main/page/6post.php:83
+#: main/page/6postphp:83
 msgid "Configure category permalink"
 msgstr ""
 
-#: main/page/5media.php:48
+#: main/page/5mediaphp:48
 msgid "Configure image upload function"
 msgstr ""
 
-#: main/page/8woo.php:32
+#: main/page/8woophp:32
 msgid "Configure order notifications to be sent to Telegram"
 msgstr ""
 
-#: main/search.php:203
+#: main/searchphp:203
 msgid "Configure the options and create search data. If you want to refresh, you can delete the search data and recreate it. After enabling quick search and completing data creation, a quick search popup will appear when you enter the search box on the website"
 msgstr ""
 
-#: inc/chat.php:228 inc/woo.php:78
+#: main/cleanphp:196
+msgid "Confirm deletion"
+msgstr ""
+
+#: inc/chatphp:228 inc/woophp:78
 msgid "Contact"
 msgstr ""
 
-#: main/page/12chat.php:210
+#: main/page/12chatphp:210
 msgid "Contact bar on mobile"
 msgstr ""
 
-#: main/clean.php:46
-msgid "Content links"
-msgstr ""
-
-#: main/shortcode.php:58
+#: main/shortcodephp:58
 msgid "Content to be hidden"
 msgstr ""
 
-#: inc/shortcode.php:126
+#: inc/shortcodephp:126
 msgid "Continue"
 msgstr ""
 
-#: main/page/5media.php:130
+#: main/page/5mediaphp:130
 msgid "Convert JPG and PNG images to AVIF upon upload, and compress the images according to the configuration you enter"
 msgstr ""
 
-#: main/page/5media.php:111
+#: main/page/5mediaphp:111
 msgid "Convert JPG and PNG images to WEBP upon upload, and compress the images according to the configuration you enter"
 msgstr ""
 
-#: main/page/5media.php:119
+#: main/page/5mediaphp:119
 msgid "Convert JPG and PNG to AVIF"
 msgstr ""
 
-#: main/page/5media.php:101
+#: main/page/5mediaphp:101
 msgid "Convert JPG and PNG to WEBP"
 msgstr ""
 
-#: main/page/5media.php:97
+#: main/page/5mediaphp:97
 msgid "Convert PNG images to JPG upon upload, and compress the images according to the JPG configuration"
 msgstr ""
 
-#: main/page/5media.php:94
+#: main/page/5mediaphp:94
 msgid "Convert PNG to JPG"
 msgstr ""
 
-#: main/page/5media.php:113
+#: main/page/5mediaphp:113
 msgid "Convert images to AVIF upon upload"
 msgstr ""
 
-#: main/page/5media.php:99
+#: main/page/5mediaphp:99
 msgid "Convert images to WEBP upon upload"
 msgstr ""
 
-#: main/page/6post.php:97
+#: main/page/6postphp:97
 msgid "Convert path from domain.com/tag/news/ to domain.com/news/"
 msgstr ""
 
-#: main/page/6post.php:89
+#: main/page/6postphp:89
 msgid "Convert paths from (domain.com/category/news/latest-news, domain.com/category/news) to (domain.com/latest-news, domain.com/news)"
 msgstr ""
 
-#: inc/notify.php:82
+#: inc/notifyphp:82
 msgid "Cookies"
 msgstr ""
 
-#: main/page/3tool.php:81
+#: main/page/3toolphp:81
 msgid "Copy pre-set content"
 msgstr ""
 
-#: main/page/11google.php:21
+#: main/page/11googlephp:21
 msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
 msgstr ""
 
-#: main/page/2scuri.php:71
+#: main/page/2scuriphp:71
 msgid "Correct, hiding the version of resources such as JS, CSS, and WordPress is a common security measure to prevent hackers from exploiting known vulnerabilities in older versions"
 msgstr ""
 
-#: main/page/12chat.php:12
+#: main/page/12chatphp:12
 msgid "Create a chat feature for users"
 msgstr ""
 
-#: main/notify.php:88
+#: main/notifyphp:88
 msgid "Create an outstanding popup"
 msgstr ""
 
-#: main/search.php:81
+#: main/searchphp:81
 msgid "Create custom post type data"
 msgstr ""
 
-#: main/page/7mail.php:142
+#: main/page/7mailphp:142
 msgid "Create welcome email for registered users"
 msgstr ""
 
-#: inc/ui.php:247
+#: inc/uiphp:247
 msgid "Currently enabled"
 msgstr ""
 
-#: main/page/10custom.php:26
+#: main/page/10customphp:26
 msgid "Custom WordPress login page"
 msgstr ""
 
-#: main/ads.php:84
+#: main/adsphp:84
 msgid "Custom position in posts"
 msgstr ""
 
-#: main/page/6post.php:59 main/toc.php:39
+#: main/page/6postphp:59 main/tocphp:39
 msgid "Custom posts will be displayed"
 msgstr ""
 
-#: main/page/12chat.php:299 main/toc.php:233
+#: main/page/12chatphp:299 main/tocphp:233
 msgid "Customize"
 msgstr ""
 
-#: main/page/8woo.php:26
+#: main/page/8woophp:26
 msgid "Customize Currency Unit"
 msgstr ""
 
-#: main/toc.php:167
+#: main/tocphp:167
 msgid "Customize TOC display position"
 msgstr ""
 
-#: main/page/10custom.php:41
+#: main/page/10customphp:41
 msgid "Customize background"
 msgstr ""
 
-#: main/page/12chat.php:170
+#: main/page/12chatphp:170
 msgid "Customize chat button"
 msgstr ""
 
-#: main/page/10custom.php:152
+#: main/page/10customphp:152
 msgid "Customize dashboard widgets"
 msgstr ""
 
-#: main/page/ht-setting.php:86
+#: main/page/ht-settingphp:86
 msgid "Customize display"
 msgstr ""
 
-#: main/toc.php:177
+#: main/tocphp:177
 msgid "Customize display and colors"
 msgstr ""
 
-#: main/page/10custom.php:65
+#: main/page/10customphp:65
 msgid "Customize elements on the page"
 msgstr ""
 
-#: main/toc.php:246
+#: main/tocphp:246
 msgid "Customize icons and positions"
 msgstr ""
 
-#: main/page/4main.php:78
+#: main/page/4mainphp:78
 msgid "Customize scroll bar"
 msgstr ""
 
-#: main/about.php:18 main/page/ht-about2.php:4
+#: main/aboutphp:18 main/page/ht-about2php:4
 msgid "DATABASE"
 msgstr ""
 
-#: main/shortcode.php:20 main/shortcode.php:96
+#: main/shortcodephp:20 main/shortcodephp:96
 msgid "DATE"
 msgstr ""
 
-#: main/debug.php:18 main/debug.php:31
+#: main/debugphp:18 main/debugphp:31
 msgid "DEBUG"
 msgstr ""
 
-#: main/gindex.php:63
+#: main/gindexphp:63
 msgid "DEL"
 msgstr ""
 
-#: main/admin.php:22 main/page/4main.php:4
+#: main/adminphp:22 main/page/4mainphp:4
 msgid "DISPLAY"
 msgstr ""
 
-#: main/page/4main.php:33
+#: main/cleanphp:47
+msgid "Daily"
+msgstr ""
+
+#: main/page/4mainphp:33
 msgid "Dark mode"
 msgstr ""
 
-#: main/page/ht-about2.php:22
+#: main/page/ht-about2php:22
 msgid "Data"
 msgstr ""
 
-#: main/debug.php:132 main/extend.php:185
+#: main/debugphp:132 main/extendphp:185
 msgid "Debug"
 msgstr ""
 
-#: main/debug.php:67
+#: main/debugphp:67
 msgid "Debug is not enabled"
 msgstr ""
 
-#: inc/debug.php:347
+#: inc/debugphp:347
 msgid "Debug log file does not exist"
 msgstr ""
 
-#: main/debug.php:33
+#: main/debugphp:33
 msgid "Debug settings"
 msgstr ""
 
-#: inc/gindex.php:126 inc/gindex.php:233
+#: inc/gindexphp:126 inc/gindexphp:233
 msgid "Declaration already deleted"
 msgstr ""
 
-#: main/page/4main.php:22
+#: main/page/4mainphp:22
 msgid "Decorative effects for the website"
 msgstr ""
 
-#: main/page/12chat.php:154
+#: main/page/12chatphp:154
 msgid "Default style"
 msgstr ""
 
-#: inc/user.php:76
+#: inc/userphp:76 main/cleanphp:204
 msgid "Delete"
 msgstr ""
 
-#: main/clean.php:64
-msgid "Delete 404 images that do not exist saved in the database"
-msgstr ""
-
-#: main/clean.php:71
-msgid "Delete 404 thumbnails that do not exist and are stored in the database"
-msgstr ""
-
-#: main/clean.php:60
+#: inc/cleanphp:376
 msgid "Delete all 404 images"
 msgstr ""
 
-#: main/clean.php:67
+#: inc/cleanphp:383
 msgid "Delete all 404 thumbnail images"
 msgstr ""
 
-#: main/clean.php:29
+#: inc/cleanphp:331
 msgid "Delete autosaves"
 msgstr ""
 
-#: main/clean.php:41
+#: main/cleanphp:92
 msgid "Delete comments"
 msgstr ""
 
-#: main/clean.php:244
-msgid "Delete comments containing links: "
-msgstr ""
-
-#: main/clean.php:221
-msgid "Delete comments in trash: "
-msgstr ""
-
-#: main/clean.php:72
+#: main/cleanphp:125
 msgid "Delete cropped image"
 msgstr ""
 
-#: main/search.php:103
+#: main/searchphp:103
 msgid "Delete data"
 msgstr ""
 
-#: main/clean.php:179
-msgid "Delete pending comment: "
-msgstr ""
-
-#: main/clean.php:28
+#: inc/cleanphp:324
 msgid "Delete revisions"
 msgstr ""
 
-#: main/clean.php:34
-msgid "Delete revisions, delete autosaves, delete content (posts, pages, products...) in the trash"
-msgstr ""
-
-#: main/page/ht-setting.php:43
+#: main/page/ht-settingphp:43
 msgid "Delete settings:"
 msgstr ""
 
-#: main/clean.php:200
-msgid "Delete spam comments: "
-msgstr ""
-
-#: inc/clean.php:296
+#: inc/cleanphp:296
 msgid "Deleted"
 msgstr ""
 
-#: inc/font.php:142
+#: main/cleanphp:218
+msgid "Deleted %1$s of %2$s scanned"
+msgstr ""
+
+#: inc/fontphp:142
 msgid "Deleted successfully"
 msgstr ""
 
-#: main/search.php:193
+#: main/cleanphp:217
+msgid "Deleted: %s"
+msgstr ""
+
+#: main/cleanphp:180
+msgid "Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action."
+msgstr ""
+
+#: main/cleanphp:84
+msgid "Deleting is permanent. Revisions, autosaves and trashed content (posts, pages, products) are removed together with their metadata and attached files."
+msgstr ""
+
+#: main/searchphp:193
 msgid "Deletion successful"
 msgstr ""
 
-#: inc/chat.php:253
+#: inc/chatphp:253
 msgid "Demo"
 msgstr ""
 
-#: main/page/1speed.php:26
+#: main/page/1speedphp:26
 msgid "Disable Classic CSS"
 msgstr ""
 
-#: main/page/1speed.php:32
+#: main/page/1speedphp:32
 msgid "Disable Emoji"
 msgstr ""
 
-#: main/page/1speed.php:20
+#: main/page/1speedphp:20
 msgid "Disable Gutenberg CSS"
 msgstr ""
 
-#: main/page/2scuri.php:14
+#: main/page/2scuriphp:14
 msgid "Disable REST API"
 msgstr ""
 
-#: main/page/10custom.php:161
+#: main/page/10customphp:161
 msgid "Disable WordPress info widget"
 msgstr ""
 
-#: main/page/2scuri.php:26
+#: main/page/2scuriphp:26
 msgid "Disable Wp-Embed"
 msgstr ""
 
-#: main/page/2scuri.php:32
+#: main/page/2scuriphp:32
 msgid "Disable X-Pingback"
 msgstr ""
 
-#: main/page/2scuri.php:20
+#: main/page/2scuriphp:20
 msgid "Disable XML RPC"
 msgstr ""
 
-#: main/page/3tool.php:66
+#: main/page/3toolphp:66
 msgid "Disable automatic update checking (core, language packs, themes, plugins)"
 msgstr ""
 
-#: main/page/3tool.php:39
+#: main/page/3toolphp:39
 msgid "Disable automatic updates"
 msgstr ""
 
-#: main/page/3tool.php:41
+#: main/page/3toolphp:41
 msgid "Disable core updates"
 msgstr ""
 
-#: main/page/10custom.php:181
+#: main/page/10customphp:181
 msgid "Disable health widget"
 msgstr ""
 
-#: main/page/1speed.php:14
+#: main/page/1speedphp:14
 msgid "Disable jQuery Migrate"
 msgstr ""
 
-#: main/page/3tool.php:46
+#: main/page/3toolphp:46
 msgid "Disable language pack updates"
 msgstr ""
 
-#: main/page/10custom.php:127
+#: main/page/10customphp:127
 msgid "Disable logo display"
 msgstr ""
 
-#: main/toc.php:152
+#: main/tocphp:152
 msgid "Disable numbers in front of tags"
 msgstr ""
 
-#: main/page/2scuri.php:44
+#: main/page/2scuriphp:44
 msgid "Disable other data sources"
 msgstr ""
 
-#: main/page/3tool.php:56
+#: main/page/3toolphp:56
 msgid "Disable plugin updates"
 msgstr ""
 
-#: main/page/10custom.php:166
+#: main/page/10customphp:166
 msgid "Disable quick draft widget"
 msgstr ""
 
-#: main/page/10custom.php:171
+#: main/page/10customphp:171
 msgid "Disable recent posts widget"
 msgstr ""
 
-#: main/page/10custom.php:156
+#: main/page/10customphp:156
 msgid "Disable statistics widget"
 msgstr ""
 
-#: main/page/9user.php:36
+#: main/page/9userphp:36
 msgid "Disable the Admin Bar"
 msgstr ""
 
-#: main/page/3tool.php:51
+#: main/page/3toolphp:51
 msgid "Disable theme updates"
 msgstr ""
 
-#: main/page/2scuri.php:47
+#: main/page/2scuriphp:47
 msgid "Disable unnecessary data sources"
 msgstr ""
 
-#: main/page/1speed.php:12
+#: main/page/1speedphp:12
 msgid "Disable unnecessary items"
 msgstr ""
 
-#: main/page/10custom.php:154
+#: main/page/10customphp:154
 msgid "Disable unused widgets"
 msgstr ""
 
-#: main/page/3tool.php:61
+#: main/page/3toolphp:61
 msgid "Disable update & maintenance notifications"
 msgstr ""
 
-#: main/page/10custom.php:176
+#: main/page/10customphp:176
 msgid "Disable welcome widget"
 msgstr ""
 
-#: inc/toc.php:222
+#: inc/tocphp:222
 msgid "Disabled TOC"
 msgstr ""
 
-#: main/page/3tool.php:75
+#: main/page/3toolphp:75
 msgid "Disallow text copying and access to DevTools"
 msgstr ""
 
-#: inc/ui.php:253
+#: inc/uiphp:253
 msgid "Discard"
 msgstr ""
 
-#: main/page/9user.php:28
+#: main/page/9userphp:28
 msgid "Display ID in the management page"
 msgstr ""
 
-#: main/page/ht-setting.php:73
+#: main/page/ht-settingphp:73
 msgid "Display language settings"
 msgstr ""
 
-#: main/shortcode.php:130
+#: main/shortcodephp:130
 msgid "Display link when seconds expire"
 msgstr ""
 
-#: main/page/11google.php:59
+#: main/page/11googlephp:59
 msgid "Display on the WooCommerce login form"
 msgstr ""
 
-#: main/page/11google.php:53
+#: main/page/11googlephp:53
 msgid "Display on the default login form"
 msgstr ""
 
-#: main/page/11google.php:48 main/page/12chat.php:25 main/page/12chat.php:223
+#: main/page/11googlephp:48 main/page/12chatphp:25 main/page/12chatphp:223
 msgid "Display options"
 msgstr ""
 
-#: main/page/10custom.php:101
+#: main/page/10customphp:101
 msgid "Display text color"
 msgstr ""
 
-#: main/page/8woo.php:23
+#: main/page/8woophp:23
 msgid "Display text if out of stock"
 msgstr ""
 
-#: main/page/8woo.php:20
+#: main/page/8woophp:20
 msgid "Display text if the price is 0"
 msgstr ""
 
-#: main/page/4main.php:51 main/shortcode.php:112
+#: main/page/4mainphp:51 main/shortcodephp:112
 msgid "Display type"
 msgstr ""
 
-#: main/notify.php:193
+#: main/notifyphp:193
 msgid "Display your cookie notice to inform users about cookie use and allow them to manage their preferences easily"
 msgstr ""
 
-#: main/toc.php:269
+#: main/tocphp:269
 msgid "Distance above"
 msgstr ""
 
-#: main/page/1speed.php:66
+#: main/page/1speedphp:66
 msgid "Do not enable if you are using optimization plugins with similar functionality (conflict)"
 msgstr ""
 
-#: main/page/ht-setting.php:15 main/page/ht-setting.php:33
+#: main/page/ht-settingphp:15 main/page/ht-settingphp:33
 msgid "Do not select"
 msgstr ""
 
-#: main/font.php:65
+#: main/fontphp:65
 msgid "Do you want to delete?"
 msgstr ""
 
-#: inc/horsetools.php:77
+#: inc/horsetoolsphp:77
 msgid "Does not exist"
 msgstr ""
 
-#: inc/shortcode.php:121 main/export.php:90
+#: inc/shortcodephp:121 main/exportphp:90
 msgid "Download"
 msgstr ""
 
-#: main/shortcode.php:124
+#: main/shortcodephp:124
 msgid "Download button GGET shortcode"
 msgstr ""
 
-#: main/shortcode.php:161 main/shortcode.php:162 main/shortcode.php:163
+#: main/shortcodephp:161 main/shortcodephp:162 main/shortcodephp:163
 msgid "Download link"
 msgstr ""
 
-#: inc/post.php:237
+#: inc/postphp:237
 msgid "Duplicate"
 msgstr ""
 
-#: inc/post.php:236
+#: inc/postphp:236
 msgid "Duplicate content"
 msgstr ""
 
-#: main/page/6post.php:53
+#: main/page/6postphp:53
 msgid "Duplicate post, page, custom post type"
 msgstr ""
 
-#: inc/tool.php:99
+#: inc/toolphp:99
 msgid "Editor classic"
 msgstr ""
 
-#: main/page/4main.php:31
+#: main/page/4mainphp:31
 msgid "Effect"
 msgstr ""
 
-#: inc/custom.php:211
+#: inc/customphp:211
 msgid "Email"
 msgstr ""
 
-#: main/page/7mail.php:163
+#: main/page/7mailphp:163
 msgid "Email notification when a post has a comment"
 msgstr ""
 
-#: main/page/7mail.php:157
+#: main/page/7mailphp:157
 msgid "Email notification when there a reply"
 msgstr ""
 
-#: inc/mail.php:50
+#: inc/mailphp:50
 msgid "Email sent successfully"
 msgstr ""
 
-#: main/page/7mail.php:149
+#: main/page/7mailphp:149
 msgid "Email subject"
 msgstr ""
 
-#: main/page/ht-about2.php:21
+#: main/page/ht-about2php:21
 msgid "Empty"
 msgstr ""
 
-#: main/clean.php:30
+#: inc/cleanphp:338
 msgid "Empty trash"
 msgstr ""
 
-#: main/page/4main.php:80
+#: main/page/4mainphp:80
 msgid "Enable"
 msgstr ""
 
-#: main/page/6post.php:103
+#: main/page/6postphp:103
 msgid "Enable .html for page"
 msgstr ""
 
-#: main/redirects.php:44
+#: main/redirectsphp:44
 msgid "Enable 301 redirection"
 msgstr ""
 
-#: main/redirects.php:79
+#: main/redirectsphp:79
 msgid "Enable 404 redirection"
 msgstr ""
 
-#: main/redirects.php:112
+#: main/redirectsphp:112
 msgid "Enable 503 maintenance mode"
 msgstr ""
 
-#: inc/media.php:1058
+#: inc/mediaphp:1058
 msgid "Enable AVIF image compression"
 msgstr ""
 
-#: main/ads.php:48
+#: main/adsphp:48
 msgid "Enable Adsense"
 msgstr ""
 
-#: main/page/3tool.php:14
+#: main/page/3toolphp:14
 msgid "Enable Classic Editor"
 msgstr ""
 
-#: main/page/3tool.php:96
+#: main/page/3toolphp:96
 msgid "Enable Classic Editor in category description"
 msgstr ""
 
-#: main/page/3tool.php:33
+#: main/page/3toolphp:33
 msgid "Enable Classic Widget"
 msgstr ""
 
-#: main/shortcode.php:125
+#: main/shortcodephp:125
 msgid "Enable GGET shortcode"
 msgstr ""
 
-#: main/page/1speed.php:62
+#: main/page/1speedphp:62
 msgid "Enable HTML compression"
 msgstr ""
 
-#: main/page/1speed.php:40
+#: main/page/1speedphp:40
 msgid "Enable Instant-page"
 msgstr ""
 
-#: inc/media.php:1028 main/page/5media.php:81
+#: inc/mediaphp:1028 main/page/5mediaphp:81
 msgid "Enable JPG image compression"
 msgstr ""
 
-#: main/page/7mail.php:16
+#: main/page/7mailphp:16
 msgid "Enable SMTP mail"
 msgstr ""
 
-#: main/page/7mail.php:20
+#: main/page/7mailphp:20
 msgid "Enable SMTP mail to allow SMTP mail to function and send emails when you perform a test"
 msgstr ""
 
-#: main/page/1speed.php:46
+#: main/page/1speedphp:46
 msgid "Enable Smooth-scroll"
 msgstr ""
 
-#: inc/media.php:1038
+#: inc/mediaphp:1038
 msgid "Enable WEBP image compression"
 msgstr ""
 
-#: main/debug.php:34
+#: main/debugphp:34
 msgid "Enable WP_DEBUG"
 msgstr ""
 
-#: main/debug.php:44
+#: main/debugphp:44
 msgid "Enable WP_DEBUG_DISPLAY"
 msgstr ""
 
-#: main/debug.php:39
+#: main/debugphp:39
 msgid "Enable WP_DEBUG_LOG"
 msgstr ""
 
-#: main/notify.php:37
+#: main/notifyphp:37
 msgid "Enable ad-block detection"
 msgstr ""
 
-#: main/ads.php:100
+#: main/adsphp:100
 msgid "Enable ads.txt"
 msgstr ""
 
-#: main/page/6post.php:148
+#: main/page/6postphp:148
 msgid "Enable advanced image viewing"
 msgstr ""
 
-#: main/page/6post.php:145
+#: main/page/6postphp:145
 msgid "Enable and add the category IDs you want to hide from the main loop displaying posts on the homepage, for example: 1, 2, 3"
 msgstr ""
 
-#: main/page/11google.php:16
+#: main/page/11googlephp:16
 msgid "Enable and configure the functions below to enable Google sign-in to work"
 msgstr ""
 
-#: main/page/2scuri.php:53
+#: main/page/2scuriphp:53
 msgid "Enable blocking uploads of non-image files"
 msgstr ""
 
-#: main/page/12chat.php:17
+#: main/page/12chatphp:17
 msgid "Enable chat button"
 msgstr ""
 
-#: main/toc.php:178
+#: main/tocphp:178
 msgid "Enable color and display customization"
 msgstr ""
 
-#: main/page/12chat.php:215
+#: main/page/12chatphp:215
 msgid "Enable contact bar"
 msgstr ""
 
-#: main/notify.php:165
+#: main/notifyphp:165
 msgid "Enable cookie"
 msgstr ""
 
-#: main/page/10custom.php:143
+#: main/page/10customphp:143
 msgid "Enable custom footer"
 msgstr ""
 
-#: main/page/10custom.php:28
+#: main/page/10customphp:28
 msgid "Enable custom functionality"
 msgstr ""
 
-#: main/page/10custom.php:188
+#: main/page/10customphp:188
 msgid "Enable custom widget"
 msgstr ""
 
-#: main/toc.php:168
+#: main/tocphp:168
 msgid "Enable customization"
 msgstr ""
 
-#: main/page/4main.php:35
+#: main/page/4mainphp:35
 msgid "Enable dark mode"
 msgstr ""
 
-#: main/shortcode.php:99
+#: main/shortcodephp:99
 msgid "Enable date shortcode"
 msgstr ""
 
-#: main/page/6post.php:27
+#: main/page/6postphp:27
 msgid "Enable deleting posts to also delete images"
 msgstr ""
 
-#: main/page/10custom.php:68
+#: main/page/10customphp:68
 msgid "Enable element customization"
 msgstr ""
 
-#: main/page/7mail.php:143
+#: main/page/7mailphp:143
 msgid "Enable email sending"
 msgstr ""
 
-#: main/page/4main.php:14
+#: main/page/4mainphp:14
 msgid "Enable font Awesome"
 msgstr ""
 
-#: main/page/10custom.php:14
+#: main/page/10customphp:14
 msgid "Enable for use"
 msgstr ""
 
-#: main/page/6post.php:138
+#: main/page/6postphp:138
 msgid "Enable if you want to hide categories"
 msgstr ""
 
-#: main/page/1speed.php:54
+#: main/page/1speedphp:54
 msgid "Enable image lazy loading"
 msgstr ""
 
-#: inc/media.php:1068
+#: inc/mediaphp:1068
 msgid "Enable image size limitation"
 msgstr ""
 
-#: main/page/10custom.php:131
+#: main/page/10customphp:131
 msgid "Enable logo customization"
 msgstr ""
 
-#: main/notify.php:69
+#: main/notifyphp:69
 msgid "Enable notification"
 msgstr ""
 
-#: main/page/8woo.php:33
+#: main/page/8woophp:33
 msgid "Enable notifications"
 msgstr ""
 
-#: inc/media.php:1088
+#: inc/mediaphp:1088
 msgid "Enable picture frame"
 msgstr ""
 
-#: main/notify.php:89
+#: main/notifyphp:89
 msgid "Enable popup"
 msgstr ""
 
-#: main/search.php:34
+#: main/searchphp:34
 msgid "Enable quick search"
 msgstr ""
 
-#: main/page/1speed.php:102
+#: main/page/1speedphp:102
 msgid "Enable revision limit"
 msgstr ""
 
-#: main/shortcode.php:37
+#: main/shortcodephp:37
 msgid "Enable shortcode lock"
 msgstr ""
 
-#: main/search.php:66
+#: main/searchphp:66
 msgid "Enable shortcodes"
 msgstr ""
 
-#: main/shortcode.php:67
+#: main/shortcodephp:67
 msgid "Enable signature shortcode"
 msgstr ""
 
-#: main/redirects.php:36
+#: main/redirectsphp:36
 msgid "Enable site-wide 301 redirects"
 msgstr ""
 
-#: main/toc.php:34
+#: main/tocphp:34
 msgid "Enable table of contents"
 msgstr ""
 
-#: main/page/12chat.php:248
+#: main/page/12chatphp:248
 msgid "Enable the contact bar and configure the content below for use"
 msgstr ""
 
-#: main/page/5media.php:152
+#: main/page/5mediaphp:152
 msgid "Enable the picture frame"
 msgstr ""
 
-#: main/page/10custom.php:21
+#: main/page/10customphp:21
 msgid "Enable this feature and enter the login link suffix"
 msgstr ""
 
-#: main/page/5media.php:77
+#: main/page/5mediaphp:77
 msgid "Enable this feature if you want JFIF format images to be uploaded to the media. The uploaded images will be converted to JPG or WEBP format according to the configuration"
 msgstr ""
 
-#: main/page/5media.php:70
+#: main/page/5mediaphp:70
 msgid "Enable this feature if you want SVG images to be uploaded to the media"
 msgstr ""
 
-#: main/page/6post.php:24
+#: main/page/6postphp:24
 msgid "Enable this feature if you want images in posts copied from another source to be stored on your website"
 msgstr ""
 
-#: main/page/6post.php:44
+#: main/page/6postphp:44
 msgid "Enable this feature if you want the first image in the post to become the featured image if the featured image field is empty. Additionally, you can select a default featured image in case both the featured image and the images in the post are empty"
 msgstr ""
 
-#: main/page/6post.php:50
+#: main/page/6postphp:50
 msgid "Enable this feature if you want the original image size to be selected by default whenever adding images to the post"
 msgstr ""
 
-#: main/page/3tool.php:23
+#: main/page/3toolphp:23
 msgid "Enable this feature if you want to add additional functionalities to the Classic Editor to enhance professional editing"
 msgstr ""
 
-#: main/page/3tool.php:29
+#: main/page/3toolphp:29
 msgid "Enable this feature if you want to add the Classic Editor button in the post and page management interface. With this feature, you dont need to set the Classic Editor as default but can use it in parallel"
 msgstr ""
 
-#: main/page/10custom.php:146
+#: main/page/10customphp:146
 msgid "Enable this feature if you want to customize the footer in the WP admin"
 msgstr ""
 
-#: main/page/10custom.php:31
+#: main/page/10customphp:31
 msgid "Enable this feature to be able to use the customizations below"
 msgstr ""
 
-#: main/page/11google.php:62
+#: main/page/11googlephp:62
 msgid "Enable to display the Google login button on the WooCommerce login form"
 msgstr ""
 
-#: main/page/11google.php:56
+#: main/page/11googlephp:56
 msgid "Enable to display the Google login button on the default WordPress login form"
 msgstr ""
 
-#: main/page/11google.php:13
+#: main/page/11googlephp:13
 msgid "Enable to use"
 msgstr ""
 
-#: main/page/5media.php:50
+#: main/page/5mediaphp:50
 msgid "Enable upload size limit"
 msgstr ""
 
-#: inc/media.php:1078
+#: inc/mediaphp:1078
 msgid "Enable watermarks"
 msgstr ""
 
-#: inc/toc.php:218
+#: inc/tocphp:218
 msgid "Enabled TOC"
 msgstr ""
 
-#: main/page/3tool.php:20
+#: main/page/3toolphp:20
 msgid "Enhance features for Classic Editor"
 msgstr ""
 
-#: main/page/2scuri.php:12
+#: main/page/2scuriphp:12
 msgid "Enhance website security"
 msgstr ""
 
-#: main/ads.php:54
+#: main/adsphp:54
 msgid "Enter Adsense code here"
 msgstr ""
 
-#: main/code.php:42 main/code.php:47 main/code.php:52
+#: main/codephp:42 main/codephp:47 main/codephp:52
 msgid "Enter CSS here"
 msgstr ""
 
-#: main/page/12chat.php:53
+#: main/page/12chatphp:53
 msgid "Enter ID"
 msgstr ""
 
-#: main/page/10custom.php:19
+#: main/page/10customphp:19
 msgid "Enter a suffix"
 msgstr ""
 
-#: main/toc.php:70
+#: main/tocphp:70
 msgid "Enter a title"
 msgstr ""
 
-#: main/page/12chat.php:65 main/page/12chat.php:84 main/page/12chat.php:117
+#: main/page/12chatphp:65 main/page/12chatphp:84 main/page/12chatphp:117
 msgid "Enter button name"
 msgstr ""
 
-#: main/ads.php:109 main/code.php:63 main/code.php:74 main/code.php:85
-#: main/code.php:96
+#: main/adsphp:109 main/codephp:63 main/codephp:74 main/codephp:85
+#: main/codephp:96
 msgid "Enter code here"
 msgstr ""
 
-#: main/page/5media.php:218
+#: main/page/5mediaphp:218
 msgid "Enter content"
 msgstr ""
 
-#: main/notify.php:59 main/notify.php:79 main/page/3tool.php:91 main/redirects.php:122
+#: main/notifyphp:59 main/notifyphp:79 main/page/3toolphp:91 main/redirectsphp:122
 msgid "Enter content here"
 msgstr ""
 
-#: main/notify.php:191
+#: main/notifyphp:191
 msgid "Enter cookie content"
 msgstr ""
 
-#: main/notify.php:188
+#: main/notifyphp:188
 msgid "Enter cookie title"
 msgstr ""
 
-#: main/export.php:93
+#: main/exportphp:93
 msgid "Enter data here"
 msgstr ""
 
-#: main/page/7mail.php:75
+#: main/page/7mailphp:75
 msgid "Enter email"
 msgstr ""
 
-#: main/page/7mail.php:152
+#: main/page/7mailphp:152
 msgid "Enter email content here"
 msgstr ""
 
-#: main/clean.php:231 main/clean.php:301
-msgid "Enter from horsetools to confirm deletion:"
-msgstr ""
-
-#: main/notify.php:144
+#: main/notifyphp:144
 msgid "Enter image link"
 msgstr ""
 
-#: main/gindex.php:98 main/gindex.php:106 main/gindex.php:192
+#: main/gindexphp:98 main/gindexphp:106 main/gindexphp:192
 msgid "Enter json"
 msgstr ""
 
-#: inc/search.php:390
+#: inc/searchphp:390
 msgid "Enter keywords to search"
 msgstr ""
 
-#: main/page/12chat.php:52 main/page/12chat.php:66 main/page/12chat.php:85 main/page/12chat.php:118
-#: main/page/12chat.php:258 main/page/12chat.php:271
+#: main/page/12chatphp:52 main/page/12chatphp:66 main/page/12chatphp:85 main/page/12chatphp:118
+#: main/page/12chatphp:258 main/page/12chatphp:271
 msgid "Enter link"
 msgstr ""
 
-#: main/gindex.php:34
+#: main/gindexphp:34
 msgid "Enter manually"
 msgstr ""
 
-#: main/page/12chat.php:257 main/page/12chat.php:270 main/page/ht-setting.php:126
+#: main/page/12chatphp:257 main/page/12chatphp:270 main/page/ht-settingphp:126
 msgid "Enter name"
 msgstr ""
 
-#: main/shortcode.php:56
+#: main/shortcodephp:56
 msgid "Enter note content"
 msgstr ""
 
-#: main/page/12chat.php:67 main/page/12chat.php:86 main/page/12chat.php:119 main/page/12chat.php:256
-#: main/page/12chat.php:269
+#: main/page/12chatphp:67 main/page/12chatphp:86 main/page/12chatphp:119 main/page/12chatphp:256
+#: main/page/12chatphp:269
 msgid "Enter the SVG icon"
 msgstr ""
 
-#: main/notify.php:157
+#: main/notifyphp:157
 msgid "Enter the content you want to display and configure the customizations above so the popup can appear when users visit your website"
 msgstr ""
 
-#: main/notify.php:81
+#: main/notifyphp:81
 msgid "Enter the content you want to display in the notification, and customize the colors to match your preferences. A notification will appear at the top of your website, making it easy for users to see"
 msgstr ""
 
-#: main/redirects.php:41 main/redirects.php:53 main/redirects.php:54 main/redirects.php:62
-#: main/redirects.php:63 main/redirects.php:144 main/redirects.php:145
+#: main/redirectsphp:41 main/redirectsphp:53 main/redirectsphp:54 main/redirectsphp:62
+#: main/redirectsphp:63 main/redirectsphp:144 main/redirectsphp:145
 msgid "Enter the link"
 msgstr ""
 
-#: main/search.php:45
+#: main/searchphp:45
 msgid "Enter the number of posts or products to be displayed when searching"
 msgstr ""
 
-#: main/page/1speed.php:107
+#: main/page/1speedphp:107
 msgid "Enter the number of revisions"
 msgstr ""
 
-#: main/notify.php:185
+#: main/notifyphp:185
 msgid "Enter the policy page link"
 msgstr ""
 
-#: main/ads.php:89
+#: main/adsphp:89
 msgid "Enter the tag and tag number for the ad to appear"
 msgstr ""
 
-#: main/notify.php:61
+#: main/notifyphp:61
 msgid "Enter the title and content you want to display when ad-blocker is detected"
 msgstr ""
 
-#: main/gindex.php:60
+#: main/gindexphp:60
 msgid "Enter the url"
 msgstr ""
 
-#: main/notify.php:56 main/notify.php:125 main/redirects.php:119
+#: main/notifyphp:56 main/notifyphp:125 main/redirectsphp:119
 msgid "Enter title"
 msgstr ""
 
-#: main/page/8woo.php:28
+#: main/page/8woophp:28
 msgid "Enter units"
 msgstr ""
 
-#: main/shortcode.php:142
+#: main/shortcodephp:142
 msgid "Enter waiting time"
 msgstr ""
 
-#: main/clean.php:252 main/clean.php:317
-msgid "Entering incorrect content"
-msgstr ""
-
-#: inc/gindex.php:343 inc/gindex.php:347
+#: inc/gindexphp:343 inc/gindexphp:347
 msgid "Error"
 msgstr ""
 
-#: main/debug.php:100
+#: main/debugphp:100
 msgid "Error cannot be cleaned"
 msgstr ""
 
-#: main/clean.php:120 main/clean.php:141 main/clean.php:162 main/clean.php:183
-#: main/clean.php:204 main/clean.php:225 main/clean.php:248 main/clean.php:272
-#: main/clean.php:293
-msgid "Error! Unable to delete"
+#: main/cleanphp:219
+msgid "Error — nothing was deleted."
 msgstr ""
 
-#: main/page/10custom.php:22
+#: main/page/10customphp:22
 msgid "Example: domain.com/wp-admin where wp-admin is the suffix"
 msgstr ""
 
-#: main/clean.php:91
-msgid "Exercise caution when using this feature, as your interface may require various sizes to display properly. If youre a web designer, youll understand the need for a variety of sizes to be utilized"
-msgstr ""
-
-#: main/export.php:86 main/export.php:169 main/extend.php:200
+#: main/exportphp:86 main/exportphp:169 main/extendphp:200
 msgid "Export"
 msgstr ""
 
-#: main/extend.php:252
+#: main/extendphp:252
 msgid "Extend"
 msgstr ""
 
-#: main/extend.php:18 main/extend.php:31
+#: main/extendphp:18 main/extendphp:31
 msgid "FREE"
 msgstr ""
 
-#: inc/font.php:144
+#: inc/fontphp:144
 msgid "Failed to delete the file"
 msgstr ""
 
-#: inc/debug.php:344
+#: inc/debugphp:344
 msgid "Failed to load debug log"
 msgstr ""
 
-#: inc/media.php:1175
+#: inc/mediaphp:1175
 msgid "Failed to update setting:"
 msgstr ""
 
-#: inc/scuri.php:73
+#: inc/scuriphp:73
 msgid "Feeds are not available on this site. %s"
 msgstr ""
 
-#: inc/scuri.php:76
+#: inc/scuriphp:76
 msgid "Feeds disabled"
 msgstr ""
 
-#: main/page/ht-about2.php:9
+#: main/page/ht-about2php:9
 msgid "Field"
 msgstr ""
 
-#: main/page/9user.php:14
+#: main/page/9userphp:14
 msgid "Filter posts and images"
 msgstr ""
 
-#: main/page/2scuri.php:51
+#: main/page/2scuriphp:51
 msgid "Filter uploaded files"
 msgstr ""
 
-#: main/clean.php:58
+#: main/cleanphp:111
 msgid "Find and delete all 404 images in media"
 msgstr ""
 
-#: main/clean.php:65
+#: main/cleanphp:118
 msgid "Find and delete all 404 thumbnail images in media"
 msgstr ""
 
-#: main/page/5media.php:192
+#: main/page/5mediaphp:192
 msgid "Flip photo"
 msgstr ""
 
-#: main/extend.php:65 main/font.php:205
+#: main/extendphp:65 main/fontphp:205
 msgid "Font"
 msgstr ""
 
-#: inc/font.php:153
+#: inc/fontphp:153
 msgid "Font does not exist"
 msgstr ""
 
-#: main/toc.php:236
+#: main/tocphp:236
 msgid "Font size"
 msgstr ""
 
-#: main/ads.php:106
+#: main/adsphp:106
 msgid "For an Nginx server, if the ads.txt file already exists in the root directory of the website, it will prioritize the static file, so this function will not work. If you want to use it, you can either configure Nginx or delete the static file before proceeding"
 msgstr ""
 
-#: main/ads.php:35
+#: main/adsphp:35
 msgid "Forced ad clicks — removed"
 msgstr ""
 
-#: main/page/ht-about1.php:63
+#: main/page/ht-about1php:63
 msgid "Foxtool by Fox Theme (Nguyễn Ngọc Hoàn)"
 msgstr ""
 
-#: main/extend.php:44 main/extend.php:59 main/extend.php:74 main/extend.php:89
-#: main/extend.php:104 main/extend.php:119 main/extend.php:134 main/extend.php:149
-#: main/extend.php:164 main/extend.php:179 main/extend.php:194 main/extend.php:209
+#: main/extendphp:44 main/extendphp:59 main/extendphp:74 main/extendphp:89
+#: main/extendphp:104 main/extendphp:119 main/extendphp:134 main/extendphp:149
+#: main/extendphp:164 main/extendphp:179 main/extendphp:194 main/extendphp:209
 msgid "Free"
 msgstr ""
 
-#: main/page/4main.php:20
+#: main/page/4mainphp:20
 msgid "Free to use \"fa-regular\" and \"fa-brands\" styles"
 msgstr ""
 
-#: inc/woo.php:29
+#: inc/woophp:29
 msgid "Free!"
 msgstr ""
 
-#: inc/woo.php:75
+#: inc/woophp:75
 msgid "From"
 msgstr ""
 
-#: inc/media.php:454
+#: inc/mediaphp:454
 msgid "GD Library does not support AVIF images"
 msgstr ""
 
-#: inc/media.php:457
+#: inc/mediaphp:457
 msgid "GD Library is not installed"
 msgstr ""
 
-#: main/shortcode.php:21 main/shortcode.php:122
+#: main/shortcodephp:21 main/shortcodephp:122
 msgid "GGET"
 msgstr ""
 
-#: main/admin.php:29 main/page/11google.php:4
+#: main/adminphp:29 main/page/11googlephp:4
 msgid "GOOGLE"
 msgstr ""
 
-#: main/search.php:102
+#: main/searchphp:102
 msgid "Generate data"
 msgstr ""
 
-#: inc/scuri.php:74
+#: inc/scuriphp:74
 msgid "Go to the home page"
 msgstr ""
 
-#: main/toc.php:206
+#: main/tocphp:206
 msgid "H tag color when scrolled to"
 msgstr ""
 
-#: main/search.php:18 main/search.php:31
+#: main/searchphp:18 main/searchphp:31
 msgid "HORSE SEARCH"
 msgstr ""
 
-#: main/export.php:40 main/export.php:84
+#: main/exportphp:40 main/exportphp:84
 msgid "HORSETOOLS"
 msgstr ""
 
-#: inc/notify.php:115
+#: inc/notifyphp:115
 msgid "Hello"
 msgstr ""
 
-#: inc/mail.php:106
+#: inc/mailphp:106
 msgid "Hello %s. A new comment has been posted on your article \"%s\". You can view the comment here: %s"
 msgstr ""
 
-#: main/page/ht-setting.php:7
+#: main/page/ht-settingphp:7
 msgid "Hide Admin account from profile page"
 msgstr ""
 
-#: main/page/ht-setting.php:46 main/page/ht-setting.php:48
+#: main/page/ht-settingphp:46 main/page/ht-settingphp:48
 msgid "Hide Horse Tools"
 msgstr ""
 
-#: main/page/10custom.php:114
+#: main/page/10customphp:114
 msgid "Hide back link"
 msgstr ""
 
-#: main/page/12chat.php:221
+#: main/page/12chatphp:221
 msgid "Hide bar when pulled down"
 msgstr ""
 
-#: main/page/12chat.php:23
+#: main/page/12chatphp:23
 msgid "Hide chat button when scrolling down"
 msgstr ""
 
-#: main/page/10custom.php:120
+#: main/page/10customphp:120
 msgid "Hide language options"
 msgstr ""
 
-#: main/toc.php:162
+#: main/tocphp:162
 msgid "Hide minimized list"
 msgstr ""
 
-#: main/page/ht-setting.php:55
+#: main/page/ht-settingphp:55
 msgid "Hide plugins from the manager"
 msgstr ""
 
-#: main/page/6post.php:136
+#: main/page/6postphp:136
 msgid "Hide post categories from homepage"
 msgstr ""
 
-#: main/page/3tool.php:102
+#: main/page/3toolphp:102
 msgid "Hide the tools you want"
 msgstr ""
 
-#: main/extend.php:170 main/search.php:223
+#: main/extendphp:170 main/searchphp:223
 msgid "Horse Search"
 msgstr ""
 
-#: inc/horsetools.php:217
+#: inc/horsetoolsphp:217
 msgid "Horse Tools"
 msgstr ""
 
-#: main/page/ht-about1.php:62
+#: main/page/ht-about1php:62
 msgid "Horse Tools is built on %s, which is no longer maintained by its author. That original work is gratefully acknowledged and this fork continues under the same GPLv2 licence."
 msgstr ""
 
-#: main/page/ht-about1.php:8
+#: main/page/ht-about1php:8
 msgid "Horse Tools:"
 msgstr ""
 
-#: inc/scuri.php:103
+#: inc/scuriphp:103
 msgid "I am sorry, you can only upload image files in the formats .GIF, .JPG, .PNG, .WEBP"
 msgstr ""
 
-#: main/export.php:99
+#: main/cleanphp:200
+msgid "I understand this permanently deletes data."
+msgstr ""
+
+#: main/exportphp:99
 msgid "IMPORT HORSETOOLS DATA"
 msgstr ""
 
-#: main/gindex.php:18 main/gindex.php:32 main/gindex.php:62
+#: main/gindexphp:18 main/gindexphp:32 main/gindexphp:62
 msgid "INDEX"
 msgstr ""
 
-#: main/page/ht-setting.php:136
+#: main/page/ht-settingphp:136
 msgid "Icon"
 msgstr ""
 
-#: main/toc.php:222
+#: main/tocphp:222
 msgid "Icon background color"
 msgstr ""
 
-#: main/toc.php:226
+#: main/tocphp:226
 msgid "Icon border color"
 msgstr ""
 
-#: main/toc.php:244
+#: main/tocphp:244
 msgid "Icon border radius"
 msgstr ""
 
-#: main/page/4main.php:41 main/search.php:76 main/toc.php:230
+#: main/page/4mainphp:41 main/searchphp:76 main/tocphp:230
 msgid "Icon color"
 msgstr ""
 
-#: main/page/7mail.php:160
+#: main/page/7mailphp:160
 msgid "If someone replies to a comment, there will be an email notification sent to the commenter"
 msgstr ""
 
-#: main/page/11google.php:94
+#: main/page/11googlephp:94
 msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
 msgstr ""
 
-#: main/page/3tool.php:93
+#: main/page/3toolphp:93
 msgid "If users copy content on the page, instead of receiving the content, they will receive the content you have set"
 msgstr ""
 
-#: main/page/ht-setting.php:84
+#: main/page/ht-settingphp:84
 msgid "If you dont want to automatically switch the language based on WordPress context, please select the language you prefer"
 msgstr ""
 
-#: main/page/1speed.php:131
+#: main/page/1speedphp:131
 msgid "If you enable this feature and set automatic revision limit and automatic save time for posts or pages, it will reduce the amount of data stored in the database"
 msgstr ""
 
-#: main/page/6post.php:106
+#: main/page/6postphp:106
 msgid "If you enable this feature, your Pages will have .html appended to them, for example: domain.com/page.html"
 msgstr ""
 
-#: main/page/9user.php:51
+#: main/page/9userphp:51
 msgid "If you find the Admin Bar distracting every time you view the website, you can turn it off (there is an option for you to turn off all or only turn off for users)"
 msgstr ""
 
-#: main/page/3tool.php:36
+#: main/page/3toolphp:36
 msgid "If you find the new Widget Manager too difficult to use, then revert it to the Classic Widget version"
 msgstr ""
 
-#: main/page/3tool.php:17
+#: main/page/3toolphp:17
 msgid "If you find the new editor too difficult to use, then revert it to the Classic Editor version"
 msgstr ""
 
-#: main/page/3tool.php:116
+#: main/page/3toolphp:116
 msgid "If you find the tools above unnecessary, you can hide them to make the WP admin interface cleaner. This function only hides them without blocking access to their links"
 msgstr ""
 
-#: main/ads.php:39
+#: main/adsphp:39
 msgid "If you had it enabled it is now inactive. The AdSense and ads.txt tools on the other tabs are unaffected."
 msgstr ""
 
-#: main/page/5media.php:64
+#: main/page/5mediaphp:64
 msgid "If you have members and do not want them to upload images with excessively large sizes, causing storage space usage, you can limit the maximum size allowed for upload"
 msgstr ""
 
-#: main/extend.php:195
+#: main/extendphp:195
 msgid "If you need to monitor WordPress debug files without accessing the file manager, this tool is made just for that purpose"
 msgstr ""
 
-#: main/page/2scuri.php:18
+#: main/page/2scuriphp:18
 msgid "If you not using REST API, it recommended to disable it for security purposes"
 msgstr ""
 
-#: main/page/2scuri.php:29
+#: main/page/2scuriphp:29
 msgid "If you not using Wp-Embed, it recommended to disable it for security purposes"
 msgstr ""
 
-#: main/page/2scuri.php:35
+#: main/page/2scuriphp:35
 msgid "If you not using X-Pingback, it recommended to disable it for security purposes"
 msgstr ""
 
-#: main/page/2scuri.php:23
+#: main/page/2scuriphp:23
 msgid "If you not using XML RPC, it recommended to disable it for security purposes"
 msgstr ""
 
-#: main/page/1speed.php:29
+#: main/page/1speedphp:29
 msgid "If you not using it, you can disable Classic CSS on the homepage"
 msgstr ""
 
-#: main/page/1speed.php:35
+#: main/page/1speedphp:35
 msgid "If you not using it, you can disable Emoji"
 msgstr ""
 
-#: main/page/1speed.php:23
+#: main/page/1speedphp:23
 msgid "If you not using it, you can disable Gutenberg CSS on the homepage"
 msgstr ""
 
-#: inc/mail.php:46
+#: inc/mailphp:46
 msgid "If you receive this email, then the SMTP email sending function is working well"
 msgstr ""
 
-#: main/shortcode.php:91
+#: main/shortcodephp:91
 msgid "If you want to display your signature anywhere, you can create content above and then use the generated shortcode at your desired location"
 msgstr ""
 
-#: main/page/6post.php:81
+#: main/page/6postphp:81
 msgid "If you want to enable the feature to duplicate posts, pages, or custom post types, please activate this function"
 msgstr ""
 
-#: main/extend.php:210
+#: main/extendphp:210
 msgid "If you want to export or import the settings of the Horse Tools plugin, enable this feature. It allows you to easily transfer configurations from this site to another"
 msgstr ""
 
-#: main/page/ht-setting.php:24
+#: main/page/ht-settingphp:24
 msgid "If you want to hide a specific Administrator account, select the user"
 msgstr ""
 
-#: main/page/1speed.php:57
+#: main/page/1speedphp:57
 msgid "If you want to lazy load images every time the page loads, then turn it on. This function helps your website load faster"
 msgstr ""
 
-#: main/page/4main.php:18
+#: main/page/4mainphp:18
 msgid "If you want to use font Awesome, you can enable it (it an icon font). You can search for icons at:"
 msgstr ""
 
-#: main/page/5media.php:270
+#: main/page/5mediaphp:270
 msgid "If you want your uploaded images to be watermarked, please use this function and configure it above. Watermark (PNG, JPG)"
 msgstr ""
 
-#: main/extend.php:180
+#: main/extendphp:180
 msgid "If youre tired of WordPress default search tool because its too slow, try out our lightning-fast search feature to give your users an exceptional and speedy search experience"
 msgstr ""
 
-#: main/page/5media.php:43
+#: main/page/5mediaphp:43
 msgid "Ignore 8-bit png"
 msgstr ""
 
-#: main/page/5media.php:12
+#: main/page/5mediaphp:12
 msgid "Image crop configuration"
 msgstr ""
 
-#: main/page/6post.php:12
+#: main/page/6postphp:12
 msgid "Image function for posts"
 msgstr ""
 
-#: main/export.php:91
+#: main/exportphp:91
 msgid "Import"
 msgstr ""
 
-#: inc/gindex.php:274 main/extend.php:95 main/gindex.php:209
+#: inc/gindexphp:274 main/extendphp:95 main/gindexphp:209
 msgid "Index now"
 msgstr ""
 
-#: main/page/ht-about1.php:5
+#: main/page/ht-about1php:5
 msgid "Information about your website"
 msgstr ""
 
-#: main/page/10custom.php:81
+#: main/page/10customphp:81
 msgid "Input / select box color"
 msgstr ""
 
-#: main/page/1speed.php:43
+#: main/page/1speedphp:43
 msgid "Instant-page is a library that allows you to preload the content of a linked page into the browser memory simply by hovering over the link. When you click on the link, it provides a remarkably fast loading experience"
 msgstr ""
 
-#: inc/clean.php:50 inc/clean.php:63 inc/clean.php:76 inc/clean.php:127
-#: inc/clean.php:136 inc/clean.php:145 inc/clean.php:154 inc/clean.php:198
-#: inc/clean.php:238 inc/clean.php:290 inc/debug.php:312 inc/font.php:131
-#: inc/font.php:162 inc/search.php:276 inc/search.php:316
+#: inc/cleanphp:50 inc/cleanphp:63 inc/cleanphp:76 inc/cleanphp:127
+#: inc/cleanphp:136 inc/cleanphp:145 inc/cleanphp:154 inc/cleanphp:198
+#: inc/cleanphp:238 inc/cleanphp:290 inc/debugphp:312 inc/fontphp:131
+#: inc/fontphp:162 inc/searchphp:276 inc/searchphp:316
 msgid "Insufficient permissions"
 msgstr ""
 
-#: main/export.php:76
+#: main/exportphp:76
 msgid "Invalid data"
 msgstr ""
 
-#: main/shortcode.php:18 main/shortcode.php:34
+#: main/shortcodephp:18 main/shortcodephp:34
 msgid "LOCKVIP"
 msgstr ""
 
-#: main/page/ht-setting.php:82
+#: main/page/ht-settingphp:82
 msgid "Language"
 msgstr ""
 
-#: main/extend.php:105
+#: main/extendphp:105
 msgid "Leverage Google’s Indexing API to speed up the indexing of your website on Google’s search engine. You can add as many API keys as you like for unlimited indexing capacity"
 msgstr ""
 
-#: main/page/ht-about1.php:58
+#: main/page/ht-about1php:58
 msgid "Licence:"
 msgstr ""
 
-#: main/search.php:60
+#: main/searchphp:60
 msgid "Light / Dark"
 msgstr ""
 
-#: main/page/ht-setting.php:26
+#: main/page/ht-settingphp:26
 msgid "Limit Horse Tools display"
 msgstr ""
 
-#: main/page/5media.php:136
+#: main/page/5mediaphp:136
 msgid "Limit JPG, PNG, WEBP, AVIF images"
 msgstr ""
 
-#: main/page/5media.php:148
+#: main/page/5mediaphp:148
 msgid "Limits the maximum width and height of JPG, PNG, WEBP images upon upload. You can leave it blank if you want to keep the original size"
 msgstr ""
 
-#: main/page/5media.php:134
+#: main/page/5mediaphp:134
 msgid "Limits the size of JPG, PNG, WEBP, AVIF images when uploading"
 msgstr ""
 
-#: main/toc.php:194
+#: main/tocphp:194
 msgid "Link color"
 msgstr ""
 
-#: main/page/10custom.php:106
+#: main/page/10customphp:106
 msgid "Link display color"
 msgstr ""
 
-#: main/toc.php:183
+#: main/tocphp:183
 msgid "List color"
 msgstr ""
 
-#: main/toc.php:157
+#: main/tocphp:157
 msgid "List is hidden by default"
 msgstr ""
 
-#: main/notify.php:182 main/page/4main.php:61 main/toc.php:175
+#: main/notifyphp:182 main/page/4mainphp:61 main/tocphp:175
 msgid "Location"
 msgstr ""
 
-#: inc/goo.php:109
+#: inc/goophp:109
 msgid "Log out"
 msgstr ""
 
-#: main/page/10custom.php:23
+#: main/page/10customphp:23
 msgid "Login link:"
 msgstr ""
 
-#: main/admin.php:25 main/page/7mail.php:4
+#: main/adminphp:25 main/page/7mailphp:4
 msgid "MAIL"
 msgstr ""
 
-#: page/503.php:3
+#: page/503php:3
 msgid "MAINTENANCE MODE"
 msgstr ""
 
-#: main/page/5media.php:55 main/page/ht-about2.php:10
+#: main/page/5mediaphp:55 main/page/ht-about2php:10
 msgid "MB"
 msgstr ""
 
-#: main/admin.php:23 main/clean.php:19 main/clean.php:56 main/page/5media.php:4
+#: main/adminphp:23 main/cleanphp:65 main/cleanphp:109 main/page/5mediaphp:4
 msgid "MEDIA"
 msgstr ""
 
-#: main/page/12chat.php:247
+#: main/page/12chatphp:247
 msgid "Main button"
 msgstr ""
 
-#: main/search.php:49
+#: main/searchphp:49
 msgid "Main color"
 msgstr ""
 
-#: main/page/12chat.php:372
+#: main/page/12chatphp:372
 msgid "Main icon color"
 msgstr ""
 
-#: main/page/12chat.php:376
+#: main/page/12chatphp:376
 msgid "Main icon text color"
 msgstr ""
 
-#: main/redirects.php:111
+#: main/redirectsphp:111
 msgid "Maintenance mode for developers (503)"
 msgstr ""
 
-#: main/page/3tool.php:73
+#: main/page/3toolphp:73
 msgid "Management tool"
 msgstr ""
 
-#: main/page/5media.php:145
+#: main/page/5mediaphp:145
 msgid "Max height"
 msgstr ""
 
-#: main/notify.php:154 main/page/5media.php:143
+#: main/notifyphp:154 main/page/5mediaphp:143
 msgid "Max width"
 msgstr ""
 
-#: inc/media.php:1020
+#: inc/mediaphp:1020
 msgid "Media"
 msgstr ""
 
-#: main/page/1speed.php:68
+#: main/page/1speedphp:68
 msgid "Minify Inline JavaScript"
 msgstr ""
 
-#: main/page/8woo.php:12
+#: main/page/8woophp:12
 msgid "Modify content"
 msgstr ""
 
-#: main/page/8woo.php:25
+#: main/page/8woophp:25
 msgid "Modify some information on Woocommerce that you want"
 msgstr ""
 
-#: main/page/10custom.php:141
+#: main/page/10customphp:141
 msgid "Modify the footer content of WP admin"
 msgstr ""
 
-#: main/notify.php:19 main/notify.php:66
+#: main/cleanphp:49
+msgid "Monthly"
+msgstr ""
+
+#: main/notifyphp:19 main/notifyphp:66
 msgid "NOTIFY"
 msgstr ""
 
-#: main/font.php:42
+#: main/fontphp:42
 msgid "Name the font"
 msgstr ""
 
-#: inc/chat.php:415
+#: inc/chatphp:415
 msgid "Navigation bar (Horse Tools)"
 msgstr ""
 
-#: main/export.php:74
+#: main/exportphp:74
 msgid "New configuration has been successfully added"
 msgstr ""
 
-#: main/page/6post.php:131
+#: main/page/6postphp:131
 msgid "Newly edited posts will be displayed first"
 msgstr ""
 
-#: main/page/12chat.php:326 main/redirects.php:157 main/toc.php:107
+#: main/cleanphp:177
+msgid "Next automatic check: %s"
+msgstr ""
+
+#: main/page/12chatphp:326 main/redirectsphp:157 main/tocphp:107
 msgid "No pages selected"
 msgstr ""
 
-#: inc/search.php:397
+#: inc/searchphp:397
 msgid "No results found"
 msgstr ""
 
-#: inc/ui.php:246
+#: inc/uiphp:246
 msgid "No setting matches that."
 msgstr ""
 
-#: inc/clean.php:298
+#: inc/cleanphp:298
 msgid "No size"
 msgstr ""
 
-#: main/page/7mail.php:55
+#: main/page/7mailphp:55
 msgid "None"
 msgstr ""
 
-#: main/page/10custom.php:53
+#: main/page/10customphp:53
 msgid "None: default not selected, Auto: background image automatically changes each time the page is loaded, Color: change the color you want, Upload: upload the background image you want"
 msgstr ""
 
-#: inc/chat.php:34
+#: inc/chatphp:34
 msgid "Not entered"
 msgstr ""
 
-#: main/clean.php:50
-msgid "Note: deleting \"Content links\" will delete all comments that have a link in the body or url input field"
-msgstr ""
-
-#: inc/ui.php:248
+#: inc/uiphp:248
 msgid "Nothing on this page is enabled yet."
 msgstr ""
 
-#: main/notify.php:68
+#: main/cleanphp:220
+msgid "Nothing to delete."
+msgstr ""
+
+#: main/notifyphp:68
 msgid "Notification at the top of the page"
 msgstr ""
 
-#: inc/gindex.php:140
+#: inc/gindexphp:140
 msgid "Notification link sent"
 msgstr ""
 
-#: main/extend.php:140 main/notify.php:213
+#: main/extendphp:140 main/notifyphp:213
 msgid "Notify"
 msgstr ""
 
-#: main/page/7mail.php:166
+#: main/page/7mailphp:166
 msgid "Notify the post author when someone comments on the post"
 msgstr ""
 
-#: main/search.php:168
+#: main/searchphp:168
 msgid "Number of data completed: '+sopost+'"
 msgstr ""
 
-#: main/clean.php:268 main/clean.php:289
-msgid "Number of images 404 deleted: "
-msgstr ""
-
-#: main/search.php:42
+#: main/searchphp:42
 msgid "Number of items displayed"
 msgstr ""
 
-#: main/completed.php:7
+#: main/completedphp:7
 msgid "OK"
 msgstr ""
 
-#: main/page/10custom.php:9 main/page/11google.php:9 main/page/12chat.php:9 main/page/1speed.php:9
-#: main/page/2scuri.php:9 main/page/3tool.php:9 main/page/4main.php:9 main/page/5media.php:9
-#: main/page/6post.php:9 main/page/7mail.php:9 main/page/8woo.php:9 main/page/9user.php:9
+#: main/page/10customphp:9 main/page/11googlephp:9 main/page/12chatphp:9 main/page/1speedphp:9
+#: main/page/2scuriphp:9 main/page/3toolphp:9 main/page/4mainphp:9 main/page/5mediaphp:9
+#: main/page/6postphp:9 main/page/7mailphp:9 main/page/8woophp:9 main/page/9userphp:9
 msgid "ON/OFF"
 msgstr ""
 
-#: main/admin.php:19 main/page/1speed.php:4
+#: main/adminphp:19 main/page/1speedphp:4
 msgid "OPTIMIZE"
 msgstr ""
 
-#: main/page/11google.php:74
+#: main/cleanphp:46
+msgid "Off"
+msgstr ""
+
+#: main/page/11googlephp:74
 msgid "Off / select"
 msgstr ""
 
-#: main/page/9user.php:21
+#: main/page/9userphp:21
 msgid "Only admin has access to the admin page"
 msgstr ""
 
-#: main/notify.php:42
+#: main/notifyphp:42
 msgid "Only notify, do not block access"
 msgstr ""
 
-#: main/page/5media.php:131
+#: main/page/5mediaphp:131
 msgid "Only supported from PHP 8.1 and above"
 msgstr ""
 
-#: main/page/12chat.php:175
+#: main/page/12chatphp:175
 msgid "Open in a new tab"
 msgstr ""
 
-#: main/page/1speed.php:38
+#: main/page/1speedphp:38
 msgid "Optimization Library"
 msgstr ""
 
-#: main/page/3tool.php:31
+#: main/page/3toolphp:31
 msgid "Optimize Widgets"
 msgstr ""
 
-#: main/clean.php:26
+#: main/cleanphp:74
 msgid "Optimize deletion of content in the database"
 msgstr ""
 
-#: main/page/1speed.php:100
+#: main/page/1speedphp:100
 msgid "Optimize saving post content into the database"
 msgstr ""
 
-#: main/ads.php:56
+#: main/adsphp:56
 msgid "Option to display ads in custom posts"
 msgstr ""
 
-#: main/page/9user.php:34
+#: main/page/9userphp:34
 msgid "Option to display the Admin bar"
 msgstr ""
 
-#: main/page/ht-about1.php:66
+#: main/page/ht-about1php:66
 msgid "Original contributors:"
 msgstr ""
 
-#: main/shortcode.php:163
+#: main/shortcodephp:163
 msgid "Other links"
 msgstr ""
 
-#: main/page/12chat.php:368
+#: main/page/12chatphp:368
 msgid "Outstanding color"
 msgstr ""
 
-#: main/page/5media.php:198
+#: main/page/5mediaphp:198
 msgid "Overlay color"
 msgstr ""
 
-#: main/admin.php:114
+#: main/adminphp:114
 msgid "Overview"
 msgstr ""
 
-#: main/notify.php:20 main/notify.php:86
+#: main/notifyphp:20 main/notifyphp:86
 msgid "POPUP"
 msgstr ""
 
-#: inc/custom.php:208
+#: inc/customphp:208
 msgid "Password"
 msgstr ""
 
-#: main/clean.php:43
-msgid "Pending"
+#: inc/cleanphp:345
+msgid "Pending comments"
 msgstr ""
 
-#: inc/goo.php:261
+#: main/cleanphp:221
+msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
+msgstr ""
+
+#: inc/goophp:261
 msgid "Please complete the reCAPTCHA to verify that you are not a robot"
 msgstr ""
 
-#: inc/notify.php:34
+#: inc/notifyphp:34
 msgid "Please disable ad-blocker on your browser to access and view the content"
 msgstr ""
 
-#: main/page/10custom.php:149
+#: main/page/10customphp:149
 msgid "Please enter the content here"
 msgstr ""
 
-#: main/export.php:157
+#: main/exportphp:157
 msgid "Please upload a valid JSON file"
 msgstr ""
 
-#: inc/shortcode.php:126 main/clean.php:32 main/clean.php:48 main/clean.php:62
-#: main/clean.php:69 main/gindex.php:66
+#: inc/shortcodephp:126 main/cleanphp:82 main/cleanphp:101 main/cleanphp:115
+#: main/cleanphp:122 main/gindexphp:66
 msgid "Please wait"
 msgstr ""
 
-#: main/page/7mail.php:79
+#: main/page/7mailphp:79
 msgid "Please wait for the email to be sent"
 msgstr ""
 
-#: main/search.php:172
+#: main/searchphp:172
 msgid "Please wait: '+sopost+'"
 msgstr ""
 
-#: main/page/ht-about1.php:54
+#: main/page/ht-about1php:54
 msgid "Plugin development"
 msgstr ""
 
-#: inc/notify.php:95
+#: inc/notifyphp:95
 msgid "Policy"
 msgstr ""
 
-#: main/toc.php:265
+#: main/tocphp:265
 msgid "Popup location"
 msgstr ""
 
-#: main/notify.php:96
+#: main/notifyphp:96
 msgid "Popup save time (.. hours)"
 msgstr ""
 
-#: main/page/2scuri.php:75
+#: main/page/2scuriphp:75
 msgid "Prevent SQL injection, cross-site scripting (XSS)"
 msgstr ""
 
-#: main/page/5media.php:156 main/page/5media.php:213
+#: main/page/5mediaphp:156 main/page/5mediaphp:213
 msgid "Process cropped images"
 msgstr ""
 
-#: main/ads.php:87
+#: main/adsphp:87
 msgid "Quantity"
 msgstr ""
 
-#: main/search.php:33
+#: main/searchphp:33
 msgid "Quick search"
 msgstr ""
 
-#: main/toc.php:219
+#: main/tocphp:219
 msgid "Quick view button color"
 msgstr ""
 
-#: main/redirects.php:43
+#: main/redirectsphp:43
 msgid "Redirect 301 to a custom page"
 msgstr ""
 
-#: main/redirects.php:35
+#: main/redirectsphp:35
 msgid "Redirect 301 whole page"
 msgstr ""
 
-#: main/redirects.php:104
+#: main/redirectsphp:104
 msgid "Redirect the 404 page to the homepage or a custom page of your choice, leave the field blank if you want to redirect to the homepage"
 msgstr ""
 
-#: main/extend.php:80 main/redirects.php:186
+#: main/extendphp:80 main/redirectsphp:186
 msgid "Redirects"
 msgstr ""
 
-#: main/debug.php:57
+#: main/debugphp:57
 msgid "Refresh"
 msgstr ""
 
-#: inc/goo.php:148
+#: inc/goophp:148
 msgid "Registration is disabled on this site."
 msgstr ""
 
-#: main/page/11google.php:24
+#: main/page/11googlephp:24
 msgid "Registration role options"
 msgstr ""
 
-#: main/page/2scuri.php:66
+#: main/page/2scuriphp:66
 msgid "Remove WordPress version"
 msgstr ""
 
-#: main/page/1speed.php:78
+#: main/page/1speedphp:78
 msgid "Remove XHTML closing tags from empty elements in HTML5"
 msgstr ""
 
-#: main/page/6post.php:85
+#: main/page/6postphp:85
 msgid "Remove category slug from permalink"
 msgstr ""
 
-#: main/page/1speed.php:73
+#: main/page/1speedphp:73
 msgid "Remove comments from HTML, JavaScript, and CSS"
 msgstr ""
 
-#: main/page/6post.php:19
+#: main/page/6postphp:19
 msgid "Remove img tag attributes"
 msgstr ""
 
-#: main/page/1speed.php:88
+#: main/page/1speedphp:88
 msgid "Remove protocols (HTTP: and HTTPS:) from all URLs"
 msgstr ""
 
-#: main/page/1speed.php:83
+#: main/page/1speedphp:83
 msgid "Remove relative domain from internal URLs"
 msgstr ""
 
-#: main/page/6post.php:93
+#: main/page/6postphp:93
 msgid "Remove tag slug from permalink"
 msgstr ""
 
-#: main/page/2scuri.php:38
+#: main/page/2scuriphp:38
 msgid "Remove unnecessary header information"
 msgstr ""
 
-#: main/page/2scuri.php:41
+#: main/page/2scuriphp:41
 msgid "Remove unnecessary header information if desired"
 msgstr ""
 
-#: main/page/2scuri.php:59
+#: main/page/2scuriphp:59
 msgid "Remove version"
 msgstr ""
 
-#: main/page/2scuri.php:61
+#: main/page/2scuriphp:61
 msgid "Remove version from JS and CSS"
 msgstr ""
 
-#: main/page/ht-setting.php:44
+#: main/cleanphp:117
+msgid "Removes attachments whose file is missing from disk. Every attachment is scanned, so the count is known only after it runs."
+msgstr ""
+
+#: main/cleanphp:124
+msgid "Removes metadata entries for thumbnail files that are missing from disk. It does not delete images."
+msgstr ""
+
+#: main/page/ht-settingphp:44
 msgid "Reset this setting"
 msgstr ""
 
-#: main/page/11google.php:46
+#: main/page/11googlephp:46
 msgid "Retrieve the API Client ID and Client Secret from your Google Developers project and add them to the two fields above"
 msgstr ""
 
-#: main/page/11google.php:92
+#: main/page/11googlephp:92
 msgid "Retrieve the Site Key and Secret Key from your Google reCAPTCHA project and add them to the two fields above"
 msgstr ""
 
-#: main/page/11google.php:37 main/page/9user.php:49 main/shortcode.php:54
+#: main/page/11googlephp:37 main/page/9userphp:49 main/shortcodephp:54
 msgid "Role"
 msgstr ""
 
-#: main/admin.php:93 main/ads.php:114 main/code.php:102 main/debug.php:74
-#: main/extend.php:216 main/font.php:130 main/gindex.php:117 main/notify.php:197
-#: main/redirects.php:127 main/search.php:207 main/shortcode.php:168 main/toc.php:279
+#: main/cleanphp:222
+msgid "Run “%s” now? This permanently deletes matching items and cannot be undone."
+msgstr ""
+
+#: main/adminphp:93 main/adsphp:114 main/codephp:102 main/debugphp:74
+#: main/extendphp:216 main/fontphp:130 main/gindexphp:117 main/notifyphp:197
+#: main/redirectsphp:127 main/searchphp:207 main/shortcodephp:168 main/tocphp:279
 msgid "SAVE CONTENT"
 msgstr ""
 
-#: main/admin.php:20 main/page/2scuri.php:4
+#: main/cleanphp:66 main/cleanphp:149
+msgid "SCHEDULE"
+msgstr ""
+
+#: main/adminphp:20 main/page/2scuriphp:4
 msgid "SECURITY"
 msgstr ""
 
-#: main/page/6post.php:109
+#: main/page/6postphp:109
 msgid "SEO optimization"
 msgstr ""
 
-#: main/admin.php:31 main/gindex.php:19 main/gindex.php:72 main/page/ht-setting.php:4
+#: main/adminphp:31 main/gindexphp:19 main/gindexphp:72 main/page/ht-settingphp:4
 msgid "SETTING"
 msgstr ""
 
-#: main/shortcode.php:19 main/shortcode.php:64
+#: main/shortcodephp:19 main/shortcodephp:64
 msgid "SIGN"
 msgstr ""
 
-#: main/page/7mail.php:67
+#: main/page/7mailphp:67
 msgid "SMTP authentication"
 msgstr ""
 
-#: main/page/7mail.php:43
+#: main/page/7mailphp:43
 msgid "SMTP port"
 msgstr ""
 
-#: main/page/7mail.php:46
+#: main/page/7mailphp:46
 msgid "SMTP protocol"
 msgstr ""
 
-#: main/page/7mail.php:40
+#: main/page/7mailphp:40
 msgid "SMTP server"
 msgstr ""
 
-#: inc/media.php:264
+#: inc/mediaphp:264
 msgid "SVG uploads are unavailable: the sanitiser library is missing."
 msgstr ""
 
-#: inc/ui.php:252
+#: inc/uiphp:252
 msgid "Save changes"
 msgstr ""
 
-#: main/page/6post.php:14
+#: main/page/6postphp:14
 msgid "Save images to media when copying from another source"
 msgstr ""
 
-#: main/page/1speed.php:122
+#: main/page/1speedphp:122
 msgid "Save interval (minutes)"
 msgstr ""
 
-#: main/debug.php:106
+#: main/cleanphp:181
+msgid "Save schedule"
+msgstr ""
+
+#: main/debugphp:106
 msgid "Screen refreshed"
 msgstr ""
 
-#: main/toc.php:202
+#: main/tocphp:202
 msgid "Scroll bar color"
 msgstr ""
 
-#: inc/search.php:391
+#: inc/searchphp:391
 msgid "Search"
 msgstr ""
 
-#: inc/ui.php:245
+#: inc/uiphp:245
 msgid "Search settings…"
 msgstr ""
 
-#: main/page/11google.php:80
+#: main/page/11googlephp:80
 msgid "Secret key"
 msgstr ""
 
-#: main/page/2scuri.php:73
+#: main/page/2scuriphp:73
 msgid "Secure access data"
 msgstr ""
 
-#: inc/goo.php:117
+#: inc/goophp:117
 msgid "Security check failed. Please start the sign-in again."
 msgstr ""
 
-#: main/page/ht-setting.php:22 main/page/ht-setting.php:40
+#: main/page/ht-settingphp:22 main/page/ht-settingphp:40
 msgid "Select admin"
 msgstr ""
 
-#: main/notify.php:76
+#: main/notifyphp:76
 msgid "Select background color"
 msgstr ""
 
-#: main/notify.php:53 main/shortcode.php:150
+#: main/notifyphp:53 main/shortcodephp:150
 msgid "Select button border color"
 msgstr ""
 
-#: main/notify.php:49 main/page/12chat.php:157 main/shortcode.php:146
+#: main/notifyphp:49 main/page/12chatphp:157 main/shortcodephp:146
 msgid "Select button color"
 msgstr ""
 
-#: main/page/12chat.php:167 main/toc.php:255
+#: main/page/12chatphp:167 main/tocphp:255
 msgid "Select icon"
 msgstr ""
 
-#: main/page/12chat.php:179
+#: main/page/12chatphp:179
 msgid "Select icon color"
 msgstr ""
 
-#: main/notify.php:122 main/page/10custom.php:37 main/page/10custom.php:62 main/page/10custom.php:137
-#: main/page/5media.php:189 main/page/5media.php:228 main/page/6post.php:41
+#: main/notifyphp:122 main/page/10customphp:37 main/page/10customphp:62 main/page/10customphp:137
+#: main/page/5mediaphp:189 main/page/5mediaphp:228 main/page/6postphp:41
 msgid "Select image"
 msgstr ""
 
-#: main/redirects.php:85
+#: main/redirectsphp:85
 msgid "Select redirect page"
 msgstr ""
 
-#: main/toc.php:59
+#: main/tocphp:59
 msgid "Select the custom post for which you want to display TOC content"
 msgstr ""
 
-#: main/ads.php:76
+#: main/adsphp:76
 msgid "Select the custom post for which you want to show ads"
 msgstr ""
 
-#: main/page/10custom.php:34
+#: main/page/10customphp:34
 msgid "Select the displayed logo"
 msgstr ""
 
-#: main/page/12chat.php:301 main/toc.php:82
+#: main/page/12chatphp:301 main/tocphp:82
 msgid "Select the page to hide"
 msgstr ""
 
-#: main/notify.php:172
+#: main/notifyphp:172
 msgid "Select title color and button"
 msgstr ""
 
-#: main/toc.php:198
+#: main/tocphp:198
 msgid "Selection color"
 msgstr ""
 
-#: main/page/7mail.php:76
+#: main/page/7mailphp:76
 msgid "Send"
 msgstr ""
 
-#: main/page/7mail.php:73
+#: main/page/7mailphp:73
 msgid "Send test email"
 msgstr ""
 
-#: main/page/7mail.php:31
+#: main/page/7mailphp:31
 msgid "Sender email address"
 msgstr ""
 
-#: main/page/7mail.php:28 main/page/7mail.php:29
+#: main/page/7mailphp:28 main/page/7mailphp:29
 msgid "Sender name"
 msgstr ""
 
-#: main/page/9user.php:12
+#: main/page/9userphp:12
 msgid "Set access and viewing permissions"
 msgstr ""
 
-#: main/ads.php:47
+#: main/adsphp:47
 msgid "Set up Adsense ads"
 msgstr ""
 
-#: main/notify.php:164
+#: main/notifyphp:164
 msgid "Set up cookie notifications"
 msgstr ""
 
-#: main/ads.php:99
+#: main/adsphp:99
 msgid "Set up the ads.txt file"
 msgstr ""
 
-#: horse-tools.php:118
+#: horse-toolsphp:118
 msgid "Settings"
 msgstr ""
 
-#: main/page/6post.php:90 main/page/6post.php:98
+#: main/page/6postphp:90 main/page/6postphp:98
 msgid "Settings > Permalinks > Save changes"
 msgstr ""
 
-#: inc/media.php:1173
+#: inc/mediaphp:1173
 msgid "Settings changed"
 msgstr ""
 
-#: main/extend.php:155 main/shortcode.php:184
+#: main/extendphp:155 main/shortcodephp:184
 msgid "Shortcode"
 msgstr ""
 
-#: main/shortcode.php:36
+#: main/shortcodephp:36
 msgid "Shortcode content visible only to group of users"
 msgstr ""
 
-#: main/shortcode.php:98
+#: main/shortcodephp:98
 msgid "Shortcode to display date"
 msgstr ""
 
-#: main/toc.php:60
+#: main/tocphp:60
 msgid "Shortcodes"
 msgstr ""
 
-#: main/page/6post.php:152
+#: main/page/6postphp:152
 msgid "Show full image"
 msgstr ""
 
-#: inc/goo.php:107
+#: inc/goophp:107
 msgid "Sign in with Google"
 msgstr ""
 
-#: main/page/11google.php:12
+#: main/page/11googlephp:12
 msgid "Sign in with Google account"
 msgstr ""
 
-#: main/shortcode.php:66
+#: main/shortcodephp:66
 msgid "Signature shortcode"
 msgstr ""
 
-#: main/page/11google.php:77
+#: main/page/11googlephp:77
 msgid "Site key"
 msgstr ""
 
-#: main/page/1speed.php:49
+#: main/page/1speedphp:49
 msgid "Smooth-scroll is a library that enables you to create a smooth scrolling effect, providing users with a perception of faster page navigation"
 msgstr ""
 
-#: main/page/ht-about1.php:57
+#: main/page/ht-about1php:57
 msgid "Source code and issues:"
 msgstr ""
 
-#: main/page/12chat.php:194 main/page/4main.php:65
+#: main/page/12chatphp:194 main/page/4mainphp:65
 msgid "Spacing below"
 msgstr ""
 
-#: main/clean.php:44
-msgid "Spam"
+#: inc/cleanphp:352
+msgid "Spam comments"
 msgstr ""
 
-#: inc/gindex.php:133 inc/gindex.php:241
+#: inc/gindexphp:133 inc/gindexphp:241
 msgid "Status:"
 msgstr ""
 
-#: main/page/12chat.php:251
+#: main/page/12chatphp:251
 msgid "Step 1: Go to Appearance > Menus > Create a new menu > check Navigation bar (Horse Tools)"
 msgstr ""
 
-#: main/page/12chat.php:252
+#: main/page/12chatphp:252
 msgid "Step 2: Below, if you want the menu to open on a specific button, add <b style=\"color:red\">#horsenavi</b> to the field (#id or .class). For (Enter link), enter <b style=\"color:red\">#</b>. Note: Only add it to one of the 5 buttons below"
 msgstr ""
 
-#: main/gindex.php:56
+#: main/gindexphp:56
 msgid "Still:"
 msgstr ""
 
-#: main/page/5media.php:34
+#: main/page/5mediaphp:34
 msgid "Stop cropping"
 msgstr ""
 
-#: main/page/5media.php:14
+#: main/page/5mediaphp:14
 msgid "Stop cropping all"
 msgstr ""
 
-#: inc/gindex.php:311 inc/gindex.php:341
+#: inc/gindexphp:311 inc/gindexphp:341
 msgid "Success"
 msgstr ""
 
-#: main/page/1speed.php:93
+#: main/page/1speedphp:93
 msgid "Support multi-byte UTF-8 encoding (if you see strange characters)"
 msgstr ""
 
-#: main/extend.php:150
+#: main/extendphp:150
 msgid "Support quick notification setup, allowing web managers to easily deliver useful and timely content, helping users stay informed effortlessly"
 msgstr ""
 
-#: main/page/ht-about2.php:20
+#: main/page/ht-about2php:20
 msgid "System"
 msgstr ""
 
-#: main/extend.php:110 main/toc.php:18 main/toc.php:31 main/toc.php:295
+#: main/extendphp:110 main/tocphp:18 main/tocphp:31 main/tocphp:295
 msgid "TOC"
 msgstr ""
 
-#: inc/toc.php:207
+#: inc/tocphp:207
 msgid "TOC Settings"
 msgstr ""
 
-#: main/admin.php:21 main/page/3tool.php:4
+#: main/adminphp:21 main/page/3toolphp:4
 msgid "TOOL"
 msgstr ""
 
-#: main/page/ht-about2.php:8
+#: main/page/ht-about2php:8
 msgid "Table name"
 msgstr ""
 
-#: inc/toc.php:35
+#: inc/tocphp:35
 msgid "Table of Contents"
 msgstr ""
 
-#: main/toc.php:33
+#: main/tocphp:33
 msgid "Table of contents configuration"
 msgstr ""
 
-#: main/ads.php:86 main/toc.php:174
+#: main/adsphp:86 main/tocphp:174
 msgid "Tag"
 msgstr ""
 
-#: inc/mail.php:45
+#: inc/mailphp:45
 msgid "Test SMTP email sending from your website"
 msgstr ""
 
-#: main/page/5media.php:223
+#: main/page/5mediaphp:223
 msgid "Text color"
 msgstr ""
 
-#: main/page/10custom.php:86
+#: main/page/10customphp:86
 msgid "Text color of the input / select box"
 msgstr ""
 
-#: main/page/3tool.php:12
+#: main/page/3toolphp:12
 msgid "Text editor tool"
 msgstr ""
 
-#: inc/http.php:183
+#: inc/httpphp:183
 msgid "That address cannot be fetched from this server."
 msgstr ""
 
-#: main/gindex.php:94
+#: main/gindexphp:94
 msgid "The \"Index Now\" link will be added in the custom post management section to allow quick index submission"
 msgstr ""
 
-#: main/page/ht-about1.php:47
+#: main/page/ht-about1php:47
 msgid "The GD library has been installed"
 msgstr ""
 
-#: main/page/ht-about1.php:49
+#: main/page/ht-about1php:49
 msgid "The GD library has not been installed"
 msgstr ""
 
-#: main/page/10custom.php:139
+#: main/page/10customphp:139
 msgid "The changing image is square, with the standard size being 100x100 pixels"
 msgstr ""
 
-#: main/debug.php:64
+#: main/debugphp:64
 msgid "The debug file does not exist"
 msgstr ""
 
-#: main/page/5media.php:205
+#: main/page/5mediaphp:205
 msgid "The feature adds advanced functions when uploading images, such as adding frames, flipping images... allowing you to automatically customize your images during upload. Picture frame (PNG)"
 msgstr ""
 
-#: main/page/5media.php:42
+#: main/page/5mediaphp:42
 msgid "The file name will be your domain name"
 msgstr ""
 
-#: inc/font.php:147
+#: inc/fontphp:147
 msgid "The file path is invalid or not a file"
 msgstr ""
 
-#: main/page/6post.php:34
+#: main/page/6postphp:34
 msgid "The first image becomes the featured image"
 msgstr ""
 
-#: main/page/1speed.php:52
+#: main/page/1speedphp:52
 msgid "The function of lazy loading images"
 msgstr ""
 
-#: main/page/6post.php:47
+#: main/page/6postphp:47
 msgid "The original image size when added to the post"
 msgstr ""
 
-#: inc/goo.php:287
+#: inc/goophp:287
 msgid "The reCAPTCHA is invalid"
 msgstr ""
 
-#: main/page/11google.php:93
+#: main/page/11googlephp:93
 msgid "The score threshold applies to reCAPTCHA v3 only. Google returns 1.0 for traffic it is confident is human and 0.0 for traffic it is confident is a bot; 0.5 is the recommended starting point. Raise it to block more aggressively, lower it if real visitors are being turned away."
 msgstr ""
 
-#: main/page/10custom.php:39
+#: main/page/10customphp:39
 msgid "The standard size for the logo is 280x80 PX"
 msgstr ""
 
-#: main/extend.php:120
+#: main/extendphp:120
 msgid "The table of contents is an incredibly useful feature that allows readers to easily grasp the content by summarizing the headings (h-tags) in the article"
 msgstr ""
 
-#: main/page/8woo.php:17
+#: main/page/8woophp:17
 msgid "The text to replace Buy Now on the product page"
 msgstr ""
 
-#: main/export.php:133
+#: main/exportphp:133
 msgid "The textarea is empty"
 msgstr ""
 
-#: main/export.php:152
+#: main/exportphp:152
 msgid "The uploaded file is not a valid JSON format"
 msgstr ""
 
-#: inc/media.php:280
+#: inc/mediaphp:280
 msgid "This SVG file could not be parsed and was rejected."
 msgstr ""
 
-#: inc/shortcode.php:50
+#: inc/shortcodephp:50
 msgid "This content is locked! You need to log in to view"
 msgstr ""
 
-#: main/extend.php:45
+#: main/extendphp:45
 msgid "This feature allows you to add CSS, JS, and HTML code to your WordPress site through hooks like WP head, WP body, WP footer, and WP login, making it easy and convenient to supplement your code"
 msgstr ""
 
-#: main/page/6post.php:128
+#: main/page/6postphp:128
 msgid "This feature allows you to add Shortcode to post titles, which is very convenient for using custom tools"
 msgstr ""
 
-#: main/page/3tool.php:99
+#: main/page/3toolphp:99
 msgid "This feature allows you to add the Classic Editor to the category description box when editing posts or products"
 msgstr ""
 
-#: main/extend.php:90
+#: main/extendphp:90
 msgid "This feature allows you to configure website redirects with multiple options such as 301, 404, and 503, making management much simpler"
 msgstr ""
 
-#: main/page/8woo.php:30
+#: main/page/8woophp:30
 msgid "This feature allows you to customize the currency symbol as desired"
 msgstr ""
 
-#: main/page/ht-setting.php:42
+#: main/page/ht-settingphp:42
 msgid "This feature allows you to only display Horse Tools to a specific Admin account"
 msgstr ""
 
-#: main/page/6post.php:134
+#: main/page/6postphp:134
 msgid "This feature allows you to set newly edited posts to be displayed first in the main loop"
 msgstr ""
 
-#: main/extend.php:165
+#: main/extendphp:165
 msgid "This feature compiles various shortcode templates with essential functionalities that are frequently used to enhance the user experience in WordPress"
 msgstr ""
 
-#: main/extend.php:60
+#: main/extendphp:60
 msgid "This feature helps optimize cleanup tasks such as clearing content, comments, and the media library. It makes your website cleaner and more optimized"
 msgstr ""
 
-#: main/page/2scuri.php:78
+#: main/page/2scuriphp:78
 msgid "This feature helps protect the website against attacks such as SQL injection, cross-site scripting (XSS)"
 msgstr ""
 
-#: main/page/6post.php:157
+#: main/page/6postphp:157
 msgid "This feature uses the Fancybox library, allowing you to open images in posts for viewing"
 msgstr ""
 
-#: main/ads.php:37
+#: main/adsphp:37
 msgid "This feature was removed in Horse Tools 1.0.0. It opened an affiliate URL in a hidden off-screen window every time a visitor clicked anywhere on the page. That is affiliate cookie stuffing: it deceives your visitors, breaks the terms of every major affiliate network and of Google AdSense, and can get your domain and your ad accounts banned."
 msgstr ""
 
-#: main/page/6post.php:120
+#: main/page/6postphp:120
 msgid "This feature will add nofollow and _blank to external links on your site"
 msgstr ""
 
-#: main/page/2scuri.php:56
+#: main/page/2scuriphp:56
 msgid "This feature will block uploads of all files that are not image formats, from media, plugins, themes, etc"
 msgstr ""
 
-#: main/page/ht-setting.php:71
+#: main/page/ht-settingphp:71
 msgid "This feature will hide the plugin you want from the plugin management page"
 msgstr ""
 
-#: main/page/6post.php:114
+#: main/page/6postphp:114
 msgid "This feature will use the title of the post as the description for the image when uploaded"
 msgstr ""
 
-#: main/page/4main.php:100
+#: main/page/4mainphp:100
 msgid "This function allows you to customize the color of the scrollbar to your liking"
 msgstr ""
 
-#: main/page/6post.php:30
+#: main/page/6postphp:30
 msgid "This function allows you to delete images attached to posts when deleting the posts themselves. Note that if multiple posts use the same image, it will also be deleted when removing the post"
 msgstr ""
 
-#: main/page/4main.php:77
+#: main/page/4mainphp:77
 msgid "This function allows you to initiate a dark mode library, enabling the website to switch between light and dark modes"
 msgstr ""
 
-#: main/redirects.php:48
+#: main/redirectsphp:48
 msgid "This function allows you to redirect 301 links to the target page"
 msgstr ""
 
-#: main/page/3tool.php:78
+#: main/page/3toolphp:78
 msgid "This function prevents users from copying text, accessing right-click options, and accessing DevTools"
 msgstr ""
 
-#: main/redirects.php:42
+#: main/redirectsphp:42
 msgid "This function will redirect all of your website pages to the destination page of your choice"
 msgstr ""
 
-#: inc/mail.php:123
+#: inc/mailphp:123
 msgid "This is an email notification of your successful registration"
 msgstr ""
 
-#: main/shortcode.php:59
+#: main/shortcodephp:59
 msgid "This shortcode allows you to lock any content, and only the selected group of logged-in users can view it"
 msgstr ""
 
-#: main/shortcode.php:164
+#: main/shortcodephp:164
 msgid "This shortcode is used to create a download button with a timeout"
 msgstr ""
 
-#: main/shortcode.php:117
+#: main/shortcodephp:117
 msgid "This shortcode is used to display the date in the post title. Please note that you need to enable the shortcode usage in the post title under the POST, PAGE section"
 msgstr ""
 
-#: inc/notify.php:83
+#: inc/notifyphp:83
 msgid "This website uses cookies to ensure you get the best experience on our site. By continuing to browse, you agree to our use of cookies. For more information, please read our Cookie Policy"
 msgstr ""
 
-#: inc/woo.php:79
+#: inc/woophp:79
 msgid "Time"
 msgstr ""
 
-#: inc/gindex.php:134 inc/gindex.php:242
+#: inc/gindexphp:134 inc/gindexphp:242
 msgid "Time:"
 msgstr ""
 
-#: main/toc.php:209
+#: main/tocphp:209
 msgid "Title color"
 msgstr ""
 
-#: main/toc.php:216
+#: main/tocphp:216
 msgid "Title text and icon color"
 msgstr ""
 
-#: main/extend.php:135
+#: main/extendphp:135
 msgid "To add advertisements to your website, simply enable this feature. It provides you with various ad options to meet your distribution needs"
 msgstr ""
 
-#: main/page/12chat.php:250
+#: main/page/12chatphp:250
 msgid "To create a menu on the navigation bar:"
 msgstr ""
 
-#: main/ads.php:77
+#: main/adsphp:77
 msgid "Top and bottom positions"
 msgstr ""
 
-#: main/page/ht-about2.php:17
+#: main/page/ht-about2php:17
 msgid "Total data"
 msgstr ""
 
-#: main/gindex.php:54
+#: main/gindexphp:54
 msgid "Total:"
 msgstr ""
 
-#: main/page/12chat.php:202 main/page/5media.php:202 main/page/5media.php:268
+#: main/page/12chatphp:202 main/page/5mediaphp:202 main/page/5mediaphp:268
 msgid "Transparency level"
 msgstr ""
 
-#: main/clean.php:45
-msgid "Trash"
+#: inc/cleanphp:359
+msgid "Trashed comments"
 msgstr ""
 
-#: main/font.php:50
+#: main/fontphp:50
 msgid "UPLOAD FONT"
 msgstr ""
 
-#: inc/gindex.php:132 inc/gindex.php:240
+#: inc/gindexphp:132 inc/gindexphp:240
 msgid "URL:"
 msgstr ""
 
-#: inc/gindex.php:247
+#: inc/gindexphp:247
 msgid "URL: Unverified"
 msgstr ""
 
-#: inc/gindex.php:146 inc/gindex.php:152
+#: inc/gindexphp:146 inc/gindexphp:152
 msgid "URL: does not exist"
 msgstr ""
 
-#: main/font.php:21 main/font.php:87
+#: main/fontphp:21 main/fontphp:87
 msgid "USE FONT"
 msgstr ""
 
-#: main/admin.php:27 main/page/9user.php:4
+#: main/adminphp:27 main/page/9userphp:4
 msgid "USER"
 msgstr ""
 
-#: inc/scuri.php:96
+#: inc/scuriphp:96
 msgid "Unable to determine image format"
 msgstr ""
 
-#: inc/media.php:271
+#: inc/mediaphp:271
 msgid "Unable to read the uploaded SVG file."
 msgstr ""
 
-#: inc/mail.php:52
+#: inc/mailphp:52
 msgid "Unable to send email!"
 msgstr ""
 
-#: inc/media.php:287
+#: inc/mediaphp:287
 msgid "Unable to write the sanitised SVG file."
 msgstr ""
 
-#: main/export.php:96
+#: main/exportphp:96
 msgid "Upload"
 msgstr ""
 
-#: inc/user.php:75
+#: inc/userphp:75
 msgid "Upload avatars"
 msgstr ""
 
-#: main/font.php:29
+#: main/fontphp:29
 msgid "Upload font error"
 msgstr ""
 
-#: main/font.php:27
+#: main/fontphp:27
 msgid "Upload font success"
 msgstr ""
 
-#: main/font.php:89
+#: main/fontphp:89
 msgid "Use fonts on the web"
 msgstr ""
 
-#: main/page/4main.php:71 main/search.php:65 main/toc.php:61
+#: main/page/4mainphp:71 main/searchphp:65 main/tocphp:61
 msgid "Use shortcodes"
 msgstr ""
 
-#: main/page/6post.php:111
+#: main/page/6postphp:111
 msgid "Use titles as descriptions for images"
 msgstr ""
 
-#: main/gindex.php:55
+#: main/cleanphp:143
+msgid "Use with care: your theme may need several image sizes to display correctly."
+msgstr ""
+
+#: main/gindexphp:55
 msgid "Use:"
 msgstr ""
 
-#: main/page/12chat.php:51 main/page/12chat.php:249
+#: main/page/12chatphp:51 main/page/12chatphp:249
 msgid "Visit this page to get the SVG icon:"
 msgstr ""
 
-#: main/admin.php:26
+#: main/adminphp:26
 msgid "WOO"
 msgstr ""
 
-#: main/page/8woo.php:4
+#: main/page/8woophp:4
 msgid "WOOCOMMERCE"
 msgstr ""
 
-#: main/code.php:21 main/code.php:69
+#: main/codephp:21 main/codephp:69
 msgid "WP BODY"
 msgstr ""
 
-#: main/code.php:22 main/code.php:80
+#: main/codephp:22 main/codephp:80
 msgid "WP FOOTER"
 msgstr ""
 
-#: main/code.php:20 main/code.php:58
+#: main/codephp:20 main/codephp:58
 msgid "WP HEAD"
 msgstr ""
 
-#: main/code.php:23 main/code.php:91
+#: main/codephp:23 main/codephp:91
 msgid "WP LOGIN"
 msgstr ""
 
-#: inc/gindex.php:337
+#: inc/gindexphp:337
 msgid "Wait..."
 msgstr ""
 
-#: main/page/5media.php:264
+#: main/page/5mediaphp:264
 msgid "Watermark image compared to main image"
 msgstr ""
 
-#: page/503.php:4
+#: page/503php:4
 msgid "We apologize, the website is currently undergoing maintenance. Please wait for a moment"
 msgstr ""
 
-#: inc/custom.php:257
+#: main/cleanphp:48
+msgid "Weekly"
+msgstr ""
+
+#: inc/customphp:257
 msgid "Welcome to Horse Tools"
 msgstr ""
 
-#: inc/mail.php:122
+#: inc/mailphp:122
 msgid "Welcome to the website"
 msgstr ""
 
-#: main/page/10custom.php:194
+#: main/page/10customphp:194
 msgid "Widget title"
 msgstr ""
 
-#: main/page/1speed.php:65
+#: main/page/1speedphp:65
 msgid "With this feature, HTML will be compressed into a single line, removing unnecessary characters and whitespace to speed up page loading"
 msgstr ""
 
-#: main/page/9user.php:17
+#: main/page/9userphp:17
 msgid "With this feature, regular users can only view their own posts and images they uploaded, while the admin can view all of them"
 msgstr ""
 
-#: main/page/9user.php:24
+#: main/page/9userphp:24
 msgid "With this feature, regular users cannot access the WordPress admin page"
 msgstr ""
 
-#: main/page/9user.php:58
+#: main/page/9userphp:58
 msgid "With this feature, there will be an additional button in the profile section allowing users to upload avatars"
 msgstr ""
 
-#: main/page/8woo.php:39
+#: main/page/8woophp:39
 msgid "With this feature, you can notify your orders to your Telegram group, helping you manage orders conveniently"
 msgstr ""
 
-#: inc/post.php:255
+#: inc/postphp:255
 msgid "You are not allowed to create this post type."
 msgstr ""
 
-#: inc/post.php:251
+#: inc/postphp:251
 msgid "You are not allowed to duplicate this item."
 msgstr ""
 
-#: inc/scuri.php:11
+#: inc/scuriphp:11
 msgid "You are not logged in"
 msgstr ""
 
-#: main/page/5media.php:91
+#: main/page/5mediaphp:91
 msgid "You can adjust the compression level of the image from 5 to 100 (100 being no compression)"
 msgstr ""
 
-#: main/page/10custom.php:192
+#: main/page/10customphp:192
 msgid "You can create your widget by activating it and entering content into the box below"
 msgstr ""
 
-#: main/page/11google.php:38
+#: main/page/11googlephp:38
 msgid "You can customize the role of successful registrants, with the default role being \"subscriber\""
 msgstr ""
 
-#: main/page/10custom.php:185
+#: main/page/10customphp:185
 msgid "You can disable default widgets on the dashboard that you dont use"
 msgstr ""
 
-#: main/page/3tool.php:71
+#: main/page/3toolphp:71
 msgid "You can disable the automatic update feature of WordPress"
 msgstr ""
 
-#: main/page/10custom.php:71
+#: main/page/10customphp:71
 msgid "You can further customize your login page by enabling this feature"
 msgstr ""
 
-#: main/page/ht-setting.php:52
+#: main/page/ht-settingphp:52
 msgid "You can hide Horse Tools from the WP menu, but you can still access it through the link. This will hide Horse Tools for all accounts"
 msgstr ""
 
-#: main/page/11google.php:52
+#: main/page/11googlephp:52
 msgid "You can paste the shortcode into the position where you want the login button to appear"
 msgstr ""
 
-#: main/ads.php:105
+#: main/adsphp:105
 msgid "You can preview your file here:"
 msgstr ""
 
-#: main/toc.php:67
+#: main/tocphp:67
 msgid "You can use the shortcode in the editor and add it to the position you want, note: only use 1 shortcode in the post"
 msgstr ""
 
-#: main/search.php:79
+#: main/searchphp:79
 msgid "You can use the shortcode to add the search icon to the location you want"
 msgstr ""
 
-#: main/export.php:46
+#: main/exportphp:46
 msgid "You do not have permission to do this."
 msgstr ""
 
-#: inc/media.php:258
+#: inc/mediaphp:258
 msgid "You do not have permission to upload SVG files."
 msgstr ""
 
-#: inc/tool.php:171
+#: inc/toolphp:171
 msgid "You have successfully copied"
 msgstr ""
 
-#: inc/ui.php:251
+#: inc/uiphp:251
 msgid "You have unsaved changes."
 msgstr ""
 
-#: inc/notify.php:59
+#: inc/notifyphp:59
 msgid "You havent added content yet"
 msgstr ""
 
-#: main/page/7mail.php:147
+#: main/page/7mailphp:147
 msgid "You need to activate this feature and customize the content below so that new registered users can receive emails"
 msgstr ""
 
-#: inc/goo.php:136
+#: inc/goophp:136
 msgid "Your Google account email address is not verified."
 msgstr ""
 
-#: inc/mail.php:84
+#: inc/mailphp:84
 msgid "Your comment has just been replied to"
 msgstr ""
 
-#: inc/mail.php:85
+#: inc/mailphp:85
 msgid "Your comment has just been replied to in the post"
 msgstr ""
 
-#: main/completed.php:6
+#: main/completedphp:6
 msgid "Your configuration has been saved"
 msgstr ""
 
-#: main/page/10custom.php:187
+#: main/page/10customphp:187
 msgid "Your custom widget"
 msgstr ""
 
-#: main/page/ht-about2.php:5
+#: main/page/ht-about2php:5
 msgid "Your database"
 msgstr ""
 
-#: inc/mail.php:111
+#: inc/mailphp:111
 msgid "[%s] New comment on the article \"%s\""
 msgstr ""
 
-#: main/font.php:61
+#: main/fontphp:61
 msgid "font-family:"
 msgstr ""
 
-#: inc/clean.php:296
+#: inc/cleanphp:296
 msgid "images"
 msgstr ""
 
-#: main/page/1speed.php:17
+#: main/page/1speedphp:17
 msgid "jQuery Migrate is a library used to maintain the operation of certain themes, plugins that rely on older code. If your website no longer relies on this library, you can disable it"
 msgstr ""
 
-#: main/page/11google.php:82
+#: main/cleanphp:216
+msgid "up to %s"
+msgstr ""
+
+#: main/page/11googlephp:82
 msgid "v3 score threshold (0 – 1)"
 msgstr ""

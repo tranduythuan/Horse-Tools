@@ -15,9 +15,15 @@ delete_option('horsetools_shortcode_settings');
 delete_option('horsetools_search_settings');
 delete_option('horsetools_debug_settings');
 delete_option('horsetools_font_settings');
+delete_option('horsetools_clean_settings');
 // Internal bookkeeping, not user settings.
 delete_option('horsetools_debug_applied');
 delete_option('horsetools_adstxt_flushed');
+delete_option('horsetools_clean_cron_last');
+
+// Drop the scheduled cleanup event too, in case the plugin is removed without
+// being deactivated first.
+wp_clear_scheduled_hook('horsetools_scheduled_clean');
 
 // NOTE: the debug feature writes WP_DEBUG / WP_DEBUG_LOG / WP_DEBUG_DISPLAY
 // into wp-config.php. Those constants are deliberately NOT touched here —

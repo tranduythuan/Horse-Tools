@@ -29,6 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 function horsetools_module_map() {
 	return array(
 		'main'      => 'horsetools_settings',
+		'clean'     => 'horsetools_clean_settings',
 		'code'      => 'horsetools_code_settings',
 		'extend'    => 'horsetools_extend_settings',
 		'font'      => 'horsetools_font_settings',
