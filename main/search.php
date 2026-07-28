@@ -31,12 +31,11 @@ function horsetools_search_options_page() {
 			<h2><?php _e('HORSE SEARCH', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="fa-regular fa-magnifying-glass"></i> <?php _e('Quick search', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_search_settings[main-search1]" value="1" <?php if ( isset($horsetools_search_options['main-search1']) && 1 == $horsetools_search_options['main-search1'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable quick search', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'main-search1', __( 'Enable quick search', 'horse-tools' ), array(
+					'module'  => 'search',
+					'tab'     => 'HORSE SEARCH',
+					'section' => 'Quick search',
+				) ); ?>
 				<div class="tb-doi" id="tb-doi-sogiay" style="display:none"><div class="ht-sload"></div> <?php _e('Automatic initialization after <span id="sogiay" style="padding: 5px;">3</span>s', 'horse-tools'); ?></div>
 				<p>
 				<input class="ht-input-small" name="horsetools_search_settings[main-search-c1]" type="number" placeholder="10" value="<?php if(!empty($horsetools_search_options['main-search-c1'])){echo sanitize_text_field($horsetools_search_options['main-search-c1']);} ?>"/>
@@ -64,15 +63,14 @@ function horsetools_search_options_page() {
 				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Change the color of the search box to your preferences', 'horse-tools'); ?></p>
 				
 				<h4><?php _e('Use shortcodes', 'horse-tools'); ?></h4>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_search_settings[main-search-code1]" value="1" <?php if ( isset($horsetools_search_options['main-search-code1']) && 1 == $horsetools_search_options['main-search-code1'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable shortcodes', 'horse-tools'); ?></label>
-				
+				<?php horsetools_toggle( 'main-search-code1', __( 'Enable shortcodes', 'horse-tools' ), array(
+					'module'  => 'search',
+					'tab'     => 'HORSE SEARCH',
+					'section' => 'Quick search',
+				) ); ?>
+
 				<p><input class='ht-input-big ht-view-in' type='text' value='[horsesearch]'/></p>
-				
-				</p>
+
 				<p style="display:flex;align-items:center;">
 				<input class="ht-input-color" name="horsetools_search_settings[main-search-code2]" type="text" data-coloris value="<?php if(!empty($horsetools_search_options['main-search-code2'])){echo sanitize_text_field($horsetools_search_options['main-search-code2']);} ?>"/>
 				<label class="ht-right-text"><?php _e('Icon color', 'horse-tools'); ?></label>
@@ -216,25 +214,6 @@ function horsetools_search_options_page() {
 	  </div>
 	</div>	
 	</div>
-	<script>
-        jQuery(document).ready(function($) {
-			// ajax select
-			$('form input[type="checkbox"]').change(function() {
-				var currentForm = $(this).closest('form');
-				$.ajax({
-					type: 'POST',
-					url: currentForm.attr('action'), 
-					data: currentForm.serialize(), 
-					success: function(response) {
-						console.log('Turn on successfully');
-					},
-					error: function() {
-						console.log('Error in AJAX request');
-					}
-				});
-			});
-		});
-	</script>
 	<?php
 	// style horsetools
 	require_once( HORSETOOLS_DIR . 'main/style.php');

@@ -31,24 +31,21 @@ function horsetools_debug_options_page() {
 			<h2><?php _e('DEBUG', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="fa-regular fa-ban-bug"></i> <?php _e('Debug settings', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_debug_settings[debug1]" value="1" <?php if ( isset($horsetools_debug_options['debug1']) && 1 == $horsetools_debug_options['debug1'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable WP_DEBUG', 'horse-tools'); ?></label>
-				</p>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_debug_settings[debug2]" value="1" <?php if ( isset($horsetools_debug_options['debug2']) && 1 == $horsetools_debug_options['debug2'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable WP_DEBUG_LOG', 'horse-tools'); ?></label>
-				</p>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_debug_settings[debug3]" value="1" <?php if ( isset($horsetools_debug_options['debug3']) && 1 == $horsetools_debug_options['debug3'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable WP_DEBUG_DISPLAY', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'debug1', __( 'Enable WP_DEBUG', 'horse-tools' ), array(
+					'module'  => 'debug',
+					'tab'     => 'DEBUG',
+					'section' => 'Debug settings',
+				) ); ?>
+				<?php horsetools_toggle( 'debug2', __( 'Enable WP_DEBUG_LOG', 'horse-tools' ), array(
+					'module'  => 'debug',
+					'tab'     => 'DEBUG',
+					'section' => 'Debug settings',
+				) ); ?>
+				<?php horsetools_toggle( 'debug3', __( 'Enable WP_DEBUG_DISPLAY', 'horse-tools' ), array(
+					'module'  => 'debug',
+					'tab'     => 'DEBUG',
+					'section' => 'Debug settings',
+				) ); ?>
 				<?php
 				if (defined('WP_DEBUG_LOG') && WP_DEBUG_LOG) {
 				$debug_log_path = WP_CONTENT_DIR . '/debug.log';
@@ -88,20 +85,6 @@ function horsetools_debug_options_page() {
 	</div>
 	<script>
 	jQuery(document).ready(function($) {
-		$('form input[type="checkbox"]').change(function() {
-			var currentForm = $(this).closest('form');
-			$.ajax({
-				type: 'POST',
-				url: currentForm.attr('action'), 
-				data: currentForm.serialize(), 
-				success: function(response) {
-					location.reload(); 
-				},
-				error: function() {
-					console.log('Error in AJAX request');
-				}
-			});
-		});
 		$('#delete-debug').on('click', function(e) {
 			var ajax_nonce = '<?php echo wp_create_nonce('horsetools_nonce_deldebug'); ?>';
 			e.preventDefault();

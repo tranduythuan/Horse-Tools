@@ -45,12 +45,11 @@ function horsetools_ads_options_page() {
 			<h2><?php _e('ADSENSE', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="fa-regular fa-rectangle-ad"></i> <?php _e('Set up Adsense ads', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_ads_settings[ads-sense1]" value="1" <?php if ( isset($horsetools_ads_options['ads-sense1']) && 1 == $horsetools_ads_options['ads-sense1'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable Adsense', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'ads-sense1', __( 'Enable Adsense', 'horse-tools' ), array(
+					'module'  => 'ads',
+					'tab'     => 'ADSENSE',
+					'section' => 'Set up Adsense ads',
+				) ); ?>
 				<p>
 				<textarea style="height:90px;" class="ht-code-textarea" name="horsetools_ads_settings[ads-sense11]" placeholder="<?php _e('Enter Adsense code here', 'horse-tools'); ?>"><?php if(!empty($horsetools_ads_options['ads-sense11'])){echo esc_textarea($horsetools_ads_options['ads-sense11']);} ?></textarea>
 				</p>
@@ -98,12 +97,11 @@ function horsetools_ads_options_page() {
 			<h2><?php _e('ADS.TXT', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="fa-regular fa-file-check"></i> <?php _e('Set up the ads.txt file', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_ads_settings[ads-adstxt1]" value="1" <?php if ( isset($horsetools_ads_options['ads-adstxt1']) && 1 == $horsetools_ads_options['ads-adstxt1'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable ads.txt', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'ads-adstxt1', __( 'Enable ads.txt', 'horse-tools' ), array(
+					'module'  => 'ads',
+					'tab'     => 'ADS.TXT',
+					'section' => 'Set up the ads.txt file',
+				) ); ?>
 				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can preview your file here:', 'horse-tools'); echo ' <a target="_blank" href="' . esc_url(home_url( '/ads.txt' )) . '">ads.txt</a>'; ?><br>
 				<?php _e('For an Nginx server, if the ads.txt file already exists in the root directory of the website, it will prioritize the static file, so this function will not work. If you want to use it, you can either configure Nginx or delete the static file before proceeding', 'horse-tools'); ?>
 				</p>
@@ -123,25 +121,6 @@ function horsetools_ads_options_page() {
 	  </div>
 	</div>	
 	</div>
-	<script>
-        jQuery(document).ready(function($) {
-			// ajax select
-			$('form input[type="checkbox"]').change(function() {
-				var currentForm = $(this).closest('form');
-				$.ajax({
-					type: 'POST',
-					url: currentForm.attr('action'), 
-					data: currentForm.serialize(), 
-					success: function(response) {
-						console.log('Turn on successfully');
-					},
-					error: function() {
-						console.log('Error in AJAX request');
-					}
-				});
-			});
-		});
-	</script>
 	<?php
 	// style horsetools
 	require_once( HORSETOOLS_DIR . 'main/style.php');

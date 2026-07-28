@@ -11,33 +11,33 @@ global $horsetools_options; ?>
 <div id="play9" class="ht-card toggle-div">
   <h3><i class="fa-regular fa-lock"></i> <?php _e('Set access and viewing permissions', 'horse-tools') ?></h3>
 	<!-- set quyen truy cap 1 -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[user-post1]" value="1" <?php if ( isset($horsetools_options['user-post1']) && 1 == $horsetools_options['user-post1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Filter posts and images', 'horse-tools'); ?></label>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('With this feature, regular users can only view their own posts and images they uploaded, while the admin can view all of them', 'horse-tools'); ?></p>
-	
+	<?php horsetools_toggle( 'user-post1', __( 'Filter posts and images', 'horse-tools' ), array(
+		'tab'         => 'USER',
+		'section'     => 'Set access and viewing permissions',
+		'description' => __( 'With this feature, regular users can only view their own posts and images they uploaded, while the admin can view all of them', 'horse-tools' ),
+	) ); ?>
+
 	<!-- set quyen truy cap 2 -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[user-wp1]" value="1" <?php if (isset($horsetools_options['user-wp1']) && 1 == $horsetools_options['user-wp1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Only admin has access to the admin page', 'horse-tools'); ?></label>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('With this feature, regular users cannot access the WordPress admin page', 'horse-tools'); ?></p>
-	
+	<?php horsetools_toggle( 'user-wp1', __( 'Only admin has access to the admin page', 'horse-tools' ), array(
+		'tab'         => 'USER',
+		'section'     => 'Set access and viewing permissions',
+		'description' => __( 'With this feature, regular users cannot access the WordPress admin page', 'horse-tools' ),
+	) ); ?>
+
 	<!-- set quyen truy cap 3 -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[user-id1]" value="1" <?php if (isset($horsetools_options['user-id1']) && 1 == $horsetools_options['user-id1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Display ID in the management page', 'horse-tools'); ?></label>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Allow displaying member IDs on the profile management page', 'horse-tools'); ?></p>
+	<?php horsetools_toggle( 'user-id1', __( 'Display ID in the management page', 'horse-tools' ), array(
+		'tab'         => 'USER',
+		'section'     => 'Set access and viewing permissions',
+		'description' => __( 'Allow displaying member IDs on the profile management page', 'horse-tools' ),
+	) ); ?>
   
   <h3><i class="fa-regular fa-list-dropdown"></i> <?php _e('Option to display the Admin bar', 'horse-tools') ?></h3>				  
 	<!-- admin bar -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[user-bar1]" value="1" <?php if ( isset($horsetools_options['user-bar1']) && 1 == $horsetools_options['user-bar1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Disable the Admin Bar', 'horse-tools'); ?></label>
-	
+	<?php horsetools_toggle( 'user-bar1', __( 'Disable the Admin Bar', 'horse-tools' ), array(
+		'tab'     => 'USER',
+		'section' => 'Option to display the Admin bar',
+	) ); ?>
+
 	<p>
 	<?php $styles = array('All', 'User'); ?>
 	<select name="horsetools_settings[user-bar11]"> 
@@ -52,9 +52,9 @@ global $horsetools_options; ?>
 	
   <h3><i class="fa-regular fa-user"></i> <?php _e('Add avatar upload functionality', 'horse-tools') ?></h3>
 	<!-- set quyen truy cap 1 -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[user-upav1]" value="1" <?php if ( isset($horsetools_options['user-upav1']) && 1 == $horsetools_options['user-upav1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Allow avatar upload', 'horse-tools'); ?></label>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('With this feature, there will be an additional button in the profile section allowing users to upload avatars', 'horse-tools'); ?></p>
+	<?php horsetools_toggle( 'user-upav1', __( 'Allow avatar upload', 'horse-tools' ), array(
+		'tab'         => 'USER',
+		'section'     => 'Add avatar upload functionality',
+		'description' => __( 'With this feature, there will be an additional button in the profile section allowing users to upload avatars', 'horse-tools' ),
+	) ); ?>
 </div>	

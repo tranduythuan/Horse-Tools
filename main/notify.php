@@ -34,18 +34,16 @@ function horsetools_notify_options_page() {
 			<h2><?php _e('BLOCKER', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="fa-regular fa-shield-halved"></i> <?php _e('Browser ad-block notification', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_notify_settings[notify-block1]" value="1" <?php if ( isset($horsetools_notify_options['notify-block1']) && 1 == $horsetools_notify_options['notify-block1'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable ad-block detection', 'horse-tools'); ?></label>
-				</p>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_notify_settings[notify-block11]" value="1" <?php if ( isset($horsetools_notify_options['notify-block11']) && 1 == $horsetools_notify_options['notify-block11'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Only notify, do not block access', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'notify-block1', __( 'Enable ad-block detection', 'horse-tools' ), array(
+					'module'  => 'notify',
+					'tab'     => 'BLOCKER',
+					'section' => 'Browser ad-block notification',
+				) ); ?>
+				<?php horsetools_toggle( 'notify-block11', __( 'Only notify, do not block access', 'horse-tools' ), array(
+					'module'  => 'notify',
+					'tab'     => 'BLOCKER',
+					'section' => 'Browser ad-block notification',
+				) ); ?>
 				<p style="display:flex;align-items:center;">
 				<input class="ht-input-color" name="horsetools_notify_settings[notify-block-c1]" type="text" data-coloris value="<?php if(!empty($horsetools_notify_options['notify-block-c1'])){echo sanitize_text_field($horsetools_notify_options['notify-block-c1']);} ?>"/>
 				<label class="ht-right-text"><?php _e('Select button color', 'horse-tools'); ?></label>
@@ -68,12 +66,11 @@ function horsetools_notify_options_page() {
 			<h2><?php _e('NOTIFY', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="fa-regular fa-bell"></i> <?php _e('Notification at the top of the page', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_notify_settings[notify-notis1]" value="1" <?php if ( isset($horsetools_notify_options['notify-notis1']) && 1 == $horsetools_notify_options['notify-notis1'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable notification', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'notify-notis1', __( 'Enable notification', 'horse-tools' ), array(
+					'module'  => 'notify',
+					'tab'     => 'NOTIFY',
+					'section' => 'Notification at the top of the page',
+				) ); ?>
 				<p style="display:flex;align-items:center;">
 				<input class="ht-input-color" name="horsetools_notify_settings[notify-notis-c1]" type="text" data-coloris value="<?php if(!empty($horsetools_notify_options['notify-notis-c1'])){echo sanitize_text_field($horsetools_notify_options['notify-notis-c1']);} ?>"/>
 				<label class="ht-right-text"><?php _e('Select background color', 'horse-tools'); ?></label>
@@ -89,12 +86,11 @@ function horsetools_notify_options_page() {
 			<h2><?php _e('POPUP', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="fa-regular fa-window"></i> <?php _e('Create an outstanding popup', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_notify_settings[notify-popup1]" value="1" <?php if ( isset($horsetools_notify_options['notify-popup1']) && 1 == $horsetools_notify_options['notify-popup1'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable popup', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'notify-popup1', __( 'Enable popup', 'horse-tools' ), array(
+					'module'  => 'notify',
+					'tab'     => 'POPUP',
+					'section' => 'Create an outstanding popup',
+				) ); ?>
 				<p>
 				<input class="ht-input-small" name="horsetools_notify_settings[notify-popup-c1]" type="number" value="<?php if(!empty($horsetools_notify_options['notify-popup-c1'])){echo sanitize_text_field($horsetools_notify_options['notify-popup-c1']);} ?>"/>
 				<label class="ht-label-right"><?php _e('Popup save time (.. hours)', 'horse-tools'); ?></label>
@@ -166,12 +162,11 @@ function horsetools_notify_options_page() {
 			<h2><?php _e('COOKIE', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="fa-regular fa-cookie-bite"></i> <?php _e('Set up cookie notifications', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_notify_settings[notify-cookie1]" value="1" <?php if ( isset($horsetools_notify_options['notify-cookie1']) && 1 == $horsetools_notify_options['notify-cookie1'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable cookie', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'notify-cookie1', __( 'Enable cookie', 'horse-tools' ), array(
+					'module'  => 'notify',
+					'tab'     => 'COOKIE',
+					'section' => 'Set up cookie notifications',
+				) ); ?>
 				<p style="display:flex;align-items:center;">
 				<input class="ht-input-color" name="horsetools_notify_settings[notify-cookie-c1]" type="text" data-coloris value="<?php if(!empty($horsetools_notify_options['notify-cookie-c1'])){echo sanitize_text_field($horsetools_notify_options['notify-cookie-c1']);} ?>"/>
 				<label class="ht-right-text"><?php _e('Select title color and button', 'horse-tools'); ?></label>
@@ -209,25 +204,6 @@ function horsetools_notify_options_page() {
 	  </div>
 	</div>	
 	</div>
-	<script>
-        jQuery(document).ready(function($) {
-			// ajax select
-			$('form input[type="checkbox"]').change(function() {
-				var currentForm = $(this).closest('form');
-				$.ajax({
-					type: 'POST',
-					url: currentForm.attr('action'), 
-					data: currentForm.serialize(), 
-					success: function(response) {
-						console.log('Turn on successfully');
-					},
-					error: function() {
-						console.log('Error in AJAX request');
-					}
-				});
-			});
-		});
-	</script>
 	<?php
 	// style horsetools
 	require_once( HORSETOOLS_DIR . 'main/style.php');

@@ -30,12 +30,10 @@ global $horsetools_options; ?>
 	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('This feature allows you to customize the currency symbol as desired', 'horse-tools'); ?></p>
 	
   <h3><i class="fa-brands fa-telegram"></i> <?php _e('Configure order notifications to be sent to Telegram', 'horse-tools') ?></h3>
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[woo-tele1]" value="1" <?php if (isset($horsetools_options['woo-tele1']) && 1 == $horsetools_options['woo-tele1']) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Enable notifications', 'horse-tools'); ?></label>
-	</p>
+	<?php horsetools_toggle( 'woo-tele1', __( 'Enable notifications', 'horse-tools' ), array(
+		'tab'     => 'WOOCOMMERCE',
+		'section' => 'Configure order notifications to be sent to Telegram',
+	) ); ?>
 	<p><input class="ht-input-big"  placeholder="<?php _e('API Token', 'horse-tools'); ?>" name="horsetools_settings[woo-tele11]" type="text" value="<?php if(!empty($horsetools_options['woo-tele11'])){echo sanitize_text_field($horsetools_options['woo-tele11']);} ?>"/></p>
 	<p><input class="ht-input-big"  placeholder="<?php _e('Chat ID', 'horse-tools'); ?>" name="horsetools_settings[woo-tele12]" type="text" value="<?php if(!empty($horsetools_options['woo-tele12'])){echo sanitize_text_field($horsetools_options['woo-tele12']);} ?>"/></p>
 	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('With this feature, you can notify your orders to your Telegram group, helping you manage orders conveniently', 'horse-tools'); ?></p>

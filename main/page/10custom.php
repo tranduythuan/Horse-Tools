@@ -11,12 +11,10 @@ global $horsetools_options; ?>
 <div id="play10" class="ht-card toggle-div">
   <h3><i class="fa-regular fa-screwdriver-wrench"></i> <?php _e('Change login link', 'horse-tools') ?></h3>
 	<!-- thay doi link dăng nhap 1 -->
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-chan1]" value="1" <?php if ( isset($horsetools_options['custom-chan1']) && 1 == $horsetools_options['custom-chan1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Enable for use', 'horse-tools'); ?></label>
-	</p>
+	<?php horsetools_toggle( 'custom-chan1', __( 'Enable for use', 'horse-tools' ), array(
+		'tab'     => 'CUSTOM',
+		'section' => 'Change login link',
+	) ); ?>
 	<p>
 	<input class="ht-input-big" name="horsetools_settings[custom-chan11]" type="text" value="<?php if(!empty($horsetools_options['custom-chan11'])){echo sanitize_text_field($horsetools_options['custom-chan11']);} ?>" placeholder="<?php _e('Enter a suffix', 'horse-tools'); ?>" />
 	</p>
@@ -27,11 +25,11 @@ global $horsetools_options; ?>
 
   <h3><i class="fa-regular fa-swatchbook"></i> <?php _e('Custom WordPress login page', 'horse-tools') ?></h3>
 	<!-- set quyen truy cap 1 -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-ad1]" value="1" <?php if ( isset($horsetools_options['custom-ad1']) && 1 == $horsetools_options['custom-ad1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Enable custom functionality', 'horse-tools'); ?></label>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enable this feature to be able to use the customizations below', 'horse-tools'); ?></p>
+	<?php horsetools_toggle( 'custom-ad1', __( 'Enable custom functionality', 'horse-tools' ), array(
+		'tab'         => 'CUSTOM',
+		'section'     => 'Custom WordPress login page',
+		'description' => __( 'Enable this feature to be able to use the customizations below', 'horse-tools' ),
+	) ); ?>
 	
 	<h4><?php _e('Select the displayed logo', 'horse-tools') ?></h4>
 	<p style="display:flex;">
@@ -67,15 +65,12 @@ global $horsetools_options; ?>
 	<h4><?php _e('Customize elements on the page', 'horse-tools') ?></h4>
 	
 	<!-- tuy bien bang nhap -->
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-main1]" value="1" <?php if ( isset($horsetools_options['custom-main1']) && 1 == $horsetools_options['custom-main1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Enable element customization', 'horse-tools'); ?></label>
-	</p>
-	
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can further customize your login page by enabling this feature', 'horse-tools'); ?></p>
-	
+	<?php horsetools_toggle( 'custom-main1', __( 'Enable element customization', 'horse-tools' ), array(
+		'tab'         => 'CUSTOM',
+		'section'     => 'Custom WordPress login page',
+		'description' => __( 'You can further customize your login page by enabling this feature', 'horse-tools' ),
+	) ); ?>
+
 	<p style="display:flex;align-items:center;">
 	<input class="ht-input-color" name="horsetools_settings[custom-main11]" type="text" data-coloris value="<?php if(!empty($horsetools_options['custom-main11'])){echo sanitize_text_field($horsetools_options['custom-main11']);} ?>"/>
 	<label class="ht-right-text"><?php _e('Background color of the input form', 'horse-tools'); ?></label>
@@ -116,33 +111,27 @@ global $horsetools_options; ?>
 	<span><?php _e('Border radius', 'horse-tools'); ?> <span id="demo9"></span> PX</span>
 	</p>
 	
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-main19]" value="1" <?php if ( isset($horsetools_options['custom-main19']) && 1 == $horsetools_options['custom-main19'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Hide back link', 'horse-tools'); ?></label>
-	</p>
-	
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-main20]" value="1" <?php if ( isset($horsetools_options['custom-main20']) && 1 == $horsetools_options['custom-main20'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Hide language options', 'horse-tools'); ?></label>
-	</p>
+	<?php horsetools_toggle( 'custom-main19', __( 'Hide back link', 'horse-tools' ), array(
+		'tab'     => 'CUSTOM',
+		'section' => 'Custom WordPress login page',
+		'parent'  => 'custom-main1',
+	) ); ?>
+
+	<?php horsetools_toggle( 'custom-main20', __( 'Hide language options', 'horse-tools' ), array(
+		'tab'     => 'CUSTOM',
+		'section' => 'Custom WordPress login page',
+		'parent'  => 'custom-main1',
+	) ); ?>
  
   <h3><i class="fa-brands fa-wordpress"></i> <?php _e('Change WordPress logo in the Admin bar', 'horse-tools') ?></h3>
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-logbar1]" value="1" <?php if ( isset($horsetools_options['custom-logbar1']) && 1 == $horsetools_options['custom-logbar1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Disable logo display', 'horse-tools'); ?></label>
-	</p>
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-logbar2]" value="1" <?php if ( isset($horsetools_options['custom-logbar2']) && 1 == $horsetools_options['custom-logbar2'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Enable logo customization', 'horse-tools'); ?></label>
-	</p>
+	<?php horsetools_toggle( 'custom-logbar1', __( 'Disable logo display', 'horse-tools' ), array(
+		'tab'     => 'CUSTOM',
+		'section' => 'Change WordPress logo in the Admin bar',
+	) ); ?>
+	<?php horsetools_toggle( 'custom-logbar2', __( 'Enable logo customization', 'horse-tools' ), array(
+		'tab'     => 'CUSTOM',
+		'section' => 'Change WordPress logo in the Admin bar',
+	) ); ?>
 	<p style="display:flex;">
 	<input id="ht-add4" class="ht-input-big" name="horsetools_settings[custom-logbar21]" type="text" value="<?php if(!empty($horsetools_options['custom-logbar21'])){echo sanitize_text_field($horsetools_options['custom-logbar21']);} ?>" placeholder="<?php _e('Add logo link', 'horse-tools'); ?>" />
 	<button class="ht-selec" data-input-id="ht-add4"><?php _e('Select image', 'horse-tools'); ?></button>
@@ -151,11 +140,11 @@ global $horsetools_options; ?>
 	
   <h3><i class="fa-regular fa-input-text"></i> <?php _e('Modify the footer content of WP admin', 'horse-tools') ?></h3>
 	<!-- tuy chinh chan trang -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-foo1]" value="1" <?php if ( isset($horsetools_options['custom-foo1']) && 1 == $horsetools_options['custom-foo1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Enable custom footer', 'horse-tools'); ?></label>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enable this feature if you want to customize the footer in the WP admin', 'horse-tools'); ?></p>
+	<?php horsetools_toggle( 'custom-foo1', __( 'Enable custom footer', 'horse-tools' ), array(
+		'tab'         => 'CUSTOM',
+		'section'     => 'Modify the footer content of WP admin',
+		'description' => __( 'Enable this feature if you want to customize the footer in the WP admin', 'horse-tools' ),
+	) ); ?>
 	<p>
 	<textarea class="ht-textarea" name="horsetools_settings[custom-foo11]" placeholder="<?php _e('Please enter the content here', 'horse-tools'); ?>"><?php if(!empty($horsetools_options['custom-foo11'])){echo esc_textarea($horsetools_options['custom-foo11']);} ?></textarea>
 	</p>
@@ -164,54 +153,42 @@ global $horsetools_options; ?>
 	
 	<h4><?php _e('Disable unused widgets', 'horse-tools') ?></h4>
 	<!-- tuy chinh bang tin -->
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-home1]" value="1" <?php if ( isset($horsetools_options['custom-home1']) && 1 == $horsetools_options['custom-home1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Disable statistics widget', 'horse-tools'); ?></label>
-	</p>
-	
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-home2]" value="1" <?php if ( isset($horsetools_options['custom-home2']) && 1 == $horsetools_options['custom-home2'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Disable WordPress info widget', 'horse-tools'); ?></label>
-	</p>
-	
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-home3]" value="1" <?php if ( isset($horsetools_options['custom-home3']) && 1 == $horsetools_options['custom-home3'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Disable quick draft widget', 'horse-tools'); ?></label>
-	</p>
-	
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-home4]" value="1" <?php if ( isset($horsetools_options['custom-home4']) && 1 == $horsetools_options['custom-home4'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Disable recent posts widget', 'horse-tools'); ?></label>
-	</p>
-	
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-home5]" value="1" <?php if ( isset($horsetools_options['custom-home5']) && 1 == $horsetools_options['custom-home5'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Disable welcome widget', 'horse-tools'); ?></label>
-	</p>
-	
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-home6]" value="1" <?php if ( isset($horsetools_options['custom-home6']) && 1 == $horsetools_options['custom-home6'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Disable health widget', 'horse-tools'); ?></label>
-	</p>
+	<?php horsetools_toggle( 'custom-home1', __( 'Disable statistics widget', 'horse-tools' ), array(
+		'tab'     => 'CUSTOM',
+		'section' => 'Customize dashboard widgets',
+	) ); ?>
+
+	<?php horsetools_toggle( 'custom-home2', __( 'Disable WordPress info widget', 'horse-tools' ), array(
+		'tab'     => 'CUSTOM',
+		'section' => 'Customize dashboard widgets',
+	) ); ?>
+
+	<?php horsetools_toggle( 'custom-home3', __( 'Disable quick draft widget', 'horse-tools' ), array(
+		'tab'     => 'CUSTOM',
+		'section' => 'Customize dashboard widgets',
+	) ); ?>
+
+	<?php horsetools_toggle( 'custom-home4', __( 'Disable recent posts widget', 'horse-tools' ), array(
+		'tab'     => 'CUSTOM',
+		'section' => 'Customize dashboard widgets',
+	) ); ?>
+
+	<?php horsetools_toggle( 'custom-home5', __( 'Disable welcome widget', 'horse-tools' ), array(
+		'tab'     => 'CUSTOM',
+		'section' => 'Customize dashboard widgets',
+	) ); ?>
+
+	<?php horsetools_toggle( 'custom-home6', __( 'Disable health widget', 'horse-tools' ), array(
+		'tab'     => 'CUSTOM',
+		'section' => 'Customize dashboard widgets',
+	) ); ?>
 	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can disable default widgets on the dashboard that you dont use', 'horse-tools'); ?></p>
 	
 	<h4><?php _e('Your custom widget', 'horse-tools') ?></h4>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[custom-wid1]" value="1" <?php if ( isset($horsetools_options['custom-wid1']) && 1 == $horsetools_options['custom-wid1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Enable custom widget', 'horse-tools'); ?></label>
+	<?php horsetools_toggle( 'custom-wid1', __( 'Enable custom widget', 'horse-tools' ), array(
+		'tab'     => 'CUSTOM',
+		'section' => 'Customize dashboard widgets',
+	) ); ?>
 	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can create your widget by activating it and entering content into the box below', 'horse-tools'); ?></p>
 	<p>
 	<input class="ht-input-big" placeholder="<?php _e('Widget title', 'horse-tools') ?>" name="horsetools_settings[custom-wid11]" type="text" value="<?php if(!empty($horsetools_options['custom-wid11'])){echo sanitize_text_field($horsetools_options['custom-wid11']);} ?>"/>

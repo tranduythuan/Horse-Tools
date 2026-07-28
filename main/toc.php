@@ -31,12 +31,11 @@ function horsetools_toc_options_page() {
 			<h2><?php _e('TOC', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="fa-regular fa-list"></i> <?php _e('Table of contents configuration', 'horse-tools') ?></h3>
-			    <p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_toc_settings[toc1]" value="1" <?php if ( isset($horsetools_toc_options['toc1']) && 1 == $horsetools_toc_options['toc1'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable table of contents', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'toc1', __( 'Enable table of contents', 'horse-tools' ), array(
+					'module'  => 'toc',
+					'tab'     => 'TOC',
+					'section' => 'Table of contents configuration',
+				) ); ?>
 				<h4><?php _e('Custom posts will be displayed', 'horse-tools') ?></h4>
 				<?php 
 				$args = array(
@@ -59,12 +58,11 @@ function horsetools_toc_options_page() {
 				?>
 				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Select the custom post for which you want to display TOC content', 'horse-tools'); ?></p>
 				<h4><?php _e('Shortcodes', 'horse-tools') ?></h4>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_toc_settings[shortcode]" value="1" <?php if ( isset($horsetools_toc_options['shortcode']) && 1 == $horsetools_toc_options['shortcode'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Use shortcodes', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'shortcode', __( 'Use shortcodes', 'horse-tools' ), array(
+					'module'  => 'toc',
+					'tab'     => 'TOC',
+					'section' => 'Table of contents configuration',
+				) ); ?>
 				<input class="ht-input-big ht-view-in" type="text" value="[horsetoc]"/>
 				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can use the shortcode in the editor and add it to the position you want, note: only use 1 shortcode in the post', 'horse-tools'); ?></p>
 				<h4><?php _e('Advanced configuration', 'horse-tools') ?></h4>
@@ -146,48 +144,42 @@ function horsetools_toc_options_page() {
 					updateNoPageMessage();
 				});
 				</script>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_toc_settings[tit-c3]" value="1" <?php if ( isset($horsetools_toc_options['tit-c3']) && 1 == $horsetools_toc_options['tit-c3'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Automatically open popup when scrolling down', 'horse-tools'); ?></label>
-				</p>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_toc_settings[tit-c4]" value="1" <?php if ( isset($horsetools_toc_options['tit-c4']) && 1 == $horsetools_toc_options['tit-c4'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Disable numbers in front of tags', 'horse-tools'); ?></label>
-				</p>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_toc_settings[tit-c5]" value="1" <?php if ( isset($horsetools_toc_options['tit-c5']) && 1 == $horsetools_toc_options['tit-c5'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('List is hidden by default', 'horse-tools'); ?></label>
-				</p>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_toc_settings[tit-c6]" value="1" <?php if ( isset($horsetools_toc_options['tit-c6']) && 1 == $horsetools_toc_options['tit-c6'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Hide minimized list', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'tit-c3', __( 'Automatically open popup when scrolling down', 'horse-tools' ), array(
+					'module'  => 'toc',
+					'tab'     => 'TOC',
+					'section' => 'Table of contents configuration',
+				) ); ?>
+				<?php horsetools_toggle( 'tit-c4', __( 'Disable numbers in front of tags', 'horse-tools' ), array(
+					'module'  => 'toc',
+					'tab'     => 'TOC',
+					'section' => 'Table of contents configuration',
+				) ); ?>
+				<?php horsetools_toggle( 'tit-c5', __( 'List is hidden by default', 'horse-tools' ), array(
+					'module'  => 'toc',
+					'tab'     => 'TOC',
+					'section' => 'Table of contents configuration',
+				) ); ?>
+				<?php horsetools_toggle( 'tit-c6', __( 'Hide minimized list', 'horse-tools' ), array(
+					'module'  => 'toc',
+					'tab'     => 'TOC',
+					'section' => 'Table of contents configuration',
+				) ); ?>
 				<h4><?php _e('Customize TOC display position', 'horse-tools') ?></h4>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_toc_settings[tag]" value="1" <?php if ( isset($horsetools_toc_options['tag']) && 1 == $horsetools_toc_options['tag'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable customization', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'tag', __( 'Enable customization', 'horse-tools' ), array(
+					'module'  => 'toc',
+					'tab'     => 'TOC',
+					'section' => 'Table of contents configuration',
+				) ); ?>
 				<p>
 				<input class="ht-input-small" placeholder="<?php _e('Tag', 'horse-tools') ?>" name="horsetools_toc_settings[tag1]" type="text" value="<?php if(!empty($horsetools_toc_options['tag1'])){echo sanitize_text_field($horsetools_toc_options['tag1']);} else {echo sanitize_text_field('h2');} ?>"/>
 				<input class="ht-input-small" placeholder="<?php _e('Location', 'horse-tools') ?>" name="horsetools_toc_settings[tag2]" type="number" value="<?php if(!empty($horsetools_toc_options['tag2'])){echo sanitize_text_field($horsetools_toc_options['tag2']);} else {echo sanitize_text_field('1');} ?>"/>
 				</p>
 				<h4><?php _e('Customize display and colors', 'horse-tools') ?></h4>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_toc_settings[main-color]" value="1" <?php if ( isset($horsetools_toc_options['main-color']) && 1 == $horsetools_toc_options['main-color'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable color and display customization', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'main-color', __( 'Enable color and display customization', 'horse-tools' ), array(
+					'module'  => 'toc',
+					'tab'     => 'TOC',
+					'section' => 'Table of contents configuration',
+				) ); ?>
 				<h5><?php _e('List color', 'horse-tools'); ?></h5>
 				<p style="display:flex;align-items:center;">
 				<input class="ht-input-color" name="horsetools_toc_settings[main-c1]" type="text" data-coloris value="<?php if(!empty($horsetools_toc_options['main-c1'])){echo sanitize_text_field($horsetools_toc_options['main-c1']);} ?>"/>
@@ -294,25 +286,6 @@ function horsetools_toc_options_page() {
 	  </div>
 	</div>	
 	</div>
-	<script>
-        jQuery(document).ready(function($) {
-			// ajax select
-			$('form input[type="checkbox"]').change(function() {
-				var currentForm = $(this).closest('form');
-				$.ajax({
-					type: 'POST',
-					url: currentForm.attr('action'), 
-					data: currentForm.serialize(), 
-					success: function(response) {
-						console.log('Turn on successfully');
-					},
-					error: function() {
-						console.log('Error in AJAX request');
-					}
-				});
-			});
-		});
-	</script>
 	<?php
 	// style horsetools
 	require_once( HORSETOOLS_DIR . 'main/style.php');

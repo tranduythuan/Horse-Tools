@@ -4,10 +4,10 @@ global $horsetools_options; ?>
 <h2><?php _e('SETTING', 'horse-tools'); ?></h2>
   <h3><i class="fa-regular fa-bomb"></i> <?php _e('Advanced settings', 'horse-tools') ?></h3>
 	<!-- horsetools 1 -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[horsetools1]" value="1" <?php if ( isset($horsetools_options['horsetools1']) && 1 == $horsetools_options['horsetools1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Hide Admin account from profile page', 'horse-tools'); ?></label>
+	<?php horsetools_toggle( 'horsetools1', __( 'Hide Admin account from profile page', 'horse-tools' ), array(
+		'tab'     => 'SETTING',
+		'section' => 'Advanced settings',
+	) ); ?>
 	<p>
 	<?php
 	$horseadmins = horsetools_get_admin_users();
@@ -23,10 +23,10 @@ global $horsetools_options; ?>
 	</p>
 	<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If you want to hide a specific Administrator account, select the user', 'horse-tools'); ?></p>
 	<!-- horsetools 1 -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[horsetools2]" value="1" <?php if ( isset($horsetools_options['horsetools2']) && 1 == $horsetools_options['horsetools2'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Limit Horse Tools display', 'horse-tools'); ?></label>
+	<?php horsetools_toggle( 'horsetools2', __( 'Limit Horse Tools display', 'horse-tools' ), array(
+		'tab'     => 'SETTING',
+		'section' => 'Advanced settings',
+	) ); ?>
 	<p>
 	<?php
     echo '<select name="horsetools_settings[horsetools21]">';
@@ -45,12 +45,10 @@ global $horsetools_options; ?>
 	</p>
   <h3><i class="fa-regular fa-eye-slash"></i> <?php _e('Hide Horse Tools', 'horse-tools') ?></h3>
 	<!-- tool hiden 1 -->
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[horsetools3]" value="1" <?php if ( isset($horsetools_options['horsetools3']) && 1 == $horsetools_options['horsetools3'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Hide Horse Tools', 'horse-tools'); ?></label>
-	</p>
+	<?php horsetools_toggle( 'horsetools3', __( 'Hide Horse Tools', 'horse-tools' ), array(
+		'tab'     => 'SETTING',
+		'section' => 'Hide Horse Tools',
+	) ); ?>
 	<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can hide Horse Tools from the WP menu, but you can still access it through the link. This will hide Horse Tools for all accounts', 'horse-tools'); ?><br>
 	<b><?php echo admin_url('/admin.php?page=horsetools-options');?></b>
 	</p>
@@ -98,33 +96,26 @@ global $horsetools_options; ?>
 	</div>
 	<input type="hidden" name="horsetools_settings[horsetools5]" id="horsetools5" value="<?php if(!empty($horsetools_options['horsetools5'])){echo sanitize_text_field($horsetools_options['horsetools5']);} else {echo sanitize_text_field('Default');} ?>" />
 	<script>
+		// Clicking a thumbnail used to POST the entire form and reload the page
+		// immediately, with nothing telling the user anything had been saved.
+		// It now only updates the hidden field and fires a change event, so the
+		// unsaved-changes bar notices and the user saves when they mean to.
+		// Setting .value from script does not fire change on its own, which is
+		// why the dispatch is explicit.
 		document.addEventListener("DOMContentLoaded", function() {
+			var field = document.getElementById('horsetools5');
 			var imgStyles = document.querySelectorAll('#ht-imgstyle img');
 			imgStyles.forEach(function(img) {
 				img.addEventListener('click', function() {
 					var selectedStyle = this.getAttribute('data-value');
-					document.getElementById('horsetools5').value = selectedStyle;
-					imgStyles.forEach(function(img) {
-						img.classList.remove('selected');
+					if (field) {
+						field.value = selectedStyle;
+						field.dispatchEvent(new Event('change', { bubbles: true }));
+					}
+					imgStyles.forEach(function(other) {
+						other.classList.remove('selected');
 					});
 					this.classList.add('selected');
-				});
-			});
-		});
-		jQuery(document).ready(function($) {
-			$('#ht-imgstyle img').click(function() { 
-				var selectedStyle = $(this).attr('data-value');
-				$('#horsetools5').val(selectedStyle);
-				$('.ht-imgstyle img').removeClass('selected');
-				$(this).addClass('selected');
-				var currentForm = $(this).closest('form');
-				$.ajax({
-					type: 'POST',
-					url: currentForm.attr('action'),
-					data: currentForm.serialize(),
-					success: function(response) {
-						location.reload(); 
-					},
 				});
 			});
 		});

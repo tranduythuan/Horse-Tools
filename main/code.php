@@ -124,10 +124,15 @@ function horsetools_code_options_page() {
 					$('#ht-save-fast').html('<i class="fa-regular fa-check"></i>');
 					setTimeout(function() {
 						$('#ht-save-fast').html('<i class="fa-regular fa-floppy-disk"></i>');
-					}, 1000); 
+					}, 1000);
+					// This is a deliberate quick-save, unlike the silent
+					// auto-save handlers that were removed. Tell the
+					// unsaved-changes bar so it stops warning about work that
+					// has in fact just been saved.
+					document.dispatchEvent(new CustomEvent('horsetools:saved'));
 				},
 				error: function() {
-					console.log('Error in AJAX request'); 
+					$('#ht-save-fast').html('<i class="fa-regular fa-triangle-exclamation"></i>');
 				}
 			});
 		});

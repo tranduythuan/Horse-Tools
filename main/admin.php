@@ -101,24 +101,6 @@ function horsetools_options_page() {
 	  </div>
 	</div>	
 	</div>
-	<script>
-	jQuery(document).ready(function($) {
-		$('form input[type="checkbox"]').change(function() {
-			var currentForm = $(this).closest('form');
-			$.ajax({
-				type: 'POST',
-				url: currentForm.attr('action'), 
-				data: currentForm.serialize(), 
-				success: function(response) {
-					console.log('Turn on successfully');
-				},
-				error: function() {
-					console.log('Error in AJAX request');
-				}
-			});
-		});
-	});
-	</script>
 	<?php
 	// style horsetools
 	require_once( HORSETOOLS_DIR . 'main/style.php');

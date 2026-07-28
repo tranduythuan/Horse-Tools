@@ -34,12 +34,11 @@ function horsetools_shortcode_options_page() {
 			<h2><?php _e('LOCKVIP', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="fa-regular fa-lock"></i> <?php _e('Shortcode content visible only to group of users', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_shortcode_settings[shortcode-s1]" value="1" <?php if ( isset($horsetools_shortcode_options['shortcode-s1']) && 1 == $horsetools_shortcode_options['shortcode-s1'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable shortcode lock', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'shortcode-s1', __( 'Enable shortcode lock', 'horse-tools' ), array(
+					'module'  => 'shortcode',
+					'tab'     => 'LOCKVIP',
+					'section' => 'Shortcode content visible only to group of users',
+				) ); ?>
 				<?php
 				$roles = get_editable_roles();
 				echo '<select name="horsetools_shortcode_settings[shortcode-s11]">';
@@ -65,12 +64,11 @@ function horsetools_shortcode_options_page() {
 			<h2><?php _e('SIGN', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="fa-regular fa-signature"></i> <?php _e('Signature shortcode', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_shortcode_settings[shortcode-s2]" value="1" <?php if ( isset($horsetools_shortcode_options['shortcode-s2']) && 1 == $horsetools_shortcode_options['shortcode-s2'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable signature shortcode', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'shortcode-s2', __( 'Enable signature shortcode', 'horse-tools' ), array(
+					'module'  => 'shortcode',
+					'tab'     => 'SIGN',
+					'section' => 'Signature shortcode',
+				) ); ?>
 				<div class="ht-classic">
 				<?php
 				$shortcode_s21 = !empty($horsetools_shortcode_options['shortcode-s21']) ? wp_kses_post($horsetools_shortcode_options['shortcode-s21']) : '';
@@ -98,12 +96,11 @@ function horsetools_shortcode_options_page() {
 			<h2><?php _e('DATE', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="fa-regular fa-calendar"></i> <?php _e('Shortcode to display date', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_shortcode_settings[shortcode-s3]" value="1" <?php if ( isset($horsetools_shortcode_options['shortcode-s3']) && 1 == $horsetools_shortcode_options['shortcode-s3'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable date shortcode', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'shortcode-s3', __( 'Enable date shortcode', 'horse-tools' ), array(
+					'module'  => 'shortcode',
+					'tab'     => 'DATE',
+					'section' => 'Shortcode to display date',
+				) ); ?>
 				<p>
 				<?php $styles = array('VI', 'EN'); ?>
 				<select name="horsetools_shortcode_settings[shortcode-s31]"> 
@@ -125,24 +122,21 @@ function horsetools_shortcode_options_page() {
 			<h2><?php _e('GGET', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="fa-regular fa-download"></i> <?php _e('Download button GGET shortcode', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_shortcode_settings[shortcode-s4]" value="1" <?php if ( isset($horsetools_shortcode_options['shortcode-s4']) && 1 == $horsetools_shortcode_options['shortcode-s4'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable GGET shortcode', 'horse-tools'); ?></label>
-				</p>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_shortcode_settings[shortcode-s4a]" value="1" <?php if ( isset($horsetools_shortcode_options['shortcode-s4a']) && 1 == $horsetools_shortcode_options['shortcode-s4a'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Display link when seconds expire', 'horse-tools'); ?></label>
-				</p>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_shortcode_settings[shortcode-s4b]" value="1" <?php if ( isset($horsetools_shortcode_options['shortcode-s4b']) && 1 == $horsetools_shortcode_options['shortcode-s4b'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Center-align button on page', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'shortcode-s4', __( 'Enable GGET shortcode', 'horse-tools' ), array(
+					'module'  => 'shortcode',
+					'tab'     => 'GGET',
+					'section' => 'Download button GGET shortcode',
+				) ); ?>
+				<?php horsetools_toggle( 'shortcode-s4a', __( 'Display link when seconds expire', 'horse-tools' ), array(
+					'module'  => 'shortcode',
+					'tab'     => 'GGET',
+					'section' => 'Download button GGET shortcode',
+				) ); ?>
+				<?php horsetools_toggle( 'shortcode-s4b', __( 'Center-align button on page', 'horse-tools' ), array(
+					'module'  => 'shortcode',
+					'tab'     => 'GGET',
+					'section' => 'Download button GGET shortcode',
+				) ); ?>
 				<p>
 				<input class="ht-input-small" placeholder="10" name="horsetools_shortcode_settings[shortcode-s41]" type="number" value="<?php if(!empty($horsetools_shortcode_options['shortcode-s41'])){echo $horsetools_shortcode_options['shortcode-s41'];} ?>"/>
 				<label class="ht-label-right"><?php _e('Enter waiting time', 'horse-tools'); ?></label>
@@ -181,25 +175,6 @@ function horsetools_shortcode_options_page() {
 	  </div>
 	</div>	
 	</div>
-	<script>
-        jQuery(document).ready(function($) {
-			// ajax select
-			$('form input[type="checkbox"]').change(function() {
-				var currentForm = $(this).closest('form');
-				$.ajax({
-					type: 'POST',
-					url: currentForm.attr('action'), 
-					data: currentForm.serialize(), 
-					success: function(response) {
-						console.log('Turn on successfully');
-					},
-					error: function() {
-						console.log('Error in AJAX request');
-					}
-				});
-			});
-		});
-	</script>
 	<?php
 	// style horsetools
 	require_once( HORSETOOLS_DIR . 'main/style.php');

@@ -50,6 +50,15 @@ function horsetools_field_id( $module, $key ) {
  *     @type string $tab         Tab id, for the search panel.
  *     @type string $section     Section heading, for the search panel.
  *     @type string $warning     Shown in red; use for anything destructive.
+ *     @type string $id          Override the generated DOM id. Only for
+ *                               controls that existing JavaScript selects by a
+ *                               hand-assigned id (see main/extend.php, where
+ *                               searchToggle() matches input[id^="more"]).
+ *     @type string $class       Extra class on the input, for the same reason.
+ *     @type bool   $bare        Emit only the switch and label, without the
+ *                               wrapping <p class="ht-field">. Use when the
+ *                               control sits inside a layout that supplies its
+ *                               own container.
  * }
  */
 function horsetools_toggle( $key, $label, array $args = array() ) {
@@ -62,6 +71,9 @@ function horsetools_toggle( $key, $label, array $args = array() ) {
 			'tab'         => '',
 			'section'     => '',
 			'warning'     => '',
+			'id'          => '',
+			'class'       => '',
+			'bare'        => false,
 		)
 	);
 
@@ -70,7 +82,7 @@ function horsetools_toggle( $key, $label, array $args = array() ) {
 		return;
 	}
 
-	$id      = horsetools_field_id( $args['module'], $key );
+	$id      = ( '' !== $args['id'] ) ? $args['id'] : horsetools_field_id( $args['module'], $key );
 	$name    = $map[ $args['module'] ] . '[' . $key . ']';
 	$value   = horsetools_opt( $args['module'], $key );
 	$note_id = $id . '-note';
@@ -91,11 +103,14 @@ function horsetools_toggle( $key, $label, array $args = array() ) {
 	if ( '' !== $args['parent'] ) {
 		$parent_attr = ' data-ht-parent="' . esc_attr( horsetools_field_id( $args['module'], $args['parent'] ) ) . '"';
 	}
+	if ( ! $args['bare'] ) {
+		echo '<p class="ht-field"' . $parent_attr . '>'; // phpcs:ignore WordPress.Security.EscapeOutput -- built from esc_attr above
+	}
 	?>
-	<p class="ht-field"<?php echo $parent_attr; // phpcs:ignore WordPress.Security.EscapeOutput -- built from esc_attr above ?>>
 		<span class="nut-switch">
 			<input type="checkbox"
 				id="<?php echo esc_attr( $id ); ?>"
+				<?php echo '' !== $args['class'] ? ' class="' . esc_attr( $args['class'] ) . '"' : ''; ?>
 				name="<?php echo esc_attr( $name ); ?>"
 				value="1"
 				<?php checked( 1, (int) $value ); ?>
@@ -103,8 +118,10 @@ function horsetools_toggle( $key, $label, array $args = array() ) {
 			<span class="slider" aria-hidden="true"></span>
 		</span>
 		<label class="ht-label-right" for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $label ); ?></label>
-	</p>
 	<?php
+	if ( ! $args['bare'] ) {
+		echo '</p>';
+	}
 	if ( $has_note ) {
 		$classes = 'ht-note' . ( '' !== $args['warning'] ? ' ht-note-red' : '' );
 		echo '<p class="' . esc_attr( $classes ) . '" id="' . esc_attr( $note_id ) . '">';

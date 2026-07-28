@@ -13,12 +13,10 @@ global $horsetools_options; ?>
 	<a class="ht-smtp-a" onclick="htnone(event, 'ht-smtp')"><i class="fa-regular fa-share"></i> <?php _e('Configure SMTP mail', 'horse-tools') ?></a>
 	<div id="ht-smtp" style="display:none">
 	<h3><i class="fa-regular fa-envelope"></i> <?php _e('Configure SMTP mail', 'horse-tools') ?></h3>
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[mail-gsmtp1]" value="1" <?php if (isset($horsetools_options['mail-gsmtp1']) && 1 == $horsetools_options['mail-gsmtp1']) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Enable SMTP mail', 'horse-tools'); ?></label>
-	</p>
+	<?php horsetools_toggle( 'mail-gsmtp1', __( 'Enable SMTP mail', 'horse-tools' ), array(
+		'tab'     => 'MAIL',
+		'section' => 'Configure SMTP mail',
+	) ); ?>
 	<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enable SMTP mail to allow SMTP mail to function and send emails when you perform a test', 'horse-tools'); ?>
 	</p>
 	<div class="ht-card-mail-set">
@@ -142,10 +140,10 @@ global $horsetools_options; ?>
 	</div>
   
   <h3><i class="fa-regular fa-paper-plane-top"></i> <?php _e('Create welcome email for registered users', 'horse-tools') ?></h3>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[mail-new1]" value="1" <?php if ( isset($horsetools_options['mail-new1']) && 1 == $horsetools_options['mail-new1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Enable email sending', 'horse-tools'); ?></label>
+	<?php horsetools_toggle( 'mail-new1', __( 'Enable email sending', 'horse-tools' ), array(
+		'tab'     => 'MAIL',
+		'section' => 'Create welcome email for registered users',
+	) ); ?>
 	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You need to activate this feature and customize the content below so that new registered users can receive emails', 'horse-tools'); ?></p>
 	<p>
 	<input class="ht-input-big" placeholder="<?php _e('Email subject', 'horse-tools') ?>" name="horsetools_settings[mail-new11]" type="text" value="<?php if(!empty($horsetools_options['mail-new11'])){echo sanitize_text_field($horsetools_options['mail-new11']);} ?>"/>
@@ -156,15 +154,15 @@ global $horsetools_options; ?>
 	
   <h3><i class="fa-regular fa-message-captions"></i> <?php _e('Comment notification', 'horse-tools') ?></h3>
 	<!-- mail comment 1 -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[mail-com1]" value="1" <?php if ( isset($horsetools_options['mail-com1']) && 1 == $horsetools_options['mail-com1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Email notification when there a reply', 'horse-tools'); ?></label>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If someone replies to a comment, there will be an email notification sent to the commenter', 'horse-tools'); ?></p>
+	<?php horsetools_toggle( 'mail-com1', __( 'Email notification when there a reply', 'horse-tools' ), array(
+		'tab'         => 'MAIL',
+		'section'     => 'Comment notification',
+		'description' => __( 'If someone replies to a comment, there will be an email notification sent to the commenter', 'horse-tools' ),
+	) ); ?>
 	<!-- mail comment 2 -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[mail-com2]" value="1" <?php if ( isset($horsetools_options['mail-com2']) && 1 == $horsetools_options['mail-com2'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Email notification when a post has a comment', 'horse-tools'); ?></label>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Notify the post author when someone comments on the post', 'horse-tools'); ?></p>
+	<?php horsetools_toggle( 'mail-com2', __( 'Email notification when a post has a comment', 'horse-tools' ), array(
+		'tab'         => 'MAIL',
+		'section'     => 'Comment notification',
+		'description' => __( 'Notify the post author when someone comments on the post', 'horse-tools' ),
+	) ); ?>
 </div>	

@@ -33,23 +33,21 @@ function horsetools_redirects_options_page() {
 			<h2><?php _e('301', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="fa-regular fa-compass"></i> <?php _e('Redirect 301 whole page', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_redirects_settings[redi11]" value="1" <?php if ( isset($horsetools_redirects_options['redi11']) && 1 == $horsetools_redirects_options['redi11'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable site-wide 301 redirects', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'redi11', __( 'Enable site-wide 301 redirects', 'horse-tools' ), array(
+					'module'  => 'redirect',
+					'tab'     => '301',
+					'section' => 'Redirect 301 whole page',
+				) ); ?>
 				<input class="ht-input-big" placeholder="<?php _e('Enter the link', 'horse-tools'); ?>" type="text" name="horsetools_redirects_settings[redi12]" value="<?php if(!empty($horsetools_redirects_options['redi12'])){echo sanitize_text_field($horsetools_redirects_options['redi12']);} ?>" />
 				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('This function will redirect all of your website pages to the destination page of your choice', 'horse-tools'); ?></p>
 			  <h3><i class="fa-regular fa-compass"></i> <?php _e('Redirect 301 to a custom page', 'horse-tools') ?></h3>
-			    <p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_redirects_settings[redi1]" value="1" <?php if ( isset($horsetools_redirects_options['redi1']) && 1 == $horsetools_redirects_options['redi1'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable 301 redirection', 'horse-tools'); ?></label>
-				</p>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('This function allows you to redirect 301 links to the target page', 'horse-tools'); ?></p>
-				
+				<?php horsetools_toggle( 'redi1', __( 'Enable 301 redirection', 'horse-tools' ), array(
+					'module'      => 'redirect',
+					'tab'         => '301',
+					'section'     => 'Redirect 301 to a custom page',
+					'description' => __( 'This function allows you to redirect 301 links to the target page', 'horse-tools' ),
+				) ); ?>
+
 				<div id="sortable-list">
 				<div data-id="1" class="ui-state-default ht-button-grid">
 				<input class="ht-input-big" placeholder="<?php _e('Enter the link', 'horse-tools'); ?>" type="text" name="horsetools_redirects_settings[rechan11]" value="<?php if(!empty($horsetools_redirects_options['rechan11'])){echo sanitize_text_field($horsetools_redirects_options['rechan11']);} ?>" />
@@ -78,12 +76,11 @@ function horsetools_redirects_options_page() {
 			<h2><?php _e('404', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="fa-regular fa-do-not-enter"></i> <?php _e('404 redirects', 'horse-tools') ?></h3>
-				<p>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_redirects_settings[redi2]" value="1" <?php if ( isset($horsetools_redirects_options['redi2']) && 1 == $horsetools_redirects_options['redi2'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable 404 redirection', 'horse-tools'); ?></label>
-				</p>
+				<?php horsetools_toggle( 'redi2', __( 'Enable 404 redirection', 'horse-tools' ), array(
+					'module'  => 'redirect',
+					'tab'     => '404',
+					'section' => '404 redirects',
+				) ); ?>
 				<select id="horsetools-toc-page-select">
 					<option value=""><?php _e('Select redirect page', 'horse-tools'); ?></option>
 					<?php
@@ -112,11 +109,12 @@ function horsetools_redirects_options_page() {
 			<h2><?php _e('503', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="fa-regular fa-bug"></i> <?php _e('Maintenance mode for developers (503)', 'horse-tools') ?></h3>
-				<label class="nut-switch">
-				<input type="checkbox" name="horsetools_redirects_settings[redi3]" value="1" <?php if ( isset($horsetools_redirects_options['redi3']) && 1 == $horsetools_redirects_options['redi3'] ) echo 'checked="checked"'; ?> />
-				<span class="slider"></span></label>
-				<label class="ht-label-right"><?php _e('Enable 503 maintenance mode', 'horse-tools'); ?></label>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('All links on your website will redirect to the maintenance page, and only logged-in admin accounts can view the content', 'horse-tools'); ?></p>
+				<?php horsetools_toggle( 'redi3', __( 'Enable 503 maintenance mode', 'horse-tools' ), array(
+					'module'      => 'redirect',
+					'tab'         => '503',
+					'section'     => 'Maintenance mode for developers (503)',
+					'description' => __( 'All links on your website will redirect to the maintenance page, and only logged-in admin accounts can view the content', 'horse-tools' ),
+				) ); ?>
 				<p>
 				<input class="ht-input-big" placeholder="<?php _e('Enter title', 'horse-tools') ?>" name="horsetools_redirects_settings[redi31]" type="text" value="<?php if(!empty($horsetools_redirects_options['redi31'])){echo sanitize_text_field($horsetools_redirects_options['redi31']);} ?>"/>
 				</p>
@@ -138,21 +136,6 @@ function horsetools_redirects_options_page() {
 	</div>
 	<script>
         jQuery(document).ready(function($) {
-			// ajax select
-			$('form input[type="checkbox"]').change(function() {
-				var currentForm = $(this).closest('form');
-				$.ajax({
-					type: 'POST',
-					url: currentForm.attr('action'), 
-					data: currentForm.serialize(), 
-					success: function(response) {
-						console.log('Turn on successfully');
-					},
-					error: function() {
-						console.log('Error in AJAX request');
-					}
-				});
-			});
 			// them link
 			var count = 0;
 			$('#ht-chatmore').click(function() {

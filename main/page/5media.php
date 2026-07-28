@@ -64,25 +64,25 @@ global $horsetools_options; ?>
 	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If you have members and do not want them to upload images with excessively large sizes, causing storage space usage, you can limit the maximum size allowed for upload', 'horse-tools'); ?></p>
 	
 	<!-- upload hinh anh 3 -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[media-up3]" value="1" <?php if ( isset($horsetools_options['media-up3']) && 1 == $horsetools_options['media-up3'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Allow uploading SVG files', 'horse-tools'); ?></label>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enable this feature if you want SVG images to be uploaded to the media', 'horse-tools'); ?></p>
-	
+	<?php horsetools_toggle( 'media-up3', __( 'Allow uploading SVG files', 'horse-tools' ), array(
+		'tab'         => 'MEDIA',
+		'section'     => 'Configure image upload function',
+		'description' => __( 'Enable this feature if you want SVG images to be uploaded to the media', 'horse-tools' ),
+	) ); ?>
+
 	<!-- upload hinh anh 4 -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[media-up4]" value="1" <?php if ( isset($horsetools_options['media-up4']) && 1 == $horsetools_options['media-up4'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Allow uploading JFIF files', 'horse-tools'); ?></label>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enable this feature if you want JFIF format images to be uploaded to the media. The uploaded images will be converted to JPG or WEBP format according to the configuration', 'horse-tools'); ?></p>
+	<?php horsetools_toggle( 'media-up4', __( 'Allow uploading JFIF files', 'horse-tools' ), array(
+		'tab'         => 'MEDIA',
+		'section'     => 'Configure image upload function',
+		'description' => __( 'Enable this feature if you want JFIF format images to be uploaded to the media. The uploaded images will be converted to JPG or WEBP format according to the configuration', 'horse-tools' ),
+	) ); ?>
   <h3><i class="fa-regular fa-file-zipper"></i> <?php _e('Compress JPG images upon upload', 'horse-tools') ?></h3>
 	<!-- upload hinh anh 1 -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[media-zip1]" value="1" <?php if ( isset($horsetools_options['media-zip1']) && 1 == $horsetools_options['media-zip1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Enable JPG image compression', 'horse-tools'); ?></label>
-	
+	<?php horsetools_toggle( 'media-zip1', __( 'Enable JPG image compression', 'horse-tools' ), array(
+		'tab'     => 'MEDIA',
+		'section' => 'Compress JPG images upon upload',
+	) ); ?>
+
 	<p class="ht-keo">
 	<input type="range" name="horsetools_settings[media-zip11]" min="10" max="90" value="<?php if(!empty($horsetools_options['media-zip11'])){echo sanitize_text_field($horsetools_options['media-zip11']);} else {echo sanitize_text_field('60');} ?>" class="htslide" data-index="10">
 	<span><?php _e('Compression level (', 'horse-tools'); ?><b><span id="demo10"></span></b> - 90)</span>
@@ -91,18 +91,18 @@ global $horsetools_options; ?>
 	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can adjust the compression level of the image from 5 to 100 (100 being no compression)', 'horse-tools'); ?></p>	
 	
 	<!-- png to jpg -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[media-zip12]" value="1" <?php if ( isset($horsetools_options['media-zip12']) && 1 == $horsetools_options['media-zip12'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Convert PNG to JPG', 'horse-tools'); ?></label>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Convert PNG images to JPG upon upload, and compress the images according to the JPG configuration', 'horse-tools'); ?></p>
+	<?php horsetools_toggle( 'media-zip12', __( 'Convert PNG to JPG', 'horse-tools' ), array(
+		'tab'         => 'MEDIA',
+		'section'     => 'Compress JPG images upon upload',
+		'description' => __( 'Convert PNG images to JPG upon upload, and compress the images according to the JPG configuration', 'horse-tools' ),
+	) ); ?>
   <h3><i class="fa-regular fa-file-zipper"></i> <?php _e('Convert images to WEBP upon upload', 'horse-tools') ?></h3>
 	<!-- jpg,png, gif to webp -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[media-webp1]" value="1" <?php if ( isset($horsetools_options['media-webp1']) && 1 == $horsetools_options['media-webp1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Convert JPG and PNG to WEBP', 'horse-tools'); ?></label>
-	
+	<?php horsetools_toggle( 'media-webp1', __( 'Convert JPG and PNG to WEBP', 'horse-tools' ), array(
+		'tab'     => 'MEDIA',
+		'section' => 'Convert images to WEBP upon upload',
+	) ); ?>
+
 	<p class="ht-keo">
 	<input type="range" name="horsetools_settings[media-webp11]" min="10" max="90" value="<?php if(!empty($horsetools_options['media-webp11'])){echo sanitize_text_field($horsetools_options['media-webp11']);} else {echo sanitize_text_field('60');} ?>" class="htslide" data-index="11">
 	<span><?php _e('Compression level (', 'horse-tools'); ?><b><span id="demo11"></span></b> - 90)</span>
@@ -112,16 +112,15 @@ global $horsetools_options; ?>
   
   <h3><i class="fa-regular fa-file-zipper"></i> <?php _e('Convert images to AVIF upon upload', 'horse-tools') ?></h3>
 	<!-- jpg,png, gif to avif -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[media-avif1]" value="1" <?php if ( isset($horsetools_options['media-avif1']) && 1 == $horsetools_options['media-avif1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Allow uploading AVIF image format', 'horse-tools'); ?></label>
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[media-avif2]" value="1" <?php if ( isset($horsetools_options['media-avif2']) && 1 == $horsetools_options['media-avif2'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Convert JPG and PNG to AVIF', 'horse-tools'); ?></label>
-	</p>
+	<?php horsetools_toggle( 'media-avif1', __( 'Allow uploading AVIF image format', 'horse-tools' ), array(
+		'tab'     => 'MEDIA',
+		'section' => 'Convert images to AVIF upon upload',
+	) ); ?>
+	<?php horsetools_toggle( 'media-avif2', __( 'Convert JPG and PNG to AVIF', 'horse-tools' ), array(
+		'tab'     => 'MEDIA',
+		'section' => 'Convert images to AVIF upon upload',
+		'parent'  => 'media-avif1',
+	) ); ?>
 
 	<p class="ht-keo">
 	<input type="range" name="horsetools_settings[media-avif21]" min="10" max="90" value="<?php if(!empty($horsetools_options['media-avif21'])){echo sanitize_text_field($horsetools_options['media-avif21']);} else {echo sanitize_text_field('60');} ?>" class="htslide" data-index="12">
@@ -134,11 +133,11 @@ global $horsetools_options; ?>
   
   <h3><i class="fa-regular fa-crop-simple"></i> <?php _e('Limits the size of JPG, PNG, WEBP, AVIF images when uploading', 'horse-tools') ?></h3>
 	<!-- upload hinh anh 1 -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[media-zip2]" value="1" <?php if ( isset($horsetools_options['media-zip2']) && 1 == $horsetools_options['media-zip2'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Limit JPG, PNG, WEBP, AVIF images', 'horse-tools'); ?></label>
-	
+	<?php horsetools_toggle( 'media-zip2', __( 'Limit JPG, PNG, WEBP, AVIF images', 'horse-tools' ), array(
+		'tab'     => 'MEDIA',
+		'section' => 'Limits the size of JPG, PNG, WEBP, AVIF images when uploading',
+	) ); ?>
+
 	<p style="display:flex;align-items:center;">
 	<input class="ht-input-small" placeholder="" name="horsetools_settings[media-zip21]" type="number" value="<?php if(!empty($horsetools_options['media-zip21'])){echo sanitize_text_field($horsetools_options['media-zip21']);} ?>"/>
 	<span style="margin-right:7px;"><?php _e('Max width', 'horse-tools'); ?></span>
@@ -150,18 +149,14 @@ global $horsetools_options; ?>
 	
   <h3><i class="fa-regular fa-frame"></i> <?php _e('Automatically add a frame when uploading an image', 'horse-tools') ?></h3>
 	<!-- them logo vao hinh anh -->
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[media-cutop1]" value="1" <?php if ( isset($horsetools_options['media-cutop1']) && 1 == $horsetools_options['media-cutop1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Enable the picture frame', 'horse-tools'); ?></label>
-	</p>
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[media-cutop-hook]" value="1" <?php if ( isset($horsetools_options['media-cutop-hook']) && 1 == $horsetools_options['media-cutop-hook'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Process cropped images', 'horse-tools'); ?></label>
-	</p>
+	<?php horsetools_toggle( 'media-cutop1', __( 'Enable the picture frame', 'horse-tools' ), array(
+		'tab'     => 'MEDIA',
+		'section' => 'Automatically add a frame when uploading an image',
+	) ); ?>
+	<?php horsetools_toggle( 'media-cutop-hook', __( 'Process cropped images', 'horse-tools' ), array(
+		'tab'     => 'MEDIA',
+		'section' => 'Automatically add a frame when uploading an image',
+	) ); ?>
 	<!-- khung -->
 	<div id="ht-imgstyle2" class="ht-imgstyle">
 		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/khung/1.png'); ?>" data-value="1" class="<?php if(isset($horsetools_options['media-cutop11']) && $horsetools_options['media-cutop11'] == '1') echo 'selected'; ?>" />
@@ -194,12 +189,10 @@ global $horsetools_options; ?>
 	<button class="ht-selec" data-input-id="ht-add6"><?php _e('Select image', 'horse-tools'); ?></button>
 	</p>
 	<!-- lat anh -->
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[media-cutop13]" value="1" <?php if ( isset($horsetools_options['media-cutop13']) && 1 == $horsetools_options['media-cutop13'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Flip photo', 'horse-tools'); ?></label>
-	</p>
+	<?php horsetools_toggle( 'media-cutop13', __( 'Flip photo', 'horse-tools' ), array(
+		'tab'     => 'MEDIA',
+		'section' => 'Automatically add a frame when uploading an image',
+	) ); ?>
 	<p style="display:flex;align-items:center;">
 	<input class="ht-input-color" name="horsetools_settings[media-cutop-c1]" type="text" data-coloris value="<?php if(!empty($horsetools_options['media-cutop-c1'])){echo esc_attr($horsetools_options['media-cutop-c1']);} ?>"/>
 	<label class="ht-right-text"><?php _e('Overlay color', 'horse-tools'); ?></label>
@@ -213,16 +206,14 @@ global $horsetools_options; ?>
 
   <h3><i class="fa-regular fa-diagram-venn"></i> <?php _e('Configure adding a watermark to images upon upload', 'horse-tools') ?></h3>
 	<!-- them logo vao hinh anh -->
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[media-logo1]" value="1" <?php if ( isset($horsetools_options['media-logo1']) && 1 == $horsetools_options['media-logo1'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Add watermark to images upon upload', 'horse-tools'); ?></label>
-	<p>
-	<label class="nut-switch">
-	<input type="checkbox" name="horsetools_settings[media-logo-hook]" value="1" <?php if ( isset($horsetools_options['media-logo-hook']) && 1 == $horsetools_options['media-logo-hook'] ) echo 'checked="checked"'; ?> />
-	<span class="slider"></span></label>
-	<label class="ht-label-right"><?php _e('Process cropped images', 'horse-tools'); ?></label>
-	</p>
+	<?php horsetools_toggle( 'media-logo1', __( 'Add watermark to images upon upload', 'horse-tools' ), array(
+		'tab'     => 'MEDIA',
+		'section' => 'Configure adding a watermark to images upon upload',
+	) ); ?>
+	<?php horsetools_toggle( 'media-logo-hook', __( 'Process cropped images', 'horse-tools' ), array(
+		'tab'     => 'MEDIA',
+		'section' => 'Configure adding a watermark to images upon upload',
+	) ); ?>
 	<p>
 	<input class="ht-input-big" name="horsetools_settings[media-logo10]" type="text" value="<?php if(!empty($horsetools_options['media-logo10'])){echo sanitize_text_field($horsetools_options['media-logo10']);} ?>" placeholder="<?php _e('Enter content', 'horse-tools'); ?>" />
 	</p>

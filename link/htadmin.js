@@ -213,6 +213,16 @@ sliders.forEach(function (slider) {
 			window.onbeforeunload = function () { return reg.i18n.unsaved; };
 		});
 		form.addEventListener('submit', function () { window.onbeforeunload = null; });
+
+		// The Add-code screen has a deliberate quick-save button that posts the
+		// form over AJAX. It announces success so the bar can clear itself
+		// rather than keep warning about changes that are already saved.
+		document.addEventListener('horsetools:saved', function () {
+			changed = Object.create(null);
+			count = 0;
+			window.onbeforeunload = null;
+			render();
+		});
 	}
 
 	/* ---- Sidebar: search + what's enabled --------------------------------- */
