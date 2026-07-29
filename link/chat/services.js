@@ -1,5 +1,7 @@
-/* Horse Tools — Services slide-up panel behaviour. Vanilla, no dependencies.
-   A bottom-bar item with id "ht-services" opens #ht-services-panel. */
+/* Horse Tools — Services panel behaviour. Vanilla, no dependencies.
+   Triggers: any #ht-services element (bottom-bar item) or .ht-svc-launch
+   (desktop launcher). Presentation mode from data-mode (auto = sheet on
+   phones, modal on desktop). */
 (function () {
 	'use strict';
 
@@ -10,27 +12,41 @@
 
 	ready(function () {
 		var wrap = document.getElementById('ht-services-panel');
-		var trigger = document.getElementById('ht-services');
 		if (!wrap) { return; }
 		var sheet = wrap.querySelector('.ht-svc-sheet');
+		var MODES = ['sheet', 'modal', 'drawer-right', 'drawer-left', 'corner', 'fullscreen'];
+		var curMode = 'sheet';
+
+		function resolveMode() {
+			var m = wrap.getAttribute('data-mode') || 'auto';
+			if (m === 'auto') { m = window.innerWidth <= 700 ? 'sheet' : 'modal'; }
+			return MODES.indexOf(m) === -1 ? 'sheet' : m;
+		}
+		function setMode(m) {
+			MODES.forEach(function (x) { wrap.classList.remove('ht-svc-m-' + x); });
+			wrap.classList.add('ht-svc-m-' + m);
+			curMode = m;
+		}
 
 		function open(e) {
 			if (e) { e.preventDefault(); }
+			setMode(resolveMode());
 			wrap.style.display = 'flex';
-			// next frame so the transition runs
 			requestAnimationFrame(function () { wrap.classList.add('ht-open'); });
 			document.addEventListener('keydown', onKey);
 		}
 		function close() {
 			wrap.classList.remove('ht-open');
 			document.removeEventListener('keydown', onKey);
-			var done = function () { wrap.style.display = 'none'; sheet.removeEventListener('transitionend', done); };
-			sheet.addEventListener('transitionend', done);
-			setTimeout(function () { wrap.style.display = 'none'; }, 350);
+			setTimeout(function () { if (!wrap.classList.contains('ht-open')) { wrap.style.display = 'none'; } }, 320);
 		}
 		function onKey(e) { if (e.key === 'Escape') { close(); } }
 
-		if (trigger) { trigger.addEventListener('click', open); }
+		// Any trigger opens the panel.
+		document.addEventListener('click', function (e) {
+			var t = e.target.closest('#ht-services, .ht-svc-launch');
+			if (t) { open(e); }
+		});
 
 		wrap.addEventListener('click', function (e) {
 			if (e.target.closest('[data-svc-close]') || e.target.classList.contains('ht-svc-backdrop')) { close(); return; }
@@ -40,19 +56,20 @@
 				var code = copy.getAttribute('data-code') || '';
 				var mark = function () { copy.classList.add('ht-done'); setTimeout(function () { copy.classList.remove('ht-done'); }, 1200); };
 				if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(code).then(mark); }
-				else { var t = document.createElement('textarea'); t.value = code; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); mark(); } catch (x) {} document.body.removeChild(t); }
+				else { var ta = document.createElement('textarea'); ta.value = code; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); mark(); } catch (x) {} document.body.removeChild(ta); }
 			}
 		});
 
-		// Swipe the sheet down to dismiss.
+		// Swipe down to dismiss — sheet mode only.
 		var startY = null, curY = 0;
-		sheet.addEventListener('touchstart', function (e) { startY = e.touches[0].clientY; curY = 0; }, { passive: true });
+		sheet.addEventListener('touchstart', function (e) { if (curMode !== 'sheet') { return; } startY = e.touches[0].clientY; curY = 0; }, { passive: true });
 		sheet.addEventListener('touchmove', function (e) {
-			if (startY === null || sheet.scrollTop > 0) { return; }
+			if (startY === null || curMode !== 'sheet' || sheet.scrollTop > 0) { return; }
 			curY = e.touches[0].clientY - startY;
 			if (curY > 0) { sheet.style.transform = 'translateY(' + curY + 'px)'; }
 		}, { passive: true });
 		sheet.addEventListener('touchend', function () {
+			if (curMode !== 'sheet') { return; }
 			sheet.style.transform = '';
 			if (curY > 90) { close(); }
 			startY = null; curY = 0;

@@ -46,18 +46,56 @@ function horsetools_services_layouts() {
 	return array( 'bento', 'grid', 'list', 'tiles', 'chips', 'story', 'coupon', 'stacked', 'banner', 'pricecards', 'reviews', 'video', 'masonry' );
 }
 
+/** Presentation modes (how the panel appears). auto = sheet on phones, modal on desktop. */
+function horsetools_services_modes() {
+	return array( 'auto', 'sheet', 'modal', 'drawer-right', 'drawer-left', 'corner', 'fullscreen' );
+}
+
 /** The stored config, normalised. */
 function horsetools_services_get() {
 	$s = get_option( 'horsetools_services', array() );
 	$s = is_array( $s ) ? $s : array();
 	return array(
-		'on'     => ! empty( $s['on'] ),
-		'title'  => isset( $s['title'] ) && '' !== $s['title'] ? $s['title'] : __( 'Services', 'horse-tools' ),
-		'layout' => isset( $s['layout'] ) && in_array( $s['layout'], horsetools_services_layouts(), true ) ? $s['layout'] : 'bento',
-		'color'  => isset( $s['color'] ) && isset( horsetools_services_themes()[ $s['color'] ] ) ? $s['color'] : 'gold',
-		'items'  => ( isset( $s['items'] ) && is_array( $s['items'] ) ) ? array_values( $s['items'] ) : array(),
+		'on'            => ! empty( $s['on'] ),
+		'title'         => isset( $s['title'] ) && '' !== $s['title'] ? $s['title'] : __( 'Services', 'horse-tools' ),
+		'layout'        => isset( $s['layout'] ) && in_array( $s['layout'], horsetools_services_layouts(), true ) ? $s['layout'] : 'bento',
+		'color'         => isset( $s['color'] ) && isset( horsetools_services_themes()[ $s['color'] ] ) ? $s['color'] : 'gold',
+		'display'       => isset( $s['display'] ) && in_array( $s['display'], horsetools_services_modes(), true ) ? $s['display'] : 'auto',
+		'launcher'      => ! empty( $s['launcher'] ),
+		'launcher_text' => isset( $s['launcher_text'] ) ? $s['launcher_text'] : '',
+		'launcher_icon' => isset( $s['launcher_icon'] ) && '' !== $s['launcher_icon'] ? preg_replace( '/[^a-z0-9-]/', '', strtolower( $s['launcher_icon'] ) ) : 'apps',
+		'items'         => ( isset( $s['items'] ) && is_array( $s['items'] ) ) ? array_values( $s['items'] ) : array(),
 	);
 }
+
+/**
+ * Floating desktop launcher button that opens the panel. Hidden on phones by
+ * CSS (there the bottom bar is the trigger).
+ *
+ * @return string
+ */
+function horsetools_services_launcher() {
+	$cfg = horsetools_services_get();
+	if ( ! $cfg['on'] || empty( $cfg['items'] ) || ! $cfg['launcher'] ) {
+		return '';
+	}
+	$accent = horsetools_services_themes()[ $cfg['color'] ];
+	$text   = trim( (string) $cfg['launcher_text'] );
+	return '<button type="button" class="ht-svc-launch" style="background:' . esc_attr( $accent ) . '" aria-label="' . esc_attr( '' !== $text ? $text : $cfg['title'] ) . '">'
+		. '<i class="ti ti-' . esc_attr( $cfg['launcher_icon'] ) . '" aria-hidden="true"></i>'
+		. ( '' !== $text ? '<span>' . esc_html( $text ) . '</span>' : '' ) . '</button>';
+}
+
+/** Output the panel (and launcher) in the footer, once, when enabled. */
+function horsetools_services_footer() {
+	$cfg = horsetools_services_get();
+	if ( ! $cfg['on'] || empty( $cfg['items'] ) ) {
+		return;
+	}
+	echo horsetools_services_render();   // phpcs:ignore WordPress.Security.EscapeOutput -- escaped inside
+	echo horsetools_services_launcher(); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped inside
+}
+add_action( 'wp_footer', 'horsetools_services_footer', 60 );
 
 /** Icon markup for one item: an image, or a Tabler glyph on a tinted tile. */
 function horsetools_services_icon( $item, $accent ) {
@@ -114,7 +152,7 @@ function horsetools_services_render() {
 
 	$body = horsetools_services_layout_body( $cfg['layout'], $items, $accent );
 
-	$out  = '<div class="ht-svc-wrap ht-svc-theme-' . esc_attr( $cfg['color'] ) . '" id="ht-services-panel" style="display:none" data-svc>';
+	$out  = '<div class="ht-svc-wrap ht-svc-theme-' . esc_attr( $cfg['color'] ) . '" id="ht-services-panel" style="display:none" data-svc data-mode="' . esc_attr( $cfg['display'] ) . '">';
 	$out .= '<div class="ht-svc-backdrop" data-svc-close></div>';
 	$out .= '<div class="ht-svc-sheet ht-svc-l-' . esc_attr( $cfg['layout'] ) . '" role="dialog" aria-modal="true" aria-label="' . esc_attr( $cfg['title'] ) . '" style="--svc-accent:' . esc_attr( $accent ) . '">';
 	$out .= '<button class="ht-svc-handle" type="button" data-svc-close aria-label="' . esc_attr__( 'Close', 'horse-tools' ) . '"></button>';
@@ -285,11 +323,15 @@ function horsetools_services_save_ajax() {
 		wp_send_json_error( array( 'msg' => __( 'Could not read the data.', 'horse-tools' ) ) );
 	}
 	$clean = array(
-		'on'     => ! empty( $data['on'] ) ? 1 : 0,
-		'title'  => sanitize_text_field( isset( $data['title'] ) ? $data['title'] : '' ),
-		'layout' => in_array( isset( $data['layout'] ) ? $data['layout'] : '', horsetools_services_layouts(), true ) ? $data['layout'] : 'bento',
-		'color'  => isset( horsetools_services_themes()[ isset( $data['color'] ) ? $data['color'] : '' ] ) ? $data['color'] : 'gold',
-		'items'  => array(),
+		'on'            => ! empty( $data['on'] ) ? 1 : 0,
+		'title'         => sanitize_text_field( isset( $data['title'] ) ? $data['title'] : '' ),
+		'layout'        => in_array( isset( $data['layout'] ) ? $data['layout'] : '', horsetools_services_layouts(), true ) ? $data['layout'] : 'bento',
+		'color'         => isset( horsetools_services_themes()[ isset( $data['color'] ) ? $data['color'] : '' ] ) ? $data['color'] : 'gold',
+		'display'       => in_array( isset( $data['display'] ) ? $data['display'] : '', horsetools_services_modes(), true ) ? $data['display'] : 'auto',
+		'launcher'      => ! empty( $data['launcher'] ) ? 1 : 0,
+		'launcher_text' => sanitize_text_field( isset( $data['launcher_text'] ) ? $data['launcher_text'] : '' ),
+		'launcher_icon' => preg_replace( '/[^a-z0-9-]/', '', strtolower( isset( $data['launcher_icon'] ) ? $data['launcher_icon'] : '' ) ),
+		'items'         => array(),
 	);
 	foreach ( (array) ( isset( $data['items'] ) ? $data['items'] : array() ) as $it ) {
 		if ( ! is_array( $it ) ) {

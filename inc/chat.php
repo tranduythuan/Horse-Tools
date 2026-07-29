@@ -36,7 +36,7 @@ function horsetools_enqueue_chat(){
 		wp_enqueue_script('chat-js', HORSETOOLS_URL . 'link/chat/horsechat.js', array(), HORSETOOLS_VERSION, true);
 	}
 	$horsetools_svc = horsetools_services_get();
-	if ( isset($horsetools_options['chat-nav1']) && $horsetools_svc['on'] && ! empty($horsetools_svc['items']) ) {
+	if ( $horsetools_svc['on'] && ! empty($horsetools_svc['items']) ) {
 		wp_enqueue_style('ht-services', HORSETOOLS_URL . 'link/chat/services.css', array(), HORSETOOLS_VERSION);
 		wp_enqueue_script('ht-services', HORSETOOLS_URL . 'link/chat/services.js', array(), HORSETOOLS_VERSION, true);
 		if ( ! wp_style_is('horsetools-tabler', 'registered') ) {
@@ -423,13 +423,7 @@ function horsetools_add_chat(){
 		 ?>
 	</div>
 	<?php } ?>
-	<?php
-	// Services slide-up panel, when a bottom-bar item targets #ht-services.
-	if ( in_array( '#ht-services', array( $horsebb1, $horsebb2, $horsebb3, $horsebb4, $horsebb5 ), true ) ) {
-		echo horsetools_services_render(); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped inside the renderer
-	}
-	?>
-	
+
 	
 	<div class="ht-boxnavi <?php echo $navclass1; ?>" <?php echo $navi_mojs; ?>>
 	<div class="ht-navi">

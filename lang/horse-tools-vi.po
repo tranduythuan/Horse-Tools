@@ -5221,3 +5221,33 @@ msgstr "Banner xếp chồng"
 
 msgid "Video cards"
 msgstr "Thẻ video"
+
+msgid "Auto (sheet on phone, modal on desktop)"
+msgstr "Tự động (trượt trên ĐT, modal trên máy tính)"
+
+msgid "Bottom sheet"
+msgstr "Trượt từ đáy"
+
+msgid "Button text"
+msgstr "Chữ trên nút"
+
+msgid "Centered modal"
+msgstr "Modal giữa màn hình"
+
+msgid "Corner card"
+msgstr "Thẻ góc màn hình"
+
+msgid "Full screen"
+msgstr "Toàn màn hình"
+
+msgid "Icon (e.g. apps)"
+msgstr "Icon (vd: apps)"
+
+msgid "Left drawer"
+msgstr "Ngăn trượt trái"
+
+msgid "Right drawer"
+msgstr "Ngăn trượt phải"
+
+msgid "Show a floating “Services” button on desktop"
+msgstr "Hiện nút “Dịch vụ” nổi trên máy tính"

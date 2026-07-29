@@ -246,7 +246,7 @@ msgstr ""
 msgid "Add picture frame link here"
 msgstr ""
 
-#: main/page/12chat.php:425
+#: main/page/12chat.php:441
 msgid "Add service"
 msgstr ""
 
@@ -394,6 +394,10 @@ msgstr ""
 msgid "Author and maintainer:"
 msgstr ""
 
+#: main/page/12chat.php:423
+msgid "Auto (sheet on phone, modal on desktop)"
+msgstr ""
+
 #: main/clean.php:151
 msgid "Automatic cleanup"
 msgstr ""
@@ -454,7 +458,7 @@ msgstr ""
 msgid "Backup"
 msgstr ""
 
-#: main/page/12chat.php:461
+#: main/page/12chat.php:477
 msgid "Badge text (optional)"
 msgstr ""
 
@@ -515,6 +519,10 @@ msgstr ""
 msgid "Border size"
 msgstr ""
 
+#: main/page/12chat.php:424
+msgid "Bottom sheet"
+msgstr ""
+
 #: main/notify.php:36
 msgid "Browser ad-block notification"
 msgstr ""
@@ -533,6 +541,10 @@ msgstr ""
 
 #: main/page/12chat.php:178
 msgid "Button position"
+msgstr ""
+
+#: main/page/12chat.php:435
+msgid "Button text"
 msgstr ""
 
 #: main/page/10custom.php:96
@@ -585,6 +597,10 @@ msgstr ""
 
 #: main/shortcode.php:137
 msgid "Center-align button on page"
+msgstr ""
+
+#: main/page/12chat.php:424
+msgid "Centered modal"
 msgstr ""
 
 #: main/page/10custom.php:126
@@ -690,7 +706,7 @@ msgstr ""
 msgid "Client Secret"
 msgstr ""
 
-#: inc/chat-services.php:120 inc/chat-services.php:122
+#: inc/chat-services.php:158 inc/chat-services.php:160
 msgid "Close"
 msgstr ""
 
@@ -870,6 +886,10 @@ msgstr ""
 msgid "Core, plugins and themes are up to date"
 msgstr ""
 
+#: main/page/12chat.php:426
+msgid "Corner card"
+msgstr ""
+
 #: inc/scuri.php:340
 msgid "Could not create the fonts folder in uploads."
 msgstr ""
@@ -878,7 +898,7 @@ msgstr ""
 msgid "Could not load the icon list."
 msgstr ""
 
-#: inc/chat-services.php:285
+#: inc/chat-services.php:323
 msgid "Could not read the data."
 msgstr ""
 
@@ -2016,6 +2036,10 @@ msgstr ""
 msgid "From"
 msgstr ""
 
+#: main/page/12chat.php:426
+msgid "Full screen"
+msgstr ""
+
 #: inc/media.php:454
 msgid "GD Library does not support AVIF images"
 msgstr ""
@@ -2196,6 +2220,10 @@ msgstr ""
 msgid "Icon"
 msgstr ""
 
+#: main/page/12chat.php:436
+msgid "Icon (e.g. apps)"
+msgstr ""
+
 #: main/toc.php:222
 msgid "Icon background color"
 msgstr ""
@@ -2320,7 +2348,7 @@ msgstr ""
 msgid "Ignore 8-bit png"
 msgstr ""
 
-#: main/page/12chat.php:457
+#: main/page/12chat.php:473
 msgid "Image URL (optional, replaces the icon)"
 msgstr ""
 
@@ -2435,6 +2463,10 @@ msgstr ""
 msgid "Leave another shortcode plugin"
 msgstr ""
 
+#: main/page/12chat.php:425
+msgid "Left drawer"
+msgstr ""
+
 #: main/shortcode.php:178
 msgid "Lets you drop any of the bundled Tabler icons (over 5,800, MIT licence) into posts, pages and anywhere shortcodes run. The icon font only loads on pages that actually use one, so it costs nothing elsewhere."
 msgstr ""
@@ -2479,7 +2511,7 @@ msgstr ""
 msgid "Limits the size of JPG, PNG, WEBP, AVIF images when uploading"
 msgstr ""
 
-#: main/page/12chat.php:460
+#: main/page/12chat.php:476
 msgid "Link (article or service page)"
 msgstr ""
 
@@ -2659,7 +2691,7 @@ msgstr ""
 msgid "Name — letters, numbers, dashes (e.g. call-to-action)"
 msgstr ""
 
-#: inc/chat.php:468
+#: inc/chat.php:462
 msgid "Navigation bar (Horse Tools)"
 msgstr ""
 
@@ -2703,7 +2735,7 @@ msgstr ""
 msgid "No automatic redirects yet. Change a published URL and one will appear here."
 msgstr ""
 
-#: main/page/12chat.php:462
+#: main/page/12chat.php:478
 msgid "No badge colour"
 msgstr ""
 
@@ -2873,7 +2905,7 @@ msgstr ""
 msgid "Option to display the Admin bar"
 msgstr ""
 
-#: inc/chat-services.php:224
+#: inc/chat-services.php:262
 msgid "Order"
 msgstr ""
 
@@ -2937,7 +2969,7 @@ msgstr ""
 msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
 msgstr ""
 
-#: inc/chat-services.php:279 inc/scuri.php:466 inc/scuri.php:532 main/shortcode.php:805
+#: inc/chat-services.php:317 inc/scuri.php:466 inc/scuri.php:532 main/shortcode.php:805
 msgid "Permission denied."
 msgstr ""
 
@@ -3194,6 +3226,10 @@ msgstr ""
 msgid "Rewrite every [sc …] tag in your content to [ht-snippet …], keeping all attributes. Preview first; applying edits post content, so take a backup. Tip: you don’t have to convert — imported snippets already answer [sc …] once Shortcoder is deactivated."
 msgstr ""
 
+#: main/page/12chat.php:425
+msgid "Right drawer"
+msgstr ""
+
 #: main/page/11google.php:37 main/page/9user.php:49 main/shortcode.php:56
 msgid "Role"
 msgstr ""
@@ -3288,7 +3324,7 @@ msgstr ""
 msgid "Save schedule"
 msgstr ""
 
-#: main/page/12chat.php:426
+#: main/page/12chat.php:442
 msgid "Save services"
 msgstr ""
 
@@ -3300,7 +3336,7 @@ msgstr ""
 msgid "Save snippet"
 msgstr ""
 
-#: main/page/12chat.php:454
+#: main/page/12chat.php:470
 msgid "Saved %d service(s)."
 msgstr ""
 
@@ -3493,7 +3529,7 @@ msgstr ""
 msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
 msgstr ""
 
-#: inc/chat-services.php:55
+#: inc/chat-services.php:60
 msgid "Services"
 msgstr ""
 
@@ -3561,6 +3597,10 @@ msgstr ""
 msgid "Shortcodes"
 msgstr ""
 
+#: main/page/12chat.php:432
+msgid "Show a floating “Services” button on desktop"
+msgstr ""
+
 #: main/shortcode.php:332
 msgid "Show from"
 msgstr ""
@@ -3617,7 +3657,7 @@ msgstr ""
 msgid "Snippet saved."
 msgstr ""
 
-#: main/page/12chat.php:455 main/page/2scuri.php:178 main/shortcode.php:427 main/shortcode.php:626
+#: main/page/12chat.php:471 main/page/2scuri.php:178 main/shortcode.php:427 main/shortcode.php:626
 #: main/shortcode.php:725
 msgid "Something went wrong."
 msgstr ""
@@ -3670,7 +3710,7 @@ msgstr ""
 msgid "Story circles"
 msgstr ""
 
-#: main/page/12chat.php:459
+#: main/page/12chat.php:475
 msgid "Subtitle / price / coupon code"
 msgstr ""
 
@@ -3722,7 +3762,7 @@ msgstr ""
 msgid "Table of contents on posts"
 msgstr ""
 
-#: main/page/12chat.php:456
+#: main/page/12chat.php:472
 msgid "Tabler icon name (e.g. snowflake) — or leave blank and use an image"
 msgstr ""
 
@@ -4030,7 +4070,7 @@ msgstr ""
 msgid "Time:"
 msgstr ""
 
-#: main/page/12chat.php:458
+#: main/page/12chat.php:474
 msgid "Title"
 msgstr ""
 

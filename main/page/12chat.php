@@ -418,6 +418,22 @@ global $horsetools_options; ?>
 		<p style="display:flex;gap:10px;flex-wrap:wrap;">
 			<select id="ht-svc-layout" class="ht-svc-sel"><?php foreach ( $horsetools_svc_layouts as $k => $v ) { echo '<option value="' . esc_attr( $k ) . '"' . selected( $horsetools_svc_cfg['layout'], $k, false ) . '>' . esc_html( $v ) . '</option>'; } ?></select>
 			<select id="ht-svc-color" class="ht-svc-sel"><?php foreach ( $horsetools_svc_colors as $k => $v ) { echo '<option value="' . esc_attr( $k ) . '"' . selected( $horsetools_svc_cfg['color'], $k, false ) . '>' . esc_html( $v ) . '</option>'; } ?></select>
+			<?php
+			$horsetools_svc_modes = array(
+				'auto' => __( 'Auto (sheet on phone, modal on desktop)', 'horse-tools' ),
+				'sheet' => __( 'Bottom sheet', 'horse-tools' ), 'modal' => __( 'Centered modal', 'horse-tools' ),
+				'drawer-right' => __( 'Right drawer', 'horse-tools' ), 'drawer-left' => __( 'Left drawer', 'horse-tools' ),
+				'corner' => __( 'Corner card', 'horse-tools' ), 'fullscreen' => __( 'Full screen', 'horse-tools' ),
+			);
+			?>
+			<select id="ht-svc-display" class="ht-svc-sel"><?php foreach ( $horsetools_svc_modes as $k => $v ) { echo '<option value="' . esc_attr( $k ) . '"' . selected( $horsetools_svc_cfg['display'], $k, false ) . '>' . esc_html( $v ) . '</option>'; } ?></select>
+		</p>
+		<p style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+			<label class="ht-container" style="margin:0"><?php _e( 'Show a floating “Services” button on desktop', 'horse-tools' ); ?>
+				<input type="checkbox" id="ht-svc-launcher" <?php checked( $horsetools_svc_cfg['launcher'], true ); ?> />
+				<span class="ht-checkmark"></span></label>
+			<input type="text" id="ht-svc-ltext" class="ht-svc-sel" style="width:160px" placeholder="<?php esc_attr_e( 'Button text', 'horse-tools' ); ?>" value="<?php echo esc_attr( $horsetools_svc_cfg['launcher_text'] ); ?>" />
+			<input type="text" id="ht-svc-licon" class="ht-svc-sel" style="width:150px" placeholder="<?php esc_attr_e( 'Icon (e.g. apps)', 'horse-tools' ); ?>" value="<?php echo esc_attr( $horsetools_svc_cfg['launcher_icon'] ); ?>" />
 		</p>
 
 		<div id="ht-svc-rows"></div>
@@ -491,7 +507,11 @@ global $horsetools_options; ?>
 				});
 			});
 			return { on: document.getElementById('ht-svc-on').checked?1:0, title:document.getElementById('ht-svc-title').value,
-				layout:document.getElementById('ht-svc-layout').value, color:document.getElementById('ht-svc-color').value, items:items };
+				layout:document.getElementById('ht-svc-layout').value, color:document.getElementById('ht-svc-color').value,
+				display:document.getElementById('ht-svc-display').value,
+				launcher:document.getElementById('ht-svc-launcher').checked?1:0,
+				launcher_text:document.getElementById('ht-svc-ltext').value, launcher_icon:document.getElementById('ht-svc-licon').value,
+				items:items };
 		}
 		document.getElementById('ht-svc-save').addEventListener('click', function(){
 			var body='action=horsetools_services_save&nonce='+encodeURIComponent(NONCE)+'&data='+encodeURIComponent(JSON.stringify(collect()));

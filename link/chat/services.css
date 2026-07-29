@@ -106,3 +106,38 @@
 .ht-svc-mas{position:relative;display:block;break-inside:avoid;margin-bottom:10px;height:90px;border-radius:14px;background-size:cover;background-position:center;overflow:hidden;text-decoration:none}
 .ht-svc-mas.ht-svc-tall{height:140px}
 .ht-svc-mas-tt{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-size:12px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.6))}
+
+/* ---- Presentation modes (desktop + mobile) ---- */
+.ht-svc-m-sheet{align-items:flex-end;justify-content:center}
+
+.ht-svc-m-modal{align-items:center;justify-content:center;padding:20px}
+.ht-svc-m-modal .ht-svc-sheet{max-width:480px;max-height:86vh;border-radius:18px;transform:translateY(16px) scale(.97);opacity:0}
+.ht-svc-m-modal.ht-open .ht-svc-sheet{transform:none;opacity:1}
+.ht-svc-m-modal .ht-svc-handle{display:none}
+
+.ht-svc-m-drawer-right{align-items:stretch;justify-content:flex-end}
+.ht-svc-m-drawer-right .ht-svc-sheet{width:380px;max-width:90%;height:100%;max-height:100%;border-radius:18px 0 0 18px;transform:translateX(100%)}
+.ht-svc-m-drawer-right.ht-open .ht-svc-sheet{transform:none}
+.ht-svc-m-drawer-right .ht-svc-handle{display:none}
+
+.ht-svc-m-drawer-left{align-items:stretch;justify-content:flex-start}
+.ht-svc-m-drawer-left .ht-svc-sheet{width:380px;max-width:90%;height:100%;max-height:100%;border-radius:0 18px 18px 0;transform:translateX(-100%)}
+.ht-svc-m-drawer-left.ht-open .ht-svc-sheet{transform:none}
+.ht-svc-m-drawer-left .ht-svc-handle{display:none}
+
+.ht-svc-m-corner{align-items:flex-end;justify-content:flex-end;padding:0 20px 20px}
+.ht-svc-m-corner .ht-svc-backdrop{background:transparent;pointer-events:none}
+.ht-svc-m-corner .ht-svc-sheet{width:360px;max-width:90%;max-height:72vh;border-radius:16px;transform:translateY(16px);opacity:0;box-shadow:0 10px 40px rgba(0,0,0,.22)}
+.ht-svc-m-corner.ht-open .ht-svc-sheet{transform:none;opacity:1}
+.ht-svc-m-corner .ht-svc-handle{display:none}
+
+.ht-svc-m-fullscreen{align-items:stretch;justify-content:center}
+.ht-svc-m-fullscreen .ht-svc-sheet{width:100%;max-width:100%;height:100%;max-height:100%;border-radius:0;transform:translateY(100%)}
+.ht-svc-m-fullscreen.ht-open .ht-svc-sheet{transform:none}
+.ht-svc-m-fullscreen .ht-svc-handle{display:none}
+
+/* Desktop launcher button (hidden on phones — the bottom bar is used there) */
+.ht-svc-launch{position:fixed;left:22px;bottom:22px;z-index:100150;display:inline-flex;align-items:center;gap:8px;border:none;color:#fff;padding:12px 18px;border-radius:30px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.ht-svc-launch i{font-size:22px;line-height:1}
+.ht-svc-launch:hover{filter:brightness(.94)}
+@media(max-width:700px){.ht-svc-launch{display:none}}
