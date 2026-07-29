@@ -44,7 +44,8 @@
 .ht-progress{margin:12px 0}
 .ht-progress-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;color:#444}
 .ht-progress-track{background:#eee;border-radius:20px;height:12px;overflow:hidden}
-.ht-progress-fill{height:100%;border-radius:20px;background:#e0a800;transition:width .6s ease}
+.ht-progress-fill{height:100%;border-radius:20px;background:#e0a800;transform-origin:left;animation:ht-fill-in .6s ease}
+@keyframes ht-fill-in{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
 /* Countdown */
 .ht-countdown{display:inline-flex;gap:10px;margin:8px 0;font-variant-numeric:tabular-nums}
