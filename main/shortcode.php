@@ -547,6 +547,123 @@ function horsetools_shortcode_options_page() {
 				render();
 			})();
 			</script>
+			<div class="ht-card ht-snip3" data-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_snip' ) ); ?>" data-ajax="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>">
+			  <h3><i class="ti ti-transfer"></i> <?php _e('Move snippets between sites', 'horse-tools') ?></h3>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Export downloads all your snippets as a .json file. Import merges a file from another site — existing snippets of the same name are kept, not overwritten.', 'horse-tools'); ?></p>
+				<p class="ht-snip-actions">
+					<button type="button" class="ht-priv-btn" id="ht-snip-export"><i class="ti ti-file-download"></i> <?php _e( 'Export snippets (.json)', 'horse-tools' ); ?></button>
+					<button type="button" class="ht-priv-btn" id="ht-snip-import-btn"><i class="ti ti-file-upload"></i> <?php _e( 'Import snippets', 'horse-tools' ); ?></button>
+					<input type="file" id="ht-snip-import-file" accept=".json,application/json" style="display:none" />
+				</p>
+				<div id="ht-snip-io-out"></div>
+			</div>
+
+			<div class="ht-card">
+			  <h3><i class="ti ti-list-search"></i> <?php _e('Shortcode reference', 'horse-tools') ?></h3>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Every Horse Tools shortcode. Click any example to copy it.', 'horse-tools'); ?></p>
+				<?php
+				$horsetools_sc_ref = array(
+					__( 'Conditional & content', 'horse-tools' ) => array(
+						'[ht-if device="mobile"] … [ht-else] … [/ht-if]',
+						'[ht-snippet name="my-block"]',
+						'[ht-raw] … [/ht-raw]',
+						'[vip] … [/vip]',
+					),
+					__( 'Layout & interactive', 'horse-tools' ) => array(
+						'[ht-alert type="warning"] … [/ht-alert]',
+						'[ht-accordion faq="1"][ht-item title="Q?"]A[/ht-item][/ht-accordion]',
+						'[ht-tabs][ht-tab title="One"] … [/ht-tab][/ht-tabs]',
+						'[ht-toggle title="More"] … [/ht-toggle]',
+						'[ht-reveal title="Answer"] … [/ht-reveal]',
+						'[ht-copy]SAVE20[/ht-copy]',
+						'[ht-progress value="80" label="PHP"]',
+						'[ht-countdown date="2026-09-01 00:00"]',
+						'[ht-button url="#" icon="cart"]Buy now[/ht-button]',
+						'[ht-email subject="Hi"]you@site.com[/ht-email]',
+					),
+					__( 'Data & media', 'horse-tools' ) => array(
+						'[ht-loop type="post" count="5" cat="news" template="cards"]',
+						'[ht-field key="title"]',
+						'[ht-post id="123" field="content"]',
+						'[ht-readingtime] min',
+						'[ht-count type="posts"]',
+						'[ht-qr size="160"]',
+						'[ht-video id="VIDEO_ID" type="youtube"]',
+						'[ht-icon name="heart" size="24"]',
+					),
+				);
+				echo '<div class="ht-ref">';
+				foreach ( $horsetools_sc_ref as $group => $codes ) {
+					echo '<div class="ht-ref-group"><h4>' . esc_html( $group ) . '</h4>';
+					foreach ( $codes as $code ) {
+						echo '<code class="ht-ref-code" data-copy="' . esc_attr( $code ) . '">' . esc_html( $code ) . '</code>';
+					}
+					echo '</div>';
+				}
+				echo '</div>';
+				?>
+			</div>
+			<style>
+			.ht-snip3 .ht-priv-btn,.ht-snip3 .ht-priv-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #e0a800;color:#8a5a00;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:13px}
+			.ht-snip3 .ht-priv-btn:hover{background:#fff9e6}
+			.ht-ref-group{margin-bottom:14px}
+			.ht-ref-group h4{margin:0 0 6px;font-size:13px;color:#8a5a00}
+			.ht-ref-code{display:block;font-family:monospace;font-size:12px;background:#fff8e1;border:1px solid #f0d98a;color:#8a5a00;border-radius:6px;padding:5px 9px;margin-bottom:5px;cursor:pointer;max-width:640px;overflow-x:auto;white-space:nowrap}
+			.ht-ref-code:hover{background:#fff2cc}
+			.ht-ref-code.copied{background:#eafaf0;border-color:#bfe6cd;color:#1e6b3f}
+			</style>
+			<script>
+			(function(){
+				var io = document.querySelector('.ht-snip3');
+				if (!io || io.dataset.ready) { return; }
+				io.dataset.ready = '1';
+				var AJAX = io.dataset.ajax, NONCE = io.dataset.nonce;
+				var out = document.getElementById('ht-snip-io-out');
+				var IO = {
+					exported: <?php echo wp_json_encode( __( 'Exported.', 'horse-tools' ) ); ?>,
+					imported: <?php echo wp_json_encode( __( 'Imported %1$d snippet(s); %2$d skipped. Reloading…', 'horse-tools' ) ); ?>,
+					badfile: <?php echo wp_json_encode( __( 'That file could not be read as JSON.', 'horse-tools' ) ); ?>,
+					fail: <?php echo wp_json_encode( __( 'Something went wrong.', 'horse-tools' ) ); ?>
+				};
+				function say(t,cls){ out.innerHTML = '<div class="ht-snip-msg '+(cls||'')+'">'+String(t).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];})+'</div>'; }
+				function post(data, done){
+					data.nonce = NONCE;
+					var body = Object.keys(data).map(function(k){ return encodeURIComponent(k)+'='+encodeURIComponent(data[k]); }).join('&');
+					fetch(AJAX,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).then(function(r){return r.json();}).then(done).catch(function(){ say(IO.fail,'err'); });
+				}
+				document.getElementById('ht-snip-export').addEventListener('click', function(){
+					post({action:'horsetools_snip_export'}, function(res){
+						if(!res||!res.success){ say(IO.fail,'err'); return; }
+						var blob = new Blob([res.data.json],{type:'application/json'});
+						var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'horse-tools-snippets.json';
+						document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(a.href);
+						say(IO.exported,'good');
+					});
+				});
+				var file = document.getElementById('ht-snip-import-file');
+				document.getElementById('ht-snip-import-btn').addEventListener('click', function(){ file.click(); });
+				file.addEventListener('change', function(e){
+					var f = e.target.files[0]; if(!f){ return; }
+					var reader = new FileReader();
+					reader.onload = function(ev){
+						post({action:'horsetools_snip_import_json', data:ev.target.result}, function(res){
+							if(!res||!res.success){ say((res&&res.data&&res.data.msg)||IO.badfile,'err'); return; }
+							say(IO.imported.replace('%1$d',res.data.added).replace('%2$d',res.data.skipped),'good');
+							setTimeout(function(){ location.reload(); }, 1200);
+						});
+					};
+					reader.readAsText(f); file.value='';
+				});
+				// reference: click to copy
+				document.querySelectorAll('.ht-ref-code').forEach(function(c){
+					c.addEventListener('click', function(){
+						var t = c.getAttribute('data-copy');
+						if(navigator.clipboard){ navigator.clipboard.writeText(t); }
+						c.classList.add('copied'); setTimeout(function(){ c.classList.remove('copied'); }, 900);
+					});
+				});
+			})();
+			</script>
 			</div>
 			<div class="ht-submit">
 				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
@@ -816,4 +933,57 @@ function horsetools_snip_replace_ajax() {
 		}
 	}
 	wp_send_json_success( array( 'apply' => $apply, 'affected' => $affected, 'changed' => $changed ) );
+}
+
+/* ---- Snippets: export / import as JSON --------------------------------- */
+add_action( 'wp_ajax_horsetools_snip_export', 'horsetools_snip_export_ajax' );
+function horsetools_snip_export_ajax() {
+	horsetools_snip_guard();
+	wp_send_json_success( array( 'json' => wp_json_encode( horsetools_snip_list_payload(), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) ) );
+}
+
+add_action( 'wp_ajax_horsetools_snip_import_json', 'horsetools_snip_import_json_ajax' );
+function horsetools_snip_import_json_ajax() {
+	horsetools_snip_guard();
+	$raw  = isset( $_POST['data'] ) ? wp_unslash( $_POST['data'] ) : '';
+	$data = json_decode( $raw, true );
+	if ( ! is_array( $data ) ) {
+		wp_send_json_error( array( 'msg' => __( 'That is not a valid snippet export file.', 'horse-tools' ) ) );
+	}
+	$reserved = array( 'vip', 'sign', 'titday', 'titmonth', 'tityear', 'gget', 'ht-icon', 'ht-snippet' );
+	$snips    = horsetools_snippets_get();
+	$added    = 0;
+	$skipped  = 0;
+	foreach ( $data as $entry ) {
+		if ( ! is_array( $entry ) ) {
+			continue;
+		}
+		$slug = sanitize_key( isset( $entry['slug'] ) ? $entry['slug'] : '' );
+		if ( '' === $slug || in_array( $slug, $reserved, true ) ) {
+			continue;
+		}
+		if ( isset( $snips[ $slug ] ) ) {
+			$skipped++;
+			continue; // never clobber an existing snippet
+		}
+		$tags = isset( $entry['tags'] ) ? $entry['tags'] : '';
+		$snips[ $slug ] = array(
+			'title'     => sanitize_text_field( isset( $entry['title'] ) ? $entry['title'] : $slug ),
+			'desc'      => sanitize_text_field( isset( $entry['desc'] ) ? $entry['desc'] : '' ),
+			'content'   => (string) ( isset( $entry['content'] ) ? $entry['content'] : '' ),
+			'on'        => ! empty( $entry['on'] ) ? 1 : 0,
+			'no_admin'  => ! empty( $entry['no_admin'] ) ? 1 : 0,
+			'device'    => in_array( isset( $entry['device'] ) ? $entry['device'] : '', array( 'desktop', 'mobile' ), true ) ? $entry['device'] : '',
+			'login'     => in_array( isset( $entry['login'] ) ? $entry['login'] : '', array( 'in', 'out' ), true ) ? $entry['login'] : '',
+			'role'      => in_array( isset( $entry['role'] ) ? $entry['role'] : '', array( 'subscriber', 'contributor', 'author', 'editor', 'administrator' ), true ) ? $entry['role'] : '',
+			'date_from' => isset( $entry['date_from'] ) && preg_match( '/^\d{4}-\d{2}-\d{2}$/', (string) $entry['date_from'] ) ? $entry['date_from'] : '',
+			'date_to'   => isset( $entry['date_to'] ) && preg_match( '/^\d{4}-\d{2}-\d{2}$/', (string) $entry['date_to'] ) ? $entry['date_to'] : '',
+			'tags'      => horsetools_snip_parse_tags( is_array( $tags ) ? implode( ',', $tags ) : (string) $tags ),
+		);
+		$added++;
+	}
+	if ( $added ) {
+		horsetools_snip_store( $snips );
+	}
+	wp_send_json_success( array( 'snippets' => horsetools_snip_list_payload(), 'added' => $added, 'skipped' => $skipped ) );
 }

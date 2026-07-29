@@ -5020,3 +5020,42 @@ msgstr "giây"
 
 msgid "Play video"
 msgstr "Phát video"
+
+msgid "Conditional & content"
+msgstr "Điều kiện & nội dung"
+
+msgid "Data & media"
+msgstr "Dữ liệu & media"
+
+msgid "Every Horse Tools shortcode. Click any example to copy it."
+msgstr "Tất cả shortcode Horse Tools. Bấm vào ví dụ bất kỳ để sao chép."
+
+msgid "Export downloads all your snippets as a .json file. Import merges a file from another site — existing snippets of the same name are kept, not overwritten."
+msgstr "Xuất sẽ tải toàn bộ snippet thành tệp .json. Nhập sẽ gộp tệp từ site khác — snippet trùng tên được giữ nguyên, không bị ghi đè."
+
+msgid "Export snippets (.json)"
+msgstr "Xuất snippet (.json)"
+
+msgid "Exported."
+msgstr "Đã xuất."
+
+msgid "Import snippets"
+msgstr "Nhập snippet"
+
+msgid "Imported %1$d snippet(s); %2$d skipped. Reloading…"
+msgstr "Đã nhập %1$d snippet; bỏ qua %2$d. Đang tải lại…"
+
+msgid "Layout & interactive"
+msgstr "Bố cục & tương tác"
+
+msgid "Move snippets between sites"
+msgstr "Chuyển snippet giữa các site"
+
+msgid "Shortcode reference"
+msgstr "Bảng tra cứu shortcode"
+
+msgid "That file could not be read as JSON."
+msgstr "Không đọc được tệp đó dưới dạng JSON."
+
+msgid "That is not a valid snippet export file."
+msgstr "Đây không phải tệp xuất snippet hợp lệ."

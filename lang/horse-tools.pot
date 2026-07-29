@@ -34,7 +34,7 @@ msgstr ""
 msgid "(duplicate)"
 msgstr ""
 
-#: main/shortcode.php:774
+#: main/shortcode.php:891
 msgid "(no title)"
 msgstr ""
 
@@ -702,6 +702,10 @@ msgstr ""
 msgid "Compression level ("
 msgstr ""
 
+#: main/shortcode.php:566
+msgid "Conditional & content"
+msgstr ""
+
 #: main/gindex.php:74
 msgid "Configure Google index API"
 msgstr ""
@@ -960,6 +964,10 @@ msgstr ""
 
 #: main/page/ht-about2.php:22
 msgid "Data"
+msgstr ""
+
+#: main/shortcode.php:584
+msgid "Data & media"
 msgstr ""
 
 #: main/debug.php:132 main/extend.php:185
@@ -1662,7 +1670,7 @@ msgstr ""
 msgid "Enter ID"
 msgstr ""
 
-#: main/shortcode.php:756
+#: main/shortcode.php:873
 msgid "Enter a shortcode name to search for."
 msgstr ""
 
@@ -1806,6 +1814,10 @@ msgstr ""
 msgid "Error — nothing was deleted."
 msgstr ""
 
+#: main/shortcode.php:563
+msgid "Every Horse Tools shortcode. Click any example to copy it."
+msgstr ""
+
 #: main/shortcode.php:327
 msgid "Everyone"
 msgstr ""
@@ -1816,6 +1828,18 @@ msgstr ""
 
 #: main/export.php:419 main/extend.php:200
 msgid "Export"
+msgstr ""
+
+#: main/shortcode.php:552
+msgid "Export downloads all your snippets as a .json file. Import merges a file from another site — existing snippets of the same name are kept, not overwritten."
+msgstr ""
+
+#: main/shortcode.php:554
+msgid "Export snippets (.json)"
+msgstr ""
+
+#: main/shortcode.php:623
+msgid "Exported."
 msgstr ""
 
 #: main/extend.php:252
@@ -1948,7 +1972,7 @@ msgstr ""
 msgid "Generate data"
 msgstr ""
 
-#: main/shortcode.php:645
+#: main/shortcode.php:762
 msgid "Give the snippet a name (letters, numbers and dashes)."
 msgstr ""
 
@@ -2240,8 +2264,16 @@ msgstr ""
 msgid "Import from Shortcoder"
 msgstr ""
 
+#: main/shortcode.php:555
+msgid "Import snippets"
+msgstr ""
+
 #: main/shortcode.php:421
 msgid "Imported %1$d snippet(s); %2$d already existed."
+msgstr ""
+
+#: main/shortcode.php:624
+msgid "Imported %1$d snippet(s); %2$d skipped. Reloading…"
 msgstr ""
 
 #: main/export.php:375
@@ -2293,6 +2325,10 @@ msgstr ""
 
 #: main/redirects.php:155
 msgid "Last seen"
+msgstr ""
+
+#: main/shortcode.php:572
+msgid "Layout & interactive"
 msgstr ""
 
 #: main/export.php:242
@@ -2499,6 +2535,10 @@ msgstr ""
 msgid "Monthly"
 msgstr ""
 
+#: main/shortcode.php:551
+msgid "Move snippets between sites"
+msgstr ""
+
 #: inc/health.php:142
 msgid "Move the site address to https://"
 msgstr ""
@@ -2547,7 +2587,7 @@ msgstr ""
 msgid "No Google Fonts leaking to Google"
 msgstr ""
 
-#: main/shortcode.php:716
+#: main/shortcode.php:833
 msgid "No Shortcoder snippets were found on this site."
 msgstr ""
 
@@ -2777,7 +2817,7 @@ msgstr ""
 msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
 msgstr ""
 
-#: inc/scuri.php:466 inc/scuri.php:532 main/shortcode.php:599
+#: inc/scuri.php:466 inc/scuri.php:532 main/shortcode.php:716
 msgid "Permission denied."
 msgstr ""
 
@@ -3044,7 +3084,7 @@ msgstr ""
 
 #: main/admin.php:93 main/ads.php:114 main/code.php:102 main/debug.php:74
 #: main/extend.php:216 main/font.php:130 main/gindex.php:117 main/notify.php:197
-#: main/redirects.php:199 main/search.php:207 main/shortcode.php:552 main/toc.php:279
+#: main/redirects.php:199 main/search.php:207 main/shortcode.php:669 main/toc.php:279
 msgid "SAVE CONTENT"
 msgstr ""
 
@@ -3337,12 +3377,16 @@ msgstr ""
 msgid "Settings changed"
 msgstr ""
 
-#: main/extend.php:155 main/shortcode.php:568
+#: main/extend.php:155 main/shortcode.php:685
 msgid "Shortcode"
 msgstr ""
 
 #: main/shortcode.php:38
 msgid "Shortcode content visible only to group of users"
+msgstr ""
+
+#: main/shortcode.php:562
+msgid "Shortcode reference"
 msgstr ""
 
 #: main/shortcode.php:100
@@ -3405,7 +3449,7 @@ msgstr ""
 msgid "Snippet saved."
 msgstr ""
 
-#: main/page/2scuri.php:178 main/shortcode.php:427
+#: main/page/2scuri.php:178 main/shortcode.php:427 main/shortcode.php:626
 msgid "Something went wrong."
 msgstr ""
 
@@ -3525,11 +3569,19 @@ msgstr ""
 msgid "That did not look like a Google Fonts stylesheet."
 msgstr ""
 
+#: main/shortcode.php:625
+msgid "That file could not be read as JSON."
+msgstr ""
+
 #: main/export.php:365
 msgid "That is not a valid Horse Tools export file."
 msgstr ""
 
-#: main/shortcode.php:650
+#: main/shortcode.php:951
+msgid "That is not a valid snippet export file."
+msgstr ""
+
+#: main/shortcode.php:767
 msgid "That name is reserved by another Horse Tools shortcode. Pick a different one."
 msgstr ""
 
