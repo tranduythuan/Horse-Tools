@@ -30,11 +30,23 @@ global $horsetools_options; ?>
 		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/chat/4.png'); ?>" data-value="Leaves" class="<?php if(isset($horsetools_options['chat-nut-skin']) && $horsetools_options['chat-nut-skin'] == 'Leaves') echo 'selected'; ?>" />
 		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/chat/5.png'); ?>" data-value="Floating" class="<?php if(isset($horsetools_options['chat-nut-skin']) && $horsetools_options['chat-nut-skin'] == 'Floating') echo 'selected'; ?>" />
 		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/chat/6.png'); ?>" data-value="Tap" class="<?php if(isset($horsetools_options['chat-nut-skin']) && $horsetools_options['chat-nut-skin'] == 'Tap') echo 'selected'; ?>" />
+		<?php
+		$horsetools_newskins = array( 'Dock' => 'ti-layout-grid', 'Pill' => 'ti-capsule-horizontal', 'Glass' => 'ti-square-rounded', 'Tile' => 'ti-square', 'Hexagon' => 'ti-hexagon' );
+		foreach ( $horsetools_newskins as $sk => $ic ) {
+			$sel = ( isset($horsetools_options['chat-nut-skin']) && $horsetools_options['chat-nut-skin'] == $sk ) ? ' selected' : '';
+			echo '<span class="ht-skin-tile'. $sel .'" data-value="'. esc_attr($sk) .'"><i class="ti '. esc_attr($ic) .'"></i>'. esc_html($sk) .'</span>';
+		}
+		?>
 	</div>
+	<style>
+	.ht-skin-tile{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:74px;height:74px;border:2px solid #eee;border-radius:10px;cursor:pointer;font-size:11px;color:#666;vertical-align:top;margin:4px}
+	.ht-skin-tile i{font-size:24px;color:#8a5a00}
+	.ht-skin-tile.selected{border-color:#e0a800;background:#fff9e6}
+	</style>
 	<input type="hidden" name="horsetools_settings[chat-nut-skin]" id="chat-nut-skin" value="<?php if(!empty($horsetools_options['chat-nut-skin'])){echo sanitize_text_field($horsetools_options['chat-nut-skin']);} else {echo sanitize_text_field('Default');} ?>" />
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
-			var imgStyles = document.querySelectorAll('#ht-imgstyle3 img');
+			var imgStyles = document.querySelectorAll('#ht-imgstyle3 img, #ht-imgstyle3 .ht-skin-tile');
 			imgStyles.forEach(function(img) {
 				img.addEventListener('click', function() {
 					var selectedStyle = this.getAttribute('data-value');
