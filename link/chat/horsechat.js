@@ -65,6 +65,17 @@ if (navimojs) {
         navilastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
     });
 }
+// Tab-widget skin: switch panes.
+document.addEventListener('click', function (e) {
+	var tab = e.target.closest('.ht-tw-tab');
+	if (!tab) { return; }
+	var panel = tab.closest('.ht-tw-panel');
+	if (!panel) { return; }
+	var key = tab.getAttribute('data-tw');
+	panel.querySelectorAll('.ht-tw-tab').forEach(function (x) { x.classList.remove('active'); });
+	panel.querySelectorAll('.ht-tw-pane').forEach(function (x) { x.classList.toggle('active', x.getAttribute('data-tw') === key); });
+	tab.classList.add('active');
+});
 // navi menu
 const horsenavi = document.getElementById('horsenavi');
 if (horsenavi) {

@@ -793,3 +793,49 @@ body .ht-chaton a, body .ht-chatbox-skin1 a, body .ht-chatbox-skin2 a, body .ht-
 .ht-chatbox-sidetab .ht-cco:hover{background:#f5f5f5}
 .ht-chatbox-sidetab .ht-cco span{color:#333 !important;font-size:14px}
 .ht-chatbox-sidetab .ht-cco svg{width:34px;height:34px}
+
+/* ---- Structural skins 2: Speed-dial, Avatar, Live-chat, Tab widget ---- */
+/* Speed-dial */
+.ht-chatbox-speeddial .ht-speeddial-list{margin-bottom:14px}
+.ht-chatbox-speeddial .ht-cco{display:flex !important;align-items:center;gap:9px;background:#fff;border-radius:30px;padding:5px 16px 5px 5px;box-shadow:0 2px 8px rgba(0,0,0,.15);margin-bottom:9px;width:max-content;text-decoration:none}
+.ht-chatbox-speeddial .ht-cco span{color:#222 !important;font-size:13px;font-weight:600;display:flex !important;position:static !important;background:none !important;opacity:1 !important;padding:0 !important;margin:0 !important;height:auto !important;width:auto !important}
+.ht-chatbox-speeddial .ht-cco svg{width:38px}
+
+/* Avatar launcher */
+.ht-avatar-btn{overflow:visible !important;position:relative}
+.ht-avatar-btn img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.ht-av-dot{position:absolute;right:3px;bottom:3px;width:14px;height:14px;border-radius:50%;background:#2ecc71;border:2px solid #fff}
+
+/* Live-chat bubble */
+.ht-lc-panel{background:#fff !important;border-radius:16px;box-shadow:0 12px 34px rgba(0,0,0,.16);overflow:hidden;min-width:282px;padding:0;margin-bottom:14px}
+.ht-lc-head{background:#1D9E75;padding:13px 15px;display:flex;align-items:center;gap:10px}
+.ht-lc-av{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.ht-lc-avph{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.25)}
+.ht-lc-name{display:block;color:#fff;font-size:14px;font-weight:600}
+.ht-lc-on{display:block;color:#c9f0e2;font-size:11px}
+.ht-lc-body{padding:14px}
+.ht-lc-greet{background:#f1f1f4;border-radius:12px;padding:9px 12px;font-size:13px;color:#333;display:inline-block;margin-bottom:10px}
+.ht-lc-quick{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.ht-lc-chip{font-size:12px;border:1px solid #1D9E75;color:#0F6E56;border-radius:16px;padding:5px 11px;text-decoration:none}
+.ht-lc-channels{display:flex;flex-direction:column;gap:3px}
+.ht-chatbox-livechat .ht-cco{display:flex !important;align-items:center;gap:11px;padding:7px 6px;border-radius:10px;text-decoration:none}
+.ht-chatbox-livechat .ht-cco:hover{background:#f5f5f5}
+.ht-chatbox-livechat .ht-cco span{color:#333 !important;font-size:14px}
+.ht-chatbox-livechat .ht-cco svg{width:34px;height:34px}
+
+/* Tab widget */
+.ht-tw-panel{background:#fff !important;border-radius:16px;box-shadow:0 12px 34px rgba(0,0,0,.16);overflow:hidden;min-width:272px;padding:0;margin-bottom:14px}
+.ht-tw-tabs{display:flex;border-bottom:1px solid #eee}
+.ht-tw-tab{flex:1;background:none;border:none;padding:12px 8px;font-size:13px;color:#888;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.ht-tw-tab.active{color:#1D9E75;border-bottom-color:#1D9E75;font-weight:600}
+.ht-tw-body{padding:8px 8px 12px;max-height:340px;overflow:auto}
+.ht-tw-pane{display:none}
+.ht-tw-pane.active{display:block}
+.ht-chatbox-tabwidget .ht-cco{display:flex !important;align-items:center;gap:11px;padding:8px;border-radius:10px;text-decoration:none}
+.ht-chatbox-tabwidget .ht-cco span{color:#333 !important;font-size:14px}
+.ht-chatbox-tabwidget .ht-cco svg{width:34px;height:34px}
+.ht-tw-srv{display:flex;align-items:center;gap:11px;padding:9px 8px;border-radius:10px;text-decoration:none;color:#333;font-size:14px}
+.ht-tw-srv:hover{background:#f5f5f5}
+.ht-tw-ic{width:34px;height:34px;border-radius:9px;background:#eee center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:600;color:#8a5a00}
+.ht-tw-let{background:#fff3d6}
+.ht-tw-hours{font-size:13px;color:#444;line-height:1.7;padding:6px 4px}

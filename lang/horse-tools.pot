@@ -14,11 +14,11 @@ msgstr ""
 msgid "\"Comments containing links\" matches links in the comment body only. The figure shown is the total comment count, not a match count, so confirm carefully."
 msgstr ""
 
-#: main/page/12chat.php:269
+#: main/page/12chat.php:274
 msgid "\"Enter link\" left blank if you want to call the chat list"
 msgstr ""
 
-#: main/page/12chat.php:266 main/page/12chat.php:279
+#: main/page/12chat.php:271 main/page/12chat.php:284
 msgid "#id or .class"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 msgid "301"
 msgstr ""
 
-#: main/page/12chat.php:270
+#: main/page/12chat.php:275
 msgid "4 customizable buttons"
 msgstr ""
 
@@ -202,7 +202,7 @@ msgstr ""
 msgid "Add duplicate button"
 msgstr ""
 
-#: main/page/12chat.php:107
+#: main/page/12chat.php:112
 msgid "Add field"
 msgstr ""
 
@@ -246,7 +246,7 @@ msgstr ""
 msgid "Add picture frame link here"
 msgstr ""
 
-#: main/page/12chat.php:453
+#: main/page/12chat.php:458
 msgid "Add service"
 msgstr ""
 
@@ -394,7 +394,7 @@ msgstr ""
 msgid "Author and maintainer:"
 msgstr ""
 
-#: main/page/12chat.php:435
+#: main/page/12chat.php:440
 msgid "Auto (sheet on phone, modal on desktop)"
 msgstr ""
 
@@ -424,6 +424,10 @@ msgstr ""
 
 #: main/toc.php:147
 msgid "Automatically open popup when scrolling down"
+msgstr ""
+
+#: main/page/12chat.php:47
+msgid "Avatar image URL (Avatar / Live-chat skin)"
 msgstr ""
 
 #: main/export.php:404 main/export.php:416
@@ -458,11 +462,11 @@ msgstr ""
 msgid "Backup"
 msgstr ""
 
-#: main/page/12chat.php:489
+#: main/page/12chat.php:494
 msgid "Badge text (optional)"
 msgstr ""
 
-#: main/page/12chat.php:387
+#: main/page/12chat.php:392
 msgid "Bar background color"
 msgstr ""
 
@@ -474,7 +478,7 @@ msgstr ""
 msgid "Bar size"
 msgstr ""
 
-#: main/page/12chat.php:401
+#: main/page/12chat.php:406
 msgid "Bento (1 big + cells)"
 msgstr ""
 
@@ -498,7 +502,7 @@ msgstr ""
 msgid "Blog / News site"
 msgstr ""
 
-#: main/page/12chat.php:416
+#: main/page/12chat.php:421
 msgid "Blue"
 msgstr ""
 
@@ -506,11 +510,11 @@ msgstr ""
 msgid "Border color"
 msgstr ""
 
-#: main/page/12chat.php:199 main/page/4main.php:69 main/toc.php:273
+#: main/page/12chat.php:204 main/page/4main.php:69 main/toc.php:273
 msgid "Border distance"
 msgstr ""
 
-#: main/notify.php:149 main/page/10custom.php:111 main/page/12chat.php:207 main/page/4main.php:94
+#: main/notify.php:149 main/page/10custom.php:111 main/page/12chat.php:212 main/page/4main.php:94
 #: main/shortcode.php:160 main/toc.php:240
 msgid "Border radius"
 msgstr ""
@@ -519,7 +523,7 @@ msgstr ""
 msgid "Border size"
 msgstr ""
 
-#: main/page/12chat.php:436
+#: main/page/12chat.php:441
 msgid "Bottom sheet"
 msgstr ""
 
@@ -527,7 +531,7 @@ msgstr ""
 msgid "Browser ad-block notification"
 msgstr ""
 
-#: main/page/12chat.php:421
+#: main/page/12chat.php:426
 msgid "Build a rich list of services or articles that slides up when a visitor taps a bottom-bar item. To open it, set one bottom-bar item’s “#id or .class” field above to"
 msgstr ""
 
@@ -539,11 +543,11 @@ msgstr ""
 msgid "Button name"
 msgstr ""
 
-#: main/page/12chat.php:190
+#: main/page/12chat.php:195
 msgid "Button position"
 msgstr ""
 
-#: main/page/12chat.php:447
+#: main/page/12chat.php:452
 msgid "Button text"
 msgstr ""
 
@@ -591,7 +595,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: main/page/12chat.php:402
+#: main/page/12chat.php:407
 msgid "Card grid"
 msgstr ""
 
@@ -599,7 +603,7 @@ msgstr ""
 msgid "Center-align button on page"
 msgstr ""
 
-#: main/page/12chat.php:436
+#: main/page/12chat.php:441
 msgid "Centered modal"
 msgstr ""
 
@@ -635,11 +639,11 @@ msgstr ""
 msgid "Chat ID"
 msgstr ""
 
-#: main/page/12chat.php:391
+#: main/page/12chat.php:396
 msgid "Chat background color"
 msgstr ""
 
-#: main/page/12chat.php:395
+#: main/page/12chat.php:400
 msgid "Chat text color"
 msgstr ""
 
@@ -722,7 +726,7 @@ msgstr ""
 msgid "Comments containing links"
 msgstr ""
 
-#: main/page/12chat.php:404
+#: main/page/12chat.php:409
 msgid "Compact icon tiles"
 msgstr ""
 
@@ -766,7 +770,7 @@ msgstr ""
 msgid "Configure adding a watermark to images upon upload"
 msgstr ""
 
-#: main/page/12chat.php:62
+#: main/page/12chat.php:67
 msgid "Configure buttons"
 msgstr ""
 
@@ -790,15 +794,17 @@ msgstr ""
 msgid "Confirm deletion"
 msgstr ""
 
-#: inc/chat.php:274 inc/chat.php:300 inc/chat.php:336 inc/woo.php:78
+#: inc/chat.php:274 inc/chat.php:300 inc/chat.php:312 inc/chat.php:331
+#: inc/chat.php:366 inc/chat.php:391 inc/chat.php:401 inc/chat.php:441
+#: inc/woo.php:78
 msgid "Contact"
 msgstr ""
 
-#: main/page/12chat.php:211
+#: main/page/12chat.php:216
 msgid "Contact bar on mobile"
 msgstr ""
 
-#: inc/chat.php:271
+#: inc/chat.php:271 inc/chat.php:328
 msgid "Contact us"
 msgstr ""
 
@@ -890,7 +896,7 @@ msgstr ""
 msgid "Core, plugins and themes are up to date"
 msgstr ""
 
-#: main/page/12chat.php:438
+#: main/page/12chat.php:443
 msgid "Corner card"
 msgstr ""
 
@@ -906,7 +912,7 @@ msgstr ""
 msgid "Could not read the data."
 msgstr ""
 
-#: main/page/12chat.php:407
+#: main/page/12chat.php:412
 msgid "Coupon codes"
 msgstr ""
 
@@ -958,11 +964,11 @@ msgstr ""
 msgid "Custom shortcodes (snippets)"
 msgstr ""
 
-#: main/page/12chat.php:411
+#: main/page/12chat.php:416
 msgid "Customer reviews"
 msgstr ""
 
-#: main/page/12chat.php:306 main/toc.php:233
+#: main/page/12chat.php:311 main/toc.php:233
 msgid "Customize"
 msgstr ""
 
@@ -978,7 +984,7 @@ msgstr ""
 msgid "Customize background"
 msgstr ""
 
-#: main/page/12chat.php:171
+#: main/page/12chat.php:176
 msgid "Customize chat button"
 msgstr ""
 
@@ -1030,7 +1036,7 @@ msgstr ""
 msgid "Daily"
 msgstr ""
 
-#: main/page/12chat.php:417
+#: main/page/12chat.php:422
 msgid "Dark"
 msgstr ""
 
@@ -1074,7 +1080,7 @@ msgstr ""
 msgid "Decorative effects for the website"
 msgstr ""
 
-#: main/page/12chat.php:155
+#: main/page/12chat.php:160
 msgid "Default style"
 msgstr ""
 
@@ -1150,7 +1156,7 @@ msgstr ""
 msgid "Deletion successful"
 msgstr ""
 
-#: inc/chat.php:361
+#: inc/chat.php:466
 msgid "Demo"
 msgstr ""
 
@@ -1286,7 +1292,7 @@ msgstr ""
 msgid "Display on the default login form"
 msgstr ""
 
-#: main/page/11google.php:48 main/page/12chat.php:25 main/page/12chat.php:230
+#: main/page/11google.php:48 main/page/12chat.php:25 main/page/12chat.php:235
 msgid "Display options"
 msgstr ""
 
@@ -1542,7 +1548,7 @@ msgstr ""
 msgid "Enable color and display customization"
 msgstr ""
 
-#: main/page/12chat.php:216
+#: main/page/12chat.php:221
 msgid "Enable contact bar"
 msgstr ""
 
@@ -1658,7 +1664,7 @@ msgstr ""
 msgid "Enable the [ht-icon] shortcode"
 msgstr ""
 
-#: main/page/12chat.php:255
+#: main/page/12chat.php:260
 msgid "Enable the contact bar and configure the content below for use"
 msgstr ""
 
@@ -1666,7 +1672,7 @@ msgstr ""
 msgid "Enable the picture frame"
 msgstr ""
 
-#: main/page/12chat.php:425
+#: main/page/12chat.php:430
 msgid "Enable the services panel"
 msgstr ""
 
@@ -1750,7 +1756,7 @@ msgstr ""
 msgid "Enter CSS here"
 msgstr ""
 
-#: main/page/12chat.php:65
+#: main/page/12chat.php:70
 msgid "Enter ID"
 msgstr ""
 
@@ -1766,7 +1772,7 @@ msgstr ""
 msgid "Enter a title"
 msgstr ""
 
-#: main/page/12chat.php:77 main/page/12chat.php:96 main/page/12chat.php:118
+#: main/page/12chat.php:82 main/page/12chat.php:101 main/page/12chat.php:123
 msgid "Enter button name"
 msgstr ""
 
@@ -1811,8 +1817,8 @@ msgstr ""
 msgid "Enter keywords to search"
 msgstr ""
 
-#: main/page/12chat.php:64 main/page/12chat.php:78 main/page/12chat.php:97 main/page/12chat.php:119
-#: main/page/12chat.php:265 main/page/12chat.php:278
+#: main/page/12chat.php:69 main/page/12chat.php:83 main/page/12chat.php:102 main/page/12chat.php:124
+#: main/page/12chat.php:270 main/page/12chat.php:283
 msgid "Enter link"
 msgstr ""
 
@@ -1820,7 +1826,7 @@ msgstr ""
 msgid "Enter manually"
 msgstr ""
 
-#: main/page/12chat.php:264 main/page/12chat.php:277 main/page/ht-setting.php:126
+#: main/page/12chat.php:269 main/page/12chat.php:282 main/page/ht-setting.php:126
 msgid "Enter name"
 msgstr ""
 
@@ -1828,8 +1834,8 @@ msgstr ""
 msgid "Enter note content"
 msgstr ""
 
-#: main/page/12chat.php:79 main/page/12chat.php:98 main/page/12chat.php:120 main/page/12chat.php:263
-#: main/page/12chat.php:276
+#: main/page/12chat.php:84 main/page/12chat.php:103 main/page/12chat.php:125 main/page/12chat.php:268
+#: main/page/12chat.php:281
 msgid "Enter the SVG icon"
 msgstr ""
 
@@ -1950,7 +1956,7 @@ msgstr ""
 msgid "Failed to update setting:"
 msgstr ""
 
-#: main/page/12chat.php:409
+#: main/page/12chat.php:414
 msgid "Featured banner + grid"
 msgstr ""
 
@@ -2040,7 +2046,7 @@ msgstr ""
 msgid "From"
 msgstr ""
 
-#: main/page/12chat.php:438
+#: main/page/12chat.php:443
 msgid "Full screen"
 msgstr ""
 
@@ -2072,7 +2078,7 @@ msgstr ""
 msgid "Go to the home page"
 msgstr ""
 
-#: main/page/12chat.php:416
+#: main/page/12chat.php:421
 msgid "Gold"
 msgstr ""
 
@@ -2088,8 +2094,12 @@ msgstr ""
 msgid "Grade %s"
 msgstr ""
 
-#: main/page/12chat.php:416
+#: main/page/12chat.php:421
 msgid "Green"
+msgstr ""
+
+#: main/page/12chat.php:48
+msgid "Greeting message (Live-chat skin)"
 msgstr ""
 
 #: main/toc.php:206
@@ -2120,6 +2130,10 @@ msgstr ""
 msgid "Hello %s. A new comment has been posted on your article \"%s\". You can view the comment here: %s"
 msgstr ""
 
+#: inc/chat.php:344
+msgid "Hi 👋 How can we help you?"
+msgstr ""
+
 #: main/page/ht-setting.php:7
 msgid "Hide Admin account from profile page"
 msgstr ""
@@ -2132,7 +2146,7 @@ msgstr ""
 msgid "Hide back link"
 msgstr ""
 
-#: main/page/12chat.php:222
+#: main/page/12chat.php:227
 msgid "Hide bar when pulled down"
 msgstr ""
 
@@ -2204,6 +2218,10 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
+#: inc/chat.php:393
+msgid "Hours"
+msgstr ""
+
 #: main/shortcode.php:182
 msgid "How to use"
 msgstr ""
@@ -2224,7 +2242,7 @@ msgstr ""
 msgid "Icon"
 msgstr ""
 
-#: main/page/12chat.php:448
+#: main/page/12chat.php:453
 msgid "Icon (e.g. apps)"
 msgstr ""
 
@@ -2352,7 +2370,7 @@ msgstr ""
 msgid "Ignore 8-bit png"
 msgstr ""
 
-#: main/page/12chat.php:485
+#: main/page/12chat.php:490
 msgid "Image URL (optional, replaces the icon)"
 msgstr ""
 
@@ -2467,7 +2485,7 @@ msgstr ""
 msgid "Leave another shortcode plugin"
 msgstr ""
 
-#: main/page/12chat.php:437
+#: main/page/12chat.php:442
 msgid "Left drawer"
 msgstr ""
 
@@ -2515,7 +2533,7 @@ msgstr ""
 msgid "Limits the size of JPG, PNG, WEBP, AVIF images when uploading"
 msgstr ""
 
-#: main/page/12chat.php:488
+#: main/page/12chat.php:493
 msgid "Link (article or service page)"
 msgstr ""
 
@@ -2527,7 +2545,7 @@ msgstr ""
 msgid "Link display color"
 msgstr ""
 
-#: main/page/12chat.php:403
+#: main/page/12chat.php:408
 msgid "List"
 msgstr ""
 
@@ -2603,7 +2621,7 @@ msgstr ""
 msgid "MEDIA"
 msgstr ""
 
-#: main/page/12chat.php:254
+#: main/page/12chat.php:259
 msgid "Main button"
 msgstr ""
 
@@ -2611,11 +2629,11 @@ msgstr ""
 msgid "Main color"
 msgstr ""
 
-#: main/page/12chat.php:379
+#: main/page/12chat.php:384
 msgid "Main icon color"
 msgstr ""
 
-#: main/page/12chat.php:383
+#: main/page/12chat.php:388
 msgid "Main icon text color"
 msgstr ""
 
@@ -2695,11 +2713,11 @@ msgstr ""
 msgid "Name — letters, numbers, dashes (e.g. call-to-action)"
 msgstr ""
 
-#: inc/chat.php:525
+#: inc/chat.php:630
 msgid "Navigation bar (Horse Tools)"
 msgstr ""
 
-#: main/page/12chat.php:417
+#: main/page/12chat.php:422
 msgid "Neutral"
 msgstr ""
 
@@ -2739,7 +2757,7 @@ msgstr ""
 msgid "No automatic redirects yet. Change a published URL and one will appear here."
 msgstr ""
 
-#: main/page/12chat.php:490
+#: main/page/12chat.php:495
 msgid "No badge colour"
 msgstr ""
 
@@ -2751,7 +2769,7 @@ msgstr ""
 msgid "No icon matches that."
 msgstr ""
 
-#: main/page/12chat.php:333 main/redirects.php:229 main/toc.php:107
+#: main/page/12chat.php:338 main/redirects.php:229 main/toc.php:107
 msgid "No pages selected"
 msgstr ""
 
@@ -2857,6 +2875,10 @@ msgstr ""
 msgid "One click applies a set of recommended settings for your kind of site. Presets only turn options on and tune a few values — they never switch off anything you have already enabled, and a one-click Undo is always kept."
 msgstr ""
 
+#: inc/chat.php:359
+msgid "Online now"
+msgstr ""
+
 #: main/page/9user.php:21
 msgid "Only admin has access to the admin page"
 msgstr ""
@@ -2873,8 +2895,12 @@ msgstr ""
 msgid "Only supported from PHP 8.1 and above"
 msgstr ""
 
-#: main/page/12chat.php:176
+#: main/page/12chat.php:181
 msgid "Open in a new tab"
+msgstr ""
+
+#: main/page/12chat.php:50
+msgid "Opening hours, one line per day (Tab-widget skin)"
 msgstr ""
 
 #: main/page/1speed.php:38
@@ -2921,7 +2947,7 @@ msgstr ""
 msgid "Other links"
 msgstr ""
 
-#: main/page/12chat.php:375
+#: main/page/12chat.php:380
 msgid "Outstanding color"
 msgstr ""
 
@@ -2949,7 +2975,7 @@ msgstr ""
 msgid "PRESETS"
 msgstr ""
 
-#: main/page/12chat.php:429
+#: main/page/12chat.php:434
 msgid "Panel title (e.g. Our services)"
 msgstr ""
 
@@ -2981,7 +3007,7 @@ msgstr ""
 msgid "Permissions-Policy: block geolocation, mic and camera"
 msgstr ""
 
-#: main/page/12chat.php:413
+#: main/page/12chat.php:418
 msgid "Photo masonry"
 msgstr ""
 
@@ -3038,7 +3064,7 @@ msgstr ""
 msgid "Preview changes"
 msgstr ""
 
-#: main/page/12chat.php:410
+#: main/page/12chat.php:415
 msgid "Price + order button"
 msgstr ""
 
@@ -3054,7 +3080,7 @@ msgstr ""
 msgid "Process cropped images"
 msgstr ""
 
-#: main/page/12chat.php:417
+#: main/page/12chat.php:422
 msgid "Purple"
 msgstr ""
 
@@ -3062,8 +3088,12 @@ msgstr ""
 msgid "Quantity"
 msgstr ""
 
-#: main/page/12chat.php:405
+#: main/page/12chat.php:410
 msgid "Quick chips"
+msgstr ""
+
+#: main/page/12chat.php:49
+msgid "Quick replies, one per line as  Label|https://link  (Live-chat skin)"
 msgstr ""
 
 #: main/search.php:33
@@ -3090,7 +3120,7 @@ msgstr ""
 msgid "Record 404 hits"
 msgstr ""
 
-#: main/page/12chat.php:417
+#: main/page/12chat.php:422
 msgid "Red"
 msgstr ""
 
@@ -3230,7 +3260,7 @@ msgstr ""
 msgid "Rewrite every [sc …] tag in your content to [ht-snippet …], keeping all attributes. Preview first; applying edits post content, so take a backup. Tip: you don’t have to convert — imported snippets already answer [sc …] once Shortcoder is deactivated."
 msgstr ""
 
-#: main/page/12chat.php:437
+#: main/page/12chat.php:442
 msgid "Right drawer"
 msgstr ""
 
@@ -3328,7 +3358,7 @@ msgstr ""
 msgid "Save schedule"
 msgstr ""
 
-#: main/page/12chat.php:454
+#: main/page/12chat.php:459
 msgid "Save services"
 msgstr ""
 
@@ -3340,7 +3370,7 @@ msgstr ""
 msgid "Save snippet"
 msgstr ""
 
-#: main/page/12chat.php:482
+#: main/page/12chat.php:487
 msgid "Saved %d service(s)."
 msgstr ""
 
@@ -3456,15 +3486,15 @@ msgstr ""
 msgid "Select button border color"
 msgstr ""
 
-#: main/notify.php:49 main/page/12chat.php:158 main/shortcode.php:148
+#: main/notify.php:49 main/page/12chat.php:163 main/shortcode.php:148
 msgid "Select button color"
 msgstr ""
 
-#: main/page/12chat.php:168 main/toc.php:255
+#: main/page/12chat.php:173 main/toc.php:255
 msgid "Select icon"
 msgstr ""
 
-#: main/page/12chat.php:180
+#: main/page/12chat.php:185
 msgid "Select icon color"
 msgstr ""
 
@@ -3489,7 +3519,7 @@ msgstr ""
 msgid "Select the displayed logo"
 msgstr ""
 
-#: main/page/12chat.php:308 main/toc.php:82
+#: main/page/12chat.php:313 main/toc.php:82
 msgid "Select the page to hide"
 msgstr ""
 
@@ -3533,11 +3563,11 @@ msgstr ""
 msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
 msgstr ""
 
-#: inc/chat-services.php:60
+#: inc/chat-services.php:60 inc/chat.php:392
 msgid "Services"
 msgstr ""
 
-#: main/page/12chat.php:397
+#: main/page/12chat.php:402
 msgid "Services panel (slide-up from the bottom bar)"
 msgstr ""
 
@@ -3601,7 +3631,7 @@ msgstr ""
 msgid "Shortcodes"
 msgstr ""
 
-#: main/page/12chat.php:444
+#: main/page/12chat.php:449
 msgid "Show a floating “Services” button on desktop"
 msgstr ""
 
@@ -3617,7 +3647,7 @@ msgstr ""
 msgid "Show on devices"
 msgstr ""
 
-#: main/page/12chat.php:228
+#: main/page/12chat.php:233
 msgid "Show the bar on tablets too (up to 1024px)"
 msgstr ""
 
@@ -3661,7 +3691,7 @@ msgstr ""
 msgid "Snippet saved."
 msgstr ""
 
-#: main/page/12chat.php:483 main/page/2scuri.php:178 main/shortcode.php:427 main/shortcode.php:626
+#: main/page/12chat.php:488 main/page/2scuri.php:178 main/shortcode.php:427 main/shortcode.php:626
 #: main/shortcode.php:725
 msgid "Something went wrong."
 msgstr ""
@@ -3670,7 +3700,7 @@ msgstr ""
 msgid "Source code and issues:"
 msgstr ""
 
-#: main/page/12chat.php:195 main/page/4main.php:65
+#: main/page/12chat.php:200 main/page/4main.php:65
 msgid "Spacing below"
 msgstr ""
 
@@ -3682,7 +3712,7 @@ msgstr ""
 msgid "Spin it — handy for loaders."
 msgstr ""
 
-#: main/page/12chat.php:408
+#: main/page/12chat.php:413
 msgid "Stacked banners"
 msgstr ""
 
@@ -3690,11 +3720,11 @@ msgstr ""
 msgid "Status:"
 msgstr ""
 
-#: main/page/12chat.php:258
+#: main/page/12chat.php:263
 msgid "Step 1: Go to Appearance > Menus > Create a new menu > check Navigation bar (Horse Tools)"
 msgstr ""
 
-#: main/page/12chat.php:259
+#: main/page/12chat.php:264
 msgid "Step 2: Below, if you want the menu to open on a specific button, add <b style=\"color:red\">#horsenavi</b> to the field (#id or .class). For (Enter link), enter <b style=\"color:red\">#</b>. Note: Only add it to one of the 5 buttons below"
 msgstr ""
 
@@ -3710,11 +3740,11 @@ msgstr ""
 msgid "Stop cropping all"
 msgstr ""
 
-#: main/page/12chat.php:406
+#: main/page/12chat.php:411
 msgid "Story circles"
 msgstr ""
 
-#: main/page/12chat.php:487
+#: main/page/12chat.php:492
 msgid "Subtitle / price / coupon code"
 msgstr ""
 
@@ -3728,6 +3758,10 @@ msgstr ""
 
 #: main/extend.php:150
 msgid "Support quick notification setup, allowing web managers to easily deliver useful and timely content, helping users stay informed effortlessly"
+msgstr ""
+
+#: inc/chat.php:359
+msgid "Support team"
 msgstr ""
 
 #: main/shortcode.php:684
@@ -3766,7 +3800,7 @@ msgstr ""
 msgid "Table of contents on posts"
 msgstr ""
 
-#: main/page/12chat.php:484
+#: main/page/12chat.php:489
 msgid "Tabler icon name (e.g. snowflake) — or leave blank and use an image"
 msgstr ""
 
@@ -3824,6 +3858,10 @@ msgstr ""
 
 #: main/gindex.php:94
 msgid "The \"Index Now\" link will be added in the custom post management section to allow quick index submission"
+msgstr ""
+
+#: main/page/12chat.php:46
+msgid "The Avatar, Live-chat and Tab-widget skins use the fields below."
 msgstr ""
 
 #: main/page/ht-about1.php:47
@@ -4074,7 +4112,7 @@ msgstr ""
 msgid "Time:"
 msgstr ""
 
-#: main/page/12chat.php:486
+#: main/page/12chat.php:491
 msgid "Title"
 msgstr ""
 
@@ -4094,7 +4132,7 @@ msgstr ""
 msgid "To add advertisements to your website, simply enable this feature. It provides you with various ad options to meet your distribution needs"
 msgstr ""
 
-#: main/page/12chat.php:257
+#: main/page/12chat.php:262
 msgid "To create a menu on the navigation bar:"
 msgstr ""
 
@@ -4114,7 +4152,7 @@ msgstr ""
 msgid "Total:"
 msgstr ""
 
-#: main/page/12chat.php:203 main/page/5media.php:202 main/page/5media.php:268
+#: main/page/12chat.php:208 main/page/5media.php:202 main/page/5media.php:268
 msgid "Transparency level"
 msgstr ""
 
@@ -4230,7 +4268,7 @@ msgstr ""
 msgid "User enumeration is blocked"
 msgstr ""
 
-#: main/page/12chat.php:412
+#: main/page/12chat.php:417
 msgid "Video cards"
 msgstr ""
 
@@ -4238,7 +4276,7 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: main/page/12chat.php:63 main/page/12chat.php:256
+#: main/page/12chat.php:68 main/page/12chat.php:261
 msgid "Visit this page to get the SVG icon:"
 msgstr ""
 
@@ -4278,7 +4316,7 @@ msgstr ""
 msgid "We apologize, the website is currently undergoing maintenance. Please wait for a moment"
 msgstr ""
 
-#: inc/chat.php:271
+#: inc/chat.php:271 inc/chat.php:328
 msgid "We reply quickly"
 msgstr ""
 

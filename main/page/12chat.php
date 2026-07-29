@@ -31,7 +31,7 @@ global $horsetools_options; ?>
 		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/chat/5.png'); ?>" data-value="Floating" class="<?php if(isset($horsetools_options['chat-nut-skin']) && $horsetools_options['chat-nut-skin'] == 'Floating') echo 'selected'; ?>" />
 		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/chat/6.png'); ?>" data-value="Tap" class="<?php if(isset($horsetools_options['chat-nut-skin']) && $horsetools_options['chat-nut-skin'] == 'Tap') echo 'selected'; ?>" />
 		<?php
-		$horsetools_newskins = array( 'Dock' => 'ti-layout-grid', 'Pill' => 'ti-capsule-horizontal', 'Glass' => 'ti-square-rounded', 'Tile' => 'ti-square', 'Hexagon' => 'ti-hexagon', 'Card' => 'ti-id', 'Sidetab' => 'ti-layout-sidebar-right' );
+		$horsetools_newskins = array( 'Dock' => 'ti-layout-grid', 'Pill' => 'ti-capsule-horizontal', 'Glass' => 'ti-square-rounded', 'Tile' => 'ti-square', 'Hexagon' => 'ti-hexagon', 'Card' => 'ti-id', 'Sidetab' => 'ti-layout-sidebar-right', 'Speeddial' => 'ti-circle-plus', 'Avatar' => 'ti-user-circle', 'Livechat' => 'ti-message-chatbot', 'Tabwidget' => 'ti-layout-navbar' );
 		foreach ( $horsetools_newskins as $sk => $ic ) {
 			$sel = ( isset($horsetools_options['chat-nut-skin']) && $horsetools_options['chat-nut-skin'] == $sk ) ? ' selected' : '';
 			echo '<span class="ht-skin-tile'. $sel .'" data-value="'. esc_attr($sk) .'"><i class="ti '. esc_attr($ic) .'"></i>'. esc_html($sk) .'</span>';
@@ -43,6 +43,11 @@ global $horsetools_options; ?>
 	.ht-skin-tile i{font-size:24px;color:#8a5a00}
 	.ht-skin-tile.selected{border-color:#e0a800;background:#fff9e6}
 	</style>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('The Avatar, Live-chat and Tab-widget skins use the fields below.', 'horse-tools'); ?></p>
+	<p><input class="ht-input-big" placeholder="<?php esc_attr_e( 'Avatar image URL (Avatar / Live-chat skin)', 'horse-tools' ); ?>" type="text" name="horsetools_settings[chat-avatar]" value="<?php if(!empty($horsetools_options['chat-avatar'])){echo esc_attr($horsetools_options['chat-avatar']);} ?>" /></p>
+	<p><input class="ht-input-big" placeholder="<?php esc_attr_e( 'Greeting message (Live-chat skin)', 'horse-tools' ); ?>" type="text" name="horsetools_settings[chat-greet]" value="<?php if(!empty($horsetools_options['chat-greet'])){echo esc_attr($horsetools_options['chat-greet']);} ?>" /></p>
+	<p><textarea style="height:70px" class="ht-code-textarea" name="horsetools_settings[chat-quick]" placeholder="<?php esc_attr_e( 'Quick replies, one per line as  Label|https://link  (Live-chat skin)', 'horse-tools' ); ?>"><?php if(!empty($horsetools_options['chat-quick'])){echo esc_textarea($horsetools_options['chat-quick']);} ?></textarea></p>
+	<p><textarea style="height:90px" class="ht-code-textarea" name="horsetools_settings[chat-hours]" placeholder="<?php esc_attr_e( 'Opening hours, one line per day (Tab-widget skin)', 'horse-tools' ); ?>"><?php if(!empty($horsetools_options['chat-hours'])){echo esc_textarea($horsetools_options['chat-hours']);} ?></textarea></p>
 	<input type="hidden" name="horsetools_settings[chat-nut-skin]" id="chat-nut-skin" value="<?php if(!empty($horsetools_options['chat-nut-skin'])){echo sanitize_text_field($horsetools_options['chat-nut-skin']);} else {echo sanitize_text_field('Default');} ?>" />
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {

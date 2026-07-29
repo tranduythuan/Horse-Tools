@@ -345,6 +345,8 @@ function horsetools_sanitize_textarea_keys() {
 		'toc-page-hi',    // page slugs where the TOC is hidden
 		'ads-click11',    // list of ad click destinations
 		'url',            // main/gindex.php - list of URLs to submit
+		'chat-quick',     // chat live-chat quick-reply lines (label|url)
+		'chat-hours',     // chat opening-hours lines
 	);
 }
 

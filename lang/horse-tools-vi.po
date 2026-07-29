@@ -5257,3 +5257,30 @@ msgstr "Liên hệ với chúng tôi"
 
 msgid "We reply quickly"
 msgstr "Phản hồi nhanh trong ít phút"
+
+msgid "Avatar image URL (Avatar / Live-chat skin)"
+msgstr "URL ảnh đại diện (skin Avatar / Live-chat)"
+
+msgid "Greeting message (Live-chat skin)"
+msgstr "Lời chào (skin Live-chat)"
+
+msgid "Hi 👋 How can we help you?"
+msgstr "Xin chào 👋 Chúng tôi có thể giúp gì cho bạn?"
+
+msgid "Hours"
+msgstr "Giờ mở cửa"
+
+msgid "Online now"
+msgstr "Đang trực tuyến"
+
+msgid "Opening hours, one line per day (Tab-widget skin)"
+msgstr "Giờ mở cửa, mỗi ngày một dòng (skin Tab-widget)"
+
+msgid "Quick replies, one per line as  Label|https://link  (Live-chat skin)"
+msgstr "Trả lời nhanh, mỗi dòng dạng  Nhãn|https://link  (skin Live-chat)"
+
+msgid "Support team"
+msgstr "Đội hỗ trợ"
+
+msgid "The Avatar, Live-chat and Tab-widget skins use the fields below."
+msgstr "Các skin Avatar, Live-chat và Tab-widget dùng các ô bên dưới."

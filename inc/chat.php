@@ -302,6 +302,111 @@ function horsetools_add_chat(){
 			<?php
 			$cor = !empty($horsetools_options['chat-nut-color']) ? '.ht-chatbox-sidetab #chatona{background:'. horsetools_css_color($horsetools_options['chat-nut-color']) .';}' : NULL;
 			if( $cor ){ echo '<style>'. $cor .'</style>'; }
+		// Speed-dial — a FAB that expands a strip of labelled channel pills.
+		} else if ( ( isset($horsetools_options['chat-nut-skin']) ? $horsetools_options['chat-nut-skin'] : '' ) == 'Speeddial' ) {
+			$bubbleIcon = '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9h8M8 13h6M21 12a9 9 0 0 1-9 9 9.7 9.7 0 0 1-4.5-1.1L3 21l1.1-4.5A9.7 9.7 0 0 1 3 12a9 9 0 1 1 18 0Z"/></svg>';
+			?>
+			<div class="ht-chatbox ht-chatbox-speeddial <?php echo $chatmo; ?>" <?php echo $chat_mojs; ?>>
+			<div class="ht-chaton-full" id="ht-chaton2" style="display:none" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"></div>
+			<div class="ht-chaton ht-speeddial-list" id="ht-chaton" style="display:none"><?php echo horsetools_chat_mang(); ?></div>
+			<button title="<?php _e('Contact', 'horse-tools'); ?>" id="chatona" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"><?php echo $bubbleIcon; ?></button>
+			</div>
+			<?php
+			$cor = !empty($horsetools_options['chat-nut-color']) ? '.ht-chatbox #chatona{background:'. horsetools_css_color($horsetools_options['chat-nut-color']) .';box-shadow:0 0 0 0px '. horsetools_css_color($horsetools_options['chat-nut-color']) .';}' : NULL;
+			$lr1 = !empty($horsetools_options['chat-nut-lr']) && isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] != 'Right' ? '.ht-chatbox{left:'. horsetools_css_number($horsetools_options['chat-nut-lr']) .'px;}' : NULL;
+			$lr2 = !empty($horsetools_options['chat-nut-lr']) && isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] == 'Right' ? 'right:'. horsetools_css_number($horsetools_options['chat-nut-lr']) .'px;' : NULL;
+			$mar = isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] == 'Right' ? '.ht-chatbox{'. $lr2 .'left:auto;text-align:right;}' : NULL;
+			$bot = (!empty($horsetools_options['chat-nut-bot']) && $horsetools_options['chat-nut-bot'] < 300) ? '.ht-chatbox{bottom:'. horsetools_css_number($horsetools_options['chat-nut-bot']) .'px;}' : NULL;
+			if(!empty($horsetools_options['chat-nut-mar'])){ echo '<style>'. $cor . $lr1 . $mar . $bot .'</style>'; }
+		// Avatar — a launcher that is an agent photo with an online dot.
+		} else if ( ( isset($horsetools_options['chat-nut-skin']) ? $horsetools_options['chat-nut-skin'] : '' ) == 'Avatar' ) {
+			$av = !empty($horsetools_options['chat-avatar']) ? esc_url($horsetools_options['chat-avatar']) : '';
+			?>
+			<div class="ht-chatbox ht-chatbox-avatar <?php echo $chatmo; ?>" <?php echo $chat_mojs; ?>>
+			<div class="ht-chaton-full" id="ht-chaton2" style="display:none" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"></div>
+			<div class="ht-chaton ht-card-panel" id="ht-chaton" style="display:none">
+				<div class="ht-card-head"><span class="ht-card-t"><?php _e('Contact us', 'horse-tools'); ?></span><span class="ht-card-s"><?php _e('We reply quickly', 'horse-tools'); ?></span></div>
+				<div class="ht-chaton-scroll"><?php echo horsetools_chat_mang(); ?></div>
+			</div>
+			<button title="<?php _e('Contact', 'horse-tools'); ?>" id="chatona" class="ht-avatar-btn" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"><?php if ($av) { echo '<img src="'. $av .'" alt="" />'; } else { echo '<svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg>'; } ?><span class="ht-av-dot"></span></button>
+			</div>
+			<?php
+			$cor = !empty($horsetools_options['chat-nut-color']) ? '.ht-card-head{background:'. horsetools_css_color($horsetools_options['chat-nut-color']) .';}' : NULL;
+			$lr1 = !empty($horsetools_options['chat-nut-lr']) && isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] != 'Right' ? '.ht-chatbox{left:'. horsetools_css_number($horsetools_options['chat-nut-lr']) .'px;}' : NULL;
+			$lr2 = !empty($horsetools_options['chat-nut-lr']) && isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] == 'Right' ? 'right:'. horsetools_css_number($horsetools_options['chat-nut-lr']) .'px;' : NULL;
+			$mar = isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] == 'Right' ? '.ht-chatbox{'. $lr2 .'left:auto;text-align:right;}' : NULL;
+			$bot = (!empty($horsetools_options['chat-nut-bot']) && $horsetools_options['chat-nut-bot'] < 300) ? '.ht-chatbox{bottom:'. horsetools_css_number($horsetools_options['chat-nut-bot']) .'px;}' : NULL;
+			if(!empty($horsetools_options['chat-nut-mar'])){ echo '<style>'. $cor . $lr1 . $mar . $bot .'</style>'; }
+		// Live-chat bubble — greeting + quick replies + channels.
+		} else if ( ( isset($horsetools_options['chat-nut-skin']) ? $horsetools_options['chat-nut-skin'] : '' ) == 'Livechat' ) {
+			$bubbleIcon = '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9h8M8 13h6M21 12a9 9 0 0 1-9 9 9.7 9.7 0 0 1-4.5-1.1L3 21l1.1-4.5A9.7 9.7 0 0 1 3 12a9 9 0 1 1 18 0Z"/></svg>';
+			$av = !empty($horsetools_options['chat-avatar']) ? esc_url($horsetools_options['chat-avatar']) : '';
+			$greet = !empty($horsetools_options['chat-greet']) ? esc_html($horsetools_options['chat-greet']) : esc_html__('Hi 👋 How can we help you?', 'horse-tools');
+			$quickchips = '';
+			if (!empty($horsetools_options['chat-quick'])) {
+				foreach (explode("\n", str_replace("\r", "", $horsetools_options['chat-quick'])) as $line) {
+					$line = trim($line); if ($line === '') continue;
+					$parts = explode('|', $line, 2);
+					$qlabel = trim($parts[0]); $qurl = isset($parts[1]) ? trim($parts[1]) : '';
+					if ($qlabel === '') continue;
+					$quickchips .= '<a class="ht-lc-chip" href="'. esc_url($qurl) .'" rel="nofollow">'. esc_html($qlabel) .'</a>';
+				}
+			}
+			?>
+			<div class="ht-chatbox ht-chatbox-livechat <?php echo $chatmo; ?>" <?php echo $chat_mojs; ?>>
+			<div class="ht-chaton-full" id="ht-chaton2" style="display:none" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"></div>
+			<div class="ht-chaton ht-lc-panel" id="ht-chaton" style="display:none">
+				<div class="ht-lc-head"><?php if ($av) { echo '<img class="ht-lc-av" src="'. $av .'" alt="" />'; } else { echo '<span class="ht-lc-av ht-lc-avph"><svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span>'; } ?><div><span class="ht-lc-name"><?php _e('Support team', 'horse-tools'); ?></span><span class="ht-lc-on">● <?php _e('Online now', 'horse-tools'); ?></span></div></div>
+				<div class="ht-lc-body">
+					<div class="ht-lc-greet"><?php echo $greet; ?></div>
+					<?php if ($quickchips) { echo '<div class="ht-lc-quick">'. $quickchips .'</div>'; } ?>
+					<div class="ht-lc-channels"><?php echo horsetools_chat_mang(); ?></div>
+				</div>
+			</div>
+			<button title="<?php _e('Contact', 'horse-tools'); ?>" id="chatona" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"><?php echo $bubbleIcon; ?></button>
+			</div>
+			<?php
+			$cor = !empty($horsetools_options['chat-nut-color']) ? '.ht-chatbox #chatona{background:'. horsetools_css_color($horsetools_options['chat-nut-color']) .';}.ht-lc-head{background:'. horsetools_css_color($horsetools_options['chat-nut-color']) .';}' : NULL;
+			$lr1 = !empty($horsetools_options['chat-nut-lr']) && isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] != 'Right' ? '.ht-chatbox{left:'. horsetools_css_number($horsetools_options['chat-nut-lr']) .'px;}' : NULL;
+			$lr2 = !empty($horsetools_options['chat-nut-lr']) && isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] == 'Right' ? 'right:'. horsetools_css_number($horsetools_options['chat-nut-lr']) .'px;' : NULL;
+			$mar = isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] == 'Right' ? '.ht-chatbox{'. $lr2 .'left:auto;text-align:right;}' : NULL;
+			$bot = (!empty($horsetools_options['chat-nut-bot']) && $horsetools_options['chat-nut-bot'] < 300) ? '.ht-chatbox{bottom:'. horsetools_css_number($horsetools_options['chat-nut-bot']) .'px;}' : NULL;
+			if(!empty($horsetools_options['chat-nut-mar'])){ echo '<style>'. $cor . $lr1 . $mar . $bot .'</style>'; }
+		// Tabbed widget — Contact / Services / Hours in one card.
+		} else if ( ( isset($horsetools_options['chat-nut-skin']) ? $horsetools_options['chat-nut-skin'] : '' ) == 'Tabwidget' ) {
+			$bubbleIcon = '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9h8M8 13h6M21 12a9 9 0 0 1-9 9 9.7 9.7 0 0 1-4.5-1.1L3 21l1.1-4.5A9.7 9.7 0 0 1 3 12a9 9 0 1 1 18 0Z"/></svg>';
+			$svc = function_exists('horsetools_services_get') ? horsetools_services_get() : array('items'=>array());
+			$hasSvc = !empty($svc['items']);
+			$hours = !empty($horsetools_options['chat-hours']) ? $horsetools_options['chat-hours'] : '';
+			$svcrows = '';
+			foreach ($svc['items'] as $si) {
+				$ico = !empty($si['img']) ? '<span class="ht-tw-ic" style="background-image:url('. esc_url($si['img']) .')"></span>' : '<span class="ht-tw-ic ht-tw-let">'. esc_html( function_exists('mb_substr') ? mb_strtoupper(mb_substr(trim((string)($si['title'] ?? '')),0,1)) : strtoupper(substr(trim((string)($si['title'] ?? '')),0,1)) ) .'</span>';
+				$svcrows .= '<a class="ht-tw-srv" href="'. esc_url($si['link'] ?? '#') .'" rel="nofollow">'. $ico .'<span>'. esc_html($si['title'] ?? '') .'</span></a>';
+			}
+			?>
+			<div class="ht-chatbox ht-chatbox-tabwidget <?php echo $chatmo; ?>" <?php echo $chat_mojs; ?>>
+			<div class="ht-chaton-full" id="ht-chaton2" style="display:none" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"></div>
+			<div class="ht-chaton ht-tw-panel" id="ht-chaton" style="display:none">
+				<div class="ht-tw-tabs">
+					<button type="button" class="ht-tw-tab active" data-tw="c"><?php _e('Contact', 'horse-tools'); ?></button>
+					<?php if ($hasSvc) { echo '<button type="button" class="ht-tw-tab" data-tw="s">'. esc_html__('Services', 'horse-tools') .'</button>'; } ?>
+					<?php if ($hours !== '') { echo '<button type="button" class="ht-tw-tab" data-tw="h">'. esc_html__('Hours', 'horse-tools') .'</button>'; } ?>
+				</div>
+				<div class="ht-tw-body">
+					<div class="ht-tw-pane active" data-tw="c"><div class="ht-chaton-scroll"><?php echo horsetools_chat_mang(); ?></div></div>
+					<?php if ($hasSvc) { echo '<div class="ht-tw-pane" data-tw="s">'. $svcrows .'</div>'; } ?>
+					<?php if ($hours !== '') { echo '<div class="ht-tw-pane" data-tw="h"><div class="ht-tw-hours">'. nl2br(esc_html($hours)) .'</div></div>'; } ?>
+				</div>
+			</div>
+			<button title="<?php _e('Contact', 'horse-tools'); ?>" id="chatona" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"><?php echo $bubbleIcon; ?></button>
+			</div>
+			<?php
+			$cor = !empty($horsetools_options['chat-nut-color']) ? '.ht-chatbox #chatona{background:'. horsetools_css_color($horsetools_options['chat-nut-color']) .';}.ht-tw-tab.active{color:'. horsetools_css_color($horsetools_options['chat-nut-color']) .';border-bottom-color:'. horsetools_css_color($horsetools_options['chat-nut-color']) .';}' : NULL;
+			$lr1 = !empty($horsetools_options['chat-nut-lr']) && isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] != 'Right' ? '.ht-chatbox{left:'. horsetools_css_number($horsetools_options['chat-nut-lr']) .'px;}' : NULL;
+			$lr2 = !empty($horsetools_options['chat-nut-lr']) && isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] == 'Right' ? 'right:'. horsetools_css_number($horsetools_options['chat-nut-lr']) .'px;' : NULL;
+			$mar = isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] == 'Right' ? '.ht-chatbox{'. $lr2 .'left:auto;text-align:right;}' : NULL;
+			$bot = (!empty($horsetools_options['chat-nut-bot']) && $horsetools_options['chat-nut-bot'] < 300) ? '.ht-chatbox{bottom:'. horsetools_css_number($horsetools_options['chat-nut-bot']) .'px;}' : NULL;
+			if(!empty($horsetools_options['chat-nut-mar'])){ echo '<style>'. $cor . $lr1 . $mar . $bot .'</style>'; }
 		// skin mac dinh chat
 		} else {
 			$defaultIcon = '<svg class="khacus" width="100%" height="100%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><g transform="matrix(0.136295,0,0,0.136295,0.0974349,0.0969444)"><path d="M278.669,172.38L278.674,172.38C312.199,172.38 339.785,199.966 339.785,233.491L339.785,233.5C339.833,237.752 343.345,241.225 347.597,241.225C351.85,241.225 355.362,237.752 355.41,233.5C355.391,191.41 320.759,156.781 278.669,156.767C278.64,156.767 278.61,156.766 278.581,156.766C274.298,156.766 270.775,160.29 270.775,164.573C270.775,168.855 274.298,172.379 278.581,172.379C278.61,172.379 278.64,172.378 278.669,172.378L278.669,172.38ZM266.876,222.358C266.847,222.358 266.817,222.359 266.788,222.359C262.505,222.359 258.982,218.835 258.982,214.553C258.982,210.27 262.505,206.747 266.788,206.747L266.898,206.747C288.884,206.747 306.976,224.839 306.976,246.825L306.976,246.837C306.928,251.089 303.416,254.562 299.164,254.562C294.911,254.562 291.399,251.089 291.351,246.837L291.351,246.828C291.351,233.404 280.305,222.358 266.881,222.358L266.876,222.358ZM317.7,415.5C293.023,411.142 268.671,399.821 247.415,386.838C222.827,371.802 199.86,353.06 179.488,332.682C159.116,312.304 140.366,289.352 125.33,264.741C112.358,243.488 101.007,219.129 96.673,194.465C95.632,188.948 95.946,183.259 97.588,177.89C99.333,172.575 102.325,167.755 106.314,163.833L138.862,131.294C142.014,128.163 147.179,128.163 150.331,131.294L208.8,189.751C211.925,192.909 211.925,198.07 208.8,201.228L177.726,232.311C173.173,236.832 172.57,244.062 176.311,249.275C188.332,265.886 201.703,281.477 216.289,295.889C230.692,310.481 246.283,323.851 262.9,335.861C268.104,339.611 275.337,339.011 279.852,334.454L310.952,303.374C312.465,301.853 314.527,301.001 316.672,301.01C318.825,301.006 320.893,301.857 322.421,303.374L380.883,361.834C384.008,364.991 384.008,370.151 380.883,373.308L348.334,405.85C340.428,414.045 328.876,417.684 317.7,415.5ZM278.669,111.691C274.388,111.691 270.865,108.168 270.865,103.887C270.865,99.607 274.388,96.084 278.669,96.084L278.676,96.084C354.056,96.084 416.084,158.112 416.084,233.492L416.084,233.5C416.084,237.786 412.557,241.313 408.271,241.313C403.985,241.313 400.458,237.786 400.458,233.5C400.463,166.683 345.486,111.697 278.669,111.691Z" style="fill:#fff"/></g></svg>';
