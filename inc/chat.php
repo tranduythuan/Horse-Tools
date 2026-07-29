@@ -261,6 +261,47 @@ function horsetools_add_chat(){
 			if(!empty($horsetools_options['chat-nut-mar'])){
 			echo '<style>'. $lr1 . $mar . $bot . $ope . $radi . $ico .'</style>';
 			}
+		// Corner card — light popup with a header (reuses the Default open/close).
+		} else if ( ( isset($horsetools_options['chat-nut-skin']) ? $horsetools_options['chat-nut-skin'] : '' ) == 'Card' ) {
+			$structIcon = '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9h8M8 13h6M21 12a9 9 0 0 1-9 9 9.7 9.7 0 0 1-4.5-1.1L3 21l1.1-4.5A9.7 9.7 0 0 1 3 12a9 9 0 1 1 18 0Z"/></svg>';
+			?>
+			<div class="ht-chatbox ht-chatbox-card <?php echo $chatmo; ?>" <?php echo $chat_mojs; ?>>
+			<div class="ht-chaton-full" id="ht-chaton2" style="display:none" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"></div>
+			<div class="ht-chaton ht-card-panel" id="ht-chaton" style="display:none">
+				<div class="ht-card-head"><span class="ht-card-t"><?php echo esc_html( !empty($horsetools_options['chat-nut21']) ? $horsetools_options['chat-nut21'] : __('Contact us', 'horse-tools') ); ?></span><span class="ht-card-s"><?php _e('We reply quickly', 'horse-tools'); ?></span></div>
+				<div class="ht-chaton-scroll"><?php echo horsetools_chat_mang(); ?></div>
+			</div>
+			<button title="<?php _e('Contact', 'horse-tools'); ?>" id="chatona" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"><?php echo $structIcon; ?></button>
+			</div>
+			<?php
+			$cor = !empty($horsetools_options['chat-nut-color']) ? '.ht-chatbox #chatona{background:'. horsetools_css_color($horsetools_options['chat-nut-color']) .';box-shadow:0 0 0 0px '. horsetools_css_color($horsetools_options['chat-nut-color']) .';}.ht-card-head{background:'. horsetools_css_color($horsetools_options['chat-nut-color']) .';}' : NULL;
+			$lr1 = !empty($horsetools_options['chat-nut-lr']) && isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] != 'Right' ? '.ht-chatbox{left:'. horsetools_css_number($horsetools_options['chat-nut-lr']) .'px;}' : NULL;
+			$lr2 = !empty($horsetools_options['chat-nut-lr']) && isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] == 'Right' ? 'right:'. horsetools_css_number($horsetools_options['chat-nut-lr']) .'px;' : NULL;
+			$mar = isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] == 'Right' ? '.ht-chatbox{'. $lr2 .'left:auto;text-align:right;}.chathi{transform:translateX(350%);}' : NULL;
+			if(!empty($horsetools_options['chat-nut-bot']) && $horsetools_options['chat-nut-bot'] < 300 ){
+				$bot = '.ht-chatbox{bottom:'. horsetools_css_number($horsetools_options['chat-nut-bot']) .'px;}';
+			} elseif (!empty($horsetools_options['chat-nut-bot']) && $horsetools_options['chat-nut-bot'] >= 300 ){
+				$bot = '.ht-chatbox{bottom:50%;}';
+			} else { $bot = NULL; }
+			$ope = !empty($horsetools_options['chat-nut-op']) ? '.ht-chatbox #chatona{opacity:'. horsetools_css_number($horsetools_options['chat-nut-op']) .';}' : NULL;
+			if(!empty($horsetools_options['chat-nut-mar'])){
+			echo '<style>'. $cor . $lr1 . $mar . $bot . $ope .'</style>';
+			}
+		// Side tab — a sticky tab on the screen edge that opens a panel.
+		} else if ( ( isset($horsetools_options['chat-nut-skin']) ? $horsetools_options['chat-nut-skin'] : '' ) == 'Sidetab' ) {
+			$structIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9h8M8 13h6M21 12a9 9 0 0 1-9 9 9.7 9.7 0 0 1-4.5-1.1L3 21l1.1-4.5A9.7 9.7 0 0 1 3 12a9 9 0 1 1 18 0Z"/></svg>';
+			$side = ( isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] == 'Right' ) ? 'ht-sidetab-right' : 'ht-sidetab-left';
+			?>
+			<div class="ht-chatbox ht-chatbox-sidetab <?php echo esc_attr($side).' '.$chatmo; ?>" <?php echo $chat_mojs; ?>>
+			<div class="ht-chaton-full" id="ht-chaton2" style="display:none" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"></div>
+			<div class="ht-chaton ht-sidetab-panel" id="ht-chaton" style="display:none">
+				<div class="ht-chaton-scroll"><?php echo horsetools_chat_mang(); ?></div>
+			</div>
+			<button title="<?php _e('Contact', 'horse-tools'); ?>" id="chatona" class="ht-sidetab-btn" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"><?php echo $structIcon; ?><span><?php _e('Contact', 'horse-tools'); ?></span></button>
+			</div>
+			<?php
+			$cor = !empty($horsetools_options['chat-nut-color']) ? '.ht-chatbox-sidetab #chatona{background:'. horsetools_css_color($horsetools_options['chat-nut-color']) .';}' : NULL;
+			if( $cor ){ echo '<style>'. $cor .'</style>'; }
 		// skin mac dinh chat
 		} else {
 			$defaultIcon = '<svg class="khacus" width="100%" height="100%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><g transform="matrix(0.136295,0,0,0.136295,0.0974349,0.0969444)"><path d="M278.669,172.38L278.674,172.38C312.199,172.38 339.785,199.966 339.785,233.491L339.785,233.5C339.833,237.752 343.345,241.225 347.597,241.225C351.85,241.225 355.362,237.752 355.41,233.5C355.391,191.41 320.759,156.781 278.669,156.767C278.64,156.767 278.61,156.766 278.581,156.766C274.298,156.766 270.775,160.29 270.775,164.573C270.775,168.855 274.298,172.379 278.581,172.379C278.61,172.379 278.64,172.378 278.669,172.378L278.669,172.38ZM266.876,222.358C266.847,222.358 266.817,222.359 266.788,222.359C262.505,222.359 258.982,218.835 258.982,214.553C258.982,210.27 262.505,206.747 266.788,206.747L266.898,206.747C288.884,206.747 306.976,224.839 306.976,246.825L306.976,246.837C306.928,251.089 303.416,254.562 299.164,254.562C294.911,254.562 291.399,251.089 291.351,246.837L291.351,246.828C291.351,233.404 280.305,222.358 266.881,222.358L266.876,222.358ZM317.7,415.5C293.023,411.142 268.671,399.821 247.415,386.838C222.827,371.802 199.86,353.06 179.488,332.682C159.116,312.304 140.366,289.352 125.33,264.741C112.358,243.488 101.007,219.129 96.673,194.465C95.632,188.948 95.946,183.259 97.588,177.89C99.333,172.575 102.325,167.755 106.314,163.833L138.862,131.294C142.014,128.163 147.179,128.163 150.331,131.294L208.8,189.751C211.925,192.909 211.925,198.07 208.8,201.228L177.726,232.311C173.173,236.832 172.57,244.062 176.311,249.275C188.332,265.886 201.703,281.477 216.289,295.889C230.692,310.481 246.283,323.851 262.9,335.861C268.104,339.611 275.337,339.011 279.852,334.454L310.952,303.374C312.465,301.853 314.527,301.001 316.672,301.01C318.825,301.006 320.893,301.857 322.421,303.374L380.883,361.834C384.008,364.991 384.008,370.151 380.883,373.308L348.334,405.85C340.428,414.045 328.876,417.684 317.7,415.5ZM278.669,111.691C274.388,111.691 270.865,108.168 270.865,103.887C270.865,99.607 274.388,96.084 278.669,96.084L278.676,96.084C354.056,96.084 416.084,158.112 416.084,233.492L416.084,233.5C416.084,237.786 412.557,241.313 408.271,241.313C403.985,241.313 400.458,237.786 400.458,233.5C400.463,166.683 345.486,111.697 278.669,111.691Z" style="fill:#fff"/></g></svg>';

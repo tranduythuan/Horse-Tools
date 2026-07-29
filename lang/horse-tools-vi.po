@@ -5251,3 +5251,9 @@ msgstr "Ngăn trượt phải"
 
 msgid "Show a floating “Services” button on desktop"
 msgstr "Hiện nút “Dịch vụ” nổi trên máy tính"
+
+msgid "Contact us"
+msgstr "Liên hệ với chúng tôi"
+
+msgid "We reply quickly"
+msgstr "Phản hồi nhanh trong ít phút"

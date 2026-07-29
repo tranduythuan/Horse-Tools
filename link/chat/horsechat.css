@@ -769,3 +769,27 @@ body .ht-chaton a, body .ht-chatbox-skin1 a, body .ht-chatbox-skin2 a, body .ht-
 .ht-cbx-hexagon svg{border-radius:0 !important;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);width:50px}
 .ht-cbx-hexagon a:not(:last-child){margin-bottom:8px}
 .ht-cbx-hexagon a:nth-child(even){margin-left:26px}
+
+/* ---- Structural skins: Corner card + Side tab ---- */
+/* Corner card */
+.ht-chatbox-card .ht-card-panel{background:#fff !important;border-radius:16px;box-shadow:0 12px 34px rgba(0,0,0,.16);overflow:hidden;min-width:262px;padding:0;margin-bottom:14px}
+.ht-card-head{background:#1D9E75;padding:14px 16px}
+.ht-card-t{display:block;color:#fff;font-size:15px;font-weight:600}
+.ht-card-s{display:block;color:rgba(255,255,255,.82);font-size:12px;margin-top:2px}
+.ht-chatbox-card .ht-chaton-scroll{padding:8px 6px;max-height:320px}
+.ht-chatbox-card .ht-cco{display:flex !important;align-items:center;gap:11px;padding:8px 10px;border-radius:10px}
+.ht-chatbox-card .ht-cco:hover{background:#f5f5f5}
+.ht-chatbox-card .ht-cco span{color:#333 !important;font-size:14px}
+.ht-chatbox-card .ht-cco svg{width:36px;height:36px}
+
+/* Side tab */
+.ht-chatbox-sidetab #chatona{position:fixed !important;top:42% !important;bottom:auto !important;background:#1D9E75;border:none;color:#fff;padding:16px 9px;cursor:pointer;writing-mode:vertical-rl;display:flex !important;align-items:center;gap:7px;font-size:14px;font-weight:600;z-index:10150;box-shadow:0 3px 14px rgba(0,0,0,.18);width:auto !important;height:auto !important}
+.ht-sidetab-right #chatona{right:0;left:auto !important;border-radius:12px 0 0 12px}
+.ht-sidetab-left #chatona{left:0;right:auto !important;border-radius:0 12px 12px 0}
+.ht-chatbox-sidetab .ht-sidetab-panel{position:fixed !important;top:38% !important;bottom:auto !important;background:#fff !important;box-shadow:0 8px 30px rgba(0,0,0,.16);padding:10px 8px;min-width:212px;border-radius:12px}
+.ht-sidetab-right .ht-sidetab-panel{right:54px;left:auto}
+.ht-sidetab-left .ht-sidetab-panel{left:54px;right:auto}
+.ht-chatbox-sidetab .ht-cco{display:flex !important;align-items:center;gap:11px;padding:8px 10px;border-radius:10px}
+.ht-chatbox-sidetab .ht-cco:hover{background:#f5f5f5}
+.ht-chatbox-sidetab .ht-cco span{color:#333 !important;font-size:14px}
+.ht-chatbox-sidetab .ht-cco svg{width:34px;height:34px}

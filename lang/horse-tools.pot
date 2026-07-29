@@ -790,12 +790,16 @@ msgstr ""
 msgid "Confirm deletion"
 msgstr ""
 
-#: inc/chat.php:295 inc/woo.php:78
+#: inc/chat.php:274 inc/chat.php:300 inc/chat.php:336 inc/woo.php:78
 msgid "Contact"
 msgstr ""
 
 #: main/page/12chat.php:211
 msgid "Contact bar on mobile"
+msgstr ""
+
+#: inc/chat.php:271
+msgid "Contact us"
 msgstr ""
 
 #: main/shortcode.php:1178
@@ -1146,7 +1150,7 @@ msgstr ""
 msgid "Deletion successful"
 msgstr ""
 
-#: inc/chat.php:320
+#: inc/chat.php:361
 msgid "Demo"
 msgstr ""
 
@@ -2691,7 +2695,7 @@ msgstr ""
 msgid "Name — letters, numbers, dashes (e.g. call-to-action)"
 msgstr ""
 
-#: inc/chat.php:484
+#: inc/chat.php:525
 msgid "Navigation bar (Horse Tools)"
 msgstr ""
 
@@ -4272,6 +4276,10 @@ msgstr ""
 
 #: page/503.php:4
 msgid "We apologize, the website is currently undergoing maintenance. Please wait for a moment"
+msgstr ""
+
+#: inc/chat.php:271
+msgid "We reply quickly"
 msgstr ""
 
 #: main/clean.php:48

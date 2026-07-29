@@ -31,7 +31,7 @@ global $horsetools_options; ?>
 		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/chat/5.png'); ?>" data-value="Floating" class="<?php if(isset($horsetools_options['chat-nut-skin']) && $horsetools_options['chat-nut-skin'] == 'Floating') echo 'selected'; ?>" />
 		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/chat/6.png'); ?>" data-value="Tap" class="<?php if(isset($horsetools_options['chat-nut-skin']) && $horsetools_options['chat-nut-skin'] == 'Tap') echo 'selected'; ?>" />
 		<?php
-		$horsetools_newskins = array( 'Dock' => 'ti-layout-grid', 'Pill' => 'ti-capsule-horizontal', 'Glass' => 'ti-square-rounded', 'Tile' => 'ti-square', 'Hexagon' => 'ti-hexagon' );
+		$horsetools_newskins = array( 'Dock' => 'ti-layout-grid', 'Pill' => 'ti-capsule-horizontal', 'Glass' => 'ti-square-rounded', 'Tile' => 'ti-square', 'Hexagon' => 'ti-hexagon', 'Card' => 'ti-id', 'Sidetab' => 'ti-layout-sidebar-right' );
 		foreach ( $horsetools_newskins as $sk => $ic ) {
 			$sel = ( isset($horsetools_options['chat-nut-skin']) && $horsetools_options['chat-nut-skin'] == $sk ) ? ' selected' : '';
 			echo '<span class="ht-skin-tile'. $sel .'" data-value="'. esc_attr($sk) .'"><i class="ti '. esc_attr($ic) .'"></i>'. esc_html($sk) .'</span>';
