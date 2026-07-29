@@ -34,7 +34,7 @@ msgstr ""
 msgid "(duplicate)"
 msgstr ""
 
-#: main/shortcode.php:891
+#: main/shortcode.php:991
 msgid "(no title)"
 msgstr ""
 
@@ -750,6 +750,10 @@ msgstr ""
 msgid "Contact bar on mobile"
 msgstr ""
 
+#: main/shortcode.php:1178
+msgid "Content"
+msgstr ""
+
 #: main/shortcode.php:60
 msgid "Content to be hidden"
 msgstr ""
@@ -966,8 +970,12 @@ msgstr ""
 msgid "Data"
 msgstr ""
 
-#: main/shortcode.php:584
+#: main/shortcode.php:584 main/shortcode.php:1180
 msgid "Data & media"
+msgstr ""
+
+#: main/shortcode.php:1181
+msgid "Date"
 msgstr ""
 
 #: main/debug.php:132 main/extend.php:185
@@ -1670,7 +1678,7 @@ msgstr ""
 msgid "Enter ID"
 msgstr ""
 
-#: main/shortcode.php:873
+#: main/shortcode.php:973
 msgid "Enter a shortcode name to search for."
 msgstr ""
 
@@ -1972,7 +1980,7 @@ msgstr ""
 msgid "Generate data"
 msgstr ""
 
-#: main/shortcode.php:762
+#: main/shortcode.php:851
 msgid "Give the snippet a name (letters, numbers and dashes)."
 msgstr ""
 
@@ -2084,7 +2092,7 @@ msgstr ""
 msgid "Horse Search"
 msgstr ""
 
-#: inc/horsetools.php:217 main/shortcode.php:1033
+#: inc/horsetools.php:217 main/shortcode.php:1133
 msgid "Horse Tools"
 msgstr ""
 
@@ -2092,7 +2100,7 @@ msgstr ""
 msgid "Horse Tools is built on %s, which is no longer maintained by its author. That original work is gratefully acknowledged and this fork continues under the same GPLv2 licence."
 msgstr ""
 
-#: main/shortcode.php:1037
+#: main/shortcode.php:1137
 msgid "Horse Tools shortcode"
 msgstr ""
 
@@ -2260,7 +2268,7 @@ msgstr ""
 msgid "Images are lazy-loaded"
 msgstr ""
 
-#: main/export.php:428
+#: main/export.php:428 main/shortcode.php:672
 msgid "Import"
 msgstr ""
 
@@ -2274,6 +2282,10 @@ msgstr ""
 
 #: main/shortcode.php:421
 msgid "Imported %1$d snippet(s); %2$d already existed."
+msgstr ""
+
+#: main/shortcode.php:723
+msgid "Imported %1$d snippet(s); %2$d already existed. Reloading…"
 msgstr ""
 
 #: main/shortcode.php:624
@@ -2319,6 +2331,10 @@ msgstr ""
 msgid "Insufficient permissions"
 msgstr ""
 
+#: main/shortcode.php:674
+msgid "Known post types:"
+msgstr ""
+
 #: main/shortcode.php:18 main/shortcode.php:36
 msgid "LOCKVIP"
 msgstr ""
@@ -2331,7 +2347,7 @@ msgstr ""
 msgid "Last seen"
 msgstr ""
 
-#: main/shortcode.php:572
+#: main/shortcode.php:572 main/shortcode.php:1179
 msgid "Layout & interactive"
 msgstr ""
 
@@ -2345,6 +2361,10 @@ msgstr ""
 
 #: main/export.php:261
 msgid "Lean pages and lighter media. Leaves Gutenberg and Classic CSS alone, since removing those can change how a theme looks."
+msgstr ""
+
+#: main/shortcode.php:668
+msgid "Leave another shortcode plugin"
 msgstr ""
 
 #: main/shortcode.php:178
@@ -2539,6 +2559,10 @@ msgstr ""
 msgid "Monthly"
 msgstr ""
 
+#: main/shortcode.php:669
+msgid "Most snippet plugins store their snippets as a custom post type. Enter that post type to import them all as Horse Tools snippets — the other plugin is only read, never changed. After importing you can deactivate it and (for Shortcoder) your [sc …] tags keep working, or use “Convert” above."
+msgstr ""
+
 #: main/shortcode.php:551
 msgid "Move snippets between sites"
 msgstr ""
@@ -2591,10 +2615,6 @@ msgstr ""
 msgid "No Google Fonts leaking to Google"
 msgstr ""
 
-#: main/shortcode.php:833
-msgid "No Shortcoder snippets were found on this site."
-msgstr ""
-
 #: main/shortcode.php:424
 msgid "No [sc] tags found in your content."
 msgstr ""
@@ -2625,6 +2645,10 @@ msgstr ""
 
 #: inc/clean.php:298
 msgid "No size"
+msgstr ""
+
+#: main/shortcode.php:932
+msgid "No snippets were found for the post type \"%s\"."
 msgstr ""
 
 #: main/shortcode.php:418
@@ -2821,7 +2845,7 @@ msgstr ""
 msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
 msgstr ""
 
-#: inc/scuri.php:466 inc/scuri.php:532 main/shortcode.php:716
+#: inc/scuri.php:466 inc/scuri.php:532 main/shortcode.php:805
 msgid "Permission denied."
 msgstr ""
 
@@ -3088,7 +3112,7 @@ msgstr ""
 
 #: main/admin.php:93 main/ads.php:114 main/code.php:102 main/debug.php:74
 #: main/extend.php:216 main/font.php:130 main/gindex.php:117 main/notify.php:197
-#: main/redirects.php:199 main/search.php:207 main/shortcode.php:669 main/toc.php:279
+#: main/redirects.php:199 main/search.php:207 main/shortcode.php:758 main/toc.php:279
 msgid "SAVE CONTENT"
 msgstr ""
 
@@ -3152,8 +3176,16 @@ msgstr ""
 msgid "Save schedule"
 msgstr ""
 
+#: main/shortcode.php:697
+msgid "Save shortcode status"
+msgstr ""
+
 #: main/shortcode.php:339
 msgid "Save snippet"
+msgstr ""
+
+#: main/shortcode.php:724
+msgid "Saved."
 msgstr ""
 
 #: main/page/2scuri.php:138
@@ -3381,7 +3413,7 @@ msgstr ""
 msgid "Settings changed"
 msgstr ""
 
-#: main/extend.php:155 main/shortcode.php:685 main/shortcode.php:1035
+#: main/extend.php:155 main/shortcode.php:774 main/shortcode.php:1135
 msgid "Shortcode"
 msgstr ""
 
@@ -3453,7 +3485,7 @@ msgstr ""
 msgid "Snippet saved."
 msgstr ""
 
-#: main/page/2scuri.php:178 main/shortcode.php:427 main/shortcode.php:626
+#: main/page/2scuri.php:178 main/shortcode.php:427 main/shortcode.php:626 main/shortcode.php:725
 msgid "Something went wrong."
 msgstr ""
 
@@ -3507,6 +3539,10 @@ msgstr ""
 
 #: main/extend.php:150
 msgid "Support quick notification setup, allowing web managers to easily deliver useful and timely content, helping users stay informed effortlessly"
+msgstr ""
+
+#: main/shortcode.php:684
+msgid "Switch off any shortcode you do not use. A disabled shortcode simply stops rendering. This only affects Horse Tools shortcodes — never those from other plugins."
 msgstr ""
 
 #: main/page/ht-about2.php:20
@@ -3581,11 +3617,11 @@ msgstr ""
 msgid "That is not a valid Horse Tools export file."
 msgstr ""
 
-#: main/shortcode.php:951
+#: main/shortcode.php:1051
 msgid "That is not a valid snippet export file."
 msgstr ""
 
-#: main/shortcode.php:767
+#: main/shortcode.php:856
 msgid "That name is reserved by another Horse Tools shortcode. Pick a different one."
 msgstr ""
 
@@ -3889,6 +3925,10 @@ msgstr ""
 msgid "Trashed comments"
 msgstr ""
 
+#: main/shortcode.php:683
+msgid "Turn Horse Tools shortcodes on or off"
+msgstr ""
+
 #: inc/health.php:157
 msgid "Turn off WP_DEBUG_DISPLAY on a live site."
 msgstr ""
@@ -3905,7 +3945,7 @@ msgstr ""
 msgid "Type any shortcode name (without brackets) to list the posts and pages that contain it — handy before you change or remove one."
 msgstr ""
 
-#: main/shortcode.php:1036
+#: main/shortcode.php:1136
 msgid "Type the number of the shortcode to insert:"
 msgstr ""
 
@@ -4281,6 +4321,10 @@ msgstr ""
 msgid "off"
 msgstr ""
 
+#: main/shortcode.php:671
+msgid "post type, e.g. shortcoder"
+msgstr ""
+
 #: inc/shortcodes-lib.php:32
 msgid "sec"
 msgstr ""
@@ -4301,6 +4345,6 @@ msgstr ""
 msgid "v3 score threshold (0 – 1)"
 msgstr ""
 
-#: main/shortcode.php:1034
+#: main/shortcode.php:1134
 msgid "— Insert a shortcode —"
 msgstr ""

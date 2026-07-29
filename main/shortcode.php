@@ -664,6 +664,95 @@ function horsetools_shortcode_options_page() {
 				});
 			})();
 			</script>
+			<div class="ht-card ht-snip4" data-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_snip' ) ); ?>" data-ajax="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>">
+			  <h3><i class="ti ti-plug-connected-x"></i> <?php _e('Leave another shortcode plugin', 'horse-tools') ?></h3>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Most snippet plugins store their snippets as a custom post type. Enter that post type to import them all as Horse Tools snippets — the other plugin is only read, never changed. After importing you can deactivate it and (for Shortcoder) your [sc …] tags keep working, or use “Convert” above.', 'horse-tools'); ?></p>
+				<p class="ht-snip-actions">
+					<input type="text" id="ht-cpt-input" class="ht-input-big" style="max-width:260px" placeholder="<?php esc_attr_e( 'post type, e.g. shortcoder', 'horse-tools' ); ?>" value="shortcoder" />
+					<button type="button" class="ht-priv-btn" id="ht-cpt-import"><i class="ti ti-download"></i> <?php _e( 'Import', 'horse-tools' ); ?></button>
+				</p>
+				<p class="ht-note"><?php _e( 'Known post types:', 'horse-tools' ); ?>
+					<a class="ht-cpt-preset" data-cpt="shortcoder">Shortcoder</a> ·
+					<a class="ht-cpt-preset" data-cpt="content_block">Content Blocks</a> ·
+					<a class="ht-cpt-preset" data-cpt="woody_snippet">Woody snippets</a>
+				</p>
+				<div id="ht-cpt-out"></div>
+			</div>
+
+			<div class="ht-card ht-scman" data-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_snip' ) ); ?>" data-ajax="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>">
+			  <h3><i class="ti ti-toggle-left"></i> <?php _e('Turn Horse Tools shortcodes on or off', 'horse-tools') ?></h3>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Switch off any shortcode you do not use. A disabled shortcode simply stops rendering. This only affects Horse Tools shortcodes — never those from other plugins.', 'horse-tools'); ?></p>
+				<?php
+				$horsetools_sc_off = (array) get_option( 'horsetools_sc_disabled', array() );
+				foreach ( horsetools_sc_manageable() as $group => $tags ) {
+					echo '<div class="ht-scman-group"><h4>' . esc_html( $group ) . '</h4>';
+					foreach ( $tags as $tag ) {
+						$on = ! in_array( $tag, $horsetools_sc_off, true );
+						echo '<label class="ht-scman-item"><input type="checkbox" class="ht-scman-cb" value="' . esc_attr( $tag ) . '"' . checked( $on, true, false ) . ' /> <code>[' . esc_html( $tag ) . ']</code></label>';
+					}
+					echo '</div>';
+				}
+				?>
+				<p class="ht-snip-actions">
+					<button type="button" class="ht-priv-btn" id="ht-scman-save"><i class="ti ti-device-floppy"></i> <?php _e( 'Save shortcode status', 'horse-tools' ); ?></button>
+				</p>
+				<div id="ht-scman-out"></div>
+			</div>
+			<style>
+			.ht-snip4 .ht-priv-btn,.ht-scman .ht-priv-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #e0a800;color:#8a5a00;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:13px}
+			.ht-snip4 .ht-priv-btn:hover,.ht-scman .ht-priv-btn:hover{background:#fff9e6}
+			.ht-cpt-preset{cursor:pointer;color:#8a5a00;text-decoration:underline}
+			.ht-scman-group{margin-bottom:12px}
+			.ht-scman-group h4{margin:0 0 6px;font-size:13px;color:#8a5a00}
+			.ht-scman-item{display:inline-flex;align-items:center;gap:5px;margin:0 14px 8px 0;font-size:13px}
+			.ht-scman-item code{background:#fff8e1;border:1px solid #f0d98a;color:#8a5a00;border-radius:5px;padding:1px 6px}
+			</style>
+			<script>
+			(function(){
+				var im = document.querySelector('.ht-snip4');
+				if (!im || im.dataset.ready) { return; }
+				im.dataset.ready = '1';
+				var AJAX = im.dataset.ajax, NONCE = im.dataset.nonce;
+				function esc(s){ return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+				function post(data, done){
+					data.nonce = NONCE;
+					var body = Object.keys(data).map(function(k){ return encodeURIComponent(k)+'='+encodeURIComponent(data[k]); }).join('&');
+					fetch(AJAX,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).then(function(r){return r.json();}).then(done).catch(function(){ done(null); });
+				}
+				var I18N = {
+					imported: <?php echo wp_json_encode( __( 'Imported %1$d snippet(s); %2$d already existed. Reloading…', 'horse-tools' ) ); ?>,
+					saved: <?php echo wp_json_encode( __( 'Saved.', 'horse-tools' ) ); ?>,
+					fail: <?php echo wp_json_encode( __( 'Something went wrong.', 'horse-tools' ) ); ?>
+				};
+				var out = document.getElementById('ht-cpt-out');
+				function say(el,t,cls){ el.innerHTML = '<div class="ht-snip-msg '+(cls||'')+'">'+esc(t)+'</div>'; }
+				document.querySelectorAll('.ht-cpt-preset').forEach(function(a){
+					a.addEventListener('click', function(){ document.getElementById('ht-cpt-input').value = a.getAttribute('data-cpt'); });
+				});
+				document.getElementById('ht-cpt-import').addEventListener('click', function(){
+					var pt = document.getElementById('ht-cpt-input').value.trim();
+					post({action:'horsetools_snip_import_sc', post_type:pt}, function(res){
+						if(!res||!res.success){ say(out,(res&&res.data&&res.data.msg)||I18N.fail,'err'); return; }
+						say(out,I18N.imported.replace('%1$d',res.data.imported).replace('%2$d',res.data.skipped),'good');
+						setTimeout(function(){ location.reload(); }, 1300);
+					});
+				});
+
+				// on/off manager
+				var man = document.querySelector('.ht-scman');
+				var mout = document.getElementById('ht-scman-out');
+				document.getElementById('ht-scman-save').addEventListener('click', function(){
+					var disabled = [];
+					man.querySelectorAll('.ht-scman-cb').forEach(function(cb){ if(!cb.checked){ disabled.push(cb.value); } });
+					var body = 'action=horsetools_sc_disable_save&nonce='+encodeURIComponent(man.dataset.nonce)
+						+ disabled.map(function(t){ return '&disabled[]='+encodeURIComponent(t); }).join('');
+					fetch(man.dataset.ajax,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+						.then(function(r){return r.json();})
+						.then(function(res){ say(mout, res&&res.success?I18N.saved:I18N.fail, res&&res.success?'good':'err'); })
+						.catch(function(){ say(mout,I18N.fail,'err'); });
+				});
+			})();
+			</script>
 			</div>
 			<div class="ht-submit">
 				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
@@ -821,16 +910,27 @@ function horsetools_snip_delete_ajax() {
 add_action( 'wp_ajax_horsetools_snip_import_sc', 'horsetools_snip_import_sc_ajax' );
 function horsetools_snip_import_sc_ajax() {
 	horsetools_snip_guard();
+	// Any snippet plugin that stores its snippets as a custom post type can be
+	// imported by naming that post type. Defaults to Shortcoder. This never
+	// touches the other plugin — it only reads its rows out of the database, so
+	// it works whether or not that plugin is still active.
+	$post_type = isset( $_POST['post_type'] ) ? sanitize_key( wp_unslash( $_POST['post_type'] ) ) : 'shortcoder'; // phpcs:ignore WordPress.Security.NonceVerification -- nonce checked in horsetools_snip_guard()
+	if ( '' === $post_type ) {
+		$post_type = 'shortcoder';
+	}
 	global $wpdb;
 	$rows = $wpdb->get_results(
 		$wpdb->prepare(
 			"SELECT post_title, post_name, post_content FROM {$wpdb->posts} WHERE post_type = %s AND post_status != %s",
-			'shortcoder',
+			$post_type,
 			'trash'
 		)
 	);
 	if ( empty( $rows ) ) {
-		wp_send_json_error( array( 'msg' => __( 'No Shortcoder snippets were found on this site.', 'horse-tools' ) ) );
+		wp_send_json_error( array(
+			/* translators: %s: post type name. */
+			'msg' => sprintf( __( 'No snippets were found for the post type "%s".', 'horse-tools' ), $post_type ),
+		) );
 	}
 
 	$snips    = horsetools_snippets_get();
@@ -1063,4 +1163,47 @@ function horsetools_sc_qt_enqueue( $hook ) {
 	}
 	wp_enqueue_script( 'horsetools-sc-qt', HORSETOOLS_URL . 'link/shortcode/htsc-qt.js', array( 'quicktags' ), HORSETOOLS_VERSION, true );
 	wp_localize_script( 'horsetools-sc-qt', 'horsetoolsSC', horsetools_sc_editor_payload() );
+}
+
+/* -------------------------------------------------------------------------
+ * Shortcode on/off manager (Option A: Horse Tools' own tags + snippets only).
+ *
+ * The manageable list is a fixed allow-list of tags this plugin registers, so
+ * the manager can never disable a shortcode owned by another plugin.
+ * ---------------------------------------------------------------------- */
+
+/** Grouped allow-list of Horse Tools shortcodes the manager may toggle. */
+function horsetools_sc_manageable() {
+	return array(
+		__( 'Content', 'horse-tools' )              => array( 'ht-snippet', 'sc', 'ht-if', 'ht-raw', 'vip', 'sign' ),
+		__( 'Layout & interactive', 'horse-tools' ) => array( 'ht-alert', 'ht-accordion', 'ht-tabs', 'ht-toggle', 'ht-reveal', 'ht-copy', 'ht-progress', 'ht-countdown', 'ht-button', 'ht-email' ),
+		__( 'Data & media', 'horse-tools' )         => array( 'ht-loop', 'ht-field', 'ht-post', 'ht-readingtime', 'ht-count', 'ht-qr', 'ht-video', 'ht-icon', 'gget' ),
+		__( 'Date', 'horse-tools' )                 => array( 'titday', 'titmonth', 'tityear' ),
+	);
+}
+
+/** Flat list of every manageable tag. */
+function horsetools_sc_manageable_flat() {
+	$flat = array();
+	foreach ( horsetools_sc_manageable() as $tags ) {
+		$flat = array_merge( $flat, $tags );
+	}
+	return $flat;
+}
+
+add_action( 'wp_ajax_horsetools_sc_disable_save', 'horsetools_sc_disable_save_ajax' );
+function horsetools_sc_disable_save_ajax() {
+	horsetools_snip_guard();
+	$raw     = isset( $_POST['disabled'] ) ? (array) wp_unslash( $_POST['disabled'] ) : array(); // phpcs:ignore WordPress.Security.NonceVerification -- nonce checked in horsetools_snip_guard()
+	$allowed = horsetools_sc_manageable_flat();
+	$clean   = array();
+	foreach ( $raw as $tag ) {
+		$tag = sanitize_key( $tag );
+		// Only ever store a tag that belongs to Horse Tools.
+		if ( in_array( $tag, $allowed, true ) ) {
+			$clean[] = $tag;
+		}
+	}
+	update_option( 'horsetools_sc_disabled', array_values( array_unique( $clean ) ), false );
+	wp_send_json_success( array( 'disabled' => $clean ) );
 }

@@ -5068,3 +5068,39 @@ msgstr "Gõ số của shortcode muốn chèn:"
 
 msgid "— Insert a shortcode —"
 msgstr "— Chèn một shortcode —"
+
+msgid "Content"
+msgstr "Nội dung"
+
+msgid "Date"
+msgstr "Ngày"
+
+msgid "Imported %1$d snippet(s); %2$d already existed. Reloading…"
+msgstr "Đã nhập %1$d snippet; %2$d đã có sẵn. Đang tải lại…"
+
+msgid "Known post types:"
+msgstr "Các post type đã biết:"
+
+msgid "Leave another shortcode plugin"
+msgstr "Rời bỏ plugin shortcode khác"
+
+msgid "Most snippet plugins store their snippets as a custom post type. Enter that post type to import them all as Horse Tools snippets — the other plugin is only read, never changed. After importing you can deactivate it and (for Shortcoder) your [sc …] tags keep working, or use “Convert” above."
+msgstr "Hầu hết plugin snippet lưu snippet dưới dạng custom post type. Nhập post type đó để nhập tất cả thành snippet Horse Tools — plugin kia chỉ được đọc, không hề bị thay đổi. Sau khi nhập, bạn có thể tắt nó và (với Shortcoder) các thẻ [sc …] vẫn chạy, hoặc dùng “Chuyển đổi” ở trên."
+
+msgid "No snippets were found for the post type \"%s\"."
+msgstr "Không tìm thấy snippet nào cho post type \"%s\"."
+
+msgid "Save shortcode status"
+msgstr "Lưu trạng thái shortcode"
+
+msgid "Saved."
+msgstr "Đã lưu."
+
+msgid "Switch off any shortcode you do not use. A disabled shortcode simply stops rendering. This only affects Horse Tools shortcodes — never those from other plugins."
+msgstr "Tắt bất kỳ shortcode nào bạn không dùng. Shortcode bị tắt sẽ ngừng hiển thị. Chỉ ảnh hưởng shortcode Horse Tools — không bao giờ đụng shortcode của plugin khác."
+
+msgid "Turn Horse Tools shortcodes on or off"
+msgstr "Bật hoặc tắt shortcode Horse Tools"
+
+msgid "post type, e.g. shortcoder"
+msgstr "post type, ví dụ: shortcoder"

@@ -27,6 +27,7 @@ delete_option('horsetools_gfont_local');
 delete_option('horsetools_gfont_ver');
 delete_option('horsetools_gfont_seen');
 delete_option('horsetools_snippets');
+delete_option('horsetools_sc_disabled');
 
 // Drop the scheduled cleanup event too, in case the plugin is removed without
 // being deactivated first.

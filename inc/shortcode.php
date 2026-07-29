@@ -445,4 +445,25 @@ if ( isset( $horsetools_shortcode_options['shortcode-interm'] ) ) {
 	add_filter( 'category_description', 'do_shortcode', 11 );
 }
 
+/**
+ * Turn off individual Horse Tools shortcodes the admin has disabled.
+ *
+ * Runs after every tag is registered (priority 100, later than the [sc]
+ * compat at 99). It only ever removes this plugin's OWN tags — the manager
+ * that writes this option is limited to the Horse Tools + snippet list, so it
+ * never touches shortcodes owned by other plugins.
+ */
+add_action( 'init', function () {
+	$disabled = get_option( 'horsetools_sc_disabled', array() );
+	if ( ! is_array( $disabled ) ) {
+		return;
+	}
+	foreach ( $disabled as $tag ) {
+		$tag = sanitize_key( $tag );
+		if ( '' !== $tag && shortcode_exists( $tag ) ) {
+			remove_shortcode( $tag );
+		}
+	}
+}, 100 );
+
 require_once HORSETOOLS_DIR . 'inc/shortcodes-lib.php';
