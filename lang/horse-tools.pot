@@ -26,8 +26,16 @@ msgstr ""
 msgid "%d enabled"
 msgstr ""
 
+#: main/shortcode.php:390
+msgid "%d post(s) contain [sc] tags. Click “Convert now” to rewrite them."
+msgstr ""
+
 #: inc/post.php:259
 msgid "(duplicate)"
+msgstr ""
+
+#: main/shortcode.php:665
+msgid "(no title)"
 msgstr ""
 
 #: main/redirects.php:18 main/redirects.php:33
@@ -138,7 +146,7 @@ msgstr ""
 msgid "Add Google json code"
 msgstr ""
 
-#: main/shortcode.php:202
+#: main/shortcode.php:203
 msgid "Add a label so screen readers announce it."
 msgstr ""
 
@@ -471,11 +479,11 @@ msgid "Border distance"
 msgstr ""
 
 #: main/notify.php:149 main/page/10custom.php:111 main/page/12chat.php:206 main/page/4main.php:94
-#: main/shortcode.php:159 main/toc.php:240
+#: main/shortcode.php:160 main/toc.php:240
 msgid "Border radius"
 msgstr ""
 
-#: main/shortcode.php:155
+#: main/shortcode.php:156
 msgid "Border size"
 msgstr ""
 
@@ -487,7 +495,7 @@ msgstr ""
 msgid "Button color"
 msgstr ""
 
-#: main/shortcode.php:163 main/shortcode.php:164
+#: main/shortcode.php:164 main/shortcode.php:165
 msgid "Button name"
 msgstr ""
 
@@ -539,7 +547,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: main/shortcode.php:136
+#: main/shortcode.php:137
 msgid "Center-align button on page"
 msgstr ""
 
@@ -722,7 +730,7 @@ msgstr ""
 msgid "Contact bar on mobile"
 msgstr ""
 
-#: main/shortcode.php:59
+#: main/shortcode.php:60
 msgid "Content to be hidden"
 msgstr ""
 
@@ -758,12 +766,20 @@ msgstr ""
 msgid "Convert PNG to JPG"
 msgstr ""
 
+#: main/shortcode.php:346
+msgid "Convert Shortcoder tags"
+msgstr ""
+
 #: main/page/5media.php:113
 msgid "Convert images to AVIF upon upload"
 msgstr ""
 
 #: main/page/5media.php:99
 msgid "Convert images to WEBP upon upload"
+msgstr ""
+
+#: main/shortcode.php:350
+msgid "Convert now"
 msgstr ""
 
 #: main/page/6post.php:97
@@ -774,11 +790,19 @@ msgstr ""
 msgid "Convert paths from (domain.com/category/news/latest-news, domain.com/category/news) to (domain.com/latest-news, domain.com/news)"
 msgstr ""
 
+#: main/shortcode.php:391
+msgid "Converted %d post(s)."
+msgstr ""
+
 #: inc/notify.php:82
 msgid "Cookies"
 msgstr ""
 
-#: main/shortcode.php:260 main/shortcode.php:264
+#: main/shortcode.php:384
+msgid "Copied"
+msgstr ""
+
+#: main/shortcode.php:261 main/shortcode.php:265
 msgid "Copied: "
 msgstr ""
 
@@ -794,7 +818,7 @@ msgstr ""
 msgid "Could not create the fonts folder in uploads."
 msgstr ""
 
-#: main/shortcode.php:301
+#: main/shortcode.php:302
 msgid "Could not load the icon list."
 msgstr ""
 
@@ -808,6 +832,10 @@ msgstr ""
 
 #: main/page/12chat.php:12
 msgid "Create a chat feature for users"
+msgstr ""
+
+#: main/shortcode.php:312
+msgid "Create a named block of HTML/CSS/JS and drop it anywhere with [ht-snippet name=\"your-name\"]. Placeholders {{param}} or %%param%% are filled from the shortcode’s attributes, plus built-ins: currentyear, currentdate, postid, posttitle, sitename, siteurl."
 msgstr ""
 
 #: main/notify.php:88
@@ -836,6 +864,10 @@ msgstr ""
 
 #: main/page/6post.php:59 main/toc.php:39
 msgid "Custom posts will be displayed"
+msgstr ""
+
+#: main/shortcode.php:311
+msgid "Custom shortcodes (snippets)"
 msgstr ""
 
 #: main/page/12chat.php:299 main/toc.php:233
@@ -886,7 +918,7 @@ msgstr ""
 msgid "DATABASE"
 msgstr ""
 
-#: main/shortcode.php:20 main/shortcode.php:97
+#: main/shortcode.php:20 main/shortcode.php:98
 msgid "DATE"
 msgstr ""
 
@@ -942,7 +974,7 @@ msgstr ""
 msgid "Default style"
 msgstr ""
 
-#: inc/user.php:76 main/clean.php:204
+#: inc/user.php:76 main/clean.php:204 main/shortcode.php:394
 msgid "Delete"
 msgstr ""
 
@@ -980,6 +1012,10 @@ msgstr ""
 
 #: main/redirects.php:167
 msgid "Delete this log entry"
+msgstr ""
+
+#: main/shortcode.php:385
+msgid "Delete this snippet? Content that uses it will stop rendering."
 msgstr ""
 
 #: inc/clean.php:296
@@ -1122,7 +1158,7 @@ msgstr ""
 msgid "Display language settings"
 msgstr ""
 
-#: main/shortcode.php:131
+#: main/shortcode.php:132
 msgid "Display link when seconds expire"
 msgstr ""
 
@@ -1150,7 +1186,7 @@ msgstr ""
 msgid "Display text if the price is 0"
 msgstr ""
 
-#: main/page/4main.php:51 main/shortcode.php:113
+#: main/page/4main.php:51 main/shortcode.php:114
 msgid "Display type"
 msgstr ""
 
@@ -1206,11 +1242,11 @@ msgstr ""
 msgid "Download .json"
 msgstr ""
 
-#: main/shortcode.php:125
+#: main/shortcode.php:126
 msgid "Download button GGET shortcode"
 msgstr ""
 
-#: main/shortcode.php:162 main/shortcode.php:163 main/shortcode.php:164
+#: main/shortcode.php:163 main/shortcode.php:164 main/shortcode.php:165
 msgid "Download link"
 msgstr ""
 
@@ -1232,6 +1268,10 @@ msgstr ""
 
 #: main/page/6post.php:53
 msgid "Duplicate post, page, custom post type"
+msgstr ""
+
+#: main/shortcode.php:393
+msgid "Edit"
 msgstr ""
 
 #: inc/tool.php:99
@@ -1314,7 +1354,7 @@ msgstr ""
 msgid "Enable Classic Widget"
 msgstr ""
 
-#: main/shortcode.php:126
+#: main/shortcode.php:127
 msgid "Enable GGET shortcode"
 msgstr ""
 
@@ -1414,7 +1454,7 @@ msgstr ""
 msgid "Enable dark mode"
 msgstr ""
 
-#: main/shortcode.php:100
+#: main/shortcode.php:101
 msgid "Enable date shortcode"
 msgstr ""
 
@@ -1478,7 +1518,7 @@ msgstr ""
 msgid "Enable revision limit"
 msgstr ""
 
-#: main/shortcode.php:38
+#: main/shortcode.php:39
 msgid "Enable shortcode lock"
 msgstr ""
 
@@ -1486,7 +1526,7 @@ msgstr ""
 msgid "Enable shortcodes"
 msgstr ""
 
-#: main/shortcode.php:68
+#: main/shortcode.php:69
 msgid "Enable signature shortcode"
 msgstr ""
 
@@ -1498,7 +1538,7 @@ msgstr ""
 msgid "Enable table of contents"
 msgstr ""
 
-#: main/shortcode.php:173
+#: main/shortcode.php:174
 msgid "Enable the [ht-icon] shortcode"
 msgstr ""
 
@@ -1570,6 +1610,10 @@ msgstr ""
 msgid "Enable watermarks"
 msgstr ""
 
+#: main/shortcode.php:324
+msgid "Enabled"
+msgstr ""
+
 #: inc/toc.php:218
 msgid "Enabled TOC"
 msgstr ""
@@ -1588,6 +1632,10 @@ msgstr ""
 
 #: main/page/12chat.php:53
 msgid "Enter ID"
+msgstr ""
+
+#: main/shortcode.php:647
+msgid "Enter a shortcode name to search for."
 msgstr ""
 
 #: main/page/10custom.php:19
@@ -1656,7 +1704,7 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
-#: main/shortcode.php:57
+#: main/shortcode.php:58
 msgid "Enter note content"
 msgstr ""
 
@@ -1710,7 +1758,7 @@ msgstr ""
 msgid "Enter units"
 msgstr ""
 
-#: main/shortcode.php:143
+#: main/shortcode.php:144
 msgid "Enter waiting time"
 msgstr ""
 
@@ -1786,6 +1834,14 @@ msgstr ""
 msgid "Find and delete all 404 thumbnail images in media"
 msgstr ""
 
+#: main/shortcode.php:342
+msgid "Find usage"
+msgstr ""
+
+#: main/shortcode.php:338
+msgid "Find where a shortcode is used"
+msgstr ""
+
 #: main/page/5media.php:192
 msgid "Flip photo"
 msgstr ""
@@ -1808,6 +1864,10 @@ msgstr ""
 
 #: main/ads.php:35
 msgid "Forced ad clicks — removed"
+msgstr ""
+
+#: main/shortcode.php:388
+msgid "Found in %d item(s):"
 msgstr ""
 
 #: main/page/ht-about1.php:63
@@ -1840,7 +1900,7 @@ msgstr ""
 msgid "GD Library is not installed"
 msgstr ""
 
-#: main/shortcode.php:21 main/shortcode.php:123
+#: main/shortcode.php:21 main/shortcode.php:124
 msgid "GGET"
 msgstr ""
 
@@ -1850,6 +1910,10 @@ msgstr ""
 
 #: main/search.php:102
 msgid "Generate data"
+msgstr ""
+
+#: main/shortcode.php:557
+msgid "Give the snippet a name (letters, numbers and dashes)."
 msgstr ""
 
 #: inc/scuri.php:73
@@ -1882,6 +1946,10 @@ msgstr ""
 
 #: main/export.php:265
 msgid "HTML compression: minify inline JS, strip comments"
+msgstr ""
+
+#: main/shortcode.php:321
+msgid "HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>"
 msgstr ""
 
 #: inc/notify.php:115
@@ -1968,7 +2036,7 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
-#: main/shortcode.php:181
+#: main/shortcode.php:182
 msgid "How to use"
 msgstr ""
 
@@ -1976,7 +2044,7 @@ msgstr ""
 msgid "I understand this permanently deletes data."
 msgstr ""
 
-#: main/shortcode.php:22 main/shortcode.php:170
+#: main/shortcode.php:22 main/shortcode.php:171
 msgid "ICON"
 msgstr ""
 
@@ -2004,7 +2072,7 @@ msgstr ""
 msgid "Icon color"
 msgstr ""
 
-#: main/shortcode.php:212
+#: main/shortcode.php:213
 msgid "Icon picker"
 msgstr ""
 
@@ -2072,7 +2140,7 @@ msgstr ""
 msgid "If you receive this email, then the SMTP email sending function is working well"
 msgstr ""
 
-#: main/shortcode.php:92
+#: main/shortcode.php:93
 msgid "If you want to display your signature anywhere, you can create content above and then use the generated shortcode at your desired location"
 msgstr ""
 
@@ -2128,6 +2196,14 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
+#: main/shortcode.php:331
+msgid "Import from Shortcoder"
+msgstr ""
+
+#: main/shortcode.php:386
+msgid "Imported %1$d snippet(s); %2$d already existed."
+msgstr ""
+
 #: main/export.php:375
 msgid "Imported %d setting group(s). You can undo this below."
 msgstr ""
@@ -2144,7 +2220,7 @@ msgstr ""
 msgid "Input / select box color"
 msgstr ""
 
-#: main/shortcode.php:172
+#: main/shortcode.php:173
 msgid "Insert icons anywhere with a shortcode"
 msgstr ""
 
@@ -2167,7 +2243,7 @@ msgstr ""
 msgid "Insufficient permissions"
 msgstr ""
 
-#: main/shortcode.php:18 main/shortcode.php:35
+#: main/shortcode.php:18 main/shortcode.php:36
 msgid "LOCKVIP"
 msgstr ""
 
@@ -2191,7 +2267,7 @@ msgstr ""
 msgid "Lean pages and lighter media. Leaves Gutenberg and Classic CSS alone, since removing those can change how a theme looks."
 msgstr ""
 
-#: main/shortcode.php:177
+#: main/shortcode.php:178
 msgid "Lets you drop any of the bundled Tabler icons (over 5,800, MIT licence) into posts, pages and anywhere shortcodes run. The icon font only loads on pages that actually use one, so it costs nothing elsewhere."
 msgstr ""
 
@@ -2251,7 +2327,7 @@ msgstr ""
 msgid "List is hidden by default"
 msgstr ""
 
-#: main/shortcode.php:213
+#: main/shortcode.php:214
 msgid "Loading icons…"
 msgstr ""
 
@@ -2379,8 +2455,16 @@ msgstr ""
 msgid "Name the font"
 msgstr ""
 
+#: main/shortcode.php:315
+msgid "Name — letters, numbers, dashes (e.g. call-to-action)"
+msgstr ""
+
 #: inc/chat.php:415
 msgid "Navigation bar (Horse Tools)"
+msgstr ""
+
+#: main/shortcode.php:330
+msgid "New / clear"
 msgstr ""
 
 #: main/page/6post.php:131
@@ -2399,6 +2483,14 @@ msgstr ""
 msgid "No Google Fonts leaking to Google"
 msgstr ""
 
+#: main/shortcode.php:607
+msgid "No Shortcoder snippets were found on this site."
+msgstr ""
+
+#: main/shortcode.php:389
+msgid "No [sc] tags found in your content."
+msgstr ""
+
 #: main/redirects.php:103
 msgid "No automatic redirects yet. Change a published URL and one will appear here."
 msgstr ""
@@ -2407,7 +2499,7 @@ msgstr ""
 msgid "No font files were found in the stylesheet."
 msgstr ""
 
-#: main/shortcode.php:276
+#: main/shortcode.php:277
 msgid "No icon matches that."
 msgstr ""
 
@@ -2427,6 +2519,10 @@ msgstr ""
 msgid "No size"
 msgstr ""
 
+#: main/shortcode.php:383
+msgid "No snippets yet. Create one above, or import from Shortcoder."
+msgstr ""
+
 #: main/page/2scuri.php:171
 msgid "No third-party requests found. Nothing leaks to other servers."
 msgstr ""
@@ -2441,6 +2537,10 @@ msgstr ""
 
 #: inc/chat.php:34
 msgid "Not entered"
+msgstr ""
+
+#: main/shortcode.php:387
+msgid "Not found in any post or page."
 msgstr ""
 
 #: inc/scuri.php:555
@@ -2561,7 +2661,7 @@ msgstr ""
 msgid "Original contributors:"
 msgstr ""
 
-#: main/shortcode.php:164
+#: main/shortcode.php:165
 msgid "Other links"
 msgstr ""
 
@@ -2613,7 +2713,7 @@ msgstr ""
 msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
 msgstr ""
 
-#: inc/scuri.php:466 inc/scuri.php:532
+#: inc/scuri.php:466 inc/scuri.php:532 main/shortcode.php:533
 msgid "Permission denied."
 msgstr ""
 
@@ -2660,6 +2760,10 @@ msgstr ""
 
 #: main/notify.php:96
 msgid "Popup save time (.. hours)"
+msgstr ""
+
+#: main/shortcode.php:349
+msgid "Preview"
 msgstr ""
 
 #: main/export.php:464
@@ -2834,7 +2938,11 @@ msgstr ""
 msgid "Retrieve the Site Key and Secret Key from your Google reCAPTCHA project and add them to the two fields above"
 msgstr ""
 
-#: main/page/11google.php:37 main/page/9user.php:49 main/shortcode.php:55
+#: main/shortcode.php:347
+msgid "Rewrite every [sc …] tag in your content to [ht-snippet …], keeping all attributes. Preview first; applying edits post content, so take a backup. Tip: you don’t have to convert — imported snippets already answer [sc …] once Shortcoder is deactivated."
+msgstr ""
+
+#: main/page/11google.php:37 main/page/9user.php:49 main/shortcode.php:56
 msgid "Role"
 msgstr ""
 
@@ -2848,7 +2956,7 @@ msgstr ""
 
 #: main/admin.php:93 main/ads.php:114 main/code.php:102 main/debug.php:74
 #: main/extend.php:216 main/font.php:130 main/gindex.php:117 main/notify.php:197
-#: main/redirects.php:199 main/search.php:207 main/shortcode.php:307 main/toc.php:279
+#: main/redirects.php:199 main/search.php:207 main/shortcode.php:486 main/toc.php:279
 msgid "SAVE CONTENT"
 msgstr ""
 
@@ -2868,7 +2976,7 @@ msgstr ""
 msgid "SETTING"
 msgstr ""
 
-#: main/shortcode.php:19 main/shortcode.php:65
+#: main/shortcode.php:19 main/shortcode.php:66
 msgid "SIGN"
 msgstr ""
 
@@ -2886,6 +2994,10 @@ msgstr ""
 
 #: main/page/7mail.php:40
 msgid "SMTP server"
+msgstr ""
+
+#: main/shortcode.php:23 main/shortcode.php:309
+msgid "SNIPPETS"
 msgstr ""
 
 #: inc/media.php:264
@@ -2908,6 +3020,10 @@ msgstr ""
 msgid "Save schedule"
 msgstr ""
 
+#: main/shortcode.php:329
+msgid "Save snippet"
+msgstr ""
+
 #: main/page/2scuri.php:138
 msgid "Scan external requests"
 msgstr ""
@@ -2928,11 +3044,11 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: main/shortcode.php:182
+#: main/shortcode.php:183
 msgid "Search below, click any icon to copy its ready-made shortcode, then paste it where you want the icon to appear."
 msgstr ""
 
-#: main/shortcode.php:209
+#: main/shortcode.php:210
 msgid "Search icons — e.g. cart, arrow, brand-facebook…"
 msgstr ""
 
@@ -3012,11 +3128,11 @@ msgstr ""
 msgid "Select background color"
 msgstr ""
 
-#: main/notify.php:53 main/shortcode.php:151
+#: main/notify.php:53 main/shortcode.php:152
 msgid "Select button border color"
 msgstr ""
 
-#: main/notify.php:49 main/page/12chat.php:157 main/shortcode.php:147
+#: main/notify.php:49 main/page/12chat.php:157 main/shortcode.php:148
 msgid "Select button color"
 msgstr ""
 
@@ -3097,11 +3213,11 @@ msgstr ""
 msgid "Set access and viewing permissions"
 msgstr ""
 
-#: main/shortcode.php:194
+#: main/shortcode.php:195
 msgid "Set the colour (hex, rgb or a CSS name)."
 msgstr ""
 
-#: main/shortcode.php:190
+#: main/shortcode.php:191
 msgid "Set the size in pixels."
 msgstr ""
 
@@ -3133,15 +3249,15 @@ msgstr ""
 msgid "Settings changed"
 msgstr ""
 
-#: main/extend.php:155 main/shortcode.php:323
+#: main/extend.php:155 main/shortcode.php:502
 msgid "Shortcode"
 msgstr ""
 
-#: main/shortcode.php:37
+#: main/shortcode.php:38
 msgid "Shortcode content visible only to group of users"
 msgstr ""
 
-#: main/shortcode.php:99
+#: main/shortcode.php:100
 msgid "Shortcode to display date"
 msgstr ""
 
@@ -3161,7 +3277,7 @@ msgstr ""
 msgid "Sign in with Google account"
 msgstr ""
 
-#: main/shortcode.php:67
+#: main/shortcode.php:68
 msgid "Signature shortcode"
 msgstr ""
 
@@ -3177,7 +3293,15 @@ msgstr ""
 msgid "Smooth-scroll is a library that enables you to create a smooth scrolling effect, providing users with a perception of faster page navigation"
 msgstr ""
 
-#: main/page/2scuri.php:178
+#: main/shortcode.php:382
+msgid "Snippet deleted."
+msgstr ""
+
+#: main/shortcode.php:381
+msgid "Snippet saved."
+msgstr ""
+
+#: main/page/2scuri.php:178 main/shortcode.php:392
 msgid "Something went wrong."
 msgstr ""
 
@@ -3193,7 +3317,7 @@ msgstr ""
 msgid "Spam comments"
 msgstr ""
 
-#: main/shortcode.php:198
+#: main/shortcode.php:199
 msgid "Spin it — handy for loaders."
 msgstr ""
 
@@ -3297,6 +3421,10 @@ msgstr ""
 msgid "That is not a valid Horse Tools export file."
 msgstr ""
 
+#: main/shortcode.php:562
+msgid "That name is reserved by another Horse Tools shortcode. Pick a different one."
+msgstr ""
+
 #: main/export.php:358
 msgid "That preset does not exist."
 msgstr ""
@@ -3365,7 +3493,7 @@ msgstr ""
 msgid "The home page returned no HTML to scan."
 msgstr ""
 
-#: main/shortcode.php:186
+#: main/shortcode.php:187
 msgid "The icon on its own."
 msgstr ""
 
@@ -3521,15 +3649,15 @@ msgstr ""
 msgid "This is an email notification of your successful registration"
 msgstr ""
 
-#: main/shortcode.php:60
+#: main/shortcode.php:61
 msgid "This shortcode allows you to lock any content, and only the selected group of logged-in users can view it"
 msgstr ""
 
-#: main/shortcode.php:165
+#: main/shortcode.php:166
 msgid "This shortcode is used to create a download button with a timeout"
 msgstr ""
 
-#: main/shortcode.php:118
+#: main/shortcode.php:119
 msgid "This shortcode is used to display the date in the post title. Please note that you need to enable the shortcode usage in the post title under the POST, PAGE section"
 msgstr ""
 
@@ -3547,6 +3675,10 @@ msgstr ""
 
 #: inc/gindex.php:134 inc/gindex.php:242
 msgid "Time:"
+msgstr ""
+
+#: main/shortcode.php:318
+msgid "Title (for your reference)"
 msgstr ""
 
 #: main/toc.php:209
@@ -3603,6 +3735,10 @@ msgstr ""
 
 #: main/page/2scuri.php:175
 msgid "Type"
+msgstr ""
+
+#: main/shortcode.php:339
+msgid "Type any shortcode name (without brackets) to list the posts and pages that contain it — handy before you change or remove one."
 msgstr ""
 
 #: main/font.php:50
@@ -3687,6 +3823,10 @@ msgstr ""
 
 #: inc/health.php:75
 msgid "User enumeration is blocked"
+msgstr ""
+
+#: main/shortcode.php:395
+msgid "View"
 msgstr ""
 
 #: main/page/12chat.php:51 main/page/12chat.php:249
@@ -3897,11 +4037,15 @@ msgstr ""
 msgid "[%s] New comment on the article \"%s\""
 msgstr ""
 
+#: main/shortcode.php:341
+msgid "e.g. sc, ht-snippet, vip"
+msgstr ""
+
 #: main/font.php:61
 msgid "font-family:"
 msgstr ""
 
-#: main/shortcode.php:278
+#: main/shortcode.php:279
 msgid "icons"
 msgstr ""
 
@@ -3917,7 +4061,7 @@ msgstr ""
 msgid "nofollow + new tab on external links"
 msgstr ""
 
-#: main/shortcode.php:277
+#: main/shortcode.php:278
 msgid "showing first"
 msgstr ""
 

@@ -20,6 +20,7 @@ function horsetools_shortcode_options_page() {
 			<button class="sotab" onclick="httab(event, 'tab3')"><i class="ti ti-calendar"></i> <?php _e('DATE', 'horse-tools'); ?></button>
 			<button class="sotab" onclick="httab(event, 'tab4')"><i class="ti ti-download"></i> <?php _e('GGET', 'horse-tools'); ?></button>
 			<button class="sotab" onclick="httab(event, 'tab5')"><i class="ti ti-mood-smile"></i> <?php _e('ICON', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab6')"><i class="ti ti-file-code"></i> <?php _e('SNIPPETS', 'horse-tools'); ?></button>
 		</div>
 
 		<div class="ht-main">
@@ -303,6 +304,187 @@ function horsetools_shortcode_options_page() {
 				</script>
 			</div>
 			</div>
+			<!-- SNIPPETS -->
+			<div class="sotab-box htbox" id="tab6" style="display:none">
+			<h2><?php _e('SNIPPETS', 'horse-tools'); ?></h2>
+			<div class="ht-card ht-snip" data-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_snip' ) ); ?>" data-ajax="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>">
+			  <h3><i class="ti ti-file-code"></i> <?php _e('Custom shortcodes (snippets)', 'horse-tools') ?></h3>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Create a named block of HTML/CSS/JS and drop it anywhere with [ht-snippet name="your-name"]. Placeholders {{param}} or %%param%% are filled from the shortcode’s attributes, plus built-ins: currentyear, currentdate, postid, posttitle, sitename, siteurl.', 'horse-tools'); ?></p>
+
+				<p>
+				<input type="text" id="ht-snip-name" class="ht-input-big" placeholder="<?php esc_attr_e( 'Name — letters, numbers, dashes (e.g. call-to-action)', 'horse-tools' ); ?>" />
+				</p>
+				<p>
+				<input type="text" id="ht-snip-title" class="ht-input-big" placeholder="<?php esc_attr_e( 'Title (for your reference)', 'horse-tools' ); ?>" />
+				</p>
+				<p>
+				<textarea id="ht-snip-content" class="ht-code-textarea" style="height:180px" placeholder="<?php esc_attr_e( 'HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>', 'horse-tools' ); ?>"></textarea>
+				</p>
+				<p>
+				<label class="ht-container"><?php _e( 'Enabled', 'horse-tools' ); ?>
+					<input type="checkbox" id="ht-snip-on" checked />
+					<span class="ht-checkmark"></span></label>
+				</p>
+				<p class="ht-snip-actions">
+					<button type="button" class="ht-priv-btn" id="ht-snip-save"><i class="ti ti-device-floppy"></i> <?php _e( 'Save snippet', 'horse-tools' ); ?></button>
+					<button type="button" class="ht-priv-btn" id="ht-snip-clear"><i class="ti ti-eraser"></i> <?php _e( 'New / clear', 'horse-tools' ); ?></button>
+					<button type="button" class="ht-priv-btn" id="ht-snip-import"><i class="ti ti-download"></i> <?php _e( 'Import from Shortcoder', 'horse-tools' ); ?></button>
+				</p>
+				<div id="ht-snip-msg"></div>
+				<div id="ht-snip-list"></div>
+			</div>
+
+			<div class="ht-card ht-snip2" data-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_snip' ) ); ?>" data-ajax="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>">
+			  <h3><i class="ti ti-search"></i> <?php _e('Find where a shortcode is used', 'horse-tools') ?></h3>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Type any shortcode name (without brackets) to list the posts and pages that contain it — handy before you change or remove one.', 'horse-tools'); ?></p>
+				<p class="ht-snip-actions">
+					<input type="text" id="ht-snip-usage-tag" class="ht-input-big" style="max-width:280px" placeholder="<?php esc_attr_e( 'e.g. sc, ht-snippet, vip', 'horse-tools' ); ?>" />
+					<button type="button" class="ht-priv-btn" id="ht-snip-usage-btn"><i class="ti ti-search"></i> <?php _e( 'Find usage', 'horse-tools' ); ?></button>
+				</p>
+				<div id="ht-snip-usage-out"></div>
+
+			  <h3 style="margin-top:22px"><i class="ti ti-replace"></i> <?php _e('Convert Shortcoder tags', 'horse-tools') ?></h3>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Rewrite every [sc …] tag in your content to [ht-snippet …], keeping all attributes. Preview first; applying edits post content, so take a backup. Tip: you don’t have to convert — imported snippets already answer [sc …] once Shortcoder is deactivated.', 'horse-tools'); ?></p>
+				<p class="ht-snip-actions">
+					<button type="button" class="ht-priv-btn" id="ht-snip-rep-preview"><i class="ti ti-eye"></i> <?php _e( 'Preview', 'horse-tools' ); ?></button>
+					<button type="button" class="ht-priv-btn" id="ht-snip-rep-apply" disabled><i class="ti ti-replace"></i> <?php _e( 'Convert now', 'horse-tools' ); ?></button>
+				</p>
+				<div id="ht-snip-rep-out"></div>
+			</div>
+			<style>
+			.ht-snip .ht-priv-btn,.ht-snip2 .ht-priv-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #e0a800;color:#8a5a00;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:13px;transition:background .12s}
+			.ht-snip .ht-priv-btn:hover,.ht-snip2 .ht-priv-btn:hover{background:#fff9e6}
+			.ht-snip .ht-priv-btn[disabled],.ht-snip2 .ht-priv-btn[disabled]{opacity:.5;cursor:default}
+			.ht-snip-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:6px 0}
+			#ht-snip-list{margin-top:12px}
+			.ht-snip-row{display:flex;align-items:center;gap:10px;padding:9px 10px;border:1px solid #ececec;border-radius:9px;margin-bottom:7px;background:#fff}
+			.ht-snip-row.off{opacity:.55}
+			.ht-snip-row b{font-size:13px}
+			.ht-snip-code{font-family:monospace;font-size:11.5px;background:#fff8e1;border:1px solid #f0d98a;color:#8a5a00;border-radius:5px;padding:2px 7px;cursor:pointer;white-space:nowrap}
+			.ht-snip-row .grow{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+			.ht-snip-row a.op{cursor:pointer;color:#8a5a00;font-size:12px;text-decoration:underline}
+			.ht-snip-row a.del{color:#c0392b}
+			.ht-snip-msg{padding:8px 12px;border-radius:8px;margin:6px 0;font-size:13px;background:#f4f6f8}
+			.ht-snip-msg.err{background:#fdecea;color:#8a1c12}
+			.ht-snip-msg.good{background:#eafaf0;color:#1e6b3f}
+			.ht-snip-table{border-collapse:collapse;width:100%;max-width:680px;font-size:13px;margin-top:6px}
+			.ht-snip-table th,.ht-snip-table td{border:1px solid #ececec;padding:6px 9px;text-align:left}
+			.ht-snip-table th{background:#fafafa}
+			</style>
+			<script>
+			(function(){
+				var root = document.querySelector('.ht-snip');
+				if (!root || root.dataset.ready) { return; }
+				root.dataset.ready = '1';
+				var AJAX = root.dataset.ajax, NONCE = root.dataset.nonce;
+				var $ = function(id){ return document.getElementById(id); };
+				var elName=$('ht-snip-name'), elTitle=$('ht-snip-title'), elContent=$('ht-snip-content'),
+				    elOn=$('ht-snip-on'), msg=$('ht-snip-msg'), list=$('ht-snip-list');
+				var I18N = {
+					saved: <?php echo wp_json_encode( __( 'Snippet saved.', 'horse-tools' ) ); ?>,
+					deleted: <?php echo wp_json_encode( __( 'Snippet deleted.', 'horse-tools' ) ); ?>,
+					none: <?php echo wp_json_encode( __( 'No snippets yet. Create one above, or import from Shortcoder.', 'horse-tools' ) ); ?>,
+					copied: <?php echo wp_json_encode( __( 'Copied', 'horse-tools' ) ); ?>,
+					confirmDel: <?php echo wp_json_encode( __( 'Delete this snippet? Content that uses it will stop rendering.', 'horse-tools' ) ); ?>,
+					imported: <?php echo wp_json_encode( __( 'Imported %1$d snippet(s); %2$d already existed.', 'horse-tools' ) ); ?>,
+					usageNone: <?php echo wp_json_encode( __( 'Not found in any post or page.', 'horse-tools' ) ); ?>,
+					usageHead: <?php echo wp_json_encode( __( 'Found in %d item(s):', 'horse-tools' ) ); ?>,
+					repNone: <?php echo wp_json_encode( __( 'No [sc] tags found in your content.', 'horse-tools' ) ); ?>,
+					repPrev: <?php echo wp_json_encode( __( '%d post(s) contain [sc] tags. Click “Convert now” to rewrite them.', 'horse-tools' ) ); ?>,
+					repDone: <?php echo wp_json_encode( __( 'Converted %d post(s).', 'horse-tools' ) ); ?>,
+					fail: <?php echo wp_json_encode( __( 'Something went wrong.', 'horse-tools' ) ); ?>,
+					edit: <?php echo wp_json_encode( __( 'Edit', 'horse-tools' ) ); ?>,
+					del: <?php echo wp_json_encode( __( 'Delete', 'horse-tools' ) ); ?>,
+					view: <?php echo wp_json_encode( __( 'View', 'horse-tools' ) ); ?>
+				};
+				var snippets = <?php echo wp_json_encode( array_values( array_map( function( $slug, $s ) { return array( 'slug' => $slug, 'title' => isset( $s['title'] ) ? $s['title'] : $slug, 'content' => isset( $s['content'] ) ? $s['content'] : '', 'on' => ! empty( $s['on'] ) ); }, array_keys( (array) get_option( 'horsetools_snippets', array() ) ), array_values( (array) get_option( 'horsetools_snippets', array() ) ) ) ) ); ?>;
+
+				function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+				function say(el,t,cls){ el.innerHTML = t ? '<div class="ht-snip-msg '+(cls||'')+'">'+esc(t)+'</div>' : ''; }
+				function post(data, done){
+					data.nonce = NONCE;
+					var body = Object.keys(data).map(function(k){ return encodeURIComponent(k)+'='+encodeURIComponent(data[k]); }).join('&');
+					fetch(AJAX,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+						.then(function(r){return r.json();}).then(done)
+						.catch(function(){ say(msg,I18N.fail,'err'); });
+				}
+
+				function render(){
+					if (!snippets.length){ list.innerHTML = '<div class="ht-snip-msg">'+esc(I18N.none)+'</div>'; return; }
+					var html='';
+					snippets.forEach(function(s){
+						var code='[ht-snippet name="'+s.slug+'"]';
+						html += '<div class="ht-snip-row'+(s.on?'':' off')+'">'
+							+ '<span class="grow"><b>'+esc(s.title)+'</b></span>'
+							+ '<span class="ht-snip-code" data-copy="'+esc(code)+'" title="'+esc(code)+'">'+esc(code)+'</span>'
+							+ '<a class="op" data-edit="'+esc(s.slug)+'">'+esc(I18N.edit)+'</a>'
+							+ '<a class="op del" data-del="'+esc(s.slug)+'">'+esc(I18N.del)+'</a>'
+							+ '</div>';
+					});
+					list.innerHTML = html;
+				}
+
+				list.addEventListener('click', function(e){
+					var c=e.target.closest('[data-copy]'), ed=e.target.closest('[data-edit]'), dl=e.target.closest('[data-del]');
+					if (c){ navigator.clipboard && navigator.clipboard.writeText(c.dataset.copy); c.textContent=I18N.copied; setTimeout(function(){ c.textContent=c.dataset.copy; },1000); return; }
+					if (ed){ var s=snippets.find(function(x){return x.slug===ed.dataset.edit;}); if(s){ elName.value=s.slug; elTitle.value=s.title; elContent.value=s.content; elOn.checked=!!s.on; elName.focus(); window.scrollTo({top:0,behavior:'smooth'}); } return; }
+					if (dl){ if(!confirm(I18N.confirmDel))return; post({action:'horsetools_snip_delete',slug:dl.dataset.del}, function(res){ if(res&&res.success){ snippets=res.data.snippets; render(); say(msg,I18N.deleted,'good'); } else { say(msg,(res&&res.data&&res.data.msg)||I18N.fail,'err'); } }); return; }
+				});
+
+				$('ht-snip-save').addEventListener('click', function(){
+					post({action:'horsetools_snip_save', slug:elName.value, title:elTitle.value, content:elContent.value, on:elOn.checked?'1':'0'}, function(res){
+						if (res&&res.success){ snippets=res.data.snippets; render(); say(msg,I18N.saved,'good'); }
+						else { say(msg,(res&&res.data&&res.data.msg)||I18N.fail,'err'); }
+					});
+				});
+				$('ht-snip-clear').addEventListener('click', function(){ elName.value=elTitle.value=elContent.value=''; elOn.checked=true; say(msg,''); elName.focus(); });
+				$('ht-snip-import').addEventListener('click', function(){
+					post({action:'horsetools_snip_import_sc'}, function(res){
+						if (res&&res.success){ snippets=res.data.snippets; render(); say(msg,I18N.imported.replace('%1$d',res.data.imported).replace('%2$d',res.data.skipped),'good'); }
+						else { say(msg,(res&&res.data&&res.data.msg)||I18N.fail,'err'); }
+					});
+				});
+
+				// second card: usage + convert
+				var root2 = document.querySelector('.ht-snip2');
+				var uOut=$('ht-snip-usage-out'), rOut=$('ht-snip-rep-out');
+				$('ht-snip-usage-btn').addEventListener('click', function(){
+					post({action:'horsetools_snip_usage', tag:$('ht-snip-usage-tag').value}, function(res){
+						if (!res||!res.success){ say(uOut,(res&&res.data&&res.data.msg)||I18N.fail,'err'); return; }
+						var d=res.data;
+						if (!d.count){ say(uOut,I18N.usageNone); return; }
+						var html='<div class="ht-snip-msg good">'+esc(I18N.usageHead.replace('%d',d.count))+'</div>';
+						html+='<table class="ht-snip-table"><tbody>';
+						d.rows.forEach(function(r){
+							html+='<tr><td>'+esc(r.title)+'</td><td>'+esc(r.type)+'</td><td>'
+								+(r.edit?'<a href="'+esc(r.edit)+'" target="_blank" rel="noopener">'+esc(I18N.edit)+'</a> ':'')
+								+(r.view?'<a href="'+esc(r.view)+'" target="_blank" rel="noopener">'+esc(I18N.view)+'</a>':'')
+								+'</td></tr>';
+						});
+						html+='</tbody></table>';
+						uOut.innerHTML=html;
+					});
+				});
+				var repApply=$('ht-snip-rep-apply');
+				$('ht-snip-rep-preview').addEventListener('click', function(){
+					post({action:'horsetools_snip_replace', apply:'0'}, function(res){
+						if (!res||!res.success){ say(rOut,I18N.fail,'err'); return; }
+						if (!res.data.affected){ say(rOut,I18N.repNone); repApply.disabled=true; return; }
+						say(rOut,I18N.repPrev.replace('%d',res.data.affected)); repApply.disabled=false;
+					});
+				});
+				repApply.addEventListener('click', function(){
+					repApply.disabled=true;
+					post({action:'horsetools_snip_replace', apply:'1'}, function(res){
+						if (!res||!res.success){ say(rOut,I18N.fail,'err'); return; }
+						say(rOut,I18N.repDone.replace('%d',res.data.changed),'good');
+					});
+				});
+
+				render();
+			})();
+			</script>
+			</div>
 			<div class="ht-submit">
 				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
 			</div>
@@ -333,3 +515,199 @@ function horsetools_shortcode_settings_cache($old_value, $value) {
 }
 add_action('update_option_horsetools_shortcode_settings', 'horsetools_shortcode_settings_cache', 10, 2);
 
+
+/* -------------------------------------------------------------------------
+ * Snippets — admin AJAX: create / edit / delete, import from Shortcoder,
+ * find usage across posts, and convert [sc] tags to [ht-snippet].
+ *
+ * All handlers require manage_options and share the horsetools_snip nonce.
+ * Snippet content is stored raw (admin-only, unfiltered_html trust model);
+ * the slug is always sanitised to a shortcode-safe key.
+ * ---------------------------------------------------------------------- */
+
+/** Normalise and persist the snippet store. */
+function horsetools_snip_store( array $snips ) {
+	update_option( 'horsetools_snippets', $snips, false );
+}
+
+/** Shared guard for every snippet AJAX endpoint. */
+function horsetools_snip_guard() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error( array( 'msg' => __( 'Permission denied.', 'horse-tools' ) ) );
+	}
+	check_ajax_referer( 'horsetools_snip', 'nonce' );
+}
+
+/** Return the store as a list for the UI (slug included, content trimmed for display size is left to JS). */
+function horsetools_snip_list_payload() {
+	$out = array();
+	foreach ( horsetools_snippets_get() as $slug => $s ) {
+		$out[] = array(
+			'slug'    => $slug,
+			'title'   => isset( $s['title'] ) ? $s['title'] : $slug,
+			'content' => isset( $s['content'] ) ? $s['content'] : '',
+			'on'      => ! empty( $s['on'] ),
+		);
+	}
+	return $out;
+}
+
+add_action( 'wp_ajax_horsetools_snip_save', 'horsetools_snip_save_ajax' );
+function horsetools_snip_save_ajax() {
+	horsetools_snip_guard();
+	$slug = isset( $_POST['slug'] ) ? sanitize_key( wp_unslash( $_POST['slug'] ) ) : '';
+	if ( '' === $slug ) {
+		wp_send_json_error( array( 'msg' => __( 'Give the snippet a name (letters, numbers and dashes).', 'horse-tools' ) ) );
+	}
+	// Do not let a snippet shadow a built-in Horse Tools shortcode.
+	$reserved = array( 'vip', 'sign', 'titday', 'titmonth', 'tityear', 'gget', 'ht-icon', 'ht-snippet' );
+	if ( in_array( $slug, $reserved, true ) ) {
+		wp_send_json_error( array( 'msg' => __( 'That name is reserved by another Horse Tools shortcode. Pick a different one.', 'horse-tools' ) ) );
+	}
+	$title   = isset( $_POST['title'] ) ? sanitize_text_field( wp_unslash( $_POST['title'] ) ) : $slug;
+	$content = isset( $_POST['content'] ) ? wp_unslash( $_POST['content'] ) : ''; // raw by design
+	$on      = isset( $_POST['on'] ) && '1' === (string) $_POST['on'];
+
+	$snips          = horsetools_snippets_get();
+	$snips[ $slug ] = array( 'title' => $title, 'content' => $content, 'on' => $on ? 1 : 0 );
+	horsetools_snip_store( $snips );
+
+	wp_send_json_success( array( 'snippets' => horsetools_snip_list_payload(), 'saved' => $slug ) );
+}
+
+add_action( 'wp_ajax_horsetools_snip_delete', 'horsetools_snip_delete_ajax' );
+function horsetools_snip_delete_ajax() {
+	horsetools_snip_guard();
+	$slug  = isset( $_POST['slug'] ) ? sanitize_key( wp_unslash( $_POST['slug'] ) ) : '';
+	$snips = horsetools_snippets_get();
+	if ( isset( $snips[ $slug ] ) ) {
+		unset( $snips[ $slug ] );
+		horsetools_snip_store( $snips );
+	}
+	wp_send_json_success( array( 'snippets' => horsetools_snip_list_payload() ) );
+}
+
+/**
+ * Import snippets from Shortcoder.
+ *
+ * Reads the shortcoder custom post type directly from the database, so it works
+ * whether or not that plugin is still active. Each Shortcoder snippet keys on
+ * its post slug — the exact name used in [sc name="slug"] — so imported
+ * snippets answer the same shortcode. Existing snippets are never overwritten.
+ */
+add_action( 'wp_ajax_horsetools_snip_import_sc', 'horsetools_snip_import_sc_ajax' );
+function horsetools_snip_import_sc_ajax() {
+	horsetools_snip_guard();
+	global $wpdb;
+	$rows = $wpdb->get_results(
+		$wpdb->prepare(
+			"SELECT post_title, post_name, post_content FROM {$wpdb->posts} WHERE post_type = %s AND post_status != %s",
+			'shortcoder',
+			'trash'
+		)
+	);
+	if ( empty( $rows ) ) {
+		wp_send_json_error( array( 'msg' => __( 'No Shortcoder snippets were found on this site.', 'horse-tools' ) ) );
+	}
+
+	$snips    = horsetools_snippets_get();
+	$imported = 0;
+	$skipped  = 0;
+	foreach ( $rows as $row ) {
+		$slug = sanitize_key( $row->post_name );
+		if ( '' === $slug ) {
+			continue;
+		}
+		if ( isset( $snips[ $slug ] ) ) {
+			$skipped++;
+			continue; // never clobber an existing snippet
+		}
+		$snips[ $slug ] = array(
+			'title'   => $row->post_title ? sanitize_text_field( $row->post_title ) : $slug,
+			'content' => (string) $row->post_content, // raw
+			'on'      => 1,
+		);
+		$imported++;
+	}
+	if ( $imported ) {
+		horsetools_snip_store( $snips );
+	}
+	wp_send_json_success( array(
+		'snippets' => horsetools_snip_list_payload(),
+		'imported' => $imported,
+		'skipped'  => $skipped,
+	) );
+}
+
+/**
+ * Find posts/pages whose content contains a given shortcode tag.
+ */
+add_action( 'wp_ajax_horsetools_snip_usage', 'horsetools_snip_usage_ajax' );
+function horsetools_snip_usage_ajax() {
+	horsetools_snip_guard();
+	$tag = isset( $_POST['tag'] ) ? preg_replace( '/[^a-z0-9_\-]/i', '', wp_unslash( $_POST['tag'] ) ) : '';
+	if ( '' === $tag ) {
+		wp_send_json_error( array( 'msg' => __( 'Enter a shortcode name to search for.', 'horse-tools' ) ) );
+	}
+	global $wpdb;
+	$like = '%[' . $wpdb->esc_like( $tag ) . '%'; // matches [tag  and [tag]
+	$rows = $wpdb->get_results(
+		$wpdb->prepare(
+			"SELECT ID, post_title, post_type FROM {$wpdb->posts}
+			 WHERE post_status IN ('publish','draft','pending','private','future')
+			 AND post_type NOT IN ('revision','nav_menu_item')
+			 AND post_content LIKE %s
+			 ORDER BY post_modified DESC LIMIT 200",
+			$like
+		)
+	);
+	$out = array();
+	foreach ( (array) $rows as $r ) {
+		$out[] = array(
+			'id'    => (int) $r->ID,
+			'title' => $r->post_title ? $r->post_title : __( '(no title)', 'horse-tools' ),
+			'type'  => $r->post_type,
+			'edit'  => get_edit_post_link( $r->ID, '' ),
+			'view'  => get_permalink( $r->ID ),
+		);
+	}
+	wp_send_json_success( array( 'tag' => $tag, 'count' => count( $out ), 'rows' => $out ) );
+}
+
+/**
+ * Convert [sc ...] tags to [ht-snippet ...] across post content.
+ *
+ * Preview mode only counts affected posts; apply mode rewrites them and returns
+ * how many changed. Only the tag token is swapped, so attributes are preserved.
+ */
+add_action( 'wp_ajax_horsetools_snip_replace', 'horsetools_snip_replace_ajax' );
+function horsetools_snip_replace_ajax() {
+	horsetools_snip_guard();
+	$apply = isset( $_POST['apply'] ) && '1' === (string) $_POST['apply'];
+	global $wpdb;
+	$rows = $wpdb->get_results(
+		"SELECT ID, post_content FROM {$wpdb->posts}
+		 WHERE post_status IN ('publish','draft','pending','private','future')
+		 AND post_type NOT IN ('revision','nav_menu_item')
+		 AND ( post_content LIKE '%[sc %' OR post_content LIKE '%[sc]%' )"
+	);
+	$affected = 0;
+	$changed  = 0;
+	foreach ( (array) $rows as $r ) {
+		$new = preg_replace(
+			array( '/\[sc(\s)/', '/\[sc\]/', '/\[\/sc\]/' ),
+			array( '[ht-snippet$1', '[ht-snippet]', '[/ht-snippet]' ),
+			$r->post_content
+		);
+		if ( $new === $r->post_content ) {
+			continue;
+		}
+		$affected++;
+		if ( $apply ) {
+			$wpdb->update( $wpdb->posts, array( 'post_content' => $new ), array( 'ID' => $r->ID ) );
+			clean_post_cache( $r->ID );
+			$changed++;
+		}
+	}
+	wp_send_json_success( array( 'apply' => $apply, 'affected' => $affected, 'changed' => $changed ) );
+}

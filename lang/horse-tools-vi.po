@@ -4786,3 +4786,111 @@ msgstr "Đã chặn dò tên người dùng"
 
 msgid "XML-RPC is disabled"
 msgstr "XML-RPC đã bị tắt"
+
+msgid "%d post(s) contain [sc] tags. Click “Convert now” to rewrite them."
+msgstr "Có %d bài chứa thẻ [sc]. Bấm “Chuyển ngay” để viết lại."
+
+msgid "(no title)"
+msgstr "(không tiêu đề)"
+
+msgid "Convert Shortcoder tags"
+msgstr "Chuyển đổi thẻ Shortcoder"
+
+msgid "Convert now"
+msgstr "Chuyển ngay"
+
+msgid "Converted %d post(s)."
+msgstr "Đã chuyển %d bài."
+
+msgid "Copied"
+msgstr "Đã chép"
+
+msgid "Create a named block of HTML/CSS/JS and drop it anywhere with [ht-snippet name=\"your-name\"]. Placeholders {{param}} or %%param%% are filled from the shortcode’s attributes, plus built-ins: currentyear, currentdate, postid, posttitle, sitename, siteurl."
+msgstr "Tạo một khối HTML/CSS/JS có tên rồi chèn bất cứ đâu bằng [ht-snippet name=\"tên-của-bạn\"]. Placeholder {{param}} hoặc %%param%% sẽ được điền từ thuộc tính của shortcode, kèm các biến sẵn: currentyear, currentdate, postid, posttitle, sitename, siteurl."
+
+msgid "Custom shortcodes (snippets)"
+msgstr "Shortcode tùy chỉnh (snippet)"
+
+msgid "Delete this snippet? Content that uses it will stop rendering."
+msgstr "Xóa snippet này? Nội dung đang dùng nó sẽ ngừng hiển thị."
+
+msgid "Edit"
+msgstr "Sửa"
+
+msgid "Enabled"
+msgstr "Bật"
+
+msgid "Enter a shortcode name to search for."
+msgstr "Nhập tên shortcode cần tìm."
+
+msgid "Find usage"
+msgstr "Tìm nơi dùng"
+
+msgid "Find where a shortcode is used"
+msgstr "Tìm nơi shortcode được dùng"
+
+msgid "Found in %d item(s):"
+msgstr "Tìm thấy trong %d mục:"
+
+msgid "Give the snippet a name (letters, numbers and dashes)."
+msgstr "Hãy đặt tên cho snippet (chữ, số và dấu gạch ngang)."
+
+msgid "HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>"
+msgstr "HTML, CSS hoặc JS…  ví dụ <a href=&quot;{{url}}&quot;>{{label}}</a>"
+
+msgid "Import from Shortcoder"
+msgstr "Nhập từ Shortcoder"
+
+msgid "Imported %1$d snippet(s); %2$d already existed."
+msgstr "Đã nhập %1$d snippet; %2$d đã có sẵn."
+
+msgid "Name — letters, numbers, dashes (e.g. call-to-action)"
+msgstr "Tên — chữ, số, gạch ngang (ví dụ: call-to-action)"
+
+msgid "New / clear"
+msgstr "Mới / xóa trắng"
+
+msgid "No Shortcoder snippets were found on this site."
+msgstr "Không tìm thấy snippet Shortcoder nào trên site này."
+
+msgid "No [sc] tags found in your content."
+msgstr "Không tìm thấy thẻ [sc] nào trong nội dung."
+
+msgid "No snippets yet. Create one above, or import from Shortcoder."
+msgstr "Chưa có snippet. Hãy tạo ở trên, hoặc nhập từ Shortcoder."
+
+msgid "Not found in any post or page."
+msgstr "Không thấy trong bài viết hay trang nào."
+
+msgid "Preview"
+msgstr "Xem trước"
+
+msgid "Rewrite every [sc …] tag in your content to [ht-snippet …], keeping all attributes. Preview first; applying edits post content, so take a backup. Tip: you don’t have to convert — imported snippets already answer [sc …] once Shortcoder is deactivated."
+msgstr "Viết lại mọi thẻ [sc …] trong nội dung thành [ht-snippet …], giữ nguyên mọi thuộc tính. Hãy xem trước; khi áp dụng sẽ sửa nội dung bài nên hãy sao lưu trước. Mẹo: bạn không nhất thiết phải chuyển — snippet đã nhập vẫn đáp ứng [sc …] một khi Shortcoder bị tắt."
+
+msgid "SNIPPETS"
+msgstr "SNIPPET"
+
+msgid "Save snippet"
+msgstr "Lưu snippet"
+
+msgid "Snippet deleted."
+msgstr "Đã xóa snippet."
+
+msgid "Snippet saved."
+msgstr "Đã lưu snippet."
+
+msgid "That name is reserved by another Horse Tools shortcode. Pick a different one."
+msgstr "Tên này đã được một shortcode Horse Tools khác giữ. Hãy chọn tên khác."
+
+msgid "Title (for your reference)"
+msgstr "Tiêu đề (để bạn dễ nhớ)"
+
+msgid "Type any shortcode name (without brackets) to list the posts and pages that contain it — handy before you change or remove one."
+msgstr "Nhập tên shortcode bất kỳ (không có ngoặc) để liệt kê bài viết và trang chứa nó — tiện trước khi bạn sửa hay xóa."
+
+msgid "View"
+msgstr "Xem"
+
+msgid "e.g. sc, ht-snippet, vip"
+msgstr "ví dụ: sc, ht-snippet, vip"

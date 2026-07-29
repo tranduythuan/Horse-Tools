@@ -250,3 +250,88 @@ if ( isset( $horsetools_shortcode_options['shortcode-s5'] ) ) {
 	add_action( 'wp_enqueue_scripts', 'horsetools_icon_register_assets' );
 }
 
+
+
+/* -------------------------------------------------------------------------
+ * Custom snippets — the Horse Tools equivalent of Shortcoder.
+ *
+ * Each snippet is a named block of raw HTML/CSS/JS the admin creates on the
+ * Shortcode screen; it is output with [ht-snippet name="slug"]. For sites
+ * migrating from Shortcoder, a [sc name="slug"] compatibility tag renders the
+ * same snippet so existing post content keeps working after that plugin is
+ * switched off. Placeholders in either the Shortcoder %%param%% or the native
+ * {{param}} style are filled from the shortcode's own attributes plus a few
+ * built-ins.
+ *
+ * Snippet content is stored and echoed raw. It is only writable through the
+ * plugin's own manage_options-gated screen — the same trust model WordPress
+ * already applies to a user with unfiltered_html — so it is deliberately not
+ * run through wp_kses.
+ * ---------------------------------------------------------------------- */
+
+/** All defined snippets: slug => array( title, content, on ). */
+function horsetools_snippets_get() {
+	$s = get_option( 'horsetools_snippets', array() );
+	return is_array( $s ) ? $s : array();
+}
+
+/**
+ * Render one snippet by slug, filling placeholders from $atts + built-ins.
+ *
+ * @param string $slug
+ * @param array  $atts Shortcode attributes (arbitrary keys become params).
+ * @return string
+ */
+function horsetools_render_snippet( $slug, $atts ) {
+	$snips = horsetools_snippets_get();
+	$slug  = sanitize_key( $slug );
+	if ( '' === $slug || empty( $snips[ $slug ] ) || empty( $snips[ $slug ]['on'] ) ) {
+		return '';
+	}
+	$content = (string) $snips[ $slug ]['content'];
+	$atts    = is_array( $atts ) ? $atts : array();
+
+	$built = array(
+		'currentyear' => date_i18n( 'Y' ),
+		'currentdate' => date_i18n( get_option( 'date_format' ) ),
+		'postid'      => (string) get_the_ID(),
+		'posttitle'   => get_the_title(),
+		'sitename'    => get_bloginfo( 'name' ),
+		'siteurl'     => home_url( '/' ),
+	);
+
+	$content = preg_replace_callback(
+		'/%%([a-z0-9_\-]+)%%|\{\{([a-z0-9_\-]+)\}\}/i',
+		function ( $m ) use ( $atts, $built ) {
+			$key = strtolower( '' !== $m[1] ? $m[1] : $m[2] );
+			if ( array_key_exists( $key, $atts ) ) {
+				return (string) $atts[ $key ];
+			}
+			if ( isset( $built[ $key ] ) ) {
+				return (string) $built[ $key ];
+			}
+			return '';
+		},
+		$content
+	);
+
+	return do_shortcode( $content );
+}
+
+function horsetools_snippet_shortcode( $atts ) {
+	$atts = is_array( $atts ) ? $atts : array();
+	$name = isset( $atts['name'] ) ? $atts['name'] : '';
+	return horsetools_render_snippet( $name, $atts );
+}
+add_shortcode( 'ht-snippet', 'horsetools_snippet_shortcode' );
+
+/**
+ * Shortcoder [sc name="…"] compatibility, registered late and only if nothing
+ * else already owns the `sc` tag — so an active Shortcoder install always wins
+ * and there is no conflict; we only step in once it is gone.
+ */
+add_action( 'init', function () {
+	if ( ! shortcode_exists( 'sc' ) ) {
+		add_shortcode( 'sc', 'horsetools_snippet_shortcode' );
+	}
+}, 99 );
