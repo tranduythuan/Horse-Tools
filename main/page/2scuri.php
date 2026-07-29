@@ -10,7 +10,7 @@ global $horsetools_options; ?>
 </div>
 <div id="play2" class="ht-card toggle-div">
 
-  <h3><i class="fa-regular fa-user-lock"></i> <?php _e('Limit login attempts', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-user-shield"></i> <?php _e('Limit login attempts', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'scuri-login1', __( 'Lock out repeated failed logins', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',
 		'section'     => 'Limit login attempts',
@@ -42,14 +42,14 @@ global $horsetools_options; ?>
 		'parent'  => 'scuri-login1',
 	) ); ?>
 
-  <h3><i class="fa-regular fa-user-secret"></i> <?php _e('Block user enumeration', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-user-question"></i> <?php _e('Block user enumeration', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'scuri-enum1', __( 'Hide usernames from scanners', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',
 		'section'     => 'Block user enumeration',
 		'description' => __( 'Blocks ?author=N scans, removes the users REST endpoint for anonymous requests, strips the author from oEmbed, and makes login errors generic so they do not reveal whether the username or the password was wrong.', 'horse-tools' ),
 	) ); ?>
 
-  <h3><i class="fa-regular fa-shield-halved"></i> <?php _e('Security response headers', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-shield-half"></i> <?php _e('Security response headers', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'scuri-head1', __( 'Send security headers', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',
 		'section'     => 'Security response headers',
@@ -81,14 +81,14 @@ global $horsetools_options; ?>
 		'description' => __( 'A wrong CSP silently breaks scripts, styles and images. Test with browser dev tools before relying on it.', 'horse-tools' ),
 	) ); ?>
 
-  <h3><i class="fa-regular fa-file-lock"></i> <?php _e('Lock down the admin', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-shield-lock"></i> <?php _e('Lock down the admin', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'scuri-fileedit1', __( 'Disable the theme & plugin file editor', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',
 		'section'     => 'Lock down the admin',
 		'description' => __( 'Removes the built-in code editor under Appearance and Plugins. If an attacker gets into wp-admin, they cannot use it to edit PHP files. You edit files over SFTP instead.', 'horse-tools' ),
 	) ); ?>
 
-  <h3><i class="fa-regular fa-badge-check"></i> <?php _e('Disable unused endpoints', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-rosette-discount-check"></i> <?php _e('Disable unused endpoints', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'scuri-off1', __( 'Disable REST API for anonymous visitors', 'horse-tools' ), array(
 		'tab'     => 'SECURITY',
 		'section' => 'Disable unused endpoints',
@@ -115,7 +115,7 @@ global $horsetools_options; ?>
 		'description' => __( 'Turns off the RSS and Atom feeds if your site does not publish one.', 'horse-tools' ),
 	) ); ?>
 
-  <h3><i class="fa-regular fa-broom"></i> <?php _e('Tidy up', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-wash"></i> <?php _e('Tidy up', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'scuri-off5', __( 'Remove unnecessary header tags', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',
 		'section'     => 'Tidy up',

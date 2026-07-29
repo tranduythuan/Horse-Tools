@@ -253,7 +253,7 @@ function horsetools_export_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="fa-regular fa-right-left"></i> <?php _e( 'BACKUP', 'horse-tools' ); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-arrows-left-right"></i> <?php _e( 'BACKUP', 'horse-tools' ); ?></button>
 		</div>
 		<div class="ht-main">
 			<?php
@@ -267,23 +267,23 @@ function horsetools_export_options_page() {
 			<h2><?php _e( 'BACKUP', 'horse-tools' ); ?></h2>
 
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-download"></i> <?php _e( 'Export', 'horse-tools' ); ?></h3>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e( 'This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site.', 'horse-tools' ); ?></p>
+			  <h3><i class="ti ti-download"></i> <?php _e( 'Export', 'horse-tools' ); ?></h3>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e( 'This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site.', 'horse-tools' ); ?></p>
 				<p>
 				<textarea style="height:250px" class="ht-code-textarea" id="horsetools-json" readonly><?php echo esc_textarea( $json ); ?></textarea>
 				</p>
-				<button type="button" id="horsetools-dow-json"><i class="fa-regular fa-download"></i> <?php _e( 'Download .json', 'horse-tools' ); ?></button>
+				<button type="button" id="horsetools-dow-json"><i class="ti ti-download"></i> <?php _e( 'Download .json', 'horse-tools' ); ?></button>
 			</div>
 
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-upload"></i> <?php _e( 'Import', 'horse-tools' ); ?></h3>
+			  <h3><i class="ti ti-upload"></i> <?php _e( 'Import', 'horse-tools' ); ?></h3>
 				<form method="post" action="<?php echo esc_url( menu_page_url( 'horsetools-export-options', false ) ); ?>">
 				<?php wp_nonce_field( 'horsetools_import', 'horsetools_import_nonce' ); ?>
 				<p>
 				<textarea style="height:200px" class="ht-code-textarea" id="horsetools-import-json" name="horsetools_export_tool" placeholder="<?php esc_attr_e( 'Paste an export here, or upload a .json file', 'horse-tools' ); ?>"><?php echo isset( $preview['raw'] ) ? esc_textarea( $preview['raw'] ) : ''; ?></textarea>
 				</p>
 				<input type="file" id="horsetools-upload-json" accept=".json,application/json" style="display:none;" />
-				<button type="button" id="horsetools-upload-button"><i class="fa-regular fa-file-arrow-up"></i> <?php _e( 'Choose a file', 'horse-tools' ); ?></button>
+				<button type="button" id="horsetools-upload-button"><i class="ti ti-file-upload"></i> <?php _e( 'Choose a file', 'horse-tools' ); ?></button>
 
 				<?php if ( $preview && ! empty( $preview['diff'] ) ) : ?>
 					<h4><?php _e( 'These groups will change', 'horse-tools' ); ?></h4>
@@ -306,13 +306,13 @@ function horsetools_export_options_page() {
 						<?php endforeach; ?>
 						</tbody>
 					</table>
-					<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e( 'Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it.', 'horse-tools' ); ?></p>
+					<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e( 'Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it.', 'horse-tools' ); ?></p>
 					<div class="ht-submit">
-						<button type="submit" name="horsetools_import_apply"><i class="fa-regular fa-file-import"></i> <?php _e( 'Apply import', 'horse-tools' ); ?></button>
+						<button type="submit" name="horsetools_import_apply"><i class="ti ti-file-import"></i> <?php _e( 'Apply import', 'horse-tools' ); ?></button>
 					</div>
 				<?php else : ?>
 					<div class="ht-submit">
-						<button type="submit" name="horsetools_import_preview"><i class="fa-regular fa-eye"></i> <?php _e( 'Preview changes', 'horse-tools' ); ?></button>
+						<button type="submit" name="horsetools_import_preview"><i class="ti ti-eye"></i> <?php _e( 'Preview changes', 'horse-tools' ); ?></button>
 					</div>
 				<?php endif; ?>
 				</form>
@@ -320,12 +320,12 @@ function horsetools_export_options_page() {
 
 			<?php if ( $has_backup ) : ?>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-rotate-left"></i> <?php _e( 'Undo the last import', 'horse-tools' ); ?></h3>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e( 'The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot.', 'horse-tools' ); ?></p>
+			  <h3><i class="ti ti-rotate"></i> <?php _e( 'Undo the last import', 'horse-tools' ); ?></h3>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e( 'The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot.', 'horse-tools' ); ?></p>
 				<form method="post" action="<?php echo esc_url( menu_page_url( 'horsetools-export-options', false ) ); ?>">
 					<?php wp_nonce_field( 'horsetools_import', 'horsetools_import_nonce' ); ?>
 					<div class="ht-submit">
-						<button type="submit" name="horsetools_import_undo"><i class="fa-regular fa-rotate-left"></i> <?php _e( 'Restore previous configuration', 'horse-tools' ); ?></button>
+						<button type="submit" name="horsetools_import_undo"><i class="ti ti-rotate"></i> <?php _e( 'Restore previous configuration', 'horse-tools' ); ?></button>
 					</div>
 				</form>
 			</div>
@@ -377,6 +377,6 @@ function horsetools_export_options_page() {
 	echo ob_get_clean();
 }
 function horsetools_export_options_link() {
-	add_submenu_page( 'horsetools-options', 'Backup', '<i class="fa-regular fa-file-export" style="width:20px;"></i> ' . __( 'Backup', 'horse-tools' ), 'manage_options', 'horsetools-export-options', 'horsetools_export_options_page' );
+	add_submenu_page( 'horsetools-options', 'Backup', '<i class="ti ti-file-export" style="width:20px;"></i> ' . __( 'Backup', 'horse-tools' ), 'manage_options', 'horsetools-export-options', 'horsetools_export_options_page' );
 }
 add_action( 'admin_menu', 'horsetools_export_options_link' );

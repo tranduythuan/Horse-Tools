@@ -125,7 +125,7 @@ function horsetools_toggle( $key, $label, array $args = array() ) {
 	if ( $has_note ) {
 		$classes = 'ht-note' . ( '' !== $args['warning'] ? ' ht-note-red' : '' );
 		echo '<p class="' . esc_attr( $classes ) . '" id="' . esc_attr( $note_id ) . '">';
-		echo '<i class="fa-regular fa-lightbulb-on" aria-hidden="true"></i> ';
+		echo '<i class="ti ti-bulb" aria-hidden="true"></i> ';
 		if ( '' !== $args['description'] ) {
 			echo esc_html( $args['description'] );
 		}
@@ -205,7 +205,7 @@ function horsetools_input( $key, $label, array $args = array() ) {
 	</p>
 	<?php
 	if ( '' !== $args['description'] ) {
-		echo '<p class="ht-note" id="' . esc_attr( $note_id ) . '"><i class="fa-regular fa-lightbulb-on" aria-hidden="true"></i> '
+		echo '<p class="ht-note" id="' . esc_attr( $note_id ) . '"><i class="ti ti-bulb" aria-hidden="true"></i> '
 			. esc_html( $args['description'] ) . '</p>';
 	}
 }

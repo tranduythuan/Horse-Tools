@@ -9,7 +9,7 @@ global $horsetools_options; ?>
 <label class="ht-on-right"><?php _e('ON/OFF', 'horse-tools'); ?></label>
 </div>
 <div id="play9" class="ht-card toggle-div">
-  <h3><i class="fa-regular fa-lock"></i> <?php _e('Set access and viewing permissions', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-lock"></i> <?php _e('Set access and viewing permissions', 'horse-tools') ?></h3>
 	<!-- set quyen truy cap 1 -->
 	<?php horsetools_toggle( 'user-post1', __( 'Filter posts and images', 'horse-tools' ), array(
 		'tab'         => 'USER',
@@ -31,7 +31,7 @@ global $horsetools_options; ?>
 		'description' => __( 'Allow displaying member IDs on the profile management page', 'horse-tools' ),
 	) ); ?>
   
-  <h3><i class="fa-regular fa-list-dropdown"></i> <?php _e('Option to display the Admin bar', 'horse-tools') ?></h3>				  
+  <h3><i class="ti ti-list-details"></i> <?php _e('Option to display the Admin bar', 'horse-tools') ?></h3>				  
 	<!-- admin bar -->
 	<?php horsetools_toggle( 'user-bar1', __( 'Disable the Admin Bar', 'horse-tools' ), array(
 		'tab'     => 'USER',
@@ -48,9 +48,9 @@ global $horsetools_options; ?>
 	</select>
 	<label class="ht-right-text"><?php _e('Role', 'horse-tools'); ?></label>
 	</p>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If you find the Admin Bar distracting every time you view the website, you can turn it off (there is an option for you to turn off all or only turn off for users)', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('If you find the Admin Bar distracting every time you view the website, you can turn it off (there is an option for you to turn off all or only turn off for users)', 'horse-tools'); ?></p>
 	
-  <h3><i class="fa-regular fa-user"></i> <?php _e('Add avatar upload functionality', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-user"></i> <?php _e('Add avatar upload functionality', 'horse-tools') ?></h3>
 	<!-- set quyen truy cap 1 -->
 	<?php horsetools_toggle( 'user-upav1', __( 'Allow avatar upload', 'horse-tools' ), array(
 		'tab'         => 'USER',

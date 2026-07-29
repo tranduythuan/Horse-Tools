@@ -32,7 +32,7 @@ function horsetools_clean_button( $id, $action, $nonce_action, $result_sel, $est
 		data-ht-result="<?php echo esc_attr( $result_sel ); ?>"
 		data-ht-label="<?php echo esc_attr( $label ); ?>"
 		data-ht-estimated="<?php echo $estimated ? '1' : '0'; ?>">
-		<i class="fa-regular fa-trash" aria-hidden="true"></i>
+		<i class="ti ti-trash" aria-hidden="true"></i>
 		<span class="ht-clean-btn-label"><?php echo esc_html( $label ); ?></span>
 		<span class="ht-clean-count" data-ht-count="<?php echo esc_attr( $id ); ?>"></span>
 	</a>
@@ -60,10 +60,10 @@ function horsetools_clean_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="fa-regular fa-thumbtack"></i> <?php _e( 'CONTENT', 'horse-tools' ); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab2')"><i class="fa-regular fa-comment"></i> <?php _e( 'COMMENT', 'horse-tools' ); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab3')"><i class="fa-regular fa-image"></i> <?php _e( 'MEDIA', 'horse-tools' ); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab4')"><i class="fa-regular fa-clock-rotate-left"></i> <?php _e( 'SCHEDULE', 'horse-tools' ); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-pin"></i> <?php _e( 'CONTENT', 'horse-tools' ); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab2')"><i class="ti ti-message-circle"></i> <?php _e( 'COMMENT', 'horse-tools' ); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab3')"><i class="ti ti-photo"></i> <?php _e( 'MEDIA', 'horse-tools' ); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab4')"><i class="ti ti-history"></i> <?php _e( 'SCHEDULE', 'horse-tools' ); ?></button>
 		</div>
 		<div class="ht-main">
 
@@ -71,7 +71,7 @@ function horsetools_clean_options_page() {
 			<div class="sotab-box htbox" id="tab1" style="margin-bottom:-60px;">
 			<h2><?php _e( 'CONTENT', 'horse-tools' ); ?></h2>
 			<div class="ht-card">
-			   <h3><i class="fa-regular fa-trash"></i> <?php _e( 'Optimize deletion of content in the database', 'horse-tools' ); ?></h3>
+			   <h3><i class="ti ti-trash"></i> <?php _e( 'Optimize deletion of content in the database', 'horse-tools' ); ?></h3>
 				<div class="ht-del">
 				<?php
 				horsetools_clean_button( 'revisions', 'horsetools_delete_revisions', 'horsetools_post_revisions', '#del-result' );
@@ -81,7 +81,7 @@ function horsetools_clean_options_page() {
 				</div>
 				<div class="edel" style="display:none"><div class="ht-sload"></div> <?php _e( 'Please wait', 'horse-tools' ); ?></div>
 				<div id="del-result" class="ht-clean-result"></div>
-				<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e( 'Deleting is permanent. Revisions, autosaves and trashed content (posts, pages, products) are removed together with their metadata and attached files.', 'horse-tools' ); ?></p>
+				<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e( 'Deleting is permanent. Revisions, autosaves and trashed content (posts, pages, products) are removed together with their metadata and attached files.', 'horse-tools' ); ?></p>
 			</div>
 			</div>
 
@@ -89,7 +89,7 @@ function horsetools_clean_options_page() {
 			<div class="sotab-box htbox" id="tab2" style="display:none;margin-bottom:-60px;">
 			<h2><?php _e( 'COMMENT', 'horse-tools' ); ?></h2>
 			<div class="ht-card">
-			   <h3><i class="fa-regular fa-trash"></i> <?php _e( 'Delete comments', 'horse-tools' ); ?></h3>
+			   <h3><i class="ti ti-trash"></i> <?php _e( 'Delete comments', 'horse-tools' ); ?></h3>
 				<div class="ht-del">
 				<?php
 				horsetools_clean_button( 'comments_pending', 'horsetools_del_comenpend', 'horsetools_del_comenpend_nonce', '#del-result2' );
@@ -100,7 +100,7 @@ function horsetools_clean_options_page() {
 				</div>
 				<div class="edel2" style="display:none"><div class="ht-sload"></div> <?php _e( 'Please wait', 'horse-tools' ); ?></div>
 				<div id="del-result2" class="ht-clean-result"></div>
-				<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e( '"Comments containing links" matches links in the comment body only. The figure shown is the total comment count, not a match count, so confirm carefully.', 'horse-tools' ); ?></p>
+				<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e( '"Comments containing links" matches links in the comment body only. The figure shown is the total comment count, not a match count, so confirm carefully.', 'horse-tools' ); ?></p>
 			</div>
 			</div>
 
@@ -108,21 +108,21 @@ function horsetools_clean_options_page() {
 			<div class="sotab-box htbox" id="tab3" style="display:none;margin-bottom:-60px;">
 			<h2><?php _e( 'MEDIA', 'horse-tools' ); ?></h2>
 			<div class="ht-card">
-			   <h3><i class="fa-regular fa-image-slash"></i> <?php _e( 'Find and delete all 404 images in media', 'horse-tools' ); ?></h3>
+			   <h3><i class="ti ti-photo-off"></i> <?php _e( 'Find and delete all 404 images in media', 'horse-tools' ); ?></h3>
 				<div class="ht-del">
 				<?php horsetools_clean_button( 'media_404', 'horsetools_delete_media', 'horsetools_media_del', '#del-media', true ); ?>
 				</div>
 				<div class="emed" style="display:none"><div class="ht-sload"></div> <?php _e( 'Please wait', 'horse-tools' ); ?></div>
 				<div id="del-media" class="ht-clean-result"></div>
-				<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e( 'Removes attachments whose file is missing from disk. Every attachment is scanned, so the count is known only after it runs.', 'horse-tools' ); ?></p>
-			   <h3><i class="fa-regular fa-image-slash"></i> <?php _e( 'Find and delete all 404 thumbnail images in media', 'horse-tools' ); ?></h3>
+				<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e( 'Removes attachments whose file is missing from disk. Every attachment is scanned, so the count is known only after it runs.', 'horse-tools' ); ?></p>
+			   <h3><i class="ti ti-photo-off"></i> <?php _e( 'Find and delete all 404 thumbnail images in media', 'horse-tools' ); ?></h3>
 				<div class="ht-del">
 				<?php horsetools_clean_button( 'media_thumbs_404', 'horsetools_delete_media_thum', 'horsetools_media_thum_del', '#del-media-thum', true ); ?>
 				</div>
 				<div class="emed-thum" style="display:none"><div class="ht-sload"></div> <?php _e( 'Please wait', 'horse-tools' ); ?></div>
 				<div id="del-media-thum" class="ht-clean-result"></div>
-				<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e( 'Removes metadata entries for thumbnail files that are missing from disk. It does not delete images.', 'horse-tools' ); ?></p>
-			  <h3><i class="fa-regular fa-image-slash"></i> <?php _e( 'Delete cropped image', 'horse-tools' ); ?></h3>
+				<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e( 'Removes metadata entries for thumbnail files that are missing from disk. It does not delete images.', 'horse-tools' ); ?></p>
+			  <h3><i class="ti ti-photo-off"></i> <?php _e( 'Delete cropped image', 'horse-tools' ); ?></h3>
 				<div class="ht-card-note ht-del-crop">
 				<?php
 				global $_wp_additional_image_sizes;
@@ -135,12 +135,12 @@ function horsetools_clean_options_page() {
 					$width = isset( $_wp_additional_image_sizes[ $size ]['width'] ) ? $_wp_additional_image_sizes[ $size ]['width'] : get_option( $size . '_size_w' );
 					?>
 					<p>
-						<a href="javascript:void(0)" class="ht-cropdel" data-size="<?php echo esc_attr( $size ); ?>"><i class="fa-regular fa-trash"></i> <?php echo esc_html( $size . ' (W: ' . $width . ')' ); ?></a>
+						<a href="javascript:void(0)" class="ht-cropdel" data-size="<?php echo esc_attr( $size ); ?>"><i class="ti ti-trash"></i> <?php echo esc_html( $size . ' (W: ' . $width . ')' ); ?></a>
 					</p>
 				<?php } ?>
 				</div>
 				<div id="delete-size-end" class="ht-clean-result"></div>
-				<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e( 'Use with care: your theme may need several image sizes to display correctly.', 'horse-tools' ); ?></p>
+				<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e( 'Use with care: your theme may need several image sizes to display correctly.', 'horse-tools' ); ?></p>
 			</div>
 			</div>
 
@@ -148,7 +148,7 @@ function horsetools_clean_options_page() {
 			<div class="sotab-box htbox" id="tab4" style="display:none;margin-bottom:-60px;">
 			<h2><?php _e( 'SCHEDULE', 'horse-tools' ); ?></h2>
 			<div class="ht-card">
-			   <h3><i class="fa-regular fa-clock-rotate-left"></i> <?php _e( 'Automatic cleanup', 'horse-tools' ); ?></h3>
+			   <h3><i class="ti ti-history"></i> <?php _e( 'Automatic cleanup', 'horse-tools' ); ?></h3>
 				<form method="post" action="options.php">
 				<?php settings_fields( 'horsetools_clean_settings_group' ); ?>
 				<?php
@@ -171,14 +171,14 @@ function horsetools_clean_options_page() {
 					<?php
 				}
 				?>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i>
+				<p class="ht-note"><i class="ti ti-bulb"></i>
 					<?php _e( 'Cleanup runs on WordPress cron, which only fires when your site receives traffic. Weekly and monthly are measured from the last run.', 'horse-tools' ); ?>
 					<?php if ( $next_run ) : ?>
 						<br><?php printf( esc_html__( 'Next automatic check: %s', 'horse-tools' ), esc_html( wp_date( 'Y-m-d H:i', $next_run ) ) ); ?>
 					<?php endif; ?>
 				</p>
-				<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e( 'Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action.', 'horse-tools' ); ?></p>
-				<div class="ht-submit"><button type="submit"><i class="fa-regular fa-floppy-disk"></i> <?php _e( 'Save schedule', 'horse-tools' ); ?></button></div>
+				<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e( 'Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action.', 'horse-tools' ); ?></p>
+				<div class="ht-submit"><button type="submit"><i class="ti ti-device-floppy"></i> <?php _e( 'Save schedule', 'horse-tools' ); ?></button></div>
 				</form>
 			</div>
 			</div>
@@ -192,7 +192,7 @@ function horsetools_clean_options_page() {
 	<!-- Confirmation modal, reused by every delete button -->
 	<div class="ht-updated-main ht-confirm" id="ht-clean-confirm" style="display:none" role="dialog" aria-modal="true" aria-labelledby="ht-confirm-title">
 		<div class="ht-updated-card">
-			<i class="fa-regular fa-triangle-exclamation" aria-hidden="true"></i>
+			<i class="ti ti-alert-triangle" aria-hidden="true"></i>
 			<div class="ht-updated-card-tit" id="ht-confirm-title"><?php _e( 'Confirm deletion', 'horse-tools' ); ?></div>
 			<p id="ht-confirm-body"></p>
 			<label class="ht-confirm-ack">
@@ -373,6 +373,6 @@ function horsetools_clean_options_page() {
 }
 
 function horsetools_clean_options_link() {
-	add_submenu_page( 'horsetools-options', 'Clean', '<i class="fa-regular fa-broom-wide" style="width:20px;"></i> ' . __( 'Clean', 'horse-tools' ), 'manage_options', 'horsetools-clean-options', 'horsetools_clean_options_page' );
+	add_submenu_page( 'horsetools-options', 'Clean', '<i class="ti ti-wash" style="width:20px;"></i> ' . __( 'Clean', 'horse-tools' ), 'manage_options', 'horsetools-clean-options', 'horsetools_clean_options_page' );
 }
 add_action( 'admin_menu', 'horsetools_clean_options_link' );

@@ -61,7 +61,7 @@ function horsetools_customize_enqueue() {
 	if ( ! horsetools_is_plugin_screen() ) {
 		return;
 	}
-	wp_enqueue_style( 'horsetools-icon', HORSETOOLS_URL . 'font/css/all.css', array(), HORSETOOLS_VERSION );
+	wp_enqueue_style( 'horsetools-icon', HORSETOOLS_URL . 'link/tabler/tabler-icons.css', array(), HORSETOOLS_VERSION );
 	wp_enqueue_style( 'horsetools-css', HORSETOOLS_URL . 'link/htadmin.css', array(), HORSETOOLS_VERSION );
 	wp_enqueue_script( 'horsetools-js', HORSETOOLS_URL . 'link/htadmin.js', array(), HORSETOOLS_VERSION, true );
 	wp_enqueue_style( 'coloris-css', HORSETOOLS_URL . 'link/color/coloris.css', array(), HORSETOOLS_VERSION );

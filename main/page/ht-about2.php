@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_options; ?>
 <h2><?php _e('DATABASE', 'horse-tools'); ?></h2>
-  <h3><i class="fa-regular fa-database"></i> <?php _e('Your database', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-database"></i> <?php _e('Your database', 'horse-tools') ?></h3>
 	<div class="ht-card-note">
 		<div class="ht-showcsdl ht-showcsdl-tit">
 			<div><?php _e('Table name', 'horse-tools') ?></div>

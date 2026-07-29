@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_options; ?>
 <h2><?php _e('ABOUT', 'horse-tools'); ?></h2>
-  <h3><i class="fa-regular fa-star"></i> <?php _e('Information about your website', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-star"></i> <?php _e('Information about your website', 'horse-tools') ?></h3>
 	<div class="ht-card-note"> 
 	<p><?php $theme = wp_get_theme(); echo 'Theme: ' . esc_html($theme->Name) .' <b>'. esc_html($theme->Version) .'</b>'; ?></p>
 	<p><?php $horsetools = HORSETOOLS_VERSION; echo __('Horse Tools:', 'horse-tools'). ' <b>'. esc_html($horsetools) .'</b>'; ?></p>
@@ -51,7 +51,7 @@ global $horsetools_options; ?>
 	?>
 	</p>
 	</div>
-  <h3><i class="fa-regular fa-star"></i> <?php _e('Plugin development', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-star"></i> <?php _e('Plugin development', 'horse-tools') ?></h3>
 	<div class="ht-card-note">
 	<p><?php _e('Author and maintainer:', 'horse-tools') ?> <b><a target="_blank" rel="noopener" href="https://tranduythuan.com/">Trần Duy Thuận</a></b></p>
 	<p><?php _e('Source code and issues:', 'horse-tools') ?> <b><a target="_blank" rel="noopener" href="https://github.com/tranduythuan/Horse-Tools">github.com/tranduythuan/Horse-Tools</a></b></p>

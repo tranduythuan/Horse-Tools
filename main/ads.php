@@ -15,9 +15,9 @@ function horsetools_ads_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="fa-regular fa-computer-mouse"></i> <?php _e('CLICK', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab2')"><i class="fa-regular fa-rectangle-ad"></i> <?php _e('ADSENSE', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab3')"><i class="fa-regular fa-file-check"></i> <?php _e('ADS.TXT', 'horse-tools'); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-mouse"></i> <?php _e('CLICK', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab2')"><i class="ti ti-ad"></i> <?php _e('ADSENSE', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab3')"><i class="ti ti-file-check"></i> <?php _e('ADS.TXT', 'horse-tools'); ?></button>
 		</div>
 
 		<div class="ht-main">
@@ -32,8 +32,8 @@ function horsetools_ads_options_page() {
 			<div class="sotab-box htbox" id="tab1" >
 			<h2><?php _e('CLICK', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			   <h3><i class="fa-regular fa-circle-exclamation"></i> <?php _e('Forced ad clicks — removed', 'horse-tools') ?></h3>
-				<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i>
+			   <h3><i class="ti ti-alert-circle"></i> <?php _e('Forced ad clicks — removed', 'horse-tools') ?></h3>
+				<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i>
 				<?php _e('This feature was removed in Horse Tools 1.0.0. It opened an affiliate URL in a hidden off-screen window every time a visitor clicked anywhere on the page. That is affiliate cookie stuffing: it deceives your visitors, breaks the terms of every major affiliate network and of Google AdSense, and can get your domain and your ad accounts banned.', 'horse-tools'); ?>
 				<br><br>
 				<?php _e('If you had it enabled it is now inactive. The AdSense and ads.txt tools on the other tabs are unaffected.', 'horse-tools'); ?>
@@ -44,7 +44,7 @@ function horsetools_ads_options_page() {
 			<div class="sotab-box htbox" id="tab2" style="display:none">
 			<h2><?php _e('ADSENSE', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			   <h3><i class="fa-regular fa-rectangle-ad"></i> <?php _e('Set up Adsense ads', 'horse-tools') ?></h3>
+			   <h3><i class="ti ti-ad"></i> <?php _e('Set up Adsense ads', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'ads-sense1', __( 'Enable Adsense', 'horse-tools' ), array(
 					'module'  => 'ads',
 					'tab'     => 'ADSENSE',
@@ -73,7 +73,7 @@ function horsetools_ads_options_page() {
 					<?php
 				}
 				?>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Select the custom post for which you want to show ads', 'horse-tools'); ?></p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Select the custom post for which you want to show ads', 'horse-tools'); ?></p>
 				<h5><?php _e('Top and bottom positions', 'horse-tools') ?></h5>
 				<p>
 				<textarea style="height:90px;" class="ht-code-textarea" name="horsetools_ads_settings[ads-sense-p1]" placeholder="<?php _e('Add ads to the top of the article', 'horse-tools'); ?>"><?php if(!empty($horsetools_ads_options['ads-sense-p1'])){echo esc_textarea($horsetools_ads_options['ads-sense-p1']);} ?></textarea>
@@ -86,7 +86,7 @@ function horsetools_ads_options_page() {
 				<input class="ht-input-small" placeholder="<?php _e('Tag', 'horse-tools') ?>" name="horsetools_ads_settings[ads-sense-c1]" type="text" value="<?php if(!empty($horsetools_ads_options['ads-sense-c1'])){echo sanitize_text_field($horsetools_ads_options['ads-sense-c1']);} else {echo sanitize_text_field('p');} ?>"/>
 				<input class="ht-input-small" placeholder="<?php _e('Quantity', 'horse-tools') ?>" name="horsetools_ads_settings[ads-sense-c2]" type="number" value="<?php if(!empty($horsetools_ads_options['ads-sense-c2'])){echo sanitize_text_field($horsetools_ads_options['ads-sense-c2']);} else {echo sanitize_text_field('10');} ?>"/>
 				</p>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enter the tag and tag number for the ad to appear', 'horse-tools'); ?></p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Enter the tag and tag number for the ad to appear', 'horse-tools'); ?></p>
 				<p>
 				<textarea style="height:90px;" class="ht-code-textarea" name="horsetools_ads_settings[ads-sense-c3]" placeholder="<?php _e('Add ads to custom post placement', 'horse-tools'); ?>"><?php if(!empty($horsetools_ads_options['ads-sense-c3'])){echo esc_textarea($horsetools_ads_options['ads-sense-c3']);} ?></textarea>
 				</p>
@@ -96,13 +96,13 @@ function horsetools_ads_options_page() {
 			<div class="sotab-box htbox" id="tab3" style="display:none">
 			<h2><?php _e('ADS.TXT', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			   <h3><i class="fa-regular fa-file-check"></i> <?php _e('Set up the ads.txt file', 'horse-tools') ?></h3>
+			   <h3><i class="ti ti-file-check"></i> <?php _e('Set up the ads.txt file', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'ads-adstxt1', __( 'Enable ads.txt', 'horse-tools' ), array(
 					'module'  => 'ads',
 					'tab'     => 'ADS.TXT',
 					'section' => 'Set up the ads.txt file',
 				) ); ?>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can preview your file here:', 'horse-tools'); echo ' <a target="_blank" href="' . esc_url(home_url( '/ads.txt' )) . '">ads.txt</a>'; ?><br>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('You can preview your file here:', 'horse-tools'); echo ' <a target="_blank" href="' . esc_url(home_url( '/ads.txt' )) . '">ads.txt</a>'; ?><br>
 				<?php _e('For an Nginx server, if the ads.txt file already exists in the root directory of the website, it will prioritize the static file, so this function will not work. If you want to use it, you can either configure Nginx or delete the static file before proceeding', 'horse-tools'); ?>
 				</p>
 				<p>
@@ -111,9 +111,9 @@ function horsetools_ads_options_page() {
 			</div>
 			</div>
 			<div class="ht-submit">
-				<button type="submit"><i class="fa-regular fa-floppy-disk"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
+				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
 			</div>
-				<button id="ht-save-fast" type="submit"><i class="fa-regular fa-floppy-disk"></i></button>
+				<button id="ht-save-fast" type="submit"><i class="ti ti-device-floppy"></i></button>
 			</form>
 		</div>
 	  </div>
@@ -127,7 +127,7 @@ function horsetools_ads_options_page() {
 	echo ob_get_clean();
 }
 function horsetools_ads_options_link() {
-	add_submenu_page ('horsetools-options', 'Ads', '<i class="fa-regular fa-rectangle-ad" style="width:20px;"></i> '. __('Ads', 'horse-tools'), 'manage_options', 'horsetools-ads-options', 'horsetools_ads_options_page');
+	add_submenu_page ('horsetools-options', 'Ads', '<i class="ti ti-ad" style="width:20px;"></i> '. __('Ads', 'horse-tools'), 'manage_options', 'horsetools-ads-options', 'horsetools_ads_options_page');
 }
 add_action('admin_menu', 'horsetools_ads_options_link');
 function horsetools_ads_register_settings() {

@@ -15,7 +15,7 @@ function horsetools_search_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="fa-regular fa-magnifying-glass"></i> <?php _e('HORSE SEARCH', 'horse-tools'); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-search"></i> <?php _e('HORSE SEARCH', 'horse-tools'); ?></button>
 		</div>
 
 		<div class="ht-main">
@@ -30,7 +30,7 @@ function horsetools_search_options_page() {
 			<div class="sotab-box htbox" id="tab1" >
 			<h2><?php _e('HORSE SEARCH', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-magnifying-glass"></i> <?php _e('Quick search', 'horse-tools') ?></h3>
+			  <h3><i class="ti ti-search"></i> <?php _e('Quick search', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'main-search1', __( 'Enable quick search', 'horse-tools' ), array(
 					'module'  => 'search',
 					'tab'     => 'HORSE SEARCH',
@@ -42,7 +42,7 @@ function horsetools_search_options_page() {
 				<label class="ht-label-right"><?php _e('Number of items displayed', 'horse-tools'); ?></label>
 				</p>
 				
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enter the number of posts or products to be displayed when searching', 'horse-tools'); ?></p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Enter the number of posts or products to be displayed when searching', 'horse-tools'); ?></p>
 				
 				<p style="display:flex;align-items:center;">
 				<input class="ht-input-color" name="horsetools_search_settings[main-search-c2]" type="text" data-coloris value="<?php if(!empty($horsetools_search_options['main-search-c2'])){echo sanitize_text_field($horsetools_search_options['main-search-c2']);} ?>"/>
@@ -60,7 +60,7 @@ function horsetools_search_options_page() {
 				<label class="ht-right-text"><?php _e('Light / Dark', 'horse-tools'); ?></label>
 				</p>
 				
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Change the color of the search box to your preferences', 'horse-tools'); ?></p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Change the color of the search box to your preferences', 'horse-tools'); ?></p>
 				
 				<h4><?php _e('Use shortcodes', 'horse-tools'); ?></h4>
 				<?php horsetools_toggle( 'main-search-code1', __( 'Enable shortcodes', 'horse-tools' ), array(
@@ -76,7 +76,7 @@ function horsetools_search_options_page() {
 				<label class="ht-right-text"><?php _e('Icon color', 'horse-tools'); ?></label>
 				</p>
 				
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can use the shortcode to add the search icon to the location you want', 'horse-tools'); ?></p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('You can use the shortcode to add the search icon to the location you want', 'horse-tools'); ?></p>
 				
 				<h4><?php _e('Create custom post type data', 'horse-tools'); ?></h4>
 				<?php 
@@ -99,8 +99,8 @@ function horsetools_search_options_page() {
 				}
 				?>
 				<div class="save-json">
-				<a href="javascript:void(0)" id="save-json"><i class="fa-regular fa-database"></i> <?php _e('Generate data', 'horse-tools'); ?></a>
-				<a href="javascript:void(0)" id="delete-json-folder"><i class="fa-regular fa-trash"></i> <?php _e('Delete data', 'horse-tools'); ?></a>
+				<a href="javascript:void(0)" id="save-json"><i class="ti ti-database"></i> <?php _e('Generate data', 'horse-tools'); ?></a>
+				<a href="javascript:void(0)" id="delete-json-folder"><i class="ti ti-trash"></i> <?php _e('Delete data', 'horse-tools'); ?></a>
 				</div> 
 				<div id="tb-json"></div>
 				<div class="tb-doi" id="tb-doi" style="display:none"><div class="ht-sload"></div> <span id="starprocess"></span></div>
@@ -200,13 +200,13 @@ function horsetools_search_options_page() {
 				});
 				</script>
 				<div id="loadbarprocess"></div>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Configure the options and create search data. If you want to refresh, you can delete the search data and recreate it. After enabling quick search and completing data creation, a quick search popup will appear when you enter the search box on the website', 'horse-tools'); ?></p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Configure the options and create search data. If you want to refresh, you can delete the search data and recreate it. After enabling quick search and completing data creation, a quick search popup will appear when you enter the search box on the website', 'horse-tools'); ?></p>
 			</div>
 			</div>
 			<div class="ht-submit">
-				<button type="submit"><i class="fa-regular fa-floppy-disk"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
+				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
 			</div>
-				<button id="ht-save-fast" type="submit"><i class="fa-regular fa-floppy-disk"></i></button>
+				<button id="ht-save-fast" type="submit"><i class="ti ti-device-floppy"></i></button>
 			</form>
 		</div>
 	  </div>
@@ -220,7 +220,7 @@ function horsetools_search_options_page() {
 	echo ob_get_clean();
 }
 function horsetools_search_options_link() {
-	add_submenu_page ('horsetools-options', 'Horse Search', '<i class="fa-regular fa-magnifying-glass" style="width:20px;"></i> '. __('Horse Search', 'horse-tools'), 'manage_options', 'horsetools-search-options', 'horsetools_search_options_page');
+	add_submenu_page ('horsetools-options', 'Horse Search', '<i class="ti ti-search" style="width:20px;"></i> '. __('Horse Search', 'horse-tools'), 'manage_options', 'horsetools-search-options', 'horsetools_search_options_page');
 }
 add_action('admin_menu', 'horsetools_search_options_link');
 function horsetools_search_register_settings() {

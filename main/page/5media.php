@@ -9,7 +9,7 @@ global $horsetools_options; ?>
 <label class="ht-on-right"><?php _e('ON/OFF', 'horse-tools'); ?></label>
 </div>
 <div id="play5" class="ht-card toggle-div">
-  <h3><i class="fa-regular fa-crop"></i> <?php _e('Image crop configuration', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-crop"></i> <?php _e('Image crop configuration', 'horse-tools') ?></h3>
 	<!-- upload hinh anh 1 -->
 	<?php horsetools_toggle( 'media-up1', __( 'Stop cropping all', 'horse-tools' ), array(
 		'tab'     => 'MEDIA',
@@ -34,18 +34,18 @@ global $horsetools_options; ?>
 			<label class="ht-label-right"><?php echo __('Stop cropping', 'horse-tools') .' '. $size .' (W: '. $width .')'; ?></label>
 		</p>
 	<?php } ?>
-   <h3><i class="fa-regular fa-photo-film-music"></i> <?php _e('Advanced photo upload', 'horse-tools') ?></h3>
+   <h3><i class="ti ti-photo-video"></i> <?php _e('Advanced photo upload', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'media-title1', __( 'Automatic name', 'horse-tools' ), array(
 		'tab'     => 'MEDIA',
 		'section' => 'Advanced photo upload',
 	) ); ?>
-	<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('The file name will be your domain name', 'horse-tools'); ?></p>
+	<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e('The file name will be your domain name', 'horse-tools'); ?></p>
 	<?php horsetools_toggle( 'media-png-8', __( 'Ignore 8-bit png', 'horse-tools' ), array(
 		'tab'     => 'MEDIA',
 		'section' => 'Advanced photo upload',
 	) ); ?>
-	<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('8-bit PNG images are not supported by the GD library, and this format already has perfect compression and does not need further processing', 'horse-tools'); ?></p>		
-  <h3><i class="fa-regular fa-upload"></i> <?php _e('Configure image upload function', 'horse-tools') ?></h3>
+	<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e('8-bit PNG images are not supported by the GD library, and this format already has perfect compression and does not need further processing', 'horse-tools'); ?></p>		
+  <h3><i class="ti ti-upload"></i> <?php _e('Configure image upload function', 'horse-tools') ?></h3>
 	<!-- upload hinh anh 2 -->
 	<?php horsetools_toggle( 'media-up2', __( 'Enable upload size limit', 'horse-tools' ), array(
 		'tab'     => 'MEDIA',
@@ -61,7 +61,7 @@ global $horsetools_options; ?>
 		'parent'      => 'media-up2',
 	) ); ?>
 
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If you have members and do not want them to upload images with excessively large sizes, causing storage space usage, you can limit the maximum size allowed for upload', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('If you have members and do not want them to upload images with excessively large sizes, causing storage space usage, you can limit the maximum size allowed for upload', 'horse-tools'); ?></p>
 	
 	<!-- upload hinh anh 3 -->
 	<?php horsetools_toggle( 'media-up3', __( 'Allow uploading SVG files', 'horse-tools' ), array(
@@ -76,7 +76,7 @@ global $horsetools_options; ?>
 		'section'     => 'Configure image upload function',
 		'description' => __( 'Enable this feature if you want JFIF format images to be uploaded to the media. The uploaded images will be converted to JPG or WEBP format according to the configuration', 'horse-tools' ),
 	) ); ?>
-  <h3><i class="fa-regular fa-file-zipper"></i> <?php _e('Compress JPG images upon upload', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-file-zip"></i> <?php _e('Compress JPG images upon upload', 'horse-tools') ?></h3>
 	<!-- upload hinh anh 1 -->
 	<?php horsetools_toggle( 'media-zip1', __( 'Enable JPG image compression', 'horse-tools' ), array(
 		'tab'     => 'MEDIA',
@@ -88,7 +88,7 @@ global $horsetools_options; ?>
 	<span><?php _e('Compression level (', 'horse-tools'); ?><b><span id="demo10"></span></b> - 90)</span>
 	</p>
 	
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can adjust the compression level of the image from 5 to 100 (100 being no compression)', 'horse-tools'); ?></p>	
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('You can adjust the compression level of the image from 5 to 100 (100 being no compression)', 'horse-tools'); ?></p>	
 	
 	<!-- png to jpg -->
 	<?php horsetools_toggle( 'media-zip12', __( 'Convert PNG to JPG', 'horse-tools' ), array(
@@ -96,7 +96,7 @@ global $horsetools_options; ?>
 		'section'     => 'Compress JPG images upon upload',
 		'description' => __( 'Convert PNG images to JPG upon upload, and compress the images according to the JPG configuration', 'horse-tools' ),
 	) ); ?>
-  <h3><i class="fa-regular fa-file-zipper"></i> <?php _e('Convert images to WEBP upon upload', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-file-zip"></i> <?php _e('Convert images to WEBP upon upload', 'horse-tools') ?></h3>
 	<!-- jpg,png, gif to webp -->
 	<?php horsetools_toggle( 'media-webp1', __( 'Convert JPG and PNG to WEBP', 'horse-tools' ), array(
 		'tab'     => 'MEDIA',
@@ -108,9 +108,9 @@ global $horsetools_options; ?>
 	<span><?php _e('Compression level (', 'horse-tools'); ?><b><span id="demo11"></span></b> - 90)</span>
 	</p>
 	
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Convert JPG and PNG images to WEBP upon upload, and compress the images according to the configuration you enter', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Convert JPG and PNG images to WEBP upon upload, and compress the images according to the configuration you enter', 'horse-tools'); ?></p>
   
-  <h3><i class="fa-regular fa-file-zipper"></i> <?php _e('Convert images to AVIF upon upload', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-file-zip"></i> <?php _e('Convert images to AVIF upon upload', 'horse-tools') ?></h3>
 	<!-- jpg,png, gif to avif -->
 	<?php horsetools_toggle( 'media-avif1', __( 'Allow uploading AVIF image format', 'horse-tools' ), array(
 		'tab'     => 'MEDIA',
@@ -127,11 +127,11 @@ global $horsetools_options; ?>
 	<span><?php _e('Compression level (', 'horse-tools'); ?><b><span id="demo12"></span></b> - 90)</span>
 	</p>
 	
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Convert JPG and PNG images to AVIF upon upload, and compress the images according to the configuration you enter', 'horse-tools'); ?><br>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Convert JPG and PNG images to AVIF upon upload, and compress the images according to the configuration you enter', 'horse-tools'); ?><br>
 	<b><?php _e('Only supported from PHP 8.1 and above', 'horse-tools'); ?></b>
 	</p>
   
-  <h3><i class="fa-regular fa-crop-simple"></i> <?php _e('Limits the size of JPG, PNG, WEBP, AVIF images when uploading', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-crop"></i> <?php _e('Limits the size of JPG, PNG, WEBP, AVIF images when uploading', 'horse-tools') ?></h3>
 	<!-- upload hinh anh 1 -->
 	<?php horsetools_toggle( 'media-zip2', __( 'Limit JPG, PNG, WEBP, AVIF images', 'horse-tools' ), array(
 		'tab'     => 'MEDIA',
@@ -145,9 +145,9 @@ global $horsetools_options; ?>
 	<span><?php _e('Max height', 'horse-tools'); ?></span>
 	</p>
 	
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Limits the maximum width and height of JPG, PNG, WEBP images upon upload. You can leave it blank if you want to keep the original size', 'horse-tools'); ?></p>	
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Limits the maximum width and height of JPG, PNG, WEBP images upon upload. You can leave it blank if you want to keep the original size', 'horse-tools'); ?></p>	
 	
-  <h3><i class="fa-regular fa-frame"></i> <?php _e('Automatically add a frame when uploading an image', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-frame"></i> <?php _e('Automatically add a frame when uploading an image', 'horse-tools') ?></h3>
 	<!-- them logo vao hinh anh -->
 	<?php horsetools_toggle( 'media-cutop1', __( 'Enable the picture frame', 'horse-tools' ), array(
 		'tab'     => 'MEDIA',
@@ -202,9 +202,9 @@ global $horsetools_options; ?>
 	<span><?php _e('Transparency level', 'horse-tools'); ?> <span id="demo17"></span> %</span>
 	</p>
 	
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('The feature adds advanced functions when uploading images, such as adding frames, flipping images... allowing you to automatically customize your images during upload. Picture frame (PNG)', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('The feature adds advanced functions when uploading images, such as adding frames, flipping images... allowing you to automatically customize your images during upload. Picture frame (PNG)', 'horse-tools'); ?></p>
 
-  <h3><i class="fa-regular fa-diagram-venn"></i> <?php _e('Configure adding a watermark to images upon upload', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-circles-relation"></i> <?php _e('Configure adding a watermark to images upon upload', 'horse-tools') ?></h3>
 	<!-- them logo vao hinh anh -->
 	<?php horsetools_toggle( 'media-logo1', __( 'Add watermark to images upon upload', 'horse-tools' ), array(
 		'tab'     => 'MEDIA',
@@ -267,5 +267,5 @@ global $horsetools_options; ?>
 	<input type="range" name="horsetools_settings[media-logo14]" min="10" max="100" value="<?php if(!empty($horsetools_options['media-logo14'])){echo sanitize_text_field($horsetools_options['media-logo14']);} else { echo sanitize_text_field('100');} ?>" class="htslide" data-index="15">
 	<span><?php _e('Transparency level', 'horse-tools'); ?> <span id="demo15"></span> %</span>
 	</p>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If you want your uploaded images to be watermarked, please use this function and configure it above. Watermark (PNG, JPG)', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('If you want your uploaded images to be watermarked, please use this function and configure it above. Watermark (PNG, JPG)', 'horse-tools'); ?></p>
 </div>	

@@ -15,7 +15,7 @@ function horsetools_toc_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="fa-regular fa-list"></i> <?php _e('TOC', 'horse-tools'); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-list"></i> <?php _e('TOC', 'horse-tools'); ?></button>
 		</div>
 
 		<div class="ht-main">
@@ -30,7 +30,7 @@ function horsetools_toc_options_page() {
 			<div class="sotab-box htbox" id="tab1" >
 			<h2><?php _e('TOC', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-list"></i> <?php _e('Table of contents configuration', 'horse-tools') ?></h3>
+			  <h3><i class="ti ti-list"></i> <?php _e('Table of contents configuration', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'toc1', __( 'Enable table of contents', 'horse-tools' ), array(
 					'module'  => 'toc',
 					'tab'     => 'TOC',
@@ -56,7 +56,7 @@ function horsetools_toc_options_page() {
 					<?php
 				}
 				?>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Select the custom post for which you want to display TOC content', 'horse-tools'); ?></p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Select the custom post for which you want to display TOC content', 'horse-tools'); ?></p>
 				<h4><?php _e('Shortcodes', 'horse-tools') ?></h4>
 				<?php horsetools_toggle( 'shortcode', __( 'Use shortcodes', 'horse-tools' ), array(
 					'module'  => 'toc',
@@ -64,7 +64,7 @@ function horsetools_toc_options_page() {
 					'section' => 'Table of contents configuration',
 				) ); ?>
 				<input class="ht-input-big ht-view-in" type="text" value="[horsetoc]"/>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can use the shortcode in the editor and add it to the position you want, note: only use 1 shortcode in the post', 'horse-tools'); ?></p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('You can use the shortcode in the editor and add it to the position you want, note: only use 1 shortcode in the post', 'horse-tools'); ?></p>
 				<h4><?php _e('Advanced configuration', 'horse-tools') ?></h4>
 				<p>
 				<input class="ht-input-big" placeholder="<?php _e('Enter a title', 'horse-tools') ?>" name="horsetools_toc_settings[tit-c1]" type="text" value="<?php if(!empty($horsetools_toc_options['tit-c1'])){echo sanitize_text_field($horsetools_toc_options['tit-c1']);} ?>"/>
@@ -276,9 +276,9 @@ function horsetools_toc_options_page() {
 			</div>
 			</div>
 			<div class="ht-submit">
-				<button type="submit"><i class="fa-regular fa-floppy-disk"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
+				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
 			</div>
-				<button id="ht-save-fast" type="submit"><i class="fa-regular fa-floppy-disk"></i></button>
+				<button id="ht-save-fast" type="submit"><i class="ti ti-device-floppy"></i></button>
 			</form>
 		</div>
 	  </div>
@@ -292,7 +292,7 @@ function horsetools_toc_options_page() {
 	echo ob_get_clean();
 }
 function horsetools_toc_options_link() {
-	add_submenu_page ('horsetools-options', 'Toc', '<i class="fa-regular fa-list" style="width:20px;"></i> '. __('TOC', 'horse-tools'), 'manage_options', 'horsetools-toc-options', 'horsetools_toc_options_page');
+	add_submenu_page ('horsetools-options', 'Toc', '<i class="ti ti-list" style="width:20px;"></i> '. __('TOC', 'horse-tools'), 'manage_options', 'horsetools-toc-options', 'horsetools_toc_options_page');
 }
 add_action('admin_menu', 'horsetools_toc_options_link');
 function horsetools_toc_register_settings() {

@@ -14,8 +14,8 @@ function horsetools_about_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="fa-regular fa-bomb"></i> <?php _e('ABOUT', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab2')"><i class="fa-regular fa-database"></i> <?php _e('DATABASE', 'horse-tools'); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-bomb"></i> <?php _e('ABOUT', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab2')"><i class="ti ti-database"></i> <?php _e('DATABASE', 'horse-tools'); ?></button>
 		</div>
 		<div class="ht-main">
 			<!-- about web -->
@@ -38,7 +38,7 @@ function horsetools_about_options_page() {
 	echo ob_get_clean();
 }
 function horsetools_about_options_link() {
-	add_submenu_page ('horsetools-options', 'About', '<i class="fa-regular fa-bomb" style="width:20px;"></i> '. __('About', 'horse-tools'), 'manage_options', 'horsetools-about-options', 'horsetools_about_options_page');
+	add_submenu_page ('horsetools-options', 'About', '<i class="ti ti-bomb" style="width:20px;"></i> '. __('About', 'horse-tools'), 'manage_options', 'horsetools-about-options', 'horsetools_about_options_page');
 }
 add_action('admin_menu', 'horsetools_about_options_link');
 

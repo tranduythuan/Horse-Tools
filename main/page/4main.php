@@ -9,17 +9,17 @@ global $horsetools_options; ?>
 <label class="ht-on-right"><?php _e('ON/OFF', 'horse-tools'); ?></label>
 </div>
 <div id="play4" class="ht-card toggle-div">
-  <h3><i class="fa-regular fa-icons"></i> <?php _e('Add font Awesome to the website', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-icons"></i> <?php _e('Add font Awesome to the website', 'horse-tools') ?></h3>
 	<!-- main add font icon 1 -->
 	<?php horsetools_toggle( 'main-add1', __( 'Enable font Awesome', 'horse-tools' ), array(
 		'tab'     => 'DISPLAY',
 		'section' => 'Add font Awesome to the website',
 	) ); ?>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If you want to use font Awesome, you can enable it (it an icon font). You can search for icons at:', 'horse-tools'); ?><br>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('If you want to use font Awesome, you can enable it (it an icon font). You can search for icons at:', 'horse-tools'); ?><br>
 	<b><a target="_blank" href="https://fontawesome.com/search"><?php _e('Access Font Awesome to find icons', 'horse-tools'); ?></a></b><br>
-	<?php _e('Free to use "fa-regular" and "fa-brands" styles', 'horse-tools'); ?>
+	<?php _e('Free to use "ti" and "ti" styles', 'horse-tools'); ?>
 	</p>
-  <h3><i class="fa-regular fa-snowflake"></i> <?php _e('Decorative effects for the website', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-snowflake"></i> <?php _e('Decorative effects for the website', 'horse-tools') ?></h3>
 	<!-- add font Google 1 -->
 	<?php $styles = array('None', 'Snow1', 'Snow2', 'Lunar1', 'Lunar2', 'Vietnam', 'Indonesia'); ?>
 	<select name="horsetools_settings[main-hover1]"> 
@@ -29,8 +29,8 @@ global $horsetools_options; ?>
 	<?php } ?> 
 	</select>
 	<label class="ht-right-text"><?php _e('Effect', 'horse-tools'); ?></label>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Choose decorations for the website, such as Christmas or Lunar New Year (If any effects cause issues on your website, it may be due to javascript conflicts. You can switch to other effects to use)', 'horse-tools'); ?></p>
-  <h3><i class="fa-regular fa-circle-half-stroke"></i> <?php _e('Dark mode', 'horse-tools') ?></h3>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Choose decorations for the website, such as Christmas or Lunar New Year (If any effects cause issues on your website, it may be due to javascript conflicts. You can switch to other effects to use)', 'horse-tools'); ?></p>
+  <h3><i class="ti ti-contrast"></i> <?php _e('Dark mode', 'horse-tools') ?></h3>
 	<!-- darkmode -->
 	<?php horsetools_toggle( 'main-mode1', __( 'Enable dark mode', 'horse-tools' ), array(
 		'tab'     => 'DISPLAY',
@@ -74,8 +74,8 @@ global $horsetools_options; ?>
 		'parent'  => 'main-mode1',
 	) ); ?>
 	<input class="ht-input-big ht-view-in" type="text" value="[horsedark]"/>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('This function allows you to initiate a dark mode library, enabling the website to switch between light and dark modes', 'horse-tools'); ?></p>
-   <h3><i class="fa-regular fa-computer-mouse-scrollwheel"></i> <?php _e('Customize scroll bar', 'horse-tools') ?></h3>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('This function allows you to initiate a dark mode library, enabling the website to switch between light and dark modes', 'horse-tools'); ?></p>
+   <h3><i class="ti ti-mouse"></i> <?php _e('Customize scroll bar', 'horse-tools') ?></h3>
 	<!-- main add font icon 1 -->
 	<?php horsetools_toggle( 'main-scroll1', __( 'Enable', 'horse-tools' ), array(
 		'tab'     => 'DISPLAY',
@@ -97,5 +97,5 @@ global $horsetools_options; ?>
 	<input type="range" name="horsetools_settings[main-scroll14]" min="7" max="20" value="<?php if(!empty($horsetools_options['main-scroll14'])){echo sanitize_text_field($horsetools_options['main-scroll14']);} else { echo sanitize_text_field('10');} ?>" class="htslide" data-index="14">
 	<span><?php _e('Bar size', 'horse-tools'); ?> <span id="demo14"></span> PX</span>
 	</p>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('This function allows you to customize the color of the scrollbar to your liking', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('This function allows you to customize the color of the scrollbar to your liking', 'horse-tools'); ?></p>
 </div>	

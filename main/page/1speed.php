@@ -9,7 +9,7 @@ global $horsetools_options; ?>
 <label class="ht-on-right"><?php _e('ON/OFF', 'horse-tools'); ?></label>
 </div>
 <div id="play1" class="toggle-div ht-card">
-  <h3><i class="fa-regular fa-square-minus"></i> <?php _e('Disable unnecessary items', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-square-minus"></i> <?php _e('Disable unnecessary items', 'horse-tools') ?></h3>
 	<!-- tôi ưu 1 -->
 	<?php horsetools_toggle( 'speed-off1', __( 'Disable jQuery Migrate', 'horse-tools' ), array(
 		'tab'         => 'OPTIMIZE',
@@ -35,7 +35,7 @@ global $horsetools_options; ?>
 		'description' => __( 'If you not using it, you can disable Emoji', 'horse-tools' ),
 	) ); ?>
 
-  <h3><i class="fa-brands fa-square-js"></i> <?php _e('Optimization Library', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-brand-javascript"></i> <?php _e('Optimization Library', 'horse-tools') ?></h3>
 	<!-- thư vien js 1 -->
 	<?php horsetools_toggle( 'speed-link1', __( 'Enable Instant-page', 'horse-tools' ), array(
 		'tab'         => 'OPTIMIZE',
@@ -49,7 +49,7 @@ global $horsetools_options; ?>
 		'description' => __( 'Smooth-scroll is a library that enables you to create a smooth scrolling effect, providing users with a perception of faster page navigation', 'horse-tools' ),
 	) ); ?>
 
-  <h3><i class="fa-regular fa-loader"></i> <?php _e('The function of lazy loading images', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-loader"></i> <?php _e('The function of lazy loading images', 'horse-tools') ?></h3>
 	<!-- lazyload img 1 -->
 	<?php horsetools_toggle( 'speed-lazy1', __( 'Enable image lazy loading', 'horse-tools' ), array(
 		'tab'         => 'OPTIMIZE',
@@ -57,7 +57,7 @@ global $horsetools_options; ?>
 		'description' => __( 'If you want to lazy load images every time the page loads, then turn it on. This function helps your website load faster', 'horse-tools' ),
 	) ); ?>
 
-  <h3><i class="fa-regular fa-file-zipper"></i> <?php _e('Compress HTML into a single line', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-file-zip"></i> <?php _e('Compress HTML into a single line', 'horse-tools') ?></h3>
 	<!-- nén 1 -->
 	<?php horsetools_toggle( 'speed-zip1', __( 'Enable HTML compression', 'horse-tools' ), array(
 		'tab'         => 'OPTIMIZE',
@@ -97,7 +97,7 @@ global $horsetools_options; ?>
 	) ); ?>
 
 
-  <h3><i class="fa-regular fa-database"></i> <?php _e('Optimize saving post content into the database', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-database"></i> <?php _e('Optimize saving post content into the database', 'horse-tools') ?></h3>
 	<!-- csdl 1 -->
 	<?php horsetools_toggle( 'speed-data1', __( 'Enable revision limit', 'horse-tools' ), array(
 		'tab'     => 'OPTIMIZE',
@@ -128,5 +128,5 @@ global $horsetools_options; ?>
 		'parent'      => 'speed-data2',
 	) ); ?>
 
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If you enable this feature and set automatic revision limit and automatic save time for posts or pages, it will reduce the amount of data stored in the database', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('If you enable this feature and set automatic revision limit and automatic save time for posts or pages, it will reduce the amount of data stored in the database', 'horse-tools'); ?></p>
 </div>

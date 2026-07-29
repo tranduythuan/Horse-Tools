@@ -15,7 +15,7 @@ function horsetools_extend_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="fa-regular fa-share-nodes"></i> <?php _e('FREE', 'horse-tools'); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-share"></i> <?php _e('FREE', 'horse-tools'); ?></button>
 		</div>
 
 		<div class="ht-main">
@@ -213,7 +213,7 @@ function horsetools_extend_options_page() {
 			</div>
 			</div>
 			<div class="ht-submit">
-				<button type="submit"><i class="fa-regular fa-floppy-disk"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
+				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
 			</div>
 			</form>
 		</div>
@@ -249,7 +249,7 @@ function horsetools_extend_options_page() {
 	echo ob_get_clean();
 }
 function horsetools_extend_options_link() {
-	add_submenu_page ('horsetools-options', 'Extend', '<i class="fa-regular fa-plus" style="width:20px;"></i> '. __('Extend', 'horse-tools'), 'manage_options', 'horsetools-extend-options', 'horsetools_extend_options_page');
+	add_submenu_page ('horsetools-options', 'Extend', '<i class="ti ti-plus" style="width:20px;"></i> '. __('Extend', 'horse-tools'), 'manage_options', 'horsetools-extend-options', 'horsetools_extend_options_page');
 }
 add_action('admin_menu', 'horsetools_extend_options_link');
 function horsetools_extend_register_settings() {

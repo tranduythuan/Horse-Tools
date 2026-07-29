@@ -9,7 +9,7 @@ global $horsetools_options; ?>
 <label class="ht-on-right"><?php _e('ON/OFF', 'horse-tools'); ?></label>
 </div>
 <div id="play3" class="ht-card toggle-div">
-  <h3><i class="fa-regular fa-pen-to-square"></i> <?php _e('Text editor tool', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-edit"></i> <?php _e('Text editor tool', 'horse-tools') ?></h3>
 	<!-- tool class 1 -->
 	<?php horsetools_toggle( 'tool-edit1', __( 'Enable Classic Editor', 'horse-tools' ), array(
 		'tab'         => 'TOOL',
@@ -28,7 +28,7 @@ global $horsetools_options; ?>
 		'section'     => 'Text editor tool',
 		'description' => __( 'Enable this feature if you want to add the Classic Editor button in the post and page management interface. With this feature, you dont need to set the Classic Editor as default but can use it in parallel', 'horse-tools' ),
 	) ); ?>
-  <h3><i class="fa-regular fa-box"></i> <?php _e('Optimize Widgets', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-box"></i> <?php _e('Optimize Widgets', 'horse-tools') ?></h3>
 	<!-- tool class 1 -->
 	<?php horsetools_toggle( 'tool-widget1', __( 'Enable Classic Widget', 'horse-tools' ), array(
 		'tab'         => 'TOOL',
@@ -37,7 +37,7 @@ global $horsetools_options; ?>
 	) ); ?>
 
 
-  <h3><i class="fa-regular fa-gear"></i> <?php _e('Automatic updates', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-settings"></i> <?php _e('Automatic updates', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'tool-upload1', __( 'Do not auto-install core updates', 'horse-tools' ), array(
 		'tab'     => 'TOOL',
 		'section' => 'Automatic updates',
@@ -59,9 +59,9 @@ global $horsetools_options; ?>
 		'section' => 'Automatic updates',
 	) ); ?>
 
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('These stop WordPress installing updates on its own — the site still checks for them, so the Dashboard and Plugins screens keep showing what is available and you apply updates when you choose. It never stops checking, so you are never left unaware of a security release.', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('These stop WordPress installing updates on its own — the site still checks for them, so the Dashboard and Plugins screens keep showing what is available and you apply updates when you choose. It never stops checking, so you are never left unaware of a security release.', 'horse-tools'); ?></p>
 
-  <h3><i class="fa-regular fa-gear"></i> <?php _e('Management tool', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-settings"></i> <?php _e('Management tool', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'tool-mana23', __( 'Add an attribution line when visitors copy text', 'horse-tools' ), array(
 		'tab'         => 'TOOL',
 		'section'     => 'Management tool',
@@ -81,7 +81,7 @@ global $horsetools_options; ?>
 		'description' => __( 'This feature allows you to add the Classic Editor to the category description box when editing posts or products', 'horse-tools' ),
 	) ); ?>
 
-  <h3><i class="fa-regular fa-eye-slash"></i> <?php _e('Hide the tools you want', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-eye-off"></i> <?php _e('Hide the tools you want', 'horse-tools') ?></h3>
 	<?php global $menu;
 	if (is_array($menu)) {
 		foreach ($menu as $index => $item) {
@@ -95,5 +95,5 @@ global $horsetools_options; ?>
 			<?php }
 		}
 	} ?>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If you find the tools above unnecessary, you can hide them to make the WP admin interface cleaner. This function only hides them without blocking access to their links', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('If you find the tools above unnecessary, you can hide them to make the WP admin interface cleaner. This function only hides them without blocking access to their links', 'horse-tools'); ?></p>
 </div>

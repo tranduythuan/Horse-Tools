@@ -15,7 +15,7 @@ function horsetools_debug_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="fa-regular fa-square-terminal"></i> <?php _e('DEBUG', 'horse-tools'); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-terminal-2"></i> <?php _e('DEBUG', 'horse-tools'); ?></button>
 		</div>
 
 		<div class="ht-main">
@@ -30,7 +30,7 @@ function horsetools_debug_options_page() {
 			<div class="sotab-box htbox" id="tab1">
 			<h2><?php _e('DEBUG', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-ban-bug"></i> <?php _e('Debug settings', 'horse-tools') ?></h3>
+			  <h3><i class="ti ti-bug-off"></i> <?php _e('Debug settings', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'debug1', __( 'Enable WP_DEBUG', 'horse-tools' ), array(
 					'module'  => 'debug',
 					'tab'     => 'DEBUG',
@@ -53,8 +53,8 @@ function horsetools_debug_options_page() {
 						<p>
 						<div class="ht-pre-tit"><span></span><span></span><span></span></div>
 						<div class="ht-pre-me">
-							<a class="delete-debug" href="javascript:void(0)" id="delete-debug"><i class="fa-regular fa-trash"></i> <?php _e('Clear all', 'horse-tools'); ?></a>
-							<a class="delete-debug" href="javascript:void(0)" id="load-debug"><i class="fa-regular fa-arrows-rotate"></i> <?php _e('Refresh', 'horse-tools'); ?></a>
+							<a class="delete-debug" href="javascript:void(0)" id="delete-debug"><i class="ti ti-trash"></i> <?php _e('Clear all', 'horse-tools'); ?></a>
+							<a class="delete-debug" href="javascript:void(0)" id="load-debug"><i class="ti ti-refresh"></i> <?php _e('Refresh', 'horse-tools'); ?></a>
 						</div>
 						<div id="delete-debug-not"></div>
 						<textarea id="debug-log-content" class="ht-pre"></textarea>
@@ -71,9 +71,9 @@ function horsetools_debug_options_page() {
 			</div>
 			
 			<div class="ht-submit">
-				<button type="submit"><i class="fa-regular fa-floppy-disk"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
+				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
 			</div>
-				<button id="ht-save-fast" type="submit"><i class="fa-regular fa-floppy-disk"></i></button>
+				<button id="ht-save-fast" type="submit"><i class="ti ti-device-floppy"></i></button>
 			</form>
 			
 		</div>
@@ -129,7 +129,7 @@ function horsetools_debug_options_page() {
 	echo ob_get_clean();
 }
 function horsetools_debug_options_link() {
-	add_submenu_page ('horsetools-options', 'Debug', '<i class="fa-regular fa-gear" style="width:20px;"></i> '. __('Debug', 'horse-tools'), 'manage_options', 'horsetools-debug-options', 'horsetools_debug_options_page');
+	add_submenu_page ('horsetools-options', 'Debug', '<i class="ti ti-settings" style="width:20px;"></i> '. __('Debug', 'horse-tools'), 'manage_options', 'horsetools-debug-options', 'horsetools_debug_options_page');
 }
 add_action('admin_menu', 'horsetools_debug_options_link');
 function horsetools_debug_register_settings() {

@@ -15,9 +15,9 @@ function horsetools_redirects_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="fa-regular fa-compass"></i> <?php _e('301', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab2')"><i class="fa-regular fa-do-not-enter"></i> <?php _e('404', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab3')"><i class="fa-regular fa-bug"></i> <?php _e('503', 'horse-tools'); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-compass"></i> <?php _e('301', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab2')"><i class="ti ti-ban"></i> <?php _e('404', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab3')"><i class="ti ti-bug"></i> <?php _e('503', 'horse-tools'); ?></button>
 		</div>
 
 		<div class="ht-main">
@@ -32,15 +32,15 @@ function horsetools_redirects_options_page() {
 			<div class="sotab-box htbox" id="tab1">
 			<h2><?php _e('301', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-compass"></i> <?php _e('Redirect 301 whole page', 'horse-tools') ?></h3>
+			  <h3><i class="ti ti-compass"></i> <?php _e('Redirect 301 whole page', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'redi11', __( 'Enable site-wide 301 redirects', 'horse-tools' ), array(
 					'module'  => 'redirect',
 					'tab'     => '301',
 					'section' => 'Redirect 301 whole page',
 				) ); ?>
 				<input class="ht-input-big" placeholder="<?php _e('Enter the link', 'horse-tools'); ?>" type="text" name="horsetools_redirects_settings[redi12]" value="<?php if(!empty($horsetools_redirects_options['redi12'])){echo sanitize_text_field($horsetools_redirects_options['redi12']);} ?>" />
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('This function will redirect all of your website pages to the destination page of your choice', 'horse-tools'); ?></p>
-			  <h3><i class="fa-regular fa-compass"></i> <?php _e('Redirect 301 to a custom page', 'horse-tools') ?></h3>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('This function will redirect all of your website pages to the destination page of your choice', 'horse-tools'); ?></p>
+			  <h3><i class="ti ti-compass"></i> <?php _e('Redirect 301 to a custom page', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'redi1', __( 'Enable 301 redirection', 'horse-tools' ), array(
 					'module'      => 'redirect',
 					'tab'         => '301',
@@ -68,10 +68,10 @@ function horsetools_redirects_options_page() {
 				}
 				?>
 				</div>
-				<span id="ht-chatmore"><i class="fa-regular fa-plus"></i> <?php _e('Add link', 'horse-tools'); ?></span>
+				<span id="ht-chatmore"><i class="ti ti-plus"></i> <?php _e('Add link', 'horse-tools'); ?></span>
 			</div>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-wand-magic-sparkles"></i> <?php _e('Automatic redirects', 'horse-tools') ?></h3>
+			  <h3><i class="ti ti-wand"></i> <?php _e('Automatic redirects', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'redi-autoslug', __( 'Create a 301 automatically when a post permalink changes', 'horse-tools' ), array(
 					'module'      => 'redirect',
 					'tab'         => '301',
@@ -100,7 +100,7 @@ function horsetools_redirects_options_page() {
 				</table>
 				<p><a href="javascript:void(0)" class="ht-autoslug-clear"><?php _e( 'Clear all automatic redirects', 'horse-tools' ); ?></a></p>
 				<?php elseif ( isset( $horsetools_redirects_options['redi-autoslug'] ) ) : ?>
-					<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e( 'No automatic redirects yet. Change a published URL and one will appear here.', 'horse-tools' ); ?></p>
+					<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e( 'No automatic redirects yet. Change a published URL and one will appear here.', 'horse-tools' ); ?></p>
 				<?php endif; ?>
 			</div>
 			</div>
@@ -108,7 +108,7 @@ function horsetools_redirects_options_page() {
 			<div class="sotab-box htbox" id="tab2" style="display:none">
 			<h2><?php _e('404', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-do-not-enter"></i> <?php _e('404 redirects', 'horse-tools') ?></h3>
+			  <h3><i class="ti ti-ban"></i> <?php _e('404 redirects', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'redi2', __( 'Enable 404 redirection', 'horse-tools' ), array(
 					'module'  => 'redirect',
 					'tab'     => '404',
@@ -134,10 +134,10 @@ function horsetools_redirects_options_page() {
 					?>
 				</div>
 				<input id="horsetools-hi-input" class="ht-input-big" type="text" style="display:none;" name="horsetools_redirects_settings[redi21]" value="<?php if(!empty($horsetools_redirects_options['redi21'])){echo sanitize_text_field($horsetools_redirects_options['redi21']);} ?>" />
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Redirect the 404 page to the homepage or a custom page of your choice, leave the field blank if you want to redirect to the homepage', 'horse-tools'); ?></p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Redirect the 404 page to the homepage or a custom page of your choice, leave the field blank if you want to redirect to the homepage', 'horse-tools'); ?></p>
 			</div>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-clipboard-list"></i> <?php _e('404 log', 'horse-tools') ?></h3>
+			  <h3><i class="ti ti-clipboard-list"></i> <?php _e('404 log', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'redi-404log', __( 'Record 404 hits', 'horse-tools' ), array(
 					'module'      => 'redirect',
 					'tab'         => '404',
@@ -162,7 +162,7 @@ function horsetools_redirects_options_page() {
 							<td><?php echo (int) $row->hits; ?></td>
 							<td><?php echo esc_html( wp_date( 'Y-m-d H:i', strtotime( $row->last_seen ) ) ); ?></td>
 							<td class="ht-404-actions">
-								<a href="javascript:void(0)" class="ht-404-redirect" title="<?php esc_attr_e( 'Create a 301 redirect from this URL', 'horse-tools' ); ?>"><i class="fa-regular fa-compass"></i> <?php _e( 'Redirect', 'horse-tools' ); ?></a>
+								<a href="javascript:void(0)" class="ht-404-redirect" title="<?php esc_attr_e( 'Create a 301 redirect from this URL', 'horse-tools' ); ?>"><i class="ti ti-compass"></i> <?php _e( 'Redirect', 'horse-tools' ); ?></a>
 								<a href="javascript:void(0)" class="ht-404-ignore" title="<?php esc_attr_e( 'Hide this URL from the log', 'horse-tools' ); ?>"><?php _e( 'Ignore', 'horse-tools' ); ?></a>
 								<a href="javascript:void(0)" class="ht-404-delete" title="<?php esc_attr_e( 'Delete this log entry', 'horse-tools' ); ?>">&times;</a>
 							</td>
@@ -172,7 +172,7 @@ function horsetools_redirects_options_page() {
 				</table>
 				<p><a href="javascript:void(0)" class="ht-404-clear"><?php _e( 'Clear the whole log', 'horse-tools' ); ?></a></p>
 				<?php elseif ( horsetools_404_logging_on() ) : ?>
-					<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e( 'No 404s recorded yet.', 'horse-tools' ); ?></p>
+					<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e( 'No 404s recorded yet.', 'horse-tools' ); ?></p>
 				<?php endif; ?>
 			</div>
 			</div>
@@ -180,7 +180,7 @@ function horsetools_redirects_options_page() {
 			<div class="sotab-box htbox" id="tab3" style="display:none">
 			<h2><?php _e('503', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-bug"></i> <?php _e('Maintenance mode for developers (503)', 'horse-tools') ?></h3>
+			  <h3><i class="ti ti-bug"></i> <?php _e('Maintenance mode for developers (503)', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'redi3', __( 'Enable 503 maintenance mode', 'horse-tools' ), array(
 					'module'      => 'redirect',
 					'tab'         => '503',
@@ -196,9 +196,9 @@ function horsetools_redirects_options_page() {
 			</div>
 			</div>
 			<div class="ht-submit">
-				<button type="submit"><i class="fa-regular fa-floppy-disk"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
+				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
 			</div>
-				<button id="ht-save-fast" type="submit"><i class="fa-regular fa-floppy-disk"></i></button>
+				<button id="ht-save-fast" type="submit"><i class="ti ti-device-floppy"></i></button>
 			</form>
 		</div>
 	  </div>
@@ -315,7 +315,7 @@ function horsetools_redirects_options_page() {
 	echo ob_get_clean();
 }
 function horsetools_redirects_options_link() {
-	add_submenu_page ('horsetools-options', 'Redirects', '<i class="fa-regular fa-compass" style="width:20px;"></i> '. __('Redirects', 'horse-tools'), 'manage_options', 'horsetools-redirects-options', 'horsetools_redirects_options_page');
+	add_submenu_page ('horsetools-options', 'Redirects', '<i class="ti ti-compass" style="width:20px;"></i> '. __('Redirects', 'horse-tools'), 'manage_options', 'horsetools-redirects-options', 'horsetools_redirects_options_page');
 }
 add_action('admin_menu', 'horsetools_redirects_options_link');
 function horsetools_redirects_register_settings() {

@@ -17,8 +17,8 @@ function horsetools_font_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="fa-regular fa-book-font"></i> <?php _e('ADD FONT', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab2')"><i class="fa-regular fa-font-case"></i> <?php _e('USE FONT', 'horse-tools'); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-book"></i> <?php _e('ADD FONT', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab2')"><i class="ti ti-letter-case"></i> <?php _e('USE FONT', 'horse-tools'); ?></button>
 		</div>
 
 		<div class="ht-main">
@@ -37,7 +37,7 @@ function horsetools_font_options_page() {
 			<form id="ht-form-font" method="post" enctype="multipart/form-data">
 			<h2><?php _e('ADD FONT', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-book-font"></i> <?php _e('Add fonts', 'horse-tools') ?></h3>
+			  <h3><i class="ti ti-book"></i> <?php _e('Add fonts', 'horse-tools') ?></h3>
 			    <p>
 				<input class="ht-input-big" type="text" placeholder="<?php _e('Name the font', 'horse-tools'); ?>" name="horsetools_font_name" required />
 				</p>
@@ -47,7 +47,7 @@ function horsetools_font_options_page() {
 				<p><em><?php _e('Accepted Font Format : woff2, ttf, otf, off | Font Size: Upto 25 MB', 'horse-tools'); ?></em></p>
 				</label>
 				<div class="ht-label-sub">
-					<button type="submit"><i class="fa-regular fa-folder-arrow-up"></i> <?php _e('UPLOAD FONT', 'horse-tools'); ?></button>
+					<button type="submit"><i class="ti ti-folder-up"></i> <?php _e('UPLOAD FONT', 'horse-tools'); ?></button>
 				</div>
 			    <ul class="font-list">
                     <?php 
@@ -62,7 +62,7 @@ function horsetools_font_options_page() {
                                     </div>
                                     <div class="ht-box-dow">
                                         <div class="font-dele">
-										<a onclick="if (!confirm('<?php _e('Do you want to delete?', 'horse-tools'); ?>')){return false;}" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin.php?page=horsetools-font-options&delete_font_key=' . rawurlencode( sanitize_key( $key ) ) ), 'horsetools_delete_font_' . sanitize_key( $key ) ) ); ?>"><i class="fa-regular fa-trash"></i></a>
+										<a onclick="if (!confirm('<?php _e('Do you want to delete?', 'horse-tools'); ?>')){return false;}" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin.php?page=horsetools-font-options&delete_font_key=' . rawurlencode( sanitize_key( $key ) ) ), 'horsetools_delete_font_' . sanitize_key( $key ) ) ); ?>"><i class="ti ti-trash"></i></a>
 										</div>
                                     </div>
                                 </article>
@@ -86,7 +86,7 @@ function horsetools_font_options_page() {
 			<?php settings_fields('horsetools_fontset_settings_group'); ?>
 			<h2><?php _e('USE FONT', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-font-case"></i> <?php _e('Use fonts on the web', 'horse-tools') ?></h3>
+			  <h3><i class="ti ti-letter-case"></i> <?php _e('Use fonts on the web', 'horse-tools') ?></h3>
 				<?php
 				if (!empty($fontsData)){
 					$p_contents = array(
@@ -127,7 +127,7 @@ function horsetools_font_options_page() {
 				} 
 				?>
 			<div class="ht-submit">
-			<button type="submit"><i class="fa-regular fa-floppy-disk"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
+			<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
 			</div>
 			</form>
 			</div>
@@ -202,7 +202,7 @@ function horsetools_font_options_page() {
 	echo ob_get_clean();
 }
 function horsetools_font_options_link() {
-	add_submenu_page ('horsetools-options', 'Font', '<i class="fa-regular fa-book-font" style="width:20px;"></i> '. __('Font', 'horse-tools'), 'manage_options', 'horsetools-font-options', 'horsetools_font_options_page');
+	add_submenu_page ('horsetools-options', 'Font', '<i class="ti ti-book" style="width:20px;"></i> '. __('Font', 'horse-tools'), 'manage_options', 'horsetools-font-options', 'horsetools_font_options_page');
 }
 add_action('admin_menu', 'horsetools_font_options_link');
 function horsetools_font_register_settings() {

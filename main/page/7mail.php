@@ -10,14 +10,14 @@ global $horsetools_options; ?>
 </div>
 
 <div id="play7" class="ht-card-mail toggle-div">
-	<a class="ht-smtp-a" onclick="htnone(event, 'ht-smtp')"><i class="fa-regular fa-share"></i> <?php _e('Configure SMTP mail', 'horse-tools') ?></a>
+	<a class="ht-smtp-a" onclick="htnone(event, 'ht-smtp')"><i class="ti ti-share"></i> <?php _e('Configure SMTP mail', 'horse-tools') ?></a>
 	<div id="ht-smtp" style="display:none">
-	<h3><i class="fa-regular fa-envelope"></i> <?php _e('Configure SMTP mail', 'horse-tools') ?></h3>
+	<h3><i class="ti ti-mail"></i> <?php _e('Configure SMTP mail', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'mail-gsmtp1', __( 'Enable SMTP mail', 'horse-tools' ), array(
 		'tab'     => 'MAIL',
 		'section' => 'Configure SMTP mail',
 	) ); ?>
-	<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enable SMTP mail to allow SMTP mail to function and send emails when you perform a test', 'horse-tools'); ?>
+	<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e('Enable SMTP mail to allow SMTP mail to function and send emails when you perform a test', 'horse-tools'); ?>
 	</p>
 	<div class="ht-card-mail-set">
 	<a title="Gmail" id="mail1"><img src="<?php echo esc_url(HORSETOOLS_URL .'img/gmail.png'); ?>" /></a>
@@ -70,7 +70,7 @@ global $horsetools_options; ?>
 	</p>
 	
 	
-	<h3><i class="fa-regular fa-paper-plane-top"></i> <?php _e('Send test email', 'horse-tools') ?></h3>
+	<h3><i class="ti ti-send"></i> <?php _e('Send test email', 'horse-tools') ?></h3>
 	<div style="display:flex;">
 	<input class="ht-input-big" id="ht-mailtest" placeholder="<?php _e('Enter email', 'horse-tools'); ?>" type="text" value=""/>
 	<a id="ht-send-email" href="javascript:void(0)" data-nonce="<?php echo wp_create_nonce('ht-send-email-nonce'); ?>"><?php _e('Send', 'horse-tools'); ?></a>
@@ -139,12 +139,12 @@ global $horsetools_options; ?>
 	</script>
 	</div>
   
-  <h3><i class="fa-regular fa-paper-plane-top"></i> <?php _e('Create welcome email for registered users', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-send"></i> <?php _e('Create welcome email for registered users', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'mail-new1', __( 'Enable email sending', 'horse-tools' ), array(
 		'tab'     => 'MAIL',
 		'section' => 'Create welcome email for registered users',
 	) ); ?>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You need to activate this feature and customize the content below so that new registered users can receive emails', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('You need to activate this feature and customize the content below so that new registered users can receive emails', 'horse-tools'); ?></p>
 	<p>
 	<input class="ht-input-big" placeholder="<?php _e('Email subject', 'horse-tools') ?>" name="horsetools_settings[mail-new11]" type="text" value="<?php if(!empty($horsetools_options['mail-new11'])){echo sanitize_text_field($horsetools_options['mail-new11']);} ?>"/>
 	</p>
@@ -152,7 +152,7 @@ global $horsetools_options; ?>
 	<textarea style="height:150px;" class="ht-code-textarea" name="horsetools_settings[mail-new12]" placeholder="<?php _e('Enter email content here', 'horse-tools'); ?>"><?php if(!empty($horsetools_options['mail-new12'])){echo esc_textarea($horsetools_options['mail-new12']);} ?></textarea>
 	</p>				  
 	
-  <h3><i class="fa-regular fa-message-captions"></i> <?php _e('Comment notification', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-message-2"></i> <?php _e('Comment notification', 'horse-tools') ?></h3>
 	<!-- mail comment 1 -->
 	<?php horsetools_toggle( 'mail-com1', __( 'Email notification when there a reply', 'horse-tools' ), array(
 		'tab'         => 'MAIL',

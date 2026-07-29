@@ -16,19 +16,19 @@ function horsetools_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="fa-regular fa-gauge-max"></i> <?php _e('OPTIMIZE', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab2')"><i class="fa-regular fa-shield-halved"></i> <?php _e('SECURITY', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab3')"><i class="fa-regular fa-toolbox"></i> <?php _e('TOOL', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab4')"><i class="fa-regular fa-desktop"></i> <?php _e('DISPLAY', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab5')"><i class="fa-regular fa-image"></i> <?php _e('MEDIA', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab6')"><i class="fa-regular fa-note-sticky"></i> <?php _e('CONTENT', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab7')"><i class="fa-regular fa-envelope"></i> <?php _e('MAIL', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab8')"><i class="fa-regular fa-cart-shopping"></i> <?php _e('WOO', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab9')"><i class="fa-regular fa-user"></i> <?php _e('USER', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab10')"><i class="fa-brands fa-wordpress-simple"></i> <?php _e('CUSTOM', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab11')"><i class="fa-brands fa-google"></i> <?php _e('GOOGLE', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab12')"><i class="fa-regular fa-message-lines"></i> <?php _e('CHAT', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab-ft1')"><i class="fa-regular fa-gear-complex"></i> <?php _e('SETTING', 'horse-tools'); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-gauge"></i> <?php _e('OPTIMIZE', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab2')"><i class="ti ti-shield-half"></i> <?php _e('SECURITY', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab3')"><i class="ti ti-tools"></i> <?php _e('TOOL', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab4')"><i class="ti ti-device-desktop"></i> <?php _e('DISPLAY', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab5')"><i class="ti ti-photo"></i> <?php _e('MEDIA', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab6')"><i class="ti ti-notes"></i> <?php _e('CONTENT', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab7')"><i class="ti ti-mail"></i> <?php _e('MAIL', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab8')"><i class="ti ti-shopping-cart"></i> <?php _e('WOO', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab9')"><i class="ti ti-user"></i> <?php _e('USER', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab10')"><i class="ti ti-brand-wordpress"></i> <?php _e('CUSTOM', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab11')"><i class="ti ti-brand-google"></i> <?php _e('GOOGLE', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab12')"><i class="ti ti-message"></i> <?php _e('CHAT', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab-ft1')"><i class="ti ti-settings"></i> <?php _e('SETTING', 'horse-tools'); ?></button>
 		</div>
 
 		<div class="ht-main">
@@ -90,9 +90,9 @@ function horsetools_options_page() {
 				<?php include( HORSETOOLS_DIR . 'main/page/ht-setting.php'); ?> 
 			</div>
 			<div class="ht-submit">
-				<button type="submit"><i class="fa-regular fa-floppy-disk"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
+				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
 			</div>
-				<button id="ht-save-fast" type="submit"><i class="fa-regular fa-floppy-disk"></i></button>
+				<button id="ht-save-fast" type="submit"><i class="ti ti-device-floppy"></i></button>
 			</form>
 		</div>
 		
@@ -111,7 +111,7 @@ function horsetools_tool_add_options_link() {
 	$icon = horsetools_icon();
 	$name = !empty($horsetools_options['horsetools6']) ? $horsetools_options['horsetools6'] : 'Horse Tools';
 	add_menu_page($name, $name, 'manage_options', 'horsetools-options', 'horsetools_options_page', $icon, 70);
-	add_submenu_page('horsetools-options', $name, '<i class="fa-regular fa-sliders-up" style="width:20px;"></i> '. __('Overview', 'horse-tools'), 'manage_options', 'horsetools-options');
+	add_submenu_page('horsetools-options', $name, '<i class="ti ti-adjustments" style="width:20px;"></i> '. __('Overview', 'horse-tools'), 'manage_options', 'horsetools-options');
 }
 add_action('admin_menu', 'horsetools_tool_add_options_link');
 function horsetools_tool_register_settings() {

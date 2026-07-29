@@ -9,7 +9,7 @@ global $horsetools_options; ?>
 <label class="ht-on-right"><?php _e('ON/OFF', 'horse-tools'); ?></label>
 </div>
 <div id="play12" class="ht-card toggle-div">
-  <h3><i class="fa-regular fa-message-lines"></i> <?php _e('Create a chat feature for users', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-message"></i> <?php _e('Create a chat feature for users', 'horse-tools') ?></h3>
 	<p>
 	<label class="nut-switch">
 	<input type="checkbox" name="horsetools_settings[chat-nut1]" value="1" <?php if ( isset($horsetools_options['chat-nut1']) && 1 == $horsetools_options['chat-nut1'] ) echo 'checked="checked"'; ?> />
@@ -48,7 +48,7 @@ global $horsetools_options; ?>
 		});
 	</script>
 	<h4><?php _e('Configure buttons', 'horse-tools'); ?></h4>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Visit this page to get the SVG icon:', 'horse-tools'); ?> <b><a target="_blank" href="https://lineicons.com/free-icons">lineicons.com</a> [Copy SVG]</b><br>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Visit this page to get the SVG icon:', 'horse-tools'); ?> <b><a target="_blank" href="https://lineicons.com/free-icons">lineicons.com</a> [Copy SVG]</b><br>
 	<b>Custom, Maps:</b> <?php _e('Enter link', 'horse-tools'); ?><br>
 	<b>Phone, SMS, Messenger, Telegram, Zalo, Whatsapp, Viber, Skype, Tiktok, Mail:</b> <?php _e('Enter ID', 'horse-tools'); ?>
 	</p>
@@ -66,7 +66,7 @@ global $horsetools_options; ?>
 	<input class="ht-input-big" placeholder="<?php _e('Enter link', 'horse-tools'); ?>" type="text" name="horsetools_settings[chat-nut31]" value="<?php if(!empty($horsetools_options['chat-nut31'])){echo sanitize_text_field($horsetools_options['chat-nut31']);} ?>" />
 	<textarea style="height:40px;" class="ht-code-textarea" name="horsetools_settings[chat-nut41]" placeholder="<?php _e('Enter the SVG icon', 'horse-tools'); ?>"><?php if(!empty($horsetools_options['chat-nut41'])){echo esc_textarea($horsetools_options['chat-nut41']);} ?></textarea>
 	</div>
-	<div class="fr-move"><i class="fa-regular fa-grip-dots-vertical"></i></div>
+	<div class="fr-move"><i class="ti ti-grip-vertical"></i></div>
 	</div>
 	<?php
 	if (is_array($horsetools_options) || is_object($horsetools_options)) {
@@ -85,14 +85,14 @@ global $horsetools_options; ?>
 				echo '<input class="ht-input-big" placeholder="'. __('Enter link', 'horse-tools') .'" type="text" name="horsetools_settings[chat-nut3' . $n . ']" value="' . sanitize_text_field($horsetools_options['chat-nut3' . $n]) . '" />';
 				echo '<textarea style="height:40px;" class="ht-code-textarea" name="horsetools_settings[chat-nut4' . $n . ']" placeholder="'. __('Enter the SVG icon', 'horse-tools') .'">' . esc_textarea($horsetools_options['chat-nut4' . $n]) . '</textarea>';
 				echo '</div>';
-				echo '<div class="fr-move"><i class="fa-regular fa-grip-dots-vertical"></i></div><span id="ht-chatx">&#x2715</span>';
+				echo '<div class="fr-move"><i class="ti ti-grip-vertical"></i></div><span id="ht-chatx">&#x2715</span>';
 				echo '</div>';
 			}
 		}
 	}
 	?>
 	</div>
-	<span id="ht-chatmore"><i class="fa-regular fa-plus"></i> <?php _e('Add field', 'horse-tools'); ?></span>
+	<span id="ht-chatmore"><i class="ti ti-plus"></i> <?php _e('Add field', 'horse-tools'); ?></span>
 	<script>
 	jQuery(document).ready(function($){
 		var count = 0;
@@ -118,7 +118,7 @@ global $horsetools_options; ?>
 				'<input class="ht-input-big" placeholder="<?php _e('Enter link', 'horse-tools'); ?>" type="text" name="horsetools_settings[chat-nut3' + count + ']" />' +
 				'<textarea style="height:40px;" class="ht-code-textarea" name="horsetools_settings[chat-nut4' + count + ']" placeholder="<?php _e('Enter the SVG icon', 'horse-tools'); ?>"></textarea>' +
 				'</div>' +
-				'<div class="fr-move"><i class="fa-regular fa-grip-dots-vertical"></i></div><span id="ht-chatx">&#x2715</span>' +
+				'<div class="fr-move"><i class="ti ti-grip-vertical"></i></div><span id="ht-chatx">&#x2715</span>' +
 				'</div>');
 			$('#sortable-list').append(newDiv);
 		});
@@ -207,7 +207,7 @@ global $horsetools_options; ?>
 	</p>
 	
 	
-  <h3><i class="fa-regular fa-bars"></i> <?php _e('Contact bar on mobile', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-menu-2"></i> <?php _e('Contact bar on mobile', 'horse-tools') ?></h3>
 	<p>
 	<label class="nut-switch">
 	<input type="checkbox" name="horsetools_settings[chat-nav1]" value="1" <?php if ( isset($horsetools_options['chat-nav1']) && 1 == $horsetools_options['chat-nav1'] ) echo 'checked="checked"'; ?> />
@@ -245,7 +245,7 @@ global $horsetools_options; ?>
 		});
 	</script>
 	<h4><?php _e('Main button', 'horse-tools'); ?></h4>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enable the contact bar and configure the content below for use', 'horse-tools'); ?><br>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Enable the contact bar and configure the content below for use', 'horse-tools'); ?><br>
 	<?php _e('Visit this page to get the SVG icon:', 'horse-tools'); ?> <b><a target="_blank" href="https://lineicons.com/free-icons">lineicons.com</a> [Copy SVG]</b><br>
 	<b><?php _e('To create a menu on the navigation bar:', 'horse-tools'); ?></b><br>
 	<?php _e('Step 1: Go to Appearance > Menus > Create a new menu > check Navigation bar (Horse Tools)', 'horse-tools'); ?><br>
@@ -259,7 +259,7 @@ global $horsetools_options; ?>
 			<input class="ht-input-big" placeholder="<?php _e('#id or .class', 'horse-tools'); ?>" type="text" name="horsetools_settings[chat-nav04]" value="<?php if(!empty($horsetools_options['chat-nav04'])){echo sanitize_text_field($horsetools_options['chat-nav04']);} ?>" />
 		</div>
 	</div>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('"Enter link" left blank if you want to call the chat list', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('"Enter link" left blank if you want to call the chat list', 'horse-tools'); ?></p>
 	<h4><?php _e('4 customizable buttons', 'horse-tools'); ?></h4>
 	<div id="sortable-list2">
 	<?php
@@ -271,7 +271,7 @@ global $horsetools_options; ?>
 			<input class="ht-input-big" placeholder="<?php _e('Enter link', 'horse-tools'); ?>" type="text" name="horsetools_settings[chat-nav3<?php echo $i ?>]" value="<?php if(!empty($horsetools_options['chat-nav3'. $i])){echo sanitize_text_field($horsetools_options['chat-nav3'. $i]);} ?>" />
 			<input class="ht-input-big" placeholder="<?php _e('#id or .class', 'horse-tools'); ?>" type="text" name="horsetools_settings[chat-nav4<?php echo $i ?>]" value="<?php if(!empty($horsetools_options['chat-nav4'. $i])){echo sanitize_text_field($horsetools_options['chat-nav4'. $i]);} ?>" />
 		 </div>
-		 <div class="fr-move"><i class="fa-regular fa-grip-dots-vertical"></i></div>
+		 <div class="fr-move"><i class="ti ti-grip-vertical"></i></div>
 		</div>
 	<?php } ?>
 	</div>

@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_options; ?>
 <h2><?php _e('SETTING', 'horse-tools'); ?></h2>
-  <h3><i class="fa-regular fa-bomb"></i> <?php _e('Advanced settings', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-bomb"></i> <?php _e('Advanced settings', 'horse-tools') ?></h3>
 	<!-- horsetools 1 -->
 	<?php horsetools_toggle( 'horsetools1', __( 'Hide Admin account from profile page', 'horse-tools' ), array(
 		'tab'     => 'SETTING',
@@ -21,7 +21,7 @@ global $horsetools_options; ?>
 	?>
 	<label class="ht-right-text"><?php _e('Select admin', 'horse-tools'); ?></label>
 	</p>
-	<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If you want to hide a specific Administrator account, select the user', 'horse-tools'); ?></p>
+	<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e('If you want to hide a specific Administrator account, select the user', 'horse-tools'); ?></p>
 	<!-- horsetools 1 -->
 	<?php horsetools_toggle( 'horsetools2', __( 'Limit Horse Tools display', 'horse-tools' ), array(
 		'tab'     => 'SETTING',
@@ -39,20 +39,20 @@ global $horsetools_options; ?>
 	?>
 	<label class="ht-right-text"><?php _e('Select admin', 'horse-tools'); ?></label>
 	</p>
-	<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('This feature allows you to only display Horse Tools to a specific Admin account', 'horse-tools'); ?><br>
+	<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e('This feature allows you to only display Horse Tools to a specific Admin account', 'horse-tools'); ?><br>
 	<b><?php _e('Delete settings:', 'horse-tools'); ?>
 	<a href="<?php echo esc_url( wp_nonce_url( admin_url('?del=adminhorsetools'), 'horsetools_del_hidden_admin' ) ); ?>"><?php _e('Reset this setting', 'horse-tools'); ?></a></b>
 	</p>
-  <h3><i class="fa-regular fa-eye-slash"></i> <?php _e('Hide Horse Tools', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-eye-off"></i> <?php _e('Hide Horse Tools', 'horse-tools') ?></h3>
 	<!-- tool hiden 1 -->
 	<?php horsetools_toggle( 'horsetools3', __( 'Hide Horse Tools', 'horse-tools' ), array(
 		'tab'     => 'SETTING',
 		'section' => 'Hide Horse Tools',
 	) ); ?>
-	<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can hide Horse Tools from the WP menu, but you can still access it through the link. This will hide Horse Tools for all accounts', 'horse-tools'); ?><br>
+	<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e('You can hide Horse Tools from the WP menu, but you can still access it through the link. This will hide Horse Tools for all accounts', 'horse-tools'); ?><br>
 	<b><?php echo admin_url('/admin.php?page=horsetools-options');?></b>
 	</p>
-  <h3><i class="fa-regular fa-eye-slash"></i> <?php _e('Hide plugins from the manager', 'horse-tools') ?></h3>	
+  <h3><i class="ti ti-eye-off"></i> <?php _e('Hide plugins from the manager', 'horse-tools') ?></h3>	
 	<!-- tool hiden 2 -->
 	<?php
 	$all_plugins = get_plugins(); 
@@ -68,9 +68,9 @@ global $horsetools_options; ?>
 			<label class="ht-label-right"><?php echo esc_html($plugin_info['Name']); ?></label>
 		</p>
 	<?php } ?>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('This feature will hide the plugin you want from the plugin management page', 'horse-tools'); ?>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('This feature will hide the plugin you want from the plugin management page', 'horse-tools'); ?>
 	</p>
-  <h3><i class="fa-regular fa-language"></i> <?php _e('Display language settings', 'horse-tools') ?></h3>	
+  <h3><i class="ti ti-language"></i> <?php _e('Display language settings', 'horse-tools') ?></h3>	
 	<p>
 	<?php $styles = array('Automatic', 'English', 'Việt Nam', 'Indonesia'); ?>
 	<select name="horsetools_settings[lang]"> 
@@ -81,9 +81,9 @@ global $horsetools_options; ?>
 	</select>
 	<label class="ht-right-text"><?php _e('Language', 'horse-tools'); ?></label>
 	</p>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If you dont want to automatically switch the language based on WordPress context, please select the language you prefer', 'horse-tools'); ?>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('If you dont want to automatically switch the language based on WordPress context, please select the language you prefer', 'horse-tools'); ?>
 	</p>
-  <h3><i class="fa-regular fa-palette"></i> <?php _e('Customize display', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-palette"></i> <?php _e('Customize display', 'horse-tools') ?></h3>
 	<div id="ht-imgstyle" class="ht-imgstyle">
 		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/style/1.jpg'); ?>" data-value="Default" class="<?php if(isset($horsetools_options['horsetools5']) && $horsetools_options['horsetools5'] == 'Default') echo 'selected'; ?>" />
 		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/style/2.jpg'); ?>" data-value="WordPress" class="<?php if(isset($horsetools_options['horsetools5']) && $horsetools_options['horsetools5'] == 'WordPress') echo 'selected'; ?>" />
@@ -120,7 +120,7 @@ global $horsetools_options; ?>
 			});
 		});
 	</script>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Choose display interface according to your preference', 'horse-tools'); ?>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Choose display interface according to your preference', 'horse-tools'); ?>
 	</p>
 	<p>
 	<input class="ht-input-big" placeholder="<?php _e('Enter name', 'horse-tools'); ?>" name="horsetools_settings[horsetools6]" type="text" value="<?php if(!empty($horsetools_options['horsetools6'])){echo sanitize_text_field($horsetools_options['horsetools6']);} ?>"/>
@@ -135,6 +135,6 @@ global $horsetools_options; ?>
 	</select>
 	<label class="ht-right-text"><?php _e('Icon', 'horse-tools'); ?></label>
 	</p>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Change display name and icon to your preference', 'horse-tools'); ?>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Change display name and icon to your preference', 'horse-tools'); ?>
 	</p>
 	

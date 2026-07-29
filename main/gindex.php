@@ -15,8 +15,8 @@ function horsetools_gindex_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="fa-regular fa-hand-point-up"></i> <?php _e('INDEX', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab2')"><i class="fa-regular fa-gear"></i> <?php _e('SETTING', 'horse-tools'); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-hand-finger"></i> <?php _e('INDEX', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab2')"><i class="ti ti-settings"></i> <?php _e('SETTING', 'horse-tools'); ?></button>
 		</div>
 
 		<div class="ht-main">
@@ -31,7 +31,7 @@ function horsetools_gindex_options_page() {
 			<div class="sotab-box htbox" id="tab1" style="margin-bottom:-60px;">
 			<h2><?php _e('INDEX', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-hand-point-up"></i> <?php _e('Enter manually', 'horse-tools') ?></h3>
+			  <h3><i class="ti ti-hand-finger"></i> <?php _e('Enter manually', 'horse-tools') ?></h3>
 			    
 				<?php 
 				// bo dem requet tông
@@ -59,9 +59,9 @@ function horsetools_gindex_options_page() {
 				?>
 				<textarea style="height:500px" class="ht-code-textarea" name="horsetools_gindex_settings[url]" placeholder="<?php _e('Enter the url', 'horse-tools'); ?>"></textarea>
 				<div class="ht-index-nut">
-					<span class="index-action" data-action="update"><i class="fa-regular fa-play"></i> <?php _e('INDEX', 'horse-tools'); ?></span>
-					<span class="index-action" data-action="delete"><i class="fa-regular fa-trash"></i> <?php _e('DEL', 'horse-tools'); ?></span>
-					<span class="index-action-check" ><i class="fa-regular fa-circle-check"></i> <?php _e('CHECK', 'horse-tools'); ?></span>
+					<span class="index-action" data-action="update"><i class="ti ti-player-play"></i> <?php _e('INDEX', 'horse-tools'); ?></span>
+					<span class="index-action" data-action="delete"><i class="ti ti-trash"></i> <?php _e('DEL', 'horse-tools'); ?></span>
+					<span class="index-action-check" ><i class="ti ti-circle-check"></i> <?php _e('CHECK', 'horse-tools'); ?></span>
 				</div>
 				<div class="emed" style="display:none"><div class="ht-sload"></div> <?php _e('Please wait', 'horse-tools'); ?></div>
 				<div id="index-bao"></div>
@@ -71,7 +71,7 @@ function horsetools_gindex_options_page() {
 			<div class="sotab-box htbox" id="tab2" style="display:none">
 			<h2><?php _e('SETTING', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-gear"></i> <?php _e('Configure Google index API', 'horse-tools') ?></h3>
+			  <h3><i class="ti ti-settings"></i> <?php _e('Configure Google index API', 'horse-tools') ?></h3>
 				<?php 
 				$args = array(
 				'public'   => true,
@@ -91,7 +91,7 @@ function horsetools_gindex_options_page() {
 					<?php
 				}
 				?>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('The "Index Now" link will be added in the custom post management section to allow quick index submission', 'horse-tools'); ?></p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('The "Index Now" link will be added in the custom post management section to allow quick index submission', 'horse-tools'); ?></p>
 				<h4><?php _e('Add Google json code', 'horse-tools') ?></h4>
 				<div id="sortable-list">
 				<div data-id="1" class="ui-state-default ht-button-grid">
@@ -111,10 +111,10 @@ function horsetools_gindex_options_page() {
 				}
 				?>
 				</div>
-				<span id="ht-chatmore"><i class="fa-regular fa-plus"></i> <?php _e('Add json', 'horse-tools'); ?></span>
+				<span id="ht-chatmore"><i class="ti ti-plus"></i> <?php _e('Add json', 'horse-tools'); ?></span>
 			</div>
 			<div class="ht-submit">
-				<button type="submit"><i class="fa-regular fa-floppy-disk"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
+				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
 			</div>
 			</div>
 			</form>
@@ -206,7 +206,7 @@ function horsetools_gindex_options_page() {
 	echo ob_get_clean();
 }
 function horsetools_gindex_options_link() {
-	add_submenu_page ('horsetools-options', 'Index', '<i class="fa-regular fa-hand-point-up" style="width:20px;"></i> '. __('Index now', 'horse-tools'), 'manage_options', 'horsetools-gindex-options', 'horsetools_gindex_options_page');
+	add_submenu_page ('horsetools-options', 'Index', '<i class="ti ti-hand-finger" style="width:20px;"></i> '. __('Index now', 'horse-tools'), 'manage_options', 'horsetools-gindex-options', 'horsetools_gindex_options_page');
 }
 add_action('admin_menu', 'horsetools_gindex_options_link');
 function horsetools_gindex_register_settings() {

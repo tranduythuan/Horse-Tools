@@ -15,10 +15,10 @@ function horsetools_notify_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="fa-regular fa-shield-halved"></i> <?php _e('BLOCKER', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab2')"><i class="fa-regular fa-bell"></i> <?php _e('NOTIFY', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab3')"><i class="fa-regular fa-window"></i> <?php _e('POPUP', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab4')"><i class="fa-regular fa-cookie-bite"></i> <?php _e('COOKIE', 'horse-tools'); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-shield-half"></i> <?php _e('BLOCKER', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab2')"><i class="ti ti-bell"></i> <?php _e('NOTIFY', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab3')"><i class="ti ti-app-window"></i> <?php _e('POPUP', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab4')"><i class="ti ti-cookie"></i> <?php _e('COOKIE', 'horse-tools'); ?></button>
 		</div>
 
 		<div class="ht-main">
@@ -33,7 +33,7 @@ function horsetools_notify_options_page() {
 			<div class="sotab-box htbox" id="tab1" >
 			<h2><?php _e('BLOCKER', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			   <h3><i class="fa-regular fa-shield-halved"></i> <?php _e('Browser ad-block notification', 'horse-tools') ?></h3>
+			   <h3><i class="ti ti-shield-half"></i> <?php _e('Browser ad-block notification', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'notify-block1', __( 'Enable ad-block detection', 'horse-tools' ), array(
 					'module'  => 'notify',
 					'tab'     => 'BLOCKER',
@@ -58,14 +58,14 @@ function horsetools_notify_options_page() {
 				<p>
 				<textarea style="height:150px;" class="ht-code-textarea" name="horsetools_notify_settings[notify-block13]" placeholder="<?php _e('Enter content here', 'horse-tools'); ?>"><?php if(!empty($horsetools_notify_options['notify-block13'])){echo esc_textarea($horsetools_notify_options['notify-block13']);} ?></textarea>
 				</p>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enter the title and content you want to display when ad-blocker is detected', 'horse-tools'); ?></p>   
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Enter the title and content you want to display when ad-blocker is detected', 'horse-tools'); ?></p>   
 			</div>
 			</div>
 			<!-- NOTIFY -->
 			<div class="sotab-box htbox" id="tab2" style="display:none">
 			<h2><?php _e('NOTIFY', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			   <h3><i class="fa-regular fa-bell"></i> <?php _e('Notification at the top of the page', 'horse-tools') ?></h3>
+			   <h3><i class="ti ti-bell"></i> <?php _e('Notification at the top of the page', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'notify-notis1', __( 'Enable notification', 'horse-tools' ), array(
 					'module'  => 'notify',
 					'tab'     => 'NOTIFY',
@@ -78,14 +78,14 @@ function horsetools_notify_options_page() {
 				<p>
 				<textarea style="height:150px;" class="ht-code-textarea" name="horsetools_notify_settings[notify-notis11]" placeholder="<?php _e('Enter content here', 'horse-tools'); ?>"><?php if(!empty($horsetools_notify_options['notify-notis11'])){echo esc_textarea($horsetools_notify_options['notify-notis11']);} ?></textarea>
 				</p>
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enter the content you want to display in the notification, and customize the colors to match your preferences. A notification will appear at the top of your website, making it easy for users to see', 'horse-tools'); ?></p> 				
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Enter the content you want to display in the notification, and customize the colors to match your preferences. A notification will appear at the top of your website, making it easy for users to see', 'horse-tools'); ?></p> 				
 			</div>
 			</div>
 			<!-- POPUP -->
 			<div class="sotab-box htbox" id="tab3" style="display:none">
 			<h2><?php _e('POPUP', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			   <h3><i class="fa-regular fa-window"></i> <?php _e('Create an outstanding popup', 'horse-tools') ?></h3>
+			   <h3><i class="ti ti-app-window"></i> <?php _e('Create an outstanding popup', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'notify-popup1', __( 'Enable popup', 'horse-tools' ), array(
 					'module'  => 'notify',
 					'tab'     => 'POPUP',
@@ -154,14 +154,14 @@ function horsetools_notify_options_page() {
 				<span><?php _e('Max width', 'horse-tools'); ?> <span id="demo2"></span> PX</span>
 				</p>
 				
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enter the content you want to display and configure the customizations above so the popup can appear when users visit your website', 'horse-tools'); ?></p> 				
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Enter the content you want to display and configure the customizations above so the popup can appear when users visit your website', 'horse-tools'); ?></p> 				
 			</div>
 			</div>
 			<!-- COOKIE -->
 			<div class="sotab-box htbox" id="tab4" style="display:none">
 			<h2><?php _e('COOKIE', 'horse-tools'); ?></h2>
 			<div class="ht-card">
-			  <h3><i class="fa-regular fa-cookie-bite"></i> <?php _e('Set up cookie notifications', 'horse-tools') ?></h3>
+			  <h3><i class="ti ti-cookie"></i> <?php _e('Set up cookie notifications', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'notify-cookie1', __( 'Enable cookie', 'horse-tools' ), array(
 					'module'  => 'notify',
 					'tab'     => 'COOKIE',
@@ -190,13 +190,13 @@ function horsetools_notify_options_page() {
 				<p>
 				<textarea style="height:150px;" class="ht-code-textarea" name="horsetools_notify_settings[notify-cookie12]" placeholder="<?php _e('Enter cookie content', 'horse-tools'); ?>"><?php if(!empty($horsetools_notify_options['notify-cookie12'])){echo esc_textarea($horsetools_notify_options['notify-cookie12']);} ?></textarea>
 				</p>  
-				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Display your cookie notice to inform users about cookie use and allow them to manage their preferences easily', 'horse-tools'); ?></p> 
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Display your cookie notice to inform users about cookie use and allow them to manage their preferences easily', 'horse-tools'); ?></p> 
 			</div>
 			</div>
 			<div class="ht-submit">
-				<button type="submit"><i class="fa-regular fa-floppy-disk"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
+				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
 			</div>
-				<button id="ht-save-fast" type="submit"><i class="fa-regular fa-floppy-disk"></i></button>
+				<button id="ht-save-fast" type="submit"><i class="ti ti-device-floppy"></i></button>
 			</form>
 		</div>
 	  </div>
@@ -210,7 +210,7 @@ function horsetools_notify_options_page() {
 	echo ob_get_clean();
 }
 function horsetools_notify_options_link() {
-	add_submenu_page ('horsetools-options', 'Notify', '<i class="fa-regular fa-bell" style="width:20px;"></i> '. __('Notify', 'horse-tools'), 'manage_options', 'horsetools-notify-options', 'horsetools_notify_options_page');
+	add_submenu_page ('horsetools-options', 'Notify', '<i class="ti ti-bell" style="width:20px;"></i> '. __('Notify', 'horse-tools'), 'manage_options', 'horsetools-notify-options', 'horsetools_notify_options_page');
 }
 add_action('admin_menu', 'horsetools_notify_options_link');
 function horsetools_notify_register_settings() {

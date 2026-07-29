@@ -9,7 +9,7 @@ global $horsetools_options; ?>
 <label class="ht-on-right"><?php _e('ON/OFF', 'horse-tools'); ?></label>
 </div>
 <div id="play6" class="ht-card toggle-div">
-  <h3><i class="fa-regular fa-image"></i> <?php _e('Image function for posts', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-photo"></i> <?php _e('Image function for posts', 'horse-tools') ?></h3>
 	<!-- post up hinh anh 1 -->
 	<?php horsetools_toggle( 'post-up1', __( 'Save images to media when copying from another source', 'horse-tools' ), array(
 		'tab'     => 'CONTENT',
@@ -21,7 +21,7 @@ global $horsetools_options; ?>
 		'section' => 'Image function for posts',
 		'parent'  => 'post-up1',
 	) ); ?>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enable this feature if you want images in posts copied from another source to be stored on your website', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Enable this feature if you want images in posts copied from another source to be stored on your website', 'horse-tools'); ?></p>
 
 	<!-- xoa bai viet xoa hinh anh 1 -->
 	<?php horsetools_toggle( 'post-del1', __( 'Enable deleting posts to also delete images', 'horse-tools' ), array(
@@ -41,7 +41,7 @@ global $horsetools_options; ?>
 	<button class="ht-selec" data-input-id="ht-add5"><?php _e('Select image', 'horse-tools'); ?></button>
 	</p>
 
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enable this feature if you want the first image in the post to become the featured image if the featured image field is empty. Additionally, you can select a default featured image in case both the featured image and the images in the post are empty', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Enable this feature if you want the first image in the post to become the featured image if the featured image field is empty. Additionally, you can select a default featured image in case both the featured image and the images in the post are empty', 'horse-tools'); ?></p>
 
 	<!-- đặt ảnh gốc khi thêm vào bài viết -->
 	<?php horsetools_toggle( 'post-imgsize1', __( 'The original image size when added to the post', 'horse-tools' ), array(
@@ -50,7 +50,7 @@ global $horsetools_options; ?>
 		'description' => __( 'Enable this feature if you want the original image size to be selected by default whenever adding images to the post', 'horse-tools' ),
 	) ); ?>
 
-  <h3><i class="fa-regular fa-copy"></i> <?php _e('Duplicate post, page, custom post type', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-copy"></i> <?php _e('Duplicate post, page, custom post type', 'horse-tools') ?></h3>
 	<!-- post nhan ban 1 -->
 	<?php horsetools_toggle( 'post-dup1', __( 'Add duplicate button', 'horse-tools' ), array(
 		'tab'     => 'CONTENT',
@@ -78,15 +78,15 @@ global $horsetools_options; ?>
 	}
 	?>
 	</p>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If you want to enable the feature to duplicate posts, pages, or custom post types, please activate this function', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('If you want to enable the feature to duplicate posts, pages, or custom post types, please activate this function', 'horse-tools'); ?></p>
 
-  <h3><i class="fa-regular fa-link"></i> <?php _e('Configure category permalink', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-link"></i> <?php _e('Configure category permalink', 'horse-tools') ?></h3>
 	<!-- thay doi slug 1 -->
 	<?php horsetools_toggle( 'post-link1', __( 'Remove category slug from permalink', 'horse-tools' ), array(
 		'tab'     => 'CONTENT',
 		'section' => 'Configure category permalink',
 	) ); ?>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Convert paths from (domain.com/category/news/latest-news, domain.com/category/news) to (domain.com/latest-news, domain.com/news)', 'horse-tools'); ?><br>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Convert paths from (domain.com/category/news/latest-news, domain.com/category/news) to (domain.com/latest-news, domain.com/news)', 'horse-tools'); ?><br>
 	<b><?php _e('Settings > Permalinks > Save changes', 'horse-tools') ?></b>
 	</p>
 	<!-- thay doi slug 2 -->
@@ -94,11 +94,11 @@ global $horsetools_options; ?>
 		'tab'     => 'CONTENT',
 		'section' => 'Configure category permalink',
 	) ); ?>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Convert path from domain.com/tag/news/ to domain.com/news/', 'horse-tools'); ?><br>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Convert path from domain.com/tag/news/ to domain.com/news/', 'horse-tools'); ?><br>
 	<b><?php _e('Settings > Permalinks > Save changes', 'horse-tools') ?></b>
 	</p>
 
-  <h3><i class="fa-regular fa-link"></i> <?php _e('Add .html for page', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-link"></i> <?php _e('Add .html for page', 'horse-tools') ?></h3>
 	<!-- thay doi slug 1 -->
 	<?php horsetools_toggle( 'post-html1', __( 'Enable .html for page', 'horse-tools' ), array(
 		'tab'         => 'CONTENT',
@@ -106,7 +106,7 @@ global $horsetools_options; ?>
 		'description' => __( 'If you enable this feature, your Pages will have .html appended to them, for example: domain.com/page.html', 'horse-tools' ),
 	) ); ?>
 
-  <h3><i class="fa-regular fa-ranking-star"></i> <?php _e('SEO optimization', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-star"></i> <?php _e('SEO optimization', 'horse-tools') ?></h3>
 	<!-- thêm alt bằng tiêu đề bài viết cho ảnh -->
 	<?php horsetools_toggle( 'post-alt1', __( 'Use titles as descriptions for images', 'horse-tools' ), array(
 		'tab'         => 'CONTENT',
@@ -120,7 +120,7 @@ global $horsetools_options; ?>
 		'description' => __( 'This feature will add nofollow and _blank to external links on your site', 'horse-tools' ),
 	) ); ?>
 
-  <h3><i class="fa-regular fa-hammer"></i> <?php _e('Additional feature', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-hammer"></i> <?php _e('Additional feature', 'horse-tools') ?></h3>
 	<!-- other 1 -->
 	<?php horsetools_toggle( 'post-other1', __( 'Allow using Shortcode in post titles', 'horse-tools' ), array(
 		'tab'         => 'CONTENT',
@@ -133,7 +133,7 @@ global $horsetools_options; ?>
 		'section'     => 'Additional feature',
 		'description' => __( 'This feature allows you to set newly edited posts to be displayed first in the main loop', 'horse-tools' ),
 	) ); ?>
-  <h3><i class="fa-regular fa-eye-slash"></i> <?php _e('Hide post categories from homepage', 'horse-tools') ?></h3>
+  <h3><i class="ti ti-eye-off"></i> <?php _e('Hide post categories from homepage', 'horse-tools') ?></h3>
 	<!-- an chuyen muc khoi index -->
 	<?php horsetools_toggle( 'post-hiden1', __( 'Enable if you want to hide categories', 'horse-tools' ), array(
 		'tab'     => 'CONTENT',
@@ -142,8 +142,8 @@ global $horsetools_options; ?>
 	<p>
 	<input class="ht-input-big" placeholder="1, 2, 3, 4, 5" name="horsetools_settings[post-hiden11]" type="text" value="<?php if(!empty($horsetools_options['post-hiden11'])){echo sanitize_text_field($horsetools_options['post-hiden11']);} ?>"/>
 	</p>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Enable and add the category IDs you want to hide from the main loop displaying posts on the homepage, for example: 1, 2, 3', 'horse-tools'); ?></p>
-  <h3><i class="fa-regular fa-calendar-image"></i> <?php _e('Advanced image viewing feature in posts', 'horse-tools') ?></h3>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Enable and add the category IDs you want to hide from the main loop displaying posts on the homepage, for example: 1, 2, 3', 'horse-tools'); ?></p>
+  <h3><i class="ti ti-calendar"></i> <?php _e('Advanced image viewing feature in posts', 'horse-tools') ?></h3>
 	<!-- an chuyen muc khoi index -->
 	<?php horsetools_toggle( 'post-fancy1', __( 'Enable advanced image viewing', 'horse-tools' ), array(
 		'tab'     => 'CONTENT',
@@ -154,5 +154,5 @@ global $horsetools_options; ?>
 		'section' => 'Advanced image viewing feature in posts',
 		'parent'  => 'post-fancy1',
 	) ); ?>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('This feature uses the Fancybox library, allowing you to open images in posts for viewing', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('This feature uses the Fancybox library, allowing you to open images in posts for viewing', 'horse-tools'); ?></p>
 </div>
