@@ -77,6 +77,34 @@ if (htGreet) {
 	var htGx = htGreet.querySelector('.ht-greet-x');
 	if (htGx) { htGx.addEventListener('click', function () { htGreet.style.display = 'none'; try { localStorage.setItem('htGreetClosed', '1'); } catch (e) {} }); }
 }
+// Scan-to-open QR for messaging channels (desktop; WeChat always).
+if (window.htChatCfg && htChatCfg.qr && typeof QRCode !== 'undefined') {
+	document.addEventListener('click', function (e) {
+		var link = e.target.closest('.ht-czal, .ht-cwha, .ht-ctel, .ht-cvib, .ht-cline, .ht-cwc');
+		if (!link) { return; }
+		var isWeChat = link.classList.contains('ht-cwc');
+		if (window.innerWidth <= 700 && !isWeChat) { return; }
+		var href = link.getAttribute('href') || '';
+		if (!href || href === '#') { return; }
+		e.preventDefault();
+		htShowQR(href, link.getAttribute('title') || '');
+	});
+}
+function htShowQR(text, title) {
+	var old = document.getElementById('ht-qr-modal'); if (old) { old.parentNode.removeChild(old); }
+	var wrap = document.createElement('div'); wrap.id = 'ht-qr-modal'; wrap.className = 'ht-qr-modal';
+	var box = document.createElement('div'); box.className = 'ht-qr-box';
+	var x = document.createElement('button'); x.className = 'ht-qr-x'; x.setAttribute('aria-label', 'Close'); x.innerHTML = '&#215;';
+	var h = document.createElement('div'); h.className = 'ht-qr-title'; h.textContent = title || (window.htChatCfg && htChatCfg.qrLbl) || '';
+	var qr = document.createElement('div'); qr.className = 'ht-qr-canvas';
+	var sub = document.createElement('div'); sub.className = 'ht-qr-sub'; sub.textContent = (window.htChatCfg && htChatCfg.qrLbl) || '';
+	box.appendChild(x); box.appendChild(h); box.appendChild(qr); box.appendChild(sub); wrap.appendChild(box); document.body.appendChild(wrap);
+	new QRCode(qr, { text: text, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.M });
+	function close() { if (wrap.parentNode) { wrap.parentNode.removeChild(wrap); } document.removeEventListener('keydown', onEsc); }
+	function onEsc(ev) { if (ev.key === 'Escape') { close(); } }
+	wrap.addEventListener('click', function (ev) { if (ev.target === wrap || ev.target === x) { close(); } });
+	document.addEventListener('keydown', onEsc);
+}
 // Tab-widget skin: switch panes.
 document.addEventListener('click', function (e) {
 	var tab = e.target.closest('.ht-tw-tab');

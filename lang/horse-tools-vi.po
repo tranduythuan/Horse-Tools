@@ -5299,3 +5299,9 @@ msgstr "Số giây trước khi bong bóng hiện"
 
 msgid "Show a greeting bubble near the button"
 msgstr "Hiện bong bóng chào mời cạnh nút"
+
+msgid "Scan with your phone"
+msgstr "Quét bằng điện thoại"
+
+msgid "Show a scan-to-open QR on desktop (Zalo, WhatsApp, Telegram, Viber, Line; WeChat always)"
+msgstr "Hiện QR để quét trên máy tính (Zalo, WhatsApp, Telegram, Viber, Line; WeChat luôn hiện)"

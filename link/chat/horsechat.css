@@ -847,3 +847,12 @@ body .ht-chaton a, body .ht-chatbox-skin1 a, body .ht-chatbox-skin2 a, body .ht-
 .ht-greet-left{left:20px}
 .ht-greet-x{position:absolute;top:5px;right:8px;background:none;border:none;font-size:18px;color:#aaa;cursor:pointer;line-height:1;padding:0}
 @keyframes htgreetin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* Scan-to-open QR popover */
+.ht-qr-modal{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100300;display:flex;align-items:center;justify-content:center}
+.ht-qr-box{position:relative;background:#fff;border-radius:16px;padding:24px 26px;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.28)}
+.ht-qr-title{font-size:15px;font-weight:600;color:#222;margin-bottom:14px;max-width:220px}
+.ht-qr-canvas{display:inline-block}
+.ht-qr-canvas img,.ht-qr-canvas canvas{display:block}
+.ht-qr-sub{font-size:13px;color:#888;margin-top:14px}
+.ht-qr-x{position:absolute;top:8px;right:11px;background:none;border:none;font-size:22px;color:#aaa;cursor:pointer;line-height:1;padding:0}

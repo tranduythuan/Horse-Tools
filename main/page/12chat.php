@@ -62,6 +62,12 @@ global $horsetools_options; ?>
 	<input class="ht-input-small" type="number" min="0" max="60" placeholder="3" name="horsetools_settings[chat-bubble-delay]" value="<?php if(isset($horsetools_options['chat-bubble-delay']) && $horsetools_options['chat-bubble-delay']!==''){echo (int)$horsetools_options['chat-bubble-delay'];} ?>" />
 	<label class="ht-label-right"><?php _e('Seconds before the bubble appears', 'horse-tools'); ?></label>
 	</p>
+	<p>
+	<label class="nut-switch">
+	<input type="checkbox" name="horsetools_settings[chat-qr]" value="1" <?php if ( isset($horsetools_options['chat-qr']) && 1 == $horsetools_options['chat-qr'] ) echo 'checked="checked"'; ?> />
+	<span class="slider"></span></label>
+	<label class="ht-label-right"><?php _e('Show a scan-to-open QR on desktop (Zalo, WhatsApp, Telegram, Viber, Line; WeChat always)', 'horse-tools'); ?></label>
+	</p>
 	<input type="hidden" name="horsetools_settings[chat-nut-skin]" id="chat-nut-skin" value="<?php if(!empty($horsetools_options['chat-nut-skin'])){echo sanitize_text_field($horsetools_options['chat-nut-skin']);} else {echo sanitize_text_field('Default');} ?>" />
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {

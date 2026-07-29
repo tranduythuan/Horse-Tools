@@ -49,6 +49,14 @@ function horsetools_enqueue_chat(){
 	if (isset($horsetools_options['chat-nut1']) || isset($horsetools_options['chat-nav1'])){
 		wp_enqueue_style('chat-css', HORSETOOLS_URL . 'link/chat/horsechat.css', array(), HORSETOOLS_VERSION);
 		wp_enqueue_script('chat-js', HORSETOOLS_URL . 'link/chat/horsechat.js', array(), HORSETOOLS_VERSION, true);
+		if ( isset($horsetools_options['chat-qr']) ) {
+			// Scan-to-open QR for messaging channels on desktop (WeChat always).
+			wp_enqueue_script('horsetools-qr', HORSETOOLS_URL . 'link/shortcode/qrcode.min.js', array(), '1.0.0', true);
+			wp_localize_script('chat-js', 'htChatCfg', array(
+				'qr'    => 1,
+				'qrLbl' => __( 'Scan with your phone', 'horse-tools' ),
+			));
+		}
 	}
 	$horsetools_svc = horsetools_services_get();
 	if ( $horsetools_svc['on'] && ! empty($horsetools_svc['items']) ) {
