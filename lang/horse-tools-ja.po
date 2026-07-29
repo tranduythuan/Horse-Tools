@@ -1,0 +1,3484 @@
+# Horse Tools translation (ja) — machine-generated, review recommended.
+msgid ""
+msgstr ""
+"Project-Id-Version: Horse Tools\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: horse-tools\n"
+
+msgid "\"Comments containing links\" matches links in the comment body only. The figure shown is the total comment count, not a match count, so confirm carefully."
+msgstr "「リンクを含むコメント」はコメント本文内のリンクのみを対象とします。表示される数値は一致件数ではなくコメントの総数ですので、慎重に確認してください。"
+
+msgid "\"Enter link\" left blank if you want to call the chat list"
+msgstr "チャットリストを呼び出したい場合は「リンクを入力」を空欄のままにしてください"
+
+msgid "#id or .class"
+msgstr "#id または .class"
+
+msgid "%d enabled"
+msgstr "%d 件が有効"
+
+msgid "%d post(s) contain [sc] tags. Click “Convert now” to rewrite them."
+msgstr "%d 件の投稿に [sc] タグが含まれています。「今すぐ変換」をクリックして書き換えてください。"
+
+msgid "(duplicate)"
+msgstr "（複製）"
+
+msgid "(no title)"
+msgstr "（タイトルなし）"
+
+msgid "301"
+msgstr "301"
+
+msgid "4 customizable buttons"
+msgstr "カスタマイズ可能な 4 つのボタン"
+
+msgid "404"
+msgstr "404"
+
+msgid "404 log"
+msgstr "404 ログ"
+
+msgid "404 redirects"
+msgstr "404 リダイレクト"
+
+msgid "503"
+msgstr "503"
+
+msgid "8-bit PNG images are not supported by the GD library, and this format already has perfect compression and does not need further processing"
+msgstr "8 ビット PNG 画像は GD ライブラリでサポートされておらず、この形式は既に完全に圧縮されているため、これ以上の処理は不要です"
+
+msgid "A login was locked out on your site"
+msgstr "サイトでログインがロックアウトされました"
+
+msgid "A wrong CSP silently breaks scripts, styles and images. Test with browser dev tools before relying on it."
+msgstr "誤った CSP はスクリプト、スタイル、画像を静かに壊します。運用する前にブラウザの開発者ツールでテストしてください。"
+
+msgid "ABOUT"
+msgstr "概要"
+
+msgid "ADD FONT"
+msgstr "フォントを追加"
+
+msgid "ADS.TXT"
+msgstr "ADS.TXT"
+
+msgid "ADSENSE"
+msgstr "ADSENSE"
+
+msgid "API Token"
+msgstr "API トークン"
+
+msgid "About"
+msgstr "概要"
+
+msgid "Accepted Font Format : woff2, ttf, otf, off | Font Size: Upto 25 MB"
+msgstr "対応フォント形式：woff2、ttf、otf、off｜フォントサイズ：最大 25 MB"
+
+msgid "Access Font Awesome to find icons"
+msgstr "Font Awesome にアクセスしてアイコンを探す"
+
+msgid "Account"
+msgstr "アカウント"
+
+msgid "Actions"
+msgstr "操作"
+
+msgid "Ad-blocker detection"
+msgstr "広告ブロッカー検出"
+
+msgid "Add .html for page"
+msgstr "ページに .html を追加"
+
+msgid "Add CSS for mobile size"
+msgstr "モバイルサイズ用の CSS を追加"
+
+msgid "Add CSS for tablet size"
+msgstr "タブレットサイズ用の CSS を追加"
+
+msgid "Add CSS to your website"
+msgstr "ウェブサイトに CSS を追加"
+
+msgid "Add Classic Editor button"
+msgstr "クラシックエディターボタンを追加"
+
+msgid "Add Google API"
+msgstr "Google API を追加"
+
+msgid "Add Google json code"
+msgstr "Google の json コードを追加"
+
+msgid "Add a label so screen readers announce it."
+msgstr "スクリーンリーダーが読み上げられるようにラベルを追加してください。"
+
+msgid "Add ads at the bottom of the article"
+msgstr "記事の下部に広告を追加"
+
+msgid "Add ads to custom post placement"
+msgstr "カスタム投稿の配置に広告を追加"
+
+msgid "Add ads to the top of the article"
+msgstr "記事の上部に広告を追加"
+
+msgid "Add an attribution line when visitors copy text"
+msgstr "訪問者がテキストをコピーした際に出典行を追加"
+
+msgid "Add avatar upload functionality"
+msgstr "アバターアップロード機能を追加"
+
+msgid "Add background image link"
+msgstr "背景画像のリンクを追加"
+
+msgid "Add code"
+msgstr "コードを追加"
+
+msgid "Add code to WP body"
+msgstr "WP body にコードを追加"
+
+msgid "Add code to WP footer"
+msgstr "WP footer にコードを追加"
+
+msgid "Add code to WP head"
+msgstr "WP head にコードを追加"
+
+msgid "Add code to WP login"
+msgstr "WP login にコードを追加"
+
+msgid "Add default featured image"
+msgstr "デフォルトのアイキャッチ画像を追加"
+
+msgid "Add duplicate button"
+msgstr "複製ボタンを追加"
+
+msgid "Add field"
+msgstr "フィールドを追加"
+
+msgid "Add font Awesome to the website"
+msgstr "ウェブサイトに Font Awesome を追加"
+
+msgid "Add fonts"
+msgstr "フォントを追加"
+
+msgid "Add fonts to your website with just a few simple steps. Additionally, it allows you to quickly set fonts in the specific areas you want to change, offering great convenience"
+msgstr "簡単な手順でウェブサイトにフォントを追加できます。さらに、変更したい特定の箇所にすばやくフォントを設定でき、たいへん便利です"
+
+msgid "Add hardening headers to front-end responses. Each one below is optional."
+msgstr "フロントエンドのレスポンスにセキュリティ強化ヘッダーを追加します。以下の各項目は任意です。"
+
+msgid "Add images"
+msgstr "画像を追加"
+
+msgid "Add json"
+msgstr "json を追加"
+
+msgid "Add link"
+msgstr "リンクを追加"
+
+msgid "Add logo link"
+msgstr "ロゴのリンクを追加"
+
+msgid "Add nofollow and _blank for external links"
+msgstr "外部リンクに nofollow と _blank を追加"
+
+msgid "Add picture frame link here"
+msgstr "ここに写真フレームのリンクを追加"
+
+msgid "Add service"
+msgstr "サービスを追加"
+
+msgid "Add the image logo link here"
+msgstr "ここに画像ロゴのリンクを追加"
+
+msgid "Add the logo image link here"
+msgstr "ここにロゴ画像のリンクを追加"
+
+msgid "Add watermark to images upon upload"
+msgstr "アップロード時に画像へ透かしを追加"
+
+msgid "Added"
+msgstr "追加しました"
+
+msgid "Additional feature"
+msgstr "追加機能"
+
+msgid "Ads"
+msgstr "広告"
+
+msgid "Advanced configuration"
+msgstr "詳細設定"
+
+msgid "Advanced image viewing feature in posts"
+msgstr "投稿での高度な画像表示機能"
+
+msgid "Advanced photo upload"
+msgstr "高度な写真アップロード"
+
+msgid "Advanced settings"
+msgstr "詳細設定"
+
+msgid "After too many failed logins from the same address, block further attempts for a while. This is the real defence against password guessing."
+msgstr "同一アドレスからのログイン失敗が多すぎる場合、しばらくの間さらなる試行をブロックします。これがパスワード推測に対する本当の防御策です。"
+
+msgid "Agree"
+msgstr "同意する"
+
+msgid "All devices"
+msgstr "すべてのデバイス"
+
+msgid "All links on your website will redirect to the maintenance page, and only logged-in admin accounts can view the content"
+msgstr "ウェブサイトのすべてのリンクがメンテナンスページにリダイレクトされ、ログイン済みの管理者アカウントのみがコンテンツを閲覧できます"
+
+msgid "All safe security headers (frame, nosniff, referrer, permissions)"
+msgstr "すべての安全なセキュリティヘッダー（frame、nosniff、referrer、permissions）"
+
+msgid "All snippets"
+msgstr "すべてのスニペット"
+
+msgid "Allow avatar upload"
+msgstr "アバターのアップロードを許可"
+
+msgid "Allow displaying member IDs on the profile management page"
+msgstr "プロフィール管理ページでメンバー ID の表示を許可"
+
+msgid "Allow uploading AVIF image format"
+msgstr "AVIF 画像形式のアップロードを許可"
+
+msgid "Allow uploading JFIF files"
+msgstr "JFIF ファイルのアップロードを許可"
+
+msgid "Allow uploading SVG files"
+msgstr "SVG ファイルのアップロードを許可"
+
+msgid "Allow using Shortcode in post titles"
+msgstr "投稿タイトルでのショートコード使用を許可"
+
+msgid "Allows uploading AVIF photos"
+msgstr "AVIF 写真のアップロードを許可"
+
+msgid "Already declared"
+msgstr "既に宣言済み"
+
+msgid "An error occurred"
+msgstr "エラーが発生しました"
+
+msgid "Any"
+msgstr "すべて"
+
+msgid "App password"
+msgstr "アプリパスワード"
+
+msgid "Applied the \"%s\" preset. Recommended settings are on — you can undo this below."
+msgstr "「%s」プリセットを適用しました。推奨設定が有効になっています。下で元に戻せます。"
+
+msgid "Apply import"
+msgstr "インポートを適用"
+
+msgid "Apply this preset"
+msgstr "このプリセットを適用"
+
+msgid "Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it."
+msgstr "適用すると、これらのグループがインポートした値で上書きされます。ワンクリックのバックアップが保持されるため、元に戻せます。"
+
+msgid "Ask your host to update PHP to 8.1 or newer."
+msgstr "ホスティング事業者に PHP を 8.1 以降へ更新するよう依頼してください。"
+
+msgid "Attempts before lockout"
+msgstr "ロックアウトまでの試行回数"
+
+msgid "Attribution line"
+msgstr "出典行"
+
+msgid "Authenticate outgoing mail"
+msgstr "送信メールを認証"
+
+msgid "Author and maintainer:"
+msgstr "作者およびメンテナー："
+
+msgid "Auto (sheet on phone, modal on desktop)"
+msgstr "自動（スマホではシート、デスクトップではモーダル）"
+
+msgid "Automatic cleanup"
+msgstr "自動クリーンアップ"
+
+msgid "Automatic initialization after <span id=\"sogiay\" style=\"padding: 5px;\">3</span>s"
+msgstr "<span id=\"sogiay\" style=\"padding: 5px;\">3</span>秒後に自動的に初期化"
+
+msgid "Automatic name"
+msgstr "自動の名前"
+
+msgid "Automatic redirects"
+msgstr "自動リダイレクト"
+
+msgid "Automatic updates"
+msgstr "自動更新"
+
+msgid "Automatically add a frame when uploading an image"
+msgstr "画像アップロード時に自動でフレームを追加"
+
+msgid "Automatically open popup when scrolling down"
+msgstr "下にスクロールしたときにポップアップを自動的に開く"
+
+msgid "Avatar image URL (Avatar / Live-chat skin)"
+msgstr "アバター画像 URL（Avatar / Live-chat スキン）"
+
+msgid "Away — leave a message"
+msgstr "不在中 — メッセージを残してください"
+
+msgid "BACKUP"
+msgstr "バックアップ"
+
+msgid "BLOCKER"
+msgstr "ブロッカー"
+
+msgid "BROWSE FILE"
+msgstr "ファイルを参照"
+
+msgid "Background"
+msgstr "背景"
+
+msgid "Background color"
+msgstr "背景色"
+
+msgid "Background color of the input form"
+msgstr "入力フォームの背景色"
+
+msgid "Background title"
+msgstr "背景タイトル"
+
+msgid "Backup"
+msgstr "バックアップ"
+
+msgid "Badge text (optional)"
+msgstr "バッジテキスト（任意）"
+
+msgid "Bar background color"
+msgstr "バーの背景色"
+
+msgid "Bar color"
+msgstr "バーの色"
+
+msgid "Bar size"
+msgstr "バーのサイズ"
+
+msgid "Bento (1 big + cells)"
+msgstr "Bento（大 1 つ + セル）"
+
+msgid "Block login spam with Google reCAPTCHA"
+msgstr "Google reCAPTCHA でログインスパムをブロック"
+
+msgid "Block user enumeration"
+msgstr "ユーザー列挙をブロック"
+
+msgid "Block user enumeration (?author=N, users REST, oEmbed)"
+msgstr "ユーザー列挙をブロック（?author=N、users REST、oEmbed）"
+
+msgid "Blocks ?author=N scans, removes the users REST endpoint for anonymous requests, strips the author from oEmbed, and makes login errors generic so they do not reveal whether the username or the password was wrong."
+msgstr "?author=N のスキャンをブロックし、匿名リクエストに対する users REST エンドポイントを削除し、oEmbed から作者情報を取り除き、ログインエラーを汎用的にしてユーザー名とパスワードのどちらが誤っていたかを明かさないようにします。"
+
+msgid "Blog / News site"
+msgstr "ブログ / ニュースサイト"
+
+msgid "Blue"
+msgstr "ブルー"
+
+msgid "Border color"
+msgstr "枠線の色"
+
+msgid "Border distance"
+msgstr "枠線の間隔"
+
+msgid "Border radius"
+msgstr "角の丸み"
+
+msgid "Border size"
+msgstr "枠線のサイズ"
+
+msgid "Bottom sheet"
+msgstr "ボトムシート"
+
+msgid "Browser ad-block notification"
+msgstr "ブラウザの広告ブロック通知"
+
+msgid "Build a rich list of services or articles that slides up when a visitor taps a bottom-bar item. To open it, set one bottom-bar item’s “#id or .class” field above to"
+msgstr "訪問者がボトムバーの項目をタップすると下からスライドアップする、サービスや記事の充実したリストを作成します。開くには、上のボトムバー項目の 1 つの「#id または .class」フィールドを次のように設定してください"
+
+msgid "Business hours (shows Online / Away on the Live-chat, Card and Avatar skins)"
+msgstr "営業時間（Live-chat、Card、Avatar スキンにオンライン / 不在を表示）"
+
+msgid "Button color"
+msgstr "ボタンの色"
+
+msgid "Button name"
+msgstr "ボタン名"
+
+msgid "Button position"
+msgstr "ボタンの位置"
+
+msgid "Button text"
+msgstr "ボタンのテキスト"
+
+msgid "Button text color"
+msgstr "ボタンの文字色"
+
+msgid "Buyer"
+msgstr "購入者"
+
+msgid "CHAT"
+msgstr "チャット"
+
+msgid "CHECK"
+msgstr "チェック"
+
+msgid "CLICK"
+msgstr "クリック"
+
+msgid "COMMENT"
+msgstr "コメント"
+
+msgid "CONTENT"
+msgstr "コンテンツ"
+
+msgid "COOKIE"
+msgstr "クッキー"
+
+msgid "CSS"
+msgstr "CSS"
+
+msgid "CUSTOM"
+msgstr "カスタム"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Card grid"
+msgstr "カードグリッド"
+
+msgid "Center-align button on page"
+msgstr "ページ上でボタンを中央揃え"
+
+msgid "Centered modal"
+msgstr "中央配置モーダル"
+
+msgid "Change WordPress logo in the Admin bar"
+msgstr "管理バーの WordPress ロゴを変更"
+
+msgid "Change display name and icon to your preference"
+msgstr "表示名とアイコンをお好みに変更"
+
+msgid "Change login link"
+msgstr "ログインリンクを変更"
+
+msgid "Change save interval"
+msgstr "保存間隔を変更"
+
+msgid "Change the Buy Now text on the single product page"
+msgstr "単一商品ページの「今すぐ購入」テキストを変更"
+
+msgid "Change the color of the search box to your preferences"
+msgstr "検索ボックスの色をお好みに変更"
+
+msgid "Changed"
+msgstr "変更しました"
+
+msgid "Chat ID"
+msgstr "チャット ID"
+
+msgid "Chat background color"
+msgstr "チャットの背景色"
+
+msgid "Chat text color"
+msgstr "チャットの文字色"
+
+msgid "Choose a file"
+msgstr "ファイルを選択"
+
+msgid "Choose a font for the"
+msgstr "次の要素のフォントを選択："
+
+msgid "Choose decorations for the website, such as Christmas or Lunar New Year (If any effects cause issues on your website, it may be due to javascript conflicts. You can switch to other effects to use)"
+msgstr "クリスマスや旧正月など、ウェブサイトの装飾を選択できます（エフェクトによってウェブサイトで問題が発生する場合は、JavaScript の競合が原因の可能性があります。他のエフェクトに切り替えてご利用ください）"
+
+msgid "Choose display interface according to your preference"
+msgstr "お好みに応じて表示インターフェースを選択"
+
+msgid "Classic Editor"
+msgstr "クラシックエディター"
+
+msgid "Classic editing"
+msgstr "クラシック編集"
+
+msgid "Clean"
+msgstr "クリーンアップ"
+
+msgid "Cleaned the screen"
+msgstr "画面をクリーンアップしました"
+
+msgid "Cleanup runs on WordPress cron, which only fires when your site receives traffic. Weekly and monthly are measured from the last run."
+msgstr "クリーンアップは WordPress cron で実行され、サイトにアクセスがあったときのみ起動します。毎週・毎月は前回の実行時点から計測されます。"
+
+msgid "Clear all"
+msgstr "すべてクリア"
+
+msgid "Clear all automatic redirects"
+msgstr "すべての自動リダイレクトをクリア"
+
+msgid "Clear the whole log"
+msgstr "ログ全体をクリア"
+
+msgid "Click here"
+msgstr "ここをクリック"
+
+msgid "Client ID"
+msgstr "クライアント ID"
+
+msgid "Client Secret"
+msgstr "クライアントシークレット"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "Code orders"
+msgstr "注文コード"
+
+msgid "Comment notification"
+msgstr "コメント通知"
+
+msgid "Comments containing links"
+msgstr "リンクを含むコメント"
+
+msgid "Compact icon tiles"
+msgstr "コンパクトなアイコンタイル"
+
+msgid "Completed"
+msgstr "完了しました"
+
+msgid "Compress HTML into a single line"
+msgstr "HTML を 1 行に圧縮"
+
+msgid "Compress JPG images upon upload"
+msgstr "アップロード時に JPG 画像を圧縮"
+
+msgid "Compress JPGs and serve WebP"
+msgstr "JPG を圧縮して WebP で配信"
+
+msgid "Compress uploaded JPGs"
+msgstr "アップロードされた JPG を圧縮"
+
+msgid "Compression level ("
+msgstr "圧縮レベル（"
+
+msgid "Conditional & content"
+msgstr "条件とコンテンツ"
+
+msgid "Configure Google index API"
+msgstr "Google インデックス API を設定"
+
+msgid "Configure SMTP mail"
+msgstr "SMTP メールを設定"
+
+msgid "Configure adding a watermark to images upon upload"
+msgstr "アップロード時の画像への透かし追加を設定"
+
+msgid "Configure buttons"
+msgstr "ボタンを設定"
+
+msgid "Configure category permalink"
+msgstr "カテゴリーのパーマリンクを設定"
+
+msgid "Configure image upload function"
+msgstr "画像アップロード機能を設定"
+
+msgid "Configure order notifications to be sent to Telegram"
+msgstr "Telegram へ送信する注文通知を設定"
+
+msgid "Configure the options and create search data. If you want to refresh, you can delete the search data and recreate it. After enabling quick search and completing data creation, a quick search popup will appear when you enter the search box on the website"
+msgstr "オプションを設定して検索データを作成します。更新したい場合は、検索データを削除して再作成できます。クイック検索を有効にしてデータ作成が完了すると、ウェブサイトの検索ボックスに入力した際にクイック検索ポップアップが表示されます"
+
+msgid "Confirm deletion"
+msgstr "削除を確認"
+
+msgid "Contact"
+msgstr "お問い合わせ"
+
+msgid "Contact bar on mobile"
+msgstr "モバイルのコンタクトバー"
+
+msgid "Contact us"
+msgstr "お問い合わせ"
+
+msgid "Content"
+msgstr "コンテンツ"
+
+msgid "Content to be hidden"
+msgstr "非表示にするコンテンツ"
+
+msgid "Content-Security-Policy (advanced, leave blank if unsure)"
+msgstr "Content-Security-Policy（上級者向け。不明な場合は空欄）"
+
+msgid "Continue"
+msgstr "続ける"
+
+msgid "Convert JPG and PNG images to AVIF upon upload, and compress the images according to the configuration you enter"
+msgstr "アップロード時に JPG および PNG 画像を AVIF に変換し、入力した設定に従って画像を圧縮します"
+
+msgid "Convert JPG and PNG images to WEBP upon upload, and compress the images according to the configuration you enter"
+msgstr "アップロード時に JPG および PNG 画像を WEBP に変換し、入力した設定に従って画像を圧縮します"
+
+msgid "Convert JPG and PNG to AVIF"
+msgstr "JPG と PNG を AVIF に変換"
+
+msgid "Convert JPG and PNG to WEBP"
+msgstr "JPG と PNG を WEBP に変換"
+
+msgid "Convert PNG images to JPG upon upload, and compress the images according to the JPG configuration"
+msgstr "アップロード時に PNG 画像を JPG に変換し、JPG の設定に従って画像を圧縮します"
+
+msgid "Convert PNG to JPG"
+msgstr "PNG を JPG に変換"
+
+msgid "Convert Shortcoder tags"
+msgstr "Shortcoder タグを変換"
+
+msgid "Convert images to AVIF upon upload"
+msgstr "アップロード時に画像を AVIF に変換"
+
+msgid "Convert images to WEBP upon upload"
+msgstr "アップロード時に画像を WEBP に変換"
+
+msgid "Convert now"
+msgstr "今すぐ変換"
+
+msgid "Convert path from domain.com/tag/news/ to domain.com/news/"
+msgstr "パスを domain.com/tag/news/ から domain.com/news/ に変換"
+
+msgid "Convert paths from (domain.com/category/news/latest-news, domain.com/category/news) to (domain.com/latest-news, domain.com/news)"
+msgstr "パスを（domain.com/category/news/latest-news、domain.com/category/news）から（domain.com/latest-news、domain.com/news）に変換"
+
+msgid "Converted %d post(s)."
+msgstr "%d 件の投稿を変換しました。"
+
+msgid "Cookies"
+msgstr "クッキー"
+
+msgid "Copied"
+msgstr "コピーしました"
+
+msgid "Copied: "
+msgstr "コピーしました："
+
+msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
+msgstr "下のリンクをコピーして、Google Developers プロジェクトの承認済みリダイレクト URL に追加してください"
+
+msgid "Core, plugins and themes are up to date"
+msgstr "コア、プラグイン、テーマは最新です"
+
+msgid "Corner card"
+msgstr "コーナーカード"
+
+msgid "Could not create the fonts folder in uploads."
+msgstr "uploads 内にフォントフォルダーを作成できませんでした。"
+
+msgid "Could not load the icon list."
+msgstr "アイコンリストを読み込めませんでした。"
+
+msgid "Could not read the data."
+msgstr "データを読み込めませんでした。"
+
+msgid "Coupon codes"
+msgstr "クーポンコード"
+
+msgid "Create a 301 automatically when a post permalink changes"
+msgstr "投稿のパーマリンクが変更されたときに 301 を自動作成"
+
+msgid "Create a 301 redirect from this URL"
+msgstr "この URL から 301 リダイレクトを作成"
+
+msgid "Create a chat feature for users"
+msgstr "ユーザー向けのチャット機能を作成"
+
+msgid "Create a named block of HTML/CSS/JS and drop it anywhere with [ht-snippet name=\"your-name\"]. Placeholders {{param}} or %%param%% are filled from the shortcode’s attributes, plus built-ins: currentyear, currentdate, postid, posttitle, sitename, siteurl."
+msgstr "名前付きの HTML/CSS/JS ブロックを作成し、[ht-snippet name=\"your-name\"] でどこにでも挿入できます。プレースホルダー {{param}} または %%param%% はショートコードの属性から埋め込まれ、組み込み値も利用できます：currentyear、currentdate、postid、posttitle、sitename、siteurl。"
+
+msgid "Create an outstanding popup"
+msgstr "目立つポップアップを作成"
+
+msgid "Create custom post type data"
+msgstr "カスタム投稿タイプのデータを作成"
+
+msgid "Create welcome email for registered users"
+msgstr "登録ユーザー向けのウェルカムメールを作成"
+
+msgid "Currently enabled"
+msgstr "現在有効"
+
+msgid "Custom WordPress login page"
+msgstr "カスタム WordPress ログインページ"
+
+msgid "Custom position in posts"
+msgstr "投稿内のカスタム位置"
+
+msgid "Custom posts will be displayed"
+msgstr "カスタム投稿が表示されます"
+
+msgid "Custom shortcodes (snippets)"
+msgstr "カスタムショートコード（スニペット）"
+
+msgid "Customer reviews"
+msgstr "お客様のレビュー"
+
+msgid "Customize"
+msgstr "カスタマイズ"
+
+msgid "Customize Currency Unit"
+msgstr "通貨単位をカスタマイズ"
+
+msgid "Customize TOC display position"
+msgstr "目次の表示位置をカスタマイズ"
+
+msgid "Customize background"
+msgstr "背景をカスタマイズ"
+
+msgid "Customize chat button"
+msgstr "チャットボタンをカスタマイズ"
+
+msgid "Customize dashboard widgets"
+msgstr "ダッシュボードのウィジェットをカスタマイズ"
+
+msgid "Customize display"
+msgstr "表示をカスタマイズ"
+
+msgid "Customize display and colors"
+msgstr "表示と色をカスタマイズ"
+
+msgid "Customize elements on the page"
+msgstr "ページ上の要素をカスタマイズ"
+
+msgid "Customize icons and positions"
+msgstr "アイコンと位置をカスタマイズ"
+
+msgid "Customize scroll bar"
+msgstr "スクロールバーをカスタマイズ"
+
+msgid "DATABASE"
+msgstr "データベース"
+
+msgid "DATE"
+msgstr "日付"
+
+msgid "DEBUG"
+msgstr "デバッグ"
+
+msgid "DEL"
+msgstr "削除"
+
+msgid "DISPLAY"
+msgstr "表示"
+
+msgid "Daily"
+msgstr "毎日"
+
+msgid "Dark"
+msgstr "ダーク"
+
+msgid "Dark mode"
+msgstr "ダークモード"
+
+msgid "Data"
+msgstr "データ"
+
+msgid "Data & media"
+msgstr "データとメディア"
+
+msgid "Date"
+msgstr "日付"
+
+msgid "Debug"
+msgstr "デバッグ"
+
+msgid "Debug is not enabled"
+msgstr "デバッグは有効になっていません"
+
+msgid "Debug log file does not exist"
+msgstr "デバッグログファイルが存在しません"
+
+msgid "Debug settings"
+msgstr "デバッグ設定"
+
+msgid "Declaration already deleted"
+msgstr "宣言は既に削除されています"
+
+msgid "Decorative effects for the website"
+msgstr "ウェブサイトの装飾エフェクト"
+
+msgid "Default style"
+msgstr "デフォルトスタイル"
+
+msgid "Delete"
+msgstr "削除"
+
+msgid "Delete all 404 images"
+msgstr "すべての 404 画像を削除"
+
+msgid "Delete all 404 thumbnail images"
+msgstr "すべての 404 サムネイル画像を削除"
+
+msgid "Delete autosaves"
+msgstr "自動保存を削除"
+
+msgid "Delete comments"
+msgstr "コメントを削除"
+
+msgid "Delete cropped image"
+msgstr "切り抜き画像を削除"
+
+msgid "Delete data"
+msgstr "データを削除"
+
+msgid "Delete revisions"
+msgstr "リビジョンを削除"
+
+msgid "Delete settings:"
+msgstr "設定を削除："
+
+msgid "Delete this log entry"
+msgstr "このログエントリを削除"
+
+msgid "Delete this snippet? Content that uses it will stop rendering."
+msgstr "このスニペットを削除しますか？これを使用しているコンテンツは表示されなくなります。"
+
+msgid "Deleted"
+msgstr "削除しました"
+
+msgid "Deleted %1$s of %2$s scanned"
+msgstr "スキャンした %2$s 件のうち %1$s 件を削除しました"
+
+msgid "Deleted successfully"
+msgstr "正常に削除しました"
+
+msgid "Deleted: %s"
+msgstr "削除しました：%s"
+
+msgid "Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action."
+msgstr "リンクパターンによるコメントの削除は、意図的に自動クリーンアップから除外されており、手動操作のままとなっています。"
+
+msgid "Deleting is permanent. Revisions, autosaves and trashed content (posts, pages, products) are removed together with their metadata and attached files."
+msgstr "削除は元に戻せません。リビジョン、自動保存、ゴミ箱内のコンテンツ（投稿、固定ページ、商品）は、そのメタデータや添付ファイルとともに削除されます。"
+
+msgid "Deletion successful"
+msgstr "削除に成功しました"
+
+msgid "Demo"
+msgstr "デモ"
+
+msgid "Description (for your reference)"
+msgstr "説明（参照用）"
+
+msgid "Desktop only"
+msgstr "デスクトップのみ"
+
+msgid "Disable Classic CSS"
+msgstr "クラシック CSS を無効化"
+
+msgid "Disable Emoji"
+msgstr "絵文字を無効化"
+
+msgid "Disable Gutenberg CSS"
+msgstr "Gutenberg CSS を無効化"
+
+msgid "Disable REST API for anonymous visitors"
+msgstr "匿名の訪問者に対して REST API を無効化"
+
+msgid "Disable WordPress info widget"
+msgstr "WordPress 情報ウィジェットを無効化"
+
+msgid "Disable Wp-Embed"
+msgstr "Wp-Embed を無効化"
+
+msgid "Disable X-Pingback"
+msgstr "X-Pingback を無効化"
+
+msgid "Disable XML RPC"
+msgstr "XML RPC を無効化"
+
+msgid "Disable XML-RPC, X-Pingback, extra header tags and the version tag"
+msgstr "XML-RPC、X-Pingback、余分なヘッダータグ、バージョンタグを無効化"
+
+msgid "Disable feeds (RSS/Atom)"
+msgstr "フィード（RSS/Atom）を無効化"
+
+msgid "Disable health widget"
+msgstr "ヘルスウィジェットを無効化"
+
+msgid "Disable jQuery Migrate"
+msgstr "jQuery Migrate を無効化"
+
+msgid "Disable logo display"
+msgstr "ロゴ表示を無効化"
+
+msgid "Disable numbers in front of tags"
+msgstr "タグ前の番号を無効化"
+
+msgid "Disable quick draft widget"
+msgstr "クイックドラフトウィジェットを無効化"
+
+msgid "Disable recent posts widget"
+msgstr "最近の投稿ウィジェットを無効化"
+
+msgid "Disable statistics widget"
+msgstr "統計ウィジェットを無効化"
+
+msgid "Disable the Admin Bar"
+msgstr "管理バーを無効化"
+
+msgid "Disable the theme & plugin file editor"
+msgstr "テーマ・プラグインのファイルエディターを無効化"
+
+msgid "Disable unnecessary items"
+msgstr "不要な項目を無効化"
+
+msgid "Disable unused endpoints"
+msgstr "未使用のエンドポイントを無効化"
+
+msgid "Disable unused widgets"
+msgstr "未使用のウィジェットを無効化"
+
+msgid "Disable welcome widget"
+msgstr "ウェルカムウィジェットを無効化"
+
+msgid "Disabled TOC"
+msgstr "目次を無効化"
+
+msgid "Discard"
+msgstr "破棄"
+
+msgid "Display ID in the management page"
+msgstr "管理ページに ID を表示"
+
+msgid "Display language settings"
+msgstr "表示言語設定"
+
+msgid "Display link when seconds expire"
+msgstr "秒数が経過したらリンクを表示"
+
+msgid "Display name (shown in the list)"
+msgstr "表示名（リストに表示されます）"
+
+msgid "Display on the WooCommerce login form"
+msgstr "WooCommerce ログインフォームに表示"
+
+msgid "Display on the default login form"
+msgstr "デフォルトのログインフォームに表示"
+
+msgid "Display options"
+msgstr "表示オプション"
+
+msgid "Display text color"
+msgstr "表示テキストの色"
+
+msgid "Display text if out of stock"
+msgstr "在庫切れの場合に表示するテキスト"
+
+msgid "Display text if the price is 0"
+msgstr "価格が 0 の場合に表示するテキスト"
+
+msgid "Display type"
+msgstr "表示タイプ"
+
+msgid "Display your cookie notice to inform users about cookie use and allow them to manage their preferences easily"
+msgstr "クッキー通知を表示してユーザーにクッキーの使用について知らせ、設定を簡単に管理できるようにします"
+
+msgid "Distance above"
+msgstr "上部からの距離"
+
+msgid "Do not auto-install core updates"
+msgstr "コアの更新を自動インストールしない"
+
+msgid "Do not auto-install language pack updates"
+msgstr "言語パックの更新を自動インストールしない"
+
+msgid "Do not auto-install plugin updates"
+msgstr "プラグインの更新を自動インストールしない"
+
+msgid "Do not auto-install theme updates"
+msgstr "テーマの更新を自動インストールしない"
+
+msgid "Do not enable if you are using optimization plugins with similar functionality (conflict)"
+msgstr "同様の機能を持つ最適化プラグインを使用している場合は有効にしないでください（競合します）"
+
+msgid "Do not select"
+msgstr "選択しない"
+
+msgid "Do you want to delete?"
+msgstr "削除しますか？"
+
+msgid "Does not exist"
+msgstr "存在しません"
+
+msgid "Download"
+msgstr "ダウンロード"
+
+msgid "Download & self-host Google Fonts"
+msgstr "Google Fonts をダウンロードしてセルフホスト"
+
+msgid "Download .json"
+msgstr ".json をダウンロード"
+
+msgid "Download button GGET shortcode"
+msgstr "ダウンロードボタン GGET ショートコード"
+
+msgid "Download link"
+msgstr "ダウンロードリンク"
+
+msgid "Downloading fonts…"
+msgstr "フォントをダウンロード中…"
+
+msgid "Drop Emoji and jQuery Migrate"
+msgstr "絵文字と jQuery Migrate を削除"
+
+msgid "Duplicate"
+msgstr "複製"
+
+msgid "Duplicate content"
+msgstr "コンテンツを複製"
+
+msgid "Duplicate post, page, custom post type"
+msgstr "投稿、固定ページ、カスタム投稿タイプを複製"
+
+msgid "Edit"
+msgstr "編集"
+
+msgid "Editor classic"
+msgstr "クラシックエディター"
+
+msgid "Effect"
+msgstr "エフェクト"
+
+msgid "Email"
+msgstr "メール"
+
+msgid "Email me when an address is locked out"
+msgstr "アドレスがロックアウトされたらメールで通知"
+
+msgid "Email notification when a post has a comment"
+msgstr "投稿にコメントが付いたときのメール通知"
+
+msgid "Email notification when there a reply"
+msgstr "返信があったときのメール通知"
+
+msgid "Email sent successfully"
+msgstr "メールを正常に送信しました"
+
+msgid "Email subject"
+msgstr "メールの件名"
+
+msgid "Empty"
+msgstr "空"
+
+msgid "Empty trash"
+msgstr "ゴミ箱を空にする"
+
+msgid "Enable"
+msgstr "有効化"
+
+msgid "Enable .html for page"
+msgstr "ページの .html を有効化"
+
+msgid "Enable 301 redirection"
+msgstr "301 リダイレクトを有効化"
+
+msgid "Enable 404 redirection"
+msgstr "404 リダイレクトを有効化"
+
+msgid "Enable 503 maintenance mode"
+msgstr "503 メンテナンスモードを有効化"
+
+msgid "Enable AVIF image compression"
+msgstr "AVIF 画像圧縮を有効化"
+
+msgid "Enable Adsense"
+msgstr "AdSense を有効化"
+
+msgid "Enable Classic Editor"
+msgstr "クラシックエディターを有効化"
+
+msgid "Enable Classic Editor in category description"
+msgstr "カテゴリー説明でクラシックエディターを有効化"
+
+msgid "Enable Classic Widget"
+msgstr "クラシックウィジェットを有効化"
+
+msgid "Enable GGET shortcode"
+msgstr "GGET ショートコードを有効化"
+
+msgid "Enable HTML compression"
+msgstr "HTML 圧縮を有効化"
+
+msgid "Enable Instant-page"
+msgstr "Instant-page を有効化"
+
+msgid "Enable JPG image compression"
+msgstr "JPG 画像圧縮を有効化"
+
+msgid "Enable SMTP mail"
+msgstr "SMTP メールを有効化"
+
+msgid "Enable SMTP mail to allow SMTP mail to function and send emails when you perform a test"
+msgstr "SMTP メールを有効にすると SMTP メールが機能し、テスト実行時にメールを送信できるようになります"
+
+msgid "Enable Smooth-scroll"
+msgstr "Smooth-scroll を有効化"
+
+msgid "Enable WEBP image compression"
+msgstr "WEBP 画像圧縮を有効化"
+
+msgid "Enable WP_DEBUG"
+msgstr "WP_DEBUG を有効化"
+
+msgid "Enable WP_DEBUG_DISPLAY"
+msgstr "WP_DEBUG_DISPLAY を有効化"
+
+msgid "Enable WP_DEBUG_LOG"
+msgstr "WP_DEBUG_LOG を有効化"
+
+msgid "Enable ad-block detection"
+msgstr "広告ブロック検出を有効化"
+
+msgid "Enable ads.txt"
+msgstr "ads.txt を有効化"
+
+msgid "Enable advanced image viewing"
+msgstr "高度な画像表示を有効化"
+
+msgid "Enable and add the category IDs you want to hide from the main loop displaying posts on the homepage, for example: 1, 2, 3"
+msgstr "有効にして、ホームページで投稿を表示するメインループから非表示にしたいカテゴリー ID を追加してください。例：1, 2, 3"
+
+msgid "Enable and configure the functions below to enable Google sign-in to work"
+msgstr "Google サインインを機能させるには、以下の機能を有効にして設定してください"
+
+msgid "Enable chat button"
+msgstr "チャットボタンを有効化"
+
+msgid "Enable color and display customization"
+msgstr "色と表示のカスタマイズを有効化"
+
+msgid "Enable contact bar"
+msgstr "コンタクトバーを有効化"
+
+msgid "Enable cookie"
+msgstr "クッキーを有効化"
+
+msgid "Enable custom footer"
+msgstr "カスタムフッターを有効化"
+
+msgid "Enable custom functionality"
+msgstr "カスタム機能を有効化"
+
+msgid "Enable custom widget"
+msgstr "カスタムウィジェットを有効化"
+
+msgid "Enable customization"
+msgstr "カスタマイズを有効化"
+
+msgid "Enable dark mode"
+msgstr "ダークモードを有効化"
+
+msgid "Enable date shortcode"
+msgstr "日付ショートコードを有効化"
+
+msgid "Enable deleting posts to also delete images"
+msgstr "投稿を削除する際に画像も削除するのを有効化"
+
+msgid "Enable element customization"
+msgstr "要素のカスタマイズを有効化"
+
+msgid "Enable email sending"
+msgstr "メール送信を有効化"
+
+msgid "Enable font Awesome"
+msgstr "Font Awesome を有効化"
+
+msgid "Enable for use"
+msgstr "使用するために有効化"
+
+msgid "Enable if you want to hide categories"
+msgstr "カテゴリーを非表示にしたい場合は有効化"
+
+msgid "Enable image lazy loading"
+msgstr "画像の遅延読み込みを有効化"
+
+msgid "Enable image size limitation"
+msgstr "画像サイズの制限を有効化"
+
+msgid "Enable logo customization"
+msgstr "ロゴのカスタマイズを有効化"
+
+msgid "Enable notification"
+msgstr "通知を有効化"
+
+msgid "Enable notifications"
+msgstr "通知を有効化"
+
+msgid "Enable picture frame"
+msgstr "写真フレームを有効化"
+
+msgid "Enable popup"
+msgstr "ポップアップを有効化"
+
+msgid "Enable quick search"
+msgstr "クイック検索を有効化"
+
+msgid "Enable revision limit"
+msgstr "リビジョン制限を有効化"
+
+msgid "Enable shortcode lock"
+msgstr "ショートコードロックを有効化"
+
+msgid "Enable shortcodes"
+msgstr "ショートコードを有効化"
+
+msgid "Enable signature shortcode"
+msgstr "署名ショートコードを有効化"
+
+msgid "Enable site-wide 301 redirects"
+msgstr "サイト全体の 301 リダイレクトを有効化"
+
+msgid "Enable table of contents"
+msgstr "目次を有効化"
+
+msgid "Enable the [ht-icon] shortcode"
+msgstr "[ht-icon] ショートコードを有効化"
+
+msgid "Enable the contact bar and configure the content below for use"
+msgstr "コンタクトバーを有効にし、以下のコンテンツを設定してご利用ください"
+
+msgid "Enable the picture frame"
+msgstr "写真フレームを有効化"
+
+msgid "Enable the services panel"
+msgstr "サービスパネルを有効化"
+
+msgid "Enable this feature and enter the login link suffix"
+msgstr "この機能を有効にしてログインリンクのサフィックスを入力してください"
+
+msgid "Enable this feature if you want JFIF format images to be uploaded to the media. The uploaded images will be converted to JPG or WEBP format according to the configuration"
+msgstr "JFIF 形式の画像をメディアにアップロードしたい場合は、この機能を有効にしてください。アップロードされた画像は設定に従って JPG または WEBP 形式に変換されます"
+
+msgid "Enable this feature if you want SVG images to be uploaded to the media"
+msgstr "SVG 画像をメディアにアップロードしたい場合は、この機能を有効にしてください"
+
+msgid "Enable this feature if you want images in posts copied from another source to be stored on your website"
+msgstr "他のソースからコピーした投稿内の画像をウェブサイトに保存したい場合は、この機能を有効にしてください"
+
+msgid "Enable this feature if you want the first image in the post to become the featured image if the featured image field is empty. Additionally, you can select a default featured image in case both the featured image and the images in the post are empty"
+msgstr "アイキャッチ画像フィールドが空の場合に投稿内の最初の画像をアイキャッチ画像にしたいときは、この機能を有効にしてください。さらに、アイキャッチ画像も投稿内の画像もどちらも空の場合に備えて、デフォルトのアイキャッチ画像を選択できます"
+
+msgid "Enable this feature if you want the original image size to be selected by default whenever adding images to the post"
+msgstr "投稿に画像を追加する際に、常に元の画像サイズをデフォルトで選択したい場合は、この機能を有効にしてください"
+
+msgid "Enable this feature if you want to add additional functionalities to the Classic Editor to enhance professional editing"
+msgstr "プロフェッショナルな編集を強化するためにクラシックエディターに追加機能を加えたい場合は、この機能を有効にしてください"
+
+msgid "Enable this feature if you want to add the Classic Editor button in the post and page management interface. With this feature, you dont need to set the Classic Editor as default but can use it in parallel"
+msgstr "投稿および固定ページの管理画面にクラシックエディターボタンを追加したい場合は、この機能を有効にしてください。この機能により、クラシックエディターをデフォルトに設定しなくても並行して使用できます"
+
+msgid "Enable this feature if you want to customize the footer in the WP admin"
+msgstr "WP 管理画面のフッターをカスタマイズしたい場合は、この機能を有効にしてください"
+
+msgid "Enable this feature to be able to use the customizations below"
+msgstr "以下のカスタマイズを利用できるようにするには、この機能を有効にしてください"
+
+msgid "Enable to display the Google login button on the WooCommerce login form"
+msgstr "WooCommerce ログインフォームに Google ログインボタンを表示するには有効にしてください"
+
+msgid "Enable to display the Google login button on the default WordPress login form"
+msgstr "デフォルトの WordPress ログインフォームに Google ログインボタンを表示するには有効にしてください"
+
+msgid "Enable to use"
+msgstr "使用するために有効化"
+
+msgid "Enable upload size limit"
+msgstr "アップロードサイズ制限を有効化"
+
+msgid "Enable watermarks"
+msgstr "透かしを有効化"
+
+msgid "Enabled"
+msgstr "有効"
+
+msgid "Enabled TOC"
+msgstr "目次を有効化"
+
+msgid "Enhance features for Classic Editor"
+msgstr "クラシックエディターの機能を強化"
+
+msgid "Enter Adsense code here"
+msgstr "ここに AdSense コードを入力"
+
+msgid "Enter CSS here"
+msgstr "ここに CSS を入力"
+
+msgid "Enter ID"
+msgstr "ID を入力"
+
+msgid "Enter a shortcode name to search for."
+msgstr "検索するショートコード名を入力してください。"
+
+msgid "Enter a suffix"
+msgstr "サフィックスを入力"
+
+msgid "Enter a title"
+msgstr "タイトルを入力"
+
+msgid "Enter button name"
+msgstr "ボタン名を入力"
+
+msgid "Enter code here"
+msgstr "ここにコードを入力"
+
+msgid "Enter content"
+msgstr "コンテンツを入力"
+
+msgid "Enter content here"
+msgstr "ここにコンテンツを入力"
+
+msgid "Enter cookie content"
+msgstr "クッキーのコンテンツを入力"
+
+msgid "Enter cookie title"
+msgstr "クッキーのタイトルを入力"
+
+msgid "Enter email"
+msgstr "メールアドレスを入力"
+
+msgid "Enter email content here"
+msgstr "ここにメールのコンテンツを入力"
+
+msgid "Enter image link"
+msgstr "画像のリンクを入力"
+
+msgid "Enter json"
+msgstr "json を入力"
+
+msgid "Enter keywords to search"
+msgstr "検索キーワードを入力"
+
+msgid "Enter link"
+msgstr "リンクを入力"
+
+msgid "Enter manually"
+msgstr "手動で入力"
+
+msgid "Enter name"
+msgstr "名前を入力"
+
+msgid "Enter note content"
+msgstr "メモの内容を入力"
+
+msgid "Enter the SVG icon"
+msgstr "SVG アイコンを入力"
+
+msgid "Enter the content you want to display and configure the customizations above so the popup can appear when users visit your website"
+msgstr "表示したいコンテンツを入力し、上のカスタマイズを設定して、ユーザーがウェブサイトを訪問したときにポップアップが表示されるようにしてください"
+
+msgid "Enter the content you want to display in the notification, and customize the colors to match your preferences. A notification will appear at the top of your website, making it easy for users to see"
+msgstr "通知に表示したいコンテンツを入力し、お好みに合わせて色をカスタマイズしてください。ウェブサイトの上部に通知が表示され、ユーザーが見やすくなります"
+
+msgid "Enter the link"
+msgstr "リンクを入力"
+
+msgid "Enter the number of posts or products to be displayed when searching"
+msgstr "検索時に表示する投稿または商品の数を入力"
+
+msgid "Enter the number of revisions"
+msgstr "リビジョンの数を入力"
+
+msgid "Enter the policy page link"
+msgstr "ポリシーページのリンクを入力"
+
+msgid "Enter the tag and tag number for the ad to appear"
+msgstr "広告を表示するためのタグとタグ番号を入力"
+
+msgid "Enter the title and content you want to display when ad-blocker is detected"
+msgstr "広告ブロッカーが検出されたときに表示したいタイトルとコンテンツを入力"
+
+msgid "Enter the url"
+msgstr "URL を入力"
+
+msgid "Enter title"
+msgstr "タイトルを入力"
+
+msgid "Enter units"
+msgstr "単位を入力"
+
+msgid "Enter waiting time"
+msgstr "待機時間を入力"
+
+msgid "Environment"
+msgstr "環境"
+
+msgid "Error"
+msgstr "エラー"
+
+msgid "Error cannot be cleaned"
+msgstr "エラーをクリーンアップできません"
+
+msgid "Error — nothing was deleted."
+msgstr "エラー — 何も削除されませんでした。"
+
+msgid "Every Horse Tools shortcode. Click any example to copy it."
+msgstr "Horse Tools のすべてのショートコード。任意の例をクリックしてコピーできます。"
+
+msgid "Everyone"
+msgstr "全員"
+
+msgid "Example: domain.com/wp-admin where wp-admin is the suffix"
+msgstr "例：domain.com/wp-admin（wp-admin がサフィックス）"
+
+msgid "Export"
+msgstr "エクスポート"
+
+msgid "Export downloads all your snippets as a .json file. Import merges a file from another site — existing snippets of the same name are kept, not overwritten."
+msgstr "エクスポートは、すべてのスニペットを .json ファイルとしてダウンロードします。インポートは別のサイトのファイルを統合します。同名の既存スニペットは上書きされず保持されます。"
+
+msgid "Export snippets (.json)"
+msgstr "スニペットをエクスポート（.json）"
+
+msgid "Exported."
+msgstr "エクスポートしました。"
+
+msgid "Extend"
+msgstr "延長"
+
+msgid "External"
+msgstr "外部"
+
+msgid "Extras"
+msgstr "追加項目"
+
+msgid "FREE"
+msgstr "無料"
+
+msgid "Failed to delete the file"
+msgstr "ファイルの削除に失敗しました"
+
+msgid "Failed to load debug log"
+msgstr "デバッグログの読み込みに失敗しました"
+
+msgid "Failed to update setting:"
+msgstr "設定の更新に失敗しました："
+
+msgid "Featured banner + grid"
+msgstr "注目バナー + グリッド"
+
+msgid "Feeds are not available on this site. %s"
+msgstr "このサイトではフィードは利用できません。%s"
+
+msgid "Feeds disabled"
+msgstr "フィードを無効化しました"
+
+msgid "Field"
+msgstr "フィールド"
+
+msgid "Filter by tag"
+msgstr "タグで絞り込み"
+
+msgid "Filter posts and images"
+msgstr "投稿と画像を絞り込み"
+
+msgid "Find and delete all 404 images in media"
+msgstr "メディア内のすべての 404 画像を検索して削除"
+
+msgid "Find and delete all 404 thumbnail images in media"
+msgstr "メディア内のすべての 404 サムネイル画像を検索して削除"
+
+msgid "Find usage"
+msgstr "使用箇所を検索"
+
+msgid "Find where a shortcode is used"
+msgstr "ショートコードが使用されている箇所を検索"
+
+msgid "Flip photo"
+msgstr "写真を反転"
+
+msgid "Font"
+msgstr "フォント"
+
+msgid "Font does not exist"
+msgstr "フォントが存在しません"
+
+msgid "Font size"
+msgstr "フォントサイズ"
+
+msgid "For an Nginx server, if the ads.txt file already exists in the root directory of the website, it will prioritize the static file, so this function will not work. If you want to use it, you can either configure Nginx or delete the static file before proceeding"
+msgstr "Nginx サーバーの場合、ads.txt ファイルが既にウェブサイトのルートディレクトリに存在すると静的ファイルが優先されるため、この機能は動作しません。使用したい場合は、Nginx を設定するか、静的ファイルを削除してから進めてください"
+
+msgid "Forced ad clicks — removed"
+msgstr "強制的な広告クリック — 削除済み"
+
+msgid "Found in %d item(s):"
+msgstr "%d 件の項目で見つかりました："
+
+msgid "Foxtool by Fox Theme (Nguyễn Ngọc Hoàn)"
+msgstr "Foxtool by Fox Theme（Nguyễn Ngọc Hoàn）"
+
+msgid "Free"
+msgstr "無料"
+
+msgid "Free to use the \"solid\" and \"brands\" styles"
+msgstr "「solid」と「brands」スタイルは無料で使用できます"
+
+msgid "Free!"
+msgstr "無料！"
+
+msgid "Fri"
+msgstr "金"
+
+msgid "From"
+msgstr "開始"
+
+msgid "Full screen"
+msgstr "全画面"
+
+msgid "GD Library does not support AVIF images"
+msgstr "GD ライブラリは AVIF 画像をサポートしていません"
+
+msgid "GD Library is not installed"
+msgstr "GD ライブラリがインストールされていません"
+
+msgid "GGET"
+msgstr "GGET"
+
+msgid "GOOGLE"
+msgstr "GOOGLE"
+
+msgid "Generate data"
+msgstr "データを生成"
+
+msgid "Give the snippet a name (letters, numbers and dashes)."
+msgstr "スニペットに名前を付けてください（英字、数字、ハイフン）。"
+
+msgid "Go to the home page"
+msgstr "ホームページへ移動"
+
+msgid "Gold"
+msgstr "ゴールド"
+
+msgid "Google Fonts detected — click “Download & self-host” to serve them locally."
+msgstr "Google Fonts を検出しました — 「ダウンロードしてセルフホスト」をクリックしてローカルで配信してください。"
+
+msgid "Google did not return the stylesheet (HTTP error)."
+msgstr "Google がスタイルシートを返しませんでした（HTTP エラー）。"
+
+msgid "Grade %s"
+msgstr "グレード %s"
+
+msgid "Green"
+msgstr "グリーン"
+
+msgid "Greeting bubble text (e.g. Hi! Need help?)"
+msgstr "あいさつ吹き出しのテキスト（例：こんにちは！お手伝いしましょうか？）"
+
+msgid "Greeting message (Live-chat skin)"
+msgstr "あいさつメッセージ（Live-chat スキン）"
+
+msgid "H tag color when scrolled to"
+msgstr "スクロール到達時の H タグの色"
+
+msgid "HORSE SEARCH"
+msgstr "HORSE SEARCH"
+
+msgid "HSTS (force HTTPS for 180 days)"
+msgstr "HSTS（180 日間 HTTPS を強制）"
+
+msgid "HTML compression: minify inline JS, strip comments"
+msgstr "HTML 圧縮：インライン JS を圧縮し、コメントを削除"
+
+msgid "HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>"
+msgstr "HTML、CSS または JS…  例：<a href=&quot;{{url}}&quot;>{{label}}</a>"
+
+msgid "Hello"
+msgstr "こんにちは"
+
+msgid "Hello %s. A new comment has been posted on your article \"%s\". You can view the comment here: %s"
+msgstr "%s さん、こんにちは。あなたの記事「%s」に新しいコメントが投稿されました。こちらでコメントを確認できます：%s"
+
+msgid "Hi 👋 How can we help you?"
+msgstr "こんにちは 👋 どのようなご用件でしょうか？"
+
+msgid "Hide Admin account from profile page"
+msgstr "プロフィールページから管理者アカウントを非表示"
+
+msgid "Hide Horse Tools"
+msgstr "Horse Tools を非表示"
+
+msgid "Hide back link"
+msgstr "戻るリンクを非表示"
+
+msgid "Hide bar when pulled down"
+msgstr "下に引いたときにバーを非表示"
+
+msgid "Hide chat button when scrolling down"
+msgstr "下にスクロールしたときにチャットボタンを非表示"
+
+msgid "Hide from administrators"
+msgstr "管理者から非表示"
+
+msgid "Hide language options"
+msgstr "言語オプションを非表示"
+
+msgid "Hide minimized list"
+msgstr "最小化したリストを非表示"
+
+msgid "Hide plugins from the manager"
+msgstr "管理画面からプラグインを非表示"
+
+msgid "Hide post categories from homepage"
+msgstr "ホームページから投稿カテゴリーを非表示"
+
+msgid "Hide the tools you want"
+msgstr "非表示にしたいツールを隠す"
+
+msgid "Hide the update & maintenance notice"
+msgstr "更新・メンテナンスの通知を非表示"
+
+msgid "Hide this URL from the log"
+msgstr "この URL をログから非表示"
+
+msgid "Hide usernames from scanners"
+msgstr "スキャナーからユーザー名を非表示"
+
+msgid "Hits"
+msgstr "ヒット数"
+
+msgid "Horse Search"
+msgstr "Horse Search"
+
+msgid "Horse Tools"
+msgstr "Horse Tools"
+
+msgid "Horse Tools is built on %s, which is no longer maintained by its author. That original work is gratefully acknowledged and this fork continues under the same GPLv2 licence."
+msgstr "Horse Tools は %s を基に構築されていますが、作者によるメンテナンスは既に終了しています。その元の作品に感謝の意を表し、このフォークは同じ GPLv2 ライセンスの下で継続されます。"
+
+msgid "Horse Tools shortcode"
+msgstr "Horse Tools ショートコード"
+
+msgid "Horse Tools:"
+msgstr "Horse Tools："
+
+msgid "Host"
+msgstr "ホスト"
+
+msgid "Hours"
+msgstr "時間"
+
+msgid "How to use"
+msgstr "使い方"
+
+msgid "I understand this permanently deletes data."
+msgstr "これによりデータが完全に削除されることを理解しています。"
+
+msgid "ICON"
+msgstr "アイコン"
+
+msgid "INDEX"
+msgstr "インデックス"
+
+msgid "Icon"
+msgstr "アイコン"
+
+msgid "Icon (e.g. apps)"
+msgstr "アイコン（例：apps）"
+
+msgid "Icon background color"
+msgstr "アイコンの背景色"
+
+msgid "Icon border color"
+msgstr "アイコンの枠線の色"
+
+msgid "Icon border radius"
+msgstr "アイコンの角の丸み"
+
+msgid "Icon color"
+msgstr "アイコンの色"
+
+msgid "Icon picker"
+msgstr "アイコンピッカー"
+
+msgid "If someone replies to a comment, there will be an email notification sent to the commenter"
+msgstr "誰かがコメントに返信すると、コメント投稿者にメール通知が送信されます"
+
+msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
+msgstr "シークレットキーが空の場合、すべてのログインを拒否するのではなく、チェックは完全にスキップされます。"
+
+msgid "If you dont want to automatically switch the language based on WordPress context, please select the language you prefer"
+msgstr "WordPress のコンテキストに基づいて言語を自動的に切り替えたくない場合は、希望する言語を選択してください"
+
+msgid "If you enable this feature and set automatic revision limit and automatic save time for posts or pages, it will reduce the amount of data stored in the database"
+msgstr "この機能を有効にして、投稿や固定ページの自動リビジョン制限と自動保存時間を設定すると、データベースに保存されるデータ量を削減できます"
+
+msgid "If you enable this feature, your Pages will have .html appended to them, for example: domain.com/page.html"
+msgstr "この機能を有効にすると、固定ページに .html が付加されます。例：domain.com/page.html"
+
+msgid "If you find the Admin Bar distracting every time you view the website, you can turn it off (there is an option for you to turn off all or only turn off for users)"
+msgstr "ウェブサイトを表示するたびに管理バーが気になる場合は、オフにできます（すべてをオフにするか、ユーザーのみオフにするオプションがあります）"
+
+msgid "If you find the new Widget Manager too difficult to use, then revert it to the Classic Widget version"
+msgstr "新しいウィジェットマネージャーが使いにくいと感じる場合は、クラシックウィジェット版に戻してください"
+
+msgid "If you find the new editor too difficult to use, then revert it to the Classic Editor version"
+msgstr "新しいエディターが使いにくいと感じる場合は、クラシックエディター版に戻してください"
+
+msgid "If you find the tools above unnecessary, you can hide them to make the WP admin interface cleaner. This function only hides them without blocking access to their links"
+msgstr "上記のツールが不要だと感じる場合は、それらを非表示にして WP 管理画面をすっきりさせることができます。この機能はリンクへのアクセスをブロックせず、非表示にするだけです"
+
+msgid "If you had it enabled it is now inactive. The AdSense and ads.txt tools on the other tabs are unaffected."
+msgstr "有効にしていた場合、現在は無効になっています。他のタブの AdSense および ads.txt ツールには影響しません。"
+
+msgid "If you have members and do not want them to upload images with excessively large sizes, causing storage space usage, you can limit the maximum size allowed for upload"
+msgstr "メンバーがいて、過度に大きなサイズの画像をアップロードしてストレージ容量を消費するのを避けたい場合は、アップロード可能な最大サイズを制限できます"
+
+msgid "If you need to monitor WordPress debug files without accessing the file manager, this tool is made just for that purpose"
+msgstr "ファイルマネージャーにアクセスせずに WordPress のデバッグファイルを監視する必要がある場合、このツールはまさにその目的のために作られています"
+
+msgid "If you not using it, you can disable Classic CSS on the homepage"
+msgstr "使用していない場合は、ホームページでクラシック CSS を無効にできます"
+
+msgid "If you not using it, you can disable Emoji"
+msgstr "使用していない場合は、絵文字を無効にできます"
+
+msgid "If you not using it, you can disable Gutenberg CSS on the homepage"
+msgstr "使用していない場合は、ホームページで Gutenberg CSS を無効にできます"
+
+msgid "If you receive this email, then the SMTP email sending function is working well"
+msgstr "このメールが届いた場合、SMTP メール送信機能が正常に動作しています"
+
+msgid "If you want to display your signature anywhere, you can create content above and then use the generated shortcode at your desired location"
+msgstr "署名をどこかに表示したい場合は、上でコンテンツを作成し、生成されたショートコードを希望の場所で使用してください"
+
+msgid "If you want to enable the feature to duplicate posts, pages, or custom post types, please activate this function"
+msgstr "投稿、固定ページ、またはカスタム投稿タイプを複製する機能を有効にしたい場合は、この機能を有効にしてください"
+
+msgid "If you want to export or import the settings of the Horse Tools plugin, enable this feature. It allows you to easily transfer configurations from this site to another"
+msgstr "Horse Tools プラグインの設定をエクスポートまたはインポートしたい場合は、この機能を有効にしてください。このサイトから別のサイトへ設定を簡単に転送できます"
+
+msgid "If you want to hide a specific Administrator account, select the user"
+msgstr "特定の管理者アカウントを非表示にしたい場合は、そのユーザーを選択してください"
+
+msgid "If you want to lazy load images every time the page loads, then turn it on. This function helps your website load faster"
+msgstr "ページ読み込みのたびに画像を遅延読み込みしたい場合は、オンにしてください。この機能によりウェブサイトの読み込みが速くなります"
+
+msgid "If you want to use font Awesome, you can enable it (it an icon font). You can search for icons at:"
+msgstr "Font Awesome を使用したい場合は、有効にできます（これはアイコンフォントです）。アイコンは次で検索できます："
+
+msgid "If you want your uploaded images to be watermarked, please use this function and configure it above. Watermark (PNG, JPG)"
+msgstr "アップロードした画像に透かしを入れたい場合は、この機能を使用して上で設定してください。透かし（PNG、JPG）"
+
+msgid "If youre tired of WordPress default search tool because its too slow, try out our lightning-fast search feature to give your users an exceptional and speedy search experience"
+msgstr "WordPress の標準検索ツールが遅すぎて困っている場合は、当プラグインの超高速検索機能をお試しください。ユーザーに卓越したスピーディーな検索体験を提供します"
+
+msgid "Ignore"
+msgstr "無視"
+
+msgid "Ignore 8-bit png"
+msgstr "8 ビット png を無視"
+
+msgid "Image URL (optional, replaces the icon)"
+msgstr "画像 URL（任意、アイコンを置き換えます）"
+
+msgid "Image crop configuration"
+msgstr "画像の切り抜き設定"
+
+msgid "Image function for posts"
+msgstr "投稿用の画像機能"
+
+msgid "Images are lazy-loaded"
+msgstr "画像は遅延読み込みされます"
+
+msgid "Import"
+msgstr "インポート"
+
+msgid "Import from Shortcoder"
+msgstr "Shortcoder からインポート"
+
+msgid "Import snippets"
+msgstr "スニペットをインポート"
+
+msgid "Imported %1$d snippet(s); %2$d already existed."
+msgstr "%1$d 件のスニペットをインポートしました。%2$d 件は既に存在していました。"
+
+msgid "Imported %1$d snippet(s); %2$d already existed. Reloading…"
+msgstr "%1$d 件のスニペットをインポートしました。%2$d 件は既に存在していました。再読み込み中…"
+
+msgid "Imported %1$d snippet(s); %2$d skipped. Reloading…"
+msgstr "%1$d 件のスニペットをインポートしました。%2$d 件をスキップしました。再読み込み中…"
+
+msgid "Imported %d setting group(s). You can undo this below."
+msgstr "%d 件の設定グループをインポートしました。下で元に戻せます。"
+
+msgid "Index now"
+msgstr "今すぐインデックス"
+
+msgid "Information about your website"
+msgstr "ウェブサイトに関する情報"
+
+msgid "Input / select box color"
+msgstr "入力 / 選択ボックスの色"
+
+msgid "Insert icons anywhere with a shortcode"
+msgstr "ショートコードでどこにでもアイコンを挿入"
+
+msgid "Install the pending updates."
+msgstr "保留中の更新をインストールしてください。"
+
+msgid "Instant-page is a library that allows you to preload the content of a linked page into the browser memory simply by hovering over the link. When you click on the link, it provides a remarkably fast loading experience"
+msgstr "Instant-page は、リンクにカーソルを合わせるだけでリンク先ページのコンテンツをブラウザのメモリに事前読み込みできるライブラリです。リンクをクリックすると、驚くほど高速な読み込み体験を提供します"
+
+msgid "Instant-page prefetch and image lazy-loading"
+msgstr "Instant-page のプリフェッチと画像の遅延読み込み"
+
+msgid "Insufficient permissions"
+msgstr "権限が不足しています"
+
+msgid "Known post types:"
+msgstr "既知の投稿タイプ："
+
+msgid "LOCKVIP"
+msgstr "LOCKVIP"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "Last seen"
+msgstr "最終アクセス"
+
+msgid "Layout & interactive"
+msgstr "レイアウトとインタラクティブ"
+
+msgid "Lazy-load images; drop Emoji"
+msgstr "画像を遅延読み込み、絵文字を削除"
+
+msgid "Lazy-load images; drop Emoji and jQuery Migrate"
+msgstr "画像を遅延読み込み、絵文字と jQuery Migrate を削除"
+
+msgid "Lean pages and lighter media. Leaves Gutenberg and Classic CSS alone, since removing those can change how a theme looks."
+msgstr "軽量なページと軽いメディア。Gutenberg とクラシック CSS はそのまま残します。これらを削除するとテーマの見た目が変わる可能性があるためです。"
+
+msgid "Leave another shortcode plugin"
+msgstr "別のショートコードプラグインから移行"
+
+msgid "Left drawer"
+msgstr "左ドロワー"
+
+msgid "Lets you drop any of the bundled Tabler icons (over 5,800, MIT licence) into posts, pages and anywhere shortcodes run. The icon font only loads on pages that actually use one, so it costs nothing elsewhere."
+msgstr "同梱の Tabler アイコン（5,800 種類以上、MIT ライセンス）を、投稿、固定ページ、ショートコードが動作するあらゆる場所に挿入できます。アイコンフォントは実際に使用しているページでのみ読み込まれるため、他の場所では負荷がかかりません。"
+
+msgid "Leverage Google’s Indexing API to speed up the indexing of your website on Google’s search engine. You can add as many API keys as you like for unlimited indexing capacity"
+msgstr "Google の Indexing API を活用して、Google 検索エンジンでのウェブサイトのインデックス登録を高速化します。API キーは好きなだけ追加でき、インデックス容量は無制限です"
+
+msgid "Licence:"
+msgstr "ライセンス："
+
+msgid "Light / Dark"
+msgstr "ライト / ダーク"
+
+msgid "Limit Horse Tools display"
+msgstr "Horse Tools の表示を制限"
+
+msgid "Limit JPG, PNG, WEBP, AVIF images"
+msgstr "JPG、PNG、WEBP、AVIF 画像を制限"
+
+msgid "Limit failed logins and email you on lockout"
+msgstr "ログイン失敗を制限し、ロックアウト時にメールで通知"
+
+msgid "Limit login attempts"
+msgstr "ログイン試行を制限"
+
+msgid "Limit logins, block user enumeration, disable XML-RPC and the file editor"
+msgstr "ログインを制限し、ユーザー列挙をブロックし、XML-RPC とファイルエディターを無効化"
+
+msgid "Limits the maximum width and height of JPG, PNG, WEBP images upon upload. You can leave it blank if you want to keep the original size"
+msgstr "アップロード時に JPG、PNG、WEBP 画像の最大幅と高さを制限します。元のサイズを維持したい場合は空欄のままにできます"
+
+msgid "Limits the size of JPG, PNG, WEBP, AVIF images when uploading"
+msgstr "アップロード時に JPG、PNG、WEBP、AVIF 画像のサイズを制限します"
+
+msgid "Link (article or service page)"
+msgstr "リンク（記事またはサービスページ）"
+
+msgid "Link color"
+msgstr "リンクの色"
+
+msgid "Link display color"
+msgstr "リンク表示の色"
+
+msgid "List"
+msgstr "リスト"
+
+msgid "List color"
+msgstr "リストの色"
+
+msgid "List is hidden by default"
+msgstr "リストはデフォルトで非表示です"
+
+msgid "Loading icons…"
+msgstr "アイコンを読み込み中…"
+
+msgid "Location"
+msgstr "位置"
+
+msgid "Lock down the admin"
+msgstr "管理画面を保護"
+
+msgid "Lock out repeated failed logins"
+msgstr "繰り返されるログイン失敗をロックアウト"
+
+msgid "Lockout length (minutes)"
+msgstr "ロックアウト時間（分）"
+
+msgid "Log out"
+msgstr "ログアウト"
+
+msgid "Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site."
+msgstr "匿名の訪問者が実際にアクセスした無効な URL を記録し、アクセスの多いものをリダイレクトに変換できます。ログイン済みユーザー、ボット、アセットリクエストは記録されず、データがサイト外に出ることはありません。"
+
+msgid "Logged-in users"
+msgstr "ログイン済みユーザー"
+
+msgid "Logged-out visitors"
+msgstr "ログアウトした訪問者"
+
+msgid "Login attempts are rate-limited"
+msgstr "ログイン試行は回数制限されています"
+
+msgid "Login failed. Check your details and try again."
+msgstr "ログインに失敗しました。入力内容を確認してもう一度お試しください。"
+
+msgid "Login link:"
+msgstr "ログインリンク："
+
+msgid "MAIL"
+msgstr "メール"
+
+msgid "MAINTENANCE MODE"
+msgstr "メンテナンスモード"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "MEDIA"
+msgstr "メディア"
+
+msgid "Main button"
+msgstr "メインボタン"
+
+msgid "Main color"
+msgstr "メインカラー"
+
+msgid "Main icon color"
+msgstr "メインアイコンの色"
+
+msgid "Main icon text color"
+msgstr "メインアイコンの文字色"
+
+msgid "Maintenance mode for developers (503)"
+msgstr "開発者向けメンテナンスモード（503）"
+
+msgid "Management tool"
+msgstr "管理ツール"
+
+msgid "Max height"
+msgstr "最大の高さ"
+
+msgid "Max width"
+msgstr "最大の幅"
+
+msgid "Media"
+msgstr "メディア"
+
+msgid "Media tab → JPG compression"
+msgstr "メディアタブ → JPG 圧縮"
+
+msgid "Minify Inline JavaScript"
+msgstr "インライン JavaScript を圧縮"
+
+msgid "Minimum role"
+msgstr "最小権限"
+
+msgid "Mobile only"
+msgstr "モバイルのみ"
+
+msgid "Modify content"
+msgstr "コンテンツを変更"
+
+msgid "Modify some information on Woocommerce that you want"
+msgstr "WooCommerce の一部の情報を任意に変更"
+
+msgid "Modify the footer content of WP admin"
+msgstr "WP 管理画面のフッターコンテンツを変更"
+
+msgid "Mon"
+msgstr "月"
+
+msgid "Monthly"
+msgstr "毎月"
+
+msgid "Most snippet plugins store their snippets as a custom post type. Enter that post type to import them all as Horse Tools snippets — the other plugin is only read, never changed. After importing you can deactivate it and (for Shortcoder) your [sc …] tags keep working, or use “Convert” above."
+msgstr "ほとんどのスニペットプラグインは、スニペットをカスタム投稿タイプとして保存します。その投稿タイプを入力すると、すべてを Horse Tools のスニペットとしてインポートできます。他のプラグインは読み取られるだけで、変更されることはありません。インポート後はそのプラグインを無効化でき、（Shortcoder の場合）[sc …] タグは引き続き機能します。または上の「変換」を使用してください。"
+
+msgid "Move snippets between sites"
+msgstr "サイト間でスニペットを移動"
+
+msgid "Move the site address to https://"
+msgstr "サイトアドレスを https:// に移動"
+
+msgid "NOTIFY"
+msgstr "通知"
+
+msgid "Name the font"
+msgstr "フォントに名前を付ける"
+
+msgid "Name — letters, numbers, dashes (e.g. call-to-action)"
+msgstr "名前 — 英字、数字、ハイフン（例：call-to-action）"
+
+msgid "Navigation bar (Horse Tools)"
+msgstr "ナビゲーションバー（Horse Tools）"
+
+msgid "Neutral"
+msgstr "ニュートラル"
+
+msgid "New / clear"
+msgstr "新規 / クリア"
+
+msgid "Newly edited posts will be displayed first"
+msgstr "新しく編集された投稿が最初に表示されます"
+
+msgid "Next automatic check: %s"
+msgstr "次回の自動チェック：%s"
+
+msgid "No"
+msgstr "いいえ"
+
+msgid "No (temporarily off)"
+msgstr "いいえ（一時的にオフ）"
+
+msgid "No 404s recorded yet."
+msgstr "まだ 404 は記録されていません。"
+
+msgid "No Google Fonts leaking to Google"
+msgstr "Google Fonts が Google に漏れていません"
+
+msgid "No [sc] tags found in your content."
+msgstr "コンテンツ内に [sc] タグは見つかりませんでした。"
+
+msgid "No automatic redirects yet. Change a published URL and one will appear here."
+msgstr "まだ自動リダイレクトはありません。公開済みの URL を変更すると、ここに表示されます。"
+
+msgid "No badge colour"
+msgstr "バッジの色なし"
+
+msgid "No font files were found in the stylesheet."
+msgstr "スタイルシート内にフォントファイルが見つかりませんでした。"
+
+msgid "No icon matches that."
+msgstr "一致するアイコンがありません。"
+
+msgid "No pages selected"
+msgstr "ページが選択されていません"
+
+msgid "No results found"
+msgstr "結果が見つかりませんでした"
+
+msgid "No setting matches that."
+msgstr "一致する設定がありません。"
+
+msgid "No size"
+msgstr "サイズなし"
+
+msgid "No snippets were found for the post type \"%s\"."
+msgstr "投稿タイプ「%s」のスニペットは見つかりませんでした。"
+
+msgid "No snippets yet. Create one above, or import from Shortcoder."
+msgstr "まだスニペットがありません。上で作成するか、Shortcoder からインポートしてください。"
+
+msgid "No third-party requests found. Nothing leaks to other servers."
+msgstr "サードパーティへのリクエストは見つかりませんでした。他のサーバーへのデータ漏洩はありません。"
+
+msgid "None"
+msgstr "なし"
+
+msgid "None: default not selected, Auto: background image automatically changes each time the page is loaded, Color: change the color you want, Upload: upload the background image you want"
+msgstr "なし：デフォルトで未選択、自動：ページ読み込みのたびに背景画像が自動的に変わる、色：お好みの色に変更、アップロード：お好みの背景画像をアップロード"
+
+msgid "Not entered"
+msgstr "未入力"
+
+msgid "Not found in any post or page."
+msgstr "どの投稿や固定ページにも見つかりませんでした。"
+
+msgid "Nothing could be self-hosted."
+msgstr "セルフホストできるものはありませんでした。"
+
+msgid "Nothing on this page is enabled yet."
+msgstr "このページではまだ何も有効になっていません。"
+
+msgid "Nothing to delete."
+msgstr "削除するものはありません。"
+
+msgid "Notification at the top of the page"
+msgstr "ページ上部の通知"
+
+msgid "Notification link sent"
+msgstr "通知リンクを送信しました"
+
+msgid "Notify"
+msgstr "通知"
+
+msgid "Notify the post author when someone comments on the post"
+msgstr "誰かが投稿にコメントしたときに投稿者に通知"
+
+msgid "Number of data completed: '+sopost+'"
+msgstr "完了したデータ数：'+sopost+'"
+
+msgid "Number of items displayed"
+msgstr "表示する項目数"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "ON/OFF"
+msgstr "オン / オフ"
+
+msgid "OPTIMIZE"
+msgstr "最適化"
+
+msgid "Off"
+msgstr "オフ"
+
+msgid "Off / select"
+msgstr "オフ / 選択"
+
+msgid "One click applies a set of recommended settings for your kind of site. Presets only turn options on and tune a few values — they never switch off anything you have already enabled, and a one-click Undo is always kept."
+msgstr "ワンクリックで、あなたのサイトの種類に合わせた推奨設定のセットを適用します。プリセットはオプションを有効にして一部の値を調整するだけで、既に有効にしているものをオフにすることは決してありません。ワンクリックの元に戻す機能も常に保持されます。"
+
+msgid "Online now"
+msgstr "現在オンライン"
+
+msgid "Only admin has access to the admin page"
+msgstr "管理者のみが管理ページにアクセスできます"
+
+msgid "Only enable once HTTPS works everywhere. Browsers will refuse plain HTTP to your site for six months, and it cannot be undone quickly."
+msgstr "HTTPS がすべての場所で機能してから有効にしてください。ブラウザは 6 か月間サイトへの通常の HTTP を拒否し、すぐには元に戻せません。"
+
+msgid "Only notify, do not block access"
+msgstr "通知するのみで、アクセスをブロックしない"
+
+msgid "Only supported from PHP 8.1 and above"
+msgstr "PHP 8.1 以降でのみサポートされています"
+
+msgid "Open in a new tab"
+msgstr "新しいタブで開く"
+
+msgid "Open – close time"
+msgstr "開店 – 閉店時間"
+
+msgid "Opening hours, one line per day (Tab-widget skin)"
+msgstr "営業時間、1 日 1 行（Tab-widget スキン）"
+
+msgid "Optimization Library"
+msgstr "最適化ライブラリ"
+
+msgid "Optimize Widgets"
+msgstr "ウィジェットを最適化"
+
+msgid "Optimize deletion of content in the database"
+msgstr "データベース内のコンテンツの削除を最適化"
+
+msgid "Optimize saving post content into the database"
+msgstr "投稿コンテンツのデータベースへの保存を最適化"
+
+msgid "Optimize tab"
+msgstr "最適化タブ"
+
+msgid "Optimize tab → image lazy loading"
+msgstr "最適化タブ → 画像の遅延読み込み"
+
+msgid "Option to display ads in custom posts"
+msgstr "カスタム投稿に広告を表示するオプション"
+
+msgid "Option to display the Admin bar"
+msgstr "管理バーを表示するオプション"
+
+msgid "Order"
+msgstr "順序"
+
+msgid "Original contributors:"
+msgstr "元の貢献者："
+
+msgid "Other links"
+msgstr "その他のリンク"
+
+msgid "Outstanding color"
+msgstr "目立つ色"
+
+msgid "Overlay color"
+msgstr "オーバーレイの色"
+
+msgid "Overview"
+msgstr "概要"
+
+msgid "PHP errors are not shown to visitors"
+msgstr "PHP エラーは訪問者に表示されません"
+
+msgid "PHP is a supported version (%s)"
+msgstr "PHP はサポートされているバージョンです（%s）"
+
+msgid "POPUP"
+msgstr "ポップアップ"
+
+msgid "PRESETS"
+msgstr "プリセット"
+
+msgid "Panel title (e.g. Our services)"
+msgstr "パネルのタイトル（例：サービス一覧）"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Paste an export here, or upload a .json file"
+msgstr "ここにエクスポートデータを貼り付けるか、.json ファイルをアップロードしてください"
+
+msgid "Pending comments"
+msgstr "承認待ちのコメント"
+
+msgid "Performance"
+msgstr "パフォーマンス"
+
+msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
+msgstr "「%2$s」から %1$s を完全に削除しますか？この操作は元に戻せません。"
+
+msgid "Permission denied."
+msgstr "権限がありません。"
+
+msgid "Permissions-Policy: block geolocation, mic and camera"
+msgstr "Permissions-Policy：位置情報、マイク、カメラをブロック"
+
+msgid "Photo masonry"
+msgstr "フォトメーソンリー"
+
+msgid "Play video"
+msgstr "動画を再生"
+
+msgid "Please complete the reCAPTCHA to verify that you are not a robot"
+msgstr "ロボットでないことを確認するため、reCAPTCHA を完了してください"
+
+msgid "Please disable ad-blocker on your browser to access and view the content"
+msgstr "コンテンツにアクセスして閲覧するには、ブラウザの広告ブロッカーを無効にしてください"
+
+msgid "Please enter the content here"
+msgstr "ここにコンテンツを入力してください"
+
+msgid "Please wait"
+msgstr "お待ちください"
+
+msgid "Please wait for the email to be sent"
+msgstr "メールが送信されるまでお待ちください"
+
+msgid "Please wait: '+sopost+'"
+msgstr "お待ちください：'+sopost+'"
+
+msgid "Plugin development"
+msgstr "プラグイン開発"
+
+msgid "Policy"
+msgstr "ポリシー"
+
+msgid "Popup location"
+msgstr "ポップアップの位置"
+
+msgid "Popup save time (.. hours)"
+msgstr "ポップアップの保存時間（.. 時間）"
+
+msgid "Pre-filled message for WhatsApp / SMS (optional)"
+msgstr "WhatsApp / SMS 用の定型メッセージ（任意）"
+
+msgid "Preview"
+msgstr "プレビュー"
+
+msgid "Preview changes"
+msgstr "変更をプレビュー"
+
+msgid "Price + order button"
+msgstr "価格 + 注文ボタン"
+
+msgid "Privacy"
+msgstr "プライバシー"
+
+msgid "Privacy — Google Fonts & external requests"
+msgstr "プライバシー — Google Fonts と外部リクエスト"
+
+msgid "Process cropped images"
+msgstr "切り抜き画像を処理"
+
+msgid "Purple"
+msgstr "パープル"
+
+msgid "Quantity"
+msgstr "数量"
+
+msgid "Quick chips"
+msgstr "クイックチップ"
+
+msgid "Quick replies, one per line as  Label|https://link  (Live-chat skin)"
+msgstr "クイック返信、1 行に 1 つ  ラベル|https://link  の形式（Live-chat スキン）"
+
+msgid "Quick search"
+msgstr "クイック検索"
+
+msgid "Quick view button color"
+msgstr "クイックビューボタンの色"
+
+msgid "REST API left ON so the store keeps working"
+msgstr "ストアが動作し続けるように REST API はオンのまま"
+
+msgid "Reading settings → uncheck “Discourage search engines”"
+msgstr "表示設定 → 「検索エンジンでの表示を許可しない」のチェックを外す"
+
+msgid "Recommended. xmlrpc.php is a common brute-force and pingback-amplification target and almost nothing uses it now (except Jetpack)."
+msgstr "推奨。xmlrpc.php は一般的なブルートフォースおよびピンバック増幅の標的であり、現在ではほとんど使用されていません（Jetpack を除く）。"
+
+msgid "Record 404 hits"
+msgstr "404 ヒットを記録"
+
+msgid "Red"
+msgstr "レッド"
+
+msgid "Redirect"
+msgstr "リダイレクト"
+
+msgid "Redirect 301 to a custom page"
+msgstr "カスタムページへ 301 リダイレクト"
+
+msgid "Redirect 301 whole page"
+msgstr "ページ全体を 301 リダイレクト"
+
+msgid "Redirect the 404 page to the homepage or a custom page of your choice, leave the field blank if you want to redirect to the homepage"
+msgstr "404 ページをホームページまたは任意のカスタムページにリダイレクトします。ホームページにリダイレクトしたい場合はフィールドを空欄にしてください"
+
+msgid "Redirects"
+msgstr "リダイレクト"
+
+msgid "Referrer-Policy: strict-origin-when-cross-origin"
+msgstr "Referrer-Policy：strict-origin-when-cross-origin"
+
+msgid "Refresh"
+msgstr "更新"
+
+msgid "Registration is disabled on this site."
+msgstr "このサイトでは登録が無効になっています。"
+
+msgid "Registration role options"
+msgstr "登録権限のオプション"
+
+msgid "Remove XHTML closing tags from empty elements in HTML5"
+msgstr "HTML5 の空要素から XHTML の閉じタグを削除"
+
+msgid "Remove category slug from permalink"
+msgstr "パーマリンクからカテゴリースラッグを削除"
+
+msgid "Remove comments from HTML, JavaScript, and CSS"
+msgstr "HTML、JavaScript、CSS からコメントを削除"
+
+msgid "Remove img tag attributes"
+msgstr "img タグの属性を削除"
+
+msgid "Remove protocols (HTTP: and HTTPS:) from all URLs"
+msgstr "すべての URL からプロトコル（HTTP: および HTTPS:）を削除"
+
+msgid "Remove relative domain from internal URLs"
+msgstr "内部 URL から相対ドメインを削除"
+
+msgid "Remove tag slug from permalink"
+msgstr "パーマリンクからタグスラッグを削除"
+
+msgid "Remove the WordPress version tag"
+msgstr "WordPress のバージョンタグを削除"
+
+msgid "Remove unnecessary header tags"
+msgstr "不要なヘッダータグを削除"
+
+msgid "Removed"
+msgstr "削除しました"
+
+msgid "Removes attachments whose file is missing from disk. Every attachment is scanned, so the count is known only after it runs."
+msgstr "ファイルがディスク上に存在しない添付ファイルを削除します。すべての添付ファイルがスキャンされるため、件数は実行後にのみ判明します。"
+
+msgid "Removes metadata entries for thumbnail files that are missing from disk. It does not delete images."
+msgstr "ディスク上に存在しないサムネイルファイルのメタデータエントリを削除します。画像自体は削除しません。"
+
+msgid "Removes the RSD, WLW manifest and adjacent-post link tags from the page head."
+msgstr "ページヘッドから RSD、WLW マニフェスト、隣接投稿のリンクタグを削除します。"
+
+msgid "Removes the X-Pingback header. Pairs with disabling XML-RPC."
+msgstr "X-Pingback ヘッダーを削除します。XML-RPC の無効化と組み合わせて使用します。"
+
+msgid "Removes the built-in code editor under Appearance and Plugins. If an attacker gets into wp-admin, they cannot use it to edit PHP files. You edit files over SFTP instead."
+msgstr "「外観」および「プラグイン」内の組み込みコードエディターを削除します。攻撃者が wp-admin に侵入しても、それを使って PHP ファイルを編集できません。代わりに SFTP 経由でファイルを編集します。"
+
+msgid "Removes the generator meta tag. A small tidy-up — not a security measure on its own, since asset fingerprints reveal the version anyway."
+msgstr "generator メタタグを削除します。ちょっとした整理であり、それ自体はセキュリティ対策ではありません。いずれにせよアセットのフィンガープリントからバージョンが判明するためです。"
+
+msgid "Removes wp-embed.js if you do not embed other WordPress posts."
+msgstr "他の WordPress 投稿を埋め込まない場合、wp-embed.js を削除します。"
+
+msgid "Requested URL"
+msgstr "リクエストされた URL"
+
+msgid "Requests"
+msgstr "リクエスト"
+
+msgid "Reset this setting"
+msgstr "この設定をリセット"
+
+msgid "Restore previous configuration"
+msgstr "以前の設定を復元"
+
+msgid "Retrieve the API Client ID and Client Secret from your Google Developers project and add them to the two fields above"
+msgstr "Google Developers プロジェクトから API のクライアント ID とクライアントシークレットを取得し、上の 2 つのフィールドに追加してください"
+
+msgid "Retrieve the Site Key and Secret Key from your Google reCAPTCHA project and add them to the two fields above"
+msgstr "Google reCAPTCHA プロジェクトからサイトキーとシークレットキーを取得し、上の 2 つのフィールドに追加してください"
+
+msgid "Reveal"
+msgstr "表示"
+
+msgid "Rewrite every [sc …] tag in your content to [ht-snippet …], keeping all attributes. Preview first; applying edits post content, so take a backup. Tip: you don’t have to convert — imported snippets already answer [sc …] once Shortcoder is deactivated."
+msgstr "コンテンツ内のすべての [sc …] タグを、すべての属性を保持したまま [ht-snippet …] に書き換えます。まずプレビューしてください。適用すると投稿コンテンツが編集されるため、バックアップを取ってください。ヒント：変換する必要はありません。Shortcoder を無効化すれば、インポート済みのスニペットが既に [sc …] に応答します。"
+
+msgid "Right drawer"
+msgstr "右ドロワー"
+
+msgid "Role"
+msgstr "権限"
+
+msgid "Run shortcodes in category / tag descriptions"
+msgstr "カテゴリー / タグの説明でショートコードを実行"
+
+msgid "Run shortcodes in excerpts"
+msgstr "抜粋でショートコードを実行"
+
+msgid "Run shortcodes in menu items"
+msgstr "メニュー項目でショートコードを実行"
+
+msgid "Run shortcodes in widgets"
+msgstr "ウィジェットでショートコードを実行"
+
+msgid "Run the scan first so there is something to self-host."
+msgstr "まずスキャンを実行して、セルフホストする対象を用意してください。"
+
+msgid "Run “%s” now? This permanently deletes matching items and cannot be undone."
+msgstr "「%s」を今すぐ実行しますか？これは一致する項目を完全に削除し、元に戻せません。"
+
+msgid "SAVE CONTENT"
+msgstr "コンテンツを保存"
+
+msgid "SCHEDULE"
+msgstr "スケジュール"
+
+msgid "SECURITY"
+msgstr "セキュリティ"
+
+msgid "SEO optimization"
+msgstr "SEO 最適化"
+
+msgid "SETTING"
+msgstr "設定"
+
+msgid "SIGN"
+msgstr "署名"
+
+msgid "SMTP authentication"
+msgstr "SMTP 認証"
+
+msgid "SMTP port"
+msgstr "SMTP ポート"
+
+msgid "SMTP protocol"
+msgstr "SMTP プロトコル"
+
+msgid "SMTP server"
+msgstr "SMTP サーバー"
+
+msgid "SNIPPETS"
+msgstr "スニペット"
+
+msgid "SVG uploads are unavailable: the sanitiser library is missing."
+msgstr "SVG のアップロードは利用できません：サニタイザーライブラリがありません。"
+
+msgid "Sat"
+msgstr "土"
+
+msgid "Save changes"
+msgstr "変更を保存"
+
+msgid "Save images to media when copying from another source"
+msgstr "別のソースからコピーする際に画像をメディアに保存"
+
+msgid "Save interval (minutes)"
+msgstr "保存間隔（分）"
+
+msgid "Save schedule"
+msgstr "スケジュールを保存"
+
+msgid "Save services"
+msgstr "サービスを保存"
+
+msgid "Save shortcode status"
+msgstr "ショートコードの状態を保存"
+
+msgid "Save snippet"
+msgstr "スニペットを保存"
+
+msgid "Saved %d service(s)."
+msgstr "%d 件のサービスを保存しました。"
+
+msgid "Saved."
+msgstr "保存しました。"
+
+msgid "Scan external requests"
+msgstr "外部リクエストをスキャン"
+
+msgid "Scan with your phone"
+msgstr "スマートフォンでスキャン"
+
+msgid "Scanning your home page…"
+msgstr "ホームページをスキャン中…"
+
+msgid "Screen refreshed"
+msgstr "画面を更新しました"
+
+msgid "Scroll bar color"
+msgstr "スクロールバーの色"
+
+msgid "Search"
+msgstr "検索"
+
+msgid "Search below, click any icon to copy its ready-made shortcode, then paste it where you want the icon to appear."
+msgstr "下で検索し、任意のアイコンをクリックして用意されたショートコードをコピーし、アイコンを表示したい場所に貼り付けてください。"
+
+msgid "Search icons — e.g. cart, arrow, brand-facebook…"
+msgstr "アイコンを検索 — 例：cart、arrow、brand-facebook…"
+
+msgid "Search settings…"
+msgstr "設定を検索…"
+
+msgid "Seconds before the bubble appears"
+msgstr "吹き出しが表示されるまでの秒数"
+
+msgid "Secret key"
+msgstr "シークレットキー"
+
+msgid "Security"
+msgstr "セキュリティ"
+
+msgid "Security and speed for a shop, chosen not to interfere with the store. The REST API is left fully on — WooCommerce cart and checkout need it — and permalinks are left untouched."
+msgstr "ストアに影響を与えないように選ばれた、ショップ向けのセキュリティと速度。REST API は完全にオンのままです（WooCommerce のカートとチェックアウトに必要なため）。また、パーマリンクはそのままにしています。"
+
+msgid "Security check failed. Please start the sign-in again."
+msgstr "セキュリティチェックに失敗しました。もう一度サインインをやり直してください。"
+
+msgid "Security hardening"
+msgstr "セキュリティ強化"
+
+msgid "Security headers (frame, nosniff, referrer)"
+msgstr "セキュリティヘッダー（frame、nosniff、referrer）"
+
+msgid "Security response headers"
+msgstr "セキュリティレスポンスヘッダー"
+
+msgid "Security response headers are sent"
+msgstr "セキュリティレスポンスヘッダーが送信されています"
+
+msgid "Security tab → Block user enumeration"
+msgstr "セキュリティタブ → ユーザー列挙をブロック"
+
+msgid "Security tab → Disable unused endpoints"
+msgstr "セキュリティタブ → 未使用のエンドポイントを無効化"
+
+msgid "Security tab → Limit login attempts"
+msgstr "セキュリティタブ → ログイン試行を制限"
+
+msgid "Security tab → Lock down the admin"
+msgstr "セキュリティタブ → 管理画面を保護"
+
+msgid "Security tab → Privacy → Scan external requests"
+msgstr "セキュリティタブ → プライバシー → 外部リクエストをスキャン"
+
+msgid "Security tab → Privacy → self-host Google Fonts"
+msgstr "セキュリティタブ → プライバシー → Google Fonts をセルフホスト"
+
+msgid "Security tab → Security response headers"
+msgstr "セキュリティタブ → セキュリティレスポンスヘッダー"
+
+msgid "Security: block user enumeration, limit logins, disable XML-RPC, hide the version, disable the file editor"
+msgstr "セキュリティ：ユーザー列挙をブロック、ログインを制限、XML-RPC を無効化、バージョンを非表示、ファイルエディターを無効化"
+
+msgid "Select admin"
+msgstr "管理者を選択"
+
+msgid "Select background color"
+msgstr "背景色を選択"
+
+msgid "Select button border color"
+msgstr "ボタンの枠線の色を選択"
+
+msgid "Select button color"
+msgstr "ボタンの色を選択"
+
+msgid "Select icon"
+msgstr "アイコンを選択"
+
+msgid "Select icon color"
+msgstr "アイコンの色を選択"
+
+msgid "Select image"
+msgstr "画像を選択"
+
+msgid "Select redirect page"
+msgstr "リダイレクトページを選択"
+
+msgid "Select the custom post for which you want to display TOC content"
+msgstr "目次コンテンツを表示したいカスタム投稿を選択"
+
+msgid "Select the custom post for which you want to show ads"
+msgstr "広告を表示したいカスタム投稿を選択"
+
+msgid "Select the displayed logo"
+msgstr "表示するロゴを選択"
+
+msgid "Select the page to hide"
+msgstr "非表示にするページを選択"
+
+msgid "Select title color and button"
+msgstr "タイトルの色とボタンを選択"
+
+msgid "Selection color"
+msgstr "選択範囲の色"
+
+msgid "Self-host Google Fonts"
+msgstr "Google Fonts をセルフホスト"
+
+msgid "Self-hosted %1$d font file(s) across %2$d stylesheet(s). Turn on “Self-host Google Fonts” above and save."
+msgstr "%2$d 個のスタイルシートにわたって %1$d 個のフォントファイルをセルフホストしました。上の「Google Fonts をセルフホスト」をオンにして保存してください。"
+
+msgid "Send"
+msgstr "送信"
+
+msgid "Send security headers"
+msgstr "セキュリティヘッダーを送信"
+
+msgid "Send test email"
+msgstr "テストメールを送信"
+
+msgid "Sender email address"
+msgstr "送信者のメールアドレス"
+
+msgid "Sender name"
+msgstr "送信者名"
+
+msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
+msgstr "コンテンツサイト向けの妥当なデフォルト設定：長い投稿の目次、軽量なページ、基本的なセキュリティ強化。"
+
+msgid "Services"
+msgstr "サービス"
+
+msgid "Services panel (slide-up from the bottom bar)"
+msgstr "サービスパネル（ボトムバーからスライドアップ）"
+
+msgid "Set access and viewing permissions"
+msgstr "アクセスと閲覧の権限を設定"
+
+msgid "Set the colour (hex, rgb or a CSS name)."
+msgstr "色を設定します（hex、rgb、または CSS 名）。"
+
+msgid "Set the size in pixels."
+msgstr "サイズをピクセルで設定します。"
+
+msgid "Set up Adsense ads"
+msgstr "AdSense 広告を設定"
+
+msgid "Set up cookie notifications"
+msgstr "クッキー通知を設定"
+
+msgid "Set up the ads.txt file"
+msgstr "ads.txt ファイルを設定"
+
+msgid "Setting group"
+msgstr "設定グループ"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "Settings > Permalinks > Save changes"
+msgstr "設定 > パーマリンク > 変更を保存"
+
+msgid "Settings changed"
+msgstr "設定を変更しました"
+
+msgid "Shortcode"
+msgstr "ショートコード"
+
+msgid "Shortcode content visible only to group of users"
+msgstr "特定のユーザーグループにのみ表示されるショートコードコンテンツ"
+
+msgid "Shortcode reference"
+msgstr "ショートコードリファレンス"
+
+msgid "Shortcode to display date"
+msgstr "日付を表示するショートコード"
+
+msgid "Shortcodes"
+msgstr "ショートコード"
+
+msgid "Show a floating “Services” button on desktop"
+msgstr "デスクトップにフローティングの「サービス」ボタンを表示"
+
+msgid "Show a greeting bubble near the button"
+msgstr "ボタンの近くにあいさつ吹き出しを表示"
+
+msgid "Show a scan-to-open QR on desktop (Zalo, WhatsApp, Telegram, Viber, Line; WeChat always)"
+msgstr "デスクトップにスキャンで開く QR を表示（Zalo、WhatsApp、Telegram、Viber、Line；WeChat は常時）"
+
+msgid "Show from"
+msgstr "表示開始"
+
+msgid "Show full image"
+msgstr "全画像を表示"
+
+msgid "Show on devices"
+msgstr "表示するデバイス"
+
+msgid "Show the bar on tablets too (up to 1024px)"
+msgstr "タブレットでもバーを表示（最大 1024px）"
+
+msgid "Show to"
+msgstr "表示終了"
+
+msgid "Show until"
+msgstr "表示終了"
+
+msgid "Sign in with Google"
+msgstr "Google でサインイン"
+
+msgid "Sign in with Google account"
+msgstr "Google アカウントでサインイン"
+
+msgid "Signature shortcode"
+msgstr "署名ショートコード"
+
+msgid "Site health"
+msgstr "サイトヘルス"
+
+msgid "Site key"
+msgstr "サイトキー"
+
+msgid "Smooth-scroll is a library that enables you to create a smooth scrolling effect, providing users with a perception of faster page navigation"
+msgstr "Smooth-scroll は、なめらかなスクロール効果を作り出せるライブラリで、ユーザーにページ移動がより速いという感覚を提供します"
+
+msgid "Snippet deleted."
+msgstr "スニペットを削除しました。"
+
+msgid "Snippet saved."
+msgstr "スニペットを保存しました。"
+
+msgid "Something went wrong."
+msgstr "問題が発生しました。"
+
+msgid "Source code and issues:"
+msgstr "ソースコードと問題報告："
+
+msgid "Spacing below"
+msgstr "下の余白"
+
+msgid "Spam comments"
+msgstr "スパムコメント"
+
+msgid "Spin it — handy for loaders."
+msgstr "回転させる — ローダーに便利です。"
+
+msgid "Stacked banners"
+msgstr "積み重ねバナー"
+
+msgid "Status:"
+msgstr "ステータス："
+
+msgid "Step 1: Go to Appearance > Menus > Create a new menu > check Navigation bar (Horse Tools)"
+msgstr "ステップ 1：外観 > メニュー > 新しいメニューを作成 > ナビゲーションバー（Horse Tools）にチェック"
+
+msgid "Step 2: Below, if you want the menu to open on a specific button, add <b style=\"color:red\">#horsenavi</b> to the field (#id or .class). For (Enter link), enter <b style=\"color:red\">#</b>. Note: Only add it to one of the 5 buttons below"
+msgstr "ステップ 2：以下で、特定のボタンでメニューを開きたい場合は、（#id または .class）フィールドに <b style=\"color:red\">#horsenavi</b> を追加してください。（リンクを入力）には <b style=\"color:red\">#</b> を入力してください。注意：以下の 5 つのボタンのうち 1 つにのみ追加してください"
+
+msgid "Still:"
+msgstr "静止画："
+
+msgid "Stop cropping"
+msgstr "切り抜きを停止"
+
+msgid "Stop cropping all"
+msgstr "すべての切り抜きを停止"
+
+msgid "Story circles"
+msgstr "ストーリーサークル"
+
+msgid "Subtitle / price / coupon code"
+msgstr "サブタイトル / 価格 / クーポンコード"
+
+msgid "Success"
+msgstr "成功"
+
+msgid "Sun"
+msgstr "日"
+
+msgid "Support multi-byte UTF-8 encoding (if you see strange characters)"
+msgstr "マルチバイト UTF-8 エンコーディングをサポート（文字化けが見られる場合）"
+
+msgid "Support quick notification setup, allowing web managers to easily deliver useful and timely content, helping users stay informed effortlessly"
+msgstr "クイックな通知設定をサポートし、ウェブ管理者が有用でタイムリーなコンテンツを簡単に配信できるようにして、ユーザーが手間なく情報を得られるようにします"
+
+msgid "Support team"
+msgstr "サポートチーム"
+
+msgid "Switch off any shortcode you do not use. A disabled shortcode simply stops rendering. This only affects Horse Tools shortcodes — never those from other plugins."
+msgstr "使用しないショートコードはオフにできます。無効化されたショートコードは単に表示されなくなります。これは Horse Tools のショートコードにのみ影響し、他のプラグインのものには影響しません。"
+
+msgid "System"
+msgstr "システム"
+
+msgid "TOC"
+msgstr "目次"
+
+msgid "TOC Settings"
+msgstr "目次の設定"
+
+msgid "TOOL"
+msgstr "ツール"
+
+msgid "Table name"
+msgstr "テーブル名"
+
+msgid "Table of Contents"
+msgstr "目次"
+
+msgid "Table of contents configuration"
+msgstr "目次の設定"
+
+msgid "Table of contents on posts"
+msgstr "投稿の目次"
+
+msgid "Tabler icon name (e.g. snowflake) — or leave blank and use an image"
+msgstr "Tabler アイコン名（例：snowflake）— または空欄にして画像を使用"
+
+msgid "Tag"
+msgstr "タグ"
+
+msgid "Tags (comma separated)"
+msgstr "タグ（カンマ区切り）"
+
+msgid "Test SMTP email sending from your website"
+msgstr "ウェブサイトからの SMTP メール送信をテスト"
+
+msgid "Text color"
+msgstr "文字色"
+
+msgid "Text color of the input / select box"
+msgstr "入力 / 選択ボックスの文字色"
+
+msgid "Text editor tool"
+msgstr "テキストエディターツール"
+
+msgid "That address cannot be fetched from this server."
+msgstr "そのアドレスはこのサーバーから取得できません。"
+
+msgid "That did not look like a Google Fonts stylesheet."
+msgstr "それは Google Fonts のスタイルシートではないようです。"
+
+msgid "That file could not be read as JSON."
+msgstr "そのファイルは JSON として読み込めませんでした。"
+
+msgid "That is not a valid Horse Tools export file."
+msgstr "それは有効な Horse Tools のエクスポートファイルではありません。"
+
+msgid "That is not a valid snippet export file."
+msgstr "それは有効なスニペットのエクスポートファイルではありません。"
+
+msgid "That name is reserved by another Horse Tools shortcode. Pick a different one."
+msgstr "その名前は別の Horse Tools ショートコードで予約されています。別の名前を選んでください。"
+
+msgid "That preset does not exist."
+msgstr "そのプリセットは存在しません。"
+
+msgid "The \"Index Now\" link will be added in the custom post management section to allow quick index submission"
+msgstr "「今すぐインデックス」リンクがカスタム投稿の管理セクションに追加され、素早いインデックス送信が可能になります"
+
+msgid "The Avatar, Live-chat and Tab-widget skins use the fields below."
+msgstr "Avatar、Live-chat、Tab-widget スキンは以下のフィールドを使用します。"
+
+msgid "The GD library has been installed"
+msgstr "GD ライブラリはインストールされています"
+
+msgid "The GD library has not been installed"
+msgstr "GD ライブラリはインストールされていません"
+
+msgid "The address %1$s was locked out after repeated failed logins on %2$s."
+msgstr "アドレス %1$s は、%2$s での繰り返されるログイン失敗の後にロックアウトされました。"
+
+msgid "The changing image is square, with the standard size being 100x100 pixels"
+msgstr "切り替わる画像は正方形で、標準サイズは 100x100 ピクセルです"
+
+msgid "The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot."
+msgstr "直近のインポート前の設定が保存されています。復元すると、すべてのグループがそのスナップショットに戻ります。"
+
+msgid "The debug file does not exist"
+msgstr "デバッグファイルが存在しません"
+
+msgid "The feature adds advanced functions when uploading images, such as adding frames, flipping images... allowing you to automatically customize your images during upload. Picture frame (PNG)"
+msgstr "この機能は、フレームの追加や画像の反転など、画像アップロード時に高度な機能を追加し、アップロード中に画像を自動的にカスタマイズできるようにします。写真フレーム（PNG）"
+
+msgid "The file contained no Horse Tools settings to import."
+msgstr "ファイルにはインポートする Horse Tools の設定が含まれていませんでした。"
+
+msgid "The file name will be your domain name"
+msgstr "ファイル名はあなたのドメイン名になります"
+
+msgid "The file path is invalid or not a file"
+msgstr "ファイルパスが無効か、ファイルではありません"
+
+msgid "The first image becomes the featured image"
+msgstr "最初の画像がアイキャッチ画像になります"
+
+msgid "The font files could not be downloaded."
+msgstr "フォントファイルをダウンロードできませんでした。"
+
+msgid "The full recommended hardening set. The one thing left out is the full REST API block, which can break forms and guests — enable that yourself on the Security screen if your site truly needs none of it."
+msgstr "推奨される完全なセキュリティ強化セット。唯一除外されているのは REST API の完全ブロックで、これはフォームやゲストの動作を壊す可能性があります。サイトがまったく必要としない場合は、セキュリティ画面でご自身で有効にしてください。"
+
+msgid "The function of lazy loading images"
+msgstr "画像の遅延読み込み機能"
+
+msgid "The home page returned no HTML to scan."
+msgstr "ホームページはスキャンする HTML を返しませんでした。"
+
+msgid "The icon on its own."
+msgstr "アイコン単体。"
+
+msgid "The optimisation module is on"
+msgstr "最適化モジュールがオンになっています"
+
+msgid "The original image size when added to the post"
+msgstr "投稿に追加する際の元の画像サイズ"
+
+msgid "The previous configuration has been restored."
+msgstr "以前の設定が復元されました。"
+
+msgid "The reCAPTCHA is invalid"
+msgstr "reCAPTCHA が無効です"
+
+msgid "The score threshold applies to reCAPTCHA v3 only. Google returns 1.0 for traffic it is confident is human and 0.0 for traffic it is confident is a bot; 0.5 is the recommended starting point. Raise it to block more aggressively, lower it if real visitors are being turned away."
+msgstr "スコアのしきい値は reCAPTCHA v3 にのみ適用されます。Google は人間だと確信するトラフィックに 1.0 を、ボットだと確信するトラフィックに 0.0 を返します。0.5 が推奨される出発点です。より厳しくブロックするには上げ、実際の訪問者が拒否されている場合は下げてください。"
+
+msgid "The site is served over HTTPS"
+msgstr "サイトは HTTPS で配信されています"
+
+msgid "The site is visible to search engines"
+msgstr "サイトは検索エンジンに表示されています"
+
+msgid "The standard size for the logo is 280x80 PX"
+msgstr "ロゴの標準サイズは 280x80 PX です"
+
+msgid "The table of contents is an incredibly useful feature that allows readers to easily grasp the content by summarizing the headings (h-tags) in the article"
+msgstr "目次は、記事内の見出し（h タグ）をまとめることで読者がコンテンツを簡単に把握できる、たいへん便利な機能です"
+
+msgid "The text to replace Buy Now on the product page"
+msgstr "商品ページで「今すぐ購入」を置き換えるテキスト"
+
+msgid "The theme/plugin file editor is disabled"
+msgstr "テーマ / プラグインのファイルエディターが無効になっています"
+
+msgid "There is no backup to restore."
+msgstr "復元するバックアップがありません。"
+
+msgid "These groups will change"
+msgstr "これらのグループが変更されます"
+
+msgid "These stop WordPress installing updates on its own — the site still checks for them, so the Dashboard and Plugins screens keep showing what is available and you apply updates when you choose. It never stops checking, so you are never left unaware of a security release."
+msgstr "これらは WordPress が独自に更新をインストールするのを止めます。サイトは引き続き更新を確認するため、ダッシュボードとプラグインの画面には利用可能なものが表示され続け、任意のタイミングで更新を適用できます。確認を止めることは決してないため、セキュリティリリースを見逃すことはありません。"
+
+msgid "This SVG file could not be parsed and was rejected."
+msgstr "この SVG ファイルは解析できず、拒否されました。"
+
+msgid "This blocks the REST API for logged-out visitors. It WILL break: WooCommerce cart and checkout for guests, Contact Form 7 and other REST-based forms, comment submission on block themes, and oEmbed. Only enable it if your site uses none of these."
+msgstr "これはログアウトした訪問者に対して REST API をブロックします。次のものが必ず壊れます：ゲスト向けの WooCommerce のカートとチェックアウト、Contact Form 7 やその他の REST ベースのフォーム、ブロックテーマでのコメント送信、oEmbed。サイトがこれらのいずれも使用していない場合にのみ有効にしてください。"
+
+msgid "This content is locked! You need to log in to view"
+msgstr "このコンテンツはロックされています！閲覧するにはログインが必要です"
+
+msgid "This feature allows you to add CSS, JS, and HTML code to your WordPress site through hooks like WP head, WP body, WP footer, and WP login, making it easy and convenient to supplement your code"
+msgstr "この機能では、WP head、WP body、WP footer、WP login などのフックを通じて WordPress サイトに CSS、JS、HTML コードを追加でき、コードの補完が簡単で便利になります"
+
+msgid "This feature allows you to add Shortcode to post titles, which is very convenient for using custom tools"
+msgstr "この機能では投稿タイトルにショートコードを追加でき、カスタムツールの利用にたいへん便利です"
+
+msgid "This feature allows you to add the Classic Editor to the category description box when editing posts or products"
+msgstr "この機能では、投稿や商品を編集する際にカテゴリー説明ボックスにクラシックエディターを追加できます"
+
+msgid "This feature allows you to configure website redirects with multiple options such as 301, 404, and 503, making management much simpler"
+msgstr "この機能では、301、404、503 などの複数のオプションでウェブサイトのリダイレクトを設定でき、管理がずっと簡単になります"
+
+msgid "This feature allows you to customize the currency symbol as desired"
+msgstr "この機能では、通貨記号を自由にカスタマイズできます"
+
+msgid "This feature allows you to only display Horse Tools to a specific Admin account"
+msgstr "この機能では、特定の管理者アカウントにのみ Horse Tools を表示できます"
+
+msgid "This feature allows you to set newly edited posts to be displayed first in the main loop"
+msgstr "この機能では、新しく編集された投稿をメインループの最初に表示するように設定できます"
+
+msgid "This feature compiles various shortcode templates with essential functionalities that are frequently used to enhance the user experience in WordPress"
+msgstr "この機能は、WordPress でのユーザー体験を向上させるために頻繁に使用される、基本的な機能を備えたさまざまなショートコードテンプレートをまとめたものです"
+
+msgid "This feature helps optimize cleanup tasks such as clearing content, comments, and the media library. It makes your website cleaner and more optimized"
+msgstr "この機能は、コンテンツ、コメント、メディアライブラリのクリーンアップなどのタスクを最適化するのに役立ちます。ウェブサイトをよりクリーンで最適化された状態にします"
+
+msgid "This feature uses the Fancybox library, allowing you to open images in posts for viewing"
+msgstr "この機能は Fancybox ライブラリを使用し、投稿内の画像を開いて閲覧できるようにします"
+
+msgid "This feature was removed in Horse Tools 1.0.0. It opened an affiliate URL in a hidden off-screen window every time a visitor clicked anywhere on the page. That is affiliate cookie stuffing: it deceives your visitors, breaks the terms of every major affiliate network and of Google AdSense, and can get your domain and your ad accounts banned."
+msgstr "この機能は Horse Tools 1.0.0 で削除されました。訪問者がページのどこかをクリックするたびに、非表示の画面外ウィンドウでアフィリエイト URL を開いていました。これはアフィリエイトのクッキースタッフィングです。訪問者を欺き、すべての主要なアフィリエイトネットワークおよび Google AdSense の規約に違反し、ドメインや広告アカウントが停止される可能性があります。"
+
+msgid "This feature will add nofollow and _blank to external links on your site"
+msgstr "この機能は、サイトの外部リンクに nofollow と _blank を追加します"
+
+msgid "This feature will hide the plugin you want from the plugin management page"
+msgstr "この機能は、指定したプラグインをプラグイン管理ページから非表示にします"
+
+msgid "This feature will use the title of the post as the description for the image when uploaded"
+msgstr "この機能は、アップロード時に投稿のタイトルを画像の説明として使用します"
+
+msgid "This function allows you to customize the color of the scrollbar to your liking"
+msgstr "この機能では、スクロールバーの色をお好みにカスタマイズできます"
+
+msgid "This function allows you to delete images attached to posts when deleting the posts themselves. Note that if multiple posts use the same image, it will also be deleted when removing the post"
+msgstr "この機能では、投稿自体を削除する際に投稿に添付された画像を削除できます。複数の投稿が同じ画像を使用している場合、投稿を削除するとその画像も削除される点にご注意ください"
+
+msgid "This function allows you to initiate a dark mode library, enabling the website to switch between light and dark modes"
+msgstr "この機能では、ダークモードライブラリを起動して、ウェブサイトがライトモードとダークモードを切り替えられるようにします"
+
+msgid "This function allows you to redirect 301 links to the target page"
+msgstr "この機能では、301 リンクを目的のページにリダイレクトできます"
+
+msgid "This function will redirect all of your website pages to the destination page of your choice"
+msgstr "この機能は、ウェブサイトのすべてのページを任意の遷移先ページにリダイレクトします"
+
+msgid "This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site."
+msgstr "これには、モジュールが現在有効かどうかにかかわらず、すべての設定グループが含まれます。アップロードされたフォントファイルは含まれません。それらはこのサイト上に存在します。"
+
+msgid "This is an email notification of your successful registration"
+msgstr "これは登録が正常に完了したことをお知らせするメール通知です"
+
+msgid "This shortcode allows you to lock any content, and only the selected group of logged-in users can view it"
+msgstr "このショートコードでは任意のコンテンツをロックでき、選択したログイン済みユーザーのグループのみが閲覧できます"
+
+msgid "This shortcode is used to create a download button with a timeout"
+msgstr "このショートコードは、タイムアウト付きのダウンロードボタンを作成するために使用します"
+
+msgid "This shortcode is used to display the date in the post title. Please note that you need to enable the shortcode usage in the post title under the POST, PAGE section"
+msgstr "このショートコードは、投稿タイトルに日付を表示するために使用します。POST、PAGE セクションで投稿タイトルでのショートコード使用を有効にする必要がある点にご注意ください"
+
+msgid "This website uses cookies to ensure you get the best experience on our site. By continuing to browse, you agree to our use of cookies. For more information, please read our Cookie Policy"
+msgstr "当ウェブサイトは、サイトで最良の体験を提供するためにクッキーを使用しています。閲覧を続けることで、当サイトのクッキー使用に同意したものとみなされます。詳細については、クッキーポリシーをお読みください"
+
+msgid "Thu"
+msgstr "木"
+
+msgid "Tidy up"
+msgstr "整理"
+
+msgid "Time"
+msgstr "時間"
+
+msgid "Time is up"
+msgstr "時間切れです"
+
+msgid "Time:"
+msgstr "時間："
+
+msgid "Title"
+msgstr "タイトル"
+
+msgid "Title color"
+msgstr "タイトルの色"
+
+msgid "Title text and icon color"
+msgstr "タイトルテキストとアイコンの色"
+
+msgid "To"
+msgstr "終了"
+
+msgid "To add advertisements to your website, simply enable this feature. It provides you with various ad options to meet your distribution needs"
+msgstr "ウェブサイトに広告を追加するには、この機能を有効にするだけです。配信ニーズに合わせたさまざまな広告オプションを提供します"
+
+msgid "To create a menu on the navigation bar:"
+msgstr "ナビゲーションバーにメニューを作成するには："
+
+msgid "Too many failed attempts. Try again in about %d minute(s)."
+msgstr "試行の失敗が多すぎます。約 %d 分後にもう一度お試しください。"
+
+msgid "Top and bottom positions"
+msgstr "上部と下部の位置"
+
+msgid "Total data"
+msgstr "総データ"
+
+msgid "Total:"
+msgstr "合計："
+
+msgid "Transparency level"
+msgstr "透明度"
+
+msgid "Trashed comments"
+msgstr "ゴミ箱内のコメント"
+
+msgid "Tue"
+msgstr "火"
+
+msgid "Turn Horse Tools shortcodes on or off"
+msgstr "Horse Tools のショートコードをオンまたはオフにする"
+
+msgid "Turn off WP_DEBUG_DISPLAY on a live site."
+msgstr "本番サイトでは WP_DEBUG_DISPLAY をオフにしてください。"
+
+msgid "Turns off the RSS and Atom feeds if your site does not publish one."
+msgstr "サイトがフィードを公開していない場合、RSS および Atom フィードをオフにします。"
+
+msgid "Type"
+msgstr "タイプ"
+
+msgid "Type any shortcode name (without brackets) to list the posts and pages that contain it — handy before you change or remove one."
+msgstr "任意のショートコード名（括弧なし）を入力すると、それを含む投稿と固定ページが一覧表示されます。変更または削除する前に便利です。"
+
+msgid "Type the number of the shortcode to insert:"
+msgstr "挿入するショートコードの番号を入力："
+
+msgid "UPLOAD FONT"
+msgstr "フォントをアップロード"
+
+msgid "URL:"
+msgstr "URL："
+
+msgid "URL: Unverified"
+msgstr "URL：未検証"
+
+msgid "URL: does not exist"
+msgstr "URL：存在しません"
+
+msgid "USE FONT"
+msgstr "フォントを使用"
+
+msgid "USER"
+msgstr "ユーザー"
+
+msgid "Unable to read the uploaded SVG file."
+msgstr "アップロードされた SVG ファイルを読み込めません。"
+
+msgid "Unable to send email!"
+msgstr "メールを送信できません！"
+
+msgid "Unable to write the sanitised SVG file."
+msgstr "サニタイズされた SVG ファイルを書き込めません。"
+
+msgid "Undo the last import"
+msgstr "直前のインポートを元に戻す"
+
+msgid "Upload avatars"
+msgstr "アバターをアップロード"
+
+msgid "Upload font error"
+msgstr "フォントのアップロードエラー"
+
+msgid "Upload font success"
+msgstr "フォントのアップロードに成功しました"
+
+msgid "Uploaded images are compressed"
+msgstr "アップロードされた画像は圧縮されます"
+
+msgid "Use fonts on the web"
+msgstr "ウェブでフォントを使用"
+
+msgid "Use shortcodes"
+msgstr "ショートコードを使用"
+
+msgid "Use titles as descriptions for images"
+msgstr "タイトルを画像の説明として使用"
+
+msgid "Use titles as image alt text"
+msgstr "タイトルを画像の代替テキストとして使用"
+
+msgid "Use with care: your theme may need several image sizes to display correctly."
+msgstr "ご注意ください：テーマが正しく表示するために複数の画像サイズを必要とする場合があります。"
+
+msgid "Use:"
+msgstr "使用："
+
+msgid "User enumeration is blocked"
+msgstr "ユーザー列挙はブロックされています"
+
+msgid "Video cards"
+msgstr "動画カード"
+
+msgid "View"
+msgstr "表示"
+
+msgid "Visit this page to get the SVG icon:"
+msgstr "SVG アイコンを取得するにはこのページにアクセスしてください："
+
+msgid "WOO"
+msgstr "WOO"
+
+msgid "WOOCOMMERCE"
+msgstr "WOOCOMMERCE"
+
+msgid "WP BODY"
+msgstr "WP BODY"
+
+msgid "WP FOOTER"
+msgstr "WP FOOTER"
+
+msgid "WP HEAD"
+msgstr "WP HEAD"
+
+msgid "WP LOGIN"
+msgstr "WP LOGIN"
+
+msgid "Wait..."
+msgstr "お待ちください..."
+
+msgid "Watermark image compared to main image"
+msgstr "メイン画像に対する透かし画像の割合"
+
+msgid "We apologize, the website is currently undergoing maintenance. Please wait for a moment"
+msgstr "申し訳ございません。ウェブサイトは現在メンテナンス中です。しばらくお待ちください"
+
+msgid "We are currently closed"
+msgstr "現在は営業時間外です"
+
+msgid "We reply quickly"
+msgstr "すぐに返信いたします"
+
+msgid "Wed"
+msgstr "水"
+
+msgid "Weekly"
+msgstr "毎週"
+
+msgid "Welcome to Horse Tools"
+msgstr "Horse Tools へようこそ"
+
+msgid "Welcome to the website"
+msgstr "ウェブサイトへようこそ"
+
+msgid "When someone copies text from your site, a short line you set is added after it — their selection is kept, nothing is replaced. Useful for a \"Source: yoursite.com\" credit."
+msgstr "誰かがサイトからテキストをコピーすると、設定した短い行がその後に追加されます。選択範囲は保持され、何も置き換えられません。「Source: yoursite.com」のようなクレジットに便利です。"
+
+msgid "When you change a published post or page URL — its slug, its parent, or the whole path — the old address is redirected to the new one. WordPress already does this for a simple slug change; this also covers moves that core misses, and only ever acts on a URL that would otherwise 404."
+msgstr "公開済みの投稿や固定ページの URL（スラッグ、親、パス全体）を変更すると、古いアドレスが新しいアドレスにリダイレクトされます。WordPress は単純なスラッグ変更については既にこれを行いますが、この機能はコアが見逃す移動もカバーし、そうでなければ 404 になる URL に対してのみ動作します。"
+
+msgid "When your theme or a plugin loads fonts from Google, every visitor's IP is sent to Google — which GDPR treats as a data transfer. This serves downloaded copies from your own domain instead. Scan first, then click self-host; this works for fonts loaded the standard way (if a font still loads from Google afterwards, your theme hard-codes it — the scan will show you)."
+msgstr "テーマやプラグインが Google からフォントを読み込むと、すべての訪問者の IP が Google に送信されます。GDPR ではこれをデータ転送とみなします。この機能は代わりに、ダウンロードしたコピーを自分のドメインから配信します。まずスキャンし、次にセルフホストをクリックしてください。これは標準的な方法で読み込まれるフォントに対して機能します（その後もフォントが Google から読み込まれる場合、テーマがそれをハードコードしているため、スキャンで確認できます）。"
+
+msgid "Where shortcodes run"
+msgstr "ショートコードが実行される場所"
+
+msgid "Widget title"
+msgstr "ウィジェットのタイトル"
+
+msgid "With this feature, HTML will be compressed into a single line, removing unnecessary characters and whitespace to speed up page loading"
+msgstr "この機能により、HTML が 1 行に圧縮され、不要な文字や空白が削除されてページの読み込みが速くなります"
+
+msgid "With this feature, regular users can only view their own posts and images they uploaded, while the admin can view all of them"
+msgstr "この機能により、一般ユーザーは自分の投稿とアップロードした画像のみを閲覧でき、管理者はそのすべてを閲覧できます"
+
+msgid "With this feature, regular users cannot access the WordPress admin page"
+msgstr "この機能により、一般ユーザーは WordPress の管理ページにアクセスできなくなります"
+
+msgid "With this feature, there will be an additional button in the profile section allowing users to upload avatars"
+msgstr "この機能により、プロフィールセクションにアバターをアップロードできる追加のボタンが表示されます"
+
+msgid "With this feature, you can notify your orders to your Telegram group, helping you manage orders conveniently"
+msgstr "この機能により、注文を Telegram グループに通知でき、注文を便利に管理できます"
+
+msgid "WooCommerce / Store"
+msgstr "WooCommerce / ストア"
+
+msgid "WordPress runs shortcodes in post content by default. Turn these on to run them elsewhere too. (Saved with the SAVE button at the bottom.)"
+msgstr "WordPress はデフォルトで投稿コンテンツ内のショートコードを実行します。これらをオンにすると、他の場所でも実行できます。（下部の保存ボタンで保存されます。）"
+
+msgid "X-Content-Type-Options: nosniff"
+msgstr "X-Content-Type-Options：nosniff"
+
+msgid "X-Frame-Options: SAMEORIGIN (block clickjacking)"
+msgstr "X-Frame-Options：SAMEORIGIN（クリックジャッキングをブロック）"
+
+msgid "XML-RPC is disabled"
+msgstr "XML-RPC は無効になっています"
+
+msgid "Yes"
+msgstr "はい"
+
+msgid "Yes — preview as a visitor"
+msgstr "はい — 訪問者としてプレビュー"
+
+msgid "You are not allowed to create this post type."
+msgstr "この投稿タイプを作成する権限がありません。"
+
+msgid "You are not allowed to duplicate this item."
+msgstr "この項目を複製する権限がありません。"
+
+msgid "You are not logged in"
+msgstr "ログインしていません"
+
+msgid "You can adjust the compression level of the image from 5 to 100 (100 being no compression)"
+msgstr "画像の圧縮レベルを 5 から 100 まで調整できます（100 は無圧縮）"
+
+msgid "You can create your widget by activating it and entering content into the box below"
+msgstr "有効にして下のボックスにコンテンツを入力することで、ウィジェットを作成できます"
+
+msgid "You can customize the role of successful registrants, with the default role being \"subscriber\""
+msgstr "登録に成功したユーザーの権限をカスタマイズできます。デフォルトの権限は「購読者」です"
+
+msgid "You can disable default widgets on the dashboard that you dont use"
+msgstr "ダッシュボードで使用していないデフォルトのウィジェットを無効にできます"
+
+msgid "You can further customize your login page by enabling this feature"
+msgstr "この機能を有効にすることで、ログインページをさらにカスタマイズできます"
+
+msgid "You can hide Horse Tools from the WP menu, but you can still access it through the link. This will hide Horse Tools for all accounts"
+msgstr "Horse Tools を WP メニューから非表示にできますが、リンクを通じて引き続きアクセスできます。これはすべてのアカウントで Horse Tools を非表示にします"
+
+msgid "You can paste the shortcode into the position where you want the login button to appear"
+msgstr "ログインボタンを表示したい位置にショートコードを貼り付けることができます"
+
+msgid "You can preview your file here:"
+msgstr "ここでファイルをプレビューできます："
+
+msgid "You can use the shortcode in the editor and add it to the position you want, note: only use 1 shortcode in the post"
+msgstr "エディターでショートコードを使用し、任意の位置に追加できます。注意：1 つの投稿につきショートコードは 1 つのみ使用してください"
+
+msgid "You can use the shortcode to add the search icon to the location you want"
+msgstr "ショートコードを使用して、任意の場所に検索アイコンを追加できます"
+
+msgid "You do not have permission to do this."
+msgstr "この操作を行う権限がありません。"
+
+msgid "You do not have permission to upload SVG files."
+msgstr "SVG ファイルをアップロードする権限がありません。"
+
+msgid "You have successfully copied"
+msgstr "正常にコピーしました"
+
+msgid "You have unsaved changes."
+msgstr "保存されていない変更があります。"
+
+msgid "You havent added content yet"
+msgstr "まだコンテンツを追加していません"
+
+msgid "You need to activate this feature and customize the content below so that new registered users can receive emails"
+msgstr "新規登録ユーザーがメールを受信できるように、この機能を有効にして以下のコンテンツをカスタマイズする必要があります"
+
+msgid "Your Google account email address is not verified."
+msgstr "あなたの Google アカウントのメールアドレスは検証されていません。"
+
+msgid "Your comment has just been replied to"
+msgstr "あなたのコメントに返信がありました"
+
+msgid "Your comment has just been replied to in the post"
+msgstr "投稿内であなたのコメントに返信がありました"
+
+msgid "Your configuration has been saved"
+msgstr "設定が保存されました"
+
+msgid "Your custom widget"
+msgstr "あなたのカスタムウィジェット"
+
+msgid "Your database"
+msgstr "あなたのデータベース"
+
+msgid "[%s] New comment on the article \"%s\""
+msgstr "[%s] 記事「%s」への新しいコメント"
+
+msgid "days"
+msgstr "日"
+
+msgid "desktop"
+msgstr "デスクトップ"
+
+msgid "e.g. contact, promo"
+msgstr "例：contact、promo"
+
+msgid "e.g. sc, ht-snippet, vip"
+msgstr "例：sc、ht-snippet、vip"
+
+msgid "font-family:"
+msgstr "font-family："
+
+msgid "hrs"
+msgstr "時間"
+
+msgid "icons"
+msgstr "アイコン"
+
+msgid "images"
+msgstr "画像"
+
+msgid "jQuery Migrate is a library used to maintain the operation of certain themes, plugins that rely on older code. If your website no longer relies on this library, you can disable it"
+msgstr "jQuery Migrate は、古いコードに依存する一部のテーマやプラグインの動作を維持するために使用されるライブラリです。ウェブサイトがこのライブラリに依存しなくなった場合は、無効にできます"
+
+msgid "logged-in"
+msgstr "ログイン済み"
+
+msgid "logged-out"
+msgstr "ログアウト済み"
+
+msgid "min"
+msgstr "分"
+
+msgid "mobile"
+msgstr "モバイル"
+
+msgid "nofollow + new tab on external links"
+msgstr "外部リンクに nofollow + 新しいタブ"
+
+msgid "off"
+msgstr "オフ"
+
+msgid "post type, e.g. shortcoder"
+msgstr "投稿タイプ、例：shortcoder"
+
+msgid "sec"
+msgstr "秒"
+
+msgid "showing first"
+msgstr "先頭を表示中"
+
+msgid "third-party host(s) found"
+msgstr "サードパーティのホストが見つかりました"
+
+msgid "up to %s"
+msgstr "最大 %s"
+
+msgid "v3 score threshold (0 – 1)"
+msgstr "v3 スコアのしきい値（0 – 1）"
+
+msgid "— Insert a shortcode —"
+msgstr "— ショートコードを挿入 —"

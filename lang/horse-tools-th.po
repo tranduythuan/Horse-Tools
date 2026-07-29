@@ -1,0 +1,3484 @@
+# Horse Tools translation (th) — machine-generated, review recommended.
+msgid ""
+msgstr ""
+"Project-Id-Version: Horse Tools\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: horse-tools\n"
+
+msgid "\"Comments containing links\" matches links in the comment body only. The figure shown is the total comment count, not a match count, so confirm carefully."
+msgstr "\"ความคิดเห็นที่มีลิงก์\" จะจับคู่เฉพาะลิงก์ในเนื้อหาความคิดเห็นเท่านั้น ตัวเลขที่แสดงคือจำนวนความคิดเห็นทั้งหมด ไม่ใช่จำนวนที่ตรงกัน โปรดตรวจสอบอย่างรอบคอบ"
+
+msgid "\"Enter link\" left blank if you want to call the chat list"
+msgstr "เว้น \"ใส่ลิงก์\" ว่างไว้หากต้องการเรียกรายการแชท"
+
+msgid "#id or .class"
+msgstr "#id หรือ .class"
+
+msgid "%d enabled"
+msgstr "เปิดใช้งาน %d รายการ"
+
+msgid "%d post(s) contain [sc] tags. Click “Convert now” to rewrite them."
+msgstr "มีโพสต์ %d รายการที่มีแท็ก [sc] คลิก “แปลงเดี๋ยวนี้” เพื่อเขียนใหม่"
+
+msgid "(duplicate)"
+msgstr "(ซ้ำ)"
+
+msgid "(no title)"
+msgstr "(ไม่มีชื่อ)"
+
+msgid "301"
+msgstr "301"
+
+msgid "4 customizable buttons"
+msgstr "ปุ่มที่ปรับแต่งได้ 4 ปุ่ม"
+
+msgid "404"
+msgstr "404"
+
+msgid "404 log"
+msgstr "บันทึก 404"
+
+msgid "404 redirects"
+msgstr "การเปลี่ยนเส้นทาง 404"
+
+msgid "503"
+msgstr "503"
+
+msgid "8-bit PNG images are not supported by the GD library, and this format already has perfect compression and does not need further processing"
+msgstr "ไลบรารี GD ไม่รองรับภาพ PNG แบบ 8-bit และรูปแบบนี้มีการบีบอัดที่สมบูรณ์อยู่แล้ว จึงไม่จำเป็นต้องประมวลผลเพิ่มเติม"
+
+msgid "A login was locked out on your site"
+msgstr "มีการล็อกเอาต์การเข้าสู่ระบบบนเว็บไซต์ของคุณ"
+
+msgid "A wrong CSP silently breaks scripts, styles and images. Test with browser dev tools before relying on it."
+msgstr "CSP ที่ผิดจะทำให้สคริปต์ สไตล์ และรูปภาพเสียหายโดยไม่แจ้งเตือน ทดสอบด้วยเครื่องมือ dev ของเบราว์เซอร์ก่อนนำไปใช้จริง"
+
+msgid "ABOUT"
+msgstr "เกี่ยวกับ"
+
+msgid "ADD FONT"
+msgstr "เพิ่มฟอนต์"
+
+msgid "ADS.TXT"
+msgstr "ADS.TXT"
+
+msgid "ADSENSE"
+msgstr "ADSENSE"
+
+msgid "API Token"
+msgstr "API Token"
+
+msgid "About"
+msgstr "เกี่ยวกับ"
+
+msgid "Accepted Font Format : woff2, ttf, otf, off | Font Size: Upto 25 MB"
+msgstr "รูปแบบฟอนต์ที่รองรับ: woff2, ttf, otf, off | ขนาดฟอนต์: สูงสุด 25 MB"
+
+msgid "Access Font Awesome to find icons"
+msgstr "เข้าถึง Font Awesome เพื่อค้นหาไอคอน"
+
+msgid "Account"
+msgstr "บัญชี"
+
+msgid "Actions"
+msgstr "การดำเนินการ"
+
+msgid "Ad-blocker detection"
+msgstr "การตรวจจับตัวบล็อกโฆษณา"
+
+msgid "Add .html for page"
+msgstr "เพิ่ม .html ให้กับหน้า"
+
+msgid "Add CSS for mobile size"
+msgstr "เพิ่ม CSS สำหรับขนาดมือถือ"
+
+msgid "Add CSS for tablet size"
+msgstr "เพิ่ม CSS สำหรับขนาดแท็บเล็ต"
+
+msgid "Add CSS to your website"
+msgstr "เพิ่ม CSS ให้กับเว็บไซต์ของคุณ"
+
+msgid "Add Classic Editor button"
+msgstr "เพิ่มปุ่ม Classic Editor"
+
+msgid "Add Google API"
+msgstr "เพิ่ม Google API"
+
+msgid "Add Google json code"
+msgstr "เพิ่มโค้ด json ของ Google"
+
+msgid "Add a label so screen readers announce it."
+msgstr "เพิ่มป้ายกำกับเพื่อให้โปรแกรมอ่านหน้าจอประกาศได้"
+
+msgid "Add ads at the bottom of the article"
+msgstr "เพิ่มโฆษณาที่ด้านล่างของบทความ"
+
+msgid "Add ads to custom post placement"
+msgstr "เพิ่มโฆษณาในตำแหน่งโพสต์ที่กำหนดเอง"
+
+msgid "Add ads to the top of the article"
+msgstr "เพิ่มโฆษณาที่ด้านบนของบทความ"
+
+msgid "Add an attribution line when visitors copy text"
+msgstr "เพิ่มบรรทัดระบุแหล่งที่มาเมื่อผู้เยี่ยมชมคัดลอกข้อความ"
+
+msgid "Add avatar upload functionality"
+msgstr "เพิ่มฟังก์ชันอัปโหลดรูปโปรไฟล์"
+
+msgid "Add background image link"
+msgstr "เพิ่มลิงก์รูปพื้นหลัง"
+
+msgid "Add code"
+msgstr "เพิ่มโค้ด"
+
+msgid "Add code to WP body"
+msgstr "เพิ่มโค้ดใน WP body"
+
+msgid "Add code to WP footer"
+msgstr "เพิ่มโค้ดใน WP footer"
+
+msgid "Add code to WP head"
+msgstr "เพิ่มโค้ดใน WP head"
+
+msgid "Add code to WP login"
+msgstr "เพิ่มโค้ดใน WP login"
+
+msgid "Add default featured image"
+msgstr "เพิ่มภาพเด่นเริ่มต้น"
+
+msgid "Add duplicate button"
+msgstr "เพิ่มปุ่มทำสำเนา"
+
+msgid "Add field"
+msgstr "เพิ่มฟิลด์"
+
+msgid "Add font Awesome to the website"
+msgstr "เพิ่ม Font Awesome ให้กับเว็บไซต์"
+
+msgid "Add fonts"
+msgstr "เพิ่มฟอนต์"
+
+msgid "Add fonts to your website with just a few simple steps. Additionally, it allows you to quickly set fonts in the specific areas you want to change, offering great convenience"
+msgstr "เพิ่มฟอนต์ให้เว็บไซต์ของคุณได้ด้วยไม่กี่ขั้นตอนง่าย ๆ อีกทั้งยังช่วยให้คุณกำหนดฟอนต์ในบริเวณที่ต้องการเปลี่ยนได้อย่างรวดเร็ว สะดวกสบายอย่างยิ่ง"
+
+msgid "Add hardening headers to front-end responses. Each one below is optional."
+msgstr "เพิ่มส่วนหัวเสริมความปลอดภัยให้กับการตอบสนองฝั่งหน้าเว็บ แต่ละรายการด้านล่างเป็นตัวเลือกเสริม"
+
+msgid "Add images"
+msgstr "เพิ่มรูปภาพ"
+
+msgid "Add json"
+msgstr "เพิ่ม json"
+
+msgid "Add link"
+msgstr "เพิ่มลิงก์"
+
+msgid "Add logo link"
+msgstr "เพิ่มลิงก์โลโก้"
+
+msgid "Add nofollow and _blank for external links"
+msgstr "เพิ่ม nofollow และ _blank ให้ลิงก์ภายนอก"
+
+msgid "Add picture frame link here"
+msgstr "เพิ่มลิงก์กรอบรูปที่นี่"
+
+msgid "Add service"
+msgstr "เพิ่มบริการ"
+
+msgid "Add the image logo link here"
+msgstr "เพิ่มลิงก์รูปโลโก้ที่นี่"
+
+msgid "Add the logo image link here"
+msgstr "เพิ่มลิงก์รูปภาพโลโก้ที่นี่"
+
+msgid "Add watermark to images upon upload"
+msgstr "เพิ่มลายน้ำให้รูปภาพเมื่ออัปโหลด"
+
+msgid "Added"
+msgstr "เพิ่มแล้ว"
+
+msgid "Additional feature"
+msgstr "คุณสมบัติเพิ่มเติม"
+
+msgid "Ads"
+msgstr "โฆษณา"
+
+msgid "Advanced configuration"
+msgstr "การตั้งค่าขั้นสูง"
+
+msgid "Advanced image viewing feature in posts"
+msgstr "คุณสมบัติดูรูปภาพขั้นสูงในโพสต์"
+
+msgid "Advanced photo upload"
+msgstr "การอัปโหลดรูปภาพขั้นสูง"
+
+msgid "Advanced settings"
+msgstr "การตั้งค่าขั้นสูง"
+
+msgid "After too many failed logins from the same address, block further attempts for a while. This is the real defence against password guessing."
+msgstr "หลังจากเข้าสู่ระบบล้มเหลวหลายครั้งจากที่อยู่เดียวกัน ให้บล็อกการพยายามเพิ่มเติมชั่วขณะ นี่คือการป้องกันการเดารหัสผ่านที่แท้จริง"
+
+msgid "Agree"
+msgstr "ยอมรับ"
+
+msgid "All devices"
+msgstr "ทุกอุปกรณ์"
+
+msgid "All links on your website will redirect to the maintenance page, and only logged-in admin accounts can view the content"
+msgstr "ลิงก์ทั้งหมดบนเว็บไซต์ของคุณจะเปลี่ยนเส้นทางไปยังหน้าบำรุงรักษา และมีเพียงบัญชีผู้ดูแลที่เข้าสู่ระบบเท่านั้นที่ดูเนื้อหาได้"
+
+msgid "All safe security headers (frame, nosniff, referrer, permissions)"
+msgstr "ส่วนหัวความปลอดภัยที่ปลอดภัยทั้งหมด (frame, nosniff, referrer, permissions)"
+
+msgid "All snippets"
+msgstr "ตัวอย่างโค้ดทั้งหมด"
+
+msgid "Allow avatar upload"
+msgstr "อนุญาตให้อัปโหลดรูปโปรไฟล์"
+
+msgid "Allow displaying member IDs on the profile management page"
+msgstr "อนุญาตให้แสดง ID สมาชิกในหน้าจัดการโปรไฟล์"
+
+msgid "Allow uploading AVIF image format"
+msgstr "อนุญาตให้อัปโหลดภาพรูปแบบ AVIF"
+
+msgid "Allow uploading JFIF files"
+msgstr "อนุญาตให้อัปโหลดไฟล์ JFIF"
+
+msgid "Allow uploading SVG files"
+msgstr "อนุญาตให้อัปโหลดไฟล์ SVG"
+
+msgid "Allow using Shortcode in post titles"
+msgstr "อนุญาตให้ใช้ Shortcode ในชื่อโพสต์"
+
+msgid "Allows uploading AVIF photos"
+msgstr "อนุญาตให้อัปโหลดรูปภาพ AVIF"
+
+msgid "Already declared"
+msgstr "ประกาศไว้แล้ว"
+
+msgid "An error occurred"
+msgstr "เกิดข้อผิดพลาด"
+
+msgid "Any"
+msgstr "ใดก็ได้"
+
+msgid "App password"
+msgstr "รหัสผ่านแอป"
+
+msgid "Applied the \"%s\" preset. Recommended settings are on — you can undo this below."
+msgstr "ใช้ค่าที่ตั้งไว้ล่วงหน้า \"%s\" แล้ว การตั้งค่าที่แนะนำเปิดอยู่ — คุณสามารถเลิกทำได้ด้านล่าง"
+
+msgid "Apply import"
+msgstr "ใช้การนำเข้า"
+
+msgid "Apply this preset"
+msgstr "ใช้ค่าที่ตั้งไว้ล่วงหน้านี้"
+
+msgid "Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it."
+msgstr "การใช้จะเขียนทับกลุ่มเหล่านี้ด้วยค่าที่นำเข้ามา ระบบเก็บสำรองข้อมูลแบบคลิกเดียวไว้เพื่อให้คุณเลิกทำได้"
+
+msgid "Ask your host to update PHP to 8.1 or newer."
+msgstr "ขอให้ผู้ให้บริการโฮสต์ของคุณอัปเดต PHP เป็นเวอร์ชัน 8.1 หรือใหม่กว่า"
+
+msgid "Attempts before lockout"
+msgstr "จำนวนครั้งก่อนถูกล็อกเอาต์"
+
+msgid "Attribution line"
+msgstr "บรรทัดระบุแหล่งที่มา"
+
+msgid "Authenticate outgoing mail"
+msgstr "ยืนยันตัวตนอีเมลขาออก"
+
+msgid "Author and maintainer:"
+msgstr "ผู้เขียนและผู้ดูแล:"
+
+msgid "Auto (sheet on phone, modal on desktop)"
+msgstr "อัตโนมัติ (แผ่นเลื่อนบนมือถือ, โมดัลบนเดสก์ท็อป)"
+
+msgid "Automatic cleanup"
+msgstr "การล้างข้อมูลอัตโนมัติ"
+
+msgid "Automatic initialization after <span id=\"sogiay\" style=\"padding: 5px;\">3</span>s"
+msgstr "เริ่มต้นอัตโนมัติหลังจาก <span id=\"sogiay\" style=\"padding: 5px;\">3</span> วินาที"
+
+msgid "Automatic name"
+msgstr "ชื่ออัตโนมัติ"
+
+msgid "Automatic redirects"
+msgstr "การเปลี่ยนเส้นทางอัตโนมัติ"
+
+msgid "Automatic updates"
+msgstr "การอัปเดตอัตโนมัติ"
+
+msgid "Automatically add a frame when uploading an image"
+msgstr "เพิ่มกรอบอัตโนมัติเมื่ออัปโหลดรูปภาพ"
+
+msgid "Automatically open popup when scrolling down"
+msgstr "เปิดป๊อปอัปอัตโนมัติเมื่อเลื่อนลง"
+
+msgid "Avatar image URL (Avatar / Live-chat skin)"
+msgstr "URL รูปโปรไฟล์ (สกิน Avatar / Live-chat)"
+
+msgid "Away — leave a message"
+msgstr "ไม่อยู่ — ฝากข้อความไว้"
+
+msgid "BACKUP"
+msgstr "สำรองข้อมูล"
+
+msgid "BLOCKER"
+msgstr "ตัวบล็อก"
+
+msgid "BROWSE FILE"
+msgstr "เรียกดูไฟล์"
+
+msgid "Background"
+msgstr "พื้นหลัง"
+
+msgid "Background color"
+msgstr "สีพื้นหลัง"
+
+msgid "Background color of the input form"
+msgstr "สีพื้นหลังของฟอร์มกรอกข้อมูล"
+
+msgid "Background title"
+msgstr "ชื่อพื้นหลัง"
+
+msgid "Backup"
+msgstr "สำรองข้อมูล"
+
+msgid "Badge text (optional)"
+msgstr "ข้อความป้าย (ตัวเลือกเสริม)"
+
+msgid "Bar background color"
+msgstr "สีพื้นหลังแถบ"
+
+msgid "Bar color"
+msgstr "สีแถบ"
+
+msgid "Bar size"
+msgstr "ขนาดแถบ"
+
+msgid "Bento (1 big + cells)"
+msgstr "Bento (ช่องใหญ่ 1 + ช่องย่อย)"
+
+msgid "Block login spam with Google reCAPTCHA"
+msgstr "บล็อกสแปมการเข้าสู่ระบบด้วย Google reCAPTCHA"
+
+msgid "Block user enumeration"
+msgstr "บล็อกการแจกแจงผู้ใช้"
+
+msgid "Block user enumeration (?author=N, users REST, oEmbed)"
+msgstr "บล็อกการแจกแจงผู้ใช้ (?author=N, users REST, oEmbed)"
+
+msgid "Blocks ?author=N scans, removes the users REST endpoint for anonymous requests, strips the author from oEmbed, and makes login errors generic so they do not reveal whether the username or the password was wrong."
+msgstr "บล็อกการสแกน ?author=N ลบ endpoint REST ของผู้ใช้สำหรับคำขอที่ไม่ระบุตัวตน ตัดผู้เขียนออกจาก oEmbed และทำให้ข้อความข้อผิดพลาดการเข้าสู่ระบบเป็นแบบทั่วไปเพื่อไม่ให้เปิดเผยว่าชื่อผู้ใช้หรือรหัสผ่านผิด"
+
+msgid "Blog / News site"
+msgstr "เว็บบล็อก / ข่าว"
+
+msgid "Blue"
+msgstr "น้ำเงิน"
+
+msgid "Border color"
+msgstr "สีเส้นขอบ"
+
+msgid "Border distance"
+msgstr "ระยะห่างเส้นขอบ"
+
+msgid "Border radius"
+msgstr "ความโค้งเส้นขอบ"
+
+msgid "Border size"
+msgstr "ขนาดเส้นขอบ"
+
+msgid "Bottom sheet"
+msgstr "แผ่นด้านล่าง"
+
+msgid "Browser ad-block notification"
+msgstr "การแจ้งเตือนตัวบล็อกโฆษณาของเบราว์เซอร์"
+
+msgid "Build a rich list of services or articles that slides up when a visitor taps a bottom-bar item. To open it, set one bottom-bar item’s “#id or .class” field above to"
+msgstr "สร้างรายการบริการหรือบทความที่ครบครันซึ่งเลื่อนขึ้นเมื่อผู้เยี่ยมชมแตะรายการในแถบด้านล่าง หากต้องการเปิด ให้ตั้งค่าฟิลด์ “#id หรือ .class” ของรายการแถบด้านล่างหนึ่งรายการด้านบนเป็น"
+
+msgid "Business hours (shows Online / Away on the Live-chat, Card and Avatar skins)"
+msgstr "เวลาทำการ (แสดงออนไลน์ / ไม่อยู่ บนสกิน Live-chat, Card และ Avatar)"
+
+msgid "Button color"
+msgstr "สีปุ่ม"
+
+msgid "Button name"
+msgstr "ชื่อปุ่ม"
+
+msgid "Button position"
+msgstr "ตำแหน่งปุ่ม"
+
+msgid "Button text"
+msgstr "ข้อความปุ่ม"
+
+msgid "Button text color"
+msgstr "สีข้อความปุ่ม"
+
+msgid "Buyer"
+msgstr "ผู้ซื้อ"
+
+msgid "CHAT"
+msgstr "แชท"
+
+msgid "CHECK"
+msgstr "ตรวจสอบ"
+
+msgid "CLICK"
+msgstr "คลิก"
+
+msgid "COMMENT"
+msgstr "ความคิดเห็น"
+
+msgid "CONTENT"
+msgstr "เนื้อหา"
+
+msgid "COOKIE"
+msgstr "COOKIE"
+
+msgid "CSS"
+msgstr "CSS"
+
+msgid "CUSTOM"
+msgstr "กำหนดเอง"
+
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+msgid "Card grid"
+msgstr "ตารางการ์ด"
+
+msgid "Center-align button on page"
+msgstr "จัดปุ่มให้อยู่กึ่งกลางหน้า"
+
+msgid "Centered modal"
+msgstr "โมดัลกึ่งกลาง"
+
+msgid "Change WordPress logo in the Admin bar"
+msgstr "เปลี่ยนโลโก้ WordPress ในแถบผู้ดูแล"
+
+msgid "Change display name and icon to your preference"
+msgstr "เปลี่ยนชื่อที่แสดงและไอคอนตามที่คุณต้องการ"
+
+msgid "Change login link"
+msgstr "เปลี่ยนลิงก์เข้าสู่ระบบ"
+
+msgid "Change save interval"
+msgstr "เปลี่ยนช่วงเวลาการบันทึก"
+
+msgid "Change the Buy Now text on the single product page"
+msgstr "เปลี่ยนข้อความ Buy Now บนหน้าสินค้าเดี่ยว"
+
+msgid "Change the color of the search box to your preferences"
+msgstr "เปลี่ยนสีของกล่องค้นหาตามที่คุณต้องการ"
+
+msgid "Changed"
+msgstr "เปลี่ยนแล้ว"
+
+msgid "Chat ID"
+msgstr "Chat ID"
+
+msgid "Chat background color"
+msgstr "สีพื้นหลังแชท"
+
+msgid "Chat text color"
+msgstr "สีข้อความแชท"
+
+msgid "Choose a file"
+msgstr "เลือกไฟล์"
+
+msgid "Choose a font for the"
+msgstr "เลือกฟอนต์สำหรับ"
+
+msgid "Choose decorations for the website, such as Christmas or Lunar New Year (If any effects cause issues on your website, it may be due to javascript conflicts. You can switch to other effects to use)"
+msgstr "เลือกการตกแต่งสำหรับเว็บไซต์ เช่น คริสต์มาสหรือตรุษจีน (หากเอฟเฟกต์ใดทำให้เกิดปัญหาบนเว็บไซต์ อาจเกิดจากความขัดแย้งของ javascript คุณสามารถเปลี่ยนไปใช้เอฟเฟกต์อื่นได้)"
+
+msgid "Choose display interface according to your preference"
+msgstr "เลือกอินเทอร์เฟซการแสดงผลตามที่คุณต้องการ"
+
+msgid "Classic Editor"
+msgstr "Classic Editor"
+
+msgid "Classic editing"
+msgstr "การแก้ไขแบบคลาสสิก"
+
+msgid "Clean"
+msgstr "ล้าง"
+
+msgid "Cleaned the screen"
+msgstr "ล้างหน้าจอแล้ว"
+
+msgid "Cleanup runs on WordPress cron, which only fires when your site receives traffic. Weekly and monthly are measured from the last run."
+msgstr "การล้างข้อมูลทำงานบน WordPress cron ซึ่งจะทำงานเฉพาะเมื่อเว็บไซต์ของคุณได้รับการเข้าชม รายสัปดาห์และรายเดือนจะนับจากการทำงานครั้งล่าสุด"
+
+msgid "Clear all"
+msgstr "ล้างทั้งหมด"
+
+msgid "Clear all automatic redirects"
+msgstr "ล้างการเปลี่ยนเส้นทางอัตโนมัติทั้งหมด"
+
+msgid "Clear the whole log"
+msgstr "ล้างบันทึกทั้งหมด"
+
+msgid "Click here"
+msgstr "คลิกที่นี่"
+
+msgid "Client ID"
+msgstr "Client ID"
+
+msgid "Client Secret"
+msgstr "Client Secret"
+
+msgid "Close"
+msgstr "ปิด"
+
+msgid "Code orders"
+msgstr "โค้ดคำสั่งซื้อ"
+
+msgid "Comment notification"
+msgstr "การแจ้งเตือนความคิดเห็น"
+
+msgid "Comments containing links"
+msgstr "ความคิดเห็นที่มีลิงก์"
+
+msgid "Compact icon tiles"
+msgstr "ไทล์ไอคอนแบบกะทัดรัด"
+
+msgid "Completed"
+msgstr "เสร็จสมบูรณ์"
+
+msgid "Compress HTML into a single line"
+msgstr "บีบอัด HTML ให้เป็นบรรทัดเดียว"
+
+msgid "Compress JPG images upon upload"
+msgstr "บีบอัดภาพ JPG เมื่ออัปโหลด"
+
+msgid "Compress JPGs and serve WebP"
+msgstr "บีบอัด JPG และให้บริการ WebP"
+
+msgid "Compress uploaded JPGs"
+msgstr "บีบอัด JPG ที่อัปโหลด"
+
+msgid "Compression level ("
+msgstr "ระดับการบีบอัด ("
+
+msgid "Conditional & content"
+msgstr "เงื่อนไขและเนื้อหา"
+
+msgid "Configure Google index API"
+msgstr "ตั้งค่า Google index API"
+
+msgid "Configure SMTP mail"
+msgstr "ตั้งค่าอีเมล SMTP"
+
+msgid "Configure adding a watermark to images upon upload"
+msgstr "ตั้งค่าการเพิ่มลายน้ำให้รูปภาพเมื่ออัปโหลด"
+
+msgid "Configure buttons"
+msgstr "ตั้งค่าปุ่ม"
+
+msgid "Configure category permalink"
+msgstr "ตั้งค่าลิงก์ถาวรของหมวดหมู่"
+
+msgid "Configure image upload function"
+msgstr "ตั้งค่าฟังก์ชันอัปโหลดรูปภาพ"
+
+msgid "Configure order notifications to be sent to Telegram"
+msgstr "ตั้งค่าการแจ้งเตือนคำสั่งซื้อให้ส่งไปยัง Telegram"
+
+msgid "Configure the options and create search data. If you want to refresh, you can delete the search data and recreate it. After enabling quick search and completing data creation, a quick search popup will appear when you enter the search box on the website"
+msgstr "ตั้งค่าตัวเลือกและสร้างข้อมูลการค้นหา หากต้องการรีเฟรช คุณสามารถลบข้อมูลการค้นหาและสร้างใหม่ได้ หลังจากเปิดใช้การค้นหาด่วนและสร้างข้อมูลเสร็จ ป๊อปอัปค้นหาด่วนจะปรากฏขึ้นเมื่อคุณคลิกที่กล่องค้นหาบนเว็บไซต์"
+
+msgid "Confirm deletion"
+msgstr "ยืนยันการลบ"
+
+msgid "Contact"
+msgstr "ติดต่อ"
+
+msgid "Contact bar on mobile"
+msgstr "แถบติดต่อบนมือถือ"
+
+msgid "Contact us"
+msgstr "ติดต่อเรา"
+
+msgid "Content"
+msgstr "เนื้อหา"
+
+msgid "Content to be hidden"
+msgstr "เนื้อหาที่จะซ่อน"
+
+msgid "Content-Security-Policy (advanced, leave blank if unsure)"
+msgstr "Content-Security-Policy (ขั้นสูง เว้นว่างไว้หากไม่แน่ใจ)"
+
+msgid "Continue"
+msgstr "ดำเนินการต่อ"
+
+msgid "Convert JPG and PNG images to AVIF upon upload, and compress the images according to the configuration you enter"
+msgstr "แปลงภาพ JPG และ PNG เป็น AVIF เมื่ออัปโหลด และบีบอัดภาพตามการตั้งค่าที่คุณกรอก"
+
+msgid "Convert JPG and PNG images to WEBP upon upload, and compress the images according to the configuration you enter"
+msgstr "แปลงภาพ JPG และ PNG เป็น WEBP เมื่ออัปโหลด และบีบอัดภาพตามการตั้งค่าที่คุณกรอก"
+
+msgid "Convert JPG and PNG to AVIF"
+msgstr "แปลง JPG และ PNG เป็น AVIF"
+
+msgid "Convert JPG and PNG to WEBP"
+msgstr "แปลง JPG และ PNG เป็น WEBP"
+
+msgid "Convert PNG images to JPG upon upload, and compress the images according to the JPG configuration"
+msgstr "แปลงภาพ PNG เป็น JPG เมื่ออัปโหลด และบีบอัดภาพตามการตั้งค่า JPG"
+
+msgid "Convert PNG to JPG"
+msgstr "แปลง PNG เป็น JPG"
+
+msgid "Convert Shortcoder tags"
+msgstr "แปลงแท็ก Shortcoder"
+
+msgid "Convert images to AVIF upon upload"
+msgstr "แปลงภาพเป็น AVIF เมื่ออัปโหลด"
+
+msgid "Convert images to WEBP upon upload"
+msgstr "แปลงภาพเป็น WEBP เมื่ออัปโหลด"
+
+msgid "Convert now"
+msgstr "แปลงเดี๋ยวนี้"
+
+msgid "Convert path from domain.com/tag/news/ to domain.com/news/"
+msgstr "แปลงเส้นทางจาก domain.com/tag/news/ เป็น domain.com/news/"
+
+msgid "Convert paths from (domain.com/category/news/latest-news, domain.com/category/news) to (domain.com/latest-news, domain.com/news)"
+msgstr "แปลงเส้นทางจาก (domain.com/category/news/latest-news, domain.com/category/news) เป็น (domain.com/latest-news, domain.com/news)"
+
+msgid "Converted %d post(s)."
+msgstr "แปลงแล้ว %d โพสต์"
+
+msgid "Cookies"
+msgstr "คุกกี้"
+
+msgid "Copied"
+msgstr "คัดลอกแล้ว"
+
+msgid "Copied: "
+msgstr "คัดลอกแล้ว: "
+
+msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
+msgstr "คัดลอกลิงก์ด้านล่างเพื่อเพิ่มลงใน Authorized redirect URLs ในโปรเจกต์ Google Developers ของคุณ"
+
+msgid "Core, plugins and themes are up to date"
+msgstr "แกนหลัก ปลั๊กอิน และธีมเป็นเวอร์ชันล่าสุด"
+
+msgid "Corner card"
+msgstr "การ์ดมุม"
+
+msgid "Could not create the fonts folder in uploads."
+msgstr "ไม่สามารถสร้างโฟลเดอร์ฟอนต์ใน uploads ได้"
+
+msgid "Could not load the icon list."
+msgstr "ไม่สามารถโหลดรายการไอคอนได้"
+
+msgid "Could not read the data."
+msgstr "ไม่สามารถอ่านข้อมูลได้"
+
+msgid "Coupon codes"
+msgstr "รหัสคูปอง"
+
+msgid "Create a 301 automatically when a post permalink changes"
+msgstr "สร้าง 301 อัตโนมัติเมื่อลิงก์ถาวรของโพสต์เปลี่ยนแปลง"
+
+msgid "Create a 301 redirect from this URL"
+msgstr "สร้างการเปลี่ยนเส้นทาง 301 จาก URL นี้"
+
+msgid "Create a chat feature for users"
+msgstr "สร้างฟีเจอร์แชทสำหรับผู้ใช้"
+
+msgid "Create a named block of HTML/CSS/JS and drop it anywhere with [ht-snippet name=\"your-name\"]. Placeholders {{param}} or %%param%% are filled from the shortcode’s attributes, plus built-ins: currentyear, currentdate, postid, posttitle, sitename, siteurl."
+msgstr "สร้างบล็อก HTML/CSS/JS ที่มีชื่อและวางที่ใดก็ได้ด้วย [ht-snippet name=\"your-name\"] ตัวยึด {{param}} หรือ %%param%% จะถูกเติมจากแอตทริบิวต์ของ shortcode พร้อมด้วยตัวในตัว: currentyear, currentdate, postid, posttitle, sitename, siteurl"
+
+msgid "Create an outstanding popup"
+msgstr "สร้างป๊อปอัปที่โดดเด่น"
+
+msgid "Create custom post type data"
+msgstr "สร้างข้อมูลประเภทโพสต์ที่กำหนดเอง"
+
+msgid "Create welcome email for registered users"
+msgstr "สร้างอีเมลต้อนรับสำหรับผู้ใช้ที่ลงทะเบียน"
+
+msgid "Currently enabled"
+msgstr "เปิดใช้งานอยู่ในขณะนี้"
+
+msgid "Custom WordPress login page"
+msgstr "หน้าเข้าสู่ระบบ WordPress ที่กำหนดเอง"
+
+msgid "Custom position in posts"
+msgstr "ตำแหน่งที่กำหนดเองในโพสต์"
+
+msgid "Custom posts will be displayed"
+msgstr "โพสต์ที่กำหนดเองจะถูกแสดง"
+
+msgid "Custom shortcodes (snippets)"
+msgstr "shortcode ที่กำหนดเอง (ตัวอย่างโค้ด)"
+
+msgid "Customer reviews"
+msgstr "รีวิวจากลูกค้า"
+
+msgid "Customize"
+msgstr "ปรับแต่ง"
+
+msgid "Customize Currency Unit"
+msgstr "ปรับแต่งหน่วยสกุลเงิน"
+
+msgid "Customize TOC display position"
+msgstr "ปรับแต่งตำแหน่งแสดงสารบัญ"
+
+msgid "Customize background"
+msgstr "ปรับแต่งพื้นหลัง"
+
+msgid "Customize chat button"
+msgstr "ปรับแต่งปุ่มแชท"
+
+msgid "Customize dashboard widgets"
+msgstr "ปรับแต่งวิดเจ็ตแดชบอร์ด"
+
+msgid "Customize display"
+msgstr "ปรับแต่งการแสดงผล"
+
+msgid "Customize display and colors"
+msgstr "ปรับแต่งการแสดงผลและสี"
+
+msgid "Customize elements on the page"
+msgstr "ปรับแต่งองค์ประกอบบนหน้า"
+
+msgid "Customize icons and positions"
+msgstr "ปรับแต่งไอคอนและตำแหน่ง"
+
+msgid "Customize scroll bar"
+msgstr "ปรับแต่งแถบเลื่อน"
+
+msgid "DATABASE"
+msgstr "ฐานข้อมูล"
+
+msgid "DATE"
+msgstr "วันที่"
+
+msgid "DEBUG"
+msgstr "DEBUG"
+
+msgid "DEL"
+msgstr "ลบ"
+
+msgid "DISPLAY"
+msgstr "แสดงผล"
+
+msgid "Daily"
+msgstr "รายวัน"
+
+msgid "Dark"
+msgstr "มืด"
+
+msgid "Dark mode"
+msgstr "โหมดมืด"
+
+msgid "Data"
+msgstr "ข้อมูล"
+
+msgid "Data & media"
+msgstr "ข้อมูลและสื่อ"
+
+msgid "Date"
+msgstr "วันที่"
+
+msgid "Debug"
+msgstr "Debug"
+
+msgid "Debug is not enabled"
+msgstr "Debug ไม่ได้เปิดใช้งาน"
+
+msgid "Debug log file does not exist"
+msgstr "ไม่มีไฟล์บันทึก debug"
+
+msgid "Debug settings"
+msgstr "การตั้งค่า debug"
+
+msgid "Declaration already deleted"
+msgstr "ลบการประกาศไปแล้ว"
+
+msgid "Decorative effects for the website"
+msgstr "เอฟเฟกต์ตกแต่งสำหรับเว็บไซต์"
+
+msgid "Default style"
+msgstr "สไตล์เริ่มต้น"
+
+msgid "Delete"
+msgstr "ลบ"
+
+msgid "Delete all 404 images"
+msgstr "ลบภาพ 404 ทั้งหมด"
+
+msgid "Delete all 404 thumbnail images"
+msgstr "ลบภาพขนาดย่อ 404 ทั้งหมด"
+
+msgid "Delete autosaves"
+msgstr "ลบการบันทึกอัตโนมัติ"
+
+msgid "Delete comments"
+msgstr "ลบความคิดเห็น"
+
+msgid "Delete cropped image"
+msgstr "ลบภาพที่ครอบตัด"
+
+msgid "Delete data"
+msgstr "ลบข้อมูล"
+
+msgid "Delete revisions"
+msgstr "ลบการแก้ไข"
+
+msgid "Delete settings:"
+msgstr "ลบการตั้งค่า:"
+
+msgid "Delete this log entry"
+msgstr "ลบรายการบันทึกนี้"
+
+msgid "Delete this snippet? Content that uses it will stop rendering."
+msgstr "ลบตัวอย่างโค้ดนี้หรือไม่? เนื้อหาที่ใช้มันจะหยุดแสดงผล"
+
+msgid "Deleted"
+msgstr "ลบแล้ว"
+
+msgid "Deleted %1$s of %2$s scanned"
+msgstr "ลบแล้ว %1$s จาก %2$s ที่สแกน"
+
+msgid "Deleted successfully"
+msgstr "ลบสำเร็จ"
+
+msgid "Deleted: %s"
+msgstr "ลบแล้ว: %s"
+
+msgid "Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action."
+msgstr "การลบความคิดเห็นตามรูปแบบลิงก์ถูกยกเว้นจากการล้างข้อมูลอัตโนมัติโดยเจตนา — จะยังคงเป็นการดำเนินการด้วยตนเอง"
+
+msgid "Deleting is permanent. Revisions, autosaves and trashed content (posts, pages, products) are removed together with their metadata and attached files."
+msgstr "การลบเป็นการถาวร การแก้ไข การบันทึกอัตโนมัติ และเนื้อหาในถังขยะ (โพสต์ หน้า สินค้า) จะถูกลบพร้อมกับข้อมูลเมตาและไฟล์แนบ"
+
+msgid "Deletion successful"
+msgstr "ลบสำเร็จ"
+
+msgid "Demo"
+msgstr "เดโม"
+
+msgid "Description (for your reference)"
+msgstr "คำอธิบาย (สำหรับอ้างอิงของคุณ)"
+
+msgid "Desktop only"
+msgstr "เดสก์ท็อปเท่านั้น"
+
+msgid "Disable Classic CSS"
+msgstr "ปิด Classic CSS"
+
+msgid "Disable Emoji"
+msgstr "ปิดอิโมจิ"
+
+msgid "Disable Gutenberg CSS"
+msgstr "ปิด Gutenberg CSS"
+
+msgid "Disable REST API for anonymous visitors"
+msgstr "ปิด REST API สำหรับผู้เยี่ยมชมที่ไม่ระบุตัวตน"
+
+msgid "Disable WordPress info widget"
+msgstr "ปิดวิดเจ็ตข้อมูล WordPress"
+
+msgid "Disable Wp-Embed"
+msgstr "ปิด Wp-Embed"
+
+msgid "Disable X-Pingback"
+msgstr "ปิด X-Pingback"
+
+msgid "Disable XML RPC"
+msgstr "ปิด XML RPC"
+
+msgid "Disable XML-RPC, X-Pingback, extra header tags and the version tag"
+msgstr "ปิด XML-RPC, X-Pingback, แท็กส่วนหัวเพิ่มเติม และแท็กเวอร์ชัน"
+
+msgid "Disable feeds (RSS/Atom)"
+msgstr "ปิดฟีด (RSS/Atom)"
+
+msgid "Disable health widget"
+msgstr "ปิดวิดเจ็ตสถานะเว็บไซต์"
+
+msgid "Disable jQuery Migrate"
+msgstr "ปิด jQuery Migrate"
+
+msgid "Disable logo display"
+msgstr "ปิดการแสดงโลโก้"
+
+msgid "Disable numbers in front of tags"
+msgstr "ปิดตัวเลขหน้าแท็ก"
+
+msgid "Disable quick draft widget"
+msgstr "ปิดวิดเจ็ตร่างด่วน"
+
+msgid "Disable recent posts widget"
+msgstr "ปิดวิดเจ็ตโพสต์ล่าสุด"
+
+msgid "Disable statistics widget"
+msgstr "ปิดวิดเจ็ตสถิติ"
+
+msgid "Disable the Admin Bar"
+msgstr "ปิดแถบผู้ดูแล"
+
+msgid "Disable the theme & plugin file editor"
+msgstr "ปิดตัวแก้ไขไฟล์ธีมและปลั๊กอิน"
+
+msgid "Disable unnecessary items"
+msgstr "ปิดรายการที่ไม่จำเป็น"
+
+msgid "Disable unused endpoints"
+msgstr "ปิด endpoint ที่ไม่ได้ใช้"
+
+msgid "Disable unused widgets"
+msgstr "ปิดวิดเจ็ตที่ไม่ได้ใช้"
+
+msgid "Disable welcome widget"
+msgstr "ปิดวิดเจ็ตต้อนรับ"
+
+msgid "Disabled TOC"
+msgstr "ปิดสารบัญ"
+
+msgid "Discard"
+msgstr "ทิ้ง"
+
+msgid "Display ID in the management page"
+msgstr "แสดง ID ในหน้าจัดการ"
+
+msgid "Display language settings"
+msgstr "การตั้งค่าภาษาที่แสดง"
+
+msgid "Display link when seconds expire"
+msgstr "แสดงลิงก์เมื่อวินาทีหมดเวลา"
+
+msgid "Display name (shown in the list)"
+msgstr "ชื่อที่แสดง (แสดงในรายการ)"
+
+msgid "Display on the WooCommerce login form"
+msgstr "แสดงบนฟอร์มเข้าสู่ระบบ WooCommerce"
+
+msgid "Display on the default login form"
+msgstr "แสดงบนฟอร์มเข้าสู่ระบบเริ่มต้น"
+
+msgid "Display options"
+msgstr "ตัวเลือกการแสดงผล"
+
+msgid "Display text color"
+msgstr "สีข้อความที่แสดง"
+
+msgid "Display text if out of stock"
+msgstr "แสดงข้อความหากสินค้าหมด"
+
+msgid "Display text if the price is 0"
+msgstr "แสดงข้อความหากราคาเป็น 0"
+
+msgid "Display type"
+msgstr "ประเภทการแสดงผล"
+
+msgid "Display your cookie notice to inform users about cookie use and allow them to manage their preferences easily"
+msgstr "แสดงประกาศคุกกี้เพื่อแจ้งให้ผู้ใช้ทราบเกี่ยวกับการใช้คุกกี้และให้พวกเขาจัดการการตั้งค่าได้อย่างง่ายดาย"
+
+msgid "Distance above"
+msgstr "ระยะห่างด้านบน"
+
+msgid "Do not auto-install core updates"
+msgstr "ไม่ติดตั้งการอัปเดตแกนหลักอัตโนมัติ"
+
+msgid "Do not auto-install language pack updates"
+msgstr "ไม่ติดตั้งการอัปเดตชุดภาษาอัตโนมัติ"
+
+msgid "Do not auto-install plugin updates"
+msgstr "ไม่ติดตั้งการอัปเดตปลั๊กอินอัตโนมัติ"
+
+msgid "Do not auto-install theme updates"
+msgstr "ไม่ติดตั้งการอัปเดตธีมอัตโนมัติ"
+
+msgid "Do not enable if you are using optimization plugins with similar functionality (conflict)"
+msgstr "อย่าเปิดใช้หากคุณใช้ปลั๊กอินเพิ่มประสิทธิภาพที่มีฟังก์ชันคล้ายกัน (ขัดแย้ง)"
+
+msgid "Do not select"
+msgstr "ไม่เลือก"
+
+msgid "Do you want to delete?"
+msgstr "คุณต้องการลบหรือไม่?"
+
+msgid "Does not exist"
+msgstr "ไม่มีอยู่"
+
+msgid "Download"
+msgstr "ดาวน์โหลด"
+
+msgid "Download & self-host Google Fonts"
+msgstr "ดาวน์โหลดและโฮสต์ Google Fonts เอง"
+
+msgid "Download .json"
+msgstr "ดาวน์โหลด .json"
+
+msgid "Download button GGET shortcode"
+msgstr "shortcode GGET ปุ่มดาวน์โหลด"
+
+msgid "Download link"
+msgstr "ลิงก์ดาวน์โหลด"
+
+msgid "Downloading fonts…"
+msgstr "กำลังดาวน์โหลดฟอนต์…"
+
+msgid "Drop Emoji and jQuery Migrate"
+msgstr "ยกเลิกอิโมจิและ jQuery Migrate"
+
+msgid "Duplicate"
+msgstr "ทำสำเนา"
+
+msgid "Duplicate content"
+msgstr "เนื้อหาซ้ำ"
+
+msgid "Duplicate post, page, custom post type"
+msgstr "ทำสำเนาโพสต์ หน้า ประเภทโพสต์ที่กำหนดเอง"
+
+msgid "Edit"
+msgstr "แก้ไข"
+
+msgid "Editor classic"
+msgstr "ตัวแก้ไขคลาสสิก"
+
+msgid "Effect"
+msgstr "เอฟเฟกต์"
+
+msgid "Email"
+msgstr "อีเมล"
+
+msgid "Email me when an address is locked out"
+msgstr "ส่งอีเมลถึงฉันเมื่อมีที่อยู่ถูกล็อกเอาต์"
+
+msgid "Email notification when a post has a comment"
+msgstr "การแจ้งเตือนทางอีเมลเมื่อโพสต์มีความคิดเห็น"
+
+msgid "Email notification when there a reply"
+msgstr "การแจ้งเตือนทางอีเมลเมื่อมีการตอบกลับ"
+
+msgid "Email sent successfully"
+msgstr "ส่งอีเมลสำเร็จ"
+
+msgid "Email subject"
+msgstr "หัวข้ออีเมล"
+
+msgid "Empty"
+msgstr "ว่างเปล่า"
+
+msgid "Empty trash"
+msgstr "ล้างถังขยะ"
+
+msgid "Enable"
+msgstr "เปิดใช้งาน"
+
+msgid "Enable .html for page"
+msgstr "เปิดใช้ .html สำหรับหน้า"
+
+msgid "Enable 301 redirection"
+msgstr "เปิดใช้การเปลี่ยนเส้นทาง 301"
+
+msgid "Enable 404 redirection"
+msgstr "เปิดใช้การเปลี่ยนเส้นทาง 404"
+
+msgid "Enable 503 maintenance mode"
+msgstr "เปิดใช้โหมดบำรุงรักษา 503"
+
+msgid "Enable AVIF image compression"
+msgstr "เปิดใช้การบีบอัดภาพ AVIF"
+
+msgid "Enable Adsense"
+msgstr "เปิดใช้ Adsense"
+
+msgid "Enable Classic Editor"
+msgstr "เปิดใช้ Classic Editor"
+
+msgid "Enable Classic Editor in category description"
+msgstr "เปิดใช้ Classic Editor ในคำอธิบายหมวดหมู่"
+
+msgid "Enable Classic Widget"
+msgstr "เปิดใช้ Classic Widget"
+
+msgid "Enable GGET shortcode"
+msgstr "เปิดใช้ shortcode GGET"
+
+msgid "Enable HTML compression"
+msgstr "เปิดใช้การบีบอัด HTML"
+
+msgid "Enable Instant-page"
+msgstr "เปิดใช้ Instant-page"
+
+msgid "Enable JPG image compression"
+msgstr "เปิดใช้การบีบอัดภาพ JPG"
+
+msgid "Enable SMTP mail"
+msgstr "เปิดใช้อีเมล SMTP"
+
+msgid "Enable SMTP mail to allow SMTP mail to function and send emails when you perform a test"
+msgstr "เปิดใช้อีเมล SMTP เพื่อให้อีเมล SMTP ทำงานและส่งอีเมลเมื่อคุณทำการทดสอบ"
+
+msgid "Enable Smooth-scroll"
+msgstr "เปิดใช้ Smooth-scroll"
+
+msgid "Enable WEBP image compression"
+msgstr "เปิดใช้การบีบอัดภาพ WEBP"
+
+msgid "Enable WP_DEBUG"
+msgstr "เปิดใช้ WP_DEBUG"
+
+msgid "Enable WP_DEBUG_DISPLAY"
+msgstr "เปิดใช้ WP_DEBUG_DISPLAY"
+
+msgid "Enable WP_DEBUG_LOG"
+msgstr "เปิดใช้ WP_DEBUG_LOG"
+
+msgid "Enable ad-block detection"
+msgstr "เปิดใช้การตรวจจับตัวบล็อกโฆษณา"
+
+msgid "Enable ads.txt"
+msgstr "เปิดใช้ ads.txt"
+
+msgid "Enable advanced image viewing"
+msgstr "เปิดใช้การดูรูปภาพขั้นสูง"
+
+msgid "Enable and add the category IDs you want to hide from the main loop displaying posts on the homepage, for example: 1, 2, 3"
+msgstr "เปิดใช้และเพิ่ม ID หมวดหมู่ที่คุณต้องการซ่อนจาก loop หลักที่แสดงโพสต์บนหน้าแรก เช่น 1, 2, 3"
+
+msgid "Enable and configure the functions below to enable Google sign-in to work"
+msgstr "เปิดใช้และตั้งค่าฟังก์ชันด้านล่างเพื่อให้การเข้าสู่ระบบ Google ทำงานได้"
+
+msgid "Enable chat button"
+msgstr "เปิดใช้ปุ่มแชท"
+
+msgid "Enable color and display customization"
+msgstr "เปิดใช้การปรับแต่งสีและการแสดงผล"
+
+msgid "Enable contact bar"
+msgstr "เปิดใช้แถบติดต่อ"
+
+msgid "Enable cookie"
+msgstr "เปิดใช้คุกกี้"
+
+msgid "Enable custom footer"
+msgstr "เปิดใช้ส่วนท้ายที่กำหนดเอง"
+
+msgid "Enable custom functionality"
+msgstr "เปิดใช้ฟังก์ชันที่กำหนดเอง"
+
+msgid "Enable custom widget"
+msgstr "เปิดใช้วิดเจ็ตที่กำหนดเอง"
+
+msgid "Enable customization"
+msgstr "เปิดใช้การปรับแต่ง"
+
+msgid "Enable dark mode"
+msgstr "เปิดใช้โหมดมืด"
+
+msgid "Enable date shortcode"
+msgstr "เปิดใช้ shortcode วันที่"
+
+msgid "Enable deleting posts to also delete images"
+msgstr "เปิดใช้การลบโพสต์เพื่อลบรูปภาพด้วย"
+
+msgid "Enable element customization"
+msgstr "เปิดใช้การปรับแต่งองค์ประกอบ"
+
+msgid "Enable email sending"
+msgstr "เปิดใช้การส่งอีเมล"
+
+msgid "Enable font Awesome"
+msgstr "เปิดใช้ Font Awesome"
+
+msgid "Enable for use"
+msgstr "เปิดใช้เพื่อใช้งาน"
+
+msgid "Enable if you want to hide categories"
+msgstr "เปิดใช้หากคุณต้องการซ่อนหมวดหมู่"
+
+msgid "Enable image lazy loading"
+msgstr "เปิดใช้การโหลดรูปภาพแบบ lazy"
+
+msgid "Enable image size limitation"
+msgstr "เปิดใช้การจำกัดขนาดรูปภาพ"
+
+msgid "Enable logo customization"
+msgstr "เปิดใช้การปรับแต่งโลโก้"
+
+msgid "Enable notification"
+msgstr "เปิดใช้การแจ้งเตือน"
+
+msgid "Enable notifications"
+msgstr "เปิดใช้การแจ้งเตือน"
+
+msgid "Enable picture frame"
+msgstr "เปิดใช้กรอบรูป"
+
+msgid "Enable popup"
+msgstr "เปิดใช้ป๊อปอัป"
+
+msgid "Enable quick search"
+msgstr "เปิดใช้การค้นหาด่วน"
+
+msgid "Enable revision limit"
+msgstr "เปิดใช้การจำกัดการแก้ไข"
+
+msgid "Enable shortcode lock"
+msgstr "เปิดใช้การล็อก shortcode"
+
+msgid "Enable shortcodes"
+msgstr "เปิดใช้ shortcode"
+
+msgid "Enable signature shortcode"
+msgstr "เปิดใช้ shortcode ลายเซ็น"
+
+msgid "Enable site-wide 301 redirects"
+msgstr "เปิดใช้การเปลี่ยนเส้นทาง 301 ทั้งเว็บไซต์"
+
+msgid "Enable table of contents"
+msgstr "เปิดใช้สารบัญ"
+
+msgid "Enable the [ht-icon] shortcode"
+msgstr "เปิดใช้ shortcode [ht-icon]"
+
+msgid "Enable the contact bar and configure the content below for use"
+msgstr "เปิดใช้แถบติดต่อและตั้งค่าเนื้อหาด้านล่างเพื่อใช้งาน"
+
+msgid "Enable the picture frame"
+msgstr "เปิดใช้กรอบรูป"
+
+msgid "Enable the services panel"
+msgstr "เปิดใช้แผงบริการ"
+
+msgid "Enable this feature and enter the login link suffix"
+msgstr "เปิดใช้คุณสมบัตินี้และกรอกส่วนต่อท้ายลิงก์เข้าสู่ระบบ"
+
+msgid "Enable this feature if you want JFIF format images to be uploaded to the media. The uploaded images will be converted to JPG or WEBP format according to the configuration"
+msgstr "เปิดใช้คุณสมบัตินี้หากคุณต้องการอัปโหลดภาพรูปแบบ JFIF ไปยังไลบรารีสื่อ ภาพที่อัปโหลดจะถูกแปลงเป็นรูปแบบ JPG หรือ WEBP ตามการตั้งค่า"
+
+msgid "Enable this feature if you want SVG images to be uploaded to the media"
+msgstr "เปิดใช้คุณสมบัตินี้หากคุณต้องการอัปโหลดภาพ SVG ไปยังไลบรารีสื่อ"
+
+msgid "Enable this feature if you want images in posts copied from another source to be stored on your website"
+msgstr "เปิดใช้คุณสมบัตินี้หากคุณต้องการให้รูปภาพในโพสต์ที่คัดลอกมาจากแหล่งอื่นถูกจัดเก็บไว้บนเว็บไซต์ของคุณ"
+
+msgid "Enable this feature if you want the first image in the post to become the featured image if the featured image field is empty. Additionally, you can select a default featured image in case both the featured image and the images in the post are empty"
+msgstr "เปิดใช้คุณสมบัตินี้หากคุณต้องการให้รูปภาพแรกในโพสต์กลายเป็นภาพเด่นเมื่อฟิลด์ภาพเด่นว่างเปล่า นอกจากนี้ คุณสามารถเลือกภาพเด่นเริ่มต้นในกรณีที่ทั้งภาพเด่นและรูปภาพในโพสต์ว่างเปล่า"
+
+msgid "Enable this feature if you want the original image size to be selected by default whenever adding images to the post"
+msgstr "เปิดใช้คุณสมบัตินี้หากคุณต้องการให้เลือกขนาดภาพต้นฉบับเป็นค่าเริ่มต้นทุกครั้งที่เพิ่มรูปภาพลงในโพสต์"
+
+msgid "Enable this feature if you want to add additional functionalities to the Classic Editor to enhance professional editing"
+msgstr "เปิดใช้คุณสมบัตินี้หากคุณต้องการเพิ่มฟังก์ชันเพิ่มเติมให้กับ Classic Editor เพื่อเสริมการแก้ไขแบบมืออาชีพ"
+
+msgid "Enable this feature if you want to add the Classic Editor button in the post and page management interface. With this feature, you dont need to set the Classic Editor as default but can use it in parallel"
+msgstr "เปิดใช้คุณสมบัตินี้หากคุณต้องการเพิ่มปุ่ม Classic Editor ในอินเทอร์เฟซการจัดการโพสต์และหน้า ด้วยคุณสมบัตินี้ คุณไม่จำเป็นต้องตั้ง Classic Editor เป็นค่าเริ่มต้น แต่สามารถใช้ควบคู่กันได้"
+
+msgid "Enable this feature if you want to customize the footer in the WP admin"
+msgstr "เปิดใช้คุณสมบัตินี้หากคุณต้องการปรับแต่งส่วนท้ายในหน้าผู้ดูแล WP"
+
+msgid "Enable this feature to be able to use the customizations below"
+msgstr "เปิดใช้คุณสมบัตินี้เพื่อให้สามารถใช้การปรับแต่งด้านล่างได้"
+
+msgid "Enable to display the Google login button on the WooCommerce login form"
+msgstr "เปิดใช้เพื่อแสดงปุ่มเข้าสู่ระบบ Google บนฟอร์มเข้าสู่ระบบ WooCommerce"
+
+msgid "Enable to display the Google login button on the default WordPress login form"
+msgstr "เปิดใช้เพื่อแสดงปุ่มเข้าสู่ระบบ Google บนฟอร์มเข้าสู่ระบบ WordPress เริ่มต้น"
+
+msgid "Enable to use"
+msgstr "เปิดใช้เพื่อใช้งาน"
+
+msgid "Enable upload size limit"
+msgstr "เปิดใช้การจำกัดขนาดอัปโหลด"
+
+msgid "Enable watermarks"
+msgstr "เปิดใช้ลายน้ำ"
+
+msgid "Enabled"
+msgstr "เปิดใช้งานแล้ว"
+
+msgid "Enabled TOC"
+msgstr "เปิดใช้สารบัญ"
+
+msgid "Enhance features for Classic Editor"
+msgstr "เสริมคุณสมบัติสำหรับ Classic Editor"
+
+msgid "Enter Adsense code here"
+msgstr "กรอกโค้ด Adsense ที่นี่"
+
+msgid "Enter CSS here"
+msgstr "กรอก CSS ที่นี่"
+
+msgid "Enter ID"
+msgstr "กรอก ID"
+
+msgid "Enter a shortcode name to search for."
+msgstr "กรอกชื่อ shortcode เพื่อค้นหา"
+
+msgid "Enter a suffix"
+msgstr "กรอกส่วนต่อท้าย"
+
+msgid "Enter a title"
+msgstr "กรอกชื่อ"
+
+msgid "Enter button name"
+msgstr "กรอกชื่อปุ่ม"
+
+msgid "Enter code here"
+msgstr "กรอกโค้ดที่นี่"
+
+msgid "Enter content"
+msgstr "กรอกเนื้อหา"
+
+msgid "Enter content here"
+msgstr "กรอกเนื้อหาที่นี่"
+
+msgid "Enter cookie content"
+msgstr "กรอกเนื้อหาคุกกี้"
+
+msgid "Enter cookie title"
+msgstr "กรอกชื่อคุกกี้"
+
+msgid "Enter email"
+msgstr "กรอกอีเมล"
+
+msgid "Enter email content here"
+msgstr "กรอกเนื้อหาอีเมลที่นี่"
+
+msgid "Enter image link"
+msgstr "กรอกลิงก์รูปภาพ"
+
+msgid "Enter json"
+msgstr "กรอก json"
+
+msgid "Enter keywords to search"
+msgstr "กรอกคำค้นหา"
+
+msgid "Enter link"
+msgstr "กรอกลิงก์"
+
+msgid "Enter manually"
+msgstr "กรอกด้วยตนเอง"
+
+msgid "Enter name"
+msgstr "กรอกชื่อ"
+
+msgid "Enter note content"
+msgstr "กรอกเนื้อหาบันทึก"
+
+msgid "Enter the SVG icon"
+msgstr "กรอกไอคอน SVG"
+
+msgid "Enter the content you want to display and configure the customizations above so the popup can appear when users visit your website"
+msgstr "กรอกเนื้อหาที่คุณต้องการแสดงและตั้งค่าการปรับแต่งด้านบนเพื่อให้ป๊อปอัปปรากฏขึ้นเมื่อผู้ใช้เยี่ยมชมเว็บไซต์ของคุณ"
+
+msgid "Enter the content you want to display in the notification, and customize the colors to match your preferences. A notification will appear at the top of your website, making it easy for users to see"
+msgstr "กรอกเนื้อหาที่คุณต้องการแสดงในการแจ้งเตือน และปรับแต่งสีให้เข้ากับความต้องการของคุณ การแจ้งเตือนจะปรากฏที่ด้านบนของเว็บไซต์ ทำให้ผู้ใช้เห็นได้ง่าย"
+
+msgid "Enter the link"
+msgstr "กรอกลิงก์"
+
+msgid "Enter the number of posts or products to be displayed when searching"
+msgstr "กรอกจำนวนโพสต์หรือสินค้าที่จะแสดงเมื่อค้นหา"
+
+msgid "Enter the number of revisions"
+msgstr "กรอกจำนวนการแก้ไข"
+
+msgid "Enter the policy page link"
+msgstr "กรอกลิงก์หน้านโยบาย"
+
+msgid "Enter the tag and tag number for the ad to appear"
+msgstr "กรอกแท็กและหมายเลขแท็กเพื่อให้โฆษณาปรากฏ"
+
+msgid "Enter the title and content you want to display when ad-blocker is detected"
+msgstr "กรอกชื่อและเนื้อหาที่คุณต้องการแสดงเมื่อตรวจพบตัวบล็อกโฆษณา"
+
+msgid "Enter the url"
+msgstr "กรอก url"
+
+msgid "Enter title"
+msgstr "กรอกชื่อ"
+
+msgid "Enter units"
+msgstr "กรอกหน่วย"
+
+msgid "Enter waiting time"
+msgstr "กรอกเวลารอ"
+
+msgid "Environment"
+msgstr "สภาพแวดล้อม"
+
+msgid "Error"
+msgstr "ข้อผิดพลาด"
+
+msgid "Error cannot be cleaned"
+msgstr "ข้อผิดพลาดไม่สามารถล้างได้"
+
+msgid "Error — nothing was deleted."
+msgstr "ข้อผิดพลาด — ไม่มีการลบใด ๆ"
+
+msgid "Every Horse Tools shortcode. Click any example to copy it."
+msgstr "shortcode ของ Horse Tools ทุกตัว คลิกตัวอย่างใดก็ได้เพื่อคัดลอก"
+
+msgid "Everyone"
+msgstr "ทุกคน"
+
+msgid "Example: domain.com/wp-admin where wp-admin is the suffix"
+msgstr "ตัวอย่าง: domain.com/wp-admin โดยที่ wp-admin คือส่วนต่อท้าย"
+
+msgid "Export"
+msgstr "ส่งออก"
+
+msgid "Export downloads all your snippets as a .json file. Import merges a file from another site — existing snippets of the same name are kept, not overwritten."
+msgstr "การส่งออกจะดาวน์โหลดตัวอย่างโค้ดทั้งหมดของคุณเป็นไฟล์ .json การนำเข้าจะรวมไฟล์จากเว็บไซต์อื่น — ตัวอย่างโค้ดที่มีอยู่ในชื่อเดียวกันจะถูกเก็บไว้ ไม่ถูกเขียนทับ"
+
+msgid "Export snippets (.json)"
+msgstr "ส่งออกตัวอย่างโค้ด (.json)"
+
+msgid "Exported."
+msgstr "ส่งออกแล้ว"
+
+msgid "Extend"
+msgstr "ขยาย"
+
+msgid "External"
+msgstr "ภายนอก"
+
+msgid "Extras"
+msgstr "รายการเสริม"
+
+msgid "FREE"
+msgstr "ฟรี"
+
+msgid "Failed to delete the file"
+msgstr "ลบไฟล์ไม่สำเร็จ"
+
+msgid "Failed to load debug log"
+msgstr "โหลดบันทึก debug ไม่สำเร็จ"
+
+msgid "Failed to update setting:"
+msgstr "อัปเดตการตั้งค่าไม่สำเร็จ:"
+
+msgid "Featured banner + grid"
+msgstr "แบนเนอร์เด่น + ตาราง"
+
+msgid "Feeds are not available on this site. %s"
+msgstr "ฟีดไม่พร้อมใช้งานบนเว็บไซต์นี้ %s"
+
+msgid "Feeds disabled"
+msgstr "ปิดฟีดแล้ว"
+
+msgid "Field"
+msgstr "ฟิลด์"
+
+msgid "Filter by tag"
+msgstr "กรองตามแท็ก"
+
+msgid "Filter posts and images"
+msgstr "กรองโพสต์และรูปภาพ"
+
+msgid "Find and delete all 404 images in media"
+msgstr "ค้นหาและลบภาพ 404 ทั้งหมดในสื่อ"
+
+msgid "Find and delete all 404 thumbnail images in media"
+msgstr "ค้นหาและลบภาพขนาดย่อ 404 ทั้งหมดในสื่อ"
+
+msgid "Find usage"
+msgstr "ค้นหาการใช้งาน"
+
+msgid "Find where a shortcode is used"
+msgstr "ค้นหาว่า shortcode ถูกใช้ที่ไหน"
+
+msgid "Flip photo"
+msgstr "พลิกรูปภาพ"
+
+msgid "Font"
+msgstr "ฟอนต์"
+
+msgid "Font does not exist"
+msgstr "ไม่มีฟอนต์"
+
+msgid "Font size"
+msgstr "ขนาดฟอนต์"
+
+msgid "For an Nginx server, if the ads.txt file already exists in the root directory of the website, it will prioritize the static file, so this function will not work. If you want to use it, you can either configure Nginx or delete the static file before proceeding"
+msgstr "สำหรับเซิร์ฟเวอร์ Nginx หากไฟล์ ads.txt มีอยู่แล้วในไดเรกทอรีรากของเว็บไซต์ ระบบจะให้ความสำคัญกับไฟล์แบบสถิต ดังนั้นฟังก์ชันนี้จะไม่ทำงาน หากคุณต้องการใช้งาน คุณสามารถตั้งค่า Nginx หรือลบไฟล์แบบสถิตก่อนดำเนินการ"
+
+msgid "Forced ad clicks — removed"
+msgstr "การบังคับคลิกโฆษณา — ถูกลบออกแล้ว"
+
+msgid "Found in %d item(s):"
+msgstr "พบใน %d รายการ:"
+
+msgid "Foxtool by Fox Theme (Nguyễn Ngọc Hoàn)"
+msgstr "Foxtool โดย Fox Theme (Nguyễn Ngọc Hoàn)"
+
+msgid "Free"
+msgstr "ฟรี"
+
+msgid "Free to use the \"solid\" and \"brands\" styles"
+msgstr "ใช้สไตล์ \"solid\" และ \"brands\" ได้ฟรี"
+
+msgid "Free!"
+msgstr "ฟรี!"
+
+msgid "Fri"
+msgstr "ศ."
+
+msgid "From"
+msgstr "จาก"
+
+msgid "Full screen"
+msgstr "เต็มจอ"
+
+msgid "GD Library does not support AVIF images"
+msgstr "ไลบรารี GD ไม่รองรับภาพ AVIF"
+
+msgid "GD Library is not installed"
+msgstr "ไม่ได้ติดตั้งไลบรารี GD"
+
+msgid "GGET"
+msgstr "GGET"
+
+msgid "GOOGLE"
+msgstr "GOOGLE"
+
+msgid "Generate data"
+msgstr "สร้างข้อมูล"
+
+msgid "Give the snippet a name (letters, numbers and dashes)."
+msgstr "ตั้งชื่อให้ตัวอย่างโค้ด (ตัวอักษร ตัวเลข และขีดกลาง)"
+
+msgid "Go to the home page"
+msgstr "ไปที่หน้าแรก"
+
+msgid "Gold"
+msgstr "ทอง"
+
+msgid "Google Fonts detected — click “Download & self-host” to serve them locally."
+msgstr "ตรวจพบ Google Fonts — คลิก “ดาวน์โหลดและโฮสต์เอง” เพื่อให้บริการจากในเครื่อง"
+
+msgid "Google did not return the stylesheet (HTTP error)."
+msgstr "Google ไม่ส่งคืน stylesheet (ข้อผิดพลาด HTTP)"
+
+msgid "Grade %s"
+msgstr "เกรด %s"
+
+msgid "Green"
+msgstr "เขียว"
+
+msgid "Greeting bubble text (e.g. Hi! Need help?)"
+msgstr "ข้อความบับเบิลทักทาย (เช่น สวัสดี! ต้องการความช่วยเหลือไหม?)"
+
+msgid "Greeting message (Live-chat skin)"
+msgstr "ข้อความทักทาย (สกิน Live-chat)"
+
+msgid "H tag color when scrolled to"
+msgstr "สีแท็ก H เมื่อเลื่อนไปถึง"
+
+msgid "HORSE SEARCH"
+msgstr "HORSE SEARCH"
+
+msgid "HSTS (force HTTPS for 180 days)"
+msgstr "HSTS (บังคับ HTTPS เป็นเวลา 180 วัน)"
+
+msgid "HTML compression: minify inline JS, strip comments"
+msgstr "การบีบอัด HTML: ย่อ JS แบบ inline ตัดความคิดเห็นออก"
+
+msgid "HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>"
+msgstr "HTML, CSS หรือ JS…  เช่น <a href=&quot;{{url}}&quot;>{{label}}</a>"
+
+msgid "Hello"
+msgstr "สวัสดี"
+
+msgid "Hello %s. A new comment has been posted on your article \"%s\". You can view the comment here: %s"
+msgstr "สวัสดี %s มีความคิดเห็นใหม่ถูกโพสต์ในบทความ \"%s\" ของคุณ คุณสามารถดูความคิดเห็นได้ที่นี่: %s"
+
+msgid "Hi 👋 How can we help you?"
+msgstr "สวัสดี 👋 เราช่วยอะไรคุณได้บ้าง?"
+
+msgid "Hide Admin account from profile page"
+msgstr "ซ่อนบัญชีผู้ดูแลจากหน้าโปรไฟล์"
+
+msgid "Hide Horse Tools"
+msgstr "ซ่อน Horse Tools"
+
+msgid "Hide back link"
+msgstr "ซ่อนลิงก์ย้อนกลับ"
+
+msgid "Hide bar when pulled down"
+msgstr "ซ่อนแถบเมื่อดึงลง"
+
+msgid "Hide chat button when scrolling down"
+msgstr "ซ่อนปุ่มแชทเมื่อเลื่อนลง"
+
+msgid "Hide from administrators"
+msgstr "ซ่อนจากผู้ดูแล"
+
+msgid "Hide language options"
+msgstr "ซ่อนตัวเลือกภาษา"
+
+msgid "Hide minimized list"
+msgstr "ซ่อนรายการที่ย่อไว้"
+
+msgid "Hide plugins from the manager"
+msgstr "ซ่อนปลั๊กอินจากตัวจัดการ"
+
+msgid "Hide post categories from homepage"
+msgstr "ซ่อนหมวดหมู่โพสต์จากหน้าแรก"
+
+msgid "Hide the tools you want"
+msgstr "ซ่อนเครื่องมือที่คุณต้องการ"
+
+msgid "Hide the update & maintenance notice"
+msgstr "ซ่อนประกาศอัปเดตและบำรุงรักษา"
+
+msgid "Hide this URL from the log"
+msgstr "ซ่อน URL นี้จากบันทึก"
+
+msgid "Hide usernames from scanners"
+msgstr "ซ่อนชื่อผู้ใช้จากตัวสแกน"
+
+msgid "Hits"
+msgstr "จำนวนครั้ง"
+
+msgid "Horse Search"
+msgstr "Horse Search"
+
+msgid "Horse Tools"
+msgstr "Horse Tools"
+
+msgid "Horse Tools is built on %s, which is no longer maintained by its author. That original work is gratefully acknowledged and this fork continues under the same GPLv2 licence."
+msgstr "Horse Tools สร้างขึ้นบน %s ซึ่งไม่ได้รับการดูแลจากผู้เขียนอีกต่อไป เราขอขอบคุณผลงานต้นฉบับนั้นด้วยความซาบซึ้ง และ fork นี้ยังคงดำเนินต่อภายใต้สัญญาอนุญาต GPLv2 เดียวกัน"
+
+msgid "Horse Tools shortcode"
+msgstr "shortcode ของ Horse Tools"
+
+msgid "Horse Tools:"
+msgstr "Horse Tools:"
+
+msgid "Host"
+msgstr "โฮสต์"
+
+msgid "Hours"
+msgstr "ชั่วโมง"
+
+msgid "How to use"
+msgstr "วิธีใช้งาน"
+
+msgid "I understand this permanently deletes data."
+msgstr "ฉันเข้าใจว่าการกระทำนี้จะลบข้อมูลอย่างถาวร"
+
+msgid "ICON"
+msgstr "ไอคอน"
+
+msgid "INDEX"
+msgstr "INDEX"
+
+msgid "Icon"
+msgstr "ไอคอน"
+
+msgid "Icon (e.g. apps)"
+msgstr "ไอคอน (เช่น apps)"
+
+msgid "Icon background color"
+msgstr "สีพื้นหลังไอคอน"
+
+msgid "Icon border color"
+msgstr "สีเส้นขอบไอคอน"
+
+msgid "Icon border radius"
+msgstr "ความโค้งเส้นขอบไอคอน"
+
+msgid "Icon color"
+msgstr "สีไอคอน"
+
+msgid "Icon picker"
+msgstr "ตัวเลือกไอคอน"
+
+msgid "If someone replies to a comment, there will be an email notification sent to the commenter"
+msgstr "หากมีคนตอบกลับความคิดเห็น จะมีการแจ้งเตือนทางอีเมลส่งไปยังผู้แสดงความคิดเห็น"
+
+msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
+msgstr "หาก Secret key ว่างเปล่า การตรวจสอบจะถูกข้ามไปทั้งหมดแทนที่จะปฏิเสธการเข้าสู่ระบบทุกครั้ง"
+
+msgid "If you dont want to automatically switch the language based on WordPress context, please select the language you prefer"
+msgstr "หากคุณไม่ต้องการสลับภาษาอัตโนมัติตามบริบทของ WordPress โปรดเลือกภาษาที่คุณต้องการ"
+
+msgid "If you enable this feature and set automatic revision limit and automatic save time for posts or pages, it will reduce the amount of data stored in the database"
+msgstr "หากคุณเปิดใช้คุณสมบัตินี้และตั้งค่าการจำกัดการแก้ไขอัตโนมัติและเวลาบันทึกอัตโนมัติสำหรับโพสต์หรือหน้า จะช่วยลดปริมาณข้อมูลที่จัดเก็บในฐานข้อมูล"
+
+msgid "If you enable this feature, your Pages will have .html appended to them, for example: domain.com/page.html"
+msgstr "หากคุณเปิดใช้คุณสมบัตินี้ หน้าของคุณจะมี .html ต่อท้าย เช่น domain.com/page.html"
+
+msgid "If you find the Admin Bar distracting every time you view the website, you can turn it off (there is an option for you to turn off all or only turn off for users)"
+msgstr "หากคุณรู้สึกว่าแถบผู้ดูแลรบกวนทุกครั้งที่ดูเว็บไซต์ คุณสามารถปิดได้ (มีตัวเลือกให้คุณปิดทั้งหมดหรือปิดเฉพาะสำหรับผู้ใช้)"
+
+msgid "If you find the new Widget Manager too difficult to use, then revert it to the Classic Widget version"
+msgstr "หากคุณรู้สึกว่าตัวจัดการวิดเจ็ตใหม่ใช้งานยากเกินไป ให้เปลี่ยนกลับไปเป็นเวอร์ชัน Classic Widget"
+
+msgid "If you find the new editor too difficult to use, then revert it to the Classic Editor version"
+msgstr "หากคุณรู้สึกว่าตัวแก้ไขใหม่ใช้งานยากเกินไป ให้เปลี่ยนกลับไปเป็นเวอร์ชัน Classic Editor"
+
+msgid "If you find the tools above unnecessary, you can hide them to make the WP admin interface cleaner. This function only hides them without blocking access to their links"
+msgstr "หากคุณรู้สึกว่าเครื่องมือด้านบนไม่จำเป็น คุณสามารถซ่อนได้เพื่อให้อินเทอร์เฟซผู้ดูแล WP สะอาดขึ้น ฟังก์ชันนี้เพียงซ่อนโดยไม่บล็อกการเข้าถึงลิงก์ของพวกมัน"
+
+msgid "If you had it enabled it is now inactive. The AdSense and ads.txt tools on the other tabs are unaffected."
+msgstr "หากคุณเปิดใช้อยู่ ตอนนี้จะไม่ทำงานแล้ว เครื่องมือ AdSense และ ads.txt บนแท็บอื่นไม่ได้รับผลกระทบ"
+
+msgid "If you have members and do not want them to upload images with excessively large sizes, causing storage space usage, you can limit the maximum size allowed for upload"
+msgstr "หากคุณมีสมาชิกและไม่ต้องการให้พวกเขาอัปโหลดรูปภาพที่มีขนาดใหญ่เกินไป ซึ่งทำให้ใช้พื้นที่จัดเก็บมาก คุณสามารถจำกัดขนาดสูงสุดที่อนุญาตให้อัปโหลดได้"
+
+msgid "If you need to monitor WordPress debug files without accessing the file manager, this tool is made just for that purpose"
+msgstr "หากคุณต้องการตรวจสอบไฟล์ debug ของ WordPress โดยไม่ต้องเข้าถึงตัวจัดการไฟล์ เครื่องมือนี้สร้างขึ้นมาเพื่อจุดประสงค์นั้นโดยเฉพาะ"
+
+msgid "If you not using it, you can disable Classic CSS on the homepage"
+msgstr "หากคุณไม่ได้ใช้งาน คุณสามารถปิด Classic CSS บนหน้าแรกได้"
+
+msgid "If you not using it, you can disable Emoji"
+msgstr "หากคุณไม่ได้ใช้งาน คุณสามารถปิดอิโมจิได้"
+
+msgid "If you not using it, you can disable Gutenberg CSS on the homepage"
+msgstr "หากคุณไม่ได้ใช้งาน คุณสามารถปิด Gutenberg CSS บนหน้าแรกได้"
+
+msgid "If you receive this email, then the SMTP email sending function is working well"
+msgstr "หากคุณได้รับอีเมลนี้ แสดงว่าฟังก์ชันการส่งอีเมล SMTP ทำงานได้ดี"
+
+msgid "If you want to display your signature anywhere, you can create content above and then use the generated shortcode at your desired location"
+msgstr "หากคุณต้องการแสดงลายเซ็นของคุณที่ใดก็ได้ คุณสามารถสร้างเนื้อหาด้านบนแล้วใช้ shortcode ที่สร้างขึ้นในตำแหน่งที่คุณต้องการ"
+
+msgid "If you want to enable the feature to duplicate posts, pages, or custom post types, please activate this function"
+msgstr "หากคุณต้องการเปิดใช้คุณสมบัติทำสำเนาโพสต์ หน้า หรือประเภทโพสต์ที่กำหนดเอง โปรดเปิดใช้ฟังก์ชันนี้"
+
+msgid "If you want to export or import the settings of the Horse Tools plugin, enable this feature. It allows you to easily transfer configurations from this site to another"
+msgstr "หากคุณต้องการส่งออกหรือนำเข้าการตั้งค่าของปลั๊กอิน Horse Tools ให้เปิดใช้คุณสมบัตินี้ ช่วยให้คุณถ่ายโอนการตั้งค่าจากเว็บไซต์นี้ไปยังอีกเว็บไซต์ได้อย่างง่ายดาย"
+
+msgid "If you want to hide a specific Administrator account, select the user"
+msgstr "หากคุณต้องการซ่อนบัญชีผู้ดูแลระบบเฉพาะราย ให้เลือกผู้ใช้"
+
+msgid "If you want to lazy load images every time the page loads, then turn it on. This function helps your website load faster"
+msgstr "หากคุณต้องการโหลดรูปภาพแบบ lazy ทุกครั้งที่หน้าโหลด ให้เปิดใช้งาน ฟังก์ชันนี้ช่วยให้เว็บไซต์ของคุณโหลดเร็วขึ้น"
+
+msgid "If you want to use font Awesome, you can enable it (it an icon font). You can search for icons at:"
+msgstr "หากคุณต้องการใช้ Font Awesome คุณสามารถเปิดใช้ได้ (เป็นฟอนต์ไอคอน) คุณสามารถค้นหาไอคอนได้ที่:"
+
+msgid "If you want your uploaded images to be watermarked, please use this function and configure it above. Watermark (PNG, JPG)"
+msgstr "หากคุณต้องการให้รูปภาพที่อัปโหลดมีลายน้ำ โปรดใช้ฟังก์ชันนี้และตั้งค่าด้านบน ลายน้ำ (PNG, JPG)"
+
+msgid "If youre tired of WordPress default search tool because its too slow, try out our lightning-fast search feature to give your users an exceptional and speedy search experience"
+msgstr "หากคุณเบื่อเครื่องมือค้นหาเริ่มต้นของ WordPress เพราะช้าเกินไป ลองใช้ฟีเจอร์ค้นหาที่รวดเร็วดั่งสายฟ้าของเราเพื่อมอบประสบการณ์การค้นหาที่ยอดเยี่ยมและรวดเร็วให้กับผู้ใช้ของคุณ"
+
+msgid "Ignore"
+msgstr "ละเว้น"
+
+msgid "Ignore 8-bit png"
+msgstr "ละเว้น png แบบ 8-bit"
+
+msgid "Image URL (optional, replaces the icon)"
+msgstr "URL รูปภาพ (ตัวเลือกเสริม แทนที่ไอคอน)"
+
+msgid "Image crop configuration"
+msgstr "การตั้งค่าการครอบตัดรูปภาพ"
+
+msgid "Image function for posts"
+msgstr "ฟังก์ชันรูปภาพสำหรับโพสต์"
+
+msgid "Images are lazy-loaded"
+msgstr "รูปภาพถูกโหลดแบบ lazy"
+
+msgid "Import"
+msgstr "นำเข้า"
+
+msgid "Import from Shortcoder"
+msgstr "นำเข้าจาก Shortcoder"
+
+msgid "Import snippets"
+msgstr "นำเข้าตัวอย่างโค้ด"
+
+msgid "Imported %1$d snippet(s); %2$d already existed."
+msgstr "นำเข้าแล้ว %1$d ตัวอย่างโค้ด; %2$d มีอยู่แล้ว"
+
+msgid "Imported %1$d snippet(s); %2$d already existed. Reloading…"
+msgstr "นำเข้าแล้ว %1$d ตัวอย่างโค้ด; %2$d มีอยู่แล้ว กำลังโหลดใหม่…"
+
+msgid "Imported %1$d snippet(s); %2$d skipped. Reloading…"
+msgstr "นำเข้าแล้ว %1$d ตัวอย่างโค้ด; ข้าม %2$d กำลังโหลดใหม่…"
+
+msgid "Imported %d setting group(s). You can undo this below."
+msgstr "นำเข้าแล้ว %d กลุ่มการตั้งค่า คุณสามารถเลิกทำได้ด้านล่าง"
+
+msgid "Index now"
+msgstr "จัดทำดัชนีเดี๋ยวนี้"
+
+msgid "Information about your website"
+msgstr "ข้อมูลเกี่ยวกับเว็บไซต์ของคุณ"
+
+msgid "Input / select box color"
+msgstr "สีกล่องกรอกข้อมูล / เลือก"
+
+msgid "Insert icons anywhere with a shortcode"
+msgstr "แทรกไอคอนที่ใดก็ได้ด้วย shortcode"
+
+msgid "Install the pending updates."
+msgstr "ติดตั้งการอัปเดตที่รอดำเนินการ"
+
+msgid "Instant-page is a library that allows you to preload the content of a linked page into the browser memory simply by hovering over the link. When you click on the link, it provides a remarkably fast loading experience"
+msgstr "Instant-page เป็นไลบรารีที่ช่วยให้คุณโหลดเนื้อหาของหน้าที่เชื่อมโยงไว้ล่วงหน้าเข้าสู่หน่วยความจำเบราว์เซอร์เพียงแค่วางเมาส์เหนือลิงก์ เมื่อคุณคลิกลิงก์ จะมอบประสบการณ์การโหลดที่รวดเร็วอย่างน่าทึ่ง"
+
+msgid "Instant-page prefetch and image lazy-loading"
+msgstr "การดึงข้อมูลล่วงหน้าของ Instant-page และการโหลดรูปภาพแบบ lazy"
+
+msgid "Insufficient permissions"
+msgstr "สิทธิ์ไม่เพียงพอ"
+
+msgid "Known post types:"
+msgstr "ประเภทโพสต์ที่รู้จัก:"
+
+msgid "LOCKVIP"
+msgstr "LOCKVIP"
+
+msgid "Language"
+msgstr "ภาษา"
+
+msgid "Last seen"
+msgstr "เห็นล่าสุด"
+
+msgid "Layout & interactive"
+msgstr "เลย์เอาต์และการโต้ตอบ"
+
+msgid "Lazy-load images; drop Emoji"
+msgstr "โหลดรูปภาพแบบ lazy; ยกเลิกอิโมจิ"
+
+msgid "Lazy-load images; drop Emoji and jQuery Migrate"
+msgstr "โหลดรูปภาพแบบ lazy; ยกเลิกอิโมจิและ jQuery Migrate"
+
+msgid "Lean pages and lighter media. Leaves Gutenberg and Classic CSS alone, since removing those can change how a theme looks."
+msgstr "หน้าที่กระชับและสื่อที่เบากว่า ปล่อย Gutenberg และ Classic CSS ไว้ตามเดิม เนื่องจากการลบสิ่งเหล่านั้นอาจทำให้ธีมมีหน้าตาเปลี่ยนไป"
+
+msgid "Leave another shortcode plugin"
+msgstr "ออกจากปลั๊กอิน shortcode อื่น"
+
+msgid "Left drawer"
+msgstr "ลิ้นชักซ้าย"
+
+msgid "Lets you drop any of the bundled Tabler icons (over 5,800, MIT licence) into posts, pages and anywhere shortcodes run. The icon font only loads on pages that actually use one, so it costs nothing elsewhere."
+msgstr "ให้คุณวางไอคอน Tabler ที่มาพร้อมกัน (กว่า 5,800 ไอคอน สัญญาอนุญาต MIT) ลงในโพสต์ หน้า และทุกที่ที่ shortcode ทำงาน ฟอนต์ไอคอนจะโหลดเฉพาะบนหน้าที่ใช้งานจริงเท่านั้น จึงไม่มีค่าใช้จ่ายในที่อื่น"
+
+msgid "Leverage Google’s Indexing API to speed up the indexing of your website on Google’s search engine. You can add as many API keys as you like for unlimited indexing capacity"
+msgstr "ใช้ประโยชน์จาก Google Indexing API เพื่อเร่งการจัดทำดัชนีเว็บไซต์ของคุณบนเครื่องมือค้นหาของ Google คุณสามารถเพิ่มคีย์ API ได้มากเท่าที่ต้องการเพื่อความสามารถในการจัดทำดัชนีที่ไม่จำกัด"
+
+msgid "Licence:"
+msgstr "สัญญาอนุญาต:"
+
+msgid "Light / Dark"
+msgstr "สว่าง / มืด"
+
+msgid "Limit Horse Tools display"
+msgstr "จำกัดการแสดง Horse Tools"
+
+msgid "Limit JPG, PNG, WEBP, AVIF images"
+msgstr "จำกัดภาพ JPG, PNG, WEBP, AVIF"
+
+msgid "Limit failed logins and email you on lockout"
+msgstr "จำกัดการเข้าสู่ระบบที่ล้มเหลวและส่งอีเมลถึงคุณเมื่อถูกล็อกเอาต์"
+
+msgid "Limit login attempts"
+msgstr "จำกัดจำนวนครั้งการเข้าสู่ระบบ"
+
+msgid "Limit logins, block user enumeration, disable XML-RPC and the file editor"
+msgstr "จำกัดการเข้าสู่ระบบ บล็อกการแจกแจงผู้ใช้ ปิด XML-RPC และตัวแก้ไขไฟล์"
+
+msgid "Limits the maximum width and height of JPG, PNG, WEBP images upon upload. You can leave it blank if you want to keep the original size"
+msgstr "จำกัดความกว้างและความสูงสูงสุดของภาพ JPG, PNG, WEBP เมื่ออัปโหลด คุณสามารถเว้นว่างไว้ได้หากต้องการคงขนาดต้นฉบับ"
+
+msgid "Limits the size of JPG, PNG, WEBP, AVIF images when uploading"
+msgstr "จำกัดขนาดของภาพ JPG, PNG, WEBP, AVIF เมื่ออัปโหลด"
+
+msgid "Link (article or service page)"
+msgstr "ลิงก์ (หน้าบทความหรือบริการ)"
+
+msgid "Link color"
+msgstr "สีลิงก์"
+
+msgid "Link display color"
+msgstr "สีการแสดงลิงก์"
+
+msgid "List"
+msgstr "รายการ"
+
+msgid "List color"
+msgstr "สีรายการ"
+
+msgid "List is hidden by default"
+msgstr "รายการถูกซ่อนไว้โดยค่าเริ่มต้น"
+
+msgid "Loading icons…"
+msgstr "กำลังโหลดไอคอน…"
+
+msgid "Location"
+msgstr "ตำแหน่ง"
+
+msgid "Lock down the admin"
+msgstr "ล็อกดาวน์ผู้ดูแล"
+
+msgid "Lock out repeated failed logins"
+msgstr "ล็อกเอาต์การเข้าสู่ระบบที่ล้มเหลวซ้ำ ๆ"
+
+msgid "Lockout length (minutes)"
+msgstr "ระยะเวลาล็อกเอาต์ (นาที)"
+
+msgid "Log out"
+msgstr "ออกจากระบบ"
+
+msgid "Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site."
+msgstr "บันทึก URL ที่ตายซึ่งผู้เยี่ยมชมที่ไม่ระบุตัวตนเข้าถึงจริง เพื่อให้คุณสามารถเปลี่ยน URL ที่มีการเข้าถึงบ่อยเป็นการเปลี่ยนเส้นทาง ผู้ใช้ที่เข้าสู่ระบบ บอท และคำขอทรัพยากรจะไม่ถูกบันทึก และไม่มีข้อมูลใดออกจากเว็บไซต์ของคุณ"
+
+msgid "Logged-in users"
+msgstr "ผู้ใช้ที่เข้าสู่ระบบ"
+
+msgid "Logged-out visitors"
+msgstr "ผู้เยี่ยมชมที่ออกจากระบบ"
+
+msgid "Login attempts are rate-limited"
+msgstr "การพยายามเข้าสู่ระบบถูกจำกัดอัตรา"
+
+msgid "Login failed. Check your details and try again."
+msgstr "เข้าสู่ระบบล้มเหลว ตรวจสอบข้อมูลของคุณและลองอีกครั้ง"
+
+msgid "Login link:"
+msgstr "ลิงก์เข้าสู่ระบบ:"
+
+msgid "MAIL"
+msgstr "MAIL"
+
+msgid "MAINTENANCE MODE"
+msgstr "โหมดบำรุงรักษา"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "MEDIA"
+msgstr "สื่อ"
+
+msgid "Main button"
+msgstr "ปุ่มหลัก"
+
+msgid "Main color"
+msgstr "สีหลัก"
+
+msgid "Main icon color"
+msgstr "สีไอคอนหลัก"
+
+msgid "Main icon text color"
+msgstr "สีข้อความไอคอนหลัก"
+
+msgid "Maintenance mode for developers (503)"
+msgstr "โหมดบำรุงรักษาสำหรับนักพัฒนา (503)"
+
+msgid "Management tool"
+msgstr "เครื่องมือจัดการ"
+
+msgid "Max height"
+msgstr "ความสูงสูงสุด"
+
+msgid "Max width"
+msgstr "ความกว้างสูงสุด"
+
+msgid "Media"
+msgstr "สื่อ"
+
+msgid "Media tab → JPG compression"
+msgstr "แท็บสื่อ → การบีบอัด JPG"
+
+msgid "Minify Inline JavaScript"
+msgstr "ย่อ JavaScript แบบ inline"
+
+msgid "Minimum role"
+msgstr "บทบาทขั้นต่ำ"
+
+msgid "Mobile only"
+msgstr "มือถือเท่านั้น"
+
+msgid "Modify content"
+msgstr "แก้ไขเนื้อหา"
+
+msgid "Modify some information on Woocommerce that you want"
+msgstr "แก้ไขข้อมูลบางอย่างบน Woocommerce ที่คุณต้องการ"
+
+msgid "Modify the footer content of WP admin"
+msgstr "แก้ไขเนื้อหาส่วนท้ายของผู้ดูแล WP"
+
+msgid "Mon"
+msgstr "จ."
+
+msgid "Monthly"
+msgstr "รายเดือน"
+
+msgid "Most snippet plugins store their snippets as a custom post type. Enter that post type to import them all as Horse Tools snippets — the other plugin is only read, never changed. After importing you can deactivate it and (for Shortcoder) your [sc …] tags keep working, or use “Convert” above."
+msgstr "ปลั๊กอินตัวอย่างโค้ดส่วนใหญ่จัดเก็บตัวอย่างโค้ดเป็นประเภทโพสต์ที่กำหนดเอง กรอกประเภทโพสต์นั้นเพื่อนำเข้าทั้งหมดเป็นตัวอย่างโค้ดของ Horse Tools — ปลั๊กอินอื่นจะถูกอ่านเท่านั้น ไม่มีการเปลี่ยนแปลง หลังจากนำเข้า คุณสามารถปิดใช้งานมันและ (สำหรับ Shortcoder) แท็ก [sc …] ของคุณยังคงทำงานต่อไป หรือใช้ “แปลง” ด้านบน"
+
+msgid "Move snippets between sites"
+msgstr "ย้ายตัวอย่างโค้ดระหว่างเว็บไซต์"
+
+msgid "Move the site address to https://"
+msgstr "ย้ายที่อยู่เว็บไซต์ไปเป็น https://"
+
+msgid "NOTIFY"
+msgstr "แจ้งเตือน"
+
+msgid "Name the font"
+msgstr "ตั้งชื่อฟอนต์"
+
+msgid "Name — letters, numbers, dashes (e.g. call-to-action)"
+msgstr "ชื่อ — ตัวอักษร ตัวเลข ขีดกลาง (เช่น call-to-action)"
+
+msgid "Navigation bar (Horse Tools)"
+msgstr "แถบนำทาง (Horse Tools)"
+
+msgid "Neutral"
+msgstr "กลาง"
+
+msgid "New / clear"
+msgstr "ใหม่ / ล้าง"
+
+msgid "Newly edited posts will be displayed first"
+msgstr "โพสต์ที่แก้ไขใหม่จะถูกแสดงก่อน"
+
+msgid "Next automatic check: %s"
+msgstr "การตรวจสอบอัตโนมัติครั้งถัดไป: %s"
+
+msgid "No"
+msgstr "ไม่"
+
+msgid "No (temporarily off)"
+msgstr "ไม่ (ปิดชั่วคราว)"
+
+msgid "No 404s recorded yet."
+msgstr "ยังไม่มีการบันทึก 404"
+
+msgid "No Google Fonts leaking to Google"
+msgstr "ไม่มี Google Fonts รั่วไหลไปยัง Google"
+
+msgid "No [sc] tags found in your content."
+msgstr "ไม่พบแท็ก [sc] ในเนื้อหาของคุณ"
+
+msgid "No automatic redirects yet. Change a published URL and one will appear here."
+msgstr "ยังไม่มีการเปลี่ยนเส้นทางอัตโนมัติ เปลี่ยน URL ที่เผยแพร่แล้วและรายการจะปรากฏที่นี่"
+
+msgid "No badge colour"
+msgstr "ไม่มีสีป้าย"
+
+msgid "No font files were found in the stylesheet."
+msgstr "ไม่พบไฟล์ฟอนต์ใน stylesheet"
+
+msgid "No icon matches that."
+msgstr "ไม่มีไอคอนที่ตรงกับสิ่งนั้น"
+
+msgid "No pages selected"
+msgstr "ไม่ได้เลือกหน้า"
+
+msgid "No results found"
+msgstr "ไม่พบผลลัพธ์"
+
+msgid "No setting matches that."
+msgstr "ไม่มีการตั้งค่าที่ตรงกับสิ่งนั้น"
+
+msgid "No size"
+msgstr "ไม่มีขนาด"
+
+msgid "No snippets were found for the post type \"%s\"."
+msgstr "ไม่พบตัวอย่างโค้ดสำหรับประเภทโพสต์ \"%s\""
+
+msgid "No snippets yet. Create one above, or import from Shortcoder."
+msgstr "ยังไม่มีตัวอย่างโค้ด สร้างหนึ่งรายการด้านบน หรือนำเข้าจาก Shortcoder"
+
+msgid "No third-party requests found. Nothing leaks to other servers."
+msgstr "ไม่พบคำขอจากบุคคลที่สาม ไม่มีข้อมูลรั่วไหลไปยังเซิร์ฟเวอร์อื่น"
+
+msgid "None"
+msgstr "ไม่มี"
+
+msgid "None: default not selected, Auto: background image automatically changes each time the page is loaded, Color: change the color you want, Upload: upload the background image you want"
+msgstr "ไม่มี: ค่าเริ่มต้นที่ไม่ได้เลือก, อัตโนมัติ: รูปพื้นหลังเปลี่ยนอัตโนมัติทุกครั้งที่โหลดหน้า, สี: เปลี่ยนสีที่คุณต้องการ, อัปโหลด: อัปโหลดรูปพื้นหลังที่คุณต้องการ"
+
+msgid "Not entered"
+msgstr "ไม่ได้กรอก"
+
+msgid "Not found in any post or page."
+msgstr "ไม่พบในโพสต์หรือหน้าใด ๆ"
+
+msgid "Nothing could be self-hosted."
+msgstr "ไม่มีสิ่งใดที่สามารถโฮสต์เองได้"
+
+msgid "Nothing on this page is enabled yet."
+msgstr "ยังไม่มีสิ่งใดบนหน้านี้ที่เปิดใช้งาน"
+
+msgid "Nothing to delete."
+msgstr "ไม่มีสิ่งใดที่จะลบ"
+
+msgid "Notification at the top of the page"
+msgstr "การแจ้งเตือนที่ด้านบนของหน้า"
+
+msgid "Notification link sent"
+msgstr "ส่งลิงก์แจ้งเตือนแล้ว"
+
+msgid "Notify"
+msgstr "แจ้งเตือน"
+
+msgid "Notify the post author when someone comments on the post"
+msgstr "แจ้งเตือนผู้เขียนโพสต์เมื่อมีคนแสดงความคิดเห็นในโพสต์"
+
+msgid "Number of data completed: '+sopost+'"
+msgstr "จำนวนข้อมูลที่เสร็จสมบูรณ์: '+sopost+'"
+
+msgid "Number of items displayed"
+msgstr "จำนวนรายการที่แสดง"
+
+msgid "OK"
+msgstr "ตกลง"
+
+msgid "ON/OFF"
+msgstr "เปิด/ปิด"
+
+msgid "OPTIMIZE"
+msgstr "ปรับให้เหมาะสม"
+
+msgid "Off"
+msgstr "ปิด"
+
+msgid "Off / select"
+msgstr "ปิด / เลือก"
+
+msgid "One click applies a set of recommended settings for your kind of site. Presets only turn options on and tune a few values — they never switch off anything you have already enabled, and a one-click Undo is always kept."
+msgstr "คลิกเดียวเพื่อใช้ชุดการตั้งค่าที่แนะนำสำหรับเว็บไซต์ประเภทของคุณ ค่าที่ตั้งไว้ล่วงหน้าจะเปิดตัวเลือกและปรับค่าบางค่าเท่านั้น — จะไม่ปิดสิ่งที่คุณเปิดใช้ไว้แล้ว และมีการเก็บปุ่มเลิกทำแบบคลิกเดียวไว้เสมอ"
+
+msgid "Online now"
+msgstr "ออนไลน์ตอนนี้"
+
+msgid "Only admin has access to the admin page"
+msgstr "มีเพียงผู้ดูแลเท่านั้นที่เข้าถึงหน้าผู้ดูแลได้"
+
+msgid "Only enable once HTTPS works everywhere. Browsers will refuse plain HTTP to your site for six months, and it cannot be undone quickly."
+msgstr "เปิดใช้เฉพาะเมื่อ HTTPS ทำงานได้ทุกที่แล้วเท่านั้น เบราว์เซอร์จะปฏิเสธ HTTP ธรรมดาไปยังเว็บไซต์ของคุณเป็นเวลาหกเดือน และไม่สามารถเลิกทำได้อย่างรวดเร็ว"
+
+msgid "Only notify, do not block access"
+msgstr "แจ้งเตือนเท่านั้น ไม่บล็อกการเข้าถึง"
+
+msgid "Only supported from PHP 8.1 and above"
+msgstr "รองรับเฉพาะ PHP 8.1 ขึ้นไปเท่านั้น"
+
+msgid "Open in a new tab"
+msgstr "เปิดในแท็บใหม่"
+
+msgid "Open – close time"
+msgstr "เวลาเปิด – ปิด"
+
+msgid "Opening hours, one line per day (Tab-widget skin)"
+msgstr "เวลาทำการ หนึ่งบรรทัดต่อวัน (สกิน Tab-widget)"
+
+msgid "Optimization Library"
+msgstr "ไลบรารีเพิ่มประสิทธิภาพ"
+
+msgid "Optimize Widgets"
+msgstr "เพิ่มประสิทธิภาพวิดเจ็ต"
+
+msgid "Optimize deletion of content in the database"
+msgstr "เพิ่มประสิทธิภาพการลบเนื้อหาในฐานข้อมูล"
+
+msgid "Optimize saving post content into the database"
+msgstr "เพิ่มประสิทธิภาพการบันทึกเนื้อหาโพสต์ลงในฐานข้อมูล"
+
+msgid "Optimize tab"
+msgstr "แท็บเพิ่มประสิทธิภาพ"
+
+msgid "Optimize tab → image lazy loading"
+msgstr "แท็บเพิ่มประสิทธิภาพ → การโหลดรูปภาพแบบ lazy"
+
+msgid "Option to display ads in custom posts"
+msgstr "ตัวเลือกในการแสดงโฆษณาในโพสต์ที่กำหนดเอง"
+
+msgid "Option to display the Admin bar"
+msgstr "ตัวเลือกในการแสดงแถบผู้ดูแล"
+
+msgid "Order"
+msgstr "คำสั่งซื้อ"
+
+msgid "Original contributors:"
+msgstr "ผู้มีส่วนร่วมดั้งเดิม:"
+
+msgid "Other links"
+msgstr "ลิงก์อื่น ๆ"
+
+msgid "Outstanding color"
+msgstr "สีเด่น"
+
+msgid "Overlay color"
+msgstr "สีโอเวอร์เลย์"
+
+msgid "Overview"
+msgstr "ภาพรวม"
+
+msgid "PHP errors are not shown to visitors"
+msgstr "ข้อผิดพลาด PHP ไม่แสดงต่อผู้เยี่ยมชม"
+
+msgid "PHP is a supported version (%s)"
+msgstr "PHP เป็นเวอร์ชันที่รองรับ (%s)"
+
+msgid "POPUP"
+msgstr "ป๊อปอัป"
+
+msgid "PRESETS"
+msgstr "ค่าที่ตั้งไว้ล่วงหน้า"
+
+msgid "Panel title (e.g. Our services)"
+msgstr "ชื่อแผง (เช่น บริการของเรา)"
+
+msgid "Password"
+msgstr "รหัสผ่าน"
+
+msgid "Paste an export here, or upload a .json file"
+msgstr "วางข้อมูลส่งออกที่นี่ หรืออัปโหลดไฟล์ .json"
+
+msgid "Pending comments"
+msgstr "ความคิดเห็นที่รอดำเนินการ"
+
+msgid "Performance"
+msgstr "ประสิทธิภาพ"
+
+msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
+msgstr "ลบ %1$s ออกจาก “%2$s” อย่างถาวรหรือไม่? การกระทำนี้ไม่สามารถเลิกทำได้"
+
+msgid "Permission denied."
+msgstr "ปฏิเสธสิทธิ์"
+
+msgid "Permissions-Policy: block geolocation, mic and camera"
+msgstr "Permissions-Policy: บล็อกตำแหน่งที่ตั้ง ไมโครโฟน และกล้อง"
+
+msgid "Photo masonry"
+msgstr "ภาพแบบ masonry"
+
+msgid "Play video"
+msgstr "เล่นวิดีโอ"
+
+msgid "Please complete the reCAPTCHA to verify that you are not a robot"
+msgstr "โปรดทำ reCAPTCHA ให้เสร็จเพื่อยืนยันว่าคุณไม่ใช่หุ่นยนต์"
+
+msgid "Please disable ad-blocker on your browser to access and view the content"
+msgstr "โปรดปิดตัวบล็อกโฆษณาบนเบราว์เซอร์ของคุณเพื่อเข้าถึงและดูเนื้อหา"
+
+msgid "Please enter the content here"
+msgstr "โปรดกรอกเนื้อหาที่นี่"
+
+msgid "Please wait"
+msgstr "โปรดรอ"
+
+msgid "Please wait for the email to be sent"
+msgstr "โปรดรอให้อีเมลถูกส่ง"
+
+msgid "Please wait: '+sopost+'"
+msgstr "โปรดรอ: '+sopost+'"
+
+msgid "Plugin development"
+msgstr "การพัฒนาปลั๊กอิน"
+
+msgid "Policy"
+msgstr "นโยบาย"
+
+msgid "Popup location"
+msgstr "ตำแหน่งป๊อปอัป"
+
+msgid "Popup save time (.. hours)"
+msgstr "เวลาบันทึกป๊อปอัป (.. ชั่วโมง)"
+
+msgid "Pre-filled message for WhatsApp / SMS (optional)"
+msgstr "ข้อความที่กรอกไว้ล่วงหน้าสำหรับ WhatsApp / SMS (ตัวเลือกเสริม)"
+
+msgid "Preview"
+msgstr "ตัวอย่าง"
+
+msgid "Preview changes"
+msgstr "ดูตัวอย่างการเปลี่ยนแปลง"
+
+msgid "Price + order button"
+msgstr "ราคา + ปุ่มสั่งซื้อ"
+
+msgid "Privacy"
+msgstr "ความเป็นส่วนตัว"
+
+msgid "Privacy — Google Fonts & external requests"
+msgstr "ความเป็นส่วนตัว — Google Fonts และคำขอภายนอก"
+
+msgid "Process cropped images"
+msgstr "ประมวลผลภาพที่ครอบตัด"
+
+msgid "Purple"
+msgstr "ม่วง"
+
+msgid "Quantity"
+msgstr "จำนวน"
+
+msgid "Quick chips"
+msgstr "ชิปด่วน"
+
+msgid "Quick replies, one per line as  Label|https://link  (Live-chat skin)"
+msgstr "การตอบกลับด่วน หนึ่งรายการต่อบรรทัดในรูปแบบ  Label|https://link  (สกิน Live-chat)"
+
+msgid "Quick search"
+msgstr "การค้นหาด่วน"
+
+msgid "Quick view button color"
+msgstr "สีปุ่มดูด่วน"
+
+msgid "REST API left ON so the store keeps working"
+msgstr "REST API เปิดไว้เพื่อให้ร้านค้าทำงานต่อได้"
+
+msgid "Reading settings → uncheck “Discourage search engines”"
+msgstr "การตั้งค่าการอ่าน → ยกเลิกการเลือก “ไม่สนับสนุนเครื่องมือค้นหา”"
+
+msgid "Recommended. xmlrpc.php is a common brute-force and pingback-amplification target and almost nothing uses it now (except Jetpack)."
+msgstr "แนะนำ xmlrpc.php เป็นเป้าหมายทั่วไปของการโจมตีแบบ brute-force และการขยาย pingback และแทบไม่มีอะไรใช้มันแล้วในตอนนี้ (ยกเว้น Jetpack)"
+
+msgid "Record 404 hits"
+msgstr "บันทึกการเข้าถึง 404"
+
+msgid "Red"
+msgstr "แดง"
+
+msgid "Redirect"
+msgstr "เปลี่ยนเส้นทาง"
+
+msgid "Redirect 301 to a custom page"
+msgstr "เปลี่ยนเส้นทาง 301 ไปยังหน้าที่กำหนดเอง"
+
+msgid "Redirect 301 whole page"
+msgstr "เปลี่ยนเส้นทาง 301 ทั้งหน้า"
+
+msgid "Redirect the 404 page to the homepage or a custom page of your choice, leave the field blank if you want to redirect to the homepage"
+msgstr "เปลี่ยนเส้นทางหน้า 404 ไปยังหน้าแรกหรือหน้าที่กำหนดเองตามที่คุณเลือก เว้นฟิลด์ว่างไว้หากต้องการเปลี่ยนเส้นทางไปยังหน้าแรก"
+
+msgid "Redirects"
+msgstr "การเปลี่ยนเส้นทาง"
+
+msgid "Referrer-Policy: strict-origin-when-cross-origin"
+msgstr "Referrer-Policy: strict-origin-when-cross-origin"
+
+msgid "Refresh"
+msgstr "รีเฟรช"
+
+msgid "Registration is disabled on this site."
+msgstr "การลงทะเบียนถูกปิดใช้งานบนเว็บไซต์นี้"
+
+msgid "Registration role options"
+msgstr "ตัวเลือกบทบาทการลงทะเบียน"
+
+msgid "Remove XHTML closing tags from empty elements in HTML5"
+msgstr "ลบแท็กปิด XHTML จากองค์ประกอบว่างใน HTML5"
+
+msgid "Remove category slug from permalink"
+msgstr "ลบ slug ของหมวดหมู่ออกจากลิงก์ถาวร"
+
+msgid "Remove comments from HTML, JavaScript, and CSS"
+msgstr "ลบความคิดเห็นออกจาก HTML, JavaScript และ CSS"
+
+msgid "Remove img tag attributes"
+msgstr "ลบแอตทริบิวต์แท็ก img"
+
+msgid "Remove protocols (HTTP: and HTTPS:) from all URLs"
+msgstr "ลบโปรโตคอล (HTTP: และ HTTPS:) ออกจาก URL ทั้งหมด"
+
+msgid "Remove relative domain from internal URLs"
+msgstr "ลบโดเมนสัมพัทธ์ออกจาก URL ภายใน"
+
+msgid "Remove tag slug from permalink"
+msgstr "ลบ slug ของแท็กออกจากลิงก์ถาวร"
+
+msgid "Remove the WordPress version tag"
+msgstr "ลบแท็กเวอร์ชัน WordPress"
+
+msgid "Remove unnecessary header tags"
+msgstr "ลบแท็กส่วนหัวที่ไม่จำเป็น"
+
+msgid "Removed"
+msgstr "ลบแล้ว"
+
+msgid "Removes attachments whose file is missing from disk. Every attachment is scanned, so the count is known only after it runs."
+msgstr "ลบไฟล์แนบที่ไฟล์หายไปจากดิสก์ ไฟล์แนบทุกรายการจะถูกสแกน ดังนั้นจำนวนจะทราบได้หลังจากทำงานเท่านั้น"
+
+msgid "Removes metadata entries for thumbnail files that are missing from disk. It does not delete images."
+msgstr "ลบรายการข้อมูลเมตาสำหรับไฟล์ภาพขนาดย่อที่หายไปจากดิสก์ มันไม่ลบรูปภาพ"
+
+msgid "Removes the RSD, WLW manifest and adjacent-post link tags from the page head."
+msgstr "ลบแท็กลิงก์ RSD, WLW manifest และโพสต์ที่อยู่ติดกันออกจากส่วนหัวของหน้า"
+
+msgid "Removes the X-Pingback header. Pairs with disabling XML-RPC."
+msgstr "ลบส่วนหัว X-Pingback ใช้คู่กับการปิด XML-RPC"
+
+msgid "Removes the built-in code editor under Appearance and Plugins. If an attacker gets into wp-admin, they cannot use it to edit PHP files. You edit files over SFTP instead."
+msgstr "ลบตัวแก้ไขโค้ดในตัวภายใต้ Appearance และ Plugins หากผู้โจมตีเข้าถึง wp-admin ได้ พวกเขาจะไม่สามารถใช้มันแก้ไขไฟล์ PHP ได้ คุณจะแก้ไขไฟล์ผ่าน SFTP แทน"
+
+msgid "Removes the generator meta tag. A small tidy-up — not a security measure on its own, since asset fingerprints reveal the version anyway."
+msgstr "ลบเมตาแท็ก generator เป็นการจัดระเบียบเล็กน้อย — ไม่ใช่มาตรการรักษาความปลอดภัยในตัวเอง เนื่องจากลายนิ้วมือของทรัพยากรก็เปิดเผยเวอร์ชันอยู่แล้ว"
+
+msgid "Removes wp-embed.js if you do not embed other WordPress posts."
+msgstr "ลบ wp-embed.js หากคุณไม่ได้ฝังโพสต์ WordPress อื่น"
+
+msgid "Requested URL"
+msgstr "URL ที่ร้องขอ"
+
+msgid "Requests"
+msgstr "คำขอ"
+
+msgid "Reset this setting"
+msgstr "รีเซ็ตการตั้งค่านี้"
+
+msgid "Restore previous configuration"
+msgstr "คืนค่าการตั้งค่าก่อนหน้า"
+
+msgid "Retrieve the API Client ID and Client Secret from your Google Developers project and add them to the two fields above"
+msgstr "ดึง Client ID และ Client Secret ของ API จากโปรเจกต์ Google Developers ของคุณและเพิ่มลงในสองฟิลด์ด้านบน"
+
+msgid "Retrieve the Site Key and Secret Key from your Google reCAPTCHA project and add them to the two fields above"
+msgstr "ดึง Site Key และ Secret Key จากโปรเจกต์ Google reCAPTCHA ของคุณและเพิ่มลงในสองฟิลด์ด้านบน"
+
+msgid "Reveal"
+msgstr "เปิดเผย"
+
+msgid "Rewrite every [sc …] tag in your content to [ht-snippet …], keeping all attributes. Preview first; applying edits post content, so take a backup. Tip: you don’t have to convert — imported snippets already answer [sc …] once Shortcoder is deactivated."
+msgstr "เขียนแท็ก [sc …] ทุกตัวในเนื้อหาของคุณใหม่เป็น [ht-snippet …] โดยคงแอตทริบิวต์ทั้งหมดไว้ ดูตัวอย่างก่อน การใช้จะแก้ไขเนื้อหาโพสต์ ดังนั้นควรสำรองข้อมูลไว้ เคล็ดลับ: คุณไม่จำเป็นต้องแปลง — ตัวอย่างโค้ดที่นำเข้าจะตอบสนอง [sc …] อยู่แล้วเมื่อ Shortcoder ถูกปิดใช้งาน"
+
+msgid "Right drawer"
+msgstr "ลิ้นชักขวา"
+
+msgid "Role"
+msgstr "บทบาท"
+
+msgid "Run shortcodes in category / tag descriptions"
+msgstr "รัน shortcode ในคำอธิบายหมวดหมู่ / แท็ก"
+
+msgid "Run shortcodes in excerpts"
+msgstr "รัน shortcode ในเนื้อหาย่อ"
+
+msgid "Run shortcodes in menu items"
+msgstr "รัน shortcode ในรายการเมนู"
+
+msgid "Run shortcodes in widgets"
+msgstr "รัน shortcode ในวิดเจ็ต"
+
+msgid "Run the scan first so there is something to self-host."
+msgstr "รันการสแกนก่อนเพื่อให้มีบางอย่างที่จะโฮสต์เอง"
+
+msgid "Run “%s” now? This permanently deletes matching items and cannot be undone."
+msgstr "รัน “%s” เดี๋ยวนี้หรือไม่? การกระทำนี้จะลบรายการที่ตรงกันอย่างถาวรและไม่สามารถเลิกทำได้"
+
+msgid "SAVE CONTENT"
+msgstr "บันทึกเนื้อหา"
+
+msgid "SCHEDULE"
+msgstr "กำหนดการ"
+
+msgid "SECURITY"
+msgstr "ความปลอดภัย"
+
+msgid "SEO optimization"
+msgstr "การเพิ่มประสิทธิภาพ SEO"
+
+msgid "SETTING"
+msgstr "การตั้งค่า"
+
+msgid "SIGN"
+msgstr "ลงชื่อ"
+
+msgid "SMTP authentication"
+msgstr "การยืนยันตัวตน SMTP"
+
+msgid "SMTP port"
+msgstr "พอร์ต SMTP"
+
+msgid "SMTP protocol"
+msgstr "โปรโตคอล SMTP"
+
+msgid "SMTP server"
+msgstr "เซิร์ฟเวอร์ SMTP"
+
+msgid "SNIPPETS"
+msgstr "ตัวอย่างโค้ด"
+
+msgid "SVG uploads are unavailable: the sanitiser library is missing."
+msgstr "การอัปโหลด SVG ไม่พร้อมใช้งาน: ไม่มีไลบรารีทำความสะอาด"
+
+msgid "Sat"
+msgstr "ส."
+
+msgid "Save changes"
+msgstr "บันทึกการเปลี่ยนแปลง"
+
+msgid "Save images to media when copying from another source"
+msgstr "บันทึกรูปภาพลงในสื่อเมื่อคัดลอกจากแหล่งอื่น"
+
+msgid "Save interval (minutes)"
+msgstr "ช่วงเวลาการบันทึก (นาที)"
+
+msgid "Save schedule"
+msgstr "บันทึกกำหนดการ"
+
+msgid "Save services"
+msgstr "บันทึกบริการ"
+
+msgid "Save shortcode status"
+msgstr "บันทึกสถานะ shortcode"
+
+msgid "Save snippet"
+msgstr "บันทึกตัวอย่างโค้ด"
+
+msgid "Saved %d service(s)."
+msgstr "บันทึกแล้ว %d บริการ"
+
+msgid "Saved."
+msgstr "บันทึกแล้ว"
+
+msgid "Scan external requests"
+msgstr "สแกนคำขอภายนอก"
+
+msgid "Scan with your phone"
+msgstr "สแกนด้วยโทรศัพท์ของคุณ"
+
+msgid "Scanning your home page…"
+msgstr "กำลังสแกนหน้าแรกของคุณ…"
+
+msgid "Screen refreshed"
+msgstr "รีเฟรชหน้าจอแล้ว"
+
+msgid "Scroll bar color"
+msgstr "สีแถบเลื่อน"
+
+msgid "Search"
+msgstr "ค้นหา"
+
+msgid "Search below, click any icon to copy its ready-made shortcode, then paste it where you want the icon to appear."
+msgstr "ค้นหาด้านล่าง คลิกไอคอนใดก็ได้เพื่อคัดลอก shortcode สำเร็จรูป จากนั้นวางในตำแหน่งที่คุณต้องการให้ไอคอนปรากฏ"
+
+msgid "Search icons — e.g. cart, arrow, brand-facebook…"
+msgstr "ค้นหาไอคอน — เช่น cart, arrow, brand-facebook…"
+
+msgid "Search settings…"
+msgstr "ค้นหาการตั้งค่า…"
+
+msgid "Seconds before the bubble appears"
+msgstr "วินาทีก่อนที่บับเบิลจะปรากฏ"
+
+msgid "Secret key"
+msgstr "Secret key"
+
+msgid "Security"
+msgstr "ความปลอดภัย"
+
+msgid "Security and speed for a shop, chosen not to interfere with the store. The REST API is left fully on — WooCommerce cart and checkout need it — and permalinks are left untouched."
+msgstr "ความปลอดภัยและความเร็วสำหรับร้านค้า เลือกให้ไม่รบกวนร้านค้า REST API เปิดไว้เต็มที่ — ตะกร้าและการชำระเงินของ WooCommerce ต้องการมัน — และลิงก์ถาวรจะไม่ถูกแตะต้อง"
+
+msgid "Security check failed. Please start the sign-in again."
+msgstr "การตรวจสอบความปลอดภัยล้มเหลว โปรดเริ่มการเข้าสู่ระบบใหม่"
+
+msgid "Security hardening"
+msgstr "การเสริมความปลอดภัย"
+
+msgid "Security headers (frame, nosniff, referrer)"
+msgstr "ส่วนหัวความปลอดภัย (frame, nosniff, referrer)"
+
+msgid "Security response headers"
+msgstr "ส่วนหัวการตอบสนองด้านความปลอดภัย"
+
+msgid "Security response headers are sent"
+msgstr "ส่งส่วนหัวการตอบสนองด้านความปลอดภัยแล้ว"
+
+msgid "Security tab → Block user enumeration"
+msgstr "แท็บความปลอดภัย → บล็อกการแจกแจงผู้ใช้"
+
+msgid "Security tab → Disable unused endpoints"
+msgstr "แท็บความปลอดภัย → ปิด endpoint ที่ไม่ได้ใช้"
+
+msgid "Security tab → Limit login attempts"
+msgstr "แท็บความปลอดภัย → จำกัดจำนวนครั้งการเข้าสู่ระบบ"
+
+msgid "Security tab → Lock down the admin"
+msgstr "แท็บความปลอดภัย → ล็อกดาวน์ผู้ดูแล"
+
+msgid "Security tab → Privacy → Scan external requests"
+msgstr "แท็บความปลอดภัย → ความเป็นส่วนตัว → สแกนคำขอภายนอก"
+
+msgid "Security tab → Privacy → self-host Google Fonts"
+msgstr "แท็บความปลอดภัย → ความเป็นส่วนตัว → โฮสต์ Google Fonts เอง"
+
+msgid "Security tab → Security response headers"
+msgstr "แท็บความปลอดภัย → ส่วนหัวการตอบสนองด้านความปลอดภัย"
+
+msgid "Security: block user enumeration, limit logins, disable XML-RPC, hide the version, disable the file editor"
+msgstr "ความปลอดภัย: บล็อกการแจกแจงผู้ใช้ จำกัดการเข้าสู่ระบบ ปิด XML-RPC ซ่อนเวอร์ชัน ปิดตัวแก้ไขไฟล์"
+
+msgid "Select admin"
+msgstr "เลือกผู้ดูแล"
+
+msgid "Select background color"
+msgstr "เลือกสีพื้นหลัง"
+
+msgid "Select button border color"
+msgstr "เลือกสีเส้นขอบปุ่ม"
+
+msgid "Select button color"
+msgstr "เลือกสีปุ่ม"
+
+msgid "Select icon"
+msgstr "เลือกไอคอน"
+
+msgid "Select icon color"
+msgstr "เลือกสีไอคอน"
+
+msgid "Select image"
+msgstr "เลือกรูปภาพ"
+
+msgid "Select redirect page"
+msgstr "เลือกหน้าเปลี่ยนเส้นทาง"
+
+msgid "Select the custom post for which you want to display TOC content"
+msgstr "เลือกโพสต์ที่กำหนดเองที่คุณต้องการแสดงเนื้อหาสารบัญ"
+
+msgid "Select the custom post for which you want to show ads"
+msgstr "เลือกโพสต์ที่กำหนดเองที่คุณต้องการแสดงโฆษณา"
+
+msgid "Select the displayed logo"
+msgstr "เลือกโลโก้ที่แสดง"
+
+msgid "Select the page to hide"
+msgstr "เลือกหน้าที่จะซ่อน"
+
+msgid "Select title color and button"
+msgstr "เลือกสีชื่อและปุ่ม"
+
+msgid "Selection color"
+msgstr "สีการเลือก"
+
+msgid "Self-host Google Fonts"
+msgstr "โฮสต์ Google Fonts เอง"
+
+msgid "Self-hosted %1$d font file(s) across %2$d stylesheet(s). Turn on “Self-host Google Fonts” above and save."
+msgstr "โฮสต์ไฟล์ฟอนต์เอง %1$d ไฟล์ ครอบคลุม %2$d stylesheet เปิด “โฮสต์ Google Fonts เอง” ด้านบนและบันทึก"
+
+msgid "Send"
+msgstr "ส่ง"
+
+msgid "Send security headers"
+msgstr "ส่งส่วนหัวความปลอดภัย"
+
+msgid "Send test email"
+msgstr "ส่งอีเมลทดสอบ"
+
+msgid "Sender email address"
+msgstr "ที่อยู่อีเมลผู้ส่ง"
+
+msgid "Sender name"
+msgstr "ชื่อผู้ส่ง"
+
+msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
+msgstr "ค่าเริ่มต้นที่เหมาะสมสำหรับเว็บไซต์เนื้อหา: สารบัญบนโพสต์ยาว หน้าที่เบากว่า และการเสริมความปลอดภัยพื้นฐาน"
+
+msgid "Services"
+msgstr "บริการ"
+
+msgid "Services panel (slide-up from the bottom bar)"
+msgstr "แผงบริการ (เลื่อนขึ้นจากแถบด้านล่าง)"
+
+msgid "Set access and viewing permissions"
+msgstr "ตั้งค่าสิทธิ์การเข้าถึงและการดู"
+
+msgid "Set the colour (hex, rgb or a CSS name)."
+msgstr "ตั้งค่าสี (hex, rgb หรือชื่อ CSS)"
+
+msgid "Set the size in pixels."
+msgstr "ตั้งค่าขนาดเป็นพิกเซล"
+
+msgid "Set up Adsense ads"
+msgstr "ตั้งค่าโฆษณา Adsense"
+
+msgid "Set up cookie notifications"
+msgstr "ตั้งค่าการแจ้งเตือนคุกกี้"
+
+msgid "Set up the ads.txt file"
+msgstr "ตั้งค่าไฟล์ ads.txt"
+
+msgid "Setting group"
+msgstr "กลุ่มการตั้งค่า"
+
+msgid "Settings"
+msgstr "การตั้งค่า"
+
+msgid "Settings > Permalinks > Save changes"
+msgstr "การตั้งค่า > ลิงก์ถาวร > บันทึกการเปลี่ยนแปลง"
+
+msgid "Settings changed"
+msgstr "เปลี่ยนการตั้งค่าแล้ว"
+
+msgid "Shortcode"
+msgstr "Shortcode"
+
+msgid "Shortcode content visible only to group of users"
+msgstr "เนื้อหา shortcode ที่มองเห็นได้เฉพาะกลุ่มผู้ใช้เท่านั้น"
+
+msgid "Shortcode reference"
+msgstr "อ้างอิง shortcode"
+
+msgid "Shortcode to display date"
+msgstr "shortcode สำหรับแสดงวันที่"
+
+msgid "Shortcodes"
+msgstr "Shortcode"
+
+msgid "Show a floating “Services” button on desktop"
+msgstr "แสดงปุ่ม “บริการ” แบบลอยบนเดสก์ท็อป"
+
+msgid "Show a greeting bubble near the button"
+msgstr "แสดงบับเบิลทักทายใกล้ปุ่ม"
+
+msgid "Show a scan-to-open QR on desktop (Zalo, WhatsApp, Telegram, Viber, Line; WeChat always)"
+msgstr "แสดง QR สแกนเพื่อเปิดบนเดสก์ท็อป (Zalo, WhatsApp, Telegram, Viber, Line; WeChat เสมอ)"
+
+msgid "Show from"
+msgstr "แสดงตั้งแต่"
+
+msgid "Show full image"
+msgstr "แสดงภาพเต็ม"
+
+msgid "Show on devices"
+msgstr "แสดงบนอุปกรณ์"
+
+msgid "Show the bar on tablets too (up to 1024px)"
+msgstr "แสดงแถบบนแท็บเล็ตด้วย (สูงสุด 1024px)"
+
+msgid "Show to"
+msgstr "แสดงถึง"
+
+msgid "Show until"
+msgstr "แสดงจนถึง"
+
+msgid "Sign in with Google"
+msgstr "เข้าสู่ระบบด้วย Google"
+
+msgid "Sign in with Google account"
+msgstr "เข้าสู่ระบบด้วยบัญชี Google"
+
+msgid "Signature shortcode"
+msgstr "shortcode ลายเซ็น"
+
+msgid "Site health"
+msgstr "สถานะเว็บไซต์"
+
+msgid "Site key"
+msgstr "Site key"
+
+msgid "Smooth-scroll is a library that enables you to create a smooth scrolling effect, providing users with a perception of faster page navigation"
+msgstr "Smooth-scroll เป็นไลบรารีที่ช่วยให้คุณสร้างเอฟเฟกต์การเลื่อนที่ราบรื่น มอบความรู้สึกในการนำทางหน้าที่รวดเร็วยิ่งขึ้นให้กับผู้ใช้"
+
+msgid "Snippet deleted."
+msgstr "ลบตัวอย่างโค้ดแล้ว"
+
+msgid "Snippet saved."
+msgstr "บันทึกตัวอย่างโค้ดแล้ว"
+
+msgid "Something went wrong."
+msgstr "เกิดข้อผิดพลาดบางอย่าง"
+
+msgid "Source code and issues:"
+msgstr "ซอร์สโค้ดและปัญหา:"
+
+msgid "Spacing below"
+msgstr "ระยะห่างด้านล่าง"
+
+msgid "Spam comments"
+msgstr "ความคิดเห็นสแปม"
+
+msgid "Spin it — handy for loaders."
+msgstr "หมุนมัน — สะดวกสำหรับตัวโหลด"
+
+msgid "Stacked banners"
+msgstr "แบนเนอร์แบบซ้อน"
+
+msgid "Status:"
+msgstr "สถานะ:"
+
+msgid "Step 1: Go to Appearance > Menus > Create a new menu > check Navigation bar (Horse Tools)"
+msgstr "ขั้นตอนที่ 1: ไปที่ Appearance > Menus > สร้างเมนูใหม่ > เลือกแถบนำทาง (Horse Tools)"
+
+msgid "Step 2: Below, if you want the menu to open on a specific button, add <b style=\"color:red\">#horsenavi</b> to the field (#id or .class). For (Enter link), enter <b style=\"color:red\">#</b>. Note: Only add it to one of the 5 buttons below"
+msgstr "ขั้นตอนที่ 2: ด้านล่าง หากคุณต้องการให้เมนูเปิดบนปุ่มเฉพาะ ให้เพิ่ม <b style=\"color:red\">#horsenavi</b> ในฟิลด์ (#id หรือ .class) สำหรับ (กรอกลิงก์) ให้กรอก <b style=\"color:red\">#</b> หมายเหตุ: เพิ่มได้ในปุ่มเดียวจาก 5 ปุ่มด้านล่างเท่านั้น"
+
+msgid "Still:"
+msgstr "ยังคง:"
+
+msgid "Stop cropping"
+msgstr "หยุดการครอบตัด"
+
+msgid "Stop cropping all"
+msgstr "หยุดการครอบตัดทั้งหมด"
+
+msgid "Story circles"
+msgstr "วงกลมสตอรี่"
+
+msgid "Subtitle / price / coupon code"
+msgstr "คำบรรยายย่อย / ราคา / รหัสคูปอง"
+
+msgid "Success"
+msgstr "สำเร็จ"
+
+msgid "Sun"
+msgstr "อา."
+
+msgid "Support multi-byte UTF-8 encoding (if you see strange characters)"
+msgstr "รองรับการเข้ารหัส UTF-8 แบบหลายไบต์ (หากคุณเห็นอักขระแปลก ๆ)"
+
+msgid "Support quick notification setup, allowing web managers to easily deliver useful and timely content, helping users stay informed effortlessly"
+msgstr "รองรับการตั้งค่าการแจ้งเตือนอย่างรวดเร็ว ช่วยให้ผู้จัดการเว็บส่งเนื้อหาที่มีประโยชน์และทันเวลาได้อย่างง่ายดาย ช่วยให้ผู้ใช้รับทราบข้อมูลได้อย่างไม่ต้องพยายาม"
+
+msgid "Support team"
+msgstr "ทีมสนับสนุน"
+
+msgid "Switch off any shortcode you do not use. A disabled shortcode simply stops rendering. This only affects Horse Tools shortcodes — never those from other plugins."
+msgstr "ปิด shortcode ที่คุณไม่ได้ใช้ shortcode ที่ปิดใช้งานจะเพียงหยุดแสดงผล สิ่งนี้ส่งผลต่อ shortcode ของ Horse Tools เท่านั้น — ไม่ส่งผลต่อของปลั๊กอินอื่น"
+
+msgid "System"
+msgstr "ระบบ"
+
+msgid "TOC"
+msgstr "สารบัญ"
+
+msgid "TOC Settings"
+msgstr "การตั้งค่าสารบัญ"
+
+msgid "TOOL"
+msgstr "เครื่องมือ"
+
+msgid "Table name"
+msgstr "ชื่อตาราง"
+
+msgid "Table of Contents"
+msgstr "สารบัญ"
+
+msgid "Table of contents configuration"
+msgstr "การตั้งค่าสารบัญ"
+
+msgid "Table of contents on posts"
+msgstr "สารบัญบนโพสต์"
+
+msgid "Tabler icon name (e.g. snowflake) — or leave blank and use an image"
+msgstr "ชื่อไอคอน Tabler (เช่น snowflake) — หรือเว้นว่างไว้และใช้รูปภาพ"
+
+msgid "Tag"
+msgstr "แท็ก"
+
+msgid "Tags (comma separated)"
+msgstr "แท็ก (คั่นด้วยเครื่องหมายจุลภาค)"
+
+msgid "Test SMTP email sending from your website"
+msgstr "ทดสอบการส่งอีเมล SMTP จากเว็บไซต์ของคุณ"
+
+msgid "Text color"
+msgstr "สีข้อความ"
+
+msgid "Text color of the input / select box"
+msgstr "สีข้อความของกล่องกรอกข้อมูล / เลือก"
+
+msgid "Text editor tool"
+msgstr "เครื่องมือแก้ไขข้อความ"
+
+msgid "That address cannot be fetched from this server."
+msgstr "ไม่สามารถดึงที่อยู่นั้นจากเซิร์ฟเวอร์นี้ได้"
+
+msgid "That did not look like a Google Fonts stylesheet."
+msgstr "นั่นดูไม่เหมือน stylesheet ของ Google Fonts"
+
+msgid "That file could not be read as JSON."
+msgstr "ไม่สามารถอ่านไฟล์นั้นเป็น JSON ได้"
+
+msgid "That is not a valid Horse Tools export file."
+msgstr "นั่นไม่ใช่ไฟล์ส่งออก Horse Tools ที่ถูกต้อง"
+
+msgid "That is not a valid snippet export file."
+msgstr "นั่นไม่ใช่ไฟล์ส่งออกตัวอย่างโค้ดที่ถูกต้อง"
+
+msgid "That name is reserved by another Horse Tools shortcode. Pick a different one."
+msgstr "ชื่อนั้นถูกสงวนไว้โดย shortcode อื่นของ Horse Tools เลือกชื่ออื่น"
+
+msgid "That preset does not exist."
+msgstr "ไม่มีค่าที่ตั้งไว้ล่วงหน้านั้น"
+
+msgid "The \"Index Now\" link will be added in the custom post management section to allow quick index submission"
+msgstr "ลิงก์ \"จัดทำดัชนีเดี๋ยวนี้\" จะถูกเพิ่มในส่วนการจัดการโพสต์ที่กำหนดเองเพื่ออนุญาตให้ส่งดัชนีได้อย่างรวดเร็ว"
+
+msgid "The Avatar, Live-chat and Tab-widget skins use the fields below."
+msgstr "สกิน Avatar, Live-chat และ Tab-widget ใช้ฟิลด์ด้านล่าง"
+
+msgid "The GD library has been installed"
+msgstr "ติดตั้งไลบรารี GD แล้ว"
+
+msgid "The GD library has not been installed"
+msgstr "ยังไม่ได้ติดตั้งไลบรารี GD"
+
+msgid "The address %1$s was locked out after repeated failed logins on %2$s."
+msgstr "ที่อยู่ %1$s ถูกล็อกเอาต์หลังจากเข้าสู่ระบบล้มเหลวซ้ำ ๆ เมื่อ %2$s"
+
+msgid "The changing image is square, with the standard size being 100x100 pixels"
+msgstr "ภาพที่เปลี่ยนเป็นรูปสี่เหลี่ยมจัตุรัส โดยขนาดมาตรฐานคือ 100x100 พิกเซล"
+
+msgid "The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot."
+msgstr "การตั้งค่าจากก่อนการนำเข้าครั้งล่าสุดของคุณถูกจัดเก็บไว้ การคืนค่าจะเปลี่ยนทุกกลุ่มกลับไปเป็นสแนปช็อตนั้น"
+
+msgid "The debug file does not exist"
+msgstr "ไม่มีไฟล์ debug"
+
+msgid "The feature adds advanced functions when uploading images, such as adding frames, flipping images... allowing you to automatically customize your images during upload. Picture frame (PNG)"
+msgstr "คุณสมบัตินี้เพิ่มฟังก์ชันขั้นสูงเมื่ออัปโหลดรูปภาพ เช่น การเพิ่มกรอบ การพลิกภาพ... ช่วยให้คุณปรับแต่งรูปภาพของคุณโดยอัตโนมัติระหว่างการอัปโหลด กรอบรูป (PNG)"
+
+msgid "The file contained no Horse Tools settings to import."
+msgstr "ไฟล์ไม่มีการตั้งค่า Horse Tools ที่จะนำเข้า"
+
+msgid "The file name will be your domain name"
+msgstr "ชื่อไฟล์จะเป็นชื่อโดเมนของคุณ"
+
+msgid "The file path is invalid or not a file"
+msgstr "เส้นทางไฟล์ไม่ถูกต้องหรือไม่ใช่ไฟล์"
+
+msgid "The first image becomes the featured image"
+msgstr "ภาพแรกจะกลายเป็นภาพเด่น"
+
+msgid "The font files could not be downloaded."
+msgstr "ไม่สามารถดาวน์โหลดไฟล์ฟอนต์ได้"
+
+msgid "The full recommended hardening set. The one thing left out is the full REST API block, which can break forms and guests — enable that yourself on the Security screen if your site truly needs none of it."
+msgstr "ชุดการเสริมความปลอดภัยที่แนะนำครบชุด สิ่งเดียวที่ไม่รวมคือการบล็อก REST API ทั้งหมด ซึ่งอาจทำให้ฟอร์มและผู้เยี่ยมชมเสียหาย — เปิดใช้เองบนหน้าจอความปลอดภัยหากเว็บไซต์ของคุณไม่จำเป็นต้องใช้มันจริง ๆ"
+
+msgid "The function of lazy loading images"
+msgstr "ฟังก์ชันการโหลดรูปภาพแบบ lazy"
+
+msgid "The home page returned no HTML to scan."
+msgstr "หน้าแรกไม่ส่งคืน HTML ให้สแกน"
+
+msgid "The icon on its own."
+msgstr "ไอคอนเดี่ยว ๆ"
+
+msgid "The optimisation module is on"
+msgstr "โมดูลการเพิ่มประสิทธิภาพเปิดอยู่"
+
+msgid "The original image size when added to the post"
+msgstr "ขนาดภาพต้นฉบับเมื่อเพิ่มลงในโพสต์"
+
+msgid "The previous configuration has been restored."
+msgstr "คืนค่าการตั้งค่าก่อนหน้าแล้ว"
+
+msgid "The reCAPTCHA is invalid"
+msgstr "reCAPTCHA ไม่ถูกต้อง"
+
+msgid "The score threshold applies to reCAPTCHA v3 only. Google returns 1.0 for traffic it is confident is human and 0.0 for traffic it is confident is a bot; 0.5 is the recommended starting point. Raise it to block more aggressively, lower it if real visitors are being turned away."
+msgstr "เกณฑ์คะแนนใช้กับ reCAPTCHA v3 เท่านั้น Google ส่งคืน 1.0 สำหรับทราฟฟิกที่มั่นใจว่าเป็นมนุษย์ และ 0.0 สำหรับทราฟฟิกที่มั่นใจว่าเป็นบอท; 0.5 เป็นจุดเริ่มต้นที่แนะนำ เพิ่มค่าเพื่อบล็อกอย่างเข้มงวดขึ้น ลดค่าลงหากผู้เยี่ยมชมจริงถูกปฏิเสธ"
+
+msgid "The site is served over HTTPS"
+msgstr "เว็บไซต์ให้บริการผ่าน HTTPS"
+
+msgid "The site is visible to search engines"
+msgstr "เว็บไซต์มองเห็นได้โดยเครื่องมือค้นหา"
+
+msgid "The standard size for the logo is 280x80 PX"
+msgstr "ขนาดมาตรฐานสำหรับโลโก้คือ 280x80 PX"
+
+msgid "The table of contents is an incredibly useful feature that allows readers to easily grasp the content by summarizing the headings (h-tags) in the article"
+msgstr "สารบัญเป็นคุณสมบัติที่มีประโยชน์อย่างเหลือเชื่อ ซึ่งช่วยให้ผู้อ่านเข้าใจเนื้อหาได้ง่ายโดยสรุปหัวข้อ (h-tags) ในบทความ"
+
+msgid "The text to replace Buy Now on the product page"
+msgstr "ข้อความสำหรับแทนที่ Buy Now บนหน้าสินค้า"
+
+msgid "The theme/plugin file editor is disabled"
+msgstr "ตัวแก้ไขไฟล์ธีม/ปลั๊กอินถูกปิดใช้งาน"
+
+msgid "There is no backup to restore."
+msgstr "ไม่มีข้อมูลสำรองให้คืนค่า"
+
+msgid "These groups will change"
+msgstr "กลุ่มเหล่านี้จะเปลี่ยนแปลง"
+
+msgid "These stop WordPress installing updates on its own — the site still checks for them, so the Dashboard and Plugins screens keep showing what is available and you apply updates when you choose. It never stops checking, so you are never left unaware of a security release."
+msgstr "สิ่งเหล่านี้จะหยุด WordPress จากการติดตั้งการอัปเดตด้วยตัวเอง — เว็บไซต์ยังคงตรวจสอบการอัปเดตอยู่ ดังนั้นหน้าจอแดชบอร์ดและปลั๊กอินยังคงแสดงสิ่งที่มีให้ และคุณจะติดตั้งการอัปเดตเมื่อคุณเลือก มันไม่เคยหยุดตรวจสอบ ดังนั้นคุณจะไม่มีวันพลาดการทราบเกี่ยวกับการเผยแพร่ด้านความปลอดภัย"
+
+msgid "This SVG file could not be parsed and was rejected."
+msgstr "ไม่สามารถแยกวิเคราะห์ไฟล์ SVG นี้และถูกปฏิเสธ"
+
+msgid "This blocks the REST API for logged-out visitors. It WILL break: WooCommerce cart and checkout for guests, Contact Form 7 and other REST-based forms, comment submission on block themes, and oEmbed. Only enable it if your site uses none of these."
+msgstr "สิ่งนี้บล็อก REST API สำหรับผู้เยี่ยมชมที่ออกจากระบบ มันจะทำให้เสียหาย: ตะกร้าและการชำระเงินของ WooCommerce สำหรับผู้เยี่ยมชม, Contact Form 7 และฟอร์มที่ใช้ REST อื่น ๆ, การส่งความคิดเห็นบนธีมแบบบล็อก และ oEmbed เปิดใช้เฉพาะเมื่อเว็บไซต์ของคุณไม่ใช้สิ่งเหล่านี้เลย"
+
+msgid "This content is locked! You need to log in to view"
+msgstr "เนื้อหานี้ถูกล็อก! คุณต้องเข้าสู่ระบบเพื่อดู"
+
+msgid "This feature allows you to add CSS, JS, and HTML code to your WordPress site through hooks like WP head, WP body, WP footer, and WP login, making it easy and convenient to supplement your code"
+msgstr "คุณสมบัตินี้ช่วยให้คุณเพิ่มโค้ด CSS, JS และ HTML ลงในเว็บไซต์ WordPress ของคุณผ่าน hook เช่น WP head, WP body, WP footer และ WP login ทำให้ง่ายและสะดวกในการเสริมโค้ดของคุณ"
+
+msgid "This feature allows you to add Shortcode to post titles, which is very convenient for using custom tools"
+msgstr "คุณสมบัตินี้ช่วยให้คุณเพิ่ม Shortcode ลงในชื่อโพสต์ ซึ่งสะดวกมากสำหรับการใช้เครื่องมือที่กำหนดเอง"
+
+msgid "This feature allows you to add the Classic Editor to the category description box when editing posts or products"
+msgstr "คุณสมบัตินี้ช่วยให้คุณเพิ่ม Classic Editor ลงในกล่องคำอธิบายหมวดหมู่เมื่อแก้ไขโพสต์หรือสินค้า"
+
+msgid "This feature allows you to configure website redirects with multiple options such as 301, 404, and 503, making management much simpler"
+msgstr "คุณสมบัตินี้ช่วยให้คุณตั้งค่าการเปลี่ยนเส้นทางเว็บไซต์ด้วยตัวเลือกหลายอย่าง เช่น 301, 404 และ 503 ทำให้การจัดการง่ายขึ้นมาก"
+
+msgid "This feature allows you to customize the currency symbol as desired"
+msgstr "คุณสมบัตินี้ช่วยให้คุณปรับแต่งสัญลักษณ์สกุลเงินตามต้องการ"
+
+msgid "This feature allows you to only display Horse Tools to a specific Admin account"
+msgstr "คุณสมบัตินี้ช่วยให้คุณแสดง Horse Tools เฉพาะบัญชีผู้ดูแลที่ระบุเท่านั้น"
+
+msgid "This feature allows you to set newly edited posts to be displayed first in the main loop"
+msgstr "คุณสมบัตินี้ช่วยให้คุณตั้งค่าให้โพสต์ที่แก้ไขใหม่ถูกแสดงก่อนใน loop หลัก"
+
+msgid "This feature compiles various shortcode templates with essential functionalities that are frequently used to enhance the user experience in WordPress"
+msgstr "คุณสมบัตินี้รวบรวมเทมเพลต shortcode ต่าง ๆ ที่มีฟังก์ชันสำคัญซึ่งใช้บ่อยเพื่อเสริมประสบการณ์ผู้ใช้ใน WordPress"
+
+msgid "This feature helps optimize cleanup tasks such as clearing content, comments, and the media library. It makes your website cleaner and more optimized"
+msgstr "คุณสมบัตินี้ช่วยเพิ่มประสิทธิภาพงานล้างข้อมูล เช่น การล้างเนื้อหา ความคิดเห็น และไลบรารีสื่อ ทำให้เว็บไซต์ของคุณสะอาดและเหมาะสมยิ่งขึ้น"
+
+msgid "This feature uses the Fancybox library, allowing you to open images in posts for viewing"
+msgstr "คุณสมบัตินี้ใช้ไลบรารี Fancybox ช่วยให้คุณเปิดรูปภาพในโพสต์เพื่อดูได้"
+
+msgid "This feature was removed in Horse Tools 1.0.0. It opened an affiliate URL in a hidden off-screen window every time a visitor clicked anywhere on the page. That is affiliate cookie stuffing: it deceives your visitors, breaks the terms of every major affiliate network and of Google AdSense, and can get your domain and your ad accounts banned."
+msgstr "คุณสมบัตินี้ถูกลบออกใน Horse Tools 1.0.0 มันเปิด URL พันธมิตรในหน้าต่างที่ซ่อนอยู่นอกจอทุกครั้งที่ผู้เยี่ยมชมคลิกที่ใดก็ได้บนหน้า นั่นคือการยัดคุกกี้พันธมิตร: มันหลอกลวงผู้เยี่ยมชมของคุณ ละเมิดข้อกำหนดของเครือข่ายพันธมิตรหลักทุกแห่งและของ Google AdSense และอาจทำให้โดเมนและบัญชีโฆษณาของคุณถูกแบน"
+
+msgid "This feature will add nofollow and _blank to external links on your site"
+msgstr "คุณสมบัตินี้จะเพิ่ม nofollow และ _blank ให้กับลิงก์ภายนอกบนเว็บไซต์ของคุณ"
+
+msgid "This feature will hide the plugin you want from the plugin management page"
+msgstr "คุณสมบัตินี้จะซ่อนปลั๊กอินที่คุณต้องการจากหน้าจัดการปลั๊กอิน"
+
+msgid "This feature will use the title of the post as the description for the image when uploaded"
+msgstr "คุณสมบัตินี้จะใช้ชื่อของโพสต์เป็นคำอธิบายสำหรับรูปภาพเมื่ออัปโหลด"
+
+msgid "This function allows you to customize the color of the scrollbar to your liking"
+msgstr "ฟังก์ชันนี้ช่วยให้คุณปรับแต่งสีของแถบเลื่อนตามที่คุณชอบ"
+
+msgid "This function allows you to delete images attached to posts when deleting the posts themselves. Note that if multiple posts use the same image, it will also be deleted when removing the post"
+msgstr "ฟังก์ชันนี้ช่วยให้คุณลบรูปภาพที่แนบกับโพสต์เมื่อลบตัวโพสต์เอง โปรดทราบว่าหากหลายโพสต์ใช้รูปภาพเดียวกัน มันจะถูกลบไปด้วยเมื่อลบโพสต์"
+
+msgid "This function allows you to initiate a dark mode library, enabling the website to switch between light and dark modes"
+msgstr "ฟังก์ชันนี้ช่วยให้คุณเริ่มไลบรารีโหมดมืด ทำให้เว็บไซต์สามารถสลับระหว่างโหมดสว่างและมืดได้"
+
+msgid "This function allows you to redirect 301 links to the target page"
+msgstr "ฟังก์ชันนี้ช่วยให้คุณเปลี่ยนเส้นทางลิงก์ 301 ไปยังหน้าเป้าหมาย"
+
+msgid "This function will redirect all of your website pages to the destination page of your choice"
+msgstr "ฟังก์ชันนี้จะเปลี่ยนเส้นทางหน้าเว็บไซต์ทั้งหมดของคุณไปยังหน้าปลายทางที่คุณเลือก"
+
+msgid "This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site."
+msgstr "สิ่งนี้รวมกลุ่มการตั้งค่าทุกกลุ่ม ไม่ว่าโมดูลของมันจะเปิดใช้งานอยู่ในปัจจุบันหรือไม่ ไฟล์ฟอนต์ที่อัปโหลดไม่รวมอยู่ด้วย — พวกมันอยู่บนเว็บไซต์นี้"
+
+msgid "This is an email notification of your successful registration"
+msgstr "นี่คือการแจ้งเตือนทางอีเมลเกี่ยวกับการลงทะเบียนที่สำเร็จของคุณ"
+
+msgid "This shortcode allows you to lock any content, and only the selected group of logged-in users can view it"
+msgstr "shortcode นี้ช่วยให้คุณล็อกเนื้อหาใดก็ได้ และมีเพียงกลุ่มผู้ใช้ที่เข้าสู่ระบบที่เลือกไว้เท่านั้นที่ดูได้"
+
+msgid "This shortcode is used to create a download button with a timeout"
+msgstr "shortcode นี้ใช้สร้างปุ่มดาวน์โหลดที่มีการหมดเวลา"
+
+msgid "This shortcode is used to display the date in the post title. Please note that you need to enable the shortcode usage in the post title under the POST, PAGE section"
+msgstr "shortcode นี้ใช้แสดงวันที่ในชื่อโพสต์ โปรดทราบว่าคุณต้องเปิดใช้การใช้ shortcode ในชื่อโพสต์ภายใต้ส่วน POST, PAGE"
+
+msgid "This website uses cookies to ensure you get the best experience on our site. By continuing to browse, you agree to our use of cookies. For more information, please read our Cookie Policy"
+msgstr "เว็บไซต์นี้ใช้คุกกี้เพื่อให้แน่ใจว่าคุณได้รับประสบการณ์ที่ดีที่สุดบนเว็บไซต์ของเรา การเรียกดูต่อไป แสดงว่าคุณยอมรับการใช้คุกกี้ของเรา สำหรับข้อมูลเพิ่มเติม โปรดอ่านนโยบายคุกกี้ของเรา"
+
+msgid "Thu"
+msgstr "พฤ."
+
+msgid "Tidy up"
+msgstr "จัดระเบียบ"
+
+msgid "Time"
+msgstr "เวลา"
+
+msgid "Time is up"
+msgstr "หมดเวลาแล้ว"
+
+msgid "Time:"
+msgstr "เวลา:"
+
+msgid "Title"
+msgstr "ชื่อ"
+
+msgid "Title color"
+msgstr "สีชื่อ"
+
+msgid "Title text and icon color"
+msgstr "สีข้อความชื่อและไอคอน"
+
+msgid "To"
+msgstr "ถึง"
+
+msgid "To add advertisements to your website, simply enable this feature. It provides you with various ad options to meet your distribution needs"
+msgstr "หากต้องการเพิ่มโฆษณาลงในเว็บไซต์ของคุณ เพียงเปิดใช้คุณสมบัตินี้ มันมอบตัวเลือกโฆษณาหลากหลายเพื่อตอบสนองความต้องการในการกระจายของคุณ"
+
+msgid "To create a menu on the navigation bar:"
+msgstr "หากต้องการสร้างเมนูบนแถบนำทาง:"
+
+msgid "Too many failed attempts. Try again in about %d minute(s)."
+msgstr "พยายามล้มเหลวมากเกินไป ลองอีกครั้งในอีกประมาณ %d นาที"
+
+msgid "Top and bottom positions"
+msgstr "ตำแหน่งบนและล่าง"
+
+msgid "Total data"
+msgstr "ข้อมูลทั้งหมด"
+
+msgid "Total:"
+msgstr "รวม:"
+
+msgid "Transparency level"
+msgstr "ระดับความโปร่งใส"
+
+msgid "Trashed comments"
+msgstr "ความคิดเห็นในถังขยะ"
+
+msgid "Tue"
+msgstr "อ."
+
+msgid "Turn Horse Tools shortcodes on or off"
+msgstr "เปิดหรือปิด shortcode ของ Horse Tools"
+
+msgid "Turn off WP_DEBUG_DISPLAY on a live site."
+msgstr "ปิด WP_DEBUG_DISPLAY บนเว็บไซต์ที่ใช้งานจริง"
+
+msgid "Turns off the RSS and Atom feeds if your site does not publish one."
+msgstr "ปิดฟีด RSS และ Atom หากเว็บไซต์ของคุณไม่ได้เผยแพร่ฟีด"
+
+msgid "Type"
+msgstr "ประเภท"
+
+msgid "Type any shortcode name (without brackets) to list the posts and pages that contain it — handy before you change or remove one."
+msgstr "พิมพ์ชื่อ shortcode ใดก็ได้ (โดยไม่มีวงเล็บ) เพื่อแสดงรายการโพสต์และหน้าที่มีมัน — สะดวกก่อนที่คุณจะเปลี่ยนหรือลบมัน"
+
+msgid "Type the number of the shortcode to insert:"
+msgstr "พิมพ์หมายเลขของ shortcode ที่จะแทรก:"
+
+msgid "UPLOAD FONT"
+msgstr "อัปโหลดฟอนต์"
+
+msgid "URL:"
+msgstr "URL:"
+
+msgid "URL: Unverified"
+msgstr "URL: ไม่ได้ยืนยัน"
+
+msgid "URL: does not exist"
+msgstr "URL: ไม่มีอยู่"
+
+msgid "USE FONT"
+msgstr "ใช้ฟอนต์"
+
+msgid "USER"
+msgstr "ผู้ใช้"
+
+msgid "Unable to read the uploaded SVG file."
+msgstr "ไม่สามารถอ่านไฟล์ SVG ที่อัปโหลดได้"
+
+msgid "Unable to send email!"
+msgstr "ไม่สามารถส่งอีเมลได้!"
+
+msgid "Unable to write the sanitised SVG file."
+msgstr "ไม่สามารถเขียนไฟล์ SVG ที่ทำความสะอาดแล้วได้"
+
+msgid "Undo the last import"
+msgstr "เลิกทำการนำเข้าครั้งล่าสุด"
+
+msgid "Upload avatars"
+msgstr "อัปโหลดรูปโปรไฟล์"
+
+msgid "Upload font error"
+msgstr "ข้อผิดพลาดในการอัปโหลดฟอนต์"
+
+msgid "Upload font success"
+msgstr "อัปโหลดฟอนต์สำเร็จ"
+
+msgid "Uploaded images are compressed"
+msgstr "รูปภาพที่อัปโหลดถูกบีบอัด"
+
+msgid "Use fonts on the web"
+msgstr "ใช้ฟอนต์บนเว็บ"
+
+msgid "Use shortcodes"
+msgstr "ใช้ shortcode"
+
+msgid "Use titles as descriptions for images"
+msgstr "ใช้ชื่อเป็นคำอธิบายสำหรับรูปภาพ"
+
+msgid "Use titles as image alt text"
+msgstr "ใช้ชื่อเป็นข้อความ alt ของรูปภาพ"
+
+msgid "Use with care: your theme may need several image sizes to display correctly."
+msgstr "ใช้อย่างระมัดระวัง: ธีมของคุณอาจต้องการขนาดรูปภาพหลายขนาดเพื่อแสดงผลอย่างถูกต้อง"
+
+msgid "Use:"
+msgstr "ใช้:"
+
+msgid "User enumeration is blocked"
+msgstr "การแจกแจงผู้ใช้ถูกบล็อก"
+
+msgid "Video cards"
+msgstr "การ์ดวิดีโอ"
+
+msgid "View"
+msgstr "ดู"
+
+msgid "Visit this page to get the SVG icon:"
+msgstr "เยี่ยมชมหน้านี้เพื่อรับไอคอน SVG:"
+
+msgid "WOO"
+msgstr "WOO"
+
+msgid "WOOCOMMERCE"
+msgstr "WOOCOMMERCE"
+
+msgid "WP BODY"
+msgstr "WP BODY"
+
+msgid "WP FOOTER"
+msgstr "WP FOOTER"
+
+msgid "WP HEAD"
+msgstr "WP HEAD"
+
+msgid "WP LOGIN"
+msgstr "WP LOGIN"
+
+msgid "Wait..."
+msgstr "โปรดรอ..."
+
+msgid "Watermark image compared to main image"
+msgstr "รูปภาพลายน้ำเทียบกับรูปภาพหลัก"
+
+msgid "We apologize, the website is currently undergoing maintenance. Please wait for a moment"
+msgstr "ขออภัย เว็บไซต์กำลังอยู่ระหว่างการบำรุงรักษา โปรดรอสักครู่"
+
+msgid "We are currently closed"
+msgstr "ขณะนี้เราปิดทำการ"
+
+msgid "We reply quickly"
+msgstr "เราตอบกลับอย่างรวดเร็ว"
+
+msgid "Wed"
+msgstr "พ."
+
+msgid "Weekly"
+msgstr "รายสัปดาห์"
+
+msgid "Welcome to Horse Tools"
+msgstr "ยินดีต้อนรับสู่ Horse Tools"
+
+msgid "Welcome to the website"
+msgstr "ยินดีต้อนรับสู่เว็บไซต์"
+
+msgid "When someone copies text from your site, a short line you set is added after it — their selection is kept, nothing is replaced. Useful for a \"Source: yoursite.com\" credit."
+msgstr "เมื่อมีคนคัดลอกข้อความจากเว็บไซต์ของคุณ บรรทัดสั้น ๆ ที่คุณตั้งไว้จะถูกเพิ่มต่อท้าย — ส่วนที่พวกเขาเลือกจะถูกเก็บไว้ ไม่มีสิ่งใดถูกแทนที่ มีประโยชน์สำหรับเครดิต \"แหล่งที่มา: yoursite.com\""
+
+msgid "When you change a published post or page URL — its slug, its parent, or the whole path — the old address is redirected to the new one. WordPress already does this for a simple slug change; this also covers moves that core misses, and only ever acts on a URL that would otherwise 404."
+msgstr "เมื่อคุณเปลี่ยน URL ของโพสต์หรือหน้าที่เผยแพร่แล้ว — slug, parent หรือทั้งเส้นทาง — ที่อยู่เดิมจะถูกเปลี่ยนเส้นทางไปยังที่อยู่ใหม่ WordPress ทำสิ่งนี้อยู่แล้วสำหรับการเปลี่ยน slug ธรรมดา; สิ่งนี้ยังครอบคลุมการย้ายที่แกนหลักพลาดไป และจะทำงานเฉพาะกับ URL ที่มิฉะนั้นจะเป็น 404 เท่านั้น"
+
+msgid "When your theme or a plugin loads fonts from Google, every visitor's IP is sent to Google — which GDPR treats as a data transfer. This serves downloaded copies from your own domain instead. Scan first, then click self-host; this works for fonts loaded the standard way (if a font still loads from Google afterwards, your theme hard-codes it — the scan will show you)."
+msgstr "เมื่อธีมหรือปลั๊กอินของคุณโหลดฟอนต์จาก Google IP ของผู้เยี่ยมชมทุกคนจะถูกส่งไปยัง Google — ซึ่ง GDPR ถือว่าเป็นการถ่ายโอนข้อมูล สิ่งนี้จะให้บริการสำเนาที่ดาวน์โหลดจากโดเมนของคุณเองแทน สแกนก่อน จากนั้นคลิกโฮสต์เอง; สิ่งนี้ใช้ได้กับฟอนต์ที่โหลดด้วยวิธีมาตรฐาน (หากฟอนต์ยังคงโหลดจาก Google หลังจากนั้น ธีมของคุณฝังมันไว้แบบ hard-code — การสแกนจะแสดงให้คุณเห็น)"
+
+msgid "Where shortcodes run"
+msgstr "ที่ที่ shortcode ทำงาน"
+
+msgid "Widget title"
+msgstr "ชื่อวิดเจ็ต"
+
+msgid "With this feature, HTML will be compressed into a single line, removing unnecessary characters and whitespace to speed up page loading"
+msgstr "ด้วยคุณสมบัตินี้ HTML จะถูกบีบอัดเป็นบรรทัดเดียว โดยลบอักขระและช่องว่างที่ไม่จำเป็นออกเพื่อเร่งการโหลดหน้า"
+
+msgid "With this feature, regular users can only view their own posts and images they uploaded, while the admin can view all of them"
+msgstr "ด้วยคุณสมบัตินี้ ผู้ใช้ทั่วไปสามารถดูได้เฉพาะโพสต์และรูปภาพของตนเองที่อัปโหลดเท่านั้น ในขณะที่ผู้ดูแลสามารถดูได้ทั้งหมด"
+
+msgid "With this feature, regular users cannot access the WordPress admin page"
+msgstr "ด้วยคุณสมบัตินี้ ผู้ใช้ทั่วไปไม่สามารถเข้าถึงหน้าผู้ดูแล WordPress ได้"
+
+msgid "With this feature, there will be an additional button in the profile section allowing users to upload avatars"
+msgstr "ด้วยคุณสมบัตินี้ จะมีปุ่มเพิ่มเติมในส่วนโปรไฟล์ที่อนุญาตให้ผู้ใช้อัปโหลดรูปโปรไฟล์"
+
+msgid "With this feature, you can notify your orders to your Telegram group, helping you manage orders conveniently"
+msgstr "ด้วยคุณสมบัตินี้ คุณสามารถแจ้งคำสั่งซื้อของคุณไปยังกลุ่ม Telegram ของคุณ ช่วยให้คุณจัดการคำสั่งซื้อได้อย่างสะดวก"
+
+msgid "WooCommerce / Store"
+msgstr "WooCommerce / ร้านค้า"
+
+msgid "WordPress runs shortcodes in post content by default. Turn these on to run them elsewhere too. (Saved with the SAVE button at the bottom.)"
+msgstr "WordPress รัน shortcode ในเนื้อหาโพสต์โดยค่าเริ่มต้น เปิดใช้สิ่งเหล่านี้เพื่อรันในที่อื่นด้วย (บันทึกด้วยปุ่ม SAVE ที่ด้านล่าง)"
+
+msgid "X-Content-Type-Options: nosniff"
+msgstr "X-Content-Type-Options: nosniff"
+
+msgid "X-Frame-Options: SAMEORIGIN (block clickjacking)"
+msgstr "X-Frame-Options: SAMEORIGIN (บล็อก clickjacking)"
+
+msgid "XML-RPC is disabled"
+msgstr "XML-RPC ถูกปิดใช้งาน"
+
+msgid "Yes"
+msgstr "ใช่"
+
+msgid "Yes — preview as a visitor"
+msgstr "ใช่ — ดูตัวอย่างในฐานะผู้เยี่ยมชม"
+
+msgid "You are not allowed to create this post type."
+msgstr "คุณไม่ได้รับอนุญาตให้สร้างประเภทโพสต์นี้"
+
+msgid "You are not allowed to duplicate this item."
+msgstr "คุณไม่ได้รับอนุญาตให้ทำสำเนารายการนี้"
+
+msgid "You are not logged in"
+msgstr "คุณยังไม่ได้เข้าสู่ระบบ"
+
+msgid "You can adjust the compression level of the image from 5 to 100 (100 being no compression)"
+msgstr "คุณสามารถปรับระดับการบีบอัดของภาพจาก 5 ถึง 100 (100 คือไม่มีการบีบอัด)"
+
+msgid "You can create your widget by activating it and entering content into the box below"
+msgstr "คุณสามารถสร้างวิดเจ็ตของคุณโดยเปิดใช้งานและกรอกเนื้อหาลงในกล่องด้านล่าง"
+
+msgid "You can customize the role of successful registrants, with the default role being \"subscriber\""
+msgstr "คุณสามารถปรับแต่งบทบาทของผู้ลงทะเบียนที่สำเร็จ โดยบทบาทเริ่มต้นคือ \"subscriber\""
+
+msgid "You can disable default widgets on the dashboard that you dont use"
+msgstr "คุณสามารถปิดวิดเจ็ตเริ่มต้นบนแดชบอร์ดที่คุณไม่ได้ใช้"
+
+msgid "You can further customize your login page by enabling this feature"
+msgstr "คุณสามารถปรับแต่งหน้าเข้าสู่ระบบของคุณเพิ่มเติมได้โดยเปิดใช้คุณสมบัตินี้"
+
+msgid "You can hide Horse Tools from the WP menu, but you can still access it through the link. This will hide Horse Tools for all accounts"
+msgstr "คุณสามารถซ่อน Horse Tools จากเมนู WP ได้ แต่คุณยังคงเข้าถึงได้ผ่านลิงก์ สิ่งนี้จะซ่อน Horse Tools สำหรับทุกบัญชี"
+
+msgid "You can paste the shortcode into the position where you want the login button to appear"
+msgstr "คุณสามารถวาง shortcode ในตำแหน่งที่คุณต้องการให้ปุ่มเข้าสู่ระบบปรากฏ"
+
+msgid "You can preview your file here:"
+msgstr "คุณสามารถดูตัวอย่างไฟล์ของคุณได้ที่นี่:"
+
+msgid "You can use the shortcode in the editor and add it to the position you want, note: only use 1 shortcode in the post"
+msgstr "คุณสามารถใช้ shortcode ในตัวแก้ไขและเพิ่มลงในตำแหน่งที่คุณต้องการ หมายเหตุ: ใช้ shortcode เพียง 1 ตัวในโพสต์"
+
+msgid "You can use the shortcode to add the search icon to the location you want"
+msgstr "คุณสามารถใช้ shortcode เพื่อเพิ่มไอคอนค้นหาลงในตำแหน่งที่คุณต้องการ"
+
+msgid "You do not have permission to do this."
+msgstr "คุณไม่มีสิทธิ์ทำสิ่งนี้"
+
+msgid "You do not have permission to upload SVG files."
+msgstr "คุณไม่มีสิทธิ์อัปโหลดไฟล์ SVG"
+
+msgid "You have successfully copied"
+msgstr "คุณคัดลอกสำเร็จแล้ว"
+
+msgid "You have unsaved changes."
+msgstr "คุณมีการเปลี่ยนแปลงที่ยังไม่ได้บันทึก"
+
+msgid "You havent added content yet"
+msgstr "คุณยังไม่ได้เพิ่มเนื้อหา"
+
+msgid "You need to activate this feature and customize the content below so that new registered users can receive emails"
+msgstr "คุณต้องเปิดใช้คุณสมบัตินี้และปรับแต่งเนื้อหาด้านล่างเพื่อให้ผู้ใช้ที่ลงทะเบียนใหม่สามารถรับอีเมลได้"
+
+msgid "Your Google account email address is not verified."
+msgstr "ที่อยู่อีเมลบัญชี Google ของคุณยังไม่ได้รับการยืนยัน"
+
+msgid "Your comment has just been replied to"
+msgstr "ความคิดเห็นของคุณเพิ่งได้รับการตอบกลับ"
+
+msgid "Your comment has just been replied to in the post"
+msgstr "ความคิดเห็นของคุณเพิ่งได้รับการตอบกลับในโพสต์"
+
+msgid "Your configuration has been saved"
+msgstr "บันทึกการตั้งค่าของคุณแล้ว"
+
+msgid "Your custom widget"
+msgstr "วิดเจ็ตที่กำหนดเองของคุณ"
+
+msgid "Your database"
+msgstr "ฐานข้อมูลของคุณ"
+
+msgid "[%s] New comment on the article \"%s\""
+msgstr "[%s] ความคิดเห็นใหม่ในบทความ \"%s\""
+
+msgid "days"
+msgstr "วัน"
+
+msgid "desktop"
+msgstr "เดสก์ท็อป"
+
+msgid "e.g. contact, promo"
+msgstr "เช่น contact, promo"
+
+msgid "e.g. sc, ht-snippet, vip"
+msgstr "เช่น sc, ht-snippet, vip"
+
+msgid "font-family:"
+msgstr "font-family:"
+
+msgid "hrs"
+msgstr "ชม."
+
+msgid "icons"
+msgstr "ไอคอน"
+
+msgid "images"
+msgstr "รูปภาพ"
+
+msgid "jQuery Migrate is a library used to maintain the operation of certain themes, plugins that rely on older code. If your website no longer relies on this library, you can disable it"
+msgstr "jQuery Migrate เป็นไลบรารีที่ใช้รักษาการทำงานของธีมและปลั๊กอินบางตัวที่พึ่งพาโค้ดเก่า หากเว็บไซต์ของคุณไม่พึ่งพาไลบรารีนี้อีกต่อไป คุณสามารถปิดใช้งานได้"
+
+msgid "logged-in"
+msgstr "เข้าสู่ระบบแล้ว"
+
+msgid "logged-out"
+msgstr "ออกจากระบบแล้ว"
+
+msgid "min"
+msgstr "นาที"
+
+msgid "mobile"
+msgstr "มือถือ"
+
+msgid "nofollow + new tab on external links"
+msgstr "nofollow + แท็บใหม่บนลิงก์ภายนอก"
+
+msgid "off"
+msgstr "ปิด"
+
+msgid "post type, e.g. shortcoder"
+msgstr "ประเภทโพสต์ เช่น shortcoder"
+
+msgid "sec"
+msgstr "วินาที"
+
+msgid "showing first"
+msgstr "แสดงลำดับแรก"
+
+msgid "third-party host(s) found"
+msgstr "พบโฮสต์บุคคลที่สาม"
+
+msgid "up to %s"
+msgstr "สูงสุด %s"
+
+msgid "v3 score threshold (0 – 1)"
+msgstr "เกณฑ์คะแนน v3 (0 – 1)"
+
+msgid "— Insert a shortcode —"
+msgstr "— แทรก shortcode —"

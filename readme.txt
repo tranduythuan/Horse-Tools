@@ -5,13 +5,13 @@ Author URI: https://tranduythuan.com/
 Plugin URI: https://github.com/tranduythuan/Horse-Tools
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: all-in-one, tools, optimization, security, media
+Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 
-All-in-one toolkit for managing a WordPress website: chat button, custom login, media optimisation, cleanup and more.
+All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
 == Description ==
 
@@ -19,19 +19,17 @@ Horse Tools bundles the day-to-day tools a WordPress site owner actually needs i
 
 Features:
 
-* Website optimisation
-* Security hardening
-* Database and content cleanup tools
-* Customisable admin display and colour scheme
-* Media management: WebP/AVIF conversion, watermarking, thumbnail control
-* Post and page utilities
-* Mail testing
-* WooCommerce helpers
-* User role and permission tools
-* Customisable WordPress login screen
-* Google Search Console / Indexing API integration
-* Floating contact chat button
-* Table of contents, redirects, notifications and shortcodes
+* **Contact chat button** — a floating multi-channel contact widget with 30+ services (Zalo, Messenger, WhatsApp, Telegram, phone, Line, WeChat, Instagram, and more), flexible links, 17 button skins, a mobile Services panel to surface your key pages, business hours, greeting bubble, pre-filled messages and scan-to-open QR codes on desktop.
+* **Shortcodes** — a full snippet manager (create reusable content/HTML/PHP snippets, importable from Shortcoder), 20+ built-in shortcodes for conditional display, layout (accordion, tabs, alerts), dynamic data, QR codes and more, plus a "find where a shortcode is used" tool and an on/off manager.
+* **Security hardening** — limit login attempts, block user enumeration, security response headers, disable the file editor, REST/XML-RPC controls and header cleanup.
+* **Privacy** — self-host Google Fonts and scan the front end for external requests.
+* **Media management** — WebP/AVIF conversion, watermarking, thumbnail control.
+* **SEO &amp; content** — table of contents, automatic 301 redirects on slug change with a 404 log, Google Search Console / Indexing API integration.
+* **Website optimisation** and a one-click site-health audit.
+* **Database and content cleanup tools.**
+* **Customisable admin display and colour scheme**, plus configuration presets (Blog, WooCommerce, Performance, Security).
+* **Customisable WordPress login screen.**
+* **WooCommerce helpers**, mail testing, user role and permission tools, post and page utilities, notifications and popups.
 
 == Privacy ==
 
@@ -42,6 +40,16 @@ Horse Tools does not send any data about your site to us or to any third party. 
 * **Telegram notifications (WooCommerce)** — only when you supply your own bot token and chat ID.
 
 No site URL, administrator e-mail, licence check or usage statistic is transmitted on activation, deactivation, or at any other time.
+
+== Languages ==
+
+The interface is fully translatable and ships with the following bundled translations:
+
+* Vietnamese (vi) — complete, maintained by the author
+* Indonesian (id_ID), Thai (th), Chinese Simplified (zh_CN), Japanese (ja), Hindi (hi_IN)
+* Spanish (es_ES), French (fr_FR), German (de_DE), Portuguese – Brazil (pt_BR), Russian (ru_RU), Arabic (ar)
+
+All languages other than Vietnamese are machine-generated as a starting point and improvements are welcome — corrections can be sent through the GitHub repository. The plugin also loads any translation placed in `wp-content/languages/plugins/`.
 
 == Installation ==
 
@@ -71,6 +79,41 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.0 =
+A feature release: a full shortcode/snippet toolkit, a rebuilt multi-channel contact chat, a privacy module, and eleven new interface languages.
+
+Shortcodes &amp; snippets:
+
+* **Snippet manager** — create reusable snippets (content, HTML or PHP) and drop them anywhere with a shortcode. Each snippet has a display name, description, tags for grouping, a temporary-disable switch, an "off for administrators" switch, and a per-device (mobile / tablet / desktop) restriction — modelled on Shortcoder, which you can import your existing snippets from so you can leave that plugin behind without touching your published content.
+* **20+ built-in shortcodes** — conditional display (`[ht-if]` / `[ht-else]` driven by easy dropdowns: logged-in state, role, device, date range, page type and more), layout (accordion, tabs, alerts, columns, buttons), dynamic data (post fields, counts, reading time), and media (QR code, click-to-load video facade, icons).
+* **Shortcode tools** — find every post or page a shortcode is used on, an insert button in the editor, and a central on/off manager for the plugin's own shortcodes and snippets. It never rewrites shortcodes belonging to other plugins.
+
+Contact chat, rebuilt:
+
+* **30+ contact channels** — Zalo, Messenger, WhatsApp, Telegram, phone, SMS, email, Line, WeChat, Instagram, Facebook, X, YouTube, LinkedIn, Discord, TikTok, Shopee, Grab and more, each accepting either a username/number or a full URL.
+* **17 button skins** for the launcher, an attractive mobile **Services panel** (13 layouts × 7 colour themes × 6 display modes, with badges) so you can put your key services and articles one tap away instead of buried in a menu, and a customisable panel title.
+* **Extras** — a greeting bubble, business hours with an online/offline state, pre-filled WhatsApp/SMS messages, scan-to-open QR codes on desktop (including WeChat), and separate mobile / tablet / desktop visibility.
+
+Privacy:
+
+* **Self-host Google Fonts** — serve Google Fonts from your own server so no visitor request reaches Google, plus a scanner that lists the external requests your front end still makes.
+
+SEO &amp; site management:
+
+* **Automatic 301 redirects** when a post or page slug changes, with a 404 log so you can catch broken links.
+* **Site-health audit** — a one-click score of your configuration with concrete suggestions.
+* **Configuration presets** — apply a sensible starting set of options for a Blog, WooCommerce store, Performance or Security focus in one click.
+
+Under the hood:
+
+* Replaced the bundled commercial **Font Awesome Pro** icon set (which was not licensed for redistribution) with Tabler Icons in wp-admin and Font Awesome Free on the front end, and removed a bundled Times New Roman font file. All icons now ship under permissive licences (CC0 / MIT / SIL OFL).
+* **`[gget]` download button** — fixed a stored/DOM cross-site-scripting hole: the target URL was stored base64-encoded (bypassing content filtering) and written to the page with `innerHTML`, so an Author could plant script that ran for any visitor. The URL is now validated to `http`/`https` on the server and built through the DOM on the client, with dangerous URI schemes blocked.
+* Improved settings backup / import.
+
+Translations:
+
+* Added eleven interface languages: Indonesian, Thai, Chinese (Simplified), Japanese, Hindi, Spanish, French, German, Portuguese (Brazil), Russian and Arabic. See the Languages section. The translation string catalogue grew to 1,158 strings.
 
 = 1.1.0 =
 Security tab rebuilt: dropped features that were theatre or actively harmful, and replaced them with real hardening.
@@ -201,3 +244,11 @@ Design:
 
 * New gold visual identity across the plugin panel and the optional wp-admin colour scheme. Semantic status colours (success green, error red, warning amber) are intentionally unchanged.
 * New brand mark, replacing the original author's logo.
+
+== Upgrade Notice ==
+
+= 1.2.0 =
+Adds a shortcode/snippet toolkit, a rebuilt multi-channel contact chat, a privacy module and eleven new languages. Includes a fix for a stored XSS in the [gget] download button — upgrading is recommended.
+
+= 1.1.0 =
+Rebuilds the Security tab: removes features that were security theatre and adds real hardening (login-attempt limiting, user-enumeration blocking, security headers).

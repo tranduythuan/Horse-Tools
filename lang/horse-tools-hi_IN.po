@@ -1,0 +1,3484 @@
+# Horse Tools translation (hi_IN) — machine-generated, review recommended.
+msgid ""
+msgstr ""
+"Project-Id-Version: Horse Tools\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: horse-tools\n"
+
+msgid "\"Comments containing links\" matches links in the comment body only. The figure shown is the total comment count, not a match count, so confirm carefully."
+msgstr "\"लिंक वाली टिप्पणियाँ\" केवल टिप्पणी के मुख्य भाग में मौजूद लिंक से मेल खाती हैं। दिखाया गया आंकड़ा कुल टिप्पणी संख्या है, मेल की संख्या नहीं, इसलिए ध्यान से पुष्टि करें।"
+
+msgid "\"Enter link\" left blank if you want to call the chat list"
+msgstr "यदि आप चैट सूची बुलाना चाहते हैं तो \"लिंक दर्ज करें\" खाली छोड़ दें"
+
+msgid "#id or .class"
+msgstr "#id या .class"
+
+msgid "%d enabled"
+msgstr "%d सक्षम"
+
+msgid "%d post(s) contain [sc] tags. Click “Convert now” to rewrite them."
+msgstr "%d पोस्ट में [sc] टैग हैं। उन्हें फिर से लिखने के लिए “अभी बदलें” पर क्लिक करें।"
+
+msgid "(duplicate)"
+msgstr "(डुप्लिकेट)"
+
+msgid "(no title)"
+msgstr "(कोई शीर्षक नहीं)"
+
+msgid "301"
+msgstr "301"
+
+msgid "4 customizable buttons"
+msgstr "4 अनुकूलन योग्य बटन"
+
+msgid "404"
+msgstr "404"
+
+msgid "404 log"
+msgstr "404 लॉग"
+
+msgid "404 redirects"
+msgstr "404 रीडायरेक्ट"
+
+msgid "503"
+msgstr "503"
+
+msgid "8-bit PNG images are not supported by the GD library, and this format already has perfect compression and does not need further processing"
+msgstr "8-bit PNG छवियाँ GD library द्वारा समर्थित नहीं हैं, और इस फ़ॉर्मेट में पहले से ही पूर्ण कम्प्रेशन है और आगे प्रोसेसिंग की आवश्यकता नहीं है"
+
+msgid "A login was locked out on your site"
+msgstr "आपकी साइट पर एक लॉगिन लॉक कर दिया गया"
+
+msgid "A wrong CSP silently breaks scripts, styles and images. Test with browser dev tools before relying on it."
+msgstr "गलत CSP चुपचाप स्क्रिप्ट, स्टाइल और छवियों को तोड़ देता है। इस पर निर्भर होने से पहले ब्राउज़र डेव टूल से परीक्षण करें।"
+
+msgid "ABOUT"
+msgstr "परिचय"
+
+msgid "ADD FONT"
+msgstr "फ़ॉन्ट जोड़ें"
+
+msgid "ADS.TXT"
+msgstr "ADS.TXT"
+
+msgid "ADSENSE"
+msgstr "ADSENSE"
+
+msgid "API Token"
+msgstr "API टोकन"
+
+msgid "About"
+msgstr "परिचय"
+
+msgid "Accepted Font Format : woff2, ttf, otf, off | Font Size: Upto 25 MB"
+msgstr "स्वीकृत फ़ॉन्ट फ़ॉर्मेट : woff2, ttf, otf, off | फ़ॉन्ट आकार: 25 MB तक"
+
+msgid "Access Font Awesome to find icons"
+msgstr "आइकन खोजने के लिए Font Awesome तक पहुँचें"
+
+msgid "Account"
+msgstr "खाता"
+
+msgid "Actions"
+msgstr "क्रियाएँ"
+
+msgid "Ad-blocker detection"
+msgstr "Ad-blocker पहचान"
+
+msgid "Add .html for page"
+msgstr "पेज के लिए .html जोड़ें"
+
+msgid "Add CSS for mobile size"
+msgstr "मोबाइल आकार के लिए CSS जोड़ें"
+
+msgid "Add CSS for tablet size"
+msgstr "टैबलेट आकार के लिए CSS जोड़ें"
+
+msgid "Add CSS to your website"
+msgstr "अपनी वेबसाइट में CSS जोड़ें"
+
+msgid "Add Classic Editor button"
+msgstr "Classic Editor बटन जोड़ें"
+
+msgid "Add Google API"
+msgstr "Google API जोड़ें"
+
+msgid "Add Google json code"
+msgstr "Google json कोड जोड़ें"
+
+msgid "Add a label so screen readers announce it."
+msgstr "एक लेबल जोड़ें ताकि स्क्रीन रीडर इसे घोषित करें।"
+
+msgid "Add ads at the bottom of the article"
+msgstr "लेख के नीचे विज्ञापन जोड़ें"
+
+msgid "Add ads to custom post placement"
+msgstr "कस्टम पोस्ट स्थान पर विज्ञापन जोड़ें"
+
+msgid "Add ads to the top of the article"
+msgstr "लेख के ऊपर विज्ञापन जोड़ें"
+
+msgid "Add an attribution line when visitors copy text"
+msgstr "जब विज़िटर टेक्स्ट कॉपी करें तो एक एट्रिब्यूशन पंक्ति जोड़ें"
+
+msgid "Add avatar upload functionality"
+msgstr "अवतार अपलोड सुविधा जोड़ें"
+
+msgid "Add background image link"
+msgstr "बैकग्राउंड छवि लिंक जोड़ें"
+
+msgid "Add code"
+msgstr "कोड जोड़ें"
+
+msgid "Add code to WP body"
+msgstr "WP body में कोड जोड़ें"
+
+msgid "Add code to WP footer"
+msgstr "WP footer में कोड जोड़ें"
+
+msgid "Add code to WP head"
+msgstr "WP head में कोड जोड़ें"
+
+msgid "Add code to WP login"
+msgstr "WP login में कोड जोड़ें"
+
+msgid "Add default featured image"
+msgstr "डिफ़ॉल्ट फ़ीचर्ड छवि जोड़ें"
+
+msgid "Add duplicate button"
+msgstr "डुप्लिकेट बटन जोड़ें"
+
+msgid "Add field"
+msgstr "फ़ील्ड जोड़ें"
+
+msgid "Add font Awesome to the website"
+msgstr "वेबसाइट में Font Awesome जोड़ें"
+
+msgid "Add fonts"
+msgstr "फ़ॉन्ट जोड़ें"
+
+msgid "Add fonts to your website with just a few simple steps. Additionally, it allows you to quickly set fonts in the specific areas you want to change, offering great convenience"
+msgstr "कुछ आसान चरणों में अपनी वेबसाइट में फ़ॉन्ट जोड़ें। इसके अतिरिक्त, यह आपको उन विशिष्ट क्षेत्रों में तेज़ी से फ़ॉन्ट सेट करने देता है जिन्हें आप बदलना चाहते हैं, जो बहुत सुविधाजनक है"
+
+msgid "Add hardening headers to front-end responses. Each one below is optional."
+msgstr "फ्रंट-एंड रिस्पॉन्स में हार्डनिंग हेडर जोड़ें। नीचे दिया गया प्रत्येक वैकल्पिक है।"
+
+msgid "Add images"
+msgstr "छवियाँ जोड़ें"
+
+msgid "Add json"
+msgstr "json जोड़ें"
+
+msgid "Add link"
+msgstr "लिंक जोड़ें"
+
+msgid "Add logo link"
+msgstr "लोगो लिंक जोड़ें"
+
+msgid "Add nofollow and _blank for external links"
+msgstr "बाहरी लिंक के लिए nofollow और _blank जोड़ें"
+
+msgid "Add picture frame link here"
+msgstr "यहाँ पिक्चर फ़्रेम लिंक जोड़ें"
+
+msgid "Add service"
+msgstr "सेवा जोड़ें"
+
+msgid "Add the image logo link here"
+msgstr "यहाँ छवि लोगो लिंक जोड़ें"
+
+msgid "Add the logo image link here"
+msgstr "यहाँ लोगो छवि लिंक जोड़ें"
+
+msgid "Add watermark to images upon upload"
+msgstr "अपलोड करते समय छवियों में वॉटरमार्क जोड़ें"
+
+msgid "Added"
+msgstr "जोड़ा गया"
+
+msgid "Additional feature"
+msgstr "अतिरिक्त सुविधा"
+
+msgid "Ads"
+msgstr "विज्ञापन"
+
+msgid "Advanced configuration"
+msgstr "उन्नत कॉन्फ़िगरेशन"
+
+msgid "Advanced image viewing feature in posts"
+msgstr "पोस्ट में उन्नत छवि देखने की सुविधा"
+
+msgid "Advanced photo upload"
+msgstr "उन्नत फ़ोटो अपलोड"
+
+msgid "Advanced settings"
+msgstr "उन्नत सेटिंग्स"
+
+msgid "After too many failed logins from the same address, block further attempts for a while. This is the real defence against password guessing."
+msgstr "एक ही पते से बहुत अधिक असफल लॉगिन के बाद, कुछ समय के लिए आगे के प्रयास रोक दें। पासवर्ड अनुमान लगाने के विरुद्ध यही असली बचाव है।"
+
+msgid "Agree"
+msgstr "सहमत"
+
+msgid "All devices"
+msgstr "सभी डिवाइस"
+
+msgid "All links on your website will redirect to the maintenance page, and only logged-in admin accounts can view the content"
+msgstr "आपकी वेबसाइट के सभी लिंक रखरखाव पेज पर रीडायरेक्ट होंगे, और केवल लॉग-इन एडमिन खाते ही सामग्री देख सकते हैं"
+
+msgid "All safe security headers (frame, nosniff, referrer, permissions)"
+msgstr "सभी सुरक्षित सुरक्षा हेडर (frame, nosniff, referrer, permissions)"
+
+msgid "All snippets"
+msgstr "सभी स्निपेट"
+
+msgid "Allow avatar upload"
+msgstr "अवतार अपलोड की अनुमति दें"
+
+msgid "Allow displaying member IDs on the profile management page"
+msgstr "प्रोफ़ाइल प्रबंधन पेज पर सदस्य ID दिखाने की अनुमति दें"
+
+msgid "Allow uploading AVIF image format"
+msgstr "AVIF छवि फ़ॉर्मेट अपलोड करने की अनुमति दें"
+
+msgid "Allow uploading JFIF files"
+msgstr "JFIF फ़ाइलें अपलोड करने की अनुमति दें"
+
+msgid "Allow uploading SVG files"
+msgstr "SVG फ़ाइलें अपलोड करने की अनुमति दें"
+
+msgid "Allow using Shortcode in post titles"
+msgstr "पोस्ट शीर्षकों में Shortcode उपयोग करने की अनुमति दें"
+
+msgid "Allows uploading AVIF photos"
+msgstr "AVIF फ़ोटो अपलोड करने की अनुमति देता है"
+
+msgid "Already declared"
+msgstr "पहले से घोषित"
+
+msgid "An error occurred"
+msgstr "एक त्रुटि हुई"
+
+msgid "Any"
+msgstr "कोई भी"
+
+msgid "App password"
+msgstr "ऐप पासवर्ड"
+
+msgid "Applied the \"%s\" preset. Recommended settings are on — you can undo this below."
+msgstr "\"%s\" प्रीसेट लागू किया गया। अनुशंसित सेटिंग्स चालू हैं — आप इसे नीचे पूर्ववत कर सकते हैं।"
+
+msgid "Apply import"
+msgstr "इम्पोर्ट लागू करें"
+
+msgid "Apply this preset"
+msgstr "यह प्रीसेट लागू करें"
+
+msgid "Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it."
+msgstr "लागू करने से ये समूह इम्पोर्ट किए गए मानों से अधिलेखित हो जाते हैं। एक-क्लिक बैकअप रखा जाता है ताकि आप इसे पूर्ववत कर सकें।"
+
+msgid "Ask your host to update PHP to 8.1 or newer."
+msgstr "अपने होस्ट से PHP को 8.1 या नए संस्करण में अपडेट करने को कहें।"
+
+msgid "Attempts before lockout"
+msgstr "लॉकआउट से पहले प्रयास"
+
+msgid "Attribution line"
+msgstr "एट्रिब्यूशन पंक्ति"
+
+msgid "Authenticate outgoing mail"
+msgstr "आउटगोइंग मेल प्रमाणित करें"
+
+msgid "Author and maintainer:"
+msgstr "लेखक और अनुरक्षक:"
+
+msgid "Auto (sheet on phone, modal on desktop)"
+msgstr "ऑटो (फ़ोन पर शीट, डेस्कटॉप पर मोडल)"
+
+msgid "Automatic cleanup"
+msgstr "स्वचालित सफ़ाई"
+
+msgid "Automatic initialization after <span id=\"sogiay\" style=\"padding: 5px;\">3</span>s"
+msgstr "<span id=\"sogiay\" style=\"padding: 5px;\">3</span>s के बाद स्वचालित आरंभीकरण"
+
+msgid "Automatic name"
+msgstr "स्वचालित नाम"
+
+msgid "Automatic redirects"
+msgstr "स्वचालित रीडायरेक्ट"
+
+msgid "Automatic updates"
+msgstr "स्वचालित अपडेट"
+
+msgid "Automatically add a frame when uploading an image"
+msgstr "छवि अपलोड करते समय स्वचालित रूप से एक फ़्रेम जोड़ें"
+
+msgid "Automatically open popup when scrolling down"
+msgstr "नीचे स्क्रॉल करने पर स्वचालित रूप से popup खोलें"
+
+msgid "Avatar image URL (Avatar / Live-chat skin)"
+msgstr "अवतार छवि URL (Avatar / Live-chat skin)"
+
+msgid "Away — leave a message"
+msgstr "अनुपस्थित — संदेश छोड़ें"
+
+msgid "BACKUP"
+msgstr "बैकअप"
+
+msgid "BLOCKER"
+msgstr "BLOCKER"
+
+msgid "BROWSE FILE"
+msgstr "फ़ाइल ब्राउज़ करें"
+
+msgid "Background"
+msgstr "बैकग्राउंड"
+
+msgid "Background color"
+msgstr "बैकग्राउंड रंग"
+
+msgid "Background color of the input form"
+msgstr "इनपुट फ़ॉर्म का बैकग्राउंड रंग"
+
+msgid "Background title"
+msgstr "बैकग्राउंड शीर्षक"
+
+msgid "Backup"
+msgstr "बैकअप"
+
+msgid "Badge text (optional)"
+msgstr "बैज टेक्स्ट (वैकल्पिक)"
+
+msgid "Bar background color"
+msgstr "बार बैकग्राउंड रंग"
+
+msgid "Bar color"
+msgstr "बार रंग"
+
+msgid "Bar size"
+msgstr "बार आकार"
+
+msgid "Bento (1 big + cells)"
+msgstr "Bento (1 बड़ा + सेल)"
+
+msgid "Block login spam with Google reCAPTCHA"
+msgstr "Google reCAPTCHA से लॉगिन स्पैम रोकें"
+
+msgid "Block user enumeration"
+msgstr "यूज़र एन्यूमरेशन रोकें"
+
+msgid "Block user enumeration (?author=N, users REST, oEmbed)"
+msgstr "यूज़र एन्यूमरेशन रोकें (?author=N, users REST, oEmbed)"
+
+msgid "Blocks ?author=N scans, removes the users REST endpoint for anonymous requests, strips the author from oEmbed, and makes login errors generic so they do not reveal whether the username or the password was wrong."
+msgstr "?author=N स्कैन रोकता है, अनामिक अनुरोधों के लिए users REST endpoint हटाता है, oEmbed से लेखक हटाता है, और लॉगिन त्रुटियों को सामान्य बनाता है ताकि वे यह प्रकट न करें कि यूज़रनेम गलत था या पासवर्ड।"
+
+msgid "Blog / News site"
+msgstr "ब्लॉग / समाचार साइट"
+
+msgid "Blue"
+msgstr "नीला"
+
+msgid "Border color"
+msgstr "बॉर्डर रंग"
+
+msgid "Border distance"
+msgstr "बॉर्डर दूरी"
+
+msgid "Border radius"
+msgstr "बॉर्डर radius"
+
+msgid "Border size"
+msgstr "बॉर्डर आकार"
+
+msgid "Bottom sheet"
+msgstr "नीचे की शीट"
+
+msgid "Browser ad-block notification"
+msgstr "ब्राउज़र ad-block सूचना"
+
+msgid "Build a rich list of services or articles that slides up when a visitor taps a bottom-bar item. To open it, set one bottom-bar item’s “#id or .class” field above to"
+msgstr "सेवाओं या लेखों की एक समृद्ध सूची बनाएँ जो विज़िटर द्वारा नीचे-बार आइटम पर टैप करने पर ऊपर स्लाइड होती है। इसे खोलने के लिए, ऊपर किसी एक नीचे-बार आइटम के “#id या .class” फ़ील्ड को सेट करें"
+
+msgid "Business hours (shows Online / Away on the Live-chat, Card and Avatar skins)"
+msgstr "व्यावसायिक घंटे (Live-chat, Card और Avatar skins पर Online / Away दिखाता है)"
+
+msgid "Button color"
+msgstr "बटन रंग"
+
+msgid "Button name"
+msgstr "बटन नाम"
+
+msgid "Button position"
+msgstr "बटन स्थिति"
+
+msgid "Button text"
+msgstr "बटन टेक्स्ट"
+
+msgid "Button text color"
+msgstr "बटन टेक्स्ट रंग"
+
+msgid "Buyer"
+msgstr "खरीदार"
+
+msgid "CHAT"
+msgstr "चैट"
+
+msgid "CHECK"
+msgstr "जाँचें"
+
+msgid "CLICK"
+msgstr "क्लिक"
+
+msgid "COMMENT"
+msgstr "टिप्पणी"
+
+msgid "CONTENT"
+msgstr "सामग्री"
+
+msgid "COOKIE"
+msgstr "COOKIE"
+
+msgid "CSS"
+msgstr "CSS"
+
+msgid "CUSTOM"
+msgstr "कस्टम"
+
+msgid "Cancel"
+msgstr "रद्द करें"
+
+msgid "Card grid"
+msgstr "कार्ड ग्रिड"
+
+msgid "Center-align button on page"
+msgstr "पेज पर बटन को केंद्र में संरेखित करें"
+
+msgid "Centered modal"
+msgstr "केंद्रित मोडल"
+
+msgid "Change WordPress logo in the Admin bar"
+msgstr "Admin bar में WordPress लोगो बदलें"
+
+msgid "Change display name and icon to your preference"
+msgstr "प्रदर्शन नाम और आइकन को अपनी पसंद के अनुसार बदलें"
+
+msgid "Change login link"
+msgstr "लॉगिन लिंक बदलें"
+
+msgid "Change save interval"
+msgstr "सहेजने का अंतराल बदलें"
+
+msgid "Change the Buy Now text on the single product page"
+msgstr "एकल उत्पाद पेज पर Buy Now टेक्स्ट बदलें"
+
+msgid "Change the color of the search box to your preferences"
+msgstr "खोज बॉक्स का रंग अपनी पसंद के अनुसार बदलें"
+
+msgid "Changed"
+msgstr "बदला गया"
+
+msgid "Chat ID"
+msgstr "Chat ID"
+
+msgid "Chat background color"
+msgstr "चैट बैकग्राउंड रंग"
+
+msgid "Chat text color"
+msgstr "चैट टेक्स्ट रंग"
+
+msgid "Choose a file"
+msgstr "एक फ़ाइल चुनें"
+
+msgid "Choose a font for the"
+msgstr "इसके लिए एक फ़ॉन्ट चुनें"
+
+msgid "Choose decorations for the website, such as Christmas or Lunar New Year (If any effects cause issues on your website, it may be due to javascript conflicts. You can switch to other effects to use)"
+msgstr "वेबसाइट के लिए सजावट चुनें, जैसे क्रिसमस या चंद्र नववर्ष (यदि कोई प्रभाव आपकी वेबसाइट पर समस्या पैदा करता है, तो यह javascript टकराव के कारण हो सकता है। आप उपयोग के लिए अन्य प्रभावों पर स्विच कर सकते हैं)"
+
+msgid "Choose display interface according to your preference"
+msgstr "अपनी पसंद के अनुसार प्रदर्शन इंटरफ़ेस चुनें"
+
+msgid "Classic Editor"
+msgstr "Classic Editor"
+
+msgid "Classic editing"
+msgstr "क्लासिक संपादन"
+
+msgid "Clean"
+msgstr "साफ़ करें"
+
+msgid "Cleaned the screen"
+msgstr "स्क्रीन साफ़ की गई"
+
+msgid "Cleanup runs on WordPress cron, which only fires when your site receives traffic. Weekly and monthly are measured from the last run."
+msgstr "सफ़ाई WordPress cron पर चलती है, जो केवल तभी सक्रिय होती है जब आपकी साइट पर ट्रैफ़िक आता है। साप्ताहिक और मासिक अंतिम रन से मापे जाते हैं।"
+
+msgid "Clear all"
+msgstr "सभी साफ़ करें"
+
+msgid "Clear all automatic redirects"
+msgstr "सभी स्वचालित रीडायरेक्ट साफ़ करें"
+
+msgid "Clear the whole log"
+msgstr "पूरा लॉग साफ़ करें"
+
+msgid "Click here"
+msgstr "यहाँ क्लिक करें"
+
+msgid "Client ID"
+msgstr "Client ID"
+
+msgid "Client Secret"
+msgstr "Client Secret"
+
+msgid "Close"
+msgstr "बंद करें"
+
+msgid "Code orders"
+msgstr "कोड ऑर्डर"
+
+msgid "Comment notification"
+msgstr "टिप्पणी सूचना"
+
+msgid "Comments containing links"
+msgstr "लिंक वाली टिप्पणियाँ"
+
+msgid "Compact icon tiles"
+msgstr "कॉम्पैक्ट आइकन टाइल"
+
+msgid "Completed"
+msgstr "पूर्ण"
+
+msgid "Compress HTML into a single line"
+msgstr "HTML को एक ही पंक्ति में कम्प्रेस करें"
+
+msgid "Compress JPG images upon upload"
+msgstr "अपलोड करते समय JPG छवियाँ कम्प्रेस करें"
+
+msgid "Compress JPGs and serve WebP"
+msgstr "JPG कम्प्रेस करें और WebP परोसें"
+
+msgid "Compress uploaded JPGs"
+msgstr "अपलोड की गई JPG कम्प्रेस करें"
+
+msgid "Compression level ("
+msgstr "कम्प्रेशन स्तर ("
+
+msgid "Conditional & content"
+msgstr "सशर्त और सामग्री"
+
+msgid "Configure Google index API"
+msgstr "Google index API कॉन्फ़िगर करें"
+
+msgid "Configure SMTP mail"
+msgstr "SMTP मेल कॉन्फ़िगर करें"
+
+msgid "Configure adding a watermark to images upon upload"
+msgstr "अपलोड करते समय छवियों में वॉटरमार्क जोड़ना कॉन्फ़िगर करें"
+
+msgid "Configure buttons"
+msgstr "बटन कॉन्फ़िगर करें"
+
+msgid "Configure category permalink"
+msgstr "श्रेणी permalink कॉन्फ़िगर करें"
+
+msgid "Configure image upload function"
+msgstr "छवि अपलोड फ़ंक्शन कॉन्फ़िगर करें"
+
+msgid "Configure order notifications to be sent to Telegram"
+msgstr "Telegram पर भेजे जाने वाली ऑर्डर सूचनाएँ कॉन्फ़िगर करें"
+
+msgid "Configure the options and create search data. If you want to refresh, you can delete the search data and recreate it. After enabling quick search and completing data creation, a quick search popup will appear when you enter the search box on the website"
+msgstr "विकल्पों को कॉन्फ़िगर करें और खोज डेटा बनाएँ। यदि आप रीफ़्रेश करना चाहते हैं, तो आप खोज डेटा हटाकर पुनः बना सकते हैं। त्वरित खोज सक्षम करने और डेटा निर्माण पूरा करने के बाद, वेबसाइट पर खोज बॉक्स में प्रवेश करने पर एक त्वरित खोज popup दिखाई देगा"
+
+msgid "Confirm deletion"
+msgstr "हटाने की पुष्टि करें"
+
+msgid "Contact"
+msgstr "संपर्क"
+
+msgid "Contact bar on mobile"
+msgstr "मोबाइल पर संपर्क बार"
+
+msgid "Contact us"
+msgstr "हमसे संपर्क करें"
+
+msgid "Content"
+msgstr "सामग्री"
+
+msgid "Content to be hidden"
+msgstr "छिपाई जाने वाली सामग्री"
+
+msgid "Content-Security-Policy (advanced, leave blank if unsure)"
+msgstr "Content-Security-Policy (उन्नत, अनिश्चित हों तो खाली छोड़ें)"
+
+msgid "Continue"
+msgstr "जारी रखें"
+
+msgid "Convert JPG and PNG images to AVIF upon upload, and compress the images according to the configuration you enter"
+msgstr "अपलोड करते समय JPG और PNG छवियों को AVIF में बदलें, और आपके द्वारा दर्ज कॉन्फ़िगरेशन के अनुसार छवियों को कम्प्रेस करें"
+
+msgid "Convert JPG and PNG images to WEBP upon upload, and compress the images according to the configuration you enter"
+msgstr "अपलोड करते समय JPG और PNG छवियों को WEBP में बदलें, और आपके द्वारा दर्ज कॉन्फ़िगरेशन के अनुसार छवियों को कम्प्रेस करें"
+
+msgid "Convert JPG and PNG to AVIF"
+msgstr "JPG और PNG को AVIF में बदलें"
+
+msgid "Convert JPG and PNG to WEBP"
+msgstr "JPG और PNG को WEBP में बदलें"
+
+msgid "Convert PNG images to JPG upon upload, and compress the images according to the JPG configuration"
+msgstr "अपलोड करते समय PNG छवियों को JPG में बदलें, और JPG कॉन्फ़िगरेशन के अनुसार छवियों को कम्प्रेस करें"
+
+msgid "Convert PNG to JPG"
+msgstr "PNG को JPG में बदलें"
+
+msgid "Convert Shortcoder tags"
+msgstr "Shortcoder टैग बदलें"
+
+msgid "Convert images to AVIF upon upload"
+msgstr "अपलोड करते समय छवियों को AVIF में बदलें"
+
+msgid "Convert images to WEBP upon upload"
+msgstr "अपलोड करते समय छवियों को WEBP में बदलें"
+
+msgid "Convert now"
+msgstr "अभी बदलें"
+
+msgid "Convert path from domain.com/tag/news/ to domain.com/news/"
+msgstr "पथ को domain.com/tag/news/ से domain.com/news/ में बदलें"
+
+msgid "Convert paths from (domain.com/category/news/latest-news, domain.com/category/news) to (domain.com/latest-news, domain.com/news)"
+msgstr "पथ को (domain.com/category/news/latest-news, domain.com/category/news) से (domain.com/latest-news, domain.com/news) में बदलें"
+
+msgid "Converted %d post(s)."
+msgstr "%d पोस्ट बदली गईं।"
+
+msgid "Cookies"
+msgstr "Cookies"
+
+msgid "Copied"
+msgstr "कॉपी किया गया"
+
+msgid "Copied: "
+msgstr "कॉपी किया गया: "
+
+msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
+msgstr "अपने Google Developers प्रोजेक्ट में Authorized redirect URLs में जोड़ने के लिए नीचे दिया गया लिंक कॉपी करें"
+
+msgid "Core, plugins and themes are up to date"
+msgstr "कोर, प्लगइन और थीम अद्यतित हैं"
+
+msgid "Corner card"
+msgstr "कोना कार्ड"
+
+msgid "Could not create the fonts folder in uploads."
+msgstr "uploads में fonts फ़ोल्डर नहीं बनाया जा सका।"
+
+msgid "Could not load the icon list."
+msgstr "आइकन सूची लोड नहीं हो सकी।"
+
+msgid "Could not read the data."
+msgstr "डेटा पढ़ा नहीं जा सका।"
+
+msgid "Coupon codes"
+msgstr "कूपन कोड"
+
+msgid "Create a 301 automatically when a post permalink changes"
+msgstr "पोस्ट permalink बदलने पर स्वचालित रूप से 301 बनाएँ"
+
+msgid "Create a 301 redirect from this URL"
+msgstr "इस URL से 301 रीडायरेक्ट बनाएँ"
+
+msgid "Create a chat feature for users"
+msgstr "उपयोगकर्ताओं के लिए चैट सुविधा बनाएँ"
+
+msgid "Create a named block of HTML/CSS/JS and drop it anywhere with [ht-snippet name=\"your-name\"]. Placeholders {{param}} or %%param%% are filled from the shortcode’s attributes, plus built-ins: currentyear, currentdate, postid, posttitle, sitename, siteurl."
+msgstr "HTML/CSS/JS का एक नामित ब्लॉक बनाएँ और इसे [ht-snippet name=\"your-name\"] के साथ कहीं भी रखें। Placeholders {{param}} या %%param%% shortcode के गुणों से भरे जाते हैं, साथ ही बिल्ट-इन: currentyear, currentdate, postid, posttitle, sitename, siteurl।"
+
+msgid "Create an outstanding popup"
+msgstr "एक उत्कृष्ट popup बनाएँ"
+
+msgid "Create custom post type data"
+msgstr "कस्टम पोस्ट टाइप डेटा बनाएँ"
+
+msgid "Create welcome email for registered users"
+msgstr "पंजीकृत उपयोगकर्ताओं के लिए स्वागत ईमेल बनाएँ"
+
+msgid "Currently enabled"
+msgstr "वर्तमान में सक्षम"
+
+msgid "Custom WordPress login page"
+msgstr "कस्टम WordPress लॉगिन पेज"
+
+msgid "Custom position in posts"
+msgstr "पोस्ट में कस्टम स्थान"
+
+msgid "Custom posts will be displayed"
+msgstr "कस्टम पोस्ट प्रदर्शित होंगी"
+
+msgid "Custom shortcodes (snippets)"
+msgstr "कस्टम shortcodes (स्निपेट)"
+
+msgid "Customer reviews"
+msgstr "ग्राहक समीक्षाएँ"
+
+msgid "Customize"
+msgstr "अनुकूलित करें"
+
+msgid "Customize Currency Unit"
+msgstr "मुद्रा इकाई अनुकूलित करें"
+
+msgid "Customize TOC display position"
+msgstr "TOC प्रदर्शन स्थिति अनुकूलित करें"
+
+msgid "Customize background"
+msgstr "बैकग्राउंड अनुकूलित करें"
+
+msgid "Customize chat button"
+msgstr "चैट बटन अनुकूलित करें"
+
+msgid "Customize dashboard widgets"
+msgstr "डैशबोर्ड विजेट अनुकूलित करें"
+
+msgid "Customize display"
+msgstr "प्रदर्शन अनुकूलित करें"
+
+msgid "Customize display and colors"
+msgstr "प्रदर्शन और रंग अनुकूलित करें"
+
+msgid "Customize elements on the page"
+msgstr "पेज पर तत्व अनुकूलित करें"
+
+msgid "Customize icons and positions"
+msgstr "आइकन और स्थान अनुकूलित करें"
+
+msgid "Customize scroll bar"
+msgstr "स्क्रॉल बार अनुकूलित करें"
+
+msgid "DATABASE"
+msgstr "DATABASE"
+
+msgid "DATE"
+msgstr "तारीख़"
+
+msgid "DEBUG"
+msgstr "DEBUG"
+
+msgid "DEL"
+msgstr "हटाएँ"
+
+msgid "DISPLAY"
+msgstr "प्रदर्शन"
+
+msgid "Daily"
+msgstr "दैनिक"
+
+msgid "Dark"
+msgstr "गहरा"
+
+msgid "Dark mode"
+msgstr "डार्क मोड"
+
+msgid "Data"
+msgstr "डेटा"
+
+msgid "Data & media"
+msgstr "डेटा और मीडिया"
+
+msgid "Date"
+msgstr "तारीख़"
+
+msgid "Debug"
+msgstr "Debug"
+
+msgid "Debug is not enabled"
+msgstr "Debug सक्षम नहीं है"
+
+msgid "Debug log file does not exist"
+msgstr "Debug लॉग फ़ाइल मौजूद नहीं है"
+
+msgid "Debug settings"
+msgstr "Debug सेटिंग्स"
+
+msgid "Declaration already deleted"
+msgstr "घोषणा पहले ही हटाई जा चुकी है"
+
+msgid "Decorative effects for the website"
+msgstr "वेबसाइट के लिए सजावटी प्रभाव"
+
+msgid "Default style"
+msgstr "डिफ़ॉल्ट स्टाइल"
+
+msgid "Delete"
+msgstr "हटाएँ"
+
+msgid "Delete all 404 images"
+msgstr "सभी 404 छवियाँ हटाएँ"
+
+msgid "Delete all 404 thumbnail images"
+msgstr "सभी 404 थंबनेल छवियाँ हटाएँ"
+
+msgid "Delete autosaves"
+msgstr "ऑटोसेव हटाएँ"
+
+msgid "Delete comments"
+msgstr "टिप्पणियाँ हटाएँ"
+
+msgid "Delete cropped image"
+msgstr "क्रॉप की गई छवि हटाएँ"
+
+msgid "Delete data"
+msgstr "डेटा हटाएँ"
+
+msgid "Delete revisions"
+msgstr "संशोधन हटाएँ"
+
+msgid "Delete settings:"
+msgstr "सेटिंग्स हटाएँ:"
+
+msgid "Delete this log entry"
+msgstr "यह लॉग प्रविष्टि हटाएँ"
+
+msgid "Delete this snippet? Content that uses it will stop rendering."
+msgstr "यह स्निपेट हटाएँ? इसका उपयोग करने वाली सामग्री रेंडर होना बंद कर देगी।"
+
+msgid "Deleted"
+msgstr "हटाया गया"
+
+msgid "Deleted %1$s of %2$s scanned"
+msgstr "स्कैन किए गए %2$s में से %1$s हटाए गए"
+
+msgid "Deleted successfully"
+msgstr "सफलतापूर्वक हटाया गया"
+
+msgid "Deleted: %s"
+msgstr "हटाया गया: %s"
+
+msgid "Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action."
+msgstr "लिंक पैटर्न द्वारा टिप्पणियाँ हटाना जानबूझकर स्वचालित सफ़ाई से बाहर रखा गया है — यह एक मैन्युअल क्रिया बनी रहती है।"
+
+msgid "Deleting is permanent. Revisions, autosaves and trashed content (posts, pages, products) are removed together with their metadata and attached files."
+msgstr "हटाना स्थायी है। संशोधन, ऑटोसेव और ट्रैश की गई सामग्री (पोस्ट, पेज, उत्पाद) उनके मेटाडेटा और संलग्न फ़ाइलों के साथ हटा दी जाती हैं।"
+
+msgid "Deletion successful"
+msgstr "हटाना सफल"
+
+msgid "Demo"
+msgstr "डेमो"
+
+msgid "Description (for your reference)"
+msgstr "विवरण (आपके संदर्भ के लिए)"
+
+msgid "Desktop only"
+msgstr "केवल डेस्कटॉप"
+
+msgid "Disable Classic CSS"
+msgstr "Classic CSS अक्षम करें"
+
+msgid "Disable Emoji"
+msgstr "Emoji अक्षम करें"
+
+msgid "Disable Gutenberg CSS"
+msgstr "Gutenberg CSS अक्षम करें"
+
+msgid "Disable REST API for anonymous visitors"
+msgstr "अनामिक विज़िटर के लिए REST API अक्षम करें"
+
+msgid "Disable WordPress info widget"
+msgstr "WordPress info विजेट अक्षम करें"
+
+msgid "Disable Wp-Embed"
+msgstr "Wp-Embed अक्षम करें"
+
+msgid "Disable X-Pingback"
+msgstr "X-Pingback अक्षम करें"
+
+msgid "Disable XML RPC"
+msgstr "XML RPC अक्षम करें"
+
+msgid "Disable XML-RPC, X-Pingback, extra header tags and the version tag"
+msgstr "XML-RPC, X-Pingback, अतिरिक्त header टैग और version टैग अक्षम करें"
+
+msgid "Disable feeds (RSS/Atom)"
+msgstr "फ़ीड अक्षम करें (RSS/Atom)"
+
+msgid "Disable health widget"
+msgstr "health विजेट अक्षम करें"
+
+msgid "Disable jQuery Migrate"
+msgstr "jQuery Migrate अक्षम करें"
+
+msgid "Disable logo display"
+msgstr "लोगो प्रदर्शन अक्षम करें"
+
+msgid "Disable numbers in front of tags"
+msgstr "टैग के आगे संख्याएँ अक्षम करें"
+
+msgid "Disable quick draft widget"
+msgstr "quick draft विजेट अक्षम करें"
+
+msgid "Disable recent posts widget"
+msgstr "recent posts विजेट अक्षम करें"
+
+msgid "Disable statistics widget"
+msgstr "statistics विजेट अक्षम करें"
+
+msgid "Disable the Admin Bar"
+msgstr "Admin Bar अक्षम करें"
+
+msgid "Disable the theme & plugin file editor"
+msgstr "थीम और प्लगइन फ़ाइल एडिटर अक्षम करें"
+
+msgid "Disable unnecessary items"
+msgstr "अनावश्यक आइटम अक्षम करें"
+
+msgid "Disable unused endpoints"
+msgstr "अप्रयुक्त endpoints अक्षम करें"
+
+msgid "Disable unused widgets"
+msgstr "अप्रयुक्त विजेट अक्षम करें"
+
+msgid "Disable welcome widget"
+msgstr "welcome विजेट अक्षम करें"
+
+msgid "Disabled TOC"
+msgstr "TOC अक्षम"
+
+msgid "Discard"
+msgstr "छोड़ें"
+
+msgid "Display ID in the management page"
+msgstr "प्रबंधन पेज पर ID प्रदर्शित करें"
+
+msgid "Display language settings"
+msgstr "प्रदर्शन भाषा सेटिंग्स"
+
+msgid "Display link when seconds expire"
+msgstr "सेकंड समाप्त होने पर लिंक प्रदर्शित करें"
+
+msgid "Display name (shown in the list)"
+msgstr "प्रदर्शन नाम (सूची में दिखाया गया)"
+
+msgid "Display on the WooCommerce login form"
+msgstr "WooCommerce लॉगिन फ़ॉर्म पर प्रदर्शित करें"
+
+msgid "Display on the default login form"
+msgstr "डिफ़ॉल्ट लॉगिन फ़ॉर्म पर प्रदर्शित करें"
+
+msgid "Display options"
+msgstr "प्रदर्शन विकल्प"
+
+msgid "Display text color"
+msgstr "प्रदर्शन टेक्स्ट रंग"
+
+msgid "Display text if out of stock"
+msgstr "स्टॉक में न होने पर टेक्स्ट प्रदर्शित करें"
+
+msgid "Display text if the price is 0"
+msgstr "कीमत 0 होने पर टेक्स्ट प्रदर्शित करें"
+
+msgid "Display type"
+msgstr "प्रदर्शन प्रकार"
+
+msgid "Display your cookie notice to inform users about cookie use and allow them to manage their preferences easily"
+msgstr "उपयोगकर्ताओं को cookie उपयोग के बारे में सूचित करने और उन्हें अपनी प्राथमिकताएँ आसानी से प्रबंधित करने देने के लिए अपनी cookie सूचना प्रदर्शित करें"
+
+msgid "Distance above"
+msgstr "ऊपर की दूरी"
+
+msgid "Do not auto-install core updates"
+msgstr "कोर अपडेट स्वतः-इंस्टॉल न करें"
+
+msgid "Do not auto-install language pack updates"
+msgstr "लैंग्वेज पैक अपडेट स्वतः-इंस्टॉल न करें"
+
+msgid "Do not auto-install plugin updates"
+msgstr "प्लगइन अपडेट स्वतः-इंस्टॉल न करें"
+
+msgid "Do not auto-install theme updates"
+msgstr "थीम अपडेट स्वतः-इंस्टॉल न करें"
+
+msgid "Do not enable if you are using optimization plugins with similar functionality (conflict)"
+msgstr "यदि आप समान कार्यक्षमता वाले ऑप्टिमाइज़ेशन प्लगइन उपयोग कर रहे हैं तो सक्षम न करें (टकराव)"
+
+msgid "Do not select"
+msgstr "चयन न करें"
+
+msgid "Do you want to delete?"
+msgstr "क्या आप हटाना चाहते हैं?"
+
+msgid "Does not exist"
+msgstr "मौजूद नहीं है"
+
+msgid "Download"
+msgstr "डाउनलोड"
+
+msgid "Download & self-host Google Fonts"
+msgstr "Google Fonts डाउनलोड और सेल्फ-होस्ट करें"
+
+msgid "Download .json"
+msgstr ".json डाउनलोड करें"
+
+msgid "Download button GGET shortcode"
+msgstr "डाउनलोड बटन GGET shortcode"
+
+msgid "Download link"
+msgstr "डाउनलोड लिंक"
+
+msgid "Downloading fonts…"
+msgstr "फ़ॉन्ट डाउनलोड हो रहे हैं…"
+
+msgid "Drop Emoji and jQuery Migrate"
+msgstr "Emoji और jQuery Migrate हटाएँ"
+
+msgid "Duplicate"
+msgstr "डुप्लिकेट"
+
+msgid "Duplicate content"
+msgstr "डुप्लिकेट सामग्री"
+
+msgid "Duplicate post, page, custom post type"
+msgstr "पोस्ट, पेज, कस्टम पोस्ट टाइप डुप्लिकेट करें"
+
+msgid "Edit"
+msgstr "संपादित करें"
+
+msgid "Editor classic"
+msgstr "Editor classic"
+
+msgid "Effect"
+msgstr "प्रभाव"
+
+msgid "Email"
+msgstr "ईमेल"
+
+msgid "Email me when an address is locked out"
+msgstr "जब कोई पता लॉक हो तो मुझे ईमेल करें"
+
+msgid "Email notification when a post has a comment"
+msgstr "जब किसी पोस्ट पर टिप्पणी हो तो ईमेल सूचना"
+
+msgid "Email notification when there a reply"
+msgstr "जब कोई उत्तर हो तो ईमेल सूचना"
+
+msgid "Email sent successfully"
+msgstr "ईमेल सफलतापूर्वक भेजा गया"
+
+msgid "Email subject"
+msgstr "ईमेल विषय"
+
+msgid "Empty"
+msgstr "खाली"
+
+msgid "Empty trash"
+msgstr "ट्रैश खाली करें"
+
+msgid "Enable"
+msgstr "सक्षम करें"
+
+msgid "Enable .html for page"
+msgstr "पेज के लिए .html सक्षम करें"
+
+msgid "Enable 301 redirection"
+msgstr "301 रीडायरेक्शन सक्षम करें"
+
+msgid "Enable 404 redirection"
+msgstr "404 रीडायरेक्शन सक्षम करें"
+
+msgid "Enable 503 maintenance mode"
+msgstr "503 रखरखाव मोड सक्षम करें"
+
+msgid "Enable AVIF image compression"
+msgstr "AVIF छवि कम्प्रेशन सक्षम करें"
+
+msgid "Enable Adsense"
+msgstr "Adsense सक्षम करें"
+
+msgid "Enable Classic Editor"
+msgstr "Classic Editor सक्षम करें"
+
+msgid "Enable Classic Editor in category description"
+msgstr "श्रेणी विवरण में Classic Editor सक्षम करें"
+
+msgid "Enable Classic Widget"
+msgstr "Classic Widget सक्षम करें"
+
+msgid "Enable GGET shortcode"
+msgstr "GGET shortcode सक्षम करें"
+
+msgid "Enable HTML compression"
+msgstr "HTML कम्प्रेशन सक्षम करें"
+
+msgid "Enable Instant-page"
+msgstr "Instant-page सक्षम करें"
+
+msgid "Enable JPG image compression"
+msgstr "JPG छवि कम्प्रेशन सक्षम करें"
+
+msgid "Enable SMTP mail"
+msgstr "SMTP मेल सक्षम करें"
+
+msgid "Enable SMTP mail to allow SMTP mail to function and send emails when you perform a test"
+msgstr "SMTP मेल को कार्य करने देने और परीक्षण करते समय ईमेल भेजने के लिए SMTP मेल सक्षम करें"
+
+msgid "Enable Smooth-scroll"
+msgstr "Smooth-scroll सक्षम करें"
+
+msgid "Enable WEBP image compression"
+msgstr "WEBP छवि कम्प्रेशन सक्षम करें"
+
+msgid "Enable WP_DEBUG"
+msgstr "WP_DEBUG सक्षम करें"
+
+msgid "Enable WP_DEBUG_DISPLAY"
+msgstr "WP_DEBUG_DISPLAY सक्षम करें"
+
+msgid "Enable WP_DEBUG_LOG"
+msgstr "WP_DEBUG_LOG सक्षम करें"
+
+msgid "Enable ad-block detection"
+msgstr "ad-block पहचान सक्षम करें"
+
+msgid "Enable ads.txt"
+msgstr "ads.txt सक्षम करें"
+
+msgid "Enable advanced image viewing"
+msgstr "उन्नत छवि देखना सक्षम करें"
+
+msgid "Enable and add the category IDs you want to hide from the main loop displaying posts on the homepage, for example: 1, 2, 3"
+msgstr "सक्षम करें और उन श्रेणी ID को जोड़ें जिन्हें आप होमपेज पर पोस्ट दिखाने वाले मुख्य लूप से छिपाना चाहते हैं, उदाहरण के लिए: 1, 2, 3"
+
+msgid "Enable and configure the functions below to enable Google sign-in to work"
+msgstr "Google sign-in को काम करने योग्य बनाने के लिए नीचे दिए गए फ़ंक्शन सक्षम और कॉन्फ़िगर करें"
+
+msgid "Enable chat button"
+msgstr "चैट बटन सक्षम करें"
+
+msgid "Enable color and display customization"
+msgstr "रंग और प्रदर्शन अनुकूलन सक्षम करें"
+
+msgid "Enable contact bar"
+msgstr "संपर्क बार सक्षम करें"
+
+msgid "Enable cookie"
+msgstr "cookie सक्षम करें"
+
+msgid "Enable custom footer"
+msgstr "कस्टम footer सक्षम करें"
+
+msgid "Enable custom functionality"
+msgstr "कस्टम कार्यक्षमता सक्षम करें"
+
+msgid "Enable custom widget"
+msgstr "कस्टम विजेट सक्षम करें"
+
+msgid "Enable customization"
+msgstr "अनुकूलन सक्षम करें"
+
+msgid "Enable dark mode"
+msgstr "डार्क मोड सक्षम करें"
+
+msgid "Enable date shortcode"
+msgstr "date shortcode सक्षम करें"
+
+msgid "Enable deleting posts to also delete images"
+msgstr "पोस्ट हटाने पर छवियाँ भी हटाना सक्षम करें"
+
+msgid "Enable element customization"
+msgstr "तत्व अनुकूलन सक्षम करें"
+
+msgid "Enable email sending"
+msgstr "ईमेल भेजना सक्षम करें"
+
+msgid "Enable font Awesome"
+msgstr "Font Awesome सक्षम करें"
+
+msgid "Enable for use"
+msgstr "उपयोग के लिए सक्षम करें"
+
+msgid "Enable if you want to hide categories"
+msgstr "यदि आप श्रेणियाँ छिपाना चाहते हैं तो सक्षम करें"
+
+msgid "Enable image lazy loading"
+msgstr "छवि lazy loading सक्षम करें"
+
+msgid "Enable image size limitation"
+msgstr "छवि आकार सीमा सक्षम करें"
+
+msgid "Enable logo customization"
+msgstr "लोगो अनुकूलन सक्षम करें"
+
+msgid "Enable notification"
+msgstr "सूचना सक्षम करें"
+
+msgid "Enable notifications"
+msgstr "सूचनाएँ सक्षम करें"
+
+msgid "Enable picture frame"
+msgstr "पिक्चर फ़्रेम सक्षम करें"
+
+msgid "Enable popup"
+msgstr "popup सक्षम करें"
+
+msgid "Enable quick search"
+msgstr "त्वरित खोज सक्षम करें"
+
+msgid "Enable revision limit"
+msgstr "संशोधन सीमा सक्षम करें"
+
+msgid "Enable shortcode lock"
+msgstr "shortcode लॉक सक्षम करें"
+
+msgid "Enable shortcodes"
+msgstr "shortcodes सक्षम करें"
+
+msgid "Enable signature shortcode"
+msgstr "signature shortcode सक्षम करें"
+
+msgid "Enable site-wide 301 redirects"
+msgstr "साइट-व्यापी 301 रीडायरेक्ट सक्षम करें"
+
+msgid "Enable table of contents"
+msgstr "विषय-सूची सक्षम करें"
+
+msgid "Enable the [ht-icon] shortcode"
+msgstr "[ht-icon] shortcode सक्षम करें"
+
+msgid "Enable the contact bar and configure the content below for use"
+msgstr "संपर्क बार सक्षम करें और उपयोग के लिए नीचे की सामग्री कॉन्फ़िगर करें"
+
+msgid "Enable the picture frame"
+msgstr "पिक्चर फ़्रेम सक्षम करें"
+
+msgid "Enable the services panel"
+msgstr "सेवाएँ पैनल सक्षम करें"
+
+msgid "Enable this feature and enter the login link suffix"
+msgstr "यह सुविधा सक्षम करें और लॉगिन लिंक सफ़िक्स दर्ज करें"
+
+msgid "Enable this feature if you want JFIF format images to be uploaded to the media. The uploaded images will be converted to JPG or WEBP format according to the configuration"
+msgstr "यदि आप चाहते हैं कि JFIF फ़ॉर्मेट की छवियाँ मीडिया में अपलोड हों तो यह सुविधा सक्षम करें। अपलोड की गई छवियाँ कॉन्फ़िगरेशन के अनुसार JPG या WEBP फ़ॉर्मेट में बदल दी जाएँगी"
+
+msgid "Enable this feature if you want SVG images to be uploaded to the media"
+msgstr "यदि आप चाहते हैं कि SVG छवियाँ मीडिया में अपलोड हों तो यह सुविधा सक्षम करें"
+
+msgid "Enable this feature if you want images in posts copied from another source to be stored on your website"
+msgstr "यदि आप चाहते हैं कि किसी अन्य स्रोत से कॉपी की गई पोस्ट की छवियाँ आपकी वेबसाइट पर संग्रहीत हों तो यह सुविधा सक्षम करें"
+
+msgid "Enable this feature if you want the first image in the post to become the featured image if the featured image field is empty. Additionally, you can select a default featured image in case both the featured image and the images in the post are empty"
+msgstr "यदि आप चाहते हैं कि फ़ीचर्ड छवि फ़ील्ड खाली होने पर पोस्ट की पहली छवि फ़ीचर्ड छवि बन जाए तो यह सुविधा सक्षम करें। इसके अतिरिक्त, यदि फ़ीचर्ड छवि और पोस्ट की छवियाँ दोनों खाली हों तो आप एक डिफ़ॉल्ट फ़ीचर्ड छवि चुन सकते हैं"
+
+msgid "Enable this feature if you want the original image size to be selected by default whenever adding images to the post"
+msgstr "यदि आप चाहते हैं कि पोस्ट में छवियाँ जोड़ते समय मूल छवि आकार डिफ़ॉल्ट रूप से चयनित हो तो यह सुविधा सक्षम करें"
+
+msgid "Enable this feature if you want to add additional functionalities to the Classic Editor to enhance professional editing"
+msgstr "यदि आप पेशेवर संपादन बढ़ाने के लिए Classic Editor में अतिरिक्त कार्यक्षमताएँ जोड़ना चाहते हैं तो यह सुविधा सक्षम करें"
+
+msgid "Enable this feature if you want to add the Classic Editor button in the post and page management interface. With this feature, you dont need to set the Classic Editor as default but can use it in parallel"
+msgstr "यदि आप पोस्ट और पेज प्रबंधन इंटरफ़ेस में Classic Editor बटन जोड़ना चाहते हैं तो यह सुविधा सक्षम करें। इस सुविधा के साथ, आपको Classic Editor को डिफ़ॉल्ट के रूप में सेट करने की आवश्यकता नहीं है बल्कि इसे समानांतर में उपयोग कर सकते हैं"
+
+msgid "Enable this feature if you want to customize the footer in the WP admin"
+msgstr "यदि आप WP admin में footer अनुकूलित करना चाहते हैं तो यह सुविधा सक्षम करें"
+
+msgid "Enable this feature to be able to use the customizations below"
+msgstr "नीचे दिए गए अनुकूलन उपयोग करने योग्य बनाने के लिए यह सुविधा सक्षम करें"
+
+msgid "Enable to display the Google login button on the WooCommerce login form"
+msgstr "WooCommerce लॉगिन फ़ॉर्म पर Google login बटन प्रदर्शित करने के लिए सक्षम करें"
+
+msgid "Enable to display the Google login button on the default WordPress login form"
+msgstr "डिफ़ॉल्ट WordPress लॉगिन फ़ॉर्म पर Google login बटन प्रदर्शित करने के लिए सक्षम करें"
+
+msgid "Enable to use"
+msgstr "उपयोग के लिए सक्षम करें"
+
+msgid "Enable upload size limit"
+msgstr "अपलोड आकार सीमा सक्षम करें"
+
+msgid "Enable watermarks"
+msgstr "वॉटरमार्क सक्षम करें"
+
+msgid "Enabled"
+msgstr "सक्षम"
+
+msgid "Enabled TOC"
+msgstr "TOC सक्षम"
+
+msgid "Enhance features for Classic Editor"
+msgstr "Classic Editor के लिए सुविधाएँ बढ़ाएँ"
+
+msgid "Enter Adsense code here"
+msgstr "यहाँ Adsense कोड दर्ज करें"
+
+msgid "Enter CSS here"
+msgstr "यहाँ CSS दर्ज करें"
+
+msgid "Enter ID"
+msgstr "ID दर्ज करें"
+
+msgid "Enter a shortcode name to search for."
+msgstr "खोजने के लिए एक shortcode नाम दर्ज करें।"
+
+msgid "Enter a suffix"
+msgstr "एक सफ़िक्स दर्ज करें"
+
+msgid "Enter a title"
+msgstr "एक शीर्षक दर्ज करें"
+
+msgid "Enter button name"
+msgstr "बटन नाम दर्ज करें"
+
+msgid "Enter code here"
+msgstr "यहाँ कोड दर्ज करें"
+
+msgid "Enter content"
+msgstr "सामग्री दर्ज करें"
+
+msgid "Enter content here"
+msgstr "यहाँ सामग्री दर्ज करें"
+
+msgid "Enter cookie content"
+msgstr "cookie सामग्री दर्ज करें"
+
+msgid "Enter cookie title"
+msgstr "cookie शीर्षक दर्ज करें"
+
+msgid "Enter email"
+msgstr "ईमेल दर्ज करें"
+
+msgid "Enter email content here"
+msgstr "यहाँ ईमेल सामग्री दर्ज करें"
+
+msgid "Enter image link"
+msgstr "छवि लिंक दर्ज करें"
+
+msgid "Enter json"
+msgstr "json दर्ज करें"
+
+msgid "Enter keywords to search"
+msgstr "खोजने के लिए कीवर्ड दर्ज करें"
+
+msgid "Enter link"
+msgstr "लिंक दर्ज करें"
+
+msgid "Enter manually"
+msgstr "मैन्युअल रूप से दर्ज करें"
+
+msgid "Enter name"
+msgstr "नाम दर्ज करें"
+
+msgid "Enter note content"
+msgstr "नोट सामग्री दर्ज करें"
+
+msgid "Enter the SVG icon"
+msgstr "SVG आइकन दर्ज करें"
+
+msgid "Enter the content you want to display and configure the customizations above so the popup can appear when users visit your website"
+msgstr "जो सामग्री आप प्रदर्शित करना चाहते हैं उसे दर्ज करें और ऊपर के अनुकूलन कॉन्फ़िगर करें ताकि उपयोगकर्ता के आपकी वेबसाइट पर आने पर popup दिखाई दे"
+
+msgid "Enter the content you want to display in the notification, and customize the colors to match your preferences. A notification will appear at the top of your website, making it easy for users to see"
+msgstr "सूचना में जो सामग्री आप प्रदर्शित करना चाहते हैं उसे दर्ज करें, और अपनी पसंद के अनुसार रंग अनुकूलित करें। आपकी वेबसाइट के शीर्ष पर एक सूचना दिखाई देगी, जिससे उपयोगकर्ताओं को देखना आसान होगा"
+
+msgid "Enter the link"
+msgstr "लिंक दर्ज करें"
+
+msgid "Enter the number of posts or products to be displayed when searching"
+msgstr "खोजते समय प्रदर्शित होने वाली पोस्ट या उत्पादों की संख्या दर्ज करें"
+
+msgid "Enter the number of revisions"
+msgstr "संशोधनों की संख्या दर्ज करें"
+
+msgid "Enter the policy page link"
+msgstr "पॉलिसी पेज लिंक दर्ज करें"
+
+msgid "Enter the tag and tag number for the ad to appear"
+msgstr "विज्ञापन दिखाने के लिए टैग और टैग संख्या दर्ज करें"
+
+msgid "Enter the title and content you want to display when ad-blocker is detected"
+msgstr "ad-blocker का पता चलने पर जो शीर्षक और सामग्री आप प्रदर्शित करना चाहते हैं उसे दर्ज करें"
+
+msgid "Enter the url"
+msgstr "url दर्ज करें"
+
+msgid "Enter title"
+msgstr "शीर्षक दर्ज करें"
+
+msgid "Enter units"
+msgstr "इकाइयाँ दर्ज करें"
+
+msgid "Enter waiting time"
+msgstr "प्रतीक्षा समय दर्ज करें"
+
+msgid "Environment"
+msgstr "वातावरण"
+
+msgid "Error"
+msgstr "त्रुटि"
+
+msgid "Error cannot be cleaned"
+msgstr "त्रुटि साफ़ नहीं की जा सकती"
+
+msgid "Error — nothing was deleted."
+msgstr "त्रुटि — कुछ भी नहीं हटाया गया।"
+
+msgid "Every Horse Tools shortcode. Click any example to copy it."
+msgstr "हर Horse Tools shortcode। कॉपी करने के लिए किसी भी उदाहरण पर क्लिक करें।"
+
+msgid "Everyone"
+msgstr "सभी"
+
+msgid "Example: domain.com/wp-admin where wp-admin is the suffix"
+msgstr "उदाहरण: domain.com/wp-admin जहाँ wp-admin सफ़िक्स है"
+
+msgid "Export"
+msgstr "एक्सपोर्ट"
+
+msgid "Export downloads all your snippets as a .json file. Import merges a file from another site — existing snippets of the same name are kept, not overwritten."
+msgstr "एक्सपोर्ट आपके सभी स्निपेट को .json फ़ाइल के रूप में डाउनलोड करता है। इम्पोर्ट किसी अन्य साइट की फ़ाइल को मर्ज करता है — समान नाम के मौजूदा स्निपेट रखे जाते हैं, अधिलेखित नहीं।"
+
+msgid "Export snippets (.json)"
+msgstr "स्निपेट एक्सपोर्ट करें (.json)"
+
+msgid "Exported."
+msgstr "एक्सपोर्ट किया गया।"
+
+msgid "Extend"
+msgstr "विस्तार करें"
+
+msgid "External"
+msgstr "बाहरी"
+
+msgid "Extras"
+msgstr "अतिरिक्त"
+
+msgid "FREE"
+msgstr "मुफ़्त"
+
+msgid "Failed to delete the file"
+msgstr "फ़ाइल हटाने में विफल"
+
+msgid "Failed to load debug log"
+msgstr "debug लॉग लोड करने में विफल"
+
+msgid "Failed to update setting:"
+msgstr "सेटिंग अपडेट करने में विफल:"
+
+msgid "Featured banner + grid"
+msgstr "फ़ीचर्ड बैनर + ग्रिड"
+
+msgid "Feeds are not available on this site. %s"
+msgstr "इस साइट पर फ़ीड उपलब्ध नहीं हैं। %s"
+
+msgid "Feeds disabled"
+msgstr "फ़ीड अक्षम"
+
+msgid "Field"
+msgstr "फ़ील्ड"
+
+msgid "Filter by tag"
+msgstr "टैग द्वारा फ़िल्टर करें"
+
+msgid "Filter posts and images"
+msgstr "पोस्ट और छवियाँ फ़िल्टर करें"
+
+msgid "Find and delete all 404 images in media"
+msgstr "मीडिया में सभी 404 छवियाँ खोजें और हटाएँ"
+
+msgid "Find and delete all 404 thumbnail images in media"
+msgstr "मीडिया में सभी 404 थंबनेल छवियाँ खोजें और हटाएँ"
+
+msgid "Find usage"
+msgstr "उपयोग खोजें"
+
+msgid "Find where a shortcode is used"
+msgstr "खोजें कि shortcode कहाँ उपयोग किया गया है"
+
+msgid "Flip photo"
+msgstr "फ़ोटो पलटें"
+
+msgid "Font"
+msgstr "फ़ॉन्ट"
+
+msgid "Font does not exist"
+msgstr "फ़ॉन्ट मौजूद नहीं है"
+
+msgid "Font size"
+msgstr "फ़ॉन्ट आकार"
+
+msgid "For an Nginx server, if the ads.txt file already exists in the root directory of the website, it will prioritize the static file, so this function will not work. If you want to use it, you can either configure Nginx or delete the static file before proceeding"
+msgstr "Nginx सर्वर के लिए, यदि ads.txt फ़ाइल पहले से ही वेबसाइट की रूट डायरेक्टरी में मौजूद है, तो यह स्टैटिक फ़ाइल को प्राथमिकता देगा, इसलिए यह फ़ंक्शन काम नहीं करेगा। यदि आप इसका उपयोग करना चाहते हैं, तो आगे बढ़ने से पहले या तो Nginx कॉन्फ़िगर करें या स्टैटिक फ़ाइल हटा दें"
+
+msgid "Forced ad clicks — removed"
+msgstr "जबरन विज्ञापन क्लिक — हटाया गया"
+
+msgid "Found in %d item(s):"
+msgstr "%d आइटम में मिला:"
+
+msgid "Foxtool by Fox Theme (Nguyễn Ngọc Hoàn)"
+msgstr "Foxtool द्वारा Fox Theme (Nguyễn Ngọc Hoàn)"
+
+msgid "Free"
+msgstr "मुफ़्त"
+
+msgid "Free to use the \"solid\" and \"brands\" styles"
+msgstr "\"solid\" और \"brands\" स्टाइल उपयोग करने के लिए मुफ़्त"
+
+msgid "Free!"
+msgstr "मुफ़्त!"
+
+msgid "Fri"
+msgstr "शुक्र"
+
+msgid "From"
+msgstr "से"
+
+msgid "Full screen"
+msgstr "पूर्ण स्क्रीन"
+
+msgid "GD Library does not support AVIF images"
+msgstr "GD Library AVIF छवियों का समर्थन नहीं करता"
+
+msgid "GD Library is not installed"
+msgstr "GD Library इंस्टॉल नहीं है"
+
+msgid "GGET"
+msgstr "GGET"
+
+msgid "GOOGLE"
+msgstr "GOOGLE"
+
+msgid "Generate data"
+msgstr "डेटा जनरेट करें"
+
+msgid "Give the snippet a name (letters, numbers and dashes)."
+msgstr "स्निपेट को एक नाम दें (अक्षर, संख्याएँ और डैश)।"
+
+msgid "Go to the home page"
+msgstr "होम पेज पर जाएँ"
+
+msgid "Gold"
+msgstr "सुनहरा"
+
+msgid "Google Fonts detected — click “Download & self-host” to serve them locally."
+msgstr "Google Fonts का पता चला — उन्हें स्थानीय रूप से परोसने के लिए “डाउनलोड और सेल्फ-होस्ट” पर क्लिक करें।"
+
+msgid "Google did not return the stylesheet (HTTP error)."
+msgstr "Google ने stylesheet वापस नहीं की (HTTP त्रुटि)।"
+
+msgid "Grade %s"
+msgstr "ग्रेड %s"
+
+msgid "Green"
+msgstr "हरा"
+
+msgid "Greeting bubble text (e.g. Hi! Need help?)"
+msgstr "अभिवादन बबल टेक्स्ट (जैसे Hi! Need help?)"
+
+msgid "Greeting message (Live-chat skin)"
+msgstr "अभिवादन संदेश (Live-chat skin)"
+
+msgid "H tag color when scrolled to"
+msgstr "स्क्रॉल करने पर H टैग रंग"
+
+msgid "HORSE SEARCH"
+msgstr "HORSE SEARCH"
+
+msgid "HSTS (force HTTPS for 180 days)"
+msgstr "HSTS (180 दिनों के लिए HTTPS बाध्य करें)"
+
+msgid "HTML compression: minify inline JS, strip comments"
+msgstr "HTML कम्प्रेशन: inline JS मिनिफ़ाई करें, टिप्पणियाँ हटाएँ"
+
+msgid "HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>"
+msgstr "HTML, CSS या JS…  जैसे <a href=&quot;{{url}}&quot;>{{label}}</a>"
+
+msgid "Hello"
+msgstr "नमस्ते"
+
+msgid "Hello %s. A new comment has been posted on your article \"%s\". You can view the comment here: %s"
+msgstr "नमस्ते %s। आपके लेख \"%s\" पर एक नई टिप्पणी पोस्ट की गई है। आप टिप्पणी यहाँ देख सकते हैं: %s"
+
+msgid "Hi 👋 How can we help you?"
+msgstr "नमस्ते 👋 हम आपकी कैसे मदद कर सकते हैं?"
+
+msgid "Hide Admin account from profile page"
+msgstr "प्रोफ़ाइल पेज से Admin खाता छिपाएँ"
+
+msgid "Hide Horse Tools"
+msgstr "Horse Tools छिपाएँ"
+
+msgid "Hide back link"
+msgstr "वापस लिंक छिपाएँ"
+
+msgid "Hide bar when pulled down"
+msgstr "नीचे खींचने पर बार छिपाएँ"
+
+msgid "Hide chat button when scrolling down"
+msgstr "नीचे स्क्रॉल करने पर चैट बटन छिपाएँ"
+
+msgid "Hide from administrators"
+msgstr "प्रशासकों से छिपाएँ"
+
+msgid "Hide language options"
+msgstr "भाषा विकल्प छिपाएँ"
+
+msgid "Hide minimized list"
+msgstr "न्यूनतम की गई सूची छिपाएँ"
+
+msgid "Hide plugins from the manager"
+msgstr "मैनेजर से प्लगइन छिपाएँ"
+
+msgid "Hide post categories from homepage"
+msgstr "होमपेज से पोस्ट श्रेणियाँ छिपाएँ"
+
+msgid "Hide the tools you want"
+msgstr "जो टूल आप चाहते हैं उन्हें छिपाएँ"
+
+msgid "Hide the update & maintenance notice"
+msgstr "अपडेट और रखरखाव सूचना छिपाएँ"
+
+msgid "Hide this URL from the log"
+msgstr "इस URL को लॉग से छिपाएँ"
+
+msgid "Hide usernames from scanners"
+msgstr "स्कैनर से यूज़रनेम छिपाएँ"
+
+msgid "Hits"
+msgstr "हिट"
+
+msgid "Horse Search"
+msgstr "Horse Search"
+
+msgid "Horse Tools"
+msgstr "Horse Tools"
+
+msgid "Horse Tools is built on %s, which is no longer maintained by its author. That original work is gratefully acknowledged and this fork continues under the same GPLv2 licence."
+msgstr "Horse Tools %s पर बना है, जिसे अब इसके लेखक द्वारा अनुरक्षित नहीं किया जाता। उस मूल कार्य को कृतज्ञतापूर्वक स्वीकार किया जाता है और यह fork उसी GPLv2 लाइसेंस के तहत जारी है।"
+
+msgid "Horse Tools shortcode"
+msgstr "Horse Tools shortcode"
+
+msgid "Horse Tools:"
+msgstr "Horse Tools:"
+
+msgid "Host"
+msgstr "Host"
+
+msgid "Hours"
+msgstr "घंटे"
+
+msgid "How to use"
+msgstr "उपयोग कैसे करें"
+
+msgid "I understand this permanently deletes data."
+msgstr "मैं समझता हूँ कि यह डेटा स्थायी रूप से हटा देता है।"
+
+msgid "ICON"
+msgstr "आइकन"
+
+msgid "INDEX"
+msgstr "INDEX"
+
+msgid "Icon"
+msgstr "आइकन"
+
+msgid "Icon (e.g. apps)"
+msgstr "आइकन (जैसे apps)"
+
+msgid "Icon background color"
+msgstr "आइकन बैकग्राउंड रंग"
+
+msgid "Icon border color"
+msgstr "आइकन बॉर्डर रंग"
+
+msgid "Icon border radius"
+msgstr "आइकन बॉर्डर radius"
+
+msgid "Icon color"
+msgstr "आइकन रंग"
+
+msgid "Icon picker"
+msgstr "आइकन चयनकर्ता"
+
+msgid "If someone replies to a comment, there will be an email notification sent to the commenter"
+msgstr "यदि कोई किसी टिप्पणी का उत्तर देता है, तो टिप्पणीकर्ता को एक ईमेल सूचना भेजी जाएगी"
+
+msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
+msgstr "यदि Secret key खाली है तो हर लॉगिन को अस्वीकार करने के बजाय जाँच पूरी तरह छोड़ दी जाती है।"
+
+msgid "If you dont want to automatically switch the language based on WordPress context, please select the language you prefer"
+msgstr "यदि आप WordPress संदर्भ के आधार पर स्वचालित रूप से भाषा स्विच नहीं करना चाहते, तो कृपया अपनी पसंदीदा भाषा चुनें"
+
+msgid "If you enable this feature and set automatic revision limit and automatic save time for posts or pages, it will reduce the amount of data stored in the database"
+msgstr "यदि आप यह सुविधा सक्षम करते हैं और पोस्ट या पेज के लिए स्वचालित संशोधन सीमा और स्वचालित सहेजने का समय सेट करते हैं, तो यह डेटाबेस में संग्रहीत डेटा की मात्रा कम कर देगा"
+
+msgid "If you enable this feature, your Pages will have .html appended to them, for example: domain.com/page.html"
+msgstr "यदि आप यह सुविधा सक्षम करते हैं, तो आपके पेज में .html जुड़ जाएगा, उदाहरण के लिए: domain.com/page.html"
+
+msgid "If you find the Admin Bar distracting every time you view the website, you can turn it off (there is an option for you to turn off all or only turn off for users)"
+msgstr "यदि आपको वेबसाइट देखते समय हर बार Admin Bar ध्यान भटकाने वाला लगता है, तो आप इसे बंद कर सकते हैं (आपके लिए सभी को बंद करने या केवल उपयोगकर्ताओं के लिए बंद करने का विकल्प है)"
+
+msgid "If you find the new Widget Manager too difficult to use, then revert it to the Classic Widget version"
+msgstr "यदि आपको नया Widget Manager उपयोग करना बहुत कठिन लगता है, तो इसे Classic Widget संस्करण में वापस लाएँ"
+
+msgid "If you find the new editor too difficult to use, then revert it to the Classic Editor version"
+msgstr "यदि आपको नया एडिटर उपयोग करना बहुत कठिन लगता है, तो इसे Classic Editor संस्करण में वापस लाएँ"
+
+msgid "If you find the tools above unnecessary, you can hide them to make the WP admin interface cleaner. This function only hides them without blocking access to their links"
+msgstr "यदि आपको ऊपर दिए गए टूल अनावश्यक लगते हैं, तो आप उन्हें छिपाकर WP admin इंटरफ़ेस को साफ़ बना सकते हैं। यह फ़ंक्शन केवल उन्हें छिपाता है, उनके लिंक तक पहुँच अवरुद्ध किए बिना"
+
+msgid "If you had it enabled it is now inactive. The AdSense and ads.txt tools on the other tabs are unaffected."
+msgstr "यदि आपने इसे सक्षम किया था तो यह अब निष्क्रिय है। अन्य टैब पर AdSense और ads.txt टूल अप्रभावित हैं।"
+
+msgid "If you have members and do not want them to upload images with excessively large sizes, causing storage space usage, you can limit the maximum size allowed for upload"
+msgstr "यदि आपके सदस्य हैं और आप नहीं चाहते कि वे अत्यधिक बड़े आकार की छवियाँ अपलोड करें, जिससे स्टोरेज स्थान का उपयोग हो, तो आप अपलोड के लिए अनुमत अधिकतम आकार सीमित कर सकते हैं"
+
+msgid "If you need to monitor WordPress debug files without accessing the file manager, this tool is made just for that purpose"
+msgstr "यदि आपको फ़ाइल मैनेजर तक पहुँचे बिना WordPress debug फ़ाइलों की निगरानी करने की आवश्यकता है, तो यह टूल ठीक इसी उद्देश्य के लिए बनाया गया है"
+
+msgid "If you not using it, you can disable Classic CSS on the homepage"
+msgstr "यदि आप इसका उपयोग नहीं कर रहे हैं, तो आप होमपेज पर Classic CSS अक्षम कर सकते हैं"
+
+msgid "If you not using it, you can disable Emoji"
+msgstr "यदि आप इसका उपयोग नहीं कर रहे हैं, तो आप Emoji अक्षम कर सकते हैं"
+
+msgid "If you not using it, you can disable Gutenberg CSS on the homepage"
+msgstr "यदि आप इसका उपयोग नहीं कर रहे हैं, तो आप होमपेज पर Gutenberg CSS अक्षम कर सकते हैं"
+
+msgid "If you receive this email, then the SMTP email sending function is working well"
+msgstr "यदि आपको यह ईमेल मिलता है, तो SMTP ईमेल भेजने का फ़ंक्शन अच्छी तरह काम कर रहा है"
+
+msgid "If you want to display your signature anywhere, you can create content above and then use the generated shortcode at your desired location"
+msgstr "यदि आप अपना हस्ताक्षर कहीं भी प्रदर्शित करना चाहते हैं, तो आप ऊपर सामग्री बना सकते हैं और फिर जनरेट किए गए shortcode को अपने इच्छित स्थान पर उपयोग कर सकते हैं"
+
+msgid "If you want to enable the feature to duplicate posts, pages, or custom post types, please activate this function"
+msgstr "यदि आप पोस्ट, पेज, या कस्टम पोस्ट टाइप डुप्लिकेट करने की सुविधा सक्षम करना चाहते हैं, तो कृपया यह फ़ंक्शन सक्रिय करें"
+
+msgid "If you want to export or import the settings of the Horse Tools plugin, enable this feature. It allows you to easily transfer configurations from this site to another"
+msgstr "यदि आप Horse Tools प्लगइन की सेटिंग्स एक्सपोर्ट या इम्पोर्ट करना चाहते हैं, तो यह सुविधा सक्षम करें। यह आपको इस साइट से दूसरी साइट पर कॉन्फ़िगरेशन आसानी से स्थानांतरित करने देती है"
+
+msgid "If you want to hide a specific Administrator account, select the user"
+msgstr "यदि आप किसी विशिष्ट प्रशासक खाते को छिपाना चाहते हैं, तो उपयोगकर्ता चुनें"
+
+msgid "If you want to lazy load images every time the page loads, then turn it on. This function helps your website load faster"
+msgstr "यदि आप चाहते हैं कि हर बार पेज लोड होने पर छवियाँ lazy load हों, तो इसे चालू करें। यह फ़ंक्शन आपकी वेबसाइट को तेज़ी से लोड करने में मदद करता है"
+
+msgid "If you want to use font Awesome, you can enable it (it an icon font). You can search for icons at:"
+msgstr "यदि आप Font Awesome उपयोग करना चाहते हैं, तो आप इसे सक्षम कर सकते हैं (यह एक आइकन फ़ॉन्ट है)। आप आइकन यहाँ खोज सकते हैं:"
+
+msgid "If you want your uploaded images to be watermarked, please use this function and configure it above. Watermark (PNG, JPG)"
+msgstr "यदि आप चाहते हैं कि आपकी अपलोड की गई छवियाँ वॉटरमार्क की जाएँ, तो कृपया इस फ़ंक्शन का उपयोग करें और इसे ऊपर कॉन्फ़िगर करें। वॉटरमार्क (PNG, JPG)"
+
+msgid "If youre tired of WordPress default search tool because its too slow, try out our lightning-fast search feature to give your users an exceptional and speedy search experience"
+msgstr "यदि आप WordPress के डिफ़ॉल्ट खोज टूल से थक गए हैं क्योंकि यह बहुत धीमा है, तो अपने उपयोगकर्ताओं को असाधारण और तेज़ खोज अनुभव देने के लिए हमारी बिजली-तेज़ खोज सुविधा आज़माएँ"
+
+msgid "Ignore"
+msgstr "अनदेखा करें"
+
+msgid "Ignore 8-bit png"
+msgstr "8-bit png अनदेखा करें"
+
+msgid "Image URL (optional, replaces the icon)"
+msgstr "छवि URL (वैकल्पिक, आइकन को बदल देता है)"
+
+msgid "Image crop configuration"
+msgstr "छवि क्रॉप कॉन्फ़िगरेशन"
+
+msgid "Image function for posts"
+msgstr "पोस्ट के लिए छवि फ़ंक्शन"
+
+msgid "Images are lazy-loaded"
+msgstr "छवियाँ lazy-load की गई हैं"
+
+msgid "Import"
+msgstr "इम्पोर्ट"
+
+msgid "Import from Shortcoder"
+msgstr "Shortcoder से इम्पोर्ट करें"
+
+msgid "Import snippets"
+msgstr "स्निपेट इम्पोर्ट करें"
+
+msgid "Imported %1$d snippet(s); %2$d already existed."
+msgstr "%1$d स्निपेट इम्पोर्ट किए गए; %2$d पहले से मौजूद थे।"
+
+msgid "Imported %1$d snippet(s); %2$d already existed. Reloading…"
+msgstr "%1$d स्निपेट इम्पोर्ट किए गए; %2$d पहले से मौजूद थे। पुनः लोड हो रहा है…"
+
+msgid "Imported %1$d snippet(s); %2$d skipped. Reloading…"
+msgstr "%1$d स्निपेट इम्पोर्ट किए गए; %2$d छोड़े गए। पुनः लोड हो रहा है…"
+
+msgid "Imported %d setting group(s). You can undo this below."
+msgstr "%d सेटिंग समूह इम्पोर्ट किए गए। आप इसे नीचे पूर्ववत कर सकते हैं।"
+
+msgid "Index now"
+msgstr "अभी index करें"
+
+msgid "Information about your website"
+msgstr "आपकी वेबसाइट के बारे में जानकारी"
+
+msgid "Input / select box color"
+msgstr "इनपुट / सिलेक्ट बॉक्स रंग"
+
+msgid "Insert icons anywhere with a shortcode"
+msgstr "shortcode के साथ आइकन कहीं भी डालें"
+
+msgid "Install the pending updates."
+msgstr "लंबित अपडेट इंस्टॉल करें।"
+
+msgid "Instant-page is a library that allows you to preload the content of a linked page into the browser memory simply by hovering over the link. When you click on the link, it provides a remarkably fast loading experience"
+msgstr "Instant-page एक library है जो आपको केवल लिंक पर होवर करके लिंक किए गए पेज की सामग्री को ब्राउज़र मेमोरी में प्रीलोड करने देती है। जब आप लिंक पर क्लिक करते हैं, तो यह उल्लेखनीय रूप से तेज़ लोडिंग अनुभव प्रदान करता है"
+
+msgid "Instant-page prefetch and image lazy-loading"
+msgstr "Instant-page prefetch और छवि lazy-loading"
+
+msgid "Insufficient permissions"
+msgstr "अपर्याप्त अनुमतियाँ"
+
+msgid "Known post types:"
+msgstr "ज्ञात पोस्ट प्रकार:"
+
+msgid "LOCKVIP"
+msgstr "LOCKVIP"
+
+msgid "Language"
+msgstr "भाषा"
+
+msgid "Last seen"
+msgstr "अंतिम बार देखा गया"
+
+msgid "Layout & interactive"
+msgstr "लेआउट और इंटरैक्टिव"
+
+msgid "Lazy-load images; drop Emoji"
+msgstr "छवियाँ lazy-load करें; Emoji हटाएँ"
+
+msgid "Lazy-load images; drop Emoji and jQuery Migrate"
+msgstr "छवियाँ lazy-load करें; Emoji और jQuery Migrate हटाएँ"
+
+msgid "Lean pages and lighter media. Leaves Gutenberg and Classic CSS alone, since removing those can change how a theme looks."
+msgstr "हल्के पेज और हल्का मीडिया। Gutenberg और Classic CSS को अछूता छोड़ता है, क्योंकि उन्हें हटाने से थीम की दिखावट बदल सकती है।"
+
+msgid "Leave another shortcode plugin"
+msgstr "एक और shortcode प्लगइन छोड़ें"
+
+msgid "Left drawer"
+msgstr "बायाँ ड्रॉअर"
+
+msgid "Lets you drop any of the bundled Tabler icons (over 5,800, MIT licence) into posts, pages and anywhere shortcodes run. The icon font only loads on pages that actually use one, so it costs nothing elsewhere."
+msgstr "आपको बंडल किए गए किसी भी Tabler आइकन (5,800 से अधिक, MIT लाइसेंस) को पोस्ट, पेज और जहाँ भी shortcodes चलते हैं वहाँ रखने देता है। आइकन फ़ॉन्ट केवल उन पेज पर लोड होता है जो वास्तव में इसका उपयोग करते हैं, इसलिए इसका कहीं और कोई खर्च नहीं है।"
+
+msgid "Leverage Google’s Indexing API to speed up the indexing of your website on Google’s search engine. You can add as many API keys as you like for unlimited indexing capacity"
+msgstr "अपनी वेबसाइट के Google सर्च इंजन पर indexing को तेज़ करने के लिए Google के Indexing API का लाभ उठाएँ। आप असीमित indexing क्षमता के लिए जितनी चाहें उतनी API keys जोड़ सकते हैं"
+
+msgid "Licence:"
+msgstr "लाइसेंस:"
+
+msgid "Light / Dark"
+msgstr "हल्का / गहरा"
+
+msgid "Limit Horse Tools display"
+msgstr "Horse Tools प्रदर्शन सीमित करें"
+
+msgid "Limit JPG, PNG, WEBP, AVIF images"
+msgstr "JPG, PNG, WEBP, AVIF छवियाँ सीमित करें"
+
+msgid "Limit failed logins and email you on lockout"
+msgstr "असफल लॉगिन सीमित करें और लॉकआउट पर आपको ईमेल करें"
+
+msgid "Limit login attempts"
+msgstr "लॉगिन प्रयास सीमित करें"
+
+msgid "Limit logins, block user enumeration, disable XML-RPC and the file editor"
+msgstr "लॉगिन सीमित करें, यूज़र एन्यूमरेशन रोकें, XML-RPC और फ़ाइल एडिटर अक्षम करें"
+
+msgid "Limits the maximum width and height of JPG, PNG, WEBP images upon upload. You can leave it blank if you want to keep the original size"
+msgstr "अपलोड करते समय JPG, PNG, WEBP छवियों की अधिकतम चौड़ाई और ऊँचाई सीमित करता है। यदि आप मूल आकार रखना चाहते हैं तो इसे खाली छोड़ सकते हैं"
+
+msgid "Limits the size of JPG, PNG, WEBP, AVIF images when uploading"
+msgstr "अपलोड करते समय JPG, PNG, WEBP, AVIF छवियों का आकार सीमित करता है"
+
+msgid "Link (article or service page)"
+msgstr "लिंक (लेख या सेवा पेज)"
+
+msgid "Link color"
+msgstr "लिंक रंग"
+
+msgid "Link display color"
+msgstr "लिंक प्रदर्शन रंग"
+
+msgid "List"
+msgstr "सूची"
+
+msgid "List color"
+msgstr "सूची रंग"
+
+msgid "List is hidden by default"
+msgstr "सूची डिफ़ॉल्ट रूप से छिपी है"
+
+msgid "Loading icons…"
+msgstr "आइकन लोड हो रहे हैं…"
+
+msgid "Location"
+msgstr "स्थान"
+
+msgid "Lock down the admin"
+msgstr "admin को लॉक करें"
+
+msgid "Lock out repeated failed logins"
+msgstr "बार-बार असफल लॉगिन को लॉक करें"
+
+msgid "Lockout length (minutes)"
+msgstr "लॉकआउट अवधि (मिनट)"
+
+msgid "Log out"
+msgstr "लॉग आउट"
+
+msgid "Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site."
+msgstr "अनामिक विज़िटर द्वारा वास्तव में हिट किए गए मृत URL लॉग करें, ताकि आप व्यस्त वालों को रीडायरेक्ट में बदल सकें। लॉग-इन उपयोगकर्ता, बॉट और एसेट अनुरोध रिकॉर्ड नहीं किए जाते, और कुछ भी आपकी साइट से बाहर नहीं जाता।"
+
+msgid "Logged-in users"
+msgstr "लॉग-इन उपयोगकर्ता"
+
+msgid "Logged-out visitors"
+msgstr "लॉग-आउट विज़िटर"
+
+msgid "Login attempts are rate-limited"
+msgstr "लॉगिन प्रयास दर-सीमित हैं"
+
+msgid "Login failed. Check your details and try again."
+msgstr "लॉगिन विफल। अपना विवरण जाँचें और पुनः प्रयास करें।"
+
+msgid "Login link:"
+msgstr "लॉगिन लिंक:"
+
+msgid "MAIL"
+msgstr "MAIL"
+
+msgid "MAINTENANCE MODE"
+msgstr "रखरखाव मोड"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "MEDIA"
+msgstr "मीडिया"
+
+msgid "Main button"
+msgstr "मुख्य बटन"
+
+msgid "Main color"
+msgstr "मुख्य रंग"
+
+msgid "Main icon color"
+msgstr "मुख्य आइकन रंग"
+
+msgid "Main icon text color"
+msgstr "मुख्य आइकन टेक्स्ट रंग"
+
+msgid "Maintenance mode for developers (503)"
+msgstr "डेवलपर्स के लिए रखरखाव मोड (503)"
+
+msgid "Management tool"
+msgstr "प्रबंधन टूल"
+
+msgid "Max height"
+msgstr "अधिकतम ऊँचाई"
+
+msgid "Max width"
+msgstr "अधिकतम चौड़ाई"
+
+msgid "Media"
+msgstr "मीडिया"
+
+msgid "Media tab → JPG compression"
+msgstr "मीडिया टैब → JPG कम्प्रेशन"
+
+msgid "Minify Inline JavaScript"
+msgstr "Inline JavaScript मिनिफ़ाई करें"
+
+msgid "Minimum role"
+msgstr "न्यूनतम भूमिका"
+
+msgid "Mobile only"
+msgstr "केवल मोबाइल"
+
+msgid "Modify content"
+msgstr "सामग्री संशोधित करें"
+
+msgid "Modify some information on Woocommerce that you want"
+msgstr "Woocommerce पर कुछ जानकारी संशोधित करें जो आप चाहते हैं"
+
+msgid "Modify the footer content of WP admin"
+msgstr "WP admin की footer सामग्री संशोधित करें"
+
+msgid "Mon"
+msgstr "सोम"
+
+msgid "Monthly"
+msgstr "मासिक"
+
+msgid "Most snippet plugins store their snippets as a custom post type. Enter that post type to import them all as Horse Tools snippets — the other plugin is only read, never changed. After importing you can deactivate it and (for Shortcoder) your [sc …] tags keep working, or use “Convert” above."
+msgstr "अधिकांश स्निपेट प्लगइन अपने स्निपेट को कस्टम पोस्ट टाइप के रूप में संग्रहीत करते हैं। उन सभी को Horse Tools स्निपेट के रूप में इम्पोर्ट करने के लिए वह पोस्ट टाइप दर्ज करें — दूसरा प्लगइन केवल पढ़ा जाता है, कभी बदला नहीं जाता। इम्पोर्ट करने के बाद आप इसे निष्क्रिय कर सकते हैं और (Shortcoder के लिए) आपके [sc …] टैग काम करते रहेंगे, या ऊपर “बदलें” का उपयोग करें।"
+
+msgid "Move snippets between sites"
+msgstr "साइटों के बीच स्निपेट स्थानांतरित करें"
+
+msgid "Move the site address to https://"
+msgstr "साइट पते को https:// पर ले जाएँ"
+
+msgid "NOTIFY"
+msgstr "सूचित करें"
+
+msgid "Name the font"
+msgstr "फ़ॉन्ट का नाम दें"
+
+msgid "Name — letters, numbers, dashes (e.g. call-to-action)"
+msgstr "नाम — अक्षर, संख्याएँ, डैश (जैसे call-to-action)"
+
+msgid "Navigation bar (Horse Tools)"
+msgstr "नेविगेशन बार (Horse Tools)"
+
+msgid "Neutral"
+msgstr "तटस्थ"
+
+msgid "New / clear"
+msgstr "नया / साफ़"
+
+msgid "Newly edited posts will be displayed first"
+msgstr "नई संपादित पोस्ट पहले प्रदर्शित होंगी"
+
+msgid "Next automatic check: %s"
+msgstr "अगली स्वचालित जाँच: %s"
+
+msgid "No"
+msgstr "नहीं"
+
+msgid "No (temporarily off)"
+msgstr "नहीं (अस्थायी रूप से बंद)"
+
+msgid "No 404s recorded yet."
+msgstr "अभी तक कोई 404 रिकॉर्ड नहीं किया गया।"
+
+msgid "No Google Fonts leaking to Google"
+msgstr "कोई Google Fonts Google को लीक नहीं हो रहे"
+
+msgid "No [sc] tags found in your content."
+msgstr "आपकी सामग्री में कोई [sc] टैग नहीं मिला।"
+
+msgid "No automatic redirects yet. Change a published URL and one will appear here."
+msgstr "अभी तक कोई स्वचालित रीडायरेक्ट नहीं। किसी प्रकाशित URL को बदलें और एक यहाँ दिखाई देगा।"
+
+msgid "No badge colour"
+msgstr "कोई बैज रंग नहीं"
+
+msgid "No font files were found in the stylesheet."
+msgstr "stylesheet में कोई फ़ॉन्ट फ़ाइल नहीं मिली।"
+
+msgid "No icon matches that."
+msgstr "उससे कोई आइकन मेल नहीं खाता।"
+
+msgid "No pages selected"
+msgstr "कोई पेज चयनित नहीं"
+
+msgid "No results found"
+msgstr "कोई परिणाम नहीं मिला"
+
+msgid "No setting matches that."
+msgstr "उससे कोई सेटिंग मेल नहीं खाती।"
+
+msgid "No size"
+msgstr "कोई आकार नहीं"
+
+msgid "No snippets were found for the post type \"%s\"."
+msgstr "पोस्ट टाइप \"%s\" के लिए कोई स्निपेट नहीं मिला।"
+
+msgid "No snippets yet. Create one above, or import from Shortcoder."
+msgstr "अभी तक कोई स्निपेट नहीं। ऊपर एक बनाएँ, या Shortcoder से इम्पोर्ट करें।"
+
+msgid "No third-party requests found. Nothing leaks to other servers."
+msgstr "कोई तृतीय-पक्ष अनुरोध नहीं मिला। कुछ भी अन्य सर्वरों को लीक नहीं होता।"
+
+msgid "None"
+msgstr "कोई नहीं"
+
+msgid "None: default not selected, Auto: background image automatically changes each time the page is loaded, Color: change the color you want, Upload: upload the background image you want"
+msgstr "कोई नहीं: डिफ़ॉल्ट चयनित नहीं, Auto: हर बार पेज लोड होने पर बैकग्राउंड छवि स्वचालित रूप से बदलती है, Color: जो रंग आप चाहते हैं बदलें, Upload: जो बैकग्राउंड छवि आप चाहते हैं अपलोड करें"
+
+msgid "Not entered"
+msgstr "दर्ज नहीं किया गया"
+
+msgid "Not found in any post or page."
+msgstr "किसी पोस्ट या पेज में नहीं मिला।"
+
+msgid "Nothing could be self-hosted."
+msgstr "कुछ भी सेल्फ-होस्ट नहीं किया जा सका।"
+
+msgid "Nothing on this page is enabled yet."
+msgstr "इस पेज पर अभी तक कुछ भी सक्षम नहीं है।"
+
+msgid "Nothing to delete."
+msgstr "हटाने के लिए कुछ नहीं।"
+
+msgid "Notification at the top of the page"
+msgstr "पेज के शीर्ष पर सूचना"
+
+msgid "Notification link sent"
+msgstr "सूचना लिंक भेजा गया"
+
+msgid "Notify"
+msgstr "सूचित करें"
+
+msgid "Notify the post author when someone comments on the post"
+msgstr "जब कोई पोस्ट पर टिप्पणी करे तो पोस्ट लेखक को सूचित करें"
+
+msgid "Number of data completed: '+sopost+'"
+msgstr "पूर्ण किए गए डेटा की संख्या: '+sopost+'"
+
+msgid "Number of items displayed"
+msgstr "प्रदर्शित आइटम की संख्या"
+
+msgid "OK"
+msgstr "ठीक है"
+
+msgid "ON/OFF"
+msgstr "चालू/बंद"
+
+msgid "OPTIMIZE"
+msgstr "ऑप्टिमाइज़"
+
+msgid "Off"
+msgstr "बंद"
+
+msgid "Off / select"
+msgstr "बंद / चुनें"
+
+msgid "One click applies a set of recommended settings for your kind of site. Presets only turn options on and tune a few values — they never switch off anything you have already enabled, and a one-click Undo is always kept."
+msgstr "एक क्लिक आपकी तरह की साइट के लिए अनुशंसित सेटिंग्स का एक सेट लागू करता है। प्रीसेट केवल विकल्प चालू करते हैं और कुछ मान समायोजित करते हैं — वे कभी भी उस चीज़ को बंद नहीं करते जिसे आपने पहले से सक्षम किया है, और एक-क्लिक पूर्ववत हमेशा रखा जाता है।"
+
+msgid "Online now"
+msgstr "अभी ऑनलाइन"
+
+msgid "Only admin has access to the admin page"
+msgstr "केवल admin के पास admin पेज तक पहुँच है"
+
+msgid "Only enable once HTTPS works everywhere. Browsers will refuse plain HTTP to your site for six months, and it cannot be undone quickly."
+msgstr "केवल तब सक्षम करें जब HTTPS हर जगह काम करे। ब्राउज़र छह महीने तक आपकी साइट के लिए सादा HTTP अस्वीकार करेंगे, और इसे जल्दी पूर्ववत नहीं किया जा सकता।"
+
+msgid "Only notify, do not block access"
+msgstr "केवल सूचित करें, पहुँच अवरुद्ध न करें"
+
+msgid "Only supported from PHP 8.1 and above"
+msgstr "केवल PHP 8.1 और उससे ऊपर से समर्थित"
+
+msgid "Open in a new tab"
+msgstr "नए टैब में खोलें"
+
+msgid "Open – close time"
+msgstr "खुलने – बंद होने का समय"
+
+msgid "Opening hours, one line per day (Tab-widget skin)"
+msgstr "खुलने के घंटे, प्रति दिन एक पंक्ति (Tab-widget skin)"
+
+msgid "Optimization Library"
+msgstr "ऑप्टिमाइज़ेशन Library"
+
+msgid "Optimize Widgets"
+msgstr "विजेट ऑप्टिमाइज़ करें"
+
+msgid "Optimize deletion of content in the database"
+msgstr "डेटाबेस में सामग्री हटाने को ऑप्टिमाइज़ करें"
+
+msgid "Optimize saving post content into the database"
+msgstr "डेटाबेस में पोस्ट सामग्री सहेजने को ऑप्टिमाइज़ करें"
+
+msgid "Optimize tab"
+msgstr "ऑप्टिमाइज़ टैब"
+
+msgid "Optimize tab → image lazy loading"
+msgstr "ऑप्टिमाइज़ टैब → छवि lazy loading"
+
+msgid "Option to display ads in custom posts"
+msgstr "कस्टम पोस्ट में विज्ञापन प्रदर्शित करने का विकल्प"
+
+msgid "Option to display the Admin bar"
+msgstr "Admin bar प्रदर्शित करने का विकल्प"
+
+msgid "Order"
+msgstr "ऑर्डर"
+
+msgid "Original contributors:"
+msgstr "मूल योगदानकर्ता:"
+
+msgid "Other links"
+msgstr "अन्य लिंक"
+
+msgid "Outstanding color"
+msgstr "उत्कृष्ट रंग"
+
+msgid "Overlay color"
+msgstr "ओवरले रंग"
+
+msgid "Overview"
+msgstr "अवलोकन"
+
+msgid "PHP errors are not shown to visitors"
+msgstr "PHP त्रुटियाँ विज़िटर को नहीं दिखाई जातीं"
+
+msgid "PHP is a supported version (%s)"
+msgstr "PHP एक समर्थित संस्करण है (%s)"
+
+msgid "POPUP"
+msgstr "POPUP"
+
+msgid "PRESETS"
+msgstr "प्रीसेट"
+
+msgid "Panel title (e.g. Our services)"
+msgstr "पैनल शीर्षक (जैसे हमारी सेवाएँ)"
+
+msgid "Password"
+msgstr "पासवर्ड"
+
+msgid "Paste an export here, or upload a .json file"
+msgstr "यहाँ एक एक्सपोर्ट पेस्ट करें, या .json फ़ाइल अपलोड करें"
+
+msgid "Pending comments"
+msgstr "लंबित टिप्पणियाँ"
+
+msgid "Performance"
+msgstr "प्रदर्शन"
+
+msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
+msgstr "“%2$s” से %1$s को स्थायी रूप से हटाएँ? इसे पूर्ववत नहीं किया जा सकता।"
+
+msgid "Permission denied."
+msgstr "अनुमति अस्वीकृत।"
+
+msgid "Permissions-Policy: block geolocation, mic and camera"
+msgstr "Permissions-Policy: geolocation, mic और camera रोकें"
+
+msgid "Photo masonry"
+msgstr "फ़ोटो masonry"
+
+msgid "Play video"
+msgstr "वीडियो चलाएँ"
+
+msgid "Please complete the reCAPTCHA to verify that you are not a robot"
+msgstr "यह सत्यापित करने के लिए कि आप रोबोट नहीं हैं, कृपया reCAPTCHA पूरा करें"
+
+msgid "Please disable ad-blocker on your browser to access and view the content"
+msgstr "सामग्री तक पहुँचने और देखने के लिए कृपया अपने ब्राउज़र पर ad-blocker अक्षम करें"
+
+msgid "Please enter the content here"
+msgstr "कृपया यहाँ सामग्री दर्ज करें"
+
+msgid "Please wait"
+msgstr "कृपया प्रतीक्षा करें"
+
+msgid "Please wait for the email to be sent"
+msgstr "कृपया ईमेल भेजे जाने की प्रतीक्षा करें"
+
+msgid "Please wait: '+sopost+'"
+msgstr "कृपया प्रतीक्षा करें: '+sopost+'"
+
+msgid "Plugin development"
+msgstr "प्लगइन विकास"
+
+msgid "Policy"
+msgstr "पॉलिसी"
+
+msgid "Popup location"
+msgstr "Popup स्थान"
+
+msgid "Popup save time (.. hours)"
+msgstr "Popup सहेजने का समय (.. घंटे)"
+
+msgid "Pre-filled message for WhatsApp / SMS (optional)"
+msgstr "WhatsApp / SMS के लिए पूर्व-भरा संदेश (वैकल्पिक)"
+
+msgid "Preview"
+msgstr "पूर्वावलोकन"
+
+msgid "Preview changes"
+msgstr "परिवर्तनों का पूर्वावलोकन करें"
+
+msgid "Price + order button"
+msgstr "कीमत + ऑर्डर बटन"
+
+msgid "Privacy"
+msgstr "गोपनीयता"
+
+msgid "Privacy — Google Fonts & external requests"
+msgstr "गोपनीयता — Google Fonts और बाहरी अनुरोध"
+
+msgid "Process cropped images"
+msgstr "क्रॉप की गई छवियाँ प्रोसेस करें"
+
+msgid "Purple"
+msgstr "बैंगनी"
+
+msgid "Quantity"
+msgstr "मात्रा"
+
+msgid "Quick chips"
+msgstr "त्वरित चिप"
+
+msgid "Quick replies, one per line as  Label|https://link  (Live-chat skin)"
+msgstr "त्वरित उत्तर, प्रति पंक्ति एक इस रूप में  Label|https://link  (Live-chat skin)"
+
+msgid "Quick search"
+msgstr "त्वरित खोज"
+
+msgid "Quick view button color"
+msgstr "त्वरित दृश्य बटन रंग"
+
+msgid "REST API left ON so the store keeps working"
+msgstr "स्टोर काम करता रहे इसलिए REST API चालू छोड़ा गया"
+
+msgid "Reading settings → uncheck “Discourage search engines”"
+msgstr "पठन सेटिंग्स → “Discourage search engines” अनचेक करें"
+
+msgid "Recommended. xmlrpc.php is a common brute-force and pingback-amplification target and almost nothing uses it now (except Jetpack)."
+msgstr "अनुशंसित। xmlrpc.php एक सामान्य brute-force और pingback-amplification लक्ष्य है और अब लगभग कुछ भी इसका उपयोग नहीं करता (Jetpack को छोड़कर)।"
+
+msgid "Record 404 hits"
+msgstr "404 हिट रिकॉर्ड करें"
+
+msgid "Red"
+msgstr "लाल"
+
+msgid "Redirect"
+msgstr "रीडायरेक्ट"
+
+msgid "Redirect 301 to a custom page"
+msgstr "कस्टम पेज पर 301 रीडायरेक्ट करें"
+
+msgid "Redirect 301 whole page"
+msgstr "पूरे पेज को 301 रीडायरेक्ट करें"
+
+msgid "Redirect the 404 page to the homepage or a custom page of your choice, leave the field blank if you want to redirect to the homepage"
+msgstr "404 पेज को होमपेज या अपनी पसंद के कस्टम पेज पर रीडायरेक्ट करें, यदि आप होमपेज पर रीडायरेक्ट करना चाहते हैं तो फ़ील्ड खाली छोड़ें"
+
+msgid "Redirects"
+msgstr "रीडायरेक्ट"
+
+msgid "Referrer-Policy: strict-origin-when-cross-origin"
+msgstr "Referrer-Policy: strict-origin-when-cross-origin"
+
+msgid "Refresh"
+msgstr "रीफ़्रेश"
+
+msgid "Registration is disabled on this site."
+msgstr "इस साइट पर पंजीकरण अक्षम है।"
+
+msgid "Registration role options"
+msgstr "पंजीकरण भूमिका विकल्प"
+
+msgid "Remove XHTML closing tags from empty elements in HTML5"
+msgstr "HTML5 में खाली तत्वों से XHTML क्लोजिंग टैग हटाएँ"
+
+msgid "Remove category slug from permalink"
+msgstr "permalink से श्रेणी slug हटाएँ"
+
+msgid "Remove comments from HTML, JavaScript, and CSS"
+msgstr "HTML, JavaScript और CSS से टिप्पणियाँ हटाएँ"
+
+msgid "Remove img tag attributes"
+msgstr "img टैग गुण हटाएँ"
+
+msgid "Remove protocols (HTTP: and HTTPS:) from all URLs"
+msgstr "सभी URL से प्रोटोकॉल (HTTP: और HTTPS:) हटाएँ"
+
+msgid "Remove relative domain from internal URLs"
+msgstr "आंतरिक URL से सापेक्ष डोमेन हटाएँ"
+
+msgid "Remove tag slug from permalink"
+msgstr "permalink से टैग slug हटाएँ"
+
+msgid "Remove the WordPress version tag"
+msgstr "WordPress version टैग हटाएँ"
+
+msgid "Remove unnecessary header tags"
+msgstr "अनावश्यक header टैग हटाएँ"
+
+msgid "Removed"
+msgstr "हटाया गया"
+
+msgid "Removes attachments whose file is missing from disk. Every attachment is scanned, so the count is known only after it runs."
+msgstr "उन अटैचमेंट को हटाता है जिनकी फ़ाइल डिस्क से गायब है। हर अटैचमेंट स्कैन किया जाता है, इसलिए संख्या केवल इसके चलने के बाद ही ज्ञात होती है।"
+
+msgid "Removes metadata entries for thumbnail files that are missing from disk. It does not delete images."
+msgstr "उन थंबनेल फ़ाइलों के लिए मेटाडेटा प्रविष्टियाँ हटाता है जो डिस्क से गायब हैं। यह छवियाँ नहीं हटाता।"
+
+msgid "Removes the RSD, WLW manifest and adjacent-post link tags from the page head."
+msgstr "पेज head से RSD, WLW manifest और adjacent-post link टैग हटाता है।"
+
+msgid "Removes the X-Pingback header. Pairs with disabling XML-RPC."
+msgstr "X-Pingback header हटाता है। XML-RPC अक्षम करने के साथ जोड़ी बनाता है।"
+
+msgid "Removes the built-in code editor under Appearance and Plugins. If an attacker gets into wp-admin, they cannot use it to edit PHP files. You edit files over SFTP instead."
+msgstr "Appearance और Plugins के अंतर्गत बिल्ट-इन कोड एडिटर हटाता है। यदि कोई हमलावर wp-admin में प्रवेश करता है, तो वे इसका उपयोग PHP फ़ाइलें संपादित करने के लिए नहीं कर सकते। इसके बजाय आप SFTP के माध्यम से फ़ाइलें संपादित करते हैं।"
+
+msgid "Removes the generator meta tag. A small tidy-up — not a security measure on its own, since asset fingerprints reveal the version anyway."
+msgstr "generator मेटा टैग हटाता है। एक छोटी सफ़ाई — अपने आप में कोई सुरक्षा उपाय नहीं, क्योंकि एसेट फ़िंगरप्रिंट वैसे भी संस्करण प्रकट कर देते हैं।"
+
+msgid "Removes wp-embed.js if you do not embed other WordPress posts."
+msgstr "यदि आप अन्य WordPress पोस्ट एम्बेड नहीं करते तो wp-embed.js हटाता है।"
+
+msgid "Requested URL"
+msgstr "अनुरोधित URL"
+
+msgid "Requests"
+msgstr "अनुरोध"
+
+msgid "Reset this setting"
+msgstr "यह सेटिंग रीसेट करें"
+
+msgid "Restore previous configuration"
+msgstr "पिछला कॉन्फ़िगरेशन पुनर्स्थापित करें"
+
+msgid "Retrieve the API Client ID and Client Secret from your Google Developers project and add them to the two fields above"
+msgstr "अपने Google Developers प्रोजेक्ट से API Client ID और Client Secret प्राप्त करें और उन्हें ऊपर के दो फ़ील्ड में जोड़ें"
+
+msgid "Retrieve the Site Key and Secret Key from your Google reCAPTCHA project and add them to the two fields above"
+msgstr "अपने Google reCAPTCHA प्रोजेक्ट से Site Key और Secret Key प्राप्त करें और उन्हें ऊपर के दो फ़ील्ड में जोड़ें"
+
+msgid "Reveal"
+msgstr "प्रकट करें"
+
+msgid "Rewrite every [sc …] tag in your content to [ht-snippet …], keeping all attributes. Preview first; applying edits post content, so take a backup. Tip: you don’t have to convert — imported snippets already answer [sc …] once Shortcoder is deactivated."
+msgstr "अपनी सामग्री में हर [sc …] टैग को [ht-snippet …] में फिर से लिखें, सभी गुण रखते हुए। पहले पूर्वावलोकन करें; लागू करना पोस्ट सामग्री संपादित करता है, इसलिए बैकअप लें। सुझाव: आपको बदलने की आवश्यकता नहीं है — Shortcoder के निष्क्रिय होने पर इम्पोर्ट किए गए स्निपेट पहले से ही [sc …] का उत्तर देते हैं।"
+
+msgid "Right drawer"
+msgstr "दायाँ ड्रॉअर"
+
+msgid "Role"
+msgstr "भूमिका"
+
+msgid "Run shortcodes in category / tag descriptions"
+msgstr "श्रेणी / टैग विवरणों में shortcodes चलाएँ"
+
+msgid "Run shortcodes in excerpts"
+msgstr "अंशों में shortcodes चलाएँ"
+
+msgid "Run shortcodes in menu items"
+msgstr "मेनू आइटम में shortcodes चलाएँ"
+
+msgid "Run shortcodes in widgets"
+msgstr "विजेट में shortcodes चलाएँ"
+
+msgid "Run the scan first so there is something to self-host."
+msgstr "पहले स्कैन चलाएँ ताकि सेल्फ-होस्ट करने के लिए कुछ हो।"
+
+msgid "Run “%s” now? This permanently deletes matching items and cannot be undone."
+msgstr "अभी “%s” चलाएँ? यह मेल खाने वाले आइटम स्थायी रूप से हटाता है और इसे पूर्ववत नहीं किया जा सकता।"
+
+msgid "SAVE CONTENT"
+msgstr "सामग्री सहेजें"
+
+msgid "SCHEDULE"
+msgstr "शेड्यूल"
+
+msgid "SECURITY"
+msgstr "सुरक्षा"
+
+msgid "SEO optimization"
+msgstr "SEO ऑप्टिमाइज़ेशन"
+
+msgid "SETTING"
+msgstr "सेटिंग"
+
+msgid "SIGN"
+msgstr "SIGN"
+
+msgid "SMTP authentication"
+msgstr "SMTP प्रमाणीकरण"
+
+msgid "SMTP port"
+msgstr "SMTP पोर्ट"
+
+msgid "SMTP protocol"
+msgstr "SMTP प्रोटोकॉल"
+
+msgid "SMTP server"
+msgstr "SMTP सर्वर"
+
+msgid "SNIPPETS"
+msgstr "स्निपेट"
+
+msgid "SVG uploads are unavailable: the sanitiser library is missing."
+msgstr "SVG अपलोड अनुपलब्ध हैं: sanitiser library गायब है।"
+
+msgid "Sat"
+msgstr "शनि"
+
+msgid "Save changes"
+msgstr "परिवर्तन सहेजें"
+
+msgid "Save images to media when copying from another source"
+msgstr "किसी अन्य स्रोत से कॉपी करते समय छवियाँ मीडिया में सहेजें"
+
+msgid "Save interval (minutes)"
+msgstr "सहेजने का अंतराल (मिनट)"
+
+msgid "Save schedule"
+msgstr "शेड्यूल सहेजें"
+
+msgid "Save services"
+msgstr "सेवाएँ सहेजें"
+
+msgid "Save shortcode status"
+msgstr "shortcode स्थिति सहेजें"
+
+msgid "Save snippet"
+msgstr "स्निपेट सहेजें"
+
+msgid "Saved %d service(s)."
+msgstr "%d सेवाएँ सहेजी गईं।"
+
+msgid "Saved."
+msgstr "सहेजा गया।"
+
+msgid "Scan external requests"
+msgstr "बाहरी अनुरोध स्कैन करें"
+
+msgid "Scan with your phone"
+msgstr "अपने फ़ोन से स्कैन करें"
+
+msgid "Scanning your home page…"
+msgstr "आपका होम पेज स्कैन हो रहा है…"
+
+msgid "Screen refreshed"
+msgstr "स्क्रीन रीफ़्रेश की गई"
+
+msgid "Scroll bar color"
+msgstr "स्क्रॉल बार रंग"
+
+msgid "Search"
+msgstr "खोजें"
+
+msgid "Search below, click any icon to copy its ready-made shortcode, then paste it where you want the icon to appear."
+msgstr "नीचे खोजें, इसका तैयार shortcode कॉपी करने के लिए किसी भी आइकन पर क्लिक करें, फिर जहाँ आप आइकन दिखाना चाहते हैं वहाँ पेस्ट करें।"
+
+msgid "Search icons — e.g. cart, arrow, brand-facebook…"
+msgstr "आइकन खोजें — जैसे cart, arrow, brand-facebook…"
+
+msgid "Search settings…"
+msgstr "सेटिंग्स खोजें…"
+
+msgid "Seconds before the bubble appears"
+msgstr "बबल दिखाई देने से पहले के सेकंड"
+
+msgid "Secret key"
+msgstr "Secret key"
+
+msgid "Security"
+msgstr "सुरक्षा"
+
+msgid "Security and speed for a shop, chosen not to interfere with the store. The REST API is left fully on — WooCommerce cart and checkout need it — and permalinks are left untouched."
+msgstr "किसी दुकान के लिए सुरक्षा और गति, स्टोर में हस्तक्षेप न करने के लिए चुनी गई। REST API पूरी तरह चालू छोड़ा गया है — WooCommerce cart और checkout को इसकी आवश्यकता है — और permalinks अछूते छोड़े गए हैं।"
+
+msgid "Security check failed. Please start the sign-in again."
+msgstr "सुरक्षा जाँच विफल। कृपया sign-in फिर से शुरू करें।"
+
+msgid "Security hardening"
+msgstr "सुरक्षा हार्डनिंग"
+
+msgid "Security headers (frame, nosniff, referrer)"
+msgstr "सुरक्षा हेडर (frame, nosniff, referrer)"
+
+msgid "Security response headers"
+msgstr "सुरक्षा रिस्पॉन्स हेडर"
+
+msgid "Security response headers are sent"
+msgstr "सुरक्षा रिस्पॉन्स हेडर भेजे जाते हैं"
+
+msgid "Security tab → Block user enumeration"
+msgstr "सुरक्षा टैब → यूज़र एन्यूमरेशन रोकें"
+
+msgid "Security tab → Disable unused endpoints"
+msgstr "सुरक्षा टैब → अप्रयुक्त endpoints अक्षम करें"
+
+msgid "Security tab → Limit login attempts"
+msgstr "सुरक्षा टैब → लॉगिन प्रयास सीमित करें"
+
+msgid "Security tab → Lock down the admin"
+msgstr "सुरक्षा टैब → admin लॉक करें"
+
+msgid "Security tab → Privacy → Scan external requests"
+msgstr "सुरक्षा टैब → गोपनीयता → बाहरी अनुरोध स्कैन करें"
+
+msgid "Security tab → Privacy → self-host Google Fonts"
+msgstr "सुरक्षा टैब → गोपनीयता → Google Fonts सेल्फ-होस्ट करें"
+
+msgid "Security tab → Security response headers"
+msgstr "सुरक्षा टैब → सुरक्षा रिस्पॉन्स हेडर"
+
+msgid "Security: block user enumeration, limit logins, disable XML-RPC, hide the version, disable the file editor"
+msgstr "सुरक्षा: यूज़र एन्यूमरेशन रोकें, लॉगिन सीमित करें, XML-RPC अक्षम करें, संस्करण छिपाएँ, फ़ाइल एडिटर अक्षम करें"
+
+msgid "Select admin"
+msgstr "admin चुनें"
+
+msgid "Select background color"
+msgstr "बैकग्राउंड रंग चुनें"
+
+msgid "Select button border color"
+msgstr "बटन बॉर्डर रंग चुनें"
+
+msgid "Select button color"
+msgstr "बटन रंग चुनें"
+
+msgid "Select icon"
+msgstr "आइकन चुनें"
+
+msgid "Select icon color"
+msgstr "आइकन रंग चुनें"
+
+msgid "Select image"
+msgstr "छवि चुनें"
+
+msgid "Select redirect page"
+msgstr "रीडायरेक्ट पेज चुनें"
+
+msgid "Select the custom post for which you want to display TOC content"
+msgstr "उस कस्टम पोस्ट को चुनें जिसके लिए आप TOC सामग्री प्रदर्शित करना चाहते हैं"
+
+msgid "Select the custom post for which you want to show ads"
+msgstr "उस कस्टम पोस्ट को चुनें जिसके लिए आप विज्ञापन दिखाना चाहते हैं"
+
+msgid "Select the displayed logo"
+msgstr "प्रदर्शित लोगो चुनें"
+
+msgid "Select the page to hide"
+msgstr "छिपाने के लिए पेज चुनें"
+
+msgid "Select title color and button"
+msgstr "शीर्षक रंग और बटन चुनें"
+
+msgid "Selection color"
+msgstr "चयन रंग"
+
+msgid "Self-host Google Fonts"
+msgstr "Google Fonts सेल्फ-होस्ट करें"
+
+msgid "Self-hosted %1$d font file(s) across %2$d stylesheet(s). Turn on “Self-host Google Fonts” above and save."
+msgstr "%2$d stylesheet में %1$d फ़ॉन्ट फ़ाइलें सेल्फ-होस्ट की गईं। ऊपर “Google Fonts सेल्फ-होस्ट करें” चालू करें और सहेजें।"
+
+msgid "Send"
+msgstr "भेजें"
+
+msgid "Send security headers"
+msgstr "सुरक्षा हेडर भेजें"
+
+msgid "Send test email"
+msgstr "परीक्षण ईमेल भेजें"
+
+msgid "Sender email address"
+msgstr "प्रेषक ईमेल पता"
+
+msgid "Sender name"
+msgstr "प्रेषक नाम"
+
+msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
+msgstr "सामग्री साइट के लिए समझदार डिफ़ॉल्ट: लंबी पोस्ट पर विषय-सूची, हल्के पेज और बुनियादी सुरक्षा हार्डनिंग।"
+
+msgid "Services"
+msgstr "सेवाएँ"
+
+msgid "Services panel (slide-up from the bottom bar)"
+msgstr "सेवाएँ पैनल (नीचे-बार से ऊपर स्लाइड)"
+
+msgid "Set access and viewing permissions"
+msgstr "पहुँच और देखने की अनुमतियाँ सेट करें"
+
+msgid "Set the colour (hex, rgb or a CSS name)."
+msgstr "रंग सेट करें (hex, rgb या CSS नाम)।"
+
+msgid "Set the size in pixels."
+msgstr "आकार पिक्सेल में सेट करें।"
+
+msgid "Set up Adsense ads"
+msgstr "Adsense विज्ञापन सेट करें"
+
+msgid "Set up cookie notifications"
+msgstr "cookie सूचनाएँ सेट करें"
+
+msgid "Set up the ads.txt file"
+msgstr "ads.txt फ़ाइल सेट करें"
+
+msgid "Setting group"
+msgstr "सेटिंग समूह"
+
+msgid "Settings"
+msgstr "सेटिंग्स"
+
+msgid "Settings > Permalinks > Save changes"
+msgstr "Settings > Permalinks > परिवर्तन सहेजें"
+
+msgid "Settings changed"
+msgstr "सेटिंग्स बदली गईं"
+
+msgid "Shortcode"
+msgstr "Shortcode"
+
+msgid "Shortcode content visible only to group of users"
+msgstr "shortcode सामग्री केवल उपयोगकर्ताओं के समूह को दिखाई देती है"
+
+msgid "Shortcode reference"
+msgstr "Shortcode संदर्भ"
+
+msgid "Shortcode to display date"
+msgstr "तारीख़ प्रदर्शित करने के लिए shortcode"
+
+msgid "Shortcodes"
+msgstr "Shortcodes"
+
+msgid "Show a floating “Services” button on desktop"
+msgstr "डेस्कटॉप पर एक फ़्लोटिंग “सेवाएँ” बटन दिखाएँ"
+
+msgid "Show a greeting bubble near the button"
+msgstr "बटन के पास एक अभिवादन बबल दिखाएँ"
+
+msgid "Show a scan-to-open QR on desktop (Zalo, WhatsApp, Telegram, Viber, Line; WeChat always)"
+msgstr "डेस्कटॉप पर scan-to-open QR दिखाएँ (Zalo, WhatsApp, Telegram, Viber, Line; WeChat हमेशा)"
+
+msgid "Show from"
+msgstr "से दिखाएँ"
+
+msgid "Show full image"
+msgstr "पूरी छवि दिखाएँ"
+
+msgid "Show on devices"
+msgstr "डिवाइस पर दिखाएँ"
+
+msgid "Show the bar on tablets too (up to 1024px)"
+msgstr "टैबलेट पर भी बार दिखाएँ (1024px तक)"
+
+msgid "Show to"
+msgstr "तक दिखाएँ"
+
+msgid "Show until"
+msgstr "तब तक दिखाएँ"
+
+msgid "Sign in with Google"
+msgstr "Google से साइन इन करें"
+
+msgid "Sign in with Google account"
+msgstr "Google खाते से साइन इन करें"
+
+msgid "Signature shortcode"
+msgstr "signature shortcode"
+
+msgid "Site health"
+msgstr "साइट स्वास्थ्य"
+
+msgid "Site key"
+msgstr "Site key"
+
+msgid "Smooth-scroll is a library that enables you to create a smooth scrolling effect, providing users with a perception of faster page navigation"
+msgstr "Smooth-scroll एक library है जो आपको एक सहज स्क्रॉलिंग प्रभाव बनाने में सक्षम बनाती है, जो उपयोगकर्ताओं को तेज़ पेज नेविगेशन की धारणा प्रदान करती है"
+
+msgid "Snippet deleted."
+msgstr "स्निपेट हटाया गया।"
+
+msgid "Snippet saved."
+msgstr "स्निपेट सहेजा गया।"
+
+msgid "Something went wrong."
+msgstr "कुछ गलत हो गया।"
+
+msgid "Source code and issues:"
+msgstr "स्रोत कोड और समस्याएँ:"
+
+msgid "Spacing below"
+msgstr "नीचे रिक्ति"
+
+msgid "Spam comments"
+msgstr "स्पैम टिप्पणियाँ"
+
+msgid "Spin it — handy for loaders."
+msgstr "इसे घुमाएँ — लोडर के लिए उपयोगी।"
+
+msgid "Stacked banners"
+msgstr "स्टैक्ड बैनर"
+
+msgid "Status:"
+msgstr "स्थिति:"
+
+msgid "Step 1: Go to Appearance > Menus > Create a new menu > check Navigation bar (Horse Tools)"
+msgstr "चरण 1: Appearance > Menus > एक नया मेनू बनाएँ > Navigation bar (Horse Tools) चेक करें पर जाएँ"
+
+msgid "Step 2: Below, if you want the menu to open on a specific button, add <b style=\"color:red\">#horsenavi</b> to the field (#id or .class). For (Enter link), enter <b style=\"color:red\">#</b>. Note: Only add it to one of the 5 buttons below"
+msgstr "चरण 2: नीचे, यदि आप चाहते हैं कि मेनू किसी विशिष्ट बटन पर खुले, तो फ़ील्ड (#id या .class) में <b style=\"color:red\">#horsenavi</b> जोड़ें। (लिंक दर्ज करें) के लिए, <b style=\"color:red\">#</b> दर्ज करें। नोट: इसे नीचे दिए गए 5 बटन में से केवल एक में जोड़ें"
+
+msgid "Still:"
+msgstr "फिर भी:"
+
+msgid "Stop cropping"
+msgstr "क्रॉपिंग रोकें"
+
+msgid "Stop cropping all"
+msgstr "सभी क्रॉपिंग रोकें"
+
+msgid "Story circles"
+msgstr "स्टोरी सर्कल"
+
+msgid "Subtitle / price / coupon code"
+msgstr "उपशीर्षक / कीमत / कूपन कोड"
+
+msgid "Success"
+msgstr "सफलता"
+
+msgid "Sun"
+msgstr "रवि"
+
+msgid "Support multi-byte UTF-8 encoding (if you see strange characters)"
+msgstr "मल्टी-बाइट UTF-8 एन्कोडिंग समर्थन करें (यदि आपको अजीब वर्ण दिखें)"
+
+msgid "Support quick notification setup, allowing web managers to easily deliver useful and timely content, helping users stay informed effortlessly"
+msgstr "त्वरित सूचना सेटअप का समर्थन करता है, जिससे वेब प्रबंधक आसानी से उपयोगी और समय पर सामग्री दे सकते हैं, जिससे उपयोगकर्ता सहजता से सूचित रहते हैं"
+
+msgid "Support team"
+msgstr "समर्थन टीम"
+
+msgid "Switch off any shortcode you do not use. A disabled shortcode simply stops rendering. This only affects Horse Tools shortcodes — never those from other plugins."
+msgstr "जो shortcode आप उपयोग नहीं करते उसे बंद कर दें। एक अक्षम shortcode बस रेंडर होना बंद कर देता है। यह केवल Horse Tools shortcodes को प्रभावित करता है — कभी भी अन्य प्लगइन वालों को नहीं।"
+
+msgid "System"
+msgstr "सिस्टम"
+
+msgid "TOC"
+msgstr "TOC"
+
+msgid "TOC Settings"
+msgstr "TOC सेटिंग्स"
+
+msgid "TOOL"
+msgstr "टूल"
+
+msgid "Table name"
+msgstr "तालिका नाम"
+
+msgid "Table of Contents"
+msgstr "विषय-सूची"
+
+msgid "Table of contents configuration"
+msgstr "विषय-सूची कॉन्फ़िगरेशन"
+
+msgid "Table of contents on posts"
+msgstr "पोस्ट पर विषय-सूची"
+
+msgid "Tabler icon name (e.g. snowflake) — or leave blank and use an image"
+msgstr "Tabler आइकन नाम (जैसे snowflake) — या खाली छोड़ें और छवि का उपयोग करें"
+
+msgid "Tag"
+msgstr "टैग"
+
+msgid "Tags (comma separated)"
+msgstr "टैग (अल्पविराम से अलग)"
+
+msgid "Test SMTP email sending from your website"
+msgstr "अपनी वेबसाइट से SMTP ईमेल भेजने का परीक्षण करें"
+
+msgid "Text color"
+msgstr "टेक्स्ट रंग"
+
+msgid "Text color of the input / select box"
+msgstr "इनपुट / सिलेक्ट बॉक्स का टेक्स्ट रंग"
+
+msgid "Text editor tool"
+msgstr "टेक्स्ट एडिटर टूल"
+
+msgid "That address cannot be fetched from this server."
+msgstr "वह पता इस सर्वर से प्राप्त नहीं किया जा सकता।"
+
+msgid "That did not look like a Google Fonts stylesheet."
+msgstr "वह Google Fonts stylesheet जैसी नहीं लगी।"
+
+msgid "That file could not be read as JSON."
+msgstr "वह फ़ाइल JSON के रूप में पढ़ी नहीं जा सकी।"
+
+msgid "That is not a valid Horse Tools export file."
+msgstr "वह एक मान्य Horse Tools एक्सपोर्ट फ़ाइल नहीं है।"
+
+msgid "That is not a valid snippet export file."
+msgstr "वह एक मान्य स्निपेट एक्सपोर्ट फ़ाइल नहीं है।"
+
+msgid "That name is reserved by another Horse Tools shortcode. Pick a different one."
+msgstr "वह नाम किसी अन्य Horse Tools shortcode द्वारा आरक्षित है। कोई भिन्न चुनें।"
+
+msgid "That preset does not exist."
+msgstr "वह प्रीसेट मौजूद नहीं है।"
+
+msgid "The \"Index Now\" link will be added in the custom post management section to allow quick index submission"
+msgstr "त्वरित index सबमिशन की अनुमति देने के लिए कस्टम पोस्ट प्रबंधन अनुभाग में \"Index Now\" लिंक जोड़ा जाएगा"
+
+msgid "The Avatar, Live-chat and Tab-widget skins use the fields below."
+msgstr "Avatar, Live-chat और Tab-widget skins नीचे दिए गए फ़ील्ड का उपयोग करते हैं।"
+
+msgid "The GD library has been installed"
+msgstr "GD library इंस्टॉल की गई है"
+
+msgid "The GD library has not been installed"
+msgstr "GD library इंस्टॉल नहीं की गई है"
+
+msgid "The address %1$s was locked out after repeated failed logins on %2$s."
+msgstr "पता %1$s को %2$s पर बार-बार असफल लॉगिन के बाद लॉक किया गया।"
+
+msgid "The changing image is square, with the standard size being 100x100 pixels"
+msgstr "बदलती छवि वर्गाकार है, मानक आकार 100x100 पिक्सेल है"
+
+msgid "The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot."
+msgstr "आपके सबसे हाल के इम्पोर्ट से पहले का कॉन्फ़िगरेशन संग्रहीत है। पुनर्स्थापित करने से हर समूह उस snapshot पर वापस आ जाता है।"
+
+msgid "The debug file does not exist"
+msgstr "debug फ़ाइल मौजूद नहीं है"
+
+msgid "The feature adds advanced functions when uploading images, such as adding frames, flipping images... allowing you to automatically customize your images during upload. Picture frame (PNG)"
+msgstr "यह सुविधा छवियाँ अपलोड करते समय उन्नत फ़ंक्शन जोड़ती है, जैसे फ़्रेम जोड़ना, छवियाँ पलटना... जिससे आप अपलोड के दौरान अपनी छवियों को स्वचालित रूप से अनुकूलित कर सकते हैं। पिक्चर फ़्रेम (PNG)"
+
+msgid "The file contained no Horse Tools settings to import."
+msgstr "फ़ाइल में इम्पोर्ट करने के लिए कोई Horse Tools सेटिंग नहीं थी।"
+
+msgid "The file name will be your domain name"
+msgstr "फ़ाइल नाम आपका डोमेन नाम होगा"
+
+msgid "The file path is invalid or not a file"
+msgstr "फ़ाइल पथ अमान्य है या फ़ाइल नहीं है"
+
+msgid "The first image becomes the featured image"
+msgstr "पहली छवि फ़ीचर्ड छवि बन जाती है"
+
+msgid "The font files could not be downloaded."
+msgstr "फ़ॉन्ट फ़ाइलें डाउनलोड नहीं की जा सकीं।"
+
+msgid "The full recommended hardening set. The one thing left out is the full REST API block, which can break forms and guests — enable that yourself on the Security screen if your site truly needs none of it."
+msgstr "पूर्ण अनुशंसित हार्डनिंग सेट। एकमात्र चीज़ जो छोड़ी गई है वह पूर्ण REST API ब्लॉक है, जो फ़ॉर्म और अतिथियों को तोड़ सकता है — यदि आपकी साइट को वास्तव में इसकी कोई आवश्यकता नहीं है तो इसे स्वयं सुरक्षा स्क्रीन पर सक्षम करें।"
+
+msgid "The function of lazy loading images"
+msgstr "छवियों को lazy loading करने का फ़ंक्शन"
+
+msgid "The home page returned no HTML to scan."
+msgstr "होम पेज ने स्कैन करने के लिए कोई HTML वापस नहीं किया।"
+
+msgid "The icon on its own."
+msgstr "अकेला आइकन।"
+
+msgid "The optimisation module is on"
+msgstr "ऑप्टिमाइज़ेशन मॉड्यूल चालू है"
+
+msgid "The original image size when added to the post"
+msgstr "पोस्ट में जोड़ते समय मूल छवि आकार"
+
+msgid "The previous configuration has been restored."
+msgstr "पिछला कॉन्फ़िगरेशन पुनर्स्थापित किया गया है।"
+
+msgid "The reCAPTCHA is invalid"
+msgstr "reCAPTCHA अमान्य है"
+
+msgid "The score threshold applies to reCAPTCHA v3 only. Google returns 1.0 for traffic it is confident is human and 0.0 for traffic it is confident is a bot; 0.5 is the recommended starting point. Raise it to block more aggressively, lower it if real visitors are being turned away."
+msgstr "स्कोर थ्रेशोल्ड केवल reCAPTCHA v3 पर लागू होता है। Google उस ट्रैफ़िक के लिए 1.0 लौटाता है जिसके मानव होने का उसे भरोसा है और उस ट्रैफ़िक के लिए 0.0 जिसके बॉट होने का उसे भरोसा है; 0.5 अनुशंसित प्रारंभिक बिंदु है। अधिक आक्रामक रूप से रोकने के लिए इसे बढ़ाएँ, यदि वास्तविक विज़िटर वापस भेजे जा रहे हैं तो इसे कम करें।"
+
+msgid "The site is served over HTTPS"
+msgstr "साइट HTTPS पर परोसी जाती है"
+
+msgid "The site is visible to search engines"
+msgstr "साइट सर्च इंजन को दिखाई देती है"
+
+msgid "The standard size for the logo is 280x80 PX"
+msgstr "लोगो के लिए मानक आकार 280x80 PX है"
+
+msgid "The table of contents is an incredibly useful feature that allows readers to easily grasp the content by summarizing the headings (h-tags) in the article"
+msgstr "विषय-सूची एक अविश्वसनीय रूप से उपयोगी सुविधा है जो पाठकों को लेख में शीर्षकों (h-tags) को सारांशित करके सामग्री को आसानी से समझने देती है"
+
+msgid "The text to replace Buy Now on the product page"
+msgstr "उत्पाद पेज पर Buy Now को बदलने के लिए टेक्स्ट"
+
+msgid "The theme/plugin file editor is disabled"
+msgstr "थीम/प्लगइन फ़ाइल एडिटर अक्षम है"
+
+msgid "There is no backup to restore."
+msgstr "पुनर्स्थापित करने के लिए कोई बैकअप नहीं है।"
+
+msgid "These groups will change"
+msgstr "ये समूह बदलेंगे"
+
+msgid "These stop WordPress installing updates on its own — the site still checks for them, so the Dashboard and Plugins screens keep showing what is available and you apply updates when you choose. It never stops checking, so you are never left unaware of a security release."
+msgstr "ये WordPress को अपने आप अपडेट इंस्टॉल करने से रोकते हैं — साइट अभी भी उनकी जाँच करती है, इसलिए Dashboard और Plugins स्क्रीन दिखाती रहती हैं कि क्या उपलब्ध है और आप अपनी पसंद से अपडेट लागू करते हैं। यह कभी जाँच बंद नहीं करता, इसलिए आप कभी भी किसी सुरक्षा रिलीज़ से अनजान नहीं रहते।"
+
+msgid "This SVG file could not be parsed and was rejected."
+msgstr "यह SVG फ़ाइल पार्स नहीं की जा सकी और अस्वीकार कर दी गई।"
+
+msgid "This blocks the REST API for logged-out visitors. It WILL break: WooCommerce cart and checkout for guests, Contact Form 7 and other REST-based forms, comment submission on block themes, and oEmbed. Only enable it if your site uses none of these."
+msgstr "यह लॉग-आउट विज़िटर के लिए REST API को रोकता है। यह तोड़ देगा: अतिथियों के लिए WooCommerce cart और checkout, Contact Form 7 और अन्य REST-आधारित फ़ॉर्म, ब्लॉक थीम पर टिप्पणी सबमिशन, और oEmbed। इसे केवल तभी सक्षम करें जब आपकी साइट इनमें से किसी का भी उपयोग न करे।"
+
+msgid "This content is locked! You need to log in to view"
+msgstr "यह सामग्री लॉक है! देखने के लिए आपको लॉग इन करना होगा"
+
+msgid "This feature allows you to add CSS, JS, and HTML code to your WordPress site through hooks like WP head, WP body, WP footer, and WP login, making it easy and convenient to supplement your code"
+msgstr "यह सुविधा आपको WP head, WP body, WP footer और WP login जैसे hooks के माध्यम से अपनी WordPress साइट में CSS, JS और HTML कोड जोड़ने देती है, जिससे आपके कोड को पूरक करना आसान और सुविधाजनक हो जाता है"
+
+msgid "This feature allows you to add Shortcode to post titles, which is very convenient for using custom tools"
+msgstr "यह सुविधा आपको पोस्ट शीर्षकों में Shortcode जोड़ने देती है, जो कस्टम टूल उपयोग करने के लिए बहुत सुविधाजनक है"
+
+msgid "This feature allows you to add the Classic Editor to the category description box when editing posts or products"
+msgstr "यह सुविधा आपको पोस्ट या उत्पाद संपादित करते समय श्रेणी विवरण बॉक्स में Classic Editor जोड़ने देती है"
+
+msgid "This feature allows you to configure website redirects with multiple options such as 301, 404, and 503, making management much simpler"
+msgstr "यह सुविधा आपको 301, 404 और 503 जैसे कई विकल्पों के साथ वेबसाइट रीडायरेक्ट कॉन्फ़िगर करने देती है, जिससे प्रबंधन बहुत सरल हो जाता है"
+
+msgid "This feature allows you to customize the currency symbol as desired"
+msgstr "यह सुविधा आपको इच्छानुसार मुद्रा चिह्न अनुकूलित करने देती है"
+
+msgid "This feature allows you to only display Horse Tools to a specific Admin account"
+msgstr "यह सुविधा आपको Horse Tools को केवल किसी विशिष्ट Admin खाते को प्रदर्शित करने देती है"
+
+msgid "This feature allows you to set newly edited posts to be displayed first in the main loop"
+msgstr "यह सुविधा आपको नई संपादित पोस्ट को मुख्य लूप में पहले प्रदर्शित करने के लिए सेट करने देती है"
+
+msgid "This feature compiles various shortcode templates with essential functionalities that are frequently used to enhance the user experience in WordPress"
+msgstr "यह सुविधा WordPress में उपयोगकर्ता अनुभव बढ़ाने के लिए बार-बार उपयोग की जाने वाली आवश्यक कार्यक्षमताओं के साथ विभिन्न shortcode टेम्पलेट संकलित करती है"
+
+msgid "This feature helps optimize cleanup tasks such as clearing content, comments, and the media library. It makes your website cleaner and more optimized"
+msgstr "यह सुविधा सामग्री, टिप्पणियाँ और मीडिया library साफ़ करने जैसे सफ़ाई कार्यों को ऑप्टिमाइज़ करने में मदद करती है। यह आपकी वेबसाइट को साफ़ और अधिक ऑप्टिमाइज़ बनाती है"
+
+msgid "This feature uses the Fancybox library, allowing you to open images in posts for viewing"
+msgstr "यह सुविधा Fancybox library का उपयोग करती है, जिससे आप देखने के लिए पोस्ट में छवियाँ खोल सकते हैं"
+
+msgid "This feature was removed in Horse Tools 1.0.0. It opened an affiliate URL in a hidden off-screen window every time a visitor clicked anywhere on the page. That is affiliate cookie stuffing: it deceives your visitors, breaks the terms of every major affiliate network and of Google AdSense, and can get your domain and your ad accounts banned."
+msgstr "यह सुविधा Horse Tools 1.0.0 में हटा दी गई थी। यह हर बार विज़िटर के पेज पर कहीं भी क्लिक करने पर एक छिपी हुई ऑफ़-स्क्रीन विंडो में एक affiliate URL खोलती थी। यह affiliate cookie stuffing है: यह आपके विज़िटर को धोखा देती है, हर प्रमुख affiliate नेटवर्क और Google AdSense की शर्तें तोड़ती है, और आपके डोमेन और आपके विज्ञापन खातों पर प्रतिबंध लगवा सकती है।"
+
+msgid "This feature will add nofollow and _blank to external links on your site"
+msgstr "यह सुविधा आपकी साइट पर बाहरी लिंक में nofollow और _blank जोड़ेगी"
+
+msgid "This feature will hide the plugin you want from the plugin management page"
+msgstr "यह सुविधा जो प्लगइन आप चाहते हैं उसे प्लगइन प्रबंधन पेज से छिपा देगी"
+
+msgid "This feature will use the title of the post as the description for the image when uploaded"
+msgstr "यह सुविधा अपलोड करते समय पोस्ट के शीर्षक को छवि के विवरण के रूप में उपयोग करेगी"
+
+msgid "This function allows you to customize the color of the scrollbar to your liking"
+msgstr "यह फ़ंक्शन आपको स्क्रॉलबार का रंग अपनी पसंद के अनुसार अनुकूलित करने देता है"
+
+msgid "This function allows you to delete images attached to posts when deleting the posts themselves. Note that if multiple posts use the same image, it will also be deleted when removing the post"
+msgstr "यह फ़ंक्शन आपको पोस्ट को स्वयं हटाते समय पोस्ट से संलग्न छवियाँ हटाने देता है। ध्यान दें कि यदि कई पोस्ट एक ही छवि का उपयोग करती हैं, तो पोस्ट हटाते समय वह भी हट जाएगी"
+
+msgid "This function allows you to initiate a dark mode library, enabling the website to switch between light and dark modes"
+msgstr "यह फ़ंक्शन आपको एक dark mode library आरंभ करने देता है, जिससे वेबसाइट हल्के और गहरे मोड के बीच स्विच कर सकती है"
+
+msgid "This function allows you to redirect 301 links to the target page"
+msgstr "यह फ़ंक्शन आपको 301 लिंक को लक्ष्य पेज पर रीडायरेक्ट करने देता है"
+
+msgid "This function will redirect all of your website pages to the destination page of your choice"
+msgstr "यह फ़ंक्शन आपकी सभी वेबसाइट पेज को आपकी पसंद के गंतव्य पेज पर रीडायरेक्ट करेगा"
+
+msgid "This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site."
+msgstr "इसमें हर सेटिंग समूह शामिल है, चाहे इसका मॉड्यूल वर्तमान में सक्षम हो या न हो। अपलोड की गई फ़ॉन्ट फ़ाइलें शामिल नहीं हैं — वे इस साइट पर रहती हैं।"
+
+msgid "This is an email notification of your successful registration"
+msgstr "यह आपके सफल पंजीकरण की एक ईमेल सूचना है"
+
+msgid "This shortcode allows you to lock any content, and only the selected group of logged-in users can view it"
+msgstr "यह shortcode आपको किसी भी सामग्री को लॉक करने देता है, और केवल लॉग-इन उपयोगकर्ताओं का चयनित समूह ही इसे देख सकता है"
+
+msgid "This shortcode is used to create a download button with a timeout"
+msgstr "यह shortcode टाइमआउट के साथ एक डाउनलोड बटन बनाने के लिए उपयोग किया जाता है"
+
+msgid "This shortcode is used to display the date in the post title. Please note that you need to enable the shortcode usage in the post title under the POST, PAGE section"
+msgstr "यह shortcode पोस्ट शीर्षक में तारीख़ प्रदर्शित करने के लिए उपयोग किया जाता है। कृपया ध्यान दें कि आपको POST, PAGE अनुभाग के अंतर्गत पोस्ट शीर्षक में shortcode उपयोग सक्षम करना होगा"
+
+msgid "This website uses cookies to ensure you get the best experience on our site. By continuing to browse, you agree to our use of cookies. For more information, please read our Cookie Policy"
+msgstr "यह वेबसाइट यह सुनिश्चित करने के लिए cookies का उपयोग करती है कि आपको हमारी साइट पर सर्वोत्तम अनुभव मिले। ब्राउज़िंग जारी रखकर, आप हमारे cookies के उपयोग से सहमत होते हैं। अधिक जानकारी के लिए, कृपया हमारी Cookie Policy पढ़ें"
+
+msgid "Thu"
+msgstr "गुरु"
+
+msgid "Tidy up"
+msgstr "व्यवस्थित करें"
+
+msgid "Time"
+msgstr "समय"
+
+msgid "Time is up"
+msgstr "समय समाप्त"
+
+msgid "Time:"
+msgstr "समय:"
+
+msgid "Title"
+msgstr "शीर्षक"
+
+msgid "Title color"
+msgstr "शीर्षक रंग"
+
+msgid "Title text and icon color"
+msgstr "शीर्षक टेक्स्ट और आइकन रंग"
+
+msgid "To"
+msgstr "तक"
+
+msgid "To add advertisements to your website, simply enable this feature. It provides you with various ad options to meet your distribution needs"
+msgstr "अपनी वेबसाइट में विज्ञापन जोड़ने के लिए, बस यह सुविधा सक्षम करें। यह आपकी वितरण आवश्यकताओं को पूरा करने के लिए विभिन्न विज्ञापन विकल्प प्रदान करती है"
+
+msgid "To create a menu on the navigation bar:"
+msgstr "नेविगेशन बार पर मेनू बनाने के लिए:"
+
+msgid "Too many failed attempts. Try again in about %d minute(s)."
+msgstr "बहुत अधिक असफल प्रयास। लगभग %d मिनट में पुनः प्रयास करें।"
+
+msgid "Top and bottom positions"
+msgstr "ऊपर और नीचे की स्थिति"
+
+msgid "Total data"
+msgstr "कुल डेटा"
+
+msgid "Total:"
+msgstr "कुल:"
+
+msgid "Transparency level"
+msgstr "पारदर्शिता स्तर"
+
+msgid "Trashed comments"
+msgstr "ट्रैश की गई टिप्पणियाँ"
+
+msgid "Tue"
+msgstr "मंगल"
+
+msgid "Turn Horse Tools shortcodes on or off"
+msgstr "Horse Tools shortcodes चालू या बंद करें"
+
+msgid "Turn off WP_DEBUG_DISPLAY on a live site."
+msgstr "लाइव साइट पर WP_DEBUG_DISPLAY बंद करें।"
+
+msgid "Turns off the RSS and Atom feeds if your site does not publish one."
+msgstr "यदि आपकी साइट कोई प्रकाशित नहीं करती तो RSS और Atom फ़ीड बंद कर देता है।"
+
+msgid "Type"
+msgstr "प्रकार"
+
+msgid "Type any shortcode name (without brackets) to list the posts and pages that contain it — handy before you change or remove one."
+msgstr "इसमें मौजूद पोस्ट और पेज सूचीबद्ध करने के लिए कोई भी shortcode नाम (ब्रैकेट के बिना) टाइप करें — किसी को बदलने या हटाने से पहले उपयोगी।"
+
+msgid "Type the number of the shortcode to insert:"
+msgstr "डालने के लिए shortcode की संख्या टाइप करें:"
+
+msgid "UPLOAD FONT"
+msgstr "फ़ॉन्ट अपलोड करें"
+
+msgid "URL:"
+msgstr "URL:"
+
+msgid "URL: Unverified"
+msgstr "URL: असत्यापित"
+
+msgid "URL: does not exist"
+msgstr "URL: मौजूद नहीं है"
+
+msgid "USE FONT"
+msgstr "फ़ॉन्ट उपयोग करें"
+
+msgid "USER"
+msgstr "USER"
+
+msgid "Unable to read the uploaded SVG file."
+msgstr "अपलोड की गई SVG फ़ाइल पढ़ने में असमर्थ।"
+
+msgid "Unable to send email!"
+msgstr "ईमेल भेजने में असमर्थ!"
+
+msgid "Unable to write the sanitised SVG file."
+msgstr "sanitised SVG फ़ाइल लिखने में असमर्थ।"
+
+msgid "Undo the last import"
+msgstr "अंतिम इम्पोर्ट पूर्ववत करें"
+
+msgid "Upload avatars"
+msgstr "अवतार अपलोड करें"
+
+msgid "Upload font error"
+msgstr "फ़ॉन्ट अपलोड त्रुटि"
+
+msgid "Upload font success"
+msgstr "फ़ॉन्ट अपलोड सफल"
+
+msgid "Uploaded images are compressed"
+msgstr "अपलोड की गई छवियाँ कम्प्रेस की गई हैं"
+
+msgid "Use fonts on the web"
+msgstr "वेब पर फ़ॉन्ट उपयोग करें"
+
+msgid "Use shortcodes"
+msgstr "shortcodes उपयोग करें"
+
+msgid "Use titles as descriptions for images"
+msgstr "छवियों के विवरण के रूप में शीर्षकों का उपयोग करें"
+
+msgid "Use titles as image alt text"
+msgstr "छवि alt टेक्स्ट के रूप में शीर्षकों का उपयोग करें"
+
+msgid "Use with care: your theme may need several image sizes to display correctly."
+msgstr "सावधानी से उपयोग करें: आपकी थीम को सही ढंग से प्रदर्शित होने के लिए कई छवि आकारों की आवश्यकता हो सकती है।"
+
+msgid "Use:"
+msgstr "उपयोग:"
+
+msgid "User enumeration is blocked"
+msgstr "यूज़र एन्यूमरेशन अवरुद्ध है"
+
+msgid "Video cards"
+msgstr "वीडियो कार्ड"
+
+msgid "View"
+msgstr "देखें"
+
+msgid "Visit this page to get the SVG icon:"
+msgstr "SVG आइकन प्राप्त करने के लिए इस पेज पर जाएँ:"
+
+msgid "WOO"
+msgstr "WOO"
+
+msgid "WOOCOMMERCE"
+msgstr "WOOCOMMERCE"
+
+msgid "WP BODY"
+msgstr "WP BODY"
+
+msgid "WP FOOTER"
+msgstr "WP FOOTER"
+
+msgid "WP HEAD"
+msgstr "WP HEAD"
+
+msgid "WP LOGIN"
+msgstr "WP LOGIN"
+
+msgid "Wait..."
+msgstr "प्रतीक्षा करें..."
+
+msgid "Watermark image compared to main image"
+msgstr "मुख्य छवि की तुलना में वॉटरमार्क छवि"
+
+msgid "We apologize, the website is currently undergoing maintenance. Please wait for a moment"
+msgstr "हम क्षमा चाहते हैं, वेबसाइट वर्तमान में रखरखाव के अधीन है। कृपया एक क्षण प्रतीक्षा करें"
+
+msgid "We are currently closed"
+msgstr "हम वर्तमान में बंद हैं"
+
+msgid "We reply quickly"
+msgstr "हम जल्दी उत्तर देते हैं"
+
+msgid "Wed"
+msgstr "बुध"
+
+msgid "Weekly"
+msgstr "साप्ताहिक"
+
+msgid "Welcome to Horse Tools"
+msgstr "Horse Tools में आपका स्वागत है"
+
+msgid "Welcome to the website"
+msgstr "वेबसाइट में आपका स्वागत है"
+
+msgid "When someone copies text from your site, a short line you set is added after it — their selection is kept, nothing is replaced. Useful for a \"Source: yoursite.com\" credit."
+msgstr "जब कोई आपकी साइट से टेक्स्ट कॉपी करता है, तो आपके द्वारा सेट की गई एक छोटी पंक्ति इसके बाद जोड़ी जाती है — उनका चयन रखा जाता है, कुछ भी नहीं बदला जाता। \"Source: yoursite.com\" क्रेडिट के लिए उपयोगी।"
+
+msgid "When you change a published post or page URL — its slug, its parent, or the whole path — the old address is redirected to the new one. WordPress already does this for a simple slug change; this also covers moves that core misses, and only ever acts on a URL that would otherwise 404."
+msgstr "जब आप किसी प्रकाशित पोस्ट या पेज URL को बदलते हैं — इसका slug, इसका parent, या पूरा पथ — पुराना पता नए पर रीडायरेक्ट हो जाता है। WordPress साधारण slug परिवर्तन के लिए यह पहले से करता है; यह उन moves को भी कवर करता है जो कोर छोड़ देता है, और केवल उस URL पर कार्य करता है जो अन्यथा 404 होता।"
+
+msgid "When your theme or a plugin loads fonts from Google, every visitor's IP is sent to Google — which GDPR treats as a data transfer. This serves downloaded copies from your own domain instead. Scan first, then click self-host; this works for fonts loaded the standard way (if a font still loads from Google afterwards, your theme hard-codes it — the scan will show you)."
+msgstr "जब आपकी थीम या कोई प्लगइन Google से फ़ॉन्ट लोड करता है, तो हर विज़िटर का IP Google को भेजा जाता है — जिसे GDPR डेटा स्थानांतरण के रूप में मानता है। यह इसके बजाय आपके अपने डोमेन से डाउनलोड की गई प्रतियाँ परोसता है। पहले स्कैन करें, फिर सेल्फ-होस्ट पर क्लिक करें; यह मानक तरीके से लोड किए गए फ़ॉन्ट के लिए काम करता है (यदि कोई फ़ॉन्ट बाद में भी Google से लोड होता है, तो आपकी थीम इसे hard-code करती है — स्कैन आपको दिखाएगा)।"
+
+msgid "Where shortcodes run"
+msgstr "shortcodes कहाँ चलते हैं"
+
+msgid "Widget title"
+msgstr "विजेट शीर्षक"
+
+msgid "With this feature, HTML will be compressed into a single line, removing unnecessary characters and whitespace to speed up page loading"
+msgstr "इस सुविधा के साथ, HTML एक ही पंक्ति में कम्प्रेस हो जाएगा, पेज लोडिंग तेज़ करने के लिए अनावश्यक वर्ण और whitespace हटा देगा"
+
+msgid "With this feature, regular users can only view their own posts and images they uploaded, while the admin can view all of them"
+msgstr "इस सुविधा के साथ, सामान्य उपयोगकर्ता केवल अपनी पोस्ट और अपलोड की गई छवियाँ देख सकते हैं, जबकि admin उन सभी को देख सकता है"
+
+msgid "With this feature, regular users cannot access the WordPress admin page"
+msgstr "इस सुविधा के साथ, सामान्य उपयोगकर्ता WordPress admin पेज तक पहुँच नहीं सकते"
+
+msgid "With this feature, there will be an additional button in the profile section allowing users to upload avatars"
+msgstr "इस सुविधा के साथ, प्रोफ़ाइल अनुभाग में एक अतिरिक्त बटन होगा जो उपयोगकर्ताओं को अवतार अपलोड करने देगा"
+
+msgid "With this feature, you can notify your orders to your Telegram group, helping you manage orders conveniently"
+msgstr "इस सुविधा के साथ, आप अपने ऑर्डर को अपने Telegram समूह में सूचित कर सकते हैं, जिससे आप ऑर्डर सुविधाजनक रूप से प्रबंधित कर सकते हैं"
+
+msgid "WooCommerce / Store"
+msgstr "WooCommerce / स्टोर"
+
+msgid "WordPress runs shortcodes in post content by default. Turn these on to run them elsewhere too. (Saved with the SAVE button at the bottom.)"
+msgstr "WordPress डिफ़ॉल्ट रूप से पोस्ट सामग्री में shortcodes चलाता है। उन्हें कहीं और भी चलाने के लिए इन्हें चालू करें। (नीचे SAVE बटन के साथ सहेजा गया।)"
+
+msgid "X-Content-Type-Options: nosniff"
+msgstr "X-Content-Type-Options: nosniff"
+
+msgid "X-Frame-Options: SAMEORIGIN (block clickjacking)"
+msgstr "X-Frame-Options: SAMEORIGIN (clickjacking रोकें)"
+
+msgid "XML-RPC is disabled"
+msgstr "XML-RPC अक्षम है"
+
+msgid "Yes"
+msgstr "हाँ"
+
+msgid "Yes — preview as a visitor"
+msgstr "हाँ — विज़िटर के रूप में पूर्वावलोकन करें"
+
+msgid "You are not allowed to create this post type."
+msgstr "आपको इस पोस्ट टाइप को बनाने की अनुमति नहीं है।"
+
+msgid "You are not allowed to duplicate this item."
+msgstr "आपको इस आइटम को डुप्लिकेट करने की अनुमति नहीं है।"
+
+msgid "You are not logged in"
+msgstr "आप लॉग इन नहीं हैं"
+
+msgid "You can adjust the compression level of the image from 5 to 100 (100 being no compression)"
+msgstr "आप छवि का कम्प्रेशन स्तर 5 से 100 तक समायोजित कर सकते हैं (100 का अर्थ कोई कम्प्रेशन नहीं)"
+
+msgid "You can create your widget by activating it and entering content into the box below"
+msgstr "आप इसे सक्रिय करके और नीचे दिए गए बॉक्स में सामग्री दर्ज करके अपना विजेट बना सकते हैं"
+
+msgid "You can customize the role of successful registrants, with the default role being \"subscriber\""
+msgstr "आप सफल पंजीकरणकर्ताओं की भूमिका अनुकूलित कर सकते हैं, डिफ़ॉल्ट भूमिका \"subscriber\" है"
+
+msgid "You can disable default widgets on the dashboard that you dont use"
+msgstr "आप डैशबोर्ड पर उन डिफ़ॉल्ट विजेट को अक्षम कर सकते हैं जिनका आप उपयोग नहीं करते"
+
+msgid "You can further customize your login page by enabling this feature"
+msgstr "आप यह सुविधा सक्षम करके अपने लॉगिन पेज को और अनुकूलित कर सकते हैं"
+
+msgid "You can hide Horse Tools from the WP menu, but you can still access it through the link. This will hide Horse Tools for all accounts"
+msgstr "आप Horse Tools को WP मेनू से छिपा सकते हैं, लेकिन आप अभी भी लिंक के माध्यम से इसे एक्सेस कर सकते हैं। यह सभी खातों के लिए Horse Tools छिपा देगा"
+
+msgid "You can paste the shortcode into the position where you want the login button to appear"
+msgstr "आप shortcode को उस स्थान पर पेस्ट कर सकते हैं जहाँ आप लॉगिन बटन दिखाना चाहते हैं"
+
+msgid "You can preview your file here:"
+msgstr "आप अपनी फ़ाइल का यहाँ पूर्वावलोकन कर सकते हैं:"
+
+msgid "You can use the shortcode in the editor and add it to the position you want, note: only use 1 shortcode in the post"
+msgstr "आप एडिटर में shortcode का उपयोग कर सकते हैं और इसे अपनी इच्छित स्थिति में जोड़ सकते हैं, नोट: पोस्ट में केवल 1 shortcode उपयोग करें"
+
+msgid "You can use the shortcode to add the search icon to the location you want"
+msgstr "आप shortcode का उपयोग करके अपनी इच्छित स्थान पर खोज आइकन जोड़ सकते हैं"
+
+msgid "You do not have permission to do this."
+msgstr "आपके पास ऐसा करने की अनुमति नहीं है।"
+
+msgid "You do not have permission to upload SVG files."
+msgstr "आपके पास SVG फ़ाइलें अपलोड करने की अनुमति नहीं है।"
+
+msgid "You have successfully copied"
+msgstr "आपने सफलतापूर्वक कॉपी किया"
+
+msgid "You have unsaved changes."
+msgstr "आपके पास असहेजे परिवर्तन हैं।"
+
+msgid "You havent added content yet"
+msgstr "आपने अभी तक सामग्री नहीं जोड़ी है"
+
+msgid "You need to activate this feature and customize the content below so that new registered users can receive emails"
+msgstr "आपको यह सुविधा सक्रिय करनी होगी और नीचे की सामग्री अनुकूलित करनी होगी ताकि नए पंजीकृत उपयोगकर्ता ईमेल प्राप्त कर सकें"
+
+msgid "Your Google account email address is not verified."
+msgstr "आपका Google खाता ईमेल पता सत्यापित नहीं है।"
+
+msgid "Your comment has just been replied to"
+msgstr "आपकी टिप्पणी का अभी-अभी उत्तर दिया गया है"
+
+msgid "Your comment has just been replied to in the post"
+msgstr "पोस्ट में आपकी टिप्पणी का अभी-अभी उत्तर दिया गया है"
+
+msgid "Your configuration has been saved"
+msgstr "आपका कॉन्फ़िगरेशन सहेज लिया गया है"
+
+msgid "Your custom widget"
+msgstr "आपका कस्टम विजेट"
+
+msgid "Your database"
+msgstr "आपका डेटाबेस"
+
+msgid "[%s] New comment on the article \"%s\""
+msgstr "[%s] लेख \"%s\" पर नई टिप्पणी"
+
+msgid "days"
+msgstr "दिन"
+
+msgid "desktop"
+msgstr "डेस्कटॉप"
+
+msgid "e.g. contact, promo"
+msgstr "जैसे contact, promo"
+
+msgid "e.g. sc, ht-snippet, vip"
+msgstr "जैसे sc, ht-snippet, vip"
+
+msgid "font-family:"
+msgstr "font-family:"
+
+msgid "hrs"
+msgstr "घंटे"
+
+msgid "icons"
+msgstr "आइकन"
+
+msgid "images"
+msgstr "छवियाँ"
+
+msgid "jQuery Migrate is a library used to maintain the operation of certain themes, plugins that rely on older code. If your website no longer relies on this library, you can disable it"
+msgstr "jQuery Migrate एक library है जो कुछ थीम, प्लगइन के संचालन को बनाए रखने के लिए उपयोग की जाती है जो पुराने कोड पर निर्भर हैं। यदि आपकी वेबसाइट अब इस library पर निर्भर नहीं है, तो आप इसे अक्षम कर सकते हैं"
+
+msgid "logged-in"
+msgstr "लॉग-इन"
+
+msgid "logged-out"
+msgstr "लॉग-आउट"
+
+msgid "min"
+msgstr "मिनट"
+
+msgid "mobile"
+msgstr "मोबाइल"
+
+msgid "nofollow + new tab on external links"
+msgstr "बाहरी लिंक पर nofollow + नया टैब"
+
+msgid "off"
+msgstr "बंद"
+
+msgid "post type, e.g. shortcoder"
+msgstr "पोस्ट टाइप, जैसे shortcoder"
+
+msgid "sec"
+msgstr "सेकंड"
+
+msgid "showing first"
+msgstr "पहले दिखा रहा है"
+
+msgid "third-party host(s) found"
+msgstr "तृतीय-पक्ष host मिले"
+
+msgid "up to %s"
+msgstr "%s तक"
+
+msgid "v3 score threshold (0 – 1)"
+msgstr "v3 स्कोर थ्रेशोल्ड (0 – 1)"
+
+msgid "— Insert a shortcode —"
+msgstr "— एक shortcode डालें —"

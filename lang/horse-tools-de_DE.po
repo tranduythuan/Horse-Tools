@@ -1,0 +1,3484 @@
+# Horse Tools translation (de_DE) — machine-generated, review recommended.
+msgid ""
+msgstr ""
+"Project-Id-Version: Horse Tools\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: horse-tools\n"
+
+msgid "\"Comments containing links\" matches links in the comment body only. The figure shown is the total comment count, not a match count, so confirm carefully."
+msgstr "\"Kommentare mit Links\" berücksichtigt nur Links im Kommentartext. Die angezeigte Zahl ist die Gesamtzahl der Kommentare, nicht die Trefferzahl – bitte sorgfältig prüfen."
+
+msgid "\"Enter link\" left blank if you want to call the chat list"
+msgstr "\"Link eingeben\" leer lassen, wenn Sie die Chat-Liste aufrufen möchten"
+
+msgid "#id or .class"
+msgstr "#id oder .class"
+
+msgid "%d enabled"
+msgstr "%d aktiviert"
+
+msgid "%d post(s) contain [sc] tags. Click “Convert now” to rewrite them."
+msgstr "%d Beitrag/Beiträge enthalten [sc]-Tags. Klicken Sie auf „Jetzt konvertieren“, um sie umzuschreiben."
+
+msgid "(duplicate)"
+msgstr "(Duplikat)"
+
+msgid "(no title)"
+msgstr "(kein Titel)"
+
+msgid "301"
+msgstr "301"
+
+msgid "4 customizable buttons"
+msgstr "4 anpassbare Schaltflächen"
+
+msgid "404"
+msgstr "404"
+
+msgid "404 log"
+msgstr "404-Protokoll"
+
+msgid "404 redirects"
+msgstr "404-Weiterleitungen"
+
+msgid "503"
+msgstr "503"
+
+msgid "8-bit PNG images are not supported by the GD library, and this format already has perfect compression and does not need further processing"
+msgstr "8-Bit-PNG-Bilder werden von der GD-Bibliothek nicht unterstützt, und dieses Format ist bereits optimal komprimiert und benötigt keine weitere Bearbeitung"
+
+msgid "A login was locked out on your site"
+msgstr "Eine Anmeldung wurde auf Ihrer Website gesperrt"
+
+msgid "A wrong CSP silently breaks scripts, styles and images. Test with browser dev tools before relying on it."
+msgstr "Eine falsche CSP legt Skripte, Stile und Bilder unbemerkt lahm. Testen Sie sie mit den Entwicklertools des Browsers, bevor Sie sich darauf verlassen."
+
+msgid "ABOUT"
+msgstr "ÜBER"
+
+msgid "ADD FONT"
+msgstr "SCHRIFT HINZUFÜGEN"
+
+msgid "ADS.TXT"
+msgstr "ADS.TXT"
+
+msgid "ADSENSE"
+msgstr "ADSENSE"
+
+msgid "API Token"
+msgstr "API-Token"
+
+msgid "About"
+msgstr "Über"
+
+msgid "Accepted Font Format : woff2, ttf, otf, off | Font Size: Upto 25 MB"
+msgstr "Zulässiges Schriftformat: woff2, ttf, otf, off | Schriftgröße: bis zu 25 MB"
+
+msgid "Access Font Awesome to find icons"
+msgstr "Font Awesome aufrufen, um Symbole zu finden"
+
+msgid "Account"
+msgstr "Konto"
+
+msgid "Actions"
+msgstr "Aktionen"
+
+msgid "Ad-blocker detection"
+msgstr "Adblocker-Erkennung"
+
+msgid "Add .html for page"
+msgstr "Seiten mit .html versehen"
+
+msgid "Add CSS for mobile size"
+msgstr "CSS für Mobilgröße hinzufügen"
+
+msgid "Add CSS for tablet size"
+msgstr "CSS für Tabletgröße hinzufügen"
+
+msgid "Add CSS to your website"
+msgstr "CSS zu Ihrer Website hinzufügen"
+
+msgid "Add Classic Editor button"
+msgstr "Schaltfläche für Classic Editor hinzufügen"
+
+msgid "Add Google API"
+msgstr "Google-API hinzufügen"
+
+msgid "Add Google json code"
+msgstr "Google-JSON-Code hinzufügen"
+
+msgid "Add a label so screen readers announce it."
+msgstr "Fügen Sie eine Beschriftung hinzu, damit Screenreader sie ansagen."
+
+msgid "Add ads at the bottom of the article"
+msgstr "Anzeigen am Ende des Artikels einfügen"
+
+msgid "Add ads to custom post placement"
+msgstr "Anzeigen an benutzerdefinierter Beitragsposition einfügen"
+
+msgid "Add ads to the top of the article"
+msgstr "Anzeigen am Anfang des Artikels einfügen"
+
+msgid "Add an attribution line when visitors copy text"
+msgstr "Eine Quellenangabe einfügen, wenn Besucher Text kopieren"
+
+msgid "Add avatar upload functionality"
+msgstr "Funktion zum Hochladen von Avataren hinzufügen"
+
+msgid "Add background image link"
+msgstr "Link zum Hintergrundbild hinzufügen"
+
+msgid "Add code"
+msgstr "Code hinzufügen"
+
+msgid "Add code to WP body"
+msgstr "Code zu WP-Body hinzufügen"
+
+msgid "Add code to WP footer"
+msgstr "Code zu WP-Footer hinzufügen"
+
+msgid "Add code to WP head"
+msgstr "Code zu WP-Head hinzufügen"
+
+msgid "Add code to WP login"
+msgstr "Code zu WP-Login hinzufügen"
+
+msgid "Add default featured image"
+msgstr "Standard-Beitragsbild hinzufügen"
+
+msgid "Add duplicate button"
+msgstr "Schaltfläche zum Duplizieren hinzufügen"
+
+msgid "Add field"
+msgstr "Feld hinzufügen"
+
+msgid "Add font Awesome to the website"
+msgstr "Font Awesome zur Website hinzufügen"
+
+msgid "Add fonts"
+msgstr "Schriften hinzufügen"
+
+msgid "Add fonts to your website with just a few simple steps. Additionally, it allows you to quickly set fonts in the specific areas you want to change, offering great convenience"
+msgstr "Fügen Sie Schriften mit wenigen einfachen Schritten zu Ihrer Website hinzu. Zudem können Sie Schriften schnell für bestimmte Bereiche festlegen, die Sie ändern möchten – besonders komfortabel"
+
+msgid "Add hardening headers to front-end responses. Each one below is optional."
+msgstr "Fügen Sie Sicherheits-Header zu den Frontend-Antworten hinzu. Jeder der folgenden ist optional."
+
+msgid "Add images"
+msgstr "Bilder hinzufügen"
+
+msgid "Add json"
+msgstr "JSON hinzufügen"
+
+msgid "Add link"
+msgstr "Link hinzufügen"
+
+msgid "Add logo link"
+msgstr "Logo-Link hinzufügen"
+
+msgid "Add nofollow and _blank for external links"
+msgstr "nofollow und _blank für externe Links hinzufügen"
+
+msgid "Add picture frame link here"
+msgstr "Bilderrahmen-Link hier hinzufügen"
+
+msgid "Add service"
+msgstr "Dienst hinzufügen"
+
+msgid "Add the image logo link here"
+msgstr "Logo-Bild-Link hier hinzufügen"
+
+msgid "Add the logo image link here"
+msgstr "Logo-Bild-Link hier hinzufügen"
+
+msgid "Add watermark to images upon upload"
+msgstr "Bildern beim Hochladen ein Wasserzeichen hinzufügen"
+
+msgid "Added"
+msgstr "Hinzugefügt"
+
+msgid "Additional feature"
+msgstr "Zusatzfunktion"
+
+msgid "Ads"
+msgstr "Anzeigen"
+
+msgid "Advanced configuration"
+msgstr "Erweiterte Konfiguration"
+
+msgid "Advanced image viewing feature in posts"
+msgstr "Erweiterte Bildansicht in Beiträgen"
+
+msgid "Advanced photo upload"
+msgstr "Erweiterter Foto-Upload"
+
+msgid "Advanced settings"
+msgstr "Erweiterte Einstellungen"
+
+msgid "After too many failed logins from the same address, block further attempts for a while. This is the real defence against password guessing."
+msgstr "Nach zu vielen fehlgeschlagenen Anmeldungen von derselben Adresse werden weitere Versuche eine Zeit lang blockiert. Dies ist der eigentliche Schutz gegen das Erraten von Passwörtern."
+
+msgid "Agree"
+msgstr "Zustimmen"
+
+msgid "All devices"
+msgstr "Alle Geräte"
+
+msgid "All links on your website will redirect to the maintenance page, and only logged-in admin accounts can view the content"
+msgstr "Alle Links Ihrer Website werden auf die Wartungsseite umgeleitet, und nur angemeldete Administratorkonten können den Inhalt sehen"
+
+msgid "All safe security headers (frame, nosniff, referrer, permissions)"
+msgstr "Alle sicheren Security-Header (Frame, Nosniff, Referrer, Permissions)"
+
+msgid "All snippets"
+msgstr "Alle Snippets"
+
+msgid "Allow avatar upload"
+msgstr "Avatar-Upload erlauben"
+
+msgid "Allow displaying member IDs on the profile management page"
+msgstr "Anzeige der Mitglieds-IDs auf der Profilverwaltungsseite erlauben"
+
+msgid "Allow uploading AVIF image format"
+msgstr "Hochladen des AVIF-Bildformats erlauben"
+
+msgid "Allow uploading JFIF files"
+msgstr "Hochladen von JFIF-Dateien erlauben"
+
+msgid "Allow uploading SVG files"
+msgstr "Hochladen von SVG-Dateien erlauben"
+
+msgid "Allow using Shortcode in post titles"
+msgstr "Verwendung von Shortcodes in Beitragstiteln erlauben"
+
+msgid "Allows uploading AVIF photos"
+msgstr "Erlaubt das Hochladen von AVIF-Fotos"
+
+msgid "Already declared"
+msgstr "Bereits deklariert"
+
+msgid "An error occurred"
+msgstr "Ein Fehler ist aufgetreten"
+
+msgid "Any"
+msgstr "Beliebig"
+
+msgid "App password"
+msgstr "App-Passwort"
+
+msgid "Applied the \"%s\" preset. Recommended settings are on — you can undo this below."
+msgstr "Voreinstellung \"%s\" angewendet. Empfohlene Einstellungen sind aktiviert – Sie können dies unten rückgängig machen."
+
+msgid "Apply import"
+msgstr "Import anwenden"
+
+msgid "Apply this preset"
+msgstr "Diese Voreinstellung anwenden"
+
+msgid "Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it."
+msgstr "Beim Anwenden werden diese Gruppen mit den importierten Werten überschrieben. Ein Backup wird per Klick vorgehalten, sodass Sie es rückgängig machen können."
+
+msgid "Ask your host to update PHP to 8.1 or newer."
+msgstr "Bitten Sie Ihren Hoster, PHP auf 8.1 oder neuer zu aktualisieren."
+
+msgid "Attempts before lockout"
+msgstr "Versuche bis zur Sperrung"
+
+msgid "Attribution line"
+msgstr "Quellenangabe"
+
+msgid "Authenticate outgoing mail"
+msgstr "Ausgehende E-Mails authentifizieren"
+
+msgid "Author and maintainer:"
+msgstr "Autor und Betreuer:"
+
+msgid "Auto (sheet on phone, modal on desktop)"
+msgstr "Automatisch (Sheet am Handy, Modal am Desktop)"
+
+msgid "Automatic cleanup"
+msgstr "Automatische Bereinigung"
+
+msgid "Automatic initialization after <span id=\"sogiay\" style=\"padding: 5px;\">3</span>s"
+msgstr "Automatische Initialisierung nach <span id=\"sogiay\" style=\"padding: 5px;\">3</span>s"
+
+msgid "Automatic name"
+msgstr "Automatischer Name"
+
+msgid "Automatic redirects"
+msgstr "Automatische Weiterleitungen"
+
+msgid "Automatic updates"
+msgstr "Automatische Updates"
+
+msgid "Automatically add a frame when uploading an image"
+msgstr "Beim Hochladen eines Bildes automatisch einen Rahmen hinzufügen"
+
+msgid "Automatically open popup when scrolling down"
+msgstr "Popup beim Herunterscrollen automatisch öffnen"
+
+msgid "Avatar image URL (Avatar / Live-chat skin)"
+msgstr "URL des Avatarbilds (Avatar-/Live-chat-Skin)"
+
+msgid "Away — leave a message"
+msgstr "Abwesend – hinterlassen Sie eine Nachricht"
+
+msgid "BACKUP"
+msgstr "BACKUP"
+
+msgid "BLOCKER"
+msgstr "BLOCKER"
+
+msgid "BROWSE FILE"
+msgstr "DATEI DURCHSUCHEN"
+
+msgid "Background"
+msgstr "Hintergrund"
+
+msgid "Background color"
+msgstr "Hintergrundfarbe"
+
+msgid "Background color of the input form"
+msgstr "Hintergrundfarbe des Eingabeformulars"
+
+msgid "Background title"
+msgstr "Hintergrundtitel"
+
+msgid "Backup"
+msgstr "Backup"
+
+msgid "Badge text (optional)"
+msgstr "Badge-Text (optional)"
+
+msgid "Bar background color"
+msgstr "Hintergrundfarbe der Leiste"
+
+msgid "Bar color"
+msgstr "Farbe der Leiste"
+
+msgid "Bar size"
+msgstr "Größe der Leiste"
+
+msgid "Bento (1 big + cells)"
+msgstr "Bento (1 groß + Zellen)"
+
+msgid "Block login spam with Google reCAPTCHA"
+msgstr "Login-Spam mit Google reCAPTCHA blockieren"
+
+msgid "Block user enumeration"
+msgstr "Benutzeraufzählung blockieren"
+
+msgid "Block user enumeration (?author=N, users REST, oEmbed)"
+msgstr "Benutzeraufzählung blockieren (?author=N, users REST, oEmbed)"
+
+msgid "Blocks ?author=N scans, removes the users REST endpoint for anonymous requests, strips the author from oEmbed, and makes login errors generic so they do not reveal whether the username or the password was wrong."
+msgstr "Blockiert ?author=N-Scans, entfernt den users-REST-Endpunkt für anonyme Anfragen, entfernt den Autor aus oEmbed und macht Anmeldefehler generisch, sodass sie nicht verraten, ob der Benutzername oder das Passwort falsch war."
+
+msgid "Blog / News site"
+msgstr "Blog-/Nachrichtenseite"
+
+msgid "Blue"
+msgstr "Blau"
+
+msgid "Border color"
+msgstr "Rahmenfarbe"
+
+msgid "Border distance"
+msgstr "Rahmenabstand"
+
+msgid "Border radius"
+msgstr "Eckenradius"
+
+msgid "Border size"
+msgstr "Rahmenstärke"
+
+msgid "Bottom sheet"
+msgstr "Bottom-Sheet"
+
+msgid "Browser ad-block notification"
+msgstr "Adblock-Hinweis im Browser"
+
+msgid "Build a rich list of services or articles that slides up when a visitor taps a bottom-bar item. To open it, set one bottom-bar item’s “#id or .class” field above to"
+msgstr "Erstellen Sie eine umfangreiche Liste von Diensten oder Artikeln, die nach oben gleitet, wenn ein Besucher ein Element der unteren Leiste antippt. Um sie zu öffnen, setzen Sie das Feld „#id oder .class“ eines Elements der unteren Leiste oben auf"
+
+msgid "Business hours (shows Online / Away on the Live-chat, Card and Avatar skins)"
+msgstr "Geschäftszeiten (zeigt Online/Abwesend bei den Skins Live-chat, Card und Avatar)"
+
+msgid "Button color"
+msgstr "Schaltflächenfarbe"
+
+msgid "Button name"
+msgstr "Schaltflächenname"
+
+msgid "Button position"
+msgstr "Position der Schaltfläche"
+
+msgid "Button text"
+msgstr "Schaltflächentext"
+
+msgid "Button text color"
+msgstr "Textfarbe der Schaltfläche"
+
+msgid "Buyer"
+msgstr "Käufer"
+
+msgid "CHAT"
+msgstr "CHAT"
+
+msgid "CHECK"
+msgstr "PRÜFEN"
+
+msgid "CLICK"
+msgstr "KLICK"
+
+msgid "COMMENT"
+msgstr "KOMMENTAR"
+
+msgid "CONTENT"
+msgstr "INHALT"
+
+msgid "COOKIE"
+msgstr "COOKIE"
+
+msgid "CSS"
+msgstr "CSS"
+
+msgid "CUSTOM"
+msgstr "BENUTZERDEFINIERT"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Card grid"
+msgstr "Kartenraster"
+
+msgid "Center-align button on page"
+msgstr "Schaltfläche auf der Seite zentrieren"
+
+msgid "Centered modal"
+msgstr "Zentriertes Modal"
+
+msgid "Change WordPress logo in the Admin bar"
+msgstr "WordPress-Logo in der Admin-Leiste ändern"
+
+msgid "Change display name and icon to your preference"
+msgstr "Anzeigenamen und Symbol nach Wunsch ändern"
+
+msgid "Change login link"
+msgstr "Login-Link ändern"
+
+msgid "Change save interval"
+msgstr "Speicherintervall ändern"
+
+msgid "Change the Buy Now text on the single product page"
+msgstr "Text „Jetzt kaufen“ auf der Einzelproduktseite ändern"
+
+msgid "Change the color of the search box to your preferences"
+msgstr "Farbe des Suchfelds nach Wunsch ändern"
+
+msgid "Changed"
+msgstr "Geändert"
+
+msgid "Chat ID"
+msgstr "Chat-ID"
+
+msgid "Chat background color"
+msgstr "Hintergrundfarbe des Chats"
+
+msgid "Chat text color"
+msgstr "Textfarbe des Chats"
+
+msgid "Choose a file"
+msgstr "Datei auswählen"
+
+msgid "Choose a font for the"
+msgstr "Wählen Sie eine Schrift für den"
+
+msgid "Choose decorations for the website, such as Christmas or Lunar New Year (If any effects cause issues on your website, it may be due to javascript conflicts. You can switch to other effects to use)"
+msgstr "Wählen Sie Dekorationen für die Website, etwa zu Weihnachten oder Neujahr (Falls Effekte auf Ihrer Website Probleme verursachen, kann dies an JavaScript-Konflikten liegen. Sie können auf andere Effekte umschalten)"
+
+msgid "Choose display interface according to your preference"
+msgstr "Anzeigeoberfläche nach Wunsch auswählen"
+
+msgid "Classic Editor"
+msgstr "Classic Editor"
+
+msgid "Classic editing"
+msgstr "Klassische Bearbeitung"
+
+msgid "Clean"
+msgstr "Bereinigen"
+
+msgid "Cleaned the screen"
+msgstr "Bildschirm bereinigt"
+
+msgid "Cleanup runs on WordPress cron, which only fires when your site receives traffic. Weekly and monthly are measured from the last run."
+msgstr "Die Bereinigung läuft über den WordPress-Cron, der nur ausgelöst wird, wenn Ihre Website Traffic erhält. Wöchentlich und monatlich werden ab dem letzten Lauf gemessen."
+
+msgid "Clear all"
+msgstr "Alle löschen"
+
+msgid "Clear all automatic redirects"
+msgstr "Alle automatischen Weiterleitungen löschen"
+
+msgid "Clear the whole log"
+msgstr "Gesamtes Protokoll löschen"
+
+msgid "Click here"
+msgstr "Hier klicken"
+
+msgid "Client ID"
+msgstr "Client-ID"
+
+msgid "Client Secret"
+msgstr "Client Secret"
+
+msgid "Close"
+msgstr "Schließen"
+
+msgid "Code orders"
+msgstr "Code-Bestellungen"
+
+msgid "Comment notification"
+msgstr "Kommentarbenachrichtigung"
+
+msgid "Comments containing links"
+msgstr "Kommentare mit Links"
+
+msgid "Compact icon tiles"
+msgstr "Kompakte Symbolkacheln"
+
+msgid "Completed"
+msgstr "Abgeschlossen"
+
+msgid "Compress HTML into a single line"
+msgstr "HTML in eine einzige Zeile komprimieren"
+
+msgid "Compress JPG images upon upload"
+msgstr "JPG-Bilder beim Hochladen komprimieren"
+
+msgid "Compress JPGs and serve WebP"
+msgstr "JPGs komprimieren und WebP ausliefern"
+
+msgid "Compress uploaded JPGs"
+msgstr "Hochgeladene JPGs komprimieren"
+
+msgid "Compression level ("
+msgstr "Komprimierungsstufe ("
+
+msgid "Conditional & content"
+msgstr "Bedingungen & Inhalt"
+
+msgid "Configure Google index API"
+msgstr "Google-Index-API konfigurieren"
+
+msgid "Configure SMTP mail"
+msgstr "SMTP-Mail konfigurieren"
+
+msgid "Configure adding a watermark to images upon upload"
+msgstr "Hinzufügen eines Wasserzeichens beim Hochladen konfigurieren"
+
+msgid "Configure buttons"
+msgstr "Schaltflächen konfigurieren"
+
+msgid "Configure category permalink"
+msgstr "Kategorie-Permalink konfigurieren"
+
+msgid "Configure image upload function"
+msgstr "Bild-Upload-Funktion konfigurieren"
+
+msgid "Configure order notifications to be sent to Telegram"
+msgstr "Bestellbenachrichtigungen für den Versand an Telegram konfigurieren"
+
+msgid "Configure the options and create search data. If you want to refresh, you can delete the search data and recreate it. After enabling quick search and completing data creation, a quick search popup will appear when you enter the search box on the website"
+msgstr "Konfigurieren Sie die Optionen und erstellen Sie die Suchdaten. Zum Aktualisieren können Sie die Suchdaten löschen und neu erstellen. Nach dem Aktivieren der Schnellsuche und dem Abschluss der Datenerstellung erscheint ein Schnellsuche-Popup, sobald Sie das Suchfeld auf der Website anklicken"
+
+msgid "Confirm deletion"
+msgstr "Löschung bestätigen"
+
+msgid "Contact"
+msgstr "Kontakt"
+
+msgid "Contact bar on mobile"
+msgstr "Kontaktleiste auf Mobilgeräten"
+
+msgid "Contact us"
+msgstr "Kontaktieren Sie uns"
+
+msgid "Content"
+msgstr "Inhalt"
+
+msgid "Content to be hidden"
+msgstr "Auszublendender Inhalt"
+
+msgid "Content-Security-Policy (advanced, leave blank if unsure)"
+msgstr "Content-Security-Policy (fortgeschritten, im Zweifel leer lassen)"
+
+msgid "Continue"
+msgstr "Fortfahren"
+
+msgid "Convert JPG and PNG images to AVIF upon upload, and compress the images according to the configuration you enter"
+msgstr "JPG- und PNG-Bilder beim Hochladen in AVIF umwandeln und die Bilder gemäß Ihrer Konfiguration komprimieren"
+
+msgid "Convert JPG and PNG images to WEBP upon upload, and compress the images according to the configuration you enter"
+msgstr "JPG- und PNG-Bilder beim Hochladen in WEBP umwandeln und die Bilder gemäß Ihrer Konfiguration komprimieren"
+
+msgid "Convert JPG and PNG to AVIF"
+msgstr "JPG und PNG in AVIF umwandeln"
+
+msgid "Convert JPG and PNG to WEBP"
+msgstr "JPG und PNG in WEBP umwandeln"
+
+msgid "Convert PNG images to JPG upon upload, and compress the images according to the JPG configuration"
+msgstr "PNG-Bilder beim Hochladen in JPG umwandeln und die Bilder gemäß der JPG-Konfiguration komprimieren"
+
+msgid "Convert PNG to JPG"
+msgstr "PNG in JPG umwandeln"
+
+msgid "Convert Shortcoder tags"
+msgstr "Shortcoder-Tags konvertieren"
+
+msgid "Convert images to AVIF upon upload"
+msgstr "Bilder beim Hochladen in AVIF umwandeln"
+
+msgid "Convert images to WEBP upon upload"
+msgstr "Bilder beim Hochladen in WEBP umwandeln"
+
+msgid "Convert now"
+msgstr "Jetzt konvertieren"
+
+msgid "Convert path from domain.com/tag/news/ to domain.com/news/"
+msgstr "Pfad von domain.com/tag/news/ in domain.com/news/ umwandeln"
+
+msgid "Convert paths from (domain.com/category/news/latest-news, domain.com/category/news) to (domain.com/latest-news, domain.com/news)"
+msgstr "Pfade von (domain.com/category/news/latest-news, domain.com/category/news) in (domain.com/latest-news, domain.com/news) umwandeln"
+
+msgid "Converted %d post(s)."
+msgstr "%d Beitrag/Beiträge konvertiert."
+
+msgid "Cookies"
+msgstr "Cookies"
+
+msgid "Copied"
+msgstr "Kopiert"
+
+msgid "Copied: "
+msgstr "Kopiert: "
+
+msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
+msgstr "Kopieren Sie den untenstehenden Link, um ihn zu den autorisierten Weiterleitungs-URLs in Ihrem Google-Developers-Projekt hinzuzufügen"
+
+msgid "Core, plugins and themes are up to date"
+msgstr "Core, Plugins und Themes sind auf dem aktuellen Stand"
+
+msgid "Corner card"
+msgstr "Eckkarte"
+
+msgid "Could not create the fonts folder in uploads."
+msgstr "Der Schriftenordner konnte in „uploads“ nicht erstellt werden."
+
+msgid "Could not load the icon list."
+msgstr "Die Symbolliste konnte nicht geladen werden."
+
+msgid "Could not read the data."
+msgstr "Die Daten konnten nicht gelesen werden."
+
+msgid "Coupon codes"
+msgstr "Gutscheincodes"
+
+msgid "Create a 301 automatically when a post permalink changes"
+msgstr "Automatisch eine 301 erstellen, wenn sich ein Beitrags-Permalink ändert"
+
+msgid "Create a 301 redirect from this URL"
+msgstr "Eine 301-Weiterleitung von dieser URL erstellen"
+
+msgid "Create a chat feature for users"
+msgstr "Eine Chat-Funktion für Nutzer erstellen"
+
+msgid "Create a named block of HTML/CSS/JS and drop it anywhere with [ht-snippet name=\"your-name\"]. Placeholders {{param}} or %%param%% are filled from the shortcode’s attributes, plus built-ins: currentyear, currentdate, postid, posttitle, sitename, siteurl."
+msgstr "Erstellen Sie einen benannten Block aus HTML/CSS/JS und fügen Sie ihn mit [ht-snippet name=\"your-name\"] überall ein. Platzhalter {{param}} oder %%param%% werden aus den Attributen des Shortcodes befüllt, ergänzt um die integrierten: currentyear, currentdate, postid, posttitle, sitename, siteurl."
+
+msgid "Create an outstanding popup"
+msgstr "Ein herausragendes Popup erstellen"
+
+msgid "Create custom post type data"
+msgstr "Daten für benutzerdefinierten Beitragstyp erstellen"
+
+msgid "Create welcome email for registered users"
+msgstr "Willkommens-E-Mail für registrierte Nutzer erstellen"
+
+msgid "Currently enabled"
+msgstr "Derzeit aktiviert"
+
+msgid "Custom WordPress login page"
+msgstr "Benutzerdefinierte WordPress-Anmeldeseite"
+
+msgid "Custom position in posts"
+msgstr "Benutzerdefinierte Position in Beiträgen"
+
+msgid "Custom posts will be displayed"
+msgstr "Benutzerdefinierte Beiträge werden angezeigt"
+
+msgid "Custom shortcodes (snippets)"
+msgstr "Benutzerdefinierte Shortcodes (Snippets)"
+
+msgid "Customer reviews"
+msgstr "Kundenbewertungen"
+
+msgid "Customize"
+msgstr "Anpassen"
+
+msgid "Customize Currency Unit"
+msgstr "Währungseinheit anpassen"
+
+msgid "Customize TOC display position"
+msgstr "Anzeigeposition des Inhaltsverzeichnisses anpassen"
+
+msgid "Customize background"
+msgstr "Hintergrund anpassen"
+
+msgid "Customize chat button"
+msgstr "Chat-Schaltfläche anpassen"
+
+msgid "Customize dashboard widgets"
+msgstr "Dashboard-Widgets anpassen"
+
+msgid "Customize display"
+msgstr "Anzeige anpassen"
+
+msgid "Customize display and colors"
+msgstr "Anzeige und Farben anpassen"
+
+msgid "Customize elements on the page"
+msgstr "Elemente auf der Seite anpassen"
+
+msgid "Customize icons and positions"
+msgstr "Symbole und Positionen anpassen"
+
+msgid "Customize scroll bar"
+msgstr "Bildlaufleiste anpassen"
+
+msgid "DATABASE"
+msgstr "DATENBANK"
+
+msgid "DATE"
+msgstr "DATUM"
+
+msgid "DEBUG"
+msgstr "DEBUG"
+
+msgid "DEL"
+msgstr "LÖSCHEN"
+
+msgid "DISPLAY"
+msgstr "ANZEIGE"
+
+msgid "Daily"
+msgstr "Täglich"
+
+msgid "Dark"
+msgstr "Dunkel"
+
+msgid "Dark mode"
+msgstr "Dunkelmodus"
+
+msgid "Data"
+msgstr "Daten"
+
+msgid "Data & media"
+msgstr "Daten & Medien"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Debug"
+msgstr "Debug"
+
+msgid "Debug is not enabled"
+msgstr "Debug ist nicht aktiviert"
+
+msgid "Debug log file does not exist"
+msgstr "Die Debug-Protokolldatei existiert nicht"
+
+msgid "Debug settings"
+msgstr "Debug-Einstellungen"
+
+msgid "Declaration already deleted"
+msgstr "Deklaration bereits gelöscht"
+
+msgid "Decorative effects for the website"
+msgstr "Dekorative Effekte für die Website"
+
+msgid "Default style"
+msgstr "Standardstil"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Delete all 404 images"
+msgstr "Alle 404-Bilder löschen"
+
+msgid "Delete all 404 thumbnail images"
+msgstr "Alle 404-Vorschaubilder löschen"
+
+msgid "Delete autosaves"
+msgstr "Automatische Speicherungen löschen"
+
+msgid "Delete comments"
+msgstr "Kommentare löschen"
+
+msgid "Delete cropped image"
+msgstr "Zugeschnittenes Bild löschen"
+
+msgid "Delete data"
+msgstr "Daten löschen"
+
+msgid "Delete revisions"
+msgstr "Revisionen löschen"
+
+msgid "Delete settings:"
+msgstr "Einstellungen löschen:"
+
+msgid "Delete this log entry"
+msgstr "Diesen Protokolleintrag löschen"
+
+msgid "Delete this snippet? Content that uses it will stop rendering."
+msgstr "Dieses Snippet löschen? Inhalte, die es verwenden, werden nicht mehr dargestellt."
+
+msgid "Deleted"
+msgstr "Gelöscht"
+
+msgid "Deleted %1$s of %2$s scanned"
+msgstr "%1$s von %2$s geprüften gelöscht"
+
+msgid "Deleted successfully"
+msgstr "Erfolgreich gelöscht"
+
+msgid "Deleted: %s"
+msgstr "Gelöscht: %s"
+
+msgid "Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action."
+msgstr "Das Löschen von Kommentaren anhand von Linkmustern ist bewusst von der automatischen Bereinigung ausgenommen – es bleibt eine manuelle Aktion."
+
+msgid "Deleting is permanent. Revisions, autosaves and trashed content (posts, pages, products) are removed together with their metadata and attached files."
+msgstr "Das Löschen ist endgültig. Revisionen, automatische Speicherungen und in den Papierkorb verschobene Inhalte (Beiträge, Seiten, Produkte) werden zusammen mit ihren Metadaten und angehängten Dateien entfernt."
+
+msgid "Deletion successful"
+msgstr "Löschung erfolgreich"
+
+msgid "Demo"
+msgstr "Demo"
+
+msgid "Description (for your reference)"
+msgstr "Beschreibung (zu Ihrer Referenz)"
+
+msgid "Desktop only"
+msgstr "Nur Desktop"
+
+msgid "Disable Classic CSS"
+msgstr "Classic CSS deaktivieren"
+
+msgid "Disable Emoji"
+msgstr "Emoji deaktivieren"
+
+msgid "Disable Gutenberg CSS"
+msgstr "Gutenberg-CSS deaktivieren"
+
+msgid "Disable REST API for anonymous visitors"
+msgstr "REST-API für anonyme Besucher deaktivieren"
+
+msgid "Disable WordPress info widget"
+msgstr "WordPress-Info-Widget deaktivieren"
+
+msgid "Disable Wp-Embed"
+msgstr "Wp-Embed deaktivieren"
+
+msgid "Disable X-Pingback"
+msgstr "X-Pingback deaktivieren"
+
+msgid "Disable XML RPC"
+msgstr "XML-RPC deaktivieren"
+
+msgid "Disable XML-RPC, X-Pingback, extra header tags and the version tag"
+msgstr "XML-RPC, X-Pingback, zusätzliche Header-Tags und den Versions-Tag deaktivieren"
+
+msgid "Disable feeds (RSS/Atom)"
+msgstr "Feeds deaktivieren (RSS/Atom)"
+
+msgid "Disable health widget"
+msgstr "Zustands-Widget deaktivieren"
+
+msgid "Disable jQuery Migrate"
+msgstr "jQuery Migrate deaktivieren"
+
+msgid "Disable logo display"
+msgstr "Logo-Anzeige deaktivieren"
+
+msgid "Disable numbers in front of tags"
+msgstr "Zahlen vor Tags deaktivieren"
+
+msgid "Disable quick draft widget"
+msgstr "Widget für Schnellentwürfe deaktivieren"
+
+msgid "Disable recent posts widget"
+msgstr "Widget für aktuelle Beiträge deaktivieren"
+
+msgid "Disable statistics widget"
+msgstr "Statistik-Widget deaktivieren"
+
+msgid "Disable the Admin Bar"
+msgstr "Admin-Leiste deaktivieren"
+
+msgid "Disable the theme & plugin file editor"
+msgstr "Datei-Editor für Themes & Plugins deaktivieren"
+
+msgid "Disable unnecessary items"
+msgstr "Unnötige Elemente deaktivieren"
+
+msgid "Disable unused endpoints"
+msgstr "Ungenutzte Endpunkte deaktivieren"
+
+msgid "Disable unused widgets"
+msgstr "Ungenutzte Widgets deaktivieren"
+
+msgid "Disable welcome widget"
+msgstr "Willkommens-Widget deaktivieren"
+
+msgid "Disabled TOC"
+msgstr "Inhaltsverzeichnis deaktiviert"
+
+msgid "Discard"
+msgstr "Verwerfen"
+
+msgid "Display ID in the management page"
+msgstr "ID auf der Verwaltungsseite anzeigen"
+
+msgid "Display language settings"
+msgstr "Anzeigesprache-Einstellungen"
+
+msgid "Display link when seconds expire"
+msgstr "Link anzeigen, wenn die Sekunden abgelaufen sind"
+
+msgid "Display name (shown in the list)"
+msgstr "Anzeigename (in der Liste sichtbar)"
+
+msgid "Display on the WooCommerce login form"
+msgstr "Im WooCommerce-Anmeldeformular anzeigen"
+
+msgid "Display on the default login form"
+msgstr "Im Standard-Anmeldeformular anzeigen"
+
+msgid "Display options"
+msgstr "Anzeigeoptionen"
+
+msgid "Display text color"
+msgstr "Textfarbe der Anzeige"
+
+msgid "Display text if out of stock"
+msgstr "Text anzeigen, wenn nicht vorrätig"
+
+msgid "Display text if the price is 0"
+msgstr "Text anzeigen, wenn der Preis 0 ist"
+
+msgid "Display type"
+msgstr "Anzeigetyp"
+
+msgid "Display your cookie notice to inform users about cookie use and allow them to manage their preferences easily"
+msgstr "Zeigen Sie Ihren Cookie-Hinweis an, um Nutzer über die Cookie-Nutzung zu informieren und ihnen die einfache Verwaltung ihrer Einstellungen zu ermöglichen"
+
+msgid "Distance above"
+msgstr "Abstand nach oben"
+
+msgid "Do not auto-install core updates"
+msgstr "Core-Updates nicht automatisch installieren"
+
+msgid "Do not auto-install language pack updates"
+msgstr "Sprachpaket-Updates nicht automatisch installieren"
+
+msgid "Do not auto-install plugin updates"
+msgstr "Plugin-Updates nicht automatisch installieren"
+
+msgid "Do not auto-install theme updates"
+msgstr "Theme-Updates nicht automatisch installieren"
+
+msgid "Do not enable if you are using optimization plugins with similar functionality (conflict)"
+msgstr "Nicht aktivieren, wenn Sie Optimierungs-Plugins mit ähnlicher Funktion verwenden (Konflikt)"
+
+msgid "Do not select"
+msgstr "Nicht auswählen"
+
+msgid "Do you want to delete?"
+msgstr "Möchten Sie löschen?"
+
+msgid "Does not exist"
+msgstr "Existiert nicht"
+
+msgid "Download"
+msgstr "Herunterladen"
+
+msgid "Download & self-host Google Fonts"
+msgstr "Google Fonts herunterladen & selbst hosten"
+
+msgid "Download .json"
+msgstr ".json herunterladen"
+
+msgid "Download button GGET shortcode"
+msgstr "GGET-Shortcode für Download-Schaltfläche"
+
+msgid "Download link"
+msgstr "Download-Link"
+
+msgid "Downloading fonts…"
+msgstr "Schriften werden heruntergeladen…"
+
+msgid "Drop Emoji and jQuery Migrate"
+msgstr "Emoji und jQuery Migrate entfernen"
+
+msgid "Duplicate"
+msgstr "Duplizieren"
+
+msgid "Duplicate content"
+msgstr "Doppelter Inhalt"
+
+msgid "Duplicate post, page, custom post type"
+msgstr "Beitrag, Seite, benutzerdefinierten Beitragstyp duplizieren"
+
+msgid "Edit"
+msgstr "Bearbeiten"
+
+msgid "Editor classic"
+msgstr "Classic Editor"
+
+msgid "Effect"
+msgstr "Effekt"
+
+msgid "Email"
+msgstr "E-Mail"
+
+msgid "Email me when an address is locked out"
+msgstr "Mir eine E-Mail senden, wenn eine Adresse gesperrt wird"
+
+msgid "Email notification when a post has a comment"
+msgstr "E-Mail-Benachrichtigung, wenn ein Beitrag einen Kommentar erhält"
+
+msgid "Email notification when there a reply"
+msgstr "E-Mail-Benachrichtigung bei einer Antwort"
+
+msgid "Email sent successfully"
+msgstr "E-Mail erfolgreich gesendet"
+
+msgid "Email subject"
+msgstr "E-Mail-Betreff"
+
+msgid "Empty"
+msgstr "Leeren"
+
+msgid "Empty trash"
+msgstr "Papierkorb leeren"
+
+msgid "Enable"
+msgstr "Aktivieren"
+
+msgid "Enable .html for page"
+msgstr ".html für Seiten aktivieren"
+
+msgid "Enable 301 redirection"
+msgstr "301-Weiterleitung aktivieren"
+
+msgid "Enable 404 redirection"
+msgstr "404-Weiterleitung aktivieren"
+
+msgid "Enable 503 maintenance mode"
+msgstr "503-Wartungsmodus aktivieren"
+
+msgid "Enable AVIF image compression"
+msgstr "AVIF-Bildkomprimierung aktivieren"
+
+msgid "Enable Adsense"
+msgstr "AdSense aktivieren"
+
+msgid "Enable Classic Editor"
+msgstr "Classic Editor aktivieren"
+
+msgid "Enable Classic Editor in category description"
+msgstr "Classic Editor in der Kategoriebeschreibung aktivieren"
+
+msgid "Enable Classic Widget"
+msgstr "Classic Widget aktivieren"
+
+msgid "Enable GGET shortcode"
+msgstr "GGET-Shortcode aktivieren"
+
+msgid "Enable HTML compression"
+msgstr "HTML-Komprimierung aktivieren"
+
+msgid "Enable Instant-page"
+msgstr "Instant-page aktivieren"
+
+msgid "Enable JPG image compression"
+msgstr "JPG-Bildkomprimierung aktivieren"
+
+msgid "Enable SMTP mail"
+msgstr "SMTP-Mail aktivieren"
+
+msgid "Enable SMTP mail to allow SMTP mail to function and send emails when you perform a test"
+msgstr "Aktivieren Sie SMTP-Mail, damit SMTP-Mail funktioniert und beim Durchführen eines Tests E-Mails versendet werden"
+
+msgid "Enable Smooth-scroll"
+msgstr "Smooth-scroll aktivieren"
+
+msgid "Enable WEBP image compression"
+msgstr "WEBP-Bildkomprimierung aktivieren"
+
+msgid "Enable WP_DEBUG"
+msgstr "WP_DEBUG aktivieren"
+
+msgid "Enable WP_DEBUG_DISPLAY"
+msgstr "WP_DEBUG_DISPLAY aktivieren"
+
+msgid "Enable WP_DEBUG_LOG"
+msgstr "WP_DEBUG_LOG aktivieren"
+
+msgid "Enable ad-block detection"
+msgstr "Adblock-Erkennung aktivieren"
+
+msgid "Enable ads.txt"
+msgstr "ads.txt aktivieren"
+
+msgid "Enable advanced image viewing"
+msgstr "Erweiterte Bildansicht aktivieren"
+
+msgid "Enable and add the category IDs you want to hide from the main loop displaying posts on the homepage, for example: 1, 2, 3"
+msgstr "Aktivieren Sie die Funktion und fügen Sie die Kategorie-IDs hinzu, die Sie aus dem Hauptloop der Beitragsanzeige auf der Startseite ausblenden möchten, zum Beispiel: 1, 2, 3"
+
+msgid "Enable and configure the functions below to enable Google sign-in to work"
+msgstr "Aktivieren und konfigurieren Sie die folgenden Funktionen, damit die Google-Anmeldung funktioniert"
+
+msgid "Enable chat button"
+msgstr "Chat-Schaltfläche aktivieren"
+
+msgid "Enable color and display customization"
+msgstr "Anpassung von Farbe und Anzeige aktivieren"
+
+msgid "Enable contact bar"
+msgstr "Kontaktleiste aktivieren"
+
+msgid "Enable cookie"
+msgstr "Cookie aktivieren"
+
+msgid "Enable custom footer"
+msgstr "Benutzerdefinierten Footer aktivieren"
+
+msgid "Enable custom functionality"
+msgstr "Benutzerdefinierte Funktion aktivieren"
+
+msgid "Enable custom widget"
+msgstr "Benutzerdefiniertes Widget aktivieren"
+
+msgid "Enable customization"
+msgstr "Anpassung aktivieren"
+
+msgid "Enable dark mode"
+msgstr "Dunkelmodus aktivieren"
+
+msgid "Enable date shortcode"
+msgstr "Datum-Shortcode aktivieren"
+
+msgid "Enable deleting posts to also delete images"
+msgstr "Beim Löschen von Beiträgen auch Bilder löschen aktivieren"
+
+msgid "Enable element customization"
+msgstr "Elementanpassung aktivieren"
+
+msgid "Enable email sending"
+msgstr "E-Mail-Versand aktivieren"
+
+msgid "Enable font Awesome"
+msgstr "Font Awesome aktivieren"
+
+msgid "Enable for use"
+msgstr "Zur Nutzung aktivieren"
+
+msgid "Enable if you want to hide categories"
+msgstr "Aktivieren, wenn Sie Kategorien ausblenden möchten"
+
+msgid "Enable image lazy loading"
+msgstr "Lazy Loading für Bilder aktivieren"
+
+msgid "Enable image size limitation"
+msgstr "Bildgrößenbeschränkung aktivieren"
+
+msgid "Enable logo customization"
+msgstr "Logo-Anpassung aktivieren"
+
+msgid "Enable notification"
+msgstr "Benachrichtigung aktivieren"
+
+msgid "Enable notifications"
+msgstr "Benachrichtigungen aktivieren"
+
+msgid "Enable picture frame"
+msgstr "Bilderrahmen aktivieren"
+
+msgid "Enable popup"
+msgstr "Popup aktivieren"
+
+msgid "Enable quick search"
+msgstr "Schnellsuche aktivieren"
+
+msgid "Enable revision limit"
+msgstr "Revisionslimit aktivieren"
+
+msgid "Enable shortcode lock"
+msgstr "Shortcode-Sperre aktivieren"
+
+msgid "Enable shortcodes"
+msgstr "Shortcodes aktivieren"
+
+msgid "Enable signature shortcode"
+msgstr "Signatur-Shortcode aktivieren"
+
+msgid "Enable site-wide 301 redirects"
+msgstr "Websiteweite 301-Weiterleitungen aktivieren"
+
+msgid "Enable table of contents"
+msgstr "Inhaltsverzeichnis aktivieren"
+
+msgid "Enable the [ht-icon] shortcode"
+msgstr "Den [ht-icon]-Shortcode aktivieren"
+
+msgid "Enable the contact bar and configure the content below for use"
+msgstr "Aktivieren Sie die Kontaktleiste und konfigurieren Sie den untenstehenden Inhalt zur Nutzung"
+
+msgid "Enable the picture frame"
+msgstr "Den Bilderrahmen aktivieren"
+
+msgid "Enable the services panel"
+msgstr "Das Dienste-Panel aktivieren"
+
+msgid "Enable this feature and enter the login link suffix"
+msgstr "Aktivieren Sie diese Funktion und geben Sie das Suffix für den Login-Link ein"
+
+msgid "Enable this feature if you want JFIF format images to be uploaded to the media. The uploaded images will be converted to JPG or WEBP format according to the configuration"
+msgstr "Aktivieren Sie diese Funktion, wenn Bilder im JFIF-Format in die Mediathek hochgeladen werden sollen. Die hochgeladenen Bilder werden gemäß der Konfiguration in das JPG- oder WEBP-Format umgewandelt"
+
+msgid "Enable this feature if you want SVG images to be uploaded to the media"
+msgstr "Aktivieren Sie diese Funktion, wenn SVG-Bilder in die Mediathek hochgeladen werden sollen"
+
+msgid "Enable this feature if you want images in posts copied from another source to be stored on your website"
+msgstr "Aktivieren Sie diese Funktion, wenn Bilder in Beiträgen, die aus einer anderen Quelle kopiert wurden, auf Ihrer Website gespeichert werden sollen"
+
+msgid "Enable this feature if you want the first image in the post to become the featured image if the featured image field is empty. Additionally, you can select a default featured image in case both the featured image and the images in the post are empty"
+msgstr "Aktivieren Sie diese Funktion, wenn das erste Bild im Beitrag zum Beitragsbild werden soll, falls das Beitragsbildfeld leer ist. Zusätzlich können Sie ein Standard-Beitragsbild auswählen, falls sowohl das Beitragsbild als auch die Bilder im Beitrag fehlen"
+
+msgid "Enable this feature if you want the original image size to be selected by default whenever adding images to the post"
+msgstr "Aktivieren Sie diese Funktion, wenn beim Hinzufügen von Bildern zum Beitrag standardmäßig die Originalbildgröße ausgewählt werden soll"
+
+msgid "Enable this feature if you want to add additional functionalities to the Classic Editor to enhance professional editing"
+msgstr "Aktivieren Sie diese Funktion, wenn Sie dem Classic Editor zusätzliche Funktionen für professionelleres Bearbeiten hinzufügen möchten"
+
+msgid "Enable this feature if you want to add the Classic Editor button in the post and page management interface. With this feature, you dont need to set the Classic Editor as default but can use it in parallel"
+msgstr "Aktivieren Sie diese Funktion, wenn Sie die Classic-Editor-Schaltfläche in der Beitrags- und Seitenverwaltung hinzufügen möchten. Damit müssen Sie den Classic Editor nicht als Standard festlegen, sondern können ihn parallel nutzen"
+
+msgid "Enable this feature if you want to customize the footer in the WP admin"
+msgstr "Aktivieren Sie diese Funktion, wenn Sie den Footer im WP-Adminbereich anpassen möchten"
+
+msgid "Enable this feature to be able to use the customizations below"
+msgstr "Aktivieren Sie diese Funktion, um die untenstehenden Anpassungen nutzen zu können"
+
+msgid "Enable to display the Google login button on the WooCommerce login form"
+msgstr "Aktivieren, um die Google-Login-Schaltfläche im WooCommerce-Anmeldeformular anzuzeigen"
+
+msgid "Enable to display the Google login button on the default WordPress login form"
+msgstr "Aktivieren, um die Google-Login-Schaltfläche im Standard-WordPress-Anmeldeformular anzuzeigen"
+
+msgid "Enable to use"
+msgstr "Zur Nutzung aktivieren"
+
+msgid "Enable upload size limit"
+msgstr "Upload-Größenlimit aktivieren"
+
+msgid "Enable watermarks"
+msgstr "Wasserzeichen aktivieren"
+
+msgid "Enabled"
+msgstr "Aktiviert"
+
+msgid "Enabled TOC"
+msgstr "Inhaltsverzeichnis aktiviert"
+
+msgid "Enhance features for Classic Editor"
+msgstr "Funktionen für den Classic Editor erweitern"
+
+msgid "Enter Adsense code here"
+msgstr "AdSense-Code hier eingeben"
+
+msgid "Enter CSS here"
+msgstr "CSS hier eingeben"
+
+msgid "Enter ID"
+msgstr "ID eingeben"
+
+msgid "Enter a shortcode name to search for."
+msgstr "Geben Sie einen Shortcode-Namen zum Suchen ein."
+
+msgid "Enter a suffix"
+msgstr "Ein Suffix eingeben"
+
+msgid "Enter a title"
+msgstr "Einen Titel eingeben"
+
+msgid "Enter button name"
+msgstr "Schaltflächenname eingeben"
+
+msgid "Enter code here"
+msgstr "Code hier eingeben"
+
+msgid "Enter content"
+msgstr "Inhalt eingeben"
+
+msgid "Enter content here"
+msgstr "Inhalt hier eingeben"
+
+msgid "Enter cookie content"
+msgstr "Cookie-Inhalt eingeben"
+
+msgid "Enter cookie title"
+msgstr "Cookie-Titel eingeben"
+
+msgid "Enter email"
+msgstr "E-Mail eingeben"
+
+msgid "Enter email content here"
+msgstr "E-Mail-Inhalt hier eingeben"
+
+msgid "Enter image link"
+msgstr "Bild-Link eingeben"
+
+msgid "Enter json"
+msgstr "JSON eingeben"
+
+msgid "Enter keywords to search"
+msgstr "Suchbegriffe eingeben"
+
+msgid "Enter link"
+msgstr "Link eingeben"
+
+msgid "Enter manually"
+msgstr "Manuell eingeben"
+
+msgid "Enter name"
+msgstr "Name eingeben"
+
+msgid "Enter note content"
+msgstr "Notizinhalt eingeben"
+
+msgid "Enter the SVG icon"
+msgstr "Das SVG-Symbol eingeben"
+
+msgid "Enter the content you want to display and configure the customizations above so the popup can appear when users visit your website"
+msgstr "Geben Sie den anzuzeigenden Inhalt ein und konfigurieren Sie die obigen Anpassungen, damit das Popup erscheint, wenn Nutzer Ihre Website besuchen"
+
+msgid "Enter the content you want to display in the notification, and customize the colors to match your preferences. A notification will appear at the top of your website, making it easy for users to see"
+msgstr "Geben Sie den in der Benachrichtigung anzuzeigenden Inhalt ein und passen Sie die Farben nach Wunsch an. Eine Benachrichtigung erscheint oben auf Ihrer Website, sodass Nutzer sie leicht sehen können"
+
+msgid "Enter the link"
+msgstr "Den Link eingeben"
+
+msgid "Enter the number of posts or products to be displayed when searching"
+msgstr "Geben Sie die Anzahl der bei der Suche anzuzeigenden Beiträge oder Produkte ein"
+
+msgid "Enter the number of revisions"
+msgstr "Geben Sie die Anzahl der Revisionen ein"
+
+msgid "Enter the policy page link"
+msgstr "Link zur Richtlinienseite eingeben"
+
+msgid "Enter the tag and tag number for the ad to appear"
+msgstr "Geben Sie den Tag und die Tag-Nummer ein, an der die Anzeige erscheinen soll"
+
+msgid "Enter the title and content you want to display when ad-blocker is detected"
+msgstr "Geben Sie den Titel und Inhalt ein, die angezeigt werden sollen, wenn ein Adblocker erkannt wird"
+
+msgid "Enter the url"
+msgstr "Die URL eingeben"
+
+msgid "Enter title"
+msgstr "Titel eingeben"
+
+msgid "Enter units"
+msgstr "Einheiten eingeben"
+
+msgid "Enter waiting time"
+msgstr "Wartezeit eingeben"
+
+msgid "Environment"
+msgstr "Umgebung"
+
+msgid "Error"
+msgstr "Fehler"
+
+msgid "Error cannot be cleaned"
+msgstr "Fehler kann nicht bereinigt werden"
+
+msgid "Error — nothing was deleted."
+msgstr "Fehler – es wurde nichts gelöscht."
+
+msgid "Every Horse Tools shortcode. Click any example to copy it."
+msgstr "Jeder Horse Tools-Shortcode. Klicken Sie auf ein Beispiel, um es zu kopieren."
+
+msgid "Everyone"
+msgstr "Alle"
+
+msgid "Example: domain.com/wp-admin where wp-admin is the suffix"
+msgstr "Beispiel: domain.com/wp-admin, wobei wp-admin das Suffix ist"
+
+msgid "Export"
+msgstr "Exportieren"
+
+msgid "Export downloads all your snippets as a .json file. Import merges a file from another site — existing snippets of the same name are kept, not overwritten."
+msgstr "Der Export lädt alle Ihre Snippets als .json-Datei herunter. Der Import führt eine Datei von einer anderen Website zusammen – bestehende Snippets mit demselben Namen bleiben erhalten und werden nicht überschrieben."
+
+msgid "Export snippets (.json)"
+msgstr "Snippets exportieren (.json)"
+
+msgid "Exported."
+msgstr "Exportiert."
+
+msgid "Extend"
+msgstr "Erweitern"
+
+msgid "External"
+msgstr "Extern"
+
+msgid "Extras"
+msgstr "Extras"
+
+msgid "FREE"
+msgstr "KOSTENLOS"
+
+msgid "Failed to delete the file"
+msgstr "Die Datei konnte nicht gelöscht werden"
+
+msgid "Failed to load debug log"
+msgstr "Das Debug-Protokoll konnte nicht geladen werden"
+
+msgid "Failed to update setting:"
+msgstr "Einstellung konnte nicht aktualisiert werden:"
+
+msgid "Featured banner + grid"
+msgstr "Hervorgehobenes Banner + Raster"
+
+msgid "Feeds are not available on this site. %s"
+msgstr "Feeds sind auf dieser Website nicht verfügbar. %s"
+
+msgid "Feeds disabled"
+msgstr "Feeds deaktiviert"
+
+msgid "Field"
+msgstr "Feld"
+
+msgid "Filter by tag"
+msgstr "Nach Tag filtern"
+
+msgid "Filter posts and images"
+msgstr "Beiträge und Bilder filtern"
+
+msgid "Find and delete all 404 images in media"
+msgstr "Alle 404-Bilder in der Mediathek finden und löschen"
+
+msgid "Find and delete all 404 thumbnail images in media"
+msgstr "Alle 404-Vorschaubilder in der Mediathek finden und löschen"
+
+msgid "Find usage"
+msgstr "Verwendung finden"
+
+msgid "Find where a shortcode is used"
+msgstr "Finden, wo ein Shortcode verwendet wird"
+
+msgid "Flip photo"
+msgstr "Foto spiegeln"
+
+msgid "Font"
+msgstr "Schrift"
+
+msgid "Font does not exist"
+msgstr "Schrift existiert nicht"
+
+msgid "Font size"
+msgstr "Schriftgröße"
+
+msgid "For an Nginx server, if the ads.txt file already exists in the root directory of the website, it will prioritize the static file, so this function will not work. If you want to use it, you can either configure Nginx or delete the static file before proceeding"
+msgstr "Wenn bei einem Nginx-Server die Datei ads.txt bereits im Stammverzeichnis der Website vorhanden ist, wird die statische Datei bevorzugt, sodass diese Funktion nicht wirkt. Wenn Sie sie nutzen möchten, konfigurieren Sie entweder Nginx oder löschen Sie die statische Datei, bevor Sie fortfahren"
+
+msgid "Forced ad clicks — removed"
+msgstr "Erzwungene Anzeigenklicks – entfernt"
+
+msgid "Found in %d item(s):"
+msgstr "Gefunden in %d Element(en):"
+
+msgid "Foxtool by Fox Theme (Nguyễn Ngọc Hoàn)"
+msgstr "Foxtool von Fox Theme (Nguyễn Ngọc Hoàn)"
+
+msgid "Free"
+msgstr "Kostenlos"
+
+msgid "Free to use the \"solid\" and \"brands\" styles"
+msgstr "Die Stile \"solid\" und \"brands\" sind kostenlos nutzbar"
+
+msgid "Free!"
+msgstr "Kostenlos!"
+
+msgid "Fri"
+msgstr "Fr"
+
+msgid "From"
+msgstr "Von"
+
+msgid "Full screen"
+msgstr "Vollbild"
+
+msgid "GD Library does not support AVIF images"
+msgstr "Die GD-Bibliothek unterstützt keine AVIF-Bilder"
+
+msgid "GD Library is not installed"
+msgstr "Die GD-Bibliothek ist nicht installiert"
+
+msgid "GGET"
+msgstr "GGET"
+
+msgid "GOOGLE"
+msgstr "GOOGLE"
+
+msgid "Generate data"
+msgstr "Daten generieren"
+
+msgid "Give the snippet a name (letters, numbers and dashes)."
+msgstr "Geben Sie dem Snippet einen Namen (Buchstaben, Zahlen und Bindestriche)."
+
+msgid "Go to the home page"
+msgstr "Zur Startseite"
+
+msgid "Gold"
+msgstr "Gold"
+
+msgid "Google Fonts detected — click “Download & self-host” to serve them locally."
+msgstr "Google Fonts erkannt – klicken Sie auf „Herunterladen & selbst hosten“, um sie lokal auszuliefern."
+
+msgid "Google did not return the stylesheet (HTTP error)."
+msgstr "Google hat das Stylesheet nicht zurückgegeben (HTTP-Fehler)."
+
+msgid "Grade %s"
+msgstr "Note %s"
+
+msgid "Green"
+msgstr "Grün"
+
+msgid "Greeting bubble text (e.g. Hi! Need help?)"
+msgstr "Text der Begrüßungsblase (z. B. Hallo! Brauchen Sie Hilfe?)"
+
+msgid "Greeting message (Live-chat skin)"
+msgstr "Begrüßungsnachricht (Live-chat-Skin)"
+
+msgid "H tag color when scrolled to"
+msgstr "Farbe des H-Tags beim Hinscrollen"
+
+msgid "HORSE SEARCH"
+msgstr "HORSE SEARCH"
+
+msgid "HSTS (force HTTPS for 180 days)"
+msgstr "HSTS (HTTPS für 180 Tage erzwingen)"
+
+msgid "HTML compression: minify inline JS, strip comments"
+msgstr "HTML-Komprimierung: Inline-JS minimieren, Kommentare entfernen"
+
+msgid "HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>"
+msgstr "HTML, CSS oder JS…  z. B. <a href=&quot;{{url}}&quot;>{{label}}</a>"
+
+msgid "Hello"
+msgstr "Hallo"
+
+msgid "Hello %s. A new comment has been posted on your article \"%s\". You can view the comment here: %s"
+msgstr "Hallo %s. Zu Ihrem Artikel \"%s\" wurde ein neuer Kommentar veröffentlicht. Sie können den Kommentar hier ansehen: %s"
+
+msgid "Hi 👋 How can we help you?"
+msgstr "Hallo 👋 Wie können wir Ihnen helfen?"
+
+msgid "Hide Admin account from profile page"
+msgstr "Administratorkonto von der Profilseite ausblenden"
+
+msgid "Hide Horse Tools"
+msgstr "Horse Tools ausblenden"
+
+msgid "Hide back link"
+msgstr "Zurück-Link ausblenden"
+
+msgid "Hide bar when pulled down"
+msgstr "Leiste beim Herunterziehen ausblenden"
+
+msgid "Hide chat button when scrolling down"
+msgstr "Chat-Schaltfläche beim Herunterscrollen ausblenden"
+
+msgid "Hide from administrators"
+msgstr "Vor Administratoren ausblenden"
+
+msgid "Hide language options"
+msgstr "Sprachoptionen ausblenden"
+
+msgid "Hide minimized list"
+msgstr "Minimierte Liste ausblenden"
+
+msgid "Hide plugins from the manager"
+msgstr "Plugins in der Verwaltung ausblenden"
+
+msgid "Hide post categories from homepage"
+msgstr "Beitragskategorien auf der Startseite ausblenden"
+
+msgid "Hide the tools you want"
+msgstr "Die gewünschten Tools ausblenden"
+
+msgid "Hide the update & maintenance notice"
+msgstr "Update- & Wartungshinweis ausblenden"
+
+msgid "Hide this URL from the log"
+msgstr "Diese URL im Protokoll ausblenden"
+
+msgid "Hide usernames from scanners"
+msgstr "Benutzernamen vor Scannern verbergen"
+
+msgid "Hits"
+msgstr "Aufrufe"
+
+msgid "Horse Search"
+msgstr "Horse Search"
+
+msgid "Horse Tools"
+msgstr "Horse Tools"
+
+msgid "Horse Tools is built on %s, which is no longer maintained by its author. That original work is gratefully acknowledged and this fork continues under the same GPLv2 licence."
+msgstr "Horse Tools basiert auf %s, das von seinem Autor nicht mehr gepflegt wird. Diese ursprüngliche Arbeit wird dankbar anerkannt, und dieser Fork wird unter derselben GPLv2-Lizenz fortgeführt."
+
+msgid "Horse Tools shortcode"
+msgstr "Horse Tools-Shortcode"
+
+msgid "Horse Tools:"
+msgstr "Horse Tools:"
+
+msgid "Host"
+msgstr "Host"
+
+msgid "Hours"
+msgstr "Stunden"
+
+msgid "How to use"
+msgstr "Anwendung"
+
+msgid "I understand this permanently deletes data."
+msgstr "Ich verstehe, dass hierdurch Daten endgültig gelöscht werden."
+
+msgid "ICON"
+msgstr "SYMBOL"
+
+msgid "INDEX"
+msgstr "INDEX"
+
+msgid "Icon"
+msgstr "Symbol"
+
+msgid "Icon (e.g. apps)"
+msgstr "Symbol (z. B. apps)"
+
+msgid "Icon background color"
+msgstr "Hintergrundfarbe des Symbols"
+
+msgid "Icon border color"
+msgstr "Rahmenfarbe des Symbols"
+
+msgid "Icon border radius"
+msgstr "Eckenradius des Symbols"
+
+msgid "Icon color"
+msgstr "Symbolfarbe"
+
+msgid "Icon picker"
+msgstr "Symbolauswahl"
+
+msgid "If someone replies to a comment, there will be an email notification sent to the commenter"
+msgstr "Wenn jemand auf einen Kommentar antwortet, wird eine E-Mail-Benachrichtigung an den Kommentierenden gesendet"
+
+msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
+msgstr "Wenn der Secret Key leer ist, wird die Prüfung vollständig übersprungen, anstatt jede Anmeldung abzulehnen."
+
+msgid "If you dont want to automatically switch the language based on WordPress context, please select the language you prefer"
+msgstr "Wenn Sie die Sprache nicht automatisch anhand des WordPress-Kontexts umschalten möchten, wählen Sie bitte die von Ihnen bevorzugte Sprache"
+
+msgid "If you enable this feature and set automatic revision limit and automatic save time for posts or pages, it will reduce the amount of data stored in the database"
+msgstr "Wenn Sie diese Funktion aktivieren und ein automatisches Revisionslimit sowie eine automatische Speicherzeit für Beiträge oder Seiten festlegen, verringert sich die in der Datenbank gespeicherte Datenmenge"
+
+msgid "If you enable this feature, your Pages will have .html appended to them, for example: domain.com/page.html"
+msgstr "Wenn Sie diese Funktion aktivieren, wird an Ihre Seiten .html angehängt, zum Beispiel: domain.com/page.html"
+
+msgid "If you find the Admin Bar distracting every time you view the website, you can turn it off (there is an option for you to turn off all or only turn off for users)"
+msgstr "Wenn Sie die Admin-Leiste beim Betrachten der Website als störend empfinden, können Sie sie deaktivieren (es gibt eine Option, um sie ganz oder nur für Benutzer zu deaktivieren)"
+
+msgid "If you find the new Widget Manager too difficult to use, then revert it to the Classic Widget version"
+msgstr "Wenn Ihnen der neue Widget-Manager zu kompliziert ist, kehren Sie zur Classic-Widget-Version zurück"
+
+msgid "If you find the new editor too difficult to use, then revert it to the Classic Editor version"
+msgstr "Wenn Ihnen der neue Editor zu kompliziert ist, kehren Sie zur Classic-Editor-Version zurück"
+
+msgid "If you find the tools above unnecessary, you can hide them to make the WP admin interface cleaner. This function only hides them without blocking access to their links"
+msgstr "Wenn Sie die obigen Tools für unnötig halten, können Sie sie ausblenden, um die WP-Admin-Oberfläche aufgeräumter zu gestalten. Diese Funktion blendet sie nur aus, ohne den Zugriff über ihre Links zu blockieren"
+
+msgid "If you had it enabled it is now inactive. The AdSense and ads.txt tools on the other tabs are unaffected."
+msgstr "Falls Sie es aktiviert hatten, ist es nun inaktiv. Die AdSense- und ads.txt-Tools in den anderen Tabs sind davon nicht betroffen."
+
+msgid "If you have members and do not want them to upload images with excessively large sizes, causing storage space usage, you can limit the maximum size allowed for upload"
+msgstr "Wenn Sie Mitglieder haben und nicht möchten, dass diese übermäßig große Bilder hochladen und dadurch Speicherplatz belegen, können Sie die maximal zulässige Upload-Größe begrenzen"
+
+msgid "If you need to monitor WordPress debug files without accessing the file manager, this tool is made just for that purpose"
+msgstr "Wenn Sie WordPress-Debug-Dateien überwachen müssen, ohne auf den Dateimanager zuzugreifen, ist dieses Tool genau dafür gemacht"
+
+msgid "If you not using it, you can disable Classic CSS on the homepage"
+msgstr "Wenn Sie es nicht verwenden, können Sie Classic CSS auf der Startseite deaktivieren"
+
+msgid "If you not using it, you can disable Emoji"
+msgstr "Wenn Sie es nicht verwenden, können Sie Emoji deaktivieren"
+
+msgid "If you not using it, you can disable Gutenberg CSS on the homepage"
+msgstr "Wenn Sie es nicht verwenden, können Sie Gutenberg-CSS auf der Startseite deaktivieren"
+
+msgid "If you receive this email, then the SMTP email sending function is working well"
+msgstr "Wenn Sie diese E-Mail erhalten, funktioniert der SMTP-E-Mail-Versand einwandfrei"
+
+msgid "If you want to display your signature anywhere, you can create content above and then use the generated shortcode at your desired location"
+msgstr "Wenn Sie Ihre Signatur irgendwo anzeigen möchten, können Sie oben Inhalt erstellen und dann den generierten Shortcode an der gewünschten Stelle verwenden"
+
+msgid "If you want to enable the feature to duplicate posts, pages, or custom post types, please activate this function"
+msgstr "Wenn Sie die Funktion zum Duplizieren von Beiträgen, Seiten oder benutzerdefinierten Beitragstypen aktivieren möchten, schalten Sie diese Funktion bitte ein"
+
+msgid "If you want to export or import the settings of the Horse Tools plugin, enable this feature. It allows you to easily transfer configurations from this site to another"
+msgstr "Wenn Sie die Einstellungen des Horse Tools-Plugins exportieren oder importieren möchten, aktivieren Sie diese Funktion. Damit können Sie Konfigurationen einfach von dieser Website auf eine andere übertragen"
+
+msgid "If you want to hide a specific Administrator account, select the user"
+msgstr "Wenn Sie ein bestimmtes Administratorkonto ausblenden möchten, wählen Sie den Benutzer aus"
+
+msgid "If you want to lazy load images every time the page loads, then turn it on. This function helps your website load faster"
+msgstr "Wenn Sie bei jedem Seitenladen Bilder verzögert laden möchten, aktivieren Sie es. Diese Funktion lässt Ihre Website schneller laden"
+
+msgid "If you want to use font Awesome, you can enable it (it an icon font). You can search for icons at:"
+msgstr "Wenn Sie Font Awesome verwenden möchten, können Sie es aktivieren (es ist eine Symbolschrift). Sie können Symbole hier suchen:"
+
+msgid "If you want your uploaded images to be watermarked, please use this function and configure it above. Watermark (PNG, JPG)"
+msgstr "Wenn Ihre hochgeladenen Bilder mit einem Wasserzeichen versehen werden sollen, nutzen Sie bitte diese Funktion und konfigurieren Sie sie oben. Wasserzeichen (PNG, JPG)"
+
+msgid "If youre tired of WordPress default search tool because its too slow, try out our lightning-fast search feature to give your users an exceptional and speedy search experience"
+msgstr "Wenn Sie das Standard-Suchwerkzeug von WordPress leid sind, weil es zu langsam ist, probieren Sie unsere blitzschnelle Suchfunktion aus, um Ihren Nutzern ein herausragendes und schnelles Sucherlebnis zu bieten"
+
+msgid "Ignore"
+msgstr "Ignorieren"
+
+msgid "Ignore 8-bit png"
+msgstr "8-Bit-PNG ignorieren"
+
+msgid "Image URL (optional, replaces the icon)"
+msgstr "Bild-URL (optional, ersetzt das Symbol)"
+
+msgid "Image crop configuration"
+msgstr "Konfiguration für Bildzuschnitt"
+
+msgid "Image function for posts"
+msgstr "Bildfunktion für Beiträge"
+
+msgid "Images are lazy-loaded"
+msgstr "Bilder werden verzögert geladen"
+
+msgid "Import"
+msgstr "Importieren"
+
+msgid "Import from Shortcoder"
+msgstr "Aus Shortcoder importieren"
+
+msgid "Import snippets"
+msgstr "Snippets importieren"
+
+msgid "Imported %1$d snippet(s); %2$d already existed."
+msgstr "%1$d Snippet(s) importiert; %2$d waren bereits vorhanden."
+
+msgid "Imported %1$d snippet(s); %2$d already existed. Reloading…"
+msgstr "%1$d Snippet(s) importiert; %2$d waren bereits vorhanden. Wird neu geladen…"
+
+msgid "Imported %1$d snippet(s); %2$d skipped. Reloading…"
+msgstr "%1$d Snippet(s) importiert; %2$d übersprungen. Wird neu geladen…"
+
+msgid "Imported %d setting group(s). You can undo this below."
+msgstr "%d Einstellungsgruppe(n) importiert. Sie können dies unten rückgängig machen."
+
+msgid "Index now"
+msgstr "Jetzt indexieren"
+
+msgid "Information about your website"
+msgstr "Informationen über Ihre Website"
+
+msgid "Input / select box color"
+msgstr "Farbe des Eingabe-/Auswahlfelds"
+
+msgid "Insert icons anywhere with a shortcode"
+msgstr "Symbole mit einem Shortcode überall einfügen"
+
+msgid "Install the pending updates."
+msgstr "Die ausstehenden Updates installieren."
+
+msgid "Instant-page is a library that allows you to preload the content of a linked page into the browser memory simply by hovering over the link. When you click on the link, it provides a remarkably fast loading experience"
+msgstr "Instant-page ist eine Bibliothek, mit der Sie den Inhalt einer verlinkten Seite bereits durch Überfahren des Links in den Browserspeicher vorladen können. Beim Klick auf den Link entsteht ein bemerkenswert schnelles Ladeerlebnis"
+
+msgid "Instant-page prefetch and image lazy-loading"
+msgstr "Instant-page-Prefetch und Lazy Loading von Bildern"
+
+msgid "Insufficient permissions"
+msgstr "Unzureichende Berechtigungen"
+
+msgid "Known post types:"
+msgstr "Bekannte Beitragstypen:"
+
+msgid "LOCKVIP"
+msgstr "LOCKVIP"
+
+msgid "Language"
+msgstr "Sprache"
+
+msgid "Last seen"
+msgstr "Zuletzt gesehen"
+
+msgid "Layout & interactive"
+msgstr "Layout & Interaktion"
+
+msgid "Lazy-load images; drop Emoji"
+msgstr "Bilder verzögert laden; Emoji entfernen"
+
+msgid "Lazy-load images; drop Emoji and jQuery Migrate"
+msgstr "Bilder verzögert laden; Emoji und jQuery Migrate entfernen"
+
+msgid "Lean pages and lighter media. Leaves Gutenberg and Classic CSS alone, since removing those can change how a theme looks."
+msgstr "Schlanke Seiten und leichtere Medien. Gutenberg und Classic CSS bleiben unangetastet, da deren Entfernung das Aussehen eines Themes verändern kann."
+
+msgid "Leave another shortcode plugin"
+msgstr "Ein anderes Shortcode-Plugin verlassen"
+
+msgid "Left drawer"
+msgstr "Linke Schublade"
+
+msgid "Lets you drop any of the bundled Tabler icons (over 5,800, MIT licence) into posts, pages and anywhere shortcodes run. The icon font only loads on pages that actually use one, so it costs nothing elsewhere."
+msgstr "Ermöglicht es Ihnen, jedes der mitgelieferten Tabler-Symbole (über 5.800, MIT-Lizenz) in Beiträge, Seiten und überall dort einzufügen, wo Shortcodes ausgeführt werden. Die Symbolschrift lädt nur auf Seiten, die tatsächlich eines verwenden, und kostet anderswo nichts."
+
+msgid "Leverage Google’s Indexing API to speed up the indexing of your website on Google’s search engine. You can add as many API keys as you like for unlimited indexing capacity"
+msgstr "Nutzen Sie die Indexing-API von Google, um die Indexierung Ihrer Website in der Google-Suchmaschine zu beschleunigen. Sie können beliebig viele API-Schlüssel für unbegrenzte Indexierungskapazität hinzufügen"
+
+msgid "Licence:"
+msgstr "Lizenz:"
+
+msgid "Light / Dark"
+msgstr "Hell/Dunkel"
+
+msgid "Limit Horse Tools display"
+msgstr "Anzeige von Horse Tools beschränken"
+
+msgid "Limit JPG, PNG, WEBP, AVIF images"
+msgstr "JPG-, PNG-, WEBP-, AVIF-Bilder beschränken"
+
+msgid "Limit failed logins and email you on lockout"
+msgstr "Fehlgeschlagene Anmeldungen begrenzen und bei Sperrung eine E-Mail senden"
+
+msgid "Limit login attempts"
+msgstr "Anmeldeversuche begrenzen"
+
+msgid "Limit logins, block user enumeration, disable XML-RPC and the file editor"
+msgstr "Anmeldungen begrenzen, Benutzeraufzählung blockieren, XML-RPC und den Datei-Editor deaktivieren"
+
+msgid "Limits the maximum width and height of JPG, PNG, WEBP images upon upload. You can leave it blank if you want to keep the original size"
+msgstr "Begrenzt die maximale Breite und Höhe von JPG-, PNG-, WEBP-Bildern beim Hochladen. Sie können das Feld leer lassen, wenn Sie die Originalgröße beibehalten möchten"
+
+msgid "Limits the size of JPG, PNG, WEBP, AVIF images when uploading"
+msgstr "Begrenzt die Größe von JPG-, PNG-, WEBP-, AVIF-Bildern beim Hochladen"
+
+msgid "Link (article or service page)"
+msgstr "Link (Artikel- oder Diensteseite)"
+
+msgid "Link color"
+msgstr "Linkfarbe"
+
+msgid "Link display color"
+msgstr "Anzeigefarbe des Links"
+
+msgid "List"
+msgstr "Liste"
+
+msgid "List color"
+msgstr "Listenfarbe"
+
+msgid "List is hidden by default"
+msgstr "Liste ist standardmäßig ausgeblendet"
+
+msgid "Loading icons…"
+msgstr "Symbole werden geladen…"
+
+msgid "Location"
+msgstr "Position"
+
+msgid "Lock down the admin"
+msgstr "Adminbereich absichern"
+
+msgid "Lock out repeated failed logins"
+msgstr "Wiederholt fehlgeschlagene Anmeldungen sperren"
+
+msgid "Lockout length (minutes)"
+msgstr "Sperrdauer (Minuten)"
+
+msgid "Log out"
+msgstr "Abmelden"
+
+msgid "Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site."
+msgstr "Protokolliert die toten URLs, die anonyme Besucher tatsächlich aufrufen, damit Sie die häufig aufgerufenen in Weiterleitungen umwandeln können. Angemeldete Benutzer, Bots und Asset-Anfragen werden nicht erfasst, und nichts verlässt Ihre Website."
+
+msgid "Logged-in users"
+msgstr "Angemeldete Benutzer"
+
+msgid "Logged-out visitors"
+msgstr "Abgemeldete Besucher"
+
+msgid "Login attempts are rate-limited"
+msgstr "Anmeldeversuche sind ratenbegrenzt"
+
+msgid "Login failed. Check your details and try again."
+msgstr "Anmeldung fehlgeschlagen. Überprüfen Sie Ihre Angaben und versuchen Sie es erneut."
+
+msgid "Login link:"
+msgstr "Login-Link:"
+
+msgid "MAIL"
+msgstr "MAIL"
+
+msgid "MAINTENANCE MODE"
+msgstr "WARTUNGSMODUS"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "MEDIA"
+msgstr "MEDIEN"
+
+msgid "Main button"
+msgstr "Hauptschaltfläche"
+
+msgid "Main color"
+msgstr "Hauptfarbe"
+
+msgid "Main icon color"
+msgstr "Farbe des Hauptsymbols"
+
+msgid "Main icon text color"
+msgstr "Textfarbe des Hauptsymbols"
+
+msgid "Maintenance mode for developers (503)"
+msgstr "Wartungsmodus für Entwickler (503)"
+
+msgid "Management tool"
+msgstr "Verwaltungstool"
+
+msgid "Max height"
+msgstr "Max. Höhe"
+
+msgid "Max width"
+msgstr "Max. Breite"
+
+msgid "Media"
+msgstr "Medien"
+
+msgid "Media tab → JPG compression"
+msgstr "Tab „Medien“ → JPG-Komprimierung"
+
+msgid "Minify Inline JavaScript"
+msgstr "Inline-JavaScript minimieren"
+
+msgid "Minimum role"
+msgstr "Mindestrolle"
+
+msgid "Mobile only"
+msgstr "Nur Mobilgeräte"
+
+msgid "Modify content"
+msgstr "Inhalt ändern"
+
+msgid "Modify some information on Woocommerce that you want"
+msgstr "Gewünschte Informationen in WooCommerce ändern"
+
+msgid "Modify the footer content of WP admin"
+msgstr "Footer-Inhalt des WP-Adminbereichs ändern"
+
+msgid "Mon"
+msgstr "Mo"
+
+msgid "Monthly"
+msgstr "Monatlich"
+
+msgid "Most snippet plugins store their snippets as a custom post type. Enter that post type to import them all as Horse Tools snippets — the other plugin is only read, never changed. After importing you can deactivate it and (for Shortcoder) your [sc …] tags keep working, or use “Convert” above."
+msgstr "Die meisten Snippet-Plugins speichern ihre Snippets als benutzerdefinierten Beitragstyp. Geben Sie diesen Beitragstyp ein, um sie alle als Horse Tools-Snippets zu importieren – das andere Plugin wird nur gelesen, niemals verändert. Nach dem Import können Sie es deaktivieren, und (bei Shortcoder) funktionieren Ihre [sc …]-Tags weiterhin, oder Sie verwenden „Konvertieren“ oben."
+
+msgid "Move snippets between sites"
+msgstr "Snippets zwischen Websites verschieben"
+
+msgid "Move the site address to https://"
+msgstr "Websiteadresse auf https:// umstellen"
+
+msgid "NOTIFY"
+msgstr "BENACHRICHTIGEN"
+
+msgid "Name the font"
+msgstr "Die Schrift benennen"
+
+msgid "Name — letters, numbers, dashes (e.g. call-to-action)"
+msgstr "Name – Buchstaben, Zahlen, Bindestriche (z. B. call-to-action)"
+
+msgid "Navigation bar (Horse Tools)"
+msgstr "Navigationsleiste (Horse Tools)"
+
+msgid "Neutral"
+msgstr "Neutral"
+
+msgid "New / clear"
+msgstr "Neu/Leeren"
+
+msgid "Newly edited posts will be displayed first"
+msgstr "Zuletzt bearbeitete Beiträge werden zuerst angezeigt"
+
+msgid "Next automatic check: %s"
+msgstr "Nächste automatische Prüfung: %s"
+
+msgid "No"
+msgstr "Nein"
+
+msgid "No (temporarily off)"
+msgstr "Nein (vorübergehend aus)"
+
+msgid "No 404s recorded yet."
+msgstr "Noch keine 404-Fehler erfasst."
+
+msgid "No Google Fonts leaking to Google"
+msgstr "Keine Google Fonts, die an Google übertragen werden"
+
+msgid "No [sc] tags found in your content."
+msgstr "Keine [sc]-Tags in Ihrem Inhalt gefunden."
+
+msgid "No automatic redirects yet. Change a published URL and one will appear here."
+msgstr "Noch keine automatischen Weiterleitungen. Ändern Sie eine veröffentlichte URL, und eine erscheint hier."
+
+msgid "No badge colour"
+msgstr "Keine Badge-Farbe"
+
+msgid "No font files were found in the stylesheet."
+msgstr "Im Stylesheet wurden keine Schriftdateien gefunden."
+
+msgid "No icon matches that."
+msgstr "Kein Symbol passt dazu."
+
+msgid "No pages selected"
+msgstr "Keine Seiten ausgewählt"
+
+msgid "No results found"
+msgstr "Keine Ergebnisse gefunden"
+
+msgid "No setting matches that."
+msgstr "Keine Einstellung passt dazu."
+
+msgid "No size"
+msgstr "Keine Größe"
+
+msgid "No snippets were found for the post type \"%s\"."
+msgstr "Für den Beitragstyp \"%s\" wurden keine Snippets gefunden."
+
+msgid "No snippets yet. Create one above, or import from Shortcoder."
+msgstr "Noch keine Snippets. Erstellen Sie oben eines oder importieren Sie aus Shortcoder."
+
+msgid "No third-party requests found. Nothing leaks to other servers."
+msgstr "Keine Drittanbieter-Anfragen gefunden. Nichts wird an andere Server übertragen."
+
+msgid "None"
+msgstr "Keine"
+
+msgid "None: default not selected, Auto: background image automatically changes each time the page is loaded, Color: change the color you want, Upload: upload the background image you want"
+msgstr "Keine: standardmäßig nicht ausgewählt, Auto: Hintergrundbild ändert sich bei jedem Seitenladen automatisch, Farbe: gewünschte Farbe ändern, Upload: gewünschtes Hintergrundbild hochladen"
+
+msgid "Not entered"
+msgstr "Nicht eingegeben"
+
+msgid "Not found in any post or page."
+msgstr "In keinem Beitrag oder keiner Seite gefunden."
+
+msgid "Nothing could be self-hosted."
+msgstr "Es konnte nichts selbst gehostet werden."
+
+msgid "Nothing on this page is enabled yet."
+msgstr "Auf dieser Seite ist noch nichts aktiviert."
+
+msgid "Nothing to delete."
+msgstr "Nichts zu löschen."
+
+msgid "Notification at the top of the page"
+msgstr "Benachrichtigung oben auf der Seite"
+
+msgid "Notification link sent"
+msgstr "Benachrichtigungslink gesendet"
+
+msgid "Notify"
+msgstr "Benachrichtigen"
+
+msgid "Notify the post author when someone comments on the post"
+msgstr "Den Beitragsautor benachrichtigen, wenn jemand den Beitrag kommentiert"
+
+msgid "Number of data completed: '+sopost+'"
+msgstr "Anzahl der abgeschlossenen Datensätze: '+sopost+'"
+
+msgid "Number of items displayed"
+msgstr "Anzahl der angezeigten Elemente"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "ON/OFF"
+msgstr "EIN/AUS"
+
+msgid "OPTIMIZE"
+msgstr "OPTIMIEREN"
+
+msgid "Off"
+msgstr "Aus"
+
+msgid "Off / select"
+msgstr "Aus/auswählen"
+
+msgid "One click applies a set of recommended settings for your kind of site. Presets only turn options on and tune a few values — they never switch off anything you have already enabled, and a one-click Undo is always kept."
+msgstr "Ein Klick wendet einen Satz empfohlener Einstellungen für Ihre Art von Website an. Voreinstellungen aktivieren nur Optionen und passen einige Werte an – sie deaktivieren niemals etwas, das Sie bereits aktiviert haben, und ein Rückgängigmachen per Klick bleibt stets erhalten."
+
+msgid "Online now"
+msgstr "Jetzt online"
+
+msgid "Only admin has access to the admin page"
+msgstr "Nur der Administrator hat Zugriff auf die Adminseite"
+
+msgid "Only enable once HTTPS works everywhere. Browsers will refuse plain HTTP to your site for six months, and it cannot be undone quickly."
+msgstr "Aktivieren Sie dies erst, wenn HTTPS überall funktioniert. Browser verweigern für sechs Monate einfaches HTTP zu Ihrer Website, und dies lässt sich nicht schnell rückgängig machen."
+
+msgid "Only notify, do not block access"
+msgstr "Nur benachrichtigen, Zugriff nicht blockieren"
+
+msgid "Only supported from PHP 8.1 and above"
+msgstr "Nur ab PHP 8.1 und höher unterstützt"
+
+msgid "Open in a new tab"
+msgstr "In einem neuen Tab öffnen"
+
+msgid "Open – close time"
+msgstr "Öffnungs- und Schließzeit"
+
+msgid "Opening hours, one line per day (Tab-widget skin)"
+msgstr "Öffnungszeiten, eine Zeile pro Tag (Tab-widget-Skin)"
+
+msgid "Optimization Library"
+msgstr "Optimierungsbibliothek"
+
+msgid "Optimize Widgets"
+msgstr "Widgets optimieren"
+
+msgid "Optimize deletion of content in the database"
+msgstr "Löschen von Inhalten in der Datenbank optimieren"
+
+msgid "Optimize saving post content into the database"
+msgstr "Speichern von Beitragsinhalten in der Datenbank optimieren"
+
+msgid "Optimize tab"
+msgstr "Tab „Optimieren“"
+
+msgid "Optimize tab → image lazy loading"
+msgstr "Tab „Optimieren“ → Lazy Loading von Bildern"
+
+msgid "Option to display ads in custom posts"
+msgstr "Option zur Anzeige von Anzeigen in benutzerdefinierten Beiträgen"
+
+msgid "Option to display the Admin bar"
+msgstr "Option zur Anzeige der Admin-Leiste"
+
+msgid "Order"
+msgstr "Reihenfolge"
+
+msgid "Original contributors:"
+msgstr "Ursprüngliche Mitwirkende:"
+
+msgid "Other links"
+msgstr "Weitere Links"
+
+msgid "Outstanding color"
+msgstr "Hervorhebungsfarbe"
+
+msgid "Overlay color"
+msgstr "Overlay-Farbe"
+
+msgid "Overview"
+msgstr "Übersicht"
+
+msgid "PHP errors are not shown to visitors"
+msgstr "PHP-Fehler werden Besuchern nicht angezeigt"
+
+msgid "PHP is a supported version (%s)"
+msgstr "PHP ist eine unterstützte Version (%s)"
+
+msgid "POPUP"
+msgstr "POPUP"
+
+msgid "PRESETS"
+msgstr "VOREINSTELLUNGEN"
+
+msgid "Panel title (e.g. Our services)"
+msgstr "Panel-Titel (z. B. Unsere Dienste)"
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Paste an export here, or upload a .json file"
+msgstr "Fügen Sie hier einen Export ein oder laden Sie eine .json-Datei hoch"
+
+msgid "Pending comments"
+msgstr "Ausstehende Kommentare"
+
+msgid "Performance"
+msgstr "Leistung"
+
+msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
+msgstr "%1$s endgültig aus „%2$s“ löschen? Dies kann nicht rückgängig gemacht werden."
+
+msgid "Permission denied."
+msgstr "Zugriff verweigert."
+
+msgid "Permissions-Policy: block geolocation, mic and camera"
+msgstr "Permissions-Policy: Geolokalisierung, Mikrofon und Kamera blockieren"
+
+msgid "Photo masonry"
+msgstr "Foto-Masonry"
+
+msgid "Play video"
+msgstr "Video abspielen"
+
+msgid "Please complete the reCAPTCHA to verify that you are not a robot"
+msgstr "Bitte schließen Sie das reCAPTCHA ab, um zu bestätigen, dass Sie kein Roboter sind"
+
+msgid "Please disable ad-blocker on your browser to access and view the content"
+msgstr "Bitte deaktivieren Sie den Adblocker in Ihrem Browser, um den Inhalt aufrufen und ansehen zu können"
+
+msgid "Please enter the content here"
+msgstr "Bitte geben Sie den Inhalt hier ein"
+
+msgid "Please wait"
+msgstr "Bitte warten"
+
+msgid "Please wait for the email to be sent"
+msgstr "Bitte warten Sie, bis die E-Mail gesendet wurde"
+
+msgid "Please wait: '+sopost+'"
+msgstr "Bitte warten: '+sopost+'"
+
+msgid "Plugin development"
+msgstr "Plugin-Entwicklung"
+
+msgid "Policy"
+msgstr "Richtlinie"
+
+msgid "Popup location"
+msgstr "Popup-Position"
+
+msgid "Popup save time (.. hours)"
+msgstr "Popup-Speicherzeit (.. Stunden)"
+
+msgid "Pre-filled message for WhatsApp / SMS (optional)"
+msgstr "Vorausgefüllte Nachricht für WhatsApp/SMS (optional)"
+
+msgid "Preview"
+msgstr "Vorschau"
+
+msgid "Preview changes"
+msgstr "Änderungen vorschauen"
+
+msgid "Price + order button"
+msgstr "Preis + Bestellschaltfläche"
+
+msgid "Privacy"
+msgstr "Datenschutz"
+
+msgid "Privacy — Google Fonts & external requests"
+msgstr "Datenschutz – Google Fonts & externe Anfragen"
+
+msgid "Process cropped images"
+msgstr "Zugeschnittene Bilder verarbeiten"
+
+msgid "Purple"
+msgstr "Violett"
+
+msgid "Quantity"
+msgstr "Menge"
+
+msgid "Quick chips"
+msgstr "Schnell-Chips"
+
+msgid "Quick replies, one per line as  Label|https://link  (Live-chat skin)"
+msgstr "Schnellantworten, eine pro Zeile als  Label|https://link  (Live-chat-Skin)"
+
+msgid "Quick search"
+msgstr "Schnellsuche"
+
+msgid "Quick view button color"
+msgstr "Farbe der Schnellansicht-Schaltfläche"
+
+msgid "REST API left ON so the store keeps working"
+msgstr "REST-API bleibt AKTIV, damit der Shop weiter funktioniert"
+
+msgid "Reading settings → uncheck “Discourage search engines”"
+msgstr "Leseeinstellungen → Häkchen bei „Suchmaschinen abhalten“ entfernen"
+
+msgid "Recommended. xmlrpc.php is a common brute-force and pingback-amplification target and almost nothing uses it now (except Jetpack)."
+msgstr "Empfohlen. xmlrpc.php ist ein häufiges Ziel für Brute-Force- und Pingback-Amplification-Angriffe, und heute nutzt es kaum noch etwas (außer Jetpack)."
+
+msgid "Record 404 hits"
+msgstr "404-Aufrufe erfassen"
+
+msgid "Red"
+msgstr "Rot"
+
+msgid "Redirect"
+msgstr "Weiterleiten"
+
+msgid "Redirect 301 to a custom page"
+msgstr "301-Weiterleitung auf eine benutzerdefinierte Seite"
+
+msgid "Redirect 301 whole page"
+msgstr "301-Weiterleitung der gesamten Seite"
+
+msgid "Redirect the 404 page to the homepage or a custom page of your choice, leave the field blank if you want to redirect to the homepage"
+msgstr "Leiten Sie die 404-Seite auf die Startseite oder eine benutzerdefinierte Seite Ihrer Wahl um; lassen Sie das Feld leer, wenn Sie auf die Startseite umleiten möchten"
+
+msgid "Redirects"
+msgstr "Weiterleitungen"
+
+msgid "Referrer-Policy: strict-origin-when-cross-origin"
+msgstr "Referrer-Policy: strict-origin-when-cross-origin"
+
+msgid "Refresh"
+msgstr "Aktualisieren"
+
+msgid "Registration is disabled on this site."
+msgstr "Die Registrierung ist auf dieser Website deaktiviert."
+
+msgid "Registration role options"
+msgstr "Optionen für Registrierungsrolle"
+
+msgid "Remove XHTML closing tags from empty elements in HTML5"
+msgstr "XHTML-Schließ-Tags aus leeren Elementen in HTML5 entfernen"
+
+msgid "Remove category slug from permalink"
+msgstr "Kategorie-Slug aus dem Permalink entfernen"
+
+msgid "Remove comments from HTML, JavaScript, and CSS"
+msgstr "Kommentare aus HTML, JavaScript und CSS entfernen"
+
+msgid "Remove img tag attributes"
+msgstr "img-Tag-Attribute entfernen"
+
+msgid "Remove protocols (HTTP: and HTTPS:) from all URLs"
+msgstr "Protokolle (HTTP: und HTTPS:) aus allen URLs entfernen"
+
+msgid "Remove relative domain from internal URLs"
+msgstr "Relative Domain aus internen URLs entfernen"
+
+msgid "Remove tag slug from permalink"
+msgstr "Tag-Slug aus dem Permalink entfernen"
+
+msgid "Remove the WordPress version tag"
+msgstr "Den WordPress-Versions-Tag entfernen"
+
+msgid "Remove unnecessary header tags"
+msgstr "Unnötige Header-Tags entfernen"
+
+msgid "Removed"
+msgstr "Entfernt"
+
+msgid "Removes attachments whose file is missing from disk. Every attachment is scanned, so the count is known only after it runs."
+msgstr "Entfernt Anhänge, deren Datei auf dem Datenträger fehlt. Jeder Anhang wird geprüft, sodass die Anzahl erst nach dem Durchlauf bekannt ist."
+
+msgid "Removes metadata entries for thumbnail files that are missing from disk. It does not delete images."
+msgstr "Entfernt Metadaten-Einträge für Vorschaubilddateien, die auf dem Datenträger fehlen. Es löscht keine Bilder."
+
+msgid "Removes the RSD, WLW manifest and adjacent-post link tags from the page head."
+msgstr "Entfernt die RSD-, WLW-Manifest- und Nachbarbeitrags-Link-Tags aus dem Seitenkopf."
+
+msgid "Removes the X-Pingback header. Pairs with disabling XML-RPC."
+msgstr "Entfernt den X-Pingback-Header. Passt zum Deaktivieren von XML-RPC."
+
+msgid "Removes the built-in code editor under Appearance and Plugins. If an attacker gets into wp-admin, they cannot use it to edit PHP files. You edit files over SFTP instead."
+msgstr "Entfernt den integrierten Code-Editor unter „Design“ und „Plugins“. Wenn ein Angreifer in wp-admin gelangt, kann er ihn nicht zum Bearbeiten von PHP-Dateien nutzen. Sie bearbeiten Dateien stattdessen über SFTP."
+
+msgid "Removes the generator meta tag. A small tidy-up — not a security measure on its own, since asset fingerprints reveal the version anyway."
+msgstr "Entfernt den generator-Meta-Tag. Eine kleine Aufräumaktion – für sich genommen keine Sicherheitsmaßnahme, da Asset-Fingerprints die Version ohnehin verraten."
+
+msgid "Removes wp-embed.js if you do not embed other WordPress posts."
+msgstr "Entfernt wp-embed.js, wenn Sie keine anderen WordPress-Beiträge einbetten."
+
+msgid "Requested URL"
+msgstr "Angeforderte URL"
+
+msgid "Requests"
+msgstr "Anfragen"
+
+msgid "Reset this setting"
+msgstr "Diese Einstellung zurücksetzen"
+
+msgid "Restore previous configuration"
+msgstr "Vorherige Konfiguration wiederherstellen"
+
+msgid "Retrieve the API Client ID and Client Secret from your Google Developers project and add them to the two fields above"
+msgstr "Rufen Sie die API-Client-ID und das Client Secret aus Ihrem Google-Developers-Projekt ab und tragen Sie sie in die beiden Felder oben ein"
+
+msgid "Retrieve the Site Key and Secret Key from your Google reCAPTCHA project and add them to the two fields above"
+msgstr "Rufen Sie den Site Key und den Secret Key aus Ihrem Google-reCAPTCHA-Projekt ab und tragen Sie sie in die beiden Felder oben ein"
+
+msgid "Reveal"
+msgstr "Anzeigen"
+
+msgid "Rewrite every [sc …] tag in your content to [ht-snippet …], keeping all attributes. Preview first; applying edits post content, so take a backup. Tip: you don’t have to convert — imported snippets already answer [sc …] once Shortcoder is deactivated."
+msgstr "Schreibt jeden [sc …]-Tag in Ihrem Inhalt in [ht-snippet …] um und behält alle Attribute bei. Zuerst die Vorschau ansehen; das Anwenden verändert den Beitragsinhalt, erstellen Sie also ein Backup. Tipp: Sie müssen nicht konvertieren – importierte Snippets reagieren bereits auf [sc …], sobald Shortcoder deaktiviert ist."
+
+msgid "Right drawer"
+msgstr "Rechte Schublade"
+
+msgid "Role"
+msgstr "Rolle"
+
+msgid "Run shortcodes in category / tag descriptions"
+msgstr "Shortcodes in Kategorie-/Tag-Beschreibungen ausführen"
+
+msgid "Run shortcodes in excerpts"
+msgstr "Shortcodes in Auszügen ausführen"
+
+msgid "Run shortcodes in menu items"
+msgstr "Shortcodes in Menüeinträgen ausführen"
+
+msgid "Run shortcodes in widgets"
+msgstr "Shortcodes in Widgets ausführen"
+
+msgid "Run the scan first so there is something to self-host."
+msgstr "Führen Sie zuerst den Scan durch, damit es etwas zum Selbsthosten gibt."
+
+msgid "Run “%s” now? This permanently deletes matching items and cannot be undone."
+msgstr "„%s“ jetzt ausführen? Dies löscht passende Elemente endgültig und kann nicht rückgängig gemacht werden."
+
+msgid "SAVE CONTENT"
+msgstr "INHALT SPEICHERN"
+
+msgid "SCHEDULE"
+msgstr "ZEITPLAN"
+
+msgid "SECURITY"
+msgstr "SICHERHEIT"
+
+msgid "SEO optimization"
+msgstr "SEO-Optimierung"
+
+msgid "SETTING"
+msgstr "EINSTELLUNG"
+
+msgid "SIGN"
+msgstr "SIGNATUR"
+
+msgid "SMTP authentication"
+msgstr "SMTP-Authentifizierung"
+
+msgid "SMTP port"
+msgstr "SMTP-Port"
+
+msgid "SMTP protocol"
+msgstr "SMTP-Protokoll"
+
+msgid "SMTP server"
+msgstr "SMTP-Server"
+
+msgid "SNIPPETS"
+msgstr "SNIPPETS"
+
+msgid "SVG uploads are unavailable: the sanitiser library is missing."
+msgstr "SVG-Uploads sind nicht verfügbar: Die Bereinigungsbibliothek fehlt."
+
+msgid "Sat"
+msgstr "Sa"
+
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
+msgid "Save images to media when copying from another source"
+msgstr "Bilder in der Mediathek speichern, wenn sie aus einer anderen Quelle kopiert werden"
+
+msgid "Save interval (minutes)"
+msgstr "Speicherintervall (Minuten)"
+
+msgid "Save schedule"
+msgstr "Zeitplan speichern"
+
+msgid "Save services"
+msgstr "Dienste speichern"
+
+msgid "Save shortcode status"
+msgstr "Shortcode-Status speichern"
+
+msgid "Save snippet"
+msgstr "Snippet speichern"
+
+msgid "Saved %d service(s)."
+msgstr "%d Dienst(e) gespeichert."
+
+msgid "Saved."
+msgstr "Gespeichert."
+
+msgid "Scan external requests"
+msgstr "Externe Anfragen scannen"
+
+msgid "Scan with your phone"
+msgstr "Mit Ihrem Telefon scannen"
+
+msgid "Scanning your home page…"
+msgstr "Ihre Startseite wird gescannt…"
+
+msgid "Screen refreshed"
+msgstr "Bildschirm aktualisiert"
+
+msgid "Scroll bar color"
+msgstr "Farbe der Bildlaufleiste"
+
+msgid "Search"
+msgstr "Suchen"
+
+msgid "Search below, click any icon to copy its ready-made shortcode, then paste it where you want the icon to appear."
+msgstr "Suchen Sie unten, klicken Sie auf ein Symbol, um seinen fertigen Shortcode zu kopieren, und fügen Sie ihn dort ein, wo das Symbol erscheinen soll."
+
+msgid "Search icons — e.g. cart, arrow, brand-facebook…"
+msgstr "Symbole suchen – z. B. cart, arrow, brand-facebook…"
+
+msgid "Search settings…"
+msgstr "Einstellungen durchsuchen…"
+
+msgid "Seconds before the bubble appears"
+msgstr "Sekunden, bis die Blase erscheint"
+
+msgid "Secret key"
+msgstr "Secret Key"
+
+msgid "Security"
+msgstr "Sicherheit"
+
+msgid "Security and speed for a shop, chosen not to interfere with the store. The REST API is left fully on — WooCommerce cart and checkout need it — and permalinks are left untouched."
+msgstr "Sicherheit und Geschwindigkeit für einen Shop, so gewählt, dass der Store nicht beeinträchtigt wird. Die REST-API bleibt vollständig aktiv – WooCommerce-Warenkorb und -Kasse benötigen sie – und Permalinks bleiben unangetastet."
+
+msgid "Security check failed. Please start the sign-in again."
+msgstr "Sicherheitsprüfung fehlgeschlagen. Bitte starten Sie die Anmeldung erneut."
+
+msgid "Security hardening"
+msgstr "Sicherheitshärtung"
+
+msgid "Security headers (frame, nosniff, referrer)"
+msgstr "Security-Header (Frame, Nosniff, Referrer)"
+
+msgid "Security response headers"
+msgstr "Security-Response-Header"
+
+msgid "Security response headers are sent"
+msgstr "Security-Response-Header werden gesendet"
+
+msgid "Security tab → Block user enumeration"
+msgstr "Tab „Sicherheit“ → Benutzeraufzählung blockieren"
+
+msgid "Security tab → Disable unused endpoints"
+msgstr "Tab „Sicherheit“ → Ungenutzte Endpunkte deaktivieren"
+
+msgid "Security tab → Limit login attempts"
+msgstr "Tab „Sicherheit“ → Anmeldeversuche begrenzen"
+
+msgid "Security tab → Lock down the admin"
+msgstr "Tab „Sicherheit“ → Adminbereich absichern"
+
+msgid "Security tab → Privacy → Scan external requests"
+msgstr "Tab „Sicherheit“ → Datenschutz → Externe Anfragen scannen"
+
+msgid "Security tab → Privacy → self-host Google Fonts"
+msgstr "Tab „Sicherheit“ → Datenschutz → Google Fonts selbst hosten"
+
+msgid "Security tab → Security response headers"
+msgstr "Tab „Sicherheit“ → Security-Response-Header"
+
+msgid "Security: block user enumeration, limit logins, disable XML-RPC, hide the version, disable the file editor"
+msgstr "Sicherheit: Benutzeraufzählung blockieren, Anmeldungen begrenzen, XML-RPC deaktivieren, Version verbergen, Datei-Editor deaktivieren"
+
+msgid "Select admin"
+msgstr "Administrator auswählen"
+
+msgid "Select background color"
+msgstr "Hintergrundfarbe auswählen"
+
+msgid "Select button border color"
+msgstr "Rahmenfarbe der Schaltfläche auswählen"
+
+msgid "Select button color"
+msgstr "Schaltflächenfarbe auswählen"
+
+msgid "Select icon"
+msgstr "Symbol auswählen"
+
+msgid "Select icon color"
+msgstr "Symbolfarbe auswählen"
+
+msgid "Select image"
+msgstr "Bild auswählen"
+
+msgid "Select redirect page"
+msgstr "Weiterleitungsseite auswählen"
+
+msgid "Select the custom post for which you want to display TOC content"
+msgstr "Wählen Sie den benutzerdefinierten Beitrag aus, für den das Inhaltsverzeichnis angezeigt werden soll"
+
+msgid "Select the custom post for which you want to show ads"
+msgstr "Wählen Sie den benutzerdefinierten Beitrag aus, für den Anzeigen angezeigt werden sollen"
+
+msgid "Select the displayed logo"
+msgstr "Das angezeigte Logo auswählen"
+
+msgid "Select the page to hide"
+msgstr "Die auszublendende Seite auswählen"
+
+msgid "Select title color and button"
+msgstr "Titelfarbe und Schaltfläche auswählen"
+
+msgid "Selection color"
+msgstr "Auswahlfarbe"
+
+msgid "Self-host Google Fonts"
+msgstr "Google Fonts selbst hosten"
+
+msgid "Self-hosted %1$d font file(s) across %2$d stylesheet(s). Turn on “Self-host Google Fonts” above and save."
+msgstr "%1$d Schriftdatei(en) über %2$d Stylesheet(s) selbst gehostet. Aktivieren Sie oben „Google Fonts selbst hosten“ und speichern Sie."
+
+msgid "Send"
+msgstr "Senden"
+
+msgid "Send security headers"
+msgstr "Security-Header senden"
+
+msgid "Send test email"
+msgstr "Test-E-Mail senden"
+
+msgid "Sender email address"
+msgstr "Absender-E-Mail-Adresse"
+
+msgid "Sender name"
+msgstr "Absendername"
+
+msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
+msgstr "Sinnvolle Voreinstellungen für eine Content-Website: ein Inhaltsverzeichnis bei langen Beiträgen, leichtere Seiten und die grundlegende Sicherheitshärtung."
+
+msgid "Services"
+msgstr "Dienste"
+
+msgid "Services panel (slide-up from the bottom bar)"
+msgstr "Dienste-Panel (gleitet von der unteren Leiste nach oben)"
+
+msgid "Set access and viewing permissions"
+msgstr "Zugriffs- und Anzeigeberechtigungen festlegen"
+
+msgid "Set the colour (hex, rgb or a CSS name)."
+msgstr "Legen Sie die Farbe fest (Hex, RGB oder ein CSS-Name)."
+
+msgid "Set the size in pixels."
+msgstr "Legen Sie die Größe in Pixeln fest."
+
+msgid "Set up Adsense ads"
+msgstr "AdSense-Anzeigen einrichten"
+
+msgid "Set up cookie notifications"
+msgstr "Cookie-Hinweise einrichten"
+
+msgid "Set up the ads.txt file"
+msgstr "Die ads.txt-Datei einrichten"
+
+msgid "Setting group"
+msgstr "Einstellungsgruppe"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Settings > Permalinks > Save changes"
+msgstr "Einstellungen > Permalinks > Änderungen speichern"
+
+msgid "Settings changed"
+msgstr "Einstellungen geändert"
+
+msgid "Shortcode"
+msgstr "Shortcode"
+
+msgid "Shortcode content visible only to group of users"
+msgstr "Shortcode-Inhalt nur für eine Benutzergruppe sichtbar"
+
+msgid "Shortcode reference"
+msgstr "Shortcode-Referenz"
+
+msgid "Shortcode to display date"
+msgstr "Shortcode zur Anzeige des Datums"
+
+msgid "Shortcodes"
+msgstr "Shortcodes"
+
+msgid "Show a floating “Services” button on desktop"
+msgstr "Eine schwebende „Dienste“-Schaltfläche am Desktop anzeigen"
+
+msgid "Show a greeting bubble near the button"
+msgstr "Eine Begrüßungsblase in der Nähe der Schaltfläche anzeigen"
+
+msgid "Show a scan-to-open QR on desktop (Zalo, WhatsApp, Telegram, Viber, Line; WeChat always)"
+msgstr "Einen Scan-zum-Öffnen-QR am Desktop anzeigen (Zalo, WhatsApp, Telegram, Viber, Line; WeChat immer)"
+
+msgid "Show from"
+msgstr "Anzeigen ab"
+
+msgid "Show full image"
+msgstr "Vollständiges Bild anzeigen"
+
+msgid "Show on devices"
+msgstr "Auf Geräten anzeigen"
+
+msgid "Show the bar on tablets too (up to 1024px)"
+msgstr "Die Leiste auch auf Tablets anzeigen (bis 1024px)"
+
+msgid "Show to"
+msgstr "Anzeigen bis"
+
+msgid "Show until"
+msgstr "Anzeigen bis"
+
+msgid "Sign in with Google"
+msgstr "Mit Google anmelden"
+
+msgid "Sign in with Google account"
+msgstr "Mit Google-Konto anmelden"
+
+msgid "Signature shortcode"
+msgstr "Signatur-Shortcode"
+
+msgid "Site health"
+msgstr "Website-Zustand"
+
+msgid "Site key"
+msgstr "Site Key"
+
+msgid "Smooth-scroll is a library that enables you to create a smooth scrolling effect, providing users with a perception of faster page navigation"
+msgstr "Smooth-scroll ist eine Bibliothek, mit der Sie einen sanften Scroll-Effekt erzeugen können, wodurch Nutzer eine schnellere Seitennavigation wahrnehmen"
+
+msgid "Snippet deleted."
+msgstr "Snippet gelöscht."
+
+msgid "Snippet saved."
+msgstr "Snippet gespeichert."
+
+msgid "Something went wrong."
+msgstr "Etwas ist schiefgelaufen."
+
+msgid "Source code and issues:"
+msgstr "Quellcode und Fehlerberichte:"
+
+msgid "Spacing below"
+msgstr "Abstand nach unten"
+
+msgid "Spam comments"
+msgstr "Spam-Kommentare"
+
+msgid "Spin it — handy for loaders."
+msgstr "Drehen lassen – praktisch für Ladeanzeigen."
+
+msgid "Stacked banners"
+msgstr "Gestapelte Banner"
+
+msgid "Status:"
+msgstr "Status:"
+
+msgid "Step 1: Go to Appearance > Menus > Create a new menu > check Navigation bar (Horse Tools)"
+msgstr "Schritt 1: Gehen Sie zu Design > Menüs > Neues Menü erstellen > Häkchen bei Navigationsleiste (Horse Tools) setzen"
+
+msgid "Step 2: Below, if you want the menu to open on a specific button, add <b style=\"color:red\">#horsenavi</b> to the field (#id or .class). For (Enter link), enter <b style=\"color:red\">#</b>. Note: Only add it to one of the 5 buttons below"
+msgstr "Schritt 2: Wenn das Menü über eine bestimmte Schaltfläche geöffnet werden soll, fügen Sie unten <b style=\"color:red\">#horsenavi</b> in das Feld (#id oder .class) ein. Für (Link eingeben) geben Sie <b style=\"color:red\">#</b> ein. Hinweis: Fügen Sie es nur bei einer der 5 Schaltflächen unten hinzu"
+
+msgid "Still:"
+msgstr "Standbild:"
+
+msgid "Stop cropping"
+msgstr "Zuschneiden beenden"
+
+msgid "Stop cropping all"
+msgstr "Zuschneiden aller beenden"
+
+msgid "Story circles"
+msgstr "Story-Kreise"
+
+msgid "Subtitle / price / coupon code"
+msgstr "Untertitel/Preis/Gutscheincode"
+
+msgid "Success"
+msgstr "Erfolg"
+
+msgid "Sun"
+msgstr "So"
+
+msgid "Support multi-byte UTF-8 encoding (if you see strange characters)"
+msgstr "Multi-Byte-UTF-8-Kodierung unterstützen (falls Sie seltsame Zeichen sehen)"
+
+msgid "Support quick notification setup, allowing web managers to easily deliver useful and timely content, helping users stay informed effortlessly"
+msgstr "Unterstützt die schnelle Einrichtung von Benachrichtigungen, sodass Website-Betreiber nützliche und zeitnahe Inhalte einfach bereitstellen und Nutzer mühelos informiert bleiben"
+
+msgid "Support team"
+msgstr "Support-Team"
+
+msgid "Switch off any shortcode you do not use. A disabled shortcode simply stops rendering. This only affects Horse Tools shortcodes — never those from other plugins."
+msgstr "Schalten Sie jeden Shortcode aus, den Sie nicht verwenden. Ein deaktivierter Shortcode wird einfach nicht mehr dargestellt. Dies betrifft nur Horse Tools-Shortcodes – niemals die anderer Plugins."
+
+msgid "System"
+msgstr "System"
+
+msgid "TOC"
+msgstr "Inhaltsverzeichnis"
+
+msgid "TOC Settings"
+msgstr "Einstellungen für Inhaltsverzeichnis"
+
+msgid "TOOL"
+msgstr "TOOL"
+
+msgid "Table name"
+msgstr "Tabellenname"
+
+msgid "Table of Contents"
+msgstr "Inhaltsverzeichnis"
+
+msgid "Table of contents configuration"
+msgstr "Konfiguration des Inhaltsverzeichnisses"
+
+msgid "Table of contents on posts"
+msgstr "Inhaltsverzeichnis in Beiträgen"
+
+msgid "Tabler icon name (e.g. snowflake) — or leave blank and use an image"
+msgstr "Tabler-Symbolname (z. B. snowflake) – oder leer lassen und ein Bild verwenden"
+
+msgid "Tag"
+msgstr "Tag"
+
+msgid "Tags (comma separated)"
+msgstr "Tags (durch Komma getrennt)"
+
+msgid "Test SMTP email sending from your website"
+msgstr "SMTP-E-Mail-Versand von Ihrer Website testen"
+
+msgid "Text color"
+msgstr "Textfarbe"
+
+msgid "Text color of the input / select box"
+msgstr "Textfarbe des Eingabe-/Auswahlfelds"
+
+msgid "Text editor tool"
+msgstr "Texteditor-Tool"
+
+msgid "That address cannot be fetched from this server."
+msgstr "Diese Adresse kann von diesem Server nicht abgerufen werden."
+
+msgid "That did not look like a Google Fonts stylesheet."
+msgstr "Das sah nicht wie ein Google-Fonts-Stylesheet aus."
+
+msgid "That file could not be read as JSON."
+msgstr "Diese Datei konnte nicht als JSON gelesen werden."
+
+msgid "That is not a valid Horse Tools export file."
+msgstr "Das ist keine gültige Horse Tools-Exportdatei."
+
+msgid "That is not a valid snippet export file."
+msgstr "Das ist keine gültige Snippet-Exportdatei."
+
+msgid "That name is reserved by another Horse Tools shortcode. Pick a different one."
+msgstr "Dieser Name ist durch einen anderen Horse Tools-Shortcode reserviert. Wählen Sie einen anderen."
+
+msgid "That preset does not exist."
+msgstr "Diese Voreinstellung existiert nicht."
+
+msgid "The \"Index Now\" link will be added in the custom post management section to allow quick index submission"
+msgstr "Der Link „Jetzt indexieren“ wird im Verwaltungsbereich für benutzerdefinierte Beiträge hinzugefügt, um eine schnelle Indexübermittlung zu ermöglichen"
+
+msgid "The Avatar, Live-chat and Tab-widget skins use the fields below."
+msgstr "Die Skins Avatar, Live-chat und Tab-widget verwenden die untenstehenden Felder."
+
+msgid "The GD library has been installed"
+msgstr "Die GD-Bibliothek wurde installiert"
+
+msgid "The GD library has not been installed"
+msgstr "Die GD-Bibliothek wurde nicht installiert"
+
+msgid "The address %1$s was locked out after repeated failed logins on %2$s."
+msgstr "Die Adresse %1$s wurde nach wiederholt fehlgeschlagenen Anmeldungen auf %2$s gesperrt."
+
+msgid "The changing image is square, with the standard size being 100x100 pixels"
+msgstr "Das wechselnde Bild ist quadratisch, die Standardgröße beträgt 100x100 Pixel"
+
+msgid "The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot."
+msgstr "Die Konfiguration von vor Ihrem letzten Import ist gespeichert. Beim Wiederherstellen wird jede Gruppe auf diesen Stand zurückgesetzt."
+
+msgid "The debug file does not exist"
+msgstr "Die Debug-Datei existiert nicht"
+
+msgid "The feature adds advanced functions when uploading images, such as adding frames, flipping images... allowing you to automatically customize your images during upload. Picture frame (PNG)"
+msgstr "Die Funktion fügt beim Hochladen von Bildern erweiterte Funktionen hinzu, etwa das Einfügen von Rahmen, das Spiegeln von Bildern usw., sodass Sie Ihre Bilder während des Uploads automatisch anpassen können. Bilderrahmen (PNG)"
+
+msgid "The file contained no Horse Tools settings to import."
+msgstr "Die Datei enthielt keine Horse Tools-Einstellungen zum Importieren."
+
+msgid "The file name will be your domain name"
+msgstr "Der Dateiname wird Ihr Domainname sein"
+
+msgid "The file path is invalid or not a file"
+msgstr "Der Dateipfad ist ungültig oder keine Datei"
+
+msgid "The first image becomes the featured image"
+msgstr "Das erste Bild wird zum Beitragsbild"
+
+msgid "The font files could not be downloaded."
+msgstr "Die Schriftdateien konnten nicht heruntergeladen werden."
+
+msgid "The full recommended hardening set. The one thing left out is the full REST API block, which can break forms and guests — enable that yourself on the Security screen if your site truly needs none of it."
+msgstr "Der vollständige empfohlene Härtungssatz. Ausgelassen wird lediglich die vollständige Blockierung der REST-API, die Formulare und Gäste beeinträchtigen kann – aktivieren Sie diese selbst im Sicherheitsbereich, wenn Ihre Website wirklich nichts davon benötigt."
+
+msgid "The function of lazy loading images"
+msgstr "Die Funktion des verzögerten Ladens von Bildern"
+
+msgid "The home page returned no HTML to scan."
+msgstr "Die Startseite hat kein HTML zum Scannen zurückgegeben."
+
+msgid "The icon on its own."
+msgstr "Das Symbol für sich allein."
+
+msgid "The optimisation module is on"
+msgstr "Das Optimierungsmodul ist aktiviert"
+
+msgid "The original image size when added to the post"
+msgstr "Die Originalbildgröße beim Hinzufügen zum Beitrag"
+
+msgid "The previous configuration has been restored."
+msgstr "Die vorherige Konfiguration wurde wiederhergestellt."
+
+msgid "The reCAPTCHA is invalid"
+msgstr "Das reCAPTCHA ist ungültig"
+
+msgid "The score threshold applies to reCAPTCHA v3 only. Google returns 1.0 for traffic it is confident is human and 0.0 for traffic it is confident is a bot; 0.5 is the recommended starting point. Raise it to block more aggressively, lower it if real visitors are being turned away."
+msgstr "Der Score-Schwellenwert gilt nur für reCAPTCHA v3. Google gibt 1.0 für Traffic zurück, den es sicher als menschlich einstuft, und 0.0 für Traffic, den es sicher als Bot einstuft; 0.5 ist der empfohlene Ausgangswert. Erhöhen Sie ihn, um aggressiver zu blockieren, senken Sie ihn, wenn echte Besucher abgewiesen werden."
+
+msgid "The site is served over HTTPS"
+msgstr "Die Website wird über HTTPS ausgeliefert"
+
+msgid "The site is visible to search engines"
+msgstr "Die Website ist für Suchmaschinen sichtbar"
+
+msgid "The standard size for the logo is 280x80 PX"
+msgstr "Die Standardgröße für das Logo beträgt 280x80 PX"
+
+msgid "The table of contents is an incredibly useful feature that allows readers to easily grasp the content by summarizing the headings (h-tags) in the article"
+msgstr "Das Inhaltsverzeichnis ist eine überaus nützliche Funktion, mit der Leser den Inhalt leicht erfassen können, indem die Überschriften (H-Tags) im Artikel zusammengefasst werden"
+
+msgid "The text to replace Buy Now on the product page"
+msgstr "Der Text, der „Jetzt kaufen“ auf der Produktseite ersetzt"
+
+msgid "The theme/plugin file editor is disabled"
+msgstr "Der Datei-Editor für Themes/Plugins ist deaktiviert"
+
+msgid "There is no backup to restore."
+msgstr "Es ist kein Backup zum Wiederherstellen vorhanden."
+
+msgid "These groups will change"
+msgstr "Diese Gruppen werden geändert"
+
+msgid "These stop WordPress installing updates on its own — the site still checks for them, so the Dashboard and Plugins screens keep showing what is available and you apply updates when you choose. It never stops checking, so you are never left unaware of a security release."
+msgstr "Diese verhindern, dass WordPress Updates von selbst installiert – die Website sucht weiterhin danach, sodass das Dashboard und die Plugin-Seiten weiterhin anzeigen, was verfügbar ist, und Sie Updates nach Wahl anwenden. Die Suche wird nie eingestellt, sodass Sie nie eine Sicherheitsveröffentlichung verpassen."
+
+msgid "This SVG file could not be parsed and was rejected."
+msgstr "Diese SVG-Datei konnte nicht verarbeitet werden und wurde abgelehnt."
+
+msgid "This blocks the REST API for logged-out visitors. It WILL break: WooCommerce cart and checkout for guests, Contact Form 7 and other REST-based forms, comment submission on block themes, and oEmbed. Only enable it if your site uses none of these."
+msgstr "Dies blockiert die REST-API für abgemeldete Besucher. Es WIRD Folgendes beeinträchtigen: WooCommerce-Warenkorb und -Kasse für Gäste, Contact Form 7 und andere REST-basierte Formulare, das Absenden von Kommentaren bei Block-Themes sowie oEmbed. Aktivieren Sie es nur, wenn Ihre Website nichts davon nutzt."
+
+msgid "This content is locked! You need to log in to view"
+msgstr "Dieser Inhalt ist gesperrt! Sie müssen sich anmelden, um ihn zu sehen"
+
+msgid "This feature allows you to add CSS, JS, and HTML code to your WordPress site through hooks like WP head, WP body, WP footer, and WP login, making it easy and convenient to supplement your code"
+msgstr "Mit dieser Funktion können Sie über Hooks wie WP head, WP body, WP footer und WP login CSS-, JS- und HTML-Code zu Ihrer WordPress-Website hinzufügen, sodass Sie Ihren Code einfach und bequem ergänzen können"
+
+msgid "This feature allows you to add Shortcode to post titles, which is very convenient for using custom tools"
+msgstr "Mit dieser Funktion können Sie Shortcodes zu Beitragstiteln hinzufügen, was für die Nutzung benutzerdefinierter Tools sehr praktisch ist"
+
+msgid "This feature allows you to add the Classic Editor to the category description box when editing posts or products"
+msgstr "Mit dieser Funktion können Sie den Classic Editor beim Bearbeiten von Beiträgen oder Produkten zum Kategoriebeschreibungsfeld hinzufügen"
+
+msgid "This feature allows you to configure website redirects with multiple options such as 301, 404, and 503, making management much simpler"
+msgstr "Mit dieser Funktion können Sie Website-Weiterleitungen mit mehreren Optionen wie 301, 404 und 503 konfigurieren, was die Verwaltung erheblich vereinfacht"
+
+msgid "This feature allows you to customize the currency symbol as desired"
+msgstr "Mit dieser Funktion können Sie das Währungssymbol nach Wunsch anpassen"
+
+msgid "This feature allows you to only display Horse Tools to a specific Admin account"
+msgstr "Mit dieser Funktion können Sie Horse Tools nur einem bestimmten Administratorkonto anzeigen"
+
+msgid "This feature allows you to set newly edited posts to be displayed first in the main loop"
+msgstr "Mit dieser Funktion können Sie festlegen, dass zuletzt bearbeitete Beiträge im Hauptloop zuerst angezeigt werden"
+
+msgid "This feature compiles various shortcode templates with essential functionalities that are frequently used to enhance the user experience in WordPress"
+msgstr "Diese Funktion fasst verschiedene Shortcode-Vorlagen mit wesentlichen, häufig genutzten Funktionen zusammen, um das Nutzererlebnis in WordPress zu verbessern"
+
+msgid "This feature helps optimize cleanup tasks such as clearing content, comments, and the media library. It makes your website cleaner and more optimized"
+msgstr "Diese Funktion hilft, Bereinigungsaufgaben wie das Leeren von Inhalten, Kommentaren und der Mediathek zu optimieren. Sie macht Ihre Website aufgeräumter und optimierter"
+
+msgid "This feature uses the Fancybox library, allowing you to open images in posts for viewing"
+msgstr "Diese Funktion nutzt die Fancybox-Bibliothek, mit der Sie Bilder in Beiträgen zur Ansicht öffnen können"
+
+msgid "This feature was removed in Horse Tools 1.0.0. It opened an affiliate URL in a hidden off-screen window every time a visitor clicked anywhere on the page. That is affiliate cookie stuffing: it deceives your visitors, breaks the terms of every major affiliate network and of Google AdSense, and can get your domain and your ad accounts banned."
+msgstr "Diese Funktion wurde in Horse Tools 1.0.0 entfernt. Sie öffnete jedes Mal, wenn ein Besucher irgendwo auf der Seite klickte, eine Affiliate-URL in einem versteckten Fenster außerhalb des Bildschirms. Das ist Affiliate-Cookie-Stuffing: Es täuscht Ihre Besucher, verstößt gegen die Bedingungen aller großen Affiliate-Netzwerke sowie von Google AdSense und kann dazu führen, dass Ihre Domain und Ihre Werbekonten gesperrt werden."
+
+msgid "This feature will add nofollow and _blank to external links on your site"
+msgstr "Diese Funktion fügt externen Links auf Ihrer Website nofollow und _blank hinzu"
+
+msgid "This feature will hide the plugin you want from the plugin management page"
+msgstr "Diese Funktion blendet das gewünschte Plugin auf der Plugin-Verwaltungsseite aus"
+
+msgid "This feature will use the title of the post as the description for the image when uploaded"
+msgstr "Diese Funktion verwendet den Titel des Beitrags als Beschreibung für das Bild beim Hochladen"
+
+msgid "This function allows you to customize the color of the scrollbar to your liking"
+msgstr "Mit dieser Funktion können Sie die Farbe der Bildlaufleiste nach Ihren Wünschen anpassen"
+
+msgid "This function allows you to delete images attached to posts when deleting the posts themselves. Note that if multiple posts use the same image, it will also be deleted when removing the post"
+msgstr "Mit dieser Funktion können Sie Bilder, die an Beiträge angehängt sind, beim Löschen der Beiträge selbst löschen. Beachten Sie, dass ein Bild, das von mehreren Beiträgen verwendet wird, ebenfalls gelöscht wird, wenn der Beitrag entfernt wird"
+
+msgid "This function allows you to initiate a dark mode library, enabling the website to switch between light and dark modes"
+msgstr "Mit dieser Funktion können Sie eine Dunkelmodus-Bibliothek einbinden, sodass die Website zwischen hellem und dunklem Modus wechseln kann"
+
+msgid "This function allows you to redirect 301 links to the target page"
+msgstr "Mit dieser Funktion können Sie Links per 301 auf die Zielseite umleiten"
+
+msgid "This function will redirect all of your website pages to the destination page of your choice"
+msgstr "Diese Funktion leitet alle Seiten Ihrer Website auf die von Ihnen gewählte Zielseite um"
+
+msgid "This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site."
+msgstr "Dies umfasst jede Einstellungsgruppe, unabhängig davon, ob ihr Modul derzeit aktiviert ist oder nicht. Hochgeladene Schriftdateien sind nicht enthalten – sie verbleiben auf dieser Website."
+
+msgid "This is an email notification of your successful registration"
+msgstr "Dies ist eine E-Mail-Benachrichtigung über Ihre erfolgreiche Registrierung"
+
+msgid "This shortcode allows you to lock any content, and only the selected group of logged-in users can view it"
+msgstr "Mit diesem Shortcode können Sie beliebige Inhalte sperren, sodass nur die ausgewählte Gruppe angemeldeter Nutzer sie sehen kann"
+
+msgid "This shortcode is used to create a download button with a timeout"
+msgstr "Dieser Shortcode dient zum Erstellen einer Download-Schaltfläche mit Zeitverzögerung"
+
+msgid "This shortcode is used to display the date in the post title. Please note that you need to enable the shortcode usage in the post title under the POST, PAGE section"
+msgstr "Dieser Shortcode dient zur Anzeige des Datums im Beitragstitel. Beachten Sie, dass Sie die Shortcode-Verwendung im Beitragstitel im Bereich BEITRAG, SEITE aktivieren müssen"
+
+msgid "This website uses cookies to ensure you get the best experience on our site. By continuing to browse, you agree to our use of cookies. For more information, please read our Cookie Policy"
+msgstr "Diese Website verwendet Cookies, um Ihnen das bestmögliche Erlebnis auf unserer Website zu bieten. Wenn Sie weiter surfen, stimmen Sie unserer Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer Cookie-Richtlinie"
+
+msgid "Thu"
+msgstr "Do"
+
+msgid "Tidy up"
+msgstr "Aufräumen"
+
+msgid "Time"
+msgstr "Zeit"
+
+msgid "Time is up"
+msgstr "Zeit abgelaufen"
+
+msgid "Time:"
+msgstr "Zeit:"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Title color"
+msgstr "Titelfarbe"
+
+msgid "Title text and icon color"
+msgstr "Titeltext- und Symbolfarbe"
+
+msgid "To"
+msgstr "Bis"
+
+msgid "To add advertisements to your website, simply enable this feature. It provides you with various ad options to meet your distribution needs"
+msgstr "Um Anzeigen zu Ihrer Website hinzuzufügen, aktivieren Sie einfach diese Funktion. Sie bietet Ihnen verschiedene Anzeigenoptionen, um Ihren Verteilungsanforderungen gerecht zu werden"
+
+msgid "To create a menu on the navigation bar:"
+msgstr "So erstellen Sie ein Menü in der Navigationsleiste:"
+
+msgid "Too many failed attempts. Try again in about %d minute(s)."
+msgstr "Zu viele fehlgeschlagene Versuche. Versuchen Sie es in etwa %d Minute(n) erneut."
+
+msgid "Top and bottom positions"
+msgstr "Positionen oben und unten"
+
+msgid "Total data"
+msgstr "Gesamtdaten"
+
+msgid "Total:"
+msgstr "Gesamt:"
+
+msgid "Transparency level"
+msgstr "Transparenzstufe"
+
+msgid "Trashed comments"
+msgstr "Kommentare im Papierkorb"
+
+msgid "Tue"
+msgstr "Di"
+
+msgid "Turn Horse Tools shortcodes on or off"
+msgstr "Horse Tools-Shortcodes ein- oder ausschalten"
+
+msgid "Turn off WP_DEBUG_DISPLAY on a live site."
+msgstr "Schalten Sie WP_DEBUG_DISPLAY auf einer Live-Website aus."
+
+msgid "Turns off the RSS and Atom feeds if your site does not publish one."
+msgstr "Schaltet die RSS- und Atom-Feeds ab, wenn Ihre Website keinen veröffentlicht."
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Type any shortcode name (without brackets) to list the posts and pages that contain it — handy before you change or remove one."
+msgstr "Geben Sie einen beliebigen Shortcode-Namen (ohne Klammern) ein, um die Beiträge und Seiten aufzulisten, die ihn enthalten – praktisch, bevor Sie einen ändern oder entfernen."
+
+msgid "Type the number of the shortcode to insert:"
+msgstr "Geben Sie die Nummer des einzufügenden Shortcodes ein:"
+
+msgid "UPLOAD FONT"
+msgstr "SCHRIFT HOCHLADEN"
+
+msgid "URL:"
+msgstr "URL:"
+
+msgid "URL: Unverified"
+msgstr "URL: Nicht verifiziert"
+
+msgid "URL: does not exist"
+msgstr "URL: existiert nicht"
+
+msgid "USE FONT"
+msgstr "SCHRIFT VERWENDEN"
+
+msgid "USER"
+msgstr "BENUTZER"
+
+msgid "Unable to read the uploaded SVG file."
+msgstr "Die hochgeladene SVG-Datei konnte nicht gelesen werden."
+
+msgid "Unable to send email!"
+msgstr "E-Mail konnte nicht gesendet werden!"
+
+msgid "Unable to write the sanitised SVG file."
+msgstr "Die bereinigte SVG-Datei konnte nicht geschrieben werden."
+
+msgid "Undo the last import"
+msgstr "Letzten Import rückgängig machen"
+
+msgid "Upload avatars"
+msgstr "Avatare hochladen"
+
+msgid "Upload font error"
+msgstr "Fehler beim Hochladen der Schrift"
+
+msgid "Upload font success"
+msgstr "Schrift erfolgreich hochgeladen"
+
+msgid "Uploaded images are compressed"
+msgstr "Hochgeladene Bilder werden komprimiert"
+
+msgid "Use fonts on the web"
+msgstr "Schriften im Web verwenden"
+
+msgid "Use shortcodes"
+msgstr "Shortcodes verwenden"
+
+msgid "Use titles as descriptions for images"
+msgstr "Titel als Beschreibungen für Bilder verwenden"
+
+msgid "Use titles as image alt text"
+msgstr "Titel als Alt-Text für Bilder verwenden"
+
+msgid "Use with care: your theme may need several image sizes to display correctly."
+msgstr "Mit Vorsicht verwenden: Ihr Theme benötigt möglicherweise mehrere Bildgrößen, um korrekt angezeigt zu werden."
+
+msgid "Use:"
+msgstr "Verwendung:"
+
+msgid "User enumeration is blocked"
+msgstr "Benutzeraufzählung ist blockiert"
+
+msgid "Video cards"
+msgstr "Video-Karten"
+
+msgid "View"
+msgstr "Ansehen"
+
+msgid "Visit this page to get the SVG icon:"
+msgstr "Besuchen Sie diese Seite, um das SVG-Symbol zu erhalten:"
+
+msgid "WOO"
+msgstr "WOO"
+
+msgid "WOOCOMMERCE"
+msgstr "WOOCOMMERCE"
+
+msgid "WP BODY"
+msgstr "WP BODY"
+
+msgid "WP FOOTER"
+msgstr "WP FOOTER"
+
+msgid "WP HEAD"
+msgstr "WP HEAD"
+
+msgid "WP LOGIN"
+msgstr "WP LOGIN"
+
+msgid "Wait..."
+msgstr "Bitte warten..."
+
+msgid "Watermark image compared to main image"
+msgstr "Wasserzeichenbild im Verhältnis zum Hauptbild"
+
+msgid "We apologize, the website is currently undergoing maintenance. Please wait for a moment"
+msgstr "Wir bitten um Entschuldigung, die Website wird derzeit gewartet. Bitte haben Sie einen Moment Geduld"
+
+msgid "We are currently closed"
+msgstr "Wir haben derzeit geschlossen"
+
+msgid "We reply quickly"
+msgstr "Wir antworten schnell"
+
+msgid "Wed"
+msgstr "Mi"
+
+msgid "Weekly"
+msgstr "Wöchentlich"
+
+msgid "Welcome to Horse Tools"
+msgstr "Willkommen bei Horse Tools"
+
+msgid "Welcome to the website"
+msgstr "Willkommen auf der Website"
+
+msgid "When someone copies text from your site, a short line you set is added after it — their selection is kept, nothing is replaced. Useful for a \"Source: yoursite.com\" credit."
+msgstr "Wenn jemand Text von Ihrer Website kopiert, wird eine von Ihnen festgelegte kurze Zeile dahinter eingefügt – die Auswahl bleibt erhalten, nichts wird ersetzt. Nützlich für eine Quellenangabe wie \"Quelle: ihre-website.com\"."
+
+msgid "When you change a published post or page URL — its slug, its parent, or the whole path — the old address is redirected to the new one. WordPress already does this for a simple slug change; this also covers moves that core misses, and only ever acts on a URL that would otherwise 404."
+msgstr "Wenn Sie die URL eines veröffentlichten Beitrags oder einer Seite ändern – ihren Slug, ihre übergeordnete Seite oder den gesamten Pfad – wird die alte Adresse auf die neue umgeleitet. WordPress erledigt dies bereits bei einer einfachen Slug-Änderung; dies deckt auch Verschiebungen ab, die der Core verpasst, und greift stets nur bei einer URL ein, die sonst einen 404 ergäbe."
+
+msgid "When your theme or a plugin loads fonts from Google, every visitor's IP is sent to Google — which GDPR treats as a data transfer. This serves downloaded copies from your own domain instead. Scan first, then click self-host; this works for fonts loaded the standard way (if a font still loads from Google afterwards, your theme hard-codes it — the scan will show you)."
+msgstr "Wenn Ihr Theme oder ein Plugin Schriften von Google lädt, wird die IP jedes Besuchers an Google übertragen – was die GDPR als Datenübermittlung wertet. Stattdessen werden heruntergeladene Kopien von Ihrer eigenen Domain ausgeliefert. Zuerst scannen, dann auf Selbst hosten klicken; dies funktioniert für auf die übliche Weise geladene Schriften (falls eine Schrift danach weiterhin von Google lädt, ist sie in Ihrem Theme fest codiert – der Scan zeigt es Ihnen)."
+
+msgid "Where shortcodes run"
+msgstr "Wo Shortcodes ausgeführt werden"
+
+msgid "Widget title"
+msgstr "Widget-Titel"
+
+msgid "With this feature, HTML will be compressed into a single line, removing unnecessary characters and whitespace to speed up page loading"
+msgstr "Mit dieser Funktion wird HTML in eine einzige Zeile komprimiert, wobei unnötige Zeichen und Leerräume entfernt werden, um das Laden der Seite zu beschleunigen"
+
+msgid "With this feature, regular users can only view their own posts and images they uploaded, while the admin can view all of them"
+msgstr "Mit dieser Funktion können normale Nutzer nur ihre eigenen Beiträge und die von ihnen hochgeladenen Bilder sehen, während der Administrator alle sehen kann"
+
+msgid "With this feature, regular users cannot access the WordPress admin page"
+msgstr "Mit dieser Funktion können normale Nutzer nicht auf die WordPress-Adminseite zugreifen"
+
+msgid "With this feature, there will be an additional button in the profile section allowing users to upload avatars"
+msgstr "Mit dieser Funktion gibt es im Profilbereich eine zusätzliche Schaltfläche, über die Nutzer Avatare hochladen können"
+
+msgid "With this feature, you can notify your orders to your Telegram group, helping you manage orders conveniently"
+msgstr "Mit dieser Funktion können Sie Ihre Bestellungen an Ihre Telegram-Gruppe melden, was Ihnen die bequeme Verwaltung von Bestellungen erleichtert"
+
+msgid "WooCommerce / Store"
+msgstr "WooCommerce/Shop"
+
+msgid "WordPress runs shortcodes in post content by default. Turn these on to run them elsewhere too. (Saved with the SAVE button at the bottom.)"
+msgstr "WordPress führt Shortcodes standardmäßig im Beitragsinhalt aus. Aktivieren Sie diese, um sie auch anderswo auszuführen. (Wird mit der Schaltfläche SPEICHERN unten gespeichert.)"
+
+msgid "X-Content-Type-Options: nosniff"
+msgstr "X-Content-Type-Options: nosniff"
+
+msgid "X-Frame-Options: SAMEORIGIN (block clickjacking)"
+msgstr "X-Frame-Options: SAMEORIGIN (Clickjacking blockieren)"
+
+msgid "XML-RPC is disabled"
+msgstr "XML-RPC ist deaktiviert"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "Yes — preview as a visitor"
+msgstr "Ja – als Besucher vorschauen"
+
+msgid "You are not allowed to create this post type."
+msgstr "Sie sind nicht berechtigt, diesen Beitragstyp zu erstellen."
+
+msgid "You are not allowed to duplicate this item."
+msgstr "Sie sind nicht berechtigt, dieses Element zu duplizieren."
+
+msgid "You are not logged in"
+msgstr "Sie sind nicht angemeldet"
+
+msgid "You can adjust the compression level of the image from 5 to 100 (100 being no compression)"
+msgstr "Sie können die Komprimierungsstufe des Bildes von 5 bis 100 einstellen (100 bedeutet keine Komprimierung)"
+
+msgid "You can create your widget by activating it and entering content into the box below"
+msgstr "Sie können Ihr Widget erstellen, indem Sie es aktivieren und Inhalt in das untenstehende Feld eingeben"
+
+msgid "You can customize the role of successful registrants, with the default role being \"subscriber\""
+msgstr "Sie können die Rolle erfolgreich Registrierter anpassen; die Standardrolle ist \"Abonnent\""
+
+msgid "You can disable default widgets on the dashboard that you dont use"
+msgstr "Sie können standardmäßige Dashboard-Widgets deaktivieren, die Sie nicht verwenden"
+
+msgid "You can further customize your login page by enabling this feature"
+msgstr "Sie können Ihre Anmeldeseite weiter anpassen, indem Sie diese Funktion aktivieren"
+
+msgid "You can hide Horse Tools from the WP menu, but you can still access it through the link. This will hide Horse Tools for all accounts"
+msgstr "Sie können Horse Tools aus dem WP-Menü ausblenden, aber weiterhin über den Link darauf zugreifen. Dadurch wird Horse Tools für alle Konten ausgeblendet"
+
+msgid "You can paste the shortcode into the position where you want the login button to appear"
+msgstr "Sie können den Shortcode an der Stelle einfügen, an der die Login-Schaltfläche erscheinen soll"
+
+msgid "You can preview your file here:"
+msgstr "Sie können Ihre Datei hier ansehen:"
+
+msgid "You can use the shortcode in the editor and add it to the position you want, note: only use 1 shortcode in the post"
+msgstr "Sie können den Shortcode im Editor verwenden und ihn an der gewünschten Stelle einfügen; Hinweis: Verwenden Sie nur 1 Shortcode pro Beitrag"
+
+msgid "You can use the shortcode to add the search icon to the location you want"
+msgstr "Sie können den Shortcode verwenden, um das Suchsymbol an der gewünschten Stelle hinzuzufügen"
+
+msgid "You do not have permission to do this."
+msgstr "Sie haben keine Berechtigung, dies zu tun."
+
+msgid "You do not have permission to upload SVG files."
+msgstr "Sie haben keine Berechtigung, SVG-Dateien hochzuladen."
+
+msgid "You have successfully copied"
+msgstr "Sie haben erfolgreich kopiert"
+
+msgid "You have unsaved changes."
+msgstr "Sie haben ungespeicherte Änderungen."
+
+msgid "You havent added content yet"
+msgstr "Sie haben noch keinen Inhalt hinzugefügt"
+
+msgid "You need to activate this feature and customize the content below so that new registered users can receive emails"
+msgstr "Sie müssen diese Funktion aktivieren und den untenstehenden Inhalt anpassen, damit neu registrierte Nutzer E-Mails erhalten können"
+
+msgid "Your Google account email address is not verified."
+msgstr "Die E-Mail-Adresse Ihres Google-Kontos ist nicht verifiziert."
+
+msgid "Your comment has just been replied to"
+msgstr "Auf Ihren Kommentar wurde soeben geantwortet"
+
+msgid "Your comment has just been replied to in the post"
+msgstr "Auf Ihren Kommentar im Beitrag wurde soeben geantwortet"
+
+msgid "Your configuration has been saved"
+msgstr "Ihre Konfiguration wurde gespeichert"
+
+msgid "Your custom widget"
+msgstr "Ihr benutzerdefiniertes Widget"
+
+msgid "Your database"
+msgstr "Ihre Datenbank"
+
+msgid "[%s] New comment on the article \"%s\""
+msgstr "[%s] Neuer Kommentar zum Artikel \"%s\""
+
+msgid "days"
+msgstr "Tage"
+
+msgid "desktop"
+msgstr "Desktop"
+
+msgid "e.g. contact, promo"
+msgstr "z. B. contact, promo"
+
+msgid "e.g. sc, ht-snippet, vip"
+msgstr "z. B. sc, ht-snippet, vip"
+
+msgid "font-family:"
+msgstr "font-family:"
+
+msgid "hrs"
+msgstr "Std."
+
+msgid "icons"
+msgstr "Symbole"
+
+msgid "images"
+msgstr "Bilder"
+
+msgid "jQuery Migrate is a library used to maintain the operation of certain themes, plugins that rely on older code. If your website no longer relies on this library, you can disable it"
+msgstr "jQuery Migrate ist eine Bibliothek, die den Betrieb bestimmter Themes und Plugins aufrechterhält, die auf älterem Code beruhen. Wenn Ihre Website nicht mehr auf diese Bibliothek angewiesen ist, können Sie sie deaktivieren"
+
+msgid "logged-in"
+msgstr "angemeldet"
+
+msgid "logged-out"
+msgstr "abgemeldet"
+
+msgid "min"
+msgstr "Min."
+
+msgid "mobile"
+msgstr "Mobil"
+
+msgid "nofollow + new tab on external links"
+msgstr "nofollow + neuer Tab bei externen Links"
+
+msgid "off"
+msgstr "aus"
+
+msgid "post type, e.g. shortcoder"
+msgstr "Beitragstyp, z. B. shortcoder"
+
+msgid "sec"
+msgstr "Sek."
+
+msgid "showing first"
+msgstr "zeigt zuerst"
+
+msgid "third-party host(s) found"
+msgstr "Drittanbieter-Host(s) gefunden"
+
+msgid "up to %s"
+msgstr "bis zu %s"
+
+msgid "v3 score threshold (0 – 1)"
+msgstr "v3-Score-Schwellenwert (0 – 1)"
+
+msgid "— Insert a shortcode —"
+msgstr "— Einen Shortcode einfügen —"

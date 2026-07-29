@@ -1,0 +1,3484 @@
+# Horse Tools translation (zh_CN) — machine-generated, review recommended.
+msgid ""
+msgstr ""
+"Project-Id-Version: Horse Tools\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: horse-tools\n"
+
+msgid "\"Comments containing links\" matches links in the comment body only. The figure shown is the total comment count, not a match count, so confirm carefully."
+msgstr "“包含链接的评论”仅匹配评论正文中的链接。显示的数字是评论总数，而非匹配数，请仔细确认。"
+
+msgid "\"Enter link\" left blank if you want to call the chat list"
+msgstr "如需调用聊天列表，请将“输入链接”留空"
+
+msgid "#id or .class"
+msgstr "#id 或 .class"
+
+msgid "%d enabled"
+msgstr "已启用 %d 个"
+
+msgid "%d post(s) contain [sc] tags. Click “Convert now” to rewrite them."
+msgstr "有 %d 篇文章包含 [sc] 标签。点击“立即转换”来重写它们。"
+
+msgid "(duplicate)"
+msgstr "（副本）"
+
+msgid "(no title)"
+msgstr "（无标题）"
+
+msgid "301"
+msgstr "301"
+
+msgid "4 customizable buttons"
+msgstr "4 个可自定义按钮"
+
+msgid "404"
+msgstr "404"
+
+msgid "404 log"
+msgstr "404 日志"
+
+msgid "404 redirects"
+msgstr "404 重定向"
+
+msgid "503"
+msgstr "503"
+
+msgid "8-bit PNG images are not supported by the GD library, and this format already has perfect compression and does not need further processing"
+msgstr "GD 库不支持 8 位 PNG 图片，且该格式已具备完美压缩，无需进一步处理"
+
+msgid "A login was locked out on your site"
+msgstr "您的网站上有一次登录被锁定"
+
+msgid "A wrong CSP silently breaks scripts, styles and images. Test with browser dev tools before relying on it."
+msgstr "错误的 CSP 会悄然破坏脚本、样式和图片。请先用浏览器开发者工具测试后再依赖它。"
+
+msgid "ABOUT"
+msgstr "关于"
+
+msgid "ADD FONT"
+msgstr "添加字体"
+
+msgid "ADS.TXT"
+msgstr "ADS.TXT"
+
+msgid "ADSENSE"
+msgstr "ADSENSE"
+
+msgid "API Token"
+msgstr "API 令牌"
+
+msgid "About"
+msgstr "关于"
+
+msgid "Accepted Font Format : woff2, ttf, otf, off | Font Size: Upto 25 MB"
+msgstr "支持的字体格式：woff2、ttf、otf、off | 字体大小：最大 25 MB"
+
+msgid "Access Font Awesome to find icons"
+msgstr "访问 Font Awesome 查找图标"
+
+msgid "Account"
+msgstr "账户"
+
+msgid "Actions"
+msgstr "操作"
+
+msgid "Ad-blocker detection"
+msgstr "广告拦截器检测"
+
+msgid "Add .html for page"
+msgstr "为页面添加 .html"
+
+msgid "Add CSS for mobile size"
+msgstr "为手机尺寸添加 CSS"
+
+msgid "Add CSS for tablet size"
+msgstr "为平板尺寸添加 CSS"
+
+msgid "Add CSS to your website"
+msgstr "为您的网站添加 CSS"
+
+msgid "Add Classic Editor button"
+msgstr "添加经典编辑器按钮"
+
+msgid "Add Google API"
+msgstr "添加 Google API"
+
+msgid "Add Google json code"
+msgstr "添加 Google json 代码"
+
+msgid "Add a label so screen readers announce it."
+msgstr "添加标签，以便屏幕阅读器朗读。"
+
+msgid "Add ads at the bottom of the article"
+msgstr "在文章底部添加广告"
+
+msgid "Add ads to custom post placement"
+msgstr "在自定义文章位置添加广告"
+
+msgid "Add ads to the top of the article"
+msgstr "在文章顶部添加广告"
+
+msgid "Add an attribution line when visitors copy text"
+msgstr "当访客复制文本时添加来源标注行"
+
+msgid "Add avatar upload functionality"
+msgstr "添加头像上传功能"
+
+msgid "Add background image link"
+msgstr "添加背景图片链接"
+
+msgid "Add code"
+msgstr "添加代码"
+
+msgid "Add code to WP body"
+msgstr "向 WP body 添加代码"
+
+msgid "Add code to WP footer"
+msgstr "向 WP footer 添加代码"
+
+msgid "Add code to WP head"
+msgstr "向 WP head 添加代码"
+
+msgid "Add code to WP login"
+msgstr "向 WP login 添加代码"
+
+msgid "Add default featured image"
+msgstr "添加默认特色图片"
+
+msgid "Add duplicate button"
+msgstr "添加复制按钮"
+
+msgid "Add field"
+msgstr "添加字段"
+
+msgid "Add font Awesome to the website"
+msgstr "为网站添加 Font Awesome"
+
+msgid "Add fonts"
+msgstr "添加字体"
+
+msgid "Add fonts to your website with just a few simple steps. Additionally, it allows you to quickly set fonts in the specific areas you want to change, offering great convenience"
+msgstr "只需几个简单步骤即可为您的网站添加字体。此外，它还允许您快速为想要更改的特定区域设置字体，非常方便"
+
+msgid "Add hardening headers to front-end responses. Each one below is optional."
+msgstr "为前端响应添加加固标头。以下每一项均为可选。"
+
+msgid "Add images"
+msgstr "添加图片"
+
+msgid "Add json"
+msgstr "添加 json"
+
+msgid "Add link"
+msgstr "添加链接"
+
+msgid "Add logo link"
+msgstr "添加 logo 链接"
+
+msgid "Add nofollow and _blank for external links"
+msgstr "为外部链接添加 nofollow 和 _blank"
+
+msgid "Add picture frame link here"
+msgstr "在此处添加相框链接"
+
+msgid "Add service"
+msgstr "添加服务"
+
+msgid "Add the image logo link here"
+msgstr "在此处添加图片 logo 链接"
+
+msgid "Add the logo image link here"
+msgstr "在此处添加 logo 图片链接"
+
+msgid "Add watermark to images upon upload"
+msgstr "上传时为图片添加水印"
+
+msgid "Added"
+msgstr "已添加"
+
+msgid "Additional feature"
+msgstr "附加功能"
+
+msgid "Ads"
+msgstr "广告"
+
+msgid "Advanced configuration"
+msgstr "高级配置"
+
+msgid "Advanced image viewing feature in posts"
+msgstr "文章中的高级图片查看功能"
+
+msgid "Advanced photo upload"
+msgstr "高级图片上传"
+
+msgid "Advanced settings"
+msgstr "高级设置"
+
+msgid "After too many failed logins from the same address, block further attempts for a while. This is the real defence against password guessing."
+msgstr "当同一地址登录失败次数过多时，暂时阻止进一步尝试。这是抵御密码猜测的真正防线。"
+
+msgid "Agree"
+msgstr "同意"
+
+msgid "All devices"
+msgstr "所有设备"
+
+msgid "All links on your website will redirect to the maintenance page, and only logged-in admin accounts can view the content"
+msgstr "您网站上的所有链接都将重定向到维护页面，只有登录的管理员账户才能查看内容"
+
+msgid "All safe security headers (frame, nosniff, referrer, permissions)"
+msgstr "所有安全的安全标头（frame、nosniff、referrer、permissions）"
+
+msgid "All snippets"
+msgstr "所有代码片段"
+
+msgid "Allow avatar upload"
+msgstr "允许上传头像"
+
+msgid "Allow displaying member IDs on the profile management page"
+msgstr "允许在资料管理页面显示会员 ID"
+
+msgid "Allow uploading AVIF image format"
+msgstr "允许上传 AVIF 图片格式"
+
+msgid "Allow uploading JFIF files"
+msgstr "允许上传 JFIF 文件"
+
+msgid "Allow uploading SVG files"
+msgstr "允许上传 SVG 文件"
+
+msgid "Allow using Shortcode in post titles"
+msgstr "允许在文章标题中使用短代码"
+
+msgid "Allows uploading AVIF photos"
+msgstr "允许上传 AVIF 图片"
+
+msgid "Already declared"
+msgstr "已声明"
+
+msgid "An error occurred"
+msgstr "发生错误"
+
+msgid "Any"
+msgstr "任意"
+
+msgid "App password"
+msgstr "应用专用密码"
+
+msgid "Applied the \"%s\" preset. Recommended settings are on — you can undo this below."
+msgstr "已应用“%s”预设。推荐设置已开启——您可以在下方撤销。"
+
+msgid "Apply import"
+msgstr "应用导入"
+
+msgid "Apply this preset"
+msgstr "应用此预设"
+
+msgid "Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it."
+msgstr "应用会用导入的值覆盖这些分组。系统会保留一键备份，以便您撤销。"
+
+msgid "Ask your host to update PHP to 8.1 or newer."
+msgstr "请让您的主机提供商将 PHP 更新到 8.1 或更高版本。"
+
+msgid "Attempts before lockout"
+msgstr "锁定前的尝试次数"
+
+msgid "Attribution line"
+msgstr "来源标注行"
+
+msgid "Authenticate outgoing mail"
+msgstr "对外发邮件进行身份验证"
+
+msgid "Author and maintainer:"
+msgstr "作者及维护者："
+
+msgid "Auto (sheet on phone, modal on desktop)"
+msgstr "自动（手机上为底部面板，桌面上为模态框）"
+
+msgid "Automatic cleanup"
+msgstr "自动清理"
+
+msgid "Automatic initialization after <span id=\"sogiay\" style=\"padding: 5px;\">3</span>s"
+msgstr "<span id=\"sogiay\" style=\"padding: 5px;\">3</span> 秒后自动初始化"
+
+msgid "Automatic name"
+msgstr "自动命名"
+
+msgid "Automatic redirects"
+msgstr "自动重定向"
+
+msgid "Automatic updates"
+msgstr "自动更新"
+
+msgid "Automatically add a frame when uploading an image"
+msgstr "上传图片时自动添加相框"
+
+msgid "Automatically open popup when scrolling down"
+msgstr "向下滚动时自动打开弹窗"
+
+msgid "Avatar image URL (Avatar / Live-chat skin)"
+msgstr "头像图片 URL（头像 / 在线聊天皮肤）"
+
+msgid "Away — leave a message"
+msgstr "离开中——请留言"
+
+msgid "BACKUP"
+msgstr "备份"
+
+msgid "BLOCKER"
+msgstr "拦截器"
+
+msgid "BROWSE FILE"
+msgstr "浏览文件"
+
+msgid "Background"
+msgstr "背景"
+
+msgid "Background color"
+msgstr "背景颜色"
+
+msgid "Background color of the input form"
+msgstr "输入表单的背景颜色"
+
+msgid "Background title"
+msgstr "背景标题"
+
+msgid "Backup"
+msgstr "备份"
+
+msgid "Badge text (optional)"
+msgstr "徽标文字（可选）"
+
+msgid "Bar background color"
+msgstr "条形背景颜色"
+
+msgid "Bar color"
+msgstr "条形颜色"
+
+msgid "Bar size"
+msgstr "条形大小"
+
+msgid "Bento (1 big + cells)"
+msgstr "Bento（1 大格 + 若干小格）"
+
+msgid "Block login spam with Google reCAPTCHA"
+msgstr "使用 Google reCAPTCHA 拦截登录垃圾请求"
+
+msgid "Block user enumeration"
+msgstr "阻止用户枚举"
+
+msgid "Block user enumeration (?author=N, users REST, oEmbed)"
+msgstr "阻止用户枚举（?author=N、users REST、oEmbed）"
+
+msgid "Blocks ?author=N scans, removes the users REST endpoint for anonymous requests, strips the author from oEmbed, and makes login errors generic so they do not reveal whether the username or the password was wrong."
+msgstr "阻止 ?author=N 扫描，移除匿名请求的 users REST 端点，从 oEmbed 中剥离作者信息，并使登录错误信息通用化，从而不泄露是用户名还是密码错误。"
+
+msgid "Blog / News site"
+msgstr "博客 / 新闻网站"
+
+msgid "Blue"
+msgstr "蓝色"
+
+msgid "Border color"
+msgstr "边框颜色"
+
+msgid "Border distance"
+msgstr "边框距离"
+
+msgid "Border radius"
+msgstr "边框圆角"
+
+msgid "Border size"
+msgstr "边框大小"
+
+msgid "Bottom sheet"
+msgstr "底部面板"
+
+msgid "Browser ad-block notification"
+msgstr "浏览器广告拦截提示"
+
+msgid "Build a rich list of services or articles that slides up when a visitor taps a bottom-bar item. To open it, set one bottom-bar item’s “#id or .class” field above to"
+msgstr "构建一个丰富的服务或文章列表，当访客点击底栏项目时向上滑出。要打开它，请将上方某个底栏项目的“#id 或 .class”字段设置为"
+
+msgid "Business hours (shows Online / Away on the Live-chat, Card and Avatar skins)"
+msgstr "营业时间（在在线聊天、卡片和头像皮肤上显示在线 / 离开）"
+
+msgid "Button color"
+msgstr "按钮颜色"
+
+msgid "Button name"
+msgstr "按钮名称"
+
+msgid "Button position"
+msgstr "按钮位置"
+
+msgid "Button text"
+msgstr "按钮文字"
+
+msgid "Button text color"
+msgstr "按钮文字颜色"
+
+msgid "Buyer"
+msgstr "买家"
+
+msgid "CHAT"
+msgstr "聊天"
+
+msgid "CHECK"
+msgstr "检查"
+
+msgid "CLICK"
+msgstr "点击"
+
+msgid "COMMENT"
+msgstr "评论"
+
+msgid "CONTENT"
+msgstr "内容"
+
+msgid "COOKIE"
+msgstr "COOKIE"
+
+msgid "CSS"
+msgstr "CSS"
+
+msgid "CUSTOM"
+msgstr "自定义"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Card grid"
+msgstr "卡片网格"
+
+msgid "Center-align button on page"
+msgstr "在页面上居中对齐按钮"
+
+msgid "Centered modal"
+msgstr "居中模态框"
+
+msgid "Change WordPress logo in the Admin bar"
+msgstr "更改管理工具栏中的 WordPress logo"
+
+msgid "Change display name and icon to your preference"
+msgstr "按您的喜好更改显示名称和图标"
+
+msgid "Change login link"
+msgstr "更改登录链接"
+
+msgid "Change save interval"
+msgstr "更改保存间隔"
+
+msgid "Change the Buy Now text on the single product page"
+msgstr "更改单品页面上的“立即购买”文字"
+
+msgid "Change the color of the search box to your preferences"
+msgstr "按您的喜好更改搜索框的颜色"
+
+msgid "Changed"
+msgstr "已更改"
+
+msgid "Chat ID"
+msgstr "聊天 ID"
+
+msgid "Chat background color"
+msgstr "聊天背景颜色"
+
+msgid "Chat text color"
+msgstr "聊天文字颜色"
+
+msgid "Choose a file"
+msgstr "选择文件"
+
+msgid "Choose a font for the"
+msgstr "为以下项目选择字体"
+
+msgid "Choose decorations for the website, such as Christmas or Lunar New Year (If any effects cause issues on your website, it may be due to javascript conflicts. You can switch to other effects to use)"
+msgstr "为网站选择装饰效果，例如圣诞节或农历新年（如果某些效果在您的网站上出现问题，可能是由于 javascript 冲突。您可以切换到其他效果使用）"
+
+msgid "Choose display interface according to your preference"
+msgstr "按您的喜好选择显示界面"
+
+msgid "Classic Editor"
+msgstr "经典编辑器"
+
+msgid "Classic editing"
+msgstr "经典编辑"
+
+msgid "Clean"
+msgstr "清理"
+
+msgid "Cleaned the screen"
+msgstr "已清理屏幕"
+
+msgid "Cleanup runs on WordPress cron, which only fires when your site receives traffic. Weekly and monthly are measured from the last run."
+msgstr "清理依赖 WordPress cron 运行，而 cron 仅在您的网站有访问流量时触发。每周和每月均从上次运行时算起。"
+
+msgid "Clear all"
+msgstr "全部清除"
+
+msgid "Clear all automatic redirects"
+msgstr "清除所有自动重定向"
+
+msgid "Clear the whole log"
+msgstr "清除整个日志"
+
+msgid "Click here"
+msgstr "点击这里"
+
+msgid "Client ID"
+msgstr "客户端 ID"
+
+msgid "Client Secret"
+msgstr "客户端密钥"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Code orders"
+msgstr "代码订单"
+
+msgid "Comment notification"
+msgstr "评论通知"
+
+msgid "Comments containing links"
+msgstr "包含链接的评论"
+
+msgid "Compact icon tiles"
+msgstr "紧凑图标磁贴"
+
+msgid "Completed"
+msgstr "已完成"
+
+msgid "Compress HTML into a single line"
+msgstr "将 HTML 压缩为单行"
+
+msgid "Compress JPG images upon upload"
+msgstr "上传时压缩 JPG 图片"
+
+msgid "Compress JPGs and serve WebP"
+msgstr "压缩 JPG 并提供 WebP"
+
+msgid "Compress uploaded JPGs"
+msgstr "压缩已上传的 JPG"
+
+msgid "Compression level ("
+msgstr "压缩级别（"
+
+msgid "Conditional & content"
+msgstr "条件与内容"
+
+msgid "Configure Google index API"
+msgstr "配置 Google 索引 API"
+
+msgid "Configure SMTP mail"
+msgstr "配置 SMTP 邮件"
+
+msgid "Configure adding a watermark to images upon upload"
+msgstr "配置上传时为图片添加水印"
+
+msgid "Configure buttons"
+msgstr "配置按钮"
+
+msgid "Configure category permalink"
+msgstr "配置分类固定链接"
+
+msgid "Configure image upload function"
+msgstr "配置图片上传功能"
+
+msgid "Configure order notifications to be sent to Telegram"
+msgstr "配置将订单通知发送到 Telegram"
+
+msgid "Configure the options and create search data. If you want to refresh, you can delete the search data and recreate it. After enabling quick search and completing data creation, a quick search popup will appear when you enter the search box on the website"
+msgstr "配置选项并创建搜索数据。如需刷新，您可以删除搜索数据后重新创建。启用快速搜索并完成数据创建后，当您在网站上进入搜索框时，会出现快速搜索弹窗"
+
+msgid "Confirm deletion"
+msgstr "确认删除"
+
+msgid "Contact"
+msgstr "联系"
+
+msgid "Contact bar on mobile"
+msgstr "移动端联系栏"
+
+msgid "Contact us"
+msgstr "联系我们"
+
+msgid "Content"
+msgstr "内容"
+
+msgid "Content to be hidden"
+msgstr "要隐藏的内容"
+
+msgid "Content-Security-Policy (advanced, leave blank if unsure)"
+msgstr "Content-Security-Policy（高级，不确定请留空）"
+
+msgid "Continue"
+msgstr "继续"
+
+msgid "Convert JPG and PNG images to AVIF upon upload, and compress the images according to the configuration you enter"
+msgstr "上传时将 JPG 和 PNG 图片转换为 AVIF，并根据您输入的配置压缩图片"
+
+msgid "Convert JPG and PNG images to WEBP upon upload, and compress the images according to the configuration you enter"
+msgstr "上传时将 JPG 和 PNG 图片转换为 WEBP，并根据您输入的配置压缩图片"
+
+msgid "Convert JPG and PNG to AVIF"
+msgstr "将 JPG 和 PNG 转换为 AVIF"
+
+msgid "Convert JPG and PNG to WEBP"
+msgstr "将 JPG 和 PNG 转换为 WEBP"
+
+msgid "Convert PNG images to JPG upon upload, and compress the images according to the JPG configuration"
+msgstr "上传时将 PNG 图片转换为 JPG，并根据 JPG 配置压缩图片"
+
+msgid "Convert PNG to JPG"
+msgstr "将 PNG 转换为 JPG"
+
+msgid "Convert Shortcoder tags"
+msgstr "转换 Shortcoder 标签"
+
+msgid "Convert images to AVIF upon upload"
+msgstr "上传时将图片转换为 AVIF"
+
+msgid "Convert images to WEBP upon upload"
+msgstr "上传时将图片转换为 WEBP"
+
+msgid "Convert now"
+msgstr "立即转换"
+
+msgid "Convert path from domain.com/tag/news/ to domain.com/news/"
+msgstr "将路径从 domain.com/tag/news/ 转换为 domain.com/news/"
+
+msgid "Convert paths from (domain.com/category/news/latest-news, domain.com/category/news) to (domain.com/latest-news, domain.com/news)"
+msgstr "将路径从（domain.com/category/news/latest-news、domain.com/category/news）转换为（domain.com/latest-news、domain.com/news）"
+
+msgid "Converted %d post(s)."
+msgstr "已转换 %d 篇文章。"
+
+msgid "Cookies"
+msgstr "Cookies"
+
+msgid "Copied"
+msgstr "已复制"
+
+msgid "Copied: "
+msgstr "已复制： "
+
+msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
+msgstr "复制下方链接，将其添加到您 Google Developers 项目的“已授权重定向 URL”中"
+
+msgid "Core, plugins and themes are up to date"
+msgstr "核心、插件和主题均为最新"
+
+msgid "Corner card"
+msgstr "角落卡片"
+
+msgid "Could not create the fonts folder in uploads."
+msgstr "无法在 uploads 中创建 fonts 文件夹。"
+
+msgid "Could not load the icon list."
+msgstr "无法加载图标列表。"
+
+msgid "Could not read the data."
+msgstr "无法读取数据。"
+
+msgid "Coupon codes"
+msgstr "优惠券代码"
+
+msgid "Create a 301 automatically when a post permalink changes"
+msgstr "当文章固定链接更改时自动创建 301"
+
+msgid "Create a 301 redirect from this URL"
+msgstr "从此 URL 创建 301 重定向"
+
+msgid "Create a chat feature for users"
+msgstr "为用户创建聊天功能"
+
+msgid "Create a named block of HTML/CSS/JS and drop it anywhere with [ht-snippet name=\"your-name\"]. Placeholders {{param}} or %%param%% are filled from the shortcode’s attributes, plus built-ins: currentyear, currentdate, postid, posttitle, sitename, siteurl."
+msgstr "创建一个命名的 HTML/CSS/JS 代码块，并用 [ht-snippet name=\"your-name\"] 将其放置到任何位置。占位符 {{param}} 或 %%param%% 由短代码的属性填充，另有内置项：currentyear、currentdate、postid、posttitle、sitename、siteurl。"
+
+msgid "Create an outstanding popup"
+msgstr "创建醒目的弹窗"
+
+msgid "Create custom post type data"
+msgstr "创建自定义文章类型数据"
+
+msgid "Create welcome email for registered users"
+msgstr "为注册用户创建欢迎邮件"
+
+msgid "Currently enabled"
+msgstr "当前已启用"
+
+msgid "Custom WordPress login page"
+msgstr "自定义 WordPress 登录页面"
+
+msgid "Custom position in posts"
+msgstr "文章中的自定义位置"
+
+msgid "Custom posts will be displayed"
+msgstr "将显示自定义文章"
+
+msgid "Custom shortcodes (snippets)"
+msgstr "自定义短代码（代码片段）"
+
+msgid "Customer reviews"
+msgstr "客户评价"
+
+msgid "Customize"
+msgstr "自定义"
+
+msgid "Customize Currency Unit"
+msgstr "自定义货币单位"
+
+msgid "Customize TOC display position"
+msgstr "自定义目录显示位置"
+
+msgid "Customize background"
+msgstr "自定义背景"
+
+msgid "Customize chat button"
+msgstr "自定义聊天按钮"
+
+msgid "Customize dashboard widgets"
+msgstr "自定义仪表盘小工具"
+
+msgid "Customize display"
+msgstr "自定义显示"
+
+msgid "Customize display and colors"
+msgstr "自定义显示和颜色"
+
+msgid "Customize elements on the page"
+msgstr "自定义页面上的元素"
+
+msgid "Customize icons and positions"
+msgstr "自定义图标和位置"
+
+msgid "Customize scroll bar"
+msgstr "自定义滚动条"
+
+msgid "DATABASE"
+msgstr "数据库"
+
+msgid "DATE"
+msgstr "日期"
+
+msgid "DEBUG"
+msgstr "调试"
+
+msgid "DEL"
+msgstr "删除"
+
+msgid "DISPLAY"
+msgstr "显示"
+
+msgid "Daily"
+msgstr "每天"
+
+msgid "Dark"
+msgstr "深色"
+
+msgid "Dark mode"
+msgstr "深色模式"
+
+msgid "Data"
+msgstr "数据"
+
+msgid "Data & media"
+msgstr "数据与媒体"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Debug"
+msgstr "调试"
+
+msgid "Debug is not enabled"
+msgstr "调试未启用"
+
+msgid "Debug log file does not exist"
+msgstr "调试日志文件不存在"
+
+msgid "Debug settings"
+msgstr "调试设置"
+
+msgid "Declaration already deleted"
+msgstr "声明已删除"
+
+msgid "Decorative effects for the website"
+msgstr "网站的装饰效果"
+
+msgid "Default style"
+msgstr "默认样式"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Delete all 404 images"
+msgstr "删除所有 404 图片"
+
+msgid "Delete all 404 thumbnail images"
+msgstr "删除所有 404 缩略图"
+
+msgid "Delete autosaves"
+msgstr "删除自动保存"
+
+msgid "Delete comments"
+msgstr "删除评论"
+
+msgid "Delete cropped image"
+msgstr "删除裁剪后的图片"
+
+msgid "Delete data"
+msgstr "删除数据"
+
+msgid "Delete revisions"
+msgstr "删除修订版本"
+
+msgid "Delete settings:"
+msgstr "删除设置："
+
+msgid "Delete this log entry"
+msgstr "删除此日志条目"
+
+msgid "Delete this snippet? Content that uses it will stop rendering."
+msgstr "删除此代码片段？使用它的内容将停止渲染。"
+
+msgid "Deleted"
+msgstr "已删除"
+
+msgid "Deleted %1$s of %2$s scanned"
+msgstr "已删除 %1$s / 已扫描 %2$s"
+
+msgid "Deleted successfully"
+msgstr "删除成功"
+
+msgid "Deleted: %s"
+msgstr "已删除：%s"
+
+msgid "Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action."
+msgstr "按链接模式删除评论有意排除在自动清理之外——它始终是手动操作。"
+
+msgid "Deleting is permanent. Revisions, autosaves and trashed content (posts, pages, products) are removed together with their metadata and attached files."
+msgstr "删除是永久性的。修订版本、自动保存和已回收的内容（文章、页面、产品）将连同其元数据和附加文件一并移除。"
+
+msgid "Deletion successful"
+msgstr "删除成功"
+
+msgid "Demo"
+msgstr "演示"
+
+msgid "Description (for your reference)"
+msgstr "描述（供您参考）"
+
+msgid "Desktop only"
+msgstr "仅桌面端"
+
+msgid "Disable Classic CSS"
+msgstr "禁用经典 CSS"
+
+msgid "Disable Emoji"
+msgstr "禁用 Emoji"
+
+msgid "Disable Gutenberg CSS"
+msgstr "禁用 Gutenberg CSS"
+
+msgid "Disable REST API for anonymous visitors"
+msgstr "为匿名访客禁用 REST API"
+
+msgid "Disable WordPress info widget"
+msgstr "禁用 WordPress 信息小工具"
+
+msgid "Disable Wp-Embed"
+msgstr "禁用 Wp-Embed"
+
+msgid "Disable X-Pingback"
+msgstr "禁用 X-Pingback"
+
+msgid "Disable XML RPC"
+msgstr "禁用 XML RPC"
+
+msgid "Disable XML-RPC, X-Pingback, extra header tags and the version tag"
+msgstr "禁用 XML-RPC、X-Pingback、多余的标头标签和版本标签"
+
+msgid "Disable feeds (RSS/Atom)"
+msgstr "禁用订阅源（RSS/Atom）"
+
+msgid "Disable health widget"
+msgstr "禁用站点健康小工具"
+
+msgid "Disable jQuery Migrate"
+msgstr "禁用 jQuery Migrate"
+
+msgid "Disable logo display"
+msgstr "禁用 logo 显示"
+
+msgid "Disable numbers in front of tags"
+msgstr "禁用标签前的数字"
+
+msgid "Disable quick draft widget"
+msgstr "禁用快速草稿小工具"
+
+msgid "Disable recent posts widget"
+msgstr "禁用最近文章小工具"
+
+msgid "Disable statistics widget"
+msgstr "禁用统计小工具"
+
+msgid "Disable the Admin Bar"
+msgstr "禁用管理工具栏"
+
+msgid "Disable the theme & plugin file editor"
+msgstr "禁用主题和插件文件编辑器"
+
+msgid "Disable unnecessary items"
+msgstr "禁用不必要的项目"
+
+msgid "Disable unused endpoints"
+msgstr "禁用未使用的端点"
+
+msgid "Disable unused widgets"
+msgstr "禁用未使用的小工具"
+
+msgid "Disable welcome widget"
+msgstr "禁用欢迎小工具"
+
+msgid "Disabled TOC"
+msgstr "已禁用目录"
+
+msgid "Discard"
+msgstr "放弃"
+
+msgid "Display ID in the management page"
+msgstr "在管理页面显示 ID"
+
+msgid "Display language settings"
+msgstr "显示语言设置"
+
+msgid "Display link when seconds expire"
+msgstr "秒数结束时显示链接"
+
+msgid "Display name (shown in the list)"
+msgstr "显示名称（在列表中显示）"
+
+msgid "Display on the WooCommerce login form"
+msgstr "在 WooCommerce 登录表单上显示"
+
+msgid "Display on the default login form"
+msgstr "在默认登录表单上显示"
+
+msgid "Display options"
+msgstr "显示选项"
+
+msgid "Display text color"
+msgstr "显示文字颜色"
+
+msgid "Display text if out of stock"
+msgstr "缺货时显示的文字"
+
+msgid "Display text if the price is 0"
+msgstr "价格为 0 时显示的文字"
+
+msgid "Display type"
+msgstr "显示类型"
+
+msgid "Display your cookie notice to inform users about cookie use and allow them to manage their preferences easily"
+msgstr "显示您的 Cookie 通知，告知用户 Cookie 的使用情况，并让他们轻松管理自己的偏好"
+
+msgid "Distance above"
+msgstr "上方距离"
+
+msgid "Do not auto-install core updates"
+msgstr "不自动安装核心更新"
+
+msgid "Do not auto-install language pack updates"
+msgstr "不自动安装语言包更新"
+
+msgid "Do not auto-install plugin updates"
+msgstr "不自动安装插件更新"
+
+msgid "Do not auto-install theme updates"
+msgstr "不自动安装主题更新"
+
+msgid "Do not enable if you are using optimization plugins with similar functionality (conflict)"
+msgstr "如果您正在使用具有类似功能的优化插件，请勿启用（会冲突）"
+
+msgid "Do not select"
+msgstr "不选择"
+
+msgid "Do you want to delete?"
+msgstr "您要删除吗？"
+
+msgid "Does not exist"
+msgstr "不存在"
+
+msgid "Download"
+msgstr "下载"
+
+msgid "Download & self-host Google Fonts"
+msgstr "下载并本地托管 Google Fonts"
+
+msgid "Download .json"
+msgstr "下载 .json"
+
+msgid "Download button GGET shortcode"
+msgstr "下载按钮 GGET 短代码"
+
+msgid "Download link"
+msgstr "下载链接"
+
+msgid "Downloading fonts…"
+msgstr "正在下载字体…"
+
+msgid "Drop Emoji and jQuery Migrate"
+msgstr "移除 Emoji 和 jQuery Migrate"
+
+msgid "Duplicate"
+msgstr "复制"
+
+msgid "Duplicate content"
+msgstr "复制内容"
+
+msgid "Duplicate post, page, custom post type"
+msgstr "复制文章、页面、自定义文章类型"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "Editor classic"
+msgstr "经典编辑器"
+
+msgid "Effect"
+msgstr "效果"
+
+msgid "Email"
+msgstr "电子邮件"
+
+msgid "Email me when an address is locked out"
+msgstr "当某地址被锁定时给我发邮件"
+
+msgid "Email notification when a post has a comment"
+msgstr "文章有评论时发送邮件通知"
+
+msgid "Email notification when there a reply"
+msgstr "有回复时发送邮件通知"
+
+msgid "Email sent successfully"
+msgstr "邮件发送成功"
+
+msgid "Email subject"
+msgstr "邮件主题"
+
+msgid "Empty"
+msgstr "空"
+
+msgid "Empty trash"
+msgstr "清空回收站"
+
+msgid "Enable"
+msgstr "启用"
+
+msgid "Enable .html for page"
+msgstr "为页面启用 .html"
+
+msgid "Enable 301 redirection"
+msgstr "启用 301 重定向"
+
+msgid "Enable 404 redirection"
+msgstr "启用 404 重定向"
+
+msgid "Enable 503 maintenance mode"
+msgstr "启用 503 维护模式"
+
+msgid "Enable AVIF image compression"
+msgstr "启用 AVIF 图片压缩"
+
+msgid "Enable Adsense"
+msgstr "启用 Adsense"
+
+msgid "Enable Classic Editor"
+msgstr "启用经典编辑器"
+
+msgid "Enable Classic Editor in category description"
+msgstr "在分类描述中启用经典编辑器"
+
+msgid "Enable Classic Widget"
+msgstr "启用经典小工具"
+
+msgid "Enable GGET shortcode"
+msgstr "启用 GGET 短代码"
+
+msgid "Enable HTML compression"
+msgstr "启用 HTML 压缩"
+
+msgid "Enable Instant-page"
+msgstr "启用 Instant-page"
+
+msgid "Enable JPG image compression"
+msgstr "启用 JPG 图片压缩"
+
+msgid "Enable SMTP mail"
+msgstr "启用 SMTP 邮件"
+
+msgid "Enable SMTP mail to allow SMTP mail to function and send emails when you perform a test"
+msgstr "启用 SMTP 邮件，以便 SMTP 邮件正常运作，并在您进行测试时发送邮件"
+
+msgid "Enable Smooth-scroll"
+msgstr "启用 Smooth-scroll"
+
+msgid "Enable WEBP image compression"
+msgstr "启用 WEBP 图片压缩"
+
+msgid "Enable WP_DEBUG"
+msgstr "启用 WP_DEBUG"
+
+msgid "Enable WP_DEBUG_DISPLAY"
+msgstr "启用 WP_DEBUG_DISPLAY"
+
+msgid "Enable WP_DEBUG_LOG"
+msgstr "启用 WP_DEBUG_LOG"
+
+msgid "Enable ad-block detection"
+msgstr "启用广告拦截检测"
+
+msgid "Enable ads.txt"
+msgstr "启用 ads.txt"
+
+msgid "Enable advanced image viewing"
+msgstr "启用高级图片查看"
+
+msgid "Enable and add the category IDs you want to hide from the main loop displaying posts on the homepage, for example: 1, 2, 3"
+msgstr "启用并添加您想从首页文章主循环中隐藏的分类 ID，例如：1, 2, 3"
+
+msgid "Enable and configure the functions below to enable Google sign-in to work"
+msgstr "启用并配置以下功能，以使 Google 登录正常运作"
+
+msgid "Enable chat button"
+msgstr "启用聊天按钮"
+
+msgid "Enable color and display customization"
+msgstr "启用颜色和显示自定义"
+
+msgid "Enable contact bar"
+msgstr "启用联系栏"
+
+msgid "Enable cookie"
+msgstr "启用 Cookie"
+
+msgid "Enable custom footer"
+msgstr "启用自定义页脚"
+
+msgid "Enable custom functionality"
+msgstr "启用自定义功能"
+
+msgid "Enable custom widget"
+msgstr "启用自定义小工具"
+
+msgid "Enable customization"
+msgstr "启用自定义"
+
+msgid "Enable dark mode"
+msgstr "启用深色模式"
+
+msgid "Enable date shortcode"
+msgstr "启用日期短代码"
+
+msgid "Enable deleting posts to also delete images"
+msgstr "启用删除文章时同时删除图片"
+
+msgid "Enable element customization"
+msgstr "启用元素自定义"
+
+msgid "Enable email sending"
+msgstr "启用邮件发送"
+
+msgid "Enable font Awesome"
+msgstr "启用 Font Awesome"
+
+msgid "Enable for use"
+msgstr "启用以使用"
+
+msgid "Enable if you want to hide categories"
+msgstr "如需隐藏分类请启用"
+
+msgid "Enable image lazy loading"
+msgstr "启用图片懒加载"
+
+msgid "Enable image size limitation"
+msgstr "启用图片尺寸限制"
+
+msgid "Enable logo customization"
+msgstr "启用 logo 自定义"
+
+msgid "Enable notification"
+msgstr "启用通知"
+
+msgid "Enable notifications"
+msgstr "启用通知"
+
+msgid "Enable picture frame"
+msgstr "启用相框"
+
+msgid "Enable popup"
+msgstr "启用弹窗"
+
+msgid "Enable quick search"
+msgstr "启用快速搜索"
+
+msgid "Enable revision limit"
+msgstr "启用修订版本限制"
+
+msgid "Enable shortcode lock"
+msgstr "启用短代码锁定"
+
+msgid "Enable shortcodes"
+msgstr "启用短代码"
+
+msgid "Enable signature shortcode"
+msgstr "启用签名短代码"
+
+msgid "Enable site-wide 301 redirects"
+msgstr "启用全站 301 重定向"
+
+msgid "Enable table of contents"
+msgstr "启用目录"
+
+msgid "Enable the [ht-icon] shortcode"
+msgstr "启用 [ht-icon] 短代码"
+
+msgid "Enable the contact bar and configure the content below for use"
+msgstr "启用联系栏并配置以下内容以供使用"
+
+msgid "Enable the picture frame"
+msgstr "启用相框"
+
+msgid "Enable the services panel"
+msgstr "启用服务面板"
+
+msgid "Enable this feature and enter the login link suffix"
+msgstr "启用此功能并输入登录链接后缀"
+
+msgid "Enable this feature if you want JFIF format images to be uploaded to the media. The uploaded images will be converted to JPG or WEBP format according to the configuration"
+msgstr "如果您想将 JFIF 格式的图片上传到媒体库，请启用此功能。上传的图片将根据配置转换为 JPG 或 WEBP 格式"
+
+msgid "Enable this feature if you want SVG images to be uploaded to the media"
+msgstr "如果您想将 SVG 图片上传到媒体库，请启用此功能"
+
+msgid "Enable this feature if you want images in posts copied from another source to be stored on your website"
+msgstr "如果您想将从其他来源复制到文章中的图片存储到您的网站上，请启用此功能"
+
+msgid "Enable this feature if you want the first image in the post to become the featured image if the featured image field is empty. Additionally, you can select a default featured image in case both the featured image and the images in the post are empty"
+msgstr "如果您希望在特色图片字段为空时，将文章中的第一张图片设为特色图片，请启用此功能。此外，您还可以选择一张默认特色图片，以防特色图片和文章中的图片都为空"
+
+msgid "Enable this feature if you want the original image size to be selected by default whenever adding images to the post"
+msgstr "如果您希望每次向文章添加图片时默认选择原始图片尺寸，请启用此功能"
+
+msgid "Enable this feature if you want to add additional functionalities to the Classic Editor to enhance professional editing"
+msgstr "如果您想为经典编辑器添加额外功能以增强专业编辑体验，请启用此功能"
+
+msgid "Enable this feature if you want to add the Classic Editor button in the post and page management interface. With this feature, you dont need to set the Classic Editor as default but can use it in parallel"
+msgstr "如果您想在文章和页面管理界面中添加经典编辑器按钮，请启用此功能。使用此功能后，您无需将经典编辑器设为默认，即可并行使用它"
+
+msgid "Enable this feature if you want to customize the footer in the WP admin"
+msgstr "如果您想自定义 WP 后台的页脚，请启用此功能"
+
+msgid "Enable this feature to be able to use the customizations below"
+msgstr "启用此功能即可使用以下自定义项"
+
+msgid "Enable to display the Google login button on the WooCommerce login form"
+msgstr "启用后在 WooCommerce 登录表单上显示 Google 登录按钮"
+
+msgid "Enable to display the Google login button on the default WordPress login form"
+msgstr "启用后在默认 WordPress 登录表单上显示 Google 登录按钮"
+
+msgid "Enable to use"
+msgstr "启用以使用"
+
+msgid "Enable upload size limit"
+msgstr "启用上传大小限制"
+
+msgid "Enable watermarks"
+msgstr "启用水印"
+
+msgid "Enabled"
+msgstr "已启用"
+
+msgid "Enabled TOC"
+msgstr "已启用目录"
+
+msgid "Enhance features for Classic Editor"
+msgstr "增强经典编辑器的功能"
+
+msgid "Enter Adsense code here"
+msgstr "在此处输入 Adsense 代码"
+
+msgid "Enter CSS here"
+msgstr "在此处输入 CSS"
+
+msgid "Enter ID"
+msgstr "输入 ID"
+
+msgid "Enter a shortcode name to search for."
+msgstr "输入要搜索的短代码名称。"
+
+msgid "Enter a suffix"
+msgstr "输入后缀"
+
+msgid "Enter a title"
+msgstr "输入标题"
+
+msgid "Enter button name"
+msgstr "输入按钮名称"
+
+msgid "Enter code here"
+msgstr "在此处输入代码"
+
+msgid "Enter content"
+msgstr "输入内容"
+
+msgid "Enter content here"
+msgstr "在此处输入内容"
+
+msgid "Enter cookie content"
+msgstr "输入 Cookie 内容"
+
+msgid "Enter cookie title"
+msgstr "输入 Cookie 标题"
+
+msgid "Enter email"
+msgstr "输入电子邮件"
+
+msgid "Enter email content here"
+msgstr "在此处输入邮件内容"
+
+msgid "Enter image link"
+msgstr "输入图片链接"
+
+msgid "Enter json"
+msgstr "输入 json"
+
+msgid "Enter keywords to search"
+msgstr "输入关键词进行搜索"
+
+msgid "Enter link"
+msgstr "输入链接"
+
+msgid "Enter manually"
+msgstr "手动输入"
+
+msgid "Enter name"
+msgstr "输入名称"
+
+msgid "Enter note content"
+msgstr "输入备注内容"
+
+msgid "Enter the SVG icon"
+msgstr "输入 SVG 图标"
+
+msgid "Enter the content you want to display and configure the customizations above so the popup can appear when users visit your website"
+msgstr "输入您想显示的内容并配置上方的自定义项，以便用户访问您的网站时弹窗能够出现"
+
+msgid "Enter the content you want to display in the notification, and customize the colors to match your preferences. A notification will appear at the top of your website, making it easy for users to see"
+msgstr "输入您想在通知中显示的内容，并自定义颜色以符合您的喜好。通知将出现在您网站的顶部，方便用户查看"
+
+msgid "Enter the link"
+msgstr "输入链接"
+
+msgid "Enter the number of posts or products to be displayed when searching"
+msgstr "输入搜索时要显示的文章或产品数量"
+
+msgid "Enter the number of revisions"
+msgstr "输入修订版本数量"
+
+msgid "Enter the policy page link"
+msgstr "输入政策页面链接"
+
+msgid "Enter the tag and tag number for the ad to appear"
+msgstr "输入广告出现所用的标签和标签编号"
+
+msgid "Enter the title and content you want to display when ad-blocker is detected"
+msgstr "输入检测到广告拦截器时要显示的标题和内容"
+
+msgid "Enter the url"
+msgstr "输入 url"
+
+msgid "Enter title"
+msgstr "输入标题"
+
+msgid "Enter units"
+msgstr "输入单位"
+
+msgid "Enter waiting time"
+msgstr "输入等待时间"
+
+msgid "Environment"
+msgstr "环境"
+
+msgid "Error"
+msgstr "错误"
+
+msgid "Error cannot be cleaned"
+msgstr "错误，无法清理"
+
+msgid "Error — nothing was deleted."
+msgstr "错误——未删除任何内容。"
+
+msgid "Every Horse Tools shortcode. Click any example to copy it."
+msgstr "所有 Horse Tools 短代码。点击任意示例即可复制。"
+
+msgid "Everyone"
+msgstr "所有人"
+
+msgid "Example: domain.com/wp-admin where wp-admin is the suffix"
+msgstr "示例：domain.com/wp-admin，其中 wp-admin 为后缀"
+
+msgid "Export"
+msgstr "导出"
+
+msgid "Export downloads all your snippets as a .json file. Import merges a file from another site — existing snippets of the same name are kept, not overwritten."
+msgstr "导出会将您所有的代码片段下载为 .json 文件。导入会合并来自其他网站的文件——同名的现有代码片段会被保留，不会被覆盖。"
+
+msgid "Export snippets (.json)"
+msgstr "导出代码片段（.json）"
+
+msgid "Exported."
+msgstr "已导出。"
+
+msgid "Extend"
+msgstr "扩展"
+
+msgid "External"
+msgstr "外部"
+
+msgid "Extras"
+msgstr "附加项"
+
+msgid "FREE"
+msgstr "免费"
+
+msgid "Failed to delete the file"
+msgstr "删除文件失败"
+
+msgid "Failed to load debug log"
+msgstr "加载调试日志失败"
+
+msgid "Failed to update setting:"
+msgstr "更新设置失败："
+
+msgid "Featured banner + grid"
+msgstr "特色横幅 + 网格"
+
+msgid "Feeds are not available on this site. %s"
+msgstr "本站点未提供订阅源。%s"
+
+msgid "Feeds disabled"
+msgstr "已禁用订阅源"
+
+msgid "Field"
+msgstr "字段"
+
+msgid "Filter by tag"
+msgstr "按标签筛选"
+
+msgid "Filter posts and images"
+msgstr "筛选文章和图片"
+
+msgid "Find and delete all 404 images in media"
+msgstr "查找并删除媒体库中所有 404 图片"
+
+msgid "Find and delete all 404 thumbnail images in media"
+msgstr "查找并删除媒体库中所有 404 缩略图"
+
+msgid "Find usage"
+msgstr "查找用法"
+
+msgid "Find where a shortcode is used"
+msgstr "查找短代码的使用位置"
+
+msgid "Flip photo"
+msgstr "翻转图片"
+
+msgid "Font"
+msgstr "字体"
+
+msgid "Font does not exist"
+msgstr "字体不存在"
+
+msgid "Font size"
+msgstr "字体大小"
+
+msgid "For an Nginx server, if the ads.txt file already exists in the root directory of the website, it will prioritize the static file, so this function will not work. If you want to use it, you can either configure Nginx or delete the static file before proceeding"
+msgstr "对于 Nginx 服务器，如果网站根目录中已存在 ads.txt 文件，它会优先使用静态文件，因此此功能将不起作用。如需使用，您可以先配置 Nginx 或删除静态文件后再继续"
+
+msgid "Forced ad clicks — removed"
+msgstr "强制广告点击——已移除"
+
+msgid "Found in %d item(s):"
+msgstr "在 %d 个项目中找到："
+
+msgid "Foxtool by Fox Theme (Nguyễn Ngọc Hoàn)"
+msgstr "Foxtool by Fox Theme (Nguyễn Ngọc Hoàn)"
+
+msgid "Free"
+msgstr "免费"
+
+msgid "Free to use the \"solid\" and \"brands\" styles"
+msgstr "可免费使用“solid”和“brands”样式"
+
+msgid "Free!"
+msgstr "免费！"
+
+msgid "Fri"
+msgstr "周五"
+
+msgid "From"
+msgstr "从"
+
+msgid "Full screen"
+msgstr "全屏"
+
+msgid "GD Library does not support AVIF images"
+msgstr "GD 库不支持 AVIF 图片"
+
+msgid "GD Library is not installed"
+msgstr "GD 库未安装"
+
+msgid "GGET"
+msgstr "GGET"
+
+msgid "GOOGLE"
+msgstr "GOOGLE"
+
+msgid "Generate data"
+msgstr "生成数据"
+
+msgid "Give the snippet a name (letters, numbers and dashes)."
+msgstr "为代码片段命名（字母、数字和短横线）。"
+
+msgid "Go to the home page"
+msgstr "前往首页"
+
+msgid "Gold"
+msgstr "金色"
+
+msgid "Google Fonts detected — click “Download & self-host” to serve them locally."
+msgstr "检测到 Google Fonts——点击“下载并本地托管”即可在本地提供。"
+
+msgid "Google did not return the stylesheet (HTTP error)."
+msgstr "Google 未返回样式表（HTTP 错误）。"
+
+msgid "Grade %s"
+msgstr "评级 %s"
+
+msgid "Green"
+msgstr "绿色"
+
+msgid "Greeting bubble text (e.g. Hi! Need help?)"
+msgstr "问候气泡文字（例如：您好！需要帮助吗？）"
+
+msgid "Greeting message (Live-chat skin)"
+msgstr "问候消息（在线聊天皮肤）"
+
+msgid "H tag color when scrolled to"
+msgstr "滚动到时的 H 标签颜色"
+
+msgid "HORSE SEARCH"
+msgstr "HORSE SEARCH"
+
+msgid "HSTS (force HTTPS for 180 days)"
+msgstr "HSTS（强制 HTTPS 180 天）"
+
+msgid "HTML compression: minify inline JS, strip comments"
+msgstr "HTML 压缩：压缩内联 JS、移除注释"
+
+msgid "HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>"
+msgstr "HTML、CSS 或 JS…  例如 <a href=&quot;{{url}}&quot;>{{label}}</a>"
+
+msgid "Hello"
+msgstr "您好"
+
+msgid "Hello %s. A new comment has been posted on your article \"%s\". You can view the comment here: %s"
+msgstr "您好 %s。您的文章“%s”有一条新评论。您可以在此查看评论：%s"
+
+msgid "Hi 👋 How can we help you?"
+msgstr "你好 👋 我们能帮您什么？"
+
+msgid "Hide Admin account from profile page"
+msgstr "在资料页面隐藏管理员账户"
+
+msgid "Hide Horse Tools"
+msgstr "隐藏 Horse Tools"
+
+msgid "Hide back link"
+msgstr "隐藏返回链接"
+
+msgid "Hide bar when pulled down"
+msgstr "下拉时隐藏栏"
+
+msgid "Hide chat button when scrolling down"
+msgstr "向下滚动时隐藏聊天按钮"
+
+msgid "Hide from administrators"
+msgstr "对管理员隐藏"
+
+msgid "Hide language options"
+msgstr "隐藏语言选项"
+
+msgid "Hide minimized list"
+msgstr "隐藏最小化列表"
+
+msgid "Hide plugins from the manager"
+msgstr "在插件管理器中隐藏插件"
+
+msgid "Hide post categories from homepage"
+msgstr "在首页隐藏文章分类"
+
+msgid "Hide the tools you want"
+msgstr "隐藏您想隐藏的工具"
+
+msgid "Hide the update & maintenance notice"
+msgstr "隐藏更新与维护通知"
+
+msgid "Hide this URL from the log"
+msgstr "在日志中隐藏此 URL"
+
+msgid "Hide usernames from scanners"
+msgstr "对扫描器隐藏用户名"
+
+msgid "Hits"
+msgstr "命中次数"
+
+msgid "Horse Search"
+msgstr "Horse Search"
+
+msgid "Horse Tools"
+msgstr "Horse Tools"
+
+msgid "Horse Tools is built on %s, which is no longer maintained by its author. That original work is gratefully acknowledged and this fork continues under the same GPLv2 licence."
+msgstr "Horse Tools 基于 %s 构建，其作者已不再维护该项目。谨此致谢原作，本分支在同样的 GPLv2 许可证下继续开发。"
+
+msgid "Horse Tools shortcode"
+msgstr "Horse Tools 短代码"
+
+msgid "Horse Tools:"
+msgstr "Horse Tools："
+
+msgid "Host"
+msgstr "主机"
+
+msgid "Hours"
+msgstr "小时"
+
+msgid "How to use"
+msgstr "使用方法"
+
+msgid "I understand this permanently deletes data."
+msgstr "我了解此操作将永久删除数据。"
+
+msgid "ICON"
+msgstr "图标"
+
+msgid "INDEX"
+msgstr "索引"
+
+msgid "Icon"
+msgstr "图标"
+
+msgid "Icon (e.g. apps)"
+msgstr "图标（例如 apps）"
+
+msgid "Icon background color"
+msgstr "图标背景颜色"
+
+msgid "Icon border color"
+msgstr "图标边框颜色"
+
+msgid "Icon border radius"
+msgstr "图标边框圆角"
+
+msgid "Icon color"
+msgstr "图标颜色"
+
+msgid "Icon picker"
+msgstr "图标选择器"
+
+msgid "If someone replies to a comment, there will be an email notification sent to the commenter"
+msgstr "如果有人回复评论，将向评论者发送一封邮件通知"
+
+msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
+msgstr "如果密钥为空，将完全跳过检查，而不是拒绝每一次登录。"
+
+msgid "If you dont want to automatically switch the language based on WordPress context, please select the language you prefer"
+msgstr "如果您不想根据 WordPress 上下文自动切换语言，请选择您偏好的语言"
+
+msgid "If you enable this feature and set automatic revision limit and automatic save time for posts or pages, it will reduce the amount of data stored in the database"
+msgstr "如果您启用此功能并为文章或页面设置自动修订版本限制和自动保存时间，将减少数据库中存储的数据量"
+
+msgid "If you enable this feature, your Pages will have .html appended to them, for example: domain.com/page.html"
+msgstr "如果您启用此功能，您的页面将附加 .html，例如：domain.com/page.html"
+
+msgid "If you find the Admin Bar distracting every time you view the website, you can turn it off (there is an option for you to turn off all or only turn off for users)"
+msgstr "如果您觉得每次查看网站时管理工具栏都会分散注意力，可以将其关闭（有选项可供您全部关闭或仅对用户关闭）"
+
+msgid "If you find the new Widget Manager too difficult to use, then revert it to the Classic Widget version"
+msgstr "如果您觉得新的小工具管理器太难用，可以将其还原为经典小工具版本"
+
+msgid "If you find the new editor too difficult to use, then revert it to the Classic Editor version"
+msgstr "如果您觉得新编辑器太难用，可以将其还原为经典编辑器版本"
+
+msgid "If you find the tools above unnecessary, you can hide them to make the WP admin interface cleaner. This function only hides them without blocking access to their links"
+msgstr "如果您觉得上述工具没有必要，可以将它们隐藏，使 WP 后台界面更整洁。此功能仅隐藏它们，不会阻止访问其链接"
+
+msgid "If you had it enabled it is now inactive. The AdSense and ads.txt tools on the other tabs are unaffected."
+msgstr "如果您之前已启用它，它现在已失效。其他标签页上的 AdSense 和 ads.txt 工具不受影响。"
+
+msgid "If you have members and do not want them to upload images with excessively large sizes, causing storage space usage, you can limit the maximum size allowed for upload"
+msgstr "如果您有会员，且不希望他们上传尺寸过大的图片而占用存储空间，可以限制允许上传的最大尺寸"
+
+msgid "If you need to monitor WordPress debug files without accessing the file manager, this tool is made just for that purpose"
+msgstr "如果您需要在不访问文件管理器的情况下监控 WordPress 调试文件，此工具正是为此而设"
+
+msgid "If you not using it, you can disable Classic CSS on the homepage"
+msgstr "如果您不使用它，可以在首页禁用经典 CSS"
+
+msgid "If you not using it, you can disable Emoji"
+msgstr "如果您不使用它，可以禁用 Emoji"
+
+msgid "If you not using it, you can disable Gutenberg CSS on the homepage"
+msgstr "如果您不使用它，可以在首页禁用 Gutenberg CSS"
+
+msgid "If you receive this email, then the SMTP email sending function is working well"
+msgstr "如果您收到此邮件，说明 SMTP 邮件发送功能运作正常"
+
+msgid "If you want to display your signature anywhere, you can create content above and then use the generated shortcode at your desired location"
+msgstr "如果您想在任何位置显示您的签名，可以在上方创建内容，然后在您想要的位置使用生成的短代码"
+
+msgid "If you want to enable the feature to duplicate posts, pages, or custom post types, please activate this function"
+msgstr "如果您想启用复制文章、页面或自定义文章类型的功能，请激活此功能"
+
+msgid "If you want to export or import the settings of the Horse Tools plugin, enable this feature. It allows you to easily transfer configurations from this site to another"
+msgstr "如果您想导出或导入 Horse Tools 插件的设置，请启用此功能。它可以让您轻松地将配置从本站点转移到另一站点"
+
+msgid "If you want to hide a specific Administrator account, select the user"
+msgstr "如果您想隐藏特定的管理员账户，请选择该用户"
+
+msgid "If you want to lazy load images every time the page loads, then turn it on. This function helps your website load faster"
+msgstr "如果您想在每次页面加载时懒加载图片，请将其开启。此功能有助于您的网站加载更快"
+
+msgid "If you want to use font Awesome, you can enable it (it an icon font). You can search for icons at:"
+msgstr "如果您想使用 Font Awesome，可以启用它（这是一款图标字体）。您可以在此处搜索图标："
+
+msgid "If you want your uploaded images to be watermarked, please use this function and configure it above. Watermark (PNG, JPG)"
+msgstr "如果您希望上传的图片带有水印，请使用此功能并在上方进行配置。水印（PNG、JPG）"
+
+msgid "If youre tired of WordPress default search tool because its too slow, try out our lightning-fast search feature to give your users an exceptional and speedy search experience"
+msgstr "如果您厌倦了 WordPress 默认搜索工具因为它太慢，不妨试试我们闪电般快速的搜索功能，为您的用户带来卓越而快速的搜索体验"
+
+msgid "Ignore"
+msgstr "忽略"
+
+msgid "Ignore 8-bit png"
+msgstr "忽略 8 位 png"
+
+msgid "Image URL (optional, replaces the icon)"
+msgstr "图片 URL（可选，替换图标）"
+
+msgid "Image crop configuration"
+msgstr "图片裁剪配置"
+
+msgid "Image function for posts"
+msgstr "文章的图片功能"
+
+msgid "Images are lazy-loaded"
+msgstr "图片已懒加载"
+
+msgid "Import"
+msgstr "导入"
+
+msgid "Import from Shortcoder"
+msgstr "从 Shortcoder 导入"
+
+msgid "Import snippets"
+msgstr "导入代码片段"
+
+msgid "Imported %1$d snippet(s); %2$d already existed."
+msgstr "已导入 %1$d 个代码片段；%2$d 个已存在。"
+
+msgid "Imported %1$d snippet(s); %2$d already existed. Reloading…"
+msgstr "已导入 %1$d 个代码片段；%2$d 个已存在。正在重新加载…"
+
+msgid "Imported %1$d snippet(s); %2$d skipped. Reloading…"
+msgstr "已导入 %1$d 个代码片段；已跳过 %2$d 个。正在重新加载…"
+
+msgid "Imported %d setting group(s). You can undo this below."
+msgstr "已导入 %d 个设置分组。您可以在下方撤销。"
+
+msgid "Index now"
+msgstr "立即索引"
+
+msgid "Information about your website"
+msgstr "关于您网站的信息"
+
+msgid "Input / select box color"
+msgstr "输入 / 选择框颜色"
+
+msgid "Insert icons anywhere with a shortcode"
+msgstr "使用短代码在任何位置插入图标"
+
+msgid "Install the pending updates."
+msgstr "安装待处理的更新。"
+
+msgid "Instant-page is a library that allows you to preload the content of a linked page into the browser memory simply by hovering over the link. When you click on the link, it provides a remarkably fast loading experience"
+msgstr "Instant-page 是一个库，只需将鼠标悬停在链接上，即可将被链接页面的内容预加载到浏览器内存中。当您点击链接时，它能提供极快的加载体验"
+
+msgid "Instant-page prefetch and image lazy-loading"
+msgstr "Instant-page 预取和图片懒加载"
+
+msgid "Insufficient permissions"
+msgstr "权限不足"
+
+msgid "Known post types:"
+msgstr "已知文章类型："
+
+msgid "LOCKVIP"
+msgstr "LOCKVIP"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Last seen"
+msgstr "最后在线"
+
+msgid "Layout & interactive"
+msgstr "布局与交互"
+
+msgid "Lazy-load images; drop Emoji"
+msgstr "懒加载图片；移除 Emoji"
+
+msgid "Lazy-load images; drop Emoji and jQuery Migrate"
+msgstr "懒加载图片；移除 Emoji 和 jQuery Migrate"
+
+msgid "Lean pages and lighter media. Leaves Gutenberg and Classic CSS alone, since removing those can change how a theme looks."
+msgstr "精简页面和更轻量的媒体。保留 Gutenberg 和经典 CSS，因为移除它们可能会改变主题的外观。"
+
+msgid "Leave another shortcode plugin"
+msgstr "离开其他短代码插件"
+
+msgid "Left drawer"
+msgstr "左侧抽屉"
+
+msgid "Lets you drop any of the bundled Tabler icons (over 5,800, MIT licence) into posts, pages and anywhere shortcodes run. The icon font only loads on pages that actually use one, so it costs nothing elsewhere."
+msgstr "让您可以将随附的任意 Tabler 图标（超过 5,800 个，MIT 许可证）放入文章、页面以及任何运行短代码的位置。图标字体仅在实际使用图标的页面上加载，因此在其他地方不产生任何开销。"
+
+msgid "Leverage Google’s Indexing API to speed up the indexing of your website on Google’s search engine. You can add as many API keys as you like for unlimited indexing capacity"
+msgstr "利用 Google 的索引 API 加快您的网站在 Google 搜索引擎上的索引速度。您可以添加任意数量的 API 密钥，以获得无限的索引容量"
+
+msgid "Licence:"
+msgstr "许可证："
+
+msgid "Light / Dark"
+msgstr "浅色 / 深色"
+
+msgid "Limit Horse Tools display"
+msgstr "限制 Horse Tools 显示"
+
+msgid "Limit JPG, PNG, WEBP, AVIF images"
+msgstr "限制 JPG、PNG、WEBP、AVIF 图片"
+
+msgid "Limit failed logins and email you on lockout"
+msgstr "限制登录失败次数并在锁定时向您发送邮件"
+
+msgid "Limit login attempts"
+msgstr "限制登录尝试次数"
+
+msgid "Limit logins, block user enumeration, disable XML-RPC and the file editor"
+msgstr "限制登录、阻止用户枚举、禁用 XML-RPC 和文件编辑器"
+
+msgid "Limits the maximum width and height of JPG, PNG, WEBP images upon upload. You can leave it blank if you want to keep the original size"
+msgstr "限制上传时 JPG、PNG、WEBP 图片的最大宽度和高度。如果您想保留原始尺寸，可以留空"
+
+msgid "Limits the size of JPG, PNG, WEBP, AVIF images when uploading"
+msgstr "限制上传时 JPG、PNG、WEBP、AVIF 图片的尺寸"
+
+msgid "Link (article or service page)"
+msgstr "链接（文章或服务页面）"
+
+msgid "Link color"
+msgstr "链接颜色"
+
+msgid "Link display color"
+msgstr "链接显示颜色"
+
+msgid "List"
+msgstr "列表"
+
+msgid "List color"
+msgstr "列表颜色"
+
+msgid "List is hidden by default"
+msgstr "列表默认隐藏"
+
+msgid "Loading icons…"
+msgstr "正在加载图标…"
+
+msgid "Location"
+msgstr "位置"
+
+msgid "Lock down the admin"
+msgstr "锁定后台"
+
+msgid "Lock out repeated failed logins"
+msgstr "锁定反复失败的登录"
+
+msgid "Lockout length (minutes)"
+msgstr "锁定时长（分钟）"
+
+msgid "Log out"
+msgstr "退出登录"
+
+msgid "Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site."
+msgstr "记录匿名访客实际访问的失效 URL，以便您将高频的那些转为重定向。已登录用户、爬虫和资源请求不会被记录，且没有任何数据离开您的网站。"
+
+msgid "Logged-in users"
+msgstr "已登录用户"
+
+msgid "Logged-out visitors"
+msgstr "未登录访客"
+
+msgid "Login attempts are rate-limited"
+msgstr "登录尝试已受频率限制"
+
+msgid "Login failed. Check your details and try again."
+msgstr "登录失败。请检查您的信息后重试。"
+
+msgid "Login link:"
+msgstr "登录链接："
+
+msgid "MAIL"
+msgstr "邮件"
+
+msgid "MAINTENANCE MODE"
+msgstr "维护模式"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "MEDIA"
+msgstr "媒体"
+
+msgid "Main button"
+msgstr "主按钮"
+
+msgid "Main color"
+msgstr "主色"
+
+msgid "Main icon color"
+msgstr "主图标颜色"
+
+msgid "Main icon text color"
+msgstr "主图标文字颜色"
+
+msgid "Maintenance mode for developers (503)"
+msgstr "面向开发者的维护模式（503）"
+
+msgid "Management tool"
+msgstr "管理工具"
+
+msgid "Max height"
+msgstr "最大高度"
+
+msgid "Max width"
+msgstr "最大宽度"
+
+msgid "Media"
+msgstr "媒体"
+
+msgid "Media tab → JPG compression"
+msgstr "媒体标签页 → JPG 压缩"
+
+msgid "Minify Inline JavaScript"
+msgstr "压缩内联 JavaScript"
+
+msgid "Minimum role"
+msgstr "最低角色"
+
+msgid "Mobile only"
+msgstr "仅移动端"
+
+msgid "Modify content"
+msgstr "修改内容"
+
+msgid "Modify some information on Woocommerce that you want"
+msgstr "修改您想要的 Woocommerce 上的某些信息"
+
+msgid "Modify the footer content of WP admin"
+msgstr "修改 WP 后台的页脚内容"
+
+msgid "Mon"
+msgstr "周一"
+
+msgid "Monthly"
+msgstr "每月"
+
+msgid "Most snippet plugins store their snippets as a custom post type. Enter that post type to import them all as Horse Tools snippets — the other plugin is only read, never changed. After importing you can deactivate it and (for Shortcoder) your [sc …] tags keep working, or use “Convert” above."
+msgstr "大多数代码片段插件将其代码片段存储为自定义文章类型。输入该文章类型即可将它们全部导入为 Horse Tools 代码片段——另一插件仅被读取，绝不会被更改。导入后您可以停用它，并且（对于 Shortcoder）您的 [sc …] 标签仍可正常工作，或使用上方的“转换”。"
+
+msgid "Move snippets between sites"
+msgstr "在站点之间移动代码片段"
+
+msgid "Move the site address to https://"
+msgstr "将站点地址迁移至 https://"
+
+msgid "NOTIFY"
+msgstr "通知"
+
+msgid "Name the font"
+msgstr "为字体命名"
+
+msgid "Name — letters, numbers, dashes (e.g. call-to-action)"
+msgstr "名称——字母、数字、短横线（例如 call-to-action）"
+
+msgid "Navigation bar (Horse Tools)"
+msgstr "导航栏（Horse Tools）"
+
+msgid "Neutral"
+msgstr "中性色"
+
+msgid "New / clear"
+msgstr "新建 / 清除"
+
+msgid "Newly edited posts will be displayed first"
+msgstr "最新编辑的文章将优先显示"
+
+msgid "Next automatic check: %s"
+msgstr "下次自动检查：%s"
+
+msgid "No"
+msgstr "否"
+
+msgid "No (temporarily off)"
+msgstr "否（暂时关闭）"
+
+msgid "No 404s recorded yet."
+msgstr "尚未记录任何 404。"
+
+msgid "No Google Fonts leaking to Google"
+msgstr "没有 Google Fonts 泄露给 Google"
+
+msgid "No [sc] tags found in your content."
+msgstr "在您的内容中未找到 [sc] 标签。"
+
+msgid "No automatic redirects yet. Change a published URL and one will appear here."
+msgstr "尚无自动重定向。更改已发布的 URL 后，这里会出现一条。"
+
+msgid "No badge colour"
+msgstr "无徽标颜色"
+
+msgid "No font files were found in the stylesheet."
+msgstr "在样式表中未找到字体文件。"
+
+msgid "No icon matches that."
+msgstr "没有匹配的图标。"
+
+msgid "No pages selected"
+msgstr "未选择页面"
+
+msgid "No results found"
+msgstr "未找到结果"
+
+msgid "No setting matches that."
+msgstr "没有匹配的设置。"
+
+msgid "No size"
+msgstr "无尺寸"
+
+msgid "No snippets were found for the post type \"%s\"."
+msgstr "未找到文章类型“%s”的代码片段。"
+
+msgid "No snippets yet. Create one above, or import from Shortcoder."
+msgstr "尚无代码片段。请在上方创建一个，或从 Shortcoder 导入。"
+
+msgid "No third-party requests found. Nothing leaks to other servers."
+msgstr "未发现第三方请求。没有任何数据泄露到其他服务器。"
+
+msgid "None"
+msgstr "无"
+
+msgid "None: default not selected, Auto: background image automatically changes each time the page is loaded, Color: change the color you want, Upload: upload the background image you want"
+msgstr "无：默认不选择，自动：每次页面加载时背景图片自动更换，颜色：更换为您想要的颜色，上传：上传您想要的背景图片"
+
+msgid "Not entered"
+msgstr "未输入"
+
+msgid "Not found in any post or page."
+msgstr "在任何文章或页面中均未找到。"
+
+msgid "Nothing could be self-hosted."
+msgstr "没有任何内容可本地托管。"
+
+msgid "Nothing on this page is enabled yet."
+msgstr "此页面上尚未启用任何内容。"
+
+msgid "Nothing to delete."
+msgstr "没有可删除的内容。"
+
+msgid "Notification at the top of the page"
+msgstr "页面顶部的通知"
+
+msgid "Notification link sent"
+msgstr "通知链接已发送"
+
+msgid "Notify"
+msgstr "通知"
+
+msgid "Notify the post author when someone comments on the post"
+msgstr "当有人评论文章时通知文章作者"
+
+msgid "Number of data completed: '+sopost+'"
+msgstr "已完成的数据数量：'+sopost+'"
+
+msgid "Number of items displayed"
+msgstr "显示的项目数量"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "ON/OFF"
+msgstr "开 / 关"
+
+msgid "OPTIMIZE"
+msgstr "优化"
+
+msgid "Off"
+msgstr "关"
+
+msgid "Off / select"
+msgstr "关 / 选择"
+
+msgid "One click applies a set of recommended settings for your kind of site. Presets only turn options on and tune a few values — they never switch off anything you have already enabled, and a one-click Undo is always kept."
+msgstr "一键即可为您的站点类型应用一组推荐设置。预设只会开启选项并调整少数几个值——绝不会关闭您已启用的任何内容，并且始终保留一键撤销。"
+
+msgid "Online now"
+msgstr "当前在线"
+
+msgid "Only admin has access to the admin page"
+msgstr "只有管理员可以访问后台页面"
+
+msgid "Only enable once HTTPS works everywhere. Browsers will refuse plain HTTP to your site for six months, and it cannot be undone quickly."
+msgstr "仅在 HTTPS 处处正常工作后再启用。浏览器将在六个月内拒绝对您网站的普通 HTTP 访问，且无法快速撤销。"
+
+msgid "Only notify, do not block access"
+msgstr "仅通知，不阻止访问"
+
+msgid "Only supported from PHP 8.1 and above"
+msgstr "仅 PHP 8.1 及以上版本支持"
+
+msgid "Open in a new tab"
+msgstr "在新标签页中打开"
+
+msgid "Open – close time"
+msgstr "开门 – 关门时间"
+
+msgid "Opening hours, one line per day (Tab-widget skin)"
+msgstr "营业时间，每天一行（Tab-widget 皮肤）"
+
+msgid "Optimization Library"
+msgstr "优化库"
+
+msgid "Optimize Widgets"
+msgstr "优化小工具"
+
+msgid "Optimize deletion of content in the database"
+msgstr "优化数据库中内容的删除"
+
+msgid "Optimize saving post content into the database"
+msgstr "优化将文章内容保存到数据库"
+
+msgid "Optimize tab"
+msgstr "优化标签页"
+
+msgid "Optimize tab → image lazy loading"
+msgstr "优化标签页 → 图片懒加载"
+
+msgid "Option to display ads in custom posts"
+msgstr "在自定义文章中显示广告的选项"
+
+msgid "Option to display the Admin bar"
+msgstr "显示管理工具栏的选项"
+
+msgid "Order"
+msgstr "订单"
+
+msgid "Original contributors:"
+msgstr "原始贡献者："
+
+msgid "Other links"
+msgstr "其他链接"
+
+msgid "Outstanding color"
+msgstr "醒目颜色"
+
+msgid "Overlay color"
+msgstr "遮罩颜色"
+
+msgid "Overview"
+msgstr "概览"
+
+msgid "PHP errors are not shown to visitors"
+msgstr "PHP 错误不会向访客显示"
+
+msgid "PHP is a supported version (%s)"
+msgstr "PHP 为受支持的版本（%s）"
+
+msgid "POPUP"
+msgstr "弹窗"
+
+msgid "PRESETS"
+msgstr "预设"
+
+msgid "Panel title (e.g. Our services)"
+msgstr "面板标题（例如 我们的服务）"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Paste an export here, or upload a .json file"
+msgstr "在此处粘贴导出内容，或上传 .json 文件"
+
+msgid "Pending comments"
+msgstr "待审核评论"
+
+msgid "Performance"
+msgstr "性能"
+
+msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
+msgstr "永久删除“%2$s”中的 %1$s？此操作无法撤销。"
+
+msgid "Permission denied."
+msgstr "权限被拒绝。"
+
+msgid "Permissions-Policy: block geolocation, mic and camera"
+msgstr "Permissions-Policy：阻止地理位置、麦克风和摄像头"
+
+msgid "Photo masonry"
+msgstr "图片瀑布流"
+
+msgid "Play video"
+msgstr "播放视频"
+
+msgid "Please complete the reCAPTCHA to verify that you are not a robot"
+msgstr "请完成 reCAPTCHA 以验证您不是机器人"
+
+msgid "Please disable ad-blocker on your browser to access and view the content"
+msgstr "请在您的浏览器上禁用广告拦截器以访问并查看内容"
+
+msgid "Please enter the content here"
+msgstr "请在此处输入内容"
+
+msgid "Please wait"
+msgstr "请稍候"
+
+msgid "Please wait for the email to be sent"
+msgstr "请等待邮件发送"
+
+msgid "Please wait: '+sopost+'"
+msgstr "请稍候：'+sopost+'"
+
+msgid "Plugin development"
+msgstr "插件开发"
+
+msgid "Policy"
+msgstr "政策"
+
+msgid "Popup location"
+msgstr "弹窗位置"
+
+msgid "Popup save time (.. hours)"
+msgstr "弹窗保存时间（.. 小时）"
+
+msgid "Pre-filled message for WhatsApp / SMS (optional)"
+msgstr "WhatsApp / 短信的预填消息（可选）"
+
+msgid "Preview"
+msgstr "预览"
+
+msgid "Preview changes"
+msgstr "预览更改"
+
+msgid "Price + order button"
+msgstr "价格 + 订购按钮"
+
+msgid "Privacy"
+msgstr "隐私"
+
+msgid "Privacy — Google Fonts & external requests"
+msgstr "隐私——Google Fonts 与外部请求"
+
+msgid "Process cropped images"
+msgstr "处理裁剪后的图片"
+
+msgid "Purple"
+msgstr "紫色"
+
+msgid "Quantity"
+msgstr "数量"
+
+msgid "Quick chips"
+msgstr "快捷标签"
+
+msgid "Quick replies, one per line as  Label|https://link  (Live-chat skin)"
+msgstr "快捷回复，每行一条，格式为  标签|https://link  （在线聊天皮肤）"
+
+msgid "Quick search"
+msgstr "快速搜索"
+
+msgid "Quick view button color"
+msgstr "快速查看按钮颜色"
+
+msgid "REST API left ON so the store keeps working"
+msgstr "REST API 保持开启，以便商店正常运作"
+
+msgid "Reading settings → uncheck “Discourage search engines”"
+msgstr "阅读设置 → 取消勾选“阻止搜索引擎索引本站点”"
+
+msgid "Recommended. xmlrpc.php is a common brute-force and pingback-amplification target and almost nothing uses it now (except Jetpack)."
+msgstr "推荐。xmlrpc.php 是常见的暴力破解和 pingback 放大攻击目标，如今几乎没有任何东西使用它（Jetpack 除外）。"
+
+msgid "Record 404 hits"
+msgstr "记录 404 命中"
+
+msgid "Red"
+msgstr "红色"
+
+msgid "Redirect"
+msgstr "重定向"
+
+msgid "Redirect 301 to a custom page"
+msgstr "301 重定向到自定义页面"
+
+msgid "Redirect 301 whole page"
+msgstr "整页 301 重定向"
+
+msgid "Redirect the 404 page to the homepage or a custom page of your choice, leave the field blank if you want to redirect to the homepage"
+msgstr "将 404 页面重定向到首页或您选择的自定义页面，如需重定向到首页，请将该字段留空"
+
+msgid "Redirects"
+msgstr "重定向"
+
+msgid "Referrer-Policy: strict-origin-when-cross-origin"
+msgstr "Referrer-Policy：strict-origin-when-cross-origin"
+
+msgid "Refresh"
+msgstr "刷新"
+
+msgid "Registration is disabled on this site."
+msgstr "本站点已禁用注册。"
+
+msgid "Registration role options"
+msgstr "注册角色选项"
+
+msgid "Remove XHTML closing tags from empty elements in HTML5"
+msgstr "在 HTML5 中移除空元素的 XHTML 闭合标签"
+
+msgid "Remove category slug from permalink"
+msgstr "从固定链接中移除分类别名"
+
+msgid "Remove comments from HTML, JavaScript, and CSS"
+msgstr "从 HTML、JavaScript 和 CSS 中移除注释"
+
+msgid "Remove img tag attributes"
+msgstr "移除 img 标签属性"
+
+msgid "Remove protocols (HTTP: and HTTPS:) from all URLs"
+msgstr "从所有 URL 中移除协议（HTTP: 和 HTTPS:）"
+
+msgid "Remove relative domain from internal URLs"
+msgstr "从内部 URL 中移除相对域名"
+
+msgid "Remove tag slug from permalink"
+msgstr "从固定链接中移除标签别名"
+
+msgid "Remove the WordPress version tag"
+msgstr "移除 WordPress 版本标签"
+
+msgid "Remove unnecessary header tags"
+msgstr "移除不必要的标头标签"
+
+msgid "Removed"
+msgstr "已移除"
+
+msgid "Removes attachments whose file is missing from disk. Every attachment is scanned, so the count is known only after it runs."
+msgstr "移除文件在磁盘上缺失的附件。系统会扫描每个附件，因此数量只有在运行后才能得知。"
+
+msgid "Removes metadata entries for thumbnail files that are missing from disk. It does not delete images."
+msgstr "移除磁盘上缺失的缩略图文件对应的元数据条目。它不会删除图片。"
+
+msgid "Removes the RSD, WLW manifest and adjacent-post link tags from the page head."
+msgstr "从页面头部移除 RSD、WLW manifest 和相邻文章的链接标签。"
+
+msgid "Removes the X-Pingback header. Pairs with disabling XML-RPC."
+msgstr "移除 X-Pingback 标头。与禁用 XML-RPC 搭配使用。"
+
+msgid "Removes the built-in code editor under Appearance and Plugins. If an attacker gets into wp-admin, they cannot use it to edit PHP files. You edit files over SFTP instead."
+msgstr "移除“外观”和“插件”下的内置代码编辑器。如果攻击者进入 wp-admin，他们将无法用它来编辑 PHP 文件。您改用 SFTP 编辑文件。"
+
+msgid "Removes the generator meta tag. A small tidy-up — not a security measure on its own, since asset fingerprints reveal the version anyway."
+msgstr "移除 generator meta 标签。这只是一个小小的整理——本身并非安全措施，因为资源指纹无论如何都会暴露版本。"
+
+msgid "Removes wp-embed.js if you do not embed other WordPress posts."
+msgstr "如果您不嵌入其他 WordPress 文章，则移除 wp-embed.js。"
+
+msgid "Requested URL"
+msgstr "请求的 URL"
+
+msgid "Requests"
+msgstr "请求"
+
+msgid "Reset this setting"
+msgstr "重置此设置"
+
+msgid "Restore previous configuration"
+msgstr "恢复先前的配置"
+
+msgid "Retrieve the API Client ID and Client Secret from your Google Developers project and add them to the two fields above"
+msgstr "从您的 Google Developers 项目中获取 API 客户端 ID 和客户端密钥，并将它们添加到上方的两个字段中"
+
+msgid "Retrieve the Site Key and Secret Key from your Google reCAPTCHA project and add them to the two fields above"
+msgstr "从您的 Google reCAPTCHA 项目中获取站点密钥和密钥，并将它们添加到上方的两个字段中"
+
+msgid "Reveal"
+msgstr "显示"
+
+msgid "Rewrite every [sc …] tag in your content to [ht-snippet …], keeping all attributes. Preview first; applying edits post content, so take a backup. Tip: you don’t have to convert — imported snippets already answer [sc …] once Shortcoder is deactivated."
+msgstr "将您内容中的每个 [sc …] 标签重写为 [ht-snippet …]，并保留所有属性。请先预览；应用会修改文章内容，因此请先备份。提示：您无需转换——一旦 Shortcoder 被停用，导入的代码片段就已经能响应 [sc …]。"
+
+msgid "Right drawer"
+msgstr "右侧抽屉"
+
+msgid "Role"
+msgstr "角色"
+
+msgid "Run shortcodes in category / tag descriptions"
+msgstr "在分类 / 标签描述中运行短代码"
+
+msgid "Run shortcodes in excerpts"
+msgstr "在摘要中运行短代码"
+
+msgid "Run shortcodes in menu items"
+msgstr "在菜单项中运行短代码"
+
+msgid "Run shortcodes in widgets"
+msgstr "在小工具中运行短代码"
+
+msgid "Run the scan first so there is something to self-host."
+msgstr "请先运行扫描，以便有内容可供本地托管。"
+
+msgid "Run “%s” now? This permanently deletes matching items and cannot be undone."
+msgstr "立即运行“%s”？此操作将永久删除匹配的项目且无法撤销。"
+
+msgid "SAVE CONTENT"
+msgstr "保存内容"
+
+msgid "SCHEDULE"
+msgstr "计划"
+
+msgid "SECURITY"
+msgstr "安全"
+
+msgid "SEO optimization"
+msgstr "SEO 优化"
+
+msgid "SETTING"
+msgstr "设置"
+
+msgid "SIGN"
+msgstr "签名"
+
+msgid "SMTP authentication"
+msgstr "SMTP 身份验证"
+
+msgid "SMTP port"
+msgstr "SMTP 端口"
+
+msgid "SMTP protocol"
+msgstr "SMTP 协议"
+
+msgid "SMTP server"
+msgstr "SMTP 服务器"
+
+msgid "SNIPPETS"
+msgstr "代码片段"
+
+msgid "SVG uploads are unavailable: the sanitiser library is missing."
+msgstr "SVG 上传不可用：清理库缺失。"
+
+msgid "Sat"
+msgstr "周六"
+
+msgid "Save changes"
+msgstr "保存更改"
+
+msgid "Save images to media when copying from another source"
+msgstr "从其他来源复制时将图片保存到媒体库"
+
+msgid "Save interval (minutes)"
+msgstr "保存间隔（分钟）"
+
+msgid "Save schedule"
+msgstr "保存计划"
+
+msgid "Save services"
+msgstr "保存服务"
+
+msgid "Save shortcode status"
+msgstr "保存短代码状态"
+
+msgid "Save snippet"
+msgstr "保存代码片段"
+
+msgid "Saved %d service(s)."
+msgstr "已保存 %d 个服务。"
+
+msgid "Saved."
+msgstr "已保存。"
+
+msgid "Scan external requests"
+msgstr "扫描外部请求"
+
+msgid "Scan with your phone"
+msgstr "用您的手机扫描"
+
+msgid "Scanning your home page…"
+msgstr "正在扫描您的首页…"
+
+msgid "Screen refreshed"
+msgstr "屏幕已刷新"
+
+msgid "Scroll bar color"
+msgstr "滚动条颜色"
+
+msgid "Search"
+msgstr "搜索"
+
+msgid "Search below, click any icon to copy its ready-made shortcode, then paste it where you want the icon to appear."
+msgstr "在下方搜索，点击任意图标即可复制其现成的短代码，然后将其粘贴到您希望图标出现的位置。"
+
+msgid "Search icons — e.g. cart, arrow, brand-facebook…"
+msgstr "搜索图标——例如 cart、arrow、brand-facebook…"
+
+msgid "Search settings…"
+msgstr "搜索设置…"
+
+msgid "Seconds before the bubble appears"
+msgstr "气泡出现前的秒数"
+
+msgid "Secret key"
+msgstr "密钥"
+
+msgid "Security"
+msgstr "安全"
+
+msgid "Security and speed for a shop, chosen not to interfere with the store. The REST API is left fully on — WooCommerce cart and checkout need it — and permalinks are left untouched."
+msgstr "为商店打造的安全与速度方案，特意选择不干扰商店运作。REST API 完全保持开启——WooCommerce 购物车和结账需要它——并且固定链接保持不变。"
+
+msgid "Security check failed. Please start the sign-in again."
+msgstr "安全检查失败。请重新开始登录。"
+
+msgid "Security hardening"
+msgstr "安全加固"
+
+msgid "Security headers (frame, nosniff, referrer)"
+msgstr "安全标头（frame、nosniff、referrer）"
+
+msgid "Security response headers"
+msgstr "安全响应标头"
+
+msgid "Security response headers are sent"
+msgstr "已发送安全响应标头"
+
+msgid "Security tab → Block user enumeration"
+msgstr "安全标签页 → 阻止用户枚举"
+
+msgid "Security tab → Disable unused endpoints"
+msgstr "安全标签页 → 禁用未使用的端点"
+
+msgid "Security tab → Limit login attempts"
+msgstr "安全标签页 → 限制登录尝试次数"
+
+msgid "Security tab → Lock down the admin"
+msgstr "安全标签页 → 锁定后台"
+
+msgid "Security tab → Privacy → Scan external requests"
+msgstr "安全标签页 → 隐私 → 扫描外部请求"
+
+msgid "Security tab → Privacy → self-host Google Fonts"
+msgstr "安全标签页 → 隐私 → 本地托管 Google Fonts"
+
+msgid "Security tab → Security response headers"
+msgstr "安全标签页 → 安全响应标头"
+
+msgid "Security: block user enumeration, limit logins, disable XML-RPC, hide the version, disable the file editor"
+msgstr "安全：阻止用户枚举、限制登录、禁用 XML-RPC、隐藏版本、禁用文件编辑器"
+
+msgid "Select admin"
+msgstr "选择管理员"
+
+msgid "Select background color"
+msgstr "选择背景颜色"
+
+msgid "Select button border color"
+msgstr "选择按钮边框颜色"
+
+msgid "Select button color"
+msgstr "选择按钮颜色"
+
+msgid "Select icon"
+msgstr "选择图标"
+
+msgid "Select icon color"
+msgstr "选择图标颜色"
+
+msgid "Select image"
+msgstr "选择图片"
+
+msgid "Select redirect page"
+msgstr "选择重定向页面"
+
+msgid "Select the custom post for which you want to display TOC content"
+msgstr "选择您想显示目录内容的自定义文章"
+
+msgid "Select the custom post for which you want to show ads"
+msgstr "选择您想显示广告的自定义文章"
+
+msgid "Select the displayed logo"
+msgstr "选择显示的 logo"
+
+msgid "Select the page to hide"
+msgstr "选择要隐藏的页面"
+
+msgid "Select title color and button"
+msgstr "选择标题颜色和按钮"
+
+msgid "Selection color"
+msgstr "选中颜色"
+
+msgid "Self-host Google Fonts"
+msgstr "本地托管 Google Fonts"
+
+msgid "Self-hosted %1$d font file(s) across %2$d stylesheet(s). Turn on “Self-host Google Fonts” above and save."
+msgstr "已在 %2$d 个样式表中本地托管 %1$d 个字体文件。请开启上方的“本地托管 Google Fonts”并保存。"
+
+msgid "Send"
+msgstr "发送"
+
+msgid "Send security headers"
+msgstr "发送安全标头"
+
+msgid "Send test email"
+msgstr "发送测试邮件"
+
+msgid "Sender email address"
+msgstr "发件人电子邮件地址"
+
+msgid "Sender name"
+msgstr "发件人名称"
+
+msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
+msgstr "适合内容型站点的合理默认设置：长文章上的目录、更轻量的页面以及基线安全加固。"
+
+msgid "Services"
+msgstr "服务"
+
+msgid "Services panel (slide-up from the bottom bar)"
+msgstr "服务面板（从底栏向上滑出）"
+
+msgid "Set access and viewing permissions"
+msgstr "设置访问和查看权限"
+
+msgid "Set the colour (hex, rgb or a CSS name)."
+msgstr "设置颜色（十六进制、rgb 或 CSS 名称）。"
+
+msgid "Set the size in pixels."
+msgstr "以像素为单位设置尺寸。"
+
+msgid "Set up Adsense ads"
+msgstr "设置 Adsense 广告"
+
+msgid "Set up cookie notifications"
+msgstr "设置 Cookie 通知"
+
+msgid "Set up the ads.txt file"
+msgstr "设置 ads.txt 文件"
+
+msgid "Setting group"
+msgstr "设置分组"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Settings > Permalinks > Save changes"
+msgstr "设置 > 固定链接 > 保存更改"
+
+msgid "Settings changed"
+msgstr "设置已更改"
+
+msgid "Shortcode"
+msgstr "短代码"
+
+msgid "Shortcode content visible only to group of users"
+msgstr "仅特定用户组可见的短代码内容"
+
+msgid "Shortcode reference"
+msgstr "短代码参考"
+
+msgid "Shortcode to display date"
+msgstr "用于显示日期的短代码"
+
+msgid "Shortcodes"
+msgstr "短代码"
+
+msgid "Show a floating “Services” button on desktop"
+msgstr "在桌面端显示浮动的“服务”按钮"
+
+msgid "Show a greeting bubble near the button"
+msgstr "在按钮附近显示问候气泡"
+
+msgid "Show a scan-to-open QR on desktop (Zalo, WhatsApp, Telegram, Viber, Line; WeChat always)"
+msgstr "在桌面端显示扫码打开的 QR 码（Zalo、WhatsApp、Telegram、Viber、Line；WeChat 始终显示）"
+
+msgid "Show from"
+msgstr "显示自"
+
+msgid "Show full image"
+msgstr "显示完整图片"
+
+msgid "Show on devices"
+msgstr "在设备上显示"
+
+msgid "Show the bar on tablets too (up to 1024px)"
+msgstr "在平板上也显示该栏（最高 1024px）"
+
+msgid "Show to"
+msgstr "显示至"
+
+msgid "Show until"
+msgstr "显示至"
+
+msgid "Sign in with Google"
+msgstr "使用 Google 登录"
+
+msgid "Sign in with Google account"
+msgstr "使用 Google 账户登录"
+
+msgid "Signature shortcode"
+msgstr "签名短代码"
+
+msgid "Site health"
+msgstr "站点健康"
+
+msgid "Site key"
+msgstr "站点密钥"
+
+msgid "Smooth-scroll is a library that enables you to create a smooth scrolling effect, providing users with a perception of faster page navigation"
+msgstr "Smooth-scroll 是一个库，可让您创建平滑滚动效果，让用户感觉页面导航更快"
+
+msgid "Snippet deleted."
+msgstr "代码片段已删除。"
+
+msgid "Snippet saved."
+msgstr "代码片段已保存。"
+
+msgid "Something went wrong."
+msgstr "出了点问题。"
+
+msgid "Source code and issues:"
+msgstr "源代码及问题反馈："
+
+msgid "Spacing below"
+msgstr "下方间距"
+
+msgid "Spam comments"
+msgstr "垃圾评论"
+
+msgid "Spin it — handy for loaders."
+msgstr "让它旋转——用作加载图标很方便。"
+
+msgid "Stacked banners"
+msgstr "堆叠横幅"
+
+msgid "Status:"
+msgstr "状态："
+
+msgid "Step 1: Go to Appearance > Menus > Create a new menu > check Navigation bar (Horse Tools)"
+msgstr "步骤 1：前往 外观 > 菜单 > 创建新菜单 > 勾选 导航栏（Horse Tools）"
+
+msgid "Step 2: Below, if you want the menu to open on a specific button, add <b style=\"color:red\">#horsenavi</b> to the field (#id or .class). For (Enter link), enter <b style=\"color:red\">#</b>. Note: Only add it to one of the 5 buttons below"
+msgstr "步骤 2：在下方，如果您希望菜单在特定按钮上打开，请在（#id 或 .class）字段中添加 <b style=\"color:red\">#horsenavi</b>。对于（输入链接），请输入 <b style=\"color:red\">#</b>。注意：仅将其添加到下方 5 个按钮中的一个"
+
+msgid "Still:"
+msgstr "静态："
+
+msgid "Stop cropping"
+msgstr "停止裁剪"
+
+msgid "Stop cropping all"
+msgstr "停止全部裁剪"
+
+msgid "Story circles"
+msgstr "故事圆圈"
+
+msgid "Subtitle / price / coupon code"
+msgstr "副标题 / 价格 / 优惠券代码"
+
+msgid "Success"
+msgstr "成功"
+
+msgid "Sun"
+msgstr "周日"
+
+msgid "Support multi-byte UTF-8 encoding (if you see strange characters)"
+msgstr "支持多字节 UTF-8 编码（如果您看到乱码字符）"
+
+msgid "Support quick notification setup, allowing web managers to easily deliver useful and timely content, helping users stay informed effortlessly"
+msgstr "支持快速设置通知，让网站管理者轻松传递有用且及时的内容，帮助用户毫不费力地掌握信息"
+
+msgid "Support team"
+msgstr "支持团队"
+
+msgid "Switch off any shortcode you do not use. A disabled shortcode simply stops rendering. This only affects Horse Tools shortcodes — never those from other plugins."
+msgstr "关闭您不使用的任何短代码。被禁用的短代码只是停止渲染。这仅影响 Horse Tools 短代码——绝不影响其他插件的短代码。"
+
+msgid "System"
+msgstr "系统"
+
+msgid "TOC"
+msgstr "目录"
+
+msgid "TOC Settings"
+msgstr "目录设置"
+
+msgid "TOOL"
+msgstr "工具"
+
+msgid "Table name"
+msgstr "表名称"
+
+msgid "Table of Contents"
+msgstr "目录"
+
+msgid "Table of contents configuration"
+msgstr "目录配置"
+
+msgid "Table of contents on posts"
+msgstr "文章上的目录"
+
+msgid "Tabler icon name (e.g. snowflake) — or leave blank and use an image"
+msgstr "Tabler 图标名称（例如 snowflake）——或留空并使用图片"
+
+msgid "Tag"
+msgstr "标签"
+
+msgid "Tags (comma separated)"
+msgstr "标签（以逗号分隔）"
+
+msgid "Test SMTP email sending from your website"
+msgstr "从您的网站测试 SMTP 邮件发送"
+
+msgid "Text color"
+msgstr "文字颜色"
+
+msgid "Text color of the input / select box"
+msgstr "输入 / 选择框的文字颜色"
+
+msgid "Text editor tool"
+msgstr "文本编辑器工具"
+
+msgid "That address cannot be fetched from this server."
+msgstr "无法从此服务器获取该地址。"
+
+msgid "That did not look like a Google Fonts stylesheet."
+msgstr "那看起来不像是 Google Fonts 样式表。"
+
+msgid "That file could not be read as JSON."
+msgstr "无法将该文件读取为 JSON。"
+
+msgid "That is not a valid Horse Tools export file."
+msgstr "那不是有效的 Horse Tools 导出文件。"
+
+msgid "That is not a valid snippet export file."
+msgstr "那不是有效的代码片段导出文件。"
+
+msgid "That name is reserved by another Horse Tools shortcode. Pick a different one."
+msgstr "该名称已被另一个 Horse Tools 短代码占用。请另选一个。"
+
+msgid "That preset does not exist."
+msgstr "该预设不存在。"
+
+msgid "The \"Index Now\" link will be added in the custom post management section to allow quick index submission"
+msgstr "“立即索引”链接将添加到自定义文章管理区域，以便快速提交索引"
+
+msgid "The Avatar, Live-chat and Tab-widget skins use the fields below."
+msgstr "头像、在线聊天和 Tab-widget 皮肤使用以下字段。"
+
+msgid "The GD library has been installed"
+msgstr "GD 库已安装"
+
+msgid "The GD library has not been installed"
+msgstr "GD 库未安装"
+
+msgid "The address %1$s was locked out after repeated failed logins on %2$s."
+msgstr "地址 %1$s 在 %2$s 因反复登录失败而被锁定。"
+
+msgid "The changing image is square, with the standard size being 100x100 pixels"
+msgstr "变换的图片为正方形，标准尺寸为 100x100 像素"
+
+msgid "The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot."
+msgstr "系统已存储您最近一次导入之前的配置。恢复会将每个分组还原到该快照。"
+
+msgid "The debug file does not exist"
+msgstr "调试文件不存在"
+
+msgid "The feature adds advanced functions when uploading images, such as adding frames, flipping images... allowing you to automatically customize your images during upload. Picture frame (PNG)"
+msgstr "此功能在上传图片时添加高级功能，例如添加相框、翻转图片……让您在上传过程中自动自定义图片。相框（PNG）"
+
+msgid "The file contained no Horse Tools settings to import."
+msgstr "该文件不包含可导入的 Horse Tools 设置。"
+
+msgid "The file name will be your domain name"
+msgstr "文件名将是您的域名"
+
+msgid "The file path is invalid or not a file"
+msgstr "文件路径无效或不是文件"
+
+msgid "The first image becomes the featured image"
+msgstr "第一张图片将成为特色图片"
+
+msgid "The font files could not be downloaded."
+msgstr "无法下载字体文件。"
+
+msgid "The full recommended hardening set. The one thing left out is the full REST API block, which can break forms and guests — enable that yourself on the Security screen if your site truly needs none of it."
+msgstr "完整的推荐加固组合。唯一未包含的是完整的 REST API 阻止，它可能会破坏表单和访客功能——如果您的网站确实完全不需要它，请自行在安全界面上启用。"
+
+msgid "The function of lazy loading images"
+msgstr "图片懒加载功能"
+
+msgid "The home page returned no HTML to scan."
+msgstr "首页未返回可供扫描的 HTML。"
+
+msgid "The icon on its own."
+msgstr "单独的图标。"
+
+msgid "The optimisation module is on"
+msgstr "优化模块已开启"
+
+msgid "The original image size when added to the post"
+msgstr "添加到文章时的原始图片尺寸"
+
+msgid "The previous configuration has been restored."
+msgstr "先前的配置已恢复。"
+
+msgid "The reCAPTCHA is invalid"
+msgstr "reCAPTCHA 无效"
+
+msgid "The score threshold applies to reCAPTCHA v3 only. Google returns 1.0 for traffic it is confident is human and 0.0 for traffic it is confident is a bot; 0.5 is the recommended starting point. Raise it to block more aggressively, lower it if real visitors are being turned away."
+msgstr "分数阈值仅适用于 reCAPTCHA v3。Google 对确信为人类的流量返回 1.0，对确信为机器人的流量返回 0.0；0.5 是推荐的起始值。将其调高可更激进地拦截，如果真实访客被拒之门外，则将其调低。"
+
+msgid "The site is served over HTTPS"
+msgstr "站点通过 HTTPS 提供服务"
+
+msgid "The site is visible to search engines"
+msgstr "站点对搜索引擎可见"
+
+msgid "The standard size for the logo is 280x80 PX"
+msgstr "logo 的标准尺寸为 280x80 PX"
+
+msgid "The table of contents is an incredibly useful feature that allows readers to easily grasp the content by summarizing the headings (h-tags) in the article"
+msgstr "目录是一项非常有用的功能，它通过汇总文章中的标题（h 标签）让读者轻松掌握内容"
+
+msgid "The text to replace Buy Now on the product page"
+msgstr "用于替换产品页面上“立即购买”的文字"
+
+msgid "The theme/plugin file editor is disabled"
+msgstr "主题/插件文件编辑器已禁用"
+
+msgid "There is no backup to restore."
+msgstr "没有可恢复的备份。"
+
+msgid "These groups will change"
+msgstr "这些分组将会更改"
+
+msgid "These stop WordPress installing updates on its own — the site still checks for them, so the Dashboard and Plugins screens keep showing what is available and you apply updates when you choose. It never stops checking, so you are never left unaware of a security release."
+msgstr "这些设置会阻止 WordPress 自行安装更新——站点仍会检查更新，因此仪表盘和插件界面会继续显示可用的更新，您可以自行选择何时应用。它绝不会停止检查，因此您永远不会对安全发布毫不知情。"
+
+msgid "This SVG file could not be parsed and was rejected."
+msgstr "无法解析此 SVG 文件，已拒绝。"
+
+msgid "This blocks the REST API for logged-out visitors. It WILL break: WooCommerce cart and checkout for guests, Contact Form 7 and other REST-based forms, comment submission on block themes, and oEmbed. Only enable it if your site uses none of these."
+msgstr "这会为未登录访客阻止 REST API。它将会破坏：访客的 WooCommerce 购物车和结账、Contact Form 7 及其他基于 REST 的表单、区块主题上的评论提交，以及 oEmbed。仅在您的网站不使用这些功能时才启用它。"
+
+msgid "This content is locked! You need to log in to view"
+msgstr "此内容已锁定！您需要登录才能查看"
+
+msgid "This feature allows you to add CSS, JS, and HTML code to your WordPress site through hooks like WP head, WP body, WP footer, and WP login, making it easy and convenient to supplement your code"
+msgstr "此功能允许您通过 WP head、WP body、WP footer 和 WP login 等钩子向您的 WordPress 站点添加 CSS、JS 和 HTML 代码，让您轻松便捷地补充代码"
+
+msgid "This feature allows you to add Shortcode to post titles, which is very convenient for using custom tools"
+msgstr "此功能允许您在文章标题中添加短代码，非常便于使用自定义工具"
+
+msgid "This feature allows you to add the Classic Editor to the category description box when editing posts or products"
+msgstr "此功能允许您在编辑文章或产品时，将经典编辑器添加到分类描述框中"
+
+msgid "This feature allows you to configure website redirects with multiple options such as 301, 404, and 503, making management much simpler"
+msgstr "此功能允许您使用 301、404 和 503 等多种选项配置网站重定向，让管理变得简单得多"
+
+msgid "This feature allows you to customize the currency symbol as desired"
+msgstr "此功能允许您根据需要自定义货币符号"
+
+msgid "This feature allows you to only display Horse Tools to a specific Admin account"
+msgstr "此功能允许您仅向特定的管理员账户显示 Horse Tools"
+
+msgid "This feature allows you to set newly edited posts to be displayed first in the main loop"
+msgstr "此功能允许您将最新编辑的文章设置为在主循环中优先显示"
+
+msgid "This feature compiles various shortcode templates with essential functionalities that are frequently used to enhance the user experience in WordPress"
+msgstr "此功能汇集了各种带有常用基础功能的短代码模板，用于提升 WordPress 中的用户体验"
+
+msgid "This feature helps optimize cleanup tasks such as clearing content, comments, and the media library. It makes your website cleaner and more optimized"
+msgstr "此功能有助于优化清理任务，例如清除内容、评论和媒体库。它让您的网站更整洁、更优化"
+
+msgid "This feature uses the Fancybox library, allowing you to open images in posts for viewing"
+msgstr "此功能使用 Fancybox 库，允许您打开文章中的图片进行查看"
+
+msgid "This feature was removed in Horse Tools 1.0.0. It opened an affiliate URL in a hidden off-screen window every time a visitor clicked anywhere on the page. That is affiliate cookie stuffing: it deceives your visitors, breaks the terms of every major affiliate network and of Google AdSense, and can get your domain and your ad accounts banned."
+msgstr "此功能已在 Horse Tools 1.0.0 中移除。每当访客点击页面上任何位置时，它都会在一个隐藏的屏幕外窗口中打开一个联盟营销 URL。这就是联盟 Cookie 填塞：它欺骗您的访客，违反所有主流联盟网络和 Google AdSense 的条款，并可能导致您的域名和广告账户被封禁。"
+
+msgid "This feature will add nofollow and _blank to external links on your site"
+msgstr "此功能将为您网站上的外部链接添加 nofollow 和 _blank"
+
+msgid "This feature will hide the plugin you want from the plugin management page"
+msgstr "此功能将在插件管理页面中隐藏您想隐藏的插件"
+
+msgid "This feature will use the title of the post as the description for the image when uploaded"
+msgstr "此功能将在上传时使用文章标题作为图片的描述"
+
+msgid "This function allows you to customize the color of the scrollbar to your liking"
+msgstr "此功能允许您按喜好自定义滚动条的颜色"
+
+msgid "This function allows you to delete images attached to posts when deleting the posts themselves. Note that if multiple posts use the same image, it will also be deleted when removing the post"
+msgstr "此功能允许您在删除文章本身时删除附加到文章的图片。请注意，如果多篇文章使用同一张图片，删除文章时该图片也会被删除"
+
+msgid "This function allows you to initiate a dark mode library, enabling the website to switch between light and dark modes"
+msgstr "此功能允许您启用深色模式库，让网站在浅色和深色模式之间切换"
+
+msgid "This function allows you to redirect 301 links to the target page"
+msgstr "此功能允许您将 301 链接重定向到目标页面"
+
+msgid "This function will redirect all of your website pages to the destination page of your choice"
+msgstr "此功能会将您网站的所有页面重定向到您选择的目标页面"
+
+msgid "This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site."
+msgstr "这包括每一个设置分组，无论其模块当前是否启用。已上传的字体文件不包含在内——它们存在于本站点上。"
+
+msgid "This is an email notification of your successful registration"
+msgstr "这是关于您注册成功的邮件通知"
+
+msgid "This shortcode allows you to lock any content, and only the selected group of logged-in users can view it"
+msgstr "此短代码允许您锁定任何内容，只有选定的已登录用户组才能查看"
+
+msgid "This shortcode is used to create a download button with a timeout"
+msgstr "此短代码用于创建带有倒计时的下载按钮"
+
+msgid "This shortcode is used to display the date in the post title. Please note that you need to enable the shortcode usage in the post title under the POST, PAGE section"
+msgstr "此短代码用于在文章标题中显示日期。请注意，您需要在 POST、PAGE 部分启用文章标题中的短代码使用功能"
+
+msgid "This website uses cookies to ensure you get the best experience on our site. By continuing to browse, you agree to our use of cookies. For more information, please read our Cookie Policy"
+msgstr "本网站使用 Cookie，以确保您在我们的网站上获得最佳体验。继续浏览即表示您同意我们使用 Cookie。欲了解更多信息，请阅读我们的 Cookie 政策"
+
+msgid "Thu"
+msgstr "周四"
+
+msgid "Tidy up"
+msgstr "整理"
+
+msgid "Time"
+msgstr "时间"
+
+msgid "Time is up"
+msgstr "时间到"
+
+msgid "Time:"
+msgstr "时间："
+
+msgid "Title"
+msgstr "标题"
+
+msgid "Title color"
+msgstr "标题颜色"
+
+msgid "Title text and icon color"
+msgstr "标题文字和图标颜色"
+
+msgid "To"
+msgstr "至"
+
+msgid "To add advertisements to your website, simply enable this feature. It provides you with various ad options to meet your distribution needs"
+msgstr "要向您的网站添加广告，只需启用此功能。它为您提供各种广告选项，以满足您的投放需求"
+
+msgid "To create a menu on the navigation bar:"
+msgstr "要在导航栏上创建菜单："
+
+msgid "Too many failed attempts. Try again in about %d minute(s)."
+msgstr "失败尝试次数过多。请在约 %d 分钟后重试。"
+
+msgid "Top and bottom positions"
+msgstr "顶部和底部位置"
+
+msgid "Total data"
+msgstr "数据总量"
+
+msgid "Total:"
+msgstr "总计："
+
+msgid "Transparency level"
+msgstr "透明度级别"
+
+msgid "Trashed comments"
+msgstr "已回收的评论"
+
+msgid "Tue"
+msgstr "周二"
+
+msgid "Turn Horse Tools shortcodes on or off"
+msgstr "开启或关闭 Horse Tools 短代码"
+
+msgid "Turn off WP_DEBUG_DISPLAY on a live site."
+msgstr "在正式站点上关闭 WP_DEBUG_DISPLAY。"
+
+msgid "Turns off the RSS and Atom feeds if your site does not publish one."
+msgstr "如果您的网站不发布订阅源，则关闭 RSS 和 Atom 订阅源。"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Type any shortcode name (without brackets) to list the posts and pages that contain it — handy before you change or remove one."
+msgstr "输入任意短代码名称（不含方括号）即可列出包含它的文章和页面——在您更改或移除某个短代码之前很有用。"
+
+msgid "Type the number of the shortcode to insert:"
+msgstr "输入要插入的短代码编号："
+
+msgid "UPLOAD FONT"
+msgstr "上传字体"
+
+msgid "URL:"
+msgstr "URL："
+
+msgid "URL: Unverified"
+msgstr "URL：未验证"
+
+msgid "URL: does not exist"
+msgstr "URL：不存在"
+
+msgid "USE FONT"
+msgstr "使用字体"
+
+msgid "USER"
+msgstr "用户"
+
+msgid "Unable to read the uploaded SVG file."
+msgstr "无法读取已上传的 SVG 文件。"
+
+msgid "Unable to send email!"
+msgstr "无法发送邮件！"
+
+msgid "Unable to write the sanitised SVG file."
+msgstr "无法写入已清理的 SVG 文件。"
+
+msgid "Undo the last import"
+msgstr "撤销上次导入"
+
+msgid "Upload avatars"
+msgstr "上传头像"
+
+msgid "Upload font error"
+msgstr "上传字体出错"
+
+msgid "Upload font success"
+msgstr "上传字体成功"
+
+msgid "Uploaded images are compressed"
+msgstr "已上传的图片已压缩"
+
+msgid "Use fonts on the web"
+msgstr "在网页上使用字体"
+
+msgid "Use shortcodes"
+msgstr "使用短代码"
+
+msgid "Use titles as descriptions for images"
+msgstr "使用标题作为图片的描述"
+
+msgid "Use titles as image alt text"
+msgstr "使用标题作为图片的 alt 文本"
+
+msgid "Use with care: your theme may need several image sizes to display correctly."
+msgstr "请谨慎使用：您的主题可能需要多种图片尺寸才能正确显示。"
+
+msgid "Use:"
+msgstr "使用："
+
+msgid "User enumeration is blocked"
+msgstr "用户枚举已被阻止"
+
+msgid "Video cards"
+msgstr "视频卡片"
+
+msgid "View"
+msgstr "查看"
+
+msgid "Visit this page to get the SVG icon:"
+msgstr "访问此页面获取 SVG 图标："
+
+msgid "WOO"
+msgstr "WOO"
+
+msgid "WOOCOMMERCE"
+msgstr "WOOCOMMERCE"
+
+msgid "WP BODY"
+msgstr "WP BODY"
+
+msgid "WP FOOTER"
+msgstr "WP FOOTER"
+
+msgid "WP HEAD"
+msgstr "WP HEAD"
+
+msgid "WP LOGIN"
+msgstr "WP LOGIN"
+
+msgid "Wait..."
+msgstr "请稍候…"
+
+msgid "Watermark image compared to main image"
+msgstr "水印图片相对于主图片"
+
+msgid "We apologize, the website is currently undergoing maintenance. Please wait for a moment"
+msgstr "抱歉，网站目前正在维护中。请稍候片刻"
+
+msgid "We are currently closed"
+msgstr "我们目前已关闭"
+
+msgid "We reply quickly"
+msgstr "我们回复迅速"
+
+msgid "Wed"
+msgstr "周三"
+
+msgid "Weekly"
+msgstr "每周"
+
+msgid "Welcome to Horse Tools"
+msgstr "欢迎使用 Horse Tools"
+
+msgid "Welcome to the website"
+msgstr "欢迎访问本网站"
+
+msgid "When someone copies text from your site, a short line you set is added after it — their selection is kept, nothing is replaced. Useful for a \"Source: yoursite.com\" credit."
+msgstr "当有人从您的网站复制文本时，会在其后追加一行您设置的短文本——他们所选的内容会被保留，不会替换任何内容。适合用作“来源：yoursite.com”的标注。"
+
+msgid "When you change a published post or page URL — its slug, its parent, or the whole path — the old address is redirected to the new one. WordPress already does this for a simple slug change; this also covers moves that core misses, and only ever acts on a URL that would otherwise 404."
+msgstr "当您更改已发布文章或页面的 URL——其别名、其父级或整个路径时——旧地址会被重定向到新地址。WordPress 已经能处理简单的别名更改；此功能还涵盖核心遗漏的移动情况，并且只会作用于原本会 404 的 URL。"
+
+msgid "When your theme or a plugin loads fonts from Google, every visitor's IP is sent to Google — which GDPR treats as a data transfer. This serves downloaded copies from your own domain instead. Scan first, then click self-host; this works for fonts loaded the standard way (if a font still loads from Google afterwards, your theme hard-codes it — the scan will show you)."
+msgstr "当您的主题或插件从 Google 加载字体时，每位访客的 IP 都会被发送给 Google——GDPR 将其视为数据传输。此功能改为从您自己的域名提供已下载的副本。请先扫描，然后点击本地托管；这适用于以标准方式加载的字体（如果之后仍有字体从 Google 加载，说明您的主题将其硬编码了——扫描会告诉您）。"
+
+msgid "Where shortcodes run"
+msgstr "短代码运行的位置"
+
+msgid "Widget title"
+msgstr "小工具标题"
+
+msgid "With this feature, HTML will be compressed into a single line, removing unnecessary characters and whitespace to speed up page loading"
+msgstr "启用此功能后，HTML 将被压缩为单行，移除不必要的字符和空白以加快页面加载"
+
+msgid "With this feature, regular users can only view their own posts and images they uploaded, while the admin can view all of them"
+msgstr "启用此功能后，普通用户只能查看自己的文章和自己上传的图片，而管理员可以查看全部"
+
+msgid "With this feature, regular users cannot access the WordPress admin page"
+msgstr "启用此功能后，普通用户无法访问 WordPress 后台页面"
+
+msgid "With this feature, there will be an additional button in the profile section allowing users to upload avatars"
+msgstr "启用此功能后，资料部分将增加一个按钮，允许用户上传头像"
+
+msgid "With this feature, you can notify your orders to your Telegram group, helping you manage orders conveniently"
+msgstr "启用此功能后，您可以将订单通知发送到您的 Telegram 群组，帮助您便捷地管理订单"
+
+msgid "WooCommerce / Store"
+msgstr "WooCommerce / 商店"
+
+msgid "WordPress runs shortcodes in post content by default. Turn these on to run them elsewhere too. (Saved with the SAVE button at the bottom.)"
+msgstr "WordPress 默认在文章内容中运行短代码。开启这些选项即可在其他位置也运行它们。（通过底部的“保存”按钮保存。）"
+
+msgid "X-Content-Type-Options: nosniff"
+msgstr "X-Content-Type-Options：nosniff"
+
+msgid "X-Frame-Options: SAMEORIGIN (block clickjacking)"
+msgstr "X-Frame-Options：SAMEORIGIN（阻止点击劫持）"
+
+msgid "XML-RPC is disabled"
+msgstr "XML-RPC 已禁用"
+
+msgid "Yes"
+msgstr "是"
+
+msgid "Yes — preview as a visitor"
+msgstr "是——以访客身份预览"
+
+msgid "You are not allowed to create this post type."
+msgstr "您无权创建此文章类型。"
+
+msgid "You are not allowed to duplicate this item."
+msgstr "您无权复制此项目。"
+
+msgid "You are not logged in"
+msgstr "您尚未登录"
+
+msgid "You can adjust the compression level of the image from 5 to 100 (100 being no compression)"
+msgstr "您可以将图片的压缩级别从 5 调整到 100（100 表示不压缩）"
+
+msgid "You can create your widget by activating it and entering content into the box below"
+msgstr "您可以通过激活并在下方框中输入内容来创建您的小工具"
+
+msgid "You can customize the role of successful registrants, with the default role being \"subscriber\""
+msgstr "您可以自定义注册成功者的角色，默认角色为“订阅者”"
+
+msgid "You can disable default widgets on the dashboard that you dont use"
+msgstr "您可以禁用仪表盘上您不使用的默认小工具"
+
+msgid "You can further customize your login page by enabling this feature"
+msgstr "启用此功能后，您可以进一步自定义您的登录页面"
+
+msgid "You can hide Horse Tools from the WP menu, but you can still access it through the link. This will hide Horse Tools for all accounts"
+msgstr "您可以在 WP 菜单中隐藏 Horse Tools，但仍可通过链接访问它。这将对所有账户隐藏 Horse Tools"
+
+msgid "You can paste the shortcode into the position where you want the login button to appear"
+msgstr "您可以将短代码粘贴到您希望登录按钮出现的位置"
+
+msgid "You can preview your file here:"
+msgstr "您可以在此处预览您的文件："
+
+msgid "You can use the shortcode in the editor and add it to the position you want, note: only use 1 shortcode in the post"
+msgstr "您可以在编辑器中使用该短代码并将其添加到您想要的位置，注意：每篇文章只使用 1 个短代码"
+
+msgid "You can use the shortcode to add the search icon to the location you want"
+msgstr "您可以使用该短代码将搜索图标添加到您想要的位置"
+
+msgid "You do not have permission to do this."
+msgstr "您无权执行此操作。"
+
+msgid "You do not have permission to upload SVG files."
+msgstr "您无权上传 SVG 文件。"
+
+msgid "You have successfully copied"
+msgstr "您已成功复制"
+
+msgid "You have unsaved changes."
+msgstr "您有未保存的更改。"
+
+msgid "You havent added content yet"
+msgstr "您尚未添加内容"
+
+msgid "You need to activate this feature and customize the content below so that new registered users can receive emails"
+msgstr "您需要激活此功能并自定义下方内容，以便新注册用户能够收到邮件"
+
+msgid "Your Google account email address is not verified."
+msgstr "您的 Google 账户电子邮件地址未验证。"
+
+msgid "Your comment has just been replied to"
+msgstr "您的评论刚刚收到了回复"
+
+msgid "Your comment has just been replied to in the post"
+msgstr "您在文章中的评论刚刚收到了回复"
+
+msgid "Your configuration has been saved"
+msgstr "您的配置已保存"
+
+msgid "Your custom widget"
+msgstr "您的自定义小工具"
+
+msgid "Your database"
+msgstr "您的数据库"
+
+msgid "[%s] New comment on the article \"%s\""
+msgstr "[%s] 文章“%s”有新评论"
+
+msgid "days"
+msgstr "天"
+
+msgid "desktop"
+msgstr "桌面端"
+
+msgid "e.g. contact, promo"
+msgstr "例如 contact、promo"
+
+msgid "e.g. sc, ht-snippet, vip"
+msgstr "例如 sc、ht-snippet、vip"
+
+msgid "font-family:"
+msgstr "font-family："
+
+msgid "hrs"
+msgstr "小时"
+
+msgid "icons"
+msgstr "图标"
+
+msgid "images"
+msgstr "图片"
+
+msgid "jQuery Migrate is a library used to maintain the operation of certain themes, plugins that rely on older code. If your website no longer relies on this library, you can disable it"
+msgstr "jQuery Migrate 是一个用于维持某些依赖旧代码的主题、插件正常运作的库。如果您的网站不再依赖此库，可以将其禁用"
+
+msgid "logged-in"
+msgstr "已登录"
+
+msgid "logged-out"
+msgstr "未登录"
+
+msgid "min"
+msgstr "分钟"
+
+msgid "mobile"
+msgstr "移动端"
+
+msgid "nofollow + new tab on external links"
+msgstr "外部链接添加 nofollow + 新标签页"
+
+msgid "off"
+msgstr "关"
+
+msgid "post type, e.g. shortcoder"
+msgstr "文章类型，例如 shortcoder"
+
+msgid "sec"
+msgstr "秒"
+
+msgid "showing first"
+msgstr "优先显示"
+
+msgid "third-party host(s) found"
+msgstr "发现第三方主机"
+
+msgid "up to %s"
+msgstr "最多 %s"
+
+msgid "v3 score threshold (0 – 1)"
+msgstr "v3 分数阈值（0 – 1）"
+
+msgid "— Insert a shortcode —"
+msgstr "— 插入短代码 —"
