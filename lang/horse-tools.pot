@@ -246,6 +246,10 @@ msgstr ""
 msgid "Add picture frame link here"
 msgstr ""
 
+#: main/page/12chat.php:413
+msgid "Add service"
+msgstr ""
+
 #: main/page/10custom.php:36
 msgid "Add the image logo link here"
 msgstr ""
@@ -450,6 +454,10 @@ msgstr ""
 msgid "Backup"
 msgstr ""
 
+#: main/page/12chat.php:449
+msgid "Badge text (optional)"
+msgstr ""
+
 #: main/page/12chat.php:369
 msgid "Bar background color"
 msgstr ""
@@ -460,6 +468,10 @@ msgstr ""
 
 #: main/page/4main.php:98
 msgid "Bar size"
+msgstr ""
+
+#: main/page/12chat.php:383
+msgid "Bento (1 big + cells)"
 msgstr ""
 
 #: main/page/11google.php:65
@@ -482,6 +494,10 @@ msgstr ""
 msgid "Blog / News site"
 msgstr ""
 
+#: main/page/12chat.php:392
+msgid "Blue"
+msgstr ""
+
 #: main/toc.php:190
 msgid "Border color"
 msgstr ""
@@ -501,6 +517,10 @@ msgstr ""
 
 #: main/notify.php:36
 msgid "Browser ad-block notification"
+msgstr ""
+
+#: main/page/12chat.php:397
+msgid "Build a rich list of services or articles that slides up when a visitor taps a bottom-bar item. To open it, set one bottom-bar item’s “#id or .class” field above to"
 msgstr ""
 
 #: main/page/10custom.php:91
@@ -557,6 +577,10 @@ msgstr ""
 
 #: main/clean.php:203
 msgid "Cancel"
+msgstr ""
+
+#: main/page/12chat.php:384
+msgid "Card grid"
 msgstr ""
 
 #: main/shortcode.php:137
@@ -680,6 +704,10 @@ msgstr ""
 
 #: inc/clean.php:366
 msgid "Comments containing links"
+msgstr ""
+
+#: main/page/12chat.php:386
+msgid "Compact icon tiles"
 msgstr ""
 
 #: main/completed.php:5
@@ -850,6 +878,14 @@ msgstr ""
 msgid "Could not load the icon list."
 msgstr ""
 
+#: inc/chat-services.php:221
+msgid "Could not read the data."
+msgstr ""
+
+#: main/page/12chat.php:389
+msgid "Coupon codes"
+msgstr ""
+
 #: main/redirects.php:75
 msgid "Create a 301 automatically when a post permalink changes"
 msgstr ""
@@ -964,6 +1000,10 @@ msgstr ""
 
 #: main/clean.php:47
 msgid "Daily"
+msgstr ""
+
+#: main/page/12chat.php:393
+msgid "Dark"
 msgstr ""
 
 #: main/page/4main.php:33
@@ -1598,6 +1638,10 @@ msgstr ""
 msgid "Enable the picture frame"
 msgstr ""
 
+#: main/page/12chat.php:401
+msgid "Enable the services panel"
+msgstr ""
+
 #: main/page/10custom.php:21
 msgid "Enable this feature and enter the login link suffix"
 msgstr ""
@@ -1992,6 +2036,10 @@ msgstr ""
 msgid "Go to the home page"
 msgstr ""
 
+#: main/page/12chat.php:392
+msgid "Gold"
+msgstr ""
+
 #: main/page/2scuri.php:173
 msgid "Google Fonts detected — click “Download & self-host” to serve them locally."
 msgstr ""
@@ -2002,6 +2050,10 @@ msgstr ""
 
 #: inc/health.php:233
 msgid "Grade %s"
+msgstr ""
+
+#: main/page/12chat.php:392
+msgid "Green"
 msgstr ""
 
 #: main/toc.php:206
@@ -2260,6 +2312,10 @@ msgstr ""
 msgid "Ignore 8-bit png"
 msgstr ""
 
+#: main/page/12chat.php:445
+msgid "Image URL (optional, replaces the icon)"
+msgstr ""
+
 #: main/page/5media.php:12
 msgid "Image crop configuration"
 msgstr ""
@@ -2415,12 +2471,20 @@ msgstr ""
 msgid "Limits the size of JPG, PNG, WEBP, AVIF images when uploading"
 msgstr ""
 
+#: main/page/12chat.php:448
+msgid "Link (article or service page)"
+msgstr ""
+
 #: main/toc.php:194
 msgid "Link color"
 msgstr ""
 
 #: main/page/10custom.php:106
 msgid "Link display color"
+msgstr ""
+
+#: main/page/12chat.php:385
+msgid "List"
 msgstr ""
 
 #: main/toc.php:183
@@ -2591,6 +2655,10 @@ msgstr ""
 msgid "Navigation bar (Horse Tools)"
 msgstr ""
 
+#: main/page/12chat.php:393
+msgid "Neutral"
+msgstr ""
+
 #: main/shortcode.php:340
 msgid "New / clear"
 msgstr ""
@@ -2625,6 +2693,10 @@ msgstr ""
 
 #: main/redirects.php:103
 msgid "No automatic redirects yet. Change a published URL and one will appear here."
+msgstr ""
+
+#: main/page/12chat.php:450
+msgid "No badge colour"
 msgstr ""
 
 #: inc/scuri.php:356
@@ -2829,6 +2901,10 @@ msgstr ""
 msgid "PRESETS"
 msgstr ""
 
+#: main/page/12chat.php:405
+msgid "Panel title (e.g. Our services)"
+msgstr ""
+
 #: inc/custom.php:208
 msgid "Password"
 msgstr ""
@@ -2849,7 +2925,7 @@ msgstr ""
 msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
 msgstr ""
 
-#: inc/scuri.php:466 inc/scuri.php:532 main/shortcode.php:805
+#: inc/chat-services.php:215 inc/scuri.php:466 inc/scuri.php:532 main/shortcode.php:805
 msgid "Permission denied."
 msgstr ""
 
@@ -2922,8 +2998,16 @@ msgstr ""
 msgid "Process cropped images"
 msgstr ""
 
+#: main/page/12chat.php:393
+msgid "Purple"
+msgstr ""
+
 #: main/ads.php:87
 msgid "Quantity"
+msgstr ""
+
+#: main/page/12chat.php:387
+msgid "Quick chips"
 msgstr ""
 
 #: main/search.php:33
@@ -2948,6 +3032,10 @@ msgstr ""
 
 #: main/redirects.php:141
 msgid "Record 404 hits"
+msgstr ""
+
+#: main/page/12chat.php:393
+msgid "Red"
 msgstr ""
 
 #: main/redirects.php:165
@@ -3180,12 +3268,20 @@ msgstr ""
 msgid "Save schedule"
 msgstr ""
 
+#: main/page/12chat.php:414
+msgid "Save services"
+msgstr ""
+
 #: main/shortcode.php:697
 msgid "Save shortcode status"
 msgstr ""
 
 #: main/shortcode.php:339
 msgid "Save snippet"
+msgstr ""
+
+#: main/page/12chat.php:442
+msgid "Saved %d service(s)."
 msgstr ""
 
 #: main/shortcode.php:724
@@ -3381,6 +3477,10 @@ msgstr ""
 msgid "Services"
 msgstr ""
 
+#: main/page/12chat.php:379
+msgid "Services panel (slide-up from the bottom bar)"
+msgstr ""
+
 #: main/page/9user.php:12
 msgid "Set access and viewing permissions"
 msgstr ""
@@ -3493,7 +3593,8 @@ msgstr ""
 msgid "Snippet saved."
 msgstr ""
 
-#: main/page/2scuri.php:178 main/shortcode.php:427 main/shortcode.php:626 main/shortcode.php:725
+#: main/page/12chat.php:443 main/page/2scuri.php:178 main/shortcode.php:427 main/shortcode.php:626
+#: main/shortcode.php:725
 msgid "Something went wrong."
 msgstr ""
 
@@ -3535,6 +3636,14 @@ msgstr ""
 
 #: main/page/5media.php:14
 msgid "Stop cropping all"
+msgstr ""
+
+#: main/page/12chat.php:388
+msgid "Story circles"
+msgstr ""
+
+#: main/page/12chat.php:447
+msgid "Subtitle / price / coupon code"
 msgstr ""
 
 #: inc/gindex.php:311 inc/gindex.php:341
@@ -3583,6 +3692,10 @@ msgstr ""
 
 #: main/export.php:220
 msgid "Table of contents on posts"
+msgstr ""
+
+#: main/page/12chat.php:444
+msgid "Tabler icon name (e.g. snowflake) — or leave blank and use an image"
 msgstr ""
 
 #: main/ads.php:86 main/toc.php:174
@@ -3887,6 +4000,10 @@ msgstr ""
 
 #: inc/gindex.php:134 inc/gindex.php:242
 msgid "Time:"
+msgstr ""
+
+#: main/page/12chat.php:446
+msgid "Title"
 msgstr ""
 
 #: main/toc.php:209

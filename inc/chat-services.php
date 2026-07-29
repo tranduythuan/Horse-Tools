@@ -41,9 +41,9 @@ function horsetools_services_badges() {
 	);
 }
 
-/** All available layouts: slug => label (translated at UI time). */
+/** Layout slugs that have a distinct renderer (more added over time). */
 function horsetools_services_layouts() {
-	return array( 'bento', 'grid', 'list', 'banner', 'chips', 'tiles', 'coupon', 'story', 'price', 'pricecards' );
+	return array( 'bento', 'grid', 'list', 'tiles', 'chips', 'story', 'coupon' );
 }
 
 /** The stored config, normalised. */
@@ -206,4 +206,47 @@ function horsetools_services_layout_body( $layout, $items, $accent ) {
 			}
 			return $out . '</div>';
 	}
+}
+
+/* ---- Admin: save the Services config ----------------------------------- */
+add_action( 'wp_ajax_horsetools_services_save', 'horsetools_services_save_ajax' );
+function horsetools_services_save_ajax() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error( array( 'msg' => __( 'Permission denied.', 'horse-tools' ) ) );
+	}
+	check_ajax_referer( 'horsetools_services', 'nonce' );
+	$raw  = isset( $_POST['data'] ) ? wp_unslash( $_POST['data'] ) : '';
+	$data = json_decode( $raw, true );
+	if ( ! is_array( $data ) ) {
+		wp_send_json_error( array( 'msg' => __( 'Could not read the data.', 'horse-tools' ) ) );
+	}
+	$clean = array(
+		'on'     => ! empty( $data['on'] ) ? 1 : 0,
+		'title'  => sanitize_text_field( isset( $data['title'] ) ? $data['title'] : '' ),
+		'layout' => in_array( isset( $data['layout'] ) ? $data['layout'] : '', horsetools_services_layouts(), true ) ? $data['layout'] : 'bento',
+		'color'  => isset( horsetools_services_themes()[ isset( $data['color'] ) ? $data['color'] : '' ] ) ? $data['color'] : 'gold',
+		'items'  => array(),
+	);
+	foreach ( (array) ( isset( $data['items'] ) ? $data['items'] : array() ) as $it ) {
+		if ( ! is_array( $it ) ) {
+			continue;
+		}
+		$title = sanitize_text_field( isset( $it['title'] ) ? $it['title'] : '' );
+		$link  = esc_url_raw( isset( $it['link'] ) ? $it['link'] : '' );
+		$img   = esc_url_raw( isset( $it['img'] ) ? $it['img'] : '' );
+		if ( '' === $title && '' === $link && '' === $img ) {
+			continue; // skip blank rows
+		}
+		$clean['items'][] = array(
+			'icon'        => preg_replace( '/[^a-z0-9-]/', '', strtolower( isset( $it['icon'] ) ? $it['icon'] : '' ) ),
+			'img'         => $img,
+			'title'       => $title,
+			'sub'         => sanitize_text_field( isset( $it['sub'] ) ? $it['sub'] : '' ),
+			'link'        => $link,
+			'badge'       => sanitize_text_field( isset( $it['badge'] ) ? $it['badge'] : '' ),
+			'badge_color' => sanitize_text_field( isset( $it['badge_color'] ) ? $it['badge_color'] : 'red' ),
+		);
+	}
+	update_option( 'horsetools_services', $clean, false );
+	wp_send_json_success( array( 'items' => count( $clean['items'] ) ) );
 }

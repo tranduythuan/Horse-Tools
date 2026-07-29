@@ -5110,3 +5110,90 @@ msgstr "Đóng"
 
 msgid "Services"
 msgstr "Dịch vụ"
+
+msgid "Add service"
+msgstr "Thêm dịch vụ"
+
+msgid "Badge text (optional)"
+msgstr "Chữ trên nhãn (tùy chọn)"
+
+msgid "Bento (1 big + cells)"
+msgstr "Bento (1 lớn + ô nhỏ)"
+
+msgid "Blue"
+msgstr "Xanh dương"
+
+msgid "Build a rich list of services or articles that slides up when a visitor taps a bottom-bar item. To open it, set one bottom-bar item’s “#id or .class” field above to"
+msgstr "Tạo danh sách dịch vụ hoặc bài viết hấp dẫn, trượt lên khi khách chạm một mục trên thanh đáy. Để mở, đặt ô “#id hoặc .class” của một mục thanh đáy ở trên thành"
+
+msgid "Card grid"
+msgstr "Lưới thẻ"
+
+msgid "Compact icon tiles"
+msgstr "Ô icon gọn"
+
+msgid "Could not read the data."
+msgstr "Không đọc được dữ liệu."
+
+msgid "Coupon codes"
+msgstr "Mã giảm giá"
+
+msgid "Dark"
+msgstr "Tối"
+
+msgid "Enable the services panel"
+msgstr "Bật panel dịch vụ"
+
+msgid "Gold"
+msgstr "Vàng"
+
+msgid "Green"
+msgstr "Xanh lá"
+
+msgid "Image URL (optional, replaces the icon)"
+msgstr "URL ảnh (tùy chọn, thay cho icon)"
+
+msgid "Link (article or service page)"
+msgstr "Link (bài viết hoặc trang dịch vụ)"
+
+msgid "List"
+msgstr "Danh sách"
+
+msgid "Neutral"
+msgstr "Trung tính"
+
+msgid "No badge colour"
+msgstr "Không màu nhãn"
+
+msgid "Panel title (e.g. Our services)"
+msgstr "Tiêu đề panel (vd: Dịch vụ của chúng tôi)"
+
+msgid "Purple"
+msgstr "Tím"
+
+msgid "Quick chips"
+msgstr "Chip nhanh"
+
+msgid "Red"
+msgstr "Đỏ"
+
+msgid "Save services"
+msgstr "Lưu dịch vụ"
+
+msgid "Saved %d service(s)."
+msgstr "Đã lưu %d dịch vụ."
+
+msgid "Services panel (slide-up from the bottom bar)"
+msgstr "Panel dịch vụ (trượt lên từ thanh đáy)"
+
+msgid "Story circles"
+msgstr "Vòng tròn story"
+
+msgid "Subtitle / price / coupon code"
+msgstr "Phụ đề / giá / mã giảm"
+
+msgid "Tabler icon name (e.g. snowflake) — or leave blank and use an image"
+msgstr "Tên icon Tabler (vd: snowflake) — hoặc để trống và dùng ảnh"
+
+msgid "Title"
+msgstr "Tiêu đề"

@@ -376,4 +376,118 @@ global $horsetools_options; ?>
 	<input class="ht-input-color" name="horsetools_settings[chat-nav-c6]" type="text" data-coloris value="<?php if(!empty($horsetools_options['chat-nav-c6'])){echo esc_attr($horsetools_options['chat-nav-c6']);} ?>"/>
 	<label class="ht-right-text"><?php _e('Chat text color', 'horse-tools'); ?></label>
 	</p>
+  <h3><i class="ti ti-layout-bottombar-expand"></i> <?php _e('Services panel (slide-up from the bottom bar)', 'horse-tools') ?></h3>
+	<?php
+	$horsetools_svc_cfg = horsetools_services_get();
+	$horsetools_svc_layouts = array(
+		'bento' => __( 'Bento (1 big + cells)', 'horse-tools' ),
+		'grid'  => __( 'Card grid', 'horse-tools' ),
+		'list'  => __( 'List', 'horse-tools' ),
+		'tiles' => __( 'Compact icon tiles', 'horse-tools' ),
+		'chips' => __( 'Quick chips', 'horse-tools' ),
+		'story' => __( 'Story circles', 'horse-tools' ),
+		'coupon'=> __( 'Coupon codes', 'horse-tools' ),
+	);
+	$horsetools_svc_colors = array(
+		'gold' => __( 'Gold', 'horse-tools' ), 'blue' => __( 'Blue', 'horse-tools' ), 'green' => __( 'Green', 'horse-tools' ),
+		'red' => __( 'Red', 'horse-tools' ), 'purple' => __( 'Purple', 'horse-tools' ), 'dark' => __( 'Dark', 'horse-tools' ), 'neutral' => __( 'Neutral', 'horse-tools' ),
+	);
+	$horsetools_svc_badgecolors = array( 'red' => 'HOT (đỏ)', 'amber' => 'SALE (cam)', 'green' => 'MỚI (xanh)', 'blue' => 'BLUE', 'gold' => 'GOLD', 'dark' => 'DARK' );
+	?>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Build a rich list of services or articles that slides up when a visitor taps a bottom-bar item. To open it, set one bottom-bar item’s “#id or .class” field above to', 'horse-tools'); ?> <code>#ht-services</code>.</p>
+
+	<div class="ht-svc-admin" data-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_services' ) ); ?>" data-ajax="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>">
+		<p>
+			<label class="ht-container"><?php _e( 'Enable the services panel', 'horse-tools' ); ?>
+				<input type="checkbox" id="ht-svc-on" <?php checked( $horsetools_svc_cfg['on'], true ); ?> />
+				<span class="ht-checkmark"></span></label>
+		</p>
+		<p><input type="text" id="ht-svc-title" class="ht-input-big" placeholder="<?php esc_attr_e( 'Panel title (e.g. Our services)', 'horse-tools' ); ?>" value="<?php echo esc_attr( $horsetools_svc_cfg['title'] ); ?>" /></p>
+		<p style="display:flex;gap:10px;flex-wrap:wrap;">
+			<select id="ht-svc-layout" class="ht-svc-sel"><?php foreach ( $horsetools_svc_layouts as $k => $v ) { echo '<option value="' . esc_attr( $k ) . '"' . selected( $horsetools_svc_cfg['layout'], $k, false ) . '>' . esc_html( $v ) . '</option>'; } ?></select>
+			<select id="ht-svc-color" class="ht-svc-sel"><?php foreach ( $horsetools_svc_colors as $k => $v ) { echo '<option value="' . esc_attr( $k ) . '"' . selected( $horsetools_svc_cfg['color'], $k, false ) . '>' . esc_html( $v ) . '</option>'; } ?></select>
+		</p>
+
+		<div id="ht-svc-rows"></div>
+		<p class="ht-snip-actions">
+			<button type="button" class="ht-priv-btn" id="ht-svc-add"><i class="ti ti-plus"></i> <?php _e( 'Add service', 'horse-tools' ); ?></button>
+			<button type="button" class="ht-priv-btn" id="ht-svc-save"><i class="ti ti-device-floppy"></i> <?php _e( 'Save services', 'horse-tools' ); ?></button>
+		</p>
+		<div id="ht-svc-msg"></div>
+	</div>
+	<style>
+	.ht-svc-admin .ht-priv-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #e0a800;color:#8a5a00;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:13px}
+	.ht-svc-admin .ht-priv-btn:hover{background:#fff9e6}
+	.ht-svc-sel{padding:8px 10px;border:1px solid #ddd;border-radius:8px;font-size:13px}
+	.ht-svc-r{border:1px solid #eee;border-radius:10px;padding:10px;margin-bottom:9px;background:#fafafa;position:relative}
+	.ht-svc-r input{width:100%;padding:7px 9px;border:1px solid #ddd;border-radius:7px;font-size:13px;margin-bottom:6px;box-sizing:border-box}
+	.ht-svc-r .row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+	.ht-svc-r .badgewrap{display:flex;gap:8px}
+	.ht-svc-r .badgewrap select{padding:7px;border:1px solid #ddd;border-radius:7px;font-size:12px}
+	.ht-svc-del{position:absolute;top:8px;right:10px;color:#c0392b;cursor:pointer;font-size:16px}
+	.ht-svc-mv{cursor:grab;color:#bbb}
+	.ht-svc-msg{padding:8px 12px;border-radius:8px;font-size:13px;background:#f4f6f8;margin-top:6px}
+	.ht-svc-msg.ok{background:#eafaf0;color:#1e6b3f}.ht-svc-msg.err{background:#fdecea;color:#8a1c12}
+	</style>
+	<script>
+	(function(){
+		var root = document.querySelector('.ht-svc-admin');
+		if(!root || root.dataset.ready){ return; }
+		root.dataset.ready='1';
+		var AJAX=root.dataset.ajax, NONCE=root.dataset.nonce;
+		var rowsEl=document.getElementById('ht-svc-rows'), msg=document.getElementById('ht-svc-msg');
+		var badgeOpts = <?php echo wp_json_encode( $horsetools_svc_badgecolors ); ?>;
+		var initial = <?php echo wp_json_encode( $horsetools_svc_cfg['items'] ); ?>;
+		var I18N = {
+			saved: <?php echo wp_json_encode( __( 'Saved %d service(s).', 'horse-tools' ) ); ?>,
+			fail: <?php echo wp_json_encode( __( 'Something went wrong.', 'horse-tools' ) ); ?>,
+			icon: <?php echo wp_json_encode( __( 'Tabler icon name (e.g. snowflake) — or leave blank and use an image', 'horse-tools' ) ); ?>,
+			img: <?php echo wp_json_encode( __( 'Image URL (optional, replaces the icon)', 'horse-tools' ) ); ?>,
+			title: <?php echo wp_json_encode( __( 'Title', 'horse-tools' ) ); ?>,
+			sub: <?php echo wp_json_encode( __( 'Subtitle / price / coupon code', 'horse-tools' ) ); ?>,
+			link: <?php echo wp_json_encode( __( 'Link (article or service page)', 'horse-tools' ) ); ?>,
+			badge: <?php echo wp_json_encode( __( 'Badge text (optional)', 'horse-tools' ) ); ?>,
+			nobadge: <?php echo wp_json_encode( __( 'No badge colour', 'horse-tools' ) ); ?>
+		};
+		function esc(s){ return String(s==null?'':s).replace(/"/g,'&quot;'); }
+		function rowHtml(it){
+			it=it||{};
+			var opts='<option value="">'+esc(I18N.nobadge)+'</option>';
+			Object.keys(badgeOpts).forEach(function(k){ opts+='<option value="'+k+'"'+(it.badge_color===k?' selected':'')+'>'+esc(badgeOpts[k])+'</option>'; });
+			return '<div class="ht-svc-r">'
+				+ '<span class="ht-svc-del" title="x">&#x2715;</span>'
+				+ '<input class="f-title" placeholder="'+esc(I18N.title)+'" value="'+esc(it.title)+'">'
+				+ '<div class="row2"><input class="f-icon" placeholder="'+esc(I18N.icon)+'" value="'+esc(it.icon)+'"><input class="f-sub" placeholder="'+esc(I18N.sub)+'" value="'+esc(it.sub)+'"></div>'
+				+ '<input class="f-link" placeholder="'+esc(I18N.link)+'" value="'+esc(it.link)+'">'
+				+ '<input class="f-img" placeholder="'+esc(I18N.img)+'" value="'+esc(it.img)+'">'
+				+ '<div class="badgewrap"><input class="f-badge" placeholder="'+esc(I18N.badge)+'" value="'+esc(it.badge)+'"><select class="f-bc">'+opts+'</select></div>'
+				+ '</div>';
+		}
+		function addRow(it){ rowsEl.insertAdjacentHTML('beforeend', rowHtml(it)); }
+		(initial.length?initial:[{}]).forEach(addRow);
+
+		rowsEl.addEventListener('click', function(e){ var d=e.target.closest('.ht-svc-del'); if(d){ d.closest('.ht-svc-r').remove(); } });
+		document.getElementById('ht-svc-add').addEventListener('click', function(){ addRow({}); });
+
+		function collect(){
+			var items=[];
+			rowsEl.querySelectorAll('.ht-svc-r').forEach(function(r){
+				items.push({
+					title:r.querySelector('.f-title').value, icon:r.querySelector('.f-icon').value, sub:r.querySelector('.f-sub').value,
+					link:r.querySelector('.f-link').value, img:r.querySelector('.f-img').value,
+					badge:r.querySelector('.f-badge').value, badge_color:r.querySelector('.f-bc').value
+				});
+			});
+			return { on: document.getElementById('ht-svc-on').checked?1:0, title:document.getElementById('ht-svc-title').value,
+				layout:document.getElementById('ht-svc-layout').value, color:document.getElementById('ht-svc-color').value, items:items };
+		}
+		document.getElementById('ht-svc-save').addEventListener('click', function(){
+			var body='action=horsetools_services_save&nonce='+encodeURIComponent(NONCE)+'&data='+encodeURIComponent(JSON.stringify(collect()));
+			fetch(AJAX,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+				.then(function(r){return r.json();})
+				.then(function(res){ msg.className='ht-svc-msg '+(res&&res.success?'ok':'err'); msg.textContent = res&&res.success ? I18N.saved.replace('%d',res.data.items) : ((res&&res.data&&res.data.msg)||I18N.fail); })
+				.catch(function(){ msg.className='ht-svc-msg err'; msg.textContent=I18N.fail; });
+		});
+	})();
+	</script>
 </div>		
