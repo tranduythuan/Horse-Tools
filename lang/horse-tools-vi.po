@@ -4438,3 +4438,21 @@ msgstr "Khi ai đó copy nội dung từ site của bạn, một dòng ngắn b�
 
 msgid "Attribution line"
 msgstr "Dòng ghi nguồn"
+
+msgid "Automatic redirects"
+msgstr "Chuyển hướng tự động"
+
+msgid "To"
+msgstr "Đến"
+
+msgid "Clear all automatic redirects"
+msgstr "Xoá tất cả chuyển hướng tự động"
+
+msgid "Create a 301 automatically when a post permalink changes"
+msgstr "Tự tạo 301 khi đường dẫn bài viết thay đổi"
+
+msgid "No automatic redirects yet. Change a published URL and one will appear here."
+msgstr "Chưa có chuyển hướng tự động nào. Đổi một URL đã đăng và nó sẽ xuất hiện ở đây."
+
+msgid "When you change a published post or page URL — its slug, its parent, or the whole path — the old address is redirected to the new one. WordPress already does this for a simple slug change; this also covers moves that core misses, and only ever acts on a URL that would otherwise 404."
+msgstr "Khi bạn đổi URL của bài viết hoặc trang đã đăng — slug, chuyên mục cha, hay toàn bộ đường dẫn — địa chỉ cũ sẽ được chuyển hướng sang địa chỉ mới. WordPress đã làm điều này cho việc đổi slug đơn giản; tính năng này bắt thêm các trường hợp core bỏ sót, và chỉ tác động lên URL vốn sẽ trả về 404."

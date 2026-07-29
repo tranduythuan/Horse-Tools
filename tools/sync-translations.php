@@ -264,6 +264,15 @@ $vi = array(
     'When someone copies text from your site, a short line you set is added after it — their selection is kept, nothing is replaced. Useful for a "Source: yoursite.com" credit.'
         => 'Khi ai đó copy nội dung từ site của bạn, một dòng ngắn bạn đặt được thêm vào sau — phần chọn của họ vẫn giữ nguyên, không thay thế gì. Hữu ích cho dòng "Nguồn: site.com".',
     'Attribution line' => 'Dòng ghi nguồn',
+    // Automatic redirects (slug change)
+    'Automatic redirects' => 'Chuyển hướng tự động',
+    'To' => 'Đến',
+    'Clear all automatic redirects' => 'Xoá tất cả chuyển hướng tự động',
+    'Create a 301 automatically when a post permalink changes' => 'Tự tạo 301 khi đường dẫn bài viết thay đổi',
+    'No automatic redirects yet. Change a published URL and one will appear here.'
+        => 'Chưa có chuyển hướng tự động nào. Đổi một URL đã đăng và nó sẽ xuất hiện ở đây.',
+    'When you change a published post or page URL — its slug, its parent, or the whole path — the old address is redirected to the new one. WordPress already does this for a simple slug change; this also covers moves that core misses, and only ever acts on a URL that would otherwise 404.'
+        => 'Khi bạn đổi URL của bài viết hoặc trang đã đăng — slug, chuyên mục cha, hay toàn bộ đường dẫn — địa chỉ cũ sẽ được chuyển hướng sang địa chỉ mới. WordPress đã làm điều này cho việc đổi slug đơn giản; tính năng này bắt thêm các trường hợp core bỏ sót, và chỉ tác động lên URL vốn sẽ trả về 404.',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

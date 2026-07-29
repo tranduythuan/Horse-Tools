@@ -69,7 +69,40 @@ function horsetools_redirects_options_page() {
 				?>
 				</div>
 				<span id="ht-chatmore"><i class="fa-regular fa-plus"></i> <?php _e('Add link', 'horse-tools'); ?></span>
-			</div>	
+			</div>
+			<div class="ht-card">
+			  <h3><i class="fa-regular fa-wand-magic-sparkles"></i> <?php _e('Automatic redirects', 'horse-tools') ?></h3>
+				<?php horsetools_toggle( 'redi-autoslug', __( 'Create a 301 automatically when a post permalink changes', 'horse-tools' ), array(
+					'module'      => 'redirect',
+					'tab'         => '301',
+					'section'     => 'Automatic redirects',
+					'description' => __( 'When you change a published post or page URL — its slug, its parent, or the whole path — the old address is redirected to the new one. WordPress already does this for a simple slug change; this also covers moves that core misses, and only ever acts on a URL that would otherwise 404.', 'horse-tools' ),
+				) ); ?>
+				<?php
+				$autoslug = function_exists( 'horsetools_autoslug_list' ) ? horsetools_autoslug_list() : array();
+				if ( ! empty( $autoslug ) ) :
+				?>
+				<table class="ht-404-table" data-autoslug-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_autoslug_action' ) ); ?>">
+					<thead><tr>
+						<th><?php _e( 'From', 'horse-tools' ); ?></th>
+						<th><?php _e( 'To', 'horse-tools' ); ?></th>
+						<th><?php _e( 'Actions', 'horse-tools' ); ?></th>
+					</tr></thead>
+					<tbody>
+					<?php foreach ( $autoslug as $key => $e ) : ?>
+						<tr data-key="<?php echo esc_attr( $key ); ?>">
+							<td class="ht-404-url"><?php echo esc_html( $e['from'] ); ?></td>
+							<td class="ht-404-url"><?php echo esc_html( $e['to'] ); ?></td>
+							<td class="ht-404-actions"><a href="javascript:void(0)" class="ht-autoslug-delete">&times;</a></td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
+				<p><a href="javascript:void(0)" class="ht-autoslug-clear"><?php _e( 'Clear all automatic redirects', 'horse-tools' ); ?></a></p>
+				<?php elseif ( isset( $horsetools_redirects_options['redi-autoslug'] ) ) : ?>
+					<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e( 'No automatic redirects yet. Change a published URL and one will appear here.', 'horse-tools' ); ?></p>
+				<?php endif; ?>
+			</div>
 			</div>
 			<!-- 404 -->
 			<div class="sotab-box htbox" id="tab2" style="display:none">
@@ -258,6 +291,21 @@ function horsetools_redirects_options_page() {
 			});
 			$(document).on('click', '.ht-404-clear', function () {
 				log404Action(0, 'clear', function () { $('.ht-404-table tbody').empty(); });
+			});
+
+			// ---- Automatic (slug-change) redirects --------------------------
+			var autoslugNonce = $('[data-autoslug-nonce]').data('autoslug-nonce');
+			function autoslugAction(data, done) {
+				$.post('<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>',
+					$.extend({ action: 'horsetools_autoslug_action', security: autoslugNonce }, data)
+				).done(function () { if (done) { done(); } });
+			}
+			$(document).on('click', '.ht-autoslug-delete', function () {
+				var $row = $(this).closest('tr');
+				autoslugAction({ 'do': 'delete', key: $row.data('key') }, function () { $row.remove(); });
+			});
+			$(document).on('click', '.ht-autoslug-clear', function () {
+				autoslugAction({ 'do': 'clear' }, function () { $('[data-autoslug-nonce] tbody').empty(); });
 			});
 		});
 	</script>

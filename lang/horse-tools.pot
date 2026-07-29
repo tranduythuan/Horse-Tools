@@ -38,19 +38,19 @@ msgstr ""
 msgid "4 customizable buttons"
 msgstr ""
 
-#: main/redirectsphp:19 main/redirectsphp:76
+#: main/redirectsphp:19 main/redirectsphp:109
 msgid "404"
 msgstr ""
 
-#: main/redirectsphp:107
+#: main/redirectsphp:140
 msgid "404 log"
 msgstr ""
 
-#: main/redirectsphp:78
+#: main/redirectsphp:111
 msgid "404 redirects"
 msgstr ""
 
-#: main/redirectsphp:20 main/redirectsphp:148
+#: main/redirectsphp:20 main/redirectsphp:181
 msgid "503"
 msgstr ""
 
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Account"
 msgstr ""
 
-#: main/redirectsphp:123
+#: main/redirectsphp:89 main/redirectsphp:156
 msgid "Actions"
 msgstr ""
 
@@ -282,7 +282,7 @@ msgstr ""
 msgid "Agree"
 msgstr ""
 
-#: main/redirectsphp:155
+#: main/redirectsphp:188
 msgid "All links on your website will redirect to the maintenance page, and only logged-in admin accounts can view the content"
 msgstr ""
 
@@ -310,7 +310,7 @@ msgstr ""
 msgid "Allow using Shortcode in post titles"
 msgstr ""
 
-#: inc/mediaphp:1048
+#: inc/mediaphp:1057
 msgid "Allows uploading AVIF photos"
 msgstr ""
 
@@ -318,7 +318,7 @@ msgstr ""
 msgid "Already declared"
 msgstr ""
 
-#: inc/mediaphp:1179
+#: inc/mediaphp:1188
 msgid "An error occurred"
 msgstr ""
 
@@ -360,6 +360,10 @@ msgstr ""
 
 #: main/page/5mediaphp:38
 msgid "Automatic name"
+msgstr ""
+
+#: main/redirectsphp:74
+msgid "Automatic redirects"
 msgstr ""
 
 #: main/page/3toolphp:40
@@ -594,7 +598,11 @@ msgstr ""
 msgid "Clear all"
 msgstr ""
 
-#: main/redirectsphp:140
+#: main/redirectsphp:101
+msgid "Clear all automatic redirects"
+msgstr ""
+
+#: main/redirectsphp:173
 msgid "Clear the whole log"
 msgstr ""
 
@@ -738,7 +746,11 @@ msgstr ""
 msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
 msgstr ""
 
-#: main/redirectsphp:132
+#: main/redirectsphp:75
+msgid "Create a 301 automatically when a post permalink changes"
+msgstr ""
+
+#: main/redirectsphp:165
 msgid "Create a 301 redirect from this URL"
 msgstr ""
 
@@ -914,7 +926,7 @@ msgstr ""
 msgid "Delete settings:"
 msgstr ""
 
-#: main/redirectsphp:134
+#: main/redirectsphp:167
 msgid "Delete this log entry"
 msgstr ""
 
@@ -1206,15 +1218,15 @@ msgstr ""
 msgid "Enable 301 redirection"
 msgstr ""
 
-#: main/redirectsphp:79
+#: main/redirectsphp:112
 msgid "Enable 404 redirection"
 msgstr ""
 
-#: main/redirectsphp:151
+#: main/redirectsphp:184
 msgid "Enable 503 maintenance mode"
 msgstr ""
 
-#: inc/mediaphp:1058
+#: inc/mediaphp:1067
 msgid "Enable AVIF image compression"
 msgstr ""
 
@@ -1246,7 +1258,7 @@ msgstr ""
 msgid "Enable Instant-page"
 msgstr ""
 
-#: inc/mediaphp:1028 main/page/5mediaphp:81
+#: inc/mediaphp:1037 main/page/5mediaphp:81
 msgid "Enable JPG image compression"
 msgstr ""
 
@@ -1262,7 +1274,7 @@ msgstr ""
 msgid "Enable Smooth-scroll"
 msgstr ""
 
-#: inc/mediaphp:1038
+#: inc/mediaphp:1047
 msgid "Enable WEBP image compression"
 msgstr ""
 
@@ -1366,7 +1378,7 @@ msgstr ""
 msgid "Enable image lazy loading"
 msgstr ""
 
-#: inc/mediaphp:1068
+#: inc/mediaphp:1077
 msgid "Enable image size limitation"
 msgstr ""
 
@@ -1382,7 +1394,7 @@ msgstr ""
 msgid "Enable notifications"
 msgstr ""
 
-#: inc/mediaphp:1088
+#: inc/mediaphp:1097
 msgid "Enable picture frame"
 msgstr ""
 
@@ -1482,7 +1494,7 @@ msgstr ""
 msgid "Enable upload size limit"
 msgstr ""
 
-#: inc/mediaphp:1078
+#: inc/mediaphp:1087
 msgid "Enable watermarks"
 msgstr ""
 
@@ -1527,7 +1539,7 @@ msgstr ""
 msgid "Enter content"
 msgstr ""
 
-#: main/notifyphp:59 main/notifyphp:79 main/redirectsphp:161
+#: main/notifyphp:59 main/notifyphp:79 main/redirectsphp:194
 msgid "Enter content here"
 msgstr ""
 
@@ -1590,7 +1602,7 @@ msgid "Enter the content you want to display in the notification, and customize 
 msgstr ""
 
 #: main/redirectsphp:41 main/redirectsphp:53 main/redirectsphp:54 main/redirectsphp:62
-#: main/redirectsphp:63 main/redirectsphp:183 main/redirectsphp:184
+#: main/redirectsphp:63 main/redirectsphp:216 main/redirectsphp:217
 msgid "Enter the link"
 msgstr ""
 
@@ -1618,7 +1630,7 @@ msgstr ""
 msgid "Enter the url"
 msgstr ""
 
-#: main/notifyphp:56 main/notifyphp:125 main/redirectsphp:158
+#: main/notifyphp:56 main/notifyphp:125 main/redirectsphp:191
 msgid "Enter title"
 msgstr ""
 
@@ -1666,7 +1678,7 @@ msgstr ""
 msgid "Failed to load debug log"
 msgstr ""
 
-#: inc/mediaphp:1175
+#: inc/mediaphp:1184
 msgid "Failed to update setting:"
 msgstr ""
 
@@ -1736,7 +1748,7 @@ msgstr ""
 msgid "Free!"
 msgstr ""
 
-#: inc/woophp:75
+#: inc/woophp:75 main/redirectsphp:87
 msgid "From"
 msgstr ""
 
@@ -1828,7 +1840,7 @@ msgstr ""
 msgid "Hide the update & maintenance notice"
 msgstr ""
 
-#: main/redirectsphp:133
+#: main/redirectsphp:166
 msgid "Hide this URL from the log"
 msgstr ""
 
@@ -1836,7 +1848,7 @@ msgstr ""
 msgid "Hide usernames from scanners"
 msgstr ""
 
-#: main/redirectsphp:121
+#: main/redirectsphp:154
 msgid "Hits"
 msgstr ""
 
@@ -1980,7 +1992,7 @@ msgstr ""
 msgid "If youre tired of WordPress default search tool because its too slow, try out our lightning-fast search feature to give your users an exceptional and speedy search experience"
 msgstr ""
 
-#: main/redirectsphp:133
+#: main/redirectsphp:166
 msgid "Ignore"
 msgstr ""
 
@@ -2035,7 +2047,7 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
-#: main/redirectsphp:122
+#: main/redirectsphp:155
 msgid "Last seen"
 msgstr ""
 
@@ -2107,7 +2119,7 @@ msgstr ""
 msgid "Log out"
 msgstr ""
 
-#: main/redirectsphp:112
+#: main/redirectsphp:145
 msgid "Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site."
 msgstr ""
 
@@ -2151,7 +2163,7 @@ msgstr ""
 msgid "Main icon text color"
 msgstr ""
 
-#: main/redirectsphp:150
+#: main/redirectsphp:183
 msgid "Maintenance mode for developers (503)"
 msgstr ""
 
@@ -2167,7 +2179,7 @@ msgstr ""
 msgid "Max width"
 msgstr ""
 
-#: inc/mediaphp:1020
+#: inc/mediaphp:1029
 msgid "Media"
 msgstr ""
 
@@ -2211,11 +2223,15 @@ msgstr ""
 msgid "Next automatic check: %s"
 msgstr ""
 
-#: main/redirectsphp:142
+#: main/redirectsphp:175
 msgid "No 404s recorded yet."
 msgstr ""
 
-#: main/page/12chatphp:326 main/redirectsphp:196 main/tocphp:107
+#: main/redirectsphp:103
+msgid "No automatic redirects yet. Change a published URL and one will appear here."
+msgstr ""
+
+#: main/page/12chatphp:326 main/redirectsphp:229 main/tocphp:107
 msgid "No pages selected"
 msgstr ""
 
@@ -2450,11 +2466,11 @@ msgstr ""
 msgid "Recommended. xmlrpc.php is a common brute-force and pingback-amplification target and almost nothing uses it now (except Jetpack)."
 msgstr ""
 
-#: main/redirectsphp:108
+#: main/redirectsphp:141
 msgid "Record 404 hits"
 msgstr ""
 
-#: main/redirectsphp:132
+#: main/redirectsphp:165
 msgid "Redirect"
 msgstr ""
 
@@ -2466,11 +2482,11 @@ msgstr ""
 msgid "Redirect 301 whole page"
 msgstr ""
 
-#: main/redirectsphp:104
+#: main/redirectsphp:137
 msgid "Redirect the 404 page to the homepage or a custom page of your choice, leave the field blank if you want to redirect to the homepage"
 msgstr ""
 
-#: main/extendphp:80 main/redirectsphp:270
+#: main/extendphp:80 main/redirectsphp:318
 msgid "Redirects"
 msgstr ""
 
@@ -2558,7 +2574,7 @@ msgstr ""
 msgid "Removes wp-embed.js if you do not embed other WordPress posts."
 msgstr ""
 
-#: main/redirectsphp:120
+#: main/redirectsphp:153
 msgid "Requested URL"
 msgstr ""
 
@@ -2588,7 +2604,7 @@ msgstr ""
 
 #: main/adminphp:93 main/adsphp:114 main/codephp:102 main/debugphp:74
 #: main/extendphp:216 main/fontphp:130 main/gindexphp:117 main/notifyphp:197
-#: main/redirectsphp:166 main/searchphp:207 main/shortcodephp:168 main/tocphp:279
+#: main/redirectsphp:199 main/searchphp:207 main/shortcodephp:168 main/tocphp:279
 msgid "SAVE CONTENT"
 msgstr ""
 
@@ -2705,7 +2721,7 @@ msgstr ""
 msgid "Select image"
 msgstr ""
 
-#: main/redirectsphp:85
+#: main/redirectsphp:118
 msgid "Select redirect page"
 msgstr ""
 
@@ -2781,7 +2797,7 @@ msgstr ""
 msgid "Settings > Permalinks > Save changes"
 msgstr ""
 
-#: inc/mediaphp:1173
+#: inc/mediaphp:1182
 msgid "Settings changed"
 msgstr ""
 
@@ -3153,6 +3169,10 @@ msgstr ""
 msgid "Title text and icon color"
 msgstr ""
 
+#: main/redirectsphp:88
+msgid "To"
+msgstr ""
+
 #: main/extendphp:135
 msgid "To add advertisements to your website, simply enable this feature. It provides you with various ad options to meet your distribution needs"
 msgstr ""
@@ -3315,6 +3335,10 @@ msgstr ""
 
 #: main/page/3toolphp:68
 msgid "When someone copies text from your site, a short line you set is added after it — their selection is kept, nothing is replaced. Useful for a \"Source: yoursite.com\" credit."
+msgstr ""
+
+#: main/redirectsphp:79
+msgid "When you change a published post or page URL — its slug, its parent, or the whole path — the old address is redirected to the new one. WordPress already does this for a simple slug change; this also covers moves that core misses, and only ever acts on a URL that would otherwise 404."
 msgstr ""
 
 #: main/page/10customphp:194

@@ -103,6 +103,147 @@ add_action('template_redirect', 'horsetools_redirect_404_to_home');
 }
 
 /* =========================================================================
+ * Automatic 301 on permalink change
+ *
+ * WordPress core already handles the simplest case: change a published post's
+ * slug and wp_old_slug_redirect() 301s the old leaf URL to the new one, via
+ * the _wp_old_slug meta. It does NOT handle a changed parent/ancestor (the
+ * whole path moves), a changed category/tag base, or a permalink-structure
+ * change — and its history is per-post meta, not a manageable list.
+ *
+ * This records the full old->new path whenever a *published* post's permalink
+ * actually changes, and applies it only as a fallback on template_redirect when
+ * the request is already a 404 — i.e. only where core did not already fix it.
+ * Core runs at priority 10; this runs at 11 gated on is_404(), so the two never
+ * both fire. Opt-in via redi-autoslug.
+ * ====================================================================== */
+
+if ( isset( $horsetools_redirects_options['redi-autoslug'] ) ) {
+
+	function horsetools_path_of( $url ) {
+		$path = wp_parse_url( (string) $url, PHP_URL_PATH );
+		$path = is_string( $path ) ? rtrim( $path, '/' ) : '';
+		return '' === $path ? '/' : $path;
+	}
+
+	// Capture the current (old) permalink before the row is written.
+	function horsetools_autoslug_before( $post_id ) {
+		if ( wp_is_post_revision( $post_id ) || wp_is_post_autosave( $post_id ) ) {
+			return;
+		}
+		if ( 'publish' !== get_post_status( $post_id ) || ! get_option( 'permalink_structure' ) ) {
+			return;
+		}
+		$GLOBALS['horsetools_autoslug_old'][ $post_id ] = horsetools_path_of( get_permalink( $post_id ) );
+	}
+	add_action( 'pre_post_update', 'horsetools_autoslug_before', 10, 1 );
+
+	// After the update, if the published permalink changed, record old -> new.
+	function horsetools_autoslug_after( $post_id, $after, $before ) {
+		if ( empty( $GLOBALS['horsetools_autoslug_old'][ $post_id ] ) ) {
+			return;
+		}
+		$old = $GLOBALS['horsetools_autoslug_old'][ $post_id ];
+		unset( $GLOBALS['horsetools_autoslug_old'][ $post_id ] );
+
+		if ( 'publish' !== $before->post_status || 'publish' !== $after->post_status ) {
+			return;
+		}
+		$new = horsetools_path_of( get_permalink( $post_id ) );
+		if ( '' === $old || '/' === $old || $old === $new ) {
+			return;
+		}
+
+		$map = get_option( 'horsetools_slug_redirects', array() );
+		if ( ! is_array( $map ) ) {
+			$map = array();
+		}
+		// Repoint any existing rule that pointed at the old path (fix chains).
+		foreach ( $map as $k => $e ) {
+			if ( isset( $e['to'] ) && $e['to'] === $old ) {
+				$map[ $k ]['to'] = $new;
+			}
+		}
+		// The new path is live, so drop any rule that redirected away from it.
+		unset( $map[ md5( $new ) ] );
+		$map[ md5( $old ) ] = array( 'from' => $old, 'to' => $new, 't' => time() );
+
+		// Keep only the 500 most recent.
+		if ( count( $map ) > 500 ) {
+			uasort( $map, function ( $a, $b ) {
+				return ( $a['t'] ?? 0 ) <=> ( $b['t'] ?? 0 );
+			} );
+			$map = array_slice( $map, -500, null, true );
+		}
+		update_option( 'horsetools_slug_redirects', $map, false );
+	}
+	add_action( 'post_updated', 'horsetools_autoslug_after', 10, 3 );
+
+	// Fallback redirect, only on a 404 core did not already resolve.
+	function horsetools_autoslug_redirect() {
+		if ( ! is_404() ) {
+			return;
+		}
+		$map = get_option( 'horsetools_slug_redirects', array() );
+		if ( ! is_array( $map ) || empty( $map ) ) {
+			return;
+		}
+		$path = horsetools_path_of( rawurldecode( (string) ( $_SERVER['REQUEST_URI'] ?? '' ) ) );
+		if ( isset( $map[ md5( $path ) ]['to'] ) && '' !== $map[ md5( $path ) ]['to'] ) {
+			$to = $map[ md5( $path ) ]['to'];
+			// A stored target is a local path or a permalink on this site.
+			wp_safe_redirect( $to, 301 );
+			exit;
+		}
+	}
+	add_action( 'template_redirect', 'horsetools_autoslug_redirect', 11 );
+}
+
+/**
+ * The stored automatic redirects, newest first, for the admin list.
+ *
+ * @return array
+ */
+function horsetools_autoslug_list() {
+	$map = get_option( 'horsetools_slug_redirects', array() );
+	if ( ! is_array( $map ) ) {
+		return array();
+	}
+	uasort( $map, function ( $a, $b ) {
+		return ( $b['t'] ?? 0 ) <=> ( $a['t'] ?? 0 );
+	} );
+	return $map;
+}
+
+/**
+ * Delete one automatic redirect (by hash key) or clear them all. Registered
+ * unconditionally so the list stays manageable even after the feature is off.
+ */
+function horsetools_autoslug_action_ajax() {
+	check_ajax_referer( 'horsetools_autoslug_action', 'security' );
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error( 'forbidden', 403 );
+	}
+	$do  = isset( $_POST['do'] ) ? sanitize_key( wp_unslash( $_POST['do'] ) ) : '';
+	$key = isset( $_POST['key'] ) ? sanitize_text_field( wp_unslash( $_POST['key'] ) ) : '';
+
+	if ( 'clear' === $do ) {
+		delete_option( 'horsetools_slug_redirects' );
+		wp_send_json_success();
+	}
+	if ( 'delete' === $do && '' !== $key ) {
+		$map = get_option( 'horsetools_slug_redirects', array() );
+		if ( is_array( $map ) && isset( $map[ $key ] ) ) {
+			unset( $map[ $key ] );
+			update_option( 'horsetools_slug_redirects', $map, false );
+		}
+		wp_send_json_success();
+	}
+	wp_send_json_error( 'bad action', 400 );
+}
+add_action( 'wp_ajax_horsetools_autoslug_action', 'horsetools_autoslug_action_ajax' );
+
+/* =========================================================================
  * 404 log
  *
  * Feeds the redirect manager: instead of typing redirect rules blind, the

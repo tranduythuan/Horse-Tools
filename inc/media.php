@@ -882,8 +882,17 @@ function horsetools_apply_watermark($file, $watermark_path = '', $logotext = '')
 		if ($image_height < 200) {return;}
 		// Xử lý text watermark
         if (!empty($logotext)) {
-            $font_file = HORSETOOLS_DIR . 'font/logo.ttf'; 
-            $font_size = 50; 
+            // Was font/logo.ttf — which was Microsoft/Monotype Times New Roman,
+            // a proprietary Windows font that cannot legally be redistributed in
+            // a plugin. Replaced with Tinos Bold (Steve Matteson, redistributable,
+            // metric-compatible with Times New Roman) so the watermark looks the
+            // same. Bail gracefully if the file is somehow missing rather than
+            // letting imagettftext() fatal.
+            $font_file = HORSETOOLS_DIR . 'font/watermark.ttf';
+            if ( ! is_readable( $font_file ) || ! function_exists( 'imagettftext' ) ) {
+                return;
+            }
+            $font_size = 50;
             $text = $logotext;
             $bbox = imagettfbbox($font_size, 0, $font_file, $text);
             $text_width = $bbox[2] - $bbox[0];

@@ -22,6 +22,7 @@ delete_option('horsetools_adstxt_flushed');
 delete_option('horsetools_clean_cron_last');
 delete_option('horsetools_config_backup');
 delete_option('horsetools_404_db');
+delete_option('horsetools_slug_redirects');
 
 // Drop the scheduled cleanup event too, in case the plugin is removed without
 // being deactivated first.
