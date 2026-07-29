@@ -654,7 +654,7 @@ msgstr ""
 msgid "Clear the whole log"
 msgstr ""
 
-#: inc/shortcodes-lib.php:235
+#: inc/shortcodes-lib.php:237
 msgid "Click here"
 msgstr ""
 
@@ -2785,6 +2785,10 @@ msgstr ""
 msgid "Permissions-Policy: block geolocation, mic and camera"
 msgstr ""
 
+#: inc/shortcodes-lib.php:455
+msgid "Play video"
+msgstr ""
+
 #: inc/goo.php:261
 msgid "Please complete the reCAPTCHA to verify that you are not a robot"
 msgstr ""
@@ -3002,7 +3006,7 @@ msgstr ""
 msgid "Retrieve the Site Key and Secret Key from your Google reCAPTCHA project and add them to the two fields above"
 msgstr ""
 
-#: inc/shortcodes-lib.php:170
+#: inc/shortcodes-lib.php:172
 msgid "Reveal"
 msgstr ""
 
@@ -3777,7 +3781,7 @@ msgstr ""
 msgid "Time"
 msgstr ""
 
-#: inc/shortcodes-lib.php:31
+#: inc/shortcodes-lib.php:33
 msgid "Time is up"
 msgstr ""
 
@@ -4157,7 +4161,7 @@ msgstr ""
 msgid "[%s] New comment on the article \"%s\""
 msgstr ""
 
-#: inc/shortcodes-lib.php:27
+#: inc/shortcodes-lib.php:29
 msgid "days"
 msgstr ""
 
@@ -4177,7 +4181,7 @@ msgstr ""
 msgid "font-family:"
 msgstr ""
 
-#: inc/shortcodes-lib.php:28
+#: inc/shortcodes-lib.php:30
 msgid "hrs"
 msgstr ""
 
@@ -4201,7 +4205,7 @@ msgstr ""
 msgid "logged-out"
 msgstr ""
 
-#: inc/shortcodes-lib.php:29
+#: inc/shortcodes-lib.php:31
 msgid "min"
 msgstr ""
 
@@ -4217,7 +4221,7 @@ msgstr ""
 msgid "off"
 msgstr ""
 
-#: inc/shortcodes-lib.php:30
+#: inc/shortcodes-lib.php:32
 msgid "sec"
 msgstr ""
 

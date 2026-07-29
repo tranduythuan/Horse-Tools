@@ -58,3 +58,29 @@
 .ht-btn:hover{filter:brightness(.94);color:#fff}
 .ht-btn.big{padding:15px 28px;font-size:17px}
 .ht-btn.ghost{background:transparent;border:2px solid currentColor}
+
+/* Query loop */
+.ht-loop{margin:16px 0}
+.ht-loop-list{list-style:none;padding:0}
+.ht-loop-list .ht-loop-item{display:flex;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}
+.ht-loop-list .ht-loop-thumb img{width:64px;height:64px;object-fit:cover;border-radius:8px;display:block}
+.ht-loop-title{font-weight:600;text-decoration:none}
+.ht-loop-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.ht-loop-cards .ht-loop-item{border:1px solid #eee;border-radius:11px;overflow:hidden;background:#fff}
+.ht-loop-cards .ht-loop-thumb img{width:100%;height:150px;object-fit:cover;display:block}
+.ht-loop-cards .ht-loop-title{display:block;padding:10px 12px 4px}
+.ht-loop-cards .ht-loop-ex{padding:0 12px 12px;color:#666;font-size:13px}
+
+/* QR code */
+.ht-qr{display:inline-block;margin:8px 0;background:#fff;padding:8px;border-radius:8px;border:1px solid #eee}
+.ht-qr img,.ht-qr canvas{display:block}
+
+/* Privacy video facade */
+.ht-video{position:relative;aspect-ratio:16/9;width:100%;max-width:720px;background:#111 center/cover no-repeat;border-radius:12px;overflow:hidden;margin:16px 0;cursor:pointer}
+.ht-video::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.25)}
+.ht-video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;border:none;background:#e0a800;color:#fff;font-size:30px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:transform .15s,background .15s}
+.ht-video:hover .ht-video-play{transform:translate(-50%,-50%) scale(1.08);background:#c8960a}
+.ht-video-title{position:absolute;left:16px;bottom:14px;color:#fff;font-weight:600;z-index:2;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.ht-video.playing{cursor:default;aspect-ratio:16/9}
+.ht-video.playing::before{display:none}
+.ht-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}

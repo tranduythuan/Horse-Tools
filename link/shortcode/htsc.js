@@ -15,6 +15,24 @@
 			if (panel) { panel.classList.add('active'); }
 			return;
 		}
+		// Privacy video facade: load the real player only on click.
+		var vp = e.target.closest('.ht-video-play');
+		if (vp) {
+			var box = vp.closest('.ht-video');
+			var type = box.getAttribute('data-type'), id = box.getAttribute('data-id');
+			var src = type === 'vimeo'
+				? 'https://player.vimeo.com/video/' + encodeURIComponent(id) + '?autoplay=1'
+				: 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0';
+			var f = document.createElement('iframe');
+			f.setAttribute('src', src);
+			f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
+			f.setAttribute('allowfullscreen', '');
+			f.setAttribute('loading', 'lazy');
+			box.innerHTML = '';
+			box.classList.add('playing');
+			box.appendChild(f);
+			return;
+		}
 		// Click-to-copy.
 		var cb = e.target.closest('.ht-copy-btn');
 		if (cb) {
@@ -65,7 +83,18 @@
 		setInterval(tick, 1000);
 	}
 
-	function init() { initEmails(); initCountdowns(); }
+	// QR codes: render locally with the vendored QRCode.js (no external calls).
+	function initQR() {
+		if (typeof QRCode === 'undefined') { return; }
+		document.querySelectorAll('.ht-qr').forEach(function (el) {
+			if (el.dataset.done) { return; }
+			el.dataset.done = '1';
+			var size = parseInt(el.getAttribute('data-size'), 10) || 160;
+			new QRCode(el, { text: el.getAttribute('data-text') || '', width: size, height: size, correctLevel: QRCode.CorrectLevel.M });
+		});
+	}
+
+	function init() { initEmails(); initCountdowns(); initQR(); }
 	if (document.readyState === 'loading') {
 		document.addEventListener('DOMContentLoaded', init);
 	} else {

@@ -20,6 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 function horsetools_sc_register_assets() {
 	wp_register_style( 'horsetools-sc', HORSETOOLS_URL . 'link/shortcode/htsc.css', array(), HORSETOOLS_VERSION );
 	wp_register_script( 'horsetools-sc', HORSETOOLS_URL . 'link/shortcode/htsc.js', array(), HORSETOOLS_VERSION, true );
+	// Vendored QRCode.js (MIT) — only loaded when [ht-qr] is on the page.
+	wp_register_script( 'horsetools-qr', HORSETOOLS_URL . 'link/shortcode/qrcode.min.js', array(), '1.0.0', true );
 	wp_localize_script(
 		'horsetools-sc',
 		'horsetoolsCdLabels',
@@ -265,3 +267,195 @@ function horsetools_sc_raw( $atts, $content = '' ) {
 	return do_shortcode( $content );
 }
 add_shortcode( 'ht-raw', 'horsetools_sc_raw' );
+
+/* ---- Data: count ------------------------------------------------------- */
+function horsetools_sc_count( $atts ) {
+	$a = shortcode_atts( array( 'type' => 'posts', 'post_type' => 'post' ), $atts, 'ht-count' );
+	switch ( $a['type'] ) {
+		case 'users':
+			$c = count_users();
+			$n = isset( $c['total_users'] ) ? (int) $c['total_users'] : 0;
+			break;
+		case 'comments':
+			$n = (int) wp_count_comments()->approved;
+			break;
+		case 'pages':
+			$p = wp_count_posts( 'page' );
+			$n = $p ? (int) $p->publish : 0;
+			break;
+		case 'terms':
+			$n = (int) wp_count_terms( array( 'taxonomy' => 'category', 'hide_empty' => false ) );
+			break;
+		case 'posts':
+		default:
+			$pt = sanitize_key( $a['post_type'] );
+			$p  = wp_count_posts( $pt ? $pt : 'post' );
+			$n  = $p ? (int) $p->publish : 0;
+			break;
+	}
+	return esc_html( number_format_i18n( $n ) );
+}
+add_shortcode( 'ht-count', 'horsetools_sc_count' );
+
+/* ---- Data: reading time ------------------------------------------------ */
+function horsetools_sc_readingtime( $atts ) {
+	$a       = shortcode_atts( array( 'id' => '', 'wpm' => '200' ), $atts, 'ht-readingtime' );
+	$id      = '' !== $a['id'] ? (int) $a['id'] : (int) get_the_ID();
+	$content = $id ? (string) get_post_field( 'post_content', $id ) : '';
+	$text    = trim( wp_strip_all_tags( strip_shortcodes( $content ) ) );
+	$words   = '' === $text ? 0 : count( preg_split( '/\s+/u', $text ) );
+	$wpm     = max( 50, (int) $a['wpm'] );
+	return (string) max( 1, (int) ceil( $words / $wpm ) );
+}
+add_shortcode( 'ht-readingtime', 'horsetools_sc_readingtime' );
+
+/* ---- Data: a post field or meta ---------------------------------------- */
+function horsetools_sc_field( $atts ) {
+	$a  = shortcode_atts( array( 'key' => '', 'id' => '', 'default' => '' ), $atts, 'ht-field' );
+	$id = '' !== $a['id'] ? (int) $a['id'] : (int) get_the_ID();
+	$key = (string) $a['key'];
+	if ( ! $id || '' === $key ) {
+		return esc_html( $a['default'] );
+	}
+	// Never expose private (underscore-prefixed) meta.
+	if ( '_' === $key[0] ) {
+		return esc_html( $a['default'] );
+	}
+	$builtin = array(
+		'title'   => get_the_title( $id ),
+		'date'    => get_the_date( '', $id ),
+		'author'  => get_the_author_meta( 'display_name', (int) get_post_field( 'post_author', $id ) ),
+		'excerpt' => get_the_excerpt( $id ),
+		'url'     => get_permalink( $id ),
+	);
+	if ( isset( $builtin[ $key ] ) ) {
+		$val = $builtin[ $key ];
+	} else {
+		$val = get_post_meta( $id, $key, true );
+	}
+	if ( is_array( $val ) ) {
+		$val = implode( ', ', $val );
+	}
+	$val = (string) $val;
+	return '' !== $val ? esc_html( $val ) : esc_html( $a['default'] );
+}
+add_shortcode( 'ht-field', 'horsetools_sc_field' );
+
+/* ---- Data: embed another post/page ------------------------------------- */
+function horsetools_sc_post( $atts ) {
+	$a  = shortcode_atts( array( 'id' => '', 'slug' => '', 'field' => 'content' ), $atts, 'ht-post' );
+	$id = 0;
+	if ( '' !== $a['id'] ) {
+		$id = (int) $a['id'];
+	} elseif ( '' !== $a['slug'] ) {
+		$p = get_page_by_path( sanitize_title( $a['slug'] ), OBJECT, array( 'post', 'page' ) );
+		if ( $p ) {
+			$id = (int) $p->ID;
+		}
+	}
+	if ( ! $id ) {
+		return '';
+	}
+	static $stack = array();
+	if ( in_array( $id, $stack, true ) ) {
+		return ''; // a post embedding itself — stop the loop
+	}
+	$post = get_post( $id );
+	if ( ! $post || 'publish' !== $post->post_status ) {
+		return '';
+	}
+	switch ( $a['field'] ) {
+		case 'title':
+			return esc_html( get_the_title( $id ) );
+		case 'excerpt':
+			return esc_html( get_the_excerpt( $id ) );
+		case 'link':
+			return esc_url( get_permalink( $id ) );
+		case 'content':
+		default:
+			$stack[] = $id;
+			$out     = apply_filters( 'the_content', $post->post_content );
+			array_pop( $stack );
+			return $out;
+	}
+}
+add_shortcode( 'ht-post', 'horsetools_sc_post' );
+
+/* ---- Data: query loop -------------------------------------------------- */
+function horsetools_sc_loop( $atts ) {
+	$a = shortcode_atts(
+		array( 'type' => 'post', 'count' => '5', 'cat' => '', 'tag' => '', 'orderby' => 'date', 'order' => 'DESC', 'template' => 'list', 'thumb' => '' ),
+		$atts,
+		'ht-loop'
+	);
+	$args = array(
+		'post_type'           => sanitize_key( $a['type'] ) ? sanitize_key( $a['type'] ) : 'post',
+		'posts_per_page'      => max( 1, min( 50, (int) $a['count'] ) ),
+		'orderby'             => in_array( $a['orderby'], array( 'date', 'title', 'rand', 'comment_count', 'modified', 'menu_order' ), true ) ? $a['orderby'] : 'date',
+		'order'               => 'ASC' === strtoupper( $a['order'] ) ? 'ASC' : 'DESC',
+		'ignore_sticky_posts' => true,
+		'no_found_rows'       => true,
+	);
+	if ( '' !== $a['cat'] ) {
+		$args['category_name'] = sanitize_text_field( $a['cat'] );
+	}
+	if ( '' !== $a['tag'] ) {
+		$args['tag'] = sanitize_text_field( $a['tag'] );
+	}
+	$q = new WP_Query( $args );
+	if ( ! $q->have_posts() ) {
+		wp_reset_postdata();
+		return '';
+	}
+	horsetools_sc_assets();
+	$cards = ( 'cards' === $a['template'] );
+	$thumb = $cards || in_array( strtolower( (string) $a['thumb'] ), array( '1', 'yes', 'true' ), true );
+	$out   = '<' . ( $cards ? 'div' : 'ul' ) . ' class="ht-loop ' . ( $cards ? 'ht-loop-cards' : 'ht-loop-list' ) . '">';
+	while ( $q->have_posts() ) {
+		$q->the_post();
+		$link = esc_url( get_permalink() );
+		$out .= $cards ? '<div class="ht-loop-item">' : '<li class="ht-loop-item">';
+		if ( $thumb && has_post_thumbnail() ) {
+			$out .= '<a href="' . $link . '" class="ht-loop-thumb">' . get_the_post_thumbnail( get_the_ID(), 'medium' ) . '</a>';
+		}
+		$out .= '<a href="' . $link . '" class="ht-loop-title">' . esc_html( get_the_title() ) . '</a>';
+		if ( $cards ) {
+			$out .= '<div class="ht-loop-ex">' . esc_html( wp_trim_words( get_the_excerpt(), 20 ) ) . '</div>';
+		}
+		$out .= $cards ? '</div>' : '</li>';
+	}
+	$out .= $cards ? '</div>' : '</ul>';
+	wp_reset_postdata();
+	return $out;
+}
+add_shortcode( 'ht-loop', 'horsetools_sc_loop' );
+
+/* ---- Media: QR code (rendered locally, no external service) ------------ */
+function horsetools_sc_qr( $atts ) {
+	$a    = shortcode_atts( array( 'data' => '', 'size' => '160' ), $atts, 'ht-qr' );
+	$data = '' !== $a['data'] ? $a['data'] : ( is_singular() ? get_permalink() : home_url( '/' ) );
+	$size = max( 80, min( 400, (int) $a['size'] ) );
+	wp_enqueue_style( 'horsetools-sc' );
+	wp_enqueue_script( 'horsetools-qr' );
+	wp_enqueue_script( 'horsetools-sc' );
+	return '<div class="ht-qr" data-text="' . esc_attr( $data ) . '" data-size="' . esc_attr( $size ) . '" style="width:' . $size . 'px;height:' . $size . 'px"></div>';
+}
+add_shortcode( 'ht-qr', 'horsetools_sc_qr' );
+
+/* ---- Media: privacy-friendly video facade ------------------------------ */
+function horsetools_sc_video( $atts ) {
+	$a   = shortcode_atts( array( 'id' => '', 'type' => 'youtube', 'title' => '', 'poster' => '' ), $atts, 'ht-video' );
+	$vid = preg_replace( '/[^A-Za-z0-9_-]/', '', (string) $a['id'] );
+	if ( '' === $vid ) {
+		return '';
+	}
+	$type = in_array( $a['type'], array( 'youtube', 'vimeo' ), true ) ? $a['type'] : 'youtube';
+	horsetools_sc_assets( true );
+	$style = '' !== $a['poster'] ? ' style="background-image:url(' . esc_url( $a['poster'] ) . ')"' : '';
+	$label = '' !== $a['title'] ? $a['title'] : __( 'Play video', 'horse-tools' );
+	return '<div class="ht-video" data-type="' . esc_attr( $type ) . '" data-id="' . esc_attr( $vid ) . '"' . $style . '>'
+		. '<button type="button" class="ht-video-play" aria-label="' . esc_attr( $label ) . '"><i class="ti ti-player-play-filled" aria-hidden="true"></i></button>'
+		. ( '' !== $a['title'] ? '<span class="ht-video-title">' . esc_html( $a['title'] ) . '</span>' : '' )
+		. '</div>';
+}
+add_shortcode( 'ht-video', 'horsetools_sc_video' );

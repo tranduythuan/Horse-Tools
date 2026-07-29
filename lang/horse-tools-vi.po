@@ -5017,3 +5017,6 @@ msgstr "phút"
 
 msgid "sec"
 msgstr "giây"
+
+msgid "Play video"
+msgstr "Phát video"
