@@ -1,0 +1,68 @@
+/* Horse Tools — mobile Services slide-up panel. Loaded only when the panel is
+   in use. --svc-accent is set inline per the chosen colour theme. */
+
+.ht-svc-wrap{position:fixed;inset:0;z-index:100200;display:flex;align-items:flex-end;justify-content:center}
+.ht-svc-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45);opacity:0;transition:opacity .25s}
+.ht-svc-wrap.ht-open .ht-svc-backdrop{opacity:1}
+.ht-svc-sheet{position:relative;width:100%;max-width:560px;max-height:84vh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#fff;border-radius:18px 18px 0 0;padding:6px 16px 22px;transform:translateY(100%);transition:transform .28s cubic-bezier(.2,.85,.25,1);box-shadow:0 -8px 30px rgba(0,0,0,.16)}
+.ht-svc-wrap.ht-open .ht-svc-sheet{transform:translateY(0)}
+.ht-svc-handle{display:block;width:44px;height:5px;border-radius:5px;background:#ddd;border:none;margin:8px auto 12px;padding:0;cursor:grab}
+.ht-svc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.ht-svc-title{font-size:17px;font-weight:700;color:#1f1f1f}
+.ht-svc-x{background:none;border:none;font-size:22px;line-height:1;color:#9a9a9a;cursor:pointer;padding:2px}
+.ht-svc-x:hover{color:#555}
+
+/* item primitives */
+.ht-svc-item{position:relative;display:block;text-decoration:none;color:#222}
+.ht-svc-ic{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background-size:cover;background-position:center;flex-shrink:0}
+.ht-svc-ic .ti{font-size:24px;line-height:1}
+.ht-svc-img{background-color:#eee}
+.ht-svc-txt{display:block}
+.ht-svc-tt{display:block;font-size:14px;font-weight:600;line-height:1.3;color:#1f1f1f}
+.ht-svc-sub{display:block;font-size:12px;color:#8a8a8a;margin-top:2px}
+.ht-svc-badge{position:absolute;top:8px;right:8px;font-size:11px;padding:2px 8px;border-radius:20px;font-weight:600;z-index:1}
+
+/* grid + bento */
+.ht-svc-grid,.ht-svc-bento{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ht-svc-grid .ht-svc-item,.ht-svc-bento .ht-svc-item{background:#fafafa;border:1px solid #eee;border-radius:14px;padding:14px}
+.ht-svc-grid .ht-svc-ic,.ht-svc-bento .ht-svc-cell .ht-svc-ic,.ht-svc-tile .ht-svc-ic{margin-bottom:8px}
+.ht-svc-big{grid-column:1 / -1;display:flex;align-items:center;gap:14px;background:var(--svc-accent)!important;border:none!important}
+.ht-svc-big .ht-svc-tt,.ht-svc-big .ht-svc-sub{color:#fff}
+.ht-svc-big .ht-svc-txt{flex:1;min-width:0}
+.ht-svc-big .ht-svc-ic{background:rgba(255,255,255,.22)!important}
+.ht-svc-big .ht-svc-ic .ti{color:#fff!important}
+
+/* list / price rows */
+.ht-svc-row{display:flex;align-items:center;gap:12px;padding:11px;background:#fafafa;border:1px solid #eee;border-radius:14px;margin-bottom:9px}
+.ht-svc-row .ht-svc-txt{flex:1;min-width:0}
+.ht-svc-row .ht-svc-badge{position:static;margin-left:auto}
+
+/* tiles (compact icon grid) */
+.ht-svc-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 6px}
+.ht-svc-tile{text-align:center}
+.ht-svc-tile .ht-svc-ic{margin:0 auto 5px;width:44px;height:44px}
+.ht-svc-tile .ht-svc-tt{font-size:11px;font-weight:500;color:#666}
+.ht-svc-tile .ht-svc-sub{display:none}
+
+/* chips */
+.ht-svc-chips{display:flex;flex-wrap:wrap;gap:8px}
+.ht-svc-chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:9px 14px;border-radius:22px;text-decoration:none;background:color-mix(in srgb,var(--svc-accent) 12%,#fff);color:var(--svc-accent);border:1px solid color-mix(in srgb,var(--svc-accent) 30%,#fff)}
+
+/* story circles */
+.ht-svc-story{display:flex;gap:14px;overflow-x:auto;padding-bottom:6px}
+.ht-svc-story-i{flex:0 0 auto;text-align:center;width:66px}
+.ht-svc-story-i .ht-svc-ic{width:58px;height:58px;border-radius:50%;border:2px solid var(--svc-accent);margin:0 auto 5px;background:#fff!important}
+.ht-svc-story-i .ht-svc-tt{font-size:11px;font-weight:500;color:#666;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ht-svc-story-i .ht-svc-badge{display:none}
+
+/* coupon */
+.ht-svc-coupon{display:flex;align-items:center;gap:12px;padding:11px;border:1px dashed var(--svc-accent);border-radius:14px;background:color-mix(in srgb,var(--svc-accent) 6%,#fff);margin-bottom:9px}
+.ht-svc-cp-mid{flex:1;min-width:0}
+.ht-svc-code{display:inline-block;font-family:monospace;font-weight:700;color:var(--svc-accent);margin-top:2px}
+.ht-svc-copy{background:var(--svc-accent);border:none;color:#fff;width:38px;height:38px;border-radius:10px;cursor:pointer;flex-shrink:0}
+.ht-svc-copy.ht-done{background:#2e9e5b}
+
+@media (prefers-reduced-motion: reduce){
+	.ht-svc-sheet{transition:none}
+	.ht-svc-backdrop{transition:none}
+}

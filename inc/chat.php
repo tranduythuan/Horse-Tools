@@ -2,6 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_options;
 require_once HORSETOOLS_DIR . 'inc/chat-channels.php';
+require_once HORSETOOLS_DIR . 'inc/chat-services.php';
 
 /**
  * Build a contact link that accepts either a handle/number or a full URL.
@@ -33,6 +34,15 @@ function horsetools_enqueue_chat(){
 	if (isset($horsetools_options['chat-nut1']) || isset($horsetools_options['chat-nav1'])){
 		wp_enqueue_style('chat-css', HORSETOOLS_URL . 'link/chat/horsechat.css', array(), HORSETOOLS_VERSION);
 		wp_enqueue_script('chat-js', HORSETOOLS_URL . 'link/chat/horsechat.js', array(), HORSETOOLS_VERSION, true);
+	}
+	$horsetools_svc = horsetools_services_get();
+	if ( isset($horsetools_options['chat-nav1']) && $horsetools_svc['on'] && ! empty($horsetools_svc['items']) ) {
+		wp_enqueue_style('ht-services', HORSETOOLS_URL . 'link/chat/services.css', array(), HORSETOOLS_VERSION);
+		wp_enqueue_script('ht-services', HORSETOOLS_URL . 'link/chat/services.js', array(), HORSETOOLS_VERSION, true);
+		if ( ! wp_style_is('horsetools-tabler', 'registered') ) {
+			wp_register_style('horsetools-tabler', HORSETOOLS_URL . 'link/tabler/tabler-icons.css', array(), HORSETOOLS_VERSION);
+		}
+		wp_enqueue_style('horsetools-tabler');
 	}
 }
 add_action('wp_enqueue_scripts', 'horsetools_enqueue_chat');
@@ -413,6 +423,12 @@ function horsetools_add_chat(){
 		 ?>
 	</div>
 	<?php } ?>
+	<?php
+	// Services slide-up panel, when a bottom-bar item targets #ht-services.
+	if ( in_array( '#ht-services', array( $horsebb1, $horsebb2, $horsebb3, $horsebb4, $horsebb5 ), true ) ) {
+		echo horsetools_services_render(); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped inside the renderer
+	}
+	?>
 	
 	
 	<div class="ht-boxnavi <?php echo $navclass1; ?>" <?php echo $navi_mojs; ?>>

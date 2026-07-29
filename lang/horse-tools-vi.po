@@ -5104,3 +5104,9 @@ msgstr "Bật hoặc tắt shortcode Horse Tools"
 
 msgid "post type, e.g. shortcoder"
 msgstr "post type, ví dụ: shortcoder"
+
+msgid "Close"
+msgstr "Đóng"
+
+msgid "Services"
+msgstr "Dịch vụ"

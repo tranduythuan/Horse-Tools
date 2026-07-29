@@ -666,6 +666,10 @@ msgstr ""
 msgid "Client Secret"
 msgstr ""
 
+#: inc/chat-services.php:120 inc/chat-services.php:122
+msgid "Close"
+msgstr ""
+
 #: inc/woo.php:76
 msgid "Code orders"
 msgstr ""
@@ -742,7 +746,7 @@ msgstr ""
 msgid "Confirm deletion"
 msgstr ""
 
-#: inc/chat.php:263 inc/woo.php:78
+#: inc/chat.php:273 inc/woo.php:78
 msgid "Contact"
 msgstr ""
 
@@ -1078,7 +1082,7 @@ msgstr ""
 msgid "Deletion successful"
 msgstr ""
 
-#: inc/chat.php:288
+#: inc/chat.php:298
 msgid "Demo"
 msgstr ""
 
@@ -2583,7 +2587,7 @@ msgstr ""
 msgid "Name — letters, numbers, dashes (e.g. call-to-action)"
 msgstr ""
 
-#: inc/chat.php:450
+#: inc/chat.php:466
 msgid "Navigation bar (Horse Tools)"
 msgstr ""
 
@@ -2667,7 +2671,7 @@ msgstr ""
 msgid "None: default not selected, Auto: background image automatically changes each time the page is loaded, Color: change the color you want, Upload: upload the background image you want"
 msgstr ""
 
-#: inc/chat.php:60
+#: inc/chat.php:70
 msgid "Not entered"
 msgstr ""
 
@@ -3371,6 +3375,10 @@ msgstr ""
 
 #: main/export.php:218
 msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
+msgstr ""
+
+#: inc/chat-services.php:55
+msgid "Services"
 msgstr ""
 
 #: main/page/9user.php:12
