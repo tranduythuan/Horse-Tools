@@ -4456,3 +4456,63 @@ msgstr "Chưa có chuyển hướng tự động nào. Đổi một URL đã đ�
 
 msgid "When you change a published post or page URL — its slug, its parent, or the whole path — the old address is redirected to the new one. WordPress already does this for a simple slug change; this also covers moves that core misses, and only ever acts on a URL that would otherwise 404."
 msgstr "Khi bạn đổi URL của bài viết hoặc trang đã đăng — slug, chuyên mục cha, hay toàn bộ đường dẫn — địa chỉ cũ sẽ được chuyển hướng sang địa chỉ mới. WordPress đã làm điều này cho việc đổi slug đơn giản; tính năng này bắt thêm các trường hợp core bỏ sót, và chỉ tác động lên URL vốn sẽ trả về 404."
+
+msgid "Add a label so screen readers announce it."
+msgstr "Thêm nhãn để trình đọc màn hình đọc được icon."
+
+msgid "Copied: "
+msgstr "Đã sao chép: "
+
+msgid "Could not load the icon list."
+msgstr "Không tải được danh sách icon."
+
+msgid "Enable the [ht-icon] shortcode"
+msgstr "Bật shortcode [ht-icon]"
+
+msgid "Free to use the \"solid\" and \"brands\" styles"
+msgstr "Được dùng miễn phí kiểu \"solid\" và \"brands\""
+
+msgid "How to use"
+msgstr "Cách dùng"
+
+msgid "ICON"
+msgstr "ICON"
+
+msgid "Icon picker"
+msgstr "Bộ chọn icon"
+
+msgid "Insert icons anywhere with a shortcode"
+msgstr "Chèn icon vào bất cứ đâu bằng shortcode"
+
+msgid "Lets you drop any of the bundled Tabler icons (over 5,800, MIT licence) into posts, pages and anywhere shortcodes run. The icon font only loads on pages that actually use one, so it costs nothing elsewhere."
+msgstr "Cho phép bạn chèn bất kỳ icon Tabler đi kèm nào (hơn 5.800, giấy phép MIT) vào bài viết, trang và mọi nơi shortcode hoạt động. Font icon chỉ tải trên trang thực sự có dùng icon, nên không tốn tài nguyên ở nơi khác."
+
+msgid "Loading icons…"
+msgstr "Đang tải icon…"
+
+msgid "No icon matches that."
+msgstr "Không có icon nào khớp."
+
+msgid "Search below, click any icon to copy its ready-made shortcode, then paste it where you want the icon to appear."
+msgstr "Tìm bên dưới, bấm vào icon bất kỳ để sao chép shortcode có sẵn, rồi dán vào nơi bạn muốn hiển thị icon."
+
+msgid "Search icons — e.g. cart, arrow, brand-facebook…"
+msgstr "Tìm icon — ví dụ: cart, arrow, brand-facebook…"
+
+msgid "Set the colour (hex, rgb or a CSS name)."
+msgstr "Đặt màu (hex, rgb hoặc tên màu CSS)."
+
+msgid "Set the size in pixels."
+msgstr "Đặt kích thước theo pixel."
+
+msgid "Spin it — handy for loaders."
+msgstr "Cho xoay — tiện làm biểu tượng đang tải."
+
+msgid "The icon on its own."
+msgstr "Chỉ riêng icon."
+
+msgid "icons"
+msgstr "icon"
+
+msgid "showing first"
+msgstr "hiển thị đầu"

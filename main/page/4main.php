@@ -17,7 +17,7 @@ global $horsetools_options; ?>
 	) ); ?>
 	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('If you want to use font Awesome, you can enable it (it an icon font). You can search for icons at:', 'horse-tools'); ?><br>
 	<b><a target="_blank" href="https://fontawesome.com/search"><?php _e('Access Font Awesome to find icons', 'horse-tools'); ?></a></b><br>
-	<?php _e('Free to use "ti" and "ti" styles', 'horse-tools'); ?>
+	<?php _e('Free to use the "solid" and "brands" styles', 'horse-tools'); ?>
 	</p>
   <h3><i class="ti ti-snowflake"></i> <?php _e('Decorative effects for the website', 'horse-tools') ?></h3>
 	<!-- add font Google 1 -->

@@ -157,3 +157,96 @@ function horsetools_gget_shortcode_css(){
 add_action('wp_head', 'horsetools_gget_shortcode_css');
 }
 
+# shortcode icon — Tabler Icons (MIT), bundled with the plugin
+if ( isset( $horsetools_shortcode_options['shortcode-s5'] ) ) {
+	/**
+	 * [ht-icon name="heart" size="24" color="#e11" spin="1" label="Favourite"]
+	 *
+	 * Renders a single Tabler icon anywhere shortcodes run — post content,
+	 * widgets, menus with a shortcode filter. `name` is the Tabler slug (with or
+	 * without the ti- prefix). The picker on the Shortcode screen lists every
+	 * valid name and copies the finished tag for you.
+	 *
+	 * @param array $atts Shortcode attributes.
+	 * @return string Safe <i> markup, or '' when the name is missing/invalid.
+	 */
+	function horsetools_icon_shortcode( $atts ) {
+		$atts = shortcode_atts(
+			array(
+				'name'  => '',
+				'size'  => '',
+				'color' => '',
+				'spin'  => '',
+				'label' => '',
+				'class' => '',
+			),
+			$atts,
+			'ht-icon'
+		);
+
+		// Accept "ti-heart" or "heart"; keep only a safe slug. An unknown slug
+		// simply renders nothing rather than breaking the page.
+		$name = strtolower( trim( (string) $atts['name'] ) );
+		$name = preg_replace( '/^ti-/', '', $name );
+		$name = preg_replace( '/[^a-z0-9-]/', '', $name );
+		if ( '' === $name ) {
+			return '';
+		}
+
+		// Load the icon font only on pages that actually place an icon. The
+		// style is registered on wp_enqueue_scripts; enqueuing it here (during
+		// the_content) makes WordPress print it in the footer.
+		wp_enqueue_style( 'horsetools-tabler' );
+
+		$classes = 'ti ti-' . $name;
+		if ( '' !== $atts['spin'] && '0' !== $atts['spin'] && 'false' !== $atts['spin'] ) {
+			$classes .= ' ht-icon-spin';
+		}
+		if ( '' !== trim( (string) $atts['class'] ) ) {
+			$extra = array_filter( array_map( 'sanitize_html_class', preg_split( '/\s+/', trim( (string) $atts['class'] ) ) ) );
+			if ( $extra ) {
+				$classes .= ' ' . implode( ' ', $extra );
+			}
+		}
+
+		$style = '';
+		if ( '' !== $atts['size'] ) {
+			$px = (int) $atts['size'];
+			if ( $px > 0 && $px <= 400 ) {
+				$style .= 'font-size:' . $px . 'px;';
+			}
+		}
+		if ( '' !== $atts['color'] ) {
+			$color = horsetools_css_color( $atts['color'] );
+			if ( '' !== $color ) {
+				$style .= 'color:' . $color . ';';
+			}
+		}
+
+		// Decorative by default (aria-hidden); given a label it becomes an
+		// image with an accessible name for screen readers.
+		$label = trim( (string) $atts['label'] );
+		$a11y  = ( '' !== $label )
+			? ' role="img" aria-label="' . esc_attr( $label ) . '"'
+			: ' aria-hidden="true"';
+
+		return '<i class="' . esc_attr( $classes ) . '"'
+			. ( '' !== $style ? ' style="' . esc_attr( $style ) . '"' : '' )
+			. $a11y . '></i>';
+	}
+	add_shortcode( 'ht-icon', 'horsetools_icon_shortcode' );
+
+	/**
+	 * Register (not enqueue) the Tabler font for the front end, plus the spin
+	 * keyframes. The shortcode enqueues it on demand.
+	 */
+	function horsetools_icon_register_assets() {
+		wp_register_style( 'horsetools-tabler', HORSETOOLS_URL . 'link/tabler/tabler-icons.css', array(), HORSETOOLS_VERSION );
+		wp_add_inline_style(
+			'horsetools-tabler',
+			'.ht-icon-spin{display:inline-block;animation:ht-icon-spin 1s linear infinite}@keyframes ht-icon-spin{to{transform:rotate(360deg)}}'
+		);
+	}
+	add_action( 'wp_enqueue_scripts', 'horsetools_icon_register_assets' );
+}
+
