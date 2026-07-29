@@ -4180,3 +4180,69 @@ msgstr "Việc dọn dẹp chạy bằng cron của WordPress, vốn chỉ kích
 
 msgid "Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action."
 msgstr "Việc xoá bình luận theo mẫu liên kết được cố ý loại khỏi dọn dẹp tự động — nó vẫn là thao tác thủ công."
+
+msgid "BACKUP"
+msgstr "SAO LƯU"
+
+msgid "Backup"
+msgstr "Sao lưu"
+
+msgid "Added"
+msgstr "Thêm"
+
+msgid "Changed"
+msgstr "Thay đổi"
+
+msgid "Removed"
+msgstr "Xoá"
+
+msgid "Setting group"
+msgstr "Nhóm cài đặt"
+
+msgid "These groups will change"
+msgstr "Các nhóm sẽ thay đổi"
+
+msgid "Preview changes"
+msgstr "Xem trước thay đổi"
+
+msgid "Apply import"
+msgstr "Áp dụng nhập"
+
+msgid "Download .json"
+msgstr "Tải .json"
+
+msgid "Choose a file"
+msgstr "Chọn tệp"
+
+msgid "Undo the last import"
+msgstr "Hoàn tác lần nhập gần nhất"
+
+msgid "Restore previous configuration"
+msgstr "Khôi phục cấu hình trước đó"
+
+msgid "Paste an export here, or upload a .json file"
+msgstr "Dán dữ liệu xuất vào đây, hoặc tải lên tệp .json"
+
+msgid "That is not a valid Horse Tools export file."
+msgstr "Đây không phải tệp xuất hợp lệ của Horse Tools."
+
+msgid "The file contained no Horse Tools settings to import."
+msgstr "Tệp không chứa cài đặt Horse Tools nào để nhập."
+
+msgid "Imported %d setting group(s). You can undo this below."
+msgstr "Đã nhập %d nhóm cài đặt. Bạn có thể hoàn tác bên dưới."
+
+msgid "The previous configuration has been restored."
+msgstr "Đã khôi phục cấu hình trước đó."
+
+msgid "There is no backup to restore."
+msgstr "Không có bản sao lưu để khôi phục."
+
+msgid "This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site."
+msgstr "Bao gồm mọi nhóm cài đặt, bất kể module đang bật hay tắt. Không bao gồm tệp phông chữ đã tải lên — chúng nằm trên site này."
+
+msgid "Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it."
+msgstr "Việc áp dụng sẽ ghi đè các nhóm này bằng giá trị đã nhập. Một bản sao lưu được giữ lại để bạn hoàn tác bằng một cú nhấp."
+
+msgid "The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot."
+msgstr "Cấu hình trước lần nhập gần nhất được lưu lại. Khôi phục sẽ đưa mọi nhóm về đúng bản chụp đó."

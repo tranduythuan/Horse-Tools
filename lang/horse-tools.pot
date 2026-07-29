@@ -222,6 +222,10 @@ msgstr ""
 msgid "Add watermark to images upon upload"
 msgstr ""
 
+#: main/exportphp:293
+msgid "Added"
+msgstr ""
+
 #: main/page/6postphp:123
 msgid "Additional feature"
 msgstr ""
@@ -294,6 +298,14 @@ msgstr ""
 msgid "App password"
 msgstr ""
 
+#: main/exportphp:311
+msgid "Apply import"
+msgstr ""
+
+#: main/exportphp:309
+msgid "Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it."
+msgstr ""
+
 #: main/page/3toolphp:85
 msgid "Attach copyright content"
 msgstr ""
@@ -326,6 +338,10 @@ msgstr ""
 msgid "Automatically open popup when scrolling down"
 msgstr ""
 
+#: main/exportphp:256 main/exportphp:267
+msgid "BACKUP"
+msgstr ""
+
 #: main/notifyphp:18 main/notifyphp:34
 msgid "BLOCKER"
 msgstr ""
@@ -348,6 +364,10 @@ msgstr ""
 
 #: main/tocphp:212
 msgid "Background title"
+msgstr ""
+
+#: main/exportphp:380
+msgid "Backup"
 msgstr ""
 
 #: main/page/12chatphp:380
@@ -471,6 +491,10 @@ msgstr ""
 msgid "Change the color of the search box to your preferences"
 msgstr ""
 
+#: main/exportphp:294
+msgid "Changed"
+msgstr ""
+
 #: main/page/8woophp:38
 msgid "Chat ID"
 msgstr ""
@@ -481,6 +505,10 @@ msgstr ""
 
 #: main/page/12chatphp:388
 msgid "Chat text color"
+msgstr ""
+
+#: main/exportphp:286
+msgid "Choose a file"
 msgstr ""
 
 #: main/fontphp:93 main/fontphp:94 main/fontphp:95 main/fontphp:96
@@ -1058,8 +1086,12 @@ msgstr ""
 msgid "Does not exist"
 msgstr ""
 
-#: inc/shortcodephp:121 main/exportphp:90
+#: inc/shortcodephp:121
 msgid "Download"
+msgstr ""
+
+#: main/exportphp:275
+msgid "Download .json"
 msgstr ""
 
 #: main/shortcodephp:124
@@ -1471,10 +1503,6 @@ msgstr ""
 msgid "Enter cookie title"
 msgstr ""
 
-#: main/exportphp:93
-msgid "Enter data here"
-msgstr ""
-
 #: main/page/7mailphp:75
 msgid "Enter email"
 msgstr ""
@@ -1582,7 +1610,7 @@ msgstr ""
 msgid "Example: domain.com/wp-admin where wp-admin is the suffix"
 msgstr ""
 
-#: main/exportphp:86 main/exportphp:169 main/extendphp:200
+#: main/exportphp:270 main/extendphp:200
 msgid "Export"
 msgstr ""
 
@@ -1712,10 +1740,6 @@ msgstr ""
 msgid "HORSE SEARCH"
 msgstr ""
 
-#: main/exportphp:40 main/exportphp:84
-msgid "HORSETOOLS"
-msgstr ""
-
 #: inc/notifyphp:115
 msgid "Hello"
 msgstr ""
@@ -1786,10 +1810,6 @@ msgstr ""
 
 #: main/cleanphp:200
 msgid "I understand this permanently deletes data."
-msgstr ""
-
-#: main/exportphp:99
-msgid "IMPORT HORSETOOLS DATA"
 msgstr ""
 
 #: main/gindexphp:18 main/gindexphp:32 main/gindexphp:62
@@ -1944,8 +1964,12 @@ msgstr ""
 msgid "Image function for posts"
 msgstr ""
 
-#: main/exportphp:91
+#: main/exportphp:279
 msgid "Import"
+msgstr ""
+
+#: main/exportphp:227
+msgid "Imported %d setting group(s). You can undo this below."
 msgstr ""
 
 #: inc/gindexphp:274 main/extendphp:95 main/gindexphp:209
@@ -1969,10 +1993,6 @@ msgstr ""
 #: inc/cleanphp:238 inc/cleanphp:290 inc/debugphp:312 inc/fontphp:131
 #: inc/fontphp:162 inc/searchphp:276 inc/searchphp:316
 msgid "Insufficient permissions"
-msgstr ""
-
-#: main/exportphp:76
-msgid "Invalid data"
 msgstr ""
 
 #: main/shortcodephp:18 main/shortcodephp:34
@@ -2121,10 +2141,6 @@ msgstr ""
 
 #: inc/chatphp:415
 msgid "Navigation bar (Horse Tools)"
-msgstr ""
-
-#: main/exportphp:74
-msgid "New configuration has been successfully added"
 msgstr ""
 
 #: main/page/6postphp:131
@@ -2285,6 +2301,10 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
+#: main/exportphp:283
+msgid "Paste an export here, or upload a .json file"
+msgstr ""
+
 #: inc/cleanphp:345
 msgid "Pending comments"
 msgstr ""
@@ -2303,10 +2323,6 @@ msgstr ""
 
 #: main/page/10customphp:149
 msgid "Please enter the content here"
-msgstr ""
-
-#: main/exportphp:157
-msgid "Please upload a valid JSON file"
 msgstr ""
 
 #: inc/shortcodephp:126 main/cleanphp:82 main/cleanphp:101 main/cleanphp:115
@@ -2340,6 +2356,10 @@ msgstr ""
 
 #: main/page/2scuriphp:75
 msgid "Prevent SQL injection, cross-site scripting (XSS)"
+msgstr ""
+
+#: main/exportphp:315
+msgid "Preview changes"
 msgstr ""
 
 #: main/page/5mediaphp:156 main/page/5mediaphp:213
@@ -2434,6 +2454,10 @@ msgstr ""
 msgid "Remove version from JS and CSS"
 msgstr ""
 
+#: main/exportphp:295
+msgid "Removed"
+msgstr ""
+
 #: main/cleanphp:117
 msgid "Removes attachments whose file is missing from disk. Every attachment is scanned, so the count is known only after it runs."
 msgstr ""
@@ -2444,6 +2468,10 @@ msgstr ""
 
 #: main/page/ht-settingphp:44
 msgid "Reset this setting"
+msgstr ""
+
+#: main/exportphp:328
+msgid "Restore previous configuration"
 msgstr ""
 
 #: main/page/11googlephp:46
@@ -2641,6 +2669,10 @@ msgstr ""
 msgid "Set up the ads.txt file"
 msgstr ""
 
+#: main/exportphp:292
+msgid "Setting group"
+msgstr ""
+
 #: horse-toolsphp:118
 msgid "Settings"
 msgstr ""
@@ -2793,6 +2825,10 @@ msgstr ""
 msgid "That address cannot be fetched from this server."
 msgstr ""
 
+#: main/exportphp:217
+msgid "That is not a valid Horse Tools export file."
+msgstr ""
+
 #: main/gindexphp:94
 msgid "The \"Index Now\" link will be added in the custom post management section to allow quick index submission"
 msgstr ""
@@ -2809,12 +2845,20 @@ msgstr ""
 msgid "The changing image is square, with the standard size being 100x100 pixels"
 msgstr ""
 
+#: main/exportphp:324
+msgid "The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot."
+msgstr ""
+
 #: main/debugphp:64
 msgid "The debug file does not exist"
 msgstr ""
 
 #: main/page/5mediaphp:205
 msgid "The feature adds advanced functions when uploading images, such as adding frames, flipping images... allowing you to automatically customize your images during upload. Picture frame (PNG)"
+msgstr ""
+
+#: main/exportphp:219
+msgid "The file contained no Horse Tools settings to import."
 msgstr ""
 
 #: main/page/5mediaphp:42
@@ -2837,6 +2881,10 @@ msgstr ""
 msgid "The original image size when added to the post"
 msgstr ""
 
+#: main/exportphp:210
+msgid "The previous configuration has been restored."
+msgstr ""
+
 #: inc/goophp:287
 msgid "The reCAPTCHA is invalid"
 msgstr ""
@@ -2857,12 +2905,12 @@ msgstr ""
 msgid "The text to replace Buy Now on the product page"
 msgstr ""
 
-#: main/exportphp:133
-msgid "The textarea is empty"
+#: main/exportphp:211
+msgid "There is no backup to restore."
 msgstr ""
 
-#: main/exportphp:152
-msgid "The uploaded file is not a valid JSON format"
+#: main/exportphp:289
+msgid "These groups will change"
 msgstr ""
 
 #: inc/mediaphp:280
@@ -2959,6 +3007,10 @@ msgstr ""
 
 #: main/redirectsphp:42
 msgid "This function will redirect all of your website pages to the destination page of your choice"
+msgstr ""
+
+#: main/exportphp:271
+msgid "This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site."
 msgstr ""
 
 #: inc/mailphp:123
@@ -3065,8 +3117,8 @@ msgstr ""
 msgid "Unable to write the sanitised SVG file."
 msgstr ""
 
-#: main/exportphp:96
-msgid "Upload"
+#: main/exportphp:323
+msgid "Undo the last import"
 msgstr ""
 
 #: inc/userphp:75
@@ -3233,7 +3285,7 @@ msgstr ""
 msgid "You can use the shortcode to add the search icon to the location you want"
 msgstr ""
 
-#: main/exportphp:46
+#: main/exportphp:203
 msgid "You do not have permission to do this."
 msgstr ""
 

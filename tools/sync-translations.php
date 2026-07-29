@@ -146,6 +146,38 @@ $vi = array(
         => 'Việc dọn dẹp chạy bằng cron của WordPress, vốn chỉ kích hoạt khi website có lượt truy cập. Hằng tuần và hằng tháng được tính từ lần chạy gần nhất.',
     'Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action.'
         => 'Việc xoá bình luận theo mẫu liên kết được cố ý loại khỏi dọn dẹp tự động — nó vẫn là thao tác thủ công.',
+    // Backup / export-import screen
+    'BACKUP' => 'SAO LƯU',
+    'Backup' => 'Sao lưu',
+    'Added'   => 'Thêm',
+    'Changed' => 'Thay đổi',
+    'Removed' => 'Xoá',
+    'Setting group' => 'Nhóm cài đặt',
+    'These groups will change' => 'Các nhóm sẽ thay đổi',
+    'Preview changes' => 'Xem trước thay đổi',
+    'Apply import' => 'Áp dụng nhập',
+    'Download .json' => 'Tải .json',
+    'Choose a file' => 'Chọn tệp',
+    'Undo the last import' => 'Hoàn tác lần nhập gần nhất',
+    'Restore previous configuration' => 'Khôi phục cấu hình trước đó',
+    'Paste an export here, or upload a .json file'
+        => 'Dán dữ liệu xuất vào đây, hoặc tải lên tệp .json',
+    'That is not a valid Horse Tools export file.'
+        => 'Đây không phải tệp xuất hợp lệ của Horse Tools.',
+    'The file contained no Horse Tools settings to import.'
+        => 'Tệp không chứa cài đặt Horse Tools nào để nhập.',
+    'Imported %d setting group(s). You can undo this below.'
+        => 'Đã nhập %d nhóm cài đặt. Bạn có thể hoàn tác bên dưới.',
+    'The previous configuration has been restored.'
+        => 'Đã khôi phục cấu hình trước đó.',
+    'There is no backup to restore.'
+        => 'Không có bản sao lưu để khôi phục.',
+    'This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site.'
+        => 'Bao gồm mọi nhóm cài đặt, bất kể module đang bật hay tắt. Không bao gồm tệp phông chữ đã tải lên — chúng nằm trên site này.',
+    'Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it.'
+        => 'Việc áp dụng sẽ ghi đè các nhóm này bằng giá trị đã nhập. Một bản sao lưu được giữ lại để bạn hoàn tác bằng một cú nhấp.',
+    'The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot.'
+        => 'Cấu hình trước lần nhập gần nhất được lưu lại. Khôi phục sẽ đưa mọi nhóm về đúng bản chụp đó.',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

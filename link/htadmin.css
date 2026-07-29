@@ -1793,3 +1793,33 @@ article.ht-box-font {
 	opacity: 0.5;
 	cursor: not-allowed;
 }
+
+/* ---------------------------------------------------------------------------
+   Backup screen: error notice + import diff table
+   ------------------------------------------------------------------------ */
+/* "Invalid data" used to render in the green success box. Give failure its
+   own red variant — error is a status, not a brand colour. */
+.ht-updated.ht-updated-err {
+	background: #fbeaea;
+	border-color: #e6b3b3;
+	color: #b32d2e;
+}
+.ht-diff-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 12px 0;
+	font-size: 14px;
+}
+.ht-diff-table th,
+.ht-diff-table td {
+	text-align: left;
+	padding: 7px 10px;
+	border-bottom: 1px solid #eee;
+}
+.ht-diff-table th {
+	color: var(--color);
+	font-weight: bold;
+}
+.ht-diff-add { color: #2c6b17; font-weight: bold; }
+.ht-diff-chg { color: #8a6100; font-weight: bold; }
+.ht-diff-del { color: #b32d2e; font-weight: bold; }

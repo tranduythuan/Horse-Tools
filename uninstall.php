@@ -20,6 +20,7 @@ delete_option('horsetools_clean_settings');
 delete_option('horsetools_debug_applied');
 delete_option('horsetools_adstxt_flushed');
 delete_option('horsetools_clean_cron_last');
+delete_option('horsetools_config_backup');
 
 // Drop the scheduled cleanup event too, in case the plugin is removed without
 // being deactivated first.
