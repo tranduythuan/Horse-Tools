@@ -685,3 +685,34 @@ body .ht-chaton a, body .ht-chatbox-skin1 a, body .ht-chatbox-skin2 a, body .ht-
 }
 
 
+
+/* ---- Extra contact channels (Line, Instagram, Facebook, X, YouTube, LinkedIn, Discord, WeChat, Google) ---- */
+.ht-si{padding:22%;box-sizing:border-box}
+.ht-cline svg{background:#06C755}
+.ht-cinsta svg{background:#E4405F}
+.ht-cfb svg{background:#1877F2}
+.ht-cx svg{background:#000000}
+.ht-cyt svg{background:#FF0000}
+.ht-cli svg{background:#0A66C2}
+.ht-cdis svg{background:#5865F2}
+.ht-cwc svg{background:#07C160}
+.ht-cgg svg{background:#4285F4}
+/* Floating / Tap skins: coloured glyph on white */
+.ht-chatbox-skin4 .ht-cline svg path, .ht-chatbox-skin5 .ht-cline svg path{fill:#06C755 !important}
+.ht-chatbox-skin4 .ht-cline svg{border:2px solid #06C755}
+.ht-chatbox-skin4 .ht-cinsta svg path, .ht-chatbox-skin5 .ht-cinsta svg path{fill:#E4405F !important}
+.ht-chatbox-skin4 .ht-cinsta svg{border:2px solid #E4405F}
+.ht-chatbox-skin4 .ht-cfb svg path, .ht-chatbox-skin5 .ht-cfb svg path{fill:#1877F2 !important}
+.ht-chatbox-skin4 .ht-cfb svg{border:2px solid #1877F2}
+.ht-chatbox-skin4 .ht-cx svg path, .ht-chatbox-skin5 .ht-cx svg path{fill:#000000 !important}
+.ht-chatbox-skin4 .ht-cx svg{border:2px solid #000000}
+.ht-chatbox-skin4 .ht-cyt svg path, .ht-chatbox-skin5 .ht-cyt svg path{fill:#FF0000 !important}
+.ht-chatbox-skin4 .ht-cyt svg{border:2px solid #FF0000}
+.ht-chatbox-skin4 .ht-cli svg path, .ht-chatbox-skin5 .ht-cli svg path{fill:#0A66C2 !important}
+.ht-chatbox-skin4 .ht-cli svg{border:2px solid #0A66C2}
+.ht-chatbox-skin4 .ht-cdis svg path, .ht-chatbox-skin5 .ht-cdis svg path{fill:#5865F2 !important}
+.ht-chatbox-skin4 .ht-cdis svg{border:2px solid #5865F2}
+.ht-chatbox-skin4 .ht-cwc svg path, .ht-chatbox-skin5 .ht-cwc svg path{fill:#07C160 !important}
+.ht-chatbox-skin4 .ht-cwc svg{border:2px solid #07C160}
+.ht-chatbox-skin4 .ht-cgg svg path, .ht-chatbox-skin5 .ht-cgg svg path{fill:#4285F4 !important}
+.ht-chatbox-skin4 .ht-cgg svg{border:2px solid #4285F4}

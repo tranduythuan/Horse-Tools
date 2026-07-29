@@ -1,6 +1,32 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_options;
+require_once HORSETOOLS_DIR . 'inc/chat-channels.php';
+
+/**
+ * Build a contact link that accepts either a handle/number or a full URL.
+ *
+ * If the value is already a full http(s) URL it is used as-is (flexible — e.g.
+ * a Zalo OA link vs a bare phone number); otherwise the handle is appended to
+ * the platform base. Empty gives '#'.
+ *
+ * @param string $base  Platform URL prefix, or '' for URL-only channels.
+ * @param string $value The user-entered handle, number or URL.
+ * @return string Escaped href.
+ */
+function horsetools_chat_flex_href( $base, $value ) {
+	$v = trim( (string) $value );
+	if ( '' === $v ) {
+		return '#';
+	}
+	if ( preg_match( '#^https?://#i', $v ) ) {
+		return esc_url( $v );
+	}
+	if ( '' === $base ) {
+		return esc_url( $v );
+	}
+	return esc_url( $base . ltrim( $v, '/@~' ) );
+}
 # add css js chat web
 function horsetools_enqueue_chat(){
 	global $horsetools_options;
@@ -44,16 +70,16 @@ function horsetools_chat_mang(){
 							echo '<a class="ht-cco ht-csms" rel="nofollow" title="SMS" href="sms:'. esc_attr($chat_value) .'"><i>'. $csms .'</i><span>'. $chat_text .'</span></a>';
 							break;
 						case 'Messenger':
-							echo '<a class="ht-cco ht-cmes" '. $chat_new .' rel="nofollow" title="Messenger" href="https://m.me/'. esc_attr($chat_value) .'"><i>'. $cmessenger .'</i><span>'. $chat_text .'</span></a>';
+							echo '<a class="ht-cco ht-cmes" '. $chat_new .' rel="nofollow" title="Messenger" href="'. horsetools_chat_flex_href('https://m.me/', $chat_value) .'"><i>'. $cmessenger .'</i><span>'. $chat_text .'</span></a>';
 							break;
 						case 'Telegram':
-							echo '<a class="ht-cco ht-ctel" '. $chat_new .' rel="nofollow" title="Telegram" href="https://telegram.me/'. esc_attr($chat_value) .'"><i>'. $ctelegram .'</i><span>'. $chat_text .'</span></a>';
+							echo '<a class="ht-cco ht-ctel" '. $chat_new .' rel="nofollow" title="Telegram" href="'. horsetools_chat_flex_href('https://t.me/', $chat_value) .'"><i>'. $ctelegram .'</i><span>'. $chat_text .'</span></a>';
 							break;
 						case 'Zalo':
-							echo '<a class="ht-cco ht-czal" '. $chat_new .' rel="nofollow" title="Zalo" href="https://zalo.me/'. esc_attr($chat_value) .'"><i>'. $czalo .'</i><span>'. $chat_text .'</span></a>';
+							echo '<a class="ht-cco ht-czal" '. $chat_new .' rel="nofollow" title="Zalo" href="'. horsetools_chat_flex_href('https://zalo.me/', $chat_value) .'"><i>'. $czalo .'</i><span>'. $chat_text .'</span></a>';
 							break;
 						case 'Whatsapp':
-							echo '<a class="ht-cco ht-cwha" '. $chat_new .' rel="nofollow" title="Whatsapp" href="https://wa.me/'. esc_attr($chat_value) .'"><i>'. $cwhatsapp .'</i><span>'. $chat_text .'</span></a>';
+							echo '<a class="ht-cco ht-cwha" '. $chat_new .' rel="nofollow" title="Whatsapp" href="'. horsetools_chat_flex_href('https://wa.me/', $chat_value) .'"><i>'. $cwhatsapp .'</i><span>'. $chat_text .'</span></a>';
 							break;
 						case 'Viber':
 							echo '<a class="ht-cco ht-cvib" '. $chat_new .' rel="nofollow" title="Viber" href="viber://chat?number='. esc_attr($chat_value) .'"><i>'. $cviber .'</i><span>'. $chat_text .'</span></a>';
@@ -74,6 +100,15 @@ function horsetools_chat_mang(){
 							echo '<a class="ht-cco ht-cco-cus ht-ccus" '. $chat_new .' rel="nofollow" title="'. $chat_text .'" href="'. esc_url($chat_value) .'"><i>'. $chat_icon .'</i><span>'. $chat_text .'</span></a>';
 							break;
 					}
+						// Extra channels (Line, Instagram, Facebook, X, YouTube, LinkedIn,
+						// Discord, WeChat, Google) — data-driven, not part of the switch above.
+						$horsetools_new_ch = horsetools_chat_new_channels();
+						if ( isset( $horsetools_new_ch[ $chat_option ] ) ) {
+							$def  = $horsetools_new_ch[ $chat_option ];
+							$href = horsetools_chat_flex_href( $def['base'], $chat_value );
+							// $def['svg'] is a fixed, safe inline SVG from the plugin's own registry.
+							echo '<a class="ht-cco ' . esc_attr( $def['class'] ) . '" ' . $chat_new . ' rel="nofollow" title="' . esc_attr( $chat_option ) . '" href="' . $href . '"><i>' . $def['svg'] . '</i><span>' . $chat_text . '</span></a>';
+						}
 				}
 			}
 		}

@@ -54,7 +54,7 @@ global $horsetools_options; ?>
 	</p>
 	<div id="sortable-list">
 	<div data-id="1" class="ui-state-default ht-button-grid">
-	<?php $styles = array('Custom', 'Phone', 'SMS', 'Messenger', 'Telegram', 'Zalo', 'Whatsapp', 'Viber', 'Skype', 'Tiktok', 'Mail', 'Maps'); ?>
+	<?php $styles = array('Custom', 'Phone', 'SMS', 'Zalo', 'Messenger', 'Telegram', 'Whatsapp', 'Viber', 'Line', 'WeChat', 'Instagram', 'Facebook', 'Tiktok', 'Youtube', 'X', 'Linkedin', 'Discord', 'Google', 'Skype', 'Mail', 'Maps'); ?>
 	<select name="horsetools_settings[chat-nut11]"> 
 	<?php foreach($styles as $style) { ?> 
 	<?php if(isset($horsetools_options['chat-nut11']) && $horsetools_options['chat-nut11'] == $style) { $selected = 'selected="selected"'; } else { $selected = ''; } ?>
@@ -100,18 +100,7 @@ global $horsetools_options; ?>
 			var count = $('#sortable-list .ui-state-default:last').data('id') + 1;
 			var newDiv = $('<div data-id="' + count + '" class="ui-state-default ht-button-grid">' +
 				'<select name="horsetools_settings[chat-nut1' + count + ']">' +
-				'<option value="Custom">Custom</option>' +
-				'<option value="Phone">Phone</option>' +
-				'<option value="SMS">SMS</option>' +
-				'<option value="Messenger">Messenger</option>' +
-				'<option value="Telegram">Telegram</option>' +
-				'<option value="Zalo">Zalo</option>' +
-				'<option value="Whatsapp">Whatsapp</option>' +
-				'<option value="Viber">Viber</option>' +
-				'<option value="Skype">Skype</option>' +
-				'<option value="Skype">Tiktok</option>' +
-				'<option value="Mail">Mail</option>' +
-				'<option value="Maps">Maps</option>' +
+				'<?php foreach ( $styles as $s ) { echo '<option value="' . esc_attr( $s ) . '">' . esc_html( $s ) . '</option>'; } ?>' +
 				'</select>' +
 				'<div class="ht-button-grid-in">' +
 				'<input class="ht-input-big" placeholder="<?php _e('Enter button name', 'horse-tools'); ?>" type="text" name="horsetools_settings[chat-nut2' + count + ']" />' +
