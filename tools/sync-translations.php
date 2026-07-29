@@ -178,6 +178,22 @@ $vi = array(
         => 'Việc áp dụng sẽ ghi đè các nhóm này bằng giá trị đã nhập. Một bản sao lưu được giữ lại để bạn hoàn tác bằng một cú nhấp.',
     'The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot.'
         => 'Cấu hình trước lần nhập gần nhất được lưu lại. Khôi phục sẽ đưa mọi nhóm về đúng bản chụp đó.',
+    // 404 log
+    '404 log' => 'Nhật ký 404',
+    'Record 404 hits' => 'Ghi lại lượt truy cập 404',
+    'Requested URL' => 'URL được yêu cầu',
+    'Hits' => 'Lượt',
+    'Last seen' => 'Lần cuối',
+    'Actions' => 'Hành động',
+    'Redirect' => 'Chuyển hướng',
+    'Ignore' => 'Bỏ qua',
+    'No 404s recorded yet.' => 'Chưa ghi nhận lỗi 404 nào.',
+    'Clear the whole log' => 'Xoá toàn bộ nhật ký',
+    'Create a 301 redirect from this URL' => 'Tạo chuyển hướng 301 từ URL này',
+    'Hide this URL from the log' => 'Ẩn URL này khỏi nhật ký',
+    'Delete this log entry' => 'Xoá mục nhật ký này',
+    'Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site.'
+        => 'Ghi lại các URL hỏng mà khách vãng lai thực sự truy cập, để bạn biến những URL nhiều lượt thành chuyển hướng. Không ghi người dùng đã đăng nhập, bot và các yêu cầu tài nguyên tĩnh, và không có gì rời khỏi site của bạn.',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

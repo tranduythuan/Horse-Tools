@@ -4246,3 +4246,45 @@ msgstr "Việc áp dụng sẽ ghi đè các nhóm này bằng giá trị đã n
 
 msgid "The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot."
 msgstr "Cấu hình trước lần nhập gần nhất được lưu lại. Khôi phục sẽ đưa mọi nhóm về đúng bản chụp đó."
+
+msgid "404 log"
+msgstr "Nhật ký 404"
+
+msgid "Record 404 hits"
+msgstr "Ghi lại lượt truy cập 404"
+
+msgid "Requested URL"
+msgstr "URL được yêu cầu"
+
+msgid "Hits"
+msgstr "Lượt"
+
+msgid "Last seen"
+msgstr "Lần cuối"
+
+msgid "Actions"
+msgstr "Hành động"
+
+msgid "Redirect"
+msgstr "Chuyển hướng"
+
+msgid "Ignore"
+msgstr "Bỏ qua"
+
+msgid "No 404s recorded yet."
+msgstr "Chưa ghi nhận lỗi 404 nào."
+
+msgid "Clear the whole log"
+msgstr "Xoá toàn bộ nhật ký"
+
+msgid "Create a 301 redirect from this URL"
+msgstr "Tạo chuyển hướng 301 từ URL này"
+
+msgid "Hide this URL from the log"
+msgstr "Ẩn URL này khỏi nhật ký"
+
+msgid "Delete this log entry"
+msgstr "Xoá mục nhật ký này"
+
+msgid "Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site."
+msgstr "Ghi lại các URL hỏng mà khách vãng lai thực sự truy cập, để bạn biến những URL nhiều lượt thành chuyển hướng. Không ghi người dùng đã đăng nhập, bot và các yêu cầu tài nguyên tĩnh, và không có gì rời khỏi site của bạn."

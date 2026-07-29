@@ -103,6 +103,45 @@ function horsetools_redirects_options_page() {
 				<input id="horsetools-hi-input" class="ht-input-big" type="text" style="display:none;" name="horsetools_redirects_settings[redi21]" value="<?php if(!empty($horsetools_redirects_options['redi21'])){echo sanitize_text_field($horsetools_redirects_options['redi21']);} ?>" />
 				<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Redirect the 404 page to the homepage or a custom page of your choice, leave the field blank if you want to redirect to the homepage', 'horse-tools'); ?></p>
 			</div>
+			<div class="ht-card">
+			  <h3><i class="fa-regular fa-clipboard-list"></i> <?php _e('404 log', 'horse-tools') ?></h3>
+				<?php horsetools_toggle( 'redi-404log', __( 'Record 404 hits', 'horse-tools' ), array(
+					'module'      => 'redirect',
+					'tab'         => '404',
+					'section'     => '404 log',
+					'description' => __( 'Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site.', 'horse-tools' ),
+				) ); ?>
+				<?php
+				$log_rows = function_exists( 'horsetools_404_recent' ) ? horsetools_404_recent( 100 ) : array();
+				if ( ! empty( $log_rows ) ) :
+				?>
+				<table class="ht-404-table" data-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_404_action' ) ); ?>">
+					<thead><tr>
+						<th><?php _e( 'Requested URL', 'horse-tools' ); ?></th>
+						<th><?php _e( 'Hits', 'horse-tools' ); ?></th>
+						<th><?php _e( 'Last seen', 'horse-tools' ); ?></th>
+						<th><?php _e( 'Actions', 'horse-tools' ); ?></th>
+					</tr></thead>
+					<tbody>
+					<?php foreach ( $log_rows as $row ) : ?>
+						<tr data-id="<?php echo (int) $row->id; ?>" data-url="<?php echo esc_attr( $row->url ); ?>">
+							<td class="ht-404-url"><?php echo esc_html( $row->url ); ?></td>
+							<td><?php echo (int) $row->hits; ?></td>
+							<td><?php echo esc_html( wp_date( 'Y-m-d H:i', strtotime( $row->last_seen ) ) ); ?></td>
+							<td class="ht-404-actions">
+								<a href="javascript:void(0)" class="ht-404-redirect" title="<?php esc_attr_e( 'Create a 301 redirect from this URL', 'horse-tools' ); ?>"><i class="fa-regular fa-compass"></i> <?php _e( 'Redirect', 'horse-tools' ); ?></a>
+								<a href="javascript:void(0)" class="ht-404-ignore" title="<?php esc_attr_e( 'Hide this URL from the log', 'horse-tools' ); ?>"><?php _e( 'Ignore', 'horse-tools' ); ?></a>
+								<a href="javascript:void(0)" class="ht-404-delete" title="<?php esc_attr_e( 'Delete this log entry', 'horse-tools' ); ?>">&times;</a>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
+				<p><a href="javascript:void(0)" class="ht-404-clear"><?php _e( 'Clear the whole log', 'horse-tools' ); ?></a></p>
+				<?php elseif ( horsetools_404_logging_on() ) : ?>
+					<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e( 'No 404s recorded yet.', 'horse-tools' ); ?></p>
+				<?php endif; ?>
+			</div>
 			</div>
 			<!-- 503 -->
 			<div class="sotab-box htbox" id="tab3" style="display:none">
@@ -175,6 +214,51 @@ function horsetools_redirects_options_page() {
 				updateNoPageMessage();
 			});
 			updateNoPageMessage();
+
+			// ---- 404 log ----------------------------------------------------
+			var log404Nonce = $('.ht-404-table').data('nonce');
+
+			function log404Action(id, act, done) {
+				$.post('<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>', {
+					action: 'horsetools_404_log_action',
+					security: log404Nonce,
+					id: id,
+					'do': act
+				}).done(function () { if (done) { done(); } });
+			}
+
+			// Turn a logged 404 into a new 301 rule: add a row on the 301 tab with
+			// the dead URL prefilled as the source, jump there, focus the target.
+			$(document).on('click', '.ht-404-redirect', function () {
+				var $row = $(this).closest('tr');
+				var url = $row.data('url');
+				var n = ($('#sortable-list .ui-state-default:last').data('id') || 0) + 1;
+				var html = '<div data-id="' + n + '" class="ui-state-default ht-button-grid">' +
+					'<input class="ht-input-big" type="text" name="horsetools_redirects_settings[rechan1' + n + ']" />' +
+					'<input class="ht-input-big" type="text" name="horsetools_redirects_settings[rechan2' + n + ']" />' +
+					'<span id="ht-chatx">&#x2715</span></div>';
+				var $new = $(html);
+				$('#sortable-list').append($new);
+				$new.find('input').eq(0).val(url);
+				// Make sure the 301 feature toggle is on, or the rule would not fire.
+				$('#ht-redirect-redi1').prop('checked', true).trigger('change');
+				var tabBtn = document.querySelector('[onclick*="tab1"]');
+				if (tabBtn) { tabBtn.click(); }
+				$new.find('input').eq(1).trigger('focus');
+				log404Action($row.data('id'), 'redirected', function () { $row.remove(); });
+			});
+
+			$(document).on('click', '.ht-404-ignore', function () {
+				var $row = $(this).closest('tr');
+				log404Action($row.data('id'), 'ignore', function () { $row.remove(); });
+			});
+			$(document).on('click', '.ht-404-delete', function () {
+				var $row = $(this).closest('tr');
+				log404Action($row.data('id'), 'delete', function () { $row.remove(); });
+			});
+			$(document).on('click', '.ht-404-clear', function () {
+				log404Action(0, 'clear', function () { $('.ht-404-table tbody').empty(); });
+			});
 		});
 	</script>
 	<?php

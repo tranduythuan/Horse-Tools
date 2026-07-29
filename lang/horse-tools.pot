@@ -42,11 +42,15 @@ msgstr ""
 msgid "404"
 msgstr ""
 
+#: main/redirectsphp:107
+msgid "404 log"
+msgstr ""
+
 #: main/redirectsphp:78
 msgid "404 redirects"
 msgstr ""
 
-#: main/redirectsphp:20 main/redirectsphp:109
+#: main/redirectsphp:20 main/redirectsphp:148
 msgid "503"
 msgstr ""
 
@@ -88,6 +92,10 @@ msgstr ""
 
 #: inc/customphp:205 main/page/7mailphp:34 main/page/7mailphp:35
 msgid "Account"
+msgstr ""
+
+#: main/redirectsphp:123
+msgid "Actions"
 msgstr ""
 
 #: inc/notifyphp:33
@@ -254,7 +262,7 @@ msgstr ""
 msgid "Agree"
 msgstr ""
 
-#: main/redirectsphp:116
+#: main/redirectsphp:155
 msgid "All links on your website will redirect to the maintenance page, and only logged-in admin accounts can view the content"
 msgstr ""
 
@@ -550,6 +558,10 @@ msgstr ""
 msgid "Clear all"
 msgstr ""
 
+#: main/redirectsphp:140
+msgid "Clear the whole log"
+msgstr ""
+
 #: main/page/11googlephp:41
 msgid "Client ID"
 msgstr ""
@@ -692,6 +704,10 @@ msgstr ""
 
 #: main/page/2scuriphp:71
 msgid "Correct, hiding the version of resources such as JS, CSS, and WordPress is a common security measure to prevent hackers from exploiting known vulnerabilities in older versions"
+msgstr ""
+
+#: main/redirectsphp:132
+msgid "Create a 301 redirect from this URL"
 msgstr ""
 
 #: main/page/12chatphp:12
@@ -864,6 +880,10 @@ msgstr ""
 
 #: main/page/ht-settingphp:43
 msgid "Delete settings:"
+msgstr ""
+
+#: main/redirectsphp:134
+msgid "Delete this log entry"
 msgstr ""
 
 #: inc/cleanphp:296
@@ -1166,7 +1186,7 @@ msgstr ""
 msgid "Enable 404 redirection"
 msgstr ""
 
-#: main/redirectsphp:112
+#: main/redirectsphp:151
 msgid "Enable 503 maintenance mode"
 msgstr ""
 
@@ -1491,7 +1511,7 @@ msgstr ""
 msgid "Enter content"
 msgstr ""
 
-#: main/notifyphp:59 main/notifyphp:79 main/page/3toolphp:91 main/redirectsphp:122
+#: main/notifyphp:59 main/notifyphp:79 main/page/3toolphp:91 main/redirectsphp:161
 msgid "Enter content here"
 msgstr ""
 
@@ -1554,7 +1574,7 @@ msgid "Enter the content you want to display in the notification, and customize 
 msgstr ""
 
 #: main/redirectsphp:41 main/redirectsphp:53 main/redirectsphp:54 main/redirectsphp:62
-#: main/redirectsphp:63 main/redirectsphp:144 main/redirectsphp:145
+#: main/redirectsphp:63 main/redirectsphp:183 main/redirectsphp:184
 msgid "Enter the link"
 msgstr ""
 
@@ -1582,7 +1602,7 @@ msgstr ""
 msgid "Enter the url"
 msgstr ""
 
-#: main/notifyphp:56 main/notifyphp:125 main/redirectsphp:119
+#: main/notifyphp:56 main/notifyphp:125 main/redirectsphp:158
 msgid "Enter title"
 msgstr ""
 
@@ -1788,6 +1808,14 @@ msgstr ""
 msgid "Hide the tools you want"
 msgstr ""
 
+#: main/redirectsphp:133
+msgid "Hide this URL from the log"
+msgstr ""
+
+#: main/redirectsphp:121
+msgid "Hits"
+msgstr ""
+
 #: main/extendphp:170 main/searchphp:223
 msgid "Horse Search"
 msgstr ""
@@ -1952,6 +1980,10 @@ msgstr ""
 msgid "If youre tired of WordPress default search tool because its too slow, try out our lightning-fast search feature to give your users an exceptional and speedy search experience"
 msgstr ""
 
+#: main/redirectsphp:133
+msgid "Ignore"
+msgstr ""
+
 #: main/page/5mediaphp:43
 msgid "Ignore 8-bit png"
 msgstr ""
@@ -2001,6 +2033,10 @@ msgstr ""
 
 #: main/page/ht-settingphp:82
 msgid "Language"
+msgstr ""
+
+#: main/redirectsphp:122
+msgid "Last seen"
 msgstr ""
 
 #: main/extendphp:105
@@ -2055,6 +2091,10 @@ msgstr ""
 msgid "Log out"
 msgstr ""
 
+#: main/redirectsphp:112
+msgid "Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site."
+msgstr ""
+
 #: main/page/10customphp:23
 msgid "Login link:"
 msgstr ""
@@ -2091,7 +2131,7 @@ msgstr ""
 msgid "Main icon text color"
 msgstr ""
 
-#: main/redirectsphp:111
+#: main/redirectsphp:150
 msgid "Maintenance mode for developers (503)"
 msgstr ""
 
@@ -2151,7 +2191,11 @@ msgstr ""
 msgid "Next automatic check: %s"
 msgstr ""
 
-#: main/page/12chatphp:326 main/redirectsphp:157 main/tocphp:107
+#: main/redirectsphp:142
+msgid "No 404s recorded yet."
+msgstr ""
+
+#: main/page/12chatphp:326 main/redirectsphp:196 main/tocphp:107
 msgid "No pages selected"
 msgstr ""
 
@@ -2378,6 +2422,14 @@ msgstr ""
 msgid "Quick view button color"
 msgstr ""
 
+#: main/redirectsphp:108
+msgid "Record 404 hits"
+msgstr ""
+
+#: main/redirectsphp:132
+msgid "Redirect"
+msgstr ""
+
 #: main/redirectsphp:43
 msgid "Redirect 301 to a custom page"
 msgstr ""
@@ -2390,7 +2442,7 @@ msgstr ""
 msgid "Redirect the 404 page to the homepage or a custom page of your choice, leave the field blank if you want to redirect to the homepage"
 msgstr ""
 
-#: main/extendphp:80 main/redirectsphp:186
+#: main/extendphp:80 main/redirectsphp:270
 msgid "Redirects"
 msgstr ""
 
@@ -2466,6 +2518,10 @@ msgstr ""
 msgid "Removes metadata entries for thumbnail files that are missing from disk. It does not delete images."
 msgstr ""
 
+#: main/redirectsphp:120
+msgid "Requested URL"
+msgstr ""
+
 #: main/page/ht-settingphp:44
 msgid "Reset this setting"
 msgstr ""
@@ -2492,7 +2548,7 @@ msgstr ""
 
 #: main/adminphp:93 main/adsphp:114 main/codephp:102 main/debugphp:74
 #: main/extendphp:216 main/fontphp:130 main/gindexphp:117 main/notifyphp:197
-#: main/redirectsphp:127 main/searchphp:207 main/shortcodephp:168 main/tocphp:279
+#: main/redirectsphp:166 main/searchphp:207 main/shortcodephp:168 main/tocphp:279
 msgid "SAVE CONTENT"
 msgstr ""
 

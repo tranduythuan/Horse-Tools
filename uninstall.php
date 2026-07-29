@@ -21,10 +21,15 @@ delete_option('horsetools_debug_applied');
 delete_option('horsetools_adstxt_flushed');
 delete_option('horsetools_clean_cron_last');
 delete_option('horsetools_config_backup');
+delete_option('horsetools_404_db');
 
 // Drop the scheduled cleanup event too, in case the plugin is removed without
 // being deactivated first.
 wp_clear_scheduled_hook('horsetools_scheduled_clean');
+
+// Drop the 404 log table.
+global $wpdb;
+$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}horsetools_404" );
 
 // NOTE: the debug feature writes WP_DEBUG / WP_DEBUG_LOG / WP_DEBUG_DISPLAY
 // into wp-config.php. Those constants are deliberately NOT touched here —
