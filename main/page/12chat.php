@@ -68,6 +68,27 @@ global $horsetools_options; ?>
 	<span class="slider"></span></label>
 	<label class="ht-label-right"><?php _e('Show a scan-to-open QR on desktop (Zalo, WhatsApp, Telegram, Viber, Line; WeChat always)', 'horse-tools'); ?></label>
 	</p>
+	<p>
+	<label class="nut-switch">
+	<input type="checkbox" name="horsetools_settings[chat-bh]" value="1" <?php if ( isset($horsetools_options['chat-bh']) && 1 == $horsetools_options['chat-bh'] ) echo 'checked="checked"'; ?> />
+	<span class="slider"></span></label>
+	<label class="ht-label-right"><?php _e('Business hours (shows Online / Away on the Live-chat, Card and Avatar skins)', 'horse-tools'); ?></label>
+	</p>
+	<p>
+	<input class="ht-input-small" type="time" name="horsetools_settings[chat-bh-open]" value="<?php echo esc_attr( $horsetools_options['chat-bh-open'] ?? '' ); ?>" />
+	<input class="ht-input-small" type="time" name="horsetools_settings[chat-bh-close]" value="<?php echo esc_attr( $horsetools_options['chat-bh-close'] ?? '' ); ?>" />
+	<label class="ht-label-right"><?php _e('Open – close time', 'horse-tools'); ?></label>
+	</p>
+	<p>
+	<?php
+	$horsetools_bh_days = ( isset($horsetools_options['chat-bh-days']) && is_array($horsetools_options['chat-bh-days']) ) ? array_map('intval', $horsetools_options['chat-bh-days']) : array();
+	$horsetools_daynames = array( 1 => __('Mon','horse-tools'), 2 => __('Tue','horse-tools'), 3 => __('Wed','horse-tools'), 4 => __('Thu','horse-tools'), 5 => __('Fri','horse-tools'), 6 => __('Sat','horse-tools'), 0 => __('Sun','horse-tools') );
+	foreach ( $horsetools_daynames as $dnum => $dname ) {
+		$dchk = in_array($dnum, $horsetools_bh_days, true) ? 'checked="checked"' : '';
+		echo '<label class="ht-container" style="display:inline-block;margin:0 12px 6px 0">'. esc_html($dname) .' <input type="checkbox" name="horsetools_settings[chat-bh-days][]" value="'. $dnum .'" '. $dchk .' /><span class="ht-checkmark"></span></label>';
+	}
+	?>
+	</p>
 	<input type="hidden" name="horsetools_settings[chat-nut-skin]" id="chat-nut-skin" value="<?php if(!empty($horsetools_options['chat-nut-skin'])){echo sanitize_text_field($horsetools_options['chat-nut-skin']);} else {echo sanitize_text_field('Default');} ?>" />
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {

@@ -5305,3 +5305,36 @@ msgstr "Quét bằng điện thoại"
 
 msgid "Show a scan-to-open QR on desktop (Zalo, WhatsApp, Telegram, Viber, Line; WeChat always)"
 msgstr "Hiện QR để quét trên máy tính (Zalo, WhatsApp, Telegram, Viber, Line; WeChat luôn hiện)"
+
+msgid "Away — leave a message"
+msgstr "Vắng mặt — để lại lời nhắn"
+
+msgid "Business hours (shows Online / Away on the Live-chat, Card and Avatar skins)"
+msgstr "Giờ làm việc (hiện Trực tuyến / Vắng trên skin Live-chat, Card và Avatar)"
+
+msgid "Fri"
+msgstr "T6"
+
+msgid "Mon"
+msgstr "T2"
+
+msgid "Sat"
+msgstr "T7"
+
+msgid "Sun"
+msgstr "CN"
+
+msgid "Thu"
+msgstr "T5"
+
+msgid "Tue"
+msgstr "T3"
+
+msgid "Wed"
+msgstr "T4"
+
+msgid "Open – close time"
+msgstr "Giờ mở – đóng"
+
+msgid "We are currently closed"
+msgstr "Hiện đang đóng cửa"

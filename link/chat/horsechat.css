@@ -856,3 +856,4 @@ body .ht-chaton a, body .ht-chatbox-skin1 a, body .ht-chatbox-skin2 a, body .ht-
 .ht-qr-canvas img,.ht-qr-canvas canvas{display:block}
 .ht-qr-sub{font-size:13px;color:#888;margin-top:14px}
 .ht-qr-x{position:absolute;top:8px;right:11px;background:none;border:none;font-size:22px;color:#aaa;cursor:pointer;line-height:1;padding:0}
+.ht-lc-off{display:block;font-size:11px;color:#ffd9d9}

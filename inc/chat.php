@@ -43,6 +43,38 @@ function horsetools_chat_append_msg( $href, $msg, $param = 'text' ) {
 	}
 	return $href . ( false === strpos( $href, '?' ) ? '?' : '&' ) . $param . '=' . $msg;
 }
+
+/**
+ * Whether the business is "open" right now, per the optional schedule.
+ *
+ * No schedule (chat-bh off) counts as always open. Otherwise: today must be an
+ * active day, and the current site-time must fall within open–close (an
+ * overnight range where close is before open is handled). Missing times mean
+ * open all day on active days.
+ *
+ * @return bool
+ */
+function horsetools_chat_is_open() {
+	global $horsetools_options;
+	if ( ! isset( $horsetools_options['chat-bh'] ) ) {
+		return true;
+	}
+	$days = ( isset( $horsetools_options['chat-bh-days'] ) && is_array( $horsetools_options['chat-bh-days'] ) )
+		? array_map( 'intval', $horsetools_options['chat-bh-days'] ) : array();
+	if ( $days && ! in_array( (int) current_time( 'w' ), $days, true ) ) {
+		return false;
+	}
+	$open  = isset( $horsetools_options['chat-bh-open'] ) ? trim( (string) $horsetools_options['chat-bh-open'] ) : '';
+	$close = isset( $horsetools_options['chat-bh-close'] ) ? trim( (string) $horsetools_options['chat-bh-close'] ) : '';
+	if ( '' === $open || '' === $close ) {
+		return true;
+	}
+	$now = current_time( 'H:i' );
+	if ( $close > $open ) {
+		return ( $now >= $open && $now < $close );
+	}
+	return ( $now >= $open || $now < $close ); // overnight
+}
 # add css js chat web
 function horsetools_enqueue_chat(){
 	global $horsetools_options;
@@ -292,7 +324,7 @@ function horsetools_add_chat(){
 			<div class="ht-chatbox ht-chatbox-card <?php echo $chatmo; ?>" <?php echo $chat_mojs; ?>>
 			<div class="ht-chaton-full" id="ht-chaton2" style="display:none" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"></div>
 			<div class="ht-chaton ht-card-panel" id="ht-chaton" style="display:none">
-				<div class="ht-card-head"><span class="ht-card-t"><?php echo esc_html( !empty($horsetools_options['chat-nut21']) ? $horsetools_options['chat-nut21'] : __('Contact us', 'horse-tools') ); ?></span><span class="ht-card-s"><?php _e('We reply quickly', 'horse-tools'); ?></span></div>
+				<div class="ht-card-head"><span class="ht-card-t"><?php echo esc_html( !empty($horsetools_options['chat-nut21']) ? $horsetools_options['chat-nut21'] : __('Contact us', 'horse-tools') ); ?></span><span class="ht-card-s"><?php echo horsetools_chat_is_open() ? esc_html__('We reply quickly','horse-tools') : esc_html__('We are currently closed','horse-tools'); ?></span></div>
 				<div class="ht-chaton-scroll"><?php echo horsetools_chat_mang(); ?></div>
 			</div>
 			<button title="<?php _e('Contact', 'horse-tools'); ?>" id="chatona" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"><?php echo $structIcon; ?></button>
@@ -349,7 +381,7 @@ function horsetools_add_chat(){
 			<div class="ht-chatbox ht-chatbox-avatar <?php echo $chatmo; ?>" <?php echo $chat_mojs; ?>>
 			<div class="ht-chaton-full" id="ht-chaton2" style="display:none" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"></div>
 			<div class="ht-chaton ht-card-panel" id="ht-chaton" style="display:none">
-				<div class="ht-card-head"><span class="ht-card-t"><?php _e('Contact us', 'horse-tools'); ?></span><span class="ht-card-s"><?php _e('We reply quickly', 'horse-tools'); ?></span></div>
+				<div class="ht-card-head"><span class="ht-card-t"><?php _e('Contact us', 'horse-tools'); ?></span><span class="ht-card-s"><?php echo horsetools_chat_is_open() ? esc_html__('We reply quickly','horse-tools') : esc_html__('We are currently closed','horse-tools'); ?></span></div>
 				<div class="ht-chaton-scroll"><?php echo horsetools_chat_mang(); ?></div>
 			</div>
 			<button title="<?php _e('Contact', 'horse-tools'); ?>" id="chatona" class="ht-avatar-btn" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"><?php if ($av) { echo '<img src="'. $av .'" alt="" />'; } else { echo '<svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg>'; } ?><span class="ht-av-dot"></span></button>
@@ -380,7 +412,7 @@ function horsetools_add_chat(){
 			<div class="ht-chatbox ht-chatbox-livechat <?php echo $chatmo; ?>" <?php echo $chat_mojs; ?>>
 			<div class="ht-chaton-full" id="ht-chaton2" style="display:none" onclick="htnone(event, 'ht-chaton');htnone(event, 'ht-chaton2');"></div>
 			<div class="ht-chaton ht-lc-panel" id="ht-chaton" style="display:none">
-				<div class="ht-lc-head"><?php if ($av) { echo '<img class="ht-lc-av" src="'. $av .'" alt="" />'; } else { echo '<span class="ht-lc-av ht-lc-avph"><svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span>'; } ?><div><span class="ht-lc-name"><?php _e('Support team', 'horse-tools'); ?></span><span class="ht-lc-on">● <?php _e('Online now', 'horse-tools'); ?></span></div></div>
+				<div class="ht-lc-head"><?php if ($av) { echo '<img class="ht-lc-av" src="'. $av .'" alt="" />'; } else { echo '<span class="ht-lc-av ht-lc-avph"><svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span>'; } ?><div><span class="ht-lc-name"><?php _e('Support team', 'horse-tools'); ?></span><?php $htOpen = horsetools_chat_is_open(); ?><span class="<?php echo $htOpen ? 'ht-lc-on' : 'ht-lc-off'; ?>">● <?php echo $htOpen ? esc_html__('Online now', 'horse-tools') : esc_html__('Away — leave a message', 'horse-tools'); ?></span></div></div>
 				<div class="ht-lc-body">
 					<div class="ht-lc-greet"><?php echo $greet; ?></div>
 					<?php if ($quickchips) { echo '<div class="ht-lc-quick">'. $quickchips .'</div>'; } ?>
