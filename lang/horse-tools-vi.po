@@ -5059,3 +5059,12 @@ msgstr "Không đọc được tệp đó dưới dạng JSON."
 
 msgid "That is not a valid snippet export file."
 msgstr "Đây không phải tệp xuất snippet hợp lệ."
+
+msgid "Horse Tools shortcode"
+msgstr "Shortcode Horse Tools"
+
+msgid "Type the number of the shortcode to insert:"
+msgstr "Gõ số của shortcode muốn chèn:"
+
+msgid "— Insert a shortcode —"
+msgstr "— Chèn một shortcode —"

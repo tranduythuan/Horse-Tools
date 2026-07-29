@@ -987,3 +987,80 @@ function horsetools_snip_import_json_ajax() {
 	}
 	wp_send_json_success( array( 'snippets' => horsetools_snip_list_payload(), 'added' => $added, 'skipped' => $skipped ) );
 }
+
+/* -------------------------------------------------------------------------
+ * Insert-shortcode button for BOTH editors.
+ *
+ * Gutenberg gets a small "Horse Tools" block (htsc-block.js) with a picker;
+ * the Classic editor gets a Quicktags button (htsc-qt.js). Both are fed the
+ * same list of shortcode templates + the site's own snippets.
+ * ---------------------------------------------------------------------- */
+
+/** Shortcode templates + snippets offered by the editor picker. */
+function horsetools_sc_editor_items() {
+	$items = array(
+		array( 'label' => '[ht-icon]',      'insert' => '[ht-icon name="heart"]' ),
+		array( 'label' => '[ht-button]',    'insert' => '[ht-button url="#" icon="cart"]Buy now[/ht-button]' ),
+		array( 'label' => '[ht-alert]',     'insert' => '[ht-alert type="info"]Your message[/ht-alert]' ),
+		array( 'label' => '[ht-accordion]', 'insert' => "[ht-accordion faq=\"1\"][ht-item title=\"Question?\"]Answer[/ht-item][/ht-accordion]" ),
+		array( 'label' => '[ht-tabs]',      'insert' => "[ht-tabs][ht-tab title=\"One\"]First[/ht-tab][ht-tab title=\"Two\"]Second[/ht-tab][/ht-tabs]" ),
+		array( 'label' => '[ht-toggle]',    'insert' => '[ht-toggle title="Show more"]Hidden content[/ht-toggle]' ),
+		array( 'label' => '[ht-copy]',      'insert' => '[ht-copy]SAVE20[/ht-copy]' ),
+		array( 'label' => '[ht-progress]',  'insert' => '[ht-progress value="80" label="PHP"]' ),
+		array( 'label' => '[ht-countdown]', 'insert' => '[ht-countdown date="2026-12-31 23:59"]' ),
+		array( 'label' => '[ht-if]',        'insert' => '[ht-if device="mobile"]Mobile only[ht-else]Desktop[/ht-if]' ),
+		array( 'label' => '[ht-loop]',      'insert' => '[ht-loop type="post" count="5" template="cards"]' ),
+		array( 'label' => '[ht-video]',     'insert' => '[ht-video id="VIDEO_ID" type="youtube"]' ),
+		array( 'label' => '[ht-qr]',        'insert' => '[ht-qr size="160"]' ),
+		array( 'label' => '[ht-readingtime]','insert' => '[ht-readingtime]' ),
+		array( 'label' => '[ht-count]',     'insert' => '[ht-count type="posts"]' ),
+		array( 'label' => '[ht-email]',     'insert' => '[ht-email]you@site.com[/ht-email]' ),
+	);
+	foreach ( horsetools_snippets_get() as $slug => $s ) {
+		$title    = ! empty( $s['title'] ) ? $s['title'] : $slug;
+		$items[] = array(
+			'label'  => $title . ' — [ht-snippet]',
+			'insert' => '[ht-snippet name="' . $slug . '"]',
+		);
+	}
+	return $items;
+}
+
+function horsetools_sc_editor_payload() {
+	return array(
+		'items' => horsetools_sc_editor_items(),
+		'i18n'  => array(
+			'title'     => __( 'Horse Tools', 'horse-tools' ),
+			'choose'    => __( '— Insert a shortcode —', 'horse-tools' ),
+			'shortcode' => __( 'Shortcode', 'horse-tools' ),
+			'pick'      => __( 'Type the number of the shortcode to insert:', 'horse-tools' ),
+			'button'    => __( 'Horse Tools shortcode', 'horse-tools' ),
+		),
+	);
+}
+
+add_action( 'enqueue_block_editor_assets', 'horsetools_sc_block_enqueue' );
+function horsetools_sc_block_enqueue() {
+	wp_enqueue_script(
+		'horsetools-sc-block',
+		HORSETOOLS_URL . 'link/shortcode/htsc-block.js',
+		array( 'wp-blocks', 'wp-element', 'wp-components', 'wp-block-editor' ),
+		HORSETOOLS_VERSION,
+		true
+	);
+	wp_localize_script( 'horsetools-sc-block', 'horsetoolsSC', horsetools_sc_editor_payload() );
+}
+
+add_action( 'admin_enqueue_scripts', 'horsetools_sc_qt_enqueue' );
+function horsetools_sc_qt_enqueue( $hook ) {
+	if ( ! in_array( $hook, array( 'post.php', 'post-new.php' ), true ) ) {
+		return;
+	}
+	$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
+	// The block editor has its own button; only add Quicktags for the Classic editor.
+	if ( $screen && method_exists( $screen, 'is_block_editor' ) && $screen->is_block_editor() ) {
+		return;
+	}
+	wp_enqueue_script( 'horsetools-sc-qt', HORSETOOLS_URL . 'link/shortcode/htsc-qt.js', array( 'quicktags' ), HORSETOOLS_VERSION, true );
+	wp_localize_script( 'horsetools-sc-qt', 'horsetoolsSC', horsetools_sc_editor_payload() );
+}

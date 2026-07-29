@@ -2084,12 +2084,16 @@ msgstr ""
 msgid "Horse Search"
 msgstr ""
 
-#: inc/horsetools.php:217
+#: inc/horsetools.php:217 main/shortcode.php:1033
 msgid "Horse Tools"
 msgstr ""
 
 #: main/page/ht-about1.php:62
 msgid "Horse Tools is built on %s, which is no longer maintained by its author. That original work is gratefully acknowledged and this fork continues under the same GPLv2 licence."
+msgstr ""
+
+#: main/shortcode.php:1037
+msgid "Horse Tools shortcode"
 msgstr ""
 
 #: main/page/ht-about1.php:8
@@ -3377,7 +3381,7 @@ msgstr ""
 msgid "Settings changed"
 msgstr ""
 
-#: main/extend.php:155 main/shortcode.php:685
+#: main/extend.php:155 main/shortcode.php:685 main/shortcode.php:1035
 msgid "Shortcode"
 msgstr ""
 
@@ -3901,6 +3905,10 @@ msgstr ""
 msgid "Type any shortcode name (without brackets) to list the posts and pages that contain it — handy before you change or remove one."
 msgstr ""
 
+#: main/shortcode.php:1036
+msgid "Type the number of the shortcode to insert:"
+msgstr ""
+
 #: main/font.php:50
 msgid "UPLOAD FONT"
 msgstr ""
@@ -4291,4 +4299,8 @@ msgstr ""
 
 #: main/page/11google.php:82
 msgid "v3 score threshold (0 – 1)"
+msgstr ""
+
+#: main/shortcode.php:1034
+msgid "— Insert a shortcode —"
 msgstr ""
