@@ -453,8 +453,10 @@ function horsetools_add_chat(){
 	$navi4 = !empty($horsetools_options['chat-nav-c4']) ? '--backcolor:'. horsetools_css_color($horsetools_options['chat-nav-c4']) .' !important;' : NULL;
 	$navi5 = !empty($horsetools_options['chat-nav-c5']) ? '--backchatcolor:'. horsetools_css_color($horsetools_options['chat-nav-c5']) .' !important;' : NULL;
 	$navi6 = !empty($horsetools_options['chat-nav-c6']) ? '--textchatcolor:'. horsetools_css_color($horsetools_options['chat-nav-c6']) .' !important;' : NULL;
-	$navi = ($navi1 || $navi3 || $navi31 || $navi4 || $navi5 || $navi6) ? ':root{'. $navi1 . $navi3 . $navi31 . $navi4 . $navi5 . $navi6 .'}' : NULL; 
-	echo '<style>'. $navi . $radi . $ico .'</style>';
+	$navi = ($navi1 || $navi3 || $navi31 || $navi4 || $navi5 || $navi6) ? ':root{'. $navi1 . $navi3 . $navi31 . $navi4 . $navi5 . $navi6 .'}' : NULL;
+	// Extend the mobile bar to tablets when asked (default breakpoint is 700px).
+	$tablet = isset($horsetools_options['chat-nav-tablet']) ? '@media(max-width:1024px){.chaton-mobile{display:none!important}.ht-boxnavi{display:block!important}}' : NULL;
+	echo '<style>'. $navi . $radi . $ico . $tablet .'</style>';
 	}
 }
 add_action('wp_footer', 'horsetools_add_chat');

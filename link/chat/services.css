@@ -66,3 +66,43 @@
 	.ht-svc-sheet{transition:none}
 	.ht-svc-backdrop{transition:none}
 }
+
+/* stacked banners */
+.ht-svc-stacked{display:flex;flex-direction:column;gap:9px}
+.ht-svc-stk{display:flex;align-items:center;gap:12px;padding:14px;border-radius:14px;background:color-mix(in srgb,var(--svc-accent) 10%,#fff);border:1px solid color-mix(in srgb,var(--svc-accent) 22%,#fff)}
+.ht-svc-stk .ht-svc-txt{flex:1;min-width:0}
+.ht-svc-stk .ht-svc-badge{position:static;margin-left:auto}
+
+/* banner (featured first cell) */
+.ht-svc-bnr{grid-column:1 / -1;display:flex;align-items:center;gap:14px;background:var(--svc-accent)!important;border:none!important;color:#fff}
+.ht-svc-bnr .ht-svc-tt,.ht-svc-bnr .ht-svc-sub{color:#fff}
+.ht-svc-bnr .ht-svc-txt{flex:1;min-width:0}
+.ht-svc-bnr .ht-svc-ic{background:rgba(255,255,255,.22)!important}
+.ht-svc-bnr .ht-svc-ic .ti{color:#fff!important}
+
+/* price + order button */
+.ht-svc-priced{display:flex;align-items:center;gap:12px;padding:11px;background:#fafafa;border:1px solid #eee;border-radius:14px;margin-bottom:9px}
+.ht-svc-priced .ht-svc-txt{flex:1;min-width:0}
+.ht-svc-priced .ht-svc-sub{color:var(--svc-accent);font-weight:600}
+.ht-svc-go{flex-shrink:0;background:var(--svc-accent);color:#fff;font-size:12px;font-weight:600;padding:8px 15px;border-radius:20px}
+
+/* reviews */
+.ht-svc-review{border:1px solid #eee;border-radius:14px;padding:13px;background:#fafafa;margin-bottom:9px}
+.ht-svc-rv-top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.ht-svc-avatar{width:36px;height:36px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.ht-svc-stars{display:block;color:#f5a623;font-size:12px;letter-spacing:1px}
+.ht-svc-quote{margin:0;font-size:13px;color:#666;line-height:1.5}
+
+/* video */
+.ht-svc-videos{display:flex;flex-direction:column;gap:11px}
+.ht-svc-video{text-decoration:none}
+.ht-svc-thumb{position:relative;display:block;height:150px;border-radius:14px;background-size:cover;background-position:center;overflow:hidden}
+.ht-svc-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;color:#222;font-size:24px}
+.ht-svc-dur{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;font-size:11px;padding:2px 7px;border-radius:6px}
+.ht-svc-video .ht-svc-tt{margin-top:8px}
+
+/* masonry */
+.ht-svc-masonry{column-count:2;column-gap:10px}
+.ht-svc-mas{position:relative;display:block;break-inside:avoid;margin-bottom:10px;height:90px;border-radius:14px;background-size:cover;background-position:center;overflow:hidden;text-decoration:none}
+.ht-svc-mas.ht-svc-tall{height:140px}
+.ht-svc-mas-tt{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-size:12px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.6))}

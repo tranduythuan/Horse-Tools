@@ -43,7 +43,7 @@ function horsetools_services_badges() {
 
 /** Layout slugs that have a distinct renderer (more added over time). */
 function horsetools_services_layouts() {
-	return array( 'bento', 'grid', 'list', 'tiles', 'chips', 'story', 'coupon' );
+	return array( 'bento', 'grid', 'list', 'tiles', 'chips', 'story', 'coupon', 'stacked', 'banner', 'pricecards', 'reviews', 'video', 'masonry' );
 }
 
 /** The stored config, normalised. */
@@ -195,6 +195,70 @@ function horsetools_services_layout_body( $layout, $items, $accent ) {
 			foreach ( $items as $it ) {
 				$out  .= $card( $it, $first ? 'ht-svc-big' : 'ht-svc-cell' );
 				$first = false;
+			}
+			return $out . '</div>';
+
+		case 'stacked':
+			$out = '<div class="ht-svc-stacked">';
+			foreach ( $items as $it ) {
+				$out .= $card( $it, 'ht-svc-stk' );
+			}
+			return $out . '</div>';
+
+		case 'banner':
+			$out   = '<div class="ht-svc-grid">';
+			$first = true;
+			foreach ( $items as $it ) {
+				$out  .= $card( $it, $first ? 'ht-svc-bnr' : 'ht-svc-cell' );
+				$first = false;
+			}
+			return $out . '</div>';
+
+		case 'pricecards':
+			$out = '';
+			foreach ( $items as $it ) {
+				$sub = ( isset( $it['sub'] ) && '' !== trim( (string) $it['sub'] ) ) ? '<span class="ht-svc-sub">' . esc_html( $it['sub'] ) . '</span>' : '';
+				$out .= '<a class="ht-svc-item ht-svc-priced" href="' . horsetools_services_href( $it ) . '" rel="nofollow">'
+					. horsetools_services_icon( $it, $accent )
+					. '<span class="ht-svc-txt"><span class="ht-svc-tt">' . esc_html( isset( $it['title'] ) ? $it['title'] : '' ) . '</span>' . $sub . '</span>'
+					. '<span class="ht-svc-go">' . esc_html__( 'Order', 'horse-tools' ) . '</span></a>';
+			}
+			return $out;
+
+		case 'reviews':
+			$out = '';
+			foreach ( $items as $it ) {
+				$name  = trim( (string) ( isset( $it['title'] ) ? $it['title'] : '' ) );
+				$quote = isset( $it['sub'] ) ? trim( (string) $it['sub'] ) : '';
+				$init  = '' !== $name ? mb_strtoupper( mb_substr( $name, 0, 1 ) ) : '★';
+				$out  .= '<div class="ht-svc-review"><div class="ht-svc-rv-top">'
+					. '<span class="ht-svc-avatar" style="background:' . esc_attr( $accent ) . '22;color:' . esc_attr( $accent ) . '">' . esc_html( $init ) . '</span>'
+					. '<div><span class="ht-svc-tt">' . esc_html( $name ) . '</span><span class="ht-svc-stars">★★★★★</span></div></div>'
+					. ( '' !== $quote ? '<p class="ht-svc-quote">' . esc_html( $quote ) . '</p>' : '' ) . '</div>';
+			}
+			return $out;
+
+		case 'video':
+			$out = '<div class="ht-svc-videos">';
+			foreach ( $items as $it ) {
+				$img = isset( $it['img'] ) ? trim( (string) $it['img'] ) : '';
+				$bg  = '' !== $img ? ' style="background-image:url(' . esc_url( $img ) . ')"' : ' style="background:' . esc_attr( $accent ) . '"';
+				$dur = ( isset( $it['sub'] ) && '' !== trim( (string) $it['sub'] ) ) ? '<span class="ht-svc-dur">' . esc_html( $it['sub'] ) . '</span>' : '';
+				$out .= '<a class="ht-svc-video" href="' . horsetools_services_href( $it ) . '" rel="nofollow">'
+					. '<span class="ht-svc-thumb"' . $bg . '><span class="ht-svc-play"><i class="ti ti-player-play" aria-hidden="true"></i></span>' . $dur . '</span>'
+					. '<span class="ht-svc-tt">' . esc_html( isset( $it['title'] ) ? $it['title'] : '' ) . '</span></a>';
+			}
+			return $out . '</div>';
+
+		case 'masonry':
+			$out = '<div class="ht-svc-masonry">';
+			$i   = 0;
+			foreach ( $items as $it ) {
+				$img  = isset( $it['img'] ) ? trim( (string) $it['img'] ) : '';
+				$bg   = '' !== $img ? 'background-image:url(' . esc_url( $img ) . ')' : 'background:' . esc_attr( $accent );
+				$tall = ( 0 === $i % 3 ) ? ' ht-svc-tall' : '';
+				$out .= '<a class="ht-svc-mas' . $tall . '" href="' . horsetools_services_href( $it ) . '" rel="nofollow" style="' . esc_attr( $bg ) . '"><span class="ht-svc-mas-tt">' . esc_html( isset( $it['title'] ) ? $it['title'] : '' ) . '</span></a>';
+				$i++;
 			}
 			return $out . '</div>';
 

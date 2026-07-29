@@ -209,6 +209,12 @@ global $horsetools_options; ?>
 	<span class="slider"></span></label>
 	<label class="ht-label-right"><?php _e('Hide bar when pulled down', 'horse-tools'); ?></label>
 	</p>
+	<p>
+	<label class="nut-switch">
+	<input type="checkbox" name="horsetools_settings[chat-nav-tablet]" value="1" <?php if ( isset($horsetools_options['chat-nav-tablet']) && 1 == $horsetools_options['chat-nav-tablet'] ) echo 'checked="checked"'; ?> />
+	<span class="slider"></span></label>
+	<label class="ht-label-right"><?php _e('Show the bar on tablets too (up to 1024px)', 'horse-tools'); ?></label>
+	</p>
 	<h4><?php _e('Display options', 'horse-tools'); ?></h4>
 	<div id="ht-imgstyle4" class="ht-imgstyle ht-imgstyle5">
 		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/chat/n1.png'); ?>" data-value="Default" class="<?php if(isset($horsetools_options['chat-nav-skin']) && $horsetools_options['chat-nav-skin'] == 'Default') echo 'selected'; ?>" />
@@ -380,13 +386,19 @@ global $horsetools_options; ?>
 	<?php
 	$horsetools_svc_cfg = horsetools_services_get();
 	$horsetools_svc_layouts = array(
-		'bento' => __( 'Bento (1 big + cells)', 'horse-tools' ),
-		'grid'  => __( 'Card grid', 'horse-tools' ),
-		'list'  => __( 'List', 'horse-tools' ),
-		'tiles' => __( 'Compact icon tiles', 'horse-tools' ),
-		'chips' => __( 'Quick chips', 'horse-tools' ),
-		'story' => __( 'Story circles', 'horse-tools' ),
-		'coupon'=> __( 'Coupon codes', 'horse-tools' ),
+		'bento'      => __( 'Bento (1 big + cells)', 'horse-tools' ),
+		'grid'       => __( 'Card grid', 'horse-tools' ),
+		'list'       => __( 'List', 'horse-tools' ),
+		'tiles'      => __( 'Compact icon tiles', 'horse-tools' ),
+		'chips'      => __( 'Quick chips', 'horse-tools' ),
+		'story'      => __( 'Story circles', 'horse-tools' ),
+		'coupon'     => __( 'Coupon codes', 'horse-tools' ),
+		'stacked'    => __( 'Stacked banners', 'horse-tools' ),
+		'banner'     => __( 'Featured banner + grid', 'horse-tools' ),
+		'pricecards' => __( 'Price + order button', 'horse-tools' ),
+		'reviews'    => __( 'Customer reviews', 'horse-tools' ),
+		'video'      => __( 'Video cards', 'horse-tools' ),
+		'masonry'    => __( 'Photo masonry', 'horse-tools' ),
 	);
 	$horsetools_svc_colors = array(
 		'gold' => __( 'Gold', 'horse-tools' ), 'blue' => __( 'Blue', 'horse-tools' ), 'green' => __( 'Green', 'horse-tools' ),

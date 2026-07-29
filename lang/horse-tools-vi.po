@@ -5197,3 +5197,27 @@ msgstr "Tên icon Tabler (vd: snowflake) — hoặc để trống và dùng ản
 
 msgid "Title"
 msgstr "Tiêu đề"
+
+msgid "Customer reviews"
+msgstr "Đánh giá khách hàng"
+
+msgid "Featured banner + grid"
+msgstr "Banner nổi bật + lưới"
+
+msgid "Order"
+msgstr "Đặt ngay"
+
+msgid "Photo masonry"
+msgstr "Lưới ảnh masonry"
+
+msgid "Price + order button"
+msgstr "Giá + nút đặt"
+
+msgid "Show the bar on tablets too (up to 1024px)"
+msgstr "Hiện thanh đáy cả trên tablet (đến 1024px)"
+
+msgid "Stacked banners"
+msgstr "Banner xếp chồng"
+
+msgid "Video cards"
+msgstr "Thẻ video"
