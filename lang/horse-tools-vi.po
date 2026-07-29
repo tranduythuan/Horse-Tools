@@ -4684,3 +4684,105 @@ msgstr "Khi theme hoặc plugin của bạn tải font từ Google, IP của m�
 
 msgid "third-party host(s) found"
 msgstr "máy chủ bên thứ ba được tìm thấy"
+
+msgid "Ask your host to update PHP to 8.1 or newer."
+msgstr "Đề nghị nhà cung cấp nâng PHP lên 8.1 trở lên."
+
+msgid "Core, plugins and themes are up to date"
+msgstr "Nhân, plugin và theme đều đã cập nhật"
+
+msgid "Environment"
+msgstr "Môi trường"
+
+msgid "Grade %s"
+msgstr "Hạng %s"
+
+msgid "Images are lazy-loaded"
+msgstr "Ảnh được tải trễ (lazy-load)"
+
+msgid "Install the pending updates."
+msgstr "Cài các bản cập nhật đang chờ."
+
+msgid "Login attempts are rate-limited"
+msgstr "Số lần đăng nhập bị giới hạn"
+
+msgid "Media tab → JPG compression"
+msgstr "Tab Media → Nén ảnh JPG"
+
+msgid "Move the site address to https://"
+msgstr "Chuyển địa chỉ site sang https://"
+
+msgid "No Google Fonts leaking to Google"
+msgstr "Không rò Google Fonts sang Google"
+
+msgid "Optimize tab"
+msgstr "Tab Tối ưu"
+
+msgid "Optimize tab → image lazy loading"
+msgstr "Tab Tối ưu → tải ảnh trễ"
+
+msgid "PHP errors are not shown to visitors"
+msgstr "Lỗi PHP không hiển thị cho khách"
+
+msgid "PHP is a supported version (%s)"
+msgstr "PHP đang ở phiên bản được hỗ trợ (%s)"
+
+msgid "Privacy"
+msgstr "Riêng tư"
+
+msgid "Reading settings → uncheck “Discourage search engines”"
+msgstr "Cài đặt Đọc → bỏ chọn “Chặn công cụ tìm kiếm”"
+
+msgid "Security"
+msgstr "Bảo mật"
+
+msgid "Security response headers are sent"
+msgstr "Đã gửi header bảo mật phản hồi"
+
+msgid "Security tab → Block user enumeration"
+msgstr "Tab Bảo mật → Chặn dò tên người dùng"
+
+msgid "Security tab → Disable unused endpoints"
+msgstr "Tab Bảo mật → Tắt endpoint không dùng"
+
+msgid "Security tab → Limit login attempts"
+msgstr "Tab Bảo mật → Giới hạn đăng nhập"
+
+msgid "Security tab → Lock down the admin"
+msgstr "Tab Bảo mật → Khóa chặt admin"
+
+msgid "Security tab → Privacy → Scan external requests"
+msgstr "Tab Bảo mật → Riêng tư → Quét request bên ngoài"
+
+msgid "Security tab → Privacy → self-host Google Fonts"
+msgstr "Tab Bảo mật → Riêng tư → tự host Google Fonts"
+
+msgid "Security tab → Security response headers"
+msgstr "Tab Bảo mật → Header bảo mật phản hồi"
+
+msgid "Site health"
+msgstr "Sức khỏe site"
+
+msgid "The optimisation module is on"
+msgstr "Module tối ưu đang bật"
+
+msgid "The site is served over HTTPS"
+msgstr "Site chạy qua HTTPS"
+
+msgid "The site is visible to search engines"
+msgstr "Site hiển thị với công cụ tìm kiếm"
+
+msgid "The theme/plugin file editor is disabled"
+msgstr "Trình sửa file theme/plugin đã bị tắt"
+
+msgid "Turn off WP_DEBUG_DISPLAY on a live site."
+msgstr "Tắt WP_DEBUG_DISPLAY trên site chạy thật."
+
+msgid "Uploaded images are compressed"
+msgstr "Ảnh tải lên được nén"
+
+msgid "User enumeration is blocked"
+msgstr "Đã chặn dò tên người dùng"
+
+msgid "XML-RPC is disabled"
+msgstr "XML-RPC đã bị tắt"

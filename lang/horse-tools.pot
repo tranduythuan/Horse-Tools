@@ -350,6 +350,10 @@ msgstr ""
 msgid "Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it."
 msgstr ""
 
+#: inc/health.php:135
+msgid "Ask your host to update PHP to 8.1 or newer."
+msgstr ""
+
 #: main/page/2scuri.php:19
 msgid "Attempts before lockout"
 msgstr ""
@@ -780,6 +784,10 @@ msgstr ""
 
 #: main/page/11google.php:21
 msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
+msgstr ""
+
+#: inc/health.php:164
+msgid "Core, plugins and themes are up to date"
 msgstr ""
 
 #: inc/scuri.php:340
@@ -1706,6 +1714,10 @@ msgstr ""
 msgid "Enter waiting time"
 msgstr ""
 
+#: inc/health.php:60
+msgid "Environment"
+msgstr ""
+
 #: inc/gindex.php:343 inc/gindex.php:347
 msgid "Error"
 msgstr ""
@@ -1850,6 +1862,10 @@ msgstr ""
 
 #: inc/scuri.php:349
 msgid "Google did not return the stylesheet (HTTP error)."
+msgstr ""
+
+#: inc/health.php:233
+msgid "Grade %s"
 msgstr ""
 
 #: main/toc.php:206
@@ -2104,6 +2120,10 @@ msgstr ""
 msgid "Image function for posts"
 msgstr ""
 
+#: inc/health.php:113
+msgid "Images are lazy-loaded"
+msgstr ""
+
 #: main/export.php:428
 msgid "Import"
 msgstr ""
@@ -2126,6 +2146,10 @@ msgstr ""
 
 #: main/shortcode.php:172
 msgid "Insert icons anywhere with a shortcode"
+msgstr ""
+
+#: inc/health.php:166
+msgid "Install the pending updates."
 msgstr ""
 
 #: main/page/1speed.php:43
@@ -2255,6 +2279,10 @@ msgstr ""
 msgid "Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site."
 msgstr ""
 
+#: inc/health.php:65
+msgid "Login attempts are rate-limited"
+msgstr ""
+
 #: inc/scuri.php:160
 msgid "Login failed. Check your details and try again."
 msgstr ""
@@ -2315,6 +2343,10 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
+#: inc/health.php:120
+msgid "Media tab → JPG compression"
+msgstr ""
+
 #: main/page/1speed.php:68
 msgid "Minify Inline JavaScript"
 msgstr ""
@@ -2333,6 +2365,10 @@ msgstr ""
 
 #: main/clean.php:49
 msgid "Monthly"
+msgstr ""
+
+#: inc/health.php:142
+msgid "Move the site address to https://"
 msgstr ""
 
 #: main/notify.php:19 main/notify.php:66
@@ -2357,6 +2393,10 @@ msgstr ""
 
 #: main/redirects.php:175
 msgid "No 404s recorded yet."
+msgstr ""
+
+#: inc/health.php:104
+msgid "No Google Fonts leaking to Google"
 msgstr ""
 
 #: main/redirects.php:103
@@ -2501,6 +2541,14 @@ msgstr ""
 msgid "Optimize saving post content into the database"
 msgstr ""
 
+#: inc/health.php:110
+msgid "Optimize tab"
+msgstr ""
+
+#: inc/health.php:115
+msgid "Optimize tab → image lazy loading"
+msgstr ""
+
 #: main/ads.php:56
 msgid "Option to display ads in custom posts"
 msgstr ""
@@ -2525,8 +2573,16 @@ msgstr ""
 msgid "Overlay color"
 msgstr ""
 
-#: main/admin.php:114
+#: main/admin.php:115
 msgid "Overview"
+msgstr ""
+
+#: inc/health.php:154
+msgid "PHP errors are not shown to visitors"
+msgstr ""
+
+#: inc/health.php:134
+msgid "PHP is a supported version (%s)"
 msgstr ""
 
 #: main/notify.php:20 main/notify.php:86
@@ -2549,7 +2605,7 @@ msgstr ""
 msgid "Pending comments"
 msgstr ""
 
-#: main/export.php:259
+#: inc/health.php:59 main/export.php:259
 msgid "Performance"
 msgstr ""
 
@@ -2610,6 +2666,10 @@ msgstr ""
 msgid "Preview changes"
 msgstr ""
 
+#: inc/health.php:58
+msgid "Privacy"
+msgstr ""
+
 #: main/page/2scuri.php:130
 msgid "Privacy — Google Fonts & external requests"
 msgstr ""
@@ -2632,6 +2692,10 @@ msgstr ""
 
 #: main/export.php:246
 msgid "REST API left ON so the store keeps working"
+msgstr ""
+
+#: inc/health.php:149
+msgid "Reading settings → uncheck “Discourage search engines”"
 msgstr ""
 
 #: main/page/2scuri.php:100
@@ -2880,6 +2944,10 @@ msgstr ""
 msgid "Secret key"
 msgstr ""
 
+#: inc/health.php:57
+msgid "Security"
+msgstr ""
+
 #: main/export.php:240
 msgid "Security and speed for a shop, chosen not to interfere with the store. The REST API is left fully on — WooCommerce cart and checkout need it — and permalinks are left untouched."
 msgstr ""
@@ -2898,6 +2966,38 @@ msgstr ""
 
 #: main/page/2scuri.php:52
 msgid "Security response headers"
+msgstr ""
+
+#: inc/health.php:85
+msgid "Security response headers are sent"
+msgstr ""
+
+#: inc/health.php:77
+msgid "Security tab → Block user enumeration"
+msgstr ""
+
+#: inc/health.php:82
+msgid "Security tab → Disable unused endpoints"
+msgstr ""
+
+#: inc/health.php:67
+msgid "Security tab → Limit login attempts"
+msgstr ""
+
+#: inc/health.php:72
+msgid "Security tab → Lock down the admin"
+msgstr ""
+
+#: inc/health.php:95
+msgid "Security tab → Privacy → Scan external requests"
+msgstr ""
+
+#: inc/health.php:102
+msgid "Security tab → Privacy → self-host Google Fonts"
+msgstr ""
+
+#: inc/health.php:87
+msgid "Security tab → Security response headers"
 msgstr ""
 
 #: main/export.php:224
@@ -3021,7 +3121,7 @@ msgstr ""
 msgid "Setting group"
 msgstr ""
 
-#: horse-tools.php:118
+#: horse-tools.php:119
 msgid "Settings"
 msgstr ""
 
@@ -3063,6 +3163,10 @@ msgstr ""
 
 #: main/shortcode.php:67
 msgid "Signature shortcode"
+msgstr ""
+
+#: inc/health.php:225
+msgid "Site health"
 msgstr ""
 
 #: main/page/11google.php:77
@@ -3265,6 +3369,10 @@ msgstr ""
 msgid "The icon on its own."
 msgstr ""
 
+#: inc/health.php:108
+msgid "The optimisation module is on"
+msgstr ""
+
 #: main/page/6post.php:47
 msgid "The original image size when added to the post"
 msgstr ""
@@ -3281,6 +3389,14 @@ msgstr ""
 msgid "The score threshold applies to reCAPTCHA v3 only. Google returns 1.0 for traffic it is confident is human and 0.0 for traffic it is confident is a bot; 0.5 is the recommended starting point. Raise it to block more aggressively, lower it if real visitors are being turned away."
 msgstr ""
 
+#: inc/health.php:140
+msgid "The site is served over HTTPS"
+msgstr ""
+
+#: inc/health.php:147
+msgid "The site is visible to search engines"
+msgstr ""
+
 #: main/page/10custom.php:39
 msgid "The standard size for the logo is 280x80 PX"
 msgstr ""
@@ -3291,6 +3407,10 @@ msgstr ""
 
 #: main/page/8woo.php:17
 msgid "The text to replace Buy Now on the product page"
+msgstr ""
+
+#: inc/health.php:70
+msgid "The theme/plugin file editor is disabled"
 msgstr ""
 
 #: main/export.php:341
@@ -3473,6 +3593,10 @@ msgstr ""
 msgid "Trashed comments"
 msgstr ""
 
+#: inc/health.php:157
+msgid "Turn off WP_DEBUG_DISPLAY on a live site."
+msgstr ""
+
 #: main/page/2scuri.php:115
 msgid "Turns off the RSS and Atom feeds if your site does not publish one."
 msgstr ""
@@ -3533,6 +3657,10 @@ msgstr ""
 msgid "Upload font success"
 msgstr ""
 
+#: inc/health.php:118
+msgid "Uploaded images are compressed"
+msgstr ""
+
 #: main/font.php:89
 msgid "Use fonts on the web"
 msgstr ""
@@ -3555,6 +3683,10 @@ msgstr ""
 
 #: main/gindex.php:55
 msgid "Use:"
+msgstr ""
+
+#: inc/health.php:75
+msgid "User enumeration is blocked"
 msgstr ""
 
 #: main/page/12chat.php:51 main/page/12chat.php:249
@@ -3655,6 +3787,10 @@ msgstr ""
 
 #: main/page/2scuri.php:58
 msgid "X-Frame-Options: SAMEORIGIN (block clickjacking)"
+msgstr ""
+
+#: inc/health.php:80
+msgid "XML-RPC is disabled"
 msgstr ""
 
 #: inc/post.php:255

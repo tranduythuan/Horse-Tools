@@ -34,6 +34,7 @@ include( HORSETOOLS_DIR . 'inc/http.php' );
 include( HORSETOOLS_DIR . 'inc/sanitize.php' );
 if ( is_admin() ) {
 	include( HORSETOOLS_DIR . 'inc/ui.php' );
+	include( HORSETOOLS_DIR . 'inc/health.php' );
 }
 include( HORSETOOLS_DIR . 'inc/horsetools.php' );
 include( HORSETOOLS_DIR . 'inc/code.php' );

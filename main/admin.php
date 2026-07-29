@@ -98,6 +98,7 @@ function horsetools_options_page() {
 		
 	  </div>
 	  <div class="ht-sidebar">
+		<?php if ( function_exists( 'horsetools_health_card' ) ) { horsetools_health_card(); } ?>
 	  </div>
 	</div>	
 	</div>
