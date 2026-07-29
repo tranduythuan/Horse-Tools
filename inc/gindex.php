@@ -93,7 +93,7 @@ function horsetools_index_now($urls, $action) {
 // Xử lý ajax index now and del index
 function horsetools_index_now_callback() {
     if ( ! current_user_can('manage_options') ) { wp_send_json_error('forbidden', 403); }
-    if (!wp_verify_nonce($_POST['ajax_nonce'], 'horsetools_index_now_nonce')) {
+    if (!wp_verify_nonce(isset($_POST['ajax_nonce']) ? wp_unslash($_POST['ajax_nonce']) : '', 'horsetools_index_now_nonce')) {
         wp_die('Invalid nonce');
     }
     $urls = explode("\n", sanitize_textarea_field( wp_unslash( $_POST['url'] ?? '' ) ));
@@ -208,7 +208,7 @@ function horsetools_index_status($urls) {
 // ajax index status
 function horsetools_index_status_callback() {
     if ( ! current_user_can('manage_options') ) { wp_send_json_error('forbidden', 403); }
-    if (!wp_verify_nonce($_POST['ajax_nonce'], 'horsetools_index_status_nonce')) {
+    if (!wp_verify_nonce(isset($_POST['ajax_nonce']) ? wp_unslash($_POST['ajax_nonce']) : '', 'horsetools_index_status_nonce')) {
         wp_die('Invalid nonce');
     }
     $urls = explode("\n", sanitize_textarea_field( wp_unslash( $_POST['url'] ?? '' ) ));
@@ -288,7 +288,7 @@ if(isset($horsetools_gindex_options['posttype'])){
 // index ajax o edit
 function horsetools_index_post_ajax() {
     if ( ! current_user_can('edit_posts') ) { wp_send_json_error('forbidden', 403); }
-    if (!wp_verify_nonce($_POST['nonce'], 'horsetools_index_now_nonce')) {
+    if (!wp_verify_nonce(isset($_POST['nonce']) ? wp_unslash($_POST['nonce']) : '', 'horsetools_index_now_nonce')) {
         wp_send_json_error('Invalid nonce');
     }
     $post_id = isset($_POST['post_id']) ? absint( wp_unslash( $_POST['post_id'] ) ) : 0;

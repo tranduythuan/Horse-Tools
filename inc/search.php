@@ -275,7 +275,7 @@ function horsetools_json_file_callback(){
 	if (!current_user_can('manage_options')){
         wp_die(__('Insufficient permissions', 'horse-tools'));
     }
-    $page = $_POST['page'];
+    $page = isset($_POST['page']) ? absint(wp_unslash($_POST['page'])) : 1;
     $data =  horsetools_search($page);
     if (empty($data)) {
         echo json_encode(array('page' => -1));

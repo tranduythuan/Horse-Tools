@@ -11,9 +11,28 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             return atob(base64String);
         } catch (e) {
-            return base64String; 
+            return base64String;
         }
     };
+	// Reveal/navigate to the download target safely: block dangerous schemes and
+	// build the link with the DOM (textContent, not innerHTML) so a URL can never
+	// be interpreted as HTML. Defence in depth — the server already esc_url_raw's it.
+	const htGgetShow = (button, fileLink, showLinkOnly) => {
+		if (/^\s*(javascript|data|vbscript):/i.test(fileLink)) { return; }
+		if (showLinkOnly) {
+			const a = document.createElement("a");
+			a.href = fileLink;
+			a.target = "_blank";
+			a.rel = "nofollow noopener";
+			a.className = "download-link";
+			a.textContent = fileLink;
+			button.textContent = "";
+			button.appendChild(a);
+			button.classList.replace("timer", "disable-timer");
+		} else {
+			location.href = fileLink;
+		}
+	};
 	
     const initTimer = (button) => {
         if (button.classList.contains("timer")) return; 
@@ -34,12 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 clearInterval(initCounter);
                 timers.delete(button); 
 
-                if (showLinkOnly) {
-                    button.innerHTML = `<a href="${fileLink}" target="_blank" class="download-link">${fileLink}</a>`;
-                    button.classList.replace("timer", "disable-timer");
-                } else {
-                    location.href = fileLink;
-                }
+                htGgetShow(button, fileLink, showLinkOnly);
             }
         }, 1000);
         timers.set(button, { interval: initCounter, remainingTime: timer });
@@ -66,12 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     const fileLink = decodeBase64(button.dataset.link);
                     const showLinkOnly = button.dataset.window === "true";
-                    if (showLinkOnly) {
-                        button.innerHTML = `<a href="${fileLink}" target="_blank" class="download-link">${fileLink}</a>`;
-                        button.classList.replace("timer", "disable-timer");
-                    } else {
-                        location.href = fileLink;
-                    }
+                    htGgetShow(button, fileLink, showLinkOnly);
                 }
             }, 1000);
 

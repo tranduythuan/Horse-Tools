@@ -131,7 +131,10 @@ function horsetools_gget_shortcode($atts, $content = null) {
 		   href="<?php echo esc_url($atts['aff']); ?>"
 		   <?php echo $target_attr; ?>
            data-timer="<?php echo esc_attr($atts['timer']); ?>" 
-           data-link="<?php echo base64_encode($atts['url']); ?>"  
+           <?php // esc_url_raw restricts the download target to http/https before it is
+                 // base64-encoded, so an Author cannot smuggle a javascript:/data: URL
+                 // past kses into the client-side link builder (which is XSS-hardened too). ?>
+           data-link="<?php echo base64_encode( esc_url_raw( $atts['url'], array( 'http', 'https' ) ) ); ?>"  
            data-window="<?php echo esc_attr($atts['window']); ?>">
            <span class="ggettext"><svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 512 512"><path fill="currentColor" d="M376 160H272v153.37l52.69-52.68a16 16 0 0 1 22.62 22.62l-80 80a16 16 0 0 1-22.62 0l-80-80a16 16 0 0 1 22.62-22.62L240 313.37V160H136a56.06 56.06 0 0 0-56 56v208a56.06 56.06 0 0 0 56 56h240a56.06 56.06 0 0 0 56-56V216a56.06 56.06 0 0 0-56-56ZM272 48a16 16 0 0 0-32 0v112h32Z"/></svg> <?php echo esc_html($content); ?></span>
         </a>
