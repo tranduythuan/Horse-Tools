@@ -444,3 +444,5 @@ if ( isset( $horsetools_shortcode_options['shortcode-interm'] ) ) {
 	add_filter( 'term_description', 'do_shortcode', 11 );
 	add_filter( 'category_description', 'do_shortcode', 11 );
 }
+
+require_once HORSETOOLS_DIR . 'inc/shortcodes-lib.php';

@@ -654,6 +654,10 @@ msgstr ""
 msgid "Clear the whole log"
 msgstr ""
 
+#: inc/shortcodes-lib.php:235
+msgid "Click here"
+msgstr ""
+
 #: main/page/11google.php:41
 msgid "Client ID"
 msgstr ""
@@ -2998,6 +3002,10 @@ msgstr ""
 msgid "Retrieve the Site Key and Secret Key from your Google reCAPTCHA project and add them to the two fields above"
 msgstr ""
 
+#: inc/shortcodes-lib.php:170
+msgid "Reveal"
+msgstr ""
+
 #: main/shortcode.php:369
 msgid "Rewrite every [sc …] tag in your content to [ht-snippet …], keeping all attributes. Preview first; applying edits post content, so take a backup. Tip: you don’t have to convert — imported snippets already answer [sc …] once Shortcoder is deactivated."
 msgstr ""
@@ -3769,6 +3777,10 @@ msgstr ""
 msgid "Time"
 msgstr ""
 
+#: inc/shortcodes-lib.php:31
+msgid "Time is up"
+msgstr ""
+
 #: inc/gindex.php:134 inc/gindex.php:242
 msgid "Time:"
 msgstr ""
@@ -4145,6 +4157,10 @@ msgstr ""
 msgid "[%s] New comment on the article \"%s\""
 msgstr ""
 
+#: inc/shortcodes-lib.php:27
+msgid "days"
+msgstr ""
+
 #: main/shortcode.php:434
 msgid "desktop"
 msgstr ""
@@ -4159,6 +4175,10 @@ msgstr ""
 
 #: main/font.php:61
 msgid "font-family:"
+msgstr ""
+
+#: inc/shortcodes-lib.php:28
+msgid "hrs"
 msgstr ""
 
 #: main/shortcode.php:279
@@ -4181,6 +4201,10 @@ msgstr ""
 msgid "logged-out"
 msgstr ""
 
+#: inc/shortcodes-lib.php:29
+msgid "min"
+msgstr ""
+
 #: main/shortcode.php:434
 msgid "mobile"
 msgstr ""
@@ -4191,6 +4215,10 @@ msgstr ""
 
 #: main/shortcode.php:431
 msgid "off"
+msgstr ""
+
+#: inc/shortcodes-lib.php:30
+msgid "sec"
 msgstr ""
 
 #: main/shortcode.php:278

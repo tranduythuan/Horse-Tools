@@ -4996,3 +4996,24 @@ msgstr "di động"
 
 msgid "off"
 msgstr "tắt"
+
+msgid "Click here"
+msgstr "Bấm vào đây"
+
+msgid "Reveal"
+msgstr "Hiện ra"
+
+msgid "Time is up"
+msgstr "Đã hết giờ"
+
+msgid "days"
+msgstr "ngày"
+
+msgid "hrs"
+msgstr "giờ"
+
+msgid "min"
+msgstr "phút"
+
+msgid "sec"
+msgstr "giây"
