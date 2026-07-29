@@ -194,6 +194,76 @@ $vi = array(
     'Delete this log entry' => 'Xoá mục nhật ký này',
     'Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site.'
         => 'Ghi lại các URL hỏng mà khách vãng lai thực sự truy cập, để bạn biến những URL nhiều lượt thành chuyển hướng. Không ghi người dùng đã đăng nhập, bot và các yêu cầu tài nguyên tĩnh, và không có gì rời khỏi site của bạn.',
+    // Security tab rebuild
+    'Limit login attempts' => 'Giới hạn số lần đăng nhập',
+    'Lock out repeated failed logins' => 'Khoá khi đăng nhập sai nhiều lần',
+    'After too many failed logins from the same address, block further attempts for a while. This is the real defence against password guessing.'
+        => 'Sau quá nhiều lần đăng nhập sai từ cùng một địa chỉ, chặn tạm các lần thử tiếp theo. Đây là biện pháp thật sự chống dò mật khẩu.',
+    'Attempts before lockout' => 'Số lần sai trước khi khoá',
+    'Lockout length (minutes)' => 'Thời gian khoá (phút)',
+    'Email me when an address is locked out' => 'Gửi email cho tôi khi một địa chỉ bị khoá',
+    'A login was locked out on your site' => 'Có một địa chỉ đăng nhập bị khoá trên site của bạn',
+    'The address %1$s was locked out after repeated failed logins on %2$s.'
+        => 'Địa chỉ %1$s đã bị khoá sau nhiều lần đăng nhập sai trên %2$s.',
+    'Too many failed attempts. Try again in about %d minute(s).'
+        => 'Quá nhiều lần thử sai. Vui lòng thử lại sau khoảng %d phút.',
+    'Login failed. Check your details and try again.'
+        => 'Đăng nhập thất bại. Kiểm tra lại thông tin và thử lại.',
+    'Block user enumeration' => 'Chặn dò tên người dùng',
+    'Hide usernames from scanners' => 'Ẩn tên người dùng khỏi công cụ quét',
+    'Blocks ?author=N scans, removes the users REST endpoint for anonymous requests, strips the author from oEmbed, and makes login errors generic so they do not reveal whether the username or the password was wrong.'
+        => 'Chặn quét ?author=N, gỡ endpoint users REST với khách vãng lai, bỏ tác giả khỏi oEmbed, và làm lỗi đăng nhập chung chung để không lộ sai tên hay sai mật khẩu.',
+    'Security response headers' => 'HTTP header bảo mật',
+    'Send security headers' => 'Gửi các header bảo mật',
+    'Add hardening headers to front-end responses. Each one below is optional.'
+        => 'Thêm các header tăng cường bảo mật cho phản hồi front-end. Mỗi mục dưới đây là tuỳ chọn.',
+    'X-Frame-Options: SAMEORIGIN (block clickjacking)' => 'X-Frame-Options: SAMEORIGIN (chặn clickjacking)',
+    'X-Content-Type-Options: nosniff' => 'X-Content-Type-Options: nosniff',
+    'Referrer-Policy: strict-origin-when-cross-origin' => 'Referrer-Policy: strict-origin-when-cross-origin',
+    'Permissions-Policy: block geolocation, mic and camera' => 'Permissions-Policy: chặn định vị, mic và camera',
+    'HSTS (force HTTPS for 180 days)' => 'HSTS (ép HTTPS trong 180 ngày)',
+    'Only enable once HTTPS works everywhere. Browsers will refuse plain HTTP to your site for six months, and it cannot be undone quickly.'
+        => 'Chỉ bật khi HTTPS đã chạy ở mọi nơi. Trình duyệt sẽ từ chối HTTP thường trong sáu tháng, và không thể huỷ nhanh.',
+    'Content-Security-Policy (advanced, leave blank if unsure)' => 'Content-Security-Policy (nâng cao, để trống nếu không chắc)',
+    'A wrong CSP silently breaks scripts, styles and images. Test with browser dev tools before relying on it.'
+        => 'CSP sai sẽ âm thầm làm hỏng script, style và ảnh. Hãy kiểm tra bằng dev tools của trình duyệt trước khi dựa vào nó.',
+    'Lock down the admin' => 'Khoá chặt khu quản trị',
+    'Disable the theme & plugin file editor' => 'Tắt trình sửa file theme & plugin',
+    'Removes the built-in code editor under Appearance and Plugins. If an attacker gets into wp-admin, they cannot use it to edit PHP files. You edit files over SFTP instead.'
+        => 'Gỡ trình sửa code trong Appearance và Plugins. Nếu kẻ tấn công vào được wp-admin, chúng không thể dùng nó để sửa file PHP. Bạn sửa file qua SFTP.',
+    'Disable unused endpoints' => 'Tắt các endpoint không dùng',
+    'Disable REST API for anonymous visitors' => 'Tắt REST API cho khách vãng lai',
+    'This blocks the REST API for logged-out visitors. It WILL break: WooCommerce cart and checkout for guests, Contact Form 7 and other REST-based forms, comment submission on block themes, and oEmbed. Only enable it if your site uses none of these.'
+        => 'Chặn REST API cho khách chưa đăng nhập. Nó SẼ làm hỏng: giỏ hàng và thanh toán WooCommerce cho khách, Contact Form 7 và các form dùng REST, gửi bình luận trên block theme, và oEmbed. Chỉ bật nếu site của bạn không dùng những thứ này.',
+    'Recommended. xmlrpc.php is a common brute-force and pingback-amplification target and almost nothing uses it now (except Jetpack).'
+        => 'Khuyến nghị. xmlrpc.php là đích brute-force và khuếch đại pingback phổ biến, hầu như không còn gì dùng nó (trừ Jetpack).',
+    'Removes wp-embed.js if you do not embed other WordPress posts.'
+        => 'Gỡ wp-embed.js nếu bạn không nhúng bài viết WordPress khác.',
+    'Removes the X-Pingback header. Pairs with disabling XML-RPC.'
+        => 'Gỡ header X-Pingback. Đi kèm với việc tắt XML-RPC.',
+    'Disable feeds (RSS/Atom)' => 'Tắt feed (RSS/Atom)',
+    'Turns off the RSS and Atom feeds if your site does not publish one.'
+        => 'Tắt feed RSS và Atom nếu site của bạn không xuất bản feed.',
+    'Tidy up' => 'Dọn dẹp',
+    'Remove unnecessary header tags' => 'Gỡ các thẻ header thừa',
+    'Removes the RSD, WLW manifest and adjacent-post link tags from the page head.'
+        => 'Gỡ các thẻ RSD, WLW manifest và link bài kề khỏi phần head.',
+    'Remove the WordPress version tag' => 'Gỡ thẻ phiên bản WordPress',
+    'Removes the generator meta tag. A small tidy-up — not a security measure on its own, since asset fingerprints reveal the version anyway.'
+        => 'Gỡ thẻ meta generator. Chỉ là dọn dẹp nhỏ — không phải biện pháp bảo mật tự thân, vì dấu vết tài nguyên vẫn lộ phiên bản.',
+    // Tool tab
+    'Automatic updates' => 'Cập nhật tự động',
+    'Do not auto-install core updates' => 'Không tự cài cập nhật lõi',
+    'Do not auto-install language pack updates' => 'Không tự cài cập nhật gói ngôn ngữ',
+    'Do not auto-install theme updates' => 'Không tự cài cập nhật theme',
+    'Do not auto-install plugin updates' => 'Không tự cài cập nhật plugin',
+    'Hide the update & maintenance notice' => 'Ẩn thông báo cập nhật & bảo trì',
+    'These stop WordPress installing updates on its own — the site still checks for them, so the Dashboard and Plugins screens keep showing what is available and you apply updates when you choose. It never stops checking, so you are never left unaware of a security release.'
+        => 'Những mục này ngăn WordPress tự cài cập nhật — site vẫn kiểm tra, nên trang Dashboard và Plugins vẫn hiện các bản có sẵn và bạn tự áp dụng khi muốn. Nó không bao giờ ngừng kiểm tra, nên bạn không bao giờ bị bỏ lỡ một bản vá bảo mật.',
+    'Add an attribution line when visitors copy text' => 'Thêm dòng ghi nguồn khi khách copy nội dung',
+    'When someone copies text from your site, a short line you set is added after it — their selection is kept, nothing is replaced. Useful for a "Source: yoursite.com" credit.'
+        => 'Khi ai đó copy nội dung từ site của bạn, một dòng ngắn bạn đặt được thêm vào sau — phần chọn của họ vẫn giữ nguyên, không thay thế gì. Hữu ích cho dòng "Nguồn: site.com".',
+    'Attribution line' => 'Dòng ghi nguồn',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

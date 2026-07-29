@@ -4288,3 +4288,153 @@ msgstr "Xoá mục nhật ký này"
 
 msgid "Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site."
 msgstr "Ghi lại các URL hỏng mà khách vãng lai thực sự truy cập, để bạn biến những URL nhiều lượt thành chuyển hướng. Không ghi người dùng đã đăng nhập, bot và các yêu cầu tài nguyên tĩnh, và không có gì rời khỏi site của bạn."
+
+msgid "Limit login attempts"
+msgstr "Giới hạn số lần đăng nhập"
+
+msgid "Lock out repeated failed logins"
+msgstr "Khoá khi đăng nhập sai nhiều lần"
+
+msgid "After too many failed logins from the same address, block further attempts for a while. This is the real defence against password guessing."
+msgstr "Sau quá nhiều lần đăng nhập sai từ cùng một địa chỉ, chặn tạm các lần thử tiếp theo. Đây là biện pháp thật sự chống dò mật khẩu."
+
+msgid "Attempts before lockout"
+msgstr "Số lần sai trước khi khoá"
+
+msgid "Lockout length (minutes)"
+msgstr "Thời gian khoá (phút)"
+
+msgid "Email me when an address is locked out"
+msgstr "Gửi email cho tôi khi một địa chỉ bị khoá"
+
+msgid "A login was locked out on your site"
+msgstr "Có một địa chỉ đăng nhập bị khoá trên site của bạn"
+
+msgid "The address %1$s was locked out after repeated failed logins on %2$s."
+msgstr "Địa chỉ %1$s đã bị khoá sau nhiều lần đăng nhập sai trên %2$s."
+
+msgid "Too many failed attempts. Try again in about %d minute(s)."
+msgstr "Quá nhiều lần thử sai. Vui lòng thử lại sau khoảng %d phút."
+
+msgid "Login failed. Check your details and try again."
+msgstr "Đăng nhập thất bại. Kiểm tra lại thông tin và thử lại."
+
+msgid "Block user enumeration"
+msgstr "Chặn dò tên người dùng"
+
+msgid "Hide usernames from scanners"
+msgstr "Ẩn tên người dùng khỏi công cụ quét"
+
+msgid "Blocks ?author=N scans, removes the users REST endpoint for anonymous requests, strips the author from oEmbed, and makes login errors generic so they do not reveal whether the username or the password was wrong."
+msgstr "Chặn quét ?author=N, gỡ endpoint users REST với khách vãng lai, bỏ tác giả khỏi oEmbed, và làm lỗi đăng nhập chung chung để không lộ sai tên hay sai mật khẩu."
+
+msgid "Security response headers"
+msgstr "HTTP header bảo mật"
+
+msgid "Send security headers"
+msgstr "Gửi các header bảo mật"
+
+msgid "Add hardening headers to front-end responses. Each one below is optional."
+msgstr "Thêm các header tăng cường bảo mật cho phản hồi front-end. Mỗi mục dưới đây là tuỳ chọn."
+
+msgid "X-Frame-Options: SAMEORIGIN (block clickjacking)"
+msgstr "X-Frame-Options: SAMEORIGIN (chặn clickjacking)"
+
+msgid "X-Content-Type-Options: nosniff"
+msgstr "X-Content-Type-Options: nosniff"
+
+msgid "Referrer-Policy: strict-origin-when-cross-origin"
+msgstr "Referrer-Policy: strict-origin-when-cross-origin"
+
+msgid "Permissions-Policy: block geolocation, mic and camera"
+msgstr "Permissions-Policy: chặn định vị, mic và camera"
+
+msgid "HSTS (force HTTPS for 180 days)"
+msgstr "HSTS (ép HTTPS trong 180 ngày)"
+
+msgid "Only enable once HTTPS works everywhere. Browsers will refuse plain HTTP to your site for six months, and it cannot be undone quickly."
+msgstr "Chỉ bật khi HTTPS đã chạy ở mọi nơi. Trình duyệt sẽ từ chối HTTP thường trong sáu tháng, và không thể huỷ nhanh."
+
+msgid "Content-Security-Policy (advanced, leave blank if unsure)"
+msgstr "Content-Security-Policy (nâng cao, để trống nếu không chắc)"
+
+msgid "A wrong CSP silently breaks scripts, styles and images. Test with browser dev tools before relying on it."
+msgstr "CSP sai sẽ âm thầm làm hỏng script, style và ảnh. Hãy kiểm tra bằng dev tools của trình duyệt trước khi dựa vào nó."
+
+msgid "Lock down the admin"
+msgstr "Khoá chặt khu quản trị"
+
+msgid "Disable the theme & plugin file editor"
+msgstr "Tắt trình sửa file theme & plugin"
+
+msgid "Removes the built-in code editor under Appearance and Plugins. If an attacker gets into wp-admin, they cannot use it to edit PHP files. You edit files over SFTP instead."
+msgstr "Gỡ trình sửa code trong Appearance và Plugins. Nếu kẻ tấn công vào được wp-admin, chúng không thể dùng nó để sửa file PHP. Bạn sửa file qua SFTP."
+
+msgid "Disable unused endpoints"
+msgstr "Tắt các endpoint không dùng"
+
+msgid "Disable REST API for anonymous visitors"
+msgstr "Tắt REST API cho khách vãng lai"
+
+msgid "This blocks the REST API for logged-out visitors. It WILL break: WooCommerce cart and checkout for guests, Contact Form 7 and other REST-based forms, comment submission on block themes, and oEmbed. Only enable it if your site uses none of these."
+msgstr "Chặn REST API cho khách chưa đăng nhập. Nó SẼ làm hỏng: giỏ hàng và thanh toán WooCommerce cho khách, Contact Form 7 và các form dùng REST, gửi bình luận trên block theme, và oEmbed. Chỉ bật nếu site của bạn không dùng những thứ này."
+
+msgid "Recommended. xmlrpc.php is a common brute-force and pingback-amplification target and almost nothing uses it now (except Jetpack)."
+msgstr "Khuyến nghị. xmlrpc.php là đích brute-force và khuếch đại pingback phổ biến, hầu như không còn gì dùng nó (trừ Jetpack)."
+
+msgid "Removes wp-embed.js if you do not embed other WordPress posts."
+msgstr "Gỡ wp-embed.js nếu bạn không nhúng bài viết WordPress khác."
+
+msgid "Removes the X-Pingback header. Pairs with disabling XML-RPC."
+msgstr "Gỡ header X-Pingback. Đi kèm với việc tắt XML-RPC."
+
+msgid "Disable feeds (RSS/Atom)"
+msgstr "Tắt feed (RSS/Atom)"
+
+msgid "Turns off the RSS and Atom feeds if your site does not publish one."
+msgstr "Tắt feed RSS và Atom nếu site của bạn không xuất bản feed."
+
+msgid "Tidy up"
+msgstr "Dọn dẹp"
+
+msgid "Remove unnecessary header tags"
+msgstr "Gỡ các thẻ header thừa"
+
+msgid "Removes the RSD, WLW manifest and adjacent-post link tags from the page head."
+msgstr "Gỡ các thẻ RSD, WLW manifest và link bài kề khỏi phần head."
+
+msgid "Remove the WordPress version tag"
+msgstr "Gỡ thẻ phiên bản WordPress"
+
+msgid "Removes the generator meta tag. A small tidy-up — not a security measure on its own, since asset fingerprints reveal the version anyway."
+msgstr "Gỡ thẻ meta generator. Chỉ là dọn dẹp nhỏ — không phải biện pháp bảo mật tự thân, vì dấu vết tài nguyên vẫn lộ phiên bản."
+
+msgid "Automatic updates"
+msgstr "Cập nhật tự động"
+
+msgid "Do not auto-install core updates"
+msgstr "Không tự cài cập nhật lõi"
+
+msgid "Do not auto-install language pack updates"
+msgstr "Không tự cài cập nhật gói ngôn ngữ"
+
+msgid "Do not auto-install theme updates"
+msgstr "Không tự cài cập nhật theme"
+
+msgid "Do not auto-install plugin updates"
+msgstr "Không tự cài cập nhật plugin"
+
+msgid "Hide the update & maintenance notice"
+msgstr "Ẩn thông báo cập nhật & bảo trì"
+
+msgid "These stop WordPress installing updates on its own — the site still checks for them, so the Dashboard and Plugins screens keep showing what is available and you apply updates when you choose. It never stops checking, so you are never left unaware of a security release."
+msgstr "Những mục này ngăn WordPress tự cài cập nhật — site vẫn kiểm tra, nên trang Dashboard và Plugins vẫn hiện các bản có sẵn và bạn tự áp dụng khi muốn. Nó không bao giờ ngừng kiểm tra, nên bạn không bao giờ bị bỏ lỡ một bản vá bảo mật."
+
+msgid "Add an attribution line when visitors copy text"
+msgstr "Thêm dòng ghi nguồn khi khách copy nội dung"
+
+msgid "When someone copies text from your site, a short line you set is added after it — their selection is kept, nothing is replaced. Useful for a \"Source: yoursite.com\" credit."
+msgstr "Khi ai đó copy nội dung từ site của bạn, một dòng ngắn bạn đặt được thêm vào sau — phần chọn của họ vẫn giữ nguyên, không thay thế gì. Hữu ích cho dòng \"Nguồn: site.com\"."
+
+msgid "Attribution line"
+msgstr "Dòng ghi nguồn"

@@ -9,7 +9,7 @@ Tags: all-in-one, tools, optimization, security, media
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 
 All-in-one toolkit for managing a WordPress website: chat button, custom login, media optimisation, cleanup and more.
 
@@ -71,6 +71,32 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.1.0 =
+Security tab rebuilt: dropped features that were theatre or actively harmful, and replaced them with real hardening.
+
+Removed:
+
+* "Block non-image uploads" — it blocked installing plugins/themes from a ZIP and the WXR importer, and broke the plugin's own SVG upload, while protecting nothing.
+* "Remove ?ver= from CSS/JS" — ?ver is the cache-buster; stripping it serves stale assets to returning visitors and CDNs after every update.
+* "Prevent SQL injection / XSS" — ran only for logged-in non-admins, matched four fixed strings in the URL, and its 255-character cap broke long legitimate admin URLs.
+* "Disable automatic update checking" (and its `remove_all_filters('plugins_api')`) — left the site unable to learn a security release existed and broke every other plugin's update mechanism.
+* "Disallow text copying / DevTools" — put `user-select:none` on everything, so visitors could not select text in the search box, comment field or checkout, while stopping nobody.
+* "Copy pre-set content" (clipboard replacement) — silently replaced whatever a visitor copied, breaking coupon codes, addresses and phone numbers.
+
+Narrowed:
+
+* "Disable automatic updates" is now "Automatic updates": it stops WordPress *installing* updates on its own (the supported, safe half) but the site keeps *checking*, so you are never left unaware of a security release.
+* The copy feature is now append-only attribution: a line you set is added after the visitor's selection; nothing is replaced.
+
+Kept: Disable REST API (now with a clear warning about what it breaks), Disable XML-RPC, wp-embed, X-Pingback, header cleanup, feed disabling, generator-tag removal.
+
+Added:
+
+* **Limit login attempts** — lock out an IP after N failed logins for M minutes, with an optional admin email. The real brute-force defence that replaces the fake "SQL protection".
+* **Block user enumeration** — blocks `?author=N` scans, removes the users REST endpoint for anonymous requests, strips the author from oEmbed, and makes login errors generic.
+* **Security response headers** — X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, optional HSTS (with a warning) and an advanced Content-Security-Policy field.
+* **Disable the theme & plugin file editor** — closes the built-in code editor, a classic post-compromise escalation path.
 
 = 1.0.0 =
 Initial release of Horse Tools, forked from Foxtool 2.5.3.

@@ -156,43 +156,43 @@ if (isset($horsetools_options['tool-widget1'])){
 add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 add_filter( 'use_widgets_block_editor', '__return_false' );
 }
-# chăn copy nội dung khoa tat ca cac phim
-function horsetools_lockcop_scripts() {
-  global $horsetools_options;
-  if (isset($horsetools_options['tool-mana2']) && !current_user_can('manage_options')){
-  wp_enqueue_script( 'lockcop', HORSETOOLS_URL . 'link/lockcop.js', array(), HORSETOOLS_VERSION);
-  wp_enqueue_style( 'lockcop', HORSETOOLS_URL . 'link/lockcop.css', array(), HORSETOOLS_VERSION);
-  }
-}
-add_action( 'wp_enqueue_scripts', 'horsetools_lockcop_scripts' );
-# copy noi dung da dat truoc
-function horsetools_copyset_scripts() { 
-	global $horsetools_options; 
-	$text = !empty($horsetools_options['tool-mana22']) ? $horsetools_options['tool-mana22'] : __('You have successfully copied', 'horse-tools');
-	if (isset($horsetools_options['tool-mana21']) && !current_user_can('manage_options')){
+# Append an attribution line when a visitor copies text.
+#
+# REMOVED in 1.1.0:
+#   tool-mana2  "disallow text copying / DevTools" — put user-select:none on
+#               everything, so visitors could not select text in the search box,
+#               the comment field or WooCommerce checkout, while stopping nobody
+#               (View Source, curl, reader mode all bypass it). lockcop.js/css
+#               deleted.
+#   tool-mana21 "copy pre-set content" (REPLACE the clipboard) — silently
+#               replaced whatever a visitor copied, breaking copying of coupon
+#               codes, addresses and phone numbers.
+#
+# Kept: the benign append-attribution variant. When someone copies from the
+# page, a short line (e.g. "Source: yoursite.com") is added AFTER their text —
+# their selection is preserved, nothing is replaced. Opt-in, front-end only.
+function horsetools_copyset_scripts() {
+	global $horsetools_options;
+	if ( empty( $horsetools_options['tool-mana23'] ) || current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	$text = ! empty( $horsetools_options['tool-mana22'] )
+		? $horsetools_options['tool-mana22']
+		: __( 'You have successfully copied', 'horse-tools' );
 	?>
 	<script>
-	jQuery(document).ready(function($) {
-	<?php if (isset($horsetools_options['tool-mana23'])){ ?>
-		$(document).on('copy', function(e){
-            var newText = "\n<?php echo esc_js( $text ); ?>";
-            var clipboardData = e.originalEvent.clipboardData || window.clipboardData || e.clipboardData;
-            var originalText = window.getSelection().toString(); 
-            clipboardData.setData('text', originalText + newText);
-            e.preventDefault(); 
-        });
-	<?php } else { ?>
-		$(document).on('copy', function(e){
+	jQuery(document).ready(function ($) {
+		$(document).on('copy', function (e) {
+			var selection = window.getSelection().toString();
+			if (!selection) { return; }
+			var clip = e.originalEvent.clipboardData || window.clipboardData || e.clipboardData;
+			if (!clip) { return; }
+			clip.setData('text', selection + "\n<?php echo esc_js( $text ); ?>");
 			e.preventDefault();
-			var newText = "<?php echo esc_js( $text ); ?>";
-			var clipboardData = e.originalEvent.clipboardData || window.clipboardData || e.clipboardData;
-			clipboardData.setData('text', newText);
 		});
-	<?php } ?>
 	});
 	</script>
 	<?php
-	}
 }
 add_action( 'wp_footer', 'horsetools_copyset_scripts' );
 # tắt những công cụ không cần thiết
@@ -209,72 +209,48 @@ function horsetools_remove_appwp_admin(){
 	}
 }
 add_action( 'admin_head', 'horsetools_remove_appwp_admin');
-# tắt tự động cập nhật
+# Control automatic updates.
+#
+# The original stopped the site from *checking* for updates
+# (pre_site_transient_update_*, wp_clear_scheduled_hook, pre_option_update_core)
+# and, in tool-upload6, ran remove_all_filters('plugins_api') — which breaks
+# every OTHER plugin's update mechanism and the "View details" modal — on init,
+# every request. The end state was a site that never learned a security release
+# existed, with no signal that it was frozen. That has been removed.
+#
+# What remains is the safe, supported half: stop WordPress from *installing*
+# updates on its own (the auto_update_* filters). The site still CHECKS, so the
+# Dashboard › Updates screen and the plugin list keep showing what is available
+# — the admin just applies them deliberately. This is what managed and agency
+# sites actually want.
 function horsetools_dis_update_full() {
 	global $horsetools_options;
-	
-	// Chặn cập nhật core WP
-	if (isset($horsetools_options['tool-upload1'])){
-		add_filter('auto_update_core', '__return_false');
-		add_filter( 'pre_option_update_core', '__return_null' );
-		remove_action( 'wp_version_check', 'wp_version_check' );
-		remove_action( 'admin_init', '_maybe_update_core' );
-		wp_clear_scheduled_hook( 'wp_version_check' );
-	}
 
-	// Chặn cập nhật gói ngôn ngữ
-	if (isset($horsetools_options['tool-upload2'])){
-		add_filter('auto_update_translation', '__return_false');
-		add_filter( 'pre_site_transient_update_languages', '__return_null' );
-		add_filter( 'site_transient_update_languages', '__return_null' );
-		remove_action('load-update-core.php', 'wp_update_languages');
-		remove_action('admin_init', '_maybe_update_languages');
-		remove_action('wp_update_languages', 'wp_update_languages');
-		wp_clear_scheduled_hook('wp_update_languages');
+	if ( isset( $horsetools_options['tool-upload1'] ) ) {
+		add_filter( 'auto_update_core', '__return_false' );
+		add_filter( 'allow_major_auto_core_updates', '__return_false' );
+		add_filter( 'allow_minor_auto_core_updates', '__return_false' );
 	}
-
-    // Chặn cập nhật theme
-	if (isset($horsetools_options['tool-upload3'])){
-		add_filter('auto_update_theme', '__return_false');
-		add_filter( 'pre_site_transient_update_themes', '__return_null' );
-		remove_action('load-themes.php', 'wp_update_themes');
-		remove_action('load-update.php', 'wp_update_themes');
-		remove_action('admin_init', '_maybe_update_themes');
-		remove_action('wp_update_themes', 'wp_update_themes');
-		remove_action('load-update-core.php', 'wp_update_themes');
-		wp_clear_scheduled_hook('wp_update_themes');
+	if ( isset( $horsetools_options['tool-upload2'] ) ) {
+		add_filter( 'auto_update_translation', '__return_false' );
 	}
-
-    // Chặn cập nhật plugin
-	if (isset($horsetools_options['tool-upload4'])){
-		add_filter('auto_update_plugin', '__return_false');
-		add_filter( 'pre_site_transient_update_plugins', '__return_null' );
-		remove_action( 'load-plugins.php', 'wp_update_plugins' );
-		remove_action( 'load-update.php', 'wp_update_plugins' );
-		remove_action( 'admin_init', '_maybe_update_plugins' );
-		remove_action( 'wp_update_plugins', 'wp_update_plugins' );
-		remove_action( 'load-update-core.php', 'wp_update_plugins' );
-		wp_clear_scheduled_hook( 'wp_update_plugins' );
+	if ( isset( $horsetools_options['tool-upload3'] ) ) {
+		add_filter( 'auto_update_theme', '__return_false' );
 	}
-	
-	// Loại bỏ thông báo cập nhật & bảo trì
-	if (isset($horsetools_options['tool-upload5'])){
+	if ( isset( $horsetools_options['tool-upload4'] ) ) {
+		add_filter( 'auto_update_plugin', '__return_false' );
+	}
+	// Hide the update / maintenance nag. The site still checks, so updates
+	// remain visible on the Plugins and Updates screens — only the top banner
+	// is suppressed.
+	if ( isset( $horsetools_options['tool-upload5'] ) ) {
 		remove_action( 'admin_notices', 'update_nag', 3 );
 		remove_action( 'network_admin_notices', 'update_nag', 3 );
 		remove_action( 'admin_notices', 'maintenance_nag' );
 		remove_action( 'network_admin_notices', 'maintenance_nag' );
 	}
-
-    // Chặn cập nhật qua API
-	if (isset($horsetools_options['tool-upload6'])){
-		remove_action( 'wp_maybe_auto_update', 'wp_maybe_auto_update' );
-		remove_action( 'admin_init', 'wp_maybe_auto_update' );
-		remove_action( 'admin_init', 'wp_auto_update_core' );
-		wp_clear_scheduled_hook( 'wp_maybe_auto_update' );
-		remove_all_filters( 'plugins_api' );
-	}
 }
-add_action('init', 'horsetools_dis_update_full');
+add_action( 'init', 'horsetools_dis_update_full' );
 
 # thêm tiny editor vao description
 if ( isset($horsetools_options['tool-mana3'])){

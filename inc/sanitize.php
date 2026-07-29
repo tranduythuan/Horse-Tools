@@ -219,6 +219,9 @@ function horsetools_sanitize_number_keys() {
 		'notify-popup-c1'  => array( 0, 86400 ),  // popup delay, seconds
 		'notify-popup-m1'  => array( 0, 200 ),    // popup radius, px
 		'notify-popup-m2'  => array( 0, 5000 ),   // popup max width, px
+		// main/page/2scuri.php — login-attempt limiter
+		'scuri-login-max'  => array( 1, 50 ),     // failed attempts before lockout
+		'scuri-login-mins' => array( 1, 1440 ),   // lockout length, minutes
 		// main/page/11google.php
 		'goo-cap13'        => array( 0, 1 ),      // reCAPTCHA v3 score threshold
 		// main/search.php

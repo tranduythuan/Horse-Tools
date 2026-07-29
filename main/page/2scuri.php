@@ -9,72 +9,121 @@ global $horsetools_options; ?>
 <label class="ht-on-right"><?php _e('ON/OFF', 'horse-tools'); ?></label>
 </div>
 <div id="play2" class="ht-card toggle-div">
-  <h3><i class="fa-regular fa-badge-check"></i> <?php _e('Enhance website security', 'horse-tools') ?></h3>
-	<!-- scuri off 1 -->
-	<?php horsetools_toggle( 'scuri-off1', __( 'Disable REST API', 'horse-tools' ), array(
-		'tab'     => 'SECURITY',
-		'section' => 'Enhance website security',
+
+  <h3><i class="fa-regular fa-user-lock"></i> <?php _e('Limit login attempts', 'horse-tools') ?></h3>
+	<?php horsetools_toggle( 'scuri-login1', __( 'Lock out repeated failed logins', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Limit login attempts',
+		'description' => __( 'After too many failed logins from the same address, block further attempts for a while. This is the real defence against password guessing.', 'horse-tools' ),
 	) ); ?>
-	<p class="ht-note ht-note-red"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If you not using REST API, it recommended to disable it for security purposes', 'horse-tools'); ?></p>
-	<!-- scuri off 2 -->
+	<?php horsetools_input( 'scuri-login-max', __( 'Attempts before lockout', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Limit login attempts',
+		'type'        => 'number',
+		'class'       => 'ht-input-small',
+		'placeholder' => '5',
+		'min'         => '1',
+		'max'         => '50',
+		'parent'      => 'scuri-login1',
+	) ); ?>
+	<?php horsetools_input( 'scuri-login-mins', __( 'Lockout length (minutes)', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Limit login attempts',
+		'type'        => 'number',
+		'class'       => 'ht-input-small',
+		'placeholder' => '15',
+		'min'         => '1',
+		'max'         => '1440',
+		'parent'      => 'scuri-login1',
+	) ); ?>
+	<?php horsetools_toggle( 'scuri-login-mail', __( 'Email me when an address is locked out', 'horse-tools' ), array(
+		'tab'     => 'SECURITY',
+		'section' => 'Limit login attempts',
+		'parent'  => 'scuri-login1',
+	) ); ?>
+
+  <h3><i class="fa-regular fa-user-secret"></i> <?php _e('Block user enumeration', 'horse-tools') ?></h3>
+	<?php horsetools_toggle( 'scuri-enum1', __( 'Hide usernames from scanners', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Block user enumeration',
+		'description' => __( 'Blocks ?author=N scans, removes the users REST endpoint for anonymous requests, strips the author from oEmbed, and makes login errors generic so they do not reveal whether the username or the password was wrong.', 'horse-tools' ),
+	) ); ?>
+
+  <h3><i class="fa-regular fa-shield-halved"></i> <?php _e('Security response headers', 'horse-tools') ?></h3>
+	<?php horsetools_toggle( 'scuri-head1', __( 'Send security headers', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Security response headers',
+		'description' => __( 'Add hardening headers to front-end responses. Each one below is optional.', 'horse-tools' ),
+	) ); ?>
+	<?php horsetools_toggle( 'scuri-head-xfo', __( 'X-Frame-Options: SAMEORIGIN (block clickjacking)', 'horse-tools' ), array(
+		'tab' => 'SECURITY', 'section' => 'Security response headers', 'parent' => 'scuri-head1',
+	) ); ?>
+	<?php horsetools_toggle( 'scuri-head-nosniff', __( 'X-Content-Type-Options: nosniff', 'horse-tools' ), array(
+		'tab' => 'SECURITY', 'section' => 'Security response headers', 'parent' => 'scuri-head1',
+	) ); ?>
+	<?php horsetools_toggle( 'scuri-head-ref', __( 'Referrer-Policy: strict-origin-when-cross-origin', 'horse-tools' ), array(
+		'tab' => 'SECURITY', 'section' => 'Security response headers', 'parent' => 'scuri-head1',
+	) ); ?>
+	<?php horsetools_toggle( 'scuri-head-perm', __( 'Permissions-Policy: block geolocation, mic and camera', 'horse-tools' ), array(
+		'tab' => 'SECURITY', 'section' => 'Security response headers', 'parent' => 'scuri-head1',
+	) ); ?>
+	<?php horsetools_toggle( 'scuri-head-hsts', __( 'HSTS (force HTTPS for 180 days)', 'horse-tools' ), array(
+		'tab'     => 'SECURITY',
+		'section' => 'Security response headers',
+		'parent'  => 'scuri-head1',
+		'warning' => __( 'Only enable once HTTPS works everywhere. Browsers will refuse plain HTTP to your site for six months, and it cannot be undone quickly.', 'horse-tools' ),
+	) ); ?>
+	<?php horsetools_input( 'scuri-head-csp', __( 'Content-Security-Policy (advanced, leave blank if unsure)', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Security response headers',
+		'parent'      => 'scuri-head1',
+		'placeholder' => "default-src 'self'",
+		'description' => __( 'A wrong CSP silently breaks scripts, styles and images. Test with browser dev tools before relying on it.', 'horse-tools' ),
+	) ); ?>
+
+  <h3><i class="fa-regular fa-file-lock"></i> <?php _e('Lock down the admin', 'horse-tools') ?></h3>
+	<?php horsetools_toggle( 'scuri-fileedit1', __( 'Disable the theme & plugin file editor', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Lock down the admin',
+		'description' => __( 'Removes the built-in code editor under Appearance and Plugins. If an attacker gets into wp-admin, they cannot use it to edit PHP files. You edit files over SFTP instead.', 'horse-tools' ),
+	) ); ?>
+
+  <h3><i class="fa-regular fa-badge-check"></i> <?php _e('Disable unused endpoints', 'horse-tools') ?></h3>
+	<?php horsetools_toggle( 'scuri-off1', __( 'Disable REST API for anonymous visitors', 'horse-tools' ), array(
+		'tab'     => 'SECURITY',
+		'section' => 'Disable unused endpoints',
+		'warning' => __( 'This blocks the REST API for logged-out visitors. It WILL break: WooCommerce cart and checkout for guests, Contact Form 7 and other REST-based forms, comment submission on block themes, and oEmbed. Only enable it if your site uses none of these.', 'horse-tools' ),
+	) ); ?>
 	<?php horsetools_toggle( 'scuri-off2', __( 'Disable XML RPC', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',
-		'section'     => 'Enhance website security',
-		'description' => __( 'If you not using XML RPC, it recommended to disable it for security purposes', 'horse-tools' ),
+		'section'     => 'Disable unused endpoints',
+		'description' => __( 'Recommended. xmlrpc.php is a common brute-force and pingback-amplification target and almost nothing uses it now (except Jetpack).', 'horse-tools' ),
 	) ); ?>
-	<!-- scuri off 3 -->
 	<?php horsetools_toggle( 'scuri-off3', __( 'Disable Wp-Embed', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',
-		'section'     => 'Enhance website security',
-		'description' => __( 'If you not using Wp-Embed, it recommended to disable it for security purposes', 'horse-tools' ),
+		'section'     => 'Disable unused endpoints',
+		'description' => __( 'Removes wp-embed.js if you do not embed other WordPress posts.', 'horse-tools' ),
 	) ); ?>
-	<!-- scuri off 4 -->
 	<?php horsetools_toggle( 'scuri-off4', __( 'Disable X-Pingback', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',
-		'section'     => 'Enhance website security',
-		'description' => __( 'If you not using X-Pingback, it recommended to disable it for security purposes', 'horse-tools' ),
+		'section'     => 'Disable unused endpoints',
+		'description' => __( 'Removes the X-Pingback header. Pairs with disabling XML-RPC.', 'horse-tools' ),
 	) ); ?>
-	<!-- scuri off 5 -->
-	<?php horsetools_toggle( 'scuri-off5', __( 'Remove unnecessary header information', 'horse-tools' ), array(
+	<?php horsetools_toggle( 'scuri-off6', __( 'Disable feeds (RSS/Atom)', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',
-		'section'     => 'Enhance website security',
-		'description' => __( 'Remove unnecessary header information if desired', 'horse-tools' ),
+		'section'     => 'Disable unused endpoints',
+		'description' => __( 'Turns off the RSS and Atom feeds if your site does not publish one.', 'horse-tools' ),
 	) ); ?>
-	<!-- scuri off 6 -->
-	<?php horsetools_toggle( 'scuri-off6', __( 'Disable other data sources', 'horse-tools' ), array(
+
+  <h3><i class="fa-regular fa-broom"></i> <?php _e('Tidy up', 'horse-tools') ?></h3>
+	<?php horsetools_toggle( 'scuri-off5', __( 'Remove unnecessary header tags', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',
-		'section'     => 'Enhance website security',
-		'description' => __( 'Disable unnecessary data sources', 'horse-tools' ),
+		'section'     => 'Tidy up',
+		'description' => __( 'Removes the RSD, WLW manifest and adjacent-post link tags from the page head.', 'horse-tools' ),
 	) ); ?>
-
-
-  <h3><i class="fa-regular fa-badge-check"></i> <?php _e('Filter uploaded files', 'horse-tools') ?></h3>
-	<!-- scuri off 1 -->
-	<?php horsetools_toggle( 'scuri-up1', __( 'Enable blocking uploads of non-image files', 'horse-tools' ), array(
+	<?php horsetools_toggle( 'scuri-verof2', __( 'Remove the WordPress version tag', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',
-		'section'     => 'Filter uploaded files',
-		'description' => __( 'This feature will block uploads of all files that are not image formats, from media, plugins, themes, etc', 'horse-tools' ),
-	) ); ?>
-
-  <h3><i class="fa-regular fa-badge-check"></i> <?php _e('Remove version', 'horse-tools') ?></h3>
-	<!-- scuri ver off 1 -->
-	<?php horsetools_toggle( 'scuri-verof1', __( 'Remove version from JS and CSS', 'horse-tools' ), array(
-		'tab'     => 'SECURITY',
-		'section' => 'Remove version',
-	) ); ?>
-	<!-- scuri ver off 2 -->
-	<?php horsetools_toggle( 'scuri-verof2', __( 'Remove WordPress version', 'horse-tools' ), array(
-		'tab'     => 'SECURITY',
-		'section' => 'Remove version',
-	) ); ?>
-
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('Correct, hiding the version of resources such as JS, CSS, and WordPress is a common security measure to prevent hackers from exploiting known vulnerabilities in older versions', 'horse-tools'); ?></p>
-
-  <h3><i class="fa-regular fa-badge-check"></i> <?php _e('Secure access data', 'horse-tools') ?></h3>
-	<!-- SQL injection -->
-	<?php horsetools_toggle( 'scuri-sql1', __( 'Prevent SQL injection, cross-site scripting (XSS)', 'horse-tools' ), array(
-		'tab'         => 'SECURITY',
-		'section'     => 'Secure access data',
-		'description' => __( 'This feature helps protect the website against attacks such as SQL injection, cross-site scripting (XSS)', 'horse-tools' ),
+		'section'     => 'Tidy up',
+		'description' => __( 'Removes the generator meta tag. A small tidy-up — not a security measure on its own, since asset fingerprints reveal the version anyway.', 'horse-tools' ),
 	) ); ?>
 </div>

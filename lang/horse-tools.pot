@@ -58,6 +58,14 @@ msgstr ""
 msgid "8-bit PNG images are not supported by the GD library, and this format already has perfect compression and does not need further processing"
 msgstr ""
 
+#: inc/scuriphp:263
+msgid "A login was locked out on your site"
+msgstr ""
+
+#: main/page/2scuriphp:81
+msgid "A wrong CSP silently breaks scripts, styles and images. Test with browser dev tools before relying on it."
+msgstr ""
+
 #: main/aboutphp:17 main/page/ht-about1php:4
 msgid "ABOUT"
 msgstr ""
@@ -142,6 +150,10 @@ msgstr ""
 msgid "Add ads to the top of the article"
 msgstr ""
 
+#: main/page/3toolphp:65
+msgid "Add an attribution line when visitors copy text"
+msgstr ""
+
 #: main/page/9userphp:53
 msgid "Add avatar upload functionality"
 msgstr ""
@@ -192,6 +204,10 @@ msgstr ""
 
 #: main/extendphp:75
 msgid "Add fonts to your website with just a few simple steps. Additionally, it allows you to quickly set fonts in the specific areas you want to change, offering great convenience"
+msgstr ""
+
+#: main/page/2scuriphp:56
+msgid "Add hardening headers to front-end responses. Each one below is optional."
 msgstr ""
 
 #: main/notifyphp:121
@@ -258,6 +274,10 @@ msgstr ""
 msgid "Advanced settings"
 msgstr ""
 
+#: main/page/2scuriphp:17
+msgid "After too many failed logins from the same address, block further attempts for a while. This is the real defence against password guessing."
+msgstr ""
+
 #: inc/notifyphp:45 inc/notifyphp:96
 msgid "Agree"
 msgstr ""
@@ -314,8 +334,12 @@ msgstr ""
 msgid "Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it."
 msgstr ""
 
-#: main/page/3toolphp:85
-msgid "Attach copyright content"
+#: main/page/2scuriphp:19
+msgid "Attempts before lockout"
+msgstr ""
+
+#: main/page/3toolphp:70
+msgid "Attribution line"
 msgstr ""
 
 #: main/page/7mailphp:65
@@ -336,6 +360,10 @@ msgstr ""
 
 #: main/page/5mediaphp:38
 msgid "Automatic name"
+msgstr ""
+
+#: main/page/3toolphp:40
+msgid "Automatic updates"
 msgstr ""
 
 #: main/page/5mediaphp:150
@@ -392,6 +420,14 @@ msgstr ""
 
 #: main/page/11googlephp:65
 msgid "Block login spam with Google reCAPTCHA"
+msgstr ""
+
+#: main/page/2scuriphp:45
+msgid "Block user enumeration"
+msgstr ""
+
+#: main/page/2scuriphp:49
+msgid "Blocks ?author=N scans, removes the users REST endpoint for anonymous requests, strips the author from oEmbed, and makes login errors generic so they do not reveal whether the username or the password was wrong."
 msgstr ""
 
 #: main/tocphp:190
@@ -646,6 +682,10 @@ msgstr ""
 msgid "Content to be hidden"
 msgstr ""
 
+#: main/page/2scuriphp:76
+msgid "Content-Security-Policy (advanced, leave blank if unsure)"
+msgstr ""
+
 #: inc/shortcodephp:126
 msgid "Continue"
 msgstr ""
@@ -694,16 +734,8 @@ msgstr ""
 msgid "Cookies"
 msgstr ""
 
-#: main/page/3toolphp:81
-msgid "Copy pre-set content"
-msgstr ""
-
 #: main/page/11googlephp:21
 msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
-msgstr ""
-
-#: main/page/2scuriphp:71
-msgid "Correct, hiding the version of resources such as JS, CSS, and WordPress is a common security measure to prevent hackers from exploiting known vulnerabilities in older versions"
 msgstr ""
 
 #: main/redirectsphp:132
@@ -930,36 +962,28 @@ msgstr ""
 msgid "Disable Gutenberg CSS"
 msgstr ""
 
-#: main/page/2scuriphp:14
-msgid "Disable REST API"
+#: main/page/2scuriphp:92
+msgid "Disable REST API for anonymous visitors"
 msgstr ""
 
 #: main/page/10customphp:161
 msgid "Disable WordPress info widget"
 msgstr ""
 
-#: main/page/2scuriphp:26
+#: main/page/2scuriphp:102
 msgid "Disable Wp-Embed"
 msgstr ""
 
-#: main/page/2scuriphp:32
+#: main/page/2scuriphp:107
 msgid "Disable X-Pingback"
 msgstr ""
 
-#: main/page/2scuriphp:20
+#: main/page/2scuriphp:97
 msgid "Disable XML RPC"
 msgstr ""
 
-#: main/page/3toolphp:66
-msgid "Disable automatic update checking (core, language packs, themes, plugins)"
-msgstr ""
-
-#: main/page/3toolphp:39
-msgid "Disable automatic updates"
-msgstr ""
-
-#: main/page/3toolphp:41
-msgid "Disable core updates"
+#: main/page/2scuriphp:112
+msgid "Disable feeds (RSS/Atom)"
 msgstr ""
 
 #: main/page/10customphp:181
@@ -970,24 +994,12 @@ msgstr ""
 msgid "Disable jQuery Migrate"
 msgstr ""
 
-#: main/page/3toolphp:46
-msgid "Disable language pack updates"
-msgstr ""
-
 #: main/page/10customphp:127
 msgid "Disable logo display"
 msgstr ""
 
 #: main/tocphp:152
 msgid "Disable numbers in front of tags"
-msgstr ""
-
-#: main/page/2scuriphp:44
-msgid "Disable other data sources"
-msgstr ""
-
-#: main/page/3toolphp:56
-msgid "Disable plugin updates"
 msgstr ""
 
 #: main/page/10customphp:166
@@ -1006,24 +1018,20 @@ msgstr ""
 msgid "Disable the Admin Bar"
 msgstr ""
 
-#: main/page/3toolphp:51
-msgid "Disable theme updates"
-msgstr ""
-
-#: main/page/2scuriphp:47
-msgid "Disable unnecessary data sources"
+#: main/page/2scuriphp:85
+msgid "Disable the theme & plugin file editor"
 msgstr ""
 
 #: main/page/1speedphp:12
 msgid "Disable unnecessary items"
 msgstr ""
 
-#: main/page/10customphp:154
-msgid "Disable unused widgets"
+#: main/page/2scuriphp:91
+msgid "Disable unused endpoints"
 msgstr ""
 
-#: main/page/3toolphp:61
-msgid "Disable update & maintenance notifications"
+#: main/page/10customphp:154
+msgid "Disable unused widgets"
 msgstr ""
 
 #: main/page/10customphp:176
@@ -1032,10 +1040,6 @@ msgstr ""
 
 #: inc/tocphp:222
 msgid "Disabled TOC"
-msgstr ""
-
-#: main/page/3toolphp:75
-msgid "Disallow text copying and access to DevTools"
 msgstr ""
 
 #: inc/uiphp:253
@@ -1088,6 +1092,22 @@ msgstr ""
 
 #: main/tocphp:269
 msgid "Distance above"
+msgstr ""
+
+#: main/page/3toolphp:41
+msgid "Do not auto-install core updates"
+msgstr ""
+
+#: main/page/3toolphp:45
+msgid "Do not auto-install language pack updates"
+msgstr ""
+
+#: main/page/3toolphp:53
+msgid "Do not auto-install plugin updates"
+msgstr ""
+
+#: main/page/3toolphp:49
+msgid "Do not auto-install theme updates"
 msgstr ""
 
 #: main/page/1speedphp:66
@@ -1146,6 +1166,10 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
+#: main/page/2scuriphp:39
+msgid "Email me when an address is locked out"
+msgstr ""
+
 #: main/page/7mailphp:163
 msgid "Email notification when a post has a comment"
 msgstr ""
@@ -1202,7 +1226,7 @@ msgstr ""
 msgid "Enable Classic Editor"
 msgstr ""
 
-#: main/page/3toolphp:96
+#: main/page/3toolphp:78
 msgid "Enable Classic Editor in category description"
 msgstr ""
 
@@ -1272,10 +1296,6 @@ msgstr ""
 
 #: main/page/11googlephp:16
 msgid "Enable and configure the functions below to enable Google sign-in to work"
-msgstr ""
-
-#: main/page/2scuriphp:53
-msgid "Enable blocking uploads of non-image files"
 msgstr ""
 
 #: main/page/12chatphp:17
@@ -1474,10 +1494,6 @@ msgstr ""
 msgid "Enhance features for Classic Editor"
 msgstr ""
 
-#: main/page/2scuriphp:12
-msgid "Enhance website security"
-msgstr ""
-
 #: main/adsphp:54
 msgid "Enter Adsense code here"
 msgstr ""
@@ -1511,7 +1527,7 @@ msgstr ""
 msgid "Enter content"
 msgstr ""
 
-#: main/notifyphp:59 main/notifyphp:79 main/page/3toolphp:91 main/redirectsphp:161
+#: main/notifyphp:59 main/notifyphp:79 main/redirectsphp:161
 msgid "Enter content here"
 msgstr ""
 
@@ -1654,11 +1670,11 @@ msgstr ""
 msgid "Failed to update setting:"
 msgstr ""
 
-#: inc/scuriphp:73
+#: inc/scuriphp:72
 msgid "Feeds are not available on this site. %s"
 msgstr ""
 
-#: inc/scuriphp:76
+#: inc/scuriphp:75
 msgid "Feeds disabled"
 msgstr ""
 
@@ -1668,10 +1684,6 @@ msgstr ""
 
 #: main/page/9userphp:14
 msgid "Filter posts and images"
-msgstr ""
-
-#: main/page/2scuriphp:51
-msgid "Filter uploaded files"
 msgstr ""
 
 #: main/cleanphp:111
@@ -1748,7 +1760,7 @@ msgstr ""
 msgid "Generate data"
 msgstr ""
 
-#: inc/scuriphp:74
+#: inc/scuriphp:73
 msgid "Go to the home page"
 msgstr ""
 
@@ -1758,6 +1770,10 @@ msgstr ""
 
 #: main/searchphp:18 main/searchphp:31
 msgid "HORSE SEARCH"
+msgstr ""
+
+#: main/page/2scuriphp:70
+msgid "HSTS (force HTTPS for 180 days)"
 msgstr ""
 
 #: inc/notifyphp:115
@@ -1804,12 +1820,20 @@ msgstr ""
 msgid "Hide post categories from homepage"
 msgstr ""
 
-#: main/page/3toolphp:102
+#: main/page/3toolphp:84
 msgid "Hide the tools you want"
+msgstr ""
+
+#: main/page/3toolphp:57
+msgid "Hide the update & maintenance notice"
 msgstr ""
 
 #: main/redirectsphp:133
 msgid "Hide this URL from the log"
+msgstr ""
+
+#: main/page/2scuriphp:46
+msgid "Hide usernames from scanners"
 msgstr ""
 
 #: main/redirectsphp:121
@@ -1830,10 +1854,6 @@ msgstr ""
 
 #: main/page/ht-about1php:8
 msgid "Horse Tools:"
-msgstr ""
-
-#: inc/scuriphp:103
-msgid "I am sorry, you can only upload image files in the formats .GIF, .JPG, .PNG, .WEBP"
 msgstr ""
 
 #: main/cleanphp:200
@@ -1872,10 +1892,6 @@ msgstr ""
 msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
 msgstr ""
 
-#: main/page/3toolphp:93
-msgid "If users copy content on the page, instead of receiving the content, they will receive the content you have set"
-msgstr ""
-
 #: main/page/ht-settingphp:84
 msgid "If you dont want to automatically switch the language based on WordPress context, please select the language you prefer"
 msgstr ""
@@ -1900,7 +1916,7 @@ msgstr ""
 msgid "If you find the new editor too difficult to use, then revert it to the Classic Editor version"
 msgstr ""
 
-#: main/page/3toolphp:116
+#: main/page/3toolphp:98
 msgid "If you find the tools above unnecessary, you can hide them to make the WP admin interface cleaner. This function only hides them without blocking access to their links"
 msgstr ""
 
@@ -1914,22 +1930,6 @@ msgstr ""
 
 #: main/extendphp:195
 msgid "If you need to monitor WordPress debug files without accessing the file manager, this tool is made just for that purpose"
-msgstr ""
-
-#: main/page/2scuriphp:18
-msgid "If you not using REST API, it recommended to disable it for security purposes"
-msgstr ""
-
-#: main/page/2scuriphp:29
-msgid "If you not using Wp-Embed, it recommended to disable it for security purposes"
-msgstr ""
-
-#: main/page/2scuriphp:35
-msgid "If you not using X-Pingback, it recommended to disable it for security purposes"
-msgstr ""
-
-#: main/page/2scuriphp:23
-msgid "If you not using XML RPC, it recommended to disable it for security purposes"
 msgstr ""
 
 #: main/page/1speedphp:29
@@ -2059,6 +2059,10 @@ msgstr ""
 msgid "Limit JPG, PNG, WEBP, AVIF images"
 msgstr ""
 
+#: main/page/2scuriphp:13
+msgid "Limit login attempts"
+msgstr ""
+
 #: main/page/5mediaphp:148
 msgid "Limits the maximum width and height of JPG, PNG, WEBP images upon upload. You can leave it blank if you want to keep the original size"
 msgstr ""
@@ -2087,12 +2091,28 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
+#: main/page/2scuriphp:84
+msgid "Lock down the admin"
+msgstr ""
+
+#: main/page/2scuriphp:14
+msgid "Lock out repeated failed logins"
+msgstr ""
+
+#: main/page/2scuriphp:29
+msgid "Lockout length (minutes)"
+msgstr ""
+
 #: inc/goophp:109
 msgid "Log out"
 msgstr ""
 
 #: main/redirectsphp:112
 msgid "Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site."
+msgstr ""
+
+#: inc/scuriphp:160
+msgid "Login failed. Check your details and try again."
 msgstr ""
 
 #: main/page/10customphp:23
@@ -2135,7 +2155,7 @@ msgstr ""
 msgid "Maintenance mode for developers (503)"
 msgstr ""
 
-#: main/page/3toolphp:73
+#: main/page/3toolphp:64
 msgid "Management tool"
 msgstr ""
 
@@ -2281,6 +2301,10 @@ msgstr ""
 msgid "Only admin has access to the admin page"
 msgstr ""
 
+#: main/page/2scuriphp:74
+msgid "Only enable once HTTPS works everywhere. Browsers will refuse plain HTTP to your site for six months, and it cannot be undone quickly."
+msgstr ""
+
 #: main/notifyphp:42
 msgid "Only notify, do not block access"
 msgstr ""
@@ -2357,6 +2381,10 @@ msgstr ""
 msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
 msgstr ""
 
+#: main/page/2scuriphp:67
+msgid "Permissions-Policy: block geolocation, mic and camera"
+msgstr ""
+
 #: inc/goophp:261
 msgid "Please complete the reCAPTCHA to verify that you are not a robot"
 msgstr ""
@@ -2398,10 +2426,6 @@ msgstr ""
 msgid "Popup save time (.. hours)"
 msgstr ""
 
-#: main/page/2scuriphp:75
-msgid "Prevent SQL injection, cross-site scripting (XSS)"
-msgstr ""
-
 #: main/exportphp:315
 msgid "Preview changes"
 msgstr ""
@@ -2420,6 +2444,10 @@ msgstr ""
 
 #: main/tocphp:219
 msgid "Quick view button color"
+msgstr ""
+
+#: main/page/2scuriphp:100
+msgid "Recommended. xmlrpc.php is a common brute-force and pingback-amplification target and almost nothing uses it now (except Jetpack)."
 msgstr ""
 
 #: main/redirectsphp:108
@@ -2446,6 +2474,10 @@ msgstr ""
 msgid "Redirects"
 msgstr ""
 
+#: main/page/2scuriphp:64
+msgid "Referrer-Policy: strict-origin-when-cross-origin"
+msgstr ""
+
 #: main/debugphp:57
 msgid "Refresh"
 msgstr ""
@@ -2456,10 +2488,6 @@ msgstr ""
 
 #: main/page/11googlephp:24
 msgid "Registration role options"
-msgstr ""
-
-#: main/page/2scuriphp:66
-msgid "Remove WordPress version"
 msgstr ""
 
 #: main/page/1speedphp:78
@@ -2490,20 +2518,12 @@ msgstr ""
 msgid "Remove tag slug from permalink"
 msgstr ""
 
-#: main/page/2scuriphp:38
-msgid "Remove unnecessary header information"
+#: main/page/2scuriphp:124
+msgid "Remove the WordPress version tag"
 msgstr ""
 
-#: main/page/2scuriphp:41
-msgid "Remove unnecessary header information if desired"
-msgstr ""
-
-#: main/page/2scuriphp:59
-msgid "Remove version"
-msgstr ""
-
-#: main/page/2scuriphp:61
-msgid "Remove version from JS and CSS"
+#: main/page/2scuriphp:119
+msgid "Remove unnecessary header tags"
 msgstr ""
 
 #: main/exportphp:295
@@ -2516,6 +2536,26 @@ msgstr ""
 
 #: main/cleanphp:124
 msgid "Removes metadata entries for thumbnail files that are missing from disk. It does not delete images."
+msgstr ""
+
+#: main/page/2scuriphp:122
+msgid "Removes the RSD, WLW manifest and adjacent-post link tags from the page head."
+msgstr ""
+
+#: main/page/2scuriphp:110
+msgid "Removes the X-Pingback header. Pairs with disabling XML-RPC."
+msgstr ""
+
+#: main/page/2scuriphp:88
+msgid "Removes the built-in code editor under Appearance and Plugins. If an attacker gets into wp-admin, they cannot use it to edit PHP files. You edit files over SFTP instead."
+msgstr ""
+
+#: main/page/2scuriphp:127
+msgid "Removes the generator meta tag. A small tidy-up — not a security measure on its own, since asset fingerprints reveal the version anyway."
+msgstr ""
+
+#: main/page/2scuriphp:105
+msgid "Removes wp-embed.js if you do not embed other WordPress posts."
 msgstr ""
 
 #: main/redirectsphp:120
@@ -2628,12 +2668,12 @@ msgstr ""
 msgid "Secret key"
 msgstr ""
 
-#: main/page/2scuriphp:73
-msgid "Secure access data"
-msgstr ""
-
 #: inc/goophp:117
 msgid "Security check failed. Please start the sign-in again."
+msgstr ""
+
+#: main/page/2scuriphp:52
+msgid "Security response headers"
 msgstr ""
 
 #: main/page/ht-settingphp:22 main/page/ht-settingphp:40
@@ -2695,6 +2735,10 @@ msgstr ""
 
 #: main/page/7mailphp:76
 msgid "Send"
+msgstr ""
+
+#: main/page/2scuriphp:53
+msgid "Send security headers"
 msgstr ""
 
 #: main/page/7mailphp:73
@@ -2897,6 +2941,10 @@ msgstr ""
 msgid "The GD library has not been installed"
 msgstr ""
 
+#: inc/scuriphp:266
+msgid "The address %1$s was locked out after repeated failed logins on %2$s."
+msgstr ""
+
 #: main/page/10customphp:139
 msgid "The changing image is square, with the standard size being 100x100 pixels"
 msgstr ""
@@ -2969,8 +3017,16 @@ msgstr ""
 msgid "These groups will change"
 msgstr ""
 
+#: main/page/3toolphp:62
+msgid "These stop WordPress installing updates on its own — the site still checks for them, so the Dashboard and Plugins screens keep showing what is available and you apply updates when you choose. It never stops checking, so you are never left unaware of a security release."
+msgstr ""
+
 #: inc/mediaphp:280
 msgid "This SVG file could not be parsed and was rejected."
+msgstr ""
+
+#: main/page/2scuriphp:95
+msgid "This blocks the REST API for logged-out visitors. It WILL break: WooCommerce cart and checkout for guests, Contact Form 7 and other REST-based forms, comment submission on block themes, and oEmbed. Only enable it if your site uses none of these."
 msgstr ""
 
 #: inc/shortcodephp:50
@@ -2985,7 +3041,7 @@ msgstr ""
 msgid "This feature allows you to add Shortcode to post titles, which is very convenient for using custom tools"
 msgstr ""
 
-#: main/page/3toolphp:99
+#: main/page/3toolphp:81
 msgid "This feature allows you to add the Classic Editor to the category description box when editing posts or products"
 msgstr ""
 
@@ -3013,10 +3069,6 @@ msgstr ""
 msgid "This feature helps optimize cleanup tasks such as clearing content, comments, and the media library. It makes your website cleaner and more optimized"
 msgstr ""
 
-#: main/page/2scuriphp:78
-msgid "This feature helps protect the website against attacks such as SQL injection, cross-site scripting (XSS)"
-msgstr ""
-
 #: main/page/6postphp:157
 msgid "This feature uses the Fancybox library, allowing you to open images in posts for viewing"
 msgstr ""
@@ -3027,10 +3079,6 @@ msgstr ""
 
 #: main/page/6postphp:120
 msgid "This feature will add nofollow and _blank to external links on your site"
-msgstr ""
-
-#: main/page/2scuriphp:56
-msgid "This feature will block uploads of all files that are not image formats, from media, plugins, themes, etc"
 msgstr ""
 
 #: main/page/ht-settingphp:71
@@ -3055,10 +3103,6 @@ msgstr ""
 
 #: main/redirectsphp:48
 msgid "This function allows you to redirect 301 links to the target page"
-msgstr ""
-
-#: main/page/3toolphp:78
-msgid "This function prevents users from copying text, accessing right-click options, and accessing DevTools"
 msgstr ""
 
 #: main/redirectsphp:42
@@ -3089,6 +3133,10 @@ msgstr ""
 msgid "This website uses cookies to ensure you get the best experience on our site. By continuing to browse, you agree to our use of cookies. For more information, please read our Cookie Policy"
 msgstr ""
 
+#: main/page/2scuriphp:118
+msgid "Tidy up"
+msgstr ""
+
 #: inc/woophp:79
 msgid "Time"
 msgstr ""
@@ -3113,6 +3161,10 @@ msgstr ""
 msgid "To create a menu on the navigation bar:"
 msgstr ""
 
+#: inc/scuriphp:240
+msgid "Too many failed attempts. Try again in about %d minute(s)."
+msgstr ""
+
 #: main/adsphp:77
 msgid "Top and bottom positions"
 msgstr ""
@@ -3131,6 +3183,10 @@ msgstr ""
 
 #: inc/cleanphp:359
 msgid "Trashed comments"
+msgstr ""
+
+#: main/page/2scuriphp:115
+msgid "Turns off the RSS and Atom feeds if your site does not publish one."
 msgstr ""
 
 #: main/fontphp:50
@@ -3155,10 +3211,6 @@ msgstr ""
 
 #: main/adminphp:27 main/page/9userphp:4
 msgid "USER"
-msgstr ""
-
-#: inc/scuriphp:96
-msgid "Unable to determine image format"
 msgstr ""
 
 #: inc/mediaphp:271
@@ -3261,6 +3313,10 @@ msgstr ""
 msgid "Welcome to the website"
 msgstr ""
 
+#: main/page/3toolphp:68
+msgid "When someone copies text from your site, a short line you set is added after it — their selection is kept, nothing is replaced. Useful for a \"Source: yoursite.com\" credit."
+msgstr ""
+
 #: main/page/10customphp:194
 msgid "Widget title"
 msgstr ""
@@ -3285,6 +3341,14 @@ msgstr ""
 msgid "With this feature, you can notify your orders to your Telegram group, helping you manage orders conveniently"
 msgstr ""
 
+#: main/page/2scuriphp:61
+msgid "X-Content-Type-Options: nosniff"
+msgstr ""
+
+#: main/page/2scuriphp:58
+msgid "X-Frame-Options: SAMEORIGIN (block clickjacking)"
+msgstr ""
+
 #: inc/postphp:255
 msgid "You are not allowed to create this post type."
 msgstr ""
@@ -3293,7 +3357,7 @@ msgstr ""
 msgid "You are not allowed to duplicate this item."
 msgstr ""
 
-#: inc/scuriphp:11
+#: inc/scuriphp:19
 msgid "You are not logged in"
 msgstr ""
 
@@ -3311,10 +3375,6 @@ msgstr ""
 
 #: main/page/10customphp:185
 msgid "You can disable default widgets on the dashboard that you dont use"
-msgstr ""
-
-#: main/page/3toolphp:71
-msgid "You can disable the automatic update feature of WordPress"
 msgstr ""
 
 #: main/page/10customphp:71
@@ -3349,7 +3409,7 @@ msgstr ""
 msgid "You do not have permission to upload SVG files."
 msgstr ""
 
-#: inc/toolphp:171
+#: inc/toolphp:181
 msgid "You have successfully copied"
 msgstr ""
 

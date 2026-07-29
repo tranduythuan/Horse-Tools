@@ -36,61 +36,43 @@ global $horsetools_options; ?>
 		'description' => __( 'If you find the new Widget Manager too difficult to use, then revert it to the Classic Widget version', 'horse-tools' ),
 	) ); ?>
 
-  <h3><i class="fa-regular fa-gear"></i> <?php _e('Disable automatic updates', 'horse-tools') ?></h3>
-	<!-- tool off upload 1 -->
-	<?php horsetools_toggle( 'tool-upload1', __( 'Disable core updates', 'horse-tools' ), array(
+
+  <h3><i class="fa-regular fa-gear"></i> <?php _e('Automatic updates', 'horse-tools') ?></h3>
+	<?php horsetools_toggle( 'tool-upload1', __( 'Do not auto-install core updates', 'horse-tools' ), array(
 		'tab'     => 'TOOL',
-		'section' => 'Disable automatic updates',
+		'section' => 'Automatic updates',
 	) ); ?>
-	<!-- tool off upload 2 -->
-	<?php horsetools_toggle( 'tool-upload2', __( 'Disable language pack updates', 'horse-tools' ), array(
+	<?php horsetools_toggle( 'tool-upload2', __( 'Do not auto-install language pack updates', 'horse-tools' ), array(
 		'tab'     => 'TOOL',
-		'section' => 'Disable automatic updates',
+		'section' => 'Automatic updates',
 	) ); ?>
-	<!-- tool off upload 3 -->
-	<?php horsetools_toggle( 'tool-upload3', __( 'Disable theme updates', 'horse-tools' ), array(
+	<?php horsetools_toggle( 'tool-upload3', __( 'Do not auto-install theme updates', 'horse-tools' ), array(
 		'tab'     => 'TOOL',
-		'section' => 'Disable automatic updates',
+		'section' => 'Automatic updates',
 	) ); ?>
-	<!-- tool off upload 4 -->
-	<?php horsetools_toggle( 'tool-upload4', __( 'Disable plugin updates', 'horse-tools' ), array(
+	<?php horsetools_toggle( 'tool-upload4', __( 'Do not auto-install plugin updates', 'horse-tools' ), array(
 		'tab'     => 'TOOL',
-		'section' => 'Disable automatic updates',
+		'section' => 'Automatic updates',
 	) ); ?>
-	<!-- tool off upload 5 -->
-	<?php horsetools_toggle( 'tool-upload5', __( 'Disable update & maintenance notifications', 'horse-tools' ), array(
+	<?php horsetools_toggle( 'tool-upload5', __( 'Hide the update & maintenance notice', 'horse-tools' ), array(
 		'tab'     => 'TOOL',
-		'section' => 'Disable automatic updates',
-	) ); ?>
-	<!-- tool off upload 6 -->
-	<?php horsetools_toggle( 'tool-upload6', __( 'Disable automatic update checking (core, language packs, themes, plugins)', 'horse-tools' ), array(
-		'tab'     => 'TOOL',
-		'section' => 'Disable automatic updates',
+		'section' => 'Automatic updates',
 	) ); ?>
 
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('You can disable the automatic update feature of WordPress', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('These stop WordPress installing updates on its own — the site still checks for them, so the Dashboard and Plugins screens keep showing what is available and you apply updates when you choose. It never stops checking, so you are never left unaware of a security release.', 'horse-tools'); ?></p>
 
   <h3><i class="fa-regular fa-gear"></i> <?php _e('Management tool', 'horse-tools') ?></h3>
-	<!-- tool manager 2 -->
-	<?php horsetools_toggle( 'tool-mana2', __( 'Disallow text copying and access to DevTools', 'horse-tools' ), array(
+	<?php horsetools_toggle( 'tool-mana23', __( 'Add an attribution line when visitors copy text', 'horse-tools' ), array(
 		'tab'         => 'TOOL',
 		'section'     => 'Management tool',
-		'description' => __( 'This function prevents users from copying text, accessing right-click options, and accessing DevTools', 'horse-tools' ),
+		'description' => __( 'When someone copies text from your site, a short line you set is added after it — their selection is kept, nothing is replaced. Useful for a "Source: yoursite.com" credit.', 'horse-tools' ),
 	) ); ?>
-
-	<?php horsetools_toggle( 'tool-mana21', __( 'Copy pre-set content', 'horse-tools' ), array(
-		'tab'     => 'TOOL',
-		'section' => 'Management tool',
+	<?php horsetools_input( 'tool-mana22', __( 'Attribution line', 'horse-tools' ), array(
+		'tab'         => 'TOOL',
+		'section'     => 'Management tool',
+		'placeholder' => 'Source: example.com',
+		'parent'      => 'tool-mana23',
 	) ); ?>
-	<?php horsetools_toggle( 'tool-mana23', __( 'Attach copyright content', 'horse-tools' ), array(
-		'tab'     => 'TOOL',
-		'section' => 'Management tool',
-		'parent'  => 'tool-mana21',
-	) ); ?>
-	<p>
-	<input class="ht-input-big" placeholder="<?php _e('Enter content here', 'horse-tools'); ?>" name="horsetools_settings[tool-mana22]" type="text" value="<?php if(!empty($horsetools_options['tool-mana22'])){echo sanitize_text_field($horsetools_options['tool-mana22']);} ?>"/>
-	</p>
-	<p class="ht-note"><i class="fa-regular fa-lightbulb-on"></i> <?php _e('If users copy content on the page, instead of receiving the content, they will receive the content you have set', 'horse-tools'); ?></p>
 
 	<!-- tool manager 2 -->
 	<?php horsetools_toggle( 'tool-mana3', __( 'Enable Classic Editor in category description', 'horse-tools' ), array(
