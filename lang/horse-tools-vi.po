@@ -4516,3 +4516,96 @@ msgstr "icon"
 
 msgid "showing first"
 msgstr "hiển thị đầu"
+
+msgid "All safe security headers (frame, nosniff, referrer, permissions)"
+msgstr "Tất cả header bảo mật an toàn (frame, nosniff, referrer, permissions)"
+
+msgid "Applied the \"%s\" preset. Recommended settings are on — you can undo this below."
+msgstr "Đã áp dụng bộ cấu hình \"%s\". Các thiết lập khuyến nghị đã bật — bạn có thể hoàn tác bên dưới."
+
+msgid "Apply this preset"
+msgstr "Áp dụng bộ cấu hình này"
+
+msgid "Block user enumeration (?author=N, users REST, oEmbed)"
+msgstr "Chặn dò tên người dùng (?author=N, REST users, oEmbed)"
+
+msgid "Blog / News site"
+msgstr "Blog / Trang tin"
+
+msgid "Compress JPGs and serve WebP"
+msgstr "Nén ảnh JPG và phục vụ WebP"
+
+msgid "Compress uploaded JPGs"
+msgstr "Nén ảnh JPG khi tải lên"
+
+msgid "Disable XML-RPC, X-Pingback, extra header tags and the version tag"
+msgstr "Tắt XML-RPC, X-Pingback, các thẻ header thừa và thẻ phiên bản"
+
+msgid "Drop Emoji and jQuery Migrate"
+msgstr "Bỏ Emoji và jQuery Migrate"
+
+msgid "HTML compression: minify inline JS, strip comments"
+msgstr "Nén HTML: rút gọn JS nội tuyến, bỏ chú thích"
+
+msgid "Instant-page prefetch and image lazy-loading"
+msgstr "Tải trước Instant-page và tải ảnh trễ (lazy-load)"
+
+msgid "Lazy-load images; drop Emoji"
+msgstr "Tải ảnh trễ; bỏ Emoji"
+
+msgid "Lazy-load images; drop Emoji and jQuery Migrate"
+msgstr "Tải ảnh trễ; bỏ Emoji và jQuery Migrate"
+
+msgid "Lean pages and lighter media. Leaves Gutenberg and Classic CSS alone, since removing those can change how a theme looks."
+msgstr "Trang gọn nhẹ và media nhẹ hơn. Giữ nguyên CSS Gutenberg và Classic, vì bỏ chúng có thể làm đổi giao diện theme."
+
+msgid "Limit failed logins and email you on lockout"
+msgstr "Giới hạn đăng nhập sai và gửi email cho bạn khi bị khóa"
+
+msgid "Limit logins, block user enumeration, disable XML-RPC and the file editor"
+msgstr "Giới hạn đăng nhập, chặn dò tên người dùng, tắt XML-RPC và trình sửa file"
+
+msgid "One click applies a set of recommended settings for your kind of site. Presets only turn options on and tune a few values — they never switch off anything you have already enabled, and a one-click Undo is always kept."
+msgstr "Một cú nhấp áp dụng bộ thiết lập khuyến nghị cho loại site của bạn. Bộ cấu hình chỉ bật tùy chọn và tinh chỉnh vài giá trị — không bao giờ tắt thứ bạn đã bật, và luôn giữ nút Hoàn tác một chạm."
+
+msgid "PRESETS"
+msgstr "BỘ CẤU HÌNH"
+
+msgid "Performance"
+msgstr "Tốc độ"
+
+msgid "REST API left ON so the store keeps working"
+msgstr "Giữ REST API BẬT để cửa hàng vẫn hoạt động"
+
+msgid "Security and speed for a shop, chosen not to interfere with the store. The REST API is left fully on — WooCommerce cart and checkout need it — and permalinks are left untouched."
+msgstr "Bảo mật và tốc độ cho cửa hàng, chọn lọc để không ảnh hưởng đến shop. REST API được giữ bật hoàn toàn — giỏ hàng và thanh toán WooCommerce cần nó — và không đụng vào permalink."
+
+msgid "Security hardening"
+msgstr "Tăng cường bảo mật"
+
+msgid "Security headers (frame, nosniff, referrer)"
+msgstr "Header bảo mật (frame, nosniff, referrer)"
+
+msgid "Security: block user enumeration, limit logins, disable XML-RPC, hide the version, disable the file editor"
+msgstr "Bảo mật: chặn dò tên người dùng, giới hạn đăng nhập, tắt XML-RPC, ẩn phiên bản, tắt trình sửa file"
+
+msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
+msgstr "Thiết lập hợp lý cho trang nội dung: mục lục cho bài dài, trang nhẹ hơn và tăng cường bảo mật cơ bản."
+
+msgid "Table of contents on posts"
+msgstr "Mục lục cho bài viết"
+
+msgid "That preset does not exist."
+msgstr "Bộ cấu hình đó không tồn tại."
+
+msgid "The full recommended hardening set. The one thing left out is the full REST API block, which can break forms and guests — enable that yourself on the Security screen if your site truly needs none of it."
+msgstr "Bộ tăng cường bảo mật khuyến nghị đầy đủ. Thứ duy nhất bỏ ra là chặn toàn bộ REST API, vốn có thể làm hỏng form và khách vãng lai — hãy tự bật ở màn Bảo mật nếu site bạn thực sự không cần đến nó."
+
+msgid "Use titles as image alt text"
+msgstr "Dùng tiêu đề làm alt cho ảnh"
+
+msgid "WooCommerce / Store"
+msgstr "WooCommerce / Cửa hàng"
+
+msgid "nofollow + new tab on external links"
+msgstr "nofollow + mở tab mới cho liên kết ngoài"

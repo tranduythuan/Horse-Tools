@@ -190,6 +190,136 @@ function horsetools_import_undo() {
 	return true;
 }
 
+/**
+ * Built-in configuration presets.
+ *
+ * A preset is a small, curated set of recommended settings for one kind of
+ * site. Presets are deliberately ADDITIVE: applying one turns recommended
+ * options on and tunes a few values, but never switches off anything the user
+ * has already enabled (see horsetools_preset_merged). That keeps them safe to
+ * try — and a one-click Undo is kept regardless.
+ *
+ * Keys map onto real option groups: the master switches (speed/scuri/media/
+ * post) live in horsetools_settings and both load the module and enable it;
+ * the table of contents additionally needs its module turned on in
+ * horsetools_extend_settings.
+ *
+ * Nothing here enables anything that can silently break a site — the full REST
+ * API block (scuri-off1), HSTS and CSP are intentionally left out, since those
+ * carry the warnings on the Security screen and are choices, not defaults.
+ *
+ * @return array id => array( label, icon, desc, items[], settings[] )
+ */
+function horsetools_presets() {
+	return array(
+		'blog' => array(
+			'label' => __( 'Blog / News site', 'horse-tools' ),
+			'icon'  => 'article',
+			'desc'  => __( 'Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening.', 'horse-tools' ),
+			'items' => array(
+				__( 'Table of contents on posts', 'horse-tools' ),
+				__( 'Lazy-load images; drop Emoji and jQuery Migrate', 'horse-tools' ),
+				__( 'nofollow + new tab on external links', 'horse-tools' ),
+				__( 'Use titles as image alt text', 'horse-tools' ),
+				__( 'Security: block user enumeration, limit logins, disable XML-RPC, hide the version, disable the file editor', 'horse-tools' ),
+			),
+			'settings' => array(
+				'horsetools_settings'        => array(
+					'speed' => '1', 'speed-off1' => '1', 'speed-off4' => '1', 'speed-lazy1' => '1',
+					'post' => '1', 'post-out1' => '1', 'post-alt1' => '1',
+					'scuri' => '1', 'scuri-off2' => '1', 'scuri-off4' => '1', 'scuri-off5' => '1',
+					'scuri-verof2' => '1', 'scuri-enum1' => '1', 'scuri-login1' => '1', 'scuri-fileedit1' => '1',
+				),
+				'horsetools_extend_settings' => array( 'toc' => '1' ),
+				'horsetools_toc_settings'    => array( 'toc1' => '1' ),
+			),
+		),
+		'woocommerce' => array(
+			'label' => __( 'WooCommerce / Store', 'horse-tools' ),
+			'icon'  => 'shopping-cart',
+			'desc'  => __( 'Security and speed for a shop, chosen not to interfere with the store. The REST API is left fully on — WooCommerce cart and checkout need it — and permalinks are left untouched.', 'horse-tools' ),
+			'items' => array(
+				__( 'Lazy-load images; drop Emoji', 'horse-tools' ),
+				__( 'Compress uploaded JPGs', 'horse-tools' ),
+				__( 'Security headers (frame, nosniff, referrer)', 'horse-tools' ),
+				__( 'Limit logins, block user enumeration, disable XML-RPC and the file editor', 'horse-tools' ),
+				__( 'REST API left ON so the store keeps working', 'horse-tools' ),
+			),
+			'settings' => array(
+				'horsetools_settings' => array(
+					'speed' => '1', 'speed-off4' => '1', 'speed-lazy1' => '1',
+					'media' => '1', 'media-zip1' => '1',
+					'scuri' => '1', 'scuri-off2' => '1', 'scuri-off4' => '1', 'scuri-verof2' => '1',
+					'scuri-enum1' => '1', 'scuri-login1' => '1', 'scuri-fileedit1' => '1',
+					'scuri-head1' => '1', 'scuri-head-xfo' => '1', 'scuri-head-nosniff' => '1', 'scuri-head-ref' => '1',
+				),
+			),
+		),
+		'performance' => array(
+			'label' => __( 'Performance', 'horse-tools' ),
+			'icon'  => 'rocket',
+			'desc'  => __( 'Lean pages and lighter media. Leaves Gutenberg and Classic CSS alone, since removing those can change how a theme looks.', 'horse-tools' ),
+			'items' => array(
+				__( 'Drop Emoji and jQuery Migrate', 'horse-tools' ),
+				__( 'Instant-page prefetch and image lazy-loading', 'horse-tools' ),
+				__( 'HTML compression: minify inline JS, strip comments', 'horse-tools' ),
+				__( 'Compress JPGs and serve WebP', 'horse-tools' ),
+			),
+			'settings' => array(
+				'horsetools_settings' => array(
+					'speed' => '1', 'speed-off1' => '1', 'speed-off4' => '1', 'speed-link1' => '1', 'speed-lazy1' => '1',
+					'speed-zip1' => '1', 'speed-zip11' => '1', 'speed-zip12' => '1',
+					'media' => '1', 'media-zip1' => '1', 'media-webp1' => '1',
+				),
+			),
+		),
+		'security' => array(
+			'label' => __( 'Security hardening', 'horse-tools' ),
+			'icon'  => 'shield-lock',
+			'desc'  => __( 'The full recommended hardening set. The one thing left out is the full REST API block, which can break forms and guests — enable that yourself on the Security screen if your site truly needs none of it.', 'horse-tools' ),
+			'items' => array(
+				__( 'Limit failed logins and email you on lockout', 'horse-tools' ),
+				__( 'Block user enumeration (?author=N, users REST, oEmbed)', 'horse-tools' ),
+				__( 'All safe security headers (frame, nosniff, referrer, permissions)', 'horse-tools' ),
+				__( 'Disable XML-RPC, X-Pingback, extra header tags and the version tag', 'horse-tools' ),
+				__( 'Disable the theme & plugin file editor', 'horse-tools' ),
+			),
+			'settings' => array(
+				'horsetools_settings' => array(
+					'scuri' => '1', 'scuri-off2' => '1', 'scuri-off4' => '1', 'scuri-off5' => '1', 'scuri-verof2' => '1',
+					'scuri-enum1' => '1', 'scuri-login1' => '1', 'scuri-login-mail' => '1', 'scuri-fileedit1' => '1',
+					'scuri-head1' => '1', 'scuri-head-xfo' => '1', 'scuri-head-nosniff' => '1',
+					'scuri-head-ref' => '1', 'scuri-head-perm' => '1',
+				),
+			),
+		),
+	);
+}
+
+/**
+ * Merge a preset's values over the current configuration.
+ *
+ * The result is a superset of what is stored now — existing keys are preserved,
+ * the preset's keys are layered on top — so horsetools_import_diff() reports
+ * removed=0 and horsetools_import_apply() writes a clean merge.
+ *
+ * @param array $preset One entry from horsetools_presets().
+ * @return array option_name => merged array.
+ */
+function horsetools_preset_merged( array $preset ) {
+	$allowed = horsetools_export_option_names();
+	$merged  = array();
+	foreach ( $preset['settings'] as $option => $values ) {
+		if ( ! in_array( $option, $allowed, true ) ) {
+			continue;
+		}
+		$current            = get_option( $option, array() );
+		$current            = is_array( $current ) ? $current : array();
+		$merged[ $option ]  = array_merge( $current, $values );
+	}
+	return $merged;
+}
+
 function horsetools_export_options_page() {
 	$payload  = horsetools_export_payload();
 	$json     = wp_json_encode( $payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
@@ -198,7 +328,7 @@ function horsetools_export_options_page() {
 	$did_apply = false;
 
 	// Handle the three POST actions. All share one nonce.
-	if ( isset( $_POST['horsetools_import_preview'] ) || isset( $_POST['horsetools_import_apply'] ) || isset( $_POST['horsetools_import_undo'] ) ) {
+	if ( isset( $_POST['horsetools_import_preview'] ) || isset( $_POST['horsetools_import_apply'] ) || isset( $_POST['horsetools_import_undo'] ) || isset( $_POST['horsetools_preset_apply'] ) ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die( esc_html__( 'You do not have permission to do this.', 'horse-tools' ) );
 		}
@@ -209,6 +339,24 @@ function horsetools_export_options_page() {
 			$notice = $ok
 				? array( 'ok', esc_html__( 'The previous configuration has been restored.', 'horse-tools' ) )
 				: array( 'err', esc_html__( 'There is no backup to restore.', 'horse-tools' ) );
+		} elseif ( isset( $_POST['horsetools_preset_apply'] ) ) {
+			$id      = isset( $_POST['horsetools_preset'] ) ? sanitize_key( wp_unslash( $_POST['horsetools_preset'] ) ) : '';
+			$presets = horsetools_presets();
+			if ( isset( $presets[ $id ] ) ) {
+				$merged    = horsetools_preset_merged( $presets[ $id ] );
+				$applied   = horsetools_import_apply( $merged );
+				$did_apply = true;
+				$notice    = array(
+					'ok',
+					sprintf(
+						/* translators: %s: preset name. */
+						esc_html__( 'Applied the "%s" preset. Recommended settings are on — you can undo this below.', 'horse-tools' ),
+						esc_html( $presets[ $id ]['label'] )
+					),
+				);
+			} else {
+				$notice = array( 'err', esc_html__( 'That preset does not exist.', 'horse-tools' ) );
+			}
 		} else {
 			$raw      = isset( $_POST['horsetools_export_tool'] ) ? wp_unslash( $_POST['horsetools_export_tool'] ) : '';
 			$incoming = horsetools_import_parse( $raw );
@@ -254,6 +402,7 @@ function horsetools_export_options_page() {
 			</a>
 			</div>
 			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-arrows-left-right"></i> <?php _e( 'BACKUP', 'horse-tools' ); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab2')"><i class="ti ti-adjustments-check"></i> <?php _e( 'PRESETS', 'horse-tools' ); ?></button>
 		</div>
 		<div class="ht-main">
 			<?php
@@ -331,6 +480,34 @@ function horsetools_export_options_page() {
 			</div>
 			<?php endif; ?>
 
+			</div>
+
+			<div class="sotab-box htbox" id="tab2" style="display:none">
+			<h2><?php _e( 'PRESETS', 'horse-tools' ); ?></h2>
+			<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e( 'One click applies a set of recommended settings for your kind of site. Presets only turn options on and tune a few values — they never switch off anything you have already enabled, and a one-click Undo is always kept.', 'horse-tools' ); ?></p>
+			<?php foreach ( horsetools_presets() as $preset_id => $preset ) : ?>
+				<div class="ht-card ht-preset">
+				  <h3><i class="ti ti-<?php echo esc_attr( $preset['icon'] ); ?>"></i> <?php echo esc_html( $preset['label'] ); ?></h3>
+					<p class="ht-note"><i class="ti ti-bulb"></i> <?php echo esc_html( $preset['desc'] ); ?></p>
+					<ul class="ht-preset-list">
+						<?php foreach ( $preset['items'] as $item ) : ?>
+							<li><i class="ti ti-circle-check"></i> <?php echo esc_html( $item ); ?></li>
+						<?php endforeach; ?>
+					</ul>
+					<form method="post" action="<?php echo esc_url( menu_page_url( 'horsetools-export-options', false ) ); ?>">
+						<?php wp_nonce_field( 'horsetools_import', 'horsetools_import_nonce' ); ?>
+						<input type="hidden" name="horsetools_preset" value="<?php echo esc_attr( $preset_id ); ?>" />
+						<div class="ht-submit">
+							<button type="submit" name="horsetools_preset_apply"><i class="ti ti-wand"></i> <?php _e( 'Apply this preset', 'horse-tools' ); ?></button>
+						</div>
+					</form>
+				</div>
+			<?php endforeach; ?>
+			<style>
+			.ht-preset-list{list-style:none;margin:8px 0 4px;padding:0}
+			.ht-preset-list li{display:flex;align-items:flex-start;gap:8px;padding:4px 0;font-size:13px;color:#444}
+			.ht-preset-list li i{color:#2e9e5b;font-size:17px;flex-shrink:0;margin-top:1px}
+			</style>
 			</div>
 		</div>
 	  </div>

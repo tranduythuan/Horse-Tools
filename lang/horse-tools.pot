@@ -250,7 +250,7 @@ msgstr ""
 msgid "Add watermark to images upon upload"
 msgstr ""
 
-#: main/export.php:293
+#: main/export.php:442
 msgid "Added"
 msgstr ""
 
@@ -288,6 +288,10 @@ msgstr ""
 
 #: main/redirects.php:188
 msgid "All links on your website will redirect to the maintenance page, and only logged-in admin accounts can view the content"
+msgstr ""
+
+#: main/export.php:283
+msgid "All safe security headers (frame, nosniff, referrer, permissions)"
 msgstr ""
 
 #: main/page/9user.php:55
@@ -330,11 +334,19 @@ msgstr ""
 msgid "App password"
 msgstr ""
 
-#: main/export.php:311
+#: main/export.php:353
+msgid "Applied the \"%s\" preset. Recommended settings are on — you can undo this below."
+msgstr ""
+
+#: main/export.php:460
 msgid "Apply import"
 msgstr ""
 
-#: main/export.php:309
+#: main/export.php:501
+msgid "Apply this preset"
+msgstr ""
+
+#: main/export.php:458
 msgid "Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it."
 msgstr ""
 
@@ -382,7 +394,7 @@ msgstr ""
 msgid "Automatically open popup when scrolling down"
 msgstr ""
 
-#: main/export.php:256 main/export.php:267
+#: main/export.php:404 main/export.php:416
 msgid "BACKUP"
 msgstr ""
 
@@ -410,7 +422,7 @@ msgstr ""
 msgid "Background title"
 msgstr ""
 
-#: main/export.php:380
+#: main/export.php:557
 msgid "Backup"
 msgstr ""
 
@@ -434,8 +446,16 @@ msgstr ""
 msgid "Block user enumeration"
 msgstr ""
 
+#: main/export.php:282
+msgid "Block user enumeration (?author=N, users REST, oEmbed)"
+msgstr ""
+
 #: main/page/2scuri.php:49
 msgid "Blocks ?author=N scans, removes the users REST endpoint for anonymous requests, strips the author from oEmbed, and makes login errors generic so they do not reveal whether the username or the password was wrong."
+msgstr ""
+
+#: main/export.php:216
+msgid "Blog / News site"
 msgstr ""
 
 #: main/toc.php:190
@@ -543,7 +563,7 @@ msgstr ""
 msgid "Change the color of the search box to your preferences"
 msgstr ""
 
-#: main/export.php:294
+#: main/export.php:443
 msgid "Changed"
 msgstr ""
 
@@ -559,7 +579,7 @@ msgstr ""
 msgid "Chat text color"
 msgstr ""
 
-#: main/export.php:286
+#: main/export.php:435
 msgid "Choose a file"
 msgstr ""
 
@@ -640,6 +660,14 @@ msgstr ""
 
 #: main/page/5media.php:79
 msgid "Compress JPG images upon upload"
+msgstr ""
+
+#: main/export.php:266
+msgid "Compress JPGs and serve WebP"
+msgstr ""
+
+#: main/export.php:243
+msgid "Compress uploaded JPGs"
 msgstr ""
 
 #: main/page/5media.php:88 main/page/5media.php:108 main/page/5media.php:127
@@ -1006,6 +1034,10 @@ msgstr ""
 msgid "Disable XML RPC"
 msgstr ""
 
+#: main/export.php:284
+msgid "Disable XML-RPC, X-Pingback, extra header tags and the version tag"
+msgstr ""
+
 #: main/page/2scuri.php:112
 msgid "Disable feeds (RSS/Atom)"
 msgstr ""
@@ -1042,7 +1074,7 @@ msgstr ""
 msgid "Disable the Admin Bar"
 msgstr ""
 
-#: main/page/2scuri.php:85
+#: main/export.php:285 main/page/2scuri.php:85
 msgid "Disable the theme & plugin file editor"
 msgstr ""
 
@@ -1154,7 +1186,7 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: main/export.php:275
+#: main/export.php:424
 msgid "Download .json"
 msgstr ""
 
@@ -1164,6 +1196,10 @@ msgstr ""
 
 #: main/shortcode.php:162 main/shortcode.php:163 main/shortcode.php:164
 msgid "Download link"
+msgstr ""
+
+#: main/export.php:263
+msgid "Drop Emoji and jQuery Migrate"
 msgstr ""
 
 #: inc/post.php:237
@@ -1674,7 +1710,7 @@ msgstr ""
 msgid "Example: domain.com/wp-admin where wp-admin is the suffix"
 msgstr ""
 
-#: main/export.php:270 main/extend.php:200
+#: main/export.php:419 main/extend.php:200
 msgid "Export"
 msgstr ""
 
@@ -1802,6 +1838,10 @@ msgstr ""
 
 #: main/page/2scuri.php:70
 msgid "HSTS (force HTTPS for 180 days)"
+msgstr ""
+
+#: main/export.php:265
+msgid "HTML compression: minify inline JS, strip comments"
 msgstr ""
 
 #: inc/notify.php:115
@@ -2036,11 +2076,11 @@ msgstr ""
 msgid "Image function for posts"
 msgstr ""
 
-#: main/export.php:279
+#: main/export.php:428
 msgid "Import"
 msgstr ""
 
-#: main/export.php:227
+#: main/export.php:375
 msgid "Imported %d setting group(s). You can undo this below."
 msgstr ""
 
@@ -2064,6 +2104,10 @@ msgstr ""
 msgid "Instant-page is a library that allows you to preload the content of a linked page into the browser memory simply by hovering over the link. When you click on the link, it provides a remarkably fast loading experience"
 msgstr ""
 
+#: main/export.php:264
+msgid "Instant-page prefetch and image lazy-loading"
+msgstr ""
+
 #: inc/clean.php:50 inc/clean.php:63 inc/clean.php:76 inc/clean.php:127
 #: inc/clean.php:136 inc/clean.php:145 inc/clean.php:154 inc/clean.php:198
 #: inc/clean.php:238 inc/clean.php:290 inc/debug.php:312 inc/font.php:131
@@ -2081,6 +2125,18 @@ msgstr ""
 
 #: main/redirects.php:155
 msgid "Last seen"
+msgstr ""
+
+#: main/export.php:242
+msgid "Lazy-load images; drop Emoji"
+msgstr ""
+
+#: main/export.php:221
+msgid "Lazy-load images; drop Emoji and jQuery Migrate"
+msgstr ""
+
+#: main/export.php:261
+msgid "Lean pages and lighter media. Leaves Gutenberg and Classic CSS alone, since removing those can change how a theme looks."
 msgstr ""
 
 #: main/shortcode.php:177
@@ -2107,8 +2163,16 @@ msgstr ""
 msgid "Limit JPG, PNG, WEBP, AVIF images"
 msgstr ""
 
+#: main/export.php:281
+msgid "Limit failed logins and email you on lockout"
+msgstr ""
+
 #: main/page/2scuri.php:13
 msgid "Limit login attempts"
+msgstr ""
+
+#: main/export.php:245
+msgid "Limit logins, block user enumeration, disable XML-RPC and the file editor"
 msgstr ""
 
 #: main/page/5media.php:148
@@ -2357,6 +2421,10 @@ msgstr ""
 msgid "Off / select"
 msgstr ""
 
+#: main/export.php:487
+msgid "One click applies a set of recommended settings for your kind of site. Presets only turn options on and tune a few values — they never switch off anything you have already enabled, and a one-click Undo is always kept."
+msgstr ""
+
 #: main/page/9user.php:21
 msgid "Only admin has access to the admin page"
 msgstr ""
@@ -2425,16 +2493,24 @@ msgstr ""
 msgid "POPUP"
 msgstr ""
 
+#: main/export.php:405 main/export.php:486
+msgid "PRESETS"
+msgstr ""
+
 #: inc/custom.php:208
 msgid "Password"
 msgstr ""
 
-#: main/export.php:283
+#: main/export.php:432
 msgid "Paste an export here, or upload a .json file"
 msgstr ""
 
 #: inc/clean.php:345
 msgid "Pending comments"
+msgstr ""
+
+#: main/export.php:259
+msgid "Performance"
 msgstr ""
 
 #: main/clean.php:221
@@ -2486,7 +2562,7 @@ msgstr ""
 msgid "Popup save time (.. hours)"
 msgstr ""
 
-#: main/export.php:315
+#: main/export.php:464
 msgid "Preview changes"
 msgstr ""
 
@@ -2504,6 +2580,10 @@ msgstr ""
 
 #: main/toc.php:219
 msgid "Quick view button color"
+msgstr ""
+
+#: main/export.php:246
+msgid "REST API left ON so the store keeps working"
 msgstr ""
 
 #: main/page/2scuri.php:100
@@ -2586,7 +2666,7 @@ msgstr ""
 msgid "Remove unnecessary header tags"
 msgstr ""
 
-#: main/export.php:295
+#: main/export.php:444
 msgid "Removed"
 msgstr ""
 
@@ -2626,7 +2706,7 @@ msgstr ""
 msgid "Reset this setting"
 msgstr ""
 
-#: main/export.php:328
+#: main/export.php:477
 msgid "Restore previous configuration"
 msgstr ""
 
@@ -2736,12 +2816,28 @@ msgstr ""
 msgid "Secret key"
 msgstr ""
 
+#: main/export.php:240
+msgid "Security and speed for a shop, chosen not to interfere with the store. The REST API is left fully on — WooCommerce cart and checkout need it — and permalinks are left untouched."
+msgstr ""
+
 #: inc/goo.php:117
 msgid "Security check failed. Please start the sign-in again."
 msgstr ""
 
+#: main/export.php:277
+msgid "Security hardening"
+msgstr ""
+
+#: main/export.php:244
+msgid "Security headers (frame, nosniff, referrer)"
+msgstr ""
+
 #: main/page/2scuri.php:52
 msgid "Security response headers"
+msgstr ""
+
+#: main/export.php:224
+msgid "Security: block user enumeration, limit logins, disable XML-RPC, hide the version, disable the file editor"
 msgstr ""
 
 #: main/page/ht-setting.php:22 main/page/ht-setting.php:40
@@ -2821,6 +2917,10 @@ msgstr ""
 msgid "Sender name"
 msgstr ""
 
+#: main/export.php:218
+msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
+msgstr ""
+
 #: main/page/9user.php:12
 msgid "Set access and viewing permissions"
 msgstr ""
@@ -2845,7 +2945,7 @@ msgstr ""
 msgid "Set up the ads.txt file"
 msgstr ""
 
-#: main/export.php:292
+#: main/export.php:441
 msgid "Setting group"
 msgstr ""
 
@@ -2981,6 +3081,10 @@ msgstr ""
 msgid "Table of contents configuration"
 msgstr ""
 
+#: main/export.php:220
+msgid "Table of contents on posts"
+msgstr ""
+
 #: main/ads.php:86 main/toc.php:174
 msgid "Tag"
 msgstr ""
@@ -3005,8 +3109,12 @@ msgstr ""
 msgid "That address cannot be fetched from this server."
 msgstr ""
 
-#: main/export.php:217
+#: main/export.php:365
 msgid "That is not a valid Horse Tools export file."
+msgstr ""
+
+#: main/export.php:358
+msgid "That preset does not exist."
 msgstr ""
 
 #: main/gindex.php:94
@@ -3029,7 +3137,7 @@ msgstr ""
 msgid "The changing image is square, with the standard size being 100x100 pixels"
 msgstr ""
 
-#: main/export.php:324
+#: main/export.php:473
 msgid "The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot."
 msgstr ""
 
@@ -3041,7 +3149,7 @@ msgstr ""
 msgid "The feature adds advanced functions when uploading images, such as adding frames, flipping images... allowing you to automatically customize your images during upload. Picture frame (PNG)"
 msgstr ""
 
-#: main/export.php:219
+#: main/export.php:367
 msgid "The file contained no Horse Tools settings to import."
 msgstr ""
 
@@ -3057,6 +3165,10 @@ msgstr ""
 msgid "The first image becomes the featured image"
 msgstr ""
 
+#: main/export.php:279
+msgid "The full recommended hardening set. The one thing left out is the full REST API block, which can break forms and guests — enable that yourself on the Security screen if your site truly needs none of it."
+msgstr ""
+
 #: main/page/1speed.php:52
 msgid "The function of lazy loading images"
 msgstr ""
@@ -3069,7 +3181,7 @@ msgstr ""
 msgid "The original image size when added to the post"
 msgstr ""
 
-#: main/export.php:210
+#: main/export.php:340
 msgid "The previous configuration has been restored."
 msgstr ""
 
@@ -3093,11 +3205,11 @@ msgstr ""
 msgid "The text to replace Buy Now on the product page"
 msgstr ""
 
-#: main/export.php:211
+#: main/export.php:341
 msgid "There is no backup to restore."
 msgstr ""
 
-#: main/export.php:289
+#: main/export.php:438
 msgid "These groups will change"
 msgstr ""
 
@@ -3193,7 +3305,7 @@ msgstr ""
 msgid "This function will redirect all of your website pages to the destination page of your choice"
 msgstr ""
 
-#: main/export.php:271
+#: main/export.php:420
 msgid "This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site."
 msgstr ""
 
@@ -3313,7 +3425,7 @@ msgstr ""
 msgid "Unable to write the sanitised SVG file."
 msgstr ""
 
-#: main/export.php:323
+#: main/export.php:472
 msgid "Undo the last import"
 msgstr ""
 
@@ -3339,6 +3451,10 @@ msgstr ""
 
 #: main/page/6post.php:111
 msgid "Use titles as descriptions for images"
+msgstr ""
+
+#: main/export.php:223
+msgid "Use titles as image alt text"
 msgstr ""
 
 #: main/clean.php:143
@@ -3433,6 +3549,10 @@ msgstr ""
 msgid "With this feature, you can notify your orders to your Telegram group, helping you manage orders conveniently"
 msgstr ""
 
+#: main/export.php:238
+msgid "WooCommerce / Store"
+msgstr ""
+
 #: main/page/2scuri.php:61
 msgid "X-Content-Type-Options: nosniff"
 msgstr ""
@@ -3493,7 +3613,7 @@ msgstr ""
 msgid "You can use the shortcode to add the search icon to the location you want"
 msgstr ""
 
-#: main/export.php:203
+#: main/export.php:333
 msgid "You do not have permission to do this."
 msgstr ""
 
@@ -3559,6 +3679,10 @@ msgstr ""
 
 #: main/page/1speed.php:17
 msgid "jQuery Migrate is a library used to maintain the operation of certain themes, plugins that rely on older code. If your website no longer relies on this library, you can disable it"
+msgstr ""
+
+#: main/export.php:222
+msgid "nofollow + new tab on external links"
 msgstr ""
 
 #: main/shortcode.php:277
