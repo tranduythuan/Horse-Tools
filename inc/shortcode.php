@@ -276,6 +276,50 @@ function horsetools_snippets_get() {
 }
 
 /**
+ * Evaluate the display conditions shared by snippets and [ht-if].
+ *
+ * Every condition is opt-in: an empty field means "no restriction", so an
+ * unconfigured snippet always shows. Returns true when the content may render.
+ *
+ * @param array $c device|login|role|no_admin|date_from|date_to.
+ * @return bool
+ */
+function horsetools_condition_passes( array $c ) {
+	if ( ! empty( $c['device'] ) ) {
+		$mobile = function_exists( 'wp_is_mobile' ) ? wp_is_mobile() : false;
+		if ( 'mobile' === $c['device'] && ! $mobile ) {
+			return false;
+		}
+		if ( 'desktop' === $c['device'] && $mobile ) {
+			return false;
+		}
+	}
+	if ( ! empty( $c['login'] ) ) {
+		$in = is_user_logged_in();
+		if ( 'in' === $c['login'] && ! $in ) {
+			return false;
+		}
+		if ( 'out' === $c['login'] && $in ) {
+			return false;
+		}
+	}
+	if ( ! empty( $c['no_admin'] ) && current_user_can( 'manage_options' ) ) {
+		return false;
+	}
+	if ( ! empty( $c['role'] ) && ! horsetools_user_meets_role( $c['role'] ) ) {
+		return false;
+	}
+	$today = current_time( 'Y-m-d' );
+	if ( ! empty( $c['date_from'] ) && $today < $c['date_from'] ) {
+		return false;
+	}
+	if ( ! empty( $c['date_to'] ) && $today > $c['date_to'] ) {
+		return false;
+	}
+	return true;
+}
+
+/**
  * Render one snippet by slug, filling placeholders from $atts + built-ins.
  *
  * @param string $slug
@@ -285,10 +329,24 @@ function horsetools_snippets_get() {
 function horsetools_render_snippet( $slug, $atts ) {
 	$snips = horsetools_snippets_get();
 	$slug  = sanitize_key( $slug );
-	if ( '' === $slug || empty( $snips[ $slug ] ) || empty( $snips[ $slug ]['on'] ) ) {
+	if ( '' === $slug || empty( $snips[ $slug ] ) ) {
 		return '';
 	}
-	$content = (string) $snips[ $slug ]['content'];
+	$s = $snips[ $slug ];
+	if ( empty( $s['on'] ) ) {
+		return '';
+	}
+	if ( ! horsetools_condition_passes( array(
+		'device'    => isset( $s['device'] ) ? $s['device'] : '',
+		'login'     => isset( $s['login'] ) ? $s['login'] : '',
+		'role'      => isset( $s['role'] ) ? $s['role'] : '',
+		'no_admin'  => ! empty( $s['no_admin'] ),
+		'date_from' => isset( $s['date_from'] ) ? $s['date_from'] : '',
+		'date_to'   => isset( $s['date_to'] ) ? $s['date_to'] : '',
+	) ) ) {
+		return '';
+	}
+	$content = (string) $s['content'];
 	$atts    = is_array( $atts ) ? $atts : array();
 
 	$built = array(
@@ -335,3 +393,54 @@ add_action( 'init', function () {
 		add_shortcode( 'sc', 'horsetools_snippet_shortcode' );
 	}
 }, 99 );
+
+/**
+ * [ht-if]…[ht-else]…[/ht-if] — show content only when conditions are met.
+ *
+ * [ht-if device="mobile" login="in" role="editor" admin="hide" from="2026-01-01" to="2026-12-31"]
+ *   Shown when all conditions pass.
+ * [ht-else]
+ *   Shown otherwise (optional).
+ * [/ht-if]
+ */
+function horsetools_if_shortcode( $atts, $content = '' ) {
+	$atts = shortcode_atts(
+		array( 'device' => '', 'login' => '', 'role' => '', 'admin' => '', 'from' => '', 'to' => '' ),
+		$atts,
+		'ht-if'
+	);
+	$parts = preg_split( '/\[ht-else\s*\/?\]/', (string) $content, 2 );
+	$yes   = $parts[0];
+	$no    = isset( $parts[1] ) ? $parts[1] : '';
+	$pass  = horsetools_condition_passes( array(
+		'device'    => strtolower( $atts['device'] ),
+		'login'     => strtolower( $atts['login'] ),
+		'role'      => sanitize_key( $atts['role'] ),
+		'no_admin'  => in_array( strtolower( (string) $atts['admin'] ), array( 'hide', '1', 'yes', 'true' ), true ),
+		'date_from' => $atts['from'],
+		'date_to'   => $atts['to'],
+	) );
+	return do_shortcode( $pass ? $yes : $no );
+}
+add_shortcode( 'ht-if', 'horsetools_if_shortcode' );
+add_shortcode( 'ht-else', '__return_empty_string' ); // harmless if used on its own
+
+/**
+ * Run shortcodes in a few extra contexts, each behind its own toggle. Core
+ * runs them in post content and text widgets but not these.
+ */
+if ( isset( $horsetools_shortcode_options['shortcode-inwidget'] ) ) {
+	add_filter( 'widget_text', 'do_shortcode', 11 );
+	add_filter( 'widget_block_content', 'do_shortcode', 11 );
+}
+if ( isset( $horsetools_shortcode_options['shortcode-inexcerpt'] ) ) {
+	add_filter( 'the_excerpt', 'do_shortcode', 11 );
+	add_filter( 'get_the_excerpt', 'do_shortcode', 11 );
+}
+if ( isset( $horsetools_shortcode_options['shortcode-inmenu'] ) ) {
+	add_filter( 'wp_nav_menu_items', 'do_shortcode', 11 );
+}
+if ( isset( $horsetools_shortcode_options['shortcode-interm'] ) ) {
+	add_filter( 'term_description', 'do_shortcode', 11 );
+	add_filter( 'category_description', 'do_shortcode', 11 );
+}

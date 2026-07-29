@@ -4894,3 +4894,105 @@ msgstr "Xem"
 
 msgid "e.g. sc, ht-snippet, vip"
 msgstr "ví dụ: sc, ht-snippet, vip"
+
+msgid "All devices"
+msgstr "Mọi thiết bị"
+
+msgid "All snippets"
+msgstr "Tất cả snippet"
+
+msgid "Any"
+msgstr "Bất kỳ"
+
+msgid "Description (for your reference)"
+msgstr "Mô tả (để bạn dễ nhớ)"
+
+msgid "Desktop only"
+msgstr "Chỉ máy tính"
+
+msgid "Display name (shown in the list)"
+msgstr "Tên hiển thị (hiện trong danh sách)"
+
+msgid "Everyone"
+msgstr "Mọi người"
+
+msgid "Filter by tag"
+msgstr "Lọc theo tag"
+
+msgid "Hide from administrators"
+msgstr "Ẩn với quản trị viên"
+
+msgid "Logged-in users"
+msgstr "Người đã đăng nhập"
+
+msgid "Logged-out visitors"
+msgstr "Khách chưa đăng nhập"
+
+msgid "Minimum role"
+msgstr "Vai trò tối thiểu"
+
+msgid "Mobile only"
+msgstr "Chỉ di động"
+
+msgid "No"
+msgstr "Không"
+
+msgid "No (temporarily off)"
+msgstr "Không (tạm tắt)"
+
+msgid "Run shortcodes in category / tag descriptions"
+msgstr "Chạy shortcode trong mô tả chuyên mục / tag"
+
+msgid "Run shortcodes in excerpts"
+msgstr "Chạy shortcode trong đoạn trích (excerpt)"
+
+msgid "Run shortcodes in menu items"
+msgstr "Chạy shortcode trong mục menu"
+
+msgid "Run shortcodes in widgets"
+msgstr "Chạy shortcode trong widget"
+
+msgid "Show from"
+msgstr "Hiện từ ngày"
+
+msgid "Show on devices"
+msgstr "Hiện trên thiết bị"
+
+msgid "Show to"
+msgstr "Hiện cho"
+
+msgid "Show until"
+msgstr "Hiện đến ngày"
+
+msgid "Tags (comma separated)"
+msgstr "Tag (cách nhau bằng dấu phẩy)"
+
+msgid "Where shortcodes run"
+msgstr "Nơi shortcode được chạy"
+
+msgid "WordPress runs shortcodes in post content by default. Turn these on to run them elsewhere too. (Saved with the SAVE button at the bottom.)"
+msgstr "WordPress mặc định chạy shortcode trong nội dung bài. Bật các mục này để chạy ở nơi khác nữa. (Lưu bằng nút LƯU ở dưới.)"
+
+msgid "Yes"
+msgstr "Có"
+
+msgid "Yes — preview as a visitor"
+msgstr "Có — xem thử như khách"
+
+msgid "desktop"
+msgstr "máy tính"
+
+msgid "e.g. contact, promo"
+msgstr "ví dụ: contact, promo"
+
+msgid "logged-in"
+msgstr "đã đăng nhập"
+
+msgid "logged-out"
+msgstr "chưa đăng nhập"
+
+msgid "mobile"
+msgstr "di động"
+
+msgid "off"
+msgstr "tắt"

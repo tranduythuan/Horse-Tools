@@ -26,7 +26,7 @@ msgstr ""
 msgid "%d enabled"
 msgstr ""
 
-#: main/shortcode.php:390
+#: main/shortcode.php:425
 msgid "%d post(s) contain [sc] tags. Click “Convert now” to rewrite them."
 msgstr ""
 
@@ -34,7 +34,7 @@ msgstr ""
 msgid "(duplicate)"
 msgstr ""
 
-#: main/shortcode.php:665
+#: main/shortcode.php:774
 msgid "(no title)"
 msgstr ""
 
@@ -294,12 +294,20 @@ msgstr ""
 msgid "Agree"
 msgstr ""
 
+#: main/shortcode.php:325
+msgid "All devices"
+msgstr ""
+
 #: main/redirects.php:188
 msgid "All links on your website will redirect to the maintenance page, and only logged-in admin accounts can view the content"
 msgstr ""
 
 #: main/export.php:283
 msgid "All safe security headers (frame, nosniff, referrer, permissions)"
+msgstr ""
+
+#: main/shortcode.php:346
+msgid "All snippets"
 msgstr ""
 
 #: main/page/9user.php:55
@@ -336,6 +344,10 @@ msgstr ""
 
 #: inc/media.php:1188
 msgid "An error occurred"
+msgstr ""
+
+#: main/shortcode.php:329
+msgid "Any"
 msgstr ""
 
 #: main/page/7mail.php:37 main/page/7mail.php:38
@@ -766,7 +778,7 @@ msgstr ""
 msgid "Convert PNG to JPG"
 msgstr ""
 
-#: main/shortcode.php:346
+#: main/shortcode.php:368
 msgid "Convert Shortcoder tags"
 msgstr ""
 
@@ -778,7 +790,7 @@ msgstr ""
 msgid "Convert images to WEBP upon upload"
 msgstr ""
 
-#: main/shortcode.php:350
+#: main/shortcode.php:372
 msgid "Convert now"
 msgstr ""
 
@@ -790,7 +802,7 @@ msgstr ""
 msgid "Convert paths from (domain.com/category/news/latest-news, domain.com/category/news) to (domain.com/latest-news, domain.com/news)"
 msgstr ""
 
-#: main/shortcode.php:391
+#: main/shortcode.php:426
 msgid "Converted %d post(s)."
 msgstr ""
 
@@ -798,7 +810,7 @@ msgstr ""
 msgid "Cookies"
 msgstr ""
 
-#: main/shortcode.php:384
+#: main/shortcode.php:419
 msgid "Copied"
 msgstr ""
 
@@ -974,7 +986,7 @@ msgstr ""
 msgid "Default style"
 msgstr ""
 
-#: inc/user.php:76 main/clean.php:204 main/shortcode.php:394
+#: inc/user.php:76 main/clean.php:204 main/shortcode.php:429
 msgid "Delete"
 msgstr ""
 
@@ -1014,7 +1026,7 @@ msgstr ""
 msgid "Delete this log entry"
 msgstr ""
 
-#: main/shortcode.php:385
+#: main/shortcode.php:420
 msgid "Delete this snippet? Content that uses it will stop rendering."
 msgstr ""
 
@@ -1048,6 +1060,14 @@ msgstr ""
 
 #: inc/chat.php:253
 msgid "Demo"
+msgstr ""
+
+#: main/shortcode.php:316
+msgid "Description (for your reference)"
+msgstr ""
+
+#: main/shortcode.php:325
+msgid "Desktop only"
 msgstr ""
 
 #: main/page/1speed.php:26
@@ -1162,6 +1182,10 @@ msgstr ""
 msgid "Display link when seconds expire"
 msgstr ""
 
+#: main/shortcode.php:315
+msgid "Display name (shown in the list)"
+msgstr ""
+
 #: main/page/11google.php:59
 msgid "Display on the WooCommerce login form"
 msgstr ""
@@ -1270,7 +1294,7 @@ msgstr ""
 msgid "Duplicate post, page, custom post type"
 msgstr ""
 
-#: main/shortcode.php:393
+#: main/shortcode.php:428
 msgid "Edit"
 msgstr ""
 
@@ -1610,7 +1634,7 @@ msgstr ""
 msgid "Enable watermarks"
 msgstr ""
 
-#: main/shortcode.php:324
+#: main/shortcode.php:320
 msgid "Enabled"
 msgstr ""
 
@@ -1634,7 +1658,7 @@ msgstr ""
 msgid "Enter ID"
 msgstr ""
 
-#: main/shortcode.php:647
+#: main/shortcode.php:756
 msgid "Enter a shortcode name to search for."
 msgstr ""
 
@@ -1778,6 +1802,10 @@ msgstr ""
 msgid "Error — nothing was deleted."
 msgstr ""
 
+#: main/shortcode.php:327
+msgid "Everyone"
+msgstr ""
+
 #: main/page/10custom.php:22
 msgid "Example: domain.com/wp-admin where wp-admin is the suffix"
 msgstr ""
@@ -1822,6 +1850,10 @@ msgstr ""
 msgid "Field"
 msgstr ""
 
+#: main/shortcode.php:345
+msgid "Filter by tag"
+msgstr ""
+
 #: main/page/9user.php:14
 msgid "Filter posts and images"
 msgstr ""
@@ -1834,11 +1866,11 @@ msgstr ""
 msgid "Find and delete all 404 thumbnail images in media"
 msgstr ""
 
-#: main/shortcode.php:342
+#: main/shortcode.php:364
 msgid "Find usage"
 msgstr ""
 
-#: main/shortcode.php:338
+#: main/shortcode.php:360
 msgid "Find where a shortcode is used"
 msgstr ""
 
@@ -1866,7 +1898,7 @@ msgstr ""
 msgid "Forced ad clicks — removed"
 msgstr ""
 
-#: main/shortcode.php:388
+#: main/shortcode.php:423
 msgid "Found in %d item(s):"
 msgstr ""
 
@@ -1912,7 +1944,7 @@ msgstr ""
 msgid "Generate data"
 msgstr ""
 
-#: main/shortcode.php:557
+#: main/shortcode.php:645
 msgid "Give the snippet a name (letters, numbers and dashes)."
 msgstr ""
 
@@ -1948,7 +1980,7 @@ msgstr ""
 msgid "HTML compression: minify inline JS, strip comments"
 msgstr ""
 
-#: main/shortcode.php:321
+#: main/shortcode.php:317
 msgid "HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>"
 msgstr ""
 
@@ -1978,6 +2010,10 @@ msgstr ""
 
 #: main/page/12chat.php:23
 msgid "Hide chat button when scrolling down"
+msgstr ""
+
+#: main/shortcode.php:322
+msgid "Hide from administrators"
 msgstr ""
 
 #: main/page/10custom.php:120
@@ -2196,11 +2232,11 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
-#: main/shortcode.php:331
+#: main/shortcode.php:341
 msgid "Import from Shortcoder"
 msgstr ""
 
-#: main/shortcode.php:386
+#: main/shortcode.php:421
 msgid "Imported %1$d snippet(s); %2$d already existed."
 msgstr ""
 
@@ -2355,6 +2391,14 @@ msgstr ""
 msgid "Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site."
 msgstr ""
 
+#: main/shortcode.php:327
+msgid "Logged-in users"
+msgstr ""
+
+#: main/shortcode.php:327
+msgid "Logged-out visitors"
+msgstr ""
+
 #: inc/health.php:65
 msgid "Login attempts are rate-limited"
 msgstr ""
@@ -2427,6 +2471,14 @@ msgstr ""
 msgid "Minify Inline JavaScript"
 msgstr ""
 
+#: main/shortcode.php:328
+msgid "Minimum role"
+msgstr ""
+
+#: main/shortcode.php:325
+msgid "Mobile only"
+msgstr ""
+
 #: main/page/8woo.php:12
 msgid "Modify content"
 msgstr ""
@@ -2455,7 +2507,7 @@ msgstr ""
 msgid "Name the font"
 msgstr ""
 
-#: main/shortcode.php:315
+#: main/shortcode.php:314
 msgid "Name — letters, numbers, dashes (e.g. call-to-action)"
 msgstr ""
 
@@ -2463,7 +2515,7 @@ msgstr ""
 msgid "Navigation bar (Horse Tools)"
 msgstr ""
 
-#: main/shortcode.php:330
+#: main/shortcode.php:340
 msgid "New / clear"
 msgstr ""
 
@@ -2475,6 +2527,14 @@ msgstr ""
 msgid "Next automatic check: %s"
 msgstr ""
 
+#: main/shortcode.php:323
+msgid "No"
+msgstr ""
+
+#: main/shortcode.php:321
+msgid "No (temporarily off)"
+msgstr ""
+
 #: main/redirects.php:175
 msgid "No 404s recorded yet."
 msgstr ""
@@ -2483,11 +2543,11 @@ msgstr ""
 msgid "No Google Fonts leaking to Google"
 msgstr ""
 
-#: main/shortcode.php:607
+#: main/shortcode.php:716
 msgid "No Shortcoder snippets were found on this site."
 msgstr ""
 
-#: main/shortcode.php:389
+#: main/shortcode.php:424
 msgid "No [sc] tags found in your content."
 msgstr ""
 
@@ -2519,7 +2579,7 @@ msgstr ""
 msgid "No size"
 msgstr ""
 
-#: main/shortcode.php:383
+#: main/shortcode.php:418
 msgid "No snippets yet. Create one above, or import from Shortcoder."
 msgstr ""
 
@@ -2539,7 +2599,7 @@ msgstr ""
 msgid "Not entered"
 msgstr ""
 
-#: main/shortcode.php:387
+#: main/shortcode.php:422
 msgid "Not found in any post or page."
 msgstr ""
 
@@ -2713,7 +2773,7 @@ msgstr ""
 msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
 msgstr ""
 
-#: inc/scuri.php:466 inc/scuri.php:532 main/shortcode.php:533
+#: inc/scuri.php:466 inc/scuri.php:532 main/shortcode.php:599
 msgid "Permission denied."
 msgstr ""
 
@@ -2762,7 +2822,7 @@ msgstr ""
 msgid "Popup save time (.. hours)"
 msgstr ""
 
-#: main/shortcode.php:349
+#: main/shortcode.php:371
 msgid "Preview"
 msgstr ""
 
@@ -2938,12 +2998,28 @@ msgstr ""
 msgid "Retrieve the Site Key and Secret Key from your Google reCAPTCHA project and add them to the two fields above"
 msgstr ""
 
-#: main/shortcode.php:347
+#: main/shortcode.php:369
 msgid "Rewrite every [sc …] tag in your content to [ht-snippet …], keeping all attributes. Preview first; applying edits post content, so take a backup. Tip: you don’t have to convert — imported snippets already answer [sc …] once Shortcoder is deactivated."
 msgstr ""
 
 #: main/page/11google.php:37 main/page/9user.php:49 main/shortcode.php:56
 msgid "Role"
+msgstr ""
+
+#: main/shortcode.php:356
+msgid "Run shortcodes in category / tag descriptions"
+msgstr ""
+
+#: main/shortcode.php:354
+msgid "Run shortcodes in excerpts"
+msgstr ""
+
+#: main/shortcode.php:355
+msgid "Run shortcodes in menu items"
+msgstr ""
+
+#: main/shortcode.php:353
+msgid "Run shortcodes in widgets"
 msgstr ""
 
 #: inc/scuri.php:538
@@ -2956,7 +3032,7 @@ msgstr ""
 
 #: main/admin.php:93 main/ads.php:114 main/code.php:102 main/debug.php:74
 #: main/extend.php:216 main/font.php:130 main/gindex.php:117 main/notify.php:197
-#: main/redirects.php:199 main/search.php:207 main/shortcode.php:486 main/toc.php:279
+#: main/redirects.php:199 main/search.php:207 main/shortcode.php:552 main/toc.php:279
 msgid "SAVE CONTENT"
 msgstr ""
 
@@ -3020,7 +3096,7 @@ msgstr ""
 msgid "Save schedule"
 msgstr ""
 
-#: main/shortcode.php:329
+#: main/shortcode.php:339
 msgid "Save snippet"
 msgstr ""
 
@@ -3249,7 +3325,7 @@ msgstr ""
 msgid "Settings changed"
 msgstr ""
 
-#: main/extend.php:155 main/shortcode.php:502
+#: main/extend.php:155 main/shortcode.php:568
 msgid "Shortcode"
 msgstr ""
 
@@ -3265,8 +3341,24 @@ msgstr ""
 msgid "Shortcodes"
 msgstr ""
 
+#: main/shortcode.php:332
+msgid "Show from"
+msgstr ""
+
 #: main/page/6post.php:152
 msgid "Show full image"
+msgstr ""
+
+#: main/shortcode.php:324
+msgid "Show on devices"
+msgstr ""
+
+#: main/shortcode.php:326
+msgid "Show to"
+msgstr ""
+
+#: main/shortcode.php:334
+msgid "Show until"
 msgstr ""
 
 #: inc/goo.php:107
@@ -3293,15 +3385,15 @@ msgstr ""
 msgid "Smooth-scroll is a library that enables you to create a smooth scrolling effect, providing users with a perception of faster page navigation"
 msgstr ""
 
-#: main/shortcode.php:382
+#: main/shortcode.php:417
 msgid "Snippet deleted."
 msgstr ""
 
-#: main/shortcode.php:381
+#: main/shortcode.php:416
 msgid "Snippet saved."
 msgstr ""
 
-#: main/page/2scuri.php:178 main/shortcode.php:392
+#: main/page/2scuri.php:178 main/shortcode.php:427
 msgid "Something went wrong."
 msgstr ""
 
@@ -3393,6 +3485,10 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
+#: main/shortcode.php:330
+msgid "Tags (comma separated)"
+msgstr ""
+
 #: inc/mail.php:45
 msgid "Test SMTP email sending from your website"
 msgstr ""
@@ -3421,7 +3517,7 @@ msgstr ""
 msgid "That is not a valid Horse Tools export file."
 msgstr ""
 
-#: main/shortcode.php:562
+#: main/shortcode.php:650
 msgid "That name is reserved by another Horse Tools shortcode. Pick a different one."
 msgstr ""
 
@@ -3677,10 +3773,6 @@ msgstr ""
 msgid "Time:"
 msgstr ""
 
-#: main/shortcode.php:318
-msgid "Title (for your reference)"
-msgstr ""
-
 #: main/toc.php:209
 msgid "Title color"
 msgstr ""
@@ -3737,7 +3829,7 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: main/shortcode.php:339
+#: main/shortcode.php:361
 msgid "Type any shortcode name (without brackets) to list the posts and pages that contain it — handy before you change or remove one."
 msgstr ""
 
@@ -3825,7 +3917,7 @@ msgstr ""
 msgid "User enumeration is blocked"
 msgstr ""
 
-#: main/shortcode.php:395
+#: main/shortcode.php:430
 msgid "View"
 msgstr ""
 
@@ -3893,6 +3985,10 @@ msgstr ""
 msgid "When your theme or a plugin loads fonts from Google, every visitor's IP is sent to Google — which GDPR treats as a data transfer. This serves downloaded copies from your own domain instead. Scan first, then click self-host; this works for fonts loaded the standard way (if a font still loads from Google afterwards, your theme hard-codes it — the scan will show you)."
 msgstr ""
 
+#: main/shortcode.php:351
+msgid "Where shortcodes run"
+msgstr ""
+
 #: main/page/10custom.php:194
 msgid "Widget title"
 msgstr ""
@@ -3921,6 +4017,10 @@ msgstr ""
 msgid "WooCommerce / Store"
 msgstr ""
 
+#: main/shortcode.php:352
+msgid "WordPress runs shortcodes in post content by default. Turn these on to run them elsewhere too. (Saved with the SAVE button at the bottom.)"
+msgstr ""
+
 #: main/page/2scuri.php:61
 msgid "X-Content-Type-Options: nosniff"
 msgstr ""
@@ -3931,6 +4031,14 @@ msgstr ""
 
 #: inc/health.php:80
 msgid "XML-RPC is disabled"
+msgstr ""
+
+#: main/shortcode.php:321
+msgid "Yes"
+msgstr ""
+
+#: main/shortcode.php:323
+msgid "Yes — preview as a visitor"
 msgstr ""
 
 #: inc/post.php:255
@@ -4037,7 +4145,15 @@ msgstr ""
 msgid "[%s] New comment on the article \"%s\""
 msgstr ""
 
-#: main/shortcode.php:341
+#: main/shortcode.php:434
+msgid "desktop"
+msgstr ""
+
+#: main/shortcode.php:331
+msgid "e.g. contact, promo"
+msgstr ""
+
+#: main/shortcode.php:363
 msgid "e.g. sc, ht-snippet, vip"
 msgstr ""
 
@@ -4057,8 +4173,24 @@ msgstr ""
 msgid "jQuery Migrate is a library used to maintain the operation of certain themes, plugins that rely on older code. If your website no longer relies on this library, you can disable it"
 msgstr ""
 
+#: main/shortcode.php:435
+msgid "logged-in"
+msgstr ""
+
+#: main/shortcode.php:435
+msgid "logged-out"
+msgstr ""
+
+#: main/shortcode.php:434
+msgid "mobile"
+msgstr ""
+
 #: main/export.php:222
 msgid "nofollow + new tab on external links"
+msgstr ""
+
+#: main/shortcode.php:431
+msgid "off"
 msgstr ""
 
 #: main/shortcode.php:278

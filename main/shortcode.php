@@ -311,27 +311,49 @@ function horsetools_shortcode_options_page() {
 			  <h3><i class="ti ti-file-code"></i> <?php _e('Custom shortcodes (snippets)', 'horse-tools') ?></h3>
 				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Create a named block of HTML/CSS/JS and drop it anywhere with [ht-snippet name="your-name"]. Placeholders {{param}} or %%param%% are filled from the shortcode’s attributes, plus built-ins: currentyear, currentdate, postid, posttitle, sitename, siteurl.', 'horse-tools'); ?></p>
 
-				<p>
-				<input type="text" id="ht-snip-name" class="ht-input-big" placeholder="<?php esc_attr_e( 'Name — letters, numbers, dashes (e.g. call-to-action)', 'horse-tools' ); ?>" />
-				</p>
-				<p>
-				<input type="text" id="ht-snip-title" class="ht-input-big" placeholder="<?php esc_attr_e( 'Title (for your reference)', 'horse-tools' ); ?>" />
-				</p>
-				<p>
-				<textarea id="ht-snip-content" class="ht-code-textarea" style="height:180px" placeholder="<?php esc_attr_e( 'HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>', 'horse-tools' ); ?>"></textarea>
-				</p>
-				<p>
-				<label class="ht-container"><?php _e( 'Enabled', 'horse-tools' ); ?>
-					<input type="checkbox" id="ht-snip-on" checked />
-					<span class="ht-checkmark"></span></label>
-				</p>
+				<p><input type="text" id="ht-snip-name" class="ht-input-big" placeholder="<?php esc_attr_e( 'Name — letters, numbers, dashes (e.g. call-to-action)', 'horse-tools' ); ?>" /></p>
+				<p><input type="text" id="ht-snip-title" class="ht-input-big" placeholder="<?php esc_attr_e( 'Display name (shown in the list)', 'horse-tools' ); ?>" /></p>
+				<p><input type="text" id="ht-snip-desc" class="ht-input-big" placeholder="<?php esc_attr_e( 'Description (for your reference)', 'horse-tools' ); ?>" /></p>
+				<p><textarea id="ht-snip-content" class="ht-code-textarea" style="height:170px" placeholder="<?php esc_attr_e( 'HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>', 'horse-tools' ); ?>"></textarea></p>
+
+				<div class="ht-snip-opts">
+					<label><span><?php _e( 'Enabled', 'horse-tools' ); ?></span>
+						<select id="ht-snip-on"><option value="1"><?php _e( 'Yes', 'horse-tools' ); ?></option><option value="0"><?php _e( 'No (temporarily off)', 'horse-tools' ); ?></option></select></label>
+					<label><span><?php _e( 'Hide from administrators', 'horse-tools' ); ?></span>
+						<select id="ht-snip-noadmin"><option value="0"><?php _e( 'No', 'horse-tools' ); ?></option><option value="1"><?php _e( 'Yes — preview as a visitor', 'horse-tools' ); ?></option></select></label>
+					<label><span><?php _e( 'Show on devices', 'horse-tools' ); ?></span>
+						<select id="ht-snip-device"><option value=""><?php _e( 'All devices', 'horse-tools' ); ?></option><option value="desktop"><?php _e( 'Desktop only', 'horse-tools' ); ?></option><option value="mobile"><?php _e( 'Mobile only', 'horse-tools' ); ?></option></select></label>
+					<label><span><?php _e( 'Show to', 'horse-tools' ); ?></span>
+						<select id="ht-snip-login"><option value=""><?php _e( 'Everyone', 'horse-tools' ); ?></option><option value="in"><?php _e( 'Logged-in users', 'horse-tools' ); ?></option><option value="out"><?php _e( 'Logged-out visitors', 'horse-tools' ); ?></option></select></label>
+					<label><span><?php _e( 'Minimum role', 'horse-tools' ); ?></span>
+						<select id="ht-snip-role"><option value=""><?php _e( 'Any', 'horse-tools' ); ?></option><option value="subscriber">Subscriber+</option><option value="contributor">Contributor+</option><option value="author">Author+</option><option value="editor">Editor+</option><option value="administrator">Administrator</option></select></label>
+					<label><span><?php _e( 'Tags (comma separated)', 'horse-tools' ); ?></span>
+						<input type="text" id="ht-snip-tags" placeholder="<?php esc_attr_e( 'e.g. contact, promo', 'horse-tools' ); ?>" /></label>
+					<label><span><?php _e( 'Show from', 'horse-tools' ); ?></span>
+						<input type="date" id="ht-snip-from" /></label>
+					<label><span><?php _e( 'Show until', 'horse-tools' ); ?></span>
+						<input type="date" id="ht-snip-to" /></label>
+				</div>
+
 				<p class="ht-snip-actions">
 					<button type="button" class="ht-priv-btn" id="ht-snip-save"><i class="ti ti-device-floppy"></i> <?php _e( 'Save snippet', 'horse-tools' ); ?></button>
 					<button type="button" class="ht-priv-btn" id="ht-snip-clear"><i class="ti ti-eraser"></i> <?php _e( 'New / clear', 'horse-tools' ); ?></button>
 					<button type="button" class="ht-priv-btn" id="ht-snip-import"><i class="ti ti-download"></i> <?php _e( 'Import from Shortcoder', 'horse-tools' ); ?></button>
 				</p>
 				<div id="ht-snip-msg"></div>
+
+				<p class="ht-snip-filter"><label><i class="ti ti-tags"></i> <?php _e( 'Filter by tag', 'horse-tools' ); ?>
+					<select id="ht-snip-tagfilter"><option value=""><?php _e( 'All snippets', 'horse-tools' ); ?></option></select></label></p>
 				<div id="ht-snip-list"></div>
+			</div>
+
+			<div class="ht-card">
+			  <h3><i class="ti ti-arrows-shuffle"></i> <?php _e('Where shortcodes run', 'horse-tools') ?></h3>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('WordPress runs shortcodes in post content by default. Turn these on to run them elsewhere too. (Saved with the SAVE button at the bottom.)', 'horse-tools'); ?></p>
+				<?php horsetools_toggle( 'shortcode-inwidget', __( 'Run shortcodes in widgets', 'horse-tools' ), array( 'module' => 'shortcode', 'tab' => 'SNIPPETS', 'section' => 'Where shortcodes run' ) ); ?>
+				<?php horsetools_toggle( 'shortcode-inexcerpt', __( 'Run shortcodes in excerpts', 'horse-tools' ), array( 'module' => 'shortcode', 'tab' => 'SNIPPETS', 'section' => 'Where shortcodes run' ) ); ?>
+				<?php horsetools_toggle( 'shortcode-inmenu', __( 'Run shortcodes in menu items', 'horse-tools' ), array( 'module' => 'shortcode', 'tab' => 'SNIPPETS', 'section' => 'Where shortcodes run' ) ); ?>
+				<?php horsetools_toggle( 'shortcode-interm', __( 'Run shortcodes in category / tag descriptions', 'horse-tools' ), array( 'module' => 'shortcode', 'tab' => 'SNIPPETS', 'section' => 'Where shortcodes run' ) ); ?>
 			</div>
 
 			<div class="ht-card ht-snip2" data-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_snip' ) ); ?>" data-ajax="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>">
@@ -356,14 +378,22 @@ function horsetools_shortcode_options_page() {
 			.ht-snip .ht-priv-btn:hover,.ht-snip2 .ht-priv-btn:hover{background:#fff9e6}
 			.ht-snip .ht-priv-btn[disabled],.ht-snip2 .ht-priv-btn[disabled]{opacity:.5;cursor:default}
 			.ht-snip-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:6px 0}
-			#ht-snip-list{margin-top:12px}
-			.ht-snip-row{display:flex;align-items:center;gap:10px;padding:9px 10px;border:1px solid #ececec;border-radius:9px;margin-bottom:7px;background:#fff}
+			.ht-snip-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px 16px;margin:8px 0 4px}
+			.ht-snip-opts label{display:flex;flex-direction:column;gap:3px;font-size:12px;color:#666}
+			.ht-snip-opts select,.ht-snip-opts input{padding:6px 8px;border:1px solid #ddd;border-radius:7px;font-size:13px}
+			.ht-snip-filter{margin:12px 0 4px;font-size:13px}
+			.ht-snip-filter select{padding:5px 8px;border:1px solid #ddd;border-radius:7px;margin-left:6px}
+			#ht-snip-list{margin-top:6px}
+			.ht-snip-row{display:flex;align-items:center;gap:10px;padding:9px 10px;border:1px solid #ececec;border-radius:9px;margin-bottom:7px;background:#fff;flex-wrap:wrap}
 			.ht-snip-row.off{opacity:.55}
 			.ht-snip-row b{font-size:13px}
 			.ht-snip-code{font-family:monospace;font-size:11.5px;background:#fff8e1;border:1px solid #f0d98a;color:#8a5a00;border-radius:5px;padding:2px 7px;cursor:pointer;white-space:nowrap}
-			.ht-snip-row .grow{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+			.ht-snip-row .grow{flex:1;min-width:120px;overflow:hidden}
+			.ht-snip-row .grow small{color:#999;display:block;font-size:11px}
 			.ht-snip-row a.op{cursor:pointer;color:#8a5a00;font-size:12px;text-decoration:underline}
 			.ht-snip-row a.del{color:#c0392b}
+			.ht-snip-badge{display:inline-block;font-size:10px;background:#eef3f8;color:#3a6ea5;border-radius:20px;padding:1px 8px;margin-right:4px}
+			.ht-snip-tag{display:inline-block;font-size:10px;background:#fff3d6;color:#8a5a00;border:1px solid #f0d98a;border-radius:20px;padding:1px 8px;margin-right:4px}
 			.ht-snip-msg{padding:8px 12px;border-radius:8px;margin:6px 0;font-size:13px;background:#f4f6f8}
 			.ht-snip-msg.err{background:#fdecea;color:#8a1c12}
 			.ht-snip-msg.good{background:#eafaf0;color:#1e6b3f}
@@ -378,8 +408,10 @@ function horsetools_shortcode_options_page() {
 				root.dataset.ready = '1';
 				var AJAX = root.dataset.ajax, NONCE = root.dataset.nonce;
 				var $ = function(id){ return document.getElementById(id); };
-				var elName=$('ht-snip-name'), elTitle=$('ht-snip-title'), elContent=$('ht-snip-content'),
-				    elOn=$('ht-snip-on'), msg=$('ht-snip-msg'), list=$('ht-snip-list');
+				var F = { name:$('ht-snip-name'), title:$('ht-snip-title'), desc:$('ht-snip-desc'), content:$('ht-snip-content'),
+					on:$('ht-snip-on'), noadmin:$('ht-snip-noadmin'), device:$('ht-snip-device'), login:$('ht-snip-login'),
+					role:$('ht-snip-role'), tags:$('ht-snip-tags'), from:$('ht-snip-from'), to:$('ht-snip-to') };
+				var msg=$('ht-snip-msg'), list=$('ht-snip-list'), tagFilter=$('ht-snip-tagfilter');
 				var I18N = {
 					saved: <?php echo wp_json_encode( __( 'Snippet saved.', 'horse-tools' ) ); ?>,
 					deleted: <?php echo wp_json_encode( __( 'Snippet deleted.', 'horse-tools' ) ); ?>,
@@ -395,9 +427,14 @@ function horsetools_shortcode_options_page() {
 					fail: <?php echo wp_json_encode( __( 'Something went wrong.', 'horse-tools' ) ); ?>,
 					edit: <?php echo wp_json_encode( __( 'Edit', 'horse-tools' ) ); ?>,
 					del: <?php echo wp_json_encode( __( 'Delete', 'horse-tools' ) ); ?>,
-					view: <?php echo wp_json_encode( __( 'View', 'horse-tools' ) ); ?>
+					view: <?php echo wp_json_encode( __( 'View', 'horse-tools' ) ); ?>,
+					off: <?php echo wp_json_encode( __( 'off', 'horse-tools' ) ); ?>
 				};
-				var snippets = <?php echo wp_json_encode( array_values( array_map( function( $slug, $s ) { return array( 'slug' => $slug, 'title' => isset( $s['title'] ) ? $s['title'] : $slug, 'content' => isset( $s['content'] ) ? $s['content'] : '', 'on' => ! empty( $s['on'] ) ); }, array_keys( (array) get_option( 'horsetools_snippets', array() ) ), array_values( (array) get_option( 'horsetools_snippets', array() ) ) ) ) ); ?>;
+				var COND = {
+					device: { desktop: <?php echo wp_json_encode( __( 'desktop', 'horse-tools' ) ); ?>, mobile: <?php echo wp_json_encode( __( 'mobile', 'horse-tools' ) ); ?> },
+					login:  { in: <?php echo wp_json_encode( __( 'logged-in', 'horse-tools' ) ); ?>, out: <?php echo wp_json_encode( __( 'logged-out', 'horse-tools' ) ); ?> }
+				};
+				var snippets = <?php echo wp_json_encode( horsetools_snip_list_payload() ); ?>;
 
 				function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
 				function say(el,t,cls){ el.innerHTML = t ? '<div class="ht-snip-msg '+(cls||'')+'">'+esc(t)+'</div>' : ''; }
@@ -405,17 +442,38 @@ function horsetools_shortcode_options_page() {
 					data.nonce = NONCE;
 					var body = Object.keys(data).map(function(k){ return encodeURIComponent(k)+'='+encodeURIComponent(data[k]); }).join('&');
 					fetch(AJAX,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
-						.then(function(r){return r.json();}).then(done)
-						.catch(function(){ say(msg,I18N.fail,'err'); });
+						.then(function(r){return r.json();}).then(done).catch(function(){ say(msg,I18N.fail,'err'); });
 				}
-
+				function badges(s){
+					var b='';
+					if(!s.on) b+='<span class="ht-snip-badge" style="background:#fdecea;color:#c0392b">'+esc(I18N.off)+'</span>';
+					if(s.device&&COND.device[s.device]) b+='<span class="ht-snip-badge">'+esc(COND.device[s.device])+'</span>';
+					if(s.login&&COND.login[s.login]) b+='<span class="ht-snip-badge">'+esc(COND.login[s.login])+'</span>';
+					if(s.role) b+='<span class="ht-snip-badge">'+esc(s.role)+'+</span>';
+					if(s.no_admin) b+='<span class="ht-snip-badge">no-admin</span>';
+					if(s.date_from||s.date_to) b+='<span class="ht-snip-badge">'+esc((s.date_from||'…')+'→'+(s.date_to||'…'))+'</span>';
+					(s.tags||[]).forEach(function(t){ b+='<span class="ht-snip-tag">'+esc(t)+'</span>'; });
+					return b;
+				}
+				function refreshTagFilter(){
+					var all={}; snippets.forEach(function(s){ (s.tags||[]).forEach(function(t){ all[t.toLowerCase()]=t; }); });
+					var cur=tagFilter.value;
+					var html='<option value="">'+tagFilter.options[0].text+'</option>';
+					Object.keys(all).sort().forEach(function(k){ html+='<option value="'+esc(k)+'">'+esc(all[k])+'</option>'; });
+					tagFilter.innerHTML=html; tagFilter.value=cur;
+				}
 				function render(){
-					if (!snippets.length){ list.innerHTML = '<div class="ht-snip-msg">'+esc(I18N.none)+'</div>'; return; }
+					refreshTagFilter();
+					var filt=tagFilter.value.toLowerCase();
+					var rows=snippets.filter(function(s){ return !filt || (s.tags||[]).some(function(t){return t.toLowerCase()===filt;}); });
+					if (!rows.length){ list.innerHTML = '<div class="ht-snip-msg">'+esc(I18N.none)+'</div>'; return; }
 					var html='';
-					snippets.forEach(function(s){
+					rows.forEach(function(s){
 						var code='[ht-snippet name="'+s.slug+'"]';
 						html += '<div class="ht-snip-row'+(s.on?'':' off')+'">'
-							+ '<span class="grow"><b>'+esc(s.title)+'</b></span>'
+							+ '<span class="grow"><b>'+esc(s.title||s.slug)+'</b>'
+							+ (s.desc?'<small>'+esc(s.desc)+'</small>':'')
+							+ '<div style="margin-top:4px">'+badges(s)+'</div></span>'
 							+ '<span class="ht-snip-code" data-copy="'+esc(code)+'" title="'+esc(code)+'">'+esc(code)+'</span>'
 							+ '<a class="op" data-edit="'+esc(s.slug)+'">'+esc(I18N.edit)+'</a>'
 							+ '<a class="op del" data-del="'+esc(s.slug)+'">'+esc(I18N.del)+'</a>'
@@ -423,21 +481,31 @@ function horsetools_shortcode_options_page() {
 					});
 					list.innerHTML = html;
 				}
+				tagFilter.addEventListener('change', render);
 
 				list.addEventListener('click', function(e){
 					var c=e.target.closest('[data-copy]'), ed=e.target.closest('[data-edit]'), dl=e.target.closest('[data-del]');
 					if (c){ navigator.clipboard && navigator.clipboard.writeText(c.dataset.copy); c.textContent=I18N.copied; setTimeout(function(){ c.textContent=c.dataset.copy; },1000); return; }
-					if (ed){ var s=snippets.find(function(x){return x.slug===ed.dataset.edit;}); if(s){ elName.value=s.slug; elTitle.value=s.title; elContent.value=s.content; elOn.checked=!!s.on; elName.focus(); window.scrollTo({top:0,behavior:'smooth'}); } return; }
+					if (ed){ var s=snippets.find(function(x){return x.slug===ed.dataset.edit;}); if(s){
+						F.name.value=s.slug; F.title.value=s.title||''; F.desc.value=s.desc||''; F.content.value=s.content||'';
+						F.on.value=s.on?'1':'0'; F.noadmin.value=s.no_admin?'1':'0'; F.device.value=s.device||''; F.login.value=s.login||'';
+						F.role.value=s.role||''; F.tags.value=(s.tags||[]).join(', '); F.from.value=s.date_from||''; F.to.value=s.date_to||'';
+						F.name.focus(); window.scrollTo({top:0,behavior:'smooth'}); } return; }
 					if (dl){ if(!confirm(I18N.confirmDel))return; post({action:'horsetools_snip_delete',slug:dl.dataset.del}, function(res){ if(res&&res.success){ snippets=res.data.snippets; render(); say(msg,I18N.deleted,'good'); } else { say(msg,(res&&res.data&&res.data.msg)||I18N.fail,'err'); } }); return; }
 				});
 
 				$('ht-snip-save').addEventListener('click', function(){
-					post({action:'horsetools_snip_save', slug:elName.value, title:elTitle.value, content:elContent.value, on:elOn.checked?'1':'0'}, function(res){
+					post({action:'horsetools_snip_save', slug:F.name.value, title:F.title.value, desc:F.desc.value, content:F.content.value,
+						on:F.on.value, no_admin:F.noadmin.value, device:F.device.value, login:F.login.value, role:F.role.value,
+						tags:F.tags.value, date_from:F.from.value, date_to:F.to.value}, function(res){
 						if (res&&res.success){ snippets=res.data.snippets; render(); say(msg,I18N.saved,'good'); }
 						else { say(msg,(res&&res.data&&res.data.msg)||I18N.fail,'err'); }
 					});
 				});
-				$('ht-snip-clear').addEventListener('click', function(){ elName.value=elTitle.value=elContent.value=''; elOn.checked=true; say(msg,''); elName.focus(); });
+				$('ht-snip-clear').addEventListener('click', function(){
+					F.name.value=F.title.value=F.desc.value=F.content.value=F.tags.value=F.from.value=F.to.value='';
+					F.on.value='1'; F.noadmin.value='0'; F.device.value=''; F.login.value=''; F.role.value=''; say(msg,''); F.name.focus();
+				});
 				$('ht-snip-import').addEventListener('click', function(){
 					post({action:'horsetools_snip_import_sc'}, function(res){
 						if (res&&res.success){ snippets=res.data.snippets; render(); say(msg,I18N.imported.replace('%1$d',res.data.imported).replace('%2$d',res.data.skipped),'good'); }
@@ -445,24 +513,19 @@ function horsetools_shortcode_options_page() {
 					});
 				});
 
-				// second card: usage + convert
-				var root2 = document.querySelector('.ht-snip2');
 				var uOut=$('ht-snip-usage-out'), rOut=$('ht-snip-rep-out');
 				$('ht-snip-usage-btn').addEventListener('click', function(){
 					post({action:'horsetools_snip_usage', tag:$('ht-snip-usage-tag').value}, function(res){
 						if (!res||!res.success){ say(uOut,(res&&res.data&&res.data.msg)||I18N.fail,'err'); return; }
 						var d=res.data;
 						if (!d.count){ say(uOut,I18N.usageNone); return; }
-						var html='<div class="ht-snip-msg good">'+esc(I18N.usageHead.replace('%d',d.count))+'</div>';
-						html+='<table class="ht-snip-table"><tbody>';
+						var html='<div class="ht-snip-msg good">'+esc(I18N.usageHead.replace('%d',d.count))+'</div><table class="ht-snip-table"><tbody>';
 						d.rows.forEach(function(r){
 							html+='<tr><td>'+esc(r.title)+'</td><td>'+esc(r.type)+'</td><td>'
 								+(r.edit?'<a href="'+esc(r.edit)+'" target="_blank" rel="noopener">'+esc(I18N.edit)+'</a> ':'')
-								+(r.view?'<a href="'+esc(r.view)+'" target="_blank" rel="noopener">'+esc(I18N.view)+'</a>':'')
-								+'</td></tr>';
+								+(r.view?'<a href="'+esc(r.view)+'" target="_blank" rel="noopener">'+esc(I18N.view)+'</a>':'')+'</td></tr>';
 						});
-						html+='</tbody></table>';
-						uOut.innerHTML=html;
+						uOut.innerHTML=html+'</tbody></table>';
 					});
 				});
 				var repApply=$('ht-snip-rep-apply');
@@ -543,13 +606,35 @@ function horsetools_snip_list_payload() {
 	$out = array();
 	foreach ( horsetools_snippets_get() as $slug => $s ) {
 		$out[] = array(
-			'slug'    => $slug,
-			'title'   => isset( $s['title'] ) ? $s['title'] : $slug,
-			'content' => isset( $s['content'] ) ? $s['content'] : '',
-			'on'      => ! empty( $s['on'] ),
+			'slug'      => $slug,
+			'title'     => isset( $s['title'] ) ? $s['title'] : $slug,
+			'desc'      => isset( $s['desc'] ) ? $s['desc'] : '',
+			'content'   => isset( $s['content'] ) ? $s['content'] : '',
+			'on'        => ! empty( $s['on'] ),
+			'no_admin'  => ! empty( $s['no_admin'] ),
+			'device'    => isset( $s['device'] ) ? $s['device'] : '',
+			'login'     => isset( $s['login'] ) ? $s['login'] : '',
+			'role'      => isset( $s['role'] ) ? $s['role'] : '',
+			'date_from' => isset( $s['date_from'] ) ? $s['date_from'] : '',
+			'date_to'   => isset( $s['date_to'] ) ? $s['date_to'] : '',
+			'tags'      => isset( $s['tags'] ) && is_array( $s['tags'] ) ? $s['tags'] : array(),
 		);
 	}
 	return $out;
+}
+
+/** Sanitise a comma/space separated tag string into a slug list. */
+function horsetools_snip_parse_tags( $raw ) {
+	$raw  = (string) $raw;
+	$bits = preg_split( '/[,\n]+/', $raw );
+	$tags = array();
+	foreach ( (array) $bits as $b ) {
+		$t = sanitize_text_field( trim( $b ) );
+		if ( '' !== $t ) {
+			$tags[ strtolower( $t ) ] = $t; // de-dupe case-insensitively
+		}
+	}
+	return array_values( $tags );
 }
 
 add_action( 'wp_ajax_horsetools_snip_save', 'horsetools_snip_save_ajax' );
@@ -568,8 +653,29 @@ function horsetools_snip_save_ajax() {
 	$content = isset( $_POST['content'] ) ? wp_unslash( $_POST['content'] ) : ''; // raw by design
 	$on      = isset( $_POST['on'] ) && '1' === (string) $_POST['on'];
 
+	$in_list = function ( $key, $allowed ) {
+		$v = isset( $_POST[ $key ] ) ? sanitize_key( wp_unslash( $_POST[ $key ] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification -- nonce checked in horsetools_snip_guard()
+		return in_array( $v, $allowed, true ) ? $v : '';
+	};
+	$valid_date = function ( $key ) {
+		$v = isset( $_POST[ $key ] ) ? sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification -- nonce checked in horsetools_snip_guard()
+		return preg_match( '/^\d{4}-\d{2}-\d{2}$/', $v ) ? $v : '';
+	};
+
 	$snips          = horsetools_snippets_get();
-	$snips[ $slug ] = array( 'title' => $title, 'content' => $content, 'on' => $on ? 1 : 0 );
+	$snips[ $slug ] = array(
+		'title'     => $title,
+		'desc'      => isset( $_POST['desc'] ) ? sanitize_text_field( wp_unslash( $_POST['desc'] ) ) : '',
+		'content'   => $content,
+		'on'        => $on ? 1 : 0,
+		'no_admin'  => ( isset( $_POST['no_admin'] ) && '1' === (string) $_POST['no_admin'] ) ? 1 : 0,
+		'device'    => $in_list( 'device', array( 'desktop', 'mobile' ) ),
+		'login'     => $in_list( 'login', array( 'in', 'out' ) ),
+		'role'      => $in_list( 'role', array( 'subscriber', 'contributor', 'author', 'editor', 'administrator' ) ),
+		'date_from' => $valid_date( 'date_from' ),
+		'date_to'   => $valid_date( 'date_to' ),
+		'tags'      => horsetools_snip_parse_tags( isset( $_POST['tags'] ) ? wp_unslash( $_POST['tags'] ) : '' ),
+	);
 	horsetools_snip_store( $snips );
 
 	wp_send_json_success( array( 'snippets' => horsetools_snip_list_payload(), 'saved' => $slug ) );
