@@ -279,3 +279,287 @@ if ( isset( $horsetools_options['scuri-login1'] ) ) {
 	}
 	add_action( 'wp_login', 'horsetools_login_clear' );
 }
+
+/* -------------------------------------------------------------------------
+ * E. Privacy — self-host Google Fonts + external-request scanner
+ *
+ * Loading fonts from fonts.googleapis.com sends every visitor's IP to Google,
+ * which German courts have ruled a GDPR violation. The self-host option
+ * downloads the font files here once and rewrites the stylesheet to serve them
+ * from this domain, so no visitor request ever reaches Google. The scanner is
+ * the diagnosis: it fetches this site's own home page and lists every third-
+ * party host it pulls from, flagging the privacy-sensitive ones.
+ *
+ * Everything here is admin-triggered or gated behind an explicit opt-in; the
+ * plugin never phones home on its own.
+ * ---------------------------------------------------------------------- */
+
+/** uploads/horsetools-gfonts path + URL. */
+function horsetools_gfonts_dir() {
+	$up = wp_upload_dir();
+	return array(
+		'path' => trailingslashit( $up['basedir'] ) . 'horsetools-gfonts',
+		'url'  => trailingslashit( $up['baseurl'] ) . 'horsetools-gfonts',
+	);
+}
+
+/** Canonical form of a Google Fonts stylesheet URL, for stable matching. */
+function horsetools_gfont_normalise_url( $url ) {
+	$url = trim( (string) $url );
+	if ( 0 === strpos( $url, '//' ) ) {
+		$url = 'https:' . $url;
+	}
+	$url = preg_replace( '#^http://#i', 'https://', $url );
+	$p   = wp_parse_url( $url );
+	if ( empty( $p['host'] ) ) {
+		return $url;
+	}
+	$out = 'https://' . strtolower( $p['host'] ) . ( isset( $p['path'] ) ? $p['path'] : '' );
+	if ( ! empty( $p['query'] ) ) {
+		$out .= '?' . $p['query'];
+	}
+	return $out;
+}
+
+/** Does a body start with a known font-file signature? */
+function horsetools_is_font_binary( $body ) {
+	$sig = substr( (string) $body, 0, 4 );
+	return in_array( $sig, array( 'wOF2', 'wOFF', 'OTTO', 'true', 'ttcf' ), true ) || "\x00\x01\x00\x00" === $sig;
+}
+
+/**
+ * Download one Google Fonts stylesheet and its font files into uploads, and
+ * write a local copy of the CSS pointing at them.
+ *
+ * @param string $css_url A fonts.googleapis.com stylesheet URL.
+ * @return array|WP_Error array( css => basename, fonts => int ) or error.
+ */
+function horsetools_gfont_localise_one( $css_url ) {
+	$dir = horsetools_gfonts_dir();
+	if ( ! wp_mkdir_p( $dir['path'] ) ) {
+		return new WP_Error( 'mkdir', __( 'Could not create the fonts folder in uploads.', 'horse-tools' ) );
+	}
+	// A modern browser UA is required or Google serves old TTF instead of woff2.
+	$ua  = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+	$res = horsetools_safe_fetch( $css_url, array( 'user-agent' => $ua, 'timeout' => 15 ) );
+	if ( is_wp_error( $res ) ) {
+		return $res;
+	}
+	if ( 200 !== (int) wp_remote_retrieve_response_code( $res ) ) {
+		return new WP_Error( 'http', __( 'Google did not return the stylesheet (HTTP error).', 'horse-tools' ) );
+	}
+	$css = wp_remote_retrieve_body( $res );
+	if ( '' === trim( $css ) || false === stripos( $css, '@font-face' ) ) {
+		return new WP_Error( 'nocss', __( 'That did not look like a Google Fonts stylesheet.', 'horse-tools' ) );
+	}
+	if ( ! preg_match_all( '#url\((https://fonts\.gstatic\.com/[^)]+)\)#i', $css, $m ) ) {
+		return new WP_Error( 'nofiles', __( 'No font files were found in the stylesheet.', 'horse-tools' ) );
+	}
+
+	$map   = array();
+	$count = 0;
+	foreach ( array_unique( $m[1] ) as $furl ) {
+		$ext = strtolower( (string) pathinfo( (string) wp_parse_url( $furl, PHP_URL_PATH ), PATHINFO_EXTENSION ) );
+		$ext = preg_replace( '/[^a-z0-9]/', '', $ext );
+		if ( ! in_array( $ext, array( 'woff2', 'woff', 'ttf' ), true ) ) {
+			continue;
+		}
+		$base = md5( $furl ) . '.' . $ext;
+		$dest = trailingslashit( $dir['path'] ) . $base;
+		if ( ! file_exists( $dest ) ) {
+			$fr = horsetools_safe_fetch( $furl, array( 'user-agent' => $ua, 'timeout' => 20 ) );
+			if ( is_wp_error( $fr ) || 200 !== (int) wp_remote_retrieve_response_code( $fr ) ) {
+				continue;
+			}
+			$body = wp_remote_retrieve_body( $fr );
+			if ( '' === $body || ! horsetools_is_font_binary( $body ) ) {
+				continue;
+			}
+			file_put_contents( $dest, $body ); // phpcs:ignore WordPress.WP.AlternativeFunctions -- controlled name inside uploads
+		}
+		$map[ $furl ] = trailingslashit( $dir['url'] ) . $base;
+		$count++;
+	}
+	if ( ! $count ) {
+		return new WP_Error( 'nodl', __( 'The font files could not be downloaded.', 'horse-tools' ) );
+	}
+
+	$local_css = strtr( $css, $map );
+	$css_base  = md5( horsetools_gfont_normalise_url( $css_url ) ) . '.css';
+	file_put_contents( trailingslashit( $dir['path'] ) . $css_base, $local_css ); // phpcs:ignore WordPress.WP.AlternativeFunctions
+	return array( 'css' => $css_base, 'fonts' => $count );
+}
+
+# Front end: rewrite enqueued Google Fonts to the local copies.
+if ( isset( $horsetools_options['scuri-gfont1'] ) ) {
+	function horsetools_gfont_rewrite() {
+		$map = get_option( 'horsetools_gfont_local', array() );
+		if ( ! is_array( $map ) || empty( $map ) ) {
+			return; // nothing localised yet — do not touch the page
+		}
+		global $wp_styles;
+		if ( ! ( $wp_styles instanceof WP_Styles ) ) {
+			return;
+		}
+		$dir = horsetools_gfonts_dir();
+		$ver = (int) get_option( 'horsetools_gfont_ver', 1 );
+		foreach ( $wp_styles->registered as $handle => $obj ) {
+			if ( empty( $obj->src ) ) {
+				continue;
+			}
+			if ( 'fonts.googleapis.com' !== wp_parse_url( $obj->src, PHP_URL_HOST ) ) {
+				continue;
+			}
+			$norm = horsetools_gfont_normalise_url( $obj->src );
+			if ( isset( $map[ $norm ] ) ) {
+				$wp_styles->registered[ $handle ]->src  = trailingslashit( $dir['url'] ) . $map[ $norm ] . '?v=' . $ver;
+				$wp_styles->registered[ $handle ]->deps = array();
+			}
+		}
+	}
+	add_action( 'wp_enqueue_scripts', 'horsetools_gfont_rewrite', 999 );
+
+	// Drop preconnect / dns-prefetch hints to Google's font hosts.
+	add_filter( 'wp_resource_hints', function ( $urls ) {
+		return array_filter( $urls, function ( $u ) {
+			$href = is_array( $u ) ? ( isset( $u['href'] ) ? $u['href'] : '' ) : $u;
+			$host = wp_parse_url( $href, PHP_URL_HOST );
+			return ! in_array( $host, array( 'fonts.googleapis.com', 'fonts.gstatic.com' ), true );
+		} );
+	}, 10, 1 );
+}
+
+/** Label and privacy flag for a third-party host. */
+function horsetools_privacy_classify_host( $h ) {
+	$h     = strtolower( $h );
+	$rules = array(
+		'fonts.googleapis.com'  => array( 'Google Fonts', true ),
+		'fonts.gstatic.com'     => array( 'Google Fonts', true ),
+		'google-analytics.com'  => array( 'Analytics', true ),
+		'googletagmanager.com'  => array( 'Tag Manager / tracking', true ),
+		'doubleclick.net'       => array( 'Ad tracking', true ),
+		'connect.facebook.net'  => array( 'Facebook', true ),
+		'facebook.com'          => array( 'Facebook', true ),
+		'gravatar.com'          => array( 'Gravatar (email hashes)', true ),
+		'youtube-nocookie.com'  => array( 'YouTube (no-cookie)', false ),
+		'youtube.com'           => array( 'YouTube embed', false ),
+		'vimeo.com'             => array( 'Vimeo embed', false ),
+		'cdnjs.cloudflare.com'  => array( 'CDN', false ),
+		'jsdelivr.net'          => array( 'CDN', false ),
+		'unpkg.com'             => array( 'CDN', false ),
+		'bootstrapcdn.com'      => array( 'CDN', false ),
+		'gstatic.com'           => array( 'Google', false ),
+		'googleapis.com'        => array( 'Google API', false ),
+	);
+	foreach ( $rules as $needle => $info ) {
+		if ( $h === $needle || substr( $h, -strlen( '.' . $needle ) ) === '.' . $needle ) {
+			return array( 'type' => $info[0], 'flag' => (bool) $info[1] );
+		}
+	}
+	return array( 'type' => __( 'External', 'horse-tools' ), 'flag' => false );
+}
+
+# AJAX: scan the site's own home page for third-party requests.
+add_action( 'wp_ajax_horsetools_privacy_scan', 'horsetools_privacy_scan_ajax' );
+function horsetools_privacy_scan_ajax() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error( array( 'msg' => __( 'Permission denied.', 'horse-tools' ) ) );
+	}
+	check_ajax_referer( 'horsetools_privacy', 'nonce' );
+
+	$home = home_url( '/' );
+	// Same-origin fetch of our own home page: use the plain client (safe_fetch
+	// would refuse a private/localhost address, which is normal in development).
+	$res = wp_remote_get( $home, array( 'timeout' => 15, 'sslverify' => false, 'redirection' => 2, 'user-agent' => 'HorseTools privacy scan' ) );
+	if ( is_wp_error( $res ) ) {
+		wp_send_json_error( array( 'msg' => $res->get_error_message() ) );
+	}
+	$html = wp_remote_retrieve_body( $res );
+	if ( '' === trim( $html ) ) {
+		wp_send_json_error( array( 'msg' => __( 'The home page returned no HTML to scan.', 'horse-tools' ) ) );
+	}
+
+	$site_host = preg_replace( '/^www\./i', '', (string) wp_parse_url( $home, PHP_URL_HOST ) );
+	$found     = array();
+	if ( preg_match_all( '#\b(?:src|href)\s*=\s*["\']([^"\']+)["\']#i', $html, $m1 ) ) {
+		$found = array_merge( $found, $m1[1] );
+	}
+	if ( preg_match_all( '#url\(\s*["\']?([^"\')]+)["\']?\s*\)#i', $html, $m2 ) ) {
+		$found = array_merge( $found, $m2[1] );
+	}
+
+	$hosts  = array();
+	$gfonts = array();
+	foreach ( $found as $u ) {
+		$u = trim( html_entity_decode( $u, ENT_QUOTES ) );
+		if ( '' === $u || '#' === $u[0] ) {
+			continue;
+		}
+		if ( 0 === stripos( $u, 'data:' ) || 0 === stripos( $u, 'javascript:' ) || 0 === stripos( $u, 'mailto:' ) || 0 === stripos( $u, 'tel:' ) ) {
+			continue;
+		}
+		if ( 0 === strpos( $u, '//' ) ) {
+			$u = 'https:' . $u;
+		}
+		$host = wp_parse_url( $u, PHP_URL_HOST );
+		if ( ! $host ) {
+			continue;
+		}
+		if ( strcasecmp( preg_replace( '/^www\./i', '', $host ), $site_host ) === 0 ) {
+			continue;
+		}
+		$hosts[ $host ] = isset( $hosts[ $host ] ) ? $hosts[ $host ] + 1 : 1;
+		if ( 'fonts.googleapis.com' === strtolower( $host ) ) {
+			$gfonts[ horsetools_gfont_normalise_url( $u ) ] = 1;
+		}
+	}
+
+	update_option( 'horsetools_gfont_seen', array_keys( $gfonts ), false );
+
+	arsort( $hosts );
+	$rows = array();
+	foreach ( $hosts as $host => $c ) {
+		$cls    = horsetools_privacy_classify_host( $host );
+		$rows[] = array( 'host' => $host, 'count' => (int) $c, 'type' => $cls['type'], 'flag' => $cls['flag'] );
+	}
+	wp_send_json_success( array( 'rows' => $rows, 'gfonts' => count( $gfonts ), 'total' => count( $hosts ) ) );
+}
+
+# AJAX: download and self-host the Google Fonts the scan discovered.
+add_action( 'wp_ajax_horsetools_gfonts_localise', 'horsetools_gfonts_localise_ajax' );
+function horsetools_gfonts_localise_ajax() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error( array( 'msg' => __( 'Permission denied.', 'horse-tools' ) ) );
+	}
+	check_ajax_referer( 'horsetools_privacy', 'nonce' );
+
+	$urls = get_option( 'horsetools_gfont_seen', array() );
+	if ( ! is_array( $urls ) || empty( $urls ) ) {
+		wp_send_json_error( array( 'msg' => __( 'Run the scan first so there is something to self-host.', 'horse-tools' ) ) );
+	}
+
+	$map   = get_option( 'horsetools_gfont_local', array() );
+	$map   = is_array( $map ) ? $map : array();
+	$fonts = 0;
+	$errs  = array();
+	foreach ( $urls as $u ) {
+		$r = horsetools_gfont_localise_one( $u );
+		if ( is_wp_error( $r ) ) {
+			$errs[] = $r->get_error_message();
+			continue;
+		}
+		$map[ horsetools_gfont_normalise_url( $u ) ] = $r['css'];
+		$fonts += (int) $r['fonts'];
+	}
+	if ( empty( $map ) ) {
+		wp_send_json_error( array( 'msg' => $errs ? implode( ' | ', array_unique( $errs ) ) : __( 'Nothing could be self-hosted.', 'horse-tools' ) ) );
+	}
+
+	update_option( 'horsetools_gfont_local', $map, false );
+	update_option( 'horsetools_gfont_ver', (int) get_option( 'horsetools_gfont_ver', 0 ) + 1, false );
+	wp_send_json_success( array(
+		'families' => count( $map ),
+		'fonts'    => $fonts,
+		'errors'   => array_values( array_unique( $errs ) ),
+	) );
+}

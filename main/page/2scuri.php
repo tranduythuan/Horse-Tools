@@ -126,4 +126,100 @@ global $horsetools_options; ?>
 		'section'     => 'Tidy up',
 		'description' => __( 'Removes the generator meta tag. A small tidy-up — not a security measure on its own, since asset fingerprints reveal the version anyway.', 'horse-tools' ),
 	) ); ?>
+
+  <h3><i class="ti ti-shield-lock"></i> <?php _e('Privacy — Google Fonts & external requests', 'horse-tools') ?></h3>
+	<?php horsetools_toggle( 'scuri-gfont1', __( 'Self-host Google Fonts', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Privacy',
+		'description' => __( 'When your theme or a plugin loads fonts from Google, every visitor\'s IP is sent to Google — which GDPR treats as a data transfer. This serves downloaded copies from your own domain instead. Scan first, then click self-host; this works for fonts loaded the standard way (if a font still loads from Google afterwards, your theme hard-codes it — the scan will show you).', 'horse-tools' ),
+	) ); ?>
+	<div class="ht-privacy" data-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_privacy' ) ); ?>" data-ajax="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>">
+		<p class="ht-priv-actions">
+			<button type="button" class="ht-priv-btn" id="ht-priv-scan"><i class="ti ti-radar-2"></i> <?php _e( 'Scan external requests', 'horse-tools' ); ?></button>
+			<button type="button" class="ht-priv-btn" id="ht-priv-host"><i class="ti ti-download"></i> <?php _e( 'Download & self-host Google Fonts', 'horse-tools' ); ?></button>
+		</p>
+		<div id="ht-priv-out" aria-live="polite"></div>
+	</div>
+	<style>
+	.ht-priv-actions{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 4px}
+	.ht-priv-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #e0a800;color:#8a5a00;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:13px;transition:background .12s}
+	.ht-priv-btn:hover{background:#fff9e6}
+	.ht-priv-btn[disabled]{opacity:.5;cursor:default}
+	#ht-priv-out{margin-top:8px}
+	.ht-priv-table{border-collapse:collapse;width:100%;max-width:640px;font-size:13px;margin-top:6px}
+	.ht-priv-table th,.ht-priv-table td{border:1px solid #ececec;padding:6px 9px;text-align:left}
+	.ht-priv-table th{background:#fafafa;font-weight:600}
+	.ht-priv-flag{color:#c0392b;font-weight:600}
+	.ht-priv-flag i{color:#c0392b}
+	.ht-priv-ok{color:#2e9e5b;font-weight:600}
+	.ht-priv-msg{padding:8px 12px;border-radius:8px;background:#f4f6f8;margin-top:6px;font-size:13px}
+	.ht-priv-msg.err{background:#fdecea;color:#8a1c12}
+	.ht-priv-msg.good{background:#eafaf0;color:#1e6b3f}
+	</style>
+	<script>
+	(function(){
+		var wrap = document.querySelector('.ht-privacy');
+		if (!wrap || wrap.dataset.ready) { return; }
+		wrap.dataset.ready = '1';
+		var out   = document.getElementById('ht-priv-out');
+		var bScan = document.getElementById('ht-priv-scan');
+		var bHost = document.getElementById('ht-priv-host');
+		var AJAX  = wrap.dataset.ajax, NONCE = wrap.dataset.nonce;
+		var I18N = {
+			scanning: <?php echo wp_json_encode( __( 'Scanning your home page…', 'horse-tools' ) ); ?>,
+			hosting:  <?php echo wp_json_encode( __( 'Downloading fonts…', 'horse-tools' ) ); ?>,
+			none:     <?php echo wp_json_encode( __( 'No third-party requests found. Nothing leaks to other servers.', 'horse-tools' ) ); ?>,
+			found:    <?php echo wp_json_encode( __( 'third-party host(s) found', 'horse-tools' ) ); ?>,
+			gfound:   <?php echo wp_json_encode( __( 'Google Fonts detected — click “Download & self-host” to serve them locally.', 'horse-tools' ) ); ?>,
+			host:     <?php echo wp_json_encode( __( 'Host', 'horse-tools' ) ); ?>,
+			type:     <?php echo wp_json_encode( __( 'Type', 'horse-tools' ) ); ?>,
+			hits:     <?php echo wp_json_encode( __( 'Requests', 'horse-tools' ) ); ?>,
+			hosted:   <?php echo wp_json_encode( __( 'Self-hosted %1$d font file(s) across %2$d stylesheet(s). Turn on “Self-host Google Fonts” above and save.', 'horse-tools' ) ); ?>,
+			fail:     <?php echo wp_json_encode( __( 'Something went wrong.', 'horse-tools' ) ); ?>
+		};
+
+		function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+		function msg(text, cls){ out.innerHTML = '<div class="ht-priv-msg '+(cls||'')+'">'+esc(text)+'</div>'; }
+
+		function post(action, done){
+			var body = 'action='+encodeURIComponent(action)+'&nonce='+encodeURIComponent(NONCE);
+			fetch(AJAX, {method:'POST', credentials:'same-origin', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body})
+				.then(function(r){ return r.json(); })
+				.then(done)
+				.catch(function(){ msg(I18N.fail,'err'); bScan.disabled=false; bHost.disabled=false; });
+		}
+
+		bScan.addEventListener('click', function(){
+			bScan.disabled = true; msg(I18N.scanning);
+			post('horsetools_privacy_scan', function(res){
+				bScan.disabled = false;
+				if (!res || !res.success) { msg((res&&res.data&&res.data.msg)||I18N.fail,'err'); return; }
+				var d = res.data, rows = d.rows||[];
+				if (!rows.length) { msg(I18N.none,'good'); return; }
+				var html = '<div class="ht-priv-msg">'+d.total+' '+esc(I18N.found)+'.</div>';
+				if (d.gfonts>0) { html += '<div class="ht-priv-msg err">'+esc(I18N.gfound)+'</div>'; }
+				html += '<table class="ht-priv-table"><thead><tr><th>'+esc(I18N.host)+'</th><th>'+esc(I18N.type)+'</th><th>'+esc(I18N.hits)+'</th></tr></thead><tbody>';
+				rows.forEach(function(r){
+					var t = r.flag ? '<span class="ht-priv-flag"><i class="ti ti-alert-triangle"></i> '+esc(r.type)+'</span>' : esc(r.type);
+					html += '<tr><td>'+esc(r.host)+'</td><td>'+t+'</td><td>'+r.count+'</td></tr>';
+				});
+				html += '</tbody></table>';
+				out.innerHTML = html;
+			});
+		});
+
+		bHost.addEventListener('click', function(){
+			bHost.disabled = true; msg(I18N.hosting);
+			post('horsetools_gfonts_localise', function(res){
+				bHost.disabled = false;
+				if (!res || !res.success) { msg((res&&res.data&&res.data.msg)||I18N.fail,'err'); return; }
+				var d = res.data;
+				var t = I18N.hosted.replace('%1$d', d.fonts).replace('%2$d', d.families);
+				var html = '<div class="ht-priv-msg good">'+esc(t)+'</div>';
+				if (d.errors && d.errors.length) { html += '<div class="ht-priv-msg err">'+esc(d.errors.join(' | '))+'</div>'; }
+				out.innerHTML = html;
+			});
+		});
+	})();
+	</script>
 </div>

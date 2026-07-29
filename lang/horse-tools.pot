@@ -782,6 +782,10 @@ msgstr ""
 msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
 msgstr ""
 
+#: inc/scuri.php:340
+msgid "Could not create the fonts folder in uploads."
+msgstr ""
+
 #: main/shortcode.php:301
 msgid "Could not load the icon list."
 msgstr ""
@@ -1186,6 +1190,10 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
+#: main/page/2scuri.php:139
+msgid "Download & self-host Google Fonts"
+msgstr ""
+
 #: main/export.php:424
 msgid "Download .json"
 msgstr ""
@@ -1196,6 +1204,10 @@ msgstr ""
 
 #: main/shortcode.php:162 main/shortcode.php:163 main/shortcode.php:164
 msgid "Download link"
+msgstr ""
+
+#: main/page/2scuri.php:170
+msgid "Downloading fonts…"
 msgstr ""
 
 #: main/export.php:263
@@ -1718,6 +1730,10 @@ msgstr ""
 msgid "Extend"
 msgstr ""
 
+#: inc/scuri.php:459
+msgid "External"
+msgstr ""
+
 #: main/extend.php:18 main/extend.php:31
 msgid "FREE"
 msgstr ""
@@ -1828,6 +1844,14 @@ msgstr ""
 msgid "Go to the home page"
 msgstr ""
 
+#: main/page/2scuri.php:173
+msgid "Google Fonts detected — click “Download & self-host” to serve them locally."
+msgstr ""
+
+#: inc/scuri.php:349
+msgid "Google did not return the stylesheet (HTTP error)."
+msgstr ""
+
 #: main/toc.php:206
 msgid "H tag color when scrolled to"
 msgstr ""
@@ -1922,6 +1946,10 @@ msgstr ""
 
 #: main/page/ht-about1.php:8
 msgid "Horse Tools:"
+msgstr ""
+
+#: main/page/2scuri.php:174
+msgid "Host"
 msgstr ""
 
 #: main/shortcode.php:181
@@ -2335,6 +2363,10 @@ msgstr ""
 msgid "No automatic redirects yet. Change a published URL and one will appear here."
 msgstr ""
 
+#: inc/scuri.php:356
+msgid "No font files were found in the stylesheet."
+msgstr ""
+
 #: main/shortcode.php:276
 msgid "No icon matches that."
 msgstr ""
@@ -2355,6 +2387,10 @@ msgstr ""
 msgid "No size"
 msgstr ""
 
+#: main/page/2scuri.php:171
+msgid "No third-party requests found. Nothing leaks to other servers."
+msgstr ""
+
 #: main/page/7mail.php:55
 msgid "None"
 msgstr ""
@@ -2365,6 +2401,10 @@ msgstr ""
 
 #: inc/chat.php:34
 msgid "Not entered"
+msgstr ""
+
+#: inc/scuri.php:555
+msgid "Nothing could be self-hosted."
 msgstr ""
 
 #: inc/ui.php:248
@@ -2517,6 +2557,10 @@ msgstr ""
 msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
 msgstr ""
 
+#: inc/scuri.php:466 inc/scuri.php:532
+msgid "Permission denied."
+msgstr ""
+
 #: main/page/2scuri.php:67
 msgid "Permissions-Policy: block geolocation, mic and camera"
 msgstr ""
@@ -2564,6 +2608,10 @@ msgstr ""
 
 #: main/export.php:464
 msgid "Preview changes"
+msgstr ""
+
+#: main/page/2scuri.php:130
+msgid "Privacy — Google Fonts & external requests"
 msgstr ""
 
 #: main/page/5media.php:156 main/page/5media.php:213
@@ -2702,6 +2750,10 @@ msgstr ""
 msgid "Requested URL"
 msgstr ""
 
+#: main/page/2scuri.php:176
+msgid "Requests"
+msgstr ""
+
 #: main/page/ht-setting.php:44
 msgid "Reset this setting"
 msgstr ""
@@ -2720,6 +2772,10 @@ msgstr ""
 
 #: main/page/11google.php:37 main/page/9user.php:49 main/shortcode.php:55
 msgid "Role"
+msgstr ""
+
+#: inc/scuri.php:538
+msgid "Run the scan first so there is something to self-host."
 msgstr ""
 
 #: main/clean.php:222
@@ -2786,6 +2842,14 @@ msgstr ""
 
 #: main/clean.php:181
 msgid "Save schedule"
+msgstr ""
+
+#: main/page/2scuri.php:138
+msgid "Scan external requests"
+msgstr ""
+
+#: main/page/2scuri.php:169
+msgid "Scanning your home page…"
 msgstr ""
 
 #: main/debug.php:106
@@ -2897,6 +2961,14 @@ msgstr ""
 msgid "Selection color"
 msgstr ""
 
+#: main/page/2scuri.php:131
+msgid "Self-host Google Fonts"
+msgstr ""
+
+#: main/page/2scuri.php:177
+msgid "Self-hosted %1$d font file(s) across %2$d stylesheet(s). Turn on “Self-host Google Fonts” above and save."
+msgstr ""
+
 #: main/page/7mail.php:76
 msgid "Send"
 msgstr ""
@@ -2999,6 +3071,10 @@ msgstr ""
 
 #: main/page/1speed.php:49
 msgid "Smooth-scroll is a library that enables you to create a smooth scrolling effect, providing users with a perception of faster page navigation"
+msgstr ""
+
+#: main/page/2scuri.php:178
+msgid "Something went wrong."
 msgstr ""
 
 #: main/page/ht-about1.php:57
@@ -3109,6 +3185,10 @@ msgstr ""
 msgid "That address cannot be fetched from this server."
 msgstr ""
 
+#: inc/scuri.php:353
+msgid "That did not look like a Google Fonts stylesheet."
+msgstr ""
+
 #: main/export.php:365
 msgid "That is not a valid Horse Tools export file."
 msgstr ""
@@ -3165,12 +3245,20 @@ msgstr ""
 msgid "The first image becomes the featured image"
 msgstr ""
 
+#: inc/scuri.php:384
+msgid "The font files could not be downloaded."
+msgstr ""
+
 #: main/export.php:279
 msgid "The full recommended hardening set. The one thing left out is the full REST API block, which can break forms and guests — enable that yourself on the Security screen if your site truly needs none of it."
 msgstr ""
 
 #: main/page/1speed.php:52
 msgid "The function of lazy loading images"
+msgstr ""
+
+#: inc/scuri.php:479
+msgid "The home page returned no HTML to scan."
 msgstr ""
 
 #: main/shortcode.php:186
@@ -3389,6 +3477,10 @@ msgstr ""
 msgid "Turns off the RSS and Atom feeds if your site does not publish one."
 msgstr ""
 
+#: main/page/2scuri.php:175
+msgid "Type"
+msgstr ""
+
 #: main/font.php:50
 msgid "UPLOAD FONT"
 msgstr ""
@@ -3523,6 +3615,10 @@ msgstr ""
 
 #: main/redirects.php:79
 msgid "When you change a published post or page URL — its slug, its parent, or the whole path — the old address is redirected to the new one. WordPress already does this for a simple slug change; this also covers moves that core misses, and only ever acts on a URL that would otherwise 404."
+msgstr ""
+
+#: main/page/2scuri.php:134
+msgid "When your theme or a plugin loads fonts from Google, every visitor's IP is sent to Google — which GDPR treats as a data transfer. This serves downloaded copies from your own domain instead. Scan first, then click self-host; this works for fonts loaded the standard way (if a font still loads from Google afterwards, your theme hard-codes it — the scan will show you)."
 msgstr ""
 
 #: main/page/10custom.php:194
@@ -3687,6 +3783,10 @@ msgstr ""
 
 #: main/shortcode.php:277
 msgid "showing first"
+msgstr ""
+
+#: main/page/2scuri.php:172
+msgid "third-party host(s) found"
 msgstr ""
 
 #: main/clean.php:216

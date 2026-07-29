@@ -4609,3 +4609,78 @@ msgstr "WooCommerce / Cửa hàng"
 
 msgid "nofollow + new tab on external links"
 msgstr "nofollow + mở tab mới cho liên kết ngoài"
+
+msgid "Could not create the fonts folder in uploads."
+msgstr "Không tạo được thư mục font trong uploads."
+
+msgid "Download & self-host Google Fonts"
+msgstr "Tải & tự host Google Fonts"
+
+msgid "Downloading fonts…"
+msgstr "Đang tải font…"
+
+msgid "External"
+msgstr "Bên ngoài"
+
+msgid "Google Fonts detected — click “Download & self-host” to serve them locally."
+msgstr "Phát hiện Google Fonts — bấm “Tải & tự host” để phục vụ tại chỗ."
+
+msgid "Google did not return the stylesheet (HTTP error)."
+msgstr "Google không trả về stylesheet (lỗi HTTP)."
+
+msgid "Host"
+msgstr "Máy chủ"
+
+msgid "No font files were found in the stylesheet."
+msgstr "Không tìm thấy tệp font nào trong stylesheet."
+
+msgid "No third-party requests found. Nothing leaks to other servers."
+msgstr "Không có request bên thứ ba. Không có gì rò rỉ sang máy chủ khác."
+
+msgid "Nothing could be self-hosted."
+msgstr "Không thể tự host thứ gì."
+
+msgid "Permission denied."
+msgstr "Không có quyền."
+
+msgid "Privacy — Google Fonts & external requests"
+msgstr "Riêng tư — Google Fonts & request bên ngoài"
+
+msgid "Requests"
+msgstr "Số request"
+
+msgid "Run the scan first so there is something to self-host."
+msgstr "Hãy quét trước để có thứ để tự host."
+
+msgid "Scan external requests"
+msgstr "Quét request bên ngoài"
+
+msgid "Scanning your home page…"
+msgstr "Đang quét trang chủ của bạn…"
+
+msgid "Self-host Google Fonts"
+msgstr "Tự host Google Fonts"
+
+msgid "Self-hosted %1$d font file(s) across %2$d stylesheet(s). Turn on “Self-host Google Fonts” above and save."
+msgstr "Đã tự host %1$d tệp font từ %2$d stylesheet. Hãy bật “Tự host Google Fonts” ở trên rồi lưu."
+
+msgid "Something went wrong."
+msgstr "Đã có lỗi xảy ra."
+
+msgid "That did not look like a Google Fonts stylesheet."
+msgstr "Cái đó trông không giống stylesheet Google Fonts."
+
+msgid "The font files could not be downloaded."
+msgstr "Không tải được các tệp font."
+
+msgid "The home page returned no HTML to scan."
+msgstr "Trang chủ không trả về HTML nào để quét."
+
+msgid "Type"
+msgstr "Loại"
+
+msgid "When your theme or a plugin loads fonts from Google, every visitor's IP is sent to Google — which GDPR treats as a data transfer. This serves downloaded copies from your own domain instead. Scan first, then click self-host; this works for fonts loaded the standard way (if a font still loads from Google afterwards, your theme hard-codes it — the scan will show you)."
+msgstr "Khi theme hoặc plugin của bạn tải font từ Google, IP của mọi khách truy cập bị gửi tới Google — điều mà GDPR xem là chuyển dữ liệu. Tính năng này thay bằng phục vụ bản tải về từ chính tên miền của bạn. Hãy quét trước rồi bấm tự host; nó hoạt động với font được nạp theo cách chuẩn (nếu sau đó font vẫn tải từ Google nghĩa là theme của bạn nhúng cứng — bản quét sẽ chỉ ra)."
+
+msgid "third-party host(s) found"
+msgstr "máy chủ bên thứ ba được tìm thấy"
