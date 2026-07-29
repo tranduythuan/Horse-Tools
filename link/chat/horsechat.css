@@ -839,3 +839,11 @@ body .ht-chaton a, body .ht-chatbox-skin1 a, body .ht-chatbox-skin2 a, body .ht-
 .ht-tw-ic{width:34px;height:34px;border-radius:9px;background:#eee center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:600;color:#8a5a00}
 .ht-tw-let{background:#fff3d6}
 .ht-tw-hours{font-size:13px;color:#444;line-height:1.7;padding:6px 4px}
+
+/* Greeting bubble */
+.ht-greet-bubble{position:fixed;bottom:92px;max-width:250px;background:#fff;border-radius:14px;box-shadow:0 6px 22px rgba(0,0,0,.16);padding:12px 32px 12px 14px;z-index:10140;font-size:14px;color:#333;line-height:1.5;animation:htgreetin .3s ease}
+.ht-greet-bubble p{margin:0}
+.ht-greet-right{right:20px}
+.ht-greet-left{left:20px}
+.ht-greet-x{position:absolute;top:5px;right:8px;background:none;border:none;font-size:18px;color:#aaa;cursor:pointer;line-height:1;padding:0}
+@keyframes htgreetin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}

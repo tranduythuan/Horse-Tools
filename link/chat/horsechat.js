@@ -65,6 +65,18 @@ if (navimojs) {
         navilastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
     });
 }
+// Greeting bubble: show after a delay unless dismissed before.
+var htGreet = document.getElementById('ht-greet');
+if (htGreet) {
+	var htClosed = false;
+	try { htClosed = localStorage.getItem('htGreetClosed') === '1'; } catch (e) {}
+	if (!htClosed) {
+		var htDelay = (parseInt(htGreet.getAttribute('data-delay'), 10) || 3) * 1000;
+		setTimeout(function () { htGreet.style.display = 'block'; }, htDelay);
+	}
+	var htGx = htGreet.querySelector('.ht-greet-x');
+	if (htGx) { htGx.addEventListener('click', function () { htGreet.style.display = 'none'; try { localStorage.setItem('htGreetClosed', '1'); } catch (e) {} }); }
+}
 // Tab-widget skin: switch panes.
 document.addEventListener('click', function (e) {
 	var tab = e.target.closest('.ht-tw-tab');

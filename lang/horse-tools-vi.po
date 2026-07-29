@@ -5284,3 +5284,18 @@ msgstr "Đội hỗ trợ"
 
 msgid "The Avatar, Live-chat and Tab-widget skins use the fields below."
 msgstr "Các skin Avatar, Live-chat và Tab-widget dùng các ô bên dưới."
+
+msgid "Extras"
+msgstr "Tính năng thêm"
+
+msgid "Greeting bubble text (e.g. Hi! Need help?)"
+msgstr "Chữ bong bóng chào (vd: Chào bạn! Cần hỗ trợ?)"
+
+msgid "Pre-filled message for WhatsApp / SMS (optional)"
+msgstr "Lời nhắn soạn sẵn cho WhatsApp / SMS (tùy chọn)"
+
+msgid "Seconds before the bubble appears"
+msgstr "Số giây trước khi bong bóng hiện"
+
+msgid "Show a greeting bubble near the button"
+msgstr "Hiện bong bóng chào mời cạnh nút"

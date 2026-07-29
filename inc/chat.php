@@ -28,6 +28,21 @@ function horsetools_chat_flex_href( $base, $value ) {
 	}
 	return esc_url( $base . ltrim( $v, '/@~' ) );
 }
+
+/**
+ * Append a pre-filled message to a contact link, choosing ? or & correctly.
+ *
+ * @param string $href
+ * @param string $msg   Already rawurlencode()d, or ''.
+ * @param string $param Query parameter (text for WhatsApp, body for SMS).
+ * @return string
+ */
+function horsetools_chat_append_msg( $href, $msg, $param = 'text' ) {
+	if ( '' === $msg ) {
+		return $href;
+	}
+	return $href . ( false === strpos( $href, '?' ) ? '?' : '&' ) . $param . '=' . $msg;
+}
 # add css js chat web
 function horsetools_enqueue_chat(){
 	global $horsetools_options;
@@ -62,6 +77,7 @@ function horsetools_chat_mang(){
 	$cmail = '<svg class="khacus" width="100%" height="100%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><g transform="matrix(0.117188,0,0,0.117188,5,5)"><path d="M277.216,97.344C224.864,90.72 174.4,108.736 138.688,147.168C103.04,185.6 88.736,237.568 99.456,289.792C111.904,350.272 158.688,398.144 218.656,411.776C231.2,414.656 243.744,416.064 256.128,416.064C280.736,416.064 304.736,410.464 326.944,399.456C334.848,395.52 338.08,385.92 334.176,377.984C330.208,370.048 320.672,366.88 312.704,370.752C285.984,384.032 255.904,387.424 225.76,380.576C178.72,369.888 140.576,330.784 130.816,283.36C122.176,241.376 133.632,199.68 162.144,168.928C190.688,138.208 231.104,123.712 273.12,129.088C336.352,137.28 384,194.688 384,262.688L384,272C384,289.664 369.664,304 352,304C334.336,304 320,289.664 320,272L320,208C320,199.168 312.832,192 304,192C297.44,192 291.84,195.968 289.376,201.6C279.84,195.584 268.64,192 256,192C218.304,192 192,221.6 192,264C192,306.4 218.304,336 256,336C275.872,336 292.416,327.616 303.776,313.6C315.52,327.2 332.672,336 352,336C387.296,336 416,307.296 416,272L416,262.688C416,178.656 356.352,107.584 277.216,97.344ZM256,304C236.256,304 224,288.672 224,264C224,239.328 236.256,224 256,224C275.744,224 288,239.328 288,264C288,288.672 275.744,304 256,304Z" style="fill:#fff;fill-rule:nonzero"/></g></svg>';
 	$cmaps = '<svg class="khacus" width="100%" height="100%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><g transform="matrix(0.0952291,0,0,0.0952291,10.1997,10.3547)"><path d="M360,11.2C299.2,11.2 250,60 248,122.8C246.4,180.8 302,257.2 335.2,297.2C341.2,304.4 350.4,308.8 360,308.8C369.6,308.8 378.4,304.4 384.8,297.2C418,256.8 474,180.8 472,122.8C470,60 420.8,11.2 360,11.2ZM360,163.2C338,163.2 320,145.2 320,123.2C320,101.2 338,83.2 360,83.2C382,83.2 400,101.2 400,123.2C400,145.2 382,163.2 360,163.2Z" style="fill:#fff;fill-rule:nonzero"/><path d="M49.6,392.8C51.2,397.6 56,400.8 60.8,400.8C62,400.8 63.6,400.4 64.8,400L166.4,363.2L215.6,498.4C217.2,503.2 222,506.4 226.8,506.4C228,506.4 229.6,506 230.8,505.6C237.2,503.2 240.4,496.4 238,490.4L184.8,343.2L142.4,226.8C140,220.4 133.2,217.2 127.2,219.6C120.8,222 117.6,228.8 120,234.8L158.4,340L56.8,376.8C50.4,379.6 47.2,386.4 49.6,392.8Z" style="fill:#fff;fill-rule:nonzero"/><path d="M224.8,230.8L198.4,240.4L187.6,210.4C185.2,204 178.4,200.8 172.4,203.2C166,205.6 162.8,212.4 165.2,218.4L180,260C181.6,264.8 186.4,268 191.2,268C192.4,268 194,267.6 195.2,267.2L232.8,253.6C239.2,251.2 242.4,244.4 240,238.4C237.6,232.4 230.8,228.8 224.8,230.8Z" style="fill:#fff;fill-rule:nonzero"/><path d="M196.4,304.8L260.8,481.2C262.4,486 267.2,489.2 272,489.2C273.2,489.2 274.8,488.8 276,488.4C282.4,486 285.6,479.2 283.2,473.2L257.2,401.6L384.8,355.2L394.4,381.6C396,386.4 400.8,389.6 405.6,389.6C406.8,389.6 408.4,389.2 409.6,388.8C416,386.4 419.2,379.6 416.8,373.6L407.2,347.2L433.6,337.6C440,335.2 443.2,328.4 440.8,322.4C438.4,316 431.6,312.8 425.6,315.2L388,328.8L249.2,379.6L223.2,308L268,291.2C274.4,288.8 277.2,282 275.2,275.6C272.8,269.2 266,266.4 259.6,268.4L203.2,289.2C202.312,289.552 198.8,291.056 196.828,294.996C194.488,299.652 196.124,304.084 196.4,304.8Z" style="fill:#fff;fill-rule:nonzero"/></g></svg>';
 	$chorsetools = '<svg width="100%" height="100%" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><path d="M95.2,64.701L50,87.298L4.8,64.701L4.8,12.702L50.008,35.318L95.2,12.702L95.2,64.701ZM13.8,27.553L13.706,60.097L49.939,76.215L80.887,61.665L13.8,27.553ZM50.008,35.318L95.057,57.741L58.359,31.139L50.008,35.318Z" style="fill:#fff"/></svg>';
+    $msg = !empty($horsetools_options['chat-msg']) ? rawurlencode( $horsetools_options['chat-msg'] ) : '';
     foreach ($horsetools_options as $key => $value) {
 			if (preg_match('/^chat-nut1(\d+)$/', $key, $matches)) {
 				$i = $matches[1];
@@ -77,7 +93,7 @@ function horsetools_chat_mang(){
 							echo '<a class="ht-cco ht-cpho" rel="nofollow" title="Phone" href="tel:'. esc_attr($chat_value) .'"><i>'. $cphone .'</i><span>'. $chat_text .'</span></a>';
 							break;
 						case 'SMS':
-							echo '<a class="ht-cco ht-csms" rel="nofollow" title="SMS" href="sms:'. esc_attr($chat_value) .'"><i>'. $csms .'</i><span>'. $chat_text .'</span></a>';
+							echo '<a class="ht-cco ht-csms" rel="nofollow" title="SMS" href="'. horsetools_chat_append_msg('sms:'. esc_attr($chat_value), $msg, 'body') .'"><i>'. $csms .'</i><span>'. $chat_text .'</span></a>';
 							break;
 						case 'Messenger':
 							echo '<a class="ht-cco ht-cmes" '. $chat_new .' rel="nofollow" title="Messenger" href="'. horsetools_chat_flex_href('https://m.me/', $chat_value) .'"><i>'. $cmessenger .'</i><span>'. $chat_text .'</span></a>';
@@ -89,7 +105,7 @@ function horsetools_chat_mang(){
 							echo '<a class="ht-cco ht-czal" '. $chat_new .' rel="nofollow" title="Zalo" href="'. horsetools_chat_flex_href('https://zalo.me/', $chat_value) .'"><i>'. $czalo .'</i><span>'. $chat_text .'</span></a>';
 							break;
 						case 'Whatsapp':
-							echo '<a class="ht-cco ht-cwha" '. $chat_new .' rel="nofollow" title="Whatsapp" href="'. horsetools_chat_flex_href('https://wa.me/', $chat_value) .'"><i>'. $cwhatsapp .'</i><span>'. $chat_text .'</span></a>';
+							echo '<a class="ht-cco ht-cwha" '. $chat_new .' rel="nofollow" title="Whatsapp" href="'. horsetools_chat_append_msg(horsetools_chat_flex_href('https://wa.me/', $chat_value), $msg) .'"><i>'. $cwhatsapp .'</i><span>'. $chat_text .'</span></a>';
 							break;
 						case 'Viber':
 							echo '<a class="ht-cco ht-cvib" '. $chat_new .' rel="nofollow" title="Viber" href="viber://chat?number='. esc_attr($chat_value) .'"><i>'. $cviber .'</i><span>'. $chat_text .'</span></a>';
@@ -458,6 +474,12 @@ function horsetools_add_chat(){
 			if(!empty($horsetools_options['chat-nut-mar'])){
 			echo '<style>'. $cor . $lr1 . $mar . $bot . $ope . $radi . $ico .'</style>';
 			}
+		}
+		// Greeting bubble — an attention popup near the chat button.
+		if ( isset($horsetools_options['chat-bubble']) && !empty($horsetools_options['chat-bubble-text']) ) {
+			$gside = ( isset($horsetools_options['chat-nut-mar']) && $horsetools_options['chat-nut-mar'] == 'Right' ) ? 'ht-greet-right' : 'ht-greet-left';
+			$gdelay = isset($horsetools_options['chat-bubble-delay']) ? (int) $horsetools_options['chat-bubble-delay'] : 3;
+			echo '<div class="ht-greet-bubble '. esc_attr($gside) .'" id="ht-greet" data-delay="'. esc_attr(max(0,$gdelay)) .'" style="display:none"><button type="button" class="ht-greet-x" aria-label="'. esc_attr__('Close','horse-tools') .'">&#215;</button><p>'. esc_html($horsetools_options['chat-bubble-text']) .'</p></div>';
 		}
 	}
 	// chat navi

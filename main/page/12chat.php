@@ -48,6 +48,20 @@ global $horsetools_options; ?>
 	<p><input class="ht-input-big" placeholder="<?php esc_attr_e( 'Greeting message (Live-chat skin)', 'horse-tools' ); ?>" type="text" name="horsetools_settings[chat-greet]" value="<?php if(!empty($horsetools_options['chat-greet'])){echo esc_attr($horsetools_options['chat-greet']);} ?>" /></p>
 	<p><textarea style="height:70px" class="ht-code-textarea" name="horsetools_settings[chat-quick]" placeholder="<?php esc_attr_e( 'Quick replies, one per line as  Label|https://link  (Live-chat skin)', 'horse-tools' ); ?>"><?php if(!empty($horsetools_options['chat-quick'])){echo esc_textarea($horsetools_options['chat-quick']);} ?></textarea></p>
 	<p><textarea style="height:90px" class="ht-code-textarea" name="horsetools_settings[chat-hours]" placeholder="<?php esc_attr_e( 'Opening hours, one line per day (Tab-widget skin)', 'horse-tools' ); ?>"><?php if(!empty($horsetools_options['chat-hours'])){echo esc_textarea($horsetools_options['chat-hours']);} ?></textarea></p>
+
+	<h4><?php _e('Extras', 'horse-tools'); ?></h4>
+	<p><input class="ht-input-big" placeholder="<?php esc_attr_e( 'Pre-filled message for WhatsApp / SMS (optional)', 'horse-tools' ); ?>" type="text" name="horsetools_settings[chat-msg]" value="<?php if(!empty($horsetools_options['chat-msg'])){echo esc_attr($horsetools_options['chat-msg']);} ?>" /></p>
+	<p>
+	<label class="nut-switch">
+	<input type="checkbox" name="horsetools_settings[chat-bubble]" value="1" <?php if ( isset($horsetools_options['chat-bubble']) && 1 == $horsetools_options['chat-bubble'] ) echo 'checked="checked"'; ?> />
+	<span class="slider"></span></label>
+	<label class="ht-label-right"><?php _e('Show a greeting bubble near the button', 'horse-tools'); ?></label>
+	</p>
+	<p><input class="ht-input-big" placeholder="<?php esc_attr_e( 'Greeting bubble text (e.g. Hi! Need help?)', 'horse-tools' ); ?>" type="text" name="horsetools_settings[chat-bubble-text]" value="<?php if(!empty($horsetools_options['chat-bubble-text'])){echo esc_attr($horsetools_options['chat-bubble-text']);} ?>" /></p>
+	<p>
+	<input class="ht-input-small" type="number" min="0" max="60" placeholder="3" name="horsetools_settings[chat-bubble-delay]" value="<?php if(isset($horsetools_options['chat-bubble-delay']) && $horsetools_options['chat-bubble-delay']!==''){echo (int)$horsetools_options['chat-bubble-delay'];} ?>" />
+	<label class="ht-label-right"><?php _e('Seconds before the bubble appears', 'horse-tools'); ?></label>
+	</p>
 	<input type="hidden" name="horsetools_settings[chat-nut-skin]" id="chat-nut-skin" value="<?php if(!empty($horsetools_options['chat-nut-skin'])){echo sanitize_text_field($horsetools_options['chat-nut-skin']);} else {echo sanitize_text_field('Default');} ?>" />
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
