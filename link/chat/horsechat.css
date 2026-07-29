@@ -716,3 +716,32 @@ body .ht-chaton a, body .ht-chatbox-skin1 a, body .ht-chatbox-skin2 a, body .ht-
 .ht-chatbox-skin4 .ht-cwc svg{border:2px solid #07C160}
 .ht-chatbox-skin4 .ht-cgg svg path, .ht-chatbox-skin5 .ht-cgg svg path{fill:#4285F4 !important}
 .ht-chatbox-skin4 .ht-cgg svg{border:2px solid #4285F4}
+
+/* ---- Extra contact channels, batch 2 (Shopee, Grab, Threads, Pinterest, Reddit, Twitch, Spotify, Signal, VK) ---- */
+.ht-cshopee svg{background:#EE4D2D}
+.ht-cgrab svg{background:#00B14F}
+.ht-cthreads svg{background:#000000}
+.ht-cpin svg{background:#BD081C}
+.ht-creddit svg{background:#FF4500}
+.ht-ctwitch svg{background:#9146FF}
+.ht-cspoti svg{background:#1DB954}
+.ht-csignal svg{background:#3A76F0}
+.ht-cvk svg{background:#0077FF}
+.ht-chatbox-skin4 .ht-cshopee svg path, .ht-chatbox-skin5 .ht-cshopee svg path{fill:#EE4D2D !important}
+.ht-chatbox-skin4 .ht-cshopee svg{border:2px solid #EE4D2D}
+.ht-chatbox-skin4 .ht-cgrab svg path, .ht-chatbox-skin5 .ht-cgrab svg path{fill:#00B14F !important}
+.ht-chatbox-skin4 .ht-cgrab svg{border:2px solid #00B14F}
+.ht-chatbox-skin4 .ht-cthreads svg path, .ht-chatbox-skin5 .ht-cthreads svg path{fill:#000000 !important}
+.ht-chatbox-skin4 .ht-cthreads svg{border:2px solid #000000}
+.ht-chatbox-skin4 .ht-cpin svg path, .ht-chatbox-skin5 .ht-cpin svg path{fill:#BD081C !important}
+.ht-chatbox-skin4 .ht-cpin svg{border:2px solid #BD081C}
+.ht-chatbox-skin4 .ht-creddit svg path, .ht-chatbox-skin5 .ht-creddit svg path{fill:#FF4500 !important}
+.ht-chatbox-skin4 .ht-creddit svg{border:2px solid #FF4500}
+.ht-chatbox-skin4 .ht-ctwitch svg path, .ht-chatbox-skin5 .ht-ctwitch svg path{fill:#9146FF !important}
+.ht-chatbox-skin4 .ht-ctwitch svg{border:2px solid #9146FF}
+.ht-chatbox-skin4 .ht-cspoti svg path, .ht-chatbox-skin5 .ht-cspoti svg path{fill:#1DB954 !important}
+.ht-chatbox-skin4 .ht-cspoti svg{border:2px solid #1DB954}
+.ht-chatbox-skin4 .ht-csignal svg path, .ht-chatbox-skin5 .ht-csignal svg path{fill:#3A76F0 !important}
+.ht-chatbox-skin4 .ht-csignal svg{border:2px solid #3A76F0}
+.ht-chatbox-skin4 .ht-cvk svg path, .ht-chatbox-skin5 .ht-cvk svg path{fill:#0077FF !important}
+.ht-chatbox-skin4 .ht-cvk svg{border:2px solid #0077FF}

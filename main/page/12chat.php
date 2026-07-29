@@ -54,7 +54,7 @@ global $horsetools_options; ?>
 	</p>
 	<div id="sortable-list">
 	<div data-id="1" class="ui-state-default ht-button-grid">
-	<?php $styles = array('Custom', 'Phone', 'SMS', 'Zalo', 'Messenger', 'Telegram', 'Whatsapp', 'Viber', 'Line', 'WeChat', 'Instagram', 'Facebook', 'Tiktok', 'Youtube', 'X', 'Linkedin', 'Discord', 'Google', 'Skype', 'Mail', 'Maps'); ?>
+	<?php $styles = array('Custom', 'Phone', 'SMS', 'Zalo', 'Messenger', 'Telegram', 'Whatsapp', 'Viber', 'Line', 'WeChat', 'Signal', 'Shopee', 'Grab', 'Instagram', 'Facebook', 'Threads', 'Tiktok', 'Youtube', 'X', 'Pinterest', 'Linkedin', 'Reddit', 'Twitch', 'Spotify', 'VK', 'Discord', 'Google', 'Skype', 'Mail', 'Maps'); ?>
 	<select name="horsetools_settings[chat-nut11]"> 
 	<?php foreach($styles as $style) { ?> 
 	<?php if(isset($horsetools_options['chat-nut11']) && $horsetools_options['chat-nut11'] == $style) { $selected = 'selected="selected"'; } else { $selected = ''; } ?>
