@@ -18,7 +18,7 @@ Horse Tools is an actively-maintained, security-hardened fork of **Foxtool** by 
 - **Contact chat button** — a floating multi-channel contact widget (Zalo, Messenger, WhatsApp, Telegram, phone, Line, WeChat, Instagram and 30+ more), 17 button skins, a built-in icon picker (5,000+ Tabler icons), business hours (online / away), a greeting bubble, pre-filled messages, and scan-to-open QR codes on desktop.
 - **Mobile Services panel** — a conversion-focused slide-up/toast panel to surface your key pages and offers, with several layouts, themes and display modes.
 - **Popup** — an image/content popup with 4 layouts, **13 entrance effects**, 4 display positions (centre, corner toast, bottom bar) and 4 triggers (on load, after N seconds, after scrolling, or exit-intent).
-- **Shortcodes & snippet manager** — create reusable content/HTML/JS snippets (with a code editor), 20+ built-in shortcodes for conditional display, layout (accordion, tabs, alerts), dynamic data and QR codes, a "find where a shortcode is used" tool, and an on/off manager.
+- **Shortcodes & snippet manager** — create reusable content/HTML/JS snippets (edited in the familiar WordPress Visual/Text editor — insert links, images and formatting, or paste raw code), 20+ built-in shortcodes for conditional display, layout (accordion, tabs, alerts), dynamic data and QR codes, a "find where a shortcode is used" tool, and an on/off manager.
 - **Security hardening** — limit login attempts, block user enumeration, security response headers, disable the file editor, REST/XML-RPC controls and header cleanup.
 - **Privacy** — self-host Google Fonts and scan the front end for external requests.
 - **Media** — WebP/AVIF conversion, watermarking and thumbnail control.
