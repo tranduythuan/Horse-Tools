@@ -13,6 +13,23 @@ require_once __DIR__ . '/po-lib.php';
 $root = rtrim( $argv[1] ?? dirname( __DIR__ ), '/\\' );
 
 $vi = array(
+    // CONTENT tab — lightbox engine selector GLightbox/PhotoSwipe (added 1.2.16).
+    'Click an image in your content to open it in a full-screen viewer. Choose the engine and how it looks below.'
+        => 'Nhấn vào ảnh trong nội dung để mở trình xem toàn màn hình. Chọn engine và kiểu hiển thị bên dưới.',
+    'Lightbox engine'
+        => 'Engine lightbox',
+    'GLightbox — light, images + video, slide effects'
+        => 'GLightbox — nhẹ, ảnh + video, hiệu ứng chuyển ảnh',
+    'PhotoSwipe — best pinch-zoom / pan for photos'
+        => 'PhotoSwipe — zoom/kéo ảnh mượt nhất',
+    'Both engines are free and open-source (MIT). GLightbox is the easy all-rounder (adds video + slide transitions); PhotoSwipe has the smoothest zoom/pan for photo galleries.'
+        => 'Cả hai engine đều miễn phí, mã nguồn mở (MIT). GLightbox dễ dùng, đa năng (thêm video + hiệu ứng chuyển ảnh); PhotoSwipe có zoom/kéo mượt nhất cho gallery ảnh chụp.',
+    'Slide transition (GLightbox)'
+        => 'Hiệu ứng chuyển ảnh (GLightbox)',
+    'Slide'
+        => 'Trượt',
+    'Both engines are bundled locally — no external requests. Gallery grouping, looping and the slide transition apply to GLightbox; PhotoSwipe always groups the content images (previous/next) and has its own smooth zoom/pan.'
+        => 'Cả hai engine đều đóng gói sẵn trong plugin — không gọi ra ngoài. Gom thư viện, quay vòng và hiệu ứng chuyển ảnh áp dụng cho GLightbox; PhotoSwipe luôn gom các ảnh trong bài (trước/sau) và có zoom/kéo mượt riêng.',
     // CONTENT tab — image lightbox display options (added 1.2.15).
     'Image lightbox'
         => 'Lightbox ảnh',

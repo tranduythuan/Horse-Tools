@@ -5665,3 +5665,30 @@ msgstr "Rạp phim (đen tuyền)"
 
 msgid "Accent colour (toolbar / active thumbnail)"
 msgstr "Màu nhấn (thanh công cụ / ảnh thu nhỏ đang chọn)"
+
+msgid "Click an image in your content to open it in a full-screen viewer. Choose the engine and how it looks below."
+msgstr "Nhấn vào ảnh trong nội dung để mở trình xem toàn màn hình. Chọn engine và kiểu hiển thị bên dưới."
+
+msgid "Lightbox engine"
+msgstr "Engine lightbox"
+
+msgid "GLightbox — light, images + video, slide effects"
+msgstr "GLightbox — nhẹ, ảnh + video, hiệu ứng chuyển ảnh"
+
+msgid "PhotoSwipe — best pinch-zoom / pan for photos"
+msgstr "PhotoSwipe — zoom/kéo ảnh mượt nhất"
+
+msgid "Both engines are free and open-source (MIT). GLightbox is the easy all-rounder (adds video + slide transitions); PhotoSwipe has the smoothest zoom/pan for photo galleries."
+msgstr "Cả hai engine đều miễn phí, mã nguồn mở (MIT). GLightbox dễ dùng, đa năng (thêm video + hiệu ứng chuyển ảnh); PhotoSwipe có zoom/kéo mượt nhất cho gallery ảnh chụp."
+
+msgid "Slide transition (GLightbox)"
+msgstr "Hiệu ứng chuyển ảnh (GLightbox)"
+
+msgid "Slide"
+msgstr "Trượt"
+
+msgid "Both engines are bundled locally — no external requests. Looping and the slide transition apply to GLightbox; PhotoSwipe always loops and has its own smooth zoom/pan."
+msgstr "Cả hai engine đều đóng gói sẵn trong plugin — không gọi ra ngoài. Quay vòng và hiệu ứng chuyển ảnh áp dụng cho GLightbox; PhotoSwipe luôn quay vòng và có zoom/kéo mượt riêng."
+
+msgid "Both engines are bundled locally — no external requests. Gallery grouping, looping and the slide transition apply to GLightbox; PhotoSwipe always groups the content images (previous/next) and has its own smooth zoom/pan."
+msgstr "Cả hai engine đều đóng gói sẵn trong plugin — không gọi ra ngoài. Gom thư viện, quay vòng và hiệu ứng chuyển ảnh áp dụng cho GLightbox; PhotoSwipe luôn gom các ảnh trong bài (trước/sau) và có zoom/kéo mượt riêng."

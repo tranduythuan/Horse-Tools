@@ -465,138 +465,155 @@ function horsetools_categories_hiden_home($query){
 }
 add_action('pre_get_posts', 'horsetools_categories_hiden_home');
 }
-# show ảnh trong bài viết hoặc trang
+# Image lightbox — GLightbox or PhotoSwipe (both MIT-licensed, free), chosen per site.
 if (isset($horsetools_options['post-fancy1'])){
 // Where the lightbox runs, from the scope option (posts / posts+pages / all singular).
-function horsetools_fancybox_on(){
+function horsetools_lb_on(){
 	global $horsetools_options;
 	$scope = ! empty( $horsetools_options['post-fancy-scope'] ) ? $horsetools_options['post-fancy-scope'] : 'post';
 	if ( 'all' === $scope )  { return is_singular(); }
 	if ( 'page' === $scope ) { return is_singular( array( 'post', 'page' ) ); }
 	return is_singular( 'post' );
 }
-// Build the Fancybox options object from the display settings.
-function horsetools_fancybox_config(){
+// Which engine is selected.
+function horsetools_lb_engine(){
 	global $horsetools_options;
-	$anim     = ! empty( $horsetools_options['post-fancy-anim'] ) ? $horsetools_options['post-fancy-anim'] : 'zoom';
-	$anim_map = array(
-		'zoom' => array( 'fancybox-zoomInUp', 'fancybox-zoomOutDown' ),
-		'fade' => array( 'fancybox-fadeIn', 'fancybox-fadeOut' ),
-		'none' => array( false, false ),
-	);
-	$pair   = isset( $anim_map[ $anim ] ) ? $anim_map[ $anim ] : $anim_map['zoom'];
-	$thumbs = isset( $horsetools_options['post-fancy-thumbs'] );
-
-	$bar = ! empty( $horsetools_options['post-fancy-toolbar'] ) ? $horsetools_options['post-fancy-toolbar'] : 'full';
-	if ( 'none' === $bar ) {
-		$toolbar = false;
-	} elseif ( 'minimal' === $bar ) {
-		$toolbar = array( 'display' => array( 'counter', 'close' ) );
+	return ( ! empty( $horsetools_options['post-fancy-engine'] ) && 'photoswipe' === $horsetools_options['post-fancy-engine'] ) ? 'photoswipe' : 'glightbox';
+}
+// Enqueue the chosen library. GLightbox is a normal (UMD) script; PhotoSwipe is
+// an ES module, so only its CSS is enqueued here and the JS is an inline module.
+function horsetools_lb_enqueue(){
+	if ( ! horsetools_lb_on() ) { return; }
+	if ( 'photoswipe' === horsetools_lb_engine() ) {
+		wp_enqueue_style( 'ht-photoswipe', HORSETOOLS_URL . 'link/photoswipe/photoswipe.css', array(), HORSETOOLS_VERSION );
 	} else {
-		$ids = array( 'counter', 'zoom', 'slideshow', 'fullscreen', 'download', 'close' );
-		if ( $thumbs ) { array_splice( $ids, 4, 0, 'thumbs' ); }
-		$toolbar = array( 'display' => $ids );
-	}
-
-	return array(
-		'showClass'   => $pair[0],
-		'hideClass'   => $pair[1],
-		'dragToClose' => true,
-		'Carousel'    => array( 'infinite' => isset( $horsetools_options['post-fancy-loop'] ) ),
-		'Thumbs'      => array( 'autoStart' => $thumbs ),
-		'Toolbar'     => $toolbar,
-	);
-}
-// add js css fancybox
-function horsetools_enqueue_fancybox(){
-	if ( horsetools_fancybox_on() ){
-	// The inline initialiser below is written in jQuery, so declare it.
-	wp_enqueue_script( 'fancybox', HORSETOOLS_URL . 'link/fancybox/fancybox.js', array( 'jquery' ), HORSETOOLS_VERSION, true );
-	wp_enqueue_style('fancybox', HORSETOOLS_URL . 'link/fancybox/fancybox.css', array(), HORSETOOLS_VERSION);
+		wp_enqueue_script( 'ht-glightbox', HORSETOOLS_URL . 'link/glightbox/glightbox.min.js', array(), HORSETOOLS_VERSION, true );
+		wp_enqueue_style( 'ht-glightbox', HORSETOOLS_URL . 'link/glightbox/glightbox.min.css', array(), HORSETOOLS_VERSION );
 	}
 }
-add_action('wp_enqueue_scripts', 'horsetools_enqueue_fancybox');
-// Print the chosen backdrop theme + accent colour as CSS-variable overrides,
-// plus a zoom-in cursor so visitors know the images are clickable.
-function horsetools_fancybox_theme_css(){
-	if ( ! horsetools_fancybox_on() ) { return; }
+add_action( 'wp_enqueue_scripts', 'horsetools_lb_enqueue' );
+// Backdrop theme + accent colour + a zoom-in cursor, targeting the active engine.
+function horsetools_lb_theme_css(){
+	if ( ! horsetools_lb_on() ) { return; }
 	global $horsetools_options;
 	$theme  = ! empty( $horsetools_options['post-fancy-theme'] ) ? $horsetools_options['post-fancy-theme'] : 'dark';
 	$accent = ! empty( $horsetools_options['post-fancy-accent'] ) ? trim( $horsetools_options['post-fancy-accent'] ) : '';
 	$themes = array(
-		'dark'   => array( 'bg' => 'rgba(20,20,22,.97)',    'color' => '#e5e7eb', 'blur' => false ),
-		'cinema' => array( 'bg' => '#000000',               'color' => '#c9c9c9', 'blur' => false ),
-		'light'  => array( 'bg' => 'rgba(248,248,250,.97)', 'color' => '#18181b', 'blur' => false ),
-		'blur'   => array( 'bg' => 'rgba(20,20,22,.55)',    'color' => '#ffffff', 'blur' => true ),
+		'dark'   => array( 'bg' => 'rgba(20,20,22,.97)',    'blur' => false ),
+		'cinema' => array( 'bg' => '#000000',               'blur' => false ),
+		'light'  => array( 'bg' => 'rgba(248,248,250,.97)', 'blur' => false ),
+		'blur'   => array( 'bg' => 'rgba(20,20,22,.55)',    'blur' => true ),
 	);
 	$t = isset( $themes[ $theme ] ) ? $themes[ $theme ] : $themes['dark'];
-
-	$css = '.fancybox__container{--fancybox-bg:' . $t['bg'] . ';--fancybox-color:' . $t['color'] . ';';
-	// Only echo the accent if it is a plain colour literal (belt-and-suspenders
+	// Only trust the accent if it is a plain colour literal (belt-and-suspenders
 	// on top of the colour sanitiser) so it can never break out of the CSS.
-	if ( '' !== $accent && preg_match( '/^(#[0-9a-fA-F]{3,8}|rgba?\([0-9,.\s]+\))$/', $accent ) ) {
-		$css .= '--fancybox-accent-color:' . $accent . ';';
-	}
-	$css .= '}';
-	if ( $t['blur'] ) {
-		$css .= '.fancybox__backdrop{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}';
+	$ok_accent = ( '' !== $accent && preg_match( '/^(#[0-9a-fA-F]{3,8}|rgba?\([0-9,.\s]+\))$/', $accent ) );
+
+	if ( 'photoswipe' === horsetools_lb_engine() ) {
+		$css = '.pswp{--pswp-bg:' . $t['bg'] . ';}';
+		if ( $t['blur'] )   { $css .= '.pswp__bg{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}'; }
+		if ( $ok_accent )   { $css .= '.pswp__button--arrow .pswp__icn,.pswp__button{color:' . $accent . ';}'; }
+	} else {
+		$css = '.goverlay{background:' . $t['bg'] . ';}';
+		if ( $t['blur'] )   { $css .= '.goverlay{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}'; }
+		if ( $ok_accent )   { $css .= '.glightbox-container .gnext svg,.glightbox-container .gprev svg,.glightbox-container .gclose svg{color:' . $accent . ';}'; }
 	}
 	$css .= '.fancybox img{cursor:zoom-in;}';
-	echo '<style id="ht-fancybox-theme">' . $css . '</style>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput -- fixed preset values + colour-validated accent
+	echo '<style id="ht-lb-theme">' . $css . '</style>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput -- preset values + colour-validated accent
 }
-add_action( 'wp_head', 'horsetools_fancybox_theme_css', 6 );
-// add script vao footer post
-function horsetools_slide_script(){
+add_action( 'wp_head', 'horsetools_lb_theme_css', 6 );
+// Footer initialiser for the chosen engine.
+function horsetools_lb_script(){
 	global $horsetools_options;
-	if ( ! horsetools_fancybox_on() ) { return; }
-	$cfg     = wp_json_encode( horsetools_fancybox_config() );
-	$gallery = isset( $horsetools_options['post-fancy11'] );
+	if ( ! horsetools_lb_on() ) { return; }
+	$engine  = horsetools_lb_engine();
+	$gallery = isset( $horsetools_options['post-fancy11'] ) ? 'true' : 'false';
 	$cap     = ! empty( $horsetools_options['post-fancy-caption'] ) ? $horsetools_options['post-fancy-caption'] : 'alt';
+	$anim    = ! empty( $horsetools_options['post-fancy-anim'] ) ? $horsetools_options['post-fancy-anim'] : 'zoom';
+	$anim    = in_array( $anim, array( 'zoom', 'fade', 'none' ), true ) ? $anim : 'zoom';
+	$slide   = ! empty( $horsetools_options['post-fancy-slide'] ) ? $horsetools_options['post-fancy-slide'] : 'slide';
+	$slide   = in_array( $slide, array( 'slide', 'fade', 'zoom', 'none' ), true ) ? $slide : 'slide';
+	$loop    = isset( $horsetools_options['post-fancy-loop'] ) ? 'true' : 'false';
+	// Caption expression, evaluated against a DOM element named `img`.
 	switch ( $cap ) {
 		case 'none':       $cap_js = "''"; break;
-		case 'title':      $cap_js = "(img.attr('title')||'')"; break;
-		case 'figcaption': $cap_js = "(img.closest('figure').find('figcaption').first().text().trim()||img.attr('alt')||'')"; break;
-		default:           $cap_js = "(img.attr('alt')||'')";
+		case 'title':      $cap_js = "(img.getAttribute('title')||'')"; break;
+		case 'figcaption': $cap_js = "((img.closest('figure')&&img.closest('figure').querySelector('figcaption')?img.closest('figure').querySelector('figcaption').textContent.trim():'')||img.getAttribute('alt')||'')"; break;
+		default:           $cap_js = "(img.getAttribute('alt')||'')";
 	}
-	?>
-	<script>
-	jQuery(function($){
-		var cfg = <?php echo $cfg; // phpcs:ignore WordPress.Security.EscapeOutput -- wp_json_encode ?>;
-		<?php if ( $gallery ) : ?>
-		$('.fancybox img').each(function(){
-			var img = $(this), cap = <?php echo $cap_js; // phpcs:ignore ?>;
-			var a = img.parent('a');
-			if (a.length){
-				// Image already links to a file: turn that link into the lightbox
-				// trigger (keeps its full-size href); if it links to a page, leave it.
-				var href = a.attr('href') || '';
-				if (/\.(jpe?g|png|gif|webp|avif|bmp|svg)(\?|#|$)/i.test(href)){
-					a.attr('data-fancybox','gallery').attr('data-caption',cap);
-				}
-				return;
-			}
-			var src = img.attr('data-src') || img.attr('src');
-			img.wrap($('<a>',{href:src,'data-fancybox':'gallery','data-caption':cap}));
-		});
-		Fancybox.bind('[data-fancybox]', cfg);
-		<?php else : ?>
-		Fancybox.bind('.fancybox img', cfg);
+
+	if ( 'photoswipe' === $engine ) {
+		$psl = HORSETOOLS_URL . 'link/photoswipe/photoswipe-lightbox.esm.min.js';
+		$ps  = HORSETOOLS_URL . 'link/photoswipe/photoswipe.esm.min.js';
+		$pc  = HORSETOOLS_URL . 'link/photoswipe/photoswipe-dynamic-caption.esm.min.js';
+		?>
+		<script type="module">
+		import PhotoSwipeLightbox from <?php echo wp_json_encode( $psl ); ?>;
+		<?php if ( 'none' !== $cap ) : ?>
+		import PhotoSwipeDynamicCaption from <?php echo wp_json_encode( $pc ); ?>;
 		<?php endif; ?>
-	});
-	</script>
-	<?php
+		(function(){
+			var isImg = function(u){ return /\.(jpe?g|png|gif|webp|avif|bmp|svg)(\?|#|$)/i.test(u||''); };
+			document.querySelectorAll('.fancybox img').forEach(function(img){
+				var cap = <?php echo $cap_js; // phpcs:ignore ?>;
+				var a = img.closest('a'), href, target;
+				if (a){ href = a.getAttribute('href')||''; if(!isImg(href)) return; target = a; }
+				else { href = img.getAttribute('data-src')||img.getAttribute('src'); target = document.createElement('a'); target.setAttribute('href', href); img.parentNode.insertBefore(target, img); target.appendChild(img); }
+				target.classList.add('ht-pswp');
+				// Prefer the intrinsic size; fall back to the rendered box (keeps the
+				// aspect ratio right even before the image has finished loading).
+				var w = img.naturalWidth || img.offsetWidth || parseInt(img.getAttribute('width'),10) || 1600;
+				var h = img.naturalHeight || img.offsetHeight || parseInt(img.getAttribute('height'),10) || Math.round(w*0.66);
+				target.setAttribute('data-pswp-width', w);
+				target.setAttribute('data-pswp-height', h);
+				if (cap) target.setAttribute('data-pswp-caption', cap);
+			});
+			var lb = new PhotoSwipeLightbox({
+				gallery: '.fancybox',
+				children: 'a.ht-pswp',
+				showHideAnimationType: <?php echo wp_json_encode( $anim ); ?>,
+				pswpModule: function(){ return import(<?php echo wp_json_encode( $ps ); ?>); }
+			});
+			<?php if ( 'none' !== $cap ) : ?>
+			new PhotoSwipeDynamicCaption(lb, { type: 'auto', captionContent: function(slide){ var e = slide.data.element; return e ? (e.getAttribute('data-pswp-caption')||'') : ''; } });
+			<?php endif; ?>
+			lb.init();
+		})();
+		</script>
+		<?php
+	} else {
+		?>
+		<script>
+		document.addEventListener('DOMContentLoaded', function(){
+			var grouped = <?php echo $gallery; ?>, i = 0;
+			var isImg = function(u){ return /\.(jpe?g|png|gif|webp|avif|bmp|svg)(\?|#|$)/i.test(u||''); };
+			document.querySelectorAll('.fancybox img').forEach(function(img){
+				var cap = <?php echo $cap_js; // phpcs:ignore ?>;
+				var a = img.closest('a'), href, target;
+				if (a){ href = a.getAttribute('href')||''; if(!isImg(href)) return; target = a; }
+				else { href = img.getAttribute('data-src')||img.getAttribute('src'); target = document.createElement('a'); target.setAttribute('href', href); img.parentNode.insertBefore(target, img); target.appendChild(img); }
+				target.classList.add('ht-glb');
+				// One shared gallery for prev/next, or a unique one per image so each opens alone.
+				target.setAttribute('data-gallery', grouped ? 'ht' : ('ht' + (i++)));
+				if (cap) target.setAttribute('data-title', cap);
+			});
+			if (window.GLightbox){
+				GLightbox({ selector: '.ht-glb', openEffect: <?php echo wp_json_encode( $anim ); ?>, closeEffect: <?php echo wp_json_encode( $anim ); ?>, slideEffect: <?php echo wp_json_encode( $slide ); ?>, loop: <?php echo $loop; ?>, zoomable: true, touchNavigation: true });
+			}
+		});
+		</script>
+		<?php
+	}
 }
-add_action('wp_footer', 'horsetools_slide_script');
-// add div vao content
-function horsetools_slide_addiv( $content ) {
-    // Same guard as the TOC: without it every archive item and every feed item
-    // got wrapped, and the gallery bound to the wrong content.
-    if ( ! horsetools_fancybox_on() || ! in_the_loop() || ! is_main_query() || is_feed() ) {
+add_action( 'wp_footer', 'horsetools_lb_script' );
+// Wrap the main content so only its images are targeted (not archives/feeds).
+function horsetools_lb_addiv( $content ) {
+    if ( ! horsetools_lb_on() || ! in_the_loop() || ! is_main_query() || is_feed() ) {
         return $content;
     }
     return '<div class="fancybox">'. $content .'</div>';
 }
-add_filter( 'the_content', 'horsetools_slide_addiv' );
+add_filter( 'the_content', 'horsetools_lb_addiv' );
 }
 
 

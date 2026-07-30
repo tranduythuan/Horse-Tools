@@ -147,8 +147,23 @@ global $horsetools_options; ?>
 	<?php horsetools_toggle( 'post-fancy1', __( 'Enable image lightbox', 'horse-tools' ), array(
 		'tab'         => 'CONTENT',
 		'section'     => 'Image lightbox',
-		'description' => __( 'Click an image in your content to open it in a full-screen viewer (Fancybox). Choose how it looks below.', 'horse-tools' ),
+		'description' => __( 'Click an image in your content to open it in a full-screen viewer. Choose the engine and how it looks below.', 'horse-tools' ),
 	) ); ?>
+
+	<p class="ht-field" data-ht-parent="ht-main-post-fancy1">
+	<label class="ht-field-label"><?php _e('Lightbox engine', 'horse-tools'); ?></label>
+	<?php
+	$ht_fb_engine = ( ! empty( $horsetools_options['post-fancy-engine'] ) && 'photoswipe' === $horsetools_options['post-fancy-engine'] ) ? 'photoswipe' : 'glightbox';
+	$ht_fb_engine_opts = array(
+		'glightbox'  => __( 'GLightbox — light, images + video, slide effects', 'horse-tools' ),
+		'photoswipe' => __( 'PhotoSwipe — best pinch-zoom / pan for photos', 'horse-tools' ),
+	);
+	echo '<select name="horsetools_settings[post-fancy-engine]">';
+	foreach ( $ht_fb_engine_opts as $v => $l ) { echo '<option value="' . esc_attr( $v ) . '"' . selected( $ht_fb_engine, $v, false ) . '>' . esc_html( $l ) . '</option>'; }
+	echo '</select>';
+	?>
+	</p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Both engines are free and open-source (MIT). GLightbox is the easy all-rounder (adds video + slide transitions); PhotoSwipe has the smoothest zoom/pan for photo galleries.', 'horse-tools'); ?></p>
 
 	<p class="ht-field" data-ht-parent="ht-main-post-fancy1">
 	<label class="ht-field-label"><?php _e('Where to run it', 'horse-tools'); ?></label>
@@ -204,16 +219,17 @@ global $horsetools_options; ?>
 	</p>
 
 	<p class="ht-field" data-ht-parent="ht-main-post-fancy1">
-	<label class="ht-field-label"><?php _e('Toolbar', 'horse-tools'); ?></label>
+	<label class="ht-field-label"><?php _e('Slide transition (GLightbox)', 'horse-tools'); ?></label>
 	<?php
-	$ht_fb_bar = ! empty( $horsetools_options['post-fancy-toolbar'] ) ? $horsetools_options['post-fancy-toolbar'] : 'full';
-	$ht_fb_bar_opts = array(
-		'full'    => __( 'Full (zoom, slideshow, fullscreen, download…)', 'horse-tools' ),
-		'minimal' => __( 'Minimal (counter + close)', 'horse-tools' ),
-		'none'    => __( 'None', 'horse-tools' ),
+	$ht_fb_slide = ! empty( $horsetools_options['post-fancy-slide'] ) ? $horsetools_options['post-fancy-slide'] : 'slide';
+	$ht_fb_slide_opts = array(
+		'slide' => __( 'Slide', 'horse-tools' ),
+		'fade'  => __( 'Fade', 'horse-tools' ),
+		'zoom'  => __( 'Zoom', 'horse-tools' ),
+		'none'  => __( 'None', 'horse-tools' ),
 	);
-	echo '<select name="horsetools_settings[post-fancy-toolbar]">';
-	foreach ( $ht_fb_bar_opts as $v => $l ) { echo '<option value="' . esc_attr( $v ) . '"' . selected( $ht_fb_bar, $v, false ) . '>' . esc_html( $l ) . '</option>'; }
+	echo '<select name="horsetools_settings[post-fancy-slide]">';
+	foreach ( $ht_fb_slide_opts as $v => $l ) { echo '<option value="' . esc_attr( $v ) . '"' . selected( $ht_fb_slide, $v, false ) . '>' . esc_html( $l ) . '</option>'; }
 	echo '</select>';
 	?>
 	</p>
@@ -239,15 +255,10 @@ global $horsetools_options; ?>
 	<input class="ht-input-color" name="horsetools_settings[post-fancy-accent]" type="text" data-coloris value="<?php if(!empty($horsetools_options['post-fancy-accent'])){echo esc_attr($horsetools_options['post-fancy-accent']);} ?>"/>
 	</p>
 
-	<?php horsetools_toggle( 'post-fancy-thumbs', __( 'Show thumbnail strip', 'horse-tools' ), array(
-		'tab'     => 'CONTENT',
-		'section' => 'Image lightbox',
-		'parent'  => 'post-fancy1',
-	) ); ?>
 	<?php horsetools_toggle( 'post-fancy-loop', __( 'Loop back to the first image', 'horse-tools' ), array(
 		'tab'     => 'CONTENT',
 		'section' => 'Image lightbox',
 		'parent'  => 'post-fancy1',
 	) ); ?>
-	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Uses the built-in Fancybox library. Thumbnails, slideshow and looping only make sense with gallery grouping on.', 'horse-tools'); ?></p>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Both engines are bundled locally — no external requests. Gallery grouping, looping and the slide transition apply to GLightbox; PhotoSwipe always groups the content images (previous/next) and has its own smooth zoom/pan.', 'horse-tools'); ?></p>
 </div>
