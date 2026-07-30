@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,6 +79,12 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.2 =
+Improved the built-in icon picker on the Chat tab.
+
+* The picker now offers **46 icons** (up from 24) and its search matches **Vietnamese keywords** as well as the English name — typing "ship" finds the truck, "giảm giá" the discount tag, "mua" the cart, "tư vấn" the headset, and so on.
+* Added a **“Choose icon” button directly under every SVG field** — the contact-button rows, the mobile contact-bar buttons, and any row you add later — so you can open the picker in place and it inserts into that exact field, instead of only from the tip at the top of the section.
 
 = 1.2.1 =
 A bug fix plus a big usability pass on the contact-chat admin screen.
@@ -265,6 +271,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.2 =
+Bigger icon picker (46 icons) with Vietnamese keyword search, and a “Choose icon” button under every SVG field.
 
 = 1.2.1 =
 Fixes the half-clickable on/off switches and rebuilds the chat admin with visual preview grids and a built-in icon picker. Settings are preserved.
