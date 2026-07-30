@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.2.8
+ * Version: 1.2.9
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.2.8' );
+define( 'HORSETOOLS_VERSION', '1.2.9' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
@@ -64,9 +64,16 @@ function horsetools_customize_enqueue() {
 	}
 	wp_enqueue_style( 'horsetools-icon', HORSETOOLS_URL . 'link/tabler/tabler-icons.css', array(), HORSETOOLS_VERSION );
 	wp_enqueue_style( 'horsetools-css', HORSETOOLS_URL . 'link/htadmin.css', array(), HORSETOOLS_VERSION );
-	wp_enqueue_script( 'horsetools-js', HORSETOOLS_URL . 'link/htadmin.js', array(), HORSETOOLS_VERSION, true );
+	// Load the admin script and colour picker in the HEAD, not the footer. On
+	// some hosts a heavy admin page drops the plugin's footer <script> tags (the
+	// tab handler, colour picker, sidebar search and dependent toggles all went
+	// missing on one site while the CSS in the head loaded fine). The head is
+	// printed reliably there, and htadmin.js only touches the DOM on
+	// DOMContentLoaded, so head loading is safe. jQuery is declared as a
+	// dependency so it is always present first.
+	wp_enqueue_script( 'horsetools-js', HORSETOOLS_URL . 'link/htadmin.js', array( 'jquery' ), HORSETOOLS_VERSION, false );
 	wp_enqueue_style( 'coloris-css', HORSETOOLS_URL . 'link/color/coloris.css', array(), HORSETOOLS_VERSION );
-	wp_enqueue_script( 'coloris-js', HORSETOOLS_URL . 'link/color/coloris.js', array(), HORSETOOLS_VERSION, true );
+	wp_enqueue_script( 'coloris-js', HORSETOOLS_URL . 'link/color/coloris.js', array(), HORSETOOLS_VERSION, false );
 }
 add_action( 'admin_enqueue_scripts', 'horsetools_customize_enqueue' );
 

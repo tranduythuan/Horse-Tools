@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.8
+Stable tag: 1.2.9
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,6 +79,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.9 =
+* **Fixed (root cause): the plugin's admin script and colour picker now load in the page head instead of the footer.** On some hosts a heavy admin page silently dropped the plugin's footer &lt;script&gt; tags, so on the main settings page the tab handler, colour picker, sidebar search and dependent toggles all went missing (the head-loaded CSS was fine). Loading them in the head — which prints reliably — restores full functionality on those hosts. Complements the inline tab fallback added in 1.2.8.
 
 = 1.2.8 =
 * **Fixed: admin tabs could stop responding on some hosts.** On sites where a cache/optimise plugin (e.g. LiteSpeed) blocks, defers or combines the plugin's admin script, the tab buttons threw “httab is not defined” and nothing switched. Tab switching is now defined inline in the page head, so the tabs always work regardless of how the host handles scripts. (For full admin functionality on such hosts, exclude Horse Tools from JS optimisation.)
@@ -303,6 +306,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.9 =
+Loads the admin script + colour picker in the head so the whole settings page works on hosts that drop footer scripts.
 
 = 1.2.8 =
 Fixes admin tabs not switching on hosts whose cache/optimise plugin blocks the admin script; clearer Redirects tab names.
