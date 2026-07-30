@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.7
+Stable tag: 1.2.8
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,6 +79,10 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.8 =
+* **Fixed: admin tabs could stop responding on some hosts.** On sites where a cache/optimise plugin (e.g. LiteSpeed) blocks, defers or combines the plugin's admin script, the tab buttons threw “httab is not defined” and nothing switched. Tab switching is now defined inline in the page head, so the tabs always work regardless of how the host handles scripts. (For full admin functionality on such hosts, exclude Horse Tools from JS optimisation.)
+* Clearer Redirects tab names — “301 / 404 / 503” are now “Redirects (301) / Broken links (404) / Maintenance (503)” — each with a short “what it does / how to use” note. (First of a wider pass to make every section beginner-friendly.)
 
 = 1.2.7 =
 * **Snippet content box is now the familiar WordPress editor.** Instead of a code-only box, the snippet content field is the same Visual/Text editor you use when writing a post — type text and use the toolbar to insert links, images and formatting (Visual tab), or paste raw HTML/CSS/JS (Text tab). Much friendlier for non-coders; advanced code still works. Placeholders like {{url}} work in both tabs.
@@ -299,6 +303,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.8 =
+Fixes admin tabs not switching on hosts whose cache/optimise plugin blocks the admin script; clearer Redirects tab names.
 
 = 1.2.7 =
 The snippet content box is now the familiar WordPress Visual/Text editor with insert-link and insert-image buttons, instead of a code-only box.

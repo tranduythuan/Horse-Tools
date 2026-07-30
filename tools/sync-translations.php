@@ -327,6 +327,16 @@ $vi = array(
         => 'Tùy chọn nâng cao — thiết bị, khách, lịch hiện, thẻ (không bắt buộc)',
     'Search snippets by name, description or tag…' => 'Tìm snippet theo tên, mô tả hoặc thẻ…',
     'No snippet matches your search.' => 'Không có snippet nào khớp tìm kiếm.',
+    // Redirects page: clearer tab names + how-to intros
+    'Redirects (301)' => 'Chuyển hướng (301)',
+    'Broken links (404)' => 'Link hỏng (404)',
+    'Maintenance (503)' => 'Bảo trì (503)',
+    'When a URL changes or an old link should point somewhere new, this sends visitors (and Google) straight to the right page instead of a “not found” error — so you don’t lose traffic.'
+        => 'Khi một URL đổi hoặc một link cũ cần trỏ tới chỗ mới, phần này đưa khách (và Google) thẳng tới đúng trang thay vì gặp lỗi “không tìm thấy” — để bạn không mất lượt truy cập.',
+    'Handle dead links: send visitors who hit a “404 – not found” page to a page you choose, and keep a log of the broken URLs so you know what to fix.'
+        => 'Xử lý link chết: đưa khách gặp trang “404 – không tìm thấy” sang trang bạn chọn, và ghi lại các URL hỏng để bạn biết mà sửa.',
+    'Temporarily close the site with a “under maintenance” notice while you make changes. You (and other logged-in admins) still see the site normally, so you can work in peace.'
+        => 'Tạm đóng website với thông báo “đang bảo trì” trong lúc bạn chỉnh sửa. Bạn (và các quản trị viên đã đăng nhập) vẫn xem site bình thường, nên cứ yên tâm làm việc.',
     'Write your block just like a post: type text and use the toolbar to insert links, images and formatting. Need raw HTML/CSS/JS? Switch to the “Text” tab. Placeholders like {{url}} still work in both.'
         => 'Soạn khối nội dung như khi viết bài: gõ chữ và dùng thanh công cụ để chèn link, ảnh và định dạng. Cần dán HTML/CSS/JS thô? Chuyển sang tab “Văn bản”. Các placeholder như {{url}} vẫn hoạt động ở cả hai.',
 );

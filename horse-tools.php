@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.2.7
+ * Version: 1.2.8
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.2.7' );
+define( 'HORSETOOLS_VERSION', '1.2.8' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
@@ -69,6 +69,37 @@ function horsetools_customize_enqueue() {
 	wp_enqueue_script( 'coloris-js', HORSETOOLS_URL . 'link/color/coloris.js', array(), HORSETOOLS_VERSION, true );
 }
 add_action( 'admin_enqueue_scripts', 'horsetools_customize_enqueue' );
+
+/**
+ * Tab switching must never depend on the external admin script loading. Some
+ * hosts run cache/optimise/security plugins (LiteSpeed, WP Rocket, etc.) that
+ * defer, combine or drop plugin footer scripts — when that happens to
+ * link/htadmin.js the inline onclick="httab(...)" throws "httab is not defined"
+ * and every tab is stuck. Printing a self-contained httab() in the head (not
+ * enqueued, so optimisers leave it alone) guarantees the tabs always work; when
+ * htadmin.js does load it simply redefines httab with the same behaviour.
+ */
+function horsetools_inline_tab_fallback() {
+	if ( ! horsetools_is_plugin_screen() ) {
+		return;
+	}
+	?>
+<script id="horsetools-tab-fallback">
+window.httab = window.httab || function (evt, tabname) {
+	var x = document.getElementsByClassName('htbox'), i;
+	for (i = 0; i < x.length; i++) { x[i].style.display = 'none'; }
+	var s = document.getElementsByClassName('sotab');
+	for (i = 0; i < s.length; i++) { s[i].className = s[i].className.replace(' sotab-select', ''); }
+	var pane = document.getElementById(tabname);
+	if (pane) { pane.style.display = 'block'; }
+	if (evt && evt.currentTarget) { evt.currentTarget.className += ' sotab-select'; }
+	try { localStorage.setItem('htranksel', tabname); } catch (e) {}
+	if (window.jQuery) { jQuery('.ht-dev').each(function () { var ed = jQuery(this).data('CodeMirrorInstance'); if (ed) { ed.refresh(); } }); }
+};
+</script>
+	<?php
+}
+add_action( 'admin_head', 'horsetools_inline_tab_fallback' );
 
 function horsetools_enqueue_media_uploader() {
 	$page = horsetools_current_admin_page();

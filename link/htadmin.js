@@ -33,11 +33,12 @@ function httab(evt, tabname) {
     x[i].style.display = "none";  
   }
   sotab = document.getElementsByClassName("sotab");
-  for (i = 0; i < x.length; i++) {
+  for (i = 0; i < sotab.length; i++) {
     sotab[i].className = sotab[i].className.replace(" sotab-select", "");
   }
-  document.getElementById(tabname).style.display = "block";
-  evt.currentTarget.className += " sotab-select";
+  var pane = document.getElementById(tabname);
+  if (pane) { pane.style.display = "block"; }
+  if (evt && evt.currentTarget) { evt.currentTarget.className += " sotab-select"; }
   localStorage.setItem('htranksel', tabname);
 	// tại codeEditor cho horse-codex2 tab 2 tro di
     jQuery(document).ready(function($) {

@@ -15,9 +15,9 @@ function horsetools_redirects_options_page() {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-compass"></i> <?php _e('301', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab2')"><i class="ti ti-ban"></i> <?php _e('404', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab3')"><i class="ti ti-bug"></i> <?php _e('503', 'horse-tools'); ?></button>
+			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-compass"></i> <?php _e('Redirects (301)', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab2')"><i class="ti ti-ban"></i> <?php _e('Broken links (404)', 'horse-tools'); ?></button>
+			<button class="sotab" onclick="httab(event, 'tab3')"><i class="ti ti-bug"></i> <?php _e('Maintenance (503)', 'horse-tools'); ?></button>
 		</div>
 
 		<div class="ht-main">
@@ -30,7 +30,8 @@ function horsetools_redirects_options_page() {
 			<?php settings_fields('horsetools_redirects_settings_group'); ?> 
 			<!-- 301 -->
 			<div class="sotab-box htbox" id="tab1">
-			<h2><?php _e('301', 'horse-tools'); ?></h2>
+			<h2><?php _e('Redirects (301)', 'horse-tools'); ?></h2>
+			<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'When a URL changes or an old link should point somewhere new, this sends visitors (and Google) straight to the right page instead of a “not found” error — so you don’t lose traffic.', 'horse-tools' ); ?></span></div>
 			<div class="ht-card">
 			  <h3><i class="ti ti-compass"></i> <?php _e('Redirect 301 whole page', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'redi11', __( 'Enable site-wide 301 redirects', 'horse-tools' ), array(
@@ -106,7 +107,8 @@ function horsetools_redirects_options_page() {
 			</div>
 			<!-- 404 -->
 			<div class="sotab-box htbox" id="tab2" style="display:none">
-			<h2><?php _e('404', 'horse-tools'); ?></h2>
+			<h2><?php _e('Broken links (404)', 'horse-tools'); ?></h2>
+			<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'Handle dead links: send visitors who hit a “404 – not found” page to a page you choose, and keep a log of the broken URLs so you know what to fix.', 'horse-tools' ); ?></span></div>
 			<div class="ht-card">
 			  <h3><i class="ti ti-ban"></i> <?php _e('404 redirects', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'redi2', __( 'Enable 404 redirection', 'horse-tools' ), array(
@@ -178,7 +180,8 @@ function horsetools_redirects_options_page() {
 			</div>
 			<!-- 503 -->
 			<div class="sotab-box htbox" id="tab3" style="display:none">
-			<h2><?php _e('503', 'horse-tools'); ?></h2>
+			<h2><?php _e('Maintenance (503)', 'horse-tools'); ?></h2>
+			<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'Temporarily close the site with a “under maintenance” notice while you make changes. You (and other logged-in admins) still see the site normally, so you can work in peace.', 'horse-tools' ); ?></span></div>
 			<div class="ht-card">
 			  <h3><i class="ti ti-bug"></i> <?php _e('Maintenance mode for developers (503)', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'redi3', __( 'Enable 503 maintenance mode', 'horse-tools' ), array(
