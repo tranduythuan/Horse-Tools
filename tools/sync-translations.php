@@ -13,6 +13,94 @@ require_once __DIR__ . '/po-lib.php';
 $root = rtrim( $argv[1] ?? dirname( __DIR__ ), '/\\' );
 
 $vi = array(
+    // CONTENT tab — image lightbox display options (added 1.2.15).
+    'Image lightbox'
+        => 'Lightbox ảnh',
+    'Enable image lightbox'
+        => 'Bật lightbox ảnh',
+    'Click an image in your content to open it in a full-screen viewer (Fancybox). Choose how it looks below.'
+        => 'Nhấn vào ảnh trong nội dung để mở trình xem toàn màn hình (Fancybox). Chọn kiểu hiển thị bên dưới.',
+    'Where to run it'
+        => 'Chạy ở đâu',
+    'Posts only'
+        => 'Chỉ bài viết',
+    'Posts and pages'
+        => 'Bài viết và trang',
+    'All single content (incl. custom types)'
+        => 'Mọi nội dung đơn (kể cả loại tùy chỉnh)',
+    'Group images into a gallery (previous / next)'
+        => 'Gom ảnh thành thư viện (trước / sau)',
+    'Links every image in the content together so the viewer can flip through them. If an image already links to a file, that link is used.'
+        => 'Liên kết mọi ảnh trong nội dung với nhau để có thể lật xem qua lại. Nếu ảnh đã có sẵn liên kết tới file, sẽ dùng liên kết đó.',
+    'Caption from'
+        => 'Chú thích lấy từ',
+    'Image alt text'
+        => 'Chữ alt của ảnh',
+    'Image title'
+        => 'Tiêu đề ảnh',
+    'No caption'
+        => 'Không chú thích',
+    'Image caption (figcaption)'
+        => 'Chú thích ảnh (figcaption)',
+    'Backdrop theme'
+        => 'Theme nền',
+    'Dark'
+        => 'Tối',
+    'Blur (frosted glass)'
+        => 'Mờ (kính mờ)',
+    'Light'
+        => 'Sáng',
+    'Cinema (pure black)'
+        => 'Rạp phim (đen tuyền)',
+    'Accent colour (toolbar / active thumbnail)'
+        => 'Màu nhấn (thanh công cụ / ảnh thu nhỏ đang chọn)',
+    'Open animation'
+        => 'Hiệu ứng mở',
+    'Zoom'
+        => 'Phóng to',
+    'Fade'
+        => 'Mờ dần',
+    'None (instant)'
+        => 'Không (tức thì)',
+    'Toolbar'
+        => 'Thanh công cụ',
+    'Full (zoom, slideshow, fullscreen, download…)'
+        => 'Đầy đủ (phóng to, trình chiếu, toàn màn hình, tải về…)',
+    'Minimal (counter + close)'
+        => 'Tối giản (đếm số + đóng)',
+    'Show thumbnail strip'
+        => 'Hiện dải ảnh thu nhỏ',
+    'Loop back to the first image'
+        => 'Quay vòng về ảnh đầu',
+    'Uses the built-in Fancybox library. Thumbnails, slideshow and looping only make sense with gallery grouping on.'
+        => 'Dùng thư viện Fancybox tích hợp. Ảnh thu nhỏ, trình chiếu và quay vòng chỉ có ý nghĩa khi bật gom thư viện.',
+    // OPTIMIZE tab — heartbeat, native lazy-load, preload, dashicons (added 1.2.15).
+    'Disable Dashicons for visitors'
+        => 'Tắt Dashicons cho khách',
+    'Removes the admin icon font (Dashicons) on the front-end for logged-out visitors, who never see it. It is kept for logged-in users because the admin bar uses it.'
+        => 'Gỡ font icon quản trị (Dashicons) khỏi front-end cho khách chưa đăng nhập — họ không bao giờ thấy nó. Vẫn giữ cho người đã đăng nhập vì thanh admin cần dùng.',
+    'Control the Heartbeat API'
+        => 'Kiểm soát Heartbeat API',
+    'WordPress “Heartbeat” pings the server every 15–60 seconds (autosave, post-lock, dashboard). Slowing or limiting it cuts admin-ajax.php load, especially with several admin tabs open.'
+        => 'WordPress “Heartbeat” gửi tín hiệu tới server mỗi 15–60 giây (tự lưu, khóa bài, bảng điều khiển). Làm chậm hoặc giới hạn nó giúp giảm tải admin-ajax.php, nhất là khi mở nhiều tab quản trị.',
+    'Heartbeat mode'
+        => 'Chế độ Heartbeat',
+    'Slow down to 60 seconds (safe)'
+        => 'Làm chậm còn 60 giây (an toàn)',
+    'Disable on the front-end, slow in admin'
+        => 'Tắt ở front-end, làm chậm trong admin',
+    'Only in the post editor (autosave/locking)'
+        => 'Chỉ trong trình soạn bài (tự lưu/khóa bài)',
+    'Preload critical assets'
+        => 'Preload tài nguyên quan trọng',
+    'Start fetching a few important files immediately (the LCP image, a web font, the main CSS). The type is detected from the file extension. Do not preload many files — it competes with everything else for bandwidth.'
+        => 'Bắt đầu tải ngay vài file quan trọng (ảnh LCP, web font, CSS chính). Loại tài nguyên được nhận dạng theo đuôi file. Đừng preload quá nhiều — nó tranh băng thông với mọi thứ khác.',
+    'Asset URLs to preload (one per line — .woff2/.css/.js/.jpg/.webp…)'
+        => 'URL tài nguyên cần preload (mỗi dòng một mục — .woff2/.css/.js/.jpg/.webp…)',
+    'Native image lazy-load + async decode'
+        => 'Lazy-load ảnh native + giải mã bất đồng bộ',
+    'Adds decoding="async" to images so the browser decodes them off the main thread, and relies on WordPress’ built-in native lazy-load (which correctly keeps the first/LCP image eager). Replaces the old script-based method that removed image src — that hurt SEO and broke images with JavaScript off.'
+        => 'Thêm decoding="async" vào ảnh để trình duyệt giải mã ngoài luồng chính, và dựa vào lazy-load native sẵn có của WordPress (giữ đúng ảnh đầu/LCP tải ngay). Thay cho phương pháp cũ dùng script xóa src ảnh — vốn hại SEO và làm hỏng ảnh khi tắt JavaScript.',
     // OPTIMIZE tab — defer JS + preconnect (added 1.2.14).
     'JavaScript &amp; connections'
         => 'JavaScript &amp; kết nối',

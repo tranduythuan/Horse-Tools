@@ -143,16 +143,111 @@ global $horsetools_options; ?>
 	<input class="ht-input-big" placeholder="1, 2, 3, 4, 5" name="horsetools_settings[post-hiden11]" type="text" value="<?php if(!empty($horsetools_options['post-hiden11'])){echo sanitize_text_field($horsetools_options['post-hiden11']);} ?>"/>
 	</p>
 	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Enable and add the category IDs you want to hide from the main loop displaying posts on the homepage, for example: 1, 2, 3', 'horse-tools'); ?></p>
-  <h3><i class="ti ti-calendar"></i> <?php _e('Advanced image viewing feature in posts', 'horse-tools') ?></h3>
-	<!-- an chuyen muc khoi index -->
-	<?php horsetools_toggle( 'post-fancy1', __( 'Enable advanced image viewing', 'horse-tools' ), array(
-		'tab'     => 'CONTENT',
-		'section' => 'Advanced image viewing feature in posts',
+  <h3><i class="ti ti-photo"></i> <?php _e('Image lightbox', 'horse-tools') ?></h3>
+	<?php horsetools_toggle( 'post-fancy1', __( 'Enable image lightbox', 'horse-tools' ), array(
+		'tab'         => 'CONTENT',
+		'section'     => 'Image lightbox',
+		'description' => __( 'Click an image in your content to open it in a full-screen viewer (Fancybox). Choose how it looks below.', 'horse-tools' ),
 	) ); ?>
-	<?php horsetools_toggle( 'post-fancy11', __( 'Show full image', 'horse-tools' ), array(
+
+	<p class="ht-field" data-ht-parent="ht-main-post-fancy1">
+	<label class="ht-field-label"><?php _e('Where to run it', 'horse-tools'); ?></label>
+	<?php
+	$ht_fb_scope = ! empty( $horsetools_options['post-fancy-scope'] ) ? $horsetools_options['post-fancy-scope'] : 'post';
+	$ht_fb_scope_opts = array(
+		'post' => __( 'Posts only', 'horse-tools' ),
+		'page' => __( 'Posts and pages', 'horse-tools' ),
+		'all'  => __( 'All single content (incl. custom types)', 'horse-tools' ),
+	);
+	echo '<select name="horsetools_settings[post-fancy-scope]">';
+	foreach ( $ht_fb_scope_opts as $v => $l ) { echo '<option value="' . esc_attr( $v ) . '"' . selected( $ht_fb_scope, $v, false ) . '>' . esc_html( $l ) . '</option>'; }
+	echo '</select>';
+	?>
+	</p>
+
+	<?php horsetools_toggle( 'post-fancy11', __( 'Group images into a gallery (previous / next)', 'horse-tools' ), array(
+		'tab'         => 'CONTENT',
+		'section'     => 'Image lightbox',
+		'parent'      => 'post-fancy1',
+		'description' => __( 'Links every image in the content together so the viewer can flip through them. If an image already links to a file, that link is used.', 'horse-tools' ),
+	) ); ?>
+
+	<p class="ht-field" data-ht-parent="ht-main-post-fancy1">
+	<label class="ht-field-label"><?php _e('Caption from', 'horse-tools'); ?></label>
+	<?php
+	$ht_fb_cap = ! empty( $horsetools_options['post-fancy-caption'] ) ? $horsetools_options['post-fancy-caption'] : 'alt';
+	$ht_fb_cap_opts = array(
+		'alt'        => __( 'Image alt text', 'horse-tools' ),
+		'figcaption' => __( 'Image caption (figcaption)', 'horse-tools' ),
+		'title'      => __( 'Image title', 'horse-tools' ),
+		'none'       => __( 'No caption', 'horse-tools' ),
+	);
+	echo '<select name="horsetools_settings[post-fancy-caption]">';
+	foreach ( $ht_fb_cap_opts as $v => $l ) { echo '<option value="' . esc_attr( $v ) . '"' . selected( $ht_fb_cap, $v, false ) . '>' . esc_html( $l ) . '</option>'; }
+	echo '</select>';
+	?>
+	</p>
+
+	<p class="ht-field" data-ht-parent="ht-main-post-fancy1">
+	<label class="ht-field-label"><?php _e('Open animation', 'horse-tools'); ?></label>
+	<?php
+	$ht_fb_anim = ! empty( $horsetools_options['post-fancy-anim'] ) ? $horsetools_options['post-fancy-anim'] : 'zoom';
+	$ht_fb_anim_opts = array(
+		'zoom' => __( 'Zoom', 'horse-tools' ),
+		'fade' => __( 'Fade', 'horse-tools' ),
+		'none' => __( 'None (instant)', 'horse-tools' ),
+	);
+	echo '<select name="horsetools_settings[post-fancy-anim]">';
+	foreach ( $ht_fb_anim_opts as $v => $l ) { echo '<option value="' . esc_attr( $v ) . '"' . selected( $ht_fb_anim, $v, false ) . '>' . esc_html( $l ) . '</option>'; }
+	echo '</select>';
+	?>
+	</p>
+
+	<p class="ht-field" data-ht-parent="ht-main-post-fancy1">
+	<label class="ht-field-label"><?php _e('Toolbar', 'horse-tools'); ?></label>
+	<?php
+	$ht_fb_bar = ! empty( $horsetools_options['post-fancy-toolbar'] ) ? $horsetools_options['post-fancy-toolbar'] : 'full';
+	$ht_fb_bar_opts = array(
+		'full'    => __( 'Full (zoom, slideshow, fullscreen, download…)', 'horse-tools' ),
+		'minimal' => __( 'Minimal (counter + close)', 'horse-tools' ),
+		'none'    => __( 'None', 'horse-tools' ),
+	);
+	echo '<select name="horsetools_settings[post-fancy-toolbar]">';
+	foreach ( $ht_fb_bar_opts as $v => $l ) { echo '<option value="' . esc_attr( $v ) . '"' . selected( $ht_fb_bar, $v, false ) . '>' . esc_html( $l ) . '</option>'; }
+	echo '</select>';
+	?>
+	</p>
+
+	<p class="ht-field" data-ht-parent="ht-main-post-fancy1">
+	<label class="ht-field-label"><?php _e('Backdrop theme', 'horse-tools'); ?></label>
+	<?php
+	$ht_fb_theme = ! empty( $horsetools_options['post-fancy-theme'] ) ? $horsetools_options['post-fancy-theme'] : 'dark';
+	$ht_fb_theme_opts = array(
+		'dark'   => __( 'Dark', 'horse-tools' ),
+		'blur'   => __( 'Blur (frosted glass)', 'horse-tools' ),
+		'light'  => __( 'Light', 'horse-tools' ),
+		'cinema' => __( 'Cinema (pure black)', 'horse-tools' ),
+	);
+	echo '<select name="horsetools_settings[post-fancy-theme]">';
+	foreach ( $ht_fb_theme_opts as $v => $l ) { echo '<option value="' . esc_attr( $v ) . '"' . selected( $ht_fb_theme, $v, false ) . '>' . esc_html( $l ) . '</option>'; }
+	echo '</select>';
+	?>
+	</p>
+
+	<p class="ht-field" data-ht-parent="ht-main-post-fancy1">
+	<label class="ht-field-label"><?php _e('Accent colour (toolbar / active thumbnail)', 'horse-tools'); ?></label>
+	<input class="ht-input-color" name="horsetools_settings[post-fancy-accent]" type="text" data-coloris value="<?php if(!empty($horsetools_options['post-fancy-accent'])){echo esc_attr($horsetools_options['post-fancy-accent']);} ?>"/>
+	</p>
+
+	<?php horsetools_toggle( 'post-fancy-thumbs', __( 'Show thumbnail strip', 'horse-tools' ), array(
 		'tab'     => 'CONTENT',
-		'section' => 'Advanced image viewing feature in posts',
+		'section' => 'Image lightbox',
 		'parent'  => 'post-fancy1',
 	) ); ?>
-	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('This feature uses the Fancybox library, allowing you to open images in posts for viewing', 'horse-tools'); ?></p>
+	<?php horsetools_toggle( 'post-fancy-loop', __( 'Loop back to the first image', 'horse-tools' ), array(
+		'tab'     => 'CONTENT',
+		'section' => 'Image lightbox',
+		'parent'  => 'post-fancy1',
+	) ); ?>
+	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Uses the built-in Fancybox library. Thumbnails, slideshow and looping only make sense with gallery grouping on.', 'horse-tools'); ?></p>
 </div>

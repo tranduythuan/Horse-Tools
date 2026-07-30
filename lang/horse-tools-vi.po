@@ -5539,3 +5539,129 @@ msgstr "Host cần preconnect (mỗi dòng một mục — host hoặc URL đầ
 
 msgid "Only add hosts the page really uses. Preconnecting to a host you do not load from wastes a connection."
 msgstr "Chỉ thêm host mà trang thật sự dùng. Preconnect tới host không tải gì sẽ lãng phí một kết nối."
+
+msgid "Disable Dashicons for visitors"
+msgstr "Tắt Dashicons cho khách"
+
+msgid "Removes the admin icon font (Dashicons) on the front-end for logged-out visitors, who never see it. It is kept for logged-in users because the admin bar uses it."
+msgstr "Gỡ font icon quản trị (Dashicons) khỏi front-end cho khách chưa đăng nhập — họ không bao giờ thấy nó. Vẫn giữ cho người đã đăng nhập vì thanh admin cần dùng."
+
+msgid "Control the Heartbeat API"
+msgstr "Kiểm soát Heartbeat API"
+
+msgid "WordPress “Heartbeat” pings the server every 15–60 seconds (autosave, post-lock, dashboard). Slowing or limiting it cuts admin-ajax.php load, especially with several admin tabs open."
+msgstr "WordPress “Heartbeat” gửi tín hiệu tới server mỗi 15–60 giây (tự lưu, khóa bài, bảng điều khiển). Làm chậm hoặc giới hạn nó giúp giảm tải admin-ajax.php, nhất là khi mở nhiều tab quản trị."
+
+msgid "Heartbeat mode"
+msgstr "Chế độ Heartbeat"
+
+msgid "Slow down to 60 seconds (safe)"
+msgstr "Làm chậm còn 60 giây (an toàn)"
+
+msgid "Disable on the front-end, slow in admin"
+msgstr "Tắt ở front-end, làm chậm trong admin"
+
+msgid "Only in the post editor (autosave/locking)"
+msgstr "Chỉ trong trình soạn bài (tự lưu/khóa bài)"
+
+msgid "Preload critical assets"
+msgstr "Preload tài nguyên quan trọng"
+
+msgid "Start fetching a few important files immediately (the LCP image, a web font, the main CSS). The type is detected from the file extension. Do not preload many files — it competes with everything else for bandwidth."
+msgstr "Bắt đầu tải ngay vài file quan trọng (ảnh LCP, web font, CSS chính). Loại tài nguyên được nhận dạng theo đuôi file. Đừng preload quá nhiều — nó tranh băng thông với mọi thứ khác."
+
+msgid "Asset URLs to preload (one per line — .woff2/.css/.js/.jpg/.webp…)"
+msgstr "URL tài nguyên cần preload (mỗi dòng một mục — .woff2/.css/.js/.jpg/.webp…)"
+
+msgid "Native image lazy-load + async decode"
+msgstr "Lazy-load ảnh native + giải mã bất đồng bộ"
+
+msgid "Adds decoding=\"async\" to images so the browser decodes them off the main thread, and relies on WordPress’ built-in native lazy-load (which correctly keeps the first/LCP image eager). Replaces the old script-based method that removed image src — that hurt SEO and broke images with JavaScript off."
+msgstr "Thêm decoding=\"async\" vào ảnh để trình duyệt giải mã ngoài luồng chính, và dựa vào lazy-load native sẵn có của WordPress (giữ đúng ảnh đầu/LCP tải ngay). Thay cho phương pháp cũ dùng script xóa src ảnh — vốn hại SEO và làm hỏng ảnh khi tắt JavaScript."
+
+msgid "Image lightbox"
+msgstr "Lightbox ảnh"
+
+msgid "Enable image lightbox"
+msgstr "Bật lightbox ảnh"
+
+msgid "Click an image in your content to open it in a full-screen viewer (Fancybox). Choose how it looks below."
+msgstr "Nhấn vào ảnh trong nội dung để mở trình xem toàn màn hình (Fancybox). Chọn kiểu hiển thị bên dưới."
+
+msgid "Where to run it"
+msgstr "Chạy ở đâu"
+
+msgid "Posts only"
+msgstr "Chỉ bài viết"
+
+msgid "Posts and pages"
+msgstr "Bài viết và trang"
+
+msgid "All single content (incl. custom types)"
+msgstr "Mọi nội dung đơn (kể cả loại tùy chỉnh)"
+
+msgid "Group images into a gallery (previous / next)"
+msgstr "Gom ảnh thành thư viện (trước / sau)"
+
+msgid "Links every image in the content together so the viewer can flip through them. If an image already links to a file, that link is used."
+msgstr "Liên kết mọi ảnh trong nội dung với nhau để có thể lật xem qua lại. Nếu ảnh đã có sẵn liên kết tới file, sẽ dùng liên kết đó."
+
+msgid "Caption from"
+msgstr "Chú thích lấy từ"
+
+msgid "Image alt text"
+msgstr "Chữ alt của ảnh"
+
+msgid "Image title"
+msgstr "Tiêu đề ảnh"
+
+msgid "No caption"
+msgstr "Không chú thích"
+
+msgid "Open animation"
+msgstr "Hiệu ứng mở"
+
+msgid "Zoom"
+msgstr "Phóng to"
+
+msgid "Fade"
+msgstr "Mờ dần"
+
+msgid "None (instant)"
+msgstr "Không (tức thì)"
+
+msgid "Toolbar"
+msgstr "Thanh công cụ"
+
+msgid "Full (zoom, slideshow, fullscreen, download…)"
+msgstr "Đầy đủ (phóng to, trình chiếu, toàn màn hình, tải về…)"
+
+msgid "Minimal (counter + close)"
+msgstr "Tối giản (đếm số + đóng)"
+
+msgid "Show thumbnail strip"
+msgstr "Hiện dải ảnh thu nhỏ"
+
+msgid "Loop back to the first image"
+msgstr "Quay vòng về ảnh đầu"
+
+msgid "Uses the built-in Fancybox library. Thumbnails, slideshow and looping only make sense with gallery grouping on."
+msgstr "Dùng thư viện Fancybox tích hợp. Ảnh thu nhỏ, trình chiếu và quay vòng chỉ có ý nghĩa khi bật gom thư viện."
+
+msgid "Image caption (figcaption)"
+msgstr "Chú thích ảnh (figcaption)"
+
+msgid "Backdrop theme"
+msgstr "Theme nền"
+
+msgid "Blur (frosted glass)"
+msgstr "Mờ (kính mờ)"
+
+msgid "Light"
+msgstr "Sáng"
+
+msgid "Cinema (pure black)"
+msgstr "Rạp phim (đen tuyền)"
+
+msgid "Accent colour (toolbar / active thumbnail)"
+msgstr "Màu nhấn (thanh công cụ / ảnh thu nhỏ đang chọn)"

@@ -255,6 +255,7 @@ function horsetools_sanitize_color_keys() {
 		'custom-main15', 'custom-main16', 'custom-main17',
 		'main-mode-c1', 'main-scroll11', 'main-scroll12',
 		'media-cutop-c1', 'media-logo10-c1',
+			'post-fancy-accent', // main/page/6post.php — lightbox accent colour
 		// main/notify.php
 		'notify-block-c1', 'notify-block-c2', 'notify-cookie-c1', 'notify-notis-c1',
 		// main/search.php
@@ -349,6 +350,7 @@ function horsetools_sanitize_textarea_keys() {
 		'chat-hours',     // chat opening-hours lines
 		'speed-defer-exclude', // OPTIMIZE - script handles/URLs never deferred
 		'speed-pre-hosts',     // OPTIMIZE - hosts to preconnect / dns-prefetch
+		'speed-preload-urls',  // OPTIMIZE - asset URLs to <link rel=preload>
 	);
 }
 

@@ -103,22 +103,31 @@ function horsetools_smooth_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'horsetools_smooth_scripts' );
 }
-# lazyload hinh anh
+# lazyload hinh anh — native
 if(isset($horsetools_options['speed-lazy1'])){
-function horsetools_lazyload_to_images_with_jquery() {
-    if (!is_admin()) {
-        wp_add_inline_script('jquery', '
-            jQuery(document).ready(function($) {
-                $("img").addClass("lazyload").each(function() {
-                    var dataSrc = $(this).attr("src");
-                    $(this).attr("data-src", dataSrc).removeAttr("src");
-                });
-            });
-        ');
-		wp_enqueue_script( 'lazyload', HORSETOOLS_URL . 'link/lazysizes.min.js', array('jquery'), '5.3.2', true);
-    }
+// The old version loaded lazysizes and STRIPPED src from every <img>, replacing
+// it with data-src. That hid images from Google and from no-JS users and fought
+// the browser's own lazy-load. Modern WordPress (6.0+) already adds
+// loading="lazy" natively AND correctly skips the first/LCP image — so we must
+// not re-add that. Here we only add decoding="async", a safe hint that lets the
+// browser decode images off the main thread; src and the LCP image are untouched.
+function horsetools_native_lazyload_content( $content ) {
+	if ( is_admin() || is_feed() ) {
+		return $content;
+	}
+	// Quote-aware match so a literal ">" inside an attribute value (e.g.
+	// alt="a > b" or a data-json attribute) doesn't cut the tag short.
+	return preg_replace_callback( '/<img\b(?:"[^"]*"|\'[^\']*\'|[^>"\'])*>/i', function ( $m ) {
+		$tag = $m[0];
+		if ( false === stripos( $tag, ' src=' ) || false !== stripos( $tag, 'decoding=' ) ) {
+			return $tag;
+		}
+		return preg_replace( '/<img\b/i', '<img decoding="async"', $tag, 1 );
+	}, $content );
 }
-add_action('wp_enqueue_scripts', 'horsetools_lazyload_to_images_with_jquery');
+add_filter( 'the_content', 'horsetools_native_lazyload_content', 20 );
+add_filter( 'post_thumbnail_html', 'horsetools_native_lazyload_content', 20 );
+add_filter( 'widget_text', 'horsetools_native_lazyload_content', 20 );
 }
 # tuy chon nen html
 function horsetools_minify_html_output($buffer) {
@@ -317,4 +326,105 @@ if ( isset( $horsetools_options['speed-pre1'] ) && ! empty( $horsetools_options[
 		}
 	}
 	add_action( 'wp_head', 'horsetools_preconnect_hints', 1 );
+}
+
+/* -------------------------------------------------------------------------
+ * Control the WordPress Heartbeat API.
+ *
+ * Heartbeat POSTs to admin-ajax.php on a timer (every 15–60s) for autosave,
+ * post-lock and dashboard widgets. On a busy site — or with several admin tabs
+ * open — that is a steady stream of PHP requests. Three safe levels:
+ *   slow     : keep it, but at the slowest interval (60s).
+ *   frontend : drop it on the front-end (visitors never need it), 60s in admin.
+ *   minimal  : allow it only in the post editor (where autosave/locking live).
+ * ---------------------------------------------------------------------- */
+if ( isset( $horsetools_options['speed-hb1'] ) ) {
+	$horsetools_hb_mode = ! empty( $horsetools_options['speed-hb2'] ) ? $horsetools_options['speed-hb2'] : 'slow';
+
+	if ( 'frontend' === $horsetools_hb_mode ) {
+		add_action( 'init', function () {
+			if ( ! is_admin() ) {
+				wp_deregister_script( 'heartbeat' );
+			}
+		}, 1 );
+	} elseif ( 'minimal' === $horsetools_hb_mode ) {
+		add_action( 'init', function () {
+			global $pagenow;
+			if ( 'post.php' !== $pagenow && 'post-new.php' !== $pagenow ) {
+				wp_deregister_script( 'heartbeat' );
+			}
+		}, 1 );
+	}
+	// Slow the tick wherever Heartbeat still runs. WP clamps interval to 15–120s.
+	add_filter( 'heartbeat_settings', function ( $settings ) {
+		$settings['interval'] = 60;
+		return $settings;
+	} );
+}
+
+/* -------------------------------------------------------------------------
+ * Preload critical assets.
+ *
+ * preconnect only warms the connection; preload actually starts fetching a
+ * specific file early. Best for the LCP image, a web font, or the main CSS.
+ * We derive the required `as` (and font type + crossorigin) from the file
+ * extension so the hint is valid — a preload with the wrong `as` is ignored
+ * and warns in the console.
+ * ---------------------------------------------------------------------- */
+if ( isset( $horsetools_options['speed-preload1'] ) && ! empty( $horsetools_options['speed-preload-urls'] ) ) {
+	function horsetools_preload_assets() {
+		global $horsetools_options;
+		$lines = preg_split( '/[\r\n]+/', (string) $horsetools_options['speed-preload-urls'], -1, PREG_SPLIT_NO_EMPTY );
+		if ( ! is_array( $lines ) ) {
+			return;
+		}
+		$font_types = array( 'woff2' => 'font/woff2', 'woff' => 'font/woff', 'ttf' => 'font/ttf', 'otf' => 'font/otf' );
+		$seen       = array();
+		foreach ( $lines as $line ) {
+			$url = esc_url( trim( $line ) );
+			if ( '' === $url || isset( $seen[ $url ] ) ) {
+				continue;
+			}
+			$seen[ $url ] = true;
+			$ext   = strtolower( (string) pathinfo( (string) wp_parse_url( $url, PHP_URL_PATH ), PATHINFO_EXTENSION ) );
+			$as    = '';
+			$extra = '';
+			if ( isset( $font_types[ $ext ] ) ) {
+				$as    = 'font';
+				$extra = ' type="' . $font_types[ $ext ] . '" crossorigin';
+			} elseif ( 'css' === $ext ) {
+				$as = 'style';
+			} elseif ( 'js' === $ext ) {
+				$as = 'script';
+			} elseif ( in_array( $ext, array( 'jpg', 'jpeg', 'png', 'webp', 'avif', 'gif', 'svg' ), true ) ) {
+				$as = 'image';
+			}
+			if ( '' === $as ) {
+				continue; // unknown type — skip rather than emit an invalid hint
+			}
+			echo '<link rel="preload" href="' . $url . '" as="' . $as . '"' . $extra . '>' . "\n";
+		}
+	}
+	add_action( 'wp_head', 'horsetools_preload_assets', 2 );
+}
+
+/* -------------------------------------------------------------------------
+ * Drop the Dashicons stylesheet for logged-out visitors.
+ *
+ * Dashicons is the admin icon font. Many themes enqueue it on the front-end but
+ * only actually need it for the logged-in admin bar, so anonymous visitors
+ * download an icon font they never see. Keep it whenever a user is logged in
+ * (the admin bar really uses it).
+ * ---------------------------------------------------------------------- */
+if ( isset( $horsetools_options['speed-dash1'] ) ) {
+	function horsetools_dequeue_dashicons() {
+		if ( ! is_user_logged_in() ) {
+			// Only dequeue, never deregister: if another front-end stylesheet
+			// declares dashicons as a dependency, deregistering it would drop
+			// that stylesheet too. Dequeuing removes it when nothing needs it,
+			// and leaves it in place (pulled back as a dep) when something does.
+			wp_dequeue_style( 'dashicons' );
+		}
+	}
+	add_action( 'wp_enqueue_scripts', 'horsetools_dequeue_dashicons', 100 );
 }

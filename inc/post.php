@@ -467,47 +467,131 @@ add_action('pre_get_posts', 'horsetools_categories_hiden_home');
 }
 # show ảnh trong bài viết hoặc trang
 if (isset($horsetools_options['post-fancy1'])){
+// Where the lightbox runs, from the scope option (posts / posts+pages / all singular).
+function horsetools_fancybox_on(){
+	global $horsetools_options;
+	$scope = ! empty( $horsetools_options['post-fancy-scope'] ) ? $horsetools_options['post-fancy-scope'] : 'post';
+	if ( 'all' === $scope )  { return is_singular(); }
+	if ( 'page' === $scope ) { return is_singular( array( 'post', 'page' ) ); }
+	return is_singular( 'post' );
+}
+// Build the Fancybox options object from the display settings.
+function horsetools_fancybox_config(){
+	global $horsetools_options;
+	$anim     = ! empty( $horsetools_options['post-fancy-anim'] ) ? $horsetools_options['post-fancy-anim'] : 'zoom';
+	$anim_map = array(
+		'zoom' => array( 'fancybox-zoomInUp', 'fancybox-zoomOutDown' ),
+		'fade' => array( 'fancybox-fadeIn', 'fancybox-fadeOut' ),
+		'none' => array( false, false ),
+	);
+	$pair   = isset( $anim_map[ $anim ] ) ? $anim_map[ $anim ] : $anim_map['zoom'];
+	$thumbs = isset( $horsetools_options['post-fancy-thumbs'] );
+
+	$bar = ! empty( $horsetools_options['post-fancy-toolbar'] ) ? $horsetools_options['post-fancy-toolbar'] : 'full';
+	if ( 'none' === $bar ) {
+		$toolbar = false;
+	} elseif ( 'minimal' === $bar ) {
+		$toolbar = array( 'display' => array( 'counter', 'close' ) );
+	} else {
+		$ids = array( 'counter', 'zoom', 'slideshow', 'fullscreen', 'download', 'close' );
+		if ( $thumbs ) { array_splice( $ids, 4, 0, 'thumbs' ); }
+		$toolbar = array( 'display' => $ids );
+	}
+
+	return array(
+		'showClass'   => $pair[0],
+		'hideClass'   => $pair[1],
+		'dragToClose' => true,
+		'Carousel'    => array( 'infinite' => isset( $horsetools_options['post-fancy-loop'] ) ),
+		'Thumbs'      => array( 'autoStart' => $thumbs ),
+		'Toolbar'     => $toolbar,
+	);
+}
 // add js css fancybox
 function horsetools_enqueue_fancybox(){
-	if (is_singular('post')){
+	if ( horsetools_fancybox_on() ){
 	// The inline initialiser below is written in jQuery, so declare it.
 	wp_enqueue_script( 'fancybox', HORSETOOLS_URL . 'link/fancybox/fancybox.js', array( 'jquery' ), HORSETOOLS_VERSION, true );
 	wp_enqueue_style('fancybox', HORSETOOLS_URL . 'link/fancybox/fancybox.css', array(), HORSETOOLS_VERSION);
 	}
 }
 add_action('wp_enqueue_scripts', 'horsetools_enqueue_fancybox');
+// Print the chosen backdrop theme + accent colour as CSS-variable overrides,
+// plus a zoom-in cursor so visitors know the images are clickable.
+function horsetools_fancybox_theme_css(){
+	if ( ! horsetools_fancybox_on() ) { return; }
+	global $horsetools_options;
+	$theme  = ! empty( $horsetools_options['post-fancy-theme'] ) ? $horsetools_options['post-fancy-theme'] : 'dark';
+	$accent = ! empty( $horsetools_options['post-fancy-accent'] ) ? trim( $horsetools_options['post-fancy-accent'] ) : '';
+	$themes = array(
+		'dark'   => array( 'bg' => 'rgba(20,20,22,.97)',    'color' => '#e5e7eb', 'blur' => false ),
+		'cinema' => array( 'bg' => '#000000',               'color' => '#c9c9c9', 'blur' => false ),
+		'light'  => array( 'bg' => 'rgba(248,248,250,.97)', 'color' => '#18181b', 'blur' => false ),
+		'blur'   => array( 'bg' => 'rgba(20,20,22,.55)',    'color' => '#ffffff', 'blur' => true ),
+	);
+	$t = isset( $themes[ $theme ] ) ? $themes[ $theme ] : $themes['dark'];
+
+	$css = '.fancybox__container{--fancybox-bg:' . $t['bg'] . ';--fancybox-color:' . $t['color'] . ';';
+	// Only echo the accent if it is a plain colour literal (belt-and-suspenders
+	// on top of the colour sanitiser) so it can never break out of the CSS.
+	if ( '' !== $accent && preg_match( '/^(#[0-9a-fA-F]{3,8}|rgba?\([0-9,.\s]+\))$/', $accent ) ) {
+		$css .= '--fancybox-accent-color:' . $accent . ';';
+	}
+	$css .= '}';
+	if ( $t['blur'] ) {
+		$css .= '.fancybox__backdrop{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}';
+	}
+	$css .= '.fancybox img{cursor:zoom-in;}';
+	echo '<style id="ht-fancybox-theme">' . $css . '</style>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput -- fixed preset values + colour-validated accent
+}
+add_action( 'wp_head', 'horsetools_fancybox_theme_css', 6 );
 // add script vao footer post
 function horsetools_slide_script(){
 	global $horsetools_options;
-	if (is_singular('post')){ 
-		if(isset($horsetools_options['post-fancy11'])){
-		?>
-		<script>
-		jQuery(document).ready(function(){
-			jQuery(".fancybox img").each(function(){
-				var a;
-				if (jQuery(this).attr("data-src")) {
-					// Nếu có thuộc tính data-src, sử dụng giá trị của data-src
-					a = jQuery(this).attr("data-src");
-				} else {
-					// Nếu không có thuộc tính data-src, sử dụng giá trị của src
-					a = jQuery(this).attr("src");
-				}
-				var caption = jQuery(this).attr("alt") || '';
-				jQuery(this).wrap('<a data-src="'+a+'" data-caption="'+caption+'" data-fancybox="gallery"></a>');
-			});
-			Fancybox.bind('[data-fancybox]', {});
-		});
-		</script>
-		<?php } else {echo '<script>jQuery(document).ready(function(){Fancybox.bind(".fancybox img");});</script>';}
+	if ( ! horsetools_fancybox_on() ) { return; }
+	$cfg     = wp_json_encode( horsetools_fancybox_config() );
+	$gallery = isset( $horsetools_options['post-fancy11'] );
+	$cap     = ! empty( $horsetools_options['post-fancy-caption'] ) ? $horsetools_options['post-fancy-caption'] : 'alt';
+	switch ( $cap ) {
+		case 'none':       $cap_js = "''"; break;
+		case 'title':      $cap_js = "(img.attr('title')||'')"; break;
+		case 'figcaption': $cap_js = "(img.closest('figure').find('figcaption').first().text().trim()||img.attr('alt')||'')"; break;
+		default:           $cap_js = "(img.attr('alt')||'')";
 	}
+	?>
+	<script>
+	jQuery(function($){
+		var cfg = <?php echo $cfg; // phpcs:ignore WordPress.Security.EscapeOutput -- wp_json_encode ?>;
+		<?php if ( $gallery ) : ?>
+		$('.fancybox img').each(function(){
+			var img = $(this), cap = <?php echo $cap_js; // phpcs:ignore ?>;
+			var a = img.parent('a');
+			if (a.length){
+				// Image already links to a file: turn that link into the lightbox
+				// trigger (keeps its full-size href); if it links to a page, leave it.
+				var href = a.attr('href') || '';
+				if (/\.(jpe?g|png|gif|webp|avif|bmp|svg)(\?|#|$)/i.test(href)){
+					a.attr('data-fancybox','gallery').attr('data-caption',cap);
+				}
+				return;
+			}
+			var src = img.attr('data-src') || img.attr('src');
+			img.wrap($('<a>',{href:src,'data-fancybox':'gallery','data-caption':cap}));
+		});
+		Fancybox.bind('[data-fancybox]', cfg);
+		<?php else : ?>
+		Fancybox.bind('.fancybox img', cfg);
+		<?php endif; ?>
+	});
+	</script>
+	<?php
 }
 add_action('wp_footer', 'horsetools_slide_script');
 // add div vao content
 function horsetools_slide_addiv( $content ) {
     // Same guard as the TOC: without it every archive item and every feed item
     // got wrapped, and the gallery bound to the wrong content.
-    if ( ! is_singular() || ! in_the_loop() || ! is_main_query() || is_feed() ) {
+    if ( ! horsetools_fancybox_on() || ! in_the_loop() || ! is_main_query() || is_feed() ) {
         return $content;
     }
     return '<div class="fancybox">'. $content .'</div>';

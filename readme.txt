@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.14
+Stable tag: 1.2.15
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,6 +79,18 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.15 =
+Optimize tab — four new performance tools:
+* **Control the Heartbeat API.** WordPress pings the server every 15–60s (autosave, post-lock, dashboard). Slow it to 60s, disable it on the front-end, or allow it only in the post editor — cuts admin-ajax.php load, especially with several admin tabs open.
+* **Native image lazy-load + async decode.** The old “lazy load” removed each image’s src (bad for SEO and for visitors with JavaScript off). It now adds decoding="async" and relies on WordPress’ built-in native lazy-load, which correctly keeps the first/LCP image loading eagerly.
+* **Preload critical assets.** Paste a few important URLs (the LCP image, a web font, the main CSS) and the browser starts fetching them immediately; the type is detected from the file extension.
+* **Disable Dashicons for visitors.** Drops the admin icon font on the front-end for logged-out visitors, who never see it (kept for logged-in users, whose admin bar uses it).
+
+Content tab — the image lightbox is now fully configurable:
+* Choose where it runs (posts / posts + pages / all single content), group images into a gallery with previous/next, and pick the caption source (alt, the image caption/figcaption, the title, or none).
+* Pick the open animation (zoom / fade / none), the toolbar (full / minimal / none), and toggle the thumbnail strip and looping.
+* **New backdrop themes** — Dark, Blur (frosted glass), Light and Cinema — plus an accent colour for the toolbar and the active thumbnail. Images now show a zoom-in cursor so visitors know they can click.
 
 = 1.2.14 =
 * **New: Defer JavaScript (Optimize tab).** Adds `defer` to front-end scripts so they no longer block the page from painting — a direct Core Web Vitals / PageSpeed win. Scripts still run in their original order once the HTML is parsed. jQuery is never deferred (inline snippets rely on it), and any script that ships an inline companion is detected and left alone automatically, so nothing breaks. An exclusion box lets you skip a specific script by its handle or file name if a theme/plugin misbehaves. Leave it off if you already use a full-page optimiser that defers scripts.
@@ -328,6 +340,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.15 =
+Four new Optimize tools (Heartbeat control, native lazy-load, Preload, disable Dashicons) and a fully configurable image lightbox (themes, animations, toolbar, captions, thumbnails).
 
 = 1.2.14 =
 Adds “Defer JavaScript” and “Preconnect” to the Optimize tab for faster page loads (Core Web Vitals), plus a Google Index status fix.

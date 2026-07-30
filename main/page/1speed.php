@@ -34,6 +34,34 @@ global $horsetools_options; ?>
 		'section'     => 'Disable unnecessary items',
 		'description' => __( 'If you not using it, you can disable Emoji', 'horse-tools' ),
 	) ); ?>
+		<!-- dashicons -->
+		<?php horsetools_toggle( 'speed-dash1', __( 'Disable Dashicons for visitors', 'horse-tools' ), array(
+			'tab'         => 'OPTIMIZE',
+			'section'     => 'Disable unnecessary items',
+			'description' => __( 'Removes the admin icon font (Dashicons) on the front-end for logged-out visitors, who never see it. It is kept for logged-in users because the admin bar uses it.', 'horse-tools' ),
+		) ); ?>
+		<!-- heartbeat -->
+		<?php horsetools_toggle( 'speed-hb1', __( 'Control the Heartbeat API', 'horse-tools' ), array(
+			'tab'         => 'OPTIMIZE',
+			'section'     => 'Disable unnecessary items',
+			'description' => __( 'WordPress “Heartbeat” pings the server every 15–60 seconds (autosave, post-lock, dashboard). Slowing or limiting it cuts admin-ajax.php load, especially with several admin tabs open.', 'horse-tools' ),
+		) ); ?>
+		<p class="ht-field" data-ht-parent="ht-main-speed-hb1">
+		<label class="ht-field-label"><?php _e('Heartbeat mode', 'horse-tools'); ?></label>
+		<select name="horsetools_settings[speed-hb2]">
+			<?php
+			$ht_hb = ! empty( $horsetools_options['speed-hb2'] ) ? $horsetools_options['speed-hb2'] : 'slow';
+			$ht_hb_opts = array(
+				'slow'     => __( 'Slow down to 60 seconds (safe)', 'horse-tools' ),
+				'frontend' => __( 'Disable on the front-end, slow in admin', 'horse-tools' ),
+				'minimal'  => __( 'Only in the post editor (autosave/locking)', 'horse-tools' ),
+			);
+			foreach ( $ht_hb_opts as $ht_v => $ht_l ) {
+				echo '<option value="' . esc_attr( $ht_v ) . '"' . selected( $ht_hb, $ht_v, false ) . '>' . esc_html( $ht_l ) . '</option>';
+			}
+			?>
+		</select>
+		</p>
 
   <h3><i class="ti ti-brand-javascript"></i> <?php _e('Optimization Library', 'horse-tools') ?></h3>
 	<!-- thư vien js 1 -->
@@ -74,12 +102,23 @@ global $horsetools_options; ?>
 		</p>
 		<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Only add hosts the page really uses. Preconnecting to a host you do not load from wastes a connection.', 'horse-tools'); ?></p>
 
+		<!-- preload -->
+		<?php horsetools_toggle( 'speed-preload1', __( 'Preload critical assets', 'horse-tools' ), array(
+			'tab'         => 'OPTIMIZE',
+			'section'     => 'JavaScript & connections',
+			'description' => __( 'Start fetching a few important files immediately (the LCP image, a web font, the main CSS). The type is detected from the file extension. Do not preload many files — it competes with everything else for bandwidth.', 'horse-tools' ),
+		) ); ?>
+		<p class="ht-field">
+		<label class="ht-field-label"><?php _e('Asset URLs to preload (one per line — .woff2/.css/.js/.jpg/.webp…)', 'horse-tools'); ?></label>
+		<textarea style="height:80px;" class="ht-code-textarea" name="horsetools_settings[speed-preload-urls]" placeholder="https://example.com/wp-content/uploads/hero.webp&#10;https://example.com/fonts/main.woff2"><?php if(!empty($horsetools_options['speed-preload-urls'])){echo esc_textarea($horsetools_options['speed-preload-urls']);} ?></textarea>
+		</p>
+
   <h3><i class="ti ti-loader"></i> <?php _e('The function of lazy loading images', 'horse-tools') ?></h3>
 	<!-- lazyload img 1 -->
-	<?php horsetools_toggle( 'speed-lazy1', __( 'Enable image lazy loading', 'horse-tools' ), array(
+	<?php horsetools_toggle( 'speed-lazy1', __( 'Native image lazy-load + async decode', 'horse-tools' ), array(
 		'tab'         => 'OPTIMIZE',
 		'section'     => 'The function of lazy loading images',
-		'description' => __( 'If you want to lazy load images every time the page loads, then turn it on. This function helps your website load faster', 'horse-tools' ),
+		'description' => __( 'Adds decoding="async" to images so the browser decodes them off the main thread, and relies on WordPress’ built-in native lazy-load (which correctly keeps the first/LCP image eager). Replaces the old script-based method that removed image src — that hurt SEO and broke images with JavaScript off.', 'horse-tools' ),
 	) ); ?>
 
   <h3><i class="ti ti-file-zip"></i> <?php _e('Compress HTML into a single line', 'horse-tools') ?></h3>
