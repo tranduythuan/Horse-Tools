@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.10
+Stable tag: 1.2.11
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,6 +79,14 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.11 =
+Login lockout improvements.
+
+* **Lockout length can now be set in minutes, hours or days** (was minutes only) — pick the number and a unit. The lockout message now shows a friendly “try again in about …” time.
+* **New “site is behind Cloudflare or a proxy” option** so the lockout counts the real visitor IP. Off by default and safe: normally the lockout uses the direct connection IP, which can’t be forged. Only enable it when your site is reachable solely through Cloudflare/a proxy — it then reads the real IP from the proxy header (CF-Connecting-IP / X-Forwarded-For). Leaving it off on a directly-reachable site is the secure choice (those headers are spoofable).
+
+Note: a successful login clears the failure count, but only while you are *not* already locked out — once an address is locked, even the correct password is refused until the lockout time expires. That is by design; it is what makes the lockout effective.
 
 = 1.2.10 =
 * **Fixed (the real root cause): the settings page could be cut off on a site where the chat feature wasn't set up yet.** The admin Chat tab always renders, but it called a Services helper that lives in a file only loaded when the chat module is active — so on a fresh/unconfigured site it hit a fatal “Call to undefined function”, which silently truncated the whole page (missing later tabs, the Save button, the sidebar and the footer scripts — which looked like tabs and other controls not working). The tab now loads that dependency itself, so the page always renders in full. This is the underlying cause behind the 1.2.8/1.2.9 tab symptoms.
@@ -309,6 +317,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.11 =
+Login lockout can now be set in minutes/hours/days, and can count the real visitor IP when the site is behind Cloudflare/a proxy.
 
 = 1.2.10 =
 Root-cause fix: the settings page no longer gets truncated on sites where the chat feature isn't configured yet (a fatal in the Chat tab cut off the rest of the page).

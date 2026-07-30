@@ -327,6 +327,17 @@ $vi = array(
         => 'Tùy chọn nâng cao — thiết bị, khách, lịch hiện, thẻ (không bắt buộc)',
     'Search snippets by name, description or tag…' => 'Tìm snippet theo tên, mô tả hoặc thẻ…',
     'No snippet matches your search.' => 'Không có snippet nào khớp tìm kiếm.',
+    // Login limiter: lockout unit + real-IP behind proxy
+    'Lockout length' => 'Thời gian khóa',
+    'Minutes' => 'Phút',
+    'Hours' => 'Giờ',
+    'Days' => 'Ngày',
+    'Lockout time unit' => 'Đơn vị thời gian khóa',
+    'Too many failed attempts. Try again in about %s.' => 'Sai quá nhiều lần. Thử lại sau khoảng %s.',
+    'Site is behind Cloudflare or a proxy (use the real visitor IP)'
+        => 'Site nằm sau Cloudflare hoặc proxy (dùng IP thật của khách)',
+    'By default the lockout counts the direct connection IP, which cannot be faked. Only turn this on if your site is reachable ONLY through Cloudflare or a proxy — it then reads the real visitor IP from the proxy header (CF-Connecting-IP / X-Forwarded-For). Do NOT enable it on a normally-hosted site: those headers can be forged, letting an attacker dodge the lockout or get an innocent visitor locked out.'
+        => 'Mặc định, bộ khóa đếm theo IP kết nối trực tiếp — thứ không thể giả mạo. Chỉ bật mục này nếu site của bạn CHỈ truy cập được qua Cloudflare hoặc proxy — khi đó nó đọc IP thật của khách từ header của proxy (CF-Connecting-IP / X-Forwarded-For). ĐỪNG bật trên site host thông thường: các header đó có thể bị làm giả, khiến kẻ tấn công né được khóa hoặc làm khách vô tội bị khóa oan.',
     // Redirects page: clearer tab names + how-to intros
     'Redirects (301)' => 'Chuyển hướng (301)',
     'Broken links (404)' => 'Link hỏng (404)',

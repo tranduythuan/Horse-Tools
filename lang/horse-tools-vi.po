@@ -5473,3 +5473,24 @@ msgstr "Xử lý link chết: đưa khách gặp trang “404 – không tìm th
 
 msgid "Temporarily close the site with a “under maintenance” notice while you make changes. You (and other logged-in admins) still see the site normally, so you can work in peace."
 msgstr "Tạm đóng website với thông báo “đang bảo trì” trong lúc bạn chỉnh sửa. Bạn (và các quản trị viên đã đăng nhập) vẫn xem site bình thường, nên cứ yên tâm làm việc."
+
+msgid "Lockout length"
+msgstr "Thời gian khóa"
+
+msgid "Minutes"
+msgstr "Phút"
+
+msgid "Days"
+msgstr "Ngày"
+
+msgid "Lockout time unit"
+msgstr "Đơn vị thời gian khóa"
+
+msgid "Too many failed attempts. Try again in about %s."
+msgstr "Sai quá nhiều lần. Thử lại sau khoảng %s."
+
+msgid "Site is behind Cloudflare or a proxy (use the real visitor IP)"
+msgstr "Site nằm sau Cloudflare hoặc proxy (dùng IP thật của khách)"
+
+msgid "By default the lockout counts the direct connection IP, which cannot be faked. Only turn this on if your site is reachable ONLY through Cloudflare or a proxy — it then reads the real visitor IP from the proxy header (CF-Connecting-IP / X-Forwarded-For). Do NOT enable it on a normally-hosted site: those headers can be forged, letting an attacker dodge the lockout or get an innocent visitor locked out."
+msgstr "Mặc định, bộ khóa đếm theo IP kết nối trực tiếp — thứ không thể giả mạo. Chỉ bật mục này nếu site của bạn CHỈ truy cập được qua Cloudflare hoặc proxy — khi đó nó đọc IP thật của khách từ header của proxy (CF-Connecting-IP / X-Forwarded-For). ĐỪNG bật trên site host thông thường: các header đó có thể bị làm giả, khiến kẻ tấn công né được khóa hoặc làm khách vô tội bị khóa oan."

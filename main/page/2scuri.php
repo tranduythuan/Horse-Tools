@@ -26,20 +26,37 @@ global $horsetools_options; ?>
 		'max'         => '50',
 		'parent'      => 'scuri-login1',
 	) ); ?>
-	<?php horsetools_input( 'scuri-login-mins', __( 'Lockout length (minutes)', 'horse-tools' ), array(
+	<?php horsetools_input( 'scuri-login-mins', __( 'Lockout length', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',
 		'section'     => 'Limit login attempts',
 		'type'        => 'number',
 		'class'       => 'ht-input-small',
 		'placeholder' => '15',
 		'min'         => '1',
-		'max'         => '1440',
+		'max'         => '999',
 		'parent'      => 'scuri-login1',
 	) ); ?>
+	<?php
+	global $horsetools_options;
+	$ht_lock_unit  = isset( $horsetools_options['scuri-login-unit'] ) ? $horsetools_options['scuri-login-unit'] : 'minutes';
+	$ht_lock_units = array( 'minutes' => __( 'Minutes', 'horse-tools' ), 'hours' => __( 'Hours', 'horse-tools' ), 'days' => __( 'Days', 'horse-tools' ) );
+	?>
+	<p class="ht-field" data-ht-parent="ht-main-scuri-login1">
+		<select name="horsetools_settings[scuri-login-unit]">
+			<?php foreach ( $ht_lock_units as $k => $v ) { echo '<option value="' . esc_attr( $k ) . '"' . selected( $ht_lock_unit, $k, false ) . '>' . esc_html( $v ) . '</option>'; } ?>
+		</select>
+		<label class="ht-right-text"><?php _e( 'Lockout time unit', 'horse-tools' ); ?></label>
+	</p>
 	<?php horsetools_toggle( 'scuri-login-mail', __( 'Email me when an address is locked out', 'horse-tools' ), array(
 		'tab'     => 'SECURITY',
 		'section' => 'Limit login attempts',
 		'parent'  => 'scuri-login1',
+	) ); ?>
+	<?php horsetools_toggle( 'scuri-login-proxy', __( 'Site is behind Cloudflare or a proxy (use the real visitor IP)', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Limit login attempts',
+		'parent'      => 'scuri-login1',
+		'description' => __( 'By default the lockout counts the direct connection IP, which cannot be faked. Only turn this on if your site is reachable ONLY through Cloudflare or a proxy — it then reads the real visitor IP from the proxy header (CF-Connecting-IP / X-Forwarded-For). Do NOT enable it on a normally-hosted site: those headers can be forged, letting an attacker dodge the lockout or get an innocent visitor locked out.', 'horse-tools' ),
 	) ); ?>
 
   <h3><i class="ti ti-user-question"></i> <?php _e('Block user enumeration', 'horse-tools') ?></h3>

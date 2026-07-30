@@ -209,6 +209,30 @@ if ( isset( $horsetools_options['scuri-head1'] ) ) {
 if ( isset( $horsetools_options['scuri-login1'] ) ) {
 
 	function horsetools_login_ip() {
+		global $horsetools_options;
+		// By default we use REMOTE_ADDR — the real TCP peer address, which the
+		// client CANNOT forge. Proxy headers (X-Forwarded-For, CF-Connecting-IP…)
+		// ARE forgeable by anyone who can reach the server directly, so trusting
+		// them is OFF by default. If we trusted them on a directly-reachable site,
+		// an attacker could send a different fake IP on every try (never getting
+		// locked out) or spoof an innocent visitor's IP to lock THEM out.
+		//
+		// Only enable "site is behind Cloudflare / a proxy" (scuri-login-proxy)
+		// when the site is reachable ONLY through that proxy — then these headers
+		// are set by the proxy itself and are trustworthy. We take the FIRST valid
+		// IP (the original client; the rest of the chain are the proxies).
+		if ( ! empty( $horsetools_options['scuri-login-proxy'] ) ) {
+			foreach ( array( 'HTTP_CF_CONNECTING_IP', 'HTTP_TRUE_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_REAL_IP' ) as $header ) {
+				if ( empty( $_SERVER[ $header ] ) ) {
+					continue;
+				}
+				$raw   = sanitize_text_field( wp_unslash( $_SERVER[ $header ] ) );
+				$first = trim( explode( ',', $raw )[0] );
+				if ( filter_var( $first, FILTER_VALIDATE_IP ) ) {
+					return $first;
+				}
+			}
+		}
 		$ip = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
 		return ( '' !== $ip && filter_var( $ip, FILTER_VALIDATE_IP ) ) ? $ip : 'unknown';
 	}
@@ -220,10 +244,23 @@ if ( isset( $horsetools_options['scuri-login1'] ) ) {
 		$n = isset( $horsetools_options['scuri-login-max'] ) ? (int) $horsetools_options['scuri-login-max'] : 5;
 		return $n > 0 ? $n : 5;
 	}
-	function horsetools_login_lock_minutes() {
+	// Lock-out length in seconds, from the number + its unit (minutes/hours/days).
+	// The stored value stays in 'scuri-login-mins' for backward compatibility; the
+	// unit 'scuri-login-unit' defaults to minutes so existing sites are unchanged.
+	function horsetools_login_lock_seconds() {
 		global $horsetools_options;
-		$m = isset( $horsetools_options['scuri-login-mins'] ) ? (int) $horsetools_options['scuri-login-mins'] : 15;
-		return $m > 0 ? $m : 15;
+		$n = isset( $horsetools_options['scuri-login-mins'] ) ? (int) $horsetools_options['scuri-login-mins'] : 15;
+		if ( $n <= 0 ) {
+			$n = 15;
+		}
+		$unit = isset( $horsetools_options['scuri-login-unit'] ) ? $horsetools_options['scuri-login-unit'] : 'minutes';
+		if ( 'days' === $unit ) {
+			return $n * DAY_IN_SECONDS;
+		}
+		if ( 'hours' === $unit ) {
+			return $n * HOUR_IN_SECONDS;
+		}
+		return $n * MINUTE_IN_SECONDS;
 	}
 
 	// Reject the attempt up front while the IP is locked out.
@@ -236,9 +273,9 @@ if ( isset( $horsetools_options['scuri-login1'] ) ) {
 			return new WP_Error(
 				'horsetools_locked',
 				sprintf(
-					/* translators: %d: minutes remaining. */
-					esc_html__( 'Too many failed attempts. Try again in about %d minute(s).', 'horse-tools' ),
-					(int) ceil( ( $data['locked'] - time() ) / 60 )
+					/* translators: %s: human-readable time remaining, e.g. "15 minutes" or "1 day". */
+					esc_html__( 'Too many failed attempts. Try again in about %s.', 'horse-tools' ),
+					human_time_diff( time(), $data['locked'] )
 				)
 			);
 		}
@@ -248,7 +285,7 @@ if ( isset( $horsetools_options['scuri-login1'] ) ) {
 
 	function horsetools_login_record_fail() {
 		$key    = horsetools_login_key( horsetools_login_ip() );
-		$window = horsetools_login_lock_minutes() * MINUTE_IN_SECONDS;
+		$window = horsetools_login_lock_seconds();
 		$data   = get_transient( $key );
 		if ( ! is_array( $data ) ) {
 			$data = array( 'count' => 0, 'locked' => 0 );
