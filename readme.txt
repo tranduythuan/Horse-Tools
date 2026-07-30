@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.11
+Stable tag: 1.2.12
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,6 +79,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.12 =
+* **New “Reset all login lockouts now” button** in Security → Limit login attempts. Clears every current lockout instantly — essential now that a lockout can last days. If you ever lock yourself out, sign in from a different network (your phone on mobile data is a different IP), then click it; or wait for the lockout to expire; or, as a last resort, rename the plugin folder via FTP to disable it. Works even on hosts with an object cache (Redis) — the plugin keeps its own list of locked addresses so it can clear them reliably.
 
 = 1.2.11 =
 Login lockout improvements.
@@ -317,6 +320,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.12 =
+Adds a “Reset all login lockouts” button so you can undo a lockout instantly (important if you use a multi-day lockout).
 
 = 1.2.11 =
 Login lockout can now be set in minutes/hours/days, and can count the real visitor IP when the site is behind Cloudflare/a proxy.

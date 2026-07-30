@@ -294,6 +294,15 @@ if ( isset( $horsetools_options['scuri-login1'] ) ) {
 		if ( $data['count'] >= horsetools_login_max() ) {
 			$data['locked'] = time() + $window;
 			$data['count']  = 0;
+			// Track locked IPs in an option so the admin "Reset lockouts" button
+			// can clear them all — transients live in the object cache (Redis) on
+			// some hosts, where they can't be enumerated, so we keep our own list.
+			$idx = get_option( 'horsetools_lla_index', array() );
+			if ( ! is_array( $idx ) ) {
+				$idx = array();
+			}
+			$idx[ horsetools_login_ip() ] = $data['locked'];
+			update_option( 'horsetools_lla_index', $idx, false );
 			if ( ! empty( $GLOBALS['horsetools_options']['scuri-login-mail'] ) ) {
 				wp_mail(
 					get_option( 'admin_email' ),
@@ -312,9 +321,37 @@ if ( isset( $horsetools_options['scuri-login1'] ) ) {
 	add_action( 'wp_login_failed', 'horsetools_login_record_fail' );
 
 	function horsetools_login_clear() {
-		delete_transient( horsetools_login_key( horsetools_login_ip() ) );
+		$ip = horsetools_login_ip();
+		delete_transient( horsetools_login_key( $ip ) );
+		$idx = get_option( 'horsetools_lla_index', array() );
+		if ( is_array( $idx ) && isset( $idx[ $ip ] ) ) {
+			unset( $idx[ $ip ] );
+			update_option( 'horsetools_lla_index', $idx, false );
+		}
 	}
 	add_action( 'wp_login', 'horsetools_login_clear' );
+
+	// Admin "Reset all login lockouts" button. Clears every current lockout so a
+	// mistakenly locked-out address (including your own) gets straight back in —
+	// important now that the lockout can be set in days.
+	add_action( 'wp_ajax_horsetools_lla_reset', 'horsetools_lla_reset_ajax' );
+	function horsetools_lla_reset_ajax() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+		check_ajax_referer( 'horsetools_lla', 'nonce' );
+		$idx = get_option( 'horsetools_lla_index', array() );
+		if ( is_array( $idx ) ) {
+			foreach ( array_keys( $idx ) as $ip ) {
+				delete_transient( horsetools_login_key( (string) $ip ) );
+			}
+		}
+		delete_option( 'horsetools_lla_index' );
+		// Belt-and-suspenders for transients stored in the DB (no object cache).
+		global $wpdb;
+		$wpdb->query( "DELETE FROM {$wpdb->options} WHERE option_name LIKE '\\_transient\\_horsetools\\_lla\\_%' OR option_name LIKE '\\_transient\\_timeout\\_horsetools\\_lla\\_%'" );
+		wp_send_json_success();
+	}
 }
 
 /* -------------------------------------------------------------------------

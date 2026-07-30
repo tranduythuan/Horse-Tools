@@ -59,6 +59,26 @@ global $horsetools_options; ?>
 		'description' => __( 'By default the lockout counts the direct connection IP, which cannot be faked. Only turn this on if your site is reachable ONLY through Cloudflare or a proxy — it then reads the real visitor IP from the proxy header (CF-Connecting-IP / X-Forwarded-For). Do NOT enable it on a normally-hosted site: those headers can be forged, letting an attacker dodge the lockout or get an innocent visitor locked out.', 'horse-tools' ),
 	) ); ?>
 
+	<p class="ht-field" data-ht-parent="ht-main-scuri-login1">
+		<button type="button" id="ht-lla-reset" class="ht-priv-btn" style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #e0a800;color:#8a5a00;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:13px" data-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_lla' ) ); ?>" data-ajax="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>"><i class="ti ti-lock-open"></i> <?php _e( 'Reset all login lockouts now', 'horse-tools' ); ?></button>
+		<span id="ht-lla-reset-msg" style="margin-left:8px;font-size:13px"></span>
+	</p>
+	<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e( 'Locked yourself out? Log in from a different network (e.g. your phone on mobile data = a different IP), then click the button above to clear all lockouts — or just wait for the lockout time to pass. As a last resort, disable the plugin by renaming its folder via FTP.', 'horse-tools' ); ?></p>
+	<script>
+	(function(){
+		var b=document.getElementById('ht-lla-reset'); if(!b||b.dataset.ready){return;} b.dataset.ready='1';
+		var msg=document.getElementById('ht-lla-reset-msg');
+		b.addEventListener('click', function(){
+			b.disabled=true;
+			var body='action=horsetools_lla_reset&nonce='+encodeURIComponent(b.dataset.nonce);
+			fetch(b.dataset.ajax,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+				.then(function(r){return r.json();})
+				.then(function(res){ b.disabled=false; if(msg){ msg.textContent = res&&res.success ? <?php echo wp_json_encode( __( 'Cleared all lockouts.', 'horse-tools' ) ); ?> : <?php echo wp_json_encode( __( 'Something went wrong.', 'horse-tools' ) ); ?>; } })
+				.catch(function(){ b.disabled=false; if(msg){ msg.textContent=<?php echo wp_json_encode( __( 'Something went wrong.', 'horse-tools' ) ); ?>; } });
+		});
+	})();
+	</script>
+
   <h3><i class="ti ti-user-question"></i> <?php _e('Block user enumeration', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'scuri-enum1', __( 'Hide usernames from scanners', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',

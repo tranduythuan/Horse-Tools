@@ -336,6 +336,10 @@ $vi = array(
     'Too many failed attempts. Try again in about %s.' => 'Sai quá nhiều lần. Thử lại sau khoảng %s.',
     'Site is behind Cloudflare or a proxy (use the real visitor IP)'
         => 'Site nằm sau Cloudflare hoặc proxy (dùng IP thật của khách)',
+    'Reset all login lockouts now' => 'Gỡ tất cả khóa đăng nhập ngay',
+    'Cleared all lockouts.' => 'Đã gỡ tất cả khóa.',
+    'Locked yourself out? Log in from a different network (e.g. your phone on mobile data = a different IP), then click the button above to clear all lockouts — or just wait for the lockout time to pass. As a last resort, disable the plugin by renaming its folder via FTP.'
+        => 'Lỡ tự khóa mình? Hãy đăng nhập từ một mạng khác (ví dụ dùng 4G điện thoại = IP khác), rồi bấm nút trên để gỡ tất cả khóa — hoặc chờ hết thời gian khóa. Cùng lắm, tắt plugin bằng cách đổi tên thư mục plugin qua FTP.',
     'By default the lockout counts the direct connection IP, which cannot be faked. Only turn this on if your site is reachable ONLY through Cloudflare or a proxy — it then reads the real visitor IP from the proxy header (CF-Connecting-IP / X-Forwarded-For). Do NOT enable it on a normally-hosted site: those headers can be forged, letting an attacker dodge the lockout or get an innocent visitor locked out.'
         => 'Mặc định, bộ khóa đếm theo IP kết nối trực tiếp — thứ không thể giả mạo. Chỉ bật mục này nếu site của bạn CHỈ truy cập được qua Cloudflare hoặc proxy — khi đó nó đọc IP thật của khách từ header của proxy (CF-Connecting-IP / X-Forwarded-For). ĐỪNG bật trên site host thông thường: các header đó có thể bị làm giả, khiến kẻ tấn công né được khóa hoặc làm khách vô tội bị khóa oan.',
     // Redirects page: clearer tab names + how-to intros
