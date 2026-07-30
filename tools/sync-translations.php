@@ -329,9 +329,9 @@ $vi = array(
     'No snippet matches your search.' => 'Không có snippet nào khớp tìm kiếm.',
     // Login limiter: lockout unit + real-IP behind proxy
     'Lockout length' => 'Thời gian khóa',
-    'Minutes' => 'Phút',
-    'Hours' => 'Giờ',
-    'Days' => 'Ngày',
+    'Minute(s)' => 'Phút',
+    'Hour(s)' => 'Giờ',
+    'Day(s)' => 'Ngày',
     'Lockout time unit' => 'Đơn vị thời gian khóa',
     'Too many failed attempts. Try again in about %s.' => 'Sai quá nhiều lần. Thử lại sau khoảng %s.',
     'Site is behind Cloudflare or a proxy (use the real visitor IP)'

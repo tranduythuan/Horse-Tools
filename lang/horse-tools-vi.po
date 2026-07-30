@@ -5503,3 +5503,12 @@ msgstr "Đã gỡ tất cả khóa."
 
 msgid "Locked yourself out? Log in from a different network (e.g. your phone on mobile data = a different IP), then click the button above to clear all lockouts — or just wait for the lockout time to pass. As a last resort, disable the plugin by renaming its folder via FTP."
 msgstr "Lỡ tự khóa mình? Hãy đăng nhập từ một mạng khác (ví dụ dùng 4G điện thoại = IP khác), rồi bấm nút trên để gỡ tất cả khóa — hoặc chờ hết thời gian khóa. Cùng lắm, tắt plugin bằng cách đổi tên thư mục plugin qua FTP."
+
+msgid "Minute(s)"
+msgstr "Phút"
+
+msgid "Hour(s)"
+msgstr "Giờ"
+
+msgid "Day(s)"
+msgstr "Ngày"

@@ -39,7 +39,7 @@ global $horsetools_options; ?>
 	<?php
 	global $horsetools_options;
 	$ht_lock_unit  = isset( $horsetools_options['scuri-login-unit'] ) ? $horsetools_options['scuri-login-unit'] : 'minutes';
-	$ht_lock_units = array( 'minutes' => __( 'Minutes', 'horse-tools' ), 'hours' => __( 'Hours', 'horse-tools' ), 'days' => __( 'Days', 'horse-tools' ) );
+	$ht_lock_units = array( 'minutes' => __( 'Minute(s)', 'horse-tools' ), 'hours' => __( 'Hour(s)', 'horse-tools' ), 'days' => __( 'Day(s)', 'horse-tools' ) );
 	?>
 	<p class="ht-field" data-ht-parent="ht-main-scuri-login1">
 		<select name="horsetools_settings[scuri-login-unit]">
