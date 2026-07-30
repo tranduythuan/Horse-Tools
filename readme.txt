@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.13
+Stable tag: 1.2.14
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,6 +79,11 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.14 =
+* **New: Defer JavaScript (Optimize tab).** Adds `defer` to front-end scripts so they no longer block the page from painting — a direct Core Web Vitals / PageSpeed win. Scripts still run in their original order once the HTML is parsed. jQuery is never deferred (inline snippets rely on it), and any script that ships an inline companion is detected and left alone automatically, so nothing breaks. An exclusion box lets you skip a specific script by its handle or file name if a theme/plugin misbehaves. Leave it off if you already use a full-page optimiser that defers scripts.
+* **New: Preconnect to third-party hosts (Optimize tab).** List the external hosts your pages load from (Google Fonts, a CDN, analytics…) and the browser starts the DNS + connection + TLS handshake early, so those files arrive sooner. Adds standard preconnect and dns-prefetch hints to the page head.
+* Fixed: on the Google Index tab, checking a URL that Google reports as 404 (not indexed yet) could show a generic error instead of a clean “not indexed” result — a dead error-handling branch that never matched. It now reads the real HTTP status correctly.
 
 = 1.2.13 =
 * Fixed the lockout time-unit dropdown showing the wrong word for “Hours” in some languages (it collided with an unrelated “opening hours” translation). The three units now use their own labels.
@@ -323,6 +328,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.14 =
+Adds “Defer JavaScript” and “Preconnect” to the Optimize tab for faster page loads (Core Web Vitals), plus a Google Index status fix.
 
 = 1.2.13 =
 Fixes the lockout time-unit dropdown mislabelling “Hours”.

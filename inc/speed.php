@@ -207,3 +207,114 @@ function horsetools_init_minify_html(){
 	}
 }
 add_action( 'init', 'horsetools_init_minify_html', 1 );
+
+/* -------------------------------------------------------------------------
+ * Defer front-end JavaScript.
+ *
+ * Render-blocking <script src> in the <head> is the single most common
+ * PageSpeed complaint. `defer` tells the browser to download the script
+ * without blocking parsing and to run it — in document order — after the HTML
+ * is parsed. We use defer, not async, precisely because defer PRESERVES ORDER,
+ * so a script and its dependencies still run in the right sequence.
+ *
+ * What we never touch:
+ *   - jQuery core: countless inline snippets run right after it expecting $ to
+ *     exist, and those inline tags are NOT deferred, so deferring jQuery itself
+ *     would break them. Excluded by default.
+ *   - Anything the user lists (handle or a substring of the URL).
+ *   - Scripts already marked async/defer or type="module" (modules defer
+ *     natively), and inline scripts (no src).
+ * ---------------------------------------------------------------------- */
+if ( isset( $horsetools_options['speed-defer1'] ) ) {
+	function horsetools_defer_scripts( $tag, $handle ) {
+		if ( is_admin() ) {
+			return $tag;
+		}
+		global $horsetools_options;
+		// jQuery is never safe to defer (see the note above).
+		$skip = array( 'jquery', 'jquery-core' );
+		if ( ! empty( $horsetools_options['speed-defer-exclude'] ) ) {
+			$extra = preg_split( '/[\s,]+/', (string) $horsetools_options['speed-defer-exclude'], -1, PREG_SPLIT_NO_EMPTY );
+			if ( is_array( $extra ) ) {
+				$skip = array_merge( $skip, $extra );
+			}
+		}
+		foreach ( $skip as $needle ) {
+			$needle = trim( (string) $needle );
+			if ( '' !== $needle && ( $handle === $needle || false !== strpos( $tag, $needle ) ) ) {
+				return $tag;
+			}
+		}
+		// Only external scripts, and never double up on async/defer/module.
+		if ( false === strpos( $tag, ' src=' ) ) {
+			return $tag;
+		}
+		if ( false !== strpos( $tag, ' defer' ) || false !== strpos( $tag, ' async' )
+			|| false !== strpos( $tag, "type='module'" ) || false !== strpos( $tag, 'type="module"' ) ) {
+			return $tag;
+		}
+		// Leave alone any script that carries an inline before/after companion.
+		// wp_add_inline_script() prints that inline part WITHOUT defer, so it runs
+		// immediately — before this deferred file — and would call functions the
+		// file has not defined yet. These are exactly the scripts defer must skip.
+		// Ask WP_Scripts directly (version-independent) and, as a textual backstop,
+		// bail if the tag itself already contains more than one <script element.
+		$wp_scripts = wp_scripts();
+		if ( $wp_scripts && ( $wp_scripts->get_data( $handle, 'after' ) || $wp_scripts->get_data( $handle, 'before' ) ) ) {
+			return $tag;
+		}
+		if ( substr_count( $tag, '<script' ) > 1 ) {
+			return $tag;
+		}
+		return preg_replace( '/<script(\s)/', '<script defer$1', $tag, 1 );
+	}
+	add_filter( 'script_loader_tag', 'horsetools_defer_scripts', 20, 2 );
+}
+
+/* -------------------------------------------------------------------------
+ * Preconnect / DNS-prefetch hints.
+ *
+ * For every third-party origin the page pulls from (Google Fonts, a CDN, an
+ * analytics host...), the browser must resolve DNS, open a TCP connection and
+ * negotiate TLS before the first byte. Announcing those origins in the <head>
+ * lets the browser start that handshake immediately, in parallel with parsing,
+ * shaving the round-trips off the critical path. dns-prefetch is the low-cost
+ * fallback for browsers that ignore preconnect.
+ * ---------------------------------------------------------------------- */
+if ( isset( $horsetools_options['speed-pre1'] ) && ! empty( $horsetools_options['speed-pre-hosts'] ) ) {
+	function horsetools_preconnect_hints() {
+		global $horsetools_options;
+		$lines = preg_split( '/[\r\n,]+/', (string) $horsetools_options['speed-pre-hosts'], -1, PREG_SPLIT_NO_EMPTY );
+		if ( ! is_array( $lines ) ) {
+			return;
+		}
+		$seen = array();
+		foreach ( $lines as $line ) {
+			$line = trim( $line );
+			if ( '' === $line ) {
+				continue;
+			}
+			// Accept a bare host (fonts.gstatic.com) or a full URL; reduce to origin.
+			if ( false === strpos( $line, '//' ) ) {
+				$origin = 'https://' . $line;
+			} else {
+				$p = wp_parse_url( $line );
+				if ( empty( $p['host'] ) ) {
+					continue;
+				}
+				$scheme = ! empty( $p['scheme'] ) ? $p['scheme'] : 'https';
+				$origin = $scheme . '://' . $p['host'];
+			}
+			$origin = esc_url( $origin );
+			if ( '' === $origin || isset( $seen[ $origin ] ) ) {
+				continue;
+			}
+			$seen[ $origin ] = true;
+			// crossorigin is required for the preconnect to be reused by font
+			// requests (which are always CORS); harmless for other origins.
+			echo '<link rel="preconnect" href="' . $origin . '" crossorigin>' . "\n";
+			echo '<link rel="dns-prefetch" href="' . $origin . '">' . "\n";
+		}
+	}
+	add_action( 'wp_head', 'horsetools_preconnect_hints', 1 );
+}

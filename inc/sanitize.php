@@ -347,6 +347,8 @@ function horsetools_sanitize_textarea_keys() {
 		'url',            // main/gindex.php - list of URLs to submit
 		'chat-quick',     // chat live-chat quick-reply lines (label|url)
 		'chat-hours',     // chat opening-hours lines
+		'speed-defer-exclude', // OPTIMIZE - script handles/URLs never deferred
+		'speed-pre-hosts',     // OPTIMIZE - hosts to preconnect / dns-prefetch
 	);
 }
 

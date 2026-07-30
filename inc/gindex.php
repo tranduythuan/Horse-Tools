@@ -189,13 +189,20 @@ function horsetools_index_status($urls) {
             } else {
                 $data['indexed'] = 'no'; 
             }
-        } catch (ClientException $e) {
-            $statusCode = $e->getResponse()->getStatusCode();
+        } catch (\GuzzleHttp\Exception\RequestException $e) {
+            // Was `catch (ClientException $e)` with no import — it resolved to a
+            // non-existent \ClientException and never matched, so the 404 branch
+            // below was dead and "not indexed yet" surfaced as a generic error.
+            // Use the base RequestException (like horsetools_index_now) and guard
+            // getResponse() for null (connection errors carry no response).
+            $statusCode = $e->getResponse() ? $e->getResponse()->getStatusCode() : 0;
             if ($statusCode == 404) {
                 $data['indexed'] = null;
             } else {
-                $data['indexed'] = 'error'; 
-                $data['error'] = 'HTTP Error ' . $statusCode . ': ' . $e->getMessage();
+                $data['indexed'] = 'error';
+                $data['error'] = $statusCode
+                    ? 'HTTP Error ' . $statusCode . ': ' . $e->getMessage()
+                    : $e->getMessage();
             }
         } catch (\Exception $e) {
             $data['indexed'] = 'error';
@@ -281,7 +288,6 @@ if(isset($horsetools_gindex_options['posttype'])){
 	$main_search_post_types = $horsetools_gindex_options['posttype'];
 	foreach ($main_search_post_types as $post_type) {
 		$hook_name = $post_type .'_row_actions';
-		add_filter($hook_name, 'horsetools_quick_index_button', 10, 2);
 		add_filter($hook_name, 'horsetools_quick_index_button', 10, 2);
 	}
 }

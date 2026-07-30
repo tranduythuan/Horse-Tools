@@ -13,6 +13,25 @@ require_once __DIR__ . '/po-lib.php';
 $root = rtrim( $argv[1] ?? dirname( __DIR__ ), '/\\' );
 
 $vi = array(
+    // OPTIMIZE tab — defer JS + preconnect (added 1.2.14).
+    'JavaScript &amp; connections'
+        => 'JavaScript &amp; kết nối',
+    'Defer JavaScript'
+        => 'Hoãn tải JavaScript (defer)',
+    'Add “defer” to front-end scripts so they no longer block the page from rendering; they run in order once the HTML is parsed. jQuery is never deferred (inline snippets depend on it). Big Core Web Vitals win.'
+        => 'Thêm “defer” vào các script front-end để chúng không còn chặn hiển thị trang; chúng chạy theo thứ tự sau khi HTML được phân tích xong. jQuery không bao giờ bị hoãn (các đoạn inline phụ thuộc vào nó). Cải thiện Core Web Vitals rõ rệt.',
+    'If a theme/plugin script misbehaves, add its handle or file name to the exclusion list below. Disable if you already use a full-page optimiser that defers scripts.'
+        => 'Nếu một script của theme/plugin trục trặc, thêm handle hoặc tên file của nó vào danh sách loại trừ bên dưới. Tắt đi nếu bạn đã dùng plugin tối ưu toàn trang có chức năng hoãn script.',
+    'Scripts to exclude from defer (one per line — a script handle or part of its URL)'
+        => 'Script loại trừ khỏi defer (mỗi dòng một mục — handle hoặc một phần URL của script)',
+    'Preconnect to third-party hosts'
+        => 'Preconnect tới các host bên thứ ba',
+    'Tell the browser to start the DNS + TCP + TLS handshake to external hosts early (fonts, CDN, analytics), so their files arrive sooner. Adds preconnect and dns-prefetch hints to the page head.'
+        => 'Yêu cầu trình duyệt bắt đầu bắt tay DNS + TCP + TLS tới các host bên ngoài sớm (font, CDN, analytics) để file của chúng về nhanh hơn. Thêm gợi ý preconnect và dns-prefetch vào phần head của trang.',
+    'Hosts to preconnect (one per line — host or full URL)'
+        => 'Host cần preconnect (mỗi dòng một mục — host hoặc URL đầy đủ)',
+    'Only add hosts the page really uses. Preconnecting to a host you do not load from wastes a connection.'
+        => 'Chỉ thêm host mà trang thật sự dùng. Preconnect tới host không tải gì sẽ lãng phí một kết nối.',
     'Author and maintainer:'
         => 'Tác giả và người duy trì:',
     'Licence:'

@@ -5512,3 +5512,30 @@ msgstr "Giờ"
 
 msgid "Day(s)"
 msgstr "Ngày"
+
+msgid "JavaScript &amp; connections"
+msgstr "JavaScript &amp; kết nối"
+
+msgid "Defer JavaScript"
+msgstr "Hoãn tải JavaScript (defer)"
+
+msgid "Add “defer” to front-end scripts so they no longer block the page from rendering; they run in order once the HTML is parsed. jQuery is never deferred (inline snippets depend on it). Big Core Web Vitals win."
+msgstr "Thêm “defer” vào các script front-end để chúng không còn chặn hiển thị trang; chúng chạy theo thứ tự sau khi HTML được phân tích xong. jQuery không bao giờ bị hoãn (các đoạn inline phụ thuộc vào nó). Cải thiện Core Web Vitals rõ rệt."
+
+msgid "If a theme/plugin script misbehaves, add its handle or file name to the exclusion list below. Disable if you already use a full-page optimiser that defers scripts."
+msgstr "Nếu một script của theme/plugin trục trặc, thêm handle hoặc tên file của nó vào danh sách loại trừ bên dưới. Tắt đi nếu bạn đã dùng plugin tối ưu toàn trang có chức năng hoãn script."
+
+msgid "Scripts to exclude from defer (one per line — a script handle or part of its URL)"
+msgstr "Script loại trừ khỏi defer (mỗi dòng một mục — handle hoặc một phần URL của script)"
+
+msgid "Preconnect to third-party hosts"
+msgstr "Preconnect tới các host bên thứ ba"
+
+msgid "Tell the browser to start the DNS + TCP + TLS handshake to external hosts early (fonts, CDN, analytics), so their files arrive sooner. Adds preconnect and dns-prefetch hints to the page head."
+msgstr "Yêu cầu trình duyệt bắt đầu bắt tay DNS + TCP + TLS tới các host bên ngoài sớm (font, CDN, analytics) để file của chúng về nhanh hơn. Thêm gợi ý preconnect và dns-prefetch vào phần head của trang."
+
+msgid "Hosts to preconnect (one per line — host or full URL)"
+msgstr "Host cần preconnect (mỗi dòng một mục — host hoặc URL đầy đủ)"
+
+msgid "Only add hosts the page really uses. Preconnecting to a host you do not load from wastes a connection."
+msgstr "Chỉ thêm host mà trang thật sự dùng. Preconnect tới host không tải gì sẽ lãng phí một kết nối."

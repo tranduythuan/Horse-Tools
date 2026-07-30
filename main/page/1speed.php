@@ -49,6 +49,31 @@ global $horsetools_options; ?>
 		'description' => __( 'Smooth-scroll is a library that enables you to create a smooth scrolling effect, providing users with a perception of faster page navigation', 'horse-tools' ),
 	) ); ?>
 
+  <h3><i class="ti ti-bolt"></i> <?php _e('JavaScript &amp; connections', 'horse-tools') ?></h3>
+		<!-- defer js -->
+		<?php horsetools_toggle( 'speed-defer1', __( 'Defer JavaScript', 'horse-tools' ), array(
+			'tab'         => 'OPTIMIZE',
+			'section'     => 'JavaScript & connections',
+			'description' => __( 'Add “defer” to front-end scripts so they no longer block the page from rendering; they run in order once the HTML is parsed. jQuery is never deferred (inline snippets depend on it). Big Core Web Vitals win.', 'horse-tools' ),
+			'warning'     => __( 'If a theme/plugin script misbehaves, add its handle or file name to the exclusion list below. Disable if you already use a full-page optimiser that defers scripts.', 'horse-tools' ),
+		) ); ?>
+		<p class="ht-field">
+		<label class="ht-field-label"><?php _e('Scripts to exclude from defer (one per line — a script handle or part of its URL)', 'horse-tools'); ?></label>
+		<textarea style="height:80px;" class="ht-code-textarea" name="horsetools_settings[speed-defer-exclude]" placeholder="jquery-migrate&#10;slider.min.js"><?php if(!empty($horsetools_options['speed-defer-exclude'])){echo esc_textarea($horsetools_options['speed-defer-exclude']);} ?></textarea>
+		</p>
+
+		<!-- preconnect -->
+		<?php horsetools_toggle( 'speed-pre1', __( 'Preconnect to third-party hosts', 'horse-tools' ), array(
+			'tab'         => 'OPTIMIZE',
+			'section'     => 'JavaScript & connections',
+			'description' => __( 'Tell the browser to start the DNS + TCP + TLS handshake to external hosts early (fonts, CDN, analytics), so their files arrive sooner. Adds preconnect and dns-prefetch hints to the page head.', 'horse-tools' ),
+		) ); ?>
+		<p class="ht-field">
+		<label class="ht-field-label"><?php _e('Hosts to preconnect (one per line — host or full URL)', 'horse-tools'); ?></label>
+		<textarea style="height:80px;" class="ht-code-textarea" name="horsetools_settings[speed-pre-hosts]" placeholder="fonts.googleapis.com&#10;fonts.gstatic.com"><?php if(!empty($horsetools_options['speed-pre-hosts'])){echo esc_textarea($horsetools_options['speed-pre-hosts']);} ?></textarea>
+		</p>
+		<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Only add hosts the page really uses. Preconnecting to a host you do not load from wastes a connection.', 'horse-tools'); ?></p>
+
   <h3><i class="ti ti-loader"></i> <?php _e('The function of lazy loading images', 'horse-tools') ?></h3>
 	<!-- lazyload img 1 -->
 	<?php horsetools_toggle( 'speed-lazy1', __( 'Enable image lazy loading', 'horse-tools' ), array(
