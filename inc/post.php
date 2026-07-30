@@ -518,7 +518,7 @@ function horsetools_lb_theme_css(){
 		if ( $t['blur'] )   { $css .= '.goverlay{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}'; }
 		if ( $ok_accent )   { $css .= '.glightbox-container .gnext svg,.glightbox-container .gprev svg,.glightbox-container .gclose svg{color:' . $accent . ';}'; }
 	}
-	$css .= '.fancybox img{cursor:zoom-in;}';
+	$css .= '.ht-lightbox img{cursor:zoom-in;}';
 	echo '<style id="ht-lb-theme">' . $css . '</style>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput -- preset values + colour-validated accent
 }
 add_action( 'wp_head', 'horsetools_lb_theme_css', 6 );
@@ -554,7 +554,7 @@ function horsetools_lb_script(){
 		<?php endif; ?>
 		(function(){
 			var isImg = function(u){ return /\.(jpe?g|png|gif|webp|avif|bmp|svg)(\?|#|$)/i.test(u||''); };
-			document.querySelectorAll('.fancybox img').forEach(function(img){
+			document.querySelectorAll('.ht-lightbox img').forEach(function(img){
 				var cap = <?php echo $cap_js; // phpcs:ignore ?>;
 				var a = img.closest('a'), href, target;
 				if (a){ href = a.getAttribute('href')||''; if(!isImg(href)) return; target = a; }
@@ -569,7 +569,7 @@ function horsetools_lb_script(){
 				if (cap) target.setAttribute('data-pswp-caption', cap);
 			});
 			var lb = new PhotoSwipeLightbox({
-				gallery: '.fancybox',
+				gallery: '.ht-lightbox',
 				children: 'a.ht-pswp',
 				showHideAnimationType: <?php echo wp_json_encode( $anim ); ?>,
 				pswpModule: function(){ return import(<?php echo wp_json_encode( $ps ); ?>); }
@@ -587,7 +587,7 @@ function horsetools_lb_script(){
 		document.addEventListener('DOMContentLoaded', function(){
 			var grouped = <?php echo $gallery; ?>, i = 0;
 			var isImg = function(u){ return /\.(jpe?g|png|gif|webp|avif|bmp|svg)(\?|#|$)/i.test(u||''); };
-			document.querySelectorAll('.fancybox img').forEach(function(img){
+			document.querySelectorAll('.ht-lightbox img').forEach(function(img){
 				var cap = <?php echo $cap_js; // phpcs:ignore ?>;
 				var a = img.closest('a'), href, target;
 				if (a){ href = a.getAttribute('href')||''; if(!isImg(href)) return; target = a; }
@@ -611,7 +611,7 @@ function horsetools_lb_addiv( $content ) {
     if ( ! horsetools_lb_on() || ! in_the_loop() || ! is_main_query() || is_feed() ) {
         return $content;
     }
-    return '<div class="fancybox">'. $content .'</div>';
+    return '<div class="ht-lightbox">'. $content .'</div>';
 }
 add_filter( 'the_content', 'horsetools_lb_addiv' );
 }

@@ -140,9 +140,10 @@ function horsetools_enqueue_home() {
 	// jQuery used to be enqueued here unconditionally on every front-end page.
 	// link/index.js contains no jQuery at all, and on a block theme that has no
 	// jQuery dependency of its own this plugin was single-handedly adding ~30 KB
-	// to every page — from the plugin whose first tab is "Optimize". The two
-	// front-end features that genuinely need it (lazyload, fancybox) declare it
-	// as a dependency, which is what pulls it in when they are switched on.
+	// to every page — from the plugin whose first tab is "Optimize". The only
+	// front-end feature that still needs it (the search / popup modal below)
+	// declares it as a dependency, which is what pulls it in when switched on.
+	// (Lazy-load is now native and the lightbox engines are vanilla JS.)
 	wp_enqueue_script( 'horsetools-index', HORSETOOLS_URL . 'link/index.js', array(), HORSETOOLS_VERSION, true );
 
 	if ( isset( $horsetools_search_options['main-search1'] ) || isset( $horsetools_notify_options['notify-popup1'] ) ) {

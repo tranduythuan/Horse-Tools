@@ -35,8 +35,6 @@ $vi = array(
         => 'Lightbox ảnh',
     'Enable image lightbox'
         => 'Bật lightbox ảnh',
-    'Click an image in your content to open it in a full-screen viewer (Fancybox). Choose how it looks below.'
-        => 'Nhấn vào ảnh trong nội dung để mở trình xem toàn màn hình (Fancybox). Chọn kiểu hiển thị bên dưới.',
     'Where to run it'
         => 'Chạy ở đâu',
     'Posts only'
@@ -89,8 +87,6 @@ $vi = array(
         => 'Hiện dải ảnh thu nhỏ',
     'Loop back to the first image'
         => 'Quay vòng về ảnh đầu',
-    'Uses the built-in Fancybox library. Thumbnails, slideshow and looping only make sense with gallery grouping on.'
-        => 'Dùng thư viện Fancybox tích hợp. Ảnh thu nhỏ, trình chiếu và quay vòng chỉ có ý nghĩa khi bật gom thư viện.',
     // OPTIMIZE tab — heartbeat, native lazy-load, preload, dashicons (added 1.2.15).
     'Disable Dashicons for visitors'
         => 'Tắt Dashicons cho khách',
