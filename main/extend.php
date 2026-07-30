@@ -34,9 +34,9 @@ function horsetools_extend_options_page() {
 					<div class="ht-extend-tit">
 						<label class="ht-extend-tit-span" for="more1"><?php _e('Add code', 'horse-tools'); ?></label>
 						<div>
-						<span class="nut-switch">
+						<label class="nut-switch">
 						<input id="more1" type="checkbox" name="horsetools_extend_settings[code]" value="1" <?php if ( isset($horsetools_extend_options['code']) && 1 == $horsetools_extend_options['code'] ) echo 'checked="checked"'; ?> />
-						<span class="slider"></span></span>
+						<span class="slider"></span></label>
 						</div>
 					</div>
 					<div class="ht-extend-card more1">
@@ -49,9 +49,9 @@ function horsetools_extend_options_page() {
 					<div class="ht-extend-tit">
 						<label class="ht-extend-tit-span" for="more2"><?php _e('Clean', 'horse-tools'); ?></label>
 						<div>
-						<span class="nut-switch">
+						<label class="nut-switch">
 						<input id="more2" type="checkbox" name="horsetools_extend_settings[clean]" value="1" <?php if ( isset($horsetools_extend_options['clean']) && 1 == $horsetools_extend_options['clean'] ) echo 'checked="checked"'; ?> />
-						<span class="slider"></span></span>
+						<span class="slider"></span></label>
 						</div>
 					</div>
 					<div class="ht-extend-card more2">
@@ -64,9 +64,9 @@ function horsetools_extend_options_page() {
 					<div class="ht-extend-tit">
 						<label class="ht-extend-tit-span" for="more3"><?php _e('Font', 'horse-tools'); ?></label>
 						<div>
-						<span class="nut-switch">
+						<label class="nut-switch">
 						<input id="more3" type="checkbox" name="horsetools_extend_settings[font]" value="1" <?php if ( isset($horsetools_extend_options['font']) && 1 == $horsetools_extend_options['font'] ) echo 'checked="checked"'; ?> />
-						<span class="slider"></span></span>
+						<span class="slider"></span></label>
 						</div>
 					</div>
 					<div class="ht-extend-card more3">
@@ -79,9 +79,9 @@ function horsetools_extend_options_page() {
 					<div class="ht-extend-tit">
 						<label class="ht-extend-tit-span" for="more4"><?php _e('Redirects', 'horse-tools'); ?></label>
 						<div>
-						<span class="nut-switch">
+						<label class="nut-switch">
 						<input id="more4" type="checkbox" name="horsetools_extend_settings[redirect]" value="1" <?php if ( isset($horsetools_extend_options['redirect']) && 1 == $horsetools_extend_options['redirect'] ) echo 'checked="checked"'; ?> />
-						<span class="slider"></span></span>
+						<span class="slider"></span></label>
 						</div>
 					</div>
 					<div class="ht-extend-card more4">
@@ -94,9 +94,9 @@ function horsetools_extend_options_page() {
 					<div class="ht-extend-tit">
 						<label class="ht-extend-tit-span" for="more5"><?php _e('Index now', 'horse-tools'); ?></label>
 						<div>
-						<span class="nut-switch">
+						<label class="nut-switch">
 						<input id="more5" type="checkbox" name="horsetools_extend_settings[index]" value="1" <?php if ( isset($horsetools_extend_options['index']) && 1 == $horsetools_extend_options['index'] ) echo 'checked="checked"'; ?> />
-						<span class="slider"></span></span>
+						<span class="slider"></span></label>
 						</div>
 					</div>
 					<div class="ht-extend-card more5">
@@ -109,9 +109,9 @@ function horsetools_extend_options_page() {
 					<div class="ht-extend-tit">
 						<label class="ht-extend-tit-span" for="more6"><?php _e('TOC', 'horse-tools'); ?></label>
 						<div>
-						<span class="nut-switch">
+						<label class="nut-switch">
 						<input id="more6" type="checkbox" name="horsetools_extend_settings[toc]" value="1" <?php if ( isset($horsetools_extend_options['toc']) && 1 == $horsetools_extend_options['toc'] ) echo 'checked="checked"'; ?> />
-						<span class="slider"></span></span>
+						<span class="slider"></span></label>
 						</div>
 					</div>
 					<div class="ht-extend-card more6">
@@ -124,9 +124,9 @@ function horsetools_extend_options_page() {
 					<div class="ht-extend-tit">
 						<label class="ht-extend-tit-span" for="more9"><?php _e('Ads', 'horse-tools'); ?></label>
 						<div>
-						<span class="nut-switch">
+						<label class="nut-switch">
 						<input id="more9" type="checkbox" name="horsetools_extend_settings[ads]" value="1" <?php if ( isset($horsetools_extend_options['ads']) && 1 == $horsetools_extend_options['ads'] ) echo 'checked="checked"'; ?> />
-						<span class="slider"></span></span>
+						<span class="slider"></span></label>
 						</div>
 					</div>
 					<div class="ht-extend-card more9">
@@ -139,9 +139,9 @@ function horsetools_extend_options_page() {
 					<div class="ht-extend-tit">
 						<label class="ht-extend-tit-span" for="more11"><?php _e('Notify', 'horse-tools'); ?></label>
 						<div>
-						<span class="nut-switch">
+						<label class="nut-switch">
 						<input id="more11" type="checkbox" name="horsetools_extend_settings[notify]" value="1" <?php if ( isset($horsetools_extend_options['notify']) && 1 == $horsetools_extend_options['notify'] ) echo 'checked="checked"'; ?> />
-						<span class="slider"></span></span>
+						<span class="slider"></span></label>
 						</div>
 					</div>
 					<div class="ht-extend-card more11">
@@ -154,9 +154,9 @@ function horsetools_extend_options_page() {
 					<div class="ht-extend-tit">
 						<label class="ht-extend-tit-span" for="more12"><?php _e('Shortcode', 'horse-tools'); ?></label>
 						<div>
-						<span class="nut-switch">
+						<label class="nut-switch">
 						<input id="more12" type="checkbox" name="horsetools_extend_settings[shortcode]" value="1" <?php if ( isset($horsetools_extend_options['shortcode']) && 1 == $horsetools_extend_options['shortcode'] ) echo 'checked="checked"'; ?> />
-						<span class="slider"></span></span>
+						<span class="slider"></span></label>
 						</div>
 					</div>
 					<div class="ht-extend-card more12">
@@ -169,9 +169,9 @@ function horsetools_extend_options_page() {
 					<div class="ht-extend-tit">
 						<label class="ht-extend-tit-span" for="more10"><?php _e('Horse Search', 'horse-tools'); ?></label>
 						<div>
-						<span class="nut-switch">
+						<label class="nut-switch">
 						<input id="more10" type="checkbox" name="horsetools_extend_settings[search]" value="1" <?php if ( isset($horsetools_extend_options['search']) && 1 == $horsetools_extend_options['search'] ) echo 'checked="checked"'; ?> />
-						<span class="slider"></span></span>
+						<span class="slider"></span></label>
 						</div>
 					</div>
 					<div class="ht-extend-card more10">
@@ -184,9 +184,9 @@ function horsetools_extend_options_page() {
 					<div class="ht-extend-tit">
 						<label class="ht-extend-tit-span" for="more7"><?php _e('Debug', 'horse-tools'); ?></label>
 						<div>
-						<span class="nut-switch">
+						<label class="nut-switch">
 						<input id="more7" type="checkbox" name="horsetools_extend_settings[debug]" value="1" <?php if ( isset($horsetools_extend_options['debug']) && 1 == $horsetools_extend_options['debug'] ) echo 'checked="checked"'; ?> />
-						<span class="slider"></span></span>
+						<span class="slider"></span></label>
 						</div>
 					</div>
 					<div class="ht-extend-card more7">
@@ -199,9 +199,9 @@ function horsetools_extend_options_page() {
 					<div class="ht-extend-tit">
 						<label class="ht-extend-tit-span" for="more8"><?php _e('Export', 'horse-tools'); ?></label>
 						<div>
-						<span class="nut-switch">
+						<label class="nut-switch">
 						<input id="more8" type="checkbox" name="horsetools_extend_settings[export]" value="1" <?php if ( isset($horsetools_extend_options['export']) && 1 == $horsetools_extend_options['export'] ) echo 'checked="checked"'; ?> />
-						<span class="slider"></span></span>
+						<span class="slider"></span></label>
 						</div>
 					</div>
 					<div class="ht-extend-card more8">

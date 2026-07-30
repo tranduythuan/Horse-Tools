@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,6 +79,25 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.1 =
+A bug fix plus a big usability pass on the contact-chat admin screen.
+
+Fixed:
+
+* **On/off toggle switches were only half-clickable.** On the Extend screen and in the shared settings UI, the sliding on/off switch sat in a plain `<span>`, and the checkbox behind it was a zero-size hidden element — so clicking the switch itself did nothing and only the text label toggled it. The switch is now a real `<label>`, so clicking anywhere on it works, matching every other tab.
+
+Chat admin — see what you pick:
+
+* Replaced the stale illustration images and plain dropdowns with **live preview grids drawn in CSS** (no image files). The 17 button skins, the 5 mobile contact-bar styles, and the Services panel's 13 layouts, 7 theme colours and 7 display modes are now visual mockups you click, so you can tell what each one does before saving. The saved values are unchanged, so existing configurations keep working.
+
+Icons from the plugin, not a third-party site:
+
+* Removed the "go to lineicons.com and copy an SVG" instruction. Known channels (Zalo, Messenger, Phone, …) already show their own logo automatically; for a custom button, a built-in icon picker inserts a ready-made SVG (24 common icons, searchable) into the field. Services-panel icons get autocomplete for common Tabler icon names.
+
+Added:
+
+* A collapsible **Quick guide** at the top of the Chat tab explaining the whole flow in six steps.
 
 = 1.2.0 =
 A feature release: a full shortcode/snippet toolkit, a rebuilt multi-channel contact chat, a privacy module, and eleven new interface languages.
@@ -246,6 +265,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.1 =
+Fixes the half-clickable on/off switches and rebuilds the chat admin with visual preview grids and a built-in icon picker. Settings are preserved.
 
 = 1.2.0 =
 Adds a shortcode/snippet toolkit, a rebuilt multi-channel contact chat, a privacy module and eleven new languages. Includes a fix for a stored XSS in the [gget] download button — upgrading is recommended.

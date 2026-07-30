@@ -107,7 +107,7 @@ function horsetools_toggle( $key, $label, array $args = array() ) {
 		echo '<p class="ht-field"' . $parent_attr . '>'; // phpcs:ignore WordPress.Security.EscapeOutput -- built from esc_attr above
 	}
 	?>
-		<span class="nut-switch">
+		<label class="nut-switch">
 			<input type="checkbox"
 				id="<?php echo esc_attr( $id ); ?>"
 				<?php echo '' !== $args['class'] ? ' class="' . esc_attr( $args['class'] ) . '"' : ''; ?>
@@ -116,7 +116,7 @@ function horsetools_toggle( $key, $label, array $args = array() ) {
 				<?php checked( 1, (int) $value ); ?>
 				<?php echo $has_note ? ' aria-describedby="' . esc_attr( $note_id ) . '"' : ''; ?> />
 			<span class="slider" aria-hidden="true"></span>
-		</span>
+		</label>
 		<label class="ht-label-right" for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $label ); ?></label>
 	<?php
 	if ( ! $args['bare'] ) {
