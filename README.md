@@ -63,6 +63,35 @@ Horse Tools does not send any data about your site to us or any third party. It 
 - Full feature notes and the complete changelog live in [`readme.txt`](readme.txt) (WordPress.org format).
 - Release downloads and notes: [Releases](https://github.com/tranduythuan/Horse-Tools/releases).
 
+## FAQ
+
+**Is it free?**
+Yes — free and open-source under the GPLv2 licence.
+
+**I currently use Foxtool. What do I do?**
+Deactivate Foxtool and activate Horse Tools; it imports Foxtool's settings automatically on first activation. Don't run both at once.
+
+**Will it slow my site down?**
+No. Each feature's CSS/JS loads only on the pages that use it, and nothing is added to the front end for features you haven't switched on.
+
+**Does it send my data anywhere?**
+No — see [Privacy](#privacy). It only contacts services you explicitly configure with your own credentials.
+
+**How do I update?**
+Download the newer ZIP from [Releases](https://github.com/tranduythuan/Horse-Tools/releases) and upload it via **Plugins → Add New → Upload Plugin**, then choose **“Replace current with uploaded”**. Your settings are kept.
+
+**I can't find the Popup (or another feature) — where is it?**
+Most modules are opt-in. Turn them on under the **Extend** page first; the feature's own settings page then appears in the menu.
+
+**How do I show a promotional popup?**
+Enable the **Notify** module on the Extend page, then go to **Notify → Popup**: switch it on and choose a layout, entrance effect, position and trigger.
+
+**Can I use it in my language?**
+Vietnamese is complete; 11 more languages ship as machine-translated starting points. You can also drop your own `.mo` into `wp-content/languages/plugins/`.
+
+**Where do I report a bug or request a feature?**
+Open a GitHub [issue](https://github.com/tranduythuan/Horse-Tools/issues).
+
 ## Contributing
 
 Issues and pull requests are welcome — bug reports, translation fixes and feature ideas. Please open an [issue](https://github.com/tranduythuan/Horse-Tools/issues) to discuss larger changes first.

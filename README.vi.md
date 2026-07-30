@@ -63,6 +63,35 @@ Horse Tools **không** gửi bất kỳ dữ liệu nào về site của bạn c
 - Ghi chú tính năng đầy đủ và toàn bộ nhật ký thay đổi nằm trong [`readme.txt`](readme.txt) (định dạng WordPress.org).
 - Tải bản phát hành và xem ghi chú: [Releases](https://github.com/tranduythuan/Horse-Tools/releases).
 
+## Câu hỏi thường gặp (FAQ)
+
+**Có miễn phí không?**
+Có — miễn phí và mã nguồn mở theo giấy phép GPLv2.
+
+**Tôi đang dùng Foxtool thì sao?**
+Tắt Foxtool và kích hoạt Horse Tools; nó tự nhập cài đặt của Foxtool trong lần kích hoạt đầu. Đừng bật cả hai cùng lúc.
+
+**Có làm chậm web không?**
+Không. CSS/JS của mỗi tính năng chỉ tải trên trang có dùng, và không thêm gì ở giao diện người dùng cho tính năng bạn chưa bật.
+
+**Plugin có gửi dữ liệu đi đâu không?**
+Không — xem mục [Riêng tư](#riêng-tư). Chỉ kết nối tới dịch vụ mà bạn tự cấu hình bằng thông tin của mình.
+
+**Cập nhật thế nào?**
+Tải file ZIP mới ở [Releases](https://github.com/tranduythuan/Horse-Tools/releases), tải lên qua **Plugins → Cài mới → Tải plugin lên**, rồi chọn **“Thay thế bản hiện tại bằng bản tải lên”**. Cài đặt của bạn được giữ nguyên.
+
+**Không thấy Popup (hoặc tính năng khác) ở đâu?**
+Phần lớn module là tùy chọn. Hãy bật chúng ở trang **Tính năng mở rộng (Extend)** trước; trang cài đặt của tính năng đó sẽ xuất hiện trong menu.
+
+**Làm sao hiện popup khuyến mãi?**
+Bật module **Notify** ở trang Extend, rồi vào **Notify → Popup**: bật lên và chọn bố cục, hiệu ứng xuất hiện, vị trí và kiểu kích hoạt.
+
+**Dùng được tiếng của tôi không?**
+Tiếng Việt hoàn chỉnh; 11 ngôn ngữ khác là bản dịch máy làm điểm khởi đầu. Bạn cũng có thể bỏ file `.mo` của mình vào `wp-content/languages/plugins/`.
+
+**Báo lỗi hoặc góp ý tính năng ở đâu?**
+Mở một [issue](https://github.com/tranduythuan/Horse-Tools/issues) trên GitHub.
+
 ## Đóng góp
 
 Rất hoan nghênh issue và pull request — báo lỗi, sửa bản dịch, ý tưởng tính năng. Với thay đổi lớn, vui lòng mở [issue](https://github.com/tranduythuan/Horse-Tools/issues) để trao đổi trước.
