@@ -5452,3 +5452,6 @@ msgstr "Rõ dần (từ mờ sang nét)"
 
 msgid "Wiggle now and then to catch the eye"
 msgstr "Thỉnh thoảng lắc nhẹ để gây chú ý"
+
+msgid "Write your block just like a post: type text and use the toolbar to insert links, images and formatting. Need raw HTML/CSS/JS? Switch to the “Text” tab. Placeholders like {{url}} still work in both."
+msgstr "Soạn khối nội dung như khi viết bài: gõ chữ và dùng thanh công cụ để chèn link, ảnh và định dạng. Cần dán HTML/CSS/JS thô? Chuyển sang tab “Văn bản”. Các placeholder như {{url}} vẫn hoạt động ở cả hai."

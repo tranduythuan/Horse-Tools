@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.2.6
+ * Version: 1.2.7
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.2.6' );
+define( 'HORSETOOLS_VERSION', '1.2.7' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
@@ -73,7 +73,7 @@ add_action( 'admin_enqueue_scripts', 'horsetools_customize_enqueue' );
 function horsetools_enqueue_media_uploader() {
 	$page = horsetools_current_admin_page();
 
-	if ( function_exists( 'wp_enqueue_media' ) && in_array( $page, array( 'horsetools-options', 'horsetools-notify-options' ), true ) ) {
+	if ( function_exists( 'wp_enqueue_media' ) && in_array( $page, array( 'horsetools-options', 'horsetools-notify-options', 'horsetools-shortcode-options' ), true ) ) {
 		wp_enqueue_media();
 		wp_enqueue_editor();
 	}
@@ -92,26 +92,6 @@ function horsetools_enqueue_media_uploader() {
 	if ( 'horsetools-font-options' === $page ) {
 		wp_enqueue_script( 'select2-horsetools', HORSETOOLS_URL . 'link/select2.js', array( 'jquery' ), '4.1.0', true );
 		wp_enqueue_style( 'select2-horsetools', HORSETOOLS_URL . 'link/select2.css', array(), '4.1.0' );
-	}
-
-	// Syntax-highlighting editor for the snippet content box. Uses WordPress's
-	// own bundled CodeMirror (no external library). Returns false if the user
-	// turned syntax highlighting off in their profile — the box then stays a
-	// plain textarea, which is fine. Settings are handed to the page script via
-	// a global so its inline initialiser can pick them up on window load.
-	if ( 'horsetools-shortcode-options' === $page && function_exists( 'wp_enqueue_code_editor' ) ) {
-		$ht_cm = wp_enqueue_code_editor( array(
-			'type'       => 'text/html',
-			'codemirror' => array(
-				'lineNumbers' => true,
-				'lineWrapping' => true,
-				'indentUnit'  => 2,
-				'tabSize'     => 2,
-			),
-		) );
-		if ( false !== $ht_cm ) {
-			wp_add_inline_script( 'code-editor', 'window.htSnipCM = ' . wp_json_encode( $ht_cm ) . ';', 'after' );
-		}
 	}
 }
 add_action( 'admin_enqueue_scripts', 'horsetools_enqueue_media_uploader' );

@@ -327,6 +327,8 @@ $vi = array(
         => 'Tùy chọn nâng cao — thiết bị, khách, lịch hiện, thẻ (không bắt buộc)',
     'Search snippets by name, description or tag…' => 'Tìm snippet theo tên, mô tả hoặc thẻ…',
     'No snippet matches your search.' => 'Không có snippet nào khớp tìm kiếm.',
+    'Write your block just like a post: type text and use the toolbar to insert links, images and formatting. Need raw HTML/CSS/JS? Switch to the “Text” tab. Placeholders like {{url}} still work in both.'
+        => 'Soạn khối nội dung như khi viết bài: gõ chữ và dùng thanh công cụ để chèn link, ảnh và định dạng. Cần dán HTML/CSS/JS thô? Chuyển sang tab “Văn bản”. Các placeholder như {{url}} vẫn hoạt động ở cả hai.',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

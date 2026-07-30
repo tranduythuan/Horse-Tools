@@ -314,7 +314,20 @@ function horsetools_shortcode_options_page() {
 				<p><input type="text" id="ht-snip-name" class="ht-input-big" placeholder="<?php esc_attr_e( 'Name — letters, numbers, dashes (e.g. call-to-action)', 'horse-tools' ); ?>" /></p>
 				<p><input type="text" id="ht-snip-title" class="ht-input-big" placeholder="<?php esc_attr_e( 'Display name (shown in the list)', 'horse-tools' ); ?>" /></p>
 				<p><input type="text" id="ht-snip-desc" class="ht-input-big" placeholder="<?php esc_attr_e( 'Description (for your reference)', 'horse-tools' ); ?>" /></p>
-				<p><textarea id="ht-snip-content" class="ht-code-textarea" style="height:170px" placeholder="<?php esc_attr_e( 'HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>', 'horse-tools' ); ?>"></textarea></p>
+				<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'Write your block just like a post: type text and use the toolbar to insert links, images and formatting. Need raw HTML/CSS/JS? Switch to the “Text” tab. Placeholders like {{url}} still work in both.', 'horse-tools' ); ?></span></div>
+				<div class="ht-snip-editor">
+				<?php
+				wp_editor( '', 'htsnippetbody', array(
+					'media_buttons' => true,
+					'textarea_rows' => 9,
+					'teeny'         => false,
+					'quicktags'     => true,
+					'tinymce'       => array(
+						'toolbar1' => 'formatselect,bold,italic,bullist,numlist,link,unlink,alignleft,aligncenter,alignright,forecolor,removeformat,undo,redo',
+					),
+				) );
+				?>
+				</div>
 
 				<details class="ht-snip-adv">
 					<summary><i class="ti ti-adjustments"></i> <?php _e( 'Advanced options — device, visitors, schedule, tags (optional)', 'horse-tools' ); ?></summary>
@@ -402,8 +415,8 @@ function horsetools_shortcode_options_page() {
 			.ht-snip-search-l{flex:1;min-width:200px}
 			.ht-snip-filter #ht-snip-search{flex:1;padding:7px 10px;border:1px solid #ddd;border-radius:7px;font-size:13px;min-width:160px}
 			.ht-snip-countlbl{color:#999;font-size:12px;margin-left:auto}
-			.ht-snip .CodeMirror{border:1px solid #ddd;border-radius:8px;height:220px;font-size:13px}
-			.ht-snip .CodeMirror-focused{border-color:#e0a800;box-shadow:0 0 0 1px #f0d98a}
+			.ht-snip-editor{margin:4px 0 6px}
+			.ht-snip-editor .wp-editor-wrap{border-radius:8px}
 			#ht-snip-list{margin-top:6px}
 			.ht-snip-row{display:flex;align-items:center;gap:10px;padding:9px 10px;border:1px solid #ececec;border-radius:9px;margin-bottom:7px;background:#fff;flex-wrap:wrap}
 			.ht-snip-row.off{opacity:.55}
@@ -429,19 +442,23 @@ function horsetools_shortcode_options_page() {
 				root.dataset.ready = '1';
 				var AJAX = root.dataset.ajax, NONCE = root.dataset.nonce;
 				var $ = function(id){ return document.getElementById(id); };
-				var F = { name:$('ht-snip-name'), title:$('ht-snip-title'), desc:$('ht-snip-desc'), content:$('ht-snip-content'),
+				var F = { name:$('ht-snip-name'), title:$('ht-snip-title'), desc:$('ht-snip-desc'), content:$('htsnippetbody'),
 					on:$('ht-snip-on'), noadmin:$('ht-snip-noadmin'), device:$('ht-snip-device'), login:$('ht-snip-login'),
 					role:$('ht-snip-role'), tags:$('ht-snip-tags'), from:$('ht-snip-from'), to:$('ht-snip-to') };
 				var msg=$('ht-snip-msg'), list=$('ht-snip-list'), tagFilter=$('ht-snip-tagfilter');
 					var search=$('ht-snip-search'), countlbl=$('ht-snip-countlbl');
 					var adv=document.querySelector('.ht-snip-adv');
-					var cm=null;
-					function initCM(){
-						if (cm || !window.wp || !window.wp.codeEditor || !window.htSnipCM || !F.content) { return; }
-						try { cm = wp.codeEditor.initialize(F.content, window.htSnipCM).codemirror; } catch(e){ cm = null; }
-						if (cm){ cm.on('change', function(){ cm.save(); }); }
+					// The content box is the WordPress editor (wp_editor id "htsnippetbody").
+					// These helpers sync it with the JS-driven create/edit/clear flow,
+					// working in both the Visual (TinyMCE) and Text (plain) tabs.
+					function htEd(){ return window.tinymce ? window.tinymce.get('htsnippetbody') : null; }
+					function htSetEditor(html){
+						html = html || '';
+						if (F.content){ F.content.value = html; }
+						var ed = htEd();
+						if (ed){ ed.setContent(html); }
 					}
-					if (document.readyState === 'complete') { initCM(); } else { window.addEventListener('load', initCM); }
+					function htFlushEditor(){ if (window.tinymce){ window.tinymce.triggerSave(); } }
 				var I18N = {
 					saved: <?php echo wp_json_encode( __( 'Snippet saved.', 'horse-tools' ) ); ?>,
 					deleted: <?php echo wp_json_encode( __( 'Snippet deleted.', 'horse-tools' ) ); ?>,
@@ -527,7 +544,7 @@ function horsetools_shortcode_options_page() {
 					var c=e.target.closest('[data-copy]'), ed=e.target.closest('[data-edit]'), dl=e.target.closest('[data-del]');
 					if (c){ navigator.clipboard && navigator.clipboard.writeText(c.dataset.copy); c.textContent=I18N.copied; setTimeout(function(){ c.textContent=c.dataset.copy; },1000); return; }
 					if (ed){ var s=snippets.find(function(x){return x.slug===ed.dataset.edit;}); if(s){
-						F.name.value=s.slug; F.title.value=s.title||''; F.desc.value=s.desc||''; F.content.value=s.content||''; if(cm){ cm.setValue(s.content||''); }
+						F.name.value=s.slug; F.title.value=s.title||''; F.desc.value=s.desc||''; htSetEditor(s.content||'');
 						F.on.value=s.on?'1':'0'; F.noadmin.value=s.no_admin?'1':'0'; F.device.value=s.device||''; F.login.value=s.login||'';
 						F.role.value=s.role||''; F.tags.value=(s.tags||[]).join(', '); F.from.value=s.date_from||''; F.to.value=s.date_to||'';
 						if (adv && (s.device||s.login||s.role||s.no_admin||s.date_from||s.date_to||(s.tags&&s.tags.length)||!s.on)) { adv.open=true; }
@@ -536,7 +553,7 @@ function horsetools_shortcode_options_page() {
 				});
 
 				$('ht-snip-save').addEventListener('click', function(){
-					if (cm){ cm.save(); }
+					htFlushEditor();
 					post({action:'horsetools_snip_save', slug:F.name.value, title:F.title.value, desc:F.desc.value, content:F.content.value,
 						on:F.on.value, no_admin:F.noadmin.value, device:F.device.value, login:F.login.value, role:F.role.value,
 						tags:F.tags.value, date_from:F.from.value, date_to:F.to.value}, function(res){
@@ -546,7 +563,7 @@ function horsetools_shortcode_options_page() {
 				});
 				$('ht-snip-clear').addEventListener('click', function(){
 					F.name.value=F.title.value=F.desc.value=F.content.value=F.tags.value=F.from.value=F.to.value='';
-					if(cm){ cm.setValue(''); }
+					htSetEditor('');
 					F.on.value='1'; F.noadmin.value='0'; F.device.value=''; F.login.value=''; F.role.value=''; say(msg,''); F.name.focus();
 				});
 				$('ht-snip-import').addEventListener('click', function(){
