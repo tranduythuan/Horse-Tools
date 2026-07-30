@@ -108,65 +108,54 @@ function horsetools_popup_assets(){
 	wp_enqueue_style( 'horsepopup', HORSETOOLS_URL . 'link/notify/horsepopup.css', array(), HORSETOOLS_VERSION);
 }
 add_action('wp_enqueue_scripts', 'horsetools_popup_assets');
-function horsetools_popup_footer(){ 
+function horsetools_popup_footer(){
 	global $horsetools_notify_options;
-	$time = !empty($horsetools_notify_options['notify-popup-c1']) ? horsetools_css_number($horsetools_notify_options['notify-popup-c1']) : NULL;
-	$title1 = !empty($horsetools_notify_options['notify-popup12']) ? '<div class="ht-popupnew-tit">'. esc_html($horsetools_notify_options['notify-popup12']) .'</div>' : NULL;
-	$title2 = !empty($horsetools_notify_options['notify-popup12']) ? esc_attr($horsetools_notify_options['notify-popup12']) : __('Hello', 'horse-tools');
-	$images = !empty($horsetools_notify_options['notify-popup11']) ? '<img alt="'. esc_attr($title2) .'" src="'. esc_url($horsetools_notify_options['notify-popup11']) .'" />' : NULL;
-	$content = !empty($horsetools_notify_options['notify-popup13']) ? do_shortcode(wp_kses_post($horsetools_notify_options['notify-popup13'])) : NULL;
-	$link1 = !empty($horsetools_notify_options['notify-popup14']) ? '<a title="'. esc_attr($title2) .'" href="'. esc_url($horsetools_notify_options['notify-popup14']) .'">'. $images .'</a>' : $images;
-	
-	$borderr = !empty($horsetools_notify_options['notify-popup-m1']) ? horsetools_css_number($horsetools_notify_options['notify-popup-m1']) .'px' : '0px';
-	$maxwidth = !empty($horsetools_notify_options['notify-popup-m2']) ? '.ht-modal{max-width:'. horsetools_css_number($horsetools_notify_options['notify-popup-m2']) .'px;}' : NULL;
-	// skin 2
-	if (!empty($horsetools_notify_options['notify-popup-c2']) && $horsetools_notify_options['notify-popup-c2'] == '2'){ ?>
-	<div id="htpopupex" class="ht-modal ht-modal-skin2">
-		<div class="ht-popupnew-content">
-			<?php echo $title1; ?>
-			<div class="ht-popupnew-img"><?php echo $link1; ?></div>
-			<div class="ht-popupnew-tex"><?php echo $content; ?></div>
+	$o = $horsetools_notify_options;
+	$time    = !empty($o['notify-popup-c1']) ? (int) horsetools_css_number($o['notify-popup-c1']) : 0;
+	$skin    = !empty($o['notify-popup-c2']) ? preg_replace('/[^1-4]/', '', (string) $o['notify-popup-c2']) : '1';
+	if ('' === $skin) { $skin = '1'; }
+	$anim    = !empty($o['notify-popup-anim']) ? preg_replace('/[^a-z-]/', '', $o['notify-popup-anim']) : 'fade';
+	$pos     = !empty($o['notify-popup-pos'])  ? preg_replace('/[^a-z-]/', '', $o['notify-popup-pos'])  : 'center';
+	$trig    = !empty($o['notify-popup-trig']) ? preg_replace('/[^a-z]/', '', $o['notify-popup-trig']) : 'load';
+	$trigval = isset($o['notify-popup-trigval']) ? (int) $o['notify-popup-trigval'] : 0;
+	$attn    = !empty($o['notify-popup-attn']) ? '1' : '0';
+
+	$title1  = !empty($o['notify-popup12']) ? '<div class="ht-popupnew-tit">'. esc_html($o['notify-popup12']) .'</div>' : '';
+	$title2  = !empty($o['notify-popup12']) ? esc_attr($o['notify-popup12']) : esc_attr__('Hello', 'horse-tools');
+	$images  = !empty($o['notify-popup11']) ? '<img alt="'. $title2 .'" src="'. esc_url($o['notify-popup11']) .'" />' : '';
+	$content = !empty($o['notify-popup13']) ? do_shortcode(wp_kses_post($o['notify-popup13'])) : '';
+	$link1   = !empty($o['notify-popup14']) ? '<a title="'. $title2 .'" href="'. esc_url($o['notify-popup14']) .'">'. $images .'</a>' : $images;
+
+	$borderr  = !empty($o['notify-popup-m1']) ? horsetools_css_number($o['notify-popup-m1']) .'px' : '0px';
+	$maxwidth = !empty($o['notify-popup-m2']) ? (int) horsetools_css_number($o['notify-popup-m2']) : 800;
+
+	// Skin-specific inner body (the original 4 layouts).
+	if ('2' === $skin) {
+		$body = '<div class="ht-popupnew-content">'. $title1 .'<div class="ht-popupnew-img">'. $link1 .'</div><div class="ht-popupnew-tex">'. $content .'</div></div>';
+	} elseif ('4' === $skin) {
+		$body = '<div class="ht-popupnew-img">'. $link1 .'</div>';
+	} else { // skins 1 and 3 share the image+content structure; CSS lays them out differently
+		$body = '<div class="ht-popupnew"><div class="ht-popupnew-img">'. $link1 .'</div><div class="ht-popupnew-content">'. $title1 .'<div class="ht-popupnew-tex">'. $content .'</div></div></div>';
+	}
+
+	if ('1' === $skin) {
+		$img_radius = '.ht-modal-skin1 .ht-popupnew-img img{border-radius:'. $borderr .' 0px 0px '. $borderr .';}@media(max-width:700px){.ht-modal-skin1 .ht-popupnew-img img{border-radius:'. $borderr .' '. $borderr .' 0px 0px;}}';
+	} elseif ('2' === $skin) {
+		$img_radius = '.ht-modal-skin2 .ht-popupnew-img img{border-radius:calc('. $borderr .' - 2px);}';
+	} elseif ('3' === $skin) {
+		$img_radius = '.ht-modal-skin3 .ht-popupnew-img img{border-radius:'. $borderr .' '. $borderr .' 0px 0px;}';
+	} else {
+		$img_radius = '.ht-modal-skin4 .ht-popupnew-img img{border-radius:'. $borderr .';}';
+	}
+	?>
+	<div id="ht-popup-root" class="ht-popup-root ht-pop-<?php echo esc_attr($pos); ?> ht-pop-anim-<?php echo esc_attr($anim); ?>" data-time="<?php echo esc_attr($time); ?>" data-trig="<?php echo esc_attr($trig); ?>" data-trigval="<?php echo esc_attr($trigval); ?>" data-attn="<?php echo esc_attr($attn); ?>" style="display:none">
+		<div class="ht-popup-backdrop" data-ht-popup-close></div>
+		<div id="htpopupex" class="ht-modal ht-modal-skin<?php echo esc_attr($skin); ?>">
+			<button type="button" class="ht-popup-x" data-ht-popup-close aria-label="<?php esc_attr_e('Close', 'horse-tools'); ?>">&times;</button>
+			<?php echo $body; // phpcs:ignore WordPress.Security.EscapeOutput -- assembled from esc_* helpers + wp_kses_post content above ?>
 		</div>
 	</div>
-	<style><?php echo $maxwidth; ?>.ht-modal{border-radius:<?php echo $borderr; ?>;}.ht-modal-skin2 .ht-popupnew-img img{border-radius:calc(<?php echo $borderr ?> - 2px);}</style>
-	
-	<?php 
-	// skin 3
-	} else if (!empty($horsetools_notify_options['notify-popup-c2']) && $horsetools_notify_options['notify-popup-c2'] == '3'){ ?>
-	<div id="htpopupex" class="ht-modal ht-modal-skin3">
-		<div class="ht-popupnew">
-			<div class="ht-popupnew-img"><?php echo $link1; ?></div>
-			<div class="ht-popupnew-content">
-				<?php echo $title1; ?>
-				<div class="ht-popupnew-tex"><?php echo $content; ?></div>
-			</div>
-		</div>
-	</div>
-	<style><?php echo $maxwidth; ?>.ht-modal{border-radius:<?php echo $borderr; ?>;}.ht-modal-skin3 .ht-popupnew-img img{border-radius: <?php echo $borderr .' '. $borderr .' 0px 0px'; ?>;}</style>
-	<?php
-	// skin 4
-	} else if (!empty($horsetools_notify_options['notify-popup-c2']) && $horsetools_notify_options['notify-popup-c2'] == '4'){ ?>
-	<div id="htpopupex" class="ht-modal ht-modal-skin4">
-		<div class="ht-popupnew-img"><?php echo $link1; ?></div>
-	</div>
-	<style><?php echo $maxwidth; ?>.ht-modal-skin4 .ht-popupnew-img img{border-radius: <?php echo $borderr; ?>;}</style>
-	
-	<?php
-	// skin 1
-	} else { ?>
-	<div id="htpopupex" class="ht-modal ht-modal-skin1">
-		<div class="ht-popupnew">
-			<div class="ht-popupnew-img"><?php echo $link1; ?></div>
-			<div class="ht-popupnew-content">
-				<?php echo $title1; ?>
-				<div class="ht-popupnew-tex"><?php echo $content; ?></div>
-			</div>
-		</div>
-	</div>
-	<style><?php echo $maxwidth; ?>.ht-modal{border-radius:<?php echo $borderr; ?>;}.ht-modal-skin1 .ht-popupnew-img img{border-radius:<?php echo $borderr .' 0px 0px '. $borderr; ?>;} @media(max-width:700px){.ht-modal-skin1 .ht-popupnew-img img{border-radius: <?php echo $borderr .' '. $borderr .' 0px 0px'; ?>;}}</style>
-	
-	<?php } ?>
-	<span id="popup-timer" data-time="<?php echo esc_attr($time); ?>"></span>
+	<style>.ht-popup-root .ht-modal{max-width:<?php echo (int) $maxwidth; ?>px;border-radius:<?php echo $borderr; ?>;}<?php echo $img_radius; // phpcs:ignore WordPress.Security.EscapeOutput -- numeric/px CSS built above ?></style>
 	<?php
 }
 add_action('wp_footer', 'horsetools_popup_footer');

@@ -34,6 +34,7 @@ function horsetools_notify_options_page() {
 			<h2><?php _e('BLOCKER', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="ti ti-shield-half"></i> <?php _e('Browser ad-block notification', 'horse-tools') ?></h3>
+				<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'Spots visitors who have an ad-blocker turned on and shows them a message asking to switch it off. To use: turn on the switch, type a title and message, then pick the button colours below.', 'horse-tools' ); ?></span></div>
 				<?php horsetools_toggle( 'notify-block1', __( 'Enable ad-block detection', 'horse-tools' ), array(
 					'module'  => 'notify',
 					'tab'     => 'BLOCKER',
@@ -66,6 +67,7 @@ function horsetools_notify_options_page() {
 			<h2><?php _e('NOTIFY', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="ti ti-bell"></i> <?php _e('Notification at the top of the page', 'horse-tools') ?></h3>
+				<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'Shows a thin notice bar across the very top of every page — handy for a promotion, a hotline, or a delivery note. To use: turn on the switch, type your message, then choose the background colour.', 'horse-tools' ); ?></span></div>
 				<?php horsetools_toggle( 'notify-notis1', __( 'Enable notification', 'horse-tools' ), array(
 					'module'  => 'notify',
 					'tab'     => 'NOTIFY',
@@ -86,6 +88,7 @@ function horsetools_notify_options_page() {
 			<h2><?php _e('POPUP', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="ti ti-app-window"></i> <?php _e('Create an outstanding popup', 'horse-tools') ?></h3>
+				<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'Shows an eye-catching popup in the middle of the screen when someone opens your site — great for a sale, an announcement or a poster. To use: turn on the switch, pick a layout below, add an image / title / content, then set how many hours before it shows again.', 'horse-tools' ); ?></span></div>
 				<?php horsetools_toggle( 'notify-popup1', __( 'Enable popup', 'horse-tools' ), array(
 					'module'  => 'notify',
 					'tab'     => 'POPUP',
@@ -95,6 +98,55 @@ function horsetools_notify_options_page() {
 				<input class="ht-input-small" name="horsetools_notify_settings[notify-popup-c1]" type="number" value="<?php if(!empty($horsetools_notify_options['notify-popup-c1'])){echo sanitize_text_field($horsetools_notify_options['notify-popup-c1']);} ?>"/>
 				<label class="ht-label-right"><?php _e('Popup save time (.. hours)', 'horse-tools'); ?></label>
 				</p>
+				<?php
+				$ht_pop_anim = !empty($horsetools_notify_options['notify-popup-anim']) ? $horsetools_notify_options['notify-popup-anim'] : 'fade';
+				$ht_pop_pos  = !empty($horsetools_notify_options['notify-popup-pos'])  ? $horsetools_notify_options['notify-popup-pos']  : 'center';
+				$ht_pop_trig = !empty($horsetools_notify_options['notify-popup-trig']) ? $horsetools_notify_options['notify-popup-trig'] : 'load';
+				$ht_pop_anims = array(
+					'fade' => __('Fade in', 'horse-tools'),
+					'zoom' => __('Zoom in', 'horse-tools'),
+					'zoom-out' => __('Zoom out', 'horse-tools'),
+					'pop' => __('Pop', 'horse-tools'),
+					'slide-up' => __('Slide up', 'horse-tools'),
+					'slide-down' => __('Slide down', 'horse-tools'),
+					'slide-left' => __('Slide in from right', 'horse-tools'),
+					'slide-right' => __('Slide in from left', 'horse-tools'),
+					'bounce' => __('Bounce', 'horse-tools'),
+					'swing' => __('Swing', 'horse-tools'),
+					'rotate' => __('Rotate in', 'horse-tools'),
+					'flip' => __('Flip', 'horse-tools'),
+					'blur' => __('Sharpen (blur to clear)', 'horse-tools'),
+				);
+				$ht_pop_poss  = array( 'center' => __('Centre of screen', 'horse-tools'), 'toast-br' => __('Corner — bottom right', 'horse-tools'), 'toast-bl' => __('Corner — bottom left', 'horse-tools'), 'bar-bottom' => __('Bar across the bottom', 'horse-tools') );
+				$ht_pop_trigs = array( 'load' => __('As soon as the page opens', 'horse-tools'), 'delay' => __('After a few seconds', 'horse-tools'), 'scroll' => __('After scrolling down', 'horse-tools'), 'exit' => __('When about to leave the page', 'horse-tools') );
+				?>
+				<p>
+				<select name="horsetools_notify_settings[notify-popup-anim]">
+				<?php foreach ($ht_pop_anims as $k => $v) { echo '<option value="'. esc_attr($k) .'"'. selected($ht_pop_anim, $k, false) .'>'. esc_html($v) .'</option>'; } ?>
+				</select>
+				<label class="ht-right-text"><?php _e('Entrance effect', 'horse-tools'); ?></label>
+				</p>
+				<p>
+				<select name="horsetools_notify_settings[notify-popup-pos]">
+				<?php foreach ($ht_pop_poss as $k => $v) { echo '<option value="'. esc_attr($k) .'"'. selected($ht_pop_pos, $k, false) .'>'. esc_html($v) .'</option>'; } ?>
+				</select>
+				<label class="ht-right-text"><?php _e('Where it appears', 'horse-tools'); ?></label>
+				</p>
+				<p>
+				<select name="horsetools_notify_settings[notify-popup-trig]">
+				<?php foreach ($ht_pop_trigs as $k => $v) { echo '<option value="'. esc_attr($k) .'"'. selected($ht_pop_trig, $k, false) .'>'. esc_html($v) .'</option>'; } ?>
+				</select>
+				<label class="ht-right-text"><?php _e('When it appears', 'horse-tools'); ?></label>
+				</p>
+				<p>
+				<input class="ht-input-small" name="horsetools_notify_settings[notify-popup-trigval]" type="number" min="0" value="<?php if(isset($horsetools_notify_options['notify-popup-trigval'])){echo (int) $horsetools_notify_options['notify-popup-trigval'];} ?>"/>
+				<label class="ht-label-right"><?php _e('Seconds to wait, or scroll percent (used by the two options above)', 'horse-tools'); ?></label>
+				</p>
+				<?php horsetools_toggle( 'notify-popup-attn', __( 'Wiggle now and then to catch the eye', 'horse-tools' ), array(
+					'module'  => 'notify',
+					'tab'     => 'POPUP',
+					'section' => 'Create an outstanding popup',
+				) ); ?>
 				<div id="ht-imgstyle" class="ht-imgstyle ht-imgstyle4">
 					<img src="<?php echo esc_url(HORSETOOLS_URL .'img/popup/1.png'); ?>" data-value="1" class="<?php if(isset($horsetools_notify_options['notify-popup-c2']) && $horsetools_notify_options['notify-popup-c2'] == '1') echo 'selected'; ?>" />
 					<img src="<?php echo esc_url(HORSETOOLS_URL .'img/popup/2.png'); ?>" data-value="2" class="<?php if(isset($horsetools_notify_options['notify-popup-c2']) && $horsetools_notify_options['notify-popup-c2'] == '2') echo 'selected'; ?>" />
@@ -162,6 +214,7 @@ function horsetools_notify_options_page() {
 			<h2><?php _e('COOKIE', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="ti ti-cookie"></i> <?php _e('Set up cookie notifications', 'horse-tools') ?></h3>
+				<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'Shows a small cookie notice in the corner so your site meets privacy rules. To use: turn on the switch, type the notice and your policy-page link, then choose which side it appears on.', 'horse-tools' ); ?></span></div>
 				<?php horsetools_toggle( 'notify-cookie1', __( 'Enable cookie', 'horse-tools' ), array(
 					'module'  => 'notify',
 					'tab'     => 'COOKIE',

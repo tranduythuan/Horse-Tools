@@ -273,6 +273,60 @@ $vi = array(
         => 'Chưa có chuyển hướng tự động nào. Đổi một URL đã đăng và nó sẽ xuất hiện ở đây.',
     'When you change a published post or page URL — its slug, its parent, or the whole path — the old address is redirected to the new one. WordPress already does this for a simple slug change; this also covers moves that core misses, and only ever acts on a URL that would otherwise 404.'
         => 'Khi bạn đổi URL của bài viết hoặc trang đã đăng — slug, chuyên mục cha, hay toàn bộ đường dẫn — địa chỉ cũ sẽ được chuyển hướng sang địa chỉ mới. WordPress đã làm điều này cho việc đổi slug đơn giản; tính năng này bắt thêm các trường hợp core bỏ sót, và chỉ tác động lên URL vốn sẽ trả về 404.',
+    // Notify page "how to use" intros (1.2.x)
+    'Spots visitors who have an ad-blocker turned on and shows them a message asking to switch it off. To use: turn on the switch, type a title and message, then pick the button colours below.'
+        => 'Phát hiện khách đang bật trình chặn quảng cáo và hiện thông báo mời họ tắt đi. Cách dùng: bật công tắc, nhập tiêu đề và nội dung, rồi chọn màu nút bên dưới.',
+    'Shows a thin notice bar across the very top of every page — handy for a promotion, a hotline, or a delivery note. To use: turn on the switch, type your message, then choose the background colour.'
+        => 'Hiện một thanh thông báo mảnh chạy ngang trên cùng của mọi trang — tiện để báo khuyến mãi, hotline hay lịch giao hàng. Cách dùng: bật công tắc, nhập nội dung, rồi chọn màu nền.',
+    'Shows an eye-catching popup in the middle of the screen when someone opens your site — great for a sale, an announcement or a poster. To use: turn on the switch, pick a layout below, add an image / title / content, then set how many hours before it shows again.'
+        => 'Hiện một cửa sổ nổi bật giữa màn hình khi khách mở web — rất hợp để chạy khuyến mãi, thông báo hay treo poster. Cách dùng: bật công tắc, chọn kiểu bên dưới, thêm ảnh / tiêu đề / nội dung, rồi đặt số giờ trước khi nó hiện lại.',
+    'Shows a small cookie notice in the corner so your site meets privacy rules. To use: turn on the switch, type the notice and your policy-page link, then choose which side it appears on.'
+        => 'Hiện một thông báo cookie nhỏ ở góc màn hình để site tuân thủ quy định về quyền riêng tư. Cách dùng: bật công tắc, nhập nội dung và link trang chính sách, rồi chọn hiển thị ở góc nào.',
+    // Popup upgrade (effect / position / trigger)
+    'Entrance effect' => 'Hiệu ứng xuất hiện',
+    'Where it appears' => 'Hiển thị ở đâu',
+    'When it appears' => 'Khi nào hiện',
+    'Seconds to wait, or scroll percent (used by the two options above)'
+        => 'Số giây chờ, hoặc phần trăm cuộn (dùng cho hai lựa chọn trên)',
+    'Fade in' => 'Mờ dần',
+    'Zoom in' => 'Phóng to dần',
+    'Slide up' => 'Trượt lên',
+    'Bounce' => 'Nảy lên',
+    'Centre of screen' => 'Giữa màn hình',
+    'Corner — bottom right' => 'Góc dưới bên phải',
+    'Corner — bottom left' => 'Góc dưới bên trái',
+    'Bar across the bottom' => 'Thanh ngang dưới đáy',
+    'As soon as the page opens' => 'Ngay khi mở trang',
+    'After a few seconds' => 'Sau vài giây',
+    'After scrolling down' => 'Sau khi cuộn xuống',
+    'When about to leave the page' => 'Khi khách sắp rời trang',
+    // More popup entrance effects + attention wiggle
+    'Zoom out' => 'Thu nhỏ dần',
+    'Pop' => 'Bật ra',
+    'Slide down' => 'Trượt xuống',
+    'Slide in from right' => 'Trượt vào từ phải',
+    'Slide in from left' => 'Trượt vào từ trái',
+    'Swing' => 'Đung đưa',
+    'Rotate in' => 'Xoay vào',
+    'Flip' => 'Lật',
+    'Sharpen (blur to clear)' => 'Rõ dần (từ mờ sang nét)',
+    'Wiggle now and then to catch the eye' => 'Thỉnh thoảng lắc nhẹ để gây chú ý',
+    // Icon picker (Chat tab)
+    'Choose an icon' => 'Chọn icon',
+    'Choose icon' => 'Chọn icon',
+    'Load more icons' => 'Tải thêm icon',
+    'Search: cart, gift, phone… (English name, or Vietnamese for popular icons)'
+        => 'Tìm: cart, gift, phone… (tên tiếng Anh, hoặc tiếng Việt cho icon thông dụng)',
+    'Click an icon to drop it into the selected field. Search by its English name (cart, gift, phone…), or Vietnamese for popular icons. Over 5,000 in total — use “Load more” to see them all.'
+        => 'Bấm một icon để chèn vào ô đang chọn. Tìm bằng tên tiếng Anh (cart, gift, phone…), hoặc tiếng Việt cho các icon thông dụng. Tổng cộng hơn 5.000 icon — bấm “Tải thêm” để xem hết.',
+    'No icon matches that.' => 'Không tìm thấy icon phù hợp.',
+    'Loading icons…' => 'Đang tải icon…',
+    'Could not load the icon list.' => 'Không tải được danh sách icon.',
+    // Snippet manager (Shortcode tab)
+    'Advanced options — device, visitors, schedule, tags (optional)'
+        => 'Tùy chọn nâng cao — thiết bị, khách, lịch hiện, thẻ (không bắt buộc)',
+    'Search snippets by name, description or tag…' => 'Tìm snippet theo tên, mô tả hoặc thẻ…',
+    'No snippet matches your search.' => 'Không có snippet nào khớp tìm kiếm.',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

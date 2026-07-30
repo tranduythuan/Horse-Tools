@@ -27,6 +27,15 @@ function horsetools_health_report() {
 	$ex = (array) get_option( 'horsetools_extend_settings', array() );
 
 	$sec  = admin_url( 'admin.php?page=horsetools-options' );
+	// A fix link that jumps straight to the relevant control (opens its tab and
+	// scrolls to the exact field) instead of just reloading the page. The
+	// htadmin.js sidebar handler picks up the #ht-jump=<field-id> fragment.
+	$jump = function ( $key, $raw_id = '' ) use ( $sec ) {
+		$id = '' !== $raw_id
+			? $raw_id
+			: ( function_exists( 'horsetools_field_id' ) ? horsetools_field_id( 'main', $key ) : '' );
+		return '' !== $id ? $sec . '#ht-jump=' . $id : $sec;
+	};
 	$checks = array();
 
 	/**
@@ -64,27 +73,27 @@ function horsetools_health_report() {
 	$add(
 		'login', $sec_cat, __( 'Login attempts are rate-limited', 'horse-tools' ),
 		( $sec_on && $on( $o, 'scuri-login1' ) ) ? 'pass' : 'fail', 3,
-		$sec, __( 'Security tab → Limit login attempts', 'horse-tools' )
+		$jump( 'scuri-login1' ), __( 'Security tab → Limit login attempts', 'horse-tools' )
 	);
 	$add(
 		'fileedit', $sec_cat, __( 'The theme/plugin file editor is disabled', 'horse-tools' ),
 		( $sec_on && $on( $o, 'scuri-fileedit1' ) ) || ( defined( 'DISALLOW_FILE_EDIT' ) && DISALLOW_FILE_EDIT ) ? 'pass' : 'warn', 2,
-		$sec, __( 'Security tab → Lock down the admin', 'horse-tools' )
+		$jump( 'scuri-fileedit1' ), __( 'Security tab → Lock down the admin', 'horse-tools' )
 	);
 	$add(
 		'enum', $sec_cat, __( 'User enumeration is blocked', 'horse-tools' ),
 		( $sec_on && $on( $o, 'scuri-enum1' ) ) ? 'pass' : 'warn', 2,
-		$sec, __( 'Security tab → Block user enumeration', 'horse-tools' )
+		$jump( 'scuri-enum1' ), __( 'Security tab → Block user enumeration', 'horse-tools' )
 	);
 	$add(
 		'xmlrpc', $sec_cat, __( 'XML-RPC is disabled', 'horse-tools' ),
 		( $sec_on && $on( $o, 'scuri-off2' ) ) ? 'pass' : 'warn', 1,
-		$sec, __( 'Security tab → Disable unused endpoints', 'horse-tools' )
+		$jump( 'scuri-off2' ), __( 'Security tab → Disable unused endpoints', 'horse-tools' )
 	);
 	$add(
 		'headers', $sec_cat, __( 'Security response headers are sent', 'horse-tools' ),
 		( $sec_on && $on( $o, 'scuri-head1' ) ) ? 'pass' : 'warn', 2,
-		$sec, __( 'Security tab → Security response headers', 'horse-tools' )
+		$jump( 'scuri-head1' ), __( 'Security tab → Security response headers', 'horse-tools' )
 	);
 
 	// ---- Privacy --------------------------------------------------------
@@ -101,23 +110,23 @@ function horsetools_health_report() {
 		$gstatus = $covered ? 'pass' : 'fail';
 		$gfix    = $covered ? '' : __( 'Security tab → Privacy → self-host Google Fonts', 'horse-tools' );
 	}
-	$add( 'gfonts', $priv_cat, __( 'No Google Fonts leaking to Google', 'horse-tools' ), $gstatus, 2, $sec, $gfix );
+	$add( 'gfonts', $priv_cat, __( 'No Google Fonts leaking to Google', 'horse-tools' ), $gstatus, 2, $jump( 'scuri-gfont1' ), $gfix );
 
 	// ---- Performance ----------------------------------------------------
 	$add(
 		'speed', $perf_cat, __( 'The optimisation module is on', 'horse-tools' ),
 		$on( $o, 'speed' ) ? 'pass' : 'warn', 2,
-		$sec, __( 'Optimize tab', 'horse-tools' )
+		$jump( 'speed', 'check1' ), __( 'Optimize tab', 'horse-tools' )
 	);
 	$add(
 		'lazy', $perf_cat, __( 'Images are lazy-loaded', 'horse-tools' ),
 		( $on( $o, 'speed' ) && $on( $o, 'speed-lazy1' ) ) ? 'pass' : 'warn', 1,
-		$sec, __( 'Optimize tab → image lazy loading', 'horse-tools' )
+		$jump( 'speed-lazy1' ), __( 'Optimize tab → image lazy loading', 'horse-tools' )
 	);
 	$add(
 		'media', $perf_cat, __( 'Uploaded images are compressed', 'horse-tools' ),
 		( $on( $o, 'media' ) && $on( $o, 'media-zip1' ) ) ? 'pass' : 'warn', 1,
-		$sec, __( 'Media tab → JPG compression', 'horse-tools' )
+		$jump( 'media-zip1' ), __( 'Media tab → JPG compression', 'horse-tools' )
 	);
 
 	// ---- Environment ----------------------------------------------------

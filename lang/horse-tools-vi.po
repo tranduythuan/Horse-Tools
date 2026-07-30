@@ -5338,3 +5338,117 @@ msgstr "Giờ mở – đóng"
 
 msgid "We are currently closed"
 msgstr "Hiện đang đóng cửa"
+
+msgid "Spots visitors who have an ad-blocker turned on and shows them a message asking to switch it off. To use: turn on the switch, type a title and message, then pick the button colours below."
+msgstr "Phát hiện khách đang bật trình chặn quảng cáo và hiện thông báo mời họ tắt đi. Cách dùng: bật công tắc, nhập tiêu đề và nội dung, rồi chọn màu nút bên dưới."
+
+msgid "Shows a thin notice bar across the very top of every page — handy for a promotion, a hotline, or a delivery note. To use: turn on the switch, type your message, then choose the background colour."
+msgstr "Hiện một thanh thông báo mảnh chạy ngang trên cùng của mọi trang — tiện để báo khuyến mãi, hotline hay lịch giao hàng. Cách dùng: bật công tắc, nhập nội dung, rồi chọn màu nền."
+
+msgid "Shows an eye-catching popup in the middle of the screen when someone opens your site — great for a sale, an announcement or a poster. To use: turn on the switch, pick a layout below, add an image / title / content, then set how many hours before it shows again."
+msgstr "Hiện một cửa sổ nổi bật giữa màn hình khi khách mở web — rất hợp để chạy khuyến mãi, thông báo hay treo poster. Cách dùng: bật công tắc, chọn kiểu bên dưới, thêm ảnh / tiêu đề / nội dung, rồi đặt số giờ trước khi nó hiện lại."
+
+msgid "Shows a small cookie notice in the corner so your site meets privacy rules. To use: turn on the switch, type the notice and your policy-page link, then choose which side it appears on."
+msgstr "Hiện một thông báo cookie nhỏ ở góc màn hình để site tuân thủ quy định về quyền riêng tư. Cách dùng: bật công tắc, nhập nội dung và link trang chính sách, rồi chọn hiển thị ở góc nào."
+
+msgid "Entrance effect"
+msgstr "Hiệu ứng xuất hiện"
+
+msgid "Where it appears"
+msgstr "Hiển thị ở đâu"
+
+msgid "When it appears"
+msgstr "Khi nào hiện"
+
+msgid "Seconds to wait, or scroll percent (used by the two options above)"
+msgstr "Số giây chờ, hoặc phần trăm cuộn (dùng cho hai lựa chọn trên)"
+
+msgid "Fade in"
+msgstr "Mờ dần"
+
+msgid "Zoom in"
+msgstr "Phóng to dần"
+
+msgid "Slide up"
+msgstr "Trượt lên"
+
+msgid "Bounce"
+msgstr "Nảy lên"
+
+msgid "Centre of screen"
+msgstr "Giữa màn hình"
+
+msgid "Corner — bottom right"
+msgstr "Góc dưới bên phải"
+
+msgid "Corner — bottom left"
+msgstr "Góc dưới bên trái"
+
+msgid "Bar across the bottom"
+msgstr "Thanh ngang dưới đáy"
+
+msgid "As soon as the page opens"
+msgstr "Ngay khi mở trang"
+
+msgid "After a few seconds"
+msgstr "Sau vài giây"
+
+msgid "After scrolling down"
+msgstr "Sau khi cuộn xuống"
+
+msgid "When about to leave the page"
+msgstr "Khi khách sắp rời trang"
+
+msgid "Choose an icon"
+msgstr "Chọn icon"
+
+msgid "Choose icon"
+msgstr "Chọn icon"
+
+msgid "Load more icons"
+msgstr "Tải thêm icon"
+
+msgid "Search: cart, gift, phone… (English name, or Vietnamese for popular icons)"
+msgstr "Tìm: cart, gift, phone… (tên tiếng Anh, hoặc tiếng Việt cho icon thông dụng)"
+
+msgid "Click an icon to drop it into the selected field. Search by its English name (cart, gift, phone…), or Vietnamese for popular icons. Over 5,000 in total — use “Load more” to see them all."
+msgstr "Bấm một icon để chèn vào ô đang chọn. Tìm bằng tên tiếng Anh (cart, gift, phone…), hoặc tiếng Việt cho các icon thông dụng. Tổng cộng hơn 5.000 icon — bấm “Tải thêm” để xem hết."
+
+msgid "Advanced options — device, visitors, schedule, tags (optional)"
+msgstr "Tùy chọn nâng cao — thiết bị, khách, lịch hiện, thẻ (không bắt buộc)"
+
+msgid "Search snippets by name, description or tag…"
+msgstr "Tìm snippet theo tên, mô tả hoặc thẻ…"
+
+msgid "No snippet matches your search."
+msgstr "Không có snippet nào khớp tìm kiếm."
+
+msgid "Zoom out"
+msgstr "Thu nhỏ dần"
+
+msgid "Pop"
+msgstr "Bật ra"
+
+msgid "Slide down"
+msgstr "Trượt xuống"
+
+msgid "Slide in from right"
+msgstr "Trượt vào từ phải"
+
+msgid "Slide in from left"
+msgstr "Trượt vào từ trái"
+
+msgid "Swing"
+msgstr "Đung đưa"
+
+msgid "Rotate in"
+msgstr "Xoay vào"
+
+msgid "Flip"
+msgstr "Lật"
+
+msgid "Sharpen (blur to clear)"
+msgstr "Rõ dần (từ mờ sang nét)"
+
+msgid "Wiggle now and then to catch the eye"
+msgstr "Thỉnh thoảng lắc nhẹ để gây chú ý"

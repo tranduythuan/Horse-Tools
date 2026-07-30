@@ -322,9 +322,27 @@ sliders.forEach(function (slider) {
 		});
 	}
 
+	function jumpFromHash() {
+		var m = /#ht-jump=([^&]+)/.exec(location.hash || '');
+		if (m) { jumpTo(decodeURIComponent(m[1])); }
+	}
+	// Health-card "fix" links (and any link carrying #ht-jump=<field-id>) open
+	// the right tab and scroll to the exact control, instead of just reloading
+	// the page to its default tab.
+	document.addEventListener('click', function (e) {
+		var a = e.target.closest('a[href*="#ht-jump="]');
+		if (!a) { return; }
+		var m = /#ht-jump=([^&]+)/.exec(a.getAttribute('href') || '');
+		if (!m) { return; }
+		var id = decodeURIComponent(m[1]);
+		if (document.getElementById(id)) { e.preventDefault(); jumpTo(id); }
+	});
+	window.addEventListener('hashchange', jumpFromHash);
+
 	document.addEventListener('DOMContentLoaded', function () {
 		syncDependents();
 		initSidebar();
 		initDirtyBar(document.querySelector('.ht-wrap form[action$="options.php"]'));
+		jumpFromHash();
 	});
 })();

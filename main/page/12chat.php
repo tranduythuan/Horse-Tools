@@ -706,10 +706,10 @@ global $horsetools_options; ?>
 		<div class="ht-icon-backdrop"></div>
 		<div class="ht-icon-dialog">
 			<div class="ht-icon-head"><b><?php _e('Choose an icon', 'horse-tools'); ?></b><span id="ht-icon-count" class="ht-icon-count"></span><span class="ht-icon-close" title="close">&#x2715;</span></div>
-			<input type="text" class="ht-icon-search" placeholder="<?php esc_attr_e('Search: phone, chat, cart, star… (Vietnamese works too)', 'horse-tools'); ?>">
+			<input type="text" class="ht-icon-search" placeholder="<?php esc_attr_e('Search: cart, gift, phone… (English name, or Vietnamese for popular icons)', 'horse-tools'); ?>">
 			<div class="ht-icon-grid" id="ht-icon-grid"></div>
 			<div class="ht-icon-more" id="ht-icon-more" style="display:none"><button type="button" class="ht-icon-morebtn" id="ht-icon-morebtn"><i class="ti ti-chevron-down"></i> <?php _e('Load more icons', 'horse-tools'); ?></button></div>
-			<div class="ht-icon-hint"><i class="ti ti-bulb"></i> <?php _e('Click an icon to drop it into the selected field. Over 5,000 icons — type to filter, or “Load more” to see them all.', 'horse-tools'); ?></div>
+			<div class="ht-icon-hint"><i class="ti ti-bulb"></i> <?php _e('Click an icon to drop it into the selected field. Search by its English name (cart, gift, phone…), or Vietnamese for popular icons. Over 5,000 in total — use “Load more” to see them all.', 'horse-tools'); ?></div>
 		</div>
 	</div>
 	<style>

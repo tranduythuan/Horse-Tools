@@ -176,3 +176,61 @@
 	width: 100%;
 }
 
+
+/* ============ Popup: positions, entrance effects, custom close =========== */
+.ht-popup-root{
+	position:fixed; inset:0; z-index:2147483000;
+	display:flex; box-sizing:border-box;
+	opacity:0; transition:opacity .3s ease;
+}
+.ht-popup-root.show{opacity:1}
+.ht-popup-backdrop{position:absolute; inset:0; background:rgba(0,0,0,.5)}
+.ht-popup-root .ht-modal{display:block; position:relative; z-index:2; margin:0}
+.ht-popup-x{
+	position:absolute; top:8px; right:10px; z-index:5;
+	width:28px; height:28px; padding:0; border:none; border-radius:50%;
+	background:rgba(0,0,0,.38); color:#fff; font-size:20px; line-height:1;
+	cursor:pointer; display:flex; align-items:center; justify-content:center;
+}
+.ht-popup-x:hover{background:rgba(0,0,0,.62)}
+
+/* --- display positions --- */
+.ht-pop-center{align-items:center; justify-content:center; padding:20px}
+.ht-pop-toast-br,.ht-pop-toast-bl,.ht-pop-bar-bottom{background:none; pointer-events:none}
+.ht-pop-toast-br .ht-popup-backdrop,.ht-pop-toast-bl .ht-popup-backdrop,.ht-pop-bar-bottom .ht-popup-backdrop{display:none}
+.ht-pop-toast-br{align-items:flex-end; justify-content:flex-end}
+.ht-pop-toast-bl{align-items:flex-end; justify-content:flex-start}
+.ht-pop-toast-br .ht-modal,.ht-pop-toast-bl .ht-modal{max-width:360px !important; margin:20px; pointer-events:auto; box-shadow:0 8px 30px rgba(0,0,0,.22)}
+.ht-pop-bar-bottom{align-items:flex-end; justify-content:center}
+.ht-pop-bar-bottom .ht-modal{width:100% !important; max-width:100% !important; margin:0; pointer-events:auto; border-radius:0 !important}
+
+/* --- entrance effects (modal animates in when .show is added) --- */
+.ht-popup-root .ht-modal{opacity:0; transition:opacity .35s ease, transform .4s cubic-bezier(.2,.8,.25,1), filter .35s ease}
+.ht-popup-root.show .ht-modal{opacity:1; transform:none; filter:none}
+.ht-pop-anim-fade .ht-modal{transform:none}
+.ht-pop-anim-zoom .ht-modal{transform:scale(.86)}
+.ht-pop-anim-zoom-out .ht-modal{transform:scale(1.16)}
+.ht-pop-anim-slide-up .ht-modal{transform:translateY(46px)}
+.ht-pop-anim-slide-down .ht-modal{transform:translateY(-46px)}
+.ht-pop-anim-slide-left .ht-modal{transform:translateX(64px)}
+.ht-pop-anim-slide-right .ht-modal{transform:translateX(-64px)}
+.ht-pop-anim-rotate .ht-modal{transform:rotate(-6deg) scale(.9)}
+.ht-pop-anim-flip .ht-modal{transform:perspective(900px) rotateX(-34deg); transform-origin:top center}
+.ht-pop-anim-blur .ht-modal{filter:blur(14px); transform:scale(1.04)}
+.ht-pop-anim-bounce .ht-modal{transform:translateY(46px)}
+.ht-pop-anim-bounce.show .ht-modal{animation:htPopBounce .6s cubic-bezier(.26,1.36,.44,1)}
+.ht-pop-anim-swing.show .ht-modal{animation:htPopSwing .75s ease}
+.ht-pop-anim-pop.show .ht-modal{animation:htPopPop .5s cubic-bezier(.26,1.5,.44,1)}
+@keyframes htPopBounce{0%{transform:translateY(46px);opacity:0}55%{transform:translateY(-10px);opacity:1}100%{transform:translateY(0)}}
+@keyframes htPopSwing{0%{transform:rotate(-9deg) translateY(22px);opacity:0}50%{transform:rotate(6deg);opacity:1}70%{transform:rotate(-4deg)}85%{transform:rotate(2deg)}100%{transform:rotate(0)}}
+@keyframes htPopPop{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.06);opacity:1}100%{transform:scale(1)}}
+/* optional attention wiggle after it appears (adds .ht-attn) */
+.ht-popup-root.ht-attn .ht-modal{animation:htPopShake .6s ease}
+@keyframes htPopShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+
+@media (max-width:700px){
+	.ht-pop-toast-br .ht-modal,.ht-pop-toast-bl .ht-modal{max-width:none !important; margin:12px; width:calc(100% - 24px)}
+}
+@media (prefers-reduced-motion: reduce){
+	.ht-popup-root .ht-modal{transition:opacity .2s ease; transform:none !important; filter:none !important; animation:none !important}
+}
