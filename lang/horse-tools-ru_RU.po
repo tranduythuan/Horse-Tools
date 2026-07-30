@@ -1,0 +1,3484 @@
+# Horse Tools translation (ru_RU) — machine-generated, review recommended.
+msgid ""
+msgstr ""
+"Project-Id-Version: Horse Tools\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Domain: horse-tools\n"
+
+msgid "\"Comments containing links\" matches links in the comment body only. The figure shown is the total comment count, not a match count, so confirm carefully."
+msgstr "«Комментарии со ссылками» ищет ссылки только в теле комментария. Показанное число — это общее количество комментариев, а не число совпадений, поэтому подтверждайте внимательно."
+
+msgid "\"Enter link\" left blank if you want to call the chat list"
+msgstr "Оставьте «Введите ссылку» пустым, если хотите вызвать список чатов"
+
+msgid "#id or .class"
+msgstr "#id or .class"
+
+msgid "%d enabled"
+msgstr "%d включено"
+
+msgid "%d post(s) contain [sc] tags. Click “Convert now” to rewrite them."
+msgstr "%d записей содержат теги [sc]. Нажмите «Преобразовать сейчас», чтобы переписать их."
+
+msgid "(duplicate)"
+msgstr "(дубликат)"
+
+msgid "(no title)"
+msgstr "(без названия)"
+
+msgid "301"
+msgstr "301"
+
+msgid "4 customizable buttons"
+msgstr "4 настраиваемые кнопки"
+
+msgid "404"
+msgstr "404"
+
+msgid "404 log"
+msgstr "Журнал 404"
+
+msgid "404 redirects"
+msgstr "Перенаправления 404"
+
+msgid "503"
+msgstr "503"
+
+msgid "8-bit PNG images are not supported by the GD library, and this format already has perfect compression and does not need further processing"
+msgstr "8-битные изображения PNG не поддерживаются библиотекой GD, и этот формат уже имеет идеальное сжатие и не нуждается в дальнейшей обработке"
+
+msgid "A login was locked out on your site"
+msgstr "На вашем сайте был заблокирован вход"
+
+msgid "A wrong CSP silently breaks scripts, styles and images. Test with browser dev tools before relying on it."
+msgstr "Неверный CSP незаметно ломает скрипты, стили и изображения. Проверьте его в инструментах разработчика браузера, прежде чем полагаться на него."
+
+msgid "ABOUT"
+msgstr "О ПРОГРАММЕ"
+
+msgid "ADD FONT"
+msgstr "ДОБАВИТЬ ШРИФТ"
+
+msgid "ADS.TXT"
+msgstr "ADS.TXT"
+
+msgid "ADSENSE"
+msgstr "ADSENSE"
+
+msgid "API Token"
+msgstr "Токен API"
+
+msgid "About"
+msgstr "О программе"
+
+msgid "Accepted Font Format : woff2, ttf, otf, off | Font Size: Upto 25 MB"
+msgstr "Допустимые форматы шрифтов: woff2, ttf, otf, off | Размер шрифта: до 25 MB"
+
+msgid "Access Font Awesome to find icons"
+msgstr "Откройте Font Awesome, чтобы найти иконки"
+
+msgid "Account"
+msgstr "Аккаунт"
+
+msgid "Actions"
+msgstr "Действия"
+
+msgid "Ad-blocker detection"
+msgstr "Обнаружение блокировщика рекламы"
+
+msgid "Add .html for page"
+msgstr "Добавить .html к странице"
+
+msgid "Add CSS for mobile size"
+msgstr "Добавить CSS для мобильного размера"
+
+msgid "Add CSS for tablet size"
+msgstr "Добавить CSS для размера планшета"
+
+msgid "Add CSS to your website"
+msgstr "Добавить CSS на ваш сайт"
+
+msgid "Add Classic Editor button"
+msgstr "Добавить кнопку классического редактора"
+
+msgid "Add Google API"
+msgstr "Добавить Google API"
+
+msgid "Add Google json code"
+msgstr "Добавить код Google json"
+
+msgid "Add a label so screen readers announce it."
+msgstr "Добавьте метку, чтобы программы чтения с экрана её озвучивали."
+
+msgid "Add ads at the bottom of the article"
+msgstr "Добавить рекламу внизу статьи"
+
+msgid "Add ads to custom post placement"
+msgstr "Добавить рекламу в произвольное размещение записи"
+
+msgid "Add ads to the top of the article"
+msgstr "Добавить рекламу вверху статьи"
+
+msgid "Add an attribution line when visitors copy text"
+msgstr "Добавлять строку авторства, когда посетители копируют текст"
+
+msgid "Add avatar upload functionality"
+msgstr "Добавить функцию загрузки аватара"
+
+msgid "Add background image link"
+msgstr "Добавить ссылку на фоновое изображение"
+
+msgid "Add code"
+msgstr "Добавить код"
+
+msgid "Add code to WP body"
+msgstr "Добавить код в WP body"
+
+msgid "Add code to WP footer"
+msgstr "Добавить код в WP footer"
+
+msgid "Add code to WP head"
+msgstr "Добавить код в WP head"
+
+msgid "Add code to WP login"
+msgstr "Добавить код в WP login"
+
+msgid "Add default featured image"
+msgstr "Добавить изображение записи по умолчанию"
+
+msgid "Add duplicate button"
+msgstr "Добавить кнопку дублирования"
+
+msgid "Add field"
+msgstr "Добавить поле"
+
+msgid "Add font Awesome to the website"
+msgstr "Добавить Font Awesome на сайт"
+
+msgid "Add fonts"
+msgstr "Добавить шрифты"
+
+msgid "Add fonts to your website with just a few simple steps. Additionally, it allows you to quickly set fonts in the specific areas you want to change, offering great convenience"
+msgstr "Добавляйте шрифты на ваш сайт всего в несколько простых шагов. Кроме того, это позволяет быстро задавать шрифты в конкретных областях, которые вы хотите изменить, что очень удобно"
+
+msgid "Add hardening headers to front-end responses. Each one below is optional."
+msgstr "Добавляйте заголовки безопасности в ответы для внешней части сайта. Каждый из перечисленных ниже необязателен."
+
+msgid "Add images"
+msgstr "Добавить изображения"
+
+msgid "Add json"
+msgstr "Добавить json"
+
+msgid "Add link"
+msgstr "Добавить ссылку"
+
+msgid "Add logo link"
+msgstr "Добавить ссылку на логотип"
+
+msgid "Add nofollow and _blank for external links"
+msgstr "Добавить nofollow и _blank для внешних ссылок"
+
+msgid "Add picture frame link here"
+msgstr "Добавьте здесь ссылку на рамку изображения"
+
+msgid "Add service"
+msgstr "Добавить услугу"
+
+msgid "Add the image logo link here"
+msgstr "Добавьте здесь ссылку на изображение логотипа"
+
+msgid "Add the logo image link here"
+msgstr "Добавьте здесь ссылку на изображение логотипа"
+
+msgid "Add watermark to images upon upload"
+msgstr "Добавлять водяной знак к изображениям при загрузке"
+
+msgid "Added"
+msgstr "Добавлено"
+
+msgid "Additional feature"
+msgstr "Дополнительная функция"
+
+msgid "Ads"
+msgstr "Реклама"
+
+msgid "Advanced configuration"
+msgstr "Расширенная настройка"
+
+msgid "Advanced image viewing feature in posts"
+msgstr "Расширенная функция просмотра изображений в записях"
+
+msgid "Advanced photo upload"
+msgstr "Расширенная загрузка фотографий"
+
+msgid "Advanced settings"
+msgstr "Расширенные настройки"
+
+msgid "After too many failed logins from the same address, block further attempts for a while. This is the real defence against password guessing."
+msgstr "После слишком большого числа неудачных попыток входа с одного адреса блокировать дальнейшие попытки на некоторое время. Это реальная защита от подбора пароля."
+
+msgid "Agree"
+msgstr "Согласен"
+
+msgid "All devices"
+msgstr "Все устройства"
+
+msgid "All links on your website will redirect to the maintenance page, and only logged-in admin accounts can view the content"
+msgstr "Все ссылки на вашем сайте будут перенаправлять на страницу технического обслуживания, и только вошедшие администраторы смогут просматривать содержимое"
+
+msgid "All safe security headers (frame, nosniff, referrer, permissions)"
+msgstr "Все безопасные заголовки безопасности (frame, nosniff, referrer, permissions)"
+
+msgid "All snippets"
+msgstr "Все сниппеты"
+
+msgid "Allow avatar upload"
+msgstr "Разрешить загрузку аватара"
+
+msgid "Allow displaying member IDs on the profile management page"
+msgstr "Разрешить отображение ID участников на странице управления профилем"
+
+msgid "Allow uploading AVIF image format"
+msgstr "Разрешить загрузку изображений в формате AVIF"
+
+msgid "Allow uploading JFIF files"
+msgstr "Разрешить загрузку файлов JFIF"
+
+msgid "Allow uploading SVG files"
+msgstr "Разрешить загрузку файлов SVG"
+
+msgid "Allow using Shortcode in post titles"
+msgstr "Разрешить использование шорткодов в заголовках записей"
+
+msgid "Allows uploading AVIF photos"
+msgstr "Позволяет загружать фотографии AVIF"
+
+msgid "Already declared"
+msgstr "Уже объявлено"
+
+msgid "An error occurred"
+msgstr "Произошла ошибка"
+
+msgid "Any"
+msgstr "Любой"
+
+msgid "App password"
+msgstr "Пароль приложения"
+
+msgid "Applied the \"%s\" preset. Recommended settings are on — you can undo this below."
+msgstr "Применён пресет «%s». Рекомендуемые настройки включены — вы можете отменить это ниже."
+
+msgid "Apply import"
+msgstr "Применить импорт"
+
+msgid "Apply this preset"
+msgstr "Применить этот пресет"
+
+msgid "Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it."
+msgstr "Применение перезаписывает эти группы импортированными значениями. Сохраняется резервная копия в один клик, чтобы вы могли отменить это."
+
+msgid "Ask your host to update PHP to 8.1 or newer."
+msgstr "Попросите вашего хостинг-провайдера обновить PHP до версии 8.1 или новее."
+
+msgid "Attempts before lockout"
+msgstr "Попыток до блокировки"
+
+msgid "Attribution line"
+msgstr "Строка авторства"
+
+msgid "Authenticate outgoing mail"
+msgstr "Аутентифицировать исходящую почту"
+
+msgid "Author and maintainer:"
+msgstr "Автор и сопровождающий:"
+
+msgid "Auto (sheet on phone, modal on desktop)"
+msgstr "Авто (шторка на телефоне, модальное окно на компьютере)"
+
+msgid "Automatic cleanup"
+msgstr "Автоматическая очистка"
+
+msgid "Automatic initialization after <span id=\"sogiay\" style=\"padding: 5px;\">3</span>s"
+msgstr "Автоматическая инициализация через <span id=\"sogiay\" style=\"padding: 5px;\">3</span> с"
+
+msgid "Automatic name"
+msgstr "Автоматическое имя"
+
+msgid "Automatic redirects"
+msgstr "Автоматические перенаправления"
+
+msgid "Automatic updates"
+msgstr "Автоматические обновления"
+
+msgid "Automatically add a frame when uploading an image"
+msgstr "Автоматически добавлять рамку при загрузке изображения"
+
+msgid "Automatically open popup when scrolling down"
+msgstr "Автоматически открывать всплывающее окно при прокрутке вниз"
+
+msgid "Avatar image URL (Avatar / Live-chat skin)"
+msgstr "URL изображения аватара (скин Avatar / Live-chat)"
+
+msgid "Away — leave a message"
+msgstr "Не в сети — оставьте сообщение"
+
+msgid "BACKUP"
+msgstr "РЕЗЕРВНАЯ КОПИЯ"
+
+msgid "BLOCKER"
+msgstr "БЛОКИРОВЩИК"
+
+msgid "BROWSE FILE"
+msgstr "ВЫБРАТЬ ФАЙЛ"
+
+msgid "Background"
+msgstr "Фон"
+
+msgid "Background color"
+msgstr "Цвет фона"
+
+msgid "Background color of the input form"
+msgstr "Цвет фона формы ввода"
+
+msgid "Background title"
+msgstr "Заголовок фона"
+
+msgid "Backup"
+msgstr "Резервная копия"
+
+msgid "Badge text (optional)"
+msgstr "Текст значка (необязательно)"
+
+msgid "Bar background color"
+msgstr "Цвет фона панели"
+
+msgid "Bar color"
+msgstr "Цвет панели"
+
+msgid "Bar size"
+msgstr "Размер панели"
+
+msgid "Bento (1 big + cells)"
+msgstr "Бенто (1 большая + ячейки)"
+
+msgid "Block login spam with Google reCAPTCHA"
+msgstr "Блокировать спам при входе с помощью Google reCAPTCHA"
+
+msgid "Block user enumeration"
+msgstr "Блокировать перечисление пользователей"
+
+msgid "Block user enumeration (?author=N, users REST, oEmbed)"
+msgstr "Блокировать перечисление пользователей (?author=N, users REST, oEmbed)"
+
+msgid "Blocks ?author=N scans, removes the users REST endpoint for anonymous requests, strips the author from oEmbed, and makes login errors generic so they do not reveal whether the username or the password was wrong."
+msgstr "Блокирует сканирование ?author=N, удаляет конечную точку users REST для анонимных запросов, убирает автора из oEmbed и делает ошибки входа общими, чтобы они не раскрывали, что было неверным — имя пользователя или пароль."
+
+msgid "Blog / News site"
+msgstr "Блог / Новостной сайт"
+
+msgid "Blue"
+msgstr "Синий"
+
+msgid "Border color"
+msgstr "Цвет границы"
+
+msgid "Border distance"
+msgstr "Отступ границы"
+
+msgid "Border radius"
+msgstr "Радиус скругления границы"
+
+msgid "Border size"
+msgstr "Размер границы"
+
+msgid "Bottom sheet"
+msgstr "Нижняя шторка"
+
+msgid "Browser ad-block notification"
+msgstr "Уведомление о блокировщике рекламы в браузере"
+
+msgid "Build a rich list of services or articles that slides up when a visitor taps a bottom-bar item. To open it, set one bottom-bar item’s “#id or .class” field above to"
+msgstr "Создайте насыщенный список услуг или статей, который выдвигается вверх, когда посетитель нажимает элемент нижней панели. Чтобы открыть его, задайте в поле «#id or .class» одного из элементов нижней панели выше значение"
+
+msgid "Business hours (shows Online / Away on the Live-chat, Card and Avatar skins)"
+msgstr "Рабочие часы (показывает В сети / Не в сети на скинах Live-chat, Card и Avatar)"
+
+msgid "Button color"
+msgstr "Цвет кнопки"
+
+msgid "Button name"
+msgstr "Название кнопки"
+
+msgid "Button position"
+msgstr "Положение кнопки"
+
+msgid "Button text"
+msgstr "Текст кнопки"
+
+msgid "Button text color"
+msgstr "Цвет текста кнопки"
+
+msgid "Buyer"
+msgstr "Покупатель"
+
+msgid "CHAT"
+msgstr "ЧАТ"
+
+msgid "CHECK"
+msgstr "ПРОВЕРКА"
+
+msgid "CLICK"
+msgstr "КЛИК"
+
+msgid "COMMENT"
+msgstr "КОММЕНТАРИЙ"
+
+msgid "CONTENT"
+msgstr "СОДЕРЖИМОЕ"
+
+msgid "COOKIE"
+msgstr "COOKIE"
+
+msgid "CSS"
+msgstr "CSS"
+
+msgid "CUSTOM"
+msgstr "ПОЛЬЗОВАТЕЛЬСКОЕ"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Card grid"
+msgstr "Сетка карточек"
+
+msgid "Center-align button on page"
+msgstr "Выровнять кнопку по центру страницы"
+
+msgid "Centered modal"
+msgstr "Центрированное модальное окно"
+
+msgid "Change WordPress logo in the Admin bar"
+msgstr "Изменить логотип WordPress на панели администратора"
+
+msgid "Change display name and icon to your preference"
+msgstr "Измените отображаемое имя и иконку по вашему предпочтению"
+
+msgid "Change login link"
+msgstr "Изменить ссылку входа"
+
+msgid "Change save interval"
+msgstr "Изменить интервал сохранения"
+
+msgid "Change the Buy Now text on the single product page"
+msgstr "Изменить текст «Купить сейчас» на странице отдельного товара"
+
+msgid "Change the color of the search box to your preferences"
+msgstr "Измените цвет поля поиска по вашим предпочтениям"
+
+msgid "Changed"
+msgstr "Изменено"
+
+msgid "Chat ID"
+msgstr "ID чата"
+
+msgid "Chat background color"
+msgstr "Цвет фона чата"
+
+msgid "Chat text color"
+msgstr "Цвет текста чата"
+
+msgid "Choose a file"
+msgstr "Выберите файл"
+
+msgid "Choose a font for the"
+msgstr "Выберите шрифт для"
+
+msgid "Choose decorations for the website, such as Christmas or Lunar New Year (If any effects cause issues on your website, it may be due to javascript conflicts. You can switch to other effects to use)"
+msgstr "Выберите украшения для сайта, например Рождество или Лунный Новый год (Если какие-либо эффекты вызывают проблемы на вашем сайте, это может быть связано с конфликтами javascript. Вы можете переключиться на другие эффекты)"
+
+msgid "Choose display interface according to your preference"
+msgstr "Выберите интерфейс отображения по вашему предпочтению"
+
+msgid "Classic Editor"
+msgstr "Классический редактор"
+
+msgid "Classic editing"
+msgstr "Классическое редактирование"
+
+msgid "Clean"
+msgstr "Очистить"
+
+msgid "Cleaned the screen"
+msgstr "Экран очищен"
+
+msgid "Cleanup runs on WordPress cron, which only fires when your site receives traffic. Weekly and monthly are measured from the last run."
+msgstr "Очистка выполняется через WordPress cron, который срабатывает только при наличии трафика на вашем сайте. Еженедельная и ежемесячная отсчитываются от последнего запуска."
+
+msgid "Clear all"
+msgstr "Очистить всё"
+
+msgid "Clear all automatic redirects"
+msgstr "Очистить все автоматические перенаправления"
+
+msgid "Clear the whole log"
+msgstr "Очистить весь журнал"
+
+msgid "Click here"
+msgstr "Нажмите здесь"
+
+msgid "Client ID"
+msgstr "Client ID"
+
+msgid "Client Secret"
+msgstr "Client Secret"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Code orders"
+msgstr "Код заказов"
+
+msgid "Comment notification"
+msgstr "Уведомление о комментарии"
+
+msgid "Comments containing links"
+msgstr "Комментарии, содержащие ссылки"
+
+msgid "Compact icon tiles"
+msgstr "Компактные плитки иконок"
+
+msgid "Completed"
+msgstr "Завершено"
+
+msgid "Compress HTML into a single line"
+msgstr "Сжать HTML в одну строку"
+
+msgid "Compress JPG images upon upload"
+msgstr "Сжимать изображения JPG при загрузке"
+
+msgid "Compress JPGs and serve WebP"
+msgstr "Сжимать JPG и отдавать WebP"
+
+msgid "Compress uploaded JPGs"
+msgstr "Сжимать загруженные JPG"
+
+msgid "Compression level ("
+msgstr "Уровень сжатия ("
+
+msgid "Conditional & content"
+msgstr "Условия и содержимое"
+
+msgid "Configure Google index API"
+msgstr "Настроить Google index API"
+
+msgid "Configure SMTP mail"
+msgstr "Настроить почту SMTP"
+
+msgid "Configure adding a watermark to images upon upload"
+msgstr "Настройте добавление водяного знака к изображениям при загрузке"
+
+msgid "Configure buttons"
+msgstr "Настроить кнопки"
+
+msgid "Configure category permalink"
+msgstr "Настроить постоянную ссылку рубрики"
+
+msgid "Configure image upload function"
+msgstr "Настроить функцию загрузки изображений"
+
+msgid "Configure order notifications to be sent to Telegram"
+msgstr "Настройте отправку уведомлений о заказах в Telegram"
+
+msgid "Configure the options and create search data. If you want to refresh, you can delete the search data and recreate it. After enabling quick search and completing data creation, a quick search popup will appear when you enter the search box on the website"
+msgstr "Настройте параметры и создайте данные поиска. Если хотите обновить, вы можете удалить данные поиска и создать их заново. После включения быстрого поиска и завершения создания данных при клике в поле поиска на сайте появится всплывающее окно быстрого поиска"
+
+msgid "Confirm deletion"
+msgstr "Подтвердить удаление"
+
+msgid "Contact"
+msgstr "Контакт"
+
+msgid "Contact bar on mobile"
+msgstr "Панель контактов на мобильных устройствах"
+
+msgid "Contact us"
+msgstr "Свяжитесь с нами"
+
+msgid "Content"
+msgstr "Содержимое"
+
+msgid "Content to be hidden"
+msgstr "Содержимое для скрытия"
+
+msgid "Content-Security-Policy (advanced, leave blank if unsure)"
+msgstr "Content-Security-Policy (для опытных, оставьте пустым, если не уверены)"
+
+msgid "Continue"
+msgstr "Продолжить"
+
+msgid "Convert JPG and PNG images to AVIF upon upload, and compress the images according to the configuration you enter"
+msgstr "Преобразовывать изображения JPG и PNG в AVIF при загрузке и сжимать изображения в соответствии с введённой конфигурацией"
+
+msgid "Convert JPG and PNG images to WEBP upon upload, and compress the images according to the configuration you enter"
+msgstr "Преобразовывать изображения JPG и PNG в WEBP при загрузке и сжимать изображения в соответствии с введённой конфигурацией"
+
+msgid "Convert JPG and PNG to AVIF"
+msgstr "Преобразовать JPG и PNG в AVIF"
+
+msgid "Convert JPG and PNG to WEBP"
+msgstr "Преобразовать JPG и PNG в WEBP"
+
+msgid "Convert PNG images to JPG upon upload, and compress the images according to the JPG configuration"
+msgstr "Преобразовывать изображения PNG в JPG при загрузке и сжимать изображения в соответствии с конфигурацией JPG"
+
+msgid "Convert PNG to JPG"
+msgstr "Преобразовать PNG в JPG"
+
+msgid "Convert Shortcoder tags"
+msgstr "Преобразовать теги Shortcoder"
+
+msgid "Convert images to AVIF upon upload"
+msgstr "Преобразовывать изображения в AVIF при загрузке"
+
+msgid "Convert images to WEBP upon upload"
+msgstr "Преобразовывать изображения в WEBP при загрузке"
+
+msgid "Convert now"
+msgstr "Преобразовать сейчас"
+
+msgid "Convert path from domain.com/tag/news/ to domain.com/news/"
+msgstr "Преобразовать путь из domain.com/tag/news/ в domain.com/news/"
+
+msgid "Convert paths from (domain.com/category/news/latest-news, domain.com/category/news) to (domain.com/latest-news, domain.com/news)"
+msgstr "Преобразовать пути из (domain.com/category/news/latest-news, domain.com/category/news) в (domain.com/latest-news, domain.com/news)"
+
+msgid "Converted %d post(s)."
+msgstr "Преобразовано %d записей."
+
+msgid "Cookies"
+msgstr "Файлы cookie"
+
+msgid "Copied"
+msgstr "Скопировано"
+
+msgid "Copied: "
+msgstr "Скопировано: "
+
+msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
+msgstr "Скопируйте ссылку ниже, чтобы добавить её в список авторизованных URL перенаправления в вашем проекте Google Developers"
+
+msgid "Core, plugins and themes are up to date"
+msgstr "Ядро, плагины и темы обновлены"
+
+msgid "Corner card"
+msgstr "Угловая карточка"
+
+msgid "Could not create the fonts folder in uploads."
+msgstr "Не удалось создать папку fonts в uploads."
+
+msgid "Could not load the icon list."
+msgstr "Не удалось загрузить список иконок."
+
+msgid "Could not read the data."
+msgstr "Не удалось прочитать данные."
+
+msgid "Coupon codes"
+msgstr "Коды купонов"
+
+msgid "Create a 301 automatically when a post permalink changes"
+msgstr "Автоматически создавать 301 при изменении постоянной ссылки записи"
+
+msgid "Create a 301 redirect from this URL"
+msgstr "Создать перенаправление 301 с этого URL"
+
+msgid "Create a chat feature for users"
+msgstr "Создать функцию чата для пользователей"
+
+msgid "Create a named block of HTML/CSS/JS and drop it anywhere with [ht-snippet name=\"your-name\"]. Placeholders {{param}} or %%param%% are filled from the shortcode’s attributes, plus built-ins: currentyear, currentdate, postid, posttitle, sitename, siteurl."
+msgstr "Создайте именованный блок HTML/CSS/JS и вставьте его в любом месте с помощью [ht-snippet name=\"your-name\"]. Заполнители {{param}} или %%param%% заполняются из атрибутов шорткода, плюс встроенные: currentyear, currentdate, postid, posttitle, sitename, siteurl."
+
+msgid "Create an outstanding popup"
+msgstr "Создать выделяющееся всплывающее окно"
+
+msgid "Create custom post type data"
+msgstr "Создать данные произвольного типа записей"
+
+msgid "Create welcome email for registered users"
+msgstr "Создать приветственное письмо для зарегистрированных пользователей"
+
+msgid "Currently enabled"
+msgstr "Сейчас включено"
+
+msgid "Custom WordPress login page"
+msgstr "Пользовательская страница входа WordPress"
+
+msgid "Custom position in posts"
+msgstr "Произвольное положение в записях"
+
+msgid "Custom posts will be displayed"
+msgstr "Будут отображаться произвольные записи"
+
+msgid "Custom shortcodes (snippets)"
+msgstr "Пользовательские шорткоды (сниппеты)"
+
+msgid "Customer reviews"
+msgstr "Отзывы покупателей"
+
+msgid "Customize"
+msgstr "Настроить"
+
+msgid "Customize Currency Unit"
+msgstr "Настроить денежную единицу"
+
+msgid "Customize TOC display position"
+msgstr "Настроить положение отображения содержания"
+
+msgid "Customize background"
+msgstr "Настроить фон"
+
+msgid "Customize chat button"
+msgstr "Настроить кнопку чата"
+
+msgid "Customize dashboard widgets"
+msgstr "Настроить виджеты консоли"
+
+msgid "Customize display"
+msgstr "Настроить отображение"
+
+msgid "Customize display and colors"
+msgstr "Настроить отображение и цвета"
+
+msgid "Customize elements on the page"
+msgstr "Настроить элементы на странице"
+
+msgid "Customize icons and positions"
+msgstr "Настроить иконки и положения"
+
+msgid "Customize scroll bar"
+msgstr "Настроить полосу прокрутки"
+
+msgid "DATABASE"
+msgstr "БАЗА ДАННЫХ"
+
+msgid "DATE"
+msgstr "ДАТА"
+
+msgid "DEBUG"
+msgstr "ОТЛАДКА"
+
+msgid "DEL"
+msgstr "УДАЛ"
+
+msgid "DISPLAY"
+msgstr "ОТОБРАЖЕНИЕ"
+
+msgid "Daily"
+msgstr "Ежедневно"
+
+msgid "Dark"
+msgstr "Тёмная"
+
+msgid "Dark mode"
+msgstr "Тёмный режим"
+
+msgid "Data"
+msgstr "Данные"
+
+msgid "Data & media"
+msgstr "Данные и медиа"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Debug"
+msgstr "Отладка"
+
+msgid "Debug is not enabled"
+msgstr "Отладка не включена"
+
+msgid "Debug log file does not exist"
+msgstr "Файл журнала отладки не существует"
+
+msgid "Debug settings"
+msgstr "Настройки отладки"
+
+msgid "Declaration already deleted"
+msgstr "Объявление уже удалено"
+
+msgid "Decorative effects for the website"
+msgstr "Декоративные эффекты для сайта"
+
+msgid "Default style"
+msgstr "Стиль по умолчанию"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Delete all 404 images"
+msgstr "Удалить все изображения 404"
+
+msgid "Delete all 404 thumbnail images"
+msgstr "Удалить все миниатюры 404"
+
+msgid "Delete autosaves"
+msgstr "Удалить автосохранения"
+
+msgid "Delete comments"
+msgstr "Удалить комментарии"
+
+msgid "Delete cropped image"
+msgstr "Удалить обрезанное изображение"
+
+msgid "Delete data"
+msgstr "Удалить данные"
+
+msgid "Delete revisions"
+msgstr "Удалить редакции"
+
+msgid "Delete settings:"
+msgstr "Удалить настройки:"
+
+msgid "Delete this log entry"
+msgstr "Удалить эту запись журнала"
+
+msgid "Delete this snippet? Content that uses it will stop rendering."
+msgstr "Удалить этот сниппет? Содержимое, которое его использует, перестанет отображаться."
+
+msgid "Deleted"
+msgstr "Удалено"
+
+msgid "Deleted %1$s of %2$s scanned"
+msgstr "Удалено %1$s из %2$s просканированных"
+
+msgid "Deleted successfully"
+msgstr "Успешно удалено"
+
+msgid "Deleted: %s"
+msgstr "Удалено: %s"
+
+msgid "Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action."
+msgstr "Удаление комментариев по шаблону ссылки намеренно исключено из автоматической очистки — это остаётся ручным действием."
+
+msgid "Deleting is permanent. Revisions, autosaves and trashed content (posts, pages, products) are removed together with their metadata and attached files."
+msgstr "Удаление необратимо. Редакции, автосохранения и содержимое в корзине (записи, страницы, товары) удаляются вместе с их метаданными и прикреплёнными файлами."
+
+msgid "Deletion successful"
+msgstr "Удаление выполнено успешно"
+
+msgid "Demo"
+msgstr "Демо"
+
+msgid "Description (for your reference)"
+msgstr "Описание (для вашего сведения)"
+
+msgid "Desktop only"
+msgstr "Только на компьютере"
+
+msgid "Disable Classic CSS"
+msgstr "Отключить классический CSS"
+
+msgid "Disable Emoji"
+msgstr "Отключить эмодзи"
+
+msgid "Disable Gutenberg CSS"
+msgstr "Отключить CSS Gutenberg"
+
+msgid "Disable REST API for anonymous visitors"
+msgstr "Отключить REST API для анонимных посетителей"
+
+msgid "Disable WordPress info widget"
+msgstr "Отключить информационный виджет WordPress"
+
+msgid "Disable Wp-Embed"
+msgstr "Отключить Wp-Embed"
+
+msgid "Disable X-Pingback"
+msgstr "Отключить X-Pingback"
+
+msgid "Disable XML RPC"
+msgstr "Отключить XML RPC"
+
+msgid "Disable XML-RPC, X-Pingback, extra header tags and the version tag"
+msgstr "Отключить XML-RPC, X-Pingback, лишние теги заголовка и тег версии"
+
+msgid "Disable feeds (RSS/Atom)"
+msgstr "Отключить ленты (RSS/Atom)"
+
+msgid "Disable health widget"
+msgstr "Отключить виджет здоровья сайта"
+
+msgid "Disable jQuery Migrate"
+msgstr "Отключить jQuery Migrate"
+
+msgid "Disable logo display"
+msgstr "Отключить отображение логотипа"
+
+msgid "Disable numbers in front of tags"
+msgstr "Отключить числа перед тегами"
+
+msgid "Disable quick draft widget"
+msgstr "Отключить виджет быстрого черновика"
+
+msgid "Disable recent posts widget"
+msgstr "Отключить виджет недавних записей"
+
+msgid "Disable statistics widget"
+msgstr "Отключить виджет статистики"
+
+msgid "Disable the Admin Bar"
+msgstr "Отключить панель администратора"
+
+msgid "Disable the theme & plugin file editor"
+msgstr "Отключить редактор файлов тем и плагинов"
+
+msgid "Disable unnecessary items"
+msgstr "Отключить ненужные элементы"
+
+msgid "Disable unused endpoints"
+msgstr "Отключить неиспользуемые конечные точки"
+
+msgid "Disable unused widgets"
+msgstr "Отключить неиспользуемые виджеты"
+
+msgid "Disable welcome widget"
+msgstr "Отключить приветственный виджет"
+
+msgid "Disabled TOC"
+msgstr "Содержание отключено"
+
+msgid "Discard"
+msgstr "Отменить"
+
+msgid "Display ID in the management page"
+msgstr "Отображать ID на странице управления"
+
+msgid "Display language settings"
+msgstr "Настройки отображения языка"
+
+msgid "Display link when seconds expire"
+msgstr "Показывать ссылку по истечении секунд"
+
+msgid "Display name (shown in the list)"
+msgstr "Отображаемое имя (показывается в списке)"
+
+msgid "Display on the WooCommerce login form"
+msgstr "Отображать на форме входа WooCommerce"
+
+msgid "Display on the default login form"
+msgstr "Отображать на форме входа по умолчанию"
+
+msgid "Display options"
+msgstr "Параметры отображения"
+
+msgid "Display text color"
+msgstr "Цвет отображаемого текста"
+
+msgid "Display text if out of stock"
+msgstr "Отображать текст, если нет в наличии"
+
+msgid "Display text if the price is 0"
+msgstr "Отображать текст, если цена равна 0"
+
+msgid "Display type"
+msgstr "Тип отображения"
+
+msgid "Display your cookie notice to inform users about cookie use and allow them to manage their preferences easily"
+msgstr "Отображайте уведомление о cookie, чтобы информировать пользователей об использовании cookie и позволить им легко управлять своими настройками"
+
+msgid "Distance above"
+msgstr "Отступ сверху"
+
+msgid "Do not auto-install core updates"
+msgstr "Не устанавливать автоматически обновления ядра"
+
+msgid "Do not auto-install language pack updates"
+msgstr "Не устанавливать автоматически обновления языковых пакетов"
+
+msgid "Do not auto-install plugin updates"
+msgstr "Не устанавливать автоматически обновления плагинов"
+
+msgid "Do not auto-install theme updates"
+msgstr "Не устанавливать автоматически обновления тем"
+
+msgid "Do not enable if you are using optimization plugins with similar functionality (conflict)"
+msgstr "Не включайте, если вы используете плагины оптимизации с аналогичным функционалом (конфликт)"
+
+msgid "Do not select"
+msgstr "Не выбирать"
+
+msgid "Do you want to delete?"
+msgstr "Вы хотите удалить?"
+
+msgid "Does not exist"
+msgstr "Не существует"
+
+msgid "Download"
+msgstr "Скачать"
+
+msgid "Download & self-host Google Fonts"
+msgstr "Скачать и разместить Google Fonts у себя"
+
+msgid "Download .json"
+msgstr "Скачать .json"
+
+msgid "Download button GGET shortcode"
+msgstr "Шорткод кнопки скачивания GGET"
+
+msgid "Download link"
+msgstr "Ссылка для скачивания"
+
+msgid "Downloading fonts…"
+msgstr "Загрузка шрифтов…"
+
+msgid "Drop Emoji and jQuery Migrate"
+msgstr "Убрать эмодзи и jQuery Migrate"
+
+msgid "Duplicate"
+msgstr "Дублировать"
+
+msgid "Duplicate content"
+msgstr "Дублировать содержимое"
+
+msgid "Duplicate post, page, custom post type"
+msgstr "Дублировать запись, страницу, произвольный тип записи"
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "Editor classic"
+msgstr "Классический редактор"
+
+msgid "Effect"
+msgstr "Эффект"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Email me when an address is locked out"
+msgstr "Уведомлять меня по email, когда адрес заблокирован"
+
+msgid "Email notification when a post has a comment"
+msgstr "Уведомление по email, когда к записи оставлен комментарий"
+
+msgid "Email notification when there a reply"
+msgstr "Уведомление по email при получении ответа"
+
+msgid "Email sent successfully"
+msgstr "Письмо успешно отправлено"
+
+msgid "Email subject"
+msgstr "Тема письма"
+
+msgid "Empty"
+msgstr "Пусто"
+
+msgid "Empty trash"
+msgstr "Очистить корзину"
+
+msgid "Enable"
+msgstr "Включить"
+
+msgid "Enable .html for page"
+msgstr "Включить .html для страниц"
+
+msgid "Enable 301 redirection"
+msgstr "Включить перенаправление 301"
+
+msgid "Enable 404 redirection"
+msgstr "Включить перенаправление 404"
+
+msgid "Enable 503 maintenance mode"
+msgstr "Включить режим обслуживания 503"
+
+msgid "Enable AVIF image compression"
+msgstr "Включить сжатие изображений AVIF"
+
+msgid "Enable Adsense"
+msgstr "Включить Adsense"
+
+msgid "Enable Classic Editor"
+msgstr "Включить классический редактор"
+
+msgid "Enable Classic Editor in category description"
+msgstr "Включить классический редактор в описании рубрики"
+
+msgid "Enable Classic Widget"
+msgstr "Включить классический виджет"
+
+msgid "Enable GGET shortcode"
+msgstr "Включить шорткод GGET"
+
+msgid "Enable HTML compression"
+msgstr "Включить сжатие HTML"
+
+msgid "Enable Instant-page"
+msgstr "Включить Instant-page"
+
+msgid "Enable JPG image compression"
+msgstr "Включить сжатие изображений JPG"
+
+msgid "Enable SMTP mail"
+msgstr "Включить почту SMTP"
+
+msgid "Enable SMTP mail to allow SMTP mail to function and send emails when you perform a test"
+msgstr "Включите почту SMTP, чтобы SMTP-почта работала и отправляла письма при выполнении теста"
+
+msgid "Enable Smooth-scroll"
+msgstr "Включить Smooth-scroll"
+
+msgid "Enable WEBP image compression"
+msgstr "Включить сжатие изображений WEBP"
+
+msgid "Enable WP_DEBUG"
+msgstr "Включить WP_DEBUG"
+
+msgid "Enable WP_DEBUG_DISPLAY"
+msgstr "Включить WP_DEBUG_DISPLAY"
+
+msgid "Enable WP_DEBUG_LOG"
+msgstr "Включить WP_DEBUG_LOG"
+
+msgid "Enable ad-block detection"
+msgstr "Включить обнаружение блокировщика рекламы"
+
+msgid "Enable ads.txt"
+msgstr "Включить ads.txt"
+
+msgid "Enable advanced image viewing"
+msgstr "Включить расширенный просмотр изображений"
+
+msgid "Enable and add the category IDs you want to hide from the main loop displaying posts on the homepage, for example: 1, 2, 3"
+msgstr "Включите и добавьте ID рубрик, которые вы хотите скрыть из основного цикла отображения записей на главной странице, например: 1, 2, 3"
+
+msgid "Enable and configure the functions below to enable Google sign-in to work"
+msgstr "Включите и настройте функции ниже, чтобы вход через Google заработал"
+
+msgid "Enable chat button"
+msgstr "Включить кнопку чата"
+
+msgid "Enable color and display customization"
+msgstr "Включить настройку цвета и отображения"
+
+msgid "Enable contact bar"
+msgstr "Включить панель контактов"
+
+msgid "Enable cookie"
+msgstr "Включить cookie"
+
+msgid "Enable custom footer"
+msgstr "Включить пользовательский подвал"
+
+msgid "Enable custom functionality"
+msgstr "Включить пользовательский функционал"
+
+msgid "Enable custom widget"
+msgstr "Включить пользовательский виджет"
+
+msgid "Enable customization"
+msgstr "Включить настройку"
+
+msgid "Enable dark mode"
+msgstr "Включить тёмный режим"
+
+msgid "Enable date shortcode"
+msgstr "Включить шорткод даты"
+
+msgid "Enable deleting posts to also delete images"
+msgstr "Включить удаление изображений вместе с записями"
+
+msgid "Enable element customization"
+msgstr "Включить настройку элементов"
+
+msgid "Enable email sending"
+msgstr "Включить отправку email"
+
+msgid "Enable font Awesome"
+msgstr "Включить Font Awesome"
+
+msgid "Enable for use"
+msgstr "Включить для использования"
+
+msgid "Enable if you want to hide categories"
+msgstr "Включите, если хотите скрыть рубрики"
+
+msgid "Enable image lazy loading"
+msgstr "Включить отложенную загрузку изображений"
+
+msgid "Enable image size limitation"
+msgstr "Включить ограничение размера изображений"
+
+msgid "Enable logo customization"
+msgstr "Включить настройку логотипа"
+
+msgid "Enable notification"
+msgstr "Включить уведомление"
+
+msgid "Enable notifications"
+msgstr "Включить уведомления"
+
+msgid "Enable picture frame"
+msgstr "Включить рамку изображения"
+
+msgid "Enable popup"
+msgstr "Включить всплывающее окно"
+
+msgid "Enable quick search"
+msgstr "Включить быстрый поиск"
+
+msgid "Enable revision limit"
+msgstr "Включить ограничение редакций"
+
+msgid "Enable shortcode lock"
+msgstr "Включить блокировку шорткодом"
+
+msgid "Enable shortcodes"
+msgstr "Включить шорткоды"
+
+msgid "Enable signature shortcode"
+msgstr "Включить шорткод подписи"
+
+msgid "Enable site-wide 301 redirects"
+msgstr "Включить перенаправления 301 по всему сайту"
+
+msgid "Enable table of contents"
+msgstr "Включить содержание"
+
+msgid "Enable the [ht-icon] shortcode"
+msgstr "Включить шорткод [ht-icon]"
+
+msgid "Enable the contact bar and configure the content below for use"
+msgstr "Включите панель контактов и настройте содержимое ниже для использования"
+
+msgid "Enable the picture frame"
+msgstr "Включить рамку изображения"
+
+msgid "Enable the services panel"
+msgstr "Включить панель услуг"
+
+msgid "Enable this feature and enter the login link suffix"
+msgstr "Включите эту функцию и введите суффикс ссылки входа"
+
+msgid "Enable this feature if you want JFIF format images to be uploaded to the media. The uploaded images will be converted to JPG or WEBP format according to the configuration"
+msgstr "Включите эту функцию, если хотите загружать изображения формата JFIF в медиатеку. Загруженные изображения будут преобразованы в формат JPG или WEBP в соответствии с конфигурацией"
+
+msgid "Enable this feature if you want SVG images to be uploaded to the media"
+msgstr "Включите эту функцию, если хотите загружать изображения SVG в медиатеку"
+
+msgid "Enable this feature if you want images in posts copied from another source to be stored on your website"
+msgstr "Включите эту функцию, если хотите, чтобы изображения в записях, скопированные из другого источника, сохранялись на вашем сайте"
+
+msgid "Enable this feature if you want the first image in the post to become the featured image if the featured image field is empty. Additionally, you can select a default featured image in case both the featured image and the images in the post are empty"
+msgstr "Включите эту функцию, если хотите, чтобы первое изображение в записи становилось изображением записи, когда поле изображения записи пусто. Кроме того, вы можете выбрать изображение записи по умолчанию на случай, если и изображение записи, и изображения в записи отсутствуют"
+
+msgid "Enable this feature if you want the original image size to be selected by default whenever adding images to the post"
+msgstr "Включите эту функцию, если хотите, чтобы оригинальный размер изображения выбирался по умолчанию при добавлении изображений в запись"
+
+msgid "Enable this feature if you want to add additional functionalities to the Classic Editor to enhance professional editing"
+msgstr "Включите эту функцию, если хотите добавить дополнительные возможности в классический редактор для профессионального редактирования"
+
+msgid "Enable this feature if you want to add the Classic Editor button in the post and page management interface. With this feature, you dont need to set the Classic Editor as default but can use it in parallel"
+msgstr "Включите эту функцию, если хотите добавить кнопку классического редактора в интерфейс управления записями и страницами. С этой функцией вам не нужно устанавливать классический редактор по умолчанию — вы можете использовать его параллельно"
+
+msgid "Enable this feature if you want to customize the footer in the WP admin"
+msgstr "Включите эту функцию, если хотите настроить подвал в админ-панели WP"
+
+msgid "Enable this feature to be able to use the customizations below"
+msgstr "Включите эту функцию, чтобы иметь возможность использовать настройки ниже"
+
+msgid "Enable to display the Google login button on the WooCommerce login form"
+msgstr "Включите, чтобы отображать кнопку входа через Google на форме входа WooCommerce"
+
+msgid "Enable to display the Google login button on the default WordPress login form"
+msgstr "Включите, чтобы отображать кнопку входа через Google на форме входа WordPress по умолчанию"
+
+msgid "Enable to use"
+msgstr "Включить для использования"
+
+msgid "Enable upload size limit"
+msgstr "Включить ограничение размера загрузки"
+
+msgid "Enable watermarks"
+msgstr "Включить водяные знаки"
+
+msgid "Enabled"
+msgstr "Включено"
+
+msgid "Enabled TOC"
+msgstr "Содержание включено"
+
+msgid "Enhance features for Classic Editor"
+msgstr "Расширить возможности классического редактора"
+
+msgid "Enter Adsense code here"
+msgstr "Введите здесь код Adsense"
+
+msgid "Enter CSS here"
+msgstr "Введите здесь CSS"
+
+msgid "Enter ID"
+msgstr "Введите ID"
+
+msgid "Enter a shortcode name to search for."
+msgstr "Введите имя шорткода для поиска."
+
+msgid "Enter a suffix"
+msgstr "Введите суффикс"
+
+msgid "Enter a title"
+msgstr "Введите заголовок"
+
+msgid "Enter button name"
+msgstr "Введите название кнопки"
+
+msgid "Enter code here"
+msgstr "Введите здесь код"
+
+msgid "Enter content"
+msgstr "Введите содержимое"
+
+msgid "Enter content here"
+msgstr "Введите здесь содержимое"
+
+msgid "Enter cookie content"
+msgstr "Введите содержимое cookie"
+
+msgid "Enter cookie title"
+msgstr "Введите заголовок cookie"
+
+msgid "Enter email"
+msgstr "Введите email"
+
+msgid "Enter email content here"
+msgstr "Введите здесь содержимое письма"
+
+msgid "Enter image link"
+msgstr "Введите ссылку на изображение"
+
+msgid "Enter json"
+msgstr "Введите json"
+
+msgid "Enter keywords to search"
+msgstr "Введите ключевые слова для поиска"
+
+msgid "Enter link"
+msgstr "Введите ссылку"
+
+msgid "Enter manually"
+msgstr "Ввести вручную"
+
+msgid "Enter name"
+msgstr "Введите имя"
+
+msgid "Enter note content"
+msgstr "Введите содержимое заметки"
+
+msgid "Enter the SVG icon"
+msgstr "Введите иконку SVG"
+
+msgid "Enter the content you want to display and configure the customizations above so the popup can appear when users visit your website"
+msgstr "Введите содержимое, которое хотите отображать, и настройте параметры выше, чтобы всплывающее окно появлялось при посещении вашего сайта"
+
+msgid "Enter the content you want to display in the notification, and customize the colors to match your preferences. A notification will appear at the top of your website, making it easy for users to see"
+msgstr "Введите содержимое, которое хотите отображать в уведомлении, и настройте цвета по вашим предпочтениям. Уведомление появится вверху вашего сайта, чтобы пользователям было легко его увидеть"
+
+msgid "Enter the link"
+msgstr "Введите ссылку"
+
+msgid "Enter the number of posts or products to be displayed when searching"
+msgstr "Введите количество записей или товаров, отображаемых при поиске"
+
+msgid "Enter the number of revisions"
+msgstr "Введите количество редакций"
+
+msgid "Enter the policy page link"
+msgstr "Введите ссылку на страницу политики"
+
+msgid "Enter the tag and tag number for the ad to appear"
+msgstr "Введите тег и номер тега, где должна появиться реклама"
+
+msgid "Enter the title and content you want to display when ad-blocker is detected"
+msgstr "Введите заголовок и содержимое, которые хотите отображать при обнаружении блокировщика рекламы"
+
+msgid "Enter the url"
+msgstr "Введите url"
+
+msgid "Enter title"
+msgstr "Введите заголовок"
+
+msgid "Enter units"
+msgstr "Введите единицы"
+
+msgid "Enter waiting time"
+msgstr "Введите время ожидания"
+
+msgid "Environment"
+msgstr "Окружение"
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "Error cannot be cleaned"
+msgstr "Ошибку невозможно очистить"
+
+msgid "Error — nothing was deleted."
+msgstr "Ошибка — ничего не удалено."
+
+msgid "Every Horse Tools shortcode. Click any example to copy it."
+msgstr "Все шорткоды Horse Tools. Нажмите на любой пример, чтобы скопировать его."
+
+msgid "Everyone"
+msgstr "Все"
+
+msgid "Example: domain.com/wp-admin where wp-admin is the suffix"
+msgstr "Пример: domain.com/wp-admin, где wp-admin — это суффикс"
+
+msgid "Export"
+msgstr "Экспорт"
+
+msgid "Export downloads all your snippets as a .json file. Import merges a file from another site — existing snippets of the same name are kept, not overwritten."
+msgstr "Экспорт скачивает все ваши сниппеты в виде файла .json. Импорт объединяет файл с другого сайта — существующие сниппеты с тем же именем сохраняются, а не перезаписываются."
+
+msgid "Export snippets (.json)"
+msgstr "Экспортировать сниппеты (.json)"
+
+msgid "Exported."
+msgstr "Экспортировано."
+
+msgid "Extend"
+msgstr "Продлить"
+
+msgid "External"
+msgstr "Внешний"
+
+msgid "Extras"
+msgstr "Дополнительно"
+
+msgid "FREE"
+msgstr "БЕСПЛАТНО"
+
+msgid "Failed to delete the file"
+msgstr "Не удалось удалить файл"
+
+msgid "Failed to load debug log"
+msgstr "Не удалось загрузить журнал отладки"
+
+msgid "Failed to update setting:"
+msgstr "Не удалось обновить настройку:"
+
+msgid "Featured banner + grid"
+msgstr "Выделенный баннер + сетка"
+
+msgid "Feeds are not available on this site. %s"
+msgstr "Ленты недоступны на этом сайте. %s"
+
+msgid "Feeds disabled"
+msgstr "Ленты отключены"
+
+msgid "Field"
+msgstr "Поле"
+
+msgid "Filter by tag"
+msgstr "Фильтровать по тегу"
+
+msgid "Filter posts and images"
+msgstr "Фильтровать записи и изображения"
+
+msgid "Find and delete all 404 images in media"
+msgstr "Найти и удалить все изображения 404 в медиатеке"
+
+msgid "Find and delete all 404 thumbnail images in media"
+msgstr "Найти и удалить все миниатюры 404 в медиатеке"
+
+msgid "Find usage"
+msgstr "Найти использование"
+
+msgid "Find where a shortcode is used"
+msgstr "Найти, где используется шорткод"
+
+msgid "Flip photo"
+msgstr "Отразить фото"
+
+msgid "Font"
+msgstr "Шрифт"
+
+msgid "Font does not exist"
+msgstr "Шрифт не существует"
+
+msgid "Font size"
+msgstr "Размер шрифта"
+
+msgid "For an Nginx server, if the ads.txt file already exists in the root directory of the website, it will prioritize the static file, so this function will not work. If you want to use it, you can either configure Nginx or delete the static file before proceeding"
+msgstr "Для сервера Nginx, если файл ads.txt уже существует в корневом каталоге сайта, приоритет будет отдан статическому файлу, поэтому эта функция не будет работать. Если вы хотите её использовать, вы можете либо настроить Nginx, либо удалить статический файл, прежде чем продолжить"
+
+msgid "Forced ad clicks — removed"
+msgstr "Принудительные клики по рекламе — удалено"
+
+msgid "Found in %d item(s):"
+msgstr "Найдено в %d элементах:"
+
+msgid "Foxtool by Fox Theme (Nguyễn Ngọc Hoàn)"
+msgstr "Foxtool от Fox Theme (Nguyễn Ngọc Hoàn)"
+
+msgid "Free"
+msgstr "Бесплатно"
+
+msgid "Free to use the \"solid\" and \"brands\" styles"
+msgstr "Бесплатное использование стилей «solid» и «brands»"
+
+msgid "Free!"
+msgstr "Бесплатно!"
+
+msgid "Fri"
+msgstr "Пт"
+
+msgid "From"
+msgstr "От"
+
+msgid "Full screen"
+msgstr "Полный экран"
+
+msgid "GD Library does not support AVIF images"
+msgstr "Библиотека GD не поддерживает изображения AVIF"
+
+msgid "GD Library is not installed"
+msgstr "Библиотека GD не установлена"
+
+msgid "GGET"
+msgstr "GGET"
+
+msgid "GOOGLE"
+msgstr "GOOGLE"
+
+msgid "Generate data"
+msgstr "Сгенерировать данные"
+
+msgid "Give the snippet a name (letters, numbers and dashes)."
+msgstr "Дайте сниппету имя (буквы, цифры и дефисы)."
+
+msgid "Go to the home page"
+msgstr "Перейти на главную страницу"
+
+msgid "Gold"
+msgstr "Золотой"
+
+msgid "Google Fonts detected — click “Download & self-host” to serve them locally."
+msgstr "Обнаружены Google Fonts — нажмите «Скачать и разместить у себя», чтобы отдавать их локально."
+
+msgid "Google did not return the stylesheet (HTTP error)."
+msgstr "Google не вернул таблицу стилей (ошибка HTTP)."
+
+msgid "Grade %s"
+msgstr "Оценка %s"
+
+msgid "Green"
+msgstr "Зелёный"
+
+msgid "Greeting bubble text (e.g. Hi! Need help?)"
+msgstr "Текст приветственного пузыря (например, Привет! Нужна помощь?)"
+
+msgid "Greeting message (Live-chat skin)"
+msgstr "Приветственное сообщение (скин Live-chat)"
+
+msgid "H tag color when scrolled to"
+msgstr "Цвет тега H при прокрутке к нему"
+
+msgid "HORSE SEARCH"
+msgstr "HORSE SEARCH"
+
+msgid "HSTS (force HTTPS for 180 days)"
+msgstr "HSTS (принудительный HTTPS на 180 дней)"
+
+msgid "HTML compression: minify inline JS, strip comments"
+msgstr "Сжатие HTML: минификация встроенного JS, удаление комментариев"
+
+msgid "HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>"
+msgstr "HTML, CSS или JS…  например, <a href=&quot;{{url}}&quot;>{{label}}</a>"
+
+msgid "Hello"
+msgstr "Здравствуйте"
+
+msgid "Hello %s. A new comment has been posted on your article \"%s\". You can view the comment here: %s"
+msgstr "Здравствуйте, %s. К вашей статье «%s» был добавлен новый комментарий. Вы можете просмотреть комментарий здесь: %s"
+
+msgid "Hi 👋 How can we help you?"
+msgstr "Привет 👋 Чем мы можем помочь?"
+
+msgid "Hide Admin account from profile page"
+msgstr "Скрыть аккаунт администратора со страницы профиля"
+
+msgid "Hide Horse Tools"
+msgstr "Скрыть Horse Tools"
+
+msgid "Hide back link"
+msgstr "Скрыть ссылку назад"
+
+msgid "Hide bar when pulled down"
+msgstr "Скрывать панель при прокрутке вниз"
+
+msgid "Hide chat button when scrolling down"
+msgstr "Скрывать кнопку чата при прокрутке вниз"
+
+msgid "Hide from administrators"
+msgstr "Скрыть от администраторов"
+
+msgid "Hide language options"
+msgstr "Скрыть параметры языка"
+
+msgid "Hide minimized list"
+msgstr "Скрыть свёрнутый список"
+
+msgid "Hide plugins from the manager"
+msgstr "Скрыть плагины из менеджера"
+
+msgid "Hide post categories from homepage"
+msgstr "Скрыть рубрики записей с главной страницы"
+
+msgid "Hide the tools you want"
+msgstr "Скройте нужные вам инструменты"
+
+msgid "Hide the update & maintenance notice"
+msgstr "Скрыть уведомление об обновлении и обслуживании"
+
+msgid "Hide this URL from the log"
+msgstr "Скрыть этот URL из журнала"
+
+msgid "Hide usernames from scanners"
+msgstr "Скрыть имена пользователей от сканеров"
+
+msgid "Hits"
+msgstr "Обращения"
+
+msgid "Horse Search"
+msgstr "Horse Search"
+
+msgid "Horse Tools"
+msgstr "Horse Tools"
+
+msgid "Horse Tools is built on %s, which is no longer maintained by its author. That original work is gratefully acknowledged and this fork continues under the same GPLv2 licence."
+msgstr "Horse Tools построен на основе %s, который больше не поддерживается его автором. Мы с благодарностью признаём эту оригинальную работу, и данный форк продолжается под той же лицензией GPLv2."
+
+msgid "Horse Tools shortcode"
+msgstr "Шорткод Horse Tools"
+
+msgid "Horse Tools:"
+msgstr "Horse Tools:"
+
+msgid "Host"
+msgstr "Хост"
+
+msgid "Hours"
+msgstr "Часы"
+
+msgid "How to use"
+msgstr "Как использовать"
+
+msgid "I understand this permanently deletes data."
+msgstr "Я понимаю, что это необратимо удаляет данные."
+
+msgid "ICON"
+msgstr "ИКОНКА"
+
+msgid "INDEX"
+msgstr "ИНДЕКС"
+
+msgid "Icon"
+msgstr "Иконка"
+
+msgid "Icon (e.g. apps)"
+msgstr "Иконка (например, apps)"
+
+msgid "Icon background color"
+msgstr "Цвет фона иконки"
+
+msgid "Icon border color"
+msgstr "Цвет границы иконки"
+
+msgid "Icon border radius"
+msgstr "Радиус скругления границы иконки"
+
+msgid "Icon color"
+msgstr "Цвет иконки"
+
+msgid "Icon picker"
+msgstr "Выбор иконки"
+
+msgid "If someone replies to a comment, there will be an email notification sent to the commenter"
+msgstr "Если кто-то ответит на комментарий, автору комментария будет отправлено уведомление по email"
+
+msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
+msgstr "Если Secret key пуст, проверка полностью пропускается, а не отклоняет каждый вход."
+
+msgid "If you dont want to automatically switch the language based on WordPress context, please select the language you prefer"
+msgstr "Если вы не хотите автоматически переключать язык на основе контекста WordPress, выберите предпочитаемый язык"
+
+msgid "If you enable this feature and set automatic revision limit and automatic save time for posts or pages, it will reduce the amount of data stored in the database"
+msgstr "Если вы включите эту функцию и зададите автоматическое ограничение редакций и время автосохранения для записей или страниц, это уменьшит объём данных, хранящихся в базе данных"
+
+msgid "If you enable this feature, your Pages will have .html appended to them, for example: domain.com/page.html"
+msgstr "Если вы включите эту функцию, к вашим страницам будет добавлено .html, например: domain.com/page.html"
+
+msgid "If you find the Admin Bar distracting every time you view the website, you can turn it off (there is an option for you to turn off all or only turn off for users)"
+msgstr "Если панель администратора отвлекает вас каждый раз при просмотре сайта, вы можете отключить её (есть возможность отключить её полностью или только для пользователей)"
+
+msgid "If you find the new Widget Manager too difficult to use, then revert it to the Classic Widget version"
+msgstr "Если новый менеджер виджетов кажется вам слишком сложным в использовании, вернитесь к версии классического виджета"
+
+msgid "If you find the new editor too difficult to use, then revert it to the Classic Editor version"
+msgstr "Если новый редактор кажется вам слишком сложным в использовании, вернитесь к версии классического редактора"
+
+msgid "If you find the tools above unnecessary, you can hide them to make the WP admin interface cleaner. This function only hides them without blocking access to their links"
+msgstr "Если вы считаете инструменты выше ненужными, вы можете скрыть их, чтобы сделать интерфейс админ-панели WP чище. Эта функция только скрывает их, не блокируя доступ по ссылкам"
+
+msgid "If you had it enabled it is now inactive. The AdSense and ads.txt tools on the other tabs are unaffected."
+msgstr "Если она была у вас включена, теперь она неактивна. Инструменты AdSense и ads.txt на других вкладках не затронуты."
+
+msgid "If you have members and do not want them to upload images with excessively large sizes, causing storage space usage, you can limit the maximum size allowed for upload"
+msgstr "Если у вас есть участники и вы не хотите, чтобы они загружали изображения слишком большого размера, занимающие место в хранилище, вы можете ограничить максимально допустимый размер загрузки"
+
+msgid "If you need to monitor WordPress debug files without accessing the file manager, this tool is made just for that purpose"
+msgstr "Если вам нужно отслеживать файлы отладки WordPress без доступа к файловому менеджеру, этот инструмент создан именно для этой цели"
+
+msgid "If you not using it, you can disable Classic CSS on the homepage"
+msgstr "Если вы его не используете, вы можете отключить классический CSS на главной странице"
+
+msgid "If you not using it, you can disable Emoji"
+msgstr "Если вы их не используете, вы можете отключить эмодзи"
+
+msgid "If you not using it, you can disable Gutenberg CSS on the homepage"
+msgstr "Если вы его не используете, вы можете отключить CSS Gutenberg на главной странице"
+
+msgid "If you receive this email, then the SMTP email sending function is working well"
+msgstr "Если вы получили это письмо, значит функция отправки писем по SMTP работает исправно"
+
+msgid "If you want to display your signature anywhere, you can create content above and then use the generated shortcode at your desired location"
+msgstr "Если вы хотите отобразить вашу подпись где-либо, вы можете создать содержимое выше, а затем использовать сгенерированный шорткод в нужном месте"
+
+msgid "If you want to enable the feature to duplicate posts, pages, or custom post types, please activate this function"
+msgstr "Если вы хотите включить функцию дублирования записей, страниц или произвольных типов записей, активируйте эту функцию"
+
+msgid "If you want to export or import the settings of the Horse Tools plugin, enable this feature. It allows you to easily transfer configurations from this site to another"
+msgstr "Если вы хотите экспортировать или импортировать настройки плагина Horse Tools, включите эту функцию. Она позволяет легко переносить конфигурации с этого сайта на другой"
+
+msgid "If you want to hide a specific Administrator account, select the user"
+msgstr "Если вы хотите скрыть определённый аккаунт администратора, выберите пользователя"
+
+msgid "If you want to lazy load images every time the page loads, then turn it on. This function helps your website load faster"
+msgstr "Если вы хотите отложенно загружать изображения при каждой загрузке страницы, включите это. Эта функция помогает вашему сайту загружаться быстрее"
+
+msgid "If you want to use font Awesome, you can enable it (it an icon font). You can search for icons at:"
+msgstr "Если вы хотите использовать Font Awesome, вы можете включить его (это шрифт с иконками). Вы можете искать иконки на:"
+
+msgid "If you want your uploaded images to be watermarked, please use this function and configure it above. Watermark (PNG, JPG)"
+msgstr "Если вы хотите, чтобы на ваши загруженные изображения добавлялся водяной знак, используйте эту функцию и настройте её выше. Водяной знак (PNG, JPG)"
+
+msgid "If youre tired of WordPress default search tool because its too slow, try out our lightning-fast search feature to give your users an exceptional and speedy search experience"
+msgstr "Если вы устали от стандартного инструмента поиска WordPress из-за его медлительности, попробуйте нашу молниеносную функцию поиска, чтобы обеспечить вашим пользователям исключительный и быстрый поиск"
+
+msgid "Ignore"
+msgstr "Игнорировать"
+
+msgid "Ignore 8-bit png"
+msgstr "Игнорировать 8-битные png"
+
+msgid "Image URL (optional, replaces the icon)"
+msgstr "URL изображения (необязательно, заменяет иконку)"
+
+msgid "Image crop configuration"
+msgstr "Настройка обрезки изображения"
+
+msgid "Image function for posts"
+msgstr "Функция изображений для записей"
+
+msgid "Images are lazy-loaded"
+msgstr "Изображения загружаются отложенно"
+
+msgid "Import"
+msgstr "Импорт"
+
+msgid "Import from Shortcoder"
+msgstr "Импортировать из Shortcoder"
+
+msgid "Import snippets"
+msgstr "Импортировать сниппеты"
+
+msgid "Imported %1$d snippet(s); %2$d already existed."
+msgstr "Импортировано %1$d сниппетов; %2$d уже существовали."
+
+msgid "Imported %1$d snippet(s); %2$d already existed. Reloading…"
+msgstr "Импортировано %1$d сниппетов; %2$d уже существовали. Перезагрузка…"
+
+msgid "Imported %1$d snippet(s); %2$d skipped. Reloading…"
+msgstr "Импортировано %1$d сниппетов; %2$d пропущено. Перезагрузка…"
+
+msgid "Imported %d setting group(s). You can undo this below."
+msgstr "Импортировано %d групп настроек. Вы можете отменить это ниже."
+
+msgid "Index now"
+msgstr "Индексировать сейчас"
+
+msgid "Information about your website"
+msgstr "Информация о вашем сайте"
+
+msgid "Input / select box color"
+msgstr "Цвет поля ввода / выбора"
+
+msgid "Insert icons anywhere with a shortcode"
+msgstr "Вставляйте иконки в любом месте с помощью шорткода"
+
+msgid "Install the pending updates."
+msgstr "Установите ожидающие обновления."
+
+msgid "Instant-page is a library that allows you to preload the content of a linked page into the browser memory simply by hovering over the link. When you click on the link, it provides a remarkably fast loading experience"
+msgstr "Instant-page — это библиотека, которая позволяет предзагружать содержимое связанной страницы в память браузера просто при наведении на ссылку. При клике по ссылке это обеспечивает поразительно быструю загрузку"
+
+msgid "Instant-page prefetch and image lazy-loading"
+msgstr "Предзагрузка Instant-page и отложенная загрузка изображений"
+
+msgid "Insufficient permissions"
+msgstr "Недостаточно прав"
+
+msgid "Known post types:"
+msgstr "Известные типы записей:"
+
+msgid "LOCKVIP"
+msgstr "LOCKVIP"
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "Last seen"
+msgstr "Последний визит"
+
+msgid "Layout & interactive"
+msgstr "Макет и интерактивность"
+
+msgid "Lazy-load images; drop Emoji"
+msgstr "Отложенная загрузка изображений; убрать эмодзи"
+
+msgid "Lazy-load images; drop Emoji and jQuery Migrate"
+msgstr "Отложенная загрузка изображений; убрать эмодзи и jQuery Migrate"
+
+msgid "Lean pages and lighter media. Leaves Gutenberg and Classic CSS alone, since removing those can change how a theme looks."
+msgstr "Облегчённые страницы и более лёгкие медиа. Не трогает CSS Gutenberg и классический CSS, поскольку их удаление может изменить внешний вид темы."
+
+msgid "Leave another shortcode plugin"
+msgstr "Уйти от другого плагина шорткодов"
+
+msgid "Left drawer"
+msgstr "Левая панель"
+
+msgid "Lets you drop any of the bundled Tabler icons (over 5,800, MIT licence) into posts, pages and anywhere shortcodes run. The icon font only loads on pages that actually use one, so it costs nothing elsewhere."
+msgstr "Позволяет вставлять любые из встроенных иконок Tabler (более 5800, лицензия MIT) в записи, страницы и везде, где работают шорткоды. Шрифт иконок загружается только на страницах, которые действительно его используют, поэтому в остальных местах он ничего не стоит."
+
+msgid "Leverage Google’s Indexing API to speed up the indexing of your website on Google’s search engine. You can add as many API keys as you like for unlimited indexing capacity"
+msgstr "Используйте Google Indexing API, чтобы ускорить индексацию вашего сайта в поисковой системе Google. Вы можете добавить сколько угодно ключей API для неограниченной ёмкости индексации"
+
+msgid "Licence:"
+msgstr "Лицензия:"
+
+msgid "Light / Dark"
+msgstr "Светлая / Тёмная"
+
+msgid "Limit Horse Tools display"
+msgstr "Ограничить отображение Horse Tools"
+
+msgid "Limit JPG, PNG, WEBP, AVIF images"
+msgstr "Ограничить изображения JPG, PNG, WEBP, AVIF"
+
+msgid "Limit failed logins and email you on lockout"
+msgstr "Ограничивать неудачные попытки входа и уведомлять вас по email при блокировке"
+
+msgid "Limit login attempts"
+msgstr "Ограничить попытки входа"
+
+msgid "Limit logins, block user enumeration, disable XML-RPC and the file editor"
+msgstr "Ограничить входы, блокировать перечисление пользователей, отключить XML-RPC и редактор файлов"
+
+msgid "Limits the maximum width and height of JPG, PNG, WEBP images upon upload. You can leave it blank if you want to keep the original size"
+msgstr "Ограничивает максимальную ширину и высоту изображений JPG, PNG, WEBP при загрузке. Вы можете оставить поле пустым, если хотите сохранить оригинальный размер"
+
+msgid "Limits the size of JPG, PNG, WEBP, AVIF images when uploading"
+msgstr "Ограничивает размер изображений JPG, PNG, WEBP, AVIF при загрузке"
+
+msgid "Link (article or service page)"
+msgstr "Ссылка (статья или страница услуги)"
+
+msgid "Link color"
+msgstr "Цвет ссылки"
+
+msgid "Link display color"
+msgstr "Цвет отображения ссылки"
+
+msgid "List"
+msgstr "Список"
+
+msgid "List color"
+msgstr "Цвет списка"
+
+msgid "List is hidden by default"
+msgstr "Список по умолчанию скрыт"
+
+msgid "Loading icons…"
+msgstr "Загрузка иконок…"
+
+msgid "Location"
+msgstr "Расположение"
+
+msgid "Lock down the admin"
+msgstr "Защитить админ-панель"
+
+msgid "Lock out repeated failed logins"
+msgstr "Блокировать повторяющиеся неудачные попытки входа"
+
+msgid "Lockout length (minutes)"
+msgstr "Длительность блокировки (минуты)"
+
+msgid "Log out"
+msgstr "Выйти"
+
+msgid "Log the dead URLs anonymous visitors actually hit, so you can turn the busy ones into redirects. Logged-in users, bots and asset requests are not recorded, and nothing leaves your site."
+msgstr "Записывайте нерабочие URL, на которые действительно попадают анонимные посетители, чтобы превратить наиболее посещаемые из них в перенаправления. Вошедшие пользователи, боты и запросы ресурсов не записываются, и ничего не покидает ваш сайт."
+
+msgid "Logged-in users"
+msgstr "Вошедшие пользователи"
+
+msgid "Logged-out visitors"
+msgstr "Не вошедшие посетители"
+
+msgid "Login attempts are rate-limited"
+msgstr "Попытки входа ограничены по частоте"
+
+msgid "Login failed. Check your details and try again."
+msgstr "Ошибка входа. Проверьте ваши данные и попробуйте снова."
+
+msgid "Login link:"
+msgstr "Ссылка входа:"
+
+msgid "MAIL"
+msgstr "ПОЧТА"
+
+msgid "MAINTENANCE MODE"
+msgstr "РЕЖИМ ОБСЛУЖИВАНИЯ"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "MEDIA"
+msgstr "МЕДИА"
+
+msgid "Main button"
+msgstr "Главная кнопка"
+
+msgid "Main color"
+msgstr "Основной цвет"
+
+msgid "Main icon color"
+msgstr "Цвет главной иконки"
+
+msgid "Main icon text color"
+msgstr "Цвет текста главной иконки"
+
+msgid "Maintenance mode for developers (503)"
+msgstr "Режим обслуживания для разработчиков (503)"
+
+msgid "Management tool"
+msgstr "Инструмент управления"
+
+msgid "Max height"
+msgstr "Макс. высота"
+
+msgid "Max width"
+msgstr "Макс. ширина"
+
+msgid "Media"
+msgstr "Медиа"
+
+msgid "Media tab → JPG compression"
+msgstr "Вкладка «Медиа» → сжатие JPG"
+
+msgid "Minify Inline JavaScript"
+msgstr "Минифицировать встроенный JavaScript"
+
+msgid "Minimum role"
+msgstr "Минимальная роль"
+
+msgid "Mobile only"
+msgstr "Только на мобильных"
+
+msgid "Modify content"
+msgstr "Изменить содержимое"
+
+msgid "Modify some information on Woocommerce that you want"
+msgstr "Измените нужную вам информацию в WooCommerce"
+
+msgid "Modify the footer content of WP admin"
+msgstr "Изменить содержимое подвала админ-панели WP"
+
+msgid "Mon"
+msgstr "Пн"
+
+msgid "Monthly"
+msgstr "Ежемесячно"
+
+msgid "Most snippet plugins store their snippets as a custom post type. Enter that post type to import them all as Horse Tools snippets — the other plugin is only read, never changed. After importing you can deactivate it and (for Shortcoder) your [sc …] tags keep working, or use “Convert” above."
+msgstr "Большинство плагинов сниппетов хранят свои сниппеты как произвольный тип записи. Укажите этот тип записи, чтобы импортировать их все как сниппеты Horse Tools — другой плагин только читается и никогда не изменяется. После импорта вы можете деактивировать его, и (для Shortcoder) ваши теги [sc …] продолжат работать, либо используйте «Преобразовать» выше."
+
+msgid "Move snippets between sites"
+msgstr "Переносить сниппеты между сайтами"
+
+msgid "Move the site address to https://"
+msgstr "Перевести адрес сайта на https://"
+
+msgid "NOTIFY"
+msgstr "УВЕДОМИТЬ"
+
+msgid "Name the font"
+msgstr "Назовите шрифт"
+
+msgid "Name — letters, numbers, dashes (e.g. call-to-action)"
+msgstr "Имя — буквы, цифры, дефисы (например, call-to-action)"
+
+msgid "Navigation bar (Horse Tools)"
+msgstr "Панель навигации (Horse Tools)"
+
+msgid "Neutral"
+msgstr "Нейтральный"
+
+msgid "New / clear"
+msgstr "Новое / очистить"
+
+msgid "Newly edited posts will be displayed first"
+msgstr "Недавно отредактированные записи будут отображаться первыми"
+
+msgid "Next automatic check: %s"
+msgstr "Следующая автоматическая проверка: %s"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "No (temporarily off)"
+msgstr "Нет (временно отключено)"
+
+msgid "No 404s recorded yet."
+msgstr "Пока не записано ни одной ошибки 404."
+
+msgid "No Google Fonts leaking to Google"
+msgstr "Google Fonts не утекают к Google"
+
+msgid "No [sc] tags found in your content."
+msgstr "В вашем содержимом не найдено тегов [sc]."
+
+msgid "No automatic redirects yet. Change a published URL and one will appear here."
+msgstr "Пока нет автоматических перенаправлений. Измените опубликованный URL, и здесь появится перенаправление."
+
+msgid "No badge colour"
+msgstr "Без цвета значка"
+
+msgid "No font files were found in the stylesheet."
+msgstr "В таблице стилей не найдено файлов шрифтов."
+
+msgid "No icon matches that."
+msgstr "Нет иконок, соответствующих запросу."
+
+msgid "No pages selected"
+msgstr "Страницы не выбраны"
+
+msgid "No results found"
+msgstr "Результаты не найдены"
+
+msgid "No setting matches that."
+msgstr "Нет настроек, соответствующих запросу."
+
+msgid "No size"
+msgstr "Без размера"
+
+msgid "No snippets were found for the post type \"%s\"."
+msgstr "Не найдено сниппетов для типа записи «%s»."
+
+msgid "No snippets yet. Create one above, or import from Shortcoder."
+msgstr "Пока нет сниппетов. Создайте один выше или импортируйте из Shortcoder."
+
+msgid "No third-party requests found. Nothing leaks to other servers."
+msgstr "Сторонних запросов не найдено. Ничего не утекает на другие серверы."
+
+msgid "None"
+msgstr "Нет"
+
+msgid "None: default not selected, Auto: background image automatically changes each time the page is loaded, Color: change the color you want, Upload: upload the background image you want"
+msgstr "Нет: по умолчанию не выбрано, Авто: фоновое изображение автоматически меняется при каждой загрузке страницы, Цвет: измените нужный цвет, Загрузка: загрузите нужное фоновое изображение"
+
+msgid "Not entered"
+msgstr "Не введено"
+
+msgid "Not found in any post or page."
+msgstr "Не найдено ни в одной записи или странице."
+
+msgid "Nothing could be self-hosted."
+msgstr "Ничего не удалось разместить у себя."
+
+msgid "Nothing on this page is enabled yet."
+msgstr "На этой странице пока ничего не включено."
+
+msgid "Nothing to delete."
+msgstr "Нечего удалять."
+
+msgid "Notification at the top of the page"
+msgstr "Уведомление вверху страницы"
+
+msgid "Notification link sent"
+msgstr "Ссылка на уведомление отправлена"
+
+msgid "Notify"
+msgstr "Уведомить"
+
+msgid "Notify the post author when someone comments on the post"
+msgstr "Уведомлять автора записи, когда кто-то комментирует запись"
+
+msgid "Number of data completed: '+sopost+'"
+msgstr "Количество завершённых данных: '+sopost+'"
+
+msgid "Number of items displayed"
+msgstr "Количество отображаемых элементов"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "ON/OFF"
+msgstr "ВКЛ/ВЫКЛ"
+
+msgid "OPTIMIZE"
+msgstr "ОПТИМИЗАЦИЯ"
+
+msgid "Off"
+msgstr "Выкл"
+
+msgid "Off / select"
+msgstr "Выкл / выбрать"
+
+msgid "One click applies a set of recommended settings for your kind of site. Presets only turn options on and tune a few values — they never switch off anything you have already enabled, and a one-click Undo is always kept."
+msgstr "Один клик применяет набор рекомендуемых настроек для вашего типа сайта. Пресеты только включают параметры и подстраивают несколько значений — они никогда не отключают то, что вы уже включили, и всегда сохраняется отмена в один клик."
+
+msgid "Online now"
+msgstr "Сейчас в сети"
+
+msgid "Only admin has access to the admin page"
+msgstr "Только у администратора есть доступ к странице администрирования"
+
+msgid "Only enable once HTTPS works everywhere. Browsers will refuse plain HTTP to your site for six months, and it cannot be undone quickly."
+msgstr "Включайте только после того, как HTTPS работает везде. Браузеры будут отказываться от обычного HTTP к вашему сайту в течение шести месяцев, и это нельзя быстро отменить."
+
+msgid "Only notify, do not block access"
+msgstr "Только уведомлять, не блокировать доступ"
+
+msgid "Only supported from PHP 8.1 and above"
+msgstr "Поддерживается только начиная с PHP 8.1 и выше"
+
+msgid "Open in a new tab"
+msgstr "Открыть в новой вкладке"
+
+msgid "Open – close time"
+msgstr "Время открытия – закрытия"
+
+msgid "Opening hours, one line per day (Tab-widget skin)"
+msgstr "Часы работы, по одной строке на день (скин Tab-widget)"
+
+msgid "Optimization Library"
+msgstr "Библиотека оптимизации"
+
+msgid "Optimize Widgets"
+msgstr "Оптимизировать виджеты"
+
+msgid "Optimize deletion of content in the database"
+msgstr "Оптимизировать удаление содержимого в базе данных"
+
+msgid "Optimize saving post content into the database"
+msgstr "Оптимизировать сохранение содержимого записей в базу данных"
+
+msgid "Optimize tab"
+msgstr "Вкладка «Оптимизация»"
+
+msgid "Optimize tab → image lazy loading"
+msgstr "Вкладка «Оптимизация» → отложенная загрузка изображений"
+
+msgid "Option to display ads in custom posts"
+msgstr "Возможность отображать рекламу в произвольных записях"
+
+msgid "Option to display the Admin bar"
+msgstr "Возможность отображать панель администратора"
+
+msgid "Order"
+msgstr "Порядок"
+
+msgid "Original contributors:"
+msgstr "Первоначальные участники:"
+
+msgid "Other links"
+msgstr "Другие ссылки"
+
+msgid "Outstanding color"
+msgstr "Выделяющийся цвет"
+
+msgid "Overlay color"
+msgstr "Цвет наложения"
+
+msgid "Overview"
+msgstr "Обзор"
+
+msgid "PHP errors are not shown to visitors"
+msgstr "Ошибки PHP не показываются посетителям"
+
+msgid "PHP is a supported version (%s)"
+msgstr "PHP поддерживаемой версии (%s)"
+
+msgid "POPUP"
+msgstr "ВСПЛЫВАЮЩЕЕ ОКНО"
+
+msgid "PRESETS"
+msgstr "ПРЕСЕТЫ"
+
+msgid "Panel title (e.g. Our services)"
+msgstr "Заголовок панели (например, Наши услуги)"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Paste an export here, or upload a .json file"
+msgstr "Вставьте экспорт сюда или загрузите файл .json"
+
+msgid "Pending comments"
+msgstr "Комментарии на модерации"
+
+msgid "Performance"
+msgstr "Производительность"
+
+msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
+msgstr "Необратимо удалить %1$s из «%2$s»? Это нельзя отменить."
+
+msgid "Permission denied."
+msgstr "Доступ запрещён."
+
+msgid "Permissions-Policy: block geolocation, mic and camera"
+msgstr "Permissions-Policy: блокировать геолокацию, микрофон и камеру"
+
+msgid "Photo masonry"
+msgstr "Мозаика фотографий"
+
+msgid "Play video"
+msgstr "Воспроизвести видео"
+
+msgid "Please complete the reCAPTCHA to verify that you are not a robot"
+msgstr "Пожалуйста, пройдите reCAPTCHA, чтобы подтвердить, что вы не робот"
+
+msgid "Please disable ad-blocker on your browser to access and view the content"
+msgstr "Пожалуйста, отключите блокировщик рекламы в вашем браузере, чтобы получить доступ к содержимому и просмотреть его"
+
+msgid "Please enter the content here"
+msgstr "Пожалуйста, введите содержимое здесь"
+
+msgid "Please wait"
+msgstr "Пожалуйста, подождите"
+
+msgid "Please wait for the email to be sent"
+msgstr "Пожалуйста, подождите отправки письма"
+
+msgid "Please wait: '+sopost+'"
+msgstr "Пожалуйста, подождите: '+sopost+'"
+
+msgid "Plugin development"
+msgstr "Разработка плагина"
+
+msgid "Policy"
+msgstr "Политика"
+
+msgid "Popup location"
+msgstr "Расположение всплывающего окна"
+
+msgid "Popup save time (.. hours)"
+msgstr "Время сохранения всплывающего окна (.. часов)"
+
+msgid "Pre-filled message for WhatsApp / SMS (optional)"
+msgstr "Заранее заполненное сообщение для WhatsApp / SMS (необязательно)"
+
+msgid "Preview"
+msgstr "Предпросмотр"
+
+msgid "Preview changes"
+msgstr "Предпросмотр изменений"
+
+msgid "Price + order button"
+msgstr "Цена + кнопка заказа"
+
+msgid "Privacy"
+msgstr "Конфиденциальность"
+
+msgid "Privacy — Google Fonts & external requests"
+msgstr "Конфиденциальность — Google Fonts и внешние запросы"
+
+msgid "Process cropped images"
+msgstr "Обрабатывать обрезанные изображения"
+
+msgid "Purple"
+msgstr "Фиолетовый"
+
+msgid "Quantity"
+msgstr "Количество"
+
+msgid "Quick chips"
+msgstr "Быстрые чипы"
+
+msgid "Quick replies, one per line as  Label|https://link  (Live-chat skin)"
+msgstr "Быстрые ответы, по одному в строке в виде  Label|https://link  (скин Live-chat)"
+
+msgid "Quick search"
+msgstr "Быстрый поиск"
+
+msgid "Quick view button color"
+msgstr "Цвет кнопки быстрого просмотра"
+
+msgid "REST API left ON so the store keeps working"
+msgstr "REST API оставлен ВКЛ, чтобы магазин продолжал работать"
+
+msgid "Reading settings → uncheck “Discourage search engines”"
+msgstr "Настройки чтения → снимите флажок «Попросить поисковые системы не индексировать сайт»"
+
+msgid "Recommended. xmlrpc.php is a common brute-force and pingback-amplification target and almost nothing uses it now (except Jetpack)."
+msgstr "Рекомендуется. xmlrpc.php — распространённая цель для перебора и усиления pingback, и почти ничто его сейчас не использует (кроме Jetpack)."
+
+msgid "Record 404 hits"
+msgstr "Записывать обращения к 404"
+
+msgid "Red"
+msgstr "Красный"
+
+msgid "Redirect"
+msgstr "Перенаправление"
+
+msgid "Redirect 301 to a custom page"
+msgstr "Перенаправление 301 на произвольную страницу"
+
+msgid "Redirect 301 whole page"
+msgstr "Перенаправление 301 всей страницы"
+
+msgid "Redirect the 404 page to the homepage or a custom page of your choice, leave the field blank if you want to redirect to the homepage"
+msgstr "Перенаправляйте страницу 404 на главную страницу или произвольную страницу по вашему выбору; оставьте поле пустым, если хотите перенаправлять на главную страницу"
+
+msgid "Redirects"
+msgstr "Перенаправления"
+
+msgid "Referrer-Policy: strict-origin-when-cross-origin"
+msgstr "Referrer-Policy: strict-origin-when-cross-origin"
+
+msgid "Refresh"
+msgstr "Обновить"
+
+msgid "Registration is disabled on this site."
+msgstr "Регистрация на этом сайте отключена."
+
+msgid "Registration role options"
+msgstr "Параметры роли при регистрации"
+
+msgid "Remove XHTML closing tags from empty elements in HTML5"
+msgstr "Удалять закрывающие теги XHTML из пустых элементов в HTML5"
+
+msgid "Remove category slug from permalink"
+msgstr "Удалить ярлык рубрики из постоянной ссылки"
+
+msgid "Remove comments from HTML, JavaScript, and CSS"
+msgstr "Удалять комментарии из HTML, JavaScript и CSS"
+
+msgid "Remove img tag attributes"
+msgstr "Удалять атрибуты тега img"
+
+msgid "Remove protocols (HTTP: and HTTPS:) from all URLs"
+msgstr "Удалять протоколы (HTTP: и HTTPS:) из всех URL"
+
+msgid "Remove relative domain from internal URLs"
+msgstr "Удалять относительный домен из внутренних URL"
+
+msgid "Remove tag slug from permalink"
+msgstr "Удалить ярлык метки из постоянной ссылки"
+
+msgid "Remove the WordPress version tag"
+msgstr "Удалить тег версии WordPress"
+
+msgid "Remove unnecessary header tags"
+msgstr "Удалить ненужные теги заголовка"
+
+msgid "Removed"
+msgstr "Удалено"
+
+msgid "Removes attachments whose file is missing from disk. Every attachment is scanned, so the count is known only after it runs."
+msgstr "Удаляет вложения, файлы которых отсутствуют на диске. Сканируется каждое вложение, поэтому количество становится известно только после выполнения."
+
+msgid "Removes metadata entries for thumbnail files that are missing from disk. It does not delete images."
+msgstr "Удаляет записи метаданных для файлов миниатюр, отсутствующих на диске. Изображения при этом не удаляются."
+
+msgid "Removes the RSD, WLW manifest and adjacent-post link tags from the page head."
+msgstr "Удаляет теги ссылок RSD, манифеста WLW и соседних записей из заголовка страницы."
+
+msgid "Removes the X-Pingback header. Pairs with disabling XML-RPC."
+msgstr "Удаляет заголовок X-Pingback. Сочетается с отключением XML-RPC."
+
+msgid "Removes the built-in code editor under Appearance and Plugins. If an attacker gets into wp-admin, they cannot use it to edit PHP files. You edit files over SFTP instead."
+msgstr "Удаляет встроенный редактор кода в разделах «Внешний вид» и «Плагины». Если злоумышленник получит доступ к wp-admin, он не сможет использовать его для редактирования PHP-файлов. Вместо этого вы редактируете файлы через SFTP."
+
+msgid "Removes the generator meta tag. A small tidy-up — not a security measure on its own, since asset fingerprints reveal the version anyway."
+msgstr "Удаляет мета-тег generator. Небольшое наведение порядка — само по себе не мера безопасности, поскольку отпечатки ресурсов всё равно раскрывают версию."
+
+msgid "Removes wp-embed.js if you do not embed other WordPress posts."
+msgstr "Удаляет wp-embed.js, если вы не встраиваете другие записи WordPress."
+
+msgid "Requested URL"
+msgstr "Запрошенный URL"
+
+msgid "Requests"
+msgstr "Запросы"
+
+msgid "Reset this setting"
+msgstr "Сбросить эту настройку"
+
+msgid "Restore previous configuration"
+msgstr "Восстановить предыдущую конфигурацию"
+
+msgid "Retrieve the API Client ID and Client Secret from your Google Developers project and add them to the two fields above"
+msgstr "Получите API Client ID и Client Secret из вашего проекта Google Developers и добавьте их в два поля выше"
+
+msgid "Retrieve the Site Key and Secret Key from your Google reCAPTCHA project and add them to the two fields above"
+msgstr "Получите Site Key и Secret Key из вашего проекта Google reCAPTCHA и добавьте их в два поля выше"
+
+msgid "Reveal"
+msgstr "Показать"
+
+msgid "Rewrite every [sc …] tag in your content to [ht-snippet …], keeping all attributes. Preview first; applying edits post content, so take a backup. Tip: you don’t have to convert — imported snippets already answer [sc …] once Shortcoder is deactivated."
+msgstr "Переписывает каждый тег [sc …] в вашем содержимом на [ht-snippet …], сохраняя все атрибуты. Сначала выполните предпросмотр; применение изменяет содержимое записей, поэтому сделайте резервную копию. Совет: преобразовывать необязательно — импортированные сниппеты уже отвечают на [sc …] после деактивации Shortcoder."
+
+msgid "Right drawer"
+msgstr "Правая панель"
+
+msgid "Role"
+msgstr "Роль"
+
+msgid "Run shortcodes in category / tag descriptions"
+msgstr "Выполнять шорткоды в описаниях рубрик / меток"
+
+msgid "Run shortcodes in excerpts"
+msgstr "Выполнять шорткоды в отрывках"
+
+msgid "Run shortcodes in menu items"
+msgstr "Выполнять шорткоды в пунктах меню"
+
+msgid "Run shortcodes in widgets"
+msgstr "Выполнять шорткоды в виджетах"
+
+msgid "Run the scan first so there is something to self-host."
+msgstr "Сначала выполните сканирование, чтобы было что разместить у себя."
+
+msgid "Run “%s” now? This permanently deletes matching items and cannot be undone."
+msgstr "Запустить «%s» сейчас? Это необратимо удаляет соответствующие элементы и не может быть отменено."
+
+msgid "SAVE CONTENT"
+msgstr "СОХРАНИТЬ СОДЕРЖИМОЕ"
+
+msgid "SCHEDULE"
+msgstr "РАСПИСАНИЕ"
+
+msgid "SECURITY"
+msgstr "БЕЗОПАСНОСТЬ"
+
+msgid "SEO optimization"
+msgstr "SEO-оптимизация"
+
+msgid "SETTING"
+msgstr "НАСТРОЙКА"
+
+msgid "SIGN"
+msgstr "ПОДПИСЬ"
+
+msgid "SMTP authentication"
+msgstr "Аутентификация SMTP"
+
+msgid "SMTP port"
+msgstr "Порт SMTP"
+
+msgid "SMTP protocol"
+msgstr "Протокол SMTP"
+
+msgid "SMTP server"
+msgstr "Сервер SMTP"
+
+msgid "SNIPPETS"
+msgstr "СНИППЕТЫ"
+
+msgid "SVG uploads are unavailable: the sanitiser library is missing."
+msgstr "Загрузка SVG недоступна: отсутствует библиотека очистки."
+
+msgid "Sat"
+msgstr "Сб"
+
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+msgid "Save images to media when copying from another source"
+msgstr "Сохранять изображения в медиатеку при копировании из другого источника"
+
+msgid "Save interval (minutes)"
+msgstr "Интервал сохранения (минуты)"
+
+msgid "Save schedule"
+msgstr "Сохранить расписание"
+
+msgid "Save services"
+msgstr "Сохранить услуги"
+
+msgid "Save shortcode status"
+msgstr "Сохранить статус шорткодов"
+
+msgid "Save snippet"
+msgstr "Сохранить сниппет"
+
+msgid "Saved %d service(s)."
+msgstr "Сохранено %d услуг."
+
+msgid "Saved."
+msgstr "Сохранено."
+
+msgid "Scan external requests"
+msgstr "Сканировать внешние запросы"
+
+msgid "Scan with your phone"
+msgstr "Отсканируйте телефоном"
+
+msgid "Scanning your home page…"
+msgstr "Сканирование вашей главной страницы…"
+
+msgid "Screen refreshed"
+msgstr "Экран обновлён"
+
+msgid "Scroll bar color"
+msgstr "Цвет полосы прокрутки"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Search below, click any icon to copy its ready-made shortcode, then paste it where you want the icon to appear."
+msgstr "Ищите ниже, нажмите на любую иконку, чтобы скопировать её готовый шорткод, затем вставьте его туда, где хотите, чтобы появилась иконка."
+
+msgid "Search icons — e.g. cart, arrow, brand-facebook…"
+msgstr "Поиск иконок — например, cart, arrow, brand-facebook…"
+
+msgid "Search settings…"
+msgstr "Поиск настроек…"
+
+msgid "Seconds before the bubble appears"
+msgstr "Секунд до появления пузыря"
+
+msgid "Secret key"
+msgstr "Secret key"
+
+msgid "Security"
+msgstr "Безопасность"
+
+msgid "Security and speed for a shop, chosen not to interfere with the store. The REST API is left fully on — WooCommerce cart and checkout need it — and permalinks are left untouched."
+msgstr "Безопасность и скорость для магазина, выбранные так, чтобы не мешать работе магазина. REST API оставлен полностью включённым — он нужен корзине и оформлению заказа WooCommerce — а постоянные ссылки остаются нетронутыми."
+
+msgid "Security check failed. Please start the sign-in again."
+msgstr "Проверка безопасности не пройдена. Пожалуйста, начните вход заново."
+
+msgid "Security hardening"
+msgstr "Усиление безопасности"
+
+msgid "Security headers (frame, nosniff, referrer)"
+msgstr "Заголовки безопасности (frame, nosniff, referrer)"
+
+msgid "Security response headers"
+msgstr "Заголовки безопасности в ответах"
+
+msgid "Security response headers are sent"
+msgstr "Заголовки безопасности в ответах отправляются"
+
+msgid "Security tab → Block user enumeration"
+msgstr "Вкладка «Безопасность» → Блокировать перечисление пользователей"
+
+msgid "Security tab → Disable unused endpoints"
+msgstr "Вкладка «Безопасность» → Отключить неиспользуемые конечные точки"
+
+msgid "Security tab → Limit login attempts"
+msgstr "Вкладка «Безопасность» → Ограничить попытки входа"
+
+msgid "Security tab → Lock down the admin"
+msgstr "Вкладка «Безопасность» → Защитить админ-панель"
+
+msgid "Security tab → Privacy → Scan external requests"
+msgstr "Вкладка «Безопасность» → Конфиденциальность → Сканировать внешние запросы"
+
+msgid "Security tab → Privacy → self-host Google Fonts"
+msgstr "Вкладка «Безопасность» → Конфиденциальность → разместить Google Fonts у себя"
+
+msgid "Security tab → Security response headers"
+msgstr "Вкладка «Безопасность» → Заголовки безопасности в ответах"
+
+msgid "Security: block user enumeration, limit logins, disable XML-RPC, hide the version, disable the file editor"
+msgstr "Безопасность: блокировать перечисление пользователей, ограничить входы, отключить XML-RPC, скрыть версию, отключить редактор файлов"
+
+msgid "Select admin"
+msgstr "Выберите администратора"
+
+msgid "Select background color"
+msgstr "Выберите цвет фона"
+
+msgid "Select button border color"
+msgstr "Выберите цвет границы кнопки"
+
+msgid "Select button color"
+msgstr "Выберите цвет кнопки"
+
+msgid "Select icon"
+msgstr "Выберите иконку"
+
+msgid "Select icon color"
+msgstr "Выберите цвет иконки"
+
+msgid "Select image"
+msgstr "Выберите изображение"
+
+msgid "Select redirect page"
+msgstr "Выберите страницу перенаправления"
+
+msgid "Select the custom post for which you want to display TOC content"
+msgstr "Выберите произвольную запись, для которой хотите отображать содержание"
+
+msgid "Select the custom post for which you want to show ads"
+msgstr "Выберите произвольную запись, для которой хотите показывать рекламу"
+
+msgid "Select the displayed logo"
+msgstr "Выберите отображаемый логотип"
+
+msgid "Select the page to hide"
+msgstr "Выберите страницу для скрытия"
+
+msgid "Select title color and button"
+msgstr "Выберите цвет заголовка и кнопки"
+
+msgid "Selection color"
+msgstr "Цвет выделения"
+
+msgid "Self-host Google Fonts"
+msgstr "Разместить Google Fonts у себя"
+
+msgid "Self-hosted %1$d font file(s) across %2$d stylesheet(s). Turn on “Self-host Google Fonts” above and save."
+msgstr "Размещено у себя %1$d файлов шрифтов в %2$d таблицах стилей. Включите «Разместить Google Fonts у себя» выше и сохраните."
+
+msgid "Send"
+msgstr "Отправить"
+
+msgid "Send security headers"
+msgstr "Отправлять заголовки безопасности"
+
+msgid "Send test email"
+msgstr "Отправить тестовое письмо"
+
+msgid "Sender email address"
+msgstr "Email-адрес отправителя"
+
+msgid "Sender name"
+msgstr "Имя отправителя"
+
+msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
+msgstr "Разумные значения по умолчанию для контентного сайта: содержание в длинных записях, более лёгкие страницы и базовое усиление безопасности."
+
+msgid "Services"
+msgstr "Услуги"
+
+msgid "Services panel (slide-up from the bottom bar)"
+msgstr "Панель услуг (выдвигается вверх из нижней панели)"
+
+msgid "Set access and viewing permissions"
+msgstr "Задать права доступа и просмотра"
+
+msgid "Set the colour (hex, rgb or a CSS name)."
+msgstr "Задайте цвет (hex, rgb или имя CSS)."
+
+msgid "Set the size in pixels."
+msgstr "Задайте размер в пикселях."
+
+msgid "Set up Adsense ads"
+msgstr "Настроить рекламу Adsense"
+
+msgid "Set up cookie notifications"
+msgstr "Настроить уведомления о cookie"
+
+msgid "Set up the ads.txt file"
+msgstr "Настроить файл ads.txt"
+
+msgid "Setting group"
+msgstr "Группа настроек"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Settings > Permalinks > Save changes"
+msgstr "Настройки > Постоянные ссылки > Сохранить изменения"
+
+msgid "Settings changed"
+msgstr "Настройки изменены"
+
+msgid "Shortcode"
+msgstr "Шорткод"
+
+msgid "Shortcode content visible only to group of users"
+msgstr "Содержимое шорткода видно только группе пользователей"
+
+msgid "Shortcode reference"
+msgstr "Справочник шорткодов"
+
+msgid "Shortcode to display date"
+msgstr "Шорткод для отображения даты"
+
+msgid "Shortcodes"
+msgstr "Шорткоды"
+
+msgid "Show a floating “Services” button on desktop"
+msgstr "Показывать плавающую кнопку «Услуги» на компьютере"
+
+msgid "Show a greeting bubble near the button"
+msgstr "Показывать приветственный пузырь рядом с кнопкой"
+
+msgid "Show a scan-to-open QR on desktop (Zalo, WhatsApp, Telegram, Viber, Line; WeChat always)"
+msgstr "Показывать QR-код для сканирования на компьютере (Zalo, WhatsApp, Telegram, Viber, Line; WeChat всегда)"
+
+msgid "Show from"
+msgstr "Показывать с"
+
+msgid "Show full image"
+msgstr "Показать полное изображение"
+
+msgid "Show on devices"
+msgstr "Показывать на устройствах"
+
+msgid "Show the bar on tablets too (up to 1024px)"
+msgstr "Показывать панель также на планшетах (до 1024px)"
+
+msgid "Show to"
+msgstr "Показывать до"
+
+msgid "Show until"
+msgstr "Показывать до"
+
+msgid "Sign in with Google"
+msgstr "Войти через Google"
+
+msgid "Sign in with Google account"
+msgstr "Войти с аккаунтом Google"
+
+msgid "Signature shortcode"
+msgstr "Шорткод подписи"
+
+msgid "Site health"
+msgstr "Здоровье сайта"
+
+msgid "Site key"
+msgstr "Site key"
+
+msgid "Smooth-scroll is a library that enables you to create a smooth scrolling effect, providing users with a perception of faster page navigation"
+msgstr "Smooth-scroll — это библиотека, которая позволяет создать эффект плавной прокрутки, давая пользователям ощущение более быстрой навигации по странице"
+
+msgid "Snippet deleted."
+msgstr "Сниппет удалён."
+
+msgid "Snippet saved."
+msgstr "Сниппет сохранён."
+
+msgid "Something went wrong."
+msgstr "Что-то пошло не так."
+
+msgid "Source code and issues:"
+msgstr "Исходный код и задачи:"
+
+msgid "Spacing below"
+msgstr "Отступ снизу"
+
+msgid "Spam comments"
+msgstr "Спам-комментарии"
+
+msgid "Spin it — handy for loaders."
+msgstr "Вращайте — удобно для индикаторов загрузки."
+
+msgid "Stacked banners"
+msgstr "Составные баннеры"
+
+msgid "Status:"
+msgstr "Статус:"
+
+msgid "Step 1: Go to Appearance > Menus > Create a new menu > check Navigation bar (Horse Tools)"
+msgstr "Шаг 1: Перейдите в «Внешний вид» > «Меню» > «Создать новое меню» > отметьте «Панель навигации (Horse Tools)»"
+
+msgid "Step 2: Below, if you want the menu to open on a specific button, add <b style=\"color:red\">#horsenavi</b> to the field (#id or .class). For (Enter link), enter <b style=\"color:red\">#</b>. Note: Only add it to one of the 5 buttons below"
+msgstr "Шаг 2: Ниже, если вы хотите, чтобы меню открывалось на определённой кнопке, добавьте <b style=\"color:red\">#horsenavi</b> в поле (#id or .class). В поле (Введите ссылку) введите <b style=\"color:red\">#</b>. Примечание: добавляйте это только к одной из 5 кнопок ниже"
+
+msgid "Still:"
+msgstr "Стоп-кадр:"
+
+msgid "Stop cropping"
+msgstr "Остановить обрезку"
+
+msgid "Stop cropping all"
+msgstr "Остановить обрезку всех"
+
+msgid "Story circles"
+msgstr "Круги историй"
+
+msgid "Subtitle / price / coupon code"
+msgstr "Подзаголовок / цена / код купона"
+
+msgid "Success"
+msgstr "Успешно"
+
+msgid "Sun"
+msgstr "Вс"
+
+msgid "Support multi-byte UTF-8 encoding (if you see strange characters)"
+msgstr "Поддержка многобайтовой кодировки UTF-8 (если вы видите странные символы)"
+
+msgid "Support quick notification setup, allowing web managers to easily deliver useful and timely content, helping users stay informed effortlessly"
+msgstr "Поддержка быстрой настройки уведомлений, позволяющая веб-менеджерам легко доносить полезное и своевременное содержимое, помогая пользователям без усилий оставаться в курсе"
+
+msgid "Support team"
+msgstr "Служба поддержки"
+
+msgid "Switch off any shortcode you do not use. A disabled shortcode simply stops rendering. This only affects Horse Tools shortcodes — never those from other plugins."
+msgstr "Отключите любой шорткод, который вы не используете. Отключённый шорткод просто перестаёт отображаться. Это касается только шорткодов Horse Tools — никогда шорткодов из других плагинов."
+
+msgid "System"
+msgstr "Система"
+
+msgid "TOC"
+msgstr "Содержание"
+
+msgid "TOC Settings"
+msgstr "Настройки содержания"
+
+msgid "TOOL"
+msgstr "ИНСТРУМЕНТ"
+
+msgid "Table name"
+msgstr "Имя таблицы"
+
+msgid "Table of Contents"
+msgstr "Содержание"
+
+msgid "Table of contents configuration"
+msgstr "Настройка содержания"
+
+msgid "Table of contents on posts"
+msgstr "Содержание в записях"
+
+msgid "Tabler icon name (e.g. snowflake) — or leave blank and use an image"
+msgstr "Имя иконки Tabler (например, snowflake) — или оставьте пустым и используйте изображение"
+
+msgid "Tag"
+msgstr "Метка"
+
+msgid "Tags (comma separated)"
+msgstr "Метки (через запятую)"
+
+msgid "Test SMTP email sending from your website"
+msgstr "Проверьте отправку писем по SMTP с вашего сайта"
+
+msgid "Text color"
+msgstr "Цвет текста"
+
+msgid "Text color of the input / select box"
+msgstr "Цвет текста поля ввода / выбора"
+
+msgid "Text editor tool"
+msgstr "Инструмент текстового редактора"
+
+msgid "That address cannot be fetched from this server."
+msgstr "Этот адрес не может быть получен с этого сервера."
+
+msgid "That did not look like a Google Fonts stylesheet."
+msgstr "Это не похоже на таблицу стилей Google Fonts."
+
+msgid "That file could not be read as JSON."
+msgstr "Этот файл не удалось прочитать как JSON."
+
+msgid "That is not a valid Horse Tools export file."
+msgstr "Это недействительный файл экспорта Horse Tools."
+
+msgid "That is not a valid snippet export file."
+msgstr "Это недействительный файл экспорта сниппетов."
+
+msgid "That name is reserved by another Horse Tools shortcode. Pick a different one."
+msgstr "Это имя зарезервировано другим шорткодом Horse Tools. Выберите другое."
+
+msgid "That preset does not exist."
+msgstr "Этот пресет не существует."
+
+msgid "The \"Index Now\" link will be added in the custom post management section to allow quick index submission"
+msgstr "Ссылка «Индексировать сейчас» будет добавлена в раздел управления произвольными записями для быстрой отправки на индексацию"
+
+msgid "The Avatar, Live-chat and Tab-widget skins use the fields below."
+msgstr "Скины Avatar, Live-chat и Tab-widget используют поля ниже."
+
+msgid "The GD library has been installed"
+msgstr "Библиотека GD установлена"
+
+msgid "The GD library has not been installed"
+msgstr "Библиотека GD не установлена"
+
+msgid "The address %1$s was locked out after repeated failed logins on %2$s."
+msgstr "Адрес %1$s был заблокирован после повторяющихся неудачных попыток входа на %2$s."
+
+msgid "The changing image is square, with the standard size being 100x100 pixels"
+msgstr "Изменяемое изображение квадратное, стандартный размер — 100x100 пикселей"
+
+msgid "The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot."
+msgstr "Конфигурация, существовавшая до вашего последнего импорта, сохранена. Восстановление возвращает каждую группу к этому снимку."
+
+msgid "The debug file does not exist"
+msgstr "Файл отладки не существует"
+
+msgid "The feature adds advanced functions when uploading images, such as adding frames, flipping images... allowing you to automatically customize your images during upload. Picture frame (PNG)"
+msgstr "Эта функция добавляет расширенные возможности при загрузке изображений, такие как добавление рамок, отражение изображений... позволяя автоматически настраивать ваши изображения при загрузке. Рамка изображения (PNG)"
+
+msgid "The file contained no Horse Tools settings to import."
+msgstr "Файл не содержал настроек Horse Tools для импорта."
+
+msgid "The file name will be your domain name"
+msgstr "Именем файла будет ваше доменное имя"
+
+msgid "The file path is invalid or not a file"
+msgstr "Путь к файлу недействителен или это не файл"
+
+msgid "The first image becomes the featured image"
+msgstr "Первое изображение становится изображением записи"
+
+msgid "The font files could not be downloaded."
+msgstr "Не удалось скачать файлы шрифтов."
+
+msgid "The full recommended hardening set. The one thing left out is the full REST API block, which can break forms and guests — enable that yourself on the Security screen if your site truly needs none of it."
+msgstr "Полный рекомендуемый набор усиления безопасности. Единственное, что не включено, — это полная блокировка REST API, которая может сломать формы и работу гостей; включите её самостоятельно на экране «Безопасность», если вашему сайту действительно ничего из этого не нужно."
+
+msgid "The function of lazy loading images"
+msgstr "Функция отложенной загрузки изображений"
+
+msgid "The home page returned no HTML to scan."
+msgstr "Главная страница не вернула HTML для сканирования."
+
+msgid "The icon on its own."
+msgstr "Иконка сама по себе."
+
+msgid "The optimisation module is on"
+msgstr "Модуль оптимизации включён"
+
+msgid "The original image size when added to the post"
+msgstr "Оригинальный размер изображения при добавлении в запись"
+
+msgid "The previous configuration has been restored."
+msgstr "Предыдущая конфигурация восстановлена."
+
+msgid "The reCAPTCHA is invalid"
+msgstr "reCAPTCHA недействительна"
+
+msgid "The score threshold applies to reCAPTCHA v3 only. Google returns 1.0 for traffic it is confident is human and 0.0 for traffic it is confident is a bot; 0.5 is the recommended starting point. Raise it to block more aggressively, lower it if real visitors are being turned away."
+msgstr "Порог оценки применяется только к reCAPTCHA v3. Google возвращает 1.0 для трафика, который он уверенно считает человеческим, и 0.0 для трафика, который он уверенно считает ботом; 0.5 — рекомендуемая отправная точка. Повысьте его, чтобы блокировать агрессивнее, понизьте, если реальным посетителям отказывают в доступе."
+
+msgid "The site is served over HTTPS"
+msgstr "Сайт отдаётся по HTTPS"
+
+msgid "The site is visible to search engines"
+msgstr "Сайт виден поисковым системам"
+
+msgid "The standard size for the logo is 280x80 PX"
+msgstr "Стандартный размер логотипа — 280x80 PX"
+
+msgid "The table of contents is an incredibly useful feature that allows readers to easily grasp the content by summarizing the headings (h-tags) in the article"
+msgstr "Содержание — невероятно полезная функция, которая позволяет читателям легко охватить содержимое, суммируя заголовки (h-теги) в статье"
+
+msgid "The text to replace Buy Now on the product page"
+msgstr "Текст для замены «Купить сейчас» на странице товара"
+
+msgid "The theme/plugin file editor is disabled"
+msgstr "Редактор файлов тем/плагинов отключён"
+
+msgid "There is no backup to restore."
+msgstr "Нет резервной копии для восстановления."
+
+msgid "These groups will change"
+msgstr "Эти группы будут изменены"
+
+msgid "These stop WordPress installing updates on its own — the site still checks for them, so the Dashboard and Plugins screens keep showing what is available and you apply updates when you choose. It never stops checking, so you are never left unaware of a security release."
+msgstr "Это не позволяет WordPress устанавливать обновления самостоятельно — сайт по-прежнему проверяет их наличие, поэтому экраны «Консоль» и «Плагины» продолжают показывать доступные обновления, а вы применяете их по своему усмотрению. Проверка никогда не прекращается, поэтому вы никогда не останетесь в неведении о выпуске обновления безопасности."
+
+msgid "This SVG file could not be parsed and was rejected."
+msgstr "Этот файл SVG не удалось разобрать, и он был отклонён."
+
+msgid "This blocks the REST API for logged-out visitors. It WILL break: WooCommerce cart and checkout for guests, Contact Form 7 and other REST-based forms, comment submission on block themes, and oEmbed. Only enable it if your site uses none of these."
+msgstr "Это блокирует REST API для не вошедших посетителей. Это СЛОМАЕТ: корзину и оформление заказа WooCommerce для гостей, Contact Form 7 и другие формы на основе REST, отправку комментариев в блочных темах и oEmbed. Включайте это только если ваш сайт не использует ничего из перечисленного."
+
+msgid "This content is locked! You need to log in to view"
+msgstr "Это содержимое заблокировано! Вам нужно войти, чтобы просмотреть его"
+
+msgid "This feature allows you to add CSS, JS, and HTML code to your WordPress site through hooks like WP head, WP body, WP footer, and WP login, making it easy and convenient to supplement your code"
+msgstr "Эта функция позволяет добавлять код CSS, JS и HTML на ваш сайт WordPress через хуки, такие как WP head, WP body, WP footer и WP login, что делает удобным дополнение вашего кода"
+
+msgid "This feature allows you to add Shortcode to post titles, which is very convenient for using custom tools"
+msgstr "Эта функция позволяет добавлять шорткоды в заголовки записей, что очень удобно для использования пользовательских инструментов"
+
+msgid "This feature allows you to add the Classic Editor to the category description box when editing posts or products"
+msgstr "Эта функция позволяет добавить классический редактор в поле описания рубрики при редактировании записей или товаров"
+
+msgid "This feature allows you to configure website redirects with multiple options such as 301, 404, and 503, making management much simpler"
+msgstr "Эта функция позволяет настраивать перенаправления сайта с несколькими вариантами, такими как 301, 404 и 503, что значительно упрощает управление"
+
+msgid "This feature allows you to customize the currency symbol as desired"
+msgstr "Эта функция позволяет настраивать символ валюты по вашему желанию"
+
+msgid "This feature allows you to only display Horse Tools to a specific Admin account"
+msgstr "Эта функция позволяет отображать Horse Tools только для определённого аккаунта администратора"
+
+msgid "This feature allows you to set newly edited posts to be displayed first in the main loop"
+msgstr "Эта функция позволяет задать отображение недавно отредактированных записей первыми в основном цикле"
+
+msgid "This feature compiles various shortcode templates with essential functionalities that are frequently used to enhance the user experience in WordPress"
+msgstr "Эта функция собирает различные шаблоны шорткодов с основными возможностями, которые часто используются для улучшения пользовательского опыта в WordPress"
+
+msgid "This feature helps optimize cleanup tasks such as clearing content, comments, and the media library. It makes your website cleaner and more optimized"
+msgstr "Эта функция помогает оптимизировать задачи очистки, такие как удаление содержимого, комментариев и медиатеки. Она делает ваш сайт чище и более оптимизированным"
+
+msgid "This feature uses the Fancybox library, allowing you to open images in posts for viewing"
+msgstr "Эта функция использует библиотеку Fancybox, позволяя открывать изображения в записях для просмотра"
+
+msgid "This feature was removed in Horse Tools 1.0.0. It opened an affiliate URL in a hidden off-screen window every time a visitor clicked anywhere on the page. That is affiliate cookie stuffing: it deceives your visitors, breaks the terms of every major affiliate network and of Google AdSense, and can get your domain and your ad accounts banned."
+msgstr "Эта функция была удалена в Horse Tools 1.0.0. Она открывала партнёрский URL в скрытом окне за пределами экрана каждый раз, когда посетитель кликал в любом месте страницы. Это партнёрский cookie stuffing: он обманывает ваших посетителей, нарушает условия каждой крупной партнёрской сети и Google AdSense и может привести к блокировке вашего домена и рекламных аккаунтов."
+
+msgid "This feature will add nofollow and _blank to external links on your site"
+msgstr "Эта функция добавит nofollow и _blank к внешним ссылкам на вашем сайте"
+
+msgid "This feature will hide the plugin you want from the plugin management page"
+msgstr "Эта функция скроет нужный вам плагин со страницы управления плагинами"
+
+msgid "This feature will use the title of the post as the description for the image when uploaded"
+msgstr "Эта функция будет использовать заголовок записи в качестве описания изображения при загрузке"
+
+msgid "This function allows you to customize the color of the scrollbar to your liking"
+msgstr "Эта функция позволяет настроить цвет полосы прокрутки по вашему вкусу"
+
+msgid "This function allows you to delete images attached to posts when deleting the posts themselves. Note that if multiple posts use the same image, it will also be deleted when removing the post"
+msgstr "Эта функция позволяет удалять изображения, прикреплённые к записям, при удалении самих записей. Обратите внимание: если несколько записей используют одно и то же изображение, оно также будет удалено при удалении записи"
+
+msgid "This function allows you to initiate a dark mode library, enabling the website to switch between light and dark modes"
+msgstr "Эта функция позволяет запустить библиотеку тёмного режима, давая сайту возможность переключаться между светлым и тёмным режимами"
+
+msgid "This function allows you to redirect 301 links to the target page"
+msgstr "Эта функция позволяет перенаправлять ссылки с помощью 301 на целевую страницу"
+
+msgid "This function will redirect all of your website pages to the destination page of your choice"
+msgstr "Эта функция перенаправит все страницы вашего сайта на целевую страницу по вашему выбору"
+
+msgid "This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site."
+msgstr "Это включает каждую группу настроек, независимо от того, включён ли сейчас её модуль. Загруженные файлы шрифтов не включаются — они хранятся на этом сайте."
+
+msgid "This is an email notification of your successful registration"
+msgstr "Это email-уведомление о вашей успешной регистрации"
+
+msgid "This shortcode allows you to lock any content, and only the selected group of logged-in users can view it"
+msgstr "Этот шорткод позволяет заблокировать любое содержимое, и только выбранная группа вошедших пользователей может его просмотреть"
+
+msgid "This shortcode is used to create a download button with a timeout"
+msgstr "Этот шорткод используется для создания кнопки скачивания с таймаутом"
+
+msgid "This shortcode is used to display the date in the post title. Please note that you need to enable the shortcode usage in the post title under the POST, PAGE section"
+msgstr "Этот шорткод используется для отображения даты в заголовке записи. Обратите внимание: вам нужно включить использование шорткодов в заголовке записи в разделе ЗАПИСЬ, СТРАНИЦА"
+
+msgid "This website uses cookies to ensure you get the best experience on our site. By continuing to browse, you agree to our use of cookies. For more information, please read our Cookie Policy"
+msgstr "Этот сайт использует файлы cookie, чтобы обеспечить вам наилучший опыт на нашем сайте. Продолжая просмотр, вы соглашаетесь на использование нами файлов cookie. Для получения дополнительной информации ознакомьтесь с нашей Политикой в отношении файлов cookie"
+
+msgid "Thu"
+msgstr "Чт"
+
+msgid "Tidy up"
+msgstr "Навести порядок"
+
+msgid "Time"
+msgstr "Время"
+
+msgid "Time is up"
+msgstr "Время истекло"
+
+msgid "Time:"
+msgstr "Время:"
+
+msgid "Title"
+msgstr "Заголовок"
+
+msgid "Title color"
+msgstr "Цвет заголовка"
+
+msgid "Title text and icon color"
+msgstr "Цвет текста и иконки заголовка"
+
+msgid "To"
+msgstr "До"
+
+msgid "To add advertisements to your website, simply enable this feature. It provides you with various ad options to meet your distribution needs"
+msgstr "Чтобы добавить рекламу на ваш сайт, просто включите эту функцию. Она предоставляет вам различные варианты рекламы для удовлетворения ваших потребностей в размещении"
+
+msgid "To create a menu on the navigation bar:"
+msgstr "Чтобы создать меню на панели навигации:"
+
+msgid "Too many failed attempts. Try again in about %d minute(s)."
+msgstr "Слишком много неудачных попыток. Попробуйте снова примерно через %d минут."
+
+msgid "Top and bottom positions"
+msgstr "Верхнее и нижнее положения"
+
+msgid "Total data"
+msgstr "Всего данных"
+
+msgid "Total:"
+msgstr "Итого:"
+
+msgid "Transparency level"
+msgstr "Уровень прозрачности"
+
+msgid "Trashed comments"
+msgstr "Комментарии в корзине"
+
+msgid "Tue"
+msgstr "Вт"
+
+msgid "Turn Horse Tools shortcodes on or off"
+msgstr "Включить или выключить шорткоды Horse Tools"
+
+msgid "Turn off WP_DEBUG_DISPLAY on a live site."
+msgstr "Отключите WP_DEBUG_DISPLAY на рабочем сайте."
+
+msgid "Turns off the RSS and Atom feeds if your site does not publish one."
+msgstr "Отключает ленты RSS и Atom, если ваш сайт не публикует их."
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Type any shortcode name (without brackets) to list the posts and pages that contain it — handy before you change or remove one."
+msgstr "Введите любое имя шорткода (без скобок), чтобы получить список записей и страниц, которые его содержат — удобно перед тем, как изменить или удалить его."
+
+msgid "Type the number of the shortcode to insert:"
+msgstr "Введите номер шорткода для вставки:"
+
+msgid "UPLOAD FONT"
+msgstr "ЗАГРУЗИТЬ ШРИФТ"
+
+msgid "URL:"
+msgstr "URL:"
+
+msgid "URL: Unverified"
+msgstr "URL: не проверен"
+
+msgid "URL: does not exist"
+msgstr "URL: не существует"
+
+msgid "USE FONT"
+msgstr "ИСПОЛЬЗОВАТЬ ШРИФТ"
+
+msgid "USER"
+msgstr "ПОЛЬЗОВАТЕЛЬ"
+
+msgid "Unable to read the uploaded SVG file."
+msgstr "Не удалось прочитать загруженный файл SVG."
+
+msgid "Unable to send email!"
+msgstr "Не удалось отправить письмо!"
+
+msgid "Unable to write the sanitised SVG file."
+msgstr "Не удалось записать очищенный файл SVG."
+
+msgid "Undo the last import"
+msgstr "Отменить последний импорт"
+
+msgid "Upload avatars"
+msgstr "Загрузить аватары"
+
+msgid "Upload font error"
+msgstr "Ошибка загрузки шрифта"
+
+msgid "Upload font success"
+msgstr "Шрифт успешно загружен"
+
+msgid "Uploaded images are compressed"
+msgstr "Загруженные изображения сжимаются"
+
+msgid "Use fonts on the web"
+msgstr "Использовать шрифты в вебе"
+
+msgid "Use shortcodes"
+msgstr "Использовать шорткоды"
+
+msgid "Use titles as descriptions for images"
+msgstr "Использовать заголовки как описания для изображений"
+
+msgid "Use titles as image alt text"
+msgstr "Использовать заголовки как alt-текст изображений"
+
+msgid "Use with care: your theme may need several image sizes to display correctly."
+msgstr "Используйте с осторожностью: вашей теме может потребоваться несколько размеров изображений для корректного отображения."
+
+msgid "Use:"
+msgstr "Использование:"
+
+msgid "User enumeration is blocked"
+msgstr "Перечисление пользователей заблокировано"
+
+msgid "Video cards"
+msgstr "Видеокарточки"
+
+msgid "View"
+msgstr "Просмотр"
+
+msgid "Visit this page to get the SVG icon:"
+msgstr "Посетите эту страницу, чтобы получить иконку SVG:"
+
+msgid "WOO"
+msgstr "WOO"
+
+msgid "WOOCOMMERCE"
+msgstr "WOOCOMMERCE"
+
+msgid "WP BODY"
+msgstr "WP BODY"
+
+msgid "WP FOOTER"
+msgstr "WP FOOTER"
+
+msgid "WP HEAD"
+msgstr "WP HEAD"
+
+msgid "WP LOGIN"
+msgstr "WP LOGIN"
+
+msgid "Wait..."
+msgstr "Подождите..."
+
+msgid "Watermark image compared to main image"
+msgstr "Изображение водяного знака относительно основного изображения"
+
+msgid "We apologize, the website is currently undergoing maintenance. Please wait for a moment"
+msgstr "Приносим извинения, сайт в настоящее время находится на техническом обслуживании. Пожалуйста, подождите немного"
+
+msgid "We are currently closed"
+msgstr "Сейчас мы закрыты"
+
+msgid "We reply quickly"
+msgstr "Мы отвечаем быстро"
+
+msgid "Wed"
+msgstr "Ср"
+
+msgid "Weekly"
+msgstr "Еженедельно"
+
+msgid "Welcome to Horse Tools"
+msgstr "Добро пожаловать в Horse Tools"
+
+msgid "Welcome to the website"
+msgstr "Добро пожаловать на сайт"
+
+msgid "When someone copies text from your site, a short line you set is added after it — their selection is kept, nothing is replaced. Useful for a \"Source: yoursite.com\" credit."
+msgstr "Когда кто-то копирует текст с вашего сайта, после него добавляется заданная вами короткая строка — выделение сохраняется, ничего не заменяется. Полезно для указания «Источник: yoursite.com»."
+
+msgid "When you change a published post or page URL — its slug, its parent, or the whole path — the old address is redirected to the new one. WordPress already does this for a simple slug change; this also covers moves that core misses, and only ever acts on a URL that would otherwise 404."
+msgstr "Когда вы меняете URL опубликованной записи или страницы — её ярлык, родителя или весь путь — старый адрес перенаправляется на новый. WordPress уже делает это при простом изменении ярлыка; это также охватывает перемещения, которые ядро пропускает, и действует только на URL, который иначе выдал бы 404."
+
+msgid "When your theme or a plugin loads fonts from Google, every visitor's IP is sent to Google — which GDPR treats as a data transfer. This serves downloaded copies from your own domain instead. Scan first, then click self-host; this works for fonts loaded the standard way (if a font still loads from Google afterwards, your theme hard-codes it — the scan will show you)."
+msgstr "Когда ваша тема или плагин загружает шрифты из Google, IP каждого посетителя отправляется в Google — что GDPR рассматривает как передачу данных. Вместо этого отдаются скачанные копии с вашего собственного домена. Сначала выполните сканирование, затем нажмите «разместить у себя»; это работает для шрифтов, загружаемых стандартным способом (если шрифт всё равно загружается из Google после этого, значит ваша тема жёстко его прописывает — сканирование покажет вам это)."
+
+msgid "Where shortcodes run"
+msgstr "Где выполняются шорткоды"
+
+msgid "Widget title"
+msgstr "Заголовок виджета"
+
+msgid "With this feature, HTML will be compressed into a single line, removing unnecessary characters and whitespace to speed up page loading"
+msgstr "С этой функцией HTML будет сжат в одну строку с удалением ненужных символов и пробелов для ускорения загрузки страницы"
+
+msgid "With this feature, regular users can only view their own posts and images they uploaded, while the admin can view all of them"
+msgstr "С этой функцией обычные пользователи могут просматривать только свои собственные записи и загруженные ими изображения, тогда как администратор может просматривать все"
+
+msgid "With this feature, regular users cannot access the WordPress admin page"
+msgstr "С этой функцией обычные пользователи не могут получить доступ к странице администрирования WordPress"
+
+msgid "With this feature, there will be an additional button in the profile section allowing users to upload avatars"
+msgstr "С этой функцией в разделе профиля появится дополнительная кнопка, позволяющая пользователям загружать аватары"
+
+msgid "With this feature, you can notify your orders to your Telegram group, helping you manage orders conveniently"
+msgstr "С этой функцией вы можете уведомлять о ваших заказах в вашу группу Telegram, что помогает удобно управлять заказами"
+
+msgid "WooCommerce / Store"
+msgstr "WooCommerce / Магазин"
+
+msgid "WordPress runs shortcodes in post content by default. Turn these on to run them elsewhere too. (Saved with the SAVE button at the bottom.)"
+msgstr "WordPress по умолчанию выполняет шорткоды в содержимом записей. Включите их, чтобы выполнять их и в других местах. (Сохраняется кнопкой СОХРАНИТЬ внизу.)"
+
+msgid "X-Content-Type-Options: nosniff"
+msgstr "X-Content-Type-Options: nosniff"
+
+msgid "X-Frame-Options: SAMEORIGIN (block clickjacking)"
+msgstr "X-Frame-Options: SAMEORIGIN (блокировать кликджекинг)"
+
+msgid "XML-RPC is disabled"
+msgstr "XML-RPC отключён"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "Yes — preview as a visitor"
+msgstr "Да — предпросмотр как посетитель"
+
+msgid "You are not allowed to create this post type."
+msgstr "Вам не разрешено создавать этот тип записи."
+
+msgid "You are not allowed to duplicate this item."
+msgstr "Вам не разрешено дублировать этот элемент."
+
+msgid "You are not logged in"
+msgstr "Вы не вошли в систему"
+
+msgid "You can adjust the compression level of the image from 5 to 100 (100 being no compression)"
+msgstr "Вы можете настроить уровень сжатия изображения от 5 до 100 (100 — без сжатия)"
+
+msgid "You can create your widget by activating it and entering content into the box below"
+msgstr "Вы можете создать свой виджет, активировав его и введя содержимое в поле ниже"
+
+msgid "You can customize the role of successful registrants, with the default role being \"subscriber\""
+msgstr "Вы можете настроить роль успешно зарегистрировавшихся, при этом роль по умолчанию — «подписчик»"
+
+msgid "You can disable default widgets on the dashboard that you dont use"
+msgstr "Вы можете отключить виджеты консоли по умолчанию, которые вы не используете"
+
+msgid "You can further customize your login page by enabling this feature"
+msgstr "Вы можете дополнительно настроить вашу страницу входа, включив эту функцию"
+
+msgid "You can hide Horse Tools from the WP menu, but you can still access it through the link. This will hide Horse Tools for all accounts"
+msgstr "Вы можете скрыть Horse Tools из меню WP, но по-прежнему сможете получить доступ по ссылке. Это скроет Horse Tools для всех аккаунтов"
+
+msgid "You can paste the shortcode into the position where you want the login button to appear"
+msgstr "Вы можете вставить шорткод в место, где хотите, чтобы появилась кнопка входа"
+
+msgid "You can preview your file here:"
+msgstr "Вы можете просмотреть ваш файл здесь:"
+
+msgid "You can use the shortcode in the editor and add it to the position you want, note: only use 1 shortcode in the post"
+msgstr "Вы можете использовать шорткод в редакторе и добавить его в нужное место, обратите внимание: используйте только 1 шорткод в записи"
+
+msgid "You can use the shortcode to add the search icon to the location you want"
+msgstr "Вы можете использовать шорткод, чтобы добавить иконку поиска в нужное место"
+
+msgid "You do not have permission to do this."
+msgstr "У вас нет прав для выполнения этого действия."
+
+msgid "You do not have permission to upload SVG files."
+msgstr "У вас нет прав для загрузки файлов SVG."
+
+msgid "You have successfully copied"
+msgstr "Вы успешно скопировали"
+
+msgid "You have unsaved changes."
+msgstr "У вас есть несохранённые изменения."
+
+msgid "You havent added content yet"
+msgstr "Вы ещё не добавили содержимое"
+
+msgid "You need to activate this feature and customize the content below so that new registered users can receive emails"
+msgstr "Вам нужно активировать эту функцию и настроить содержимое ниже, чтобы новые зарегистрированные пользователи могли получать письма"
+
+msgid "Your Google account email address is not verified."
+msgstr "Email-адрес вашего аккаунта Google не подтверждён."
+
+msgid "Your comment has just been replied to"
+msgstr "На ваш комментарий только что ответили"
+
+msgid "Your comment has just been replied to in the post"
+msgstr "На ваш комментарий только что ответили в записи"
+
+msgid "Your configuration has been saved"
+msgstr "Ваша конфигурация сохранена"
+
+msgid "Your custom widget"
+msgstr "Ваш пользовательский виджет"
+
+msgid "Your database"
+msgstr "Ваша база данных"
+
+msgid "[%s] New comment on the article \"%s\""
+msgstr "[%s] Новый комментарий к статье «%s»"
+
+msgid "days"
+msgstr "дней"
+
+msgid "desktop"
+msgstr "компьютер"
+
+msgid "e.g. contact, promo"
+msgstr "например, contact, promo"
+
+msgid "e.g. sc, ht-snippet, vip"
+msgstr "например, sc, ht-snippet, vip"
+
+msgid "font-family:"
+msgstr "font-family:"
+
+msgid "hrs"
+msgstr "ч"
+
+msgid "icons"
+msgstr "иконки"
+
+msgid "images"
+msgstr "изображения"
+
+msgid "jQuery Migrate is a library used to maintain the operation of certain themes, plugins that rely on older code. If your website no longer relies on this library, you can disable it"
+msgstr "jQuery Migrate — это библиотека, используемая для поддержания работы определённых тем и плагинов, которые полагаются на устаревший код. Если ваш сайт больше не зависит от этой библиотеки, вы можете отключить её"
+
+msgid "logged-in"
+msgstr "вошедшие"
+
+msgid "logged-out"
+msgstr "не вошедшие"
+
+msgid "min"
+msgstr "мин"
+
+msgid "mobile"
+msgstr "мобильный"
+
+msgid "nofollow + new tab on external links"
+msgstr "nofollow + новая вкладка для внешних ссылок"
+
+msgid "off"
+msgstr "выкл"
+
+msgid "post type, e.g. shortcoder"
+msgstr "тип записи, например shortcoder"
+
+msgid "sec"
+msgstr "сек"
+
+msgid "showing first"
+msgstr "показывать первыми"
+
+msgid "third-party host(s) found"
+msgstr "найдено сторонних хостов"
+
+msgid "up to %s"
+msgstr "до %s"
+
+msgid "v3 score threshold (0 – 1)"
+msgstr "порог оценки v3 (0 – 1)"
+
+msgid "— Insert a shortcode —"
+msgstr "— Вставить шорткод —"
