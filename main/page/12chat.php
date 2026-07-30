@@ -1,5 +1,15 @@
-<?php 
+<?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
+// This admin tab always renders on the main settings page, but it calls
+// horsetools_services_get() (defined in chat-services.php). That file is only
+// auto-loaded when the chat module is active (inc/chat.php, and only when the
+// 'chat' option is set). On a site where chat isn't configured yet the function
+// was undefined, so this tab hit a fatal "Call to undefined function" — which
+// truncated the whole settings page (no tabs after it, no sidebar, no footer
+// scripts). Load the dependency here so the tab is self-sufficient regardless.
+if ( ! function_exists( 'horsetools_services_get' ) ) {
+	require_once HORSETOOLS_DIR . 'inc/chat-services.php';
+}
 global $horsetools_options; ?>
 <h2><?php _e('CHAT', 'horse-tools'); ?></h2>
 <div class="ht-on">
