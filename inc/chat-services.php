@@ -156,7 +156,18 @@ function horsetools_services_render() {
 	$out .= '<div class="ht-svc-backdrop" data-svc-close></div>';
 	$out .= '<div class="ht-svc-sheet ht-svc-l-' . esc_attr( $cfg['layout'] ) . '" role="dialog" aria-modal="true" aria-label="' . esc_attr( $cfg['title'] ) . '" style="--svc-accent:' . esc_attr( $accent ) . '">';
 	$out .= '<button class="ht-svc-handle" type="button" data-svc-close aria-label="' . esc_attr__( 'Close', 'horse-tools' ) . '"></button>';
-	$out .= '<div class="ht-svc-head"><span class="ht-svc-title">' . esc_html( $cfg['title'] ) . '</span>';
+	$out .= '<div class="ht-svc-head"><div class="ht-svc-htxt"><span class="ht-svc-title">' . esc_html( $cfg['title'] ) . '</span>';
+	// Business-hours status. On phones the floating chat widget is hidden in
+	// favour of the bottom bar, so this panel header is where mobile visitors
+	// see whether the shop is open. Only shown when a schedule is configured.
+	global $horsetools_options;
+	if ( isset( $horsetools_options['chat-bh'] ) && function_exists( 'horsetools_chat_is_open' ) ) {
+		$svc_open = horsetools_chat_is_open();
+		$out .= '<span class="ht-svc-status ' . ( $svc_open ? 'ht-svc-open' : 'ht-svc-closed' ) . '">● '
+			. ( $svc_open ? esc_html__( 'Online now', 'horse-tools' ) : esc_html__( 'Away — leave a message', 'horse-tools' ) )
+			. '</span>';
+	}
+	$out .= '</div>';
 	$out .= '<button class="ht-svc-x" type="button" data-svc-close aria-label="' . esc_attr__( 'Close', 'horse-tools' ) . '"><i class="ti ti-x" aria-hidden="true"></i></button></div>';
 	$out .= '<div class="ht-svc-body">' . $body . '</div>';
 	$out .= '</div></div>';

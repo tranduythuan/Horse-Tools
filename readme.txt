@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,6 +79,13 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.3 =
+Live-chat polish for mobile, and a friendlier snippet manager.
+
+* Fixed the **misaligned person icon** in the Livechat skin's default avatar — the placeholder is now a properly centred circle.
+* The **business-hours status** (open / away) now also shows in the mobile **Services panel** header. On phones the floating chat widget is replaced by the bottom contact bar, so previously mobile visitors never saw whether the shop was open; now they do when the schedule is configured.
+* **Snippet manager** — the content box is now a proper **code editor** (syntax highlighting, line numbers) using WordPress's own bundled CodeMirror. The many per-snippet conditions (device, visitors, schedule, tags) are tidied into a collapsible **“Advanced options”** section so the create form is simple by default. Added a **search box** and a live count to the snippet list so it stays manageable with hundreds of snippets.
 
 = 1.2.2 =
 Improved the built-in icon picker on the Chat tab.
@@ -271,6 +278,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.3 =
+Fixes the off-centre Livechat avatar, shows open/away status in the mobile Services panel, and adds a code editor + search to the snippet manager.
 
 = 1.2.2 =
 Bigger icon picker (46 icons) with Vietnamese keyword search, and a “Choose icon” button under every SVG field.

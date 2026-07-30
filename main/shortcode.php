@@ -316,6 +316,8 @@ function horsetools_shortcode_options_page() {
 				<p><input type="text" id="ht-snip-desc" class="ht-input-big" placeholder="<?php esc_attr_e( 'Description (for your reference)', 'horse-tools' ); ?>" /></p>
 				<p><textarea id="ht-snip-content" class="ht-code-textarea" style="height:170px" placeholder="<?php esc_attr_e( 'HTML, CSS or JS…  e.g. <a href=&quot;{{url}}&quot;>{{label}}</a>', 'horse-tools' ); ?>"></textarea></p>
 
+				<details class="ht-snip-adv">
+					<summary><i class="ti ti-adjustments"></i> <?php _e( 'Advanced options — device, visitors, schedule, tags (optional)', 'horse-tools' ); ?></summary>
 				<div class="ht-snip-opts">
 					<label><span><?php _e( 'Enabled', 'horse-tools' ); ?></span>
 						<select id="ht-snip-on"><option value="1"><?php _e( 'Yes', 'horse-tools' ); ?></option><option value="0"><?php _e( 'No (temporarily off)', 'horse-tools' ); ?></option></select></label>
@@ -334,6 +336,7 @@ function horsetools_shortcode_options_page() {
 					<label><span><?php _e( 'Show until', 'horse-tools' ); ?></span>
 						<input type="date" id="ht-snip-to" /></label>
 				</div>
+				</details>
 
 				<p class="ht-snip-actions">
 					<button type="button" class="ht-priv-btn" id="ht-snip-save"><i class="ti ti-device-floppy"></i> <?php _e( 'Save snippet', 'horse-tools' ); ?></button>
@@ -342,8 +345,13 @@ function horsetools_shortcode_options_page() {
 				</p>
 				<div id="ht-snip-msg"></div>
 
-				<p class="ht-snip-filter"><label><i class="ti ti-tags"></i> <?php _e( 'Filter by tag', 'horse-tools' ); ?>
-					<select id="ht-snip-tagfilter"><option value=""><?php _e( 'All snippets', 'horse-tools' ); ?></option></select></label></p>
+				<div class="ht-snip-filter">
+					<label class="ht-snip-search-l"><i class="ti ti-search"></i>
+						<input type="search" id="ht-snip-search" placeholder="<?php esc_attr_e( 'Search snippets by name, description or tag…', 'horse-tools' ); ?>" autocomplete="off" /></label>
+					<label><i class="ti ti-tags"></i> <?php _e( 'Tag', 'horse-tools' ); ?>
+						<select id="ht-snip-tagfilter"><option value=""><?php _e( 'All snippets', 'horse-tools' ); ?></option></select></label>
+					<span id="ht-snip-countlbl" class="ht-snip-countlbl"></span>
+				</div>
 				<div id="ht-snip-list"></div>
 			</div>
 
@@ -381,8 +389,21 @@ function horsetools_shortcode_options_page() {
 			.ht-snip-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px 16px;margin:8px 0 4px}
 			.ht-snip-opts label{display:flex;flex-direction:column;gap:3px;font-size:12px;color:#666}
 			.ht-snip-opts select,.ht-snip-opts input{padding:6px 8px;border:1px solid #ddd;border-radius:7px;font-size:13px}
-			.ht-snip-filter{margin:12px 0 4px;font-size:13px}
-			.ht-snip-filter select{padding:5px 8px;border:1px solid #ddd;border-radius:7px;margin-left:6px}
+			.ht-snip-adv{margin:8px 0 4px;border:1px solid #eee;border-radius:9px;background:#fafafa}
+			.ht-snip-adv>summary{cursor:pointer;padding:9px 12px;font-size:13px;font-weight:600;color:#8a5a00;list-style:none;display:flex;align-items:center;gap:7px;user-select:none}
+			.ht-snip-adv>summary::-webkit-details-marker{display:none}
+			.ht-snip-adv>summary::after{content:"▾";margin-left:auto;color:#b8942f;transition:transform .15s}
+			.ht-snip-adv[open]>summary::after{transform:rotate(180deg)}
+			.ht-snip-adv[open]>summary{border-bottom:1px solid #eee}
+			.ht-snip-adv .ht-snip-opts{padding:12px}
+			.ht-snip-filter{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:14px 0 6px;font-size:13px}
+			.ht-snip-filter label{display:inline-flex;align-items:center;gap:6px;color:#666}
+			.ht-snip-filter select{padding:5px 8px;border:1px solid #ddd;border-radius:7px}
+			.ht-snip-search-l{flex:1;min-width:200px}
+			.ht-snip-filter #ht-snip-search{flex:1;padding:7px 10px;border:1px solid #ddd;border-radius:7px;font-size:13px;min-width:160px}
+			.ht-snip-countlbl{color:#999;font-size:12px;margin-left:auto}
+			.ht-snip .CodeMirror{border:1px solid #ddd;border-radius:8px;height:220px;font-size:13px}
+			.ht-snip .CodeMirror-focused{border-color:#e0a800;box-shadow:0 0 0 1px #f0d98a}
 			#ht-snip-list{margin-top:6px}
 			.ht-snip-row{display:flex;align-items:center;gap:10px;padding:9px 10px;border:1px solid #ececec;border-radius:9px;margin-bottom:7px;background:#fff;flex-wrap:wrap}
 			.ht-snip-row.off{opacity:.55}
@@ -412,6 +433,15 @@ function horsetools_shortcode_options_page() {
 					on:$('ht-snip-on'), noadmin:$('ht-snip-noadmin'), device:$('ht-snip-device'), login:$('ht-snip-login'),
 					role:$('ht-snip-role'), tags:$('ht-snip-tags'), from:$('ht-snip-from'), to:$('ht-snip-to') };
 				var msg=$('ht-snip-msg'), list=$('ht-snip-list'), tagFilter=$('ht-snip-tagfilter');
+					var search=$('ht-snip-search'), countlbl=$('ht-snip-countlbl');
+					var adv=document.querySelector('.ht-snip-adv');
+					var cm=null;
+					function initCM(){
+						if (cm || !window.wp || !window.wp.codeEditor || !window.htSnipCM || !F.content) { return; }
+						try { cm = wp.codeEditor.initialize(F.content, window.htSnipCM).codemirror; } catch(e){ cm = null; }
+						if (cm){ cm.on('change', function(){ cm.save(); }); }
+					}
+					if (document.readyState === 'complete') { initCM(); } else { window.addEventListener('load', initCM); }
 				var I18N = {
 					saved: <?php echo wp_json_encode( __( 'Snippet saved.', 'horse-tools' ) ); ?>,
 					deleted: <?php echo wp_json_encode( __( 'Snippet deleted.', 'horse-tools' ) ); ?>,
@@ -465,8 +495,17 @@ function horsetools_shortcode_options_page() {
 				function render(){
 					refreshTagFilter();
 					var filt=tagFilter.value.toLowerCase();
-					var rows=snippets.filter(function(s){ return !filt || (s.tags||[]).some(function(t){return t.toLowerCase()===filt;}); });
-					if (!rows.length){ list.innerHTML = '<div class="ht-snip-msg">'+esc(I18N.none)+'</div>'; return; }
+					var q=(search&&search.value||'').trim().toLowerCase();
+					var rows=snippets.filter(function(s){
+						if (filt && !(s.tags||[]).some(function(t){return t.toLowerCase()===filt;})) { return false; }
+						if (q){
+							var hay=((s.slug||'')+' '+(s.title||'')+' '+(s.desc||'')+' '+((s.tags||[]).join(' '))).toLowerCase();
+							if (hay.indexOf(q)===-1) { return false; }
+						}
+						return true;
+					});
+					if (countlbl){ countlbl.textContent = snippets.length ? (rows.length+'/'+snippets.length) : ''; }
+					if (!rows.length){ list.innerHTML = '<div class="ht-snip-msg">'+esc(snippets.length?<?php echo wp_json_encode( __( 'No snippet matches your search.', 'horse-tools' ) ); ?>:I18N.none)+'</div>'; return; }
 					var html='';
 					rows.forEach(function(s){
 						var code='[ht-snippet name="'+s.slug+'"]';
@@ -482,19 +521,22 @@ function horsetools_shortcode_options_page() {
 					list.innerHTML = html;
 				}
 				tagFilter.addEventListener('change', render);
+					if (search){ search.addEventListener('input', render); }
 
 				list.addEventListener('click', function(e){
 					var c=e.target.closest('[data-copy]'), ed=e.target.closest('[data-edit]'), dl=e.target.closest('[data-del]');
 					if (c){ navigator.clipboard && navigator.clipboard.writeText(c.dataset.copy); c.textContent=I18N.copied; setTimeout(function(){ c.textContent=c.dataset.copy; },1000); return; }
 					if (ed){ var s=snippets.find(function(x){return x.slug===ed.dataset.edit;}); if(s){
-						F.name.value=s.slug; F.title.value=s.title||''; F.desc.value=s.desc||''; F.content.value=s.content||'';
+						F.name.value=s.slug; F.title.value=s.title||''; F.desc.value=s.desc||''; F.content.value=s.content||''; if(cm){ cm.setValue(s.content||''); }
 						F.on.value=s.on?'1':'0'; F.noadmin.value=s.no_admin?'1':'0'; F.device.value=s.device||''; F.login.value=s.login||'';
 						F.role.value=s.role||''; F.tags.value=(s.tags||[]).join(', '); F.from.value=s.date_from||''; F.to.value=s.date_to||'';
+						if (adv && (s.device||s.login||s.role||s.no_admin||s.date_from||s.date_to||(s.tags&&s.tags.length)||!s.on)) { adv.open=true; }
 						F.name.focus(); window.scrollTo({top:0,behavior:'smooth'}); } return; }
 					if (dl){ if(!confirm(I18N.confirmDel))return; post({action:'horsetools_snip_delete',slug:dl.dataset.del}, function(res){ if(res&&res.success){ snippets=res.data.snippets; render(); say(msg,I18N.deleted,'good'); } else { say(msg,(res&&res.data&&res.data.msg)||I18N.fail,'err'); } }); return; }
 				});
 
 				$('ht-snip-save').addEventListener('click', function(){
+					if (cm){ cm.save(); }
 					post({action:'horsetools_snip_save', slug:F.name.value, title:F.title.value, desc:F.desc.value, content:F.content.value,
 						on:F.on.value, no_admin:F.noadmin.value, device:F.device.value, login:F.login.value, role:F.role.value,
 						tags:F.tags.value, date_from:F.from.value, date_to:F.to.value}, function(res){
@@ -504,6 +546,7 @@ function horsetools_shortcode_options_page() {
 				});
 				$('ht-snip-clear').addEventListener('click', function(){
 					F.name.value=F.title.value=F.desc.value=F.content.value=F.tags.value=F.from.value=F.to.value='';
+					if(cm){ cm.setValue(''); }
 					F.on.value='1'; F.noadmin.value='0'; F.device.value=''; F.login.value=''; F.role.value=''; say(msg,''); F.name.focus();
 				});
 				$('ht-snip-import').addEventListener('click', function(){

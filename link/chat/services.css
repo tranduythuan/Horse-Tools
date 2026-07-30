@@ -7,8 +7,12 @@
 .ht-svc-sheet{position:relative;width:100%;max-width:560px;max-height:84vh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#fff;border-radius:18px 18px 0 0;padding:6px 16px 22px;transform:translateY(100%);transition:transform .28s cubic-bezier(.2,.85,.25,1);box-shadow:0 -8px 30px rgba(0,0,0,.16)}
 .ht-svc-wrap.ht-open .ht-svc-sheet{transform:translateY(0)}
 .ht-svc-handle{display:block;width:44px;height:5px;border-radius:5px;background:#ddd;border:none;margin:8px auto 12px;padding:0;cursor:grab}
-.ht-svc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.ht-svc-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px}
+.ht-svc-htxt{display:flex;flex-direction:column;gap:2px}
 .ht-svc-title{font-size:17px;font-weight:700;color:#1f1f1f}
+.ht-svc-status{font-size:12px;font-weight:600;line-height:1.2}
+.ht-svc-open{color:#1a9c5b}
+.ht-svc-closed{color:#c0392b}
 .ht-svc-x{background:none;border:none;font-size:22px;line-height:1;color:#9a9a9a;cursor:pointer;padding:2px}
 .ht-svc-x:hover{color:#555}
 
