@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,6 +79,13 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.4 =
+A much bigger, more visual icon picker on the Chat tab.
+
+* The icon picker now offers the **entire Tabler set (5,000+ icons)** instead of a fixed 24. Type to filter (Vietnamese keywords work for common icons too), and a **“Load more”** button reveals the rest in batches so the dialog stays fast.
+* Every icon shows as a real preview, so you pick what you see.
+* The **Services panel** icon fields now have the same **“Choose icon” button** right beside them — no more typing a Tabler name by hand or guessing. It fills the field for you; the mobile contact-bar SVG fields keep their in-place picker button too.
 
 = 1.2.3 =
 Live-chat polish for mobile, and a friendlier snippet manager.
@@ -278,6 +285,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.4 =
+The Chat icon picker now covers all 5,000+ Tabler icons with search + load-more, and the Services icon fields get their own “Choose icon” button.
 
 = 1.2.3 =
 Fixes the off-centre Livechat avatar, shows open/away status in the mobile Services panel, and adds a code editor + search to the snippet manager.

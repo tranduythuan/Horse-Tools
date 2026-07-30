@@ -509,7 +509,8 @@ global $horsetools_options; ?>
 			sub: <?php echo wp_json_encode( __( 'Subtitle / price / coupon code', 'horse-tools' ) ); ?>,
 			link: <?php echo wp_json_encode( __( 'Link (article or service page)', 'horse-tools' ) ); ?>,
 			badge: <?php echo wp_json_encode( __( 'Badge text (optional)', 'horse-tools' ) ); ?>,
-			nobadge: <?php echo wp_json_encode( __( 'No badge colour', 'horse-tools' ) ); ?>
+			nobadge: <?php echo wp_json_encode( __( 'No badge colour', 'horse-tools' ) ); ?>,
+			pick: <?php echo wp_json_encode( __( 'Choose icon', 'horse-tools' ) ); ?>
 		};
 		function esc(s){ return String(s==null?'':s).replace(/"/g,'&quot;'); }
 		function rowHtml(it){
@@ -519,7 +520,7 @@ global $horsetools_options; ?>
 			return '<div class="ht-svc-r">'
 				+ '<span class="ht-svc-del" title="x">&#x2715;</span>'
 				+ '<input class="f-title" placeholder="'+esc(I18N.title)+'" value="'+esc(it.title)+'">'
-				+ '<div class="row2"><input class="f-icon" list="ht-ti-names" placeholder="'+esc(I18N.icon)+'" value="'+esc(it.icon)+'"><input class="f-sub" placeholder="'+esc(I18N.sub)+'" value="'+esc(it.sub)+'"></div>'
+				+ '<div class="row2"><span class="ficon-wrap"><input class="f-icon" list="ht-ti-names" placeholder="'+esc(I18N.icon)+'" value="'+esc(it.icon)+'"><button type="button" class="ht-icon-open ht-svc-iconbtn" title="'+esc(I18N.pick)+'"><i class="ti ti-mood-smile"></i></button></span><input class="f-sub" placeholder="'+esc(I18N.sub)+'" value="'+esc(it.sub)+'"></div>'
 				+ '<input class="f-link" placeholder="'+esc(I18N.link)+'" value="'+esc(it.link)+'">'
 				+ '<input class="f-img" placeholder="'+esc(I18N.img)+'" value="'+esc(it.img)+'">'
 				+ '<div class="badgewrap"><input class="f-badge" placeholder="'+esc(I18N.badge)+'" value="'+esc(it.badge)+'"><select class="f-bc">'+opts+'</select></div>'
@@ -704,10 +705,11 @@ global $horsetools_options; ?>
 	<div id="ht-icon-modal" class="ht-icon-modal" hidden>
 		<div class="ht-icon-backdrop"></div>
 		<div class="ht-icon-dialog">
-			<div class="ht-icon-head"><b><?php _e('Choose a built-in icon', 'horse-tools'); ?></b><span class="ht-icon-close" title="close">&#x2715;</span></div>
-			<input type="text" class="ht-icon-search" placeholder="<?php esc_attr_e('Search: phone, chat, cart, star…', 'horse-tools'); ?>">
+			<div class="ht-icon-head"><b><?php _e('Choose an icon', 'horse-tools'); ?></b><span id="ht-icon-count" class="ht-icon-count"></span><span class="ht-icon-close" title="close">&#x2715;</span></div>
+			<input type="text" class="ht-icon-search" placeholder="<?php esc_attr_e('Search: phone, chat, cart, star… (Vietnamese works too)', 'horse-tools'); ?>">
 			<div class="ht-icon-grid" id="ht-icon-grid"></div>
-			<div class="ht-icon-hint"><i class="ti ti-bulb"></i> <?php _e('Click an icon to insert it into the selected SVG box. These use the current icon colour automatically.', 'horse-tools'); ?></div>
+			<div class="ht-icon-more" id="ht-icon-more" style="display:none"><button type="button" class="ht-icon-morebtn" id="ht-icon-morebtn"><i class="ti ti-chevron-down"></i> <?php _e('Load more icons', 'horse-tools'); ?></button></div>
+			<div class="ht-icon-hint"><i class="ti ti-bulb"></i> <?php _e('Click an icon to drop it into the selected field. Over 5,000 icons — type to filter, or “Load more” to see them all.', 'horse-tools'); ?></div>
 		</div>
 	</div>
 	<style>
@@ -717,94 +719,88 @@ global $horsetools_options; ?>
 	.ht-icon-modal[hidden]{display:none}
 	.ht-icon-backdrop{position:absolute;inset:0;background:rgba(20,22,26,.45)}
 	.ht-icon-dialog{position:relative;background:#fff;border-radius:14px;width:min(560px,92vw);max-height:82vh;display:flex;flex-direction:column;padding:16px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-	.ht-icon-head{display:flex;align-items:center;justify-content:space-between;font-size:15px;color:#8a5a00;margin-bottom:10px}
+	.ht-icon-head{display:flex;align-items:center;gap:10px;font-size:15px;color:#8a5a00;margin-bottom:10px}
+	.ht-icon-head b{flex:0 0 auto}
+	.ht-icon-count{margin-left:auto;font-size:11px;color:#aaa;font-weight:400}
 	.ht-icon-close{cursor:pointer;font-size:18px;color:#999;line-height:1}
 	.ht-icon-close:hover{color:#c0392b}
 	.ht-icon-search{width:100%;padding:9px 12px;border:1px solid #ddd;border-radius:9px;font-size:13px;margin-bottom:12px;box-sizing:border-box}
-	.ht-icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(70px,1fr));gap:8px;overflow:auto;padding:2px}
+	.ht-icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(70px,1fr));gap:8px;overflow:auto;padding:2px;min-height:60px}
 	.ht-icon-cell{display:flex;flex-direction:column;align-items:center;gap:4px;border:2px solid #eee;border-radius:10px;padding:9px 4px;cursor:pointer;background:#fff;color:#3a3f47}
 	.ht-icon-cell:hover{border-color:#e0a800;background:#fff9e6}
 	.ht-icon-cell svg{width:24px;height:24px}
-	.ht-icon-cell span{font-size:9.5px;color:#888}
+	.ht-icon-cell i.ti{font-size:24px;line-height:1;color:#3a3f47}
+	.ht-icon-cell span{font-size:9.5px;color:#888;max-width:64px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+	.ht-icon-empty{color:#999;font-size:13px;padding:14px 4px;grid-column:1/-1;text-align:center}
+	.ht-icon-more{margin-top:10px;text-align:center}
+	.ht-icon-morebtn{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid #e0a800;color:#8a5a00;padding:7px 16px;border-radius:8px;cursor:pointer;font-size:13px}
+	.ht-icon-morebtn:hover{background:#fff9e6}
 	.ht-icon-hint{margin-top:12px;font-size:12px;color:#8a5a00;background:#fff9e6;border-radius:8px;padding:8px 10px}
+	.ht-svc-iconbtn{flex:0 0 auto;padding:0 9px;display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1px solid #e0a800;color:#8a5a00;border-radius:7px;cursor:pointer;font-size:15px}
+	.ht-svc-iconbtn:hover{background:#fff9e6}
+	.ht-svc-r .ficon-wrap{display:flex;gap:4px;flex:1;min-width:0}
+	.ht-svc-r .ficon-wrap .f-icon{flex:1;min-width:0}
 	</style>
 	<script>
 	(function(){
 		var modal=document.getElementById('ht-icon-modal'); if(!modal){return;}
 		var grid=document.getElementById('ht-icon-grid');
 		var search=modal.querySelector('.ht-icon-search');
+		var moreWrap=document.getElementById('ht-icon-more');
+		var moreBtn=document.getElementById('ht-icon-morebtn');
+		var countEl=document.getElementById('ht-icon-count');
 		var last=null;
+		var SRC=<?php echo wp_json_encode( HORSETOOLS_URL . 'link/tabler/icons.json' ); ?>;
+		var ALL=[], view=[], shown=0, STEP=140, ready=false;
 		function isSvgField(el){ return el && el.tagName==='TEXTAREA' && /\[chat-(nut4|nav0|nav1)/.test(el.name||''); }
-		document.addEventListener('focusin', function(e){ if(isSvgField(e.target)){ last=e.target; } });
-		var S='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">';
-		var ICONS=[
-			['phone', S+'<path d="M6 3h3l2 5-2 1a11 11 0 005 5l1-2 5 2v3a2 2 0 01-2 2A16 16 0 014 5a2 2 0 012-2z"/></svg>'],
-			['chat', S+'<path d="M4 5h16v10H8l-4 4z"/></svg>'],
-			['message', S+'<path d="M4 5h16v10H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg>'],
-			['mail', S+'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>'],
-			['map', S+'<path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>'],
-			['cart', S+'<circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/><path d="M3 4h2l2.4 12h10l2-8H6.4"/></svg>'],
-			['user', S+'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>'],
-			['home', S+'<path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/></svg>'],
-			['star', S+'<path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19l1-5.8L3.5 9.2l5.9-.9z"/></svg>'],
-			['heart', S+'<path d="M12 20s-7-4.5-7-10a4 4 0 017-2 4 4 0 017 2c0 5.5-7 10-7 10z"/></svg>'],
-			['clock', S+'<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>'],
-			['info', S+'<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>'],
-			['help', S+'<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 113 2.5c-.7.3-1 .8-1 1.5M12 17h.01"/></svg>'],
-			['gift', S+'<rect x="4" y="9" width="16" height="11" rx="1"/><path d="M4 13h16M12 9v11M12 9c-3-4-6-1-3 0M12 9c3-4 6-1 3 0"/></svg>'],
-			['tag', S+'<path d="M4 4h7l9 9-7 7-9-9z"/><circle cx="8" cy="8" r="1.2"/></svg>'],
-			['bell', S+'<path d="M6 16V10a6 6 0 1112 0v6l2 2H4z"/><path d="M10 20a2 2 0 004 0"/></svg>'],
-			['send', S+'<path d="M4 12l16-8-6 16-3-6-7-2z"/></svg>'],
-			['calendar', S+'<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg>'],
-			['camera', S+'<rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3.3"/><path d="M8 7l2-3h4l2 3"/></svg>'],
-			['photo', S+'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.4"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg>'],
-			['download', S+'<path d="M12 4v10m0 0l-4-4m4 4l4-4M5 20h14"/></svg>'],
-			['link', S+'<path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></svg>'],
-			['search', S+'<circle cx="11" cy="11" r="6"/><path d="M20 20l-4-4"/></svg>'],
-			['headset', S+'<path d="M4 13v-1a8 8 0 0116 0v1"/><rect x="3" y="13" width="4" height="6" rx="1"/><rect x="17" y="13" width="4" height="6" rx="1"/><path d="M19 19a4 4 0 01-4 3h-3"/></svg>']
-		];
-		ICONS = ICONS.concat([
-			['phone-call', S+'<path d="M6 3h3l2 5-2 1a11 11 0 005 5l1-2 5 2v3a2 2 0 01-2 2A16 16 0 014 5a2 2 0 012-2z"/><path d="M15 4a5 5 0 015 5"/></svg>'],
-			['messages', S+'<path d="M4 5h11v8H8l-4 3z"/><path d="M9 15v1h8l3 3v-8h-4"/></svg>'],
-			['bag', S+'<path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 016 0"/></svg>'],
-			['truck', S+'<rect x="3" y="6" width="11" height="9"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>'],
-			['package', S+'<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg>'],
-			['discount', S+'<circle cx="12" cy="12" r="9"/><path d="M9 15l6-6M9.5 9.5h.01M14.5 14.5h.01"/></svg>'],
-			['wallet', S+'<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h13a2 2 0 012 2 2 2 0 01-2 2h-3"/></svg>'],
-			['credit-card', S+'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 15h4"/></svg>'],
-			['qrcode', S+'<rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h3v3M20 14v6M17 20h3"/></svg>'],
-			['world', S+'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>'],
-			['share', S+'<circle cx="6" cy="12" r="2.4"/><circle cx="17" cy="6" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M8.2 10.8l6.6-3.6M8.2 13.2l6.6 3.6"/></svg>'],
-			['users', S+'<circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 5.2a3 3 0 010 5.6M21 20a6 6 0 00-4-5.2"/></svg>'],
-			['video', S+'<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg>'],
-			['play', S+'<circle cx="12" cy="12" r="9"/><path d="M10 9l5 3-5 3z"/></svg>'],
-			['check', S+'<path d="M5 12l5 5L20 7"/></svg>'],
-			['alert', S+'<path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg>'],
-			['menu', S+'<path d="M4 7h16M4 12h16M4 17h16"/></svg>'],
-			['list', S+'<path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg>'],
-			['bolt', S+'<path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg>'],
-			['sparkles', S+'<path d="M12 4l1.6 4.4L18 10l-4.4 1.6L12 16l-1.6-4.4L6 10l4.4-1.6z"/></svg>'],
-			['award', S+'<circle cx="12" cy="9" r="5"/><path d="M9 13l-1 8 4-2 4 2-1-8"/></svg>'],
-			['settings', S+'<circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>']
-		]);
+		function isNameField(el){ return el && el.classList && el.classList.contains('f-icon'); }
+		document.addEventListener('focusin', function(e){ if(isSvgField(e.target)||isNameField(e.target)){ last=e.target; } });
 		var KW={phone:'goi call lien he hotline dien thoai','phone-call':'goi call hotline',chat:'nhan tin message zalo tu van',message:'nhan tin sms',messages:'nhan tin hoi dap',mail:'email thu gui',map:'ban do dia chi vi tri location',cart:'gio hang mua sam shop order dat mua',bag:'tui mua sam shopping',user:'nguoi tai khoan khach',users:'nhom khach nguoi',home:'trang chu nha',star:'sao danh gia review',heart:'thich yeu favorite',clock:'gio thoi gian gio lam viec hours',info:'thong tin',help:'tro giup hoi faq',gift:'qua tang khuyen mai',tag:'nhan gia label',discount:'giam gia sale khuyen mai phan tram',bell:'thong bao chuong',send:'gui',calendar:'lich ngay dat',camera:'chup anh hinh',photo:'hinh anh mau san pham',download:'tai xuong bao gia',link:'lien ket url website',search:'tim kiem',headset:'tong dai ho tro cskh support tu van',truck:'giao hang van chuyen ship',package:'don hang goi kien hang',wallet:'vi thanh toan tien','credit-card':'the thanh toan tra card',qrcode:'ma qr quet',world:'website web toan quoc',share:'chia se',video:'video clip',play:'phat xem',check:'xong hoan thanh dung ok',alert:'canh bao chu y',menu:'menu dich vu danh muc',list:'danh sach',bolt:'nhanh flash sale',sparkles:'moi noi bat hot',award:'giai thuong uy tin chinh hang',settings:'cai dat'};
-		grid.innerHTML=ICONS.map(function(it){ var kw=KW[it[0]]||''; return '<button type="button" class="ht-icon-cell" title="'+it[0]+'" data-kw="'+it[0]+' '+kw+'" data-svg="'+it[1].replace(/"/g,'&quot;')+'">'+it[1]+'<span>'+it[0]+'</span></button>'; }).join('');
-		function openM(){ modal.hidden=false; search.value=''; filter(''); search.focus(); }
+		// Extra keywords keyed on real Tabler names (aliases above may not be exact icon names).
+		var KWX={'shopping-cart':'gio hang mua sam shop order dat mua cart','shopping-bag':'tui mua sam bag','message-circle':'nhan tin chat zalo tu van','map-pin':'ban do dia chi vi tri location','brand-facebook':'facebook fb','brand-messenger':'messenger nhan tin','brand-instagram':'instagram insta ig','brand-youtube':'youtube video kenh','brand-tiktok':'tiktok','brand-whatsapp':'whatsapp','brand-telegram':'telegram','brand-zalo':'zalo','circle-check':'xong hoan thanh ok dung','discount-2':'giam gia sale khuyen mai','clock-hour-9':'gio lam viec thoi gian'};
+		Object.keys(KWX).forEach(function(k){ KW[k]=(KW[k]?KW[k]+' ':'')+KWX[k]; });
+		function escq(s){ return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+		function cell(n){ return '<button type="button" class="ht-icon-cell" title="'+escq(n)+'" data-name="'+escq(n)+'"><i class="ti ti-'+escq(n)+'"></i><span>'+escq(n)+'</span></button>'; }
+		function renderMore(){
+			var slice=view.slice(shown, shown+STEP);
+			grid.insertAdjacentHTML('beforeend', slice.map(cell).join(''));
+			shown+=slice.length;
+			if(moreWrap){ moreWrap.style.display = (shown<view.length) ? '' : 'none'; }
+			if(countEl){ countEl.textContent = view.length ? (shown+' / '+view.length) : '0'; }
+		}
+		function apply(q){
+			q=(q||'').toLowerCase().trim();
+			var qn=q.replace(/\s+/g,'-');
+			view = !q ? ALL : ALL.filter(function(n){ if(n.indexOf(qn)>=0){ return true; } var k=KW[n]; return k && k.indexOf(q)>=0; });
+			grid.innerHTML=''; shown=0; renderMore();
+			if(!view.length){ grid.innerHTML='<p class="ht-icon-empty"><?php echo esc_js( __( 'No icon matches that.', 'horse-tools' ) ); ?></p>'; if(moreWrap){ moreWrap.style.display='none'; } }
+		}
+		function load(){
+			if(ready){ return; }
+			ready=true;
+			grid.innerHTML='<p class="ht-icon-empty"><?php echo esc_js( __( 'Loading icons…', 'horse-tools' ) ); ?></p>';
+			fetch(SRC).then(function(r){ return r.json(); }).then(function(d){ ALL=Array.isArray(d)?d:[]; apply(search.value||''); }).catch(function(){ ready=false; grid.innerHTML='<p class="ht-icon-empty"><?php echo esc_js( __( 'Could not load the icon list.', 'horse-tools' ) ); ?></p>'; });
+		}
+		function openM(){ modal.hidden=false; search.value=''; load(); if(ready&&ALL.length){ apply(''); } search.focus(); }
 		function closeM(){ modal.hidden=true; }
-		function filter(q){ q=(q||'').toLowerCase().trim(); grid.querySelectorAll('.ht-icon-cell').forEach(function(c){ var hay=(c.getAttribute('data-kw')||c.title).toLowerCase(); c.style.display = (!q || hay.indexOf(q)>=0) ? '' : 'none'; }); }
+		if(moreBtn){ moreBtn.addEventListener('click', renderMore); }
 		document.addEventListener('click', function(e){
 			var openBtn=e.target.closest('.ht-icon-open');
-			if(openBtn){ e.preventDefault(); var f=openBtn.getAttribute('data-for'); if(f){ var tf=document.getElementById(f); if(tf){ last=tf; } } openM(); return; }
-			var cell=e.target.closest('.ht-icon-cell');
-			if(cell){
-				var svg=cell.getAttribute('data-svg');
+			if(openBtn){ e.preventDefault();
+				var f=openBtn.getAttribute('data-for');
+				if(f){ var tf=document.getElementById(f); if(tf){ last=tf; } }
+				else { var pf=openBtn.previousElementSibling; if(pf&&pf.classList&&pf.classList.contains('f-icon')){ last=pf; } }
+				openM(); return; }
+			var cellEl=e.target.closest('.ht-icon-cell');
+			if(cellEl){
+				var name=cellEl.getAttribute('data-name');
 				var tgt=last || document.querySelector('textarea[name*="chat-nut4"], textarea[name*="chat-nav0"], textarea[name*="chat-nav1"]');
-				if(tgt){ tgt.value=svg; tgt.dispatchEvent(new Event('input',{bubbles:true})); last=tgt; }
+				if(tgt){ tgt.value = isNameField(tgt) ? name : '<i class="ti ti-'+name+'"></i>'; tgt.dispatchEvent(new Event('input',{bubbles:true})); last=tgt; }
 				closeM(); return;
 			}
 			if(e.target.closest('.ht-icon-close') || e.target.classList.contains('ht-icon-backdrop')){ closeM(); }
 		});
-		search.addEventListener('input', function(){ filter(search.value); });
+		search.addEventListener('input', function(){ if(ready){ apply(search.value); } });
 		document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !modal.hidden){ closeM(); } });
 		// Inline "Choose icon" button under every SVG field (channel rows + mobile-bar buttons), incl. dynamically-added rows.
 		var htiId=0, PICK=<?php echo wp_json_encode( __( 'Choose icon', 'horse-tools' ) ); ?>;

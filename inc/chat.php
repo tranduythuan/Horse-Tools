@@ -78,9 +78,15 @@ function horsetools_chat_is_open() {
 # add css js chat web
 function horsetools_enqueue_chat(){
 	global $horsetools_options;
+	if ( ! wp_style_is( 'horsetools-tabler', 'registered' ) ) {
+		wp_register_style( 'horsetools-tabler', HORSETOOLS_URL . 'link/tabler/tabler-icons.css', array(), HORSETOOLS_VERSION );
+	}
 	if (isset($horsetools_options['chat-nut1']) || isset($horsetools_options['chat-nav1'])){
 		wp_enqueue_style('chat-css', HORSETOOLS_URL . 'link/chat/horsechat.css', array(), HORSETOOLS_VERSION);
 		wp_enqueue_script('chat-js', HORSETOOLS_URL . 'link/chat/horsechat.js', array(), HORSETOOLS_VERSION, true);
+		// Channels can now use a Tabler icon-font glyph (<i class="ti ti-name">)
+		// picked in the admin, so the font must be present whenever chat shows.
+		wp_enqueue_style('horsetools-tabler');
 		if ( isset($horsetools_options['chat-qr']) ) {
 			// Scan-to-open QR for messaging channels on desktop (WeChat always).
 			wp_enqueue_script('horsetools-qr', HORSETOOLS_URL . 'link/shortcode/qrcode.min.js', array(), '1.0.0', true);

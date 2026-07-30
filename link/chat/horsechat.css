@@ -806,6 +806,11 @@ body .ht-chaton a, body .ht-chatbox-skin1 a, body .ht-chatbox-skin2 a, body .ht-
 .ht-avatar-btn img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
 .ht-av-dot{position:absolute;right:3px;bottom:3px;width:14px;height:14px;border-radius:50%;background:#2ecc71;border:2px solid #fff}
 
+/* Tabler icon-font glyphs picked for custom channels (nested inside .ht-cco i) */
+.ht-cco i .ti{font-size:24px;line-height:1;display:inline-flex;align-items:center;justify-content:center}
+.ht-chatbox-livechat .ht-cco i .ti,.ht-chatbox-tabwidget .ht-cco i .ti{font-size:30px}
+.ht-chatbox-speeddial .ht-cco i .ti{font-size:26px}
+
 /* Live-chat bubble */
 .ht-lc-panel{background:#fff !important;border-radius:16px;box-shadow:0 12px 34px rgba(0,0,0,.16);overflow:hidden;min-width:282px;padding:0;margin-bottom:14px}
 .ht-lc-head{background:#1D9E75;padding:13px 15px;display:flex;align-items:center;gap:10px}
