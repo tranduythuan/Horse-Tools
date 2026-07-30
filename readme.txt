@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,6 +79,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.6 =
+* **Fixed: settings that saved only through their own button now also save with the page’s main “Save content” button.** The Services panel (including the desktop “Services” launcher toggle) and the “turn shortcodes on/off” manager each have their own section Save; clicking the big Save at the bottom used to skip them, so a change like un-ticking the launcher appeared to “not stick”. The main Save now persists them too.
 
 = 1.2.5 =
 Friendlier admin, a much richer popup, and Vietnamese everywhere.
@@ -293,6 +296,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.6 =
+Fixes Services panel and shortcode on/off changes being lost when you use the page’s main Save button instead of the section’s own Save.
 
 = 1.2.5 =
 Site Health links now jump to the exact setting, the popup gains 13 effects / positions / triggers, and all new text is translated to Vietnamese.

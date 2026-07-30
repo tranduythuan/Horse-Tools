@@ -548,13 +548,30 @@ global $horsetools_options; ?>
 				launcher_text:document.getElementById('ht-svc-ltext').value, launcher_icon:document.getElementById('ht-svc-licon').value,
 				items:items };
 		}
-		document.getElementById('ht-svc-save').addEventListener('click', function(){
+		function saveServices(){
 			var body='action=horsetools_services_save&nonce='+encodeURIComponent(NONCE)+'&data='+encodeURIComponent(JSON.stringify(collect()));
-			fetch(AJAX,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
-				.then(function(r){return r.json();})
+			return fetch(AJAX,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).then(function(r){return r.json();});
+		}
+		document.getElementById('ht-svc-save').addEventListener('click', function(){
+			saveServices()
 				.then(function(res){ msg.className='ht-svc-msg '+(res&&res.success?'ok':'err'); msg.textContent = res&&res.success ? I18N.saved.replace('%d',res.data.items) : ((res&&res.data&&res.data.msg)||I18N.fail); })
 				.catch(function(){ msg.className='ht-svc-msg err'; msg.textContent=I18N.fail; });
 		});
+		// The Services panel saves through its own AJAX button, but it lives on a
+		// page whose main "Save content" button only writes the other settings.
+		// People reasonably click the big Save and lose their Services changes, so
+		// intercept that submit, push the panel first, then let the form through.
+		var htForm = root.closest('form') || document.querySelector('.ht-wrap form[action$="options.php"]');
+		if (htForm) {
+			htForm.addEventListener('submit', function(e){
+				if (htForm.dataset.htSvcDone === '1') { return; }
+				e.preventDefault();
+				saveServices().catch(function(){}).then(function(){
+					htForm.dataset.htSvcDone = '1';
+					htForm.submit();
+				});
+			});
+		}
 	})();
 	</script>
 
