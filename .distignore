@@ -1,0 +1,16 @@
+# Files and folders excluded from the distributed plugin ZIP.
+# rsync --exclude-from patterns (leading / anchors to the plugin root).
+/.git
+/.github
+/.gitignore
+/.gitattributes
+/.distignore
+/tools
+/node_modules
+/.vscode
+/.idea
+_*.json
+*.zip
+*.log
+.DS_Store
+Thumbs.db

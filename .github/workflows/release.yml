@@ -1,0 +1,72 @@
+name: Release
+
+# Build a distributable plugin ZIP and publish a GitHub Release whenever a
+# version tag (e.g. v1.2.0) is pushed:  git tag v1.2.0 && git push --tags
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Build plugin ZIP
+        run: |
+          set -euo pipefail
+          VERSION="${GITHUB_REF_NAME#v}"
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+          # Warn (do not fail) if the tag doesn't match the plugin header version.
+          HEADER_VERSION="$(grep -oiP '^\s*\*\s*Version:\s*\K[0-9][0-9A-Za-z.\-]*' horse-tools.php | head -n1 || true)"
+          if [ -n "$HEADER_VERSION" ] && [ "$HEADER_VERSION" != "$VERSION" ]; then
+            echo "::warning::Tag version ($VERSION) does not match horse-tools.php header ($HEADER_VERSION)."
+          fi
+
+          # Copy the plugin into a top-level 'horse-tools/' folder so it installs
+          # cleanly in WordPress, excluding dev-only files.
+          mkdir -p build/horse-tools
+          rsync -a --exclude-from=.distignore ./ build/horse-tools/
+
+          ( cd build && zip -rq "../horse-tools-${VERSION}.zip" horse-tools )
+          echo "Built horse-tools-${VERSION}.zip:"
+          ls -lh "horse-tools-${VERSION}.zip"
+
+      - name: Extract changelog notes
+        run: |
+          set -euo pipefail
+          # Pull the "= <version> =" block from the readme.txt changelog.
+          NOTES="$(awk -v v="= ${VERSION} =" '
+            $0==v {flag=1; next}
+            /^= [0-9]/ && flag {exit}
+            /^== / && flag {exit}
+            flag {print}
+          ' readme.txt | sed '/^[[:space:]]*$/{/./!d}')"
+          if [ -z "$(printf '%s' "$NOTES" | tr -d '[:space:]')" ]; then
+            NOTES="Release ${VERSION}. See readme.txt for details."
+          fi
+          {
+            printf '%s\n' "$NOTES"
+            printf '\n---\n_Install: download `horse-tools-%s.zip` below, then Plugins → Add New → Upload Plugin._\n' "$VERSION"
+          } > release-notes.md
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          PRERELEASE=""
+          case "$VERSION" in
+            *-*) PRERELEASE="--prerelease" ;;
+          esac
+          gh release create "$GITHUB_REF_NAME" \
+            "horse-tools-${VERSION}.zip" \
+            --title "Horse Tools ${VERSION}" \
+            --notes-file release-notes.md \
+            $PRERELEASE
