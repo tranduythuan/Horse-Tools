@@ -5842,3 +5842,6 @@ msgstr "Không có chat gần đây. Hãy nhắn cho bot một tin trước rồ
 
 msgid "Send the site’s Telegram bot any message, then click “Detect my chat ID” and pick yourself from the list — no third-party bot needed. (You can also type the number manually.) Recovery codes then reach your own Telegram, not the admin."
 msgstr "Nhắn cho bot Telegram của site một tin bất kỳ, rồi bấm “Dò chat ID của tôi” và chọn bạn trong danh sách — không cần bot bên thứ ba. (Bạn cũng có thể tự gõ số.) Mã khôi phục khi đó về Telegram của chính bạn, không phải của admin."
+
+msgid "Could not send the recovery code — message the bot first, then check your chat ID."
+msgstr "Không gửi được mã khôi phục — hãy nhắn cho bot trước, rồi kiểm tra lại chat ID của bạn."

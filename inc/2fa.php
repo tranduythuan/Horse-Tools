@@ -369,10 +369,19 @@ function horsetools_2fa_after_login( $user_login, $user ) {
 	horsetools_2fa_prompt( $user, $redirect, $remember );
 	exit;
 }
-function horsetools_2fa_prompt( $user, $redirect, $remember, $error = '' ) {
+function horsetools_2fa_prompt( $user, $redirect, $remember, $error = '', $type = 'error' ) {
 	$token = horsetools_2fa_pending_token( $user->ID );
-	$err   = $error ? new WP_Error( 'horsetools_2fa', $error ) : null;
-	login_header( __( 'Two-factor authentication', 'horse-tools' ), '', $err );
+	// Print our own notice instead of passing a WP_Error to login_header: the
+	// "hide login errors" enumeration option filters login_errors down to one
+	// generic string, which would otherwise mask "code sent" / "invalid code".
+	login_header( __( 'Two-factor authentication', 'horse-tools' ), '', null );
+	if ( '' !== $error ) {
+		if ( 'success' === $type ) {
+			echo '<p class="message">' . esc_html( $error ) . '</p>';
+		} else {
+			echo '<div id="login_error" class="notice notice-error">' . esc_html( $error ) . '</div>';
+		}
+	}
 	?>
 	<form name="ht2fa" method="post" action="<?php echo esc_url( site_url( 'wp-login.php?action=horsetools_2fa', 'login_post' ) ); ?>">
 		<p>
@@ -446,7 +455,8 @@ function horsetools_2fa_send_step( $channel ) {
 	$redirect = isset( $_POST['redirect_to'] ) ? wp_unslash( $_POST['redirect_to'] ) : admin_url();
 	horsetools_2fa_prompt( $user, $redirect, ! empty( $_POST['rememberme'] ),
 		$sent ? __( 'A one-time code has been sent. Enter it above.', 'horse-tools' )
-		      : __( 'Could not send the recovery code — check the channel is configured.', 'horse-tools' ) );
+		      : __( 'Could not send the recovery code — message the bot first, then check your chat ID.', 'horse-tools' ),
+		$sent ? 'success' : 'error' );
 	exit;
 }
 add_action( 'login_form_horsetools_2fa_email', function () { horsetools_2fa_send_step( 'email' ); } );

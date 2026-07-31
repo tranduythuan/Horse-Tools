@@ -46,6 +46,8 @@ $vi = array(
     'Invalid code. Please try again.' => 'Mã không đúng. Vui lòng thử lại.',
     'A one-time code has been sent. Enter it above.' => 'Đã gửi mã một lần. Nhập mã đó ở trên.',
     'Could not send the recovery code — check the channel is configured.' => 'Không gửi được mã khôi phục — kiểm tra kênh đã được cấu hình chưa.',
+    'Could not send the recovery code — message the bot first, then check your chat ID.'
+        => 'Không gửi được mã khôi phục — hãy nhắn cho bot trước, rồi kiểm tra lại chat ID của bạn.',
     'Your one-time login code for %1$s is: %2$s (valid 10 minutes).' => 'Mã đăng nhập một lần cho %1$s là: %2$s (hiệu lực 10 phút).',
     'Your login recovery code' => 'Mã khôi phục đăng nhập của bạn',
     'This account uses two-factor authentication; XML-RPC password login is disabled.'

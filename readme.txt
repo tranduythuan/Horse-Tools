@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.21
+Stable tag: 1.2.22
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.22 =
+* **Fixed: on the 2FA code screen, the "code sent" and "wrong code" messages were replaced by the generic "Login failed" text** whenever the "hide login errors" (block user-enumeration) option was on — so you couldn't tell whether a Telegram / email recovery code had actually been sent. The 2FA screen now prints its own messages, unaffected by that filter.
 
 = 1.2.21 =
 * **2FA: a "Detect my chat ID" button on your profile.** It reads your Telegram chat ID from the site's own bot (no dependency on any third-party @userinfobot that could disappear) — message the bot, click the button, and pick yourself from the list. You can still type the number in manually.
@@ -365,6 +368,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.22 =
+Fixes the 2FA code screen showing a generic error instead of the real "code sent" / "wrong code" message.
 
 = 1.2.21 =
 2FA: adds a "Detect my chat ID" button that reads your Telegram chat ID from the site's own bot.
