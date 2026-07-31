@@ -596,6 +596,21 @@ $vi = array(
         => 'Bộ đếm dự phòng — chạy các script bị hoãn sau bấy nhiêu giây kể cả khi không có tương tác (0 = chỉ khi tương tác)',
     'Tip: to stop one specific script from ever being delayed, add the attribute data-ht-no-delay to its tag. Logged-in users are never affected.'
         => 'Mẹo: để một script cụ thể không bao giờ bị hoãn, thêm thuộc tính data-ht-no-delay vào thẻ của nó. Người dùng đã đăng nhập không bao giờ bị ảnh hưởng.',
+    // OPTIMIZE — script scanner
+    'Scan the scripts running on the home page' => 'Quét các script đang chạy trên trang chủ',
+    'Scanning…' => 'Đang quét…',
+    'No scripts found.' => 'Không tìm thấy script nào.',
+    '%d scripts found — “+ Delay” holds one back, “+ Exclude” keeps it running immediately:'
+        => 'Tìm thấy %d script — “+ Hoãn” để giữ lại, “+ Loại trừ” để cho chạy ngay:',
+    'delayed' => 'đang hoãn',
+    'runs now' => 'chạy ngay',
+    '+ Delay' => '+ Hoãn',
+    '+ Exclude' => '+ Loại trừ',
+    'added ✓' => 'đã thêm ✓',
+    'Scan failed.' => 'Quét thất bại.',
+    'Could not load the home page from the server:' => 'Không tải được trang chủ từ máy chủ:',
+    'Could not read the home page (HTTP %s). Your host may block the site from calling itself; check the scripts via “View source” instead.'
+        => 'Không đọc được trang chủ (HTTP %s). Host của bạn có thể chặn site tự gọi chính nó; hãy kiểm tra script bằng “Xem nguồn trang” thay thế.',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

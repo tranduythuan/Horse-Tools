@@ -473,6 +473,111 @@ if ( isset( $horsetools_options['speed-delay1'] ) ) {
 }
 
 /* -------------------------------------------------------------------------
+ * "What scripts does my site run?" scanner.
+ *
+ * The delay / exclude / defer boxes above ask for script handles or URL
+ * keywords — but a non-technical owner has no idea what their site actually
+ * loads. This fetches the real home page (as a logged-out visitor would see it),
+ * lists every <script> it finds, flags which are already being delayed, and
+ * lets the admin drop each one into the delay or exclude box with one click. No
+ * need to read source or know a single handle. Admin-only, nonce-protected.
+ * ---------------------------------------------------------------------- */
+function horsetools_speed_scanjs_ajax() {
+	check_ajax_referer( 'horsetools_speed_scanjs', 'nonce' );
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error( array( 'msg' => esc_html__( 'Not allowed.', 'horse-tools' ) ) );
+	}
+	$res = wp_remote_get( add_query_arg( 'ht_scan', time(), home_url( '/' ) ), array(
+		'timeout'     => 20,
+		'sslverify'   => false,
+		'redirection' => 3,
+		'user-agent'  => 'Mozilla/5.0 (HorseTools script scan)',
+		'headers'     => array( 'Cache-Control' => 'no-cache', 'Pragma' => 'no-cache' ),
+	) );
+	if ( is_wp_error( $res ) ) {
+		wp_send_json_error( array( 'msg' => esc_html__( 'Could not load the home page from the server:', 'horse-tools' ) . ' ' . $res->get_error_message() ) );
+	}
+	$code = (int) wp_remote_retrieve_response_code( $res );
+	$html = (string) wp_remote_retrieve_body( $res );
+	if ( $code >= 400 || '' === $html ) {
+		/* translators: %s: HTTP status code. */
+		wp_send_json_error( array( 'msg' => sprintf( esc_html__( 'Could not read the home page (HTTP %s). Your host may block the site from calling itself; check the scripts via “View source” instead.', 'horse-tools' ), $code ? $code : '0' ) ) );
+	}
+	$site_host = wp_parse_url( home_url(), PHP_URL_HOST );
+	// Inline snippets rarely carry a URL, so recognise the common ones by the
+	// global they define and suggest a matching keyword.
+	$known = array(
+		'gtag('       => 'gtag(',
+		'fbq('        => 'fbq(',
+		'adsbygoogle' => 'adsbygoogle',
+		'dataLayer'   => 'googletagmanager',
+		'_gaq'        => 'google-analytics',
+		'ttq.'        => 'analytics.tiktok',
+		'hotjar'      => 'hotjar',
+		'clarity'     => 'clarity.ms',
+		'Tawk_API'    => 'tawk.to',
+		'twq('        => 'twitter',
+		'snaptr('     => 'snapchat',
+		'pintrk('     => 'pinterest',
+	);
+	$found = array();
+	if ( preg_match_all( '#<script\b((?:"[^"]*"|\'[^\']*\'|[^"\'>])*)>([\s\S]*?)</script\s*>#i', $html, $mm, PREG_SET_ORDER ) ) {
+		foreach ( $mm as $m ) {
+			$attrs = $m[1];
+			$body  = $m[2];
+			if ( false !== stripos( $attrs, 'data-ht-delay-loader' ) ) {
+				continue;
+			}
+			if ( preg_match( '#type\s*=\s*["\']?\s*(application/ld\+json|application/json|module|importmap|text/template|text/html|text/x-template)#i', $attrs ) ) {
+				continue;
+			}
+			$delayed = ( false !== stripos( $attrs, 'ht/delayed' ) );
+			if ( preg_match( '#\s(?:data-ht-src|src)\s*=\s*["\']?([^"\'\s>]+)#i', $attrs, $sm ) ) {
+				$src  = html_entity_decode( $sm[1] );
+				$host = (string) wp_parse_url( $src, PHP_URL_HOST );
+				$path = (string) wp_parse_url( $src, PHP_URL_PATH );
+				$file = $path ? basename( $path ) : '';
+				if ( $host && $host !== $site_host ) {
+					$key   = $host;
+					$label = $host . $path;
+				} else {
+					$key   = $file ? $file : ( $path ? $path : $src );
+					$label = $path ? $path : $src;
+				}
+				$id = 'e|' . strtolower( $key );
+			} else {
+				$trim = trim( $body );
+				if ( '' === $trim ) {
+					continue;
+				}
+				$key = '';
+				foreach ( $known as $needle => $kw ) {
+					if ( false !== stripos( $body, $needle ) ) {
+						$key = $kw;
+						break;
+					}
+				}
+				$snippet = trim( preg_replace( '/\s+/', ' ', substr( $trim, 0, 55 ) ) );
+				$label   = 'inline: ' . $snippet . ( strlen( $trim ) > 55 ? '…' : '' );
+				$id      = 'i|' . ( '' !== $key ? $key : substr( md5( $body ), 0, 8 ) );
+			}
+			if ( ! isset( $found[ $id ] ) ) {
+				$found[ $id ] = array(
+					'type'    => ( 'e' === $id[0] ? 'external' : 'inline' ),
+					'label'   => $label,
+					'keyword' => $key,
+					'delayed' => $delayed,
+				);
+			} elseif ( $delayed ) {
+				$found[ $id ]['delayed'] = true;
+			}
+		}
+	}
+	wp_send_json_success( array( 'scripts' => array_values( $found ), 'total' => count( $found ) ) );
+}
+add_action( 'wp_ajax_horsetools_speed_scanjs', 'horsetools_speed_scanjs_ajax' );
+
+/* -------------------------------------------------------------------------
  * Preconnect / DNS-prefetch hints.
  *
  * For every third-party origin the page pulls from (Google Fonts, a CDN, an

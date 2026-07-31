@@ -153,6 +153,57 @@ global $horsetools_options; ?>
 			'parent'      => 'speed-delay1',
 		) ); ?>
 		<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Tip: to stop one specific script from ever being delayed, add the attribute data-ht-no-delay to its tag. Logged-in users are never affected.', 'horse-tools'); ?></p>
+		<p class="ht-field" data-ht-parent="ht-main-speed-delay1">
+		<button type="button" class="button" id="ht-scanjs" data-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_speed_scanjs' ) ); ?>"><i class="ti ti-radar-2"></i> <?php _e('Scan the scripts running on the home page', 'horse-tools'); ?></button>
+		<span id="ht-scanjs-msg" class="description" style="margin-left:8px"></span>
+		</p>
+		<div id="ht-scanjs-list" data-ht-parent="ht-main-speed-delay1" style="margin:6px 0;overflow-x:auto"></div>
+		<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var btn=document.getElementById('ht-scanjs'); if(!btn){return;}
+			var box=document.getElementById('ht-scanjs-list'), msg=document.getElementById('ht-scanjs-msg');
+			function ta(name){ return document.querySelector('textarea[name="horsetools_settings['+name+']"]'); }
+			function addKw(name,kw){
+				var t=ta(name); if(!t||!kw){return;}
+				var lines=t.value.split(/\r?\n/).map(function(s){return s.trim();}).filter(Boolean);
+				if(lines.indexOf(kw)===-1){ lines.push(kw); t.value=lines.join('\n'); t.dispatchEvent(new Event('change',{bubbles:true})); }
+			}
+			var I18N={
+				scanning:<?php echo wp_json_encode( __( 'Scanning…', 'horse-tools' ) ); ?>,
+				none:<?php echo wp_json_encode( __( 'No scripts found.', 'horse-tools' ) ); ?>,
+				found:<?php echo wp_json_encode( __( '%d scripts found — “+ Delay” holds one back, “+ Exclude” keeps it running immediately:', 'horse-tools' ) ); ?>,
+				delayed:<?php echo wp_json_encode( __( 'delayed', 'horse-tools' ) ); ?>,
+				live:<?php echo wp_json_encode( __( 'runs now', 'horse-tools' ) ); ?>,
+				delay:<?php echo wp_json_encode( __( '+ Delay', 'horse-tools' ) ); ?>,
+				excl:<?php echo wp_json_encode( __( '+ Exclude', 'horse-tools' ) ); ?>,
+				added:<?php echo wp_json_encode( __( 'added ✓', 'horse-tools' ) ); ?>,
+				err:<?php echo wp_json_encode( __( 'Scan failed.', 'horse-tools' ) ); ?>
+			};
+			btn.addEventListener('click',function(){
+				msg.textContent=I18N.scanning; btn.disabled=true; box.innerHTML='';
+				fetch(ajaxurl,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({action:'horsetools_speed_scanjs',nonce:btn.dataset.nonce})})
+				.then(function(r){return r.json();}).then(function(res){
+					btn.disabled=false;
+					if(!res.success){ msg.textContent=(res.data&&res.data.msg)||I18N.err; return; }
+					var list=res.data.scripts||[];
+					msg.textContent=I18N.found.replace('%d',res.data.total);
+					if(!list.length){ box.innerHTML='<p class="description">'+I18N.none+'</p>'; return; }
+					var html='<table class="widefat striped" style="max-width:840px"><tbody>';
+					list.forEach(function(s){
+						var badge=s.delayed?'<span style="color:#1d9e75;font-weight:600">● '+I18N.delayed+'</span>':'<span style="color:#8a8a8a">○ '+I18N.live+'</span>';
+						var acts='';
+						if(s.keyword){ acts='<a href="javascript:void(0)" class="ht-scan-add" data-t="speed-delay-list" data-k="'+encodeURIComponent(s.keyword)+'">'+I18N.delay+'</a> · <a href="javascript:void(0)" class="ht-scan-add" data-t="speed-delay-exclude" data-k="'+encodeURIComponent(s.keyword)+'">'+I18N.excl+'</a>'; }
+						html+='<tr><td style="width:96px">'+badge+'</td><td><code style="word-break:break-all">'+String(s.label).replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</code></td><td style="width:150px;text-align:right;white-space:nowrap">'+acts+'</td></tr>';
+					});
+					html+='</tbody></table>';
+					box.innerHTML=html;
+					box.querySelectorAll('.ht-scan-add').forEach(function(a){
+						a.addEventListener('click',function(){ addKw(a.dataset.t, decodeURIComponent(a.dataset.k)); a.textContent=I18N.added; a.style.pointerEvents='none'; a.style.opacity='0.6'; });
+					});
+				}).catch(function(){ btn.disabled=false; msg.textContent=I18N.err; });
+			});
+		});
+		</script>
 
   <h3><i class="ti ti-loader"></i> <?php _e('The function of lazy loading images', 'horse-tools') ?></h3>
 	<!-- lazyload img 1 -->

@@ -5941,3 +5941,39 @@ msgstr "Bộ đếm dự phòng — chạy các script bị hoãn sau bấy nhi�
 
 msgid "Tip: to stop one specific script from ever being delayed, add the attribute data-ht-no-delay to its tag. Logged-in users are never affected."
 msgstr "Mẹo: để một script cụ thể không bao giờ bị hoãn, thêm thuộc tính data-ht-no-delay vào thẻ của nó. Người dùng đã đăng nhập không bao giờ bị ảnh hưởng."
+
+msgid "Scan the scripts running on the home page"
+msgstr "Quét các script đang chạy trên trang chủ"
+
+msgid "Scanning…"
+msgstr "Đang quét…"
+
+msgid "No scripts found."
+msgstr "Không tìm thấy script nào."
+
+msgid "%d scripts found — “+ Delay” holds one back, “+ Exclude” keeps it running immediately:"
+msgstr "Tìm thấy %d script — “+ Hoãn” để giữ lại, “+ Loại trừ” để cho chạy ngay:"
+
+msgid "delayed"
+msgstr "đang hoãn"
+
+msgid "runs now"
+msgstr "chạy ngay"
+
+msgid "+ Delay"
+msgstr "+ Hoãn"
+
+msgid "+ Exclude"
+msgstr "+ Loại trừ"
+
+msgid "added ✓"
+msgstr "đã thêm ✓"
+
+msgid "Scan failed."
+msgstr "Quét thất bại."
+
+msgid "Could not load the home page from the server:"
+msgstr "Không tải được trang chủ từ máy chủ:"
+
+msgid "Could not read the home page (HTTP %s). Your host may block the site from calling itself; check the scripts via “View source” instead."
+msgstr "Không đọc được trang chủ (HTTP %s). Host của bạn có thể chặn site tự gọi chính nó; hãy kiểm tra script bằng “Xem nguồn trang” thay thế."
