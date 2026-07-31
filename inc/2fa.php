@@ -180,6 +180,37 @@ function horsetools_2fa_use_recovery( $user_id, $code ) {
 }
 
 /* ---------------------------------------------------------------------------
+ * "Detect my chat ID" — self-contained, uses the site's OWN bot (no dependency
+ * on any third-party @userinfobot that could disappear). The user messages the
+ * site bot, clicks the button, and we read the bot's getUpdates and list the
+ * recent chats to pick from.
+ * ------------------------------------------------------------------------- */
+add_action( 'wp_ajax_horsetools_2fa_getchat', 'horsetools_2fa_getchat_ajax' );
+function horsetools_2fa_getchat_ajax() {
+	if ( ! is_user_logged_in() ) { wp_send_json_error( array( 'msg' => esc_html__( 'Not allowed.', 'horse-tools' ) ) ); }
+	check_ajax_referer( 'horsetools_2fa_getchat', 'nonce' );
+	global $horsetools_options;
+	$token = ! empty( $horsetools_options['woo-tele11'] ) ? $horsetools_options['woo-tele11'] : '';
+	if ( '' === $token ) { wp_send_json_error( array( 'msg' => esc_html__( 'No Telegram bot token is set yet (WooCommerce module).', 'horse-tools' ) ) ); }
+	$r = wp_remote_get( 'https://api.telegram.org/bot' . rawurlencode( $token ) . '/getUpdates', array( 'timeout' => 8 ) );
+	if ( is_wp_error( $r ) ) { wp_send_json_error( array( 'msg' => $r->get_error_message() ) ); }
+	$body = json_decode( wp_remote_retrieve_body( $r ), true );
+	if ( empty( $body['ok'] ) ) { wp_send_json_error( array( 'msg' => esc_html__( 'Telegram returned no updates (the bot may use a webhook, or the token is wrong).', 'horse-tools' ) ) ); }
+	$chats = array();
+	foreach ( (array) $body['result'] as $u ) {
+		$c = isset( $u['message']['chat'] ) ? $u['message']['chat'] : ( isset( $u['channel_post']['chat'] ) ? $u['channel_post']['chat'] : null );
+		if ( ! $c || ! isset( $c['id'] ) ) { continue; }
+		$name = isset( $c['title'] ) ? $c['title'] : trim( ( isset( $c['first_name'] ) ? $c['first_name'] : '' ) . ' ' . ( isset( $c['last_name'] ) ? $c['last_name'] : '' ) );
+		if ( isset( $c['username'] ) ) { $name = trim( $name . ' (@' . $c['username'] . ')' ); }
+		$chats[ (string) $c['id'] ] = '' !== $name ? $name : (string) $c['id'];
+	}
+	if ( empty( $chats ) ) { wp_send_json_error( array( 'msg' => esc_html__( 'No recent chats. Send your bot a message first, then try again.', 'horse-tools' ) ) ); }
+	$out = array();
+	foreach ( $chats as $id => $label ) { $out[] = array( 'id' => $id, 'label' => $label ); }
+	wp_send_json_success( array( 'chats' => $out ) );
+}
+
+/* ---------------------------------------------------------------------------
  * Enrolment on the user's own profile screen
  * ------------------------------------------------------------------------- */
 add_action( 'show_user_profile', 'horsetools_2fa_profile' );
@@ -239,8 +270,32 @@ function horsetools_2fa_profile( $user ) {
 	if ( ! empty( $horsetools_options['scuri-2fa-tg'] ) ) {
 		$tg = (string) get_user_meta( $user->ID, '_horsetools_2fa_tg_chat', true );
 		echo '<p style="margin-top:14px"><label>' . esc_html__( 'Your Telegram chat ID (for recovery codes)', 'horse-tools' ) . '<br/>';
-		echo '<input type="text" name="horsetools_2fa_tg_chat" value="' . esc_attr( $tg ) . '" class="regular-text" placeholder="123456789" /></label></p>';
-		echo '<p class="description">' . esc_html__( 'Message the site’s Telegram bot once, then paste YOUR own chat ID here (get it from @userinfobot) so recovery codes go to your Telegram, not the admin.', 'horse-tools' ) . '</p>';
+		echo '<input type="text" name="horsetools_2fa_tg_chat" id="ht-2fa-tgchat" value="' . esc_attr( $tg ) . '" class="regular-text" placeholder="123456789" /></label></p>';
+		echo '<p><button type="button" class="button" id="ht-2fa-getchat" data-nonce="' . esc_attr( wp_create_nonce( 'horsetools_2fa_getchat' ) ) . '">' . esc_html__( 'Detect my chat ID', 'horse-tools' ) . '</button> <span id="ht-2fa-getchat-msg" class="description" style="margin-left:6px"></span></p>';
+		echo '<p class="description">' . esc_html__( 'Send the site’s Telegram bot any message, then click “Detect my chat ID” and pick yourself from the list — no third-party bot needed. (You can also type the number manually.) Recovery codes then reach your own Telegram, not the admin.', 'horse-tools' ) . '</p>';
+		?>
+		<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var b=document.getElementById('ht-2fa-getchat'); if(!b){return;}
+			b.addEventListener('click',function(){
+				var msg=document.getElementById('ht-2fa-getchat-msg'), inp=document.getElementById('ht-2fa-tgchat');
+				msg.textContent=<?php echo wp_json_encode( __( 'Checking…', 'horse-tools' ) ); ?>; b.disabled=true;
+				fetch(ajaxurl,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({action:'horsetools_2fa_getchat',nonce:b.dataset.nonce})})
+				.then(function(r){return r.json();}).then(function(res){
+					b.disabled=false;
+					if(!res.success){ msg.textContent=(res.data&&res.data.msg)||'Error'; return; }
+					msg.textContent='';
+					res.data.chats.forEach(function(c){
+						var pick=document.createElement('button'); pick.type='button'; pick.className='button-link'; pick.style.marginRight='10px';
+						pick.textContent=c.label+' → '+c.id;
+						pick.addEventListener('click',function(){ inp.value=c.id; msg.textContent='✓ '+c.id; });
+						msg.appendChild(pick);
+					});
+				}).catch(function(){ b.disabled=false; msg.textContent='Error'; });
+			});
+		});
+		</script>
+		<?php
 	}
 	echo '</td></tr></table>';
 }

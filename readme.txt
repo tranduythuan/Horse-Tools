@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.20
+Stable tag: 1.2.21
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.21 =
+* **2FA: a "Detect my chat ID" button on your profile.** It reads your Telegram chat ID from the site's own bot (no dependency on any third-party @userinfobot that could disappear) — message the bot, click the button, and pick yourself from the list. You can still type the number in manually.
 
 = 1.2.20 =
 * **2FA: Telegram recovery is now per-user.** Each user pastes their OWN Telegram chat ID on their profile (the site still uses one shared bot), so a recovery code always reaches that user's own Telegram instead of being pooled to the admin. Users who haven't set a chat ID simply don't see the Telegram option. (Email recovery was already per-user — it goes to each user's own account address.)
@@ -362,6 +365,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.21 =
+2FA: adds a "Detect my chat ID" button that reads your Telegram chat ID from the site's own bot.
 
 = 1.2.20 =
 2FA: Telegram recovery codes now go to each user's own chat, and admins can reset a locked-out user's 2FA.

@@ -51,6 +51,16 @@ $vi = array(
     'This account uses two-factor authentication; XML-RPC password login is disabled.'
         => 'Tài khoản này dùng xác thực hai lớp; đăng nhập bằng mật khẩu qua XML-RPC đã bị tắt.',
     'This user has two-factor authentication ON.' => 'Người dùng này đang BẬT xác thực hai lớp.',
+    'Detect my chat ID' => 'Dò chat ID của tôi',
+    'Checking…' => 'Đang kiểm tra…',
+    'Not allowed.' => 'Không được phép.',
+    'No Telegram bot token is set yet (WooCommerce module).' => 'Chưa cấu hình token bot Telegram (module WooCommerce).',
+    'Telegram returned no updates (the bot may use a webhook, or the token is wrong).'
+        => 'Telegram không trả về cập nhật nào (bot có thể đang dùng webhook, hoặc token sai).',
+    'No recent chats. Send your bot a message first, then try again.'
+        => 'Không có chat gần đây. Hãy nhắn cho bot một tin trước rồi thử lại.',
+    'Send the site’s Telegram bot any message, then click “Detect my chat ID” and pick yourself from the list — no third-party bot needed. (You can also type the number manually.) Recovery codes then reach your own Telegram, not the admin.'
+        => 'Nhắn cho bot Telegram của site một tin bất kỳ, rồi bấm “Dò chat ID của tôi” và chọn bạn trong danh sách — không cần bot bên thứ ba. (Bạn cũng có thể tự gõ số.) Mã khôi phục khi đó về Telegram của chính bạn, không phải của admin.',
     'Turn it off for this user (e.g. they lost their device)' => 'Tắt cho người dùng này (vd họ bị mất thiết bị)',
     'Your Telegram chat ID (for recovery codes)' => 'Chat ID Telegram của bạn (để nhận mã khôi phục)',
     'Message the site’s Telegram bot once, then paste YOUR own chat ID here (get it from @userinfobot) so recovery codes go to your Telegram, not the admin.'

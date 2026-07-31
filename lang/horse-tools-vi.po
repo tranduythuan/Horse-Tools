@@ -5821,3 +5821,24 @@ msgstr "Nhắn cho bot Telegram của site một lần, rồi dán CHAT ID của
 
 msgid "Uses the site’s Telegram bot (configured in the WooCommerce module), but each user pastes their OWN chat ID on their profile — so a recovery code always reaches that user’s Telegram, never pooled to the admin. Users without a chat ID simply don’t see the Telegram option."
 msgstr "Dùng bot Telegram của site (cấu hình ở module WooCommerce), nhưng mỗi người dán CHAT ID của chính mình trong hồ sơ — nên mã khôi phục luôn về Telegram của người đó, không dồn về admin. Ai chưa có chat ID thì không thấy tùy chọn Telegram."
+
+msgid "Detect my chat ID"
+msgstr "Dò chat ID của tôi"
+
+msgid "Checking…"
+msgstr "Đang kiểm tra…"
+
+msgid "Not allowed."
+msgstr "Không được phép."
+
+msgid "No Telegram bot token is set yet (WooCommerce module)."
+msgstr "Chưa cấu hình token bot Telegram (module WooCommerce)."
+
+msgid "Telegram returned no updates (the bot may use a webhook, or the token is wrong)."
+msgstr "Telegram không trả về cập nhật nào (bot có thể đang dùng webhook, hoặc token sai)."
+
+msgid "No recent chats. Send your bot a message first, then try again."
+msgstr "Không có chat gần đây. Hãy nhắn cho bot một tin trước rồi thử lại."
+
+msgid "Send the site’s Telegram bot any message, then click “Detect my chat ID” and pick yourself from the list — no third-party bot needed. (You can also type the number manually.) Recovery codes then reach your own Telegram, not the admin."
+msgstr "Nhắn cho bot Telegram của site một tin bất kỳ, rồi bấm “Dò chat ID của tôi” và chọn bạn trong danh sách — không cần bot bên thứ ba. (Bạn cũng có thể tự gõ số.) Mã khôi phục khi đó về Telegram của chính bạn, không phải của admin."
