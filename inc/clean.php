@@ -283,6 +283,53 @@ function horsetools_delete_404_thumbnails() {
     wp_send_json_success(array('deleted_count' => $cleanedEntries, 'scanned' => $scanned));
 }
 add_action('wp_ajax_horsetools_delete_media_thum', 'horsetools_delete_404_thumbnails');
+/**
+ * Thumbnail-file deletion by size name — used by the "Delete cropped image"
+ * buttons below. These two helpers used to live in inc/media.php, but the Clean
+ * module is their only caller, so on a site with the Media module switched OFF
+ * this feature fatalled with an "undefined function" error. They live here now
+ * so Clean is self-contained. Guarded with function_exists so an older
+ * media.php that still declares them cannot trigger a redeclare fatal.
+ */
+if ( ! function_exists( 'horsetools_delete_thumbnails' ) ) {
+	function horsetools_delete_thumbnails( $thumbnail_name, $limit = 500 ) {
+		$attachments = get_posts( array(
+			'post_type'     => 'attachment',
+			'post_status'   => 'any',
+			'numberposts'   => -1,
+			'fields'        => 'ids',
+			'no_found_rows' => true,
+		) );
+		$deleted_count = 0;
+		foreach ( $attachments as $attachment_id ) {
+			if ( $deleted_count >= $limit ) {
+				break;
+			}
+			$deleted_count += horsetools_delete_all_thumbnails( (int) $attachment_id, $thumbnail_name );
+		}
+		return $deleted_count;
+	}
+}
+if ( ! function_exists( 'horsetools_delete_all_thumbnails' ) ) {
+	function horsetools_delete_all_thumbnails( $attachment_id, $thumbnail_name ) {
+		$deleted_count = 0;
+		$metadata = wp_get_attachment_metadata( $attachment_id );
+		if ( isset( $metadata['sizes'] ) ) {
+			foreach ( $metadata['sizes'] as $size => $data ) {
+				if ( $size === $thumbnail_name ) {
+					$file_path = wp_get_upload_dir()['basedir'] . '/' . dirname( $metadata['file'] ) . '/' . $data['file'];
+					if ( file_exists( $file_path ) ) {
+						unlink( $file_path );
+						$deleted_count++;
+					}
+					unset( $metadata['sizes'][ $size ] );
+				}
+			}
+			wp_update_attachment_metadata( $attachment_id, $metadata );
+		}
+		return $deleted_count;
+	}
+}
 # ajax xoa file crop
 function horsetools_delete_images_by_size_callback() {
     check_ajax_referer('horsetools_delete_crop_nonce', 'security');

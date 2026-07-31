@@ -122,47 +122,11 @@ function horsetools_block_specific_image_size($sizes) {
     return $sizes;
 }
 add_filter('intermediate_image_sizes_advanced', 'horsetools_block_specific_image_size');
-// tim kiem va xoa anh thu nho
-function horsetools_delete_thumbnails($thumbnail_name, $limit = 500) {
-    $attachments = get_posts(array(
-        'post_type' => 'attachment',
-        'post_status' => 'any',
-        'numberposts' => -1,
-        'fields' => 'ids',
-        'no_found_rows' => true,
-    ));
-    // 'fields' => 'ids' matters here: this used to hydrate every attachment in
-    // the library into a full WP_Post before applying the 500 limit, which is
-    // an out-of-memory on any real media library.
-    $deleted_count = 0;
-    foreach ($attachments as $attachment_id) {
-        if ($deleted_count >= $limit) {
-            break;
-        }
-        $deleted_count += horsetools_delete_all_thumbnails((int) $attachment_id, $thumbnail_name);
-    }
-	return $deleted_count; 
-}
-function horsetools_delete_all_thumbnails($attachment_id, $thumbnail_name) {
-    $deleted_count = 0; // Biến đếm số lượng hình đã xóa
-    $metadata = wp_get_attachment_metadata($attachment_id);
-    if (isset($metadata['sizes'])) {
-        $image_sizes = $metadata['sizes'];
-        foreach ($image_sizes as $size => $data) {
-            if ($size === $thumbnail_name) { // Kiểm tra tên của hình thu nhỏ
-                $file_path = wp_get_upload_dir()['basedir'] . '/' . dirname($metadata['file']) . '/' . $data['file'];
-                if (file_exists($file_path)) {
-                    unlink($file_path);
-                    $deleted_count++; // Tăng biến đếm khi xóa hình thành công
-                }
-                unset($metadata['sizes'][$size]);
-            }
-        }
-        wp_update_attachment_metadata($attachment_id, $metadata);
-    }
-    return $deleted_count; // Trả về số lượng hình đã xóa
-}
-# han che tai len file 
+// horsetools_delete_thumbnails() / horsetools_delete_all_thumbnails() moved to
+// inc/clean.php — the Clean module's "Delete cropped image" tool was their only
+// caller, and keeping them here broke that tool whenever the Media module was
+// switched off. See inc/clean.php.
+# han che tai len file
 if (isset($horsetools_options['media-up2']) && !empty($horsetools_options['media-up21'])){ 
 function horsetools_change_upload_size(){
     global $horsetools_options;

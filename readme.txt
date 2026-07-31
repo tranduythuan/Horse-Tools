@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.25
+Stable tag: 1.2.26
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.26 =
+* **Fixed: the Clean module's "Delete cropped image" tool crashed on sites that had the Media module switched off.** Its helper functions lived in the Media module, so clicking a size button returned a server error (nothing was deleted) whenever Media wasn't active. The helpers now live in the Clean module itself, so it is fully self-contained. Every other cleanup tool (revisions, autosaves, trash, comments, 404 media/thumbnails, scheduled cleanup) was unaffected.
 
 = 1.2.25 =
 * **Removed leftover Foxtool branding from the display-style preview thumbnails.** Seven of the eight "Customize display" preview images (Settings → General) still showed the old Foxtool logo baked into the corner; they now carry the Horse Tools mark like the rest of the plugin.
@@ -379,6 +382,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.26 =
+Fixes the Clean module's "Delete cropped image" tool crashing when the Media module was switched off.
 
 = 1.2.25 =
 Cleans the last of the old Foxtool logo out of the display-style preview thumbnails, replacing it with the Horse Tools mark.
