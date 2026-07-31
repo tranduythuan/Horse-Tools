@@ -5719,3 +5719,90 @@ msgstr "Đáp án so khớp không phân biệt hoa thường và bỏ khoảng 
 
 msgid "Wrong answer to the security question."
 msgstr "Sai đáp án câu hỏi bảo mật."
+
+msgid "Two-factor authentication (2FA)"
+msgstr "Xác thực hai lớp (2FA)"
+
+msgid "Enable two-factor authentication"
+msgstr "Bật xác thực hai lớp"
+
+msgid "Each user turns it on for their own account under Users → Profile (scan a QR with Google Authenticator / Authy). After the password they enter a 6-digit code, so a stolen password alone is not enough. Uses standard WordPress hooks — safe across WordPress updates, and disabling the plugin instantly restores the normal login."
+msgstr "Mỗi người tự bật cho tài khoản của mình ở Thành viên → Hồ sơ (quét mã QR bằng Google Authenticator / Authy). Sau mật khẩu phải nhập thêm mã 6 số, nên chỉ có mật khẩu là chưa đủ để vào. Dùng hook chuẩn của WordPress — an toàn qua các bản cập nhật WordPress, và tắt plugin là trả về đăng nhập bình thường ngay."
+
+msgid "Allow a recovery code by email"
+msgstr "Cho phép mã khôi phục qua email"
+
+msgid "On the code screen the user can have a one-time code emailed to their account address if they lose their phone."
+msgstr "Ở màn hình nhập mã, người dùng có thể yêu cầu gửi mã một lần vào email tài khoản nếu mất điện thoại."
+
+msgid "Allow a recovery code by Telegram"
+msgstr "Cho phép mã khôi phục qua Telegram"
+
+msgid "Sends the one-time code to the Telegram bot and chat set in the WooCommerce module. Make sure that chat is private to you."
+msgstr "Gửi mã một lần tới bot và chat Telegram đã cấu hình ở module WooCommerce. Hãy đảm bảo chat đó là riêng của bạn."
+
+msgid "Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off."
+msgstr "Mỗi người khi cài đều nhận được mã dự phòng dùng một lần — hãy lưu lại. Nếu bị khóa mà không có điện thoại, mã dự phòng hay kênh khôi phục, đổi tên thư mục plugin qua FTP để tắt 2FA."
+
+msgid "Status"
+msgstr "Trạng thái"
+
+msgid "Two-factor authentication is ON for your account."
+msgstr "Xác thực hai lớp đang BẬT cho tài khoản của bạn."
+
+msgid "Turn it off (uncheck stays on)"
+msgstr "Tắt đi (không tick thì vẫn bật)"
+
+msgid "Save these one-time backup codes somewhere safe — each works once if you lose your phone:"
+msgstr "Lưu các mã dự phòng dùng một lần này ở nơi an toàn — mỗi mã dùng được một lần khi bạn mất điện thoại:"
+
+msgid "Scan this with Google Authenticator, Authy or a similar app, then enter the 6-digit code it shows to turn 2FA on."
+msgstr "Quét mã này bằng Google Authenticator, Authy hoặc app tương tự, rồi nhập mã 6 số nó hiện ra để bật 2FA."
+
+msgid "Or enter this key manually:"
+msgstr "Hoặc nhập khóa này thủ công:"
+
+msgid "6-digit code"
+msgstr "Mã 6 số"
+
+msgid "← enter code and press \"Update profile\" to enable"
+msgstr "← nhập mã rồi bấm \"Cập nhật hồ sơ\" để bật"
+
+msgid "Authentication code"
+msgstr "Mã xác thực"
+
+msgid "Enter the 6-digit code from your app, or a backup code."
+msgstr "Nhập mã 6 số từ app, hoặc một mã dự phòng."
+
+msgid "Lost your device?"
+msgstr "Mất thiết bị?"
+
+msgid "Email me a code"
+msgstr "Gửi mã vào email tôi"
+
+msgid "Send a Telegram code"
+msgstr "Gửi mã qua Telegram"
+
+msgid "Trust this device for 30 days"
+msgstr "Tin thiết bị này trong 30 ngày"
+
+msgid "Verify"
+msgstr "Xác thực"
+
+msgid "Invalid code. Please try again."
+msgstr "Mã không đúng. Vui lòng thử lại."
+
+msgid "A one-time code has been sent. Enter it above."
+msgstr "Đã gửi mã một lần. Nhập mã đó ở trên."
+
+msgid "Could not send the recovery code — check the channel is configured."
+msgstr "Không gửi được mã khôi phục — kiểm tra kênh đã được cấu hình chưa."
+
+msgid "Your one-time login code for %1$s is: %2$s (valid 10 minutes)."
+msgstr "Mã đăng nhập một lần cho %1$s là: %2$s (hiệu lực 10 phút)."
+
+msgid "Your login recovery code"
+msgstr "Mã khôi phục đăng nhập của bạn"
+
+msgid "This account uses two-factor authentication; XML-RPC password login is disabled."
+msgstr "Tài khoản này dùng xác thực hai lớp; đăng nhập bằng mật khẩu qua XML-RPC đã bị tắt."

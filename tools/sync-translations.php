@@ -13,6 +13,43 @@ require_once __DIR__ . '/po-lib.php';
 $root = rtrim( $argv[1] ?? dirname( __DIR__ ), '/\\' );
 
 $vi = array(
+    // SECURITY tab — two-factor authentication (added 1.2.19).
+    'Two-factor authentication (2FA)' => 'Xác thực hai lớp (2FA)',
+    'Enable two-factor authentication' => 'Bật xác thực hai lớp',
+    'Each user turns it on for their own account under Users → Profile (scan a QR with Google Authenticator / Authy). After the password they enter a 6-digit code, so a stolen password alone is not enough. Uses standard WordPress hooks — safe across WordPress updates, and disabling the plugin instantly restores the normal login.'
+        => 'Mỗi người tự bật cho tài khoản của mình ở Thành viên → Hồ sơ (quét mã QR bằng Google Authenticator / Authy). Sau mật khẩu phải nhập thêm mã 6 số, nên chỉ có mật khẩu là chưa đủ để vào. Dùng hook chuẩn của WordPress — an toàn qua các bản cập nhật WordPress, và tắt plugin là trả về đăng nhập bình thường ngay.',
+    'Allow a recovery code by email' => 'Cho phép mã khôi phục qua email',
+    'On the code screen the user can have a one-time code emailed to their account address if they lose their phone.'
+        => 'Ở màn hình nhập mã, người dùng có thể yêu cầu gửi mã một lần vào email tài khoản nếu mất điện thoại.',
+    'Allow a recovery code by Telegram' => 'Cho phép mã khôi phục qua Telegram',
+    'Sends the one-time code to the Telegram bot and chat set in the WooCommerce module. Make sure that chat is private to you.'
+        => 'Gửi mã một lần tới bot và chat Telegram đã cấu hình ở module WooCommerce. Hãy đảm bảo chat đó là riêng của bạn.',
+    'Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off.'
+        => 'Mỗi người khi cài đều nhận được mã dự phòng dùng một lần — hãy lưu lại. Nếu bị khóa mà không có điện thoại, mã dự phòng hay kênh khôi phục, đổi tên thư mục plugin qua FTP để tắt 2FA.',
+    'Status' => 'Trạng thái',
+    'Two-factor authentication is ON for your account.' => 'Xác thực hai lớp đang BẬT cho tài khoản của bạn.',
+    'Turn it off (uncheck stays on)' => 'Tắt đi (không tick thì vẫn bật)',
+    'Save these one-time backup codes somewhere safe — each works once if you lose your phone:'
+        => 'Lưu các mã dự phòng dùng một lần này ở nơi an toàn — mỗi mã dùng được một lần khi bạn mất điện thoại:',
+    'Scan this with Google Authenticator, Authy or a similar app, then enter the 6-digit code it shows to turn 2FA on.'
+        => 'Quét mã này bằng Google Authenticator, Authy hoặc app tương tự, rồi nhập mã 6 số nó hiện ra để bật 2FA.',
+    'Or enter this key manually:' => 'Hoặc nhập khóa này thủ công:',
+    '6-digit code' => 'Mã 6 số',
+    '← enter code and press "Update profile" to enable' => '← nhập mã rồi bấm "Cập nhật hồ sơ" để bật',
+    'Authentication code' => 'Mã xác thực',
+    'Enter the 6-digit code from your app, or a backup code.' => 'Nhập mã 6 số từ app, hoặc một mã dự phòng.',
+    'Lost your device?' => 'Mất thiết bị?',
+    'Email me a code' => 'Gửi mã vào email tôi',
+    'Send a Telegram code' => 'Gửi mã qua Telegram',
+    'Trust this device for 30 days' => 'Tin thiết bị này trong 30 ngày',
+    'Verify' => 'Xác thực',
+    'Invalid code. Please try again.' => 'Mã không đúng. Vui lòng thử lại.',
+    'A one-time code has been sent. Enter it above.' => 'Đã gửi mã một lần. Nhập mã đó ở trên.',
+    'Could not send the recovery code — check the channel is configured.' => 'Không gửi được mã khôi phục — kiểm tra kênh đã được cấu hình chưa.',
+    'Your one-time login code for %1$s is: %2$s (valid 10 minutes).' => 'Mã đăng nhập một lần cho %1$s là: %2$s (hiệu lực 10 phút).',
+    'Your login recovery code' => 'Mã khôi phục đăng nhập của bạn',
+    'This account uses two-factor authentication; XML-RPC password login is disabled.'
+        => 'Tài khoản này dùng xác thực hai lớp; đăng nhập bằng mật khẩu qua XML-RPC đã bị tắt.',
     // SECURITY tab — custom login question (added 1.2.18).
     'Security question on the login form'
         => 'Câu hỏi bảo mật trên trang đăng nhập',

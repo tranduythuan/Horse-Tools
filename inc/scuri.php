@@ -401,6 +401,14 @@ if ( isset( $horsetools_options['scuri-lq1'] )
 }
 
 /* -------------------------------------------------------------------------
+ * A3. Two-factor authentication (TOTP) — opt-in, per user. Kept in its own file
+ * because it is a sizeable feature; loaded only when switched on.
+ * ---------------------------------------------------------------------- */
+if ( isset( $horsetools_options['scuri-2fa1'] ) ) {
+	require_once HORSETOOLS_DIR . 'inc/2fa.php';
+}
+
+/* -------------------------------------------------------------------------
  * E. Privacy — self-host Google Fonts + external-request scanner
  *
  * Loading fonts from fonts.googleapis.com sends every visitor's IP to Google,

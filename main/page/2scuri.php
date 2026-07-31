@@ -99,6 +99,26 @@ global $horsetools_options; ?>
 	) ); ?>
 	<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e('The answer is matched ignoring case and surrounding spaces. Remember it — if you ever forget it you can still get back in by renaming the plugin folder over FTP to switch the plugin off.', 'horse-tools'); ?></p>
 
+  <h3><i class="ti ti-shield-lock"></i> <?php _e('Two-factor authentication (2FA)', 'horse-tools') ?></h3>
+	<?php horsetools_toggle( 'scuri-2fa1', __( 'Enable two-factor authentication', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Two-factor authentication (2FA)',
+		'description' => __( 'Each user turns it on for their own account under Users → Profile (scan a QR with Google Authenticator / Authy). After the password they enter a 6-digit code, so a stolen password alone is not enough. Uses standard WordPress hooks — safe across WordPress updates, and disabling the plugin instantly restores the normal login.', 'horse-tools' ),
+	) ); ?>
+	<?php horsetools_toggle( 'scuri-2fa-email', __( 'Allow a recovery code by email', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Two-factor authentication (2FA)',
+		'parent'      => 'scuri-2fa1',
+		'description' => __( 'On the code screen the user can have a one-time code emailed to their account address if they lose their phone.', 'horse-tools' ),
+	) ); ?>
+	<?php horsetools_toggle( 'scuri-2fa-tg', __( 'Allow a recovery code by Telegram', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Two-factor authentication (2FA)',
+		'parent'      => 'scuri-2fa1',
+		'description' => __( 'Sends the one-time code to the Telegram bot and chat set in the WooCommerce module. Make sure that chat is private to you.', 'horse-tools' ),
+	) ); ?>
+	<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e('Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off.', 'horse-tools'); ?></p>
+
   <h3><i class="ti ti-user-question"></i> <?php _e('Block user enumeration', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'scuri-enum1', __( 'Hide usernames from scanners', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',
