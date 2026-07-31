@@ -37,6 +37,7 @@ Horse Tools does not send any data about your site to us or to any third party. 
 
 * **Google Indexing API / Search Console** — only when you connect your own Google service account, and only to submit the URLs you request.
 * **Google login** — only when you enable it and supply your own OAuth client.
+* **Google reCAPTCHA** — only when you enable it and supply your own reCAPTCHA site/secret keys. It loads Google's reCAPTCHA script on the login and registration forms (and, on stores, the WooCommerce login/registration forms) to tell humans from bots. Google's Terms of Service (https://policies.google.com/terms) and Privacy Policy (https://policies.google.com/privacy) apply to that check.
 * **Telegram notifications (WooCommerce)** — only when you supply your own bot token and chat ID.
 
 No site URL, administrator e-mail, licence check or usage statistic is transmitted on activation, deactivation, or at any other time.
