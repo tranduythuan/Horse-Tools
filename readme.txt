@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.26
+Stable tag: 1.2.27
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,12 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.27 =
+* **New (Optimize): Delay JavaScript until interaction.** Holds heavy third-party scripts — analytics, tag managers, pixels, chat widgets, ad and A/B tags — until the visitor first interacts (scroll, mouse move, tap, key or click), then runs them in the original order. It is the single biggest lever for Total Blocking Time and Lighthouse "Reduce unused JavaScript".
+    * Two modes: *Listed* (delay only scripts you name, with a built-in default list of common trackers) or *All* (delay everything except an exclusion list).
+    * Preserves execution order (external scripts wait for load) and re-fires DOMContentLoaded / load **only for the delayed scripts**, so late libraries still initialise without double-running the ones the page already ran.
+    * Never touches JSON-LD structured data, ES modules, document.write scripts, or anything tagged `data-ht-no-delay`; keeps jQuery core live even in *All* mode; skips logged-in users, AJAX/REST/feeds/embeds/customizer/AMP; and carries a CSP nonce onto its loader when the page uses one. Optional fall-back timer.
 
 = 1.2.26 =
 * **Fixed: the Clean module's "Delete cropped image" tool crashed on sites that had the Media module switched off.** Its helper functions lived in the Media module, so clicking a size button returned a server error (nothing was deleted) whenever Media wasn't active. The helpers now live in the Clean module itself, so it is fully self-contained. Every other cleanup tool (revisions, autosaves, trash, comments, 404 media/thumbnails, scheduled cleanup) was unaffected.
@@ -382,6 +388,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.27 =
+Adds "Delay JavaScript until interaction" to the Optimize module — a major Core Web Vitals win for Total Blocking Time. Test the front end after enabling.
 
 = 1.2.26 =
 Fixes the Clean module's "Delete cropped image" tool crashing when the Media module was switched off.

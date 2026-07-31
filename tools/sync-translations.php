@@ -578,6 +578,24 @@ $vi = array(
     'Decline button text (default: Decline)' => 'Chữ nút Từ chối (mặc định: Từ chối)',
     'Choose the position (corner box or full-width bar) and customise the message and button labels. The Accept/Decline choice is stored in the browser (localStorage + an “ht_cookie_consent” cookie), so the notice won’t nag returning visitors. Note: this is an informational notice — Horse Tools does not itself block third-party tracking scripts, so for strict consent-gating you would still gate your own scripts on that cookie.'
         => 'Chọn vị trí (hộp góc hoặc thanh ngang full-width) và tùy chỉnh nội dung cùng chữ trên nút. Lựa chọn Đồng ý/Từ chối được lưu trong trình duyệt (localStorage + cookie “ht_cookie_consent”), nên thông báo không làm phiền khách quay lại. Lưu ý: đây là thông báo mang tính thông tin — Horse Tools không tự chặn các script theo dõi của bên thứ ba, nên nếu muốn chặn chặt chẽ bạn vẫn cần tự điều kiện hóa script của mình dựa trên cookie đó.',
+    // OPTIMIZE — Delay JavaScript
+    'Delay JavaScript until interaction' => 'Hoãn JavaScript đến khi tương tác',
+    'Delay JavaScript execution' => 'Hoãn chạy JavaScript',
+    'Hold heavy third-party scripts (analytics, tag managers, pixels, chat, ads) until the visitor first interacts — scroll, mouse move, tap, key or click — then run them in order. The single biggest win for Total Blocking Time and “Reduce unused JavaScript”. It re-fires the page-ready events afterwards, keeps script order, and never touches JSON-LD structured data or ES modules.'
+        => 'Giữ lại các script nặng của bên thứ ba (analytics, tag manager, pixel, chat, quảng cáo) cho tới khi khách tương tác lần đầu — cuộn, di chuột, chạm, gõ phím hay bấm — rồi chạy chúng theo đúng thứ tự. Đây là mức tối ưu mạnh nhất cho Total Blocking Time và “Reduce unused JavaScript”. Sau đó nó tự kích hoạt lại các sự kiện page-ready, giữ đúng thứ tự script, và không đụng tới dữ liệu JSON-LD hay ES module.',
+    'Test the site after turning this on. If something that must work before interaction breaks (a hero slider, a cookie bar), add its handle or file name to a list below. Do not use together with “Delay JS” in another optimiser.'
+        => 'Hãy kiểm tra site sau khi bật. Nếu có thứ cần chạy trước khi tương tác bị lỗi (slider đầu trang, thanh cookie), hãy thêm handle hoặc tên file của nó vào danh sách bên dưới. Đừng dùng chung với “Delay JS” của một plugin tối ưu khác.',
+    'Mode' => 'Chế độ',
+    'Delay only the scripts I list (recommended, safe)' => 'Chỉ hoãn các script tôi liệt kê (khuyên dùng, an toàn)',
+    'Delay all scripts except the exclusions (most aggressive)' => 'Hoãn mọi script trừ danh sách loại trừ (mạnh nhất)',
+    '“Listed” mode — scripts to delay (one per line: a handle, file name or part of a URL). Leave empty to use the built-in list of common trackers.'
+        => 'Chế độ “Liệt kê” — các script cần hoãn (mỗi dòng một: handle, tên file hoặc một phần URL). Để trống sẽ dùng danh sách tracker phổ biến có sẵn.',
+    '“All” mode — scripts to NEVER delay (one per line). A hero slider or a cookie-consent script usually belongs here.'
+        => 'Chế độ “Tất cả” — các script KHÔNG BAO GIỜ hoãn (mỗi dòng một). Slider đầu trang hay script đồng ý cookie thường nằm ở đây.',
+    'Fall-back timer — run the delayed scripts after this many seconds even with no interaction (0 = only on interaction)'
+        => 'Bộ đếm dự phòng — chạy các script bị hoãn sau bấy nhiêu giây kể cả khi không có tương tác (0 = chỉ khi tương tác)',
+    'Tip: to stop one specific script from ever being delayed, add the attribute data-ht-no-delay to its tag. Logged-in users are never affected.'
+        => 'Mẹo: để một script cụ thể không bao giờ bị hoãn, thêm thuộc tính data-ht-no-delay vào thẻ của nó. Người dùng đã đăng nhập không bao giờ bị ảnh hưởng.',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

@@ -281,6 +281,198 @@ if ( isset( $horsetools_options['speed-defer1'] ) ) {
 }
 
 /* -------------------------------------------------------------------------
+ * Delay JavaScript until the first user interaction.
+ *
+ * The heaviest scripts on most sites are third-party — analytics, tag managers,
+ * pixels, chat widgets, ad and A/B tags. They block the main thread during load
+ * even though nothing on screen needs them until the visitor does something.
+ * This rewrites those scripts to an inert type the browser will not execute,
+ * then swaps them back to life on the FIRST interaction (key, mouse, wheel,
+ * touch, scroll, click) or an optional fall-back timer. It is the single biggest
+ * lever for Total Blocking Time and Lighthouse "Reduce unused JavaScript".
+ *
+ * Two modes:
+ *   listed : delay only scripts whose src/inline body matches a keyword. Safe,
+ *            and ships with a sensible default list when the box is left empty.
+ *   all    : delay every script except an exclusion list. Most powerful, and
+ *            because inline scripts are delayed alongside their files, order and
+ *            jQuery dependencies are preserved.
+ *
+ * What sets this apart from the usual implementation:
+ *   - it re-fires DOMContentLoaded and load once the delayed scripts have run,
+ *     so libraries that hook those events still initialise;
+ *   - restored scripts run strictly in document order (external ones wait for
+ *     onload) so dependencies never race;
+ *   - it never touches JSON-LD / JSON structured data (SEO), ES modules,
+ *     document.write scripts, this plugin's own loader, or anything the theme
+ *     marks with data-ht-no-delay.
+ *
+ * It runs in its own output buffer at template_redirect, so it also catches the
+ * hard-coded inline third-party tags that script_loader_tag never sees. When the
+ * HTML-minify buffer is also on, this (inner) buffer transforms first and minify
+ * runs over the result.
+ * ---------------------------------------------------------------------- */
+if ( isset( $horsetools_options['speed-delay1'] ) ) {
+
+	// Default keywords for "listed" mode when the user leaves the box empty: the
+	// usual heavy third parties, none needed before the visitor interacts.
+	function horsetools_delay_default_list() {
+		return array(
+			'googletagmanager', 'gtag/js', 'gtag(', 'google-analytics', 'analytics.js', 'ga.js',
+			'connect.facebook', 'fbevents', 'fbq(', 'facebook.net',
+			'googlesyndication', 'adsbygoogle', 'doubleclick',
+			'hotjar', 'clarity.ms',
+			'tawk.to', 'crisp.chat', 'tidio', 'intercom', 'zdassets', 'zendesk', 'livechatinc', 'drift.com',
+			'recaptcha', 'disqus',
+			'analytics.tiktok', 'matomo', 'piwik', 'criteo', 'taboola', 'outbrain', 'onesignal',
+		);
+	}
+
+	// Does this script (identified by its src URL or, for inline, its body) get
+	// delayed under the current mode and lists?
+	function horsetools_delay_should( $needle, $mode, $list, $exclude ) {
+		if ( 'all' === $mode ) {
+			foreach ( $exclude as $kw ) {
+				if ( '' !== $kw && false !== stripos( $needle, $kw ) ) {
+					return false;
+				}
+			}
+			return true;
+		}
+		foreach ( $list as $kw ) {
+			if ( '' !== $kw && false !== stripos( $needle, $kw ) ) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	// The buffer callback: rewrite matching <script> tags and, if any matched,
+	// append the interaction loader.
+	function horsetools_delay_transform( $buffer ) {
+		global $horsetools_options;
+		if ( '' === $buffer || false === stripos( $buffer, '<script' ) ) {
+			return $buffer;
+		}
+		$mode    = ( ! empty( $horsetools_options['speed-delay-mode'] ) && 'all' === $horsetools_options['speed-delay-mode'] ) ? 'all' : 'listed';
+		$user    = isset( $horsetools_options['speed-delay-list'] ) ? preg_split( '/[\r\n,]+/', (string) $horsetools_options['speed-delay-list'], -1, PREG_SPLIT_NO_EMPTY ) : array();
+		$user    = is_array( $user ) ? array_map( 'trim', $user ) : array();
+		$list    = ( 'listed' === $mode && empty( $user ) ) ? horsetools_delay_default_list() : $user;
+		$exclude = isset( $horsetools_options['speed-delay-exclude'] ) ? preg_split( '/[\r\n,]+/', (string) $horsetools_options['speed-delay-exclude'], -1, PREG_SPLIT_NO_EMPTY ) : array();
+		$exclude = is_array( $exclude ) ? array_map( 'trim', $exclude ) : array();
+		if ( 'all' === $mode ) {
+			// jQuery core must keep running at parse time even in "all" mode: an
+			// inline script that is NOT delayed (an excluded one, or one using
+			// document.write) may call $ / jQuery immediately, and delaying jQuery
+			// core would throw a ReferenceError. jQuery *plugins* are still delayed.
+			$exclude = array_merge( $exclude, array( 'jquery.js', 'jquery.min.js', 'jquery-migrate', '/jquery/jquery', 'code.jquery.com/jquery', 'googleapis.com/ajax/libs/jquery' ) );
+		}
+
+		// Strip a real type attribute whether it is quoted or not.
+		$strip_type = '#\stype\s*=\s*("[^"]*"|\'[^\']*\'|[^\s"\'>]+)#i';
+		$count = 0;
+		$out   = preg_replace_callback(
+			// Quote-aware attribute run (a quote matches only its string branch, so
+			// no super-linear backtracking), and a whitespace-tolerant terminator.
+			'#<script\b((?:"[^"]*"|\'[^\']*\'|[^"\'>])*)>([\s\S]*?)</script\s*>#i',
+			function ( $m ) use ( $mode, $list, $exclude, $strip_type, &$count ) {
+				$attrs = $m[1];
+				$body  = $m[2];
+				// Never touch structured data, JSON, ES modules, import maps,
+				// templates, this plugin's own loader, or explicit opt-outs.
+				if ( preg_match( '#type\s*=\s*["\']?\s*(application/ld\+json|application/json|module|importmap|text/template|text/html|text/x-template)#i', $attrs ) ) {
+					return $m[0];
+				}
+				if ( false !== stripos( $attrs, 'data-ht-no-delay' ) || false !== stripos( $attrs, 'data-ht-delay-loader' ) ) {
+					return $m[0];
+				}
+				$has_src = preg_match( '#\ssrc\s*=\s*["\']?([^"\'\s>]+)#i', $attrs, $srcm );
+				if ( ! $has_src ) {
+					// document.write() cannot run once deferred; empty scripts are
+					// pointless to delay.
+					if ( '' === trim( $body ) || false !== stripos( $body, 'document.write' ) ) {
+						return $m[0];
+					}
+				}
+				$needle = $has_src ? $srcm[1] : $body;
+				if ( ! horsetools_delay_should( $needle, $mode, $list, $exclude ) ) {
+					return $m[0];
+				}
+				$count++;
+				if ( $has_src ) {
+					// Rename exactly the src occurrence we detected (not a blind
+					// first match, which could land inside another attribute value).
+					$src_rewritten = preg_replace( '#^\s+src#i', ' data-ht-src', $srcm[0], 1 );
+					$new = str_replace( $srcm[0], $src_rewritten, $attrs );
+					$new = preg_replace( $strip_type, '', $new );
+					return '<script type="ht/delayed"' . $new . '></script>';
+				}
+				$new = preg_replace( $strip_type, '', $attrs );
+				return '<script type="ht/delayed"' . $new . '>' . $body . '</script>';
+			},
+			$buffer
+		);
+
+		if ( ! $count || null === $out ) {
+			return $buffer; // nothing delayed — leave the page byte-for-byte as it was
+		}
+		$timeout = isset( $horsetools_options['speed-delay-timeout'] ) ? (int) $horsetools_options['speed-delay-timeout'] : 0;
+		$timeout = max( 0, min( 60, $timeout ) ) * 1000;
+		// Carry a CSP nonce onto the loader if the page uses one, so a strict
+		// script-src policy does not block the one script that revives the rest.
+		$nonce = '';
+		if ( preg_match( '#<script[^>]*\snonce=(["\'])([^"\']+)\1#i', $out, $nm ) ) {
+			$nonce = ' nonce="' . esc_attr( $nm[2] ) . '"';
+		}
+		$loader  = '<script data-ht-delay-loader' . $nonce . '>' . horsetools_delay_loader_js( $timeout ) . '</script>';
+		if ( false !== stripos( $out, '</body>' ) ) {
+			return preg_replace( '#</body>#i', $loader . '</body>', $out, 1 );
+		}
+		return $out . $loader;
+	}
+
+	// The loader. Compact and inline so it can never itself be delayed, minified
+	// away or reordered by another optimiser.
+	function horsetools_delay_loader_js( $timeout_ms ) {
+		$js  = "(function(){var d=false,t=null,E=['keydown','mousedown','mousemove','wheel','touchstart','touchmove','touchend','click','scroll'];";
+		$js .= "function load(){if(d)return;d=true;E.forEach(function(e){window.removeEventListener(e,load,{passive:true})});if(t)clearTimeout(t);";
+		// Capture DOMContentLoaded/load handlers that the DELAYED scripts register
+		// while they run, then fire only those afterwards. This is why we don't
+		// blindly re-dispatch the events globally: that would re-run handlers the
+		// page already ran at real load time (double analytics hits, re-inited
+		// widgets). Only late libraries that missed the events get a replay.
+		$js .= "var q=[],dA=document.addEventListener,wA=window.addEventListener;";
+		$js .= "function cap(tg,orig){return function(ty,fn,o){if((ty==='DOMContentLoaded'||ty==='load')&&typeof fn==='function'){q.push([fn,ty])}else{orig.call(tg,ty,fn,o)}}}";
+		$js .= "document.addEventListener=cap(document,dA);window.addEventListener=cap(window,wA);";
+		$js .= "var n=document.querySelectorAll('script[type=\"ht/delayed\"]'),i=0;(function go(){";
+		$js .= "if(i>=n.length){document.addEventListener=dA;window.addEventListener=wA;q.forEach(function(h){try{h[0].call(h[1]==='load'?window:document,new Event(h[1]))}catch(e){}});return}";
+		$js .= "var o=n[i++],s=document.createElement('script'),a,x;for(a=0;a<o.attributes.length;a++){x=o.attributes[a];if(x.name==='type'||x.name==='data-ht-src')continue;s.setAttribute(x.name,x.value)}";
+		$js .= "var src=o.getAttribute('data-ht-src');if(src){s.src=src;s.onload=s.onerror=go;o.parentNode.replaceChild(s,o)}else{s.text=o.textContent;o.parentNode.replaceChild(s,o);go()}})()}";
+		$js .= "E.forEach(function(e){window.addEventListener(e,load,{passive:true})});";
+		if ( $timeout_ms > 0 ) {
+			$js .= "t=setTimeout(load,{$timeout_ms});";
+		}
+		$js .= "})();";
+		return $js;
+	}
+
+	function horsetools_delay_init() {
+		if ( is_admin() || is_user_logged_in() ) {
+			return;
+		}
+		if ( wp_doing_ajax() || wp_doing_cron() || is_feed() || is_embed()
+			|| ( defined( 'REST_REQUEST' ) && REST_REQUEST )
+			|| ( defined( 'WP_CLI' ) && WP_CLI )
+			|| ( function_exists( 'is_customize_preview' ) && is_customize_preview() )
+			|| ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) ) {
+			return;
+		}
+		ob_start( 'horsetools_delay_transform' );
+	}
+	add_action( 'template_redirect', 'horsetools_delay_init', 1 );
+}
+
+/* -------------------------------------------------------------------------
  * Preconnect / DNS-prefetch hints.
  *
  * For every third-party origin the page pulls from (Google Fonts, a CDN, an

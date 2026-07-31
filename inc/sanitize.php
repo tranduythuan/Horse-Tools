@@ -237,6 +237,8 @@ function horsetools_sanitize_number_keys() {
 		'main-her2'        => array( 0, 100 ),    // vertical position, %
 		'main-her3'        => array( 0, 500 ),    // horizontal offset, px
 		'tag2'             => array( 1, 1000 ),   // insert before Nth heading
+		// main/page/1speed.php — Delay JavaScript
+		'speed-delay-timeout' => array( 0, 60 ), // fall-back timer, seconds (0 = interaction only)
 	);
 }
 
@@ -351,6 +353,8 @@ function horsetools_sanitize_textarea_keys() {
 		'speed-defer-exclude', // OPTIMIZE - script handles/URLs never deferred
 		'speed-pre-hosts',     // OPTIMIZE - hosts to preconnect / dns-prefetch
 		'speed-preload-urls',  // OPTIMIZE - asset URLs to <link rel=preload>
+		'speed-delay-list',    // OPTIMIZE - Delay JS: scripts to delay (listed mode)
+		'speed-delay-exclude', // OPTIMIZE - Delay JS: scripts never delayed (all mode)
 	);
 }
 

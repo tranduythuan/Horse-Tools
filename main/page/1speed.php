@@ -113,6 +113,47 @@ global $horsetools_options; ?>
 		<textarea style="height:80px;" class="ht-code-textarea" name="horsetools_settings[speed-preload-urls]" placeholder="https://example.com/wp-content/uploads/hero.webp&#10;https://example.com/fonts/main.woff2"><?php if(!empty($horsetools_options['speed-preload-urls'])){echo esc_textarea($horsetools_options['speed-preload-urls']);} ?></textarea>
 		</p>
 
+  <h3><i class="ti ti-hourglass-low"></i> <?php _e('Delay JavaScript until interaction', 'horse-tools') ?></h3>
+		<!-- delay js -->
+		<?php horsetools_toggle( 'speed-delay1', __( 'Delay JavaScript execution', 'horse-tools' ), array(
+			'tab'         => 'OPTIMIZE',
+			'section'     => 'Delay JavaScript until interaction',
+			'description' => __( 'Hold heavy third-party scripts (analytics, tag managers, pixels, chat, ads) until the visitor first interacts — scroll, mouse move, tap, key or click — then run them in order. The single biggest win for Total Blocking Time and “Reduce unused JavaScript”. It re-fires the page-ready events afterwards, keeps script order, and never touches JSON-LD structured data or ES modules.', 'horse-tools' ),
+			'warning'     => __( 'Test the site after turning this on. If something that must work before interaction breaks (a hero slider, a cookie bar), add its handle or file name to a list below. Do not use together with “Delay JS” in another optimiser.', 'horse-tools' ),
+		) ); ?>
+		<p class="ht-field" data-ht-parent="ht-main-speed-delay1">
+		<label class="ht-field-label"><?php _e('Mode', 'horse-tools'); ?></label>
+		<select name="horsetools_settings[speed-delay-mode]">
+			<?php
+			$ht_dm = ! empty( $horsetools_options['speed-delay-mode'] ) ? $horsetools_options['speed-delay-mode'] : 'listed';
+			$ht_dm_opts = array(
+				'listed' => __( 'Delay only the scripts I list (recommended, safe)', 'horse-tools' ),
+				'all'    => __( 'Delay all scripts except the exclusions (most aggressive)', 'horse-tools' ),
+			);
+			foreach ( $ht_dm_opts as $ht_v => $ht_l ) {
+				echo '<option value="' . esc_attr( $ht_v ) . '"' . selected( $ht_dm, $ht_v, false ) . '>' . esc_html( $ht_l ) . '</option>';
+			}
+			?>
+		</select>
+		</p>
+		<p class="ht-field" data-ht-parent="ht-main-speed-delay1">
+		<label class="ht-field-label"><?php _e('“Listed” mode — scripts to delay (one per line: a handle, file name or part of a URL). Leave empty to use the built-in list of common trackers.', 'horse-tools'); ?></label>
+		<textarea style="height:90px;" class="ht-code-textarea" name="horsetools_settings[speed-delay-list]" placeholder="googletagmanager&#10;fbevents&#10;hotjar&#10;tawk.to"><?php if(!empty($horsetools_options['speed-delay-list'])){echo esc_textarea($horsetools_options['speed-delay-list']);} ?></textarea>
+		</p>
+		<p class="ht-field" data-ht-parent="ht-main-speed-delay1">
+		<label class="ht-field-label"><?php _e('“All” mode — scripts to NEVER delay (one per line). A hero slider or a cookie-consent script usually belongs here.', 'horse-tools'); ?></label>
+		<textarea style="height:80px;" class="ht-code-textarea" name="horsetools_settings[speed-delay-exclude]" placeholder="slider&#10;consent"><?php if(!empty($horsetools_options['speed-delay-exclude'])){echo esc_textarea($horsetools_options['speed-delay-exclude']);} ?></textarea>
+		</p>
+		<?php horsetools_input( 'speed-delay-timeout', __( 'Fall-back timer — run the delayed scripts after this many seconds even with no interaction (0 = only on interaction)', 'horse-tools' ), array(
+			'tab'         => 'OPTIMIZE',
+			'section'     => 'Delay JavaScript until interaction',
+			'type'        => 'number',
+			'class'       => 'ht-input-small',
+			'placeholder' => '0',
+			'parent'      => 'speed-delay1',
+		) ); ?>
+		<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Tip: to stop one specific script from ever being delayed, add the attribute data-ht-no-delay to its tag. Logged-in users are never affected.', 'horse-tools'); ?></p>
+
   <h3><i class="ti ti-loader"></i> <?php _e('The function of lazy loading images', 'horse-tools') ?></h3>
 	<!-- lazyload img 1 -->
 	<?php horsetools_toggle( 'speed-lazy1', __( 'Native image lazy-load + async decode', 'horse-tools' ), array(
