@@ -117,6 +117,9 @@ global $horsetools_options; ?>
 		'parent'      => 'scuri-2fa1',
 		'description' => __( 'Uses the site’s Telegram bot (configured in the WooCommerce module), but each user pastes their OWN chat ID on their profile — so a recovery code always reaches that user’s Telegram, never pooled to the admin. Users without a chat ID simply don’t see the Telegram option.', 'horse-tools' ),
 	) ); ?>
+	<?php if ( ! empty( $horsetools_options['scuri-2fa-tg'] ) && empty( $horsetools_options['woo-tele11'] ) ) : ?>
+	<p class="ht-note ht-note-red"><i class="ti ti-alert-triangle"></i> <?php printf( esc_html__( 'Telegram recovery is ON but this site has no bot token yet, so no recovery code can be sent. Add a bot token in the %1$s module (the “Configure order notifications to be sent to Telegram” section) — it is easy to miss because it lives there, not here — then each user pastes their own chat ID on their profile.', 'horse-tools' ), '<strong>' . esc_html__( 'WooCommerce', 'horse-tools' ) . '</strong>' ); ?></p>
+	<?php endif; ?>
 	<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e('Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off.', 'horse-tools'); ?></p>
 
   <h3><i class="ti ti-user-question"></i> <?php _e('Block user enumeration', 'horse-tools') ?></h3>

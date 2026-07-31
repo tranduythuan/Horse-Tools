@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.22
+Stable tag: 1.2.23
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,11 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.23 =
+* **2FA recovery on the profile is now self-explanatory.** A new "If you lose your phone" panel lists every recovery channel the admin switched on: **email** (shows the exact address a code goes to) and **Telegram**.
+* **The profile now shows WHICH Telegram bot to message.** "Detect my chat ID" only works after you've messaged the site's bot — but a user (e.g. an editor on someone else's site) had no way to know which bot that is. The profile now shows the bot's @username as a clickable link (Step 1 — open it and press Start), then the Detect button (Step 2).
+* **Clear warning when the bot isn't set up.** If Telegram recovery is switched on but no bot token has been entered (the token lives in the WooCommerce module — easy to miss), both the Security settings page and the profile now say so, and link admins straight to where to set it. Regular users are told to use email or a backup code instead.
 
 = 1.2.22 =
 * **Fixed: on the 2FA code screen, the "code sent" and "wrong code" messages were replaced by the generic "Login failed" text** whenever the "hide login errors" (block user-enumeration) option was on — so you couldn't tell whether a Telegram / email recovery code had actually been sent. The 2FA screen now prints its own messages, unaffected by that filter.
@@ -368,6 +373,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.23 =
+Clearer 2FA recovery: a "If you lose your phone" panel lists email + Telegram, shows the bot's @username to message, and warns (with a link) when the bot token isn't set up yet.
 
 = 1.2.22 =
 Fixes the 2FA code screen showing a generic error instead of the real "code sent" / "wrong code" message.

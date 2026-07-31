@@ -5845,3 +5845,45 @@ msgstr "Nhắn cho bot Telegram của site một tin bất kỳ, rồi bấm “
 
 msgid "Could not send the recovery code — message the bot first, then check your chat ID."
 msgstr "Không gửi được mã khôi phục — hãy nhắn cho bot trước, rồi kiểm tra lại chat ID của bạn."
+
+msgid "Step 1 —"
+msgstr "Bước 1 —"
+
+msgid "open this site’s Telegram bot and press Start:"
+msgstr "mở bot Telegram của site này và bấm Start:"
+
+msgid "Message the site’s Telegram bot once (ask the site admin which bot if you’re not sure), then use the button below."
+msgstr "Nhắn cho bot Telegram của site một lần (nếu không chắc là bot nào thì hỏi admin của site), rồi dùng nút bên dưới."
+
+msgid "Step 2 —"
+msgstr "Bước 2 —"
+
+msgid "The code then reaches your own Telegram, not the admin. (You can also type the chat ID number in manually.)"
+msgstr "Mã khi đó về Telegram của chính bạn, không phải của admin. (Bạn cũng có thể tự gõ số chat ID vào.)"
+
+msgid "If you lose your phone"
+msgstr "Nếu bạn mất điện thoại"
+
+msgid "Besides your one-time backup codes, a fresh code can also be sent to you here:"
+msgstr "Ngoài các mã dự phòng dùng một lần, một mã mới cũng có thể được gửi cho bạn ở đây:"
+
+msgid "By email — a one-time code is sent to your account address:"
+msgstr "Qua email — một mã dùng một lần được gửi tới địa chỉ email tài khoản của bạn:"
+
+msgid "By Telegram"
+msgstr "Qua Telegram"
+
+msgid "Telegram recovery is turned on but this site has no bot token yet, so no code can be sent. Add a bot token under %s, then reload this page."
+msgstr "Đường lùi qua Telegram đang bật nhưng site chưa có token bot, nên chưa gửi được mã nào. Hãy thêm token bot ở %s, rồi tải lại trang này."
+
+msgid "Settings → WooCommerce → “Configure order notifications to be sent to Telegram”"
+msgstr "Cài đặt → WooCommerce → “Cấu hình thông báo đơn hàng gửi về Telegram”"
+
+msgid "Telegram recovery isn’t fully set up on this site yet — ask the site admin, or just use email or a backup code instead."
+msgstr "Đường lùi qua Telegram trên site này chưa được cấu hình đầy đủ — hãy hỏi admin của site, hoặc dùng email hay mã dự phòng thay thế."
+
+msgid "Telegram recovery is ON but this site has no bot token yet, so no recovery code can be sent. Add a bot token in the %1$s module (the “Configure order notifications to be sent to Telegram” section) — it is easy to miss because it lives there, not here — then each user pastes their own chat ID on their profile."
+msgstr "Đường lùi qua Telegram đang BẬT nhưng site chưa có token bot, nên chưa gửi được mã khôi phục nào. Hãy thêm token bot trong module %1$s (mục “Cấu hình thông báo đơn hàng gửi về Telegram”) — chỗ này dễ bỏ sót vì nó nằm ở đó chứ không phải ở đây — rồi mỗi người dán chat ID của mình trong hồ sơ."
+
+msgid "WooCommerce"
+msgstr "WooCommerce"

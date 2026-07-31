@@ -210,6 +210,26 @@ function horsetools_2fa_getchat_ajax() {
 	wp_send_json_success( array( 'chats' => $out ) );
 }
 
+// The bot's @username (via getMe) so the profile can show a "message this bot"
+// link — a user should never have to ask the admin which bot the site uses.
+// Cached per token so we don't hit Telegram on every profile load.
+function horsetools_2fa_bot_username() {
+	global $horsetools_options;
+	$token = ! empty( $horsetools_options['woo-tele11'] ) ? $horsetools_options['woo-tele11'] : '';
+	if ( '' === $token ) { return ''; }
+	$key = 'horsetools_2fa_botuser_' . md5( $token );
+	$u   = get_transient( $key );
+	if ( false !== $u ) { return (string) $u; }
+	$r = wp_remote_get( 'https://api.telegram.org/bot' . rawurlencode( $token ) . '/getMe', array( 'timeout' => 8 ) );
+	$username = '';
+	if ( ! is_wp_error( $r ) ) {
+		$body = json_decode( wp_remote_retrieve_body( $r ), true );
+		if ( ! empty( $body['result']['username'] ) ) { $username = (string) $body['result']['username']; }
+	}
+	set_transient( $key, $username, $username ? DAY_IN_SECONDS : 5 * MINUTE_IN_SECONDS );
+	return $username;
+}
+
 /* ---------------------------------------------------------------------------
  * Enrolment on the user's own profile screen
  * ------------------------------------------------------------------------- */
@@ -265,37 +285,78 @@ function horsetools_2fa_profile( $user ) {
 		<script>document.addEventListener('DOMContentLoaded',function(){var el=document.getElementById('ht-2fa-qr');if(el&&window.QRCode){new QRCode(el,{text:el.getAttribute('data-otp'),width:180,height:180,correctLevel:QRCode.CorrectLevel.M});}});</script>
 		<?php
 	}
-	// Per-user Telegram chat ID, so a Telegram recovery code reaches THIS user's
-	// own Telegram (never pooled to the admin). One shared bot, per-user chat.
-	if ( ! empty( $horsetools_options['scuri-2fa-tg'] ) ) {
-		$tg = (string) get_user_meta( $user->ID, '_horsetools_2fa_tg_chat', true );
-		echo '<p style="margin-top:14px"><label>' . esc_html__( 'Your Telegram chat ID (for recovery codes)', 'horse-tools' ) . '<br/>';
-		echo '<input type="text" name="horsetools_2fa_tg_chat" id="ht-2fa-tgchat" value="' . esc_attr( $tg ) . '" class="regular-text" placeholder="123456789" /></label></p>';
-		echo '<p><button type="button" class="button" id="ht-2fa-getchat" data-nonce="' . esc_attr( wp_create_nonce( 'horsetools_2fa_getchat' ) ) . '">' . esc_html__( 'Detect my chat ID', 'horse-tools' ) . '</button> <span id="ht-2fa-getchat-msg" class="description" style="margin-left:6px"></span></p>';
-		echo '<p class="description">' . esc_html__( 'Send the site’s Telegram bot any message, then click “Detect my chat ID” and pick yourself from the list — no third-party bot needed. (You can also type the number manually.) Recovery codes then reach your own Telegram, not the admin.', 'horse-tools' ) . '</p>';
-		?>
-		<script>
-		document.addEventListener('DOMContentLoaded',function(){
-			var b=document.getElementById('ht-2fa-getchat'); if(!b){return;}
-			b.addEventListener('click',function(){
-				var msg=document.getElementById('ht-2fa-getchat-msg'), inp=document.getElementById('ht-2fa-tgchat');
-				msg.textContent=<?php echo wp_json_encode( __( 'Checking…', 'horse-tools' ) ); ?>; b.disabled=true;
-				fetch(ajaxurl,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({action:'horsetools_2fa_getchat',nonce:b.dataset.nonce})})
-				.then(function(r){return r.json();}).then(function(res){
-					b.disabled=false;
-					if(!res.success){ msg.textContent=(res.data&&res.data.msg)||'Error'; return; }
-					msg.textContent='';
-					res.data.chats.forEach(function(c){
-						var pick=document.createElement('button'); pick.type='button'; pick.className='button-link'; pick.style.marginRight='10px';
-						pick.textContent=c.label+' → '+c.id;
-						pick.addEventListener('click',function(){ inp.value=c.id; msg.textContent='✓ '+c.id; });
-						msg.appendChild(pick);
-					});
-				}).catch(function(){ b.disabled=false; msg.textContent='Error'; });
+	// If the user ever loses their phone, these recovery channels take over.
+	// List every channel the admin switched on — and flag any that isn't
+	// actually usable yet — so nobody discovers a dead channel only once
+	// they're already locked out.
+	$email_on = ! empty( $horsetools_options['scuri-2fa-email'] );
+	$tg_on    = ! empty( $horsetools_options['scuri-2fa-tg'] );
+	if ( $email_on || $tg_on ) {
+		echo '<hr style="margin:16px 0;border:none;border-top:1px solid #dcdcde"/>';
+		echo '<p style="font-weight:600;margin-bottom:2px">' . esc_html__( 'If you lose your phone', 'horse-tools' ) . '</p>';
+		echo '<p class="description" style="margin-top:0">' . esc_html__( 'Besides your one-time backup codes, a fresh code can also be sent to you here:', 'horse-tools' ) . '</p>';
+	}
+
+	// Email recovery needs no setup — it always goes to this account's address.
+	if ( $email_on ) {
+		echo '<p style="margin:6px 0">' . esc_html__( 'By email — a one-time code is sent to your account address:', 'horse-tools' ) . ' <code>' . esc_html( $user->user_email ) . '</code></p>';
+	}
+
+	// Telegram recovery needs BOTH the site bot token AND this user's chat ID.
+	if ( $tg_on ) {
+		echo '<p style="margin:10px 0 2px"><strong>' . esc_html__( 'By Telegram', 'horse-tools' ) . '</strong></p>';
+		if ( empty( $horsetools_options['woo-tele11'] ) ) {
+			// The admin switched Telegram recovery ON but never set a bot token,
+			// so no code can be sent. Warn — and point admins to the out-of-the-
+			// way place the token lives (the WooCommerce module), which a user
+			// setting up 2FA would never think to open.
+			if ( current_user_can( 'manage_options' ) ) {
+				echo '<p style="border-left:4px solid #dba617;background:#fcf9e8;padding:8px 12px;margin:4px 0">'
+					. sprintf(
+						/* translators: %s: link to the settings location */
+						esc_html__( 'Telegram recovery is turned on but this site has no bot token yet, so no code can be sent. Add a bot token under %s, then reload this page.', 'horse-tools' ),
+						'<a href="' . esc_url( admin_url( 'admin.php?page=horsetools-options' ) ) . '"><strong>' . esc_html__( 'Settings → WooCommerce → “Configure order notifications to be sent to Telegram”', 'horse-tools' ) . '</strong></a>'
+					) . '</p>';
+			} else {
+				echo '<p class="description" style="margin-top:0">' . esc_html__( 'Telegram recovery isn’t fully set up on this site yet — ask the site admin, or just use email or a backup code instead.', 'horse-tools' ) . '</p>';
+			}
+		} else {
+			$tg  = (string) get_user_meta( $user->ID, '_horsetools_2fa_tg_chat', true );
+			$bot = horsetools_2fa_bot_username();
+			echo '<p style="margin-top:4px"><label>' . esc_html__( 'Your Telegram chat ID (for recovery codes)', 'horse-tools' ) . '<br/>';
+			echo '<input type="text" name="horsetools_2fa_tg_chat" id="ht-2fa-tgchat" value="' . esc_attr( $tg ) . '" class="regular-text" placeholder="123456789" /></label></p>';
+			if ( '' !== $bot ) {
+				echo '<p><strong>' . esc_html__( 'Step 1 —', 'horse-tools' ) . '</strong> ' . esc_html__( 'open this site’s Telegram bot and press Start:', 'horse-tools' )
+					. ' <a href="' . esc_url( 'https://t.me/' . $bot ) . '" target="_blank" rel="noopener"><strong>@' . esc_html( $bot ) . '</strong></a></p>';
+			} else {
+				echo '<p class="description">' . esc_html__( 'Message the site’s Telegram bot once (ask the site admin which bot if you’re not sure), then use the button below.', 'horse-tools' ) . '</p>';
+			}
+			echo '<p><strong>' . esc_html__( 'Step 2 —', 'horse-tools' ) . '</strong> <button type="button" class="button" id="ht-2fa-getchat" data-nonce="' . esc_attr( wp_create_nonce( 'horsetools_2fa_getchat' ) ) . '">' . esc_html__( 'Detect my chat ID', 'horse-tools' ) . '</button> <span id="ht-2fa-getchat-msg" class="description" style="margin-left:6px"></span></p>';
+			echo '<p class="description">' . esc_html__( 'The code then reaches your own Telegram, not the admin. (You can also type the chat ID number in manually.)', 'horse-tools' ) . '</p>';
+			?>
+			<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var b=document.getElementById('ht-2fa-getchat'); if(!b){return;}
+				b.addEventListener('click',function(){
+					var msg=document.getElementById('ht-2fa-getchat-msg'), inp=document.getElementById('ht-2fa-tgchat');
+					msg.textContent=<?php echo wp_json_encode( __( 'Checking…', 'horse-tools' ) ); ?>; b.disabled=true;
+					fetch(ajaxurl,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({action:'horsetools_2fa_getchat',nonce:b.dataset.nonce})})
+					.then(function(r){return r.json();}).then(function(res){
+						b.disabled=false;
+						if(!res.success){ msg.textContent=(res.data&&res.data.msg)||'Error'; return; }
+						msg.textContent='';
+						res.data.chats.forEach(function(c){
+							var pick=document.createElement('button'); pick.type='button'; pick.className='button-link'; pick.style.marginRight='10px';
+							pick.textContent=c.label+' → '+c.id;
+							pick.addEventListener('click',function(){ inp.value=c.id; msg.textContent='✓ '+c.id; });
+							msg.appendChild(pick);
+						});
+					}).catch(function(){ b.disabled=false; msg.textContent='Error'; });
+				});
 			});
-		});
-		</script>
-		<?php
+			</script>
+			<?php
+		}
 	}
 	echo '</td></tr></table>';
 }

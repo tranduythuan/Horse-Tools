@@ -61,8 +61,28 @@ $vi = array(
         => 'Telegram không trả về cập nhật nào (bot có thể đang dùng webhook, hoặc token sai).',
     'No recent chats. Send your bot a message first, then try again.'
         => 'Không có chat gần đây. Hãy nhắn cho bot một tin trước rồi thử lại.',
-    'Send the site’s Telegram bot any message, then click “Detect my chat ID” and pick yourself from the list — no third-party bot needed. (You can also type the number manually.) Recovery codes then reach your own Telegram, not the admin.'
-        => 'Nhắn cho bot Telegram của site một tin bất kỳ, rồi bấm “Dò chat ID của tôi” và chọn bạn trong danh sách — không cần bot bên thứ ba. (Bạn cũng có thể tự gõ số.) Mã khôi phục khi đó về Telegram của chính bạn, không phải của admin.',
+    'Step 1 —' => 'Bước 1 —',
+    'open this site’s Telegram bot and press Start:' => 'mở bot Telegram của site này và bấm Start:',
+    'Message the site’s Telegram bot once (ask the site admin which bot if you’re not sure), then use the button below.'
+        => 'Nhắn cho bot Telegram của site một lần (nếu không chắc là bot nào thì hỏi admin của site), rồi dùng nút bên dưới.',
+    'Step 2 —' => 'Bước 2 —',
+    'The code then reaches your own Telegram, not the admin. (You can also type the chat ID number in manually.)'
+        => 'Mã khi đó về Telegram của chính bạn, không phải của admin. (Bạn cũng có thể tự gõ số chat ID vào.)',
+    'If you lose your phone' => 'Nếu bạn mất điện thoại',
+    'Besides your one-time backup codes, a fresh code can also be sent to you here:'
+        => 'Ngoài các mã dự phòng dùng một lần, một mã mới cũng có thể được gửi cho bạn ở đây:',
+    'By email — a one-time code is sent to your account address:'
+        => 'Qua email — một mã dùng một lần được gửi tới địa chỉ email tài khoản của bạn:',
+    'By Telegram' => 'Qua Telegram',
+    'Telegram recovery is turned on but this site has no bot token yet, so no code can be sent. Add a bot token under %s, then reload this page.'
+        => 'Đường lùi qua Telegram đang bật nhưng site chưa có token bot, nên chưa gửi được mã nào. Hãy thêm token bot ở %s, rồi tải lại trang này.',
+    'Settings → WooCommerce → “Configure order notifications to be sent to Telegram”'
+        => 'Cài đặt → WooCommerce → “Cấu hình thông báo đơn hàng gửi về Telegram”',
+    'Telegram recovery isn’t fully set up on this site yet — ask the site admin, or just use email or a backup code instead.'
+        => 'Đường lùi qua Telegram trên site này chưa được cấu hình đầy đủ — hãy hỏi admin của site, hoặc dùng email hay mã dự phòng thay thế.',
+    'Telegram recovery is ON but this site has no bot token yet, so no recovery code can be sent. Add a bot token in the %1$s module (the “Configure order notifications to be sent to Telegram” section) — it is easy to miss because it lives there, not here — then each user pastes their own chat ID on their profile.'
+        => 'Đường lùi qua Telegram đang BẬT nhưng site chưa có token bot, nên chưa gửi được mã khôi phục nào. Hãy thêm token bot trong module %1$s (mục “Cấu hình thông báo đơn hàng gửi về Telegram”) — chỗ này dễ bỏ sót vì nó nằm ở đó chứ không phải ở đây — rồi mỗi người dán chat ID của mình trong hồ sơ.',
+    'WooCommerce' => 'WooCommerce',
     'Turn it off for this user (e.g. they lost their device)' => 'Tắt cho người dùng này (vd họ bị mất thiết bị)',
     'Your Telegram chat ID (for recovery codes)' => 'Chat ID Telegram của bạn (để nhận mã khôi phục)',
     'Message the site’s Telegram bot once, then paste YOUR own chat ID here (get it from @userinfobot) so recovery codes go to your Telegram, not the admin.'
