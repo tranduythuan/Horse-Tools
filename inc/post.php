@@ -509,14 +509,19 @@ function horsetools_lb_theme_css(){
 	// on top of the colour sanitiser) so it can never break out of the CSS.
 	$ok_accent = ( '' !== $accent && preg_match( '/^(#[0-9a-fA-F]{3,8}|rgba?\([0-9,.\s]+\))$/', $accent ) );
 
+	// !important is required: our <style> prints before the engine's own bundled
+	// CSS, and both target the same single class (.goverlay / .pswp) at equal
+	// specificity — so without it the library's default backdrop wins the cascade
+	// and every theme looks identical. The engines don't use !important here, so
+	// this reliably wins regardless of stylesheet order.
 	if ( 'photoswipe' === horsetools_lb_engine() ) {
-		$css = '.pswp{--pswp-bg:' . $t['bg'] . ';}';
-		if ( $t['blur'] )   { $css .= '.pswp__bg{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}'; }
-		if ( $ok_accent )   { $css .= '.pswp__button--arrow .pswp__icn,.pswp__button{color:' . $accent . ';}'; }
+		$css = '.pswp{--pswp-bg:' . $t['bg'] . ' !important;}';
+		if ( $t['blur'] )   { $css .= '.pswp__bg{backdrop-filter:blur(14px) !important;-webkit-backdrop-filter:blur(14px) !important;}'; }
+		if ( $ok_accent )   { $css .= '.pswp__button--arrow .pswp__icn,.pswp__button{color:' . $accent . ' !important;}'; }
 	} else {
-		$css = '.goverlay{background:' . $t['bg'] . ';}';
-		if ( $t['blur'] )   { $css .= '.goverlay{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}'; }
-		if ( $ok_accent )   { $css .= '.glightbox-container .gnext svg,.glightbox-container .gprev svg,.glightbox-container .gclose svg{color:' . $accent . ';}'; }
+		$css = '.goverlay{background:' . $t['bg'] . ' !important;}';
+		if ( $t['blur'] )   { $css .= '.goverlay{backdrop-filter:blur(14px) !important;-webkit-backdrop-filter:blur(14px) !important;}'; }
+		if ( $ok_accent )   { $css .= '.glightbox-container .gnext svg,.glightbox-container .gprev svg,.glightbox-container .gclose svg{color:' . $accent . ' !important;}'; }
 	}
 	$css .= '.ht-lightbox img{cursor:zoom-in;}';
 	echo '<style id="ht-lb-theme">' . $css . '</style>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput -- preset values + colour-validated accent

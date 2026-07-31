@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.16
+Stable tag: 1.2.17
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,6 +79,10 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.17 =
+* **Fixed: the lightbox backdrop themes (Dark / Blur / Light / Cinema) had no effect.** The theme styles were printed before the lightbox library's own stylesheet, so — at the same CSS specificity — the library's default black backdrop always won and every theme looked identical. The theme now takes priority, so Blur (frosted glass), Light, Cinema and your accent colour actually show. Verified live on GLightbox. (The lightbox itself, its open/slide animations and looping were working correctly — only the backdrop appearance was affected.)
+* Internal: the leftover `.fancybox` content-wrapper CSS class from the old engine was renamed to `.ht-lightbox` (no visible change).
 
 = 1.2.16 =
 * **The image lightbox is now free and open-source — Fancybox has been replaced with your choice of GLightbox or PhotoSwipe (both MIT-licensed).** Fancybox requires a paid licence for commercial sites; the two new engines are free for any use, so there is no licensing worry and nothing phones home (both are bundled in the plugin). Pick the engine in Content → Image lightbox:
@@ -347,6 +351,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.17 =
+Fixes the lightbox backdrop themes (Dark / Blur / Light / Cinema) and accent colour, which had no visible effect in 1.2.16.
 
 = 1.2.16 =
 The image lightbox is now free/open-source: Fancybox is replaced by your choice of GLightbox or PhotoSwipe (both MIT). No commercial-licence worry; adds video and slide transitions.
