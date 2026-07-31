@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.19
+Stable tag: 1.2.20
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,10 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.20 =
+* **2FA: Telegram recovery is now per-user.** Each user pastes their OWN Telegram chat ID on their profile (the site still uses one shared bot), so a recovery code always reaches that user's own Telegram instead of being pooled to the admin. Users who haven't set a chat ID simply don't see the Telegram option. (Email recovery was already per-user — it goes to each user's own account address.)
+* **2FA: admins can now reset another user's two-factor authentication** from that user's profile (Users → edit the user → "Turn it off for this user") — the escape hatch when someone loses their device, without touching FTP.
 
 = 1.2.19 =
 * **New: two-factor authentication (2FA), opt-in and per user (Security tab).** Each user turns it on for their own account under Users → Profile: scan a QR code with Google Authenticator / Authy, confirm one code, and from then on the login asks for a 6-digit code after the password — so a stolen password alone is no longer enough. You also get one-time backup codes, plus an optional "trust this device for 30 days". If you lose your phone, recover with a backup code or — each toggleable in settings — a one-time code sent to your email or Telegram; last resort, switch the plugin off over FTP. Built entirely on standard WordPress hooks, so it's safe across WordPress updates and disabling the plugin restores the normal login instantly. Notes: XML-RPC password login is blocked for 2FA accounts (use an application password for automation), and wrong codes are rate-limited and count toward the login-attempt lockout.
@@ -358,6 +362,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.20 =
+2FA: Telegram recovery codes now go to each user's own chat, and admins can reset a locked-out user's 2FA.
 
 = 1.2.19 =
 Adds opt-in, per-user two-factor authentication (TOTP) with backup codes and optional email/Telegram recovery.

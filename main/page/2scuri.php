@@ -115,7 +115,7 @@ global $horsetools_options; ?>
 		'tab'         => 'SECURITY',
 		'section'     => 'Two-factor authentication (2FA)',
 		'parent'      => 'scuri-2fa1',
-		'description' => __( 'Sends the one-time code to the Telegram bot and chat set in the WooCommerce module. Make sure that chat is private to you.', 'horse-tools' ),
+		'description' => __( 'Uses the site’s Telegram bot (configured in the WooCommerce module), but each user pastes their OWN chat ID on their profile — so a recovery code always reaches that user’s Telegram, never pooled to the admin. Users without a chat ID simply don’t see the Telegram option.', 'horse-tools' ),
 	) ); ?>
 	<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e('Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off.', 'horse-tools'); ?></p>
 

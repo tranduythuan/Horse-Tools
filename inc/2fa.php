@@ -142,6 +142,14 @@ function horsetools_2fa_recovery_allowed( $channel ) {
 	global $horsetools_options;
 	return 'email' === $channel ? ! empty( $horsetools_options['scuri-2fa-email'] ) : ! empty( $horsetools_options['scuri-2fa-tg'] );
 }
+// Telegram recovery is only offered to a user who has set their OWN chat ID
+// (and the site has a bot token + the toggle on).
+function horsetools_2fa_tg_available( $user_id ) {
+	global $horsetools_options;
+	return ! empty( $horsetools_options['scuri-2fa-tg'] )
+		&& ! empty( $horsetools_options['woo-tele11'] )
+		&& '' !== (string) get_user_meta( $user_id, '_horsetools_2fa_tg_chat', true );
+}
 function horsetools_2fa_send_recovery( $user, $channel ) {
 	$code = str_pad( (string) random_int( 0, 999999 ), 6, '0', STR_PAD_LEFT );
 	set_transient( 'horsetools_2fa_rec_' . $user->ID, wp_hash_password( $code ), 600 ); // 10 min
@@ -150,8 +158,10 @@ function horsetools_2fa_send_recovery( $user, $channel ) {
 		return wp_mail( $user->user_email, __( 'Your login recovery code', 'horse-tools' ), $msg );
 	}
 	global $horsetools_options;
+	// One shared bot for the whole site, but each user's OWN chat ID — so a
+	// recovery code always goes to that user's Telegram, never pooled to the admin.
 	$token  = ! empty( $horsetools_options['woo-tele11'] ) ? $horsetools_options['woo-tele11'] : '';
-	$chatid = ! empty( $horsetools_options['woo-tele12'] ) ? $horsetools_options['woo-tele12'] : '';
+	$chatid = (string) get_user_meta( $user->ID, '_horsetools_2fa_tg_chat', true );
 	if ( '' === $token || '' === $chatid ) { return false; }
 	$r = wp_remote_post( 'https://api.telegram.org/bot' . rawurlencode( $token ) . '/sendMessage', array(
 		'timeout' => 8,
@@ -175,9 +185,19 @@ function horsetools_2fa_use_recovery( $user_id, $code ) {
 add_action( 'show_user_profile', 'horsetools_2fa_profile' );
 add_action( 'edit_user_profile', 'horsetools_2fa_profile' );
 function horsetools_2fa_profile( $user ) {
+	global $horsetools_options;
 	if ( get_current_user_id() !== (int) $user->ID ) {
-		// Only let a person manage 2FA on their OWN account (never enrol/disable
-		// someone else's second factor from the Users screen).
+		// Not your own account: an admin may only RESET this user's 2FA (never see
+		// the secret or enrol on their behalf) — the escape hatch for a user who
+		// lost their device.
+		if ( current_user_can( 'edit_users' ) && horsetools_2fa_enabled( $user->ID ) ) {
+			echo '<h2>' . esc_html__( 'Two-factor authentication', 'horse-tools' ) . '</h2>';
+			echo '<table class="form-table" role="presentation"><tr><th>' . esc_html__( 'Status', 'horse-tools' ) . '</th><td>';
+			wp_nonce_field( 'horsetools_2fa_admin_' . $user->ID, 'horsetools_2fa_admin_nonce' );
+			echo '<p>' . esc_html__( 'This user has two-factor authentication ON.', 'horse-tools' ) . '</p>';
+			echo '<label><input type="checkbox" name="horsetools_2fa_admin_reset" value="1" /> ' . esc_html__( 'Turn it off for this user (e.g. they lost their device)', 'horse-tools' ) . '</label>';
+			echo '</td></tr></table>';
+		}
 		return;
 	}
 	wp_enqueue_script( 'horsetools-qr', HORSETOOLS_URL . 'link/shortcode/qrcode.min.js', array(), '1.0.0', true );
@@ -214,14 +234,38 @@ function horsetools_2fa_profile( $user ) {
 		<script>document.addEventListener('DOMContentLoaded',function(){var el=document.getElementById('ht-2fa-qr');if(el&&window.QRCode){new QRCode(el,{text:el.getAttribute('data-otp'),width:180,height:180,correctLevel:QRCode.CorrectLevel.M});}});</script>
 		<?php
 	}
+	// Per-user Telegram chat ID, so a Telegram recovery code reaches THIS user's
+	// own Telegram (never pooled to the admin). One shared bot, per-user chat.
+	if ( ! empty( $horsetools_options['scuri-2fa-tg'] ) ) {
+		$tg = (string) get_user_meta( $user->ID, '_horsetools_2fa_tg_chat', true );
+		echo '<p style="margin-top:14px"><label>' . esc_html__( 'Your Telegram chat ID (for recovery codes)', 'horse-tools' ) . '<br/>';
+		echo '<input type="text" name="horsetools_2fa_tg_chat" value="' . esc_attr( $tg ) . '" class="regular-text" placeholder="123456789" /></label></p>';
+		echo '<p class="description">' . esc_html__( 'Message the site’s Telegram bot once, then paste YOUR own chat ID here (get it from @userinfobot) so recovery codes go to your Telegram, not the admin.', 'horse-tools' ) . '</p>';
+	}
 	echo '</td></tr></table>';
 }
 add_action( 'personal_options_update', 'horsetools_2fa_profile_save' );
 add_action( 'edit_user_profile_update', 'horsetools_2fa_profile_save' );
 function horsetools_2fa_profile_save( $user_id ) {
-	if ( get_current_user_id() !== (int) $user_id ) { return; }
+	// An admin turning OFF another user's 2FA (the only cross-account action).
+	if ( get_current_user_id() !== (int) $user_id ) {
+		if ( current_user_can( 'edit_users' ) && ! empty( $_POST['horsetools_2fa_admin_reset'] )
+			&& isset( $_POST['horsetools_2fa_admin_nonce'] )
+			&& wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['horsetools_2fa_admin_nonce'] ) ), 'horsetools_2fa_admin_' . $user_id ) ) {
+			delete_user_meta( $user_id, '_horsetools_2fa_enabled' );
+			delete_user_meta( $user_id, '_horsetools_2fa_secret' );
+			delete_user_meta( $user_id, '_horsetools_2fa_backup' );
+		}
+		return;
+	}
 	if ( ! isset( $_POST['horsetools_2fa_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['horsetools_2fa_nonce'] ) ), 'horsetools_2fa_' . $user_id ) ) {
 		return;
+	}
+	// Save the user's own Telegram chat ID (numeric, may be negative for groups).
+	if ( isset( $_POST['horsetools_2fa_tg_chat'] ) ) {
+		$tg = preg_replace( '/[^0-9-]/', '', sanitize_text_field( wp_unslash( $_POST['horsetools_2fa_tg_chat'] ) ) );
+		if ( '' === $tg ) { delete_user_meta( $user_id, '_horsetools_2fa_tg_chat' ); }
+		else { update_user_meta( $user_id, '_horsetools_2fa_tg_chat', $tg ); }
 	}
 	if ( horsetools_2fa_enabled( $user_id ) ) {
 		if ( ! empty( $_POST['horsetools_2fa_disable'] ) ) {
@@ -281,13 +325,13 @@ function horsetools_2fa_prompt( $user, $redirect, $remember, $error = '' ) {
 			<input type="text" name="horsetools_2fa_code" id="ht2fa_code" class="input" inputmode="numeric" autocomplete="one-time-code" value="" size="20" autofocus />
 		</p>
 		<p class="description"><?php esc_html_e( 'Enter the 6-digit code from your app, or a backup code.', 'horse-tools' ); ?></p>
-		<?php if ( horsetools_2fa_recovery_allowed( 'email' ) || horsetools_2fa_recovery_allowed( 'tg' ) ) : ?>
+		<?php if ( horsetools_2fa_recovery_allowed( 'email' ) || horsetools_2fa_tg_available( $user->ID ) ) : ?>
 		<p style="font-size:13px">
 			<?php esc_html_e( 'Lost your device?', 'horse-tools' ); ?>
 			<?php if ( horsetools_2fa_recovery_allowed( 'email' ) ) : ?>
 				<button type="submit" formaction="<?php echo esc_url( site_url( 'wp-login.php?action=horsetools_2fa_email', 'login_post' ) ); ?>" class="button-link"><?php esc_html_e( 'Email me a code', 'horse-tools' ); ?></button>
 			<?php endif; ?>
-			<?php if ( horsetools_2fa_recovery_allowed( 'tg' ) ) : ?>
+			<?php if ( horsetools_2fa_tg_available( $user->ID ) ) : ?>
 				&middot; <button type="submit" formaction="<?php echo esc_url( site_url( 'wp-login.php?action=horsetools_2fa_tg', 'login_post' ) ); ?>" class="button-link"><?php esc_html_e( 'Send a Telegram code', 'horse-tools' ); ?></button>
 			<?php endif; ?>
 		</p>
@@ -341,7 +385,8 @@ function horsetools_2fa_do_verify() {
 function horsetools_2fa_send_step( $channel ) {
 	$uid  = horsetools_2fa_read_pending( isset( $_POST['horsetools_2fa_pending'] ) ? wp_unslash( $_POST['horsetools_2fa_pending'] ) : '' );
 	$user = $uid ? get_user_by( 'id', $uid ) : false;
-	if ( ! $user || ! horsetools_2fa_recovery_allowed( $channel ) ) { wp_safe_redirect( wp_login_url() ); exit; }
+	$allowed = ( 'tg' === $channel ) ? horsetools_2fa_tg_available( $uid ) : horsetools_2fa_recovery_allowed( $channel );
+	if ( ! $user || ! $allowed ) { wp_safe_redirect( wp_login_url() ); exit; }
 	$sent = horsetools_2fa_send_recovery( $user, $channel );
 	$redirect = isset( $_POST['redirect_to'] ) ? wp_unslash( $_POST['redirect_to'] ) : admin_url();
 	horsetools_2fa_prompt( $user, $redirect, ! empty( $_POST['rememberme'] ),

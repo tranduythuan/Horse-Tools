@@ -50,6 +50,13 @@ $vi = array(
     'Your login recovery code' => 'Mã khôi phục đăng nhập của bạn',
     'This account uses two-factor authentication; XML-RPC password login is disabled.'
         => 'Tài khoản này dùng xác thực hai lớp; đăng nhập bằng mật khẩu qua XML-RPC đã bị tắt.',
+    'This user has two-factor authentication ON.' => 'Người dùng này đang BẬT xác thực hai lớp.',
+    'Turn it off for this user (e.g. they lost their device)' => 'Tắt cho người dùng này (vd họ bị mất thiết bị)',
+    'Your Telegram chat ID (for recovery codes)' => 'Chat ID Telegram của bạn (để nhận mã khôi phục)',
+    'Message the site’s Telegram bot once, then paste YOUR own chat ID here (get it from @userinfobot) so recovery codes go to your Telegram, not the admin.'
+        => 'Nhắn cho bot Telegram của site một lần, rồi dán CHAT ID của chính bạn vào đây (lấy từ @userinfobot) để mã khôi phục về Telegram của bạn, không phải của admin.',
+    'Uses the site’s Telegram bot (configured in the WooCommerce module), but each user pastes their OWN chat ID on their profile — so a recovery code always reaches that user’s Telegram, never pooled to the admin. Users without a chat ID simply don’t see the Telegram option.'
+        => 'Dùng bot Telegram của site (cấu hình ở module WooCommerce), nhưng mỗi người dán CHAT ID của chính mình trong hồ sơ — nên mã khôi phục luôn về Telegram của người đó, không dồn về admin. Ai chưa có chat ID thì không thấy tùy chọn Telegram.',
     // SECURITY tab — custom login question (added 1.2.18).
     'Security question on the login form'
         => 'Câu hỏi bảo mật trên trang đăng nhập',
