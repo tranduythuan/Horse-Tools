@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.30
+Stable tag: 1.2.31
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.31 =
+* **One-click speed for non-technical owners.** The built-in configuration presets (Extend → Backup/Import) now switch on the new safe, high-impact speed features for you — no handles, no critical CSS, nothing to understand. The **Performance** preset (and the Blog and WooCommerce presets) now enable Delay JavaScript in its safe *Listed* mode with a 5-second fall-back, Defer JavaScript, disable Dashicons for visitors and calm the Heartbeat, on top of what they already did. The risky options (async CSS, the aggressive "delay all" mode) are deliberately left out so a preset never breaks a site.
 
 = 1.2.30 =
 * **New (Optimize): Load CSS without blocking render (async CSS).** Stylesheets in the head normally block the browser from painting anything until they finish downloading. This loads them with the media-toggle technique so the page appears on screen sooner — a big win for First Contentful Paint and Lighthouse's "Eliminate render-blocking resources". Comes with a **Critical CSS** box (inlined at the top of the head so the first paint already looks right, preventing the unstyled flash) and an exclusion list to keep chosen stylesheets blocking. A no-JavaScript fallback keeps every stylesheet working, and logged-in users are unaffected. It is the most powerful CSS option — test the front end after enabling.
@@ -397,6 +400,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.31 =
+The Performance/Blog/WooCommerce presets now enable the new safe speed features (delay + defer JS) in one click — no technical setup needed.
 
 = 1.2.30 =
 Adds "Load CSS without blocking render" (async CSS) with a Critical CSS box to the Optimize module — a major First Contentful Paint win. Test the front end after enabling.

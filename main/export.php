@@ -218,6 +218,7 @@ function horsetools_presets() {
 			'desc'  => __( 'Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening.', 'horse-tools' ),
 			'items' => array(
 				__( 'Table of contents on posts', 'horse-tools' ),
+				__( 'Delay analytics/ads/chat until interaction, and defer JavaScript', 'horse-tools' ),
 				__( 'Lazy-load images; drop Emoji and jQuery Migrate', 'horse-tools' ),
 				__( 'nofollow + new tab on external links', 'horse-tools' ),
 				__( 'Use titles as image alt text', 'horse-tools' ),
@@ -226,6 +227,8 @@ function horsetools_presets() {
 			'settings' => array(
 				'horsetools_settings'        => array(
 					'speed' => '1', 'speed-off1' => '1', 'speed-off4' => '1', 'speed-lazy1' => '1',
+					'speed-defer1' => '1', 'speed-dash1' => '1', 'speed-hb1' => '1', 'speed-hb2' => 'slow',
+					'speed-delay1' => '1', 'speed-delay-mode' => 'listed', 'speed-delay-timeout' => '5',
 					'post' => '1', 'post-out1' => '1', 'post-alt1' => '1',
 					'scuri' => '1', 'scuri-off2' => '1', 'scuri-off4' => '1', 'scuri-off5' => '1',
 					'scuri-verof2' => '1', 'scuri-enum1' => '1', 'scuri-login1' => '1', 'scuri-fileedit1' => '1',
@@ -239,6 +242,7 @@ function horsetools_presets() {
 			'icon'  => 'shopping-cart',
 			'desc'  => __( 'Security and speed for a shop, chosen not to interfere with the store. The REST API is left fully on — WooCommerce cart and checkout need it — and permalinks are left untouched.', 'horse-tools' ),
 			'items' => array(
+				__( 'Delay analytics/ads/chat until interaction, and defer JavaScript (cart & checkout untouched)', 'horse-tools' ),
 				__( 'Lazy-load images; drop Emoji', 'horse-tools' ),
 				__( 'Compress uploaded JPGs', 'horse-tools' ),
 				__( 'Security headers (frame, nosniff, referrer)', 'horse-tools' ),
@@ -248,6 +252,8 @@ function horsetools_presets() {
 			'settings' => array(
 				'horsetools_settings' => array(
 					'speed' => '1', 'speed-off4' => '1', 'speed-lazy1' => '1',
+					'speed-defer1' => '1', 'speed-dash1' => '1', 'speed-hb1' => '1', 'speed-hb2' => 'slow',
+					'speed-delay1' => '1', 'speed-delay-mode' => 'listed', 'speed-delay-timeout' => '5',
 					'media' => '1', 'media-zip1' => '1',
 					'scuri' => '1', 'scuri-off2' => '1', 'scuri-off4' => '1', 'scuri-verof2' => '1',
 					'scuri-enum1' => '1', 'scuri-login1' => '1', 'scuri-fileedit1' => '1',
@@ -258,16 +264,20 @@ function horsetools_presets() {
 		'performance' => array(
 			'label' => __( 'Performance', 'horse-tools' ),
 			'icon'  => 'rocket',
-			'desc'  => __( 'Lean pages and lighter media. Leaves Gutenberg and Classic CSS alone, since removing those can change how a theme looks.', 'horse-tools' ),
+			'desc'  => __( 'One click for the safe, high-impact speed features — including delaying third-party scripts and deferring JavaScript. It deliberately leaves out the advanced, riskier options (async CSS, the aggressive “delay all” mode), which you can still turn on yourself later. Gutenberg and Classic CSS are left alone, since removing those can change how a theme looks.', 'horse-tools' ),
 			'items' => array(
-				__( 'Drop Emoji and jQuery Migrate', 'horse-tools' ),
+				__( 'Delay third-party scripts (analytics, ads, chat) until the visitor interacts — safe built-in list, with a 5-second fall-back', 'horse-tools' ),
+				__( 'Defer JavaScript so it no longer blocks the page', 'horse-tools' ),
+				__( 'Drop Emoji, jQuery Migrate and admin icons; calm the Heartbeat', 'horse-tools' ),
 				__( 'Instant-page prefetch and image lazy-loading', 'horse-tools' ),
-				__( 'HTML compression: minify inline JS, strip comments', 'horse-tools' ),
-				__( 'Compress JPGs and serve WebP', 'horse-tools' ),
+				__( 'HTML compression; compress JPGs and serve WebP', 'horse-tools' ),
 			),
 			'settings' => array(
 				'horsetools_settings' => array(
 					'speed' => '1', 'speed-off1' => '1', 'speed-off4' => '1', 'speed-link1' => '1', 'speed-lazy1' => '1',
+					'speed-dash1' => '1', 'speed-hb1' => '1', 'speed-hb2' => 'slow',
+					'speed-defer1' => '1',
+					'speed-delay1' => '1', 'speed-delay-mode' => 'listed', 'speed-delay-timeout' => '5',
 					'speed-zip1' => '1', 'speed-zip11' => '1', 'speed-zip12' => '1',
 					'media' => '1', 'media-zip1' => '1', 'media-webp1' => '1',
 				),

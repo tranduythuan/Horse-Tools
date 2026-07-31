@@ -624,6 +624,17 @@ $vi = array(
         => 'CSS cần giữ chặn-hiển-thị (mỗi dòng một — handle hoặc một phần URL). Nếu chưa có critical CSS thì để CSS chính của theme vào đây.',
     'Only affects enqueued stylesheets, and only for logged-out visitors. A fallback keeps every stylesheet working when JavaScript is turned off.'
         => 'Chỉ tác động đến các CSS được enqueue, và chỉ với khách chưa đăng nhập. Có bản dự phòng để mọi CSS vẫn hoạt động khi tắt JavaScript.',
+    // Presets (one-click) — new speed baseline
+    'One click for the safe, high-impact speed features — including delaying third-party scripts and deferring JavaScript. It deliberately leaves out the advanced, riskier options (async CSS, the aggressive “delay all” mode), which you can still turn on yourself later. Gutenberg and Classic CSS are left alone, since removing those can change how a theme looks.'
+        => 'Một cú bấm cho các tính năng tốc độ an toàn, hiệu quả cao — gồm cả hoãn script bên thứ ba và defer JavaScript. Nó cố ý bỏ qua các tùy chọn nâng cao, rủi ro hơn (async CSS, chế độ “hoãn tất cả”) — bạn có thể tự bật sau. Gutenberg và Classic CSS được giữ nguyên vì gỡ chúng có thể làm đổi giao diện theme.',
+    'Delay third-party scripts (analytics, ads, chat) until the visitor interacts — safe built-in list, with a 5-second fall-back'
+        => 'Hoãn script bên thứ ba (analytics, quảng cáo, chat) tới khi khách tương tác — danh sách an toàn có sẵn, kèm timer dự phòng 5 giây',
+    'Defer JavaScript so it no longer blocks the page' => 'Defer JavaScript để không còn chặn hiển thị trang',
+    'Drop Emoji, jQuery Migrate and admin icons; calm the Heartbeat' => 'Tắt Emoji, jQuery Migrate và icon admin; làm dịu Heartbeat',
+    'HTML compression; compress JPGs and serve WebP' => 'Nén HTML; nén JPG và phục vụ WebP',
+    'Delay analytics/ads/chat until interaction, and defer JavaScript' => 'Hoãn analytics/quảng cáo/chat tới khi tương tác, và defer JavaScript',
+    'Delay analytics/ads/chat until interaction, and defer JavaScript (cart & checkout untouched)'
+        => 'Hoãn analytics/quảng cáo/chat tới khi tương tác, và defer JavaScript (giỏ hàng & thanh toán không bị đụng)',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';
