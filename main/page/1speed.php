@@ -213,6 +213,23 @@ global $horsetools_options; ?>
 		'description' => __( 'Adds decoding="async" to images so the browser decodes them off the main thread, and relies on WordPress’ built-in native lazy-load (which correctly keeps the first/LCP image eager). Replaces the old script-based method that removed image src — that hurt SEO and broke images with JavaScript off.', 'horse-tools' ),
 	) ); ?>
 
+  <h3><i class="ti ti-brush"></i> <?php _e('Load CSS without blocking render', 'horse-tools') ?></h3>
+		<?php horsetools_toggle( 'speed-acss1', __( 'Async CSS — remove render-blocking stylesheets', 'horse-tools' ), array(
+			'tab'         => 'OPTIMIZE',
+			'section'     => 'Load CSS without blocking render',
+			'description' => __( 'Loads stylesheets without blocking the first paint (the media-toggle technique), so the page appears on screen sooner. A big win for First Contentful Paint and Lighthouse’s “Eliminate render-blocking resources”.', 'horse-tools' ),
+			'warning'     => __( 'The most powerful but riskiest speed option. Without the Critical CSS below, the page can flash unstyled for a moment (FOUC). Paste your above-the-fold CSS, or keep the main theme stylesheet in the exclusion list. Test the front end carefully, and don’t combine it with another plugin that also optimises CSS delivery.', 'horse-tools' ),
+		) ); ?>
+		<p class="ht-field" data-ht-parent="ht-main-speed-acss1">
+		<label class="ht-field-label"><?php _e('Critical CSS — the above-the-fold styles, inlined in the head to prevent the flash (optional, but strongly recommended)', 'horse-tools'); ?></label>
+		<textarea style="height:120px;" class="ht-code-textarea" name="horsetools_settings[speed-acss-critical]" placeholder="body{margin:0}&#10;.header{…}"><?php if(!empty($horsetools_options['speed-acss-critical'])){echo esc_textarea($horsetools_options['speed-acss-critical']);} ?></textarea>
+		</p>
+		<p class="ht-field" data-ht-parent="ht-main-speed-acss1">
+		<label class="ht-field-label"><?php _e('Stylesheets to keep render-blocking (one per line — a handle or part of the URL). Put your main theme CSS here if you don’t have critical CSS yet.', 'horse-tools'); ?></label>
+		<textarea style="height:70px;" class="ht-code-textarea" name="horsetools_settings[speed-acss-exclude]" placeholder="style.css&#10;flatsome"><?php if(!empty($horsetools_options['speed-acss-exclude'])){echo esc_textarea($horsetools_options['speed-acss-exclude']);} ?></textarea>
+		</p>
+		<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Only affects enqueued stylesheets, and only for logged-out visitors. A fallback keeps every stylesheet working when JavaScript is turned off.', 'horse-tools'); ?></p>
+
   <h3><i class="ti ti-file-zip"></i> <?php _e('Compress HTML into a single line', 'horse-tools') ?></h3>
 	<!-- nén 1 -->
 	<?php horsetools_toggle( 'speed-zip1', __( 'Enable HTML compression', 'horse-tools' ), array(

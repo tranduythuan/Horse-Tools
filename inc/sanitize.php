@@ -58,6 +58,8 @@ function horsetools_sanitize_raw_keys() {
 		'mail-gsmtp14',
 		// main/gindex.php - Google service-account JSON credentials.
 		'json1',
+		// main/page/1speed.php - critical CSS inlined for async-CSS (verbatim).
+		'speed-acss-critical',
 	);
 }
 
@@ -355,6 +357,7 @@ function horsetools_sanitize_textarea_keys() {
 		'speed-preload-urls',  // OPTIMIZE - asset URLs to <link rel=preload>
 		'speed-delay-list',    // OPTIMIZE - Delay JS: scripts to delay (listed mode)
 		'speed-delay-exclude', // OPTIMIZE - Delay JS: scripts never delayed (all mode)
+		'speed-acss-exclude',  // OPTIMIZE - Async CSS: stylesheets kept render-blocking
 	);
 }
 

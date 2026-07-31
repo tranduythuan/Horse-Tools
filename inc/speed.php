@@ -760,3 +760,86 @@ if ( isset( $horsetools_options['speed-dash1'] ) ) {
 	}
 	add_action( 'wp_enqueue_scripts', 'horsetools_dequeue_dashicons', 100 );
 }
+
+/* -------------------------------------------------------------------------
+ * Load CSS without blocking rendering (async CSS).
+ *
+ * A stylesheet in the <head> is render-blocking: the browser will not paint
+ * anything until it has downloaded and parsed it. The "media toggle" swaps each
+ * stylesheet to media="print" (which the browser fetches but does NOT apply to
+ * the screen, so it stops blocking paint) and flips it back to its real media on
+ * load. The page can now render immediately — a big First Contentful Paint /
+ * "Eliminate render-blocking resources" win.
+ *
+ * The catch is FOUC (a flash of unstyled content) before the CSS applies. The
+ * fix is Critical CSS: the admin pastes the small above-the-fold CSS, which we
+ * inline at the very top of <head> so the first paint already looks right while
+ * the full stylesheets stream in behind it. A <noscript> copy keeps every
+ * stylesheet working with JavaScript disabled. Skips logged-in users, and any
+ * handle/URL on the exclusion list (keep the main theme CSS blocking if you have
+ * no critical CSS yet).
+ * ---------------------------------------------------------------------- */
+if ( isset( $horsetools_options['speed-acss1'] ) ) {
+
+	// Inline the critical CSS as early as possible so the first paint is styled.
+	if ( ! empty( $horsetools_options['speed-acss-critical'] ) ) {
+		function horsetools_acss_critical() {
+			if ( is_admin() || is_user_logged_in() ) {
+				return;
+			}
+			global $horsetools_options;
+			// Trusted admin input, but make a stray </style> impossible.
+			$css = str_ireplace( array( '</style', '<script' ), array( '<\/style', '<\script' ), (string) $horsetools_options['speed-acss-critical'] );
+			echo '<style id="ht-critical-css">' . $css . '</style>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput
+		}
+		add_action( 'wp_head', 'horsetools_acss_critical', 1 );
+	}
+
+	function horsetools_async_css( $tag, $handle, $href, $media ) {
+		global $horsetools_options;
+		if ( is_admin() || is_user_logged_in() ) {
+			return $tag;
+		}
+		// Only real screen stylesheets; never touch print sheets or ones already
+		// switched to async.
+		if ( false === stripos( $tag, 'rel="stylesheet"' ) && false === stripos( $tag, "rel='stylesheet'" ) ) {
+			return $tag;
+		}
+		if ( 'print' === $media || false !== stripos( $tag, ' onload=' ) ) {
+			return $tag;
+		}
+		// Keep these render-blocking: obvious breakage otherwise, plus the user's
+		// own list (e.g. the main theme stylesheet, until they have critical CSS).
+		$skip = array( 'admin-bar', 'dashicons' );
+		if ( ! empty( $horsetools_options['speed-acss-exclude'] ) ) {
+			$extra = preg_split( '/[\r\n,]+/', (string) $horsetools_options['speed-acss-exclude'], -1, PREG_SPLIT_NO_EMPTY );
+			if ( is_array( $extra ) ) {
+				$skip = array_merge( $skip, array_map( 'trim', $extra ) );
+			}
+		}
+		foreach ( $skip as $needle ) {
+			$needle = trim( (string) $needle );
+			if ( '' !== $needle && ( $handle === $needle || false !== stripos( $tag, $needle ) ) ) {
+				return $tag;
+			}
+		}
+		// Restore the ORIGINAL media on load (not a blanket "all"), so a stylesheet
+		// with a real media query keeps its scope.
+		$restore = ( '' !== (string) $media && 'all' !== $media ) ? (string) $media : 'all';
+		$restore = str_replace( array( "'", '"' ), '', $restore );
+		// Swap media to print (fetched but not applied → not render-blocking).
+		$new = preg_replace( '/\smedia=([\'"]).*?\1/i', " media='print'", $tag, 1 );
+		if ( null === $new ) {
+			return $tag;
+		}
+		if ( false === stripos( $new, "media='print'" ) ) {
+			$new = preg_replace( '/<link\s/i', "<link media='print' ", $new, 1 );
+		}
+		$new = preg_replace( '/<link\s/i', '<link onload="this.media=\'' . $restore . '\'" ', $new, 1 );
+		if ( null === $new ) {
+			return $tag;
+		}
+		return $new . '<noscript>' . $tag . '</noscript>';
+	}
+	add_filter( 'style_loader_tag', 'horsetools_async_css', 20, 4 );
+}

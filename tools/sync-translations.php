@@ -611,6 +611,19 @@ $vi = array(
     'Could not load the home page from the server:' => 'Không tải được trang chủ từ máy chủ:',
     'Could not read the home page (HTTP %s). Your host may block the site from calling itself; check the scripts via “View source” instead.'
         => 'Không đọc được trang chủ (HTTP %s). Host của bạn có thể chặn site tự gọi chính nó; hãy kiểm tra script bằng “Xem nguồn trang” thay thế.',
+    // OPTIMIZE — Async CSS
+    'Load CSS without blocking render' => 'Nạp CSS không chặn hiển thị',
+    'Async CSS — remove render-blocking stylesheets' => 'Async CSS — gỡ CSS chặn hiển thị',
+    'Loads stylesheets without blocking the first paint (the media-toggle technique), so the page appears on screen sooner. A big win for First Contentful Paint and Lighthouse’s “Eliminate render-blocking resources”.'
+        => 'Nạp CSS mà không chặn lần vẽ đầu tiên (kỹ thuật đổi media), nên trang hiện lên màn hình sớm hơn. Cải thiện lớn cho First Contentful Paint và mục “Eliminate render-blocking resources” của Lighthouse.',
+    'The most powerful but riskiest speed option. Without the Critical CSS below, the page can flash unstyled for a moment (FOUC). Paste your above-the-fold CSS, or keep the main theme stylesheet in the exclusion list. Test the front end carefully, and don’t combine it with another plugin that also optimises CSS delivery.'
+        => 'Tùy chọn tốc độ mạnh nhất nhưng rủi ro nhất. Nếu không có Critical CSS bên dưới, trang có thể nháy mất định dạng một lúc (FOUC). Hãy dán CSS phần trên màn hình, hoặc để CSS chính của theme trong danh sách loại trừ. Kiểm tra front-end kỹ, và đừng dùng chung với plugin khác cũng tối ưu cách nạp CSS.',
+    'Critical CSS — the above-the-fold styles, inlined in the head to prevent the flash (optional, but strongly recommended)'
+        => 'Critical CSS — phần định dạng trên màn hình, chèn thẳng vào head để tránh nháy (không bắt buộc nhưng rất nên có)',
+    'Stylesheets to keep render-blocking (one per line — a handle or part of the URL). Put your main theme CSS here if you don’t have critical CSS yet.'
+        => 'CSS cần giữ chặn-hiển-thị (mỗi dòng một — handle hoặc một phần URL). Nếu chưa có critical CSS thì để CSS chính của theme vào đây.',
+    'Only affects enqueued stylesheets, and only for logged-out visitors. A fallback keeps every stylesheet working when JavaScript is turned off.'
+        => 'Chỉ tác động đến các CSS được enqueue, và chỉ với khách chưa đăng nhập. Có bản dự phòng để mọi CSS vẫn hoạt động khi tắt JavaScript.',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';
