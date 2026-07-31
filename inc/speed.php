@@ -312,6 +312,35 @@ if ( isset( $horsetools_options['speed-defer1'] ) ) {
  * HTML-minify buffer is also on, this (inner) buffer transforms first and minify
  * runs over the result.
  * ---------------------------------------------------------------------- */
+
+/**
+ * True only for a <script> tag that holds classic, delayable JavaScript — i.e.
+ * it has no type attribute, or an explicit JavaScript mime. Everything else is
+ * left completely alone: ES modules, JSON-LD / JSON, import maps, speculation
+ * rules, Partytown, framework <template> scripts, and the text/plain blobs that
+ * consent managers park scripts in. Using an allow-list (rather than a list of
+ * types to skip) means a new inert type can never be delayed by mistake.
+ *
+ * Shared by the delay transform and the "scan scripts" tool, so it lives at the
+ * top level rather than inside the feature guard.
+ *
+ * @param string $attrs The raw attribute string of a <script> tag.
+ * @return bool
+ */
+function horsetools_delay_type_is_js( $attrs ) {
+	if ( ! preg_match( '#\stype\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^\s"\'>]+))#i', $attrs, $tm ) ) {
+		return true; // no type attribute → classic JavaScript
+	}
+	$type = strtolower( trim( ( $tm[1] ?? '' ) . ( $tm[2] ?? '' ) . ( $tm[3] ?? '' ) ) );
+	if ( '' === $type ) {
+		return true;
+	}
+	return in_array( $type, array(
+		'text/javascript', 'application/javascript', 'application/ecmascript',
+		'text/ecmascript', 'application/x-javascript', 'text/jscript',
+	), true );
+}
+
 if ( isset( $horsetools_options['speed-delay1'] ) ) {
 
 	// Default keywords for "listed" mode when the user leaves the box empty: the
@@ -378,9 +407,10 @@ if ( isset( $horsetools_options['speed-delay1'] ) ) {
 			function ( $m ) use ( $mode, $list, $exclude, $strip_type, &$count ) {
 				$attrs = $m[1];
 				$body  = $m[2];
-				// Never touch structured data, JSON, ES modules, import maps,
-				// templates, this plugin's own loader, or explicit opt-outs.
-				if ( preg_match( '#type\s*=\s*["\']?\s*(application/ld\+json|application/json|module|importmap|text/template|text/html|text/x-template)#i', $attrs ) ) {
+				// Only classic JavaScript is safe to delay — never modules, JSON-LD,
+				// speculation rules, Partytown, templates, this plugin's own loader,
+				// or anything the theme opts out with data-ht-no-delay.
+				if ( ! horsetools_delay_type_is_js( $attrs ) ) {
 					return $m[0];
 				}
 				if ( false !== stripos( $attrs, 'data-ht-no-delay' ) || false !== stripos( $attrs, 'data-ht-delay-loader' ) ) {
@@ -528,10 +558,15 @@ function horsetools_speed_scanjs_ajax() {
 			if ( false !== stripos( $attrs, 'data-ht-delay-loader' ) ) {
 				continue;
 			}
-			if ( preg_match( '#type\s*=\s*["\']?\s*(application/ld\+json|application/json|module|importmap|text/template|text/html|text/x-template)#i', $attrs ) ) {
+			// A script we have already parked shows up as type="ht/delayed" with a
+			// data-ht-src — recognise it as delayed and always list it.
+			$delayed = ( false !== stripos( $attrs, 'ht/delayed' ) ) || ( false !== stripos( $attrs, 'data-ht-src' ) );
+			// For everything else apply the same allow-list as the transform, so the
+			// list only shows what can actually be delayed (skips modules, JSON-LD,
+			// speculation rules, Partytown…).
+			if ( ! $delayed && ! horsetools_delay_type_is_js( $attrs ) ) {
 				continue;
 			}
-			$delayed = ( false !== stripos( $attrs, 'ht/delayed' ) );
 			if ( preg_match( '#\s(?:data-ht-src|src)\s*=\s*["\']?([^"\'\s>]+)#i', $attrs, $sm ) ) {
 				$src  = html_entity_decode( $sm[1] );
 				$host = (string) wp_parse_url( $src, PHP_URL_HOST );

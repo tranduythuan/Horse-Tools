@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.28
+Stable tag: 1.2.29
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.29 =
+* **Hardening for Delay JavaScript.** The delay engine now only ever touches classic executable JavaScript (an allow-list), so newer inert `<script>` types can never be delayed by mistake — this specifically protects **speculation rules** (Speculative Loading / prerender), **Partytown**, framework `<template>` scripts and the `text/plain` blobs consent managers use, which the aggressive *All* mode could otherwise have broken. The scanner uses the same rule, so its list matches exactly what can be delayed while still showing anything already delayed.
 
 = 1.2.28 =
 * **New (Optimize): "Scan the scripts running on the home page" button.** The Delay JavaScript boxes ask for script names, but a non-technical owner rarely knows what their site loads. This one click fetches the live home page (as a visitor sees it), lists every script it finds — external files and recognised inline trackers like Google Analytics, GTM, AdSense, Facebook, Hotjar — flags which are already delayed, and lets you drop each one straight into the Delay or Exclude list. No source-reading or handles required.
@@ -391,6 +394,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.29 =
+Safety hardening for Delay JavaScript: it now only delays real JavaScript, never speculation rules, Partytown or other inert script types — protecting the aggressive "All" mode.
 
 = 1.2.28 =
 Adds a one-click "Scan the scripts running on the home page" button so you can see what your site loads and choose what to delay or exclude — no technical knowledge needed.
