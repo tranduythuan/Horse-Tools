@@ -635,6 +635,11 @@ $vi = array(
     'Delay analytics/ads/chat until interaction, and defer JavaScript' => 'Hoãn analytics/quảng cáo/chat tới khi tương tác, và defer JavaScript',
     'Delay analytics/ads/chat until interaction, and defer JavaScript (cart & checkout untouched)'
         => 'Hoãn analytics/quảng cáo/chat tới khi tương tác, và defer JavaScript (giỏ hàng & thanh toán không bị đụng)',
+    // OPTIMIZE — one-click quick-optimise button
+    'One-click safe speed setup' => 'Tối ưu tốc độ an toàn 1-chạm',
+    'For non-technical users: this switches on the safe, high-impact speed features — delay & defer JavaScript (safe mode, with a 5-second fall-back), lazy-load, Instant-page, HTML compression, and dropping Emoji / jQuery Migrate / Dashicons. The riskier options (async CSS, “delay all”) are left off. The switches below light up so you can see what changed — then press SAVE to apply.'
+        => 'Dành cho người không rành kỹ thuật: nút này bật sẵn các tính năng tốc độ an toàn, hiệu quả cao — hoãn & defer JavaScript (chế độ an toàn, kèm timer dự phòng 5 giây), lazy-load, Instant-page, nén HTML, và tắt Emoji / jQuery Migrate / Dashicons. Các tùy chọn rủi ro hơn (async CSS, “hoãn tất cả”) được để tắt. Các công tắc bên dưới sẽ sáng lên để bạn thấy đã đổi gì — rồi bấm LƯU để áp dụng.',
+    '✓ Turned on — press SAVE to apply' => '✓ Đã bật — bấm LƯU để áp dụng',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

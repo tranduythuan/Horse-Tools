@@ -9,6 +9,31 @@ global $horsetools_options; ?>
 <label class="ht-on-right"><?php _e('ON/OFF', 'horse-tools'); ?></label>
 </div>
 <div id="play1" class="toggle-div ht-card">
+  <div class="ht-quickopt" style="border:1px solid #e0a500;background:#fffaf0;border-radius:10px;padding:14px 16px;margin-bottom:18px;">
+	<button type="button" id="ht-quickopt-btn" class="button button-primary" style="font-weight:600;"><i class="ti ti-bolt" aria-hidden="true"></i> <?php _e('One-click safe speed setup', 'horse-tools'); ?></button>
+	<span id="ht-quickopt-msg" style="margin-left:10px;font-weight:600;color:#1d9e75;"></span>
+	<p class="ht-note" style="margin:10px 0 0;"><i class="ti ti-bulb"></i> <?php _e('For non-technical users: this switches on the safe, high-impact speed features — delay & defer JavaScript (safe mode, with a 5-second fall-back), lazy-load, Instant-page, HTML compression, and dropping Emoji / jQuery Migrate / Dashicons. The riskier options (async CSS, “delay all”) are left off. The switches below light up so you can see what changed — then press SAVE to apply.', 'horse-tools'); ?></p>
+  </div>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+	var b = document.getElementById('ht-quickopt-btn'); if (!b) { return; }
+	b.addEventListener('click', function () {
+		function set(name, val) {
+			var el = document.querySelector('[name="horsetools_settings[' + name + ']"]');
+			if (!el) { return; }
+			if (el.type === 'checkbox') { el.checked = true; }
+			else { el.value = val; el.dispatchEvent(new Event('input', { bubbles: true })); }
+			el.dispatchEvent(new Event('change', { bubbles: true }));
+		}
+		set('speed');
+		['speed-off1','speed-off4','speed-link1','speed-lazy1','speed-dash1','speed-hb1','speed-defer1','speed-delay1','speed-zip1','speed-zip11','speed-zip12'].forEach(function (k) { set(k); });
+		set('speed-hb2', 'slow');
+		set('speed-delay-mode', 'listed');
+		set('speed-delay-timeout', '5');
+		document.getElementById('ht-quickopt-msg').textContent = <?php echo wp_json_encode( __( '✓ Turned on — press SAVE to apply', 'horse-tools' ) ); ?>;
+	});
+  });
+  </script>
   <h3><i class="ti ti-square-minus"></i> <?php _e('Disable unnecessary items', 'horse-tools') ?></h3>
 	<!-- tôi ưu 1 -->
 	<?php horsetools_toggle( 'speed-off1', __( 'Disable jQuery Migrate', 'horse-tools' ), array(

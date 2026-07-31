@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.31
+Stable tag: 1.2.32
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.32 =
+* **New: a “One-click safe speed setup” button right on the Optimize screen.** No need to find the presets page — one button at the top of Optimize switches on all the safe, high-impact speed features (delay & defer JavaScript in safe mode, lazy-load, Instant-page, HTML compression, and dropping Emoji / jQuery Migrate / Dashicons), and deliberately leaves the risky ones (async CSS, “delay all”) off. The switches light up so you can see exactly what changed, then you press Save.
 
 = 1.2.31 =
 * **One-click speed for non-technical owners.** The built-in configuration presets (Extend → Backup/Import) now switch on the new safe, high-impact speed features for you — no handles, no critical CSS, nothing to understand. The **Performance** preset (and the Blog and WooCommerce presets) now enable Delay JavaScript in its safe *Listed* mode with a 5-second fall-back, Defer JavaScript, disable Dashicons for visitors and calm the Heartbeat, on top of what they already did. The risky options (async CSS, the aggressive "delay all" mode) are deliberately left out so a preset never breaks a site.
@@ -400,6 +403,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.32 =
+Adds a “One-click safe speed setup” button to the Optimize screen so anyone can enable the safe speed features without touching the presets page.
 
 = 1.2.31 =
 The Performance/Blog/WooCommerce presets now enable the new safe speed features (delay + defer JS) in one click — no technical setup needed.
