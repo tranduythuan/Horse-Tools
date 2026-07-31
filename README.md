@@ -60,6 +60,7 @@ Horse Tools does not send any data about your site to us or any third party. It 
 
 ## Documentation & changelog
 
+- **User guides:** [Chat / contact button guide](docs/chat-guide.md) · [phiên bản Tiếng Việt](docs/huong-dan-chat.md).
 - Full feature notes and the complete changelog live in [`readme.txt`](readme.txt) (WordPress.org format).
 - Release downloads and notes: [Releases](https://github.com/tranduythuan/Horse-Tools/releases).
 

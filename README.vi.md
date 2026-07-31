@@ -60,6 +60,7 @@ Horse Tools **không** gửi bất kỳ dữ liệu nào về site của bạn c
 
 ## Tài liệu & nhật ký thay đổi
 
+- **Hướng dẫn sử dụng:** [Hướng dẫn nút liên hệ / Chat](docs/huong-dan-chat.md) · [English version](docs/chat-guide.md).
 - Ghi chú tính năng đầy đủ và toàn bộ nhật ký thay đổi nằm trong [`readme.txt`](readme.txt) (định dạng WordPress.org).
 - Tải bản phát hành và xem ghi chú: [Releases](https://github.com/tranduythuan/Horse-Tools/releases).
 
