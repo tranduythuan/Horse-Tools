@@ -13,6 +13,25 @@ require_once __DIR__ . '/po-lib.php';
 $root = rtrim( $argv[1] ?? dirname( __DIR__ ), '/\\' );
 
 $vi = array(
+    // SECURITY tab — custom login question (added 1.2.18).
+    'Security question on the login form'
+        => 'Câu hỏi bảo mật trên trang đăng nhập',
+    'Ask a custom question on the login form'
+        => 'Hỏi một câu tùy chọn trên trang đăng nhập',
+    'A no-Google, no-badge challenge that loads only on the wp-login.php page — zero effect on your front-end or its speed. Bots that hammer the login page cannot answer a site-specific question. It does not stop a person who reads the question, so pair it with the attempt limiter above.'
+        => 'Một lớp thử thách không cần Google, không badge, chỉ tải trên trang wp-login.php — không ảnh hưởng gì tới front-end hay tốc độ. Bot dò trang đăng nhập không thể trả lời một câu hỏi riêng của site. Nó không chặn được người đọc thấy câu hỏi, nên hãy dùng kèm bộ giới hạn đăng nhập ở trên.',
+    'Question'
+        => 'Câu hỏi',
+    'e.g. What is the shop mascot?'
+        => 'vd: Linh vật của shop là con gì?',
+    'Answer'
+        => 'Đáp án',
+    'e.g. fox'
+        => 'vd: cáo',
+    'The answer is matched ignoring case and surrounding spaces. Remember it — if you ever forget it you can still get back in by renaming the plugin folder over FTP to switch the plugin off.'
+        => 'Đáp án so khớp không phân biệt hoa thường và bỏ khoảng trắng thừa. Hãy nhớ nó — lỡ quên thì vẫn vào lại được bằng cách đổi tên thư mục plugin qua FTP để tắt plugin.',
+    'Wrong answer to the security question.'
+        => 'Sai đáp án câu hỏi bảo mật.',
     // CONTENT tab — lightbox engine selector GLightbox/PhotoSwipe (added 1.2.16).
     'Click an image in your content to open it in a full-screen viewer. Choose the engine and how it looks below.'
         => 'Nhấn vào ảnh trong nội dung để mở trình xem toàn màn hình. Chọn engine và kiểu hiển thị bên dưới.',

@@ -79,6 +79,26 @@ global $horsetools_options; ?>
 	})();
 	</script>
 
+  <h3><i class="ti ti-help-circle"></i> <?php _e('Security question on the login form', 'horse-tools') ?></h3>
+	<?php horsetools_toggle( 'scuri-lq1', __( 'Ask a custom question on the login form', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Security question on the login form',
+		'description' => __( 'A no-Google, no-badge challenge that loads only on the wp-login.php page — zero effect on your front-end or its speed. Bots that hammer the login page cannot answer a site-specific question. It does not stop a person who reads the question, so pair it with the attempt limiter above.', 'horse-tools' ),
+	) ); ?>
+	<?php horsetools_input( 'scuri-lq-q', __( 'Question', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Security question on the login form',
+		'placeholder' => __( 'e.g. What is the shop mascot?', 'horse-tools' ),
+		'parent'      => 'scuri-lq1',
+	) ); ?>
+	<?php horsetools_input( 'scuri-lq-a', __( 'Answer', 'horse-tools' ), array(
+		'tab'         => 'SECURITY',
+		'section'     => 'Security question on the login form',
+		'placeholder' => __( 'e.g. fox', 'horse-tools' ),
+		'parent'      => 'scuri-lq1',
+	) ); ?>
+	<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e('The answer is matched ignoring case and surrounding spaces. Remember it — if you ever forget it you can still get back in by renaming the plugin folder over FTP to switch the plugin off.', 'horse-tools'); ?></p>
+
   <h3><i class="ti ti-user-question"></i> <?php _e('Block user enumeration', 'horse-tools') ?></h3>
 	<?php horsetools_toggle( 'scuri-enum1', __( 'Hide usernames from scanners', 'horse-tools' ), array(
 		'tab'         => 'SECURITY',

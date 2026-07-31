@@ -355,6 +355,52 @@ if ( isset( $horsetools_options['scuri-login1'] ) ) {
 }
 
 /* -------------------------------------------------------------------------
+ * A2. Custom security question on the login form
+ *
+ * A no-Google, no-external-service challenge: the admin sets a question and its
+ * answer; the wp-login.php form shows the question and the answer must match or
+ * the login is refused. It stops the automated bots that hammer wp-login.php
+ * (they can't answer a site-specific question) without sending any visitor data
+ * to a third party or loading a script. It is NOT protection against a human
+ * who deliberately reads the visible question — pair it with the attempt
+ * limiter / 2FA for that.
+ *
+ * Scope is deliberately just wp-login.php: the field is only printed there, and
+ * the check only runs there, so WooCommerce/theme login forms and XML-RPC / REST
+ * / application-password logins are never affected (they would never submit the
+ * field and would otherwise be locked out).
+ * ---------------------------------------------------------------------- */
+if ( isset( $horsetools_options['scuri-lq1'] )
+	&& ! empty( $horsetools_options['scuri-lq-q'] )
+	&& '' !== trim( (string) ( $horsetools_options['scuri-lq-a'] ?? '' ) ) ) {
+
+	function horsetools_login_question_field() {
+		global $horsetools_options;
+		echo '<p><label for="horsetools_lq">' . esc_html( $horsetools_options['scuri-lq-q'] )
+			. '<br /><input type="text" name="horsetools_lq" id="horsetools_lq" class="input" value="" size="20" autocomplete="off" /></label></p>';
+	}
+	add_action( 'login_form', 'horsetools_login_question_field' );
+
+	function horsetools_login_question_check( $user, $username = '' ) {
+		if ( '' === $username ) {
+			return $user; // page load, not a submitted attempt
+		}
+		// Only the wp-login.php form carries the question; never gate other paths.
+		if ( ! isset( $GLOBALS['pagenow'] ) || 'wp-login.php' !== $GLOBALS['pagenow'] ) {
+			return $user;
+		}
+		global $horsetools_options;
+		$expected = strtolower( trim( (string) $horsetools_options['scuri-lq-a'] ) );
+		$given    = isset( $_POST['horsetools_lq'] ) ? strtolower( trim( (string) wp_unslash( $_POST['horsetools_lq'] ) ) ) : '';
+		if ( $given !== $expected ) {
+			return new WP_Error( 'horsetools_lq', esc_html__( 'Wrong answer to the security question.', 'horse-tools' ) );
+		}
+		return $user;
+	}
+	add_filter( 'authenticate', 'horsetools_login_question_check', 25, 2 );
+}
+
+/* -------------------------------------------------------------------------
  * E. Privacy — self-host Google Fonts + external-request scanner
  *
  * Loading fonts from fonts.googleapis.com sends every visitor's IP to Google,

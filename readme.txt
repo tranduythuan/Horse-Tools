@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.17
+Stable tag: 1.2.18
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,6 +79,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.18 =
+* **New: a custom security question on the login form (Security tab).** Set your own question and answer; the wp-login.php page then asks it and refuses the login when the answer is wrong. It's a no-Google, no-badge, no-external-request way to stop the bots that hammer wp-login.php, and it loads *only* on the login page — your front-end and its speed are completely untouched. It won't stop a person who reads the visible question, so keep the login-attempt limiter on as well. The answer is matched ignoring case and spaces; if you ever forget it, switch the plugin off over FTP to get back in.
 
 = 1.2.17 =
 * **Fixed: the lightbox backdrop themes (Dark / Blur / Light / Cinema) had no effect.** The theme styles were printed before the lightbox library's own stylesheet, so — at the same CSS specificity — the library's default black backdrop always won and every theme looked identical. The theme now takes priority, so Blur (frosted glass), Light, Cinema and your accent colour actually show. Verified live on GLightbox. (The lightbox itself, its open/slide animations and looping were working correctly — only the backdrop appearance was affected.)
@@ -351,6 +354,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.18 =
+Adds an optional custom security question on the login form — a lightweight, no-Google anti-bot layer that loads only on wp-login.php.
 
 = 1.2.17 =
 Fixes the lightbox backdrop themes (Dark / Blur / Light / Cinema) and accent colour, which had no visible effect in 1.2.16.
