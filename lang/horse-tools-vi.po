@@ -5887,3 +5887,24 @@ msgstr "Đường lùi qua Telegram đang BẬT nhưng site chưa có token bot,
 
 msgid "WooCommerce"
 msgstr "WooCommerce"
+
+msgid "Decline"
+msgstr "Từ chối"
+
+msgid "Buttons"
+msgstr "Nút bấm"
+
+msgid "Accept button text (default: Agree)"
+msgstr "Chữ nút Đồng ý (mặc định: Đồng ý)"
+
+msgid "Policy link text (default: Policy)"
+msgstr "Chữ nút Chính sách (mặc định: Chính sách)"
+
+msgid "Show a “Decline” button"
+msgstr "Hiện nút “Từ chối”"
+
+msgid "Decline button text (default: Decline)"
+msgstr "Chữ nút Từ chối (mặc định: Từ chối)"
+
+msgid "Choose the position (corner box or full-width bar) and customise the message and button labels. The Accept/Decline choice is stored in the browser (localStorage + an “ht_cookie_consent” cookie), so the notice won’t nag returning visitors. Note: this is an informational notice — Horse Tools does not itself block third-party tracking scripts, so for strict consent-gating you would still gate your own scripts on that cookie."
+msgstr "Chọn vị trí (hộp góc hoặc thanh ngang full-width) và tùy chỉnh nội dung cùng chữ trên nút. Lựa chọn Đồng ý/Từ chối được lưu trong trình duyệt (localStorage + cookie “ht_cookie_consent”), nên thông báo không làm phiền khách quay lại. Lưu ý: đây là thông báo mang tính thông tin — Horse Tools không tự chặn các script theo dõi của bên thứ ba, nên nếu muốn chặn chặt chẽ bạn vẫn cần tự điều kiện hóa script của mình dựa trên cookie đó."

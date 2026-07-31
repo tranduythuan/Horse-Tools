@@ -225,8 +225,8 @@ function horsetools_notify_options_page() {
 				<label class="ht-right-text"><?php _e('Select title color and button', 'horse-tools'); ?></label>
 				</p>
 				<p>
-				<?php $styles = array('Left', 'Right'); ?>
-				<select name="horsetools_notify_settings[notify-cookie-c2]"> 
+				<?php $styles = array('Left', 'Right', 'Bar'); ?>
+				<select name="horsetools_notify_settings[notify-cookie-c2]">
 				<?php foreach($styles as $style) { ?> 
 				<?php if(isset($horsetools_notify_options['notify-cookie-c2']) && $horsetools_notify_options['notify-cookie-c2'] == $style) { $selected = 'selected="selected"'; } else { $selected = ''; } ?>
 				<option value="<?php echo $style; ?>" <?php echo $selected; ?>><?php echo $style; ?></option> 
@@ -242,8 +242,24 @@ function horsetools_notify_options_page() {
 				</p>
 				<p>
 				<textarea style="height:150px;" class="ht-code-textarea" name="horsetools_notify_settings[notify-cookie12]" placeholder="<?php _e('Enter cookie content', 'horse-tools'); ?>"><?php if(!empty($horsetools_notify_options['notify-cookie12'])){echo esc_textarea($horsetools_notify_options['notify-cookie12']);} ?></textarea>
-				</p>  
-				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Display your cookie notice to inform users about cookie use and allow them to manage their preferences easily', 'horse-tools'); ?></p> 
+				</p>
+				<h3><i class="ti ti-forms"></i> <?php _e('Buttons', 'horse-tools') ?></h3>
+				<p>
+				<input class="ht-input-big" placeholder="<?php _e('Accept button text (default: Agree)', 'horse-tools') ?>" name="horsetools_notify_settings[notify-cookie13]" type="text" value="<?php if(!empty($horsetools_notify_options['notify-cookie13'])){echo sanitize_text_field($horsetools_notify_options['notify-cookie13']);} ?>"/>
+				</p>
+				<p>
+				<input class="ht-input-big" placeholder="<?php _e('Policy link text (default: Policy)', 'horse-tools') ?>" name="horsetools_notify_settings[notify-cookie14]" type="text" value="<?php if(!empty($horsetools_notify_options['notify-cookie14'])){echo sanitize_text_field($horsetools_notify_options['notify-cookie14']);} ?>"/>
+				</p>
+				<?php horsetools_toggle( 'notify-cookie2', __( 'Show a “Decline” button', 'horse-tools' ), array(
+					'module'  => 'notify',
+					'tab'     => 'COOKIE',
+					'section' => 'Set up cookie notifications',
+					'parent'  => 'notify-cookie1',
+				) ); ?>
+				<p>
+				<input class="ht-input-big" placeholder="<?php _e('Decline button text (default: Decline)', 'horse-tools') ?>" name="horsetools_notify_settings[notify-cookie15]" type="text" value="<?php if(!empty($horsetools_notify_options['notify-cookie15'])){echo sanitize_text_field($horsetools_notify_options['notify-cookie15']);} ?>"/>
+				</p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Choose the position (corner box or full-width bar) and customise the message and button labels. The Accept/Decline choice is stored in the browser (localStorage + an “ht_cookie_consent” cookie), so the notice won’t nag returning visitors. Note: this is an informational notice — Horse Tools does not itself block third-party tracking scripts, so for strict consent-gating you would still gate your own scripts on that cookie.', 'horse-tools'); ?></p>
 			</div>
 			</div>
 			<div class="ht-submit">

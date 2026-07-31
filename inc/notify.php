@@ -77,27 +77,41 @@ function horsetools_cookie_assets(){
 	wp_enqueue_script( 'horsecookie', HORSETOOLS_URL . 'link/notify/horsecookie.js', array(), HORSETOOLS_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'horsetools_cookie_assets');
-function horsetools_cookie_footer(){ 
+function horsetools_cookie_footer(){
 	global $horsetools_notify_options;
-	$title = !empty($horsetools_notify_options['notify-cookie11']) ? esc_html($horsetools_notify_options['notify-cookie11']) : __('Cookies', 'horse-tools');
-	$content = !empty($horsetools_notify_options['notify-cookie12']) ? wp_kses_post($horsetools_notify_options['notify-cookie12']) : __('This website uses cookies to ensure you get the best experience on our site. By continuing to browse, you agree to our use of cookies. For more information, please read our Cookie Policy', 'horse-tools');
-	$colortit = !empty($horsetools_notify_options['notify-cookie-c1']) ? '--cookiecolor:'. horsetools_css_color($horsetools_notify_options['notify-cookie-c1']) .';' : NULL;
-	$right = isset($horsetools_notify_options['notify-cookie-c2']) && $horsetools_notify_options['notify-cookie-c2'] == 'Right' ? '.ht-cookie{right:10px;left:unset;}' : NULL;
-	$link = !empty($horsetools_notify_options['notify-cookie-l1']) ? esc_url($horsetools_notify_options['notify-cookie-l1']) : 'javascript:void(0)';
+	$o        = $horsetools_notify_options;
+	$title    = !empty($o['notify-cookie11']) ? esc_html($o['notify-cookie11']) : __('Cookies', 'horse-tools');
+	$content  = !empty($o['notify-cookie12']) ? wp_kses_post($o['notify-cookie12']) : __('This website uses cookies to ensure you get the best experience on our site. By continuing to browse, you agree to our use of cookies. For more information, please read our Cookie Policy', 'horse-tools');
+	$colortit = !empty($o['notify-cookie-c1']) ? '--cookiecolor:'. horsetools_css_color($o['notify-cookie-c1']) .';' : '';
+	// Layout: Left corner (default) | Right corner | full-width Bar.
+	$pos      = !empty($o['notify-cookie-c2']) ? $o['notify-cookie-c2'] : 'Left';
+	$poscls   = 'Right' === $pos ? ' ht-cookie-right' : ( 'Bar' === $pos ? ' ht-cookie-bar' : '' );
+	// Custom button labels (fall back to sensible defaults).
+	$oktext   = !empty($o['notify-cookie13']) ? esc_html($o['notify-cookie13']) : __('Agree', 'horse-tools');
+	$potext   = !empty($o['notify-cookie14']) ? esc_html($o['notify-cookie14']) : __('Policy', 'horse-tools');
+	$notext   = !empty($o['notify-cookie15']) ? esc_html($o['notify-cookie15']) : __('Decline', 'horse-tools');
+	$showno   = !empty($o['notify-cookie2']);
+	// Policy button only appears when a link is actually set.
+	$link     = !empty($o['notify-cookie-l1']) ? esc_url($o['notify-cookie-l1']) : '';
 	?>
-	<div id="ht-cookie" class="ht-cookie">
+	<div id="ht-cookie" class="ht-cookie<?php echo $poscls; ?>">
 		<div class="ht-cookie-tit">
 			<span class="ht-cookie-text"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="currentColor" d="M21.598 11.064a1.006 1.006 0 0 0-.854-.172A2.938 2.938 0 0 1 20 11c-1.654 0-3-1.346-3.003-2.937c.005-.034.016-.136.017-.17a.998.998 0 0 0-1.254-1.006A2.963 2.963 0 0 1 15 7c-1.654 0-3-1.346-3-3c0-.217.031-.444.099-.716a1 1 0 0 0-1.067-1.236A9.956 9.956 0 0 0 2 12c0 5.514 4.486 10 10 10s10-4.486 10-10c0-.049-.003-.097-.007-.16a1.004 1.004 0 0 0-.395-.776zM12 20c-4.411 0-8-3.589-8-8a7.962 7.962 0 0 1 6.006-7.75A5.006 5.006 0 0 0 15 9l.101-.001a5.007 5.007 0 0 0 4.837 4C19.444 16.941 16.073 20 12 20z"/><circle cx="12.5" cy="11.5" r="1.5" fill="currentColor"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><circle cx="7.5" cy="12.5" r="1.5" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.5" fill="currentColor"/><circle cx="10.5" cy="16.5" r="1.5" fill="currentColor"/></svg> <?php echo $title; ?></span>
 			<span class="ht-cookie-close">&#215;</span>
 		</div>
 		<span class="ht-cookie-content"><?php echo $content; ?></span>
 		<div class="ht-cookie-but">
-			<a title="<?php _e('Policy', 'horse-tools'); ?>" href="<?php echo $link; ?>" target="_blank"><?php _e('Policy', 'horse-tools'); ?></a>
-			<a title="<?php _e('Agree', 'horse-tools'); ?>" class="ht-cookie-oke" href="javascript:void(0)"><?php _e('Agree', 'horse-tools'); ?></a>
+			<?php if ( '' !== $link ) : ?>
+			<a class="ht-cookie-policy" title="<?php echo esc_attr( $potext ); ?>" href="<?php echo $link; ?>" target="_blank" rel="noopener"><?php echo $potext; ?></a>
+			<?php endif; ?>
+			<?php if ( $showno ) : ?>
+			<a class="ht-cookie-no" title="<?php echo esc_attr( $notext ); ?>" href="javascript:void(0)"><?php echo $notext; ?></a>
+			<?php endif; ?>
+			<a class="ht-cookie-oke" title="<?php echo esc_attr( $oktext ); ?>" href="javascript:void(0)"><?php echo $oktext; ?></a>
 		</div>
 	</div>
 	<?php
-	echo '<style>:root{'. $colortit .'}'. $right .'</style>';
+	if ( '' !== $colortit ) { echo '<style>:root{'. $colortit .'}</style>'; }
 }
 add_action('wp_footer', 'horsetools_cookie_footer');	
 }  

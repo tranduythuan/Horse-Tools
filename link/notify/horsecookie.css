@@ -4,68 +4,92 @@
 .ht-cookie {
 	position: fixed;
 	bottom: 10px;
-	left:10px;
+	left: 10px;
 	width: 400px;
+	max-width: calc(100% - 20px);
 	background: #fff;
 	padding: 20px;
-	box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 	display: none;
-	z-index:9999999999999;
+	z-index: 9999999999999;
 	box-shadow: 0px 0px 10px #0000004d;
-	border-radius:10px;
+	border-radius: 10px;
 	box-sizing: border-box;
 }
+/* JS reveals the notice by adding this class (only when no choice is stored). */
+.ht-cookie.ht-cookie-show { display: block; }
+/* Right-hand corner box */
+.ht-cookie-right { left: auto; right: 10px; }
+/* Full-width bar pinned to the bottom edge */
+.ht-cookie-bar {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	max-width: 100%;
+	border-radius: 0;
+	padding: 14px 20px;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 22px;
+	box-shadow: 0 -2px 10px #0000002e;
+}
+.ht-cookie-bar.ht-cookie-show { display: flex; }
 @media (max-width: 700px) {
 	.ht-cookie {
-		left:10px !important;
+		left: 10px !important;
+		right: 10px !important;
 		bottom: 10px;
-	    right:10px !important;
 		width: auto;
 	}
+	.ht-cookie-bar { left: 0 !important; right: 0 !important; bottom: 0; }
 }
 .ht-cookie-tit {
 	display: flex;
 	align-items: center;
-	margin-bottom:10px;
+	margin-bottom: 10px;
 	margin-top: -5px;
-	color:var(--cookiecolor);
+	color: var(--cookiecolor);
 }
-.ht-cookie-tit svg{width:30px;height:30px;}
-.ht-cookie-tit svg path{fill:var(--cookiecolor);}
+.ht-cookie-tit svg { width: 30px; height: 30px; }
+.ht-cookie-tit svg path { fill: var(--cookiecolor); }
 .ht-cookie-text {
 	width: 100%;
 	font-size: 23px;
 	font-weight: bold;
 }
-.ht-cookie-close{font-size: 30px;cursor: pointer;}
-.ht-cookie-content{
-	display:block;
-}
+.ht-cookie-close { font-size: 30px; cursor: pointer; margin-left: auto; line-height: 1; }
+.ht-cookie-content { display: block; }
 .ht-cookie-but {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
 	margin-top: 15px;
 }
-.ht-cookie-but a:first-child {
-	background:#dfdfdf;
-	color:#333;
-}
-.ht-cookie-but a:hover:first-child {
-	color:#333;
-}
 .ht-cookie-but a {
+	flex: 1 1 auto;
 	padding: 8px 16px;
-	background: var(--cookiecolor);
-	color: #fff;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-	display: block;
 	text-align: center;
 	font-weight: bold;
+	display: block;
 }
-.ht-cookie-but a:hover {
-	opacity:0.6;
-	color:#fff;
+.ht-cookie-oke { background: var(--cookiecolor); color: #fff; }
+.ht-cookie-oke:hover { opacity: .7; color: #fff; }
+.ht-cookie-no { background: #e4e4e4; color: #333; }
+.ht-cookie-no:hover { background: #d7d7d7; color: #333; }
+.ht-cookie-policy {
+	flex: 0 0 auto;
+	background: transparent;
+	color: var(--cookiecolor);
+	text-decoration: underline;
 }
+.ht-cookie-policy:hover { color: var(--cookiecolor); opacity: .7; }
+/* Bar-specific tweaks: title + message + buttons sit in one row */
+.ht-cookie-bar .ht-cookie-tit { margin: 0; }
+.ht-cookie-bar .ht-cookie-text { width: auto; font-size: 18px; white-space: nowrap; }
+.ht-cookie-bar .ht-cookie-close { display: none; }
+.ht-cookie-bar .ht-cookie-content { flex: 1 1 260px; }
+.ht-cookie-bar .ht-cookie-but { margin-top: 0; flex: 0 0 auto; }
+.ht-cookie-bar .ht-cookie-but a { flex: 0 0 auto; }

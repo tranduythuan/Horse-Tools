@@ -569,6 +569,15 @@ $vi = array(
         => 'Tạm đóng website với thông báo “đang bảo trì” trong lúc bạn chỉnh sửa. Bạn (và các quản trị viên đã đăng nhập) vẫn xem site bình thường, nên cứ yên tâm làm việc.',
     'Write your block just like a post: type text and use the toolbar to insert links, images and formatting. Need raw HTML/CSS/JS? Switch to the “Text” tab. Placeholders like {{url}} still work in both.'
         => 'Soạn khối nội dung như khi viết bài: gõ chữ và dùng thanh công cụ để chèn link, ảnh và định dạng. Cần dán HTML/CSS/JS thô? Chuyển sang tab “Văn bản”. Các placeholder như {{url}} vẫn hoạt động ở cả hai.',
+    // Cookie notice upgrade (Notify → COOKIE)
+    'Decline' => 'Từ chối',
+    'Buttons' => 'Nút bấm',
+    'Accept button text (default: Agree)' => 'Chữ nút Đồng ý (mặc định: Đồng ý)',
+    'Policy link text (default: Policy)' => 'Chữ nút Chính sách (mặc định: Chính sách)',
+    'Show a “Decline” button' => 'Hiện nút “Từ chối”',
+    'Decline button text (default: Decline)' => 'Chữ nút Từ chối (mặc định: Từ chối)',
+    'Choose the position (corner box or full-width bar) and customise the message and button labels. The Accept/Decline choice is stored in the browser (localStorage + an “ht_cookie_consent” cookie), so the notice won’t nag returning visitors. Note: this is an informational notice — Horse Tools does not itself block third-party tracking scripts, so for strict consent-gating you would still gate your own scripts on that cookie.'
+        => 'Chọn vị trí (hộp góc hoặc thanh ngang full-width) và tùy chỉnh nội dung cùng chữ trên nút. Lựa chọn Đồng ý/Từ chối được lưu trong trình duyệt (localStorage + cookie “ht_cookie_consent”), nên thông báo không làm phiền khách quay lại. Lưu ý: đây là thông báo mang tính thông tin — Horse Tools không tự chặn các script theo dõi của bên thứ ba, nên nếu muốn chặn chặt chẽ bạn vẫn cần tự điều kiện hóa script của mình dựa trên cookie đó.',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';
