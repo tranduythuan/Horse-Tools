@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.24
+Stable tag: 1.2.25
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.25 =
+* **Removed leftover Foxtool branding from the display-style preview thumbnails.** Seven of the eight "Customize display" preview images (Settings → General) still showed the old Foxtool logo baked into the corner; they now carry the Horse Tools mark like the rest of the plugin.
 
 = 1.2.24 =
 * **Cookie notice — big customisation upgrade** (Notify module → COOKIE tab). New **full-width bottom bar** layout in addition to the left/right corner box. You can now set the **Accept** and **Policy** button labels, and optionally show a **Decline** button with its own label. The visitor's Accept/Decline choice is stored in the browser (localStorage + an `ht_cookie_consent` cookie) so the notice never nags returning visitors — and so you can gate your own scripts on that cookie if you want stricter consent behaviour. Everything is still output on `wp_footer` (update-safe).
@@ -376,6 +379,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.25 =
+Cleans the last of the old Foxtool logo out of the display-style preview thumbnails, replacing it with the Horse Tools mark.
 
 = 1.2.24 =
 Cookie notice upgrade: new full-width bar layout, customisable Accept/Policy/Decline button labels, an optional Decline button, and the visitor's choice is remembered.
