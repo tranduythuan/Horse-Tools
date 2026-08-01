@@ -376,8 +376,15 @@ if ( isset( $horsetools_options['scuri-lq1'] )
 
 	function horsetools_login_question_field() {
 		global $horsetools_options;
-		echo '<p><label for="horsetools_lq">' . esc_html( $horsetools_options['scuri-lq-q'] )
-			. '<br /><input type="text" name="horsetools_lq" id="horsetools_lq" class="input" value="" size="20" autocomplete="off" /></label></p>';
+		// Structure and width must match wp-login.php's own fields (label then a
+		// full-width input as a direct child of <p>). The old markup wrapped the
+		// input inside the <label>, which — with the custom login screen — left it
+		// narrower than the username/password boxes. The inline width is a belt-and-
+		// braces guarantee across themes.
+		echo '<p>'
+			. '<label for="horsetools_lq" style="display:block;margin-bottom:6px;">' . esc_html( $horsetools_options['scuri-lq-q'] ) . '</label>'
+			. '<input type="text" name="horsetools_lq" id="horsetools_lq" class="input" value="" autocomplete="off" style="width:100%;box-sizing:border-box;" />'
+			. '</p>';
 	}
 	add_action( 'login_form', 'horsetools_login_question_field' );
 

@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.32
+Stable tag: 1.2.33
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.33 =
+* **Fixed: the security-question field on the login form was narrower than the username and password boxes** when the custom login screen was on. The input used to sit inside its label (which shrank it); it is now a full-width field that lines up exactly with the other login boxes.
 
 = 1.2.32 =
 * **New: a “One-click safe speed setup” button right on the Optimize screen.** No need to find the presets page — one button at the top of Optimize switches on all the safe, high-impact speed features (delay & defer JavaScript in safe mode, lazy-load, Instant-page, HTML compression, and dropping Emoji / jQuery Migrate / Dashicons), and deliberately leaves the risky ones (async CSS, “delay all”) off. The switches light up so you can see exactly what changed, then you press Save.
@@ -403,6 +406,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.33 =
+Fixes the security-question box on the login form being narrower than the username and password fields.
 
 = 1.2.32 =
 Adds a “One-click safe speed setup” button to the Optimize screen so anyone can enable the safe speed features without touching the presets page.
