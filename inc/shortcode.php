@@ -468,6 +468,52 @@ function horsetools_snippet_editor_button( $editor_id ) {
 }
 add_action( 'media_buttons', 'horsetools_snippet_editor_button' );
 
+/* -------------------------------------------------------------------------
+ * The same quick-insert for the block editor (Gutenberg): a dynamic
+ * "Horse Tools snippet" block. You pick a snippet from a dropdown; it is
+ * rendered server-side as [ht-snippet name="…"], so there is nothing to keep in
+ * sync and no block-validation to go stale.
+ * ---------------------------------------------------------------------- */
+function horsetools_register_snippet_block() {
+	if ( ! function_exists( 'register_block_type' ) ) {
+		return; // WP < 5.0, no block editor.
+	}
+	wp_register_script(
+		'horsetools-snippet-block',
+		HORSETOOLS_URL . 'link/ht-snippet-block.js',
+		array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components' ),
+		HORSETOOLS_VERSION,
+		true
+	);
+	$list = array();
+	foreach ( horsetools_snippets_get() as $slug => $snip ) {
+		if ( empty( $snip['on'] ) ) {
+			continue;
+		}
+		$list[] = array( 'slug' => $slug, 'title' => ! empty( $snip['title'] ) ? $snip['title'] : $slug );
+	}
+	wp_localize_script( 'horsetools-snippet-block', 'htSnippetData', array(
+		'list'  => $list,
+		'pick'  => __( 'Select a snippet', 'horse-tools' ),
+		'hint'  => __( 'Pick a snippet to insert', 'horse-tools' ),
+		'label' => __( 'Horse Tools snippet', 'horse-tools' ),
+	) );
+	register_block_type( 'horse-tools/snippet', array(
+		'editor_script'   => 'horsetools-snippet-block',
+		'attributes'      => array( 'slug' => array( 'type' => 'string', 'default' => '' ) ),
+		'render_callback' => 'horsetools_snippet_block_render',
+	) );
+}
+add_action( 'init', 'horsetools_register_snippet_block' );
+
+function horsetools_snippet_block_render( $attrs ) {
+	$slug = isset( $attrs['slug'] ) ? preg_replace( '/[^A-Za-z0-9_-]/', '', (string) $attrs['slug'] ) : '';
+	if ( '' === $slug ) {
+		return '';
+	}
+	return do_shortcode( '[ht-snippet name="' . $slug . '"]' );
+}
+
 /**
  * [ht-if]…[ht-else]…[/ht-if] — show content only when conditions are met.
  *

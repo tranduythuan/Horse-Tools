@@ -6034,3 +6034,12 @@ msgstr "Chèn một snippet"
 
 msgid "No snippets yet — create them on the Shortcode screen."
 msgstr "Chưa có snippet nào — tạo ở trang Shortcode."
+
+msgid "Select a snippet"
+msgstr "Chọn một snippet"
+
+msgid "Pick a snippet to insert"
+msgstr "Chọn một snippet để chèn"
+
+msgid "Horse Tools snippet"
+msgstr "Snippet Horse Tools"

@@ -644,6 +644,9 @@ $vi = array(
     'Shortcode' => 'Shortcode',
     'Insert a snippet' => 'Chèn một snippet',
     'No snippets yet — create them on the Shortcode screen.' => 'Chưa có snippet nào — tạo ở trang Shortcode.',
+    'Select a snippet' => 'Chọn một snippet',
+    'Pick a snippet to insert' => 'Chọn một snippet để chèn',
+    'Horse Tools snippet' => 'Snippet Horse Tools',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

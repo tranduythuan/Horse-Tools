@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.34
+Stable tag: 1.2.35
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.35 =
+* **New: a “Horse Tools snippet” block for the block editor (Gutenberg).** The companion to the Classic-editor button added in 1.2.34 — add the block, pick a snippet from the dropdown, and it renders on the page. Now writers can insert their snippets from either editor without remembering a single slug. (The block is dynamic, so its output always stays in sync with the snippet.)
 
 = 1.2.34 =
 * **New: a “Shortcode” button in the post editor to insert your snippets.** Writers no longer have to remember snippet slugs — a button next to “Add Media” (Classic editor and the Classic block) drops down the site’s own snippets and inserts `[ht-snippet name="…"]` at the cursor, in the visual editor or the Text tab. Only appears when the Shortcode module is on.
@@ -409,6 +412,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.35 =
+Adds a “Horse Tools snippet” block so the block editor (Gutenberg) can insert snippets too, matching the Classic-editor button.
 
 = 1.2.34 =
 Adds a “Shortcode” button to the post editor (Classic editor / Classic block) that lists your snippets and inserts them at the cursor.
