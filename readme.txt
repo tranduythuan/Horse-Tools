@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.36
+Stable tag: 1.2.37
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -79,7 +79,20 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
+= Bundled third-party libraries =
+
+All bundled libraries are free/open-source under GPL-compatible licences, and their original copyright notices are retained in the respective files:
+
+* **SheetJS Community Edition** (`xlsx`, Apache-2.0) — reads uploaded .xlsx/.xls/.csv files in the browser for the Table builder. No spreadsheet data is sent anywhere.
+* **GLightbox** and **PhotoSwipe** (MIT) — the image lightbox engines.
+* **CodeMirror** (MIT), **Coloris** (MIT), **Select2** (MIT), **instant.page** (MIT), and the Google API PHP client (Apache-2.0).
+
+Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
+
 == Changelog ==
+
+= 1.2.37 =
+* **Licensing housekeeping.** Added a “Bundled third-party libraries” section to the readme crediting each bundled library and its licence (SheetJS Apache-2.0, GLightbox / PhotoSwipe / CodeMirror / Coloris / Select2 / instant.page MIT, Google API client Apache-2.0). All are free/open-source and GPL-compatible; no code or licence changed.
 
 = 1.2.36 =
 * **New: a responsive Table builder in the editor.** A “Table” button (Classic editor) and a “Horse Tools table” block (Gutenberg) open a builder with three ways to make a table: **type it in** a grid, **paste from Excel / Google Sheets** (or CSV), or **upload a .xlsx / .xls / .csv file**. Options for a header row, striped rows, compact spacing, and stacking each row into a card on phones. The table is wrapped so it scrolls instead of overflowing on mobile, and its stylesheet only loads on pages that actually have a table. Excel files are read in the browser (SheetJS, bundled, loaded only when you pick a file) — nothing is uploaded to any third party.
