@@ -6043,3 +6043,84 @@ msgstr "Chọn một snippet để chèn"
 
 msgid "Horse Tools snippet"
 msgstr "Snippet Horse Tools"
+
+msgid "Table"
+msgstr "Bảng"
+
+msgid "Insert a table"
+msgstr "Chèn một bảng"
+
+msgid "Type it in"
+msgstr "Nhập tay"
+
+msgid "Paste from Excel"
+msgstr "Dán từ Excel"
+
+msgid "Upload a file"
+msgstr "Tải file lên"
+
+msgid "Rows"
+msgstr "Số hàng"
+
+msgid "Columns"
+msgstr "Số cột"
+
+msgid "Build grid"
+msgstr "Tạo lưới"
+
+msgid "Copy cells in Excel / Google Sheets (or paste CSV) and paste here:"
+msgstr "Sao chép các ô trong Excel / Google Sheets (hoặc dán CSV) rồi dán vào đây:"
+
+msgid "Choose a .xlsx, .xls or .csv file:"
+msgstr "Chọn file .xlsx, .xls hoặc .csv:"
+
+msgid "First row is a header"
+msgstr "Dòng đầu là tiêu đề"
+
+msgid "Striped rows"
+msgstr "Hàng kẻ sọc"
+
+msgid "Compact"
+msgstr "Gọn"
+
+msgid "Stack into cards on mobile"
+msgstr "Xếp thành thẻ trên điện thoại"
+
+msgid "Insert table"
+msgstr "Chèn bảng"
+
+msgid "Nothing to preview yet."
+msgstr "Chưa có gì để xem trước."
+
+msgid "Add some data first."
+msgstr "Hãy nhập dữ liệu trước."
+
+msgid "Column"
+msgstr "Cột"
+
+msgid "Reading…"
+msgstr "Đang đọc…"
+
+msgid "rows"
+msgstr "hàng"
+
+msgid "Could not read the file."
+msgstr "Không đọc được file."
+
+msgid "Could not load the Excel reader — save the file as CSV and try again."
+msgstr "Không tải được bộ đọc Excel — hãy lưu file dạng CSV rồi thử lại."
+
+msgid "Horse Tools table"
+msgstr "Bảng Horse Tools"
+
+msgid "No table yet."
+msgstr "Chưa có bảng."
+
+msgid "Table ready — click to edit."
+msgstr "Đã có bảng — bấm để sửa."
+
+msgid "Create table"
+msgstr "Tạo bảng"
+
+msgid "Edit table"
+msgstr "Sửa bảng"

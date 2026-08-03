@@ -409,6 +409,9 @@ function horsetools_snippet_editor_button( $editor_id ) {
 	echo ' <button type="button" class="button ht-scpick-btn" data-editor="' . esc_attr( $editor_id ) . '">'
 		. '<span class="dashicons dashicons-shortcode" style="font-size:16px;height:16px;vertical-align:text-top;"></span> '
 		. esc_html__( 'Shortcode', 'horse-tools' ) . '</button>';
+	echo ' <button type="button" class="button ht-tbl-btn" data-editor="' . esc_attr( $editor_id ) . '">'
+		. '<span class="dashicons dashicons-editor-table" style="font-size:16px;height:16px;vertical-align:text-top;"></span> '
+		. esc_html__( 'Table', 'horse-tools' ) . '</button>';
 
 	// The picker + its script are shared by every editor on the page — print once.
 	static $printed = false;
@@ -458,6 +461,8 @@ function horsetools_snippet_editor_button( $editor_id ) {
 			if(btn){ ev.preventDefault(); curEd=btn.getAttribute('data-editor')||''; var r=btn.getBoundingClientRect();
 				pick.style.top=(r.bottom+window.scrollY+4)+'px'; pick.style.left=(r.left+window.scrollX)+'px';
 				pick.style.display=(pick.style.display==='none'?'block':'none'); return; }
+			var tbl=t.closest ? t.closest('.ht-tbl-btn') : null;
+			if(tbl){ ev.preventDefault(); curEd=tbl.getAttribute('data-editor')||''; if(window.htTableBuilder){ window.htTableBuilder.open(function(sc){ insert(sc); }); } else { alert('Table builder not loaded'); } return; }
 			var item=t.closest ? t.closest('.ht-scpick-item') : null;
 			if(item){ ev.preventDefault(); insert(item.getAttribute('data-sc')); return; }
 			if(!t.closest || !t.closest('#ht-scpick')){ hide(); }
@@ -513,6 +518,118 @@ function horsetools_snippet_block_render( $attrs ) {
 	}
 	return do_shortcode( '[ht-snippet name="' . $slug . '"]' );
 }
+
+/* -------------------------------------------------------------------------
+ * Responsive tables — [ht-table]…<table>…</table>…[/ht-table]
+ *
+ * The Table builder (editor button / block) produces this. The shortcode wraps
+ * the builder's plain <table> in a horizontal-scroll container so it never
+ * overflows a phone, and adds the striped / compact / mobile-stack classes. The
+ * stylesheet is only loaded on singular views whose content actually contains a
+ * table, so table-less pages pay nothing.
+ * ---------------------------------------------------------------------- */
+function horsetools_table_shortcode( $atts, $content = '' ) {
+	$a = shortcode_atts( array(
+		'stack'   => '0', // 1 = stack each row into a card on small screens
+		'striped' => '1',
+		'compact' => '0',
+	), $atts, 'ht-table' );
+	$inner = trim( (string) $content );
+	if ( '' === $inner ) {
+		return '';
+	}
+	$cls = 'ht-table';
+	if ( '1' === (string) $a['stack'] ) {
+		$cls .= ' ht-table-stack';
+	}
+	if ( '1' === (string) $a['striped'] ) {
+		$cls .= ' ht-table-striped';
+	}
+	if ( '1' === (string) $a['compact'] ) {
+		$cls .= ' ht-table-compact';
+	}
+	return '<div class="' . esc_attr( $cls ) . '"><div class="ht-table-scroll">' . do_shortcode( $inner ) . '</div></div>';
+}
+add_shortcode( 'ht-table', 'horsetools_table_shortcode' );
+
+function horsetools_table_css_maybe() {
+	if ( ! is_singular() ) {
+		return;
+	}
+	$p = get_post();
+	if ( $p && false !== strpos( (string) $p->post_content, '[ht-table' ) ) {
+		wp_enqueue_style( 'horsetools-table', HORSETOOLS_URL . 'link/ht-table.css', array(), HORSETOOLS_VERSION );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'horsetools_table_css_maybe' );
+
+/* -------------------------------------------------------------------------
+ * The table builder itself — a modal shared by the Classic "Table" media button
+ * and the Gutenberg "Horse Tools table" block. Three ways in: type it, paste
+ * from Excel/Sheets, or upload a .csv/.xlsx (SheetJS is bundled and loaded only
+ * when an Excel file is picked). It emits a [ht-table] shortcode.
+ * ---------------------------------------------------------------------- */
+function horsetools_table_builder_i18n() {
+	return array(
+		'title'      => __( 'Insert a table', 'horse-tools' ),
+		'manual'     => __( 'Type it in', 'horse-tools' ),
+		'paste'      => __( 'Paste from Excel', 'horse-tools' ),
+		'upload'     => __( 'Upload a file', 'horse-tools' ),
+		'rowsL'      => __( 'Rows', 'horse-tools' ),
+		'colsL'      => __( 'Columns', 'horse-tools' ),
+		'mkgrid'     => __( 'Build grid', 'horse-tools' ),
+		'pasteHint'  => __( 'Copy cells in Excel / Google Sheets (or paste CSV) and paste here:', 'horse-tools' ),
+		'uploadHint' => __( 'Choose a .xlsx, .xls or .csv file:', 'horse-tools' ),
+		'optHeader'  => __( 'First row is a header', 'horse-tools' ),
+		'optStriped' => __( 'Striped rows', 'horse-tools' ),
+		'optCompact' => __( 'Compact', 'horse-tools' ),
+		'optStack'   => __( 'Stack into cards on mobile', 'horse-tools' ),
+		'preview'    => __( 'Preview', 'horse-tools' ),
+		'cancel'     => __( 'Cancel', 'horse-tools' ),
+		'insert'     => __( 'Insert table', 'horse-tools' ),
+		'empty'      => __( 'Nothing to preview yet.', 'horse-tools' ),
+		'emptyErr'   => __( 'Add some data first.', 'horse-tools' ),
+		'colN'       => __( 'Column', 'horse-tools' ),
+		'reading'    => __( 'Reading…', 'horse-tools' ),
+		'rows'       => __( 'rows', 'horse-tools' ),
+		'readfail'   => __( 'Could not read the file.', 'horse-tools' ),
+		'noxlsx'     => __( 'Could not load the Excel reader — save the file as CSV and try again.', 'horse-tools' ),
+		'blockTitle' => __( 'Horse Tools table', 'horse-tools' ),
+		'blockEmpty' => __( 'No table yet.', 'horse-tools' ),
+		'blockDone'  => __( 'Table ready — click to edit.', 'horse-tools' ),
+		'blockCreate'=> __( 'Create table', 'horse-tools' ),
+		'blockEdit'  => __( 'Edit table', 'horse-tools' ),
+	);
+}
+
+function horsetools_table_register() {
+	wp_register_script( 'horsetools-table-builder', HORSETOOLS_URL . 'link/ht-table-builder.js', array(), HORSETOOLS_VERSION, true );
+	wp_localize_script( 'horsetools-table-builder', 'htTableI18n', horsetools_table_builder_i18n() );
+	wp_add_inline_script( 'horsetools-table-builder', 'window.htXlsxUrl=' . wp_json_encode( HORSETOOLS_URL . 'link/xlsx.mini.min.js' ) . ';', 'before' );
+
+	if ( function_exists( 'register_block_type' ) ) {
+		wp_register_script( 'horsetools-table-block', HORSETOOLS_URL . 'link/ht-table-block.js', array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'horsetools-table-builder' ), HORSETOOLS_VERSION, true );
+		register_block_type( 'horse-tools/table', array(
+			'editor_script'   => 'horsetools-table-block',
+			'attributes'      => array( 'content' => array( 'type' => 'string', 'default' => '' ) ),
+			'render_callback' => 'horsetools_table_block_render',
+		) );
+	}
+}
+add_action( 'init', 'horsetools_table_register' );
+
+function horsetools_table_block_render( $attrs ) {
+	$content = isset( $attrs['content'] ) ? (string) $attrs['content'] : '';
+	return '' === trim( $content ) ? '' : do_shortcode( $content );
+}
+
+// Classic editor / widgets screen: make the builder available for the media button.
+function horsetools_table_builder_classic( $hook ) {
+	if ( in_array( $hook, array( 'post.php', 'post-new.php', 'widgets.php' ), true ) ) {
+		wp_enqueue_script( 'horsetools-table-builder' );
+	}
+}
+add_action( 'admin_enqueue_scripts', 'horsetools_table_builder_classic' );
 
 /**
  * [ht-if]…[ht-else]…[/ht-if] — show content only when conditions are met.

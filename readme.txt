@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.35
+Stable tag: 1.2.36
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.36 =
+* **New: a responsive Table builder in the editor.** A “Table” button (Classic editor) and a “Horse Tools table” block (Gutenberg) open a builder with three ways to make a table: **type it in** a grid, **paste from Excel / Google Sheets** (or CSV), or **upload a .xlsx / .xls / .csv file**. Options for a header row, striped rows, compact spacing, and stacking each row into a card on phones. The table is wrapped so it scrolls instead of overflowing on mobile, and its stylesheet only loads on pages that actually have a table. Excel files are read in the browser (SheetJS, bundled, loaded only when you pick a file) — nothing is uploaded to any third party.
 
 = 1.2.35 =
 * **New: a “Horse Tools snippet” block for the block editor (Gutenberg).** The companion to the Classic-editor button added in 1.2.34 — add the block, pick a snippet from the dropdown, and it renders on the page. Now writers can insert their snippets from either editor without remembering a single slug. (The block is dynamic, so its output always stays in sync with the snippet.)
@@ -412,6 +415,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.36 =
+Adds a responsive Table builder to the editor — type it, paste from Excel, or upload an .xlsx/.csv — for both the Classic editor and the block editor.
 
 = 1.2.35 =
 Adds a “Horse Tools snippet” block so the block editor (Gutenberg) can insert snippets too, matching the Classic-editor button.

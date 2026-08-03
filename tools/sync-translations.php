@@ -647,6 +647,38 @@ $vi = array(
     'Select a snippet' => 'Chọn một snippet',
     'Pick a snippet to insert' => 'Chọn một snippet để chèn',
     'Horse Tools snippet' => 'Snippet Horse Tools',
+    // Table builder
+    'Table' => 'Bảng',
+    'Insert a table' => 'Chèn một bảng',
+    'Type it in' => 'Nhập tay',
+    'Paste from Excel' => 'Dán từ Excel',
+    'Upload a file' => 'Tải file lên',
+    'Rows' => 'Số hàng',
+    'Columns' => 'Số cột',
+    'Build grid' => 'Tạo lưới',
+    'Copy cells in Excel / Google Sheets (or paste CSV) and paste here:'
+        => 'Sao chép các ô trong Excel / Google Sheets (hoặc dán CSV) rồi dán vào đây:',
+    'Choose a .xlsx, .xls or .csv file:' => 'Chọn file .xlsx, .xls hoặc .csv:',
+    'First row is a header' => 'Dòng đầu là tiêu đề',
+    'Striped rows' => 'Hàng kẻ sọc',
+    'Compact' => 'Gọn',
+    'Stack into cards on mobile' => 'Xếp thành thẻ trên điện thoại',
+    'Preview' => 'Xem trước',
+    'Cancel' => 'Hủy',
+    'Insert table' => 'Chèn bảng',
+    'Nothing to preview yet.' => 'Chưa có gì để xem trước.',
+    'Add some data first.' => 'Hãy nhập dữ liệu trước.',
+    'Column' => 'Cột',
+    'Reading…' => 'Đang đọc…',
+    'rows' => 'hàng',
+    'Could not read the file.' => 'Không đọc được file.',
+    'Could not load the Excel reader — save the file as CSV and try again.'
+        => 'Không tải được bộ đọc Excel — hãy lưu file dạng CSV rồi thử lại.',
+    'Horse Tools table' => 'Bảng Horse Tools',
+    'No table yet.' => 'Chưa có bảng.',
+    'Table ready — click to edit.' => 'Đã có bảng — bấm để sửa.',
+    'Create table' => 'Tạo bảng',
+    'Edit table' => 'Sửa bảng',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';
