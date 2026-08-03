@@ -679,6 +679,20 @@ $vi = array(
     'Table ready — click to edit.' => 'Đã có bảng — bấm để sửa.',
     'Create table' => 'Tạo bảng',
     'Edit table' => 'Sửa bảng',
+    'Style' => 'Kiểu',
+    'Default' => 'Mặc định',
+    'Bordered' => 'Kẻ viền',
+    'Minimal' => 'Tối giản',
+    'Lines only' => 'Chỉ kẻ ngang',
+    'Header colour' => 'Màu tiêu đề',
+    'Grey' => 'Xám',
+    'Blue' => 'Xanh dương',
+    'Green' => 'Xanh lá',
+    'Orange' => 'Cam',
+    'Purple' => 'Tím',
+    'Dark' => 'Đậm',
+    'Caption' => 'Chú thích',
+    'optional title above the table' => 'tiêu đề tùy chọn phía trên bảng',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

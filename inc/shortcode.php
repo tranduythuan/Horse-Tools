@@ -533,6 +533,8 @@ function horsetools_table_shortcode( $atts, $content = '' ) {
 		'stack'   => '0', // 1 = stack each row into a card on small screens
 		'striped' => '1',
 		'compact' => '0',
+		'theme'   => '', // bordered | minimal | lines
+		'hcolor'  => '', // blue | green | orange | purple | dark
 	), $atts, 'ht-table' );
 	$inner = trim( (string) $content );
 	if ( '' === $inner ) {
@@ -547,6 +549,12 @@ function horsetools_table_shortcode( $atts, $content = '' ) {
 	}
 	if ( '1' === (string) $a['compact'] ) {
 		$cls .= ' ht-table-compact';
+	}
+	if ( in_array( $a['theme'], array( 'bordered', 'minimal', 'lines' ), true ) ) {
+		$cls .= ' ht-tt-' . $a['theme'];
+	}
+	if ( in_array( $a['hcolor'], array( 'blue', 'green', 'orange', 'purple', 'dark' ), true ) ) {
+		$cls .= ' ht-th-' . $a['hcolor'];
 	}
 	return '<div class="' . esc_attr( $cls ) . '"><div class="ht-table-scroll">' . do_shortcode( $inner ) . '</div></div>';
 }
@@ -594,6 +602,20 @@ function horsetools_table_builder_i18n() {
 		'rows'       => __( 'rows', 'horse-tools' ),
 		'readfail'   => __( 'Could not read the file.', 'horse-tools' ),
 		'noxlsx'     => __( 'Could not load the Excel reader — save the file as CSV and try again.', 'horse-tools' ),
+		'themeL'     => __( 'Style', 'horse-tools' ),
+		'themeDefault' => __( 'Default', 'horse-tools' ),
+		'themeBordered' => __( 'Bordered', 'horse-tools' ),
+		'themeMinimal' => __( 'Minimal', 'horse-tools' ),
+		'themeLines' => __( 'Lines only', 'horse-tools' ),
+		'hcolorL'    => __( 'Header colour', 'horse-tools' ),
+		'cGrey'      => __( 'Grey', 'horse-tools' ),
+		'cBlue'      => __( 'Blue', 'horse-tools' ),
+		'cGreen'     => __( 'Green', 'horse-tools' ),
+		'cOrange'    => __( 'Orange', 'horse-tools' ),
+		'cPurple'    => __( 'Purple', 'horse-tools' ),
+		'cDark'      => __( 'Dark', 'horse-tools' ),
+		'captionL'   => __( 'Caption', 'horse-tools' ),
+		'captionPh'  => __( 'optional title above the table', 'horse-tools' ),
 		'blockTitle' => __( 'Horse Tools table', 'horse-tools' ),
 		'blockEmpty' => __( 'No table yet.', 'horse-tools' ),
 		'blockDone'  => __( 'Table ready — click to edit.', 'horse-tools' ),
@@ -627,6 +649,9 @@ function horsetools_table_block_render( $attrs ) {
 function horsetools_table_builder_classic( $hook ) {
 	if ( in_array( $hook, array( 'post.php', 'post-new.php', 'widgets.php' ), true ) ) {
 		wp_enqueue_script( 'horsetools-table-builder' );
+		// So the modal's live preview shows the real styles (themes, header
+		// colour, alignment) exactly as they will appear on the site.
+		wp_enqueue_style( 'horsetools-table', HORSETOOLS_URL . 'link/ht-table.css', array(), HORSETOOLS_VERSION );
 	}
 }
 add_action( 'admin_enqueue_scripts', 'horsetools_table_builder_classic' );

@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.37
+Stable tag: 1.2.38
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -90,6 +90,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.38 =
+* **Table builder — richer styling.** Following the plain first version, the builder now offers a **Style** (Default, Bordered, Minimal, Lines only), a **Header colour** (grey, blue, green, orange, purple, dark), and an optional **Caption** (a title above the table). Number-only columns are now **right-aligned automatically**, and the live preview shows all of it exactly as it will look on the site. The result no longer looks like one flat default table.
 
 = 1.2.37 =
 * **Licensing housekeeping.** Added a “Bundled third-party libraries” section to the readme crediting each bundled library and its licence (SheetJS Apache-2.0, GLightbox / PhotoSwipe / CodeMirror / Coloris / Select2 / instant.page MIT, Google API client Apache-2.0). All are free/open-source and GPL-compatible; no code or licence changed.
@@ -428,6 +431,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.38 =
+The Table builder gains styles, header colours, a caption, and automatic right-alignment for number columns.
 
 = 1.2.36 =
 Adds a responsive Table builder to the editor — type it, paste from Excel, or upload an .xlsx/.csv — for both the Classic editor and the block editor.

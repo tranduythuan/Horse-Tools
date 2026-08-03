@@ -6124,3 +6124,33 @@ msgstr "Tạo bảng"
 
 msgid "Edit table"
 msgstr "Sửa bảng"
+
+msgid "Style"
+msgstr "Kiểu"
+
+msgid "Default"
+msgstr "Mặc định"
+
+msgid "Bordered"
+msgstr "Kẻ viền"
+
+msgid "Minimal"
+msgstr "Tối giản"
+
+msgid "Lines only"
+msgstr "Chỉ kẻ ngang"
+
+msgid "Header colour"
+msgstr "Màu tiêu đề"
+
+msgid "Grey"
+msgstr "Xám"
+
+msgid "Orange"
+msgstr "Cam"
+
+msgid "Caption"
+msgstr "Chú thích"
+
+msgid "optional title above the table"
+msgstr "tiêu đề tùy chọn phía trên bảng"
