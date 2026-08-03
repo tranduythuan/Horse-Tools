@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.39
+Stable tag: 1.2.40
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -90,6 +90,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.40 =
+* **Much smaller, faster install.** The bundled Google API client had been pruned to just the three services the plugin uses (Indexing, OAuth2, Search Console), but its Composer class map was never regenerated — so it still listed ~36,000 classes pointing at files that no longer existed, bloating two autoload files to about 12 MB of dead entries. Those are now rebuilt to the 401 real classes (~96 KB), and the gettext `.po` sources (kept in the repository) no longer ship in the ZIP. The download drops by several megabytes and installs reliably on low-powered hosts where the previous upload could stall or fail. No feature change — the SEO Indexing / Search Console integration works exactly as before.
 
 = 1.2.39 =
 * **New: reusable, stored tables (a “Tables” manager).** The first step toward a full table tool. Build a table once on the new **Horse Tools → Tables** screen, then drop it into any post or page with `[ht-table id="5"]`. Edit it in one place and every post that uses it updates automatically — no more copy-pasting the same table around. Duplicate and delete from the list; each row shows the exact shortcode to copy. The editor’s **Table** button also gains a **Saved tables** tab so you can insert an existing table without leaving the post. Stored tables share the same styles, header colours, caption and automatic number-alignment as inline ones, and render server-side so they always reflect the current data. (More is coming: front-end sorting/search/pagination, a spreadsheet-style row/column editor, Google Sheets sync, and export.)
@@ -434,6 +437,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.40 =
+Fixes a bloated bundled Google library (~12 MB of dead autoload entries) that made the ZIP large and could stall installs on weak hosts. Much smaller download; no feature change.
 
 = 1.2.39 =
 Adds reusable stored tables: build once under Horse Tools → Tables, insert anywhere with [ht-table id="N"], edit once and every post updates.

@@ -12,5 +12,7 @@
 _*.json
 *.zip
 *.log
+# Gettext sources — only the compiled .mo is needed at runtime; .po stays in git.
+/lang/*.po
 .DS_Store
 Thumbs.db
