@@ -907,7 +907,13 @@ function horsetools_tables_menu() {
 		'horsetools_tables_page'
 	);
 }
-add_action( 'admin_menu', 'horsetools_tables_menu' );
+// Priority 20: this file is included before main/admin.php, so at the default
+// priority this submenu would register BEFORE the parent "Horse Tools" menu
+// exists. WordPress then computes the page hook without the parent slug and the
+// screen becomes unreachable — the menu shows a bare "horsetools-tables" href
+// and opening admin.php?page=horsetools-tables says "you are not allowed".
+// Registering after the parent (priority 10) fixes both.
+add_action( 'admin_menu', 'horsetools_tables_menu', 20 );
 
 function horsetools_tables_page() {
 	$tables = horsetools_tables_get();

@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.44
+Stable tag: 1.2.45
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.45 =
+* **Fix: the “Tables” screen was unreachable.** The Horse Tools → Tables submenu (introduced in 1.2.39) registered before its parent menu existed, so WordPress produced a broken menu link and opening the screen said “you are not allowed to access this page”. Found in live testing; the submenu now registers after the parent and the Tables manager opens normally. No other changes.
 
 = 1.2.44 =
 * **Vietnamese translation for the new update screens.** The 1.2.43 release shipped the GitHub self-update feature with its six interface strings (“Check for updates”, the up-to-date / new-version notices, …) not yet compiled into the bundled Vietnamese translation; they showed in English. Recompiled — Vietnamese admins now see them translated. This release also serves as the first live test of the new one-click GitHub update path.
