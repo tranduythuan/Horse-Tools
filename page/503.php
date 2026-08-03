@@ -33,15 +33,22 @@ $content = !empty($horsetools_redirects_options['redi32']) ? $horsetools_redirec
 			max-width: 700px;
 			width: 100%;
 		}
+        /* A pure-CSS panel instead of a heavy background image: keeps the page
+           tiny (the old illustration was a 1.3 MB GIF) and still looks clean. */
         .four_zero_four_bg {
-            background-image: url('<?php echo esc_url(HORSETOOLS_URL . 'img/503.gif'); ?>');
-            height: 350px;
-            background-position: center;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f6f8fb 0%, #e9eef4 100%);
+            border-radius: 16px;
         }
         .four_zero_four_bg h1 {
-            font-size: 80px;
-			margin-top:0px;
+            font-size: 140px;
+            line-height: 1;
+			margin:0;
 			color:#95684a;
+            letter-spacing: 4px;
         }
         .contant_box_503 p{
             font-size: 25px;

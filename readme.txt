@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.41
+Stable tag: 1.2.42
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -67,6 +67,13 @@ All languages other than Vietnamese are machine-generated as a starting point an
 
 If you previously used Foxtool on this site, Horse Tools imports its settings automatically the first time you activate it. Nothing is overwritten if Horse Tools settings already exist.
 
+= Upload fails or the browser shows ERR_HTTP2_PROTOCOL_ERROR =
+
+This is not a plugin fault — it means your web server rejected the upload before WordPress ever saw it, almost always because the ZIP is larger than the server's upload limit. On nginx this is `client_max_body_size` (its default is only 1 MB), which is separate from PHP's `upload_max_filesize`. Fixes:
+
+* Raise the nginx limit in your site's server block, e.g. `client_max_body_size 64M;`, and reload nginx. (On a two-tier / proxy setup, set it on the public-facing server block that terminates the browser connection.)
+* Or skip the browser upload entirely: extract the ZIP and upload the `horse-tools` folder to `wp-content/plugins/` over SFTP / your host's file manager. This bypasses the upload limit and the server's unzip step, and is the fastest, most reliable way to install or update.
+
 == Support ==
 
 Source code, issue tracker and releases: https://github.com/tranduythuan/Horse-Tools
@@ -90,6 +97,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.42 =
+* **Smaller download + install troubleshooting.** Replaced the maintenance-page (503) background — a 1.3 MB animated GIF — with a lightweight CSS panel, trimming the download by over a megabyte with no visible change. Added an Installation section explaining the `ERR_HTTP2_PROTOCOL_ERROR` some servers throw on plugin upload: it is the web server rejecting an upload larger than nginx's `client_max_body_size` (default 1 MB), fixed by raising that limit or by uploading the folder over SFTP. Combined with 1.2.40–1.2.41, the plugin is now roughly half its former size and unpacks far fewer files.
 
 = 1.2.41 =
 * **Faster install: ~280 files instead of ~760.** The bundled Google API client — nearly two thirds of the plugin's files, and only needed by the optional Google Login and SEO Indexing / Search Console features — now ships as a single compressed file and is unpacked automatically the first time one of those features is used. A normal install therefore unpacks far fewer files, which is dramatically faster on hosts that lack the PHP `zip` extension (where WordPress falls back to a slow one-file-at-a-time unpacker). Nothing changes for you: if you use Google Login or SEO Indexing it just works; the library is unpacked once behind the scenes. No feature removed.
@@ -440,6 +450,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.42 =
+Over a megabyte smaller (the 503 page's heavy GIF is gone), plus install-troubleshooting notes for the ERR_HTTP2_PROTOCOL_ERROR upload issue.
 
 = 1.2.41 =
 Installs much faster: the large Google API library (only for Google Login / SEO Indexing) now ships compressed and unpacks on first use, so a normal install handles ~280 files instead of ~760.
