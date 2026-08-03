@@ -1,8 +1,10 @@
 ( function () {
 	var T = ( window.htTableI18n ) || {};
 	function t( k, d ) { return T[ k ] || d; }
+	var STORE = window.htTableStore || {};
 
 	var overlay = null, onInsert = null, uploadData = null, els = {};
+	var mode = 'insert', editId = 0, pendingInitial = null;
 
 	function escHtml( s ) { return String( s == null ? '' : s ).replace( /&/g, '&amp;' ).replace( /</g, '&lt;' ).replace( />/g, '&gt;' ); }
 	function escAttr( s ) { return escHtml( s ).replace( /"/g, '&quot;' ); }
@@ -39,9 +41,9 @@
 
 	function collect() {
 		var active = overlay.querySelector( '.ht-tb-tab.active' );
-		var mode = active ? active.getAttribute( 'data-tab' ) : 'manual';
-		if ( mode === 'paste' ) { return normalize( parseDelimited( els.paste.value ) ); }
-		if ( mode === 'upload' ) { return normalize( uploadData || [] ); }
+		var m = active ? active.getAttribute( 'data-tab' ) : 'manual';
+		if ( m === 'paste' ) { return normalize( parseDelimited( els.paste.value ) ); }
+		if ( m === 'upload' ) { return normalize( uploadData || [] ); }
 		// manual
 		var rows = Math.max( 1, parseInt( els.rows.value, 10 ) || 0 );
 		var cols = Math.max( 1, parseInt( els.cols.value, 10 ) || 0 );
@@ -121,7 +123,13 @@
 		return '[ht-table' + ( a.length ? ' ' + a.join( ' ' ) : '' ) + ']' + inner + '[/ht-table]';
 	}
 
+	function activeTab() {
+		var a = overlay.querySelector( '.ht-tb-tab.active' );
+		return a ? a.getAttribute( 'data-tab' ) : 'manual';
+	}
+
 	function renderPreview() {
+		if ( activeTab() === 'saved' ) { return; }
 		var data = collect(), o = opts();
 		var cls = 'ht-table' + ( o.theme ? ' ht-tt-' + o.theme : '' ) + ( o.hcolor ? ' ht-th-' + o.hcolor : '' ) + ( o.stack ? ' ht-table-stack' : '' ) + ( o.striped ? ' ht-table-striped' : '' ) + ( o.compact ? ' ht-table-compact' : '' );
 		var html = tableHtml( data, o );
@@ -134,11 +142,16 @@
 		els.rows.value = rows; els.cols.value = cols;
 		var existing = null;
 		try { existing = collectGridRaw(); } catch ( e ) {}
+		fillGrid( existing, rows, cols );
+	}
+
+	// Render the manual grid from a 2D source (or blanks), rows×cols in size.
+	function fillGrid( src, rows, cols ) {
 		var html = '';
 		for ( var r = 0; r < rows; r++ ) {
 			html += '<div class="ht-tb-grow">';
 			for ( var c = 0; c < cols; c++ ) {
-				var v = ( existing && existing[ r ] && existing[ r ][ c ] != null ) ? existing[ r ][ c ] : '';
+				var v = ( src && src[ r ] && src[ r ][ c ] != null ) ? src[ r ][ c ] : '';
 				html += '<input type="text" data-r="' + r + '" data-c="' + c + '" value="' + escAttr( v ) + '"' + ( r === 0 ? ' class="ht-tb-hcell" placeholder="' + escAttr( t( 'colN', 'Column' ) + ' ' + ( c + 1 ) ) + '"' : '' ) + '>';
 			}
 			html += '</div>';
@@ -152,6 +165,18 @@
 			( out[ r ] = out[ r ] || [] )[ c ] = inp.value;
 		} );
 		return out;
+	}
+
+	// Load an existing table's data into the manual grid (used when editing).
+	function loadData( data ) {
+		data = data || [];
+		var rows = Math.max( 1, Math.min( 200, data.length ) );
+		var cols = 1;
+		data.forEach( function ( r ) { if ( r.length > cols ) { cols = r.length; } } );
+		cols = Math.min( 40, cols );
+		els.rows.value = rows;
+		els.cols.value = cols;
+		fillGrid( data, rows, cols );
 	}
 
 	function handleFile( file ) {
@@ -195,17 +220,38 @@
 		document.head.appendChild( s );
 	}
 
+	function switchTab( name ) {
+		overlay.querySelectorAll( '.ht-tb-tab' ).forEach( function ( b ) { b.classList.toggle( 'active', b.getAttribute( 'data-tab' ) === name ); } );
+		overlay.querySelectorAll( '.ht-tb-pane' ).forEach( function ( p ) { p.style.display = ( p.getAttribute( 'data-pane' ) === name ) ? 'block' : 'none'; } );
+		// On the "saved tables" picker there is nothing to style or preview.
+		var isSaved = name === 'saved';
+		[ '.ht-tb-opts', '.ht-tb-opts2', '.ht-tb-prevwrap' ].forEach( function ( sel ) {
+			var el = overlay.querySelector( sel );
+			if ( el ) { el.style.display = isSaved ? 'none' : ''; }
+		} );
+		renderPreview();
+	}
+
+	function savedOptionsHtml() {
+		var list = ( STORE.tables || [] );
+		if ( ! list.length ) { return '<option value="">' + escHtml( t( 'savedNone', 'No saved tables yet.' ) ) + '</option>'; }
+		return list.map( function ( x ) { return '<option value="' + escAttr( x.id ) + '">' + escHtml( x.name + '  ·  [ht-table id=' + x.id + ']' ) + '</option>'; } ).join( '' );
+	}
+
 	function build() {
 		injectStyle();
+		var hasSaved = ( STORE.tables || [] ).length > 0;
 		overlay = document.createElement( 'div' );
 		overlay.className = 'ht-tb-overlay';
 		overlay.innerHTML =
 			'<div class="ht-tb-modal" role="dialog" aria-modal="true">' +
-				'<div class="ht-tb-head"><span>' + escHtml( t( 'title', 'Insert a table' ) ) + '</span><button type="button" class="ht-tb-x" aria-label="Close">&times;</button></div>' +
+				'<div class="ht-tb-head"><span class="ht-tb-title">' + escHtml( t( 'title', 'Insert a table' ) ) + '</span><button type="button" class="ht-tb-x" aria-label="Close">&times;</button></div>' +
+				'<div class="ht-tb-namerow" style="display:none;"><label>' + escHtml( t( 'nameL', 'Table name' ) ) + ' <input type="text" class="ht-tb-name" placeholder="' + escAttr( t( 'namePh', 'e.g. Price list' ) ) + '"></label></div>' +
 				'<div class="ht-tb-tabs">' +
 					'<button type="button" class="ht-tb-tab active" data-tab="manual">' + escHtml( t( 'manual', 'Type it in' ) ) + '</button>' +
 					'<button type="button" class="ht-tb-tab" data-tab="paste">' + escHtml( t( 'paste', 'Paste from Excel' ) ) + '</button>' +
 					'<button type="button" class="ht-tb-tab" data-tab="upload">' + escHtml( t( 'upload', 'Upload a file' ) ) + '</button>' +
+					( hasSaved ? '<button type="button" class="ht-tb-tab ht-tb-tabsaved" data-tab="saved">' + escHtml( t( 'savedTab', 'Saved tables' ) ) + '</button>' : '' ) +
 				'</div>' +
 				'<div class="ht-tb-body">' +
 					'<div class="ht-tb-pane" data-pane="manual">' +
@@ -221,6 +267,10 @@
 						'<input type="file" class="ht-tb-file" accept=".csv,.tsv,.txt,.xlsx,.xls">' +
 						'<span class="ht-tb-upmsg"></span>' +
 					'</div>' +
+					( hasSaved ? '<div class="ht-tb-pane" data-pane="saved" style="display:none;">' +
+						'<p class="ht-tb-hint">' + escHtml( t( 'savedHint', 'Insert a table you saved earlier:' ) ) + '</p>' +
+						'<select class="ht-tb-saved">' + savedOptionsHtml() + '</select>' +
+					'</div>' : '' ) +
 					'<div class="ht-tb-opts">' +
 						'<label><input type="checkbox" class="ht-tb-header" checked> ' + escHtml( t( 'optHeader', 'First row is a header' ) ) + '</label>' +
 						'<label><input type="checkbox" class="ht-tb-striped" checked> ' + escHtml( t( 'optStriped', 'Striped rows' ) ) + '</label>' +
@@ -238,11 +288,15 @@
 			'</div>';
 		document.body.appendChild( overlay );
 
+		els.title = overlay.querySelector( '.ht-tb-title' );
+		els.namerow = overlay.querySelector( '.ht-tb-namerow' );
+		els.name = overlay.querySelector( '.ht-tb-name' );
 		els.rows = overlay.querySelector( '.ht-tb-rows' );
 		els.cols = overlay.querySelector( '.ht-tb-cols' );
 		els.grid = overlay.querySelector( '.ht-tb-grid' );
 		els.paste = overlay.querySelector( '.ht-tb-paste' );
 		els.upmsg = overlay.querySelector( '.ht-tb-upmsg' );
+		els.saved = overlay.querySelector( '.ht-tb-saved' );
 		els.header = overlay.querySelector( '.ht-tb-header' );
 		els.striped = overlay.querySelector( '.ht-tb-striped' );
 		els.compact = overlay.querySelector( '.ht-tb-compact' );
@@ -251,25 +305,14 @@
 		els.hcolor = overlay.querySelector( '.ht-tb-hcolor' );
 		els.caption = overlay.querySelector( '.ht-tb-caption' );
 		els.preview = overlay.querySelector( '.ht-tb-preview' );
+		els.insertBtn = overlay.querySelector( '.ht-tb-insert' );
 
 		overlay.addEventListener( 'click', function ( e ) {
 			var tgt = e.target;
 			if ( tgt === overlay || tgt.classList.contains( 'ht-tb-x' ) || tgt.classList.contains( 'ht-tb-cancel' ) ) { closeIt(); return; }
-			if ( tgt.classList.contains( 'ht-tb-tab' ) ) {
-				overlay.querySelectorAll( '.ht-tb-tab' ).forEach( function ( b ) { b.classList.remove( 'active' ); } );
-				tgt.classList.add( 'active' );
-				overlay.querySelectorAll( '.ht-tb-pane' ).forEach( function ( p ) { p.style.display = ( p.getAttribute( 'data-pane' ) === tgt.getAttribute( 'data-tab' ) ) ? 'block' : 'none'; } );
-				renderPreview();
-				return;
-			}
+			if ( tgt.classList.contains( 'ht-tb-tab' ) ) { switchTab( tgt.getAttribute( 'data-tab' ) ); return; }
 			if ( tgt.classList.contains( 'ht-tb-mkgrid' ) ) { buildGrid(); renderPreview(); return; }
-			if ( tgt.classList.contains( 'ht-tb-insert' ) ) {
-				var sc = shortcode( collect(), opts() );
-				if ( ! sc ) { els.preview.innerHTML = '<p style="color:#b32d2e;margin:0;">' + escHtml( t( 'emptyErr', 'Add some data first.' ) ) + '</p>'; return; }
-				if ( typeof onInsert === 'function' ) { onInsert( sc ); }
-				closeIt();
-				return;
-			}
+			if ( tgt.classList.contains( 'ht-tb-insert' ) ) { doPrimary(); return; }
 		} );
 		overlay.addEventListener( 'input', function ( e ) {
 			if ( e.target.closest( '.ht-tb-grid, .ht-tb-paste, .ht-tb-opts, .ht-tb-opts2' ) ) { renderPreview(); }
@@ -282,6 +325,59 @@
 		buildGrid();
 	}
 
+	// The primary (footer) action — insert a shortcode, insert a saved-table
+	// reference, or hand a { name, data, opts } payload back for saving.
+	function doPrimary() {
+		if ( mode === 'save' ) {
+			var data = collect();
+			if ( ! data.length || ! data.some( function ( r ) { return r.some( function ( c ) { return String( c ).trim() !== ''; } ); } ) ) {
+				showErr(); return;
+			}
+			if ( typeof onInsert === 'function' ) { onInsert( { id: editId, name: els.name ? els.name.value.trim() : '', data: data, opts: opts() } ); }
+			closeIt();
+			return;
+		}
+		if ( activeTab() === 'saved' ) {
+			var id = els.saved ? els.saved.value : '';
+			if ( ! id ) { return; }
+			if ( typeof onInsert === 'function' ) { onInsert( '[ht-table id="' + id + '"]' ); }
+			closeIt();
+			return;
+		}
+		var sc = shortcode( collect(), opts() );
+		if ( ! sc ) { showErr(); return; }
+		if ( typeof onInsert === 'function' ) { onInsert( sc ); }
+		closeIt();
+	}
+
+	function showErr() {
+		if ( els.preview ) { els.preview.innerHTML = '<p style="color:#b32d2e;margin:0;">' + escHtml( t( 'emptyErr', 'Add some data first.' ) ) + '</p>'; }
+	}
+
+	function applyInitial( init ) {
+		// Reset to defaults first (the modal is reused between opens).
+		els.header.checked = true; els.striped.checked = true;
+		els.compact.checked = false; els.stack.checked = false;
+		if ( els.theme ) { els.theme.value = ''; }
+		if ( els.hcolor ) { els.hcolor.value = ''; }
+		if ( els.caption ) { els.caption.value = ''; }
+		if ( els.paste ) { els.paste.value = ''; }
+		if ( els.name ) { els.name.value = ''; }
+		uploadData = null;
+		if ( ! init ) { els.rows.value = 3; els.cols.value = 3; buildGrid(); switchTab( 'manual' ); return; }
+		var o = init.opts || {};
+		els.header.checked = o.header === undefined ? true : !! o.header;
+		els.striped.checked = o.striped === undefined ? true : !! o.striped;
+		els.compact.checked = !! o.compact;
+		els.stack.checked = !! o.stack;
+		if ( els.theme ) { els.theme.value = o.theme || ''; }
+		if ( els.hcolor ) { els.hcolor.value = o.hcolor || ''; }
+		if ( els.caption ) { els.caption.value = o.caption || ''; }
+		if ( els.name && init.name != null ) { els.name.value = init.name; }
+		loadData( init.data || [] );
+		switchTab( 'manual' );
+	}
+
 	function closeIt() { if ( overlay ) { overlay.style.display = 'none'; } }
 
 	function injectStyle() {
@@ -290,9 +386,12 @@
 			+ '.ht-tb-modal{background:#fff;border-radius:10px;width:760px;max-width:100%;box-shadow:0 10px 40px rgba(0,0,0,.3);}'
 			+ '.ht-tb-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid #e2e4e7;font-weight:600;font-size:16px;}'
 			+ '.ht-tb-x{border:none;background:none;font-size:24px;line-height:1;cursor:pointer;color:#666;}'
-			+ '.ht-tb-tabs{display:flex;gap:4px;padding:10px 18px 0;}'
+			+ '.ht-tb-namerow{padding:12px 18px 0;font-size:13px;}'
+			+ '.ht-tb-namerow input{min-width:280px;padding:5px 8px;border:1px solid #dcdcde;border-radius:4px;margin-left:5px;}'
+			+ '.ht-tb-tabs{display:flex;gap:4px;padding:10px 18px 0;flex-wrap:wrap;}'
 			+ '.ht-tb-tab{border:1px solid transparent;background:#f0f0f1;padding:8px 14px;border-radius:6px 6px 0 0;cursor:pointer;font-size:13px;}'
 			+ '.ht-tb-tab.active{background:#fff;border-color:#e2e4e7;border-bottom-color:#fff;font-weight:600;}'
+			+ '.ht-tb-tabsaved{background:#eef6ff;}'
 			+ '.ht-tb-body{padding:16px 18px;border-top:1px solid #e2e4e7;margin-top:-1px;}'
 			+ '.ht-tb-manualbar{margin-bottom:10px;font-size:13px;}'
 			+ '.ht-tb-manualbar input{width:60px;}'
@@ -301,6 +400,7 @@
 			+ '.ht-tb-grow input{flex:1;min-width:70px;padding:5px 7px;border:1px solid #dcdcde;border-radius:4px;font-size:13px;}'
 			+ '.ht-tb-grow input.ht-tb-hcell{background:#f5f7fa;font-weight:600;}'
 			+ '.ht-tb-paste{width:100%;font-family:monospace;font-size:13px;}'
+			+ '.ht-tb-saved{min-width:320px;max-width:100%;padding:6px 8px;font-size:13px;}'
 			+ '.ht-tb-hint{font-size:13px;color:#555;margin:0 0 8px;}'
 			+ '.ht-tb-upmsg{margin-left:8px;font-size:13px;color:#1d9e75;}'
 			+ '.ht-tb-opts{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0;font-size:13px;}'
@@ -317,11 +417,23 @@
 		document.head.appendChild( st );
 	}
 
+	// open( cb )                       → insert mode (editor): cb receives a shortcode string.
+	// open( cb, { mode:'save', ... } ) → save mode (manager): cb receives { id, name, data, opts }.
+	//   config.initial = { name, data, opts } pre-fills the builder (for editing).
 	window.htTableBuilder = {
-		open: function ( cb ) {
+		open: function ( cb, config ) {
+			config = config || {};
 			onInsert = cb;
+			mode = config.mode === 'save' ? 'save' : 'insert';
+			editId = parseInt( config.id, 10 ) || 0;
+			pendingInitial = config.initial || null;
 			uploadData = null;
 			if ( ! overlay ) { build(); } else { overlay.style.display = 'flex'; }
+			// Title, name row and the primary button reflect the mode.
+			if ( els.title ) { els.title.textContent = mode === 'save' ? t( 'titleSave', 'Save a table' ) : t( 'title', 'Insert a table' ); }
+			if ( els.namerow ) { els.namerow.style.display = mode === 'save' ? 'block' : 'none'; }
+			if ( els.insertBtn ) { els.insertBtn.textContent = mode === 'save' ? t( 'save', 'Save table' ) : t( 'insert', 'Insert table' ); }
+			applyInitial( pendingInitial );
 			renderPreview();
 		}
 	};

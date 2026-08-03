@@ -693,6 +693,28 @@ $vi = array(
     'Dark' => 'Đậm',
     'Caption' => 'Chú thích',
     'optional title above the table' => 'tiêu đề tùy chọn phía trên bảng',
+    // Stored / reusable tables (Phase 1)
+    'Save a table' => 'Lưu bảng',
+    'Save table' => 'Lưu bảng',
+    'Table name' => 'Tên bảng',
+    'e.g. Price list' => 'vd: Bảng giá',
+    'Saved tables' => 'Bảng đã lưu',
+    'Insert a table you saved earlier:' => 'Chèn bảng bạn đã lưu trước đó:',
+    'No saved tables yet.' => 'Chưa có bảng nào được lưu.',
+    'Tables' => 'Bảng',
+    'Add new table' => 'Thêm bảng mới',
+    'Name' => 'Tên',
+    'Size' => 'Kích thước',
+    'Actions' => 'Thao tác',
+    'Edit' => 'Sửa',
+    'Duplicate' => 'Nhân bản',
+    'Delete' => 'Xóa',
+    'Build a table once here, then insert it into any post or page with its shortcode. Edit it here and every place that uses it updates automatically.' => 'Tạo bảng một lần tại đây, rồi chèn vào bất kỳ bài viết hay trang nào bằng shortcode. Sửa tại đây thì mọi nơi dùng bảng đều tự cập nhật.',
+    'No tables yet. Click “Add new table” to create your first one.' => 'Chưa có bảng nào. Bấm “Thêm bảng mới” để tạo bảng đầu tiên.',
+    'Delete this table? Any post using it will lose the table.' => 'Xóa bảng này? Mọi bài viết đang dùng sẽ mất bảng.',
+    'Something went wrong. Please try again.' => 'Có lỗi xảy ra. Vui lòng thử lại.',
+    'Table %d' => 'Bảng %d',
+    'copy' => 'bản sao',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

@@ -530,12 +530,25 @@ function horsetools_snippet_block_render( $attrs ) {
  * ---------------------------------------------------------------------- */
 function horsetools_table_shortcode( $atts, $content = '' ) {
 	$a = shortcode_atts( array(
+		'id'      => '', // when set, render a stored table from the library
 		'stack'   => '0', // 1 = stack each row into a card on small screens
 		'striped' => '1',
 		'compact' => '0',
 		'theme'   => '', // bordered | minimal | lines
 		'hcolor'  => '', // blue | green | orange | purple | dark
 	), $atts, 'ht-table' );
+
+	// Stored, reusable table: [ht-table id="5"]. The saved options win; any
+	// striped/theme/etc. attrs on the shortcode are ignored so "edit once,
+	// update everywhere" holds.
+	if ( '' !== trim( (string) $a['id'] ) ) {
+		$t = horsetools_table_get( (int) $a['id'] );
+		if ( ! $t || empty( $t['data'] ) ) {
+			return '';
+		}
+		return horsetools_table_render_data( $t['data'], isset( $t['opts'] ) ? $t['opts'] : array() );
+	}
+
 	$inner = trim( (string) $content );
 	if ( '' === $inner ) {
 		return '';
@@ -616,6 +629,13 @@ function horsetools_table_builder_i18n() {
 		'cDark'      => __( 'Dark', 'horse-tools' ),
 		'captionL'   => __( 'Caption', 'horse-tools' ),
 		'captionPh'  => __( 'optional title above the table', 'horse-tools' ),
+		'titleSave'  => __( 'Save a table', 'horse-tools' ),
+		'save'       => __( 'Save table', 'horse-tools' ),
+		'nameL'      => __( 'Table name', 'horse-tools' ),
+		'namePh'     => __( 'e.g. Price list', 'horse-tools' ),
+		'savedTab'   => __( 'Saved tables', 'horse-tools' ),
+		'savedHint'  => __( 'Insert a table you saved earlier:', 'horse-tools' ),
+		'savedNone'  => __( 'No saved tables yet.', 'horse-tools' ),
 		'blockTitle' => __( 'Horse Tools table', 'horse-tools' ),
 		'blockEmpty' => __( 'No table yet.', 'horse-tools' ),
 		'blockDone'  => __( 'Table ready — click to edit.', 'horse-tools' ),
@@ -627,6 +647,19 @@ function horsetools_table_builder_i18n() {
 function horsetools_table_register() {
 	wp_register_script( 'horsetools-table-builder', HORSETOOLS_URL . 'link/ht-table-builder.js', array(), HORSETOOLS_VERSION, true );
 	wp_localize_script( 'horsetools-table-builder', 'htTableI18n', horsetools_table_builder_i18n() );
+	// Library access (list of saved tables + save endpoint) for the builder's
+	// "Saved tables" tab and the manager screen. Only admins get the nonce.
+	$can   = current_user_can( 'manage_options' );
+	$store = array();
+	foreach ( horsetools_tables_get() as $id => $t ) {
+		$store[] = array( 'id' => (int) $id, 'name' => isset( $t['name'] ) ? (string) $t['name'] : ( 'Table ' . $id ) );
+	}
+	wp_localize_script( 'horsetools-table-builder', 'htTableStore', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		'nonce'   => $can ? wp_create_nonce( 'horsetools_tbl' ) : '',
+		'canSave' => $can,
+		'tables'  => $store,
+	) );
 	wp_add_inline_script( 'horsetools-table-builder', 'window.htXlsxUrl=' . wp_json_encode( HORSETOOLS_URL . 'link/xlsx.mini.min.js' ) . ';', 'before' );
 
 	if ( function_exists( 'register_block_type' ) ) {
@@ -647,7 +680,7 @@ function horsetools_table_block_render( $attrs ) {
 
 // Classic editor / widgets screen: make the builder available for the media button.
 function horsetools_table_builder_classic( $hook ) {
-	if ( in_array( $hook, array( 'post.php', 'post-new.php', 'widgets.php' ), true ) ) {
+	if ( in_array( $hook, array( 'post.php', 'post-new.php', 'widgets.php' ), true ) || 'horsetools-tables' === horsetools_current_admin_page() ) {
 		wp_enqueue_script( 'horsetools-table-builder' );
 		// So the modal's live preview shows the real styles (themes, header
 		// colour, alignment) exactly as they will appear on the site.
@@ -655,6 +688,333 @@ function horsetools_table_builder_classic( $hook ) {
 	}
 }
 add_action( 'admin_enqueue_scripts', 'horsetools_table_builder_classic' );
+
+/* =========================================================================
+ * Stored, reusable tables (Phase 1 of the "TablePress-like" set).
+ *
+ * A table is saved once in the horsetools_tables option (id => name/data/opts)
+ * and inserted anywhere with [ht-table id="N"]. Edit it once on the Tables
+ * screen and every post that embeds it updates. Rendering is server-side so the
+ * output always reflects the current data + options.
+ * ====================================================================== */
+function horsetools_tables_get() {
+	$t = get_option( 'horsetools_tables', array() );
+	return is_array( $t ) ? $t : array();
+}
+function horsetools_table_get( $id ) {
+	$t = horsetools_tables_get();
+	return isset( $t[ $id ] ) ? $t[ $id ] : null;
+}
+
+/** A cell that is entirely a number (optionally with %, currency) → right-align. */
+function horsetools_table_is_num( $v ) {
+	$v = trim( (string) $v );
+	return '' !== $v && (bool) preg_match( '/^[+\-]?[\d.,\s]+\s*[%đ$₫]?$/u', $v );
+}
+
+/** Build the responsive table HTML from a 2D data array + options. Mirrors the
+ *  JavaScript builder so a stored table and an inline one look identical. */
+function horsetools_table_render_data( $data, $opts ) {
+	$data = is_array( $data ) ? array_values( $data ) : array();
+	if ( empty( $data ) ) {
+		return '';
+	}
+	$opts    = is_array( $opts ) ? $opts : array();
+	$header  = ! empty( $opts['header'] );
+	$caption = isset( $opts['caption'] ) ? (string) $opts['caption'] : '';
+	$head    = $header ? array_map( 'strval', (array) $data[0] ) : null;
+	$body    = $header ? array_slice( $data, 1 ) : $data;
+
+	$ncol = 0;
+	foreach ( $data as $r ) {
+		$ncol = max( $ncol, count( (array) $r ) );
+	}
+	$right = array();
+	for ( $ci = 0; $ci < $ncol; $ci++ ) {
+		$any = false;
+		$all = true;
+		foreach ( $body as $r ) {
+			$r = (array) $r;
+			$v = isset( $r[ $ci ] ) ? $r[ $ci ] : '';
+			if ( '' === trim( (string) $v ) ) {
+				continue;
+			}
+			$any = true;
+			if ( ! horsetools_table_is_num( $v ) ) {
+				$all = false;
+				break;
+			}
+		}
+		$right[ $ci ] = $any && $all;
+	}
+	$rc = function ( $i ) use ( $right ) {
+		return ! empty( $right[ $i ] ) ? ' class="ht-r"' : '';
+	};
+
+	$h = '<table>';
+	if ( '' !== $caption ) {
+		$h .= '<caption>' . esc_html( $caption ) . '</caption>';
+	}
+	if ( $head ) {
+		$h .= '<thead><tr>';
+		foreach ( $head as $i => $c ) {
+			$h .= '<th' . $rc( $i ) . '>' . esc_html( $c ) . '</th>';
+		}
+		$h .= '</tr></thead>';
+	}
+	$h .= '<tbody>';
+	foreach ( $body as $row ) {
+		$row = (array) $row;
+		$h  .= '<tr>';
+		for ( $i = 0; $i < $ncol; $i++ ) {
+			$c   = isset( $row[ $i ] ) ? (string) $row[ $i ] : '';
+			$lbl = ( $head && isset( $head[ $i ] ) ) ? esc_attr( $head[ $i ] ) : '';
+			$h  .= '<td data-label="' . $lbl . '"' . $rc( $i ) . '>' . esc_html( $c ) . '</td>';
+		}
+		$h .= '</tr>';
+	}
+	$h .= '</tbody></table>';
+
+	$cls = 'ht-table';
+	if ( ! empty( $opts['stack'] ) ) {
+		$cls .= ' ht-table-stack';
+	}
+	if ( ! isset( $opts['striped'] ) || ! empty( $opts['striped'] ) ) {
+		$cls .= ' ht-table-striped';
+	}
+	if ( ! empty( $opts['compact'] ) ) {
+		$cls .= ' ht-table-compact';
+	}
+	$theme = isset( $opts['theme'] ) ? $opts['theme'] : '';
+	if ( in_array( $theme, array( 'bordered', 'minimal', 'lines' ), true ) ) {
+		$cls .= ' ht-tt-' . $theme;
+	}
+	$hcolor = isset( $opts['hcolor'] ) ? $opts['hcolor'] : '';
+	if ( in_array( $hcolor, array( 'blue', 'green', 'orange', 'purple', 'dark' ), true ) ) {
+		$cls .= ' ht-th-' . $hcolor;
+	}
+	return '<div class="' . esc_attr( $cls ) . '"><div class="ht-table-scroll">' . $h . '</div></div>';
+}
+
+/** Sanitise a posted table into { name, data(2D strings), opts(whitelist) }. */
+function horsetools_table_sanitize_payload() {
+	$name = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
+	$data = isset( $_POST['data'] ) ? json_decode( wp_unslash( $_POST['data'] ), true ) : array();
+	$opts = isset( $_POST['opts'] ) ? json_decode( wp_unslash( $_POST['opts'] ), true ) : array();
+	$clean = array();
+	if ( is_array( $data ) ) {
+		foreach ( $data as $row ) {
+			if ( ! is_array( $row ) ) {
+				continue;
+			}
+			$cr = array();
+			foreach ( $row as $cell ) {
+				$cr[] = sanitize_textarea_field( (string) $cell );
+			}
+			$clean[] = $cr;
+		}
+	}
+	$opts = is_array( $opts ) ? $opts : array();
+	$copt = array(
+		'header'  => ! empty( $opts['header'] ),
+		'striped' => ! isset( $opts['striped'] ) || ! empty( $opts['striped'] ),
+		'compact' => ! empty( $opts['compact'] ),
+		'stack'   => ! empty( $opts['stack'] ),
+		'theme'   => in_array( isset( $opts['theme'] ) ? $opts['theme'] : '', array( 'bordered', 'minimal', 'lines' ), true ) ? $opts['theme'] : '',
+		'hcolor'  => in_array( isset( $opts['hcolor'] ) ? $opts['hcolor'] : '', array( 'blue', 'green', 'orange', 'purple', 'dark' ), true ) ? $opts['hcolor'] : '',
+		'caption' => isset( $opts['caption'] ) ? sanitize_text_field( (string) $opts['caption'] ) : '',
+	);
+	return array( 'name' => $name, 'data' => $clean, 'opts' => $copt );
+}
+
+function horsetools_tbl_save_ajax() {
+	check_ajax_referer( 'horsetools_tbl', 'nonce' );
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error();
+	}
+	$id      = isset( $_POST['id'] ) ? (int) $_POST['id'] : 0;
+	$payload = horsetools_table_sanitize_payload();
+	$tables  = horsetools_tables_get();
+	if ( $id <= 0 || ! isset( $tables[ $id ] ) ) {
+		$id = 1;
+		foreach ( array_keys( $tables ) as $k ) {
+			if ( (int) $k >= $id ) {
+				$id = (int) $k + 1;
+			}
+		}
+	}
+	$tables[ $id ] = array(
+		'id'   => $id,
+		'name' => '' !== $payload['name'] ? $payload['name'] : sprintf( __( 'Table %d', 'horse-tools' ), $id ),
+		'data' => $payload['data'],
+		'opts' => $payload['opts'],
+	);
+	update_option( 'horsetools_tables', $tables, false );
+	wp_send_json_success( array( 'id' => $id, 'name' => $tables[ $id ]['name'] ) );
+}
+add_action( 'wp_ajax_horsetools_tbl_save', 'horsetools_tbl_save_ajax' );
+
+function horsetools_tbl_delete_ajax() {
+	check_ajax_referer( 'horsetools_tbl', 'nonce' );
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error();
+	}
+	$id     = isset( $_POST['id'] ) ? (int) $_POST['id'] : 0;
+	$tables = horsetools_tables_get();
+	unset( $tables[ $id ] );
+	update_option( 'horsetools_tables', $tables, false );
+	wp_send_json_success();
+}
+add_action( 'wp_ajax_horsetools_tbl_delete', 'horsetools_tbl_delete_ajax' );
+
+function horsetools_tbl_duplicate_ajax() {
+	check_ajax_referer( 'horsetools_tbl', 'nonce' );
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error();
+	}
+	$id     = isset( $_POST['id'] ) ? (int) $_POST['id'] : 0;
+	$tables = horsetools_tables_get();
+	if ( ! isset( $tables[ $id ] ) ) {
+		wp_send_json_error();
+	}
+	$newid = 1;
+	foreach ( array_keys( $tables ) as $k ) {
+		if ( (int) $k >= $newid ) {
+			$newid = (int) $k + 1;
+		}
+	}
+	$copy         = $tables[ $id ];
+	$copy['id']   = $newid;
+	$copy['name'] = $copy['name'] . ' (' . __( 'copy', 'horse-tools' ) . ')';
+	$tables[ $newid ] = $copy;
+	update_option( 'horsetools_tables', $tables, false );
+	wp_send_json_success( array( 'id' => $newid ) );
+}
+add_action( 'wp_ajax_horsetools_tbl_duplicate', 'horsetools_tbl_duplicate_ajax' );
+
+/**
+ * The "Tables" manager screen. Lists saved tables, lets you add / edit (via the
+ * shared builder in save mode), duplicate and delete them, and shows the
+ * [ht-table id="N"] shortcode to copy.
+ */
+function horsetools_tables_menu() {
+	add_submenu_page(
+		'horsetools-options',
+		__( 'Tables', 'horse-tools' ),
+		'<i class="ti ti-table" style="width:20px;"></i> ' . __( 'Tables', 'horse-tools' ),
+		'manage_options',
+		'horsetools-tables',
+		'horsetools_tables_page'
+	);
+}
+add_action( 'admin_menu', 'horsetools_tables_menu' );
+
+function horsetools_tables_page() {
+	$tables = horsetools_tables_get();
+	// Pass the full data to the page so Edit opens the builder pre-filled without
+	// another round-trip. Admin-only screen, capability-checked by the submenu.
+	$payload = array();
+	foreach ( $tables as $id => $tb ) {
+		$payload[ (string) $id ] = array(
+			'name' => isset( $tb['name'] ) ? (string) $tb['name'] : ( 'Table ' . $id ),
+			'data' => isset( $tb['data'] ) ? $tb['data'] : array(),
+			'opts' => isset( $tb['opts'] ) ? $tb['opts'] : array(),
+		);
+	}
+	?>
+	<div class="wrap">
+		<h1 class="wp-heading-inline"><?php esc_html_e( 'Tables', 'horse-tools' ); ?></h1>
+		<button type="button" class="page-title-action" id="ht-tbl-new"><?php esc_html_e( 'Add new table', 'horse-tools' ); ?></button>
+		<p class="description" style="margin-top:8px;max-width:760px;">
+			<?php esc_html_e( 'Build a table once here, then insert it into any post or page with its shortcode. Edit it here and every place that uses it updates automatically.', 'horse-tools' ); ?>
+		</p>
+		<table class="widefat striped" style="margin-top:14px;max-width:920px;">
+			<thead><tr>
+				<th style="width:60px;">ID</th>
+				<th><?php esc_html_e( 'Name', 'horse-tools' ); ?></th>
+				<th style="width:110px;"><?php esc_html_e( 'Size', 'horse-tools' ); ?></th>
+				<th style="width:210px;"><?php esc_html_e( 'Shortcode', 'horse-tools' ); ?></th>
+				<th style="width:230px;"><?php esc_html_e( 'Actions', 'horse-tools' ); ?></th>
+			</tr></thead>
+			<tbody id="ht-tbl-rows">
+			<?php if ( empty( $tables ) ) : ?>
+				<tr class="ht-tbl-empty"><td colspan="5"><?php esc_html_e( 'No tables yet. Click “Add new table” to create your first one.', 'horse-tools' ); ?></td></tr>
+			<?php else : ?>
+				<?php foreach ( $tables as $id => $tb ) :
+					$rows = is_array( $tb['data'] ) ? count( $tb['data'] ) : 0;
+					$cols = 0;
+					if ( is_array( $tb['data'] ) ) {
+						foreach ( $tb['data'] as $r ) { $cols = max( $cols, is_array( $r ) ? count( $r ) : 0 ); }
+					}
+					?>
+					<tr data-id="<?php echo (int) $id; ?>">
+						<td><?php echo (int) $id; ?></td>
+						<td class="ht-tbl-name"><strong><?php echo esc_html( $tb['name'] ); ?></strong></td>
+						<td><?php echo (int) $rows . ' × ' . (int) $cols; ?></td>
+						<td><code class="ht-tbl-sc">[ht-table id="<?php echo (int) $id; ?>"]</code></td>
+						<td>
+							<button type="button" class="button ht-tbl-edit"><?php esc_html_e( 'Edit', 'horse-tools' ); ?></button>
+							<button type="button" class="button ht-tbl-dup"><?php esc_html_e( 'Duplicate', 'horse-tools' ); ?></button>
+							<button type="button" class="button ht-tbl-del"><?php esc_html_e( 'Delete', 'horse-tools' ); ?></button>
+						</td>
+					</tr>
+				<?php endforeach; ?>
+			<?php endif; ?>
+			</tbody>
+		</table>
+	</div>
+	<script>
+	( function () {
+		var STORE = <?php echo wp_json_encode( $payload ); ?>;
+		var NONCE = <?php echo wp_json_encode( wp_create_nonce( 'horsetools_tbl' ) ); ?>;
+		var AJAX  = <?php echo wp_json_encode( admin_url( 'admin-ajax.php' ) ); ?>;
+		var STR   = {
+			del:  <?php echo wp_json_encode( __( 'Delete this table? Any post using it will lose the table.', 'horse-tools' ) ); ?>,
+			fail: <?php echo wp_json_encode( __( 'Something went wrong. Please try again.', 'horse-tools' ) ); ?>
+		};
+		function post( action, data, cb ) {
+			data = data || {};
+			data.action = action; data.nonce = NONCE;
+			var body = Object.keys( data ).map( function ( k ) { return encodeURIComponent( k ) + '=' + encodeURIComponent( data[ k ] ); } ).join( '&' );
+			fetch( AJAX, { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body } )
+				.then( function ( r ) { return r.json(); } ).then( cb ).catch( function () { alert( STR.fail ); } );
+		}
+		function save( id, initial ) {
+			if ( ! window.htTableBuilder ) { return; }
+			window.htTableBuilder.open( function ( payload ) {
+				post( 'horsetools_tbl_save', {
+					id: payload.id || 0,
+					name: payload.name || '',
+					data: JSON.stringify( payload.data || [] ),
+					opts: JSON.stringify( payload.opts || {} )
+				}, function ( res ) {
+					if ( res && res.success ) { location.reload(); } else { alert( STR.fail ); }
+				} );
+			}, { mode: 'save', id: id, initial: initial } );
+		}
+		var newBtn = document.getElementById( 'ht-tbl-new' );
+		if ( newBtn ) { newBtn.addEventListener( 'click', function () { save( 0, null ); } ); }
+		var tbody = document.getElementById( 'ht-tbl-rows' );
+		if ( tbody ) {
+			tbody.addEventListener( 'click', function ( e ) {
+				var tr = e.target.closest( 'tr[data-id]' );
+				if ( ! tr ) { return; }
+				var id = tr.getAttribute( 'data-id' );
+				if ( e.target.classList.contains( 'ht-tbl-edit' ) ) {
+					var init = STORE[ id ] || null;
+					save( parseInt( id, 10 ), init );
+				} else if ( e.target.classList.contains( 'ht-tbl-dup' ) ) {
+					post( 'horsetools_tbl_duplicate', { id: id }, function ( res ) { if ( res && res.success ) { location.reload(); } else { alert( STR.fail ); } } );
+				} else if ( e.target.classList.contains( 'ht-tbl-del' ) ) {
+					if ( ! confirm( STR.del ) ) { return; }
+					post( 'horsetools_tbl_delete', { id: id }, function ( res ) { if ( res && res.success ) { location.reload(); } else { alert( STR.fail ); } } );
+				}
+			} );
+		}
+	}() );
+	</script>
+	<?php
+}
 
 /**
  * [ht-if]…[ht-else]…[/ht-if] — show content only when conditions are met.

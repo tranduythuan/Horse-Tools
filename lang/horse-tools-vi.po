@@ -6154,3 +6154,51 @@ msgstr "Chú thích"
 
 msgid "optional title above the table"
 msgstr "tiêu đề tùy chọn phía trên bảng"
+
+msgid "Save a table"
+msgstr "Lưu bảng"
+
+msgid "Save table"
+msgstr "Lưu bảng"
+
+msgid "e.g. Price list"
+msgstr "vd: Bảng giá"
+
+msgid "Saved tables"
+msgstr "Bảng đã lưu"
+
+msgid "Insert a table you saved earlier:"
+msgstr "Chèn bảng bạn đã lưu trước đó:"
+
+msgid "No saved tables yet."
+msgstr "Chưa có bảng nào được lưu."
+
+msgid "Tables"
+msgstr "Bảng"
+
+msgid "Add new table"
+msgstr "Thêm bảng mới"
+
+msgid "Name"
+msgstr "Tên"
+
+msgid "Size"
+msgstr "Kích thước"
+
+msgid "Build a table once here, then insert it into any post or page with its shortcode. Edit it here and every place that uses it updates automatically."
+msgstr "Tạo bảng một lần tại đây, rồi chèn vào bất kỳ bài viết hay trang nào bằng shortcode. Sửa tại đây thì mọi nơi dùng bảng đều tự cập nhật."
+
+msgid "No tables yet. Click “Add new table” to create your first one."
+msgstr "Chưa có bảng nào. Bấm “Thêm bảng mới” để tạo bảng đầu tiên."
+
+msgid "Delete this table? Any post using it will lose the table."
+msgstr "Xóa bảng này? Mọi bài viết đang dùng sẽ mất bảng."
+
+msgid "Something went wrong. Please try again."
+msgstr "Có lỗi xảy ra. Vui lòng thử lại."
+
+msgid "Table %d"
+msgstr "Bảng %d"
+
+msgid "copy"
+msgstr "bản sao"

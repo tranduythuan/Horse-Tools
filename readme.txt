@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.38
+Stable tag: 1.2.39
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -90,6 +90,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.39 =
+* **New: reusable, stored tables (a “Tables” manager).** The first step toward a full table tool. Build a table once on the new **Horse Tools → Tables** screen, then drop it into any post or page with `[ht-table id="5"]`. Edit it in one place and every post that uses it updates automatically — no more copy-pasting the same table around. Duplicate and delete from the list; each row shows the exact shortcode to copy. The editor’s **Table** button also gains a **Saved tables** tab so you can insert an existing table without leaving the post. Stored tables share the same styles, header colours, caption and automatic number-alignment as inline ones, and render server-side so they always reflect the current data. (More is coming: front-end sorting/search/pagination, a spreadsheet-style row/column editor, Google Sheets sync, and export.)
 
 = 1.2.38 =
 * **Table builder — richer styling.** Following the plain first version, the builder now offers a **Style** (Default, Bordered, Minimal, Lines only), a **Header colour** (grey, blue, green, orange, purple, dark), and an optional **Caption** (a title above the table). Number-only columns are now **right-aligned automatically**, and the live preview shows all of it exactly as it will look on the site. The result no longer looks like one flat default table.
@@ -431,6 +434,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.39 =
+Adds reusable stored tables: build once under Horse Tools → Tables, insert anywhere with [ht-table id="N"], edit once and every post updates.
 
 = 1.2.38 =
 The Table builder gains styles, header colours, a caption, and automatic right-alignment for number columns.
