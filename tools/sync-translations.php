@@ -715,6 +715,13 @@ $vi = array(
     'Something went wrong. Please try again.' => 'Có lỗi xảy ra. Vui lòng thử lại.',
     'Table %d' => 'Bảng %d',
     'copy' => 'bản sao',
+    // GitHub self-update (1.2.43)
+    'Check for updates' => 'Kiểm tra cập nhật',
+    'Horse Tools could not reach GitHub to check for updates. Please try again later.' => 'Horse Tools không kết nối được GitHub để kiểm tra cập nhật. Vui lòng thử lại sau.',
+    'Horse Tools %s is available — an update link now appears under the plugin below. WordPress will download it directly from GitHub.' => 'Đã có Horse Tools %s — liên kết cập nhật hiện ngay dưới plugin bên dưới. WordPress sẽ tải trực tiếp từ GitHub.',
+    'Horse Tools is up to date (version %s).' => 'Horse Tools đang ở bản mới nhất (phiên bản %s).',
+    'All-in-one WordPress toolkit: contact chat, shortcodes, security & privacy, media optimisation, SEO, cleanup and more — in one plugin.' => 'Bộ công cụ WordPress tất-cả-trong-một: nút chat liên hệ, shortcode, bảo mật & quyền riêng tư, tối ưu media, SEO, dọn dẹp và hơn thế — trong một plugin.',
+    'See the GitHub release page for details.' => 'Xem trang phát hành trên GitHub để biết chi tiết.',
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

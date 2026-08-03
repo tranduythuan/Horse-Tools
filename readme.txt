@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.42
+Stable tag: 1.2.43
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -97,6 +97,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.43 =
+* **New: one-click updates straight from GitHub — no more manual uploads.** Horse Tools now reports its new releases to WordPress' own update system: when a new version is published, an ordinary **Update** link appears on the Plugins page (and in Dashboard → Updates), and your **server downloads the package directly from GitHub** — exactly how wordpress.org plugins update. The ZIP never travels through your own connection again, which eliminates the browser-upload failures (HTTP/3 aborts, 408 timeouts) that hit owners on slow uplinks. Includes a **“Check for updates”** link on the plugin row for an instant check, a “View details” popup showing the release notes, and support for WordPress auto-updates. Only the official `horse-tools-*.zip` asset of the official repository is ever accepted as an update source, and results are cached so GitHub is asked at most a few times a day.
 
 = 1.2.42 =
 * **Smaller download + install troubleshooting.** Replaced the maintenance-page (503) background — a 1.3 MB animated GIF — with a lightweight CSS panel, trimming the download by over a megabyte with no visible change. Added an Installation section explaining the `ERR_HTTP2_PROTOCOL_ERROR` some servers throw on plugin upload: it is the web server rejecting an upload larger than nginx's `client_max_body_size` (default 1 MB), fixed by raising that limit or by uploading the folder over SFTP. Combined with 1.2.40–1.2.41, the plugin is now roughly half its former size and unpacks far fewer files.
@@ -450,6 +453,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.43 =
+Install this version once, and every future update is one click: WordPress downloads new releases directly from GitHub — no more uploading ZIPs through the browser.
 
 = 1.2.42 =
 Over a megabyte smaller (the 503 page's heavy GIF is gone), plus install-troubleshooting notes for the ERR_HTTP2_PROTOCOL_ERROR upload issue.
