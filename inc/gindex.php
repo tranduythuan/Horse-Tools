@@ -2,7 +2,12 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_gindex_options;
 function horsetools_require_google_api_index() {
-    require_once( HORSETOOLS_DIR . 'link/google-api/vendor/autoload.php');
+    $autoload = horsetools_google_autoload_path();
+    if ( ! $autoload ) {
+        return false;
+    }
+    require_once( $autoload );
+    return true;
 }
 // check link eror
 function horsetools_valid_url($url) {
@@ -11,8 +16,10 @@ function horsetools_valid_url($url) {
 // quan ly json index api
 function horsetools_jsonapi_index() {
     global $horsetools_gindex_options;
-    horsetools_require_google_api_index();
-    $jsonStrings = array(); 
+    if ( ! horsetools_require_google_api_index() ) {
+        return false;
+    }
+    $jsonStrings = array();
     if (is_array($horsetools_gindex_options) || is_object($horsetools_gindex_options)) {
         foreach ($horsetools_gindex_options as $key => $value) {
             if (preg_match('/^json(\d+)$/', $key, $matches)) {

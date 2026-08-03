@@ -34,6 +34,17 @@ jobs:
           mkdir -p build/horse-tools
           rsync -a --exclude-from=.distignore ./ build/horse-tools/
 
+          # Ship the Google API client (only used by the optional Google Login /
+          # SEO Indexing features) as a single archive, so a normal install
+          # unpacks ~280 files instead of ~760 — far faster on hosts without the
+          # PHP zip extension. It is unpacked on first use by
+          # horsetools_google_autoload_path().
+          if [ -d build/horse-tools/link/google-api ]; then
+            ( cd build/horse-tools/link/google-api && zip -rqX ../google-api.zip . )
+            rm -rf build/horse-tools/link/google-api
+            echo "Compressed google-api -> google-api.zip ($(du -h build/horse-tools/link/google-api.zip | cut -f1))"
+          fi
+
           ( cd build && zip -rq "../horse-tools-${VERSION}.zip" horse-tools )
           echo "Built horse-tools-${VERSION}.zip:"
           ls -lh "horse-tools-${VERSION}.zip"

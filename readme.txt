@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.40
+Stable tag: 1.2.41
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -90,6 +90,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.41 =
+* **Faster install: ~280 files instead of ~760.** The bundled Google API client — nearly two thirds of the plugin's files, and only needed by the optional Google Login and SEO Indexing / Search Console features — now ships as a single compressed file and is unpacked automatically the first time one of those features is used. A normal install therefore unpacks far fewer files, which is dramatically faster on hosts that lack the PHP `zip` extension (where WordPress falls back to a slow one-file-at-a-time unpacker). Nothing changes for you: if you use Google Login or SEO Indexing it just works; the library is unpacked once behind the scenes. No feature removed.
 
 = 1.2.40 =
 * **Much smaller, faster install.** The bundled Google API client had been pruned to just the three services the plugin uses (Indexing, OAuth2, Search Console), but its Composer class map was never regenerated — so it still listed ~36,000 classes pointing at files that no longer existed, bloating two autoload files to about 12 MB of dead entries. Those are now rebuilt to the 401 real classes (~96 KB), and the gettext `.po` sources (kept in the repository) no longer ship in the ZIP. The download drops by several megabytes and installs reliably on low-powered hosts where the previous upload could stall or fail. No feature change — the SEO Indexing / Search Console integration works exactly as before.
@@ -437,6 +440,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.41 =
+Installs much faster: the large Google API library (only for Google Login / SEO Indexing) now ships compressed and unpacks on first use, so a normal install handles ~280 files instead of ~760.
 
 = 1.2.40 =
 Fixes a bloated bundled Google library (~12 MB of dead autoload entries) that made the ZIP large and could stall installs on weak hosts. Much smaller download; no feature change.

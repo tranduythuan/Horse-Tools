@@ -1,5 +1,51 @@
 <?php
 /**
+ * On-demand loader for the bundled Google API client.
+ *
+ * The client is ~480 files but is only needed by two optional features —
+ * Google Login and the SEO Indexing / Search Console integration. Shipping it
+ * loose made every plugin install unpack ~760 files, which is slow on hosts
+ * without the PHP `zip` extension (WordPress falls back to a pure-PHP unzip that
+ * processes one file at a time). So the distributed plugin ships the client as a
+ * single `link/google-api.zip`; this unpacks it into `link/google-api/` on first
+ * use and reuses it thereafter. A normal install now unpacks ~280 files.
+ *
+ * Returns the autoload path, or false if the library can't be made available
+ * (the callers already degrade gracefully in that case). In the dev checkout the
+ * loose folder exists and no archive is present, so this returns immediately.
+ */
+function horsetools_google_autoload_path() {
+	$dir      = HORSETOOLS_DIR . 'link/google-api';
+	$autoload = $dir . '/vendor/autoload.php';
+	if ( file_exists( $autoload ) ) {
+		return $autoload;
+	}
+	$zip = HORSETOOLS_DIR . 'link/google-api.zip';
+	if ( ! file_exists( $zip ) ) {
+		return false;
+	}
+	// Prefer the native extension: it writes files directly and never prompts
+	// for FTP credentials the way WP_Filesystem can.
+	if ( class_exists( 'ZipArchive' ) ) {
+		$za = new ZipArchive();
+		if ( true === $za->open( $zip ) ) {
+			@$za->extractTo( $dir );
+			$za->close();
+		}
+	}
+	// Fallback to WordPress' own unzipper (PclZip) when ZipArchive is absent.
+	if ( ! file_exists( $autoload ) ) {
+		if ( ! function_exists( 'unzip_file' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/file.php';
+		}
+		if ( function_exists( 'WP_Filesystem' ) && WP_Filesystem() ) {
+			unzip_file( $zip, $dir );
+		}
+	}
+	return file_exists( $autoload ) ? $autoload : false;
+}
+
+/**
  * Horse Tools — outbound request guard.
  *
  * WordPress's own wp_http_validate_url() is a useful first gate but it is not

@@ -4,7 +4,11 @@ global $horsetools_options;
 if (isset($horsetools_options['goo-log1'])){
 // Hàm chung để khởi tạo và cấu hình \Google\Client
 function horsetools_initialize_google_client() {
-    require_once( HORSETOOLS_DIR . 'link/google-api/vendor/autoload.php');
+    $autoload = horsetools_google_autoload_path();
+    if ( ! $autoload ) {
+        return null;
+    }
+    require_once( $autoload );
     global $horsetools_options;
     $urlgoogleset = admin_url('admin-ajax.php?action=horsetools_login_google');
     $setClientId = !empty($horsetools_options['goo-log11']) ? $horsetools_options['goo-log11'] : '123456789';
@@ -74,6 +78,9 @@ function horsetools_consume_oauth_state( $state ) {
 // Hàm trả về URL đăng nhập
 function horsetools_get_google_login_url() {
     $gClient = horsetools_initialize_google_client();
+    if ( ! $gClient ) {
+        return '';
+    }
     $gClient->setState( horsetools_issue_oauth_state() );
     $login_url = $gClient->createAuthUrl();
     return $login_url;
@@ -104,6 +111,10 @@ function horsetools_login_shortcode_google() {
         </style>
 	';
     if (!is_user_logged_in()) {
+        if ( '' === $login_url ) {
+            // The Google library could not be unpacked; don't print a dead button.
+            return '';
+        }
         return $btnContent . '<div class="horsetools-google"><a title="Google login" href="' . esc_url($login_url) . '"><img alt="Gooogle login" src="'. HORSETOOLS_URL . 'img/google.svg' .'"/> '. __('Sign in with Google', 'horse-tools') .'</a></div>';
     } else {
         return $btnContent . '<div class="horsetools-google"><a href="' . esc_url(wp_logout_url()) . '">'. __('Log out', 'horse-tools') .'</a></div>';
@@ -117,6 +128,10 @@ function horsetools_login_google() {
 		wp_die( esc_html__( 'Security check failed. Please start the sign-in again.', 'horse-tools' ) );
 	}
 	$gClient = horsetools_initialize_google_client();
+	if ( ! $gClient ) {
+		wp_safe_redirect( home_url() );
+		exit;
+	}
 	if ( isset($_GET['code']) && is_string( $_GET['code'] ) ) {
         $token = $gClient->fetchAccessTokenWithAuthCode( sanitize_text_field( wp_unslash( $_GET['code'] ) ) );
         if (!is_array($token) || isset($token["error"])) {
