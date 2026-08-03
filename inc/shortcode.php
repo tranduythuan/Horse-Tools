@@ -397,6 +397,77 @@ add_action( 'init', function () {
 	}
 }, 99 );
 
+/* -------------------------------------------------------------------------
+ * Editor quick-insert.
+ *
+ * A writer can't be expected to remember every snippet slug. This adds a
+ * "Shortcode" button beside "Add Media" (the Classic editor and the Classic
+ * block) that drops down the site's own snippets and inserts
+ * [ht-snippet name="…"] at the cursor — visual editor or Text tab.
+ * ---------------------------------------------------------------------- */
+function horsetools_snippet_editor_button( $editor_id ) {
+	echo ' <button type="button" class="button ht-scpick-btn" data-editor="' . esc_attr( $editor_id ) . '">'
+		. '<span class="dashicons dashicons-shortcode" style="font-size:16px;height:16px;vertical-align:text-top;"></span> '
+		. esc_html__( 'Shortcode', 'horse-tools' ) . '</button>';
+
+	// The picker + its script are shared by every editor on the page — print once.
+	static $printed = false;
+	if ( $printed ) {
+		return;
+	}
+	$printed = true;
+
+	$items = '';
+	foreach ( horsetools_snippets_get() as $slug => $snip ) {
+		if ( empty( $snip['on'] ) ) {
+			continue;
+		}
+		$title  = ! empty( $snip['title'] ) ? $snip['title'] : $slug;
+		$items .= '<a href="#" class="ht-scpick-item" data-sc="' . esc_attr( '[ht-snippet name="' . $slug . '"]' ) . '">'
+			. '<strong>' . esc_html( $title ) . '</strong> <code>' . esc_html( $slug ) . '</code></a>';
+	}
+	if ( '' === $items ) {
+		$items = '<p style="margin:10px 12px;color:#646970;">' . esc_html__( 'No snippets yet — create them on the Shortcode screen.', 'horse-tools' ) . '</p>';
+	}
+	?>
+	<div id="ht-scpick" style="display:none;position:absolute;z-index:100050;background:#fff;border:1px solid #c3c4c7;box-shadow:0 2px 10px rgba(0,0,0,.15);border-radius:6px;max-height:340px;overflow:auto;min-width:240px;max-width:380px;">
+		<div style="padding:8px 12px;border-bottom:1px solid #eee;font-weight:600;"><?php esc_html_e( 'Insert a snippet', 'horse-tools' ); ?></div>
+		<?php echo $items; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+	</div>
+	<style>
+	#ht-scpick .ht-scpick-item{display:block;padding:8px 12px;text-decoration:none;color:#1d2327;border-bottom:1px solid #f0f0f1;}
+	#ht-scpick .ht-scpick-item:hover{background:#f0f6fc;}
+	#ht-scpick .ht-scpick-item code{color:#646970;font-size:11px;}
+	.ht-scpick-btn .dashicons{margin-right:2px;}
+	</style>
+	<script>
+	(function(){
+		var pick=document.getElementById('ht-scpick'); if(!pick){return;}
+		document.body.appendChild(pick);
+		var curEd='';
+		function hide(){ pick.style.display='none'; }
+		function insert(text){
+			if(window.tinymce){ var t=tinymce.get(curEd); if(t && !t.isHidden()){ t.execCommand('mceInsertContent',false,text); hide(); return; } }
+			var ta=document.getElementById(curEd);
+			if(ta && typeof ta.value==='string'){ var s=ta.selectionStart||0,e=ta.selectionEnd||0; ta.value=ta.value.slice(0,s)+text+ta.value.slice(e); ta.selectionStart=ta.selectionEnd=s+text.length; ta.focus(); }
+			hide();
+		}
+		document.addEventListener('click',function(ev){
+			var t=ev.target;
+			var btn=t.closest ? t.closest('.ht-scpick-btn') : null;
+			if(btn){ ev.preventDefault(); curEd=btn.getAttribute('data-editor')||''; var r=btn.getBoundingClientRect();
+				pick.style.top=(r.bottom+window.scrollY+4)+'px'; pick.style.left=(r.left+window.scrollX)+'px';
+				pick.style.display=(pick.style.display==='none'?'block':'none'); return; }
+			var item=t.closest ? t.closest('.ht-scpick-item') : null;
+			if(item){ ev.preventDefault(); insert(item.getAttribute('data-sc')); return; }
+			if(!t.closest || !t.closest('#ht-scpick')){ hide(); }
+		});
+	})();
+	</script>
+	<?php
+}
+add_action( 'media_buttons', 'horsetools_snippet_editor_button' );
+
 /**
  * [ht-if]…[ht-else]…[/ht-if] — show content only when conditions are met.
  *

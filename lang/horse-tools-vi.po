@@ -6028,3 +6028,9 @@ msgstr "Dành cho người không rành kỹ thuật: nút này bật sẵn các
 
 msgid "✓ Turned on — press SAVE to apply"
 msgstr "✓ Đã bật — bấm LƯU để áp dụng"
+
+msgid "Insert a snippet"
+msgstr "Chèn một snippet"
+
+msgid "No snippets yet — create them on the Shortcode screen."
+msgstr "Chưa có snippet nào — tạo ở trang Shortcode."

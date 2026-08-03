@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.33
+Stable tag: 1.2.34
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -80,6 +80,9 @@ It began as a fork of **Foxtool** by **Fox Theme**, released under the GPLv2 lic
 Under the GPLv2, this fork is distributed under the same licence as the original. See the Changelog for the full list of what changed.
 
 == Changelog ==
+
+= 1.2.34 =
+* **New: a “Shortcode” button in the post editor to insert your snippets.** Writers no longer have to remember snippet slugs — a button next to “Add Media” (Classic editor and the Classic block) drops down the site’s own snippets and inserts `[ht-snippet name="…"]` at the cursor, in the visual editor or the Text tab. Only appears when the Shortcode module is on.
 
 = 1.2.33 =
 * **Fixed: the security-question field on the login form was narrower than the username and password boxes** when the custom login screen was on. The input used to sit inside its label (which shrank it); it is now a full-width field that lines up exactly with the other login boxes.
@@ -406,6 +409,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.34 =
+Adds a “Shortcode” button to the post editor (Classic editor / Classic block) that lists your snippets and inserts them at the cursor.
 
 = 1.2.33 =
 Fixes the security-question box on the login form being narrower than the username and password fields.
