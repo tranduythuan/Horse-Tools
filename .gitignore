@@ -23,3 +23,6 @@ _probe*
 # Local analysis output
 .phpcs-cache
 phpcs-report.*
+
+# Scratch files for the translation tooling (never committed)
+tools/_*.json
