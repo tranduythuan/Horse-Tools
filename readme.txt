@@ -39,6 +39,7 @@ Horse Tools does not send any data about your site to us or to any third party. 
 * **Google login** — only when you enable it and supply your own OAuth client.
 * **Google reCAPTCHA** — only when you enable it and supply your own reCAPTCHA site/secret keys. It loads Google's reCAPTCHA script on the login and registration forms (and, on stores, the WooCommerce login/registration forms) to tell humans from bots. Google's Terms of Service (https://policies.google.com/terms) and Privacy Policy (https://policies.google.com/privacy) apply to that check.
 * **Telegram notifications (WooCommerce)** — only when you supply your own bot token and chat ID.
+* **Update check (GitHub)** — a few times a day the plugin asks the public GitHub API whether a newer release exists, and downloads updates from GitHub when you choose to update. The request carries no site data at all — GitHub sees only your server's IP address, the same as any outbound request. The plugin author sees only GitHub's aggregate download counter, never who or which site downloaded.
 
 No site URL, administrator e-mail, licence check or usage statistic is transmitted on activation, deactivation, or at any other time.
 
