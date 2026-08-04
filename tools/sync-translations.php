@@ -715,6 +715,8 @@ $vi = array(
     'Something went wrong. Please try again.' => 'Có lỗi xảy ra. Vui lòng thử lại.',
     'Table %d' => 'Bảng %d',
     'copy' => 'bản sao',
+    // Global feature search (1.2.52)
+    'Search all plugin features…' => 'Tìm mọi tính năng của plugin…',
     // Richer table themes & colours (1.2.51)
     'Card (shadow)' => 'Nổi khối (đổ bóng)',
     'Dark background' => 'Nền tối',

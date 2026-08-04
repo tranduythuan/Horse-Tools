@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.51
+Stable tag: 1.2.52
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.52 =
+* **The sidebar search now finds features across the WHOLE plugin.** It used to search only the screen you were on; with dozens of features spread over many screens and tabs, a new user had no way to know where anything lived. The search box (top of the sidebar on every Horse Tools screen) now indexes **every setting on every screen** — type a feature name and each result shows its full location (Screen › Tab › Section); click it and you land on the right screen with the right tab open and the exact control highlighted. Matching is diacritic-insensitive, so typing “bao mat” finds “Bảo mật”. Screen names themselves are searchable too. The index builds itself from the real settings screens (no hand-maintained list to go stale) and is cached per version and language.
 
 = 1.2.51 =
 * **Richer table looks: 3 new styles and 7 new header colours.** New styles: **Card** (an elevated, softly-rounded block with a shadow and no hard outline), **Dark background** (a full dark table — dark rows, matched borders, search box and pagination restyled to fit), and **Soft pastel** (the whole table tinted with gentle pastels *mixed automatically from whichever header colour you pick* — choose Pink and the stripes, hover and footer all turn soft pink). New header colours: **Red, Pink, Teal, Indigo** plus three **gradients** (blue–violet, sunset, ocean). Everything combines freely with the existing options and shows live in the builder preview.
@@ -478,6 +481,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.52 =
+The sidebar search now covers the whole plugin: find any feature by name (accents optional), click, and land on the right screen, tab and control.
 
 = 1.2.51 =
 Tables get 3 new styles (Card, Dark, Soft pastel) and 7 new header colours including gradients.

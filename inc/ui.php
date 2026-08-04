@@ -211,6 +211,96 @@ function horsetools_input( $key, $label, array $args = array() ) {
 }
 
 /**
+ * Admin page slug => render callback, for building the global search index.
+ * A callback that doesn't exist (module switched off) is simply skipped.
+ */
+function horsetools_index_pages() {
+	return array(
+		'horsetools-options'           => 'horsetools_options_page',
+		'horsetools-extend-options'    => 'horsetools_extend_options_page',
+		'horsetools-code-options'      => 'horsetools_code_options_page',
+		'horsetools-clean-options'     => 'horsetools_clean_options_page',
+		'horsetools-notify-options'    => 'horsetools_notify_options_page',
+		'horsetools-shortcode-options' => 'horsetools_shortcode_options_page',
+		'horsetools-font-options'      => 'horsetools_font_options_page',
+		'horsetools-redirects-options' => 'horsetools_redirects_options_page',
+		'horsetools-gindex-options'    => 'horsetools_gindex_options_page',
+		'horsetools-toc-options'       => 'horsetools_toc_options_page',
+		'horsetools-ads-options'       => 'horsetools_ads_options_page',
+		'horsetools-search-options'    => 'horsetools_search_options_page',
+		'horsetools-debug-options'     => 'horsetools_debug_options_page',
+		'horsetools-export-options'    => 'horsetools_export_options_page',
+	);
+}
+
+/**
+ * Every registered setting across EVERY admin page — the index behind the
+ * sidebar search, so a user can find a feature without knowing which screen
+ * it lives on.
+ *
+ * The per-request registry only knows the page currently rendering, so this
+ * renders every page callback once into a discarded buffer to make each of
+ * them register its fields, then caches the merged result (per plugin version
+ * and locale — labels are translated strings). Cost is a one-off on the first
+ * plugin screen after an update or language switch.
+ */
+function horsetools_global_field_index() {
+	global $horsetools_field_registry;
+
+	$locale = get_locale();
+	$cached = get_option( 'horsetools_search_index', null );
+	if ( is_array( $cached )
+		&& isset( $cached['ver'], $cached['locale'], $cached['fields'] )
+		&& HORSETOOLS_VERSION === $cached['ver']
+		&& $locale === $cached['locale'] ) {
+		return $cached['fields'];
+	}
+
+	$saved_registry = $horsetools_field_registry;
+	$saved_page     = isset( $_GET['page'] ) ? $_GET['page'] : null;
+	$index          = array();
+
+	foreach ( horsetools_index_pages() as $slug => $callback ) {
+		if ( ! function_exists( $callback ) ) {
+			continue;
+		}
+		$horsetools_field_registry = array();
+		$_GET['page']              = $slug; // horsetools_register_field() defaults 'page' from this
+		ob_start();
+		try {
+			call_user_func( $callback );
+		} catch ( \Throwable $e ) {
+			// A page that fails to render simply contributes nothing.
+		}
+		ob_end_clean();
+		foreach ( horsetools_get_field_registry() as $field ) {
+			$index[] = array(
+				'id'      => horsetools_field_id( $field['module'], $field['key'] ),
+				'key'     => $field['key'],
+				'label'   => $field['label'],
+				'tab'     => $field['tab'],
+				'section' => $field['section'],
+				'page'    => $slug,
+			);
+		}
+	}
+
+	if ( null === $saved_page ) {
+		unset( $_GET['page'] );
+	} else {
+		$_GET['page'] = $saved_page;
+	}
+	$horsetools_field_registry = $saved_registry;
+
+	update_option( 'horsetools_search_index', array(
+		'ver'    => HORSETOOLS_VERSION,
+		'locale' => $locale,
+		'fields' => $index,
+	), false );
+	return $index;
+}
+
+/**
  * Hand the registry to the admin JavaScript.
  *
  * This has to run on admin_footer, not admin_enqueue_scripts: the registry is
@@ -222,16 +312,19 @@ function horsetools_localise_registry() {
 		return;
 	}
 
-	$fields = array();
-	foreach ( horsetools_get_field_registry() as $id => $field ) {
-		$fields[] = array(
-			'id'      => horsetools_field_id( $field['module'], $field['key'] ),
-			'key'     => $field['key'],
-			'label'   => $field['label'],
-			'tab'     => $field['tab'],
-			'section' => $field['section'],
-			'page'    => $field['page'],
-		);
+	// The search box gets the GLOBAL index (every page); results on another
+	// page deep-link there via admin.php?page=…#ht-jump=….
+	$fields = horsetools_global_field_index();
+
+	// Page titles for the result breadcrumbs, straight from the admin menu so
+	// they are always the translated labels the user actually sees.
+	$pages = array();
+	if ( isset( $GLOBALS['submenu']['horsetools-options'] ) ) {
+		foreach ( $GLOBALS['submenu']['horsetools-options'] as $item ) {
+			if ( isset( $item[2] ) && 0 === strpos( $item[2], 'horsetools-' ) ) {
+				$pages[ $item[2] ] = wp_strip_all_tags( $item[0] );
+			}
+		}
 	}
 	$active = array();
 	foreach ( horsetools_get_active_fields() as $field ) {
@@ -239,10 +332,12 @@ function horsetools_localise_registry() {
 	}
 
 	$payload = array(
-		'fields' => $fields,
-		'active' => $active,
-		'i18n'   => array(
-			'search'      => __( 'Search settings…', 'horse-tools' ),
+		'fields'  => $fields,
+		'active'  => $active,
+		'pages'   => $pages,
+		'current' => horsetools_current_admin_page(),
+		'i18n'    => array(
+			'search'      => __( 'Search all plugin features…', 'horse-tools' ),
 			'noResults'   => __( 'No setting matches that.', 'horse-tools' ),
 			'activeTitle' => __( 'Currently enabled', 'horse-tools' ),
 			'noneActive'  => __( 'Nothing on this page is enabled yet.', 'horse-tools' ),

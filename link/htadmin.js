@@ -244,18 +244,37 @@ sliders.forEach(function (slider) {
 		if (typeof el.focus === 'function') { el.focus({ preventScroll: true }); }
 	}
 
+	// Lowercase + strip Vietnamese diacritics so "bao mat" matches "Bảo mật".
+	function normText(s) {
+		s = String(s == null ? '' : s).toLowerCase();
+		try { s = s.normalize('NFD').replace(/[̀-ͯ]/g, ''); } catch (e) {}
+		return s.replace(/đ/g, 'd');
+	}
+
 	function listItem(field) {
 		var li = document.createElement('li');
 		var btn = document.createElement('button');
 		btn.type = 'button';
 		btn.textContent = field.label || field.key;
-		if (field.section || field.tab) {
+		var onOtherPage = field.page && reg.current && field.page !== reg.current;
+		var pageTitle = (reg.pages && reg.pages[field.page]) || '';
+		var crumbParts = [onOtherPage ? pageTitle : '', field.tab, field.section].filter(Boolean);
+		if (crumbParts.length) {
 			var crumb = document.createElement('span');
 			crumb.className = 'ht-side-crumb';
-			crumb.textContent = [field.tab, field.section].filter(Boolean).join(' › ');
+			crumb.textContent = crumbParts.join(' › ');
 			btn.appendChild(crumb);
 		}
-		btn.addEventListener('click', function () { jumpTo(field.id); });
+		btn.addEventListener('click', function () {
+			// On this page: open the tab and flash the control. On another page:
+			// deep-link there — #ht-jump is handled on load at the destination.
+			if (document.getElementById(field.id)) {
+				jumpTo(field.id);
+			} else if (field.page) {
+				window.location.href = 'admin.php?page=' + encodeURIComponent(field.page)
+					+ (field.id ? '#ht-jump=' + encodeURIComponent(field.id) : '');
+			}
+		});
 		li.appendChild(btn);
 		return li;
 	}
@@ -299,17 +318,25 @@ sliders.forEach(function (slider) {
 			activeList.appendChild(none);
 		}
 
+		// Screens themselves are searchable too ("Bảng" finds the Tables page).
+		var pageEntries = [];
+		Object.keys(reg.pages || {}).forEach(function (slug) {
+			pageEntries.push({ id: '', label: reg.pages[slug], tab: '', section: '', page: slug, key: '' });
+		});
+
 		search.addEventListener('input', function () {
-			var q = search.value.trim().toLowerCase();
+			var q = normText(search.value.trim());
 			results.innerHTML = '';
 			var showing = q.length > 0;
 			activeTitle.hidden = showing;
 			activeList.hidden = showing;
 			if (!showing) { return; }
 
-			var hits = reg.fields.filter(function (f) {
-				return (f.label + ' ' + f.key + ' ' + f.section + ' ' + f.tab)
-					.toLowerCase().indexOf(q) !== -1;
+			var pool = pageEntries.concat(reg.fields);
+			var hits = pool.filter(function (f) {
+				var page = (reg.pages && reg.pages[f.page]) || '';
+				return normText(f.label + ' ' + f.key + ' ' + f.section + ' ' + f.tab + ' ' + page)
+					.indexOf(q) !== -1;
 			}).slice(0, 25);
 
 			if (!hits.length) {

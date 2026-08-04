@@ -6358,3 +6358,6 @@ msgstr "Chuyển sắc hoàng hôn"
 
 msgid "Gradient ocean"
 msgstr "Chuyển sắc biển"
+
+msgid "Search all plugin features…"
+msgstr "Tìm mọi tính năng của plugin…"
