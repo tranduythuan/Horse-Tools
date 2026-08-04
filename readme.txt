@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.64
+Stable tag: 1.2.65
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.65 =
+* **FAQ schema: stands aside when the post already carries its own.** Found on a live site: an article whose FAQ answers had been marked up by hand years ago got a second FAQPage block from us, so one page published two conflicting sets of questions. Detection previously knew about Rank Math and Yoast only, and a JSON-LD block pasted straight into the post leaves no trace to look for — nothing in the editor shows it is there. We now look for a real script block in the content, while ignoring the word where a post merely writes about schema in escaped example code. There is also a filter, `horsetools_faq_foreign`, for an SEO plugin we do not recognise.
+* **FAQ schema: code no longer leaks into an answer.** The same article showed the second, worse half of the problem — its last answer contained the entire source of that pasted block, published as if a reader had written it. The walker skipped script and style tags, but the answer text was read from the whole paragraph, and WordPress can leave a script inside the very paragraph it follows. Script, style, noscript and template contents are now removed before an answer is read.
+* Cached results now record which version of these rules produced them, so a fix like this recomputes posts by itself. Previously the cache was keyed to the post edit time alone, and a corrected rule kept serving the old answer on every post nobody happened to edit again.
 
 = 1.2.64 =
 * Restores a filename that went missing from the 1.2.63 changelog text. No code change — this release doubles as the first live exercise of the new CDN-based update check.
@@ -518,6 +523,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.65 =
+Fixes two FAQ schema faults found live: a duplicate FAQPage on posts that already had their own, and pasted code being published as answer text. Cached results recompute themselves.
 
 = 1.2.64 =
 Changelog wording fix; also the first release checked through the new CDN manifest.

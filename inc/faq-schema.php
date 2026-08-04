@@ -19,6 +19,12 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  * view parses nothing once the post has been seen.
  */
 
+/**
+ * Bump when the extraction rules or the stand-aside rules change, so cached
+ * results from the old rules are recomputed rather than served for ever.
+ */
+define( 'HORSETOOLS_FAQ_RULES', 2 );
+
 /** The phrases that mark a FAQ section, as one case-insensitive regex. */
 function horsetools_faq_keys() {
 	$raw = trim( (string) horsetools_opt( 'main', 'faq-keys', '' ) );
@@ -82,8 +88,23 @@ function horsetools_faq_extract( $html, $keys ) {
 	// Flatten the document to a reading-order list of headings and text blocks.
 	// Recursion is the point: a heading three <div>s deep still lands here.
 	$flat = array();
-	$txt  = function ( $n ) {
-		return trim( preg_replace( '~\s+~u', ' ', $n->textContent ) );
+	// Skipping <script> while walking is not enough: wpautop can leave one
+	// inside the very paragraph that answers a question, and textContent
+	// happily returns its source. A page with a hand-pasted JSON-LD block after
+	// the last answer would otherwise publish that block's source code as the
+	// answer's text. Nothing here is text a reader ever sees, so remove it.
+	$txt = function ( $n ) {
+		$clone = $n->cloneNode( true );
+		foreach ( array( 'script', 'style', 'noscript', 'template' ) as $tag ) {
+			$drop = array();
+			foreach ( $clone->getElementsByTagName( $tag ) as $el ) {
+				$drop[] = $el;
+			}
+			foreach ( $drop as $el ) {
+				$el->parentNode->removeChild( $el );
+			}
+		}
+		return trim( preg_replace( '~\s+~u', ' ', $clone->textContent ) );
 	};
 	$walk = function ( $node ) use ( &$walk, &$flat, $txt ) {
 		foreach ( $node->childNodes as $c ) {
@@ -199,7 +220,27 @@ function horsetools_faq_foreign( $post_id ) {
 	if ( false !== strpos( $content, 'wp:yoast/faq-block' ) ) {
 		return true;
 	}
-	return false;
+	// An FAQ block written by hand and pasted into the post — the way this was
+	// done before any plugin offered it. It is easy to miss because nothing
+	// records that it is there: it is just a <script> in the middle of the
+	// article, and the post looks ordinary in the editor. Publishing a second
+	// FAQPage alongside it puts two conflicting blocks on one URL.
+	//
+	// Only a real script counts. A post explaining schema markup shows its
+	// examples escaped (&lt;script&gt;), so the word alone must not silence us.
+	if ( false !== stripos( $content, 'FAQPage' )
+		&& preg_match( '~<script[^>]*ld\+json[^>]*>(?:(?!</script>)[\s\S])*?FAQPage~i', $content ) ) {
+		return true;
+	}
+	/**
+	 * Whether some other source already publishes FAQ schema for this post.
+	 *
+	 * Lets a site suppress ours for an SEO plugin we do not recognise.
+	 *
+	 * @param bool $foreign
+	 * @param int  $post_id
+	 */
+	return (bool) apply_filters( 'horsetools_faq_foreign', false, $post_id );
 }
 
 /**
@@ -211,9 +252,13 @@ function horsetools_faq_foreign( $post_id ) {
  */
 function horsetools_faq_json( $post_id, $force = false ) {
 	$post_id = (int) $post_id;
-	$stamp   = (int) get_post_modified_time( 'U', true, $post_id );
+	// The stamp carries the rule version as well as the edit time, so that
+	// changing how questions are found or when we stand aside re-computes every
+	// post by itself. Keying on the edit time alone meant a fixed rule kept
+	// serving the old answer on posts nobody happened to edit again.
+	$stamp   = get_post_modified_time( 'U', true, $post_id ) . '#' . HORSETOOLS_FAQ_RULES;
 	$cached  = get_post_meta( $post_id, '_ht_faq_ld', true );
-	$seen    = (int) get_post_meta( $post_id, '_ht_faq_stamp', true );
+	$seen    = (string) get_post_meta( $post_id, '_ht_faq_stamp', true );
 
 	if ( ! $force && is_string( $cached ) && $seen === $stamp ) {
 		return $cached;
