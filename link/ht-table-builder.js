@@ -65,6 +65,7 @@
 			striped: els.striped.checked,
 			compact: els.compact.checked,
 			stack: els.stack.checked,
+			footer: els.footer ? els.footer.checked : false,
 			theme: els.theme ? els.theme.value : '',
 			hcolor: els.hcolor ? els.hcolor.value : '',
 			caption: els.caption ? els.caption.value.trim() : '',
@@ -137,9 +138,10 @@
 
 	// #colspan# merges into the nearest real cell to the LEFT, #rowspan# into
 	// the nearest real cell ABOVE (never across the header/body boundary).
-	function computeSpans( data, headerOn ) {
+	function computeSpans( data, headerOn, footerStart ) {
 		var cs = {}, rs = {}, skip = {};
 		var bodyStart = headerOn ? 1 : 0;
+		if ( footerStart == null ) { footerStart = -1; }
 		data.forEach( function ( row, r ) {
 			row.forEach( function ( cell, c ) {
 				var v = String( cell == null ? '' : cell ).trim();
@@ -154,6 +156,7 @@
 					}
 				} else if ( v === '#rowspan#' ) {
 					var limit = r >= bodyStart ? bodyStart : 0;
+					if ( footerStart >= 0 && r >= footerStart ) { limit = footerStart; }
 					for ( var rr = r - 1; rr >= limit; rr-- ) {
 						var up = String( ( data[ rr ] || [] )[ c ] == null ? '' : data[ rr ][ c ] ).trim();
 						if ( up !== '#colspan#' && up !== '#rowspan#' ) {
@@ -170,10 +173,13 @@
 
 	function tableHtml( data, o ) {
 		if ( ! data.length ) { return ''; }
+		var footerOn = !! o.footer && data.length >= ( o.header ? 3 : 2 );
+		var footerStart = footerOn ? data.length - 1 : -1;
 		data = applyFormulas( data );
-		var sp = computeSpans( data, !! o.header );
+		var sp = computeSpans( data, !! o.header, footerStart );
 		var head = o.header ? data[ 0 ] : null;
 		var body = o.header ? data.slice( 1 ) : data;
+		var foot = footerOn ? body.pop() : null;
 		var ncol = 0;
 		data.forEach( function ( r ) { if ( r.length > ncol ) { ncol = r.length; } } );
 		// A column that is entirely numbers gets right-aligned automatically.
@@ -221,7 +227,18 @@
 			} );
 			h += '</tr>';
 		} );
-		return h + '</tbody></table>';
+		h += '</tbody>';
+		if ( foot ) {
+			var fr = data.length - 1;
+			h += '<tfoot><tr>';
+			foot.forEach( function ( c, i ) {
+				if ( sp.skip[ fr + ':' + i ] ) { return; }
+				var lbl = head ? escAttr( head[ i ] || '' ) : '';
+				h += '<td data-label="' + lbl + '"' + cls( i ) + spanAttr( fr, i ) + '>' + escHtml( cellText( c ) ) + '</td>';
+			} );
+			h += '</tr></tfoot>';
+		}
+		return h + '</table>';
 	}
 
 	function shortcode( data, o ) {
@@ -473,6 +490,7 @@
 						'<label><input type="checkbox" class="ht-tb-striped" checked> ' + escHtml( t( 'optStriped', 'Striped rows' ) ) + '</label>' +
 						'<label><input type="checkbox" class="ht-tb-compact"> ' + escHtml( t( 'optCompact', 'Compact' ) ) + '</label>' +
 						'<label><input type="checkbox" class="ht-tb-stack"> ' + escHtml( t( 'optStack', 'Stack into cards on mobile' ) ) + '</label>' +
+						'<label><input type="checkbox" class="ht-tb-footer"> ' + escHtml( t( 'optFooter', 'Last row is a total row (pinned to the bottom)' ) ) + '</label>' +
 					'</div>' +
 					'<div class="ht-tb-opts2">' +
 						'<label>' + escHtml( t( 'themeL', 'Style' ) ) + ' <select class="ht-tb-theme"><option value="">' + escHtml( t( 'themeDefault', 'Default' ) ) + '</option><option value="bordered">' + escHtml( t( 'themeBordered', 'Bordered' ) ) + '</option><option value="minimal">' + escHtml( t( 'themeMinimal', 'Minimal' ) ) + '</option><option value="lines">' + escHtml( t( 'themeLines', 'Lines only' ) ) + '</option></select></label>' +
@@ -511,6 +529,7 @@
 		els.striped = overlay.querySelector( '.ht-tb-striped' );
 		els.compact = overlay.querySelector( '.ht-tb-compact' );
 		els.stack = overlay.querySelector( '.ht-tb-stack' );
+		els.footer = overlay.querySelector( '.ht-tb-footer' );
 		els.theme = overlay.querySelector( '.ht-tb-theme' );
 		els.hcolor = overlay.querySelector( '.ht-tb-hcolor' );
 		els.caption = overlay.querySelector( '.ht-tb-caption' );
@@ -629,6 +648,7 @@
 		// Reset to defaults first (the modal is reused between opens).
 		els.header.checked = true; els.striped.checked = true;
 		els.compact.checked = false; els.stack.checked = false;
+		if ( els.footer ) { els.footer.checked = false; }
 		if ( els.theme ) { els.theme.value = ''; }
 		if ( els.hcolor ) { els.hcolor.value = ''; }
 		if ( els.caption ) { els.caption.value = ''; }
@@ -649,6 +669,7 @@
 		els.striped.checked = o.striped === undefined ? true : !! o.striped;
 		els.compact.checked = !! o.compact;
 		els.stack.checked = !! o.stack;
+		if ( els.footer ) { els.footer.checked = !! o.footer; }
 		if ( els.theme ) { els.theme.value = o.theme || ''; }
 		if ( els.hcolor ) { els.hcolor.value = o.hcolor || ''; }
 		if ( els.caption ) { els.caption.value = o.caption || ''; }

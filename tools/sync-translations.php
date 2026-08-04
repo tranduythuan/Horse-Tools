@@ -715,6 +715,8 @@ $vi = array(
     'Something went wrong. Please try again.' => 'Có lỗi xảy ra. Vui lòng thử lại.',
     'Table %d' => 'Bảng %d',
     'copy' => 'bản sao',
+    // Pinned total row (1.2.50)
+    'Last row is a total row (pinned to the bottom)' => 'Hàng cuối là hàng tổng (ghim dưới đáy)',
     // Export / merge / formulas / per-table CSS (1.2.49)
     'Export CSV' => 'Xuất CSV',
     'Custom CSS' => 'CSS riêng',

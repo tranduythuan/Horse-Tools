@@ -6328,3 +6328,6 @@ msgstr "CSS riêng"
 
 msgid "Merge cells: type #colspan# to merge into the cell on the left, #rowspan# to merge into the cell above. Formulas: =SUM(B2:B10), also AVG / MIN / MAX."
 msgstr "Gộp ô: gõ #colspan# để gộp vào ô bên trái, #rowspan# để gộp vào ô phía trên. Công thức: =SUM(B2:B10), có cả AVG / MIN / MAX."
+
+msgid "Last row is a total row (pinned to the bottom)"
+msgstr "Hàng cuối là hàng tổng (ghim dưới đáy)"

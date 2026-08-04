@@ -644,6 +644,7 @@ function horsetools_table_builder_i18n() {
 		'optStriped' => __( 'Striped rows', 'horse-tools' ),
 		'optCompact' => __( 'Compact', 'horse-tools' ),
 		'optStack'   => __( 'Stack into cards on mobile', 'horse-tools' ),
+		'optFooter'  => __( 'Last row is a total row (pinned to the bottom)', 'horse-tools' ),
 		'preview'    => __( 'Preview', 'horse-tools' ),
 		'cancel'     => __( 'Cancel', 'horse-tools' ),
 		'insert'     => __( 'Insert table', 'horse-tools' ),
@@ -872,7 +873,7 @@ function horsetools_table_apply_formulas( $data ) {
  * boundary). Returns [colspanMap, rowspanMap, skipMap] keyed "r:c".
  * A keyword with no valid owner renders as an ordinary empty cell.
  */
-function horsetools_table_spans( $data, $has_header ) {
+function horsetools_table_spans( $data, $has_header, $footer_start = -1 ) {
 	$cs = array();
 	$rs = array();
 	$skip = array();
@@ -892,6 +893,11 @@ function horsetools_table_spans( $data, $has_header ) {
 				}
 			} elseif ( '#rowspan#' === $cell ) {
 				$limit = ( $r >= $body_start ) ? $body_start : 0;
+				// The footer (tfoot) is its own section too: a rowspan may not
+				// reach from the footer up into the body.
+				if ( $footer_start >= 0 && $r >= $footer_start ) {
+					$limit = $footer_start;
+				}
 				for ( $rr = $r - 1; $rr >= $limit; $rr-- ) {
 					$up = trim( (string) ( isset( $data[ $rr ][ $c ] ) ? $data[ $rr ][ $c ] : '' ) );
 					if ( '#colspan#' !== $up && '#rowspan#' !== $up ) {
@@ -916,12 +922,20 @@ function horsetools_table_render_data( $data, $opts, $id = 0, $css = '' ) {
 	}
 	$opts    = is_array( $opts ) ? $opts : array();
 	$header  = ! empty( $opts['header'] );
+	// A pinned total row: rendered as a real <tfoot>, which sorting, search and
+	// pagination never touch (they operate on tbody rows only).
+	$footer_on    = ! empty( $opts['footer'] ) && count( $data ) >= ( $header ? 3 : 2 );
+	$footer_start = $footer_on ? count( $data ) - 1 : -1;
 	// Formulas first (they may live in merged owner cells), then merge keywords.
 	$data = horsetools_table_apply_formulas( $data );
-	list( $span_cs, $span_rs, $span_skip ) = horsetools_table_spans( $data, $header );
+	list( $span_cs, $span_rs, $span_skip ) = horsetools_table_spans( $data, $header, $footer_start );
 	$caption = isset( $opts['caption'] ) ? (string) $opts['caption'] : '';
 	$head    = $header ? array_map( 'strval', (array) $data[0] ) : null;
 	$body    = $header ? array_slice( $data, 1 ) : $data;
+	$foot    = null;
+	if ( $footer_on ) {
+		$foot = array_pop( $body );
+	}
 
 	$ncol = 0;
 	foreach ( $data as $r ) {
@@ -996,7 +1010,24 @@ function horsetools_table_render_data( $data, $opts, $id = 0, $css = '' ) {
 		}
 		$h .= '</tr>';
 	}
-	$h .= '</tbody></table>';
+	$h .= '</tbody>';
+	if ( null !== $foot ) {
+		$fr = count( $data ) - 1; // absolute matrix row of the footer
+		$h .= '<tfoot><tr>';
+		for ( $i = 0; $i < $ncol; $i++ ) {
+			if ( isset( $span_skip[ $fr . ':' . $i ] ) ) {
+				continue;
+			}
+			$c = trim( (string) ( isset( $foot[ $i ] ) ? $foot[ $i ] : '' ) );
+			if ( '#colspan#' === $c || '#rowspan#' === $c ) {
+				$c = '';
+			}
+			$lbl = ( $head && isset( $head[ $i ] ) ) ? esc_attr( $head[ $i ] ) : '';
+			$h  .= '<td data-label="' . $lbl . '"' . $rc( $i ) . $span_attr( $fr, $i ) . '>' . esc_html( $c ) . '</td>';
+		}
+		$h .= '</tr></tfoot>';
+	}
+	$h .= '</table>';
 
 	$cls = 'ht-table';
 	if ( ! empty( $opts['stack'] ) ) {
@@ -1054,6 +1085,7 @@ function horsetools_table_sanitize_payload() {
 		'striped' => ! isset( $opts['striped'] ) || ! empty( $opts['striped'] ),
 		'compact' => ! empty( $opts['compact'] ),
 		'stack'   => ! empty( $opts['stack'] ),
+		'footer'  => ! empty( $opts['footer'] ),
 		'theme'   => in_array( isset( $opts['theme'] ) ? $opts['theme'] : '', array( 'bordered', 'minimal', 'lines' ), true ) ? $opts['theme'] : '',
 		'hcolor'  => in_array( isset( $opts['hcolor'] ) ? $opts['hcolor'] : '', array( 'blue', 'green', 'orange', 'purple', 'dark' ), true ) ? $opts['hcolor'] : '',
 		'caption' => isset( $opts['caption'] ) ? sanitize_text_field( (string) $opts['caption'] ) : '',
