@@ -49,6 +49,12 @@ function horsetools_load_admin_files() {
         'main/group.php',
         'main/seo.php',
         'main/security.php',
+        'main/speed.php',
+        'main/content.php',
+        'main/display.php',
+        'main/customers.php',
+        'main/accounts.php',
+        'main/tools.php',
     );
     foreach ($optional_files as $key => $file) {
         if (isset($horsetools_extend_options[$key])) {

@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.70
+Stable tag: 1.2.71
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.71 =
+* **The settings are now grouped by what they do.** Instead of one screen with thirteen tabs, there are eight screens named after the job: Speed, SEO, Security, Content, Appearance, Customers, Accounts & Email, and Tools. Nothing has been removed or renamed — a setting that was in the MEDIA tab is under Speed because compressing images is how you make pages lighter, and one that was in GOOGLE is under Accounts & Email because signing in with Google is a way for people to log in.
+* **Overview is now a way in rather than a wall of settings.** It shows the eight groups with a line about what is in each, alongside the site health panel and the search box. If you are not sure which group holds a setting, type its name into the search box and it will take you straight to it.
+* This also fixes what was making that screen slow: it was 546 KB of HTML, of which 260 KB was the twelve tabs you were not looking at, hidden by JavaScript after the browser had already built them. Each screen now sends only its own.
 
 = 1.2.70 =
 * **There is now a Security screen, and protecting your login is finally in one place.** It was split across three unrelated tabs: the lockout, security question and two-factor settings under SECURITY; the reCAPTCHA check under GOOGLE, because reCAPTCHA happens to be a Google product; and moving or restyling the login page under CUSTOM. Anyone hardening their login had to know to visit all three. It is one job, so it is one screen.
@@ -546,6 +551,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.71 =
+Settings are now grouped across eight screens named after what they do. Nothing removed or renamed.
 
 = 1.2.70 =
 Adds a Security screen that reunites login protection from three separate tabs.
