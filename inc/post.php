@@ -637,3 +637,7 @@ add_filter( 'the_content', 'horsetools_lb_addiv' );
 
 
 
+
+/* FAQ schema: reads the FAQ section a post already has and publishes the
+   matching JSON-LD. Part of the CONTENT module. */
+require_once HORSETOOLS_DIR . 'inc/faq-schema.php';

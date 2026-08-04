@@ -6478,3 +6478,81 @@ msgstr "Site này đặt DISALLOW_FILE_MODS nên không được chạy PHP từ
 
 msgid "PHP snippets are switched off by HORSETOOLS_NO_PHP in wp-config.php."
 msgstr "Snippet PHP đã bị tắt bởi HORSETOOLS_NO_PHP trong wp-config.php."
+
+msgid "FAQ schema (rich results)"
+msgstr "FAQ schema (kết quả nổi bật)"
+
+msgid "Publish FAQ schema automatically from the FAQ section in a post"
+msgstr "Tự động gắn FAQ schema từ mục hỏi đáp có sẵn trong bài"
+
+msgid "Reads the “frequently asked questions” part your posts already have — a heading that names the section, then one heading per question with its answer below — and publishes the matching JSON-LD so Google can show them as FAQ rich results. Nothing in your posts is changed. If another SEO plugin already publishes FAQ schema for a post, Horse Tools stays out of the way."
+msgstr "Đọc phần “câu hỏi thường gặp” bài của bạn đã có sẵn — một tiêu đề đặt tên cho mục, rồi mỗi câu hỏi là một tiêu đề kèm câu trả lời bên dưới — rồi gắn JSON-LD tương ứng để Google hiển thị dạng kết quả nổi bật. Không sửa gì trong bài viết. Nếu một plugin SEO khác đã gắn FAQ schema cho bài đó thì Horse Tools tự nhường."
+
+msgid "Apply to Pages as well, not just Posts"
+msgstr "Áp dụng cho cả Trang, không chỉ Bài viết"
+
+msgid "Phrases that mark the FAQ section"
+msgstr "Các cụm từ nhận diện mục hỏi đáp"
+
+msgid "Comma separated. A heading containing any of these opens the FAQ section; every heading below it until the next heading of the same level is treated as a question."
+msgstr "Ngăn cách bằng dấu phẩy. Tiêu đề nào chứa một trong các cụm này sẽ mở mục hỏi đáp; mọi tiêu đề nhỏ hơn bên dưới, cho tới tiêu đề cùng cấp kế tiếp, được coi là câu hỏi."
+
+msgid "Only in these category IDs"
+msgstr "Chỉ áp dụng cho các ID chuyên mục"
+
+msgid "leave empty for all categories"
+msgstr "để trống nghĩa là mọi chuyên mục"
+
+msgid "Minimum number of questions"
+msgstr "Số câu hỏi tối thiểu"
+
+msgid "Posts with fewer questions than this get no schema. Two or more is the safer choice."
+msgstr "Bài ít câu hỏi hơn mức này sẽ không được gắn schema. Từ 2 trở lên là an toàn hơn."
+
+msgid "Trim answers to this many characters"
+msgstr "Cắt câu trả lời còn bấy nhiêu ký tự"
+
+msgid "Only the schema is trimmed; the post itself is never touched."
+msgstr "Chỉ cắt trong schema, bài viết không hề bị đụng tới."
+
+msgid "Scan the whole site"
+msgstr "Quét toàn bộ site"
+
+msgid "Clear cache & re-read"
+msgstr "Xóa cache & đọc lại"
+
+msgid "%1$d post(s) will publish FAQ schema (%2$s questions on average)."
+msgstr "%1$d bài sẽ được gắn FAQ schema (trung bình %2$s câu hỏi)."
+
+msgid "%d post(s) have a FAQ section but too few questions:"
+msgstr "%d bài có mục hỏi đáp nhưng quá ít câu hỏi:"
+
+msgid "%d post(s) mention a FAQ but no question could be read — unusual structure:"
+msgstr "%d bài có nhắc tới hỏi đáp nhưng không đọc được câu hỏi nào — cấu trúc lạ:"
+
+msgid "%d post(s) already get FAQ schema from another plugin, so they are left alone."
+msgstr "%d bài đã được plugin khác gắn FAQ schema nên được để nguyên."
+
+msgid "%d post(s) have no FAQ section."
+msgstr "%d bài không có mục hỏi đáp."
+
+msgid "Cache cleared. Each post will be read again the next time it is viewed."
+msgstr "Đã xóa cache. Mỗi bài sẽ được đọc lại ở lượt xem kế tiếp."
+
+msgid "FAQ schema (Horse Tools)"
+msgstr "FAQ schema (Horse Tools)"
+
+msgid "Another plugin already publishes FAQ schema for this post, so Horse Tools is staying out of the way."
+msgstr "Một plugin khác đã gắn FAQ schema cho bài này nên Horse Tools tự nhường."
+
+msgid "%d question found"
+msgstr "Tìm thấy %d câu hỏi"
+
+msgid "%d questions found"
+msgstr "Tìm thấy %d câu hỏi"
+
+msgid "Only %1$d question found; at least %2$d are needed before schema is published."
+msgstr "Chỉ tìm thấy %1$d câu hỏi; cần ít nhất %2$d thì mới gắn schema."
+
+msgid "No FAQ section recognised in this post."
+msgstr "Không nhận ra mục hỏi đáp nào trong bài này."
