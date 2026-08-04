@@ -715,6 +715,10 @@ $vi = array(
     'Something went wrong. Please try again.' => 'Có lỗi xảy ra. Vui lòng thử lại.',
     'Table %d' => 'Bảng %d',
     'copy' => 'bản sao',
+    // Export / merge / formulas / per-table CSS (1.2.49)
+    'Export CSV' => 'Xuất CSV',
+    'Custom CSS' => 'CSS riêng',
+    'Merge cells: type #colspan# to merge into the cell on the left, #rowspan# to merge into the cell above. Formulas: =SUM(B2:B10), also AVG / MIN / MAX.' => 'Gộp ô: gõ #colspan# để gộp vào ô bên trái, #rowspan# để gộp vào ô phía trên. Công thức: =SUM(B2:B10), có cả AVG / MIN / MAX.',
     // Google Sheet sync (1.2.48)
     'Google Sheet' => 'Google Sheet',
     'Paste a Google Sheets link (shared: anyone with the link)' => 'Dán link Google Sheets (chia sẻ: ai có link đều xem được)',

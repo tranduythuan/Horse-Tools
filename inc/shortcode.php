@@ -549,7 +549,12 @@ function horsetools_table_shortcode( $atts, $content = '' ) {
 		if ( ! $t || empty( $t['data'] ) ) {
 			return '';
 		}
-		return horsetools_table_render_data( $t['data'], isset( $t['opts'] ) ? $t['opts'] : array() );
+		return horsetools_table_render_data(
+			$t['data'],
+			isset( $t['opts'] ) ? $t['opts'] : array(),
+			(int) $a['id'],
+			isset( $t['css'] ) ? (string) $t['css'] : ''
+		);
 	}
 
 	$inner = trim( (string) $content );
@@ -663,6 +668,9 @@ function horsetools_table_builder_i18n() {
 		'cDark'      => __( 'Dark', 'horse-tools' ),
 		'captionL'   => __( 'Caption', 'horse-tools' ),
 		'captionPh'  => __( 'optional title above the table', 'horse-tools' ),
+		'cssL'       => __( 'Custom CSS', 'horse-tools' ),
+		'cssPh'      => '.ht-table-5 td { font-size: 14px; }',
+		'mergeHint'  => __( 'Merge cells: type #colspan# to merge into the cell on the left, #rowspan# to merge into the cell above. Formulas: =SUM(B2:B10), also AVG / MIN / MAX.', 'horse-tools' ),
 		'sheetL'     => __( 'Google Sheet', 'horse-tools' ),
 		'sheetPh'    => __( 'Paste a Google Sheets link (shared: anyone with the link)', 'horse-tools' ),
 		'sheetPull'  => __( 'Pull data', 'horse-tools' ),
@@ -767,15 +775,150 @@ function horsetools_table_is_num( $v ) {
 	return '' !== $v && (bool) preg_match( '/^[+\-]?[\d.,\s]+\s*[%đ$₫]?$/u', $v );
 }
 
+/** Parse a cell as a number, VN/EU separators aware ("1.790.000", "1,5"). */
+function horsetools_table_num( $v ) {
+	$v = trim( (string) $v );
+	if ( '' === $v || ! preg_match( '/^[+\-]?[\d.,\s]+\s*[%đ$₫]?$/u', $v ) ) {
+		return null;
+	}
+	$s = preg_replace( '/[^\d.,\-]/', '', $v );
+	$d = false !== strpos( $s, '.' );
+	$c = false !== strpos( $s, ',' );
+	if ( $d && $c ) {
+		$s = str_replace( ',', '.', str_replace( '.', '', $s ) );
+	} elseif ( $d ) {
+		$p = explode( '.', $s );
+		if ( count( $p ) > 2 || ( 2 === count( $p ) && 3 === strlen( $p[1] ) ) ) {
+			$s = str_replace( '.', '', $s );
+		}
+	} elseif ( $c ) {
+		$p = explode( ',', $s );
+		if ( count( $p ) > 2 || ( 2 === count( $p ) && 3 === strlen( $p[1] ) ) ) {
+			$s = str_replace( ',', '', $s );
+		} else {
+			$s = str_replace( ',', '.', $s );
+		}
+	}
+	return is_numeric( $s ) ? (float) $s : null;
+}
+
+/** "B" → 1, "AA" → 26 (0-based column index from spreadsheet letters). */
+function horsetools_table_col_idx( $letters ) {
+	$n = 0;
+	foreach ( str_split( strtoupper( $letters ) ) as $ch ) {
+		$n = $n * 26 + ( ord( $ch ) - 64 );
+	}
+	return $n - 1;
+}
+
+/**
+ * Evaluate the safe formula subset: a cell that is exactly
+ * =SUM(B2:B10) / =AVG(...) / =MIN(...) / =MAX(...).
+ * Regex-matched only — no expression parser, no eval, nothing else runs.
+ * Values are read from a snapshot of the ORIGINAL data, so evaluation order
+ * doesn't matter and a formula inside its own range is simply ignored
+ * (formula text isn't numeric). Results use VN formatting (1.790.000 / 1,50).
+ */
+function horsetools_table_apply_formulas( $data ) {
+	$src = $data;
+	foreach ( $data as $r => $row ) {
+		foreach ( $row as $c => $cell ) {
+			if ( ! is_string( $cell ) || '' === $cell || '=' !== $cell[0] ) {
+				continue;
+			}
+			if ( ! preg_match( '/^=\s*(SUM|AVG|MIN|MAX)\s*\(\s*([A-Z]{1,2})(\d{1,4})\s*:\s*([A-Z]{1,2})(\d{1,4})\s*\)\s*$/i', $cell, $m ) ) {
+				continue;
+			}
+			$fn = strtoupper( $m[1] );
+			$c1 = horsetools_table_col_idx( $m[2] );
+			$r1 = (int) $m[3] - 1;
+			$c2 = horsetools_table_col_idx( $m[4] );
+			$r2 = (int) $m[5] - 1;
+			if ( $c2 < $c1 ) { $t = $c1; $c1 = $c2; $c2 = $t; }
+			if ( $r2 < $r1 ) { $t = $r1; $r1 = $r2; $r2 = $t; }
+			$vals = array();
+			for ( $ri = $r1; $ri <= $r2; $ri++ ) {
+				for ( $ci = $c1; $ci <= $c2; $ci++ ) {
+					if ( isset( $src[ $ri ][ $ci ] ) ) {
+						$n = horsetools_table_num( $src[ $ri ][ $ci ] );
+						if ( null !== $n ) {
+							$vals[] = $n;
+						}
+					}
+				}
+			}
+			if ( empty( $vals ) ) {
+				$data[ $r ][ $c ] = 'SUM' === $fn ? '0' : '';
+				continue;
+			}
+			switch ( $fn ) {
+				case 'SUM': $res = array_sum( $vals ); break;
+				case 'AVG': $res = array_sum( $vals ) / count( $vals ); break;
+				case 'MIN': $res = min( $vals ); break;
+				default:    $res = max( $vals );
+			}
+			$data[ $r ][ $c ] = ( floor( $res ) == $res )
+				? number_format( $res, 0, ',', '.' )
+				: number_format( $res, 2, ',', '.' );
+		}
+	}
+	return $data;
+}
+
+/**
+ * Merge-cell keywords, TablePress-compatible: a cell containing exactly
+ * "#colspan#" merges into the nearest real cell to its LEFT; "#rowspan#"
+ * merges into the nearest real cell ABOVE (never across the thead/tbody
+ * boundary). Returns [colspanMap, rowspanMap, skipMap] keyed "r:c".
+ * A keyword with no valid owner renders as an ordinary empty cell.
+ */
+function horsetools_table_spans( $data, $has_header ) {
+	$cs = array();
+	$rs = array();
+	$skip = array();
+	$body_start = $has_header ? 1 : 0;
+	foreach ( $data as $r => $row ) {
+		foreach ( $row as $c => $cell ) {
+			$cell = trim( (string) $cell );
+			if ( '#colspan#' === $cell ) {
+				for ( $cc = $c - 1; $cc >= 0; $cc-- ) {
+					$left = trim( (string) ( isset( $data[ $r ][ $cc ] ) ? $data[ $r ][ $cc ] : '' ) );
+					if ( '#colspan#' !== $left && '#rowspan#' !== $left ) {
+						$key = $r . ':' . $cc;
+						$cs[ $key ] = ( isset( $cs[ $key ] ) ? $cs[ $key ] : 1 ) + 1;
+						$skip[ $r . ':' . $c ] = true;
+						break;
+					}
+				}
+			} elseif ( '#rowspan#' === $cell ) {
+				$limit = ( $r >= $body_start ) ? $body_start : 0;
+				for ( $rr = $r - 1; $rr >= $limit; $rr-- ) {
+					$up = trim( (string) ( isset( $data[ $rr ][ $c ] ) ? $data[ $rr ][ $c ] : '' ) );
+					if ( '#colspan#' !== $up && '#rowspan#' !== $up ) {
+						$key = $rr . ':' . $c;
+						$rs[ $key ] = ( isset( $rs[ $key ] ) ? $rs[ $key ] : 1 ) + 1;
+						$skip[ $r . ':' . $c ] = true;
+						break;
+					}
+				}
+			}
+		}
+	}
+	return array( $cs, $rs, $skip );
+}
+
 /** Build the responsive table HTML from a 2D data array + options. Mirrors the
  *  JavaScript builder so a stored table and an inline one look identical. */
-function horsetools_table_render_data( $data, $opts ) {
+function horsetools_table_render_data( $data, $opts, $id = 0, $css = '' ) {
 	$data = is_array( $data ) ? array_values( $data ) : array();
 	if ( empty( $data ) ) {
 		return '';
 	}
 	$opts    = is_array( $opts ) ? $opts : array();
 	$header  = ! empty( $opts['header'] );
+	// Formulas first (they may live in merged owner cells), then merge keywords.
+	$data = horsetools_table_apply_formulas( $data );
+	list( $span_cs, $span_rs, $span_skip ) = horsetools_table_spans( $data, $header );
 	$caption = isset( $opts['caption'] ) ? (string) $opts['caption'] : '';
 	$head    = $header ? array_map( 'strval', (array) $data[0] ) : null;
 	$body    = $header ? array_slice( $data, 1 ) : $data;
@@ -790,8 +933,8 @@ function horsetools_table_render_data( $data, $opts ) {
 		$all = true;
 		foreach ( $body as $r ) {
 			$r = (array) $r;
-			$v = isset( $r[ $ci ] ) ? $r[ $ci ] : '';
-			if ( '' === trim( (string) $v ) ) {
+			$v = trim( (string) ( isset( $r[ $ci ] ) ? $r[ $ci ] : '' ) );
+			if ( '' === $v || '#colspan#' === $v || '#rowspan#' === $v ) {
 				continue;
 			}
 			$any = true;
@@ -805,6 +948,17 @@ function horsetools_table_render_data( $data, $opts ) {
 	$rc = function ( $i ) use ( $right ) {
 		return ! empty( $right[ $i ] ) ? ' class="ht-r"' : '';
 	};
+	$span_attr = function ( $r, $c ) use ( $span_cs, $span_rs ) {
+		$key = $r . ':' . $c;
+		$a   = '';
+		if ( isset( $span_cs[ $key ] ) ) {
+			$a .= ' colspan="' . (int) $span_cs[ $key ] . '"';
+		}
+		if ( isset( $span_rs[ $key ] ) ) {
+			$a .= ' rowspan="' . (int) $span_rs[ $key ] . '"';
+		}
+		return $a;
+	};
 
 	$h = '<table>';
 	if ( '' !== $caption ) {
@@ -813,18 +967,32 @@ function horsetools_table_render_data( $data, $opts ) {
 	if ( $head ) {
 		$h .= '<thead><tr>';
 		foreach ( $head as $i => $c ) {
-			$h .= '<th' . $rc( $i ) . '>' . esc_html( $c ) . '</th>';
+			if ( isset( $span_skip[ '0:' . $i ] ) ) {
+				continue;
+			}
+			$cv = trim( (string) $c );
+			if ( '#colspan#' === $cv || '#rowspan#' === $cv ) {
+				$cv = ''; // keyword with no valid owner: plain empty cell
+			}
+			$h .= '<th' . $rc( $i ) . $span_attr( 0, $i ) . '>' . esc_html( $cv ) . '</th>';
 		}
 		$h .= '</tr></thead>';
 	}
 	$h .= '<tbody>';
-	foreach ( $body as $row ) {
+	foreach ( $body as $bi => $row ) {
 		$row = (array) $row;
+		$ri  = $header ? $bi + 1 : $bi; // absolute row in the matrix
 		$h  .= '<tr>';
 		for ( $i = 0; $i < $ncol; $i++ ) {
-			$c   = isset( $row[ $i ] ) ? (string) $row[ $i ] : '';
+			if ( isset( $span_skip[ $ri . ':' . $i ] ) ) {
+				continue;
+			}
+			$c = trim( (string) ( isset( $row[ $i ] ) ? $row[ $i ] : '' ) );
+			if ( '#colspan#' === $c || '#rowspan#' === $c ) {
+				$c = '';
+			}
 			$lbl = ( $head && isset( $head[ $i ] ) ) ? esc_attr( $head[ $i ] ) : '';
-			$h  .= '<td data-label="' . $lbl . '"' . $rc( $i ) . '>' . esc_html( $c ) . '</td>';
+			$h  .= '<td data-label="' . $lbl . '"' . $rc( $i ) . $span_attr( $ri, $i ) . '>' . esc_html( $c ) . '</td>';
 		}
 		$h .= '</tr>';
 	}
@@ -848,7 +1016,18 @@ function horsetools_table_render_data( $data, $opts ) {
 	if ( in_array( $hcolor, array( 'blue', 'green', 'orange', 'purple', 'dark' ), true ) ) {
 		$cls .= ' ht-th-' . $hcolor;
 	}
-	return '<div class="' . esc_attr( $cls ) . '"' . horsetools_table_fx_attrs( $opts ) . '><div class="ht-table-scroll">' . $h . '</div></div>';
+	$style = '';
+	if ( $id > 0 ) {
+		$cls .= ' ht-table-' . (int) $id;
+		// Per-table CSS, admin-authored (same trust level as Customizer
+		// "Additional CSS"). '<' is stripped at save AND here, so the block can
+		// never be broken out of.
+		$css = str_replace( '<', '', (string) $css );
+		if ( '' !== trim( $css ) ) {
+			$style = '<style>' . $css . '</style>';
+		}
+	}
+	return $style . '<div class="' . esc_attr( $cls ) . '"' . horsetools_table_fx_attrs( $opts ) . '><div class="ht-table-scroll">' . $h . '</div></div>';
 }
 
 /** Sanitise a posted table into { name, data(2D strings), opts(whitelist) }. */
@@ -893,7 +1072,11 @@ function horsetools_table_sanitize_payload() {
 	if ( '' === $sheet || ! in_array( $sync, array( 'hourly', 'daily' ), true ) ) {
 		$sync = 'off';
 	}
-	return array( 'name' => $name, 'data' => $clean, 'opts' => $copt, 'sheet' => $sheet, 'sync' => $sync );
+	// Per-table CSS: admin-trusted, but '<' is stripped (invalid in CSS anyway)
+	// so a </style> breakout is impossible, and the size is capped.
+	$css = isset( $_POST['css'] ) ? (string) wp_unslash( $_POST['css'] ) : '';
+	$css = substr( str_replace( '<', '', $css ), 0, 5000 );
+	return array( 'name' => $name, 'data' => $clean, 'opts' => $copt, 'sheet' => $sheet, 'sync' => $sync, 'css' => $css );
 }
 
 /* ---- Google Sheet sync (Phase 4). A public sheet ("Anyone with the link can
@@ -1079,6 +1262,7 @@ function horsetools_tbl_save_ajax() {
 		'opts'      => $payload['opts'],
 		'sheet'     => $payload['sheet'],
 		'sync'      => $payload['sync'],
+		'css'       => $payload['css'],
 		'last_sync' => isset( $tables[ $id ]['last_sync'] ) ? $tables[ $id ]['last_sync'] : 0,
 	);
 	update_option( 'horsetools_tables', $tables, false );
@@ -1161,6 +1345,7 @@ function horsetools_tables_page() {
 			'opts'  => isset( $tb['opts'] ) ? $tb['opts'] : array(),
 			'sheet' => isset( $tb['sheet'] ) ? (string) $tb['sheet'] : '',
 			'sync'  => isset( $tb['sync'] ) ? (string) $tb['sync'] : 'off',
+			'css'   => isset( $tb['css'] ) ? (string) $tb['css'] : '',
 		);
 	}
 	?>
@@ -1198,6 +1383,7 @@ function horsetools_tables_page() {
 							<button type="button" class="button ht-tbl-edit"><?php esc_html_e( 'Edit', 'horse-tools' ); ?></button>
 							<button type="button" class="button ht-tbl-dup"><?php esc_html_e( 'Duplicate', 'horse-tools' ); ?></button>
 							<button type="button" class="button ht-tbl-del"><?php esc_html_e( 'Delete', 'horse-tools' ); ?></button>
+							<button type="button" class="button ht-tbl-csv"><?php esc_html_e( 'Export CSV', 'horse-tools' ); ?></button>
 							<?php if ( ! empty( $tb['sheet'] ) ) : ?>
 								<button type="button" class="button ht-tbl-sync" title="<?php echo esc_attr( $tb['sheet'] ); ?>"><?php esc_html_e( 'Sync from Sheet', 'horse-tools' ); ?></button>
 							<?php endif; ?>
@@ -1235,7 +1421,8 @@ function horsetools_tables_page() {
 					data: JSON.stringify( payload.data || [] ),
 					opts: JSON.stringify( payload.opts || {} ),
 					sheet: payload.sheet || '',
-					sync: payload.sync || 'off'
+					sync: payload.sync || 'off',
+					css: payload.css || ''
 				}, function ( res ) {
 					if ( res && res.success ) { location.reload(); } else { alert( STR.fail ); }
 				} );
@@ -1254,6 +1441,24 @@ function horsetools_tables_page() {
 					save( parseInt( id, 10 ), init );
 				} else if ( e.target.classList.contains( 'ht-tbl-dup' ) ) {
 					post( 'horsetools_tbl_duplicate', { id: id }, function ( res ) { if ( res && res.success ) { location.reload(); } else { alert( STR.fail ); } } );
+				} else if ( e.target.classList.contains( 'ht-tbl-csv' ) ) {
+					// Client-side CSV export: BOM so Excel opens UTF-8 (Vietnamese)
+					// correctly; every cell quoted.
+					var tbl = STORE[ id ];
+					if ( ! tbl ) { return; }
+					var csv = ( tbl.data || [] ).map( function ( row ) {
+						return row.map( function ( cell ) {
+							return '"' + String( cell == null ? '' : cell ).replace( /"/g, '""' ) + '"';
+						} ).join( ',' );
+					} ).join( '\r\n' );
+					var blob = new Blob( [ '﻿' + csv ], { type: 'text/csv;charset=utf-8' } );
+					var a = document.createElement( 'a' );
+					a.href = URL.createObjectURL( blob );
+					a.download = 'ht-table-' + id + '.csv';
+					document.body.appendChild( a );
+					a.click();
+					a.remove();
+					setTimeout( function () { URL.revokeObjectURL( a.href ); }, 5000 );
 				} else if ( e.target.classList.contains( 'ht-tbl-sync' ) ) {
 					var sb = e.target, sbLabel = sb.textContent;
 					sb.disabled = true;

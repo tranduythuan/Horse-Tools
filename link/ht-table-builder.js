@@ -77,8 +77,101 @@
 
 	function isNum( v ) { v = String( v == null ? '' : v ).trim(); return v !== '' && /^[+\-]?[\d.,\s]+\s*[%đ$₫]?$/.test( v ); }
 
+	// VN/EU-aware numeric parse ("1.790.000", "1,5"); null when not a number.
+	function cellNum( v ) {
+		v = String( v == null ? '' : v ).trim();
+		if ( ! v || ! /^[+\-]?[\d.,\s]+\s*[%đ$₫]?$/.test( v ) ) { return null; }
+		var s = v.replace( /[^\d.,\-]/g, '' );
+		var d = s.indexOf( '.' ) !== -1, c = s.indexOf( ',' ) !== -1, p;
+		if ( d && c ) { s = s.replace( /\./g, '' ).replace( ',', '.' ); }
+		else if ( d ) { p = s.split( '.' ); if ( p.length > 2 || ( p.length === 2 && p[ 1 ].length === 3 ) ) { s = s.replace( /\./g, '' ); } }
+		else if ( c ) { p = s.split( ',' ); if ( p.length > 2 || ( p.length === 2 && p[ 1 ].length === 3 ) ) { s = s.replace( /,/g, '' ); } else { s = s.replace( ',', '.' ); } }
+		var n = parseFloat( s );
+		return isNaN( n ) ? null : n;
+	}
+	function fmtNum( n ) {
+		var neg = n < 0 ? '-' : '';
+		n = Math.abs( n );
+		var isInt = Math.floor( n ) === n;
+		var parts = ( isInt ? String( n ) : n.toFixed( 2 ) ).split( '.' );
+		parts[ 0 ] = parts[ 0 ].replace( /\B(?=(\d{3})+(?!\d))/g, '.' );
+		return neg + ( parts.length > 1 ? parts[ 0 ] + ',' + parts[ 1 ] : parts[ 0 ] );
+	}
+
+	// Safe formula subset: a cell that is exactly =SUM/AVG/MIN/MAX(B2:B10).
+	// Regex-matched only; values come from a snapshot of the original data.
+	function applyFormulas( data ) {
+		var src = data.map( function ( r ) { return r.slice(); } );
+		function colIdx( letters ) {
+			var n = 0;
+			letters.toUpperCase().split( '' ).forEach( function ( ch ) { n = n * 26 + ( ch.charCodeAt( 0 ) - 64 ); } );
+			return n - 1;
+		}
+		return data.map( function ( row, r ) {
+			return row.map( function ( cell, c ) {
+				var m = /^=\s*(SUM|AVG|MIN|MAX)\s*\(\s*([A-Z]{1,2})(\d{1,4})\s*:\s*([A-Z]{1,2})(\d{1,4})\s*\)\s*$/i.exec( String( cell == null ? '' : cell ) );
+				if ( ! m ) { return cell; }
+				var fn = m[ 1 ].toUpperCase();
+				var c1 = colIdx( m[ 2 ] ), r1 = +m[ 3 ] - 1, c2 = colIdx( m[ 4 ] ), r2 = +m[ 5 ] - 1, t;
+				if ( c2 < c1 ) { t = c1; c1 = c2; c2 = t; }
+				if ( r2 < r1 ) { t = r1; r1 = r2; r2 = t; }
+				var vals = [];
+				for ( var ri = r1; ri <= r2; ri++ ) {
+					for ( var ci = c1; ci <= c2; ci++ ) {
+						if ( src[ ri ] && src[ ri ][ ci ] != null ) {
+							var n = cellNum( src[ ri ][ ci ] );
+							if ( n !== null ) { vals.push( n ); }
+						}
+					}
+				}
+				if ( ! vals.length ) { return fn === 'SUM' ? '0' : ''; }
+				var res;
+				if ( fn === 'SUM' ) { res = vals.reduce( function ( a, b ) { return a + b; }, 0 ); }
+				else if ( fn === 'AVG' ) { res = vals.reduce( function ( a, b ) { return a + b; }, 0 ) / vals.length; }
+				else if ( fn === 'MIN' ) { res = Math.min.apply( null, vals ); }
+				else { res = Math.max.apply( null, vals ); }
+				return fmtNum( res );
+			} );
+		} );
+	}
+
+	// #colspan# merges into the nearest real cell to the LEFT, #rowspan# into
+	// the nearest real cell ABOVE (never across the header/body boundary).
+	function computeSpans( data, headerOn ) {
+		var cs = {}, rs = {}, skip = {};
+		var bodyStart = headerOn ? 1 : 0;
+		data.forEach( function ( row, r ) {
+			row.forEach( function ( cell, c ) {
+				var v = String( cell == null ? '' : cell ).trim();
+				if ( v === '#colspan#' ) {
+					for ( var cc = c - 1; cc >= 0; cc-- ) {
+						var left = String( data[ r ][ cc ] == null ? '' : data[ r ][ cc ] ).trim();
+						if ( left !== '#colspan#' && left !== '#rowspan#' ) {
+							cs[ r + ':' + cc ] = ( cs[ r + ':' + cc ] || 1 ) + 1;
+							skip[ r + ':' + c ] = true;
+							break;
+						}
+					}
+				} else if ( v === '#rowspan#' ) {
+					var limit = r >= bodyStart ? bodyStart : 0;
+					for ( var rr = r - 1; rr >= limit; rr-- ) {
+						var up = String( ( data[ rr ] || [] )[ c ] == null ? '' : data[ rr ][ c ] ).trim();
+						if ( up !== '#colspan#' && up !== '#rowspan#' ) {
+							rs[ rr + ':' + c ] = ( rs[ rr + ':' + c ] || 1 ) + 1;
+							skip[ r + ':' + c ] = true;
+							break;
+						}
+					}
+				}
+			} );
+		} );
+		return { cs: cs, rs: rs, skip: skip };
+	}
+
 	function tableHtml( data, o ) {
 		if ( ! data.length ) { return ''; }
+		data = applyFormulas( data );
+		var sp = computeSpans( data, !! o.header );
 		var head = o.header ? data[ 0 ] : null;
 		var body = o.header ? data.slice( 1 ) : data;
 		var ncol = 0;
@@ -88,27 +181,43 @@
 		for ( var ci = 0; ci < ncol; ci++ ) {
 			var any = false, all = true;
 			for ( var ri = 0; ri < body.length; ri++ ) {
-				var v = body[ ri ][ ci ];
-				if ( String( v == null ? '' : v ).trim() === '' ) { continue; }
+				var v = String( body[ ri ][ ci ] == null ? '' : body[ ri ][ ci ] ).trim();
+				if ( v === '' || v === '#colspan#' || v === '#rowspan#' ) { continue; }
 				any = true;
 				if ( ! isNum( v ) ) { all = false; break; }
 			}
 			right[ ci ] = any && all;
 		}
 		function cls( i ) { return right[ i ] ? ' class="ht-r"' : ''; }
+		function spanAttr( r, c ) {
+			var a = '';
+			if ( sp.cs[ r + ':' + c ] ) { a += ' colspan="' + sp.cs[ r + ':' + c ] + '"'; }
+			if ( sp.rs[ r + ':' + c ] ) { a += ' rowspan="' + sp.rs[ r + ':' + c ] + '"'; }
+			return a;
+		}
+		function cellText( v ) {
+			v = String( v == null ? '' : v );
+			var tv = v.trim();
+			return ( tv === '#colspan#' || tv === '#rowspan#' ) ? '' : v;
+		}
 		var h = '<table>';
 		if ( o.caption ) { h += '<caption>' + escHtml( o.caption ) + '</caption>'; }
 		if ( head ) {
 			h += '<thead><tr>';
-			head.forEach( function ( c, i ) { h += '<th' + cls( i ) + '>' + escHtml( c ) + '</th>'; } );
+			head.forEach( function ( c, i ) {
+				if ( sp.skip[ '0:' + i ] ) { return; }
+				h += '<th' + cls( i ) + spanAttr( 0, i ) + '>' + escHtml( cellText( c ) ) + '</th>';
+			} );
 			h += '</tr></thead>';
 		}
 		h += '<tbody>';
-		body.forEach( function ( row ) {
+		body.forEach( function ( row, bi ) {
+			var r = o.header ? bi + 1 : bi;
 			h += '<tr>';
 			row.forEach( function ( c, i ) {
+				if ( sp.skip[ r + ':' + i ] ) { return; }
 				var lbl = head ? escAttr( head[ i ] || '' ) : '';
-				h += '<td data-label="' + lbl + '"' + cls( i ) + '>' + escHtml( c ) + '</td>';
+				h += '<td data-label="' + lbl + '"' + cls( i ) + spanAttr( r, i ) + '>' + escHtml( cellText( c ) ) + '</td>';
 			} );
 			h += '</tr>';
 		} );
@@ -331,6 +440,9 @@
 					'<span class="ht-tb-sheetmsg"></span>' +
 					'<span class="ht-tb-sheethint">' + escHtml( t( 'sheetHint', 'The sheet must be shared as “Anyone with the link can view”. With auto-refresh on, the table updates itself from the sheet.' ) ) + '</span>' +
 				'</div>' +
+				'<div class="ht-tb-cssrow" style="display:none;">' +
+					'<label>' + escHtml( t( 'cssL', 'Custom CSS' ) ) + ' <textarea class="ht-tb-css" rows="2" placeholder="' + escAttr( t( 'cssPh', '.ht-table-5 td { font-size: 14px; }' ) ) + '"></textarea></label>' +
+				'</div>' +
 				'<div class="ht-tb-tabs">' +
 					'<button type="button" class="ht-tb-tab active" data-tab="manual">' + escHtml( t( 'manual', 'Type it in' ) ) + '</button>' +
 					'<button type="button" class="ht-tb-tab" data-tab="paste">' + escHtml( t( 'paste', 'Paste from Excel' ) ) + '</button>' +
@@ -341,6 +453,7 @@
 					'<div class="ht-tb-pane" data-pane="manual">' +
 						'<div class="ht-tb-manualbar">' + escHtml( t( 'rowsL', 'Rows' ) ) + ' <input type="number" min="1" max="200" value="3" class="ht-tb-rows"> ' + escHtml( t( 'colsL', 'Columns' ) ) + ' <input type="number" min="1" max="40" value="3" class="ht-tb-cols"> <button type="button" class="button ht-tb-mkgrid">' + escHtml( t( 'mkgrid', 'Build grid' ) ) + '</button></div>' +
 						'<div class="ht-tb-grid"></div>' +
+						'<p class="ht-tb-mergehint">' + escHtml( t( 'mergeHint', 'Merge cells: type #colspan# to merge into the cell on the left, #rowspan# to merge into the cell above. Formulas: =SUM(B2:B10), also AVG / MIN / MAX.' ) ) + '</p>' +
 					'</div>' +
 					'<div class="ht-tb-pane" data-pane="paste" style="display:none;">' +
 						'<p class="ht-tb-hint">' + escHtml( t( 'pasteHint', 'Copy cells in Excel / Google Sheets (or paste CSV) and paste here:' ) ) + '</p>' +
@@ -386,6 +499,8 @@
 		els.sheet = overlay.querySelector( '.ht-tb-sheet' );
 		els.sync = overlay.querySelector( '.ht-tb-sync' );
 		els.sheetmsg = overlay.querySelector( '.ht-tb-sheetmsg' );
+		els.cssrow = overlay.querySelector( '.ht-tb-cssrow' );
+		els.css = overlay.querySelector( '.ht-tb-css' );
 		els.rows = overlay.querySelector( '.ht-tb-rows' );
 		els.cols = overlay.querySelector( '.ht-tb-cols' );
 		els.grid = overlay.querySelector( '.ht-tb-grid' );
@@ -486,7 +601,8 @@
 					data: data,
 					opts: opts(),
 					sheet: els.sheet ? els.sheet.value.trim() : '',
-					sync: els.sync ? els.sync.value : 'off'
+					sync: els.sync ? els.sync.value : 'off',
+					css: els.css ? els.css.value : ''
 				} );
 			}
 			closeIt();
@@ -525,6 +641,7 @@
 		if ( els.sheet ) { els.sheet.value = ''; }
 		if ( els.sync ) { els.sync.value = 'off'; }
 		if ( els.sheetmsg ) { els.sheetmsg.textContent = ''; }
+		if ( els.css ) { els.css.value = ''; }
 		uploadData = null;
 		if ( ! init ) { els.rows.value = 3; els.cols.value = 3; buildGrid(); switchTab( 'manual' ); return; }
 		var o = init.opts || {};
@@ -541,6 +658,7 @@
 		if ( els.pagesize ) { els.pagesize.value = o.pagesize || 10; }
 		if ( els.sheet && init.sheet != null ) { els.sheet.value = init.sheet; }
 		if ( els.sync && init.sync != null ) { els.sync.value = init.sync || 'off'; }
+		if ( els.css && init.css != null ) { els.css.value = init.css; }
 		if ( els.name && init.name != null ) { els.name.value = init.name; }
 		loadData( init.data || [] );
 		switchTab( 'manual' );
@@ -561,6 +679,10 @@
 			+ '.ht-tb-sheet{flex:1;min-width:220px;padding:5px 8px;border:1px solid #dcdcde;border-radius:4px;}'
 			+ '.ht-tb-sheetmsg{font-size:12px;}'
 			+ '.ht-tb-sheethint{flex-basis:100%;font-size:12px;color:#7a8590;}'
+			+ '.ht-tb-cssrow{padding:8px 18px 0;font-size:13px;}'
+			+ '.ht-tb-cssrow label{display:flex;align-items:flex-start;gap:6px;}'
+			+ '.ht-tb-css{flex:1;font-family:monospace;font-size:12px;padding:5px 8px;border:1px solid #dcdcde;border-radius:4px;}'
+			+ '.ht-tb-mergehint{margin:6px 0 0;font-size:12px;color:#7a8590;}'
 			+ '.ht-tb-tabs{display:flex;gap:4px;padding:10px 18px 0;flex-wrap:wrap;}'
 			+ '.ht-tb-tab{border:1px solid transparent;background:#f0f0f1;padding:8px 14px;border-radius:6px 6px 0 0;cursor:pointer;font-size:13px;}'
 			+ '.ht-tb-tab.active{background:#fff;border-color:#e2e4e7;border-bottom-color:#fff;font-weight:600;}'
@@ -613,7 +735,8 @@
 			// Title, name row and the primary button reflect the mode.
 			if ( els.title ) { els.title.textContent = mode === 'save' ? t( 'titleSave', 'Save a table' ) : t( 'title', 'Insert a table' ); }
 			if ( els.namerow ) { els.namerow.style.display = mode === 'save' ? 'block' : 'none'; }
-			if ( els.sheetrow ) { els.sheetrow.style.display = mode === 'save' ? 'block' : 'none'; }
+			if ( els.sheetrow ) { els.sheetrow.style.display = mode === 'save' ? 'flex' : 'none'; }
+			if ( els.cssrow ) { els.cssrow.style.display = mode === 'save' ? 'block' : 'none'; }
 			if ( els.insertBtn ) { els.insertBtn.textContent = mode === 'save' ? t( 'save', 'Save table' ) : t( 'insert', 'Insert table' ); }
 			applyInitial( pendingInitial );
 			renderPreview();

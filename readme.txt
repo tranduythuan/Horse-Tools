@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.48
+Stable tag: 1.2.49
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.49 =
+* **Tables, final piece: export, merged cells, formulas, per-table CSS.** Every stored table gains an **Export CSV** button (Excel-ready UTF-8, Vietnamese intact). Cells can be **merged**: type `#colspan#` to merge into the cell on the left, `#rowspan#` into the cell above — TablePress-compatible keywords, working in the header too and never crossing the header/body boundary. A safe **formula subset** computes totals at render time: a cell of exactly `=SUM(B2:B10)` (or AVG / MIN / MAX) is evaluated over the range — Vietnamese number formats understood, results formatted the same way; it is pattern-matched only, no expression engine, so nothing else can run. And each table accepts **its own custom CSS** (scoped by its `ht-table-{id}` class, printed only on pages showing that table; `<` is stripped so the style block can't be escaped). The builder shows a hint for the merge/formula keywords, and the live preview renders merges and formulas exactly like the site.
 
 = 1.2.48 =
 * **New: Google Sheets sync for stored tables.** Paste the link of a public Google Sheet (shared as “Anyone with the link can view”) into the table builder, click **Pull data**, and the sheet lands in the grid — no API key, no Google account connection, the server reads the sheet's CSV export directly. Optionally set the table to **refresh itself hourly or daily** (via WP-Cron), so editing the spreadsheet updates the website on its own; a **“Sync from Sheet”** button on the Tables screen refreshes on demand. Safety rails: only `docs.google.com` links are accepted, downloads are capped at 1 MB / 500 rows / 40 columns, every cell is sanitised as plain text, and a sheet that stops responding is retried on the next interval instead of hammering Google. Privacy: your server only ever *reads* the public sheet; nothing is sent.
@@ -469,6 +472,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.49 =
+Tables complete the TablePress-class set: CSV export, merged cells (#colspan#/#rowspan#), safe =SUM/AVG/MIN/MAX formulas, and per-table custom CSS.
 
 = 1.2.48 =
 Stored tables can now pull their data from a public Google Sheet and refresh hourly/daily — edit the spreadsheet, the website updates itself. No API key needed.
