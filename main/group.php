@@ -106,3 +106,46 @@ function horsetools_group_menu( $slug, $title, $icon, $callback, $position ) {
 		$position
 	);
 }
+
+/**
+ * Put the Horse Tools submenu in a deliberate order.
+ *
+ * Ordering by position argument alone does not work here: the module screens
+ * register without one and land wherever registration order puts them, so the
+ * grouped screens ended up interleaved with Extend and Clean. Sorting the built
+ * submenu once, after everything has registered, is the only way to get a
+ * predictable result — and anything not listed keeps its place at the end
+ * rather than disappearing, so a screen added later is never lost.
+ */
+function horsetools_group_sort_menu() {
+	global $submenu;
+	if ( empty( $submenu['horsetools-options'] ) ) {
+		return;
+	}
+	$order = array(
+		'horsetools-options',
+		'horsetools-speed-options',
+		'horsetools-seo-options',
+		'horsetools-security-options',
+		'horsetools-content-options',
+		'horsetools-display-options',
+		'horsetools-customers-options',
+		'horsetools-accounts-options',
+		'horsetools-tools-options',
+	);
+	$rank = array_flip( $order );
+	$last = count( $order );
+	$items = array_values( $submenu['horsetools-options'] );
+	// Stable sort: usort is not stable before PHP 8.0, and this plugin requires
+	// 8.1, so equal ranks keep their registration order.
+	usort(
+		$items,
+		function ( $a, $b ) use ( $rank, $last ) {
+			$ra = isset( $rank[ $a[2] ] ) ? $rank[ $a[2] ] : $last;
+			$rb = isset( $rank[ $b[2] ] ) ? $rank[ $b[2] ] : $last;
+			return $ra <=> $rb;
+		}
+	);
+	$submenu['horsetools-options'] = $items;
+}
+add_action( 'admin_menu', 'horsetools_group_sort_menu', 999 );

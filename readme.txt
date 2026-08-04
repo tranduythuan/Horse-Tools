@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.71
+Stable tag: 1.2.72
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.72 =
+* **Fixed: the “fix this” links in the site health panel led nowhere.** They pointed at the Overview screen, which held every setting until the previous release and now holds none, so clicking one looked like it worked and did nothing. Each link now goes to the screen that setting actually lives on.
+* Fixed the menu order — the grouped screens were interleaved with Extend and Clean, because a screen registered without a position lands wherever registration order happens to put it.
+* The group cards on Overview now fit two to a row instead of one.
 
 = 1.2.71 =
 * **The settings are now grouped by what they do.** Instead of one screen with thirteen tabs, there are eight screens named after the job: Speed, SEO, Security, Content, Appearance, Customers, Accounts & Email, and Tools. Nothing has been removed or renamed — a setting that was in the MEDIA tab is under Speed because compressing images is how you make pages lighter, and one that was in GOOGLE is under Accounts & Email because signing in with Google is a way for people to log in.
@@ -551,6 +556,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.72 =
+Fixes the site health panel links, which pointed at a screen that no longer holds settings.
 
 = 1.2.71 =
 Settings are now grouped across eight screens named after what they do. Nothing removed or renamed.

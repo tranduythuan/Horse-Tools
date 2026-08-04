@@ -26,15 +26,32 @@ function horsetools_health_report() {
 	$o  = (array) get_option( 'horsetools_settings', array() );
 	$ex = (array) get_option( 'horsetools_extend_settings', array() );
 
-	$sec  = admin_url( 'admin.php?page=horsetools-options' );
+	$sec = admin_url( 'admin.php?page=horsetools-options' );
+
+	// Which screen each checked setting now lives on. This was one page until
+	// the settings were grouped by subject in 1.2.71; left pointing at the old
+	// page, every "fix this" link landed on the Overview screen, which holds no
+	// settings at all — the link would look like it worked and do nothing.
+	// Listed by prefix rather than guessed, because there are only nine of them
+	// and a wrong guess fails silently.
+	$screens = array(
+		'scuri' => 'horsetools-security-options',
+		'speed' => 'horsetools-speed-options',
+		'media' => 'horsetools-speed-options', // image settings sit under Speed
+	);
+
 	// A fix link that jumps straight to the relevant control (opens its tab and
 	// scrolls to the exact field) instead of just reloading the page. The
 	// htadmin.js sidebar handler picks up the #ht-jump=<field-id> fragment.
-	$jump = function ( $key, $raw_id = '' ) use ( $sec ) {
+	$jump = function ( $key, $raw_id = '' ) use ( $sec, $screens ) {
+		$prefix = strtok( $key, '-' );
+		$url    = isset( $screens[ $prefix ] )
+			? admin_url( 'admin.php?page=' . $screens[ $prefix ] )
+			: $sec;
 		$id = '' !== $raw_id
 			? $raw_id
 			: ( function_exists( 'horsetools_field_id' ) ? horsetools_field_id( 'main', $key ) : '' );
-		return '' !== $id ? $sec . '#ht-jump=' . $id : $sec;
+		return '' !== $id ? $url . '#ht-jump=' . $id : $url;
 	};
 	$checks = array();
 

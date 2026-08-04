@@ -1850,7 +1850,7 @@ article.ht-box-font {
    The Overview screen used to hold every setting; it now points at the screens
    that do. Cards rather than a list because the description is what tells you
    which group a setting is in, and a list buries it. */
-.ht-grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:18px}
+.ht-grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:14px;margin-top:18px}
 .ht-gcard{display:block;padding:16px 18px;border:1px solid var(--ht-border,#e3e6ec);border-radius:12px;
   background:var(--ht-cardbg,#fff);text-decoration:none;color:inherit;transition:border-color .15s,transform .15s,box-shadow .15s}
 .ht-gcard:hover,.ht-gcard:focus-visible{border-color:var(--ht-accent,#2271b1);transform:translateY(-2px);
