@@ -20,6 +20,17 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  * @param array $tabs  id => array( label, icon, files[] ). Each file is a
  *                     section relative to the plugin directory.
  */
+/**
+ * Whether an optional module is switched on.
+ *
+ * @param string $key Module key from the Extend screen.
+ * @return bool
+ */
+function horsetools_module_on( $key ) {
+	$ex = (array) get_option( 'horsetools_extend_settings', array() );
+	return isset( $ex[ $key ] );
+}
+
 function horsetools_group_render( array $tabs ) {
 	global $horsetools_options;
 	ob_start();
@@ -35,7 +46,7 @@ function horsetools_group_render( array $tabs ) {
 			<span><?php horsetools_logo(); ?></span>
 			</a>
 			</div>
-			<?php $first = true; foreach ( $tabs as $id => $tab ) : ?>
+			<?php $first = true; foreach ( $tabs as $id => $tab ) : if ( ! empty( $tab['module'] ) && ! horsetools_module_on( $tab['module'] ) ) { continue; } ?>
 			<button class="sotab<?php echo $first ? ' sotab-select' : ''; ?>" onclick="httab(event, '<?php echo esc_attr( $id ); ?>')"><i class="ti <?php echo esc_attr( $tab['icon'] ); ?>"></i> <?php echo esc_html( $tab['label'] ); ?></button>
 			<?php $first = false; endforeach; ?>
 		</div>
@@ -51,13 +62,35 @@ function horsetools_group_render( array $tabs ) {
 			ob_start();
 			$first = true;
 			foreach ( $tabs as $id => $tab ) {
+				// A tab folded in from an optional module is only rendered when
+				// that module is switched on. Its markup calls functions that
+				// live in the module's own file, which is not loaded otherwise —
+				// rendering it regardless takes the whole screen down with a
+				// fatal, and because the sections render inside an output
+				// buffer the page dies half-drawn with no error on it.
+				if ( ! empty( $tab['module'] ) && ! horsetools_module_on( $tab['module'] ) ) {
+					continue;
+				}
 				printf(
 					'<div class="sotab-box htbox" id="%s"%s><div class="ht-card">',
 					esc_attr( $id ),
 					$first ? '' : ' style="display:none"'
 				);
 				foreach ( (array) $tab['files'] as $file ) {
-					include( HORSETOOLS_DIR . $file );
+					// One section must not be able to take the screen down.
+					// These sections render inside an output buffer, so a fatal
+					// in one stops the page half-drawn with no Save button and
+					// no error visible — which is exactly how 1.2.73 shipped
+					// broken. Catch it, say so in place, and carry on.
+					try {
+						include( HORSETOOLS_DIR . $file );
+					} catch ( Throwable $e ) {
+						printf(
+							'<p class="ht-note ht-note-red"><i class="ti ti-alert-triangle"></i> %s<br><code>%s</code></p>',
+							esc_html__( 'This section could not be displayed. The rest of the screen still works.', 'horse-tools' ),
+							esc_html( $e->getMessage() )
+						);
+					}
 				}
 				echo '</div></div>';
 				$first = false;

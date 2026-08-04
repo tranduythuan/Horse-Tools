@@ -26,6 +26,7 @@ function horsetools_security_page() {
 			'files' => array( 'main/section/sec-login.php', 'main/section/sec-recaptcha.php' ),
 		),
 		'sec-tab3' => array(
+			'module' => 'redirect',
 			'label' => __( 'Maintenance 503', 'horse-tools' ),
 			'icon'  => 'ti-bug',
 			'files' => array( 'main/section/sec-503.php' ),

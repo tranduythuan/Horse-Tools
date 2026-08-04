@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.73
+Stable tag: 1.2.74
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.74 =
+* **Fixes a critical error on the SEO screen introduced in 1.2.73.** The tabs folded in from Redirects, Index now and the table of contents belong to optional modules; on a site where one of those modules is switched off, the code behind that tab is not loaded and rendering it stopped the whole screen with a critical error. Those tabs now appear only when their module is on, exactly as their old menu entries did. Update straight past 1.2.73 if you are on it.
+* A section that fails can no longer take a whole screen down with it. It now says so in place and the rest of the screen — including the Save button — keeps working.
 
 = 1.2.73 =
 * **Redirects, Index now and the table of contents are now tabs on the SEO screen** instead of three separate menu entries. They were always SEO work; having them as their own items was what made the menu long without making anything easier to find. The maintenance page (503) went to Security, where it belongs — it was only next to redirects because they share a file.
@@ -561,6 +565,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.74 =
+Fixes a critical error on the SEO screen in 1.2.73. Update if you installed that version.
 
 = 1.2.73 =
 Redirects, Index now and the table of contents move onto the SEO screen as tabs.
