@@ -375,4 +375,5 @@ function horsetools_clean_options_page() {
 function horsetools_clean_options_link() {
 	add_submenu_page( 'horsetools-options', 'Clean', '<i class="ti ti-wash" style="width:20px;"></i> ' . __( 'Clean', 'horse-tools' ), 'manage_options', 'horsetools-clean-options', 'horsetools_clean_options_page' );
 }
-add_action( 'admin_menu', 'horsetools_clean_options_link' );
+// Menu removed in 1.2.77: now tabs on a grouped screen.
+// add_action( 'admin_menu', 'horsetools_clean_options_link' );

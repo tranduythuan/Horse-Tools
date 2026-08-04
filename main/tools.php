@@ -20,7 +20,43 @@ function horsetools_tools_page() {
 			'label' => __( 'Plugin settings', 'horse-tools' ),
 			'icon'  => 'ti-settings',
 			'files' => array( 'main/page/ht-setting.php' ),
-		),	) );
+		),		'tl-tab3' => array(
+			'label'  => __( 'Custom CSS', 'horse-tools' ),
+			'icon'   => 'ti-brush',
+			'module' => 'code',
+			'files'  => array( 'main/section/tl-code1.php' ),
+		),
+		'tl-tab4' => array(
+			'label'  => __( 'Code in head', 'horse-tools' ),
+			'icon'   => 'ti-code',
+			'module' => 'code',
+			'files'  => array( 'main/section/tl-code2.php' ),
+		),
+		'tl-tab5' => array(
+			'label'  => __( 'Code in body', 'horse-tools' ),
+			'icon'   => 'ti-code-plus',
+			'module' => 'code',
+			'files'  => array( 'main/section/tl-code3.php' ),
+		),
+		'tl-tab6' => array(
+			'label'  => __( 'Code in footer', 'horse-tools' ),
+			'icon'   => 'ti-code-minus',
+			'module' => 'code',
+			'files'  => array( 'main/section/tl-code4.php' ),
+		),
+		'tl-tab7' => array(
+			'label'  => __( 'Code on login', 'horse-tools' ),
+			'icon'   => 'ti-login',
+			'module' => 'code',
+			'files'  => array( 'main/section/tl-code5.php' ),
+		),
+		'tl-tab8' => array(
+			'label'  => __( 'Debug', 'horse-tools' ),
+			'icon'   => 'ti-bug',
+			'module' => 'debug',
+			'files'  => array( 'main/section/tl-debug1.php' ),
+		),
+	) );
 }
 
 function horsetools_tools_menu() {

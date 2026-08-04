@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.76
+Stable tag: 1.2.77
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.77 =
+* **Add code, Debug and Clean move onto grouped screens.** Custom CSS and the four code boxes plus the debug settings are tabs on Tools; the database cleanup is on Speed, because clearing out revisions and orphaned media is what it is actually for. Three more menu entries gone.
+* Old addresses still work.
 
 = 1.2.76 =
 * **Notifications, ads and site search move onto grouped screens.** The ad-block notice, notification bar, popup and cookie notice are now four tabs on Customers, next to ad clicks, AdSense and ads.txt; site search is a tab on Appearance. Three more menu entries gone, nothing removed.
@@ -574,6 +578,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.77 =
+Add code, Debug and Clean become tabs on the Tools and Speed screens.
 
 = 1.2.76 =
 Notifications, ads and site search become tabs on the Customers and Appearance screens.

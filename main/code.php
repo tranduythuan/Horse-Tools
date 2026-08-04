@@ -146,7 +146,8 @@ function horsetools_code_options_page() {
 function horsetools_code_options_link() {
 	add_submenu_page ('horsetools-options', 'Code', '<i class="ti ti-code" style="width:20px;"></i> '. __('Add code', 'horse-tools'), 'manage_options', 'horsetools-code-options', 'horsetools_code_options_page');
 }
-add_action('admin_menu', 'horsetools_code_options_link');
+// Menu removed in 1.2.77: now tabs on a grouped screen.
+// add_action('admin_menu', 'horsetools_code_options_link');
 function horsetools_code_register_settings() {
 	register_setting( 'horsetools_code_settings_group', 'horsetools_code_settings', array( 'sanitize_callback' => 'horsetools_sanitize_code' ) );
 }

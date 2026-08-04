@@ -20,7 +20,31 @@ function horsetools_speed_page() {
 			'label' => __( 'Images', 'horse-tools' ),
 			'icon'  => 'ti-photo',
 			'files' => array( 'main/page/5media.php' ),
-		),	) );
+		),		'sp-tab3' => array(
+			'label'  => __( 'Clean posts', 'horse-tools' ),
+			'icon'   => 'ti-pin',
+			'module' => 'clean',
+			'files'  => array( 'main/section/sp-clean1.php' ),
+		),
+		'sp-tab4' => array(
+			'label'  => __( 'Clean comments', 'horse-tools' ),
+			'icon'   => 'ti-message-circle',
+			'module' => 'clean',
+			'files'  => array( 'main/section/sp-clean2.php' ),
+		),
+		'sp-tab5' => array(
+			'label'  => __( 'Clean media', 'horse-tools' ),
+			'icon'   => 'ti-photo',
+			'module' => 'clean',
+			'files'  => array( 'main/section/sp-clean3.php' ),
+		),
+		'sp-tab6' => array(
+			'label'  => __( 'Cleanup schedule', 'horse-tools' ),
+			'icon'   => 'ti-history',
+			'module' => 'clean',
+			'files'  => array( 'main/section/sp-clean4.php' ),
+		),
+	) );
 }
 
 function horsetools_speed_menu() {

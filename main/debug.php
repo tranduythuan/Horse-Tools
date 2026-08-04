@@ -131,7 +131,8 @@ function horsetools_debug_options_page() {
 function horsetools_debug_options_link() {
 	add_submenu_page ('horsetools-options', 'Debug', '<i class="ti ti-settings" style="width:20px;"></i> '. __('Debug', 'horse-tools'), 'manage_options', 'horsetools-debug-options', 'horsetools_debug_options_page');
 }
-add_action('admin_menu', 'horsetools_debug_options_link');
+// Menu removed in 1.2.77: now tabs on a grouped screen.
+// add_action('admin_menu', 'horsetools_debug_options_link');
 function horsetools_debug_register_settings() {
 	register_setting( 'horsetools_debug_settings_group', 'horsetools_debug_settings', array( 'sanitize_callback' => 'horsetools_sanitize_debug' ) );
 }

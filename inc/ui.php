@@ -226,11 +226,8 @@ function horsetools_index_pages() {
 		'horsetools-accounts-options'  => 'horsetools_accounts_page',
 		'horsetools-tools-options'     => 'horsetools_tools_page',
 		'horsetools-extend-options'    => 'horsetools_extend_options_page',
-		'horsetools-code-options'      => 'horsetools_code_options_page',
-		'horsetools-clean-options'     => 'horsetools_clean_options_page',
 		'horsetools-shortcode-options' => 'horsetools_shortcode_options_page',
 		'horsetools-font-options'      => 'horsetools_font_options_page',
-		'horsetools-debug-options'     => 'horsetools_debug_options_page',
 		'horsetools-export-options'    => 'horsetools_export_options_page',
 	);
 }
