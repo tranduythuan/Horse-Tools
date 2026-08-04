@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.52
+Stable tag: 1.2.53
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.53 =
+* **Fix: the sidebar search box never actually appeared.** A long-standing timing bug — the admin script reads its settings index at load time, but since the script was moved into the page `<head>` (so that hosts which drop footer scripts don't break the tabs) the index, which is printed at the end of the page, did not exist yet. The whole sidebar panel — search box *and* the “Currently enabled” summary — silently did nothing. The script now reads the index when the page is ready, so both work. Found while live-testing the new plugin-wide search in 1.2.52.
 
 = 1.2.52 =
 * **The sidebar search now finds features across the WHOLE plugin.** It used to search only the screen you were on; with dozens of features spread over many screens and tabs, a new user had no way to know where anything lived. The search box (top of the sidebar on every Horse Tools screen) now indexes **every setting on every screen** — type a feature name and each result shows its full location (Screen › Tab › Section); click it and you land on the right screen with the right tab open and the exact control highlighted. Matching is diacritic-insensitive, so typing “bao mat” finds “Bảo mật”. Screen names themselves are searchable too. The index builds itself from the real settings screens (no hand-maintained list to go stale) and is cached per version and language.
@@ -481,6 +484,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.53 =
+Fixes the sidebar panel (search box and "Currently enabled" list) never rendering — required for 1.2.52's plugin-wide search to be usable at all.
 
 = 1.2.52 =
 The sidebar search now covers the whole plugin: find any feature by name (accents optional), click, and land on the right screen, tab and control.

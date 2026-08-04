@@ -142,6 +142,10 @@ sliders.forEach(function (slider) {
 (function () {
 	'use strict';
 
+	// Assigned for real on DOMContentLoaded: this file is enqueued in the HEAD
+	// (some hosts drop plugin footer scripts), while inc/ui.php prints the
+	// registry on admin_footer — so at IIFE time it is always undefined, which
+	// silently disabled the whole sidebar (search + "currently enabled").
 	var reg = window.horsetoolsRegistry;
 
 	/* ---- Dependent fields ------------------------------------------------
@@ -368,6 +372,7 @@ sliders.forEach(function (slider) {
 	window.addEventListener('hashchange', jumpFromHash);
 
 	document.addEventListener('DOMContentLoaded', function () {
+		reg = window.horsetoolsRegistry || reg;
 		syncDependents();
 		initSidebar();
 		initDirtyBar(document.querySelector('.ht-wrap form[action$="options.php"]'));
