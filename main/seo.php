@@ -24,7 +24,26 @@ function horsetools_seo_page() {
 			'icon'  => 'ti-help-circle',
 			'files' => array( 'main/section/seo-faq.php' ),
 		),
-	) );
+		'seo-tab3' => array(
+			'label' => __( 'Redirects 301', 'horse-tools' ),
+			'icon'  => 'ti-compass',
+			'files' => array( 'main/section/seo-301.php' ),
+		),
+		'seo-tab4' => array(
+			'label' => __( 'Broken links 404', 'horse-tools' ),
+			'icon'  => 'ti-ban',
+			'files' => array( 'main/section/seo-404.php' ),
+		),
+		'seo-tab5' => array(
+			'label' => __( 'Index now', 'horse-tools' ),
+			'icon'  => 'ti-hand-finger',
+			'files' => array( 'main/section/seo-index.php', 'main/section/seo-index2.php' ),
+		),
+		'seo-tab6' => array(
+			'label' => __( 'Table of contents', 'horse-tools' ),
+			'icon'  => 'ti-list',
+			'files' => array( 'main/section/seo-toc.php' ),
+		),	) );
 }
 
 function horsetools_seo_menu() {

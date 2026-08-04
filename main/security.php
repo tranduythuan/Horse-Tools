@@ -25,6 +25,11 @@ function horsetools_security_page() {
 			'icon'  => 'ti-login',
 			'files' => array( 'main/section/sec-login.php', 'main/section/sec-recaptcha.php' ),
 		),
+		'sec-tab3' => array(
+			'label' => __( 'Maintenance 503', 'horse-tools' ),
+			'icon'  => 'ti-bug',
+			'files' => array( 'main/section/sec-503.php' ),
+		),
 	) );
 }
 

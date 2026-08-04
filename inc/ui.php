@@ -231,9 +231,6 @@ function horsetools_index_pages() {
 		'horsetools-notify-options'    => 'horsetools_notify_options_page',
 		'horsetools-shortcode-options' => 'horsetools_shortcode_options_page',
 		'horsetools-font-options'      => 'horsetools_font_options_page',
-		'horsetools-redirects-options' => 'horsetools_redirects_options_page',
-		'horsetools-gindex-options'    => 'horsetools_gindex_options_page',
-		'horsetools-toc-options'       => 'horsetools_toc_options_page',
 		'horsetools-ads-options'       => 'horsetools_ads_options_page',
 		'horsetools-search-options'    => 'horsetools_search_options_page',
 		'horsetools-debug-options'     => 'horsetools_debug_options_page',
@@ -586,6 +583,27 @@ function horsetools_scope_from_html( $html, $option ) {
  *                          more than one screen, or each screen would claim
  *                          the others' keys and erase them on save.
  */
+function horsetools_scope_print_all( $html ) {
+	// A grouped screen can hold sections belonging to different option groups —
+	// the SEO screen carries FAQ settings from the shared blob next to
+	// redirects and the table of contents, each with its own option. Every one
+	// of them needs its own declaration, or the ones without would be rewritten
+	// wholesale on save and lose whatever that screen does not render.
+	foreach ( horsetools_option_names() as $option ) {
+		$keys = horsetools_scope_from_html( $html, $option );
+		if ( ! $keys ) {
+			continue;
+		}
+		printf(
+			'<input type="hidden" name="%s[%s]" value="%s">' . "\n",
+			esc_attr( $option ),
+			esc_attr( HORSETOOLS_SCOPE_FIELD ),
+			esc_attr( implode( ',', $keys ) )
+		);
+	}
+	echo $html; // phpcs:ignore WordPress.Security.EscapeOutput -- already-rendered form markup
+}
+
 function horsetools_scope_print( $html, $option, $owns_all = false ) {
 	$keys = horsetools_scope_from_html( $html, $option );
 	if ( $owns_all ) {

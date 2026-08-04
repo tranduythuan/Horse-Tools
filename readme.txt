@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.72
+Stable tag: 1.2.73
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.73 =
+* **Redirects, Index now and the table of contents are now tabs on the SEO screen** instead of three separate menu entries. They were always SEO work; having them as their own items was what made the menu long without making anything easier to find. The maintenance page (503) went to Security, where it belongs — it was only next to redirects because they share a file.
+* Old bookmarks still work: the previous addresses now take you to the right tab rather than showing a permissions error.
+* Behind this, a screen can now hold settings from several groups at once and still save each one without touching the others — the SEO screen writes four different stored settings from a single Save button.
 
 = 1.2.72 =
 * **Fixed: the “fix this” links in the site health panel led nowhere.** They pointed at the Overview screen, which held every setting until the previous release and now holds none, so clicking one looked like it worked and did nothing. Each link now goes to the screen that setting actually lives on.
@@ -556,6 +561,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.73 =
+Redirects, Index now and the table of contents move onto the SEO screen as tabs.
 
 = 1.2.72 =
 Fixes the site health panel links, which pointed at a screen that no longer holds settings.

@@ -208,7 +208,8 @@ function horsetools_gindex_options_page() {
 function horsetools_gindex_options_link() {
 	add_submenu_page ('horsetools-options', 'Index', '<i class="ti ti-hand-finger" style="width:20px;"></i> '. __('Index now', 'horse-tools'), 'manage_options', 'horsetools-gindex-options', 'horsetools_gindex_options_page');
 }
-add_action('admin_menu', 'horsetools_gindex_options_link');
+// Menu removed in 1.2.73: now the "Index now" tab on the SEO screen.
+// add_action('admin_menu', 'horsetools_gindex_options_link');
 function horsetools_gindex_register_settings() {
 	register_setting( 'horsetools_gindex_settings_group', 'horsetools_gindex_settings', array( 'sanitize_callback' => 'horsetools_sanitize_gindex' ) );
 }

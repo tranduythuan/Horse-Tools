@@ -1,31 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
-function horsetools_toc_options_page() {
-	global $horsetools_toc_options;
-	ob_start(); 
-	?>
-	<div class="wrap ht-wrap">
-	<div class="ht-wrap-top">
-	</div>
-	<div class="ht-wrap2">
-	  <div class="ht-box">
-		<div class="ht-menu">
-			<div class="ht-logo ht-logoquay">
-			<a class="ht-logoquaya" href="https://tranduythuan.com/" target="_blank">
-			<span><?php horsetools_logo(); ?></span>
-			</a>
-			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-list"></i> <?php _e('TOC', 'horse-tools'); ?></button>
-		</div>
-
-		<div class="ht-main">
-			<?php 
-			if( isset($_GET['settings-updated']) ) { 
-				require_once( HORSETOOLS_DIR . 'main/completed.php'); 
-			}
-			?>
-			<form method="post" action="options.php">
-			<?php settings_fields('horsetools_toc_settings_group'); ?> 
+global $horsetools_toc_options; ?>
 			<!-- SETTING -->
 			<div class="sotab-box htbox" id="tab1" >
 			<h2><?php _e('TOC', 'horse-tools'); ?></h2>
@@ -275,34 +250,3 @@ function horsetools_toc_options_page() {
 				
 			</div>
 			</div>
-			<div class="ht-submit">
-				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
-			</div>
-				<button id="ht-save-fast" type="submit"><i class="ti ti-device-floppy"></i></button>
-			</form>
-		</div>
-	  </div>
-      <div class="ht-sidebar">
-	  </div>
-	</div>	
-	</div>
-	<?php
-	// style horsetools
-	require_once( HORSETOOLS_DIR . 'main/style.php');
-	echo ob_get_clean();
-}
-function horsetools_toc_options_link() {
-	add_submenu_page ('horsetools-options', 'Toc', '<i class="ti ti-list" style="width:20px;"></i> '. __('TOC', 'horse-tools'), 'manage_options', 'horsetools-toc-options', 'horsetools_toc_options_page');
-}
-// Menu removed in 1.2.73: now the "Table of contents" tab on the SEO screen.
-// add_action('admin_menu', 'horsetools_toc_options_link');
-function horsetools_toc_register_settings() {
-	register_setting( 'horsetools_toc_settings_group', 'horsetools_toc_settings', array( 'sanitize_callback' => 'horsetools_sanitize_toc' ) );
-}
-add_action('admin_init', 'horsetools_toc_register_settings');
-// clear cache
-function horsetools_toc_settings_cache($old_value, $value) {
-    wp_cache_delete('horsetools_toc_settings', 'options');
-}
-add_action('update_option_horsetools_toc_settings', 'horsetools_toc_settings_cache', 10, 2);
-

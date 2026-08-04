@@ -62,7 +62,7 @@ function horsetools_group_render( array $tabs ) {
 				echo '</div></div>';
 				$first = false;
 			}
-			horsetools_scope_print( ob_get_clean(), 'horsetools_settings' );
+			horsetools_scope_print_all( ob_get_clean() );
 			?>
 			<div class="ht-submit">
 				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e( 'SAVE CONTENT', 'horse-tools' ); ?></button>
@@ -149,3 +149,24 @@ function horsetools_group_sort_menu() {
 	$submenu['horsetools-options'] = $items;
 }
 add_action( 'admin_menu', 'horsetools_group_sort_menu', 999 );
+
+/**
+ * Send the old per-module screens to where their settings moved.
+ *
+ * Bookmarks and the links inside older documentation still point at these
+ * slugs. Without this they would hit "Sorry, you are not allowed to access this
+ * page", which reads like a permissions problem rather than a page that moved.
+ */
+function horsetools_group_legacy_redirect() {
+	$moved = array(
+		'horsetools-redirects-options' => 'horsetools-seo-options',
+		'horsetools-gindex-options'    => 'horsetools-seo-options',
+		'horsetools-toc-options'       => 'horsetools-seo-options',
+	);
+	$page = isset( $_GET['page'] ) ? sanitize_key( wp_unslash( $_GET['page'] ) ) : '';
+	if ( isset( $moved[ $page ] ) && current_user_can( 'manage_options' ) ) {
+		wp_safe_redirect( admin_url( 'admin.php?page=' . $moved[ $page ] ) );
+		exit;
+	}
+}
+add_action( 'admin_init', 'horsetools_group_legacy_redirect' );

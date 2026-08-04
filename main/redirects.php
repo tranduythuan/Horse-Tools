@@ -320,7 +320,8 @@ function horsetools_redirects_options_page() {
 function horsetools_redirects_options_link() {
 	add_submenu_page ('horsetools-options', 'Redirects', '<i class="ti ti-compass" style="width:20px;"></i> '. __('Redirects', 'horse-tools'), 'manage_options', 'horsetools-redirects-options', 'horsetools_redirects_options_page');
 }
-add_action('admin_menu', 'horsetools_redirects_options_link');
+// Menu removed in 1.2.73: these settings are tabs on the SEO screen now.
+// add_action('admin_menu', 'horsetools_redirects_options_link');
 function horsetools_redirects_register_settings() {
 	register_setting( 'horsetools_redirects_settings_group', 'horsetools_redirects_settings', array( 'sanitize_callback' => 'horsetools_sanitize_redirects' ) );
 }
