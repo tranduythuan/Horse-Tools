@@ -17,7 +17,6 @@ function horsetools_options_page() {
 			</a>
 			</div>
 			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-gauge"></i> <?php _e('OPTIMIZE', 'horse-tools'); ?></button>
-			<button class="sotab" onclick="httab(event, 'tab2')"><i class="ti ti-shield-half"></i> <?php _e('SECURITY', 'horse-tools'); ?></button>
 			<button class="sotab" onclick="httab(event, 'tab3')"><i class="ti ti-tools"></i> <?php _e('TOOL', 'horse-tools'); ?></button>
 			<button class="sotab" onclick="httab(event, 'tab4')"><i class="ti ti-device-desktop"></i> <?php _e('DISPLAY', 'horse-tools'); ?></button>
 			<button class="sotab" onclick="httab(event, 'tab5')"><i class="ti ti-photo"></i> <?php _e('MEDIA', 'horse-tools'); ?></button>
@@ -39,18 +38,14 @@ function horsetools_options_page() {
 			<?php horsetools_save_fields(); ?>
 			<?php
 			// Buffer the tabs so the form can declare which option keys it
-			// writes. Today it renders all of them and the declaration changes
-			// nothing; it is what lets these tabs be split across screens
-			// later without one screen's save erasing another's settings.
+			// writes. Tabs are moving out to their own screens one at a time,
+			// and the declaration is what stops this screen's save from
+			// erasing the settings that have already left.
 			ob_start();
 			?>
 			<!-- trang toi uu -->
 			<div class="sotab-box htbox" id="tab1">
 				<?php include( HORSETOOLS_DIR . 'main/page/1speed.php'); ?>
-			</div>
-			<!-- trang bao mat -->
-			<div class="sotab-box htbox" id="tab2" style="display:none">	
-				<?php include( HORSETOOLS_DIR . 'main/page/2scuri.php'); ?>
 			</div>
 			<!-- trang cong cu -->
 			<div class="sotab-box htbox" id="tab3" style="display:none">	

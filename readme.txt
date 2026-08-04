@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.69
+Stable tag: 1.2.70
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.70 =
+* **There is now a Security screen, and protecting your login is finally in one place.** It was split across three unrelated tabs: the lockout, security question and two-factor settings under SECURITY; the reCAPTCHA check under GOOGLE, because reCAPTCHA happens to be a Google product; and moving or restyling the login page under CUSTOM. Anyone hardening their login had to know to visit all three. It is one job, so it is one screen.
+* Like the SEO settings before them, reCAPTCHA and the login-page settings no longer depend on the tab they came from being switched on.
+* Internally the screens now share one shell rather than each being its own copy. Nine hand-written near-copies would have drifted apart, which is how the settings came to need reorganising in the first place.
 
 = 1.2.69 =
 * **There is now an SEO screen.** Everything on it already existed, buried in the CONTENT tab: removing the category and tag slug from permalinks, adding .html to pages, using image titles as alt text, adding nofollow and a new tab to external links, and the automatic FAQ schema. None of it was findable by anyone looking for SEO — which is how a site owner reasonably concludes the plugin has no SEO features. Nothing about what these settings do has changed, only where they live.
@@ -541,6 +546,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.70 =
+Adds a Security screen that reunites login protection from three separate tabs.
 
 = 1.2.69 =
 Adds an SEO screen holding settings that were previously buried in the CONTENT tab.

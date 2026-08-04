@@ -46,7 +46,9 @@ function horsetools_load_admin_files() {
         'main/extend.php',
         // Always present: SEO is not an optional module, it is a home for
         // settings that already existed and were simply hard to find.
+        'main/group.php',
         'main/seo.php',
+        'main/security.php',
     );
     foreach ($optional_files as $key => $file) {
         if (isset($horsetools_extend_options[$key])) {
@@ -130,7 +132,11 @@ if (isset($horsetools_extend_options) && is_array($horsetools_extend_options)) {
  * turns on exactly that feature and nothing else.
  */
 $horsetools_orphan_keys = array(
-    'post' => array( 'post-link1', 'post-link2', 'post-html1', 'post-alt1', 'post-out1', 'faq-schema1' ),
+    'post'   => array( 'post-link1', 'post-link2', 'post-html1', 'post-alt1', 'post-out1', 'faq-schema1' ),
+    // Moving or restyling the login page came from the CUSTOM tab, and the
+    // reCAPTCHA check from GOOGLE. Both now live on the Security screen.
+    'custom' => array( 'custom-ad1', 'custom-main1' ),
+    'goo'    => array( 'goo-cap1' ),
 );
 
 if (isset($horsetools_options) && is_array($horsetools_options)) {
