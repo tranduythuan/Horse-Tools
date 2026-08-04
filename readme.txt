@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.67
+Stable tag: 1.2.68
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.68 =
+* **One Save button can now write more than one group of settings.** WordPress binds a settings form to exactly one stored option, which is fine while each screen maps to one option and stops being fine as soon as screens are grouped by subject: an SEO screen holds the FAQ settings alongside redirects, index-now and the table of contents, and each of those is a separate option — four forms and four Save buttons on one screen. Saving now goes through its own handler that writes any number of options from a single submission, while each one still only rewrites the keys that screen actually rendered.
+* Measured before changing anything, and the earlier plan for this release was aimed at the wrong target. Loading admin PHP was not the cost: the settings screen sends 546 KB of HTML and 4,388 elements, of which 260 KB is the twelve tabs you are not looking at (the chat tab alone is 100 KB). That is fixed by splitting the screen up, which is the next release, so rearranging the loading of files that are about to be reorganised anyway was dropped rather than done twice.
+* No visible change. The existing screen posts through the new handler and still saves exactly as before.
 
 = 1.2.67 =
 * **Fixed: the daily cleanup has never actually run.** Three modules were skipped on any request that was not the admin area, to keep them off page views. WP-Cron is not an admin request, so the file that handles the scheduled cleanup was skipped there too — the event fired, found nothing listening, and WordPress marked it done and rescheduled it. It failed silently rather than erroring, which is why it went unnoticed. Loading is now decided by a test that counts cron and WP-CLI as well as the admin area, so the handler is present when the event fires. Turn the schedule off and on again if you want to be sure of a fresh next-run time.
@@ -531,6 +536,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.68 =
+Internal: one Save button can now write several settings groups. No visible change.
 
 = 1.2.67 =
 Fixes a scheduled cleanup that never ran, and stops page views loading admin-only code.

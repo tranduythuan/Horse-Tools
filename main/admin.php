@@ -35,8 +35,8 @@ function horsetools_options_page() {
 			<?php if( isset($_GET['settings-updated']) ) {
 				require_once( HORSETOOLS_DIR . 'main/completed.php');
 			} ?>
-			<form method="post" action="options.php">
-			<?php settings_fields('horsetools_settings_group'); ?>
+			<form method="post" action="<?php echo esc_url( horsetools_save_url() ); ?>">
+			<?php horsetools_save_fields(); ?>
 			<?php
 			// Buffer the tabs so the form can declare which option keys it
 			// writes. Today it renders all of them and the declaration changes
