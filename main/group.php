@@ -76,6 +76,13 @@ function horsetools_group_render( array $tabs ) {
 					esc_attr( $id ),
 					$first ? '' : ' style="display:none"'
 				);
+				// Sections are buffered separately so a tab strip that came with
+				// a section can be neutralised. httab() hides every .htbox on
+				// the screen, so a .sotab-box nested inside a tab stays hidden
+				// even when its parent tab is shown — the tab opens and looks
+				// empty. Sections lifted out of screens that had their own tabs
+				// carry one of these, and it is invisible until someone clicks.
+				ob_start();
 				foreach ( (array) $tab['files'] as $file ) {
 					// One section must not be able to take the screen down.
 					// These sections render inside an output buffer, so a fatal
@@ -92,6 +99,11 @@ function horsetools_group_render( array $tabs ) {
 						);
 					}
 				}
+				echo preg_replace(
+					'~(<[^>]*class="[^"]*)\bsotab-box\b([^"]*)\bhtbox\b~',
+					'$1ht-subsection$2',
+					ob_get_clean()
+				); // phpcs:ignore WordPress.Security.EscapeOutput -- already-rendered section markup
 				echo '</div></div>';
 				$first = false;
 			}

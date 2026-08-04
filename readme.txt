@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.74
+Stable tag: 1.2.75
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.75 =
+* **Fixed: the table of contents tab on the SEO screen opened empty.** It kept the tab strip from its old screen, and a tab inside a tab stays hidden — so clicking it showed nothing at all while the settings were still there in the page. Only visible with the table of contents module switched on, which is why it survived the previous release.
+* A section can no longer bring a tab strip of its own onto a grouped screen, so this cannot happen again as the remaining screens are folded in.
 
 = 1.2.74 =
 * **Fixes a critical error on the SEO screen introduced in 1.2.73.** The tabs folded in from Redirects, Index now and the table of contents belong to optional modules; on a site where one of those modules is switched off, the code behind that tab is not loaded and rendering it stopped the whole screen with a critical error. Those tabs now appear only when their module is on, exactly as their old menu entries did. Update straight past 1.2.73 if you are on it.
@@ -565,6 +569,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.75 =
+Fixes the table of contents tab opening empty on the SEO screen.
 
 = 1.2.74 =
 Fixes a critical error on the SEO screen in 1.2.73. Update if you installed that version.

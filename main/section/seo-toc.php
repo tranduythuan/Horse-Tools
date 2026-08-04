@@ -2,7 +2,6 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_toc_options; ?>
 			<!-- SETTING -->
-			<div class="sotab-box htbox" id="tab1" >
 			<h2><?php _e('TOC', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="ti ti-list"></i> <?php _e('Table of contents configuration', 'horse-tools') ?></h3>
@@ -248,5 +247,4 @@ global $horsetools_toc_options; ?>
 				<span><?php _e('Border distance', 'horse-tools'); ?> <span id="demo4"></span> PX</span>
 				</p>	
 				
-			</div>
 			</div>
