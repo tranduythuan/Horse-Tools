@@ -231,8 +231,20 @@ sliders.forEach(function (slider) {
 	}
 
 	/* ---- Sidebar: search + what's enabled --------------------------------- */
+	// A search hit points either at an element id or, for controls that have no
+	// id (the hand-written screens), at "name:<input name>".
+	function resolveTarget(token) {
+		if (!token) { return null; }
+		if (token.indexOf('name:') === 0) {
+			try {
+				return document.querySelector('[name="' + token.slice(5).replace(/"/g, '\\"') + '"]');
+			} catch (e) { return null; }
+		}
+		return document.getElementById(token);
+	}
+
 	function jumpTo(id) {
-		var el = document.getElementById(id);
+		var el = resolveTarget(id);
 		if (!el) { return; }
 		// Reveal the tab that holds it before scrolling.
 		var box = el.closest('.sotab-box');
@@ -272,7 +284,7 @@ sliders.forEach(function (slider) {
 		btn.addEventListener('click', function () {
 			// On this page: open the tab and flash the control. On another page:
 			// deep-link there — #ht-jump is handled on load at the destination.
-			if (document.getElementById(field.id)) {
+			if (resolveTarget(field.id)) {
 				jumpTo(field.id);
 			} else if (field.page) {
 				window.location.href = 'admin.php?page=' + encodeURIComponent(field.page)
@@ -367,7 +379,7 @@ sliders.forEach(function (slider) {
 		var m = /#ht-jump=([^&]+)/.exec(a.getAttribute('href') || '');
 		if (!m) { return; }
 		var id = decodeURIComponent(m[1]);
-		if (document.getElementById(id)) { e.preventDefault(); jumpTo(id); }
+		if (resolveTarget(id)) { e.preventDefault(); jumpTo(id); }
 	});
 	window.addEventListener('hashchange', jumpFromHash);
 

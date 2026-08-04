@@ -244,6 +244,128 @@ function horsetools_index_pages() {
  * and locale — labels are translated strings). Cost is a one-off on the first
  * plugin screen after an update or language switch.
  */
+/** Readable one-line text of a node: tags out, whitespace collapsed, capped. */
+function horsetools_index_text( $node ) {
+	$t = trim( preg_replace( '/\s+/u', ' ', (string) $node->textContent ) );
+	if ( function_exists( 'mb_substr' ) && function_exists( 'mb_strlen' ) && mb_strlen( $t ) > 90 ) {
+		$t = mb_substr( $t, 0, 90 ) . '…';
+	}
+	return $t;
+}
+
+/**
+ * Pull settings out of a rendered screen by reading its HTML.
+ *
+ * Screens built with the inc/ui.php helpers register themselves, but several
+ * older screens (Extend, Add code, Cleanup, …) are hand-written markup and
+ * register nothing — so their settings were invisible to the search. Rather
+ * than rewrite those screens (a large, risky change for a search feature),
+ * this reads the markup they just produced: every control whose name belongs
+ * to the plugin becomes an index entry, with its label taken from the real
+ * <label>, its tab from the tab button it sits under, and its section from the
+ * nearest heading above it. Nothing to keep in sync — whatever a screen
+ * renders is what the search finds.
+ *
+ * Controls without an id are addressed by name (target "name:<input name>"),
+ * which the admin script resolves the same way as an id.
+ */
+function horsetools_index_scan_html( $html, $slug ) {
+	$out = array();
+	if ( '' === trim( (string) $html ) || ! class_exists( 'DOMDocument' ) ) {
+		return $out;
+	}
+
+	$prev = libxml_use_internal_errors( true );
+	$doc  = new DOMDocument();
+	// The meta tag is what makes libxml treat the markup as UTF-8; without it
+	// every Vietnamese label comes back mojibake.
+	$doc->loadHTML( '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">' . $html );
+	libxml_clear_errors();
+	libxml_use_internal_errors( $prev );
+	$xp = new DOMXPath( $doc );
+
+	$has_class = function ( $cls ) {
+		return 'contains(concat(" ", normalize-space(@class), " "), " ' . $cls . ' ")';
+	};
+
+	// Tab pane id => the visible name of its tab button.
+	$tabs = array();
+	foreach ( $xp->query( '//button[' . $has_class( 'sotab' ) . ']' ) as $btn ) {
+		if ( preg_match( '/httab\(\s*event\s*,\s*[\'"]([^\'"]+)/', $btn->getAttribute( 'onclick' ), $m ) ) {
+			$tabs[ $m[1] ] = horsetools_index_text( $btn );
+		}
+	}
+
+	$seen = array();
+	foreach ( $xp->query( '//input[@name] | //select[@name] | //textarea[@name]' ) as $el ) {
+		$name = $el->getAttribute( 'name' );
+		if ( 0 !== strpos( $name, 'horsetools_' ) ) {
+			continue;
+		}
+		$type = strtolower( $el->getAttribute( 'type' ) );
+		if ( in_array( $type, array( 'hidden', 'submit', 'button', 'reset' ), true ) ) {
+			continue;
+		}
+		$id = $el->getAttribute( 'id' );
+		if ( isset( $seen[ $name . '|' . $id ] ) ) {
+			continue;
+		}
+		$seen[ $name . '|' . $id ] = true;
+
+		// Label: an explicit <label for>, then a wrapping <label>, then the
+		// control's own hints, then the settings key itself.
+		$label = '';
+		if ( '' !== $id && preg_match( '/^[A-Za-z0-9_:.\-]+$/', $id ) ) {
+			$for = $xp->query( '//label[@for="' . $id . '"]' );
+			if ( $for->length ) {
+				$label = horsetools_index_text( $for->item( 0 ) );
+			}
+		}
+		if ( '' === $label ) {
+			$wrap = $xp->query( 'ancestor::label[1]', $el );
+			if ( $wrap->length ) {
+				$label = horsetools_index_text( $wrap->item( 0 ) );
+			}
+		}
+		foreach ( array( 'placeholder', 'aria-label', 'title' ) as $attr ) {
+			if ( '' === $label && $el->hasAttribute( $attr ) ) {
+				$label = trim( preg_replace( '/\s+/u', ' ', $el->getAttribute( $attr ) ) );
+			}
+		}
+		if ( '' === $label && preg_match( '/\[([^\]]+)\]/', $name, $k ) ) {
+			$label = $k[1];
+		}
+		if ( '' === $label ) {
+			continue;
+		}
+
+		$tab = '';
+		$box = $xp->query( 'ancestor::*[' . $has_class( 'sotab-box' ) . '][1]', $el );
+		if ( $box->length ) {
+			$bid = $box->item( 0 )->getAttribute( 'id' );
+			if ( isset( $tabs[ $bid ] ) ) {
+				$tab = $tabs[ $bid ];
+			}
+		}
+
+		$section = '';
+		$head    = $xp->query( '(preceding::h2|preceding::h3|preceding::h4)[last()]', $el );
+		if ( $head->length ) {
+			$section = horsetools_index_text( $head->item( 0 ) );
+		}
+
+		$out[] = array(
+			'id'      => '' !== $id ? $id : 'name:' . $name,
+			'key'     => preg_match( '/\[([^\]]+)\]/', $name, $k2 ) ? $k2[1] : $name,
+			'label'   => $label,
+			'tab'     => $tab,
+			'section' => $section,
+			'page'    => $slug,
+		);
+	}
+	return $out;
+}
+
 function horsetools_global_field_index() {
 	global $horsetools_field_registry;
 
@@ -272,16 +394,27 @@ function horsetools_global_field_index() {
 		} catch ( \Throwable $e ) {
 			// A page that fails to render simply contributes nothing.
 		}
-		ob_end_clean();
+		$html = ob_get_clean();
+
+		// Registered fields first — their labels and sections are the curated
+		// ones — then anything else the markup reveals.
+		$known = array();
 		foreach ( horsetools_get_field_registry() as $field ) {
-			$index[] = array(
-				'id'      => horsetools_field_id( $field['module'], $field['key'] ),
+			$fid           = horsetools_field_id( $field['module'], $field['key'] );
+			$known[ $fid ] = true;
+			$index[]       = array(
+				'id'      => $fid,
 				'key'     => $field['key'],
 				'label'   => $field['label'],
 				'tab'     => $field['tab'],
 				'section' => $field['section'],
 				'page'    => $slug,
 			);
+		}
+		foreach ( horsetools_index_scan_html( $html, $slug ) as $scanned ) {
+			if ( ! isset( $known[ $scanned['id'] ] ) ) {
+				$index[] = $scanned;
+			}
 		}
 	}
 

@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.53
+Stable tag: 1.2.54
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.54 =
+* **The search now covers every setting in the plugin, on every screen.** In 1.2.52 only screens built with the newer settings framework were indexed; the older hand-written screens (Extend, Add code, Cleanup and friends) contributed nothing but their name. The index now also *reads the markup each screen produces*: every control belonging to the plugin is picked up, with its label taken from its real `<label>`, its tab from the tab button it sits under, and its section from the nearest heading above it. Controls that have no HTML id are addressed by their field name, so clicking a result still lands on the exact control. Nothing has to be maintained by hand — whatever a screen renders is what the search finds, including anything added in future.
 
 = 1.2.53 =
 * **Fix: the sidebar search box never actually appeared.** A long-standing timing bug — the admin script reads its settings index at load time, but since the script was moved into the page `<head>` (so that hosts which drop footer scripts don't break the tabs) the index, which is printed at the end of the page, did not exist yet. The whole sidebar panel — search box *and* the “Currently enabled” summary — silently did nothing. The script now reads the index when the page is ready, so both work. Found while live-testing the new plugin-wide search in 1.2.52.
@@ -484,6 +487,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.54 =
+Search coverage is now complete: every setting on every screen is findable, including the older hand-written screens.
 
 = 1.2.53 =
 Fixes the sidebar panel (search box and "Currently enabled" list) never rendering — required for 1.2.52's plugin-wide search to be usable at all.
