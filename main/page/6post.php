@@ -291,25 +291,27 @@ global $horsetools_options; ?>
 	) ); ?>
 
 	<?php horsetools_input( 'faq-min', __( 'Minimum number of questions', 'horse-tools' ), array(
-		'tab'     => 'CONTENT',
-		'section' => 'FAQ schema',
-		'parent'  => 'faq-schema1',
-		'type'    => 'number',
-		'min'     => 1,
-		'max'     => 20,
-		'class'   => 'ht-input-small',
-		'description' => __( 'Posts with fewer questions than this get no schema. Two or more is the safer choice.', 'horse-tools' ),
+		'tab'         => 'CONTENT',
+		'section'     => 'FAQ schema',
+		'parent'      => 'faq-schema1',
+		'type'        => 'number',
+		'min'         => 1,
+		'max'         => 20,
+		'class'       => 'ht-input-small',
+		'placeholder' => '2',
+		'description' => __( 'A post with fewer questions than this gets no schema. Leave empty to use 2, which is the safer choice.', 'horse-tools' ),
 	) ); ?>
 
-	<?php horsetools_input( 'faq-maxlen', __( 'Trim answers to this many characters', 'horse-tools' ), array(
-		'tab'     => 'CONTENT',
-		'section' => 'FAQ schema',
-		'parent'  => 'faq-schema1',
-		'type'    => 'number',
-		'min'     => 80,
-		'max'     => 5000,
-		'class'   => 'ht-input-small',
-		'description' => __( 'Only the schema is trimmed; the post itself is never touched.', 'horse-tools' ),
+	<?php horsetools_input( 'faq-maxlen', __( 'Longest answer to publish (characters)', 'horse-tools' ), array(
+		'tab'         => 'CONTENT',
+		'section'     => 'FAQ schema',
+		'parent'      => 'faq-schema1',
+		'type'        => 'number',
+		'min'         => 80,
+		'max'         => 5000,
+		'class'       => 'ht-input-small',
+		'placeholder' => '500',
+		'description' => __( 'A longer answer is shortened in the schema only — your post is never touched. Leave empty to use 500.', 'horse-tools' ),
 	) ); ?>
 
 	<p class="ht-field" data-ht-parent="ht-main-faq-schema1">

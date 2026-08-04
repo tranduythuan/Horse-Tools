@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.61
+Stable tag: 1.2.62
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.62 =
+* **Fix: the two FAQ number boxes looked broken when empty.** They start empty because nothing has been saved yet, and the defaults (2 questions, 500 characters) live in the code — so the screen gave no hint of what was actually in force. Both now show their default as placeholder text and say so in the help note, and their labels read plainly. Leaving them empty keeps using the defaults, exactly as before.
 
 = 1.2.61 =
 * **New: automatic FAQ schema.** Horse Tools now reads the “frequently asked questions” section your posts already contain and publishes the matching FAQPage JSON-LD, so an entire archive becomes eligible for Google's FAQ rich results without editing a single article. It is deliberately forgiving about how that section is written: the FAQ can sit anywhere in the post, including nested inside a page builder's markup; questions may be any heading level below the section heading, or an accordion's summary; text inside shortcodes is read rather than discarded; and the phrases that identify the section (“thường gặp”, “hỏi đáp”, “FAQ”, “Q&A”…) are a list you can extend, matched case- and accent-insensitively. **A “Scan the whole site” button reports exactly what will happen** — how many posts qualify, which ones have a FAQ section but too few questions, and which mention one but could not be read at all, each linking straight to the editor — so nothing fails silently. The post editor shows the questions it found while you write. Results are cached per post and recomputed only when that post is edited, and if another SEO plugin already publishes FAQ schema for a post, Horse Tools leaves it alone rather than duplicating it. Under Overview → Content.
@@ -509,6 +512,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.62 =
+The FAQ schema number fields now show their defaults instead of appearing blank.
 
 = 1.2.61 =
 Adds automatic FAQ schema built from the FAQ section your posts already have, with a whole-site scan that shows exactly which posts qualify.

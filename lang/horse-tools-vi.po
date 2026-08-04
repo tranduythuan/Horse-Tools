@@ -6556,3 +6556,12 @@ msgstr "Chỉ tìm thấy %1$d câu hỏi; cần ít nhất %2$d thì mới gắ
 
 msgid "No FAQ section recognised in this post."
 msgstr "Không nhận ra mục hỏi đáp nào trong bài này."
+
+msgid "A post with fewer questions than this gets no schema. Leave empty to use 2, which is the safer choice."
+msgstr "Bài có ít câu hỏi hơn mức này sẽ không được gắn schema. Để trống thì dùng mức 2 — an toàn hơn."
+
+msgid "Longest answer to publish (characters)"
+msgstr "Câu trả lời dài nhất được gắn (ký tự)"
+
+msgid "A longer answer is shortened in the schema only — your post is never touched. Leave empty to use 500."
+msgstr "Câu trả lời dài hơn sẽ được rút gọn CHỈ trong schema — bài viết của bạn không hề bị đụng tới. Để trống thì dùng mức 500."
