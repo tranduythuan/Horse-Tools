@@ -351,8 +351,10 @@ sliders.forEach(function (slider) {
 			var pool = pageEntries.concat(reg.fields);
 			var hits = pool.filter(function (f) {
 				var page = (reg.pages && reg.pages[f.page]) || '';
-				return normText(f.label + ' ' + f.key + ' ' + f.section + ' ' + f.tab + ' ' + page)
-					.indexOf(q) !== -1;
+				// f.kw holds words that should match but not show: the choices of
+				// a dropdown, the field's help note.
+				return normText(f.label + ' ' + f.key + ' ' + f.section + ' ' + f.tab
+					+ ' ' + page + ' ' + (f.kw || '')).indexOf(q) !== -1;
 			}).slice(0, 25);
 
 			if (!hits.length) {

@@ -354,6 +354,31 @@ function horsetools_index_scan_html( $html, $slug ) {
 			$section = horsetools_index_text( $head->item( 0 ) );
 		}
 
+		// Extra words the search should match but not display: the choices of a
+		// dropdown (so "zalo" finds the contact-channel picker, whose label says
+		// only "Channel"), and the field's own help note.
+		$words = array();
+		if ( 'select' === strtolower( $el->nodeName ) ) {
+			$n = 0;
+			foreach ( $xp->query( './/option', $el ) as $opt ) {
+				$words[] = horsetools_index_text( $opt );
+				if ( ++$n >= 40 ) {
+					break;
+				}
+			}
+		}
+		$note_id = $el->getAttribute( 'aria-describedby' );
+		if ( '' !== $note_id && preg_match( '/^[A-Za-z0-9_:.\-]+$/', $note_id ) ) {
+			$note = $xp->query( '//*[@id="' . $note_id . '"]' );
+			if ( $note->length ) {
+				$words[] = horsetools_index_text( $note->item( 0 ) );
+			}
+		}
+		$keywords = trim( preg_replace( '/\s+/u', ' ', implode( ' ', array_unique( array_filter( $words ) ) ) ) );
+		if ( function_exists( 'mb_substr' ) && function_exists( 'mb_strlen' ) && mb_strlen( $keywords ) > 300 ) {
+			$keywords = mb_substr( $keywords, 0, 300 );
+		}
+
 		$out[] = array(
 			'id'      => '' !== $id ? $id : 'name:' . $name,
 			'key'     => preg_match( '/\[([^\]]+)\]/', $name, $k2 ) ? $k2[1] : $name,
@@ -361,6 +386,7 @@ function horsetools_index_scan_html( $html, $slug ) {
 			'tab'     => $tab,
 			'section' => $section,
 			'page'    => $slug,
+			'kw'      => $keywords,
 		);
 	}
 	return $out;
@@ -397,24 +423,31 @@ function horsetools_global_field_index() {
 		$html = ob_get_clean();
 
 		// Registered fields first — their labels and sections are the curated
-		// ones — then anything else the markup reveals.
+		// ones — then anything else the markup reveals. Where both describe the
+		// same control the registry entry wins, but it still picks up the
+		// keywords only the markup can supply (dropdown choices, help note).
 		$known = array();
 		foreach ( horsetools_get_field_registry() as $field ) {
-			$fid           = horsetools_field_id( $field['module'], $field['key'] );
-			$known[ $fid ] = true;
-			$index[]       = array(
+			$fid            = horsetools_field_id( $field['module'], $field['key'] );
+			$index[]        = array(
 				'id'      => $fid,
 				'key'     => $field['key'],
 				'label'   => $field['label'],
 				'tab'     => $field['tab'],
 				'section' => $field['section'],
 				'page'    => $slug,
+				'kw'      => '',
 			);
+			$known[ $fid ] = count( $index ) - 1;
 		}
 		foreach ( horsetools_index_scan_html( $html, $slug ) as $scanned ) {
-			if ( ! isset( $known[ $scanned['id'] ] ) ) {
-				$index[] = $scanned;
+			if ( isset( $known[ $scanned['id'] ] ) ) {
+				if ( '' !== $scanned['kw'] ) {
+					$index[ $known[ $scanned['id'] ] ]['kw'] = $scanned['kw'];
+				}
+				continue;
 			}
+			$index[] = $scanned;
 		}
 	}
 

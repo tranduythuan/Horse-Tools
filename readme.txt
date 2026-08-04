@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.54
+Stable tag: 1.2.55
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.55 =
+* **Search also matches things a label doesn’t say.** Typing “zalo” used to find nothing, because the contact-channel setting is labelled just “Channel” — Zalo is one of its dropdown choices. Each indexed setting now carries hidden keywords: **every choice in its dropdown** and **its help note**. So “zalo”, “messenger”, “viber” find the channel picker, and searching a phrase from a hint finds the setting it describes. The keywords only affect matching; results still show the clean label and location.
 
 = 1.2.54 =
 * **The search now covers every setting in the plugin, on every screen.** In 1.2.52 only screens built with the newer settings framework were indexed; the older hand-written screens (Extend, Add code, Cleanup and friends) contributed nothing but their name. The index now also *reads the markup each screen produces*: every control belonging to the plugin is picked up, with its label taken from its real `<label>`, its tab from the tab button it sits under, and its section from the nearest heading above it. Controls that have no HTML id are addressed by their field name, so clicking a result still lands on the exact control. Nothing has to be maintained by hand — whatever a screen renders is what the search finds, including anything added in future.
@@ -487,6 +490,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.55 =
+Search now matches dropdown choices and help notes too, so "zalo" finds the contact-channel setting labelled only "Channel".
 
 = 1.2.54 =
 Search coverage is now complete: every setting on every screen is findable, including the older hand-written screens.
