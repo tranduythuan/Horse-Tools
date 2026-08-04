@@ -67,7 +67,11 @@
 			stack: els.stack.checked,
 			theme: els.theme ? els.theme.value : '',
 			hcolor: els.hcolor ? els.hcolor.value : '',
-			caption: els.caption ? els.caption.value.trim() : ''
+			caption: els.caption ? els.caption.value.trim() : '',
+			sort: els.sort ? els.sort.checked : false,
+			search: els.search ? els.search.checked : false,
+			paginate: els.paginate ? els.paginate.checked : false,
+			pagesize: els.pagesize ? Math.max( 1, Math.min( 100, parseInt( els.pagesize.value, 10 ) || 10 ) ) : 10
 		};
 	}
 
@@ -120,6 +124,9 @@
 		if ( o.compact ) { a.push( 'compact="1"' ); }
 		if ( o.theme ) { a.push( 'theme="' + o.theme + '"' ); }
 		if ( o.hcolor ) { a.push( 'hcolor="' + o.hcolor + '"' ); }
+		if ( o.sort ) { a.push( 'sort="1"' ); }
+		if ( o.search ) { a.push( 'search="1"' ); }
+		if ( o.paginate && o.pagesize ) { a.push( 'page="' + o.pagesize + '"' ); }
 		return '[ht-table' + ( a.length ? ' ' + a.join( ' ' ) : '' ) + ']' + inner + '[/ht-table]';
 	}
 
@@ -225,7 +232,7 @@
 		overlay.querySelectorAll( '.ht-tb-pane' ).forEach( function ( p ) { p.style.display = ( p.getAttribute( 'data-pane' ) === name ) ? 'block' : 'none'; } );
 		// On the "saved tables" picker there is nothing to style or preview.
 		var isSaved = name === 'saved';
-		[ '.ht-tb-opts', '.ht-tb-opts2', '.ht-tb-prevwrap' ].forEach( function ( sel ) {
+		[ '.ht-tb-opts', '.ht-tb-opts2', '.ht-tb-opts3', '.ht-tb-prevwrap' ].forEach( function ( sel ) {
 			var el = overlay.querySelector( sel );
 			if ( el ) { el.style.display = isSaved ? 'none' : ''; }
 		} );
@@ -282,6 +289,13 @@
 						'<label>' + escHtml( t( 'hcolorL', 'Header colour' ) ) + ' <select class="ht-tb-hcolor"><option value="">' + escHtml( t( 'cGrey', 'Grey' ) ) + '</option><option value="blue">' + escHtml( t( 'cBlue', 'Blue' ) ) + '</option><option value="green">' + escHtml( t( 'cGreen', 'Green' ) ) + '</option><option value="orange">' + escHtml( t( 'cOrange', 'Orange' ) ) + '</option><option value="purple">' + escHtml( t( 'cPurple', 'Purple' ) ) + '</option><option value="dark">' + escHtml( t( 'cDark', 'Dark' ) ) + '</option></select></label>' +
 						'<label>' + escHtml( t( 'captionL', 'Caption' ) ) + ' <input type="text" class="ht-tb-caption" placeholder="' + escAttr( t( 'captionPh', 'optional title above the table' ) ) + '"></label>' +
 					'</div>' +
+					'<div class="ht-tb-opts3">' +
+						'<label><input type="checkbox" class="ht-tb-sort"> ' + escHtml( t( 'optSort', 'Sortable columns' ) ) + '</label>' +
+						'<label><input type="checkbox" class="ht-tb-search"> ' + escHtml( t( 'optSearch', 'Search box' ) ) + '</label>' +
+						'<label><input type="checkbox" class="ht-tb-paginate"> ' + escHtml( t( 'optPage', 'Pagination' ) ) + '</label>' +
+						'<label>' + escHtml( t( 'optPer', 'Rows/page' ) ) + ' <input type="number" class="ht-tb-pagesize" min="1" max="100" value="10"></label>' +
+						'<span class="ht-tb-fxnote">' + escHtml( t( 'fxNote', 'Sorting, search and pagination appear on the published page.' ) ) + '</span>' +
+					'</div>' +
 					'<div class="ht-tb-prevwrap"><div class="ht-tb-prevlabel">' + escHtml( t( 'preview', 'Preview' ) ) + '</div><div class="ht-tb-preview"></div></div>' +
 				'</div>' +
 				'<div class="ht-tb-foot"><button type="button" class="button ht-tb-cancel">' + escHtml( t( 'cancel', 'Cancel' ) ) + '</button><button type="button" class="button button-primary ht-tb-insert">' + escHtml( t( 'insert', 'Insert table' ) ) + '</button></div>' +
@@ -304,6 +318,10 @@
 		els.theme = overlay.querySelector( '.ht-tb-theme' );
 		els.hcolor = overlay.querySelector( '.ht-tb-hcolor' );
 		els.caption = overlay.querySelector( '.ht-tb-caption' );
+		els.sort = overlay.querySelector( '.ht-tb-sort' );
+		els.search = overlay.querySelector( '.ht-tb-search' );
+		els.paginate = overlay.querySelector( '.ht-tb-paginate' );
+		els.pagesize = overlay.querySelector( '.ht-tb-pagesize' );
 		els.preview = overlay.querySelector( '.ht-tb-preview' );
 		els.insertBtn = overlay.querySelector( '.ht-tb-insert' );
 
@@ -363,6 +381,10 @@
 		if ( els.caption ) { els.caption.value = ''; }
 		if ( els.paste ) { els.paste.value = ''; }
 		if ( els.name ) { els.name.value = ''; }
+		if ( els.sort ) { els.sort.checked = false; }
+		if ( els.search ) { els.search.checked = false; }
+		if ( els.paginate ) { els.paginate.checked = false; }
+		if ( els.pagesize ) { els.pagesize.value = 10; }
 		uploadData = null;
 		if ( ! init ) { els.rows.value = 3; els.cols.value = 3; buildGrid(); switchTab( 'manual' ); return; }
 		var o = init.opts || {};
@@ -373,6 +395,10 @@
 		if ( els.theme ) { els.theme.value = o.theme || ''; }
 		if ( els.hcolor ) { els.hcolor.value = o.hcolor || ''; }
 		if ( els.caption ) { els.caption.value = o.caption || ''; }
+		if ( els.sort ) { els.sort.checked = !! o.sort; }
+		if ( els.search ) { els.search.checked = !! o.search; }
+		if ( els.paginate ) { els.paginate.checked = !! o.paginate; }
+		if ( els.pagesize ) { els.pagesize.value = o.pagesize || 10; }
 		if ( els.name && init.name != null ) { els.name.value = init.name; }
 		loadData( init.data || [] );
 		switchTab( 'manual' );
@@ -410,6 +436,9 @@
 			+ '.ht-tb-opts2{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:0 0 14px;font-size:13px;}'
 			+ '.ht-tb-opts2 select,.ht-tb-opts2 input{margin-left:5px;}'
 			+ '.ht-tb-opts2 .ht-tb-caption{padding:5px 8px;border:1px solid #dcdcde;border-radius:4px;min-width:170px;}'
+			+ '.ht-tb-opts3{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:0 0 14px;font-size:13px;padding:10px 12px;background:#f6f8fb;border-radius:8px;}'
+			+ '.ht-tb-opts3 .ht-tb-pagesize{width:62px;margin-left:5px;}'
+			+ '.ht-tb-fxnote{flex-basis:100%;font-size:12px;color:#7a8590;}'
 			+ '.ht-tb-preview .ht-table{margin:0;}';
 		var st = document.createElement( 'style' );
 		st.id = 'ht-tb-style';

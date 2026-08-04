@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.45
+Stable tag: 1.2.46
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.46 =
+* **New: sortable, searchable, paginated tables.** Every table — stored or inline — can now switch on three reader-facing behaviours: **click a column header to sort** (understands Vietnamese number formats, so “1.790.000” sorts as a number, and mixed text like “12 tháng” sorts naturally), a **search box** that matches without typing accents (“chuot” finds “Chuột”), and **pagination** with a configurable rows-per-page. Three checkboxes in the table builder (or `sort="1" search="1" page="10"` on the shortcode). Implemented in ~5 KB of dependency-free JavaScript loaded only on pages that contain a table — no jQuery, no DataTables, nothing added to the rest of the site.
 
 = 1.2.45 =
 * **Fix: the “Tables” screen was unreachable.** The Horse Tools → Tables submenu (introduced in 1.2.39) registered before its parent menu existed, so WordPress produced a broken menu link and opening the screen said “you are not allowed to access this page”. Found in live testing; the submenu now registers after the parent and the Tables manager opens normally. No other changes.
@@ -460,6 +463,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.46 =
+Tables gain click-to-sort columns, an accent-insensitive search box, and pagination — three checkboxes in the builder, ~5 KB of dependency-free JS.
 
 = 1.2.43 =
 Install this version once, and every future update is one click: WordPress downloads new releases directly from GitHub — no more uploading ZIPs through the browser.

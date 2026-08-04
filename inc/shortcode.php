@@ -536,6 +536,9 @@ function horsetools_table_shortcode( $atts, $content = '' ) {
 		'compact' => '0',
 		'theme'   => '', // bordered | minimal | lines
 		'hcolor'  => '', // blue | green | orange | purple | dark
+		'sort'    => '0', // 1 = clickable column sorting on the front end
+		'search'  => '0', // 1 = search box above the table
+		'page'    => '0', // rows per page (0 = no pagination)
 	), $atts, 'ht-table' );
 
 	// Stored, reusable table: [ht-table id="5"]. The saved options win; any
@@ -569,9 +572,31 @@ function horsetools_table_shortcode( $atts, $content = '' ) {
 	if ( in_array( $a['hcolor'], array( 'blue', 'green', 'orange', 'purple', 'dark' ), true ) ) {
 		$cls .= ' ht-th-' . $a['hcolor'];
 	}
-	return '<div class="' . esc_attr( $cls ) . '"><div class="ht-table-scroll">' . do_shortcode( $inner ) . '</div></div>';
+	$fx = horsetools_table_fx_attrs( array(
+		'sort'     => '1' === (string) $a['sort'],
+		'search'   => '1' === (string) $a['search'],
+		'paginate' => (int) $a['page'] > 0,
+		'pagesize' => (int) $a['page'],
+	) );
+	return '<div class="' . esc_attr( $cls ) . '"' . $fx . '><div class="ht-table-scroll">' . do_shortcode( $inner ) . '</div></div>';
 }
 add_shortcode( 'ht-table', 'horsetools_table_shortcode' );
+
+/** Data attributes that switch on ht-table-fx.js behaviours for one table. */
+function horsetools_table_fx_attrs( $opts ) {
+	$fx = '';
+	if ( ! empty( $opts['sort'] ) ) {
+		$fx .= ' data-ht-sort="1"';
+	}
+	if ( ! empty( $opts['search'] ) ) {
+		$fx .= ' data-ht-search="1"';
+	}
+	$per = isset( $opts['pagesize'] ) ? (int) $opts['pagesize'] : 0;
+	if ( ! empty( $opts['paginate'] ) && $per > 0 ) {
+		$fx .= ' data-ht-page="' . min( 100, max( 1, $per ) ) . '"';
+	}
+	return $fx;
+}
 
 function horsetools_table_css_maybe() {
 	if ( ! is_singular() ) {
@@ -580,6 +605,15 @@ function horsetools_table_css_maybe() {
 	$p = get_post();
 	if ( $p && false !== strpos( (string) $p->post_content, '[ht-table' ) ) {
 		wp_enqueue_style( 'horsetools-table', HORSETOOLS_URL . 'link/ht-table.css', array(), HORSETOOLS_VERSION );
+		// Sort / search / pagination. ~5 KB vanilla, footer-loaded, and a no-op
+		// unless a table on the page carries the data-ht-* attributes.
+		wp_enqueue_script( 'horsetools-table-fx', HORSETOOLS_URL . 'link/ht-table-fx.js', array(), HORSETOOLS_VERSION, true );
+		wp_localize_script( 'horsetools-table-fx', 'htTableFx', array(
+			'search' => __( 'Search the table…', 'horse-tools' ),
+			'empty'  => __( 'No matching rows.', 'horse-tools' ),
+			'prev'   => __( 'Previous', 'horse-tools' ),
+			'next'   => __( 'Next', 'horse-tools' ),
+		) );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'horsetools_table_css_maybe' );
@@ -629,6 +663,11 @@ function horsetools_table_builder_i18n() {
 		'cDark'      => __( 'Dark', 'horse-tools' ),
 		'captionL'   => __( 'Caption', 'horse-tools' ),
 		'captionPh'  => __( 'optional title above the table', 'horse-tools' ),
+		'optSort'    => __( 'Sortable columns', 'horse-tools' ),
+		'optSearch'  => __( 'Search box', 'horse-tools' ),
+		'optPage'    => __( 'Pagination', 'horse-tools' ),
+		'optPer'     => __( 'Rows/page', 'horse-tools' ),
+		'fxNote'     => __( 'Sorting, search and pagination appear on the published page.', 'horse-tools' ),
 		'titleSave'  => __( 'Save a table', 'horse-tools' ),
 		'save'       => __( 'Save table', 'horse-tools' ),
 		'nameL'      => __( 'Table name', 'horse-tools' ),
@@ -793,7 +832,7 @@ function horsetools_table_render_data( $data, $opts ) {
 	if ( in_array( $hcolor, array( 'blue', 'green', 'orange', 'purple', 'dark' ), true ) ) {
 		$cls .= ' ht-th-' . $hcolor;
 	}
-	return '<div class="' . esc_attr( $cls ) . '"><div class="ht-table-scroll">' . $h . '</div></div>';
+	return '<div class="' . esc_attr( $cls ) . '"' . horsetools_table_fx_attrs( $opts ) . '><div class="ht-table-scroll">' . $h . '</div></div>';
 }
 
 /** Sanitise a posted table into { name, data(2D strings), opts(whitelist) }. */
@@ -823,6 +862,11 @@ function horsetools_table_sanitize_payload() {
 		'theme'   => in_array( isset( $opts['theme'] ) ? $opts['theme'] : '', array( 'bordered', 'minimal', 'lines' ), true ) ? $opts['theme'] : '',
 		'hcolor'  => in_array( isset( $opts['hcolor'] ) ? $opts['hcolor'] : '', array( 'blue', 'green', 'orange', 'purple', 'dark' ), true ) ? $opts['hcolor'] : '',
 		'caption' => isset( $opts['caption'] ) ? sanitize_text_field( (string) $opts['caption'] ) : '',
+		// Front-end interactivity (ht-table-fx.js).
+		'sort'     => ! empty( $opts['sort'] ),
+		'search'   => ! empty( $opts['search'] ),
+		'paginate' => ! empty( $opts['paginate'] ),
+		'pagesize' => min( 100, max( 1, isset( $opts['pagesize'] ) ? (int) $opts['pagesize'] : 10 ) ),
 	);
 	return array( 'name' => $name, 'data' => $clean, 'opts' => $copt );
 }

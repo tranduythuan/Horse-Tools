@@ -6220,3 +6220,30 @@ msgstr "Bộ công cụ WordPress tất-cả-trong-một: nút chat liên hệ, 
 
 msgid "See the GitHub release page for details."
 msgstr "Xem trang phát hành trên GitHub để biết chi tiết."
+
+msgid "Sortable columns"
+msgstr "Cột bấm để sắp xếp"
+
+msgid "Search box"
+msgstr "Ô tìm kiếm"
+
+msgid "Pagination"
+msgstr "Phân trang"
+
+msgid "Rows/page"
+msgstr "Dòng/trang"
+
+msgid "Sorting, search and pagination appear on the published page."
+msgstr "Sắp xếp, tìm kiếm và phân trang sẽ hiển thị trên trang đã đăng (không hiện trong xem trước)."
+
+msgid "Search the table…"
+msgstr "Tìm trong bảng…"
+
+msgid "No matching rows."
+msgstr "Không có dòng nào khớp."
+
+msgid "Previous"
+msgstr "Trước"
+
+msgid "Next"
+msgstr "Sau"

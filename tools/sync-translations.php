@@ -715,6 +715,16 @@ $vi = array(
     'Something went wrong. Please try again.' => 'Có lỗi xảy ra. Vui lòng thử lại.',
     'Table %d' => 'Bảng %d',
     'copy' => 'bản sao',
+    // Table fx: sort/search/pagination (1.2.46)
+    'Sortable columns' => 'Cột bấm để sắp xếp',
+    'Search box' => 'Ô tìm kiếm',
+    'Pagination' => 'Phân trang',
+    'Rows/page' => 'Dòng/trang',
+    'Sorting, search and pagination appear on the published page.' => 'Sắp xếp, tìm kiếm và phân trang sẽ hiển thị trên trang đã đăng (không hiện trong xem trước).',
+    'Search the table…' => 'Tìm trong bảng…',
+    'No matching rows.' => 'Không có dòng nào khớp.',
+    'Previous' => 'Trước',
+    'Next' => 'Sau',
     // GitHub self-update (1.2.43)
     'Check for updates' => 'Kiểm tra cập nhật',
     'Horse Tools could not reach GitHub to check for updates. Please try again later.' => 'Horse Tools không kết nối được GitHub để kiểm tra cập nhật. Vui lòng thử lại sau.',
