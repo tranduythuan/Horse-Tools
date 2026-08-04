@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.65
+Stable tag: 1.2.66
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.66 =
+* **Groundwork for reorganising the settings screens: a form can now save its own part of the settings without erasing the rest.** All thirteen tabs share one stored option, and a settings form replaces that option wholesale — correct only while a single form renders every field. Splitting the tabs across screens would have meant saving one screen wiped the others. A form now declares which keys it is responsible for, and saving drops exactly those before applying what was submitted. The declaration cannot be worked out at save time from what arrives: an unticked checkbox sends nothing, and is indistinguishable from a field the form never had — so the form states its scope up front, read back from the markup it actually rendered, which covers fields written as raw HTML and repeater rows alike.
+* Nothing changes on screen in this release. While one screen still renders every tab it also claims every stored key, so saving behaves exactly as before even for a field the scanner might have missed.
 
 = 1.2.65 =
 * **FAQ schema: stands aside when the post already carries its own.** Found on a live site: an article whose FAQ answers had been marked up by hand years ago got a second FAQPage block from us, so one page published two conflicting sets of questions. Detection previously knew about Rank Math and Yoast only, and a JSON-LD block pasted straight into the post leaves no trace to look for — nothing in the editor shows it is there. We now look for a real script block in the content, while ignoring the word where a post merely writes about schema in escaped example code. There is also a filter, `horsetools_faq_foreign`, for an SEO plugin we do not recognise.
@@ -523,6 +527,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.66 =
+Internal groundwork for the settings reorganisation. No visible change.
 
 = 1.2.65 =
 Fixes two FAQ schema faults found live: a duplicate FAQPage on posts that already had their own, and pasted code being published as answer text. Cached results recompute themselves.

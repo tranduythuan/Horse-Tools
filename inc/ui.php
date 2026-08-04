@@ -529,3 +529,75 @@ function horsetools_localise_registry() {
 	);
 }
 add_action( 'admin_footer', 'horsetools_localise_registry', 5 );
+
+/* -------------------------------------------------------------------------
+ * Scoped settings forms
+ *
+ * A form that renders only part of an option must say so, or saving it would
+ * wipe the rest (see horsetools_scope_merge()). The list is read back out of
+ * the markup the form just produced rather than maintained by hand: every
+ * field is then covered by construction, including the ones written as raw
+ * HTML and the repeater rows that only exist because a value was stored.
+ * ---------------------------------------------------------------------- */
+
+/**
+ * The option keys a rendered block of form markup writes to.
+ *
+ * @param string $html   Rendered form markup.
+ * @param string $option Option name, e.g. 'horsetools_settings'.
+ * @return string[]
+ */
+function horsetools_scope_from_html( $html, $option ) {
+	$pattern = '~name\s*=\s*["\']' . preg_quote( $option, '~' ) . '\[([^\]\[]{1,64})\]~';
+	if ( ! preg_match_all( $pattern, (string) $html, $m ) ) {
+		return array();
+	}
+	$keys = array();
+	foreach ( $m[1] as $key ) {
+		// Reject anything that is not a plain key. A JavaScript row template
+		// carries a placeholder in the same position, and claiming that as a
+		// real key would be harmless but misleading in the saved scope.
+		if ( preg_match( '~^[A-Za-z0-9_\-]+$~', $key ) ) {
+			$keys[ $key ] = true;
+		}
+	}
+	return array_keys( $keys );
+}
+
+/**
+ * Render a settings form body and prefix it with its scope declaration.
+ *
+ * @param string $html      Rendered form markup.
+ * @param string $option    Option name the form writes to.
+ * @param bool   $owns_all  True while this form is the only one writing the
+ *                          option. Every stored key is then added to the scope,
+ *                          so a field the scanner somehow missed still behaves
+ *                          exactly as it did before scoping existed — a missed
+ *                          key would otherwise become impossible to untick.
+ *                          MUST become false once the option is edited from
+ *                          more than one screen, or each screen would claim
+ *                          the others' keys and erase them on save.
+ */
+function horsetools_scope_print( $html, $option, $owns_all = false ) {
+	$keys = horsetools_scope_from_html( $html, $option );
+	if ( $owns_all ) {
+		$stored = get_option( $option );
+		if ( is_array( $stored ) ) {
+			foreach ( array_keys( $stored ) as $key ) {
+				if ( preg_match( '~^[A-Za-z0-9_\-]{1,64}$~', (string) $key ) ) {
+					$keys[] = (string) $key;
+				}
+			}
+			$keys = array_values( array_unique( $keys ) );
+		}
+	}
+	if ( $keys ) {
+		printf(
+			'<input type="hidden" name="%s[%s]" value="%s">' . "\n",
+			esc_attr( $option ),
+			esc_attr( HORSETOOLS_SCOPE_FIELD ),
+			esc_attr( implode( ',', $keys ) )
+		);
+	}
+	echo $html; // phpcs:ignore WordPress.Security.EscapeOutput -- already-rendered form markup
+}

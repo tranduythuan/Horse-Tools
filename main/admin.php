@@ -36,7 +36,14 @@ function horsetools_options_page() {
 				require_once( HORSETOOLS_DIR . 'main/completed.php');
 			} ?>
 			<form method="post" action="options.php">
-			<?php settings_fields('horsetools_settings_group'); ?> 
+			<?php settings_fields('horsetools_settings_group'); ?>
+			<?php
+			// Buffer the tabs so the form can declare which option keys it
+			// writes. Today it renders all of them and the declaration changes
+			// nothing; it is what lets these tabs be split across screens
+			// later without one screen's save erasing another's settings.
+			ob_start();
+			?>
 			<!-- trang toi uu -->
 			<div class="sotab-box htbox" id="tab1">
 				<?php include( HORSETOOLS_DIR . 'main/page/1speed.php'); ?>
@@ -89,6 +96,12 @@ function horsetools_options_page() {
 			<div class="sotab-box htbox" id="tab-ft1" style="display:none">
 				<?php include( HORSETOOLS_DIR . 'main/page/ht-setting.php'); ?> 
 			</div>
+			<?php
+			// $owns_all is true only while this screen renders every tab. When
+			// the tabs are split across screens it must be dropped, or each
+			// screen would claim the whole option and wipe the others.
+			horsetools_scope_print( ob_get_clean(), 'horsetools_settings', true );
+			?>
 			<div class="ht-submit">
 				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
 			</div>

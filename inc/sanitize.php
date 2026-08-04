@@ -448,10 +448,93 @@ function horsetools_sanitize_settings_array( $input ) {
 }
 
 /* -------------------------------------------------------------------------
+ * 3b. Partial saves
+ *
+ * All thirteen tabs of the main screen share one option, and a settings form
+ * replaces that option wholesale. That is correct only while a single form
+ * renders every field: the moment the settings are split across several
+ * screens, saving one screen would erase the others.
+ *
+ * The fix is for a form to declare which keys it is responsible for. Saving
+ * then means: take what is stored, drop the declared keys, apply what was
+ * submitted. The declaration cannot be inferred at save time from what arrived
+ * — an unticked checkbox sends nothing at all, and is indistinguishable from a
+ * field the form never had — which is why the form states its scope up front,
+ * built from the fields it actually rendered.
+ * ---------------------------------------------------------------------- */
+
+/** The hidden field a scoped form posts its key list in. */
+const HORSETOOLS_SCOPE_FIELD = '__ht_scope';
+
+/**
+ * Pull the declared scope out of submitted input, removing it from the input.
+ *
+ * @param array $input Submitted option array, modified in place.
+ * @return string[] Declared keys, or array() when the form declared none.
+ */
+function horsetools_scope_take( &$input ) {
+	if ( ! is_array( $input ) || ! isset( $input[ HORSETOOLS_SCOPE_FIELD ] ) ) {
+		return array();
+	}
+	$raw = (string) $input[ HORSETOOLS_SCOPE_FIELD ];
+	unset( $input[ HORSETOOLS_SCOPE_FIELD ] );
+
+	$keys = array();
+	foreach ( explode( ',', $raw ) as $key ) {
+		$key = trim( $key );
+		// Same character set the scope builder accepts. A key that could not
+		// have been produced by a real field is dropped rather than trusted.
+		if ( '' !== $key && preg_match( '~^[A-Za-z0-9_\-]{1,64}$~', $key ) ) {
+			$keys[] = $key;
+		}
+	}
+	return array_values( array_unique( $keys ) );
+}
+
+/**
+ * Merge a partial save into what is already stored.
+ *
+ * With no declared scope this returns the submitted array untouched, which is
+ * the whole-option replace WordPress does by default — so a form that has not
+ * been converted behaves exactly as before.
+ *
+ * @param array    $clean  Sanitised submitted values.
+ * @param string   $option Option name being written.
+ * @param string[] $scope  Keys this form is responsible for.
+ * @return array
+ */
+function horsetools_scope_merge( $clean, $option, $scope ) {
+	if ( ! $scope || ! is_array( $clean ) ) {
+		return $clean;
+	}
+	$stored = get_option( $option );
+	if ( ! is_array( $stored ) || ! $stored ) {
+		return $clean;
+	}
+	foreach ( $scope as $key ) {
+		unset( $stored[ $key ] );
+	}
+	// Submitted values win; everything outside this form's scope survives.
+	return array_merge( $stored, $clean );
+}
+
+/**
+ * Sanitize callback body for an option that supports partial saves.
+ *
+ * @param array  $input
+ * @param string $option
+ * @return array
+ */
+function horsetools_sanitize_scoped( $input, $option ) {
+	$scope = horsetools_scope_take( $input );
+	return horsetools_scope_merge( horsetools_sanitize_settings_array( $input ), $option, $scope );
+}
+
+/* -------------------------------------------------------------------------
  * 4. Per-group wrappers used as sanitize_callback
  * ---------------------------------------------------------------------- */
 
-function horsetools_sanitize_main( $input )      { return horsetools_sanitize_settings_array( $input ); }
+function horsetools_sanitize_main( $input )      { return horsetools_sanitize_scoped( $input, 'horsetools_settings' ); }
 function horsetools_sanitize_ads( $input )       { return horsetools_sanitize_settings_array( $input ); }
 
 /**
