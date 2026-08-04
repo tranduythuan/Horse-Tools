@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.62
+Stable tag: 1.2.63
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.63 =
+* **Update checks no longer use the GitHub API.** Each release now carries a small manifest file, and the plugin reads that from the release download CDN instead of calling api.github.com. The reason is capacity: the API allows 60 unauthenticated requests an hour **per IP address**, which is plenty for one site but is shared by every site behind the same address on shared hosting — and a conditional request does not help, as a 304 response still counts against it (measured). Release downloads were never subject to that limit, and now the version check is not either, so the plugin scales to any number of installations. The check also spreads itself out — the result is kept 12 to 16 hours, jittered, so installations do not drift into checking in unison. The API remains as a fallback for older releases. Nothing about the safety changes: only the official  asset of the official repository is ever accepted, now verified by filename as well as by repository.
 
 = 1.2.62 =
 * **Fix: the two FAQ number boxes looked broken when empty.** They start empty because nothing has been saved yet, and the defaults (2 questions, 500 characters) live in the code — so the screen gave no hint of what was actually in force. Both now show their default as placeholder text and say so in the help note, and their labels read plainly. Leaving them empty keeps using the defaults, exactly as before.
@@ -512,6 +515,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.63 =
+Version checks move off the GitHub API onto the release CDN, so the plugin scales to any number of sites.
 
 = 1.2.62 =
 The FAQ schema number fields now show their defaults instead of appearing blank.

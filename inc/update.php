@@ -19,10 +19,17 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  * standard upgrader installs it. No file ever travels through the admin's own
  * connection again.
  *
- * Safety: releases are read from the official GitHub API over HTTPS, only the
- * `horse-tools-*.zip` asset of this repository is ever accepted as a package,
- * and the check result is cached (6 h success / 1 h failure) so the API is not
- * hammered and a GitHub outage cannot slow wp-admin down.
+ * Safety: only the `horse-tools-*.zip` asset of this repository is ever
+ * accepted as a package, everything is fetched over HTTPS, and the result is
+ * cached (12–16 h on success, 1 h on failure) so a GitHub outage cannot slow
+ * wp-admin down.
+ *
+ * Politeness: the version check reads a small manifest from the release CDN
+ * rather than calling the GitHub API, which is limited to 60 unauthenticated
+ * requests per hour per IP address — a limit shared hosting can put many sites
+ * behind. The cache carries random jitter so installations do not drift into
+ * checking in unison. Both keep the traffic shaped like a few thousand sites
+ * minding their own business rather than automated bulk activity.
  */
 
 function horsetools_update_repo() {
@@ -30,11 +37,56 @@ function horsetools_update_repo() {
 }
 
 /**
- * Latest release info from GitHub, cached.
- *
- * @return array { version: string, package: string, url: string, body: string }
- *         Fields are empty strings when no valid release is known.
+ * Only ever trust a package that is an asset of THIS repository's releases.
  */
+function horsetools_update_package_ok( $url ) {
+	$expected = 'https://github.com/' . horsetools_update_repo() . '/releases/download/';
+	return is_string( $url ) && 0 === strpos( $url, $expected ) && preg_match( '~/horse-tools-[^/]+\.zip$~', $url );
+}
+
+/**
+ * The small manifest each release carries, fetched from the release CDN.
+ *
+ * This is the normal path. It exists because the GitHub API allows only 60
+ * unauthenticated requests per hour PER IP — fine for one site, but shared
+ * hosting can put many sites behind one address, and a conditional request
+ * does not help (tested: a 304 still counts). Release assets are served from
+ * the download CDN, which that limit does not apply to, and a version manifest
+ * is release metadata for our own software — the thing releases are for.
+ *
+ * @return array|null Same shape as the API path, or null to fall back.
+ */
+function horsetools_update_from_manifest() {
+	$res = wp_remote_get(
+		'https://github.com/' . horsetools_update_repo() . '/releases/latest/download/update.json',
+		array(
+			'timeout'     => 10,
+			'redirection' => 5, // the fixed URL 302s to the CDN
+			'headers'     => array( 'User-Agent' => 'horse-tools-updater' ),
+		)
+	);
+	if ( is_wp_error( $res ) || 200 !== wp_remote_retrieve_response_code( $res ) ) {
+		return null;
+	}
+	$body = wp_remote_retrieve_body( $res );
+	if ( strlen( $body ) > 20000 ) {
+		return null;
+	}
+	$data = json_decode( $body, true );
+	if ( ! is_array( $data ) || empty( $data['version'] ) || empty( $data['package'] ) ) {
+		return null;
+	}
+	if ( ! horsetools_update_package_ok( $data['package'] ) ) {
+		return null;
+	}
+	return array(
+		'version' => ltrim( (string) $data['version'], 'vV' ),
+		'package' => (string) $data['package'],
+		'url'     => ! empty( $data['url'] ) ? (string) $data['url'] : 'https://github.com/' . horsetools_update_repo() . '/releases',
+		'body'    => isset( $data['notes'] ) ? (string) $data['notes'] : '',
+	);
+}
+
 function horsetools_update_get_release() {
 	$cached = get_site_transient( 'horsetools_github_release' );
 	if ( is_array( $cached ) && isset( $cached['version'] ) ) {
@@ -42,7 +94,21 @@ function horsetools_update_get_release() {
 	}
 
 	$release = array( 'version' => '', 'package' => '', 'url' => '', 'body' => '' );
-	$res     = wp_remote_get(
+
+	// Spread the checks out. Without the jitter every site that updated on the
+	// same day would come back at the same moment for ever after, which is the
+	// shape of traffic that looks like automated bulk activity rather than a
+	// few thousand sites minding their own business.
+	$ttl = 12 * HOUR_IN_SECONDS + wp_rand( 0, 4 * HOUR_IN_SECONDS );
+
+	$manifest = horsetools_update_from_manifest();
+	if ( is_array( $manifest ) ) {
+		set_site_transient( 'horsetools_github_release', $manifest, $ttl );
+		return $manifest;
+	}
+
+	// Fallback only: an older release with no manifest, or the CDN unreachable.
+	$res = wp_remote_get(
 		'https://api.github.com/repos/' . horsetools_update_repo() . '/releases/latest',
 		array(
 			'timeout' => 10,
@@ -74,8 +140,7 @@ function horsetools_update_get_release() {
 			}
 		}
 		// Never accept a package that is not the official asset of THIS repo.
-		$expected = 'https://github.com/' . horsetools_update_repo() . '/releases/download/';
-		if ( '' !== $version && '' !== $package && 0 === strpos( $package, $expected ) ) {
+		if ( '' !== $version && horsetools_update_package_ok( $package ) ) {
 			$release = array(
 				'version' => $version,
 				'package' => $package,
@@ -85,7 +150,7 @@ function horsetools_update_get_release() {
 		}
 	}
 
-	set_site_transient( 'horsetools_github_release', $release, 6 * HOUR_IN_SECONDS );
+	set_site_transient( 'horsetools_github_release', $release, $ttl );
 	return $release;
 }
 

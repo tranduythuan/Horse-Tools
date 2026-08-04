@@ -67,6 +67,25 @@ jobs:
             printf '\n---\n_Install: download `horse-tools-%s.zip` below, then Plugins → Add New → Upload Plugin._\n' "$VERSION"
           } > release-notes.md
 
+      - name: Build update manifest
+        run: |
+          set -euo pipefail
+          # A few hundred bytes that the plugin reads instead of calling the
+          # GitHub API: served from the release CDN, so the API's 60-per-hour
+          # per-IP limit stops mattering however many sites run the plugin.
+          # Its fixed name is what makes /releases/latest/download/update.json
+          # always resolve to the newest release.
+          NOTES="$(head -c 4000 release-notes.md)"
+          jq -n \
+            --arg v   "$VERSION" \
+            --arg pkg "https://github.com/${GITHUB_REPOSITORY}/releases/download/${GITHUB_REF_NAME}/horse-tools-${VERSION}.zip" \
+            --arg url "https://github.com/${GITHUB_REPOSITORY}/releases/tag/${GITHUB_REF_NAME}" \
+            --arg n   "$NOTES" \
+            '{version:$v, package:$pkg, url:$url, requires:"6.0", requires_php:"8.1", notes:$n}' \
+            > update.json
+          echo "update.json ($(wc -c < update.json) bytes):"
+          cat update.json | head -c 300; echo
+
       - name: Create GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -78,6 +97,7 @@ jobs:
           esac
           gh release create "$GITHUB_REF_NAME" \
             "horse-tools-${VERSION}.zip" \
+            update.json \
             --title "Horse Tools ${VERSION}" \
             --notes-file release-notes.md \
             $PRERELEASE
