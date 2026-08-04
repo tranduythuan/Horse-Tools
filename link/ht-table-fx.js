@@ -329,20 +329,37 @@
 			for ( var i = 0; i < ncol; i++ ) { if ( ! state.hidden[ i ] ) { out.push( i ); } }
 			return out;
 		}
+		// One value per COLUMN of a row. A merged cell contributes its text at
+		// the column it starts in and leaves the columns it spans empty —
+		// otherwise a total row spanning two columns would be exported twice.
+		function rowValues( tr ) {
+			var vals = [], at = 0;
+			for ( var i = 0; i < tr.children.length; i++ ) {
+				var c = tr.children[ i ];
+				var span = parseInt( c.getAttribute( 'colspan' ), 10 ) || 1;
+				vals[ at ] = c.textContent.trim();
+				for ( var k = 1; k < span; k++ ) { vals[ at + k ] = ''; }
+				at += span;
+			}
+			return vals;
+		}
+
 		// Everything the current filters leave in, not just the open page.
 		function matrix() {
 			var cols = visibleCols();
 			var data = [];
-			if ( ths.length ) {
-				data.push( cols.map( function ( i ) { return ths[ i ] ? ths[ i ].textContent.trim() : ''; } ) );
-			}
-			filtered().forEach( function ( tr ) {
-				data.push( cols.map( function ( i ) { return cellText( tr, i ).trim(); } ) );
+			var pick = function ( vals ) {
+				return cols.map( function ( i ) { return vals[ i ] == null ? '' : vals[ i ]; } );
+			};
+			if ( headRow ) { data.push( pick( rowValues( headRow ) ) ); }
+			filtered().forEach( function ( tr, n ) {
+				var vals = rowValues( tr );
+				// Number from the position in the exported set: a row that has
+				// never been on screen has no number written into its cell yet.
+				if ( doIndex ) { vals[ 0 ] = String( n + 1 ); }
+				data.push( pick( vals ) );
 			} );
-			if ( tfoot && tfoot.rows.length ) {
-				var fr = tfoot.rows[ 0 ];
-				data.push( cols.map( function ( i ) { var c = cellAt( fr, i ); return c ? c.textContent.trim() : ''; } ) );
-			}
+			if ( tfoot && tfoot.rows.length ) { data.push( pick( rowValues( tfoot.rows[ 0 ] ) ) ); }
 			return data;
 		}
 		function copyOut( btn ) {

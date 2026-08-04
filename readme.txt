@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.57
+Stable tag: 1.2.58
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.58 =
+* **Fix: printed and exported tables lost some row numbers, and repeated a merged total.** Reported from a real print-out. Row numbers were read back from the page, so rows that had never been displayed (page 3 of a paginated table, say) came out blank; they are now numbered from their position in the exported set, so Print, Copy and CSV always number every row. And a cell merged across columns — the amount in a “TOTAL” row — was written once per column it spanned, printing the figure twice; a merged cell now contributes its text once, in the column it starts in.
 
 = 1.2.57 =
 * **Reader tools for tables — the features people expect from a paid table plugin.** Four new switches in the table builder: a **row-number column**; a **filter dropdown under each column header** (built from that column's own values, so a price list can be narrowed to one warranty period in a click); **Copy / CSV / Print buttons** for visitors, plus a **show/hide columns** menu; and **freeze the first column** so the product name stays put while a wide table scrolls sideways. Searching now also **highlights the matches** inside the table. Copy, CSV and Print all export exactly what the reader is looking at — current filters and hidden columns respected, every matching row included rather than just the open page — and Print opens a clean printable sheet without a pop-up window. Merged cells stay aligned when a column is hidden, a pinned total row is never touched, and the whole thing is still dependency-free JavaScript that loads only on pages containing a table.
@@ -496,6 +499,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.58 =
+Fixes missing row numbers and a duplicated merged total in printed/copied/exported tables.
 
 = 1.2.57 =
 Tables gain reader tools: row numbers, per-column filters, Copy/CSV/Print, show-hide columns, a frozen first column and search highlighting.
