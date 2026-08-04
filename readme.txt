@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.55
+Stable tag: 1.2.56
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.56 =
+* **Readable names for search results that had none.** A handful of controls carry no visible label at all — the contact-channel picker, for instance — and were listed by their internal key (“chat-nut11”). Such a result now takes the name of the section it belongs to, plus its row number when it sits in a repeating list (“Buttons 1”, “Buttons 2”), and the location crumb no longer repeats that name back.
 
 = 1.2.55 =
 * **Search also matches things a label doesn’t say.** Typing “zalo” used to find nothing, because the contact-channel setting is labelled just “Channel” — Zalo is one of its dropdown choices. Each indexed setting now carries hidden keywords: **every choice in its dropdown** and **its help note**. So “zalo”, “messenger”, “viber” find the channel picker, and searching a phrase from a hint finds the setting it describes. The keywords only affect matching; results still show the clean label and location.
@@ -490,6 +493,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.56 =
+Unlabelled settings (like the contact-channel picker) now appear in search under their section name instead of an internal key.
 
 = 1.2.55 =
 Search now matches dropdown choices and help notes too, so "zalo" finds the contact-channel setting labelled only "Channel".

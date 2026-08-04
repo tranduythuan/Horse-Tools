@@ -314,6 +314,21 @@ function horsetools_index_scan_html( $html, $slug ) {
 
 		// Label: an explicit <label for>, then a wrapping <label>, then the
 		// control's own hints, then the settings key itself.
+		$tab = '';
+		$box = $xp->query( 'ancestor::*[' . $has_class( 'sotab-box' ) . '][1]', $el );
+		if ( $box->length ) {
+			$bid = $box->item( 0 )->getAttribute( 'id' );
+			if ( isset( $tabs[ $bid ] ) ) {
+				$tab = $tabs[ $bid ];
+			}
+		}
+
+		$section = '';
+		$head    = $xp->query( '(preceding::h2|preceding::h3|preceding::h4)[last()]', $el );
+		if ( $head->length ) {
+			$section = horsetools_index_text( $head->item( 0 ) );
+		}
+
 		$label = '';
 		if ( '' !== $id && preg_match( '/^[A-Za-z0-9_:.\-]+$/', $id ) ) {
 			$for = $xp->query( '//label[@for="' . $id . '"]' );
@@ -332,26 +347,19 @@ function horsetools_index_scan_html( $html, $slug ) {
 				$label = trim( preg_replace( '/\s+/u', ' ', $el->getAttribute( $attr ) ) );
 			}
 		}
-		if ( '' === $label && preg_match( '/\[([^\]]+)\]/', $name, $k ) ) {
-			$label = $k[1];
+		if ( '' === $label ) {
+			// Nothing names this control (the contact-channel picker, for one).
+			// Its section reads far better than the raw settings key; add the
+			// row number when it sits in a repeater so the entries stay apart.
+			$row = $xp->query( 'ancestor::*[@data-id][1]', $el );
+			$n   = $row->length ? trim( $row->item( 0 )->getAttribute( 'data-id' ) ) : '';
+			$label = '' !== $section ? $section : ( preg_match( '/\[([^\]]+)\]/', $name, $k ) ? $k[1] : $name );
+			if ( '' !== $n ) {
+				$label .= ' ' . $n;
+			}
 		}
 		if ( '' === $label ) {
 			continue;
-		}
-
-		$tab = '';
-		$box = $xp->query( 'ancestor::*[' . $has_class( 'sotab-box' ) . '][1]', $el );
-		if ( $box->length ) {
-			$bid = $box->item( 0 )->getAttribute( 'id' );
-			if ( isset( $tabs[ $bid ] ) ) {
-				$tab = $tabs[ $bid ];
-			}
-		}
-
-		$section = '';
-		$head    = $xp->query( '(preceding::h2|preceding::h3|preceding::h4)[last()]', $el );
-		if ( $head->length ) {
-			$section = horsetools_index_text( $head->item( 0 ) );
 		}
 
 		// Extra words the search should match but not display: the choices of a

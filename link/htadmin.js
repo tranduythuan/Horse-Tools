@@ -274,7 +274,11 @@ sliders.forEach(function (slider) {
 		btn.textContent = field.label || field.key;
 		var onOtherPage = field.page && reg.current && field.page !== reg.current;
 		var pageTitle = (reg.pages && reg.pages[field.page]) || '';
-		var crumbParts = [onOtherPage ? pageTitle : '', field.tab, field.section].filter(Boolean);
+		var name = field.label || field.key;
+		// Don't echo the label back in the crumb: an unlabelled control borrows
+		// its section name, which would otherwise read "Buttons — CHAT › Buttons".
+		var crumbParts = [onOtherPage ? pageTitle : '', field.tab, field.section]
+			.filter(Boolean).filter(function (p) { return p !== name && name.indexOf(p) !== 0; });
 		if (crumbParts.length) {
 			var crumb = document.createElement('span');
 			crumb.className = 'ht-side-crumb';
