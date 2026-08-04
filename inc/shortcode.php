@@ -349,6 +349,12 @@ function horsetools_render_snippet( $slug, $atts ) {
 	) ) ) {
 		return '';
 	}
+	// A PHP snippet runs instead of being treated as content — guarded by
+	// inc/php-snippet.php (signature, crash guard, kill switch).
+	if ( ! empty( $s['php'] ) && function_exists( 'horsetools_php_exec' ) ) {
+		return horsetools_php_exec( $slug, $s );
+	}
+
 	$content = (string) $s['content'];
 	$atts    = is_array( $atts ) ? $atts : array();
 
@@ -1656,3 +1662,6 @@ add_action( 'init', function () {
 }, 100 );
 
 require_once HORSETOOLS_DIR . 'inc/shortcodes-lib.php';
+// PHP snippets: the execution layer and all of its gates. Loaded with the
+// Shortcode module because PHP snippets ARE snippets.
+require_once HORSETOOLS_DIR . 'inc/php-snippet.php';

@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.58
+Stable tag: 1.2.59
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -20,7 +20,7 @@ Horse Tools bundles the day-to-day tools a WordPress site owner actually needs i
 Features:
 
 * **Contact chat button** — a floating multi-channel contact widget with 30+ services (Zalo, Messenger, WhatsApp, Telegram, phone, Line, WeChat, Instagram, and more), flexible links, 17 button skins, a mobile Services panel to surface your key pages, business hours, greeting bubble, pre-filled messages and scan-to-open QR codes on desktop.
-* **Shortcodes** — a full snippet manager (create reusable content/HTML/PHP snippets, importable from Shortcoder), 20+ built-in shortcodes for conditional display, layout (accordion, tabs, alerts), dynamic data, QR codes and more, plus a "find where a shortcode is used" tool and an on/off manager.
+* **Shortcodes** — a full snippet manager (reusable content/HTML snippets, importable from Shortcoder; optionally **PHP snippets**, gated behind two-factor authentication — see below), 20+ built-in shortcodes for conditional display, layout (accordion, tabs, alerts), dynamic data, QR codes and more, plus a "find where a shortcode is used" tool and an on/off manager.
 * **Security hardening** — limit login attempts, block user enumeration, security response headers, disable the file editor, REST/XML-RPC controls and header cleanup.
 * **Privacy** — self-host Google Fonts and scan the front end for external requests.
 * **Media management** — WebP/AVIF conversion, watermarking, thumbnail control.
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.59 =
+* **New: PHP snippets — with the strongest safety net of any snippet plugin I know of.** A snippet can now be marked "run as PHP", which finally makes things like an automatic FAQ schema or a related-posts block possible without a separate code plugin. Because running PHP is the most powerful thing a plugin can offer, it is fenced in: only a full administrator (super admin on multisite) can see it, **their own account must have two-factor authentication switched on**, and editing PHP stays locked until they type a **current authenticator code**, which opens a 15-minute window. Code is **checked for syntax errors before it is saved**, so a typo can no longer white-screen the site, and if a snippet ever does crash a page it is **switched off automatically** with an explanation. Each snippet is **signed with the site's own secret key**: code written straight into the database — the usual pay-off of an SQL-injection hole in some other plugin — has no valid signature and simply refuses to run. Saving or enabling PHP sends an **alert to your Telegram (or e-mail)** and is written to an audit log with user, time and IP. You choose where each snippet runs (its own shortcode, the head, the footer, above/below post content, or every page load) and on which side of the site. And if the worst happens, `define( 'HORSETOOLS_NO_PHP', true )` in wp-config.php stops every PHP snippet, so a site is always recoverable over FTP.
+* Corrected the plugin description, which had claimed PHP snippets before they existed.
 
 = 1.2.58 =
 * **Fix: printed and exported tables lost some row numbers, and repeated a merged total.** Reported from a real print-out. Row numbers were read back from the page, so rows that had never been displayed (page 3 of a paginated table, say) came out blank; they are now numbered from their position in the exported set, so Print, Copy and CSV always number every row. And a cell merged across columns — the amount in a “TOTAL” row — was written once per column it spanned, printing the figure twice; a merged cell now contributes its text once, in the column it starts in.
@@ -499,6 +503,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.59 =
+Adds optional PHP snippets, gated behind two-factor authentication, a 15-minute unlock, pre-save syntax checking, auto-disable on crash and code signing.
 
 = 1.2.58 =
 Fixes missing row numbers and a duplicated merged total in printed/copied/exported tables.

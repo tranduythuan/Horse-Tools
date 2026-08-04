@@ -351,6 +351,63 @@ function horsetools_shortcode_options_page() {
 				</div>
 				</details>
 
+				<?php
+				// PHP snippets: shown only where they could actually be used, and
+				// gated behind the account's own two-factor code.
+				$ht_php_why = function_exists( 'horsetools_php_user_blocked' ) ? horsetools_php_user_blocked() : 'off';
+				if ( function_exists( 'horsetools_php_user_blocked' ) ) :
+					?>
+					<div class="ht-snip-php">
+						<?php if ( '' === $ht_php_why ) : ?>
+							<label class="ht-php-toggle">
+								<input type="checkbox" id="ht-snip-php" />
+								<b><?php _e( 'Run this snippet as PHP', 'horse-tools' ); ?></b>
+							</label>
+							<div id="ht-snip-php-box" hidden>
+								<div id="ht-snip-php-lock" <?php echo horsetools_php_unlocked() ? 'hidden' : ''; ?>>
+									<p class="ht-note"><i class="ti ti-lock"></i>
+										<?php _e( 'PHP runs with full access to your site, so it stays locked. Enter a current code from your authenticator to unlock it for 15 minutes.', 'horse-tools' ); ?></p>
+									<p>
+										<input type="text" id="ht-snip-php-code" inputmode="numeric" autocomplete="off"
+											placeholder="<?php esc_attr_e( '6-digit code', 'horse-tools' ); ?>" style="width:130px" />
+										<button type="button" class="ht-priv-btn" id="ht-snip-php-unlock"><i class="ti ti-lock-open"></i> <?php _e( 'Unlock', 'horse-tools' ); ?></button>
+									</p>
+								</div>
+								<div id="ht-snip-php-fields" <?php echo horsetools_php_unlocked() ? '' : 'hidden'; ?>>
+									<p class="ht-note"><i class="ti ti-bulb"></i>
+										<?php _e( 'Write plain PHP — no opening tag needed. The code is checked for syntax errors before it is saved, and if it ever crashes a page Horse Tools switches it off automatically.', 'horse-tools' ); ?></p>
+									<label><span><?php _e( 'Where it runs', 'horse-tools' ); ?></span>
+										<select id="ht-snip-php-hook">
+											<?php foreach ( horsetools_php_hooks_allowed() as $k => $label ) : ?>
+												<option value="<?php echo esc_attr( $k ); ?>"><?php echo esc_html( $label ); ?></option>
+											<?php endforeach; ?>
+										</select></label>
+									<label><span><?php _e( 'Side of the site', 'horse-tools' ); ?></span>
+										<select id="ht-snip-php-scope">
+											<?php foreach ( horsetools_php_scopes_allowed() as $k => $label ) : ?>
+												<option value="<?php echo esc_attr( $k ); ?>"><?php echo esc_html( $label ); ?></option>
+											<?php endforeach; ?>
+										</select></label>
+								</div>
+							</div>
+						<?php else : ?>
+							<p class="ht-note"><i class="ti ti-shield-lock"></i>
+								<?php
+								$ht_php_msgs = array(
+									'constant'     => __( 'PHP snippets are switched off by HORSETOOLS_NO_PHP in wp-config.php.', 'horse-tools' ),
+									'file_edit'    => __( 'PHP snippets are unavailable because this site sets DISALLOW_FILE_EDIT.', 'horse-tools' ),
+									'file_mods'    => __( 'PHP snippets are unavailable because this site sets DISALLOW_FILE_MODS.', 'horse-tools' ),
+									'cap'          => __( 'Only a full administrator may use PHP snippets.', 'horse-tools' ),
+									'no2fa_module' => __( 'To use PHP snippets, switch on two-factor authentication first (Horse Tools → Overview → Security).', 'horse-tools' ),
+									'no2fa_user'   => __( 'To use PHP snippets, switch on two-factor authentication for your own account first (Users → Profile).', 'horse-tools' ),
+								);
+								echo esc_html( isset( $ht_php_msgs[ $ht_php_why ] ) ? $ht_php_msgs[ $ht_php_why ] : __( 'PHP snippets are not available.', 'horse-tools' ) );
+								?>
+							</p>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
+
 				<p class="ht-snip-actions">
 					<button type="button" class="ht-priv-btn" id="ht-snip-save"><i class="ti ti-device-floppy"></i> <?php _e( 'Save snippet', 'horse-tools' ); ?></button>
 					<button type="button" class="ht-priv-btn" id="ht-snip-clear"><i class="ti ti-eraser"></i> <?php _e( 'New / clear', 'horse-tools' ); ?></button>
@@ -444,7 +501,8 @@ function horsetools_shortcode_options_page() {
 				var $ = function(id){ return document.getElementById(id); };
 				var F = { name:$('ht-snip-name'), title:$('ht-snip-title'), desc:$('ht-snip-desc'), content:$('htsnippetbody'),
 					on:$('ht-snip-on'), noadmin:$('ht-snip-noadmin'), device:$('ht-snip-device'), login:$('ht-snip-login'),
-					role:$('ht-snip-role'), tags:$('ht-snip-tags'), from:$('ht-snip-from'), to:$('ht-snip-to') };
+					role:$('ht-snip-role'), tags:$('ht-snip-tags'), from:$('ht-snip-from'), to:$('ht-snip-to'),
+					php:$('ht-snip-php'), phpHook:$('ht-snip-php-hook'), phpScope:$('ht-snip-php-scope') };
 				var msg=$('ht-snip-msg'), list=$('ht-snip-list'), tagFilter=$('ht-snip-tagfilter');
 					var search=$('ht-snip-search'), countlbl=$('ht-snip-countlbl');
 					var adv=document.querySelector('.ht-snip-adv');
@@ -459,7 +517,10 @@ function horsetools_shortcode_options_page() {
 						if (ed){ ed.setContent(html); }
 					}
 					function htFlushEditor(){ if (window.tinymce){ window.tinymce.triggerSave(); } }
+				var PHPNONCE = <?php echo wp_json_encode( wp_create_nonce( 'horsetools_php' ) ); ?>;
 				var I18N = {
+					phpUnlocked: <?php echo wp_json_encode( __( 'PHP editing unlocked for %d minutes.', 'horse-tools' ) ); ?>,
+					phpBad: <?php echo wp_json_encode( __( 'This snippet’s code no longer matches its signature — it was changed outside this screen and will not run. Review it and save again to re-sign it.', 'horse-tools' ) ); ?>,
 					saved: <?php echo wp_json_encode( __( 'Snippet saved.', 'horse-tools' ) ); ?>,
 					deleted: <?php echo wp_json_encode( __( 'Snippet deleted.', 'horse-tools' ) ); ?>,
 					none: <?php echo wp_json_encode( __( 'No snippets yet. Create one above, or import from Shortcoder.', 'horse-tools' ) ); ?>,
@@ -547,16 +608,41 @@ function horsetools_shortcode_options_page() {
 						F.name.value=s.slug; F.title.value=s.title||''; F.desc.value=s.desc||''; htSetEditor(s.content||'');
 						F.on.value=s.on?'1':'0'; F.noadmin.value=s.no_admin?'1':'0'; F.device.value=s.device||''; F.login.value=s.login||'';
 						F.role.value=s.role||''; F.tags.value=(s.tags||[]).join(', '); F.from.value=s.date_from||''; F.to.value=s.date_to||'';
+						if (F.php){ F.php.checked=!!s.php; F.php.dispatchEvent(new Event('change')); }
+						if (F.phpHook){ F.phpHook.value=s.php_hook||''; }
+						if (F.phpScope){ F.phpScope.value=s.php_scope||'front'; }
+						if (s.php_bad){ say(msg, I18N.phpBad, 'err'); }
 						if (adv && (s.device||s.login||s.role||s.no_admin||s.date_from||s.date_to||(s.tags&&s.tags.length)||!s.on)) { adv.open=true; }
 						F.name.focus(); window.scrollTo({top:0,behavior:'smooth'}); } return; }
 					if (dl){ if(!confirm(I18N.confirmDel))return; post({action:'horsetools_snip_delete',slug:dl.dataset.del}, function(res){ if(res&&res.success){ snippets=res.data.snippets; render(); say(msg,I18N.deleted,'good'); } else { say(msg,(res&&res.data&&res.data.msg)||I18N.fail,'err'); } }); return; }
 				});
 
+				// ---- PHP snippets: reveal the box, unlock with a 2FA code ----
+				var phpBox=$('ht-snip-php-box'), phpLock=$('ht-snip-php-lock'), phpFields=$('ht-snip-php-fields');
+				if (F.php && phpBox){
+					var syncPhp=function(){ phpBox.hidden = !F.php.checked; };
+					F.php.addEventListener('change', syncPhp);
+					syncPhp();
+				}
+				if ($('ht-snip-php-unlock')){
+					$('ht-snip-php-unlock').addEventListener('click', function(){
+						var code=$('ht-snip-php-code');
+						post({action:'horsetools_php_unlock', php_nonce:PHPNONCE, code:code.value}, function(res){
+							if (res&&res.success){
+								phpLock.hidden=true; phpFields.hidden=false; code.value='';
+								say(msg, I18N.phpUnlocked.replace('%d', res.data.minutes), 'good');
+							} else { say(msg,(res&&res.data&&res.data.msg)||I18N.fail,'err'); }
+						});
+					});
+				}
+
 				$('ht-snip-save').addEventListener('click', function(){
 					htFlushEditor();
 					post({action:'horsetools_snip_save', slug:F.name.value, title:F.title.value, desc:F.desc.value, content:F.content.value,
 						on:F.on.value, no_admin:F.noadmin.value, device:F.device.value, login:F.login.value, role:F.role.value,
-						tags:F.tags.value, date_from:F.from.value, date_to:F.to.value}, function(res){
+						tags:F.tags.value, date_from:F.from.value, date_to:F.to.value,
+						php:(F.php&&F.php.checked)?'1':'0',
+						php_hook:F.phpHook?F.phpHook.value:'', php_scope:F.phpScope?F.phpScope.value:'front'}, function(res){
 						if (res&&res.success){ snippets=res.data.snippets; render(); say(msg,I18N.saved,'good'); }
 						else { say(msg,(res&&res.data&&res.data.msg)||I18N.fail,'err'); }
 					});
@@ -895,6 +981,12 @@ function horsetools_snip_list_payload() {
 			'date_from' => isset( $s['date_from'] ) ? $s['date_from'] : '',
 			'date_to'   => isset( $s['date_to'] ) ? $s['date_to'] : '',
 			'tags'      => isset( $s['tags'] ) && is_array( $s['tags'] ) ? $s['tags'] : array(),
+			'php'       => ! empty( $s['php'] ),
+			'php_hook'  => isset( $s['hook'] ) ? $s['hook'] : '',
+			'php_scope' => isset( $s['scope'] ) ? $s['scope'] : 'front',
+			// A signed snippet whose code no longer matches its signature was
+			// changed outside this screen and will refuse to run.
+			'php_bad'   => ! empty( $s['php'] ) && function_exists( 'horsetools_php_signature_ok' ) && ! horsetools_php_signature_ok( $s ),
 		);
 	}
 	return $out;
@@ -940,6 +1032,7 @@ function horsetools_snip_save_ajax() {
 	};
 
 	$snips          = horsetools_snippets_get();
+	$prev           = isset( $snips[ $slug ] ) ? (array) $snips[ $slug ] : array();
 	$snips[ $slug ] = array(
 		'title'     => $title,
 		'desc'      => isset( $_POST['desc'] ) ? sanitize_text_field( wp_unslash( $_POST['desc'] ) ) : '',
@@ -953,6 +1046,16 @@ function horsetools_snip_save_ajax() {
 		'date_to'   => $valid_date( 'date_to' ),
 		'tags'      => horsetools_snip_parse_tags( isset( $_POST['tags'] ) ? wp_unslash( $_POST['tags'] ) : '' ),
 	);
+
+	// PHP snippets: validate, sign and record. Nothing is stored if the code
+	// does not parse or the author has not cleared every gate.
+	if ( function_exists( 'horsetools_php_prepare_save' ) ) {
+		$err = horsetools_php_prepare_save( $snips[ $slug ], $prev, $slug );
+		if ( '' !== $err ) {
+			wp_send_json_error( array( 'msg' => $err ) );
+		}
+	}
+
 	horsetools_snip_store( $snips );
 
 	wp_send_json_success( array( 'snippets' => horsetools_snip_list_payload(), 'saved' => $slug ) );

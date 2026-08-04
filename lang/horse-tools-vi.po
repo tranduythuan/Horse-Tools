@@ -6385,3 +6385,84 @@ msgstr "Hiện cột"
 
 msgid "All"
 msgstr "Tất cả"
+
+msgid "Run this snippet as PHP"
+msgstr "Chạy snippet này dưới dạng PHP"
+
+msgid "PHP runs with full access to your site, so it stays locked. Enter a current code from your authenticator to unlock it for 15 minutes."
+msgstr "PHP có toàn quyền trên site nên luôn ở trạng thái khóa. Nhập mã hiện tại từ ứng dụng xác thực để mở khóa trong 15 phút."
+
+msgid "Unlock"
+msgstr "Mở khóa"
+
+msgid "Write plain PHP — no opening tag needed. The code is checked for syntax errors before it is saved, and if it ever crashes a page Horse Tools switches it off automatically."
+msgstr "Viết PHP thuần, không cần thẻ mở đầu. Code được kiểm tra lỗi cú pháp trước khi lưu, và nếu làm sập trang thì Horse Tools sẽ tự tắt nó."
+
+msgid "Where it runs"
+msgstr "Chạy ở đâu"
+
+msgid "Side of the site"
+msgstr "Phía nào của site"
+
+msgid "Only where I place its shortcode"
+msgstr "Chỉ nơi tôi chèn shortcode"
+
+msgid "Every page load (init)"
+msgstr "Mọi lượt tải trang (init)"
+
+msgid "In the page <head>"
+msgstr "Trong <head> của trang"
+
+msgid "Before </body>"
+msgstr "Trước </body>"
+
+msgid "Above the post content"
+msgstr "Phía trên nội dung bài"
+
+msgid "Below the post content"
+msgstr "Phía dưới nội dung bài"
+
+msgid "Front end only"
+msgstr "Chỉ ngoài trang web"
+
+msgid "Admin only"
+msgstr "Chỉ trong quản trị"
+
+msgid "Front end and admin"
+msgstr "Cả ngoài trang lẫn quản trị"
+
+msgid "PHP editing unlocked for %d minutes."
+msgstr "Đã mở khóa sửa PHP trong %d phút."
+
+msgid "Only a full administrator may use PHP snippets."
+msgstr "Chỉ quản trị viên đầy đủ mới được dùng snippet PHP."
+
+msgid "To use PHP snippets, switch on two-factor authentication for your own account first (Users → Profile)."
+msgstr "Muốn dùng snippet PHP, hãy bật xác thực hai lớp cho chính tài khoản của bạn trước (Tài khoản → Hồ sơ)."
+
+msgid "To use PHP snippets, switch on two-factor authentication first (Horse Tools → Overview → Security)."
+msgstr "Muốn dùng snippet PHP, hãy bật xác thực hai lớp trước (Horse Tools → Tổng quan → Bảo mật)."
+
+msgid "Your own account must have two-factor authentication switched on before you can use PHP snippets."
+msgstr "Tài khoản của bạn phải bật xác thực hai lớp thì mới dùng được snippet PHP."
+
+msgid "Enter a current two-factor code to unlock PHP editing first."
+msgstr "Hãy nhập mã xác thực hai lớp hiện tại để mở khóa sửa PHP trước đã."
+
+msgid "Enter your authentication code."
+msgstr "Hãy nhập mã xác thực của bạn."
+
+msgid "That code is not right."
+msgstr "Mã không đúng."
+
+msgid "PHP syntax error — nothing was saved: %s"
+msgstr "Lỗi cú pháp PHP — chưa lưu gì cả: %s"
+
+msgid "PHP snippets are not available."
+msgstr "Snippet PHP không khả dụng."
+
+msgid "You are not allowed to use PHP snippets."
+msgstr "Bạn không được phép dùng snippet PHP."
+
+msgid "A PHP snippet changed on your site"
+msgstr "Có snippet PHP vừa thay đổi trên site của bạn"
