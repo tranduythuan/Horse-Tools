@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.77
+Stable tag: 1.2.78
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.78 =
+* **Fixes the cleanup schedule tab, which 1.2.77 shipped empty.** The schedule needs a list of what can be cleaned and a list of frequencies, both of which were built by the screen it was lifted out of, so the tab drew its heading and then nothing. It also carried a second form and Save button of its own, inside the screen's form, which browsers discard.
+* Restored the keyboard-shortcut hint above the code editors, lost in the same way.
 
 = 1.2.77 =
 * **Add code, Debug and Clean move onto grouped screens.** Custom CSS and the four code boxes plus the debug settings are tabs on Tools; the database cleanup is on Speed, because clearing out revisions and orphaned media is what it is actually for. Three more menu entries gone.
@@ -578,6 +582,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.78 =
+Fixes the cleanup schedule tab, which shipped empty in 1.2.77.
 
 = 1.2.77 =
 Add code, Debug and Clean become tabs on the Tools and Speed screens.

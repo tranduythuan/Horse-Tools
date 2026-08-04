@@ -1,11 +1,21 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
-global $horsetools_clean_options; ?>
+global $horsetools_clean_options;
+// $targets and $next_run were set in the body of the screen this section was
+// lifted out of. Without them the schedule loop runs over nothing and the tab
+// renders as an empty panel — no error, just a feature that looks missing.
+$targets  = function_exists( 'horsetools_clean_targets' ) ? horsetools_clean_targets() : array();
+$next_run = wp_next_scheduled( 'horsetools_scheduled_clean' );
+	$freq_opts  = array(
+		'off'     => __( 'Off', 'horse-tools' ),
+		'daily'   => __( 'Daily', 'horse-tools' ),
+		'weekly'  => __( 'Weekly', 'horse-tools' ),
+		'monthly' => __( 'Monthly', 'horse-tools' ),
+	);
+?>
 			<h2><?php _e( 'SCHEDULE', 'horse-tools' ); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="ti ti-history"></i> <?php _e( 'Automatic cleanup', 'horse-tools' ); ?></h3>
-				<form method="post" action="options.php">
-				<?php settings_fields( 'horsetools_clean_settings_group' ); ?>
 				<?php
 				foreach ( $targets as $id => $target ) {
 					if ( empty( $target['schedulable'] ) ) {
@@ -33,6 +43,4 @@ global $horsetools_clean_options; ?>
 					<?php endif; ?>
 				</p>
 				<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e( 'Deleting comments by link pattern is intentionally excluded from automatic cleanup — it stays a manual action.', 'horse-tools' ); ?></p>
-				<div class="ht-submit"><button type="submit"><i class="ti ti-device-floppy"></i> <?php _e( 'Save schedule', 'horse-tools' ); ?></button></div>
-				</form>
 			</div>
