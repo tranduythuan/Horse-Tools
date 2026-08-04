@@ -20,7 +20,49 @@ function horsetools_customers_page() {
 			'label' => __( 'WooCommerce', 'horse-tools' ),
 			'icon'  => 'ti-shopping-cart',
 			'files' => array( 'main/page/8woo.php' ),
-		),	) );
+		),		'cu-tab3' => array(
+			'label'  => __( 'Ad-block notice', 'horse-tools' ),
+			'icon'   => 'ti-ban',
+			'module' => 'notify',
+			'files'  => array( 'main/section/cu-notify1.php' ),
+		),
+		'cu-tab4' => array(
+			'label'  => __( 'Notification bar', 'horse-tools' ),
+			'icon'   => 'ti-bell',
+			'module' => 'notify',
+			'files'  => array( 'main/section/cu-notify2.php' ),
+		),
+		'cu-tab5' => array(
+			'label'  => __( 'Popup', 'horse-tools' ),
+			'icon'   => 'ti-app-window',
+			'module' => 'notify',
+			'files'  => array( 'main/section/cu-notify3.php' ),
+		),
+		'cu-tab6' => array(
+			'label'  => __( 'Cookie notice', 'horse-tools' ),
+			'icon'   => 'ti-cookie',
+			'module' => 'notify',
+			'files'  => array( 'main/section/cu-notify4.php' ),
+		),
+		'cu-tab7' => array(
+			'label'  => __( 'Ad clicks', 'horse-tools' ),
+			'icon'   => 'ti-click',
+			'module' => 'ads',
+			'files'  => array( 'main/section/cu-ads1.php' ),
+		),
+		'cu-tab8' => array(
+			'label'  => __( 'AdSense', 'horse-tools' ),
+			'icon'   => 'ti-ad',
+			'module' => 'ads',
+			'files'  => array( 'main/section/cu-ads2.php' ),
+		),
+		'cu-tab9' => array(
+			'label'  => __( 'ads.txt', 'horse-tools' ),
+			'icon'   => 'ti-file-text',
+			'module' => 'ads',
+			'files'  => array( 'main/section/cu-ads3.php' ),
+		),
+	) );
 }
 
 function horsetools_customers_menu() {

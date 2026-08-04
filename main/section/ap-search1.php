@@ -1,33 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
-function horsetools_search_options_page() {
-	global $horsetools_search_options;
-	ob_start(); 
-	?>
-	<div class="wrap ht-wrap">
-	<div class="ht-wrap-top">
-	</div>
-	<div class="ht-wrap2">
-	  <div class="ht-box">
-		<div class="ht-menu">
-			<div class="ht-logo ht-logoquay">
-			<a class="ht-logoquaya" href="https://tranduythuan.com/" target="_blank">
-			<span><?php horsetools_logo(); ?></span>
-			</a>
-			</div>
-			<button class="sotab sotab-select" onclick="httab(event, 'tab1')"><i class="ti ti-search"></i> <?php _e('HORSE SEARCH', 'horse-tools'); ?></button>
-		</div>
-
-		<div class="ht-main">
-			<?php 
-			if( isset($_GET['settings-updated']) ) { 
-				require_once( HORSETOOLS_DIR . 'main/completed.php'); 
-			}
-			?>
-			<form method="post" action="options.php">
-			<?php settings_fields('horsetools_search_settings_group'); ?> 
-			<!-- SEARCH -->
-			<div class="sotab-box htbox" id="tab1" >
+global $horsetools_search_options; ?>
 			<h2><?php _e('HORSE SEARCH', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="ti ti-search"></i> <?php _e('Quick search', 'horse-tools') ?></h3>
@@ -202,35 +175,3 @@ function horsetools_search_options_page() {
 				<div id="loadbarprocess"></div>
 				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Configure the options and create search data. If you want to refresh, you can delete the search data and recreate it. After enabling quick search and completing data creation, a quick search popup will appear when you enter the search box on the website', 'horse-tools'); ?></p>
 			</div>
-			</div>
-			<div class="ht-submit">
-				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
-			</div>
-				<button id="ht-save-fast" type="submit"><i class="ti ti-device-floppy"></i></button>
-			</form>
-		</div>
-	  </div>
-      <div class="ht-sidebar">
-	  </div>
-	</div>	
-	</div>
-	<?php
-	// style horsetools
-	require_once( HORSETOOLS_DIR . 'main/style.php');
-	echo ob_get_clean();
-}
-function horsetools_search_options_link() {
-	add_submenu_page ('horsetools-options', 'Horse Search', '<i class="ti ti-search" style="width:20px;"></i> '. __('Horse Search', 'horse-tools'), 'manage_options', 'horsetools-search-options', 'horsetools_search_options_page');
-}
-// Menu removed in 1.2.76: now tabs on a grouped screen.
-// add_action('admin_menu', 'horsetools_search_options_link');
-function horsetools_search_register_settings() {
-	register_setting( 'horsetools_search_settings_group', 'horsetools_search_settings', array( 'sanitize_callback' => 'horsetools_sanitize_search' ) );
-}
-add_action('admin_init', 'horsetools_search_register_settings');
-// clear cache
-function horsetools_search_settings_cache($old_value, $value) {
-    wp_cache_delete('horsetools_search_settings', 'options');
-}
-add_action('update_option_horsetools_search_settings', 'horsetools_search_settings_cache', 10, 2);
-

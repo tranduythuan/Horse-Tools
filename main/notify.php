@@ -281,7 +281,8 @@ function horsetools_notify_options_page() {
 function horsetools_notify_options_link() {
 	add_submenu_page ('horsetools-options', 'Notify', '<i class="ti ti-bell" style="width:20px;"></i> '. __('Notify', 'horse-tools'), 'manage_options', 'horsetools-notify-options', 'horsetools_notify_options_page');
 }
-add_action('admin_menu', 'horsetools_notify_options_link');
+// Menu removed in 1.2.76: now tabs on a grouped screen.
+// add_action('admin_menu', 'horsetools_notify_options_link');
 function horsetools_notify_register_settings() {
 	register_setting( 'horsetools_notify_settings_group', 'horsetools_notify_settings', array( 'sanitize_callback' => 'horsetools_sanitize_notify' ) );
 }

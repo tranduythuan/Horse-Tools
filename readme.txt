@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.75
+Stable tag: 1.2.76
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.76 =
+* **Notifications, ads and site search move onto grouped screens.** The ad-block notice, notification bar, popup and cookie notice are now four tabs on Customers, next to ad clicks, AdSense and ads.txt; site search is a tab on Appearance. Three more menu entries gone, nothing removed.
+* Each of those screens had its own tab strip, so the tabs are flattened into the screen rather than nested — a tab inside a tab is hidden by the tab switcher and opens empty, which is the fault fixed in 1.2.75.
+* Old addresses still work.
 
 = 1.2.75 =
 * **Fixed: the table of contents tab on the SEO screen opened empty.** It kept the tab strip from its old screen, and a tab inside a tab stays hidden — so clicking it showed nothing at all while the settings were still there in the page. Only visible with the table of contents module switched on, which is why it survived the previous release.
@@ -569,6 +574,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.76 =
+Notifications, ads and site search become tabs on the Customers and Appearance screens.
 
 = 1.2.75 =
 Fixes the table of contents tab opening empty on the SEO screen.

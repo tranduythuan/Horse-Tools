@@ -20,7 +20,13 @@ function horsetools_display_page() {
 			'label' => __( 'Admin area', 'horse-tools' ),
 			'icon'  => 'ti-brand-wordpress',
 			'files' => array( 'main/page/10custom.php' ),
-		),	) );
+		),		'dp-tab3' => array(
+			'label'  => __( 'Site search', 'horse-tools' ),
+			'icon'   => 'ti-search',
+			'module' => 'search',
+			'files'  => array( 'main/section/ap-search1.php' ),
+		),
+	) );
 }
 
 function horsetools_display_menu() {

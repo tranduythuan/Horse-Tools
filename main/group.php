@@ -207,6 +207,9 @@ function horsetools_group_legacy_redirect() {
 		'horsetools-redirects-options' => 'horsetools-seo-options',
 		'horsetools-gindex-options'    => 'horsetools-seo-options',
 		'horsetools-toc-options'       => 'horsetools-seo-options',
+		'horsetools-search-options'    => 'horsetools-display-options',
+		'horsetools-notify-options'    => 'horsetools-customers-options',
+		'horsetools-ads-options'       => 'horsetools-customers-options',
 	);
 	$page = isset( $_GET['page'] ) ? sanitize_key( wp_unslash( $_GET['page'] ) ) : '';
 	if ( isset( $moved[ $page ] ) && current_user_can( 'manage_options' ) ) {
