@@ -97,10 +97,10 @@ function horsetools_options_page() {
 				<?php include( HORSETOOLS_DIR . 'main/page/ht-setting.php'); ?> 
 			</div>
 			<?php
-			// $owns_all is true only while this screen renders every tab. When
-			// the tabs are split across screens it must be dropped, or each
-			// screen would claim the whole option and wipe the others.
-			horsetools_scope_print( ob_get_clean(), 'horsetools_settings', true );
+			// No owns_all any more: the SEO screen writes this option too, so
+			// this screen must claim only the keys it renders. Claiming the
+			// whole option here would erase the SEO settings on every save.
+			horsetools_scope_print( ob_get_clean(), 'horsetools_settings' );
 			?>
 			<div class="ht-submit">
 				<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>

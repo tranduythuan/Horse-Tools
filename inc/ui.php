@@ -217,6 +217,7 @@ function horsetools_input( $key, $label, array $args = array() ) {
 function horsetools_index_pages() {
 	return array(
 		'horsetools-options'           => 'horsetools_options_page',
+		'horsetools-seo-options'       => 'horsetools_seo_page',
 		'horsetools-extend-options'    => 'horsetools_extend_options_page',
 		'horsetools-code-options'      => 'horsetools_code_options_page',
 		'horsetools-clean-options'     => 'horsetools_clean_options_page',

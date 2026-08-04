@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.68
+Stable tag: 1.2.69
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.69 =
+* **There is now an SEO screen.** Everything on it already existed, buried in the CONTENT tab: removing the category and tag slug from permalinks, adding .html to pages, using image titles as alt text, adding nofollow and a new tab to external links, and the automatic FAQ schema. None of it was findable by anyone looking for SEO — which is how a site owner reasonably concludes the plugin has no SEO features. Nothing about what these settings do has changed, only where they live.
+* **Those features no longer depend on the CONTENT switch.** They are implemented in the file the CONTENT tab loads, so with CONTENT off they would have been switched on from the SEO screen and quietly done nothing. The file is now also loaded when any of these features is on by itself.
+* The two screens write the same stored option and each now claims only the fields it renders, so saving one leaves the other alone. This is what the last three releases were building towards.
 
 = 1.2.68 =
 * **One Save button can now write more than one group of settings.** WordPress binds a settings form to exactly one stored option, which is fine while each screen maps to one option and stops being fine as soon as screens are grouped by subject: an SEO screen holds the FAQ settings alongside redirects, index-now and the table of contents, and each of those is a separate option — four forms and four Save buttons on one screen. Saving now goes through its own handler that writes any number of options from a single submission, while each one still only rewrites the keys that screen actually rendered.
@@ -536,6 +541,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.69 =
+Adds an SEO screen holding settings that were previously buried in the CONTENT tab.
 
 = 1.2.68 =
 Internal: one Save button can now write several settings groups. No visible change.

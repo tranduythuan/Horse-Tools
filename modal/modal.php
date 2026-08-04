@@ -44,6 +44,9 @@ function horsetools_load_admin_files() {
     $files_to_include = array(
         'main/admin.php',
         'main/extend.php',
+        // Always present: SEO is not an optional module, it is a home for
+        // settings that already existed and were simply hard to find.
+        'main/seo.php',
     );
     foreach ($optional_files as $key => $file) {
         if (isset($horsetools_extend_options[$key])) {
@@ -114,9 +117,34 @@ if (isset($horsetools_extend_options) && is_array($horsetools_extend_options)) {
         }
     }
 }
+/**
+ * Features that moved to their own screen but whose code still lives in a file
+ * gated by the tab they came from.
+ *
+ * The tab master switches predate the reorganisation: 'post' turns on the whole
+ * CONTENT tab, and inc/post.php — which also holds the URL, image-alt,
+ * external-link and FAQ schema features — loads only when it is on. Now that
+ * those settings live on the SEO screen, someone can switch one on there while
+ * CONTENT is off, and it would quietly do nothing. Each feature inside the file
+ * already checks its own key, so loading the file when any of these is set
+ * turns on exactly that feature and nothing else.
+ */
+$horsetools_orphan_keys = array(
+    'post' => array( 'post-link1', 'post-link2', 'post-html1', 'post-alt1', 'post-out1', 'faq-schema1' ),
+);
+
 if (isset($horsetools_options) && is_array($horsetools_options)) {
     foreach ($horsetools_option_files as $option_key => $file_path) {
-        if (isset($horsetools_options[$option_key])) {
+        $wanted = isset($horsetools_options[$option_key]);
+        if ( ! $wanted && isset( $horsetools_orphan_keys[ $option_key ] ) ) {
+            foreach ( $horsetools_orphan_keys[ $option_key ] as $key ) {
+                if ( ! empty( $horsetools_options[ $key ] ) ) {
+                    $wanted = true;
+                    break;
+                }
+            }
+        }
+        if ($wanted) {
             include(HORSETOOLS_DIR . $file_path);
         }
     }
