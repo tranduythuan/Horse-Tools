@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.2.66
+ * Version: 1.2.67
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,19 +24,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.2.66' );
+define( 'HORSETOOLS_VERSION', '1.2.67' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
 
+/**
+ * Whether this request can reach the plugin's own machinery.
+ *
+ * is_admin() alone is the wrong test and has already cost us: WP-Cron runs
+ * through wp-cron.php with no admin constant, so a file skipped for "not admin"
+ * is also skipped for every scheduled task it registers — the task then fires
+ * into nothing and WordPress reschedules it, silently, for ever. WP-CLI is here
+ * for the same reason: activation and updates run there with no admin either.
+ */
+function horsetools_is_backend() {
+	return is_admin()
+		|| ( function_exists( 'wp_doing_cron' ) && wp_doing_cron() )
+		|| ( defined( 'DOING_CRON' ) && DOING_CRON )
+		|| ( defined( 'WP_CLI' ) && WP_CLI );
+}
+
 include( HORSETOOLS_DIR . 'inc/registry.php' );
 include( HORSETOOLS_DIR . 'inc/http.php' );
-include( HORSETOOLS_DIR . 'inc/sanitize.php' );
-// Self-update from GitHub Releases. Loaded unconditionally (not admin-only):
-// the update check also runs from WP-Cron, and the injected package URL is what
-// lets the SERVER download new versions directly from GitHub instead of the
-// owner uploading the ZIP through the browser.
-include( HORSETOOLS_DIR . 'inc/update.php' );
+// Sanitizing is what happens when settings are written, which only the admin
+// screens, the activation migration and WP-CLI ever do. A page view never
+// needs it.
+if ( horsetools_is_backend() ) {
+	include( HORSETOOLS_DIR . 'inc/sanitize.php' );
+}
+// Self-update from GitHub Releases. Backend rather than admin-only: the update
+// check also runs from WP-Cron, and the injected package URL is what lets the
+// SERVER download new versions directly from GitHub instead of the owner
+// uploading the ZIP through the browser. A visitor's page view is the one case
+// that never needs any of it.
+if ( horsetools_is_backend() ) {
+	include( HORSETOOLS_DIR . 'inc/update.php' );
+}
 if ( is_admin() ) {
 	include( HORSETOOLS_DIR . 'inc/ui.php' );
 	include( HORSETOOLS_DIR . 'inc/health.php' );

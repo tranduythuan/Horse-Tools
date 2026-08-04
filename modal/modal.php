@@ -101,7 +101,12 @@ $horsetools_admin_only_modules = array( 'clean', 'debug', 'index' );
 
 if (isset($horsetools_extend_options) && is_array($horsetools_extend_options)) {
     foreach ($horsetools_extend_files as $option_key => $file_path) {
-        if ( in_array( $option_key, $horsetools_admin_only_modules, true ) && ! is_admin() ) {
+        // Not is_admin(): inc/clean.php registers the handler for the daily
+        // cleanup, and WP-Cron is not an admin request, so skipping the file
+        // there left the scheduled event firing into nothing — WordPress then
+        // marks it done and reschedules, so it failed silently rather than
+        // erroring. horsetools_is_backend() covers cron and WP-CLI too.
+        if ( in_array( $option_key, $horsetools_admin_only_modules, true ) && ! horsetools_is_backend() ) {
             continue;
         }
         if (isset($horsetools_extend_options[$option_key])) {

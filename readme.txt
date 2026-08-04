@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.66
+Stable tag: 1.2.67
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.67 =
+* **Fixed: the daily cleanup has never actually run.** Three modules were skipped on any request that was not the admin area, to keep them off page views. WP-Cron is not an admin request, so the file that handles the scheduled cleanup was skipped there too — the event fired, found nothing listening, and WordPress marked it done and rescheduled it. It failed silently rather than erroring, which is why it went unnoticed. Loading is now decided by a test that counts cron and WP-CLI as well as the admin area, so the handler is present when the event fires. Turn the schedule off and on again if you want to be sure of a fresh next-run time.
+* **A page view no longer loads the settings sanitiser or the updater** — 33 KB of PHP that a visitor could never reach, out of the 70 KB the plugin always loaded. Sanitising happens when settings are written, which only the admin screens, the activation migration and WP-CLI ever do; the update check runs in the admin area and from cron. Both are still loaded in every context that needs them. With OPcache the saving is memory and a little include work rather than recompilation, so expect a small improvement, not a transformed site.
 
 = 1.2.66 =
 * **Groundwork for reorganising the settings screens: a form can now save its own part of the settings without erasing the rest.** All thirteen tabs share one stored option, and a settings form replaces that option wholesale — correct only while a single form renders every field. Splitting the tabs across screens would have meant saving one screen wiped the others. A form now declares which keys it is responsible for, and saving drops exactly those before applying what was submitted. The declaration cannot be worked out at save time from what arrives: an unticked checkbox sends nothing, and is indistinguishable from a field the form never had — so the form states its scope up front, read back from the markup it actually rendered, which covers fields written as raw HTML and repeater rows alike.
@@ -527,6 +531,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.67 =
+Fixes a scheduled cleanup that never ran, and stops page views loading admin-only code.
 
 = 1.2.66 =
 Internal groundwork for the settings reorganisation. No visible change.
