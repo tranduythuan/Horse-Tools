@@ -153,10 +153,27 @@
 	}
 
 	// Render the manual grid from a 2D source (or blanks), rows×cols in size.
+	// Every column gets a control strip (insert/delete/move) and every row a
+	// control cell — the spreadsheet-style editing that a fixed grid lacked.
 	function fillGrid( src, rows, cols ) {
-		var html = '';
+		var html = '<div class="ht-tb-colctls"><span class="ht-tb-rcsp"></span>';
+		for ( var cc = 0; cc < cols; cc++ ) {
+			html += '<span class="ht-tb-colctl">'
+				+ '<button type="button" class="ht-tb-op" data-op="cml" data-j="' + cc + '" title="' + escAttr( t( 'colLeft', 'Move column left' ) ) + '">‹</button>'
+				+ '<button type="button" class="ht-tb-op" data-op="cadd" data-j="' + cc + '" title="' + escAttr( t( 'colAdd', 'Insert column right' ) ) + '">＋</button>'
+				+ '<button type="button" class="ht-tb-op" data-op="cdel" data-j="' + cc + '" title="' + escAttr( t( 'colDel', 'Delete column' ) ) + '">✕</button>'
+				+ '<button type="button" class="ht-tb-op" data-op="cmr" data-j="' + cc + '" title="' + escAttr( t( 'colRight', 'Move column right' ) ) + '">›</button>'
+				+ '</span>';
+		}
+		html += '</div>';
 		for ( var r = 0; r < rows; r++ ) {
 			html += '<div class="ht-tb-grow">';
+			html += '<span class="ht-tb-rowctl">'
+				+ '<button type="button" class="ht-tb-op" data-op="rmu" data-i="' + r + '" title="' + escAttr( t( 'rowUp', 'Move row up' ) ) + '">˄</button>'
+				+ '<button type="button" class="ht-tb-op" data-op="radd" data-i="' + r + '" title="' + escAttr( t( 'rowAdd', 'Insert row below' ) ) + '">＋</button>'
+				+ '<button type="button" class="ht-tb-op" data-op="rdel" data-i="' + r + '" title="' + escAttr( t( 'rowDel', 'Delete row' ) ) + '">✕</button>'
+				+ '<button type="button" class="ht-tb-op" data-op="rmd" data-i="' + r + '" title="' + escAttr( t( 'rowDown', 'Move row down' ) ) + '">˅</button>'
+				+ '</span>';
 			for ( var c = 0; c < cols; c++ ) {
 				var v = ( src && src[ r ] && src[ r ][ c ] != null ) ? src[ r ][ c ] : '';
 				html += '<input type="text" data-r="' + r + '" data-c="' + c + '" value="' + escAttr( v ) + '"' + ( r === 0 ? ' class="ht-tb-hcell" placeholder="' + escAttr( t( 'colN', 'Column' ) + ' ' + ( c + 1 ) ) + '"' : '' ) + '>';
@@ -164,6 +181,59 @@
 			html += '</div>';
 		}
 		els.grid.innerHTML = html;
+	}
+
+	// Current grid as a full rows×cols matrix (missing cells become '').
+	function readGrid() {
+		var rows = Math.max( 1, parseInt( els.rows.value, 10 ) || 1 );
+		var cols = Math.max( 1, parseInt( els.cols.value, 10 ) || 1 );
+		var data = [];
+		for ( var r = 0; r < rows; r++ ) {
+			var row = [];
+			for ( var c = 0; c < cols; c++ ) {
+				var inp = els.grid.querySelector( 'input[data-r="' + r + '"][data-c="' + c + '"]' );
+				row.push( inp ? inp.value : '' );
+			}
+			data.push( row );
+		}
+		return { data: data, rows: rows, cols: cols };
+	}
+
+	// Structural edits: insert/delete/move rows and columns.
+	function gridOp( op, i, j ) {
+		var g = readGrid(), data = g.data, rows = g.rows, cols = g.cols, tmp;
+		if ( 'radd' === op ) {
+			if ( rows >= 200 ) { return; }
+			var blank = []; for ( var b = 0; b < cols; b++ ) { blank.push( '' ); }
+			data.splice( i + 1, 0, blank );
+		} else if ( 'rdel' === op ) {
+			if ( rows <= 1 ) { return; }
+			data.splice( i, 1 );
+		} else if ( 'rmu' === op ) {
+			if ( i <= 0 ) { return; }
+			tmp = data[ i - 1 ]; data[ i - 1 ] = data[ i ]; data[ i ] = tmp;
+		} else if ( 'rmd' === op ) {
+			if ( i >= rows - 1 ) { return; }
+			tmp = data[ i + 1 ]; data[ i + 1 ] = data[ i ]; data[ i ] = tmp;
+		} else if ( 'cadd' === op ) {
+			if ( cols >= 40 ) { return; }
+			data.forEach( function ( r ) { r.splice( j + 1, 0, '' ); } );
+		} else if ( 'cdel' === op ) {
+			if ( cols <= 1 ) { return; }
+			data.forEach( function ( r ) { r.splice( j, 1 ); } );
+		} else if ( 'cml' === op ) {
+			if ( j <= 0 ) { return; }
+			data.forEach( function ( r ) { var x = r[ j - 1 ]; r[ j - 1 ] = r[ j ]; r[ j ] = x; } );
+		} else if ( 'cmr' === op ) {
+			if ( j >= cols - 1 ) { return; }
+			data.forEach( function ( r ) { var x = r[ j + 1 ]; r[ j + 1 ] = r[ j ]; r[ j ] = x; } );
+		} else {
+			return;
+		}
+		els.rows.value = data.length;
+		els.cols.value = data[ 0 ].length;
+		fillGrid( data, data.length, data[ 0 ].length );
+		renderPreview();
 	}
 	function collectGridRaw() {
 		var out = [];
@@ -330,7 +400,25 @@
 			if ( tgt === overlay || tgt.classList.contains( 'ht-tb-x' ) || tgt.classList.contains( 'ht-tb-cancel' ) ) { closeIt(); return; }
 			if ( tgt.classList.contains( 'ht-tb-tab' ) ) { switchTab( tgt.getAttribute( 'data-tab' ) ); return; }
 			if ( tgt.classList.contains( 'ht-tb-mkgrid' ) ) { buildGrid(); renderPreview(); return; }
+			if ( tgt.classList.contains( 'ht-tb-op' ) ) {
+				gridOp( tgt.getAttribute( 'data-op' ), parseInt( tgt.getAttribute( 'data-i' ), 10 ) || 0, parseInt( tgt.getAttribute( 'data-j' ), 10 ) || 0 );
+				return;
+			}
 			if ( tgt.classList.contains( 'ht-tb-insert' ) ) { doPrimary(); return; }
+		} );
+		// Enter in a grid cell moves to the cell below (adding a row on the last
+		// one) — the spreadsheet muscle-memory flow for typing a column of data.
+		overlay.addEventListener( 'keydown', function ( e ) {
+			var tgt = e.target;
+			if ( 'Enter' !== e.key || ! tgt.matches || ! tgt.matches( '.ht-tb-grid input[data-r]' ) ) { return; }
+			e.preventDefault();
+			var r = parseInt( tgt.getAttribute( 'data-r' ), 10 ), c = parseInt( tgt.getAttribute( 'data-c' ), 10 );
+			var next = els.grid.querySelector( 'input[data-r="' + ( r + 1 ) + '"][data-c="' + c + '"]' );
+			if ( ! next ) {
+				gridOp( 'radd', r, 0 );
+				next = els.grid.querySelector( 'input[data-r="' + ( r + 1 ) + '"][data-c="' + c + '"]' );
+			}
+			if ( next ) { next.focus(); }
 		} );
 		overlay.addEventListener( 'input', function ( e ) {
 			if ( e.target.closest( '.ht-tb-grid, .ht-tb-paste, .ht-tb-opts, .ht-tb-opts2' ) ) { renderPreview(); }
@@ -422,9 +510,14 @@
 			+ '.ht-tb-manualbar{margin-bottom:10px;font-size:13px;}'
 			+ '.ht-tb-manualbar input{width:60px;}'
 			+ '.ht-tb-grid{max-height:220px;overflow:auto;border:1px solid #eee;border-radius:6px;padding:6px;}'
-			+ '.ht-tb-grow{display:flex;gap:4px;margin-bottom:4px;}'
+			+ '.ht-tb-grow{display:flex;gap:4px;margin-bottom:4px;align-items:center;}'
 			+ '.ht-tb-grow input{flex:1;min-width:70px;padding:5px 7px;border:1px solid #dcdcde;border-radius:4px;font-size:13px;}'
 			+ '.ht-tb-grow input.ht-tb-hcell{background:#f5f7fa;font-weight:600;}'
+			+ '.ht-tb-colctls{display:flex;gap:4px;margin-bottom:4px;}'
+			+ '.ht-tb-rcsp,.ht-tb-rowctl{flex:0 0 96px;display:flex;gap:2px;justify-content:center;}'
+			+ '.ht-tb-colctl{flex:1;min-width:70px;display:flex;gap:2px;justify-content:center;}'
+			+ '.ht-tb-op{border:1px solid #dcdcde;background:#fff;border-radius:4px;cursor:pointer;font-size:11px;line-height:1;padding:3px 5px;color:#667;}'
+			+ '.ht-tb-op:hover{border-color:#2271b1;color:#2271b1;}'
 			+ '.ht-tb-paste{width:100%;font-family:monospace;font-size:13px;}'
 			+ '.ht-tb-saved{min-width:320px;max-width:100%;padding:6px 8px;font-size:13px;}'
 			+ '.ht-tb-hint{font-size:13px;color:#555;margin:0 0 8px;}'

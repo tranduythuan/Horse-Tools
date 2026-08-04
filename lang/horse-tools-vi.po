@@ -6247,3 +6247,30 @@ msgstr "Trước"
 
 msgid "Next"
 msgstr "Sau"
+
+msgid "Insert row below"
+msgstr "Chèn hàng bên dưới"
+
+msgid "Delete row"
+msgstr "Xóa hàng"
+
+msgid "Move row up"
+msgstr "Chuyển hàng lên"
+
+msgid "Move row down"
+msgstr "Chuyển hàng xuống"
+
+msgid "Insert column right"
+msgstr "Chèn cột bên phải"
+
+msgid "Delete column"
+msgstr "Xóa cột"
+
+msgid "Move column left"
+msgstr "Chuyển cột sang trái"
+
+msgid "Move column right"
+msgstr "Chuyển cột sang phải"
+
+msgid "Click again to delete"
+msgstr "Bấm lần nữa để xóa"

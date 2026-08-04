@@ -715,6 +715,16 @@ $vi = array(
     'Something went wrong. Please try again.' => 'Có lỗi xảy ra. Vui lòng thử lại.',
     'Table %d' => 'Bảng %d',
     'copy' => 'bản sao',
+    // Spreadsheet-style grid editor (1.2.47)
+    'Insert row below' => 'Chèn hàng bên dưới',
+    'Delete row' => 'Xóa hàng',
+    'Move row up' => 'Chuyển hàng lên',
+    'Move row down' => 'Chuyển hàng xuống',
+    'Insert column right' => 'Chèn cột bên phải',
+    'Delete column' => 'Xóa cột',
+    'Move column left' => 'Chuyển cột sang trái',
+    'Move column right' => 'Chuyển cột sang phải',
+    'Click again to delete' => 'Bấm lần nữa để xóa',
     // Table fx: sort/search/pagination (1.2.46)
     'Sortable columns' => 'Cột bấm để sắp xếp',
     'Search box' => 'Ô tìm kiếm',

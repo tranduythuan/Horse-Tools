@@ -663,6 +663,14 @@ function horsetools_table_builder_i18n() {
 		'cDark'      => __( 'Dark', 'horse-tools' ),
 		'captionL'   => __( 'Caption', 'horse-tools' ),
 		'captionPh'  => __( 'optional title above the table', 'horse-tools' ),
+		'rowAdd'     => __( 'Insert row below', 'horse-tools' ),
+		'rowDel'     => __( 'Delete row', 'horse-tools' ),
+		'rowUp'      => __( 'Move row up', 'horse-tools' ),
+		'rowDown'    => __( 'Move row down', 'horse-tools' ),
+		'colAdd'     => __( 'Insert column right', 'horse-tools' ),
+		'colDel'     => __( 'Delete column', 'horse-tools' ),
+		'colLeft'    => __( 'Move column left', 'horse-tools' ),
+		'colRight'   => __( 'Move column right', 'horse-tools' ),
 		'optSort'    => __( 'Sortable columns', 'horse-tools' ),
 		'optSearch'  => __( 'Search box', 'horse-tools' ),
 		'optPage'    => __( 'Pagination', 'horse-tools' ),
@@ -1019,7 +1027,7 @@ function horsetools_tables_page() {
 		var NONCE = <?php echo wp_json_encode( wp_create_nonce( 'horsetools_tbl' ) ); ?>;
 		var AJAX  = <?php echo wp_json_encode( admin_url( 'admin-ajax.php' ) ); ?>;
 		var STR   = {
-			del:  <?php echo wp_json_encode( __( 'Delete this table? Any post using it will lose the table.', 'horse-tools' ) ); ?>,
+			sure: <?php echo wp_json_encode( __( 'Click again to delete', 'horse-tools' ) ); ?>,
 			fail: <?php echo wp_json_encode( __( 'Something went wrong. Please try again.', 'horse-tools' ) ); ?>
 		};
 		function post( action, data, cb ) {
@@ -1056,8 +1064,26 @@ function horsetools_tables_page() {
 				} else if ( e.target.classList.contains( 'ht-tbl-dup' ) ) {
 					post( 'horsetools_tbl_duplicate', { id: id }, function ( res ) { if ( res && res.success ) { location.reload(); } else { alert( STR.fail ); } } );
 				} else if ( e.target.classList.contains( 'ht-tbl-del' ) ) {
-					if ( ! confirm( STR.del ) ) { return; }
-					post( 'horsetools_tbl_delete', { id: id }, function ( res ) { if ( res && res.success ) { location.reload(); } else { alert( STR.fail ); } } );
+					// Two-step confirm instead of a native confirm() dialog: first
+					// click arms the button for 4 s, second click deletes.
+					var b = e.target;
+					if ( b.dataset.armed === '1' ) {
+						post( 'horsetools_tbl_delete', { id: id }, function ( res ) { if ( res && res.success ) { location.reload(); } else { alert( STR.fail ); } } );
+						return;
+					}
+					b.dataset.armed = '1';
+					b.dataset.label = b.textContent;
+					b.textContent = STR.sure;
+					b.style.borderColor = '#b32d2e';
+					b.style.color = '#b32d2e';
+					setTimeout( function () {
+						if ( b.dataset.armed === '1' ) {
+							b.dataset.armed = '';
+							b.textContent = b.dataset.label;
+							b.style.borderColor = '';
+							b.style.color = '';
+						}
+					}, 4000 );
 				}
 			} );
 		}
