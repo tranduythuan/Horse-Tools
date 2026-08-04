@@ -6331,3 +6331,30 @@ msgstr "Gộp ô: gõ #colspan# để gộp vào ô bên trái, #rowspan# để 
 
 msgid "Last row is a total row (pinned to the bottom)"
 msgstr "Hàng cuối là hàng tổng (ghim dưới đáy)"
+
+msgid "Card (shadow)"
+msgstr "Nổi khối (đổ bóng)"
+
+msgid "Dark background"
+msgstr "Nền tối"
+
+msgid "Soft pastel"
+msgstr "Pastel dịu"
+
+msgid "Pink"
+msgstr "Hồng"
+
+msgid "Teal"
+msgstr "Xanh ngọc"
+
+msgid "Indigo"
+msgstr "Chàm"
+
+msgid "Gradient blue-violet"
+msgstr "Chuyển sắc xanh–tím"
+
+msgid "Gradient sunset"
+msgstr "Chuyển sắc hoàng hôn"
+
+msgid "Gradient ocean"
+msgstr "Chuyển sắc biển"

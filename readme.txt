@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.50
+Stable tag: 1.2.51
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.51 =
+* **Richer table looks: 3 new styles and 7 new header colours.** New styles: **Card** (an elevated, softly-rounded block with a shadow and no hard outline), **Dark background** (a full dark table — dark rows, matched borders, search box and pagination restyled to fit), and **Soft pastel** (the whole table tinted with gentle pastels *mixed automatically from whichever header colour you pick* — choose Pink and the stripes, hover and footer all turn soft pink). New header colours: **Red, Pink, Teal, Indigo** plus three **gradients** (blue–violet, sunset, ocean). Everything combines freely with the existing options and shows live in the builder preview.
 
 = 1.2.50 =
 * **Fix: total rows no longer get mixed in by sorting.** Live testing showed that a “TỔNG CỘNG” row was sorted in among the products and landed on whatever page pagination put it. New option in the builder: **“Last row is a total row (pinned to the bottom)”** — the row is rendered as a real `<tfoot>`, which sorting, searching and pagination never touch: it stays pinned under the table on every page, always visible, and gets a bold/grey emphasis by default (customisable per-table CSS can target `tfoot`). Merges (`#colspan#`) still work inside the pinned row; a `#rowspan#` can no longer reach from the pinned row into the body. Works in the mobile card layout too.
@@ -475,6 +478,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.51 =
+Tables get 3 new styles (Card, Dark, Soft pastel) and 7 new header colours including gradients.
 
 = 1.2.50 =
 Total rows can now be pinned to the bottom of the table (rendered as tfoot) so sorting, search and pagination never displace them.

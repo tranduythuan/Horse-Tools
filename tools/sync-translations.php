@@ -715,6 +715,17 @@ $vi = array(
     'Something went wrong. Please try again.' => 'Có lỗi xảy ra. Vui lòng thử lại.',
     'Table %d' => 'Bảng %d',
     'copy' => 'bản sao',
+    // Richer table themes & colours (1.2.51)
+    'Card (shadow)' => 'Nổi khối (đổ bóng)',
+    'Dark background' => 'Nền tối',
+    'Soft pastel' => 'Pastel dịu',
+    'Red' => 'Đỏ',
+    'Pink' => 'Hồng',
+    'Teal' => 'Xanh ngọc',
+    'Indigo' => 'Chàm',
+    'Gradient blue-violet' => 'Chuyển sắc xanh–tím',
+    'Gradient sunset' => 'Chuyển sắc hoàng hôn',
+    'Gradient ocean' => 'Chuyển sắc biển',
     // Pinned total row (1.2.50)
     'Last row is a total row (pinned to the bottom)' => 'Hàng cuối là hàng tổng (ghim dưới đáy)',
     // Export / merge / formulas / per-table CSS (1.2.49)

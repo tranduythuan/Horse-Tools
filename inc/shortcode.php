@@ -571,10 +571,10 @@ function horsetools_table_shortcode( $atts, $content = '' ) {
 	if ( '1' === (string) $a['compact'] ) {
 		$cls .= ' ht-table-compact';
 	}
-	if ( in_array( $a['theme'], array( 'bordered', 'minimal', 'lines' ), true ) ) {
+	if ( in_array( $a['theme'], array( 'bordered', 'minimal', 'lines', 'card', 'dark', 'soft' ), true ) ) {
 		$cls .= ' ht-tt-' . $a['theme'];
 	}
-	if ( in_array( $a['hcolor'], array( 'blue', 'green', 'orange', 'purple', 'dark' ), true ) ) {
+	if ( in_array( $a['hcolor'], array( 'blue', 'green', 'orange', 'purple', 'dark', 'red', 'teal', 'pink', 'indigo', 'gradblue', 'gradsunset', 'gradocean' ), true ) ) {
 		$cls .= ' ht-th-' . $a['hcolor'];
 	}
 	$fx = horsetools_table_fx_attrs( array(
@@ -660,6 +660,9 @@ function horsetools_table_builder_i18n() {
 		'themeBordered' => __( 'Bordered', 'horse-tools' ),
 		'themeMinimal' => __( 'Minimal', 'horse-tools' ),
 		'themeLines' => __( 'Lines only', 'horse-tools' ),
+		'themeCard'  => __( 'Card (shadow)', 'horse-tools' ),
+		'themeDark'  => __( 'Dark background', 'horse-tools' ),
+		'themeSoft'  => __( 'Soft pastel', 'horse-tools' ),
 		'hcolorL'    => __( 'Header colour', 'horse-tools' ),
 		'cGrey'      => __( 'Grey', 'horse-tools' ),
 		'cBlue'      => __( 'Blue', 'horse-tools' ),
@@ -667,6 +670,13 @@ function horsetools_table_builder_i18n() {
 		'cOrange'    => __( 'Orange', 'horse-tools' ),
 		'cPurple'    => __( 'Purple', 'horse-tools' ),
 		'cDark'      => __( 'Dark', 'horse-tools' ),
+		'cRed'       => __( 'Red', 'horse-tools' ),
+		'cPink'      => __( 'Pink', 'horse-tools' ),
+		'cTeal'      => __( 'Teal', 'horse-tools' ),
+		'cIndigo'    => __( 'Indigo', 'horse-tools' ),
+		'cGradBlue'  => __( 'Gradient blue-violet', 'horse-tools' ),
+		'cGradSunset' => __( 'Gradient sunset', 'horse-tools' ),
+		'cGradOcean' => __( 'Gradient ocean', 'horse-tools' ),
 		'captionL'   => __( 'Caption', 'horse-tools' ),
 		'captionPh'  => __( 'optional title above the table', 'horse-tools' ),
 		'cssL'       => __( 'Custom CSS', 'horse-tools' ),
@@ -1040,11 +1050,11 @@ function horsetools_table_render_data( $data, $opts, $id = 0, $css = '' ) {
 		$cls .= ' ht-table-compact';
 	}
 	$theme = isset( $opts['theme'] ) ? $opts['theme'] : '';
-	if ( in_array( $theme, array( 'bordered', 'minimal', 'lines' ), true ) ) {
+	if ( in_array( $theme, array( 'bordered', 'minimal', 'lines', 'card', 'dark', 'soft' ), true ) ) {
 		$cls .= ' ht-tt-' . $theme;
 	}
 	$hcolor = isset( $opts['hcolor'] ) ? $opts['hcolor'] : '';
-	if ( in_array( $hcolor, array( 'blue', 'green', 'orange', 'purple', 'dark' ), true ) ) {
+	if ( in_array( $hcolor, array( 'blue', 'green', 'orange', 'purple', 'dark', 'red', 'teal', 'pink', 'indigo', 'gradblue', 'gradsunset', 'gradocean' ), true ) ) {
 		$cls .= ' ht-th-' . $hcolor;
 	}
 	$style = '';
@@ -1086,8 +1096,8 @@ function horsetools_table_sanitize_payload() {
 		'compact' => ! empty( $opts['compact'] ),
 		'stack'   => ! empty( $opts['stack'] ),
 		'footer'  => ! empty( $opts['footer'] ),
-		'theme'   => in_array( isset( $opts['theme'] ) ? $opts['theme'] : '', array( 'bordered', 'minimal', 'lines' ), true ) ? $opts['theme'] : '',
-		'hcolor'  => in_array( isset( $opts['hcolor'] ) ? $opts['hcolor'] : '', array( 'blue', 'green', 'orange', 'purple', 'dark' ), true ) ? $opts['hcolor'] : '',
+		'theme'   => in_array( isset( $opts['theme'] ) ? $opts['theme'] : '', array( 'bordered', 'minimal', 'lines', 'card', 'dark', 'soft' ), true ) ? $opts['theme'] : '',
+		'hcolor'  => in_array( isset( $opts['hcolor'] ) ? $opts['hcolor'] : '', array( 'blue', 'green', 'orange', 'purple', 'dark', 'red', 'teal', 'pink', 'indigo', 'gradblue', 'gradsunset', 'gradocean' ), true ) ? $opts['hcolor'] : '',
 		'caption' => isset( $opts['caption'] ) ? sanitize_text_field( (string) $opts['caption'] ) : '',
 		// Front-end interactivity (ht-table-fx.js).
 		'sort'     => ! empty( $opts['sort'] ),
