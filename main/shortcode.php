@@ -359,6 +359,10 @@ function horsetools_shortcode_options_page() {
 					?>
 					<div class="ht-snip-php">
 						<?php if ( '' === $ht_php_why ) : ?>
+							<?php if ( 'file_edit' === horsetools_php_notice_reason() ) : ?>
+								<p class="ht-note"><i class="ti ti-info-circle"></i>
+									<?php _e( 'This site has WordPress\'s built-in file editor switched off (DISALLOW_FILE_EDIT) — good. PHP snippets still work, because they carry their own protections: two-factor unlock, a syntax check before saving, auto-disable on a crash, and code signing. To switch them off as well, add HORSETOOLS_NO_PHP to wp-config.php.', 'horse-tools' ); ?></p>
+							<?php endif; ?>
 							<label class="ht-php-toggle">
 								<input type="checkbox" id="ht-snip-php" />
 								<b><?php _e( 'Run this snippet as PHP', 'horse-tools' ); ?></b>
@@ -395,8 +399,7 @@ function horsetools_shortcode_options_page() {
 								<?php
 								$ht_php_msgs = array(
 									'constant'     => __( 'PHP snippets are switched off by HORSETOOLS_NO_PHP in wp-config.php.', 'horse-tools' ),
-									'file_edit'    => __( 'PHP snippets are unavailable because this site sets DISALLOW_FILE_EDIT.', 'horse-tools' ),
-									'file_mods'    => __( 'PHP snippets are unavailable because this site sets DISALLOW_FILE_MODS.', 'horse-tools' ),
+									'file_mods'    => __( 'PHP snippets are unavailable because this site sets DISALLOW_FILE_MODS — the platform does not allow code changes at all.', 'horse-tools' ),
 									'cap'          => __( 'Only a full administrator may use PHP snippets.', 'horse-tools' ),
 									'no2fa_module' => __( 'To use PHP snippets, switch on two-factor authentication first (Horse Tools → Overview → Security).', 'horse-tools' ),
 									'no2fa_user'   => __( 'To use PHP snippets, switch on two-factor authentication for your own account first (Users → Profile).', 'horse-tools' ),

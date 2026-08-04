@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.59
+Stable tag: 1.2.60
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.60 =
+* **Fix: PHP snippets refused to appear on well-hardened sites.** 1.2.59 treated DISALLOW_FILE_EDIT as a reason to hide the feature — but that constant only closes WordPress's built-in theme/plugin file editor, and it is set on most careful sites (by the host, by a security plugin, or by this plugin's own Security tab). Blocking on it shut out exactly the site owners the feature is meant for, while stopping nobody determined — an administrator who wants PHP can still install any snippet plugin — and it pushed people to switch off real hardening in order to use a feature that is better protected than the editor that constant closes. PHP snippets now work alongside it and simply note that it is set. DISALLOW_FILE_MODS still blocks, because there the platform genuinely allows no code changes at all, and HORSETOOLS_NO_PHP remains the explicit off switch.
 
 = 1.2.59 =
 * **New: PHP snippets — with the strongest safety net of any snippet plugin I know of.** A snippet can now be marked "run as PHP", which finally makes things like an automatic FAQ schema or a related-posts block possible without a separate code plugin. Because running PHP is the most powerful thing a plugin can offer, it is fenced in: only a full administrator (super admin on multisite) can see it, **their own account must have two-factor authentication switched on**, and editing PHP stays locked until they type a **current authenticator code**, which opens a 15-minute window. Code is **checked for syntax errors before it is saved**, so a typo can no longer white-screen the site, and if a snippet ever does crash a page it is **switched off automatically** with an explanation. Each snippet is **signed with the site's own secret key**: code written straight into the database — the usual pay-off of an SQL-injection hole in some other plugin — has no valid signature and simply refuses to run. Saving or enabling PHP sends an **alert to your Telegram (or e-mail)** and is written to an audit log with user, time and IP. You choose where each snippet runs (its own shortcode, the head, the footer, above/below post content, or every page load) and on which side of the site. And if the worst happens, `define( 'HORSETOOLS_NO_PHP', true )` in wp-config.php stops every PHP snippet, so a site is always recoverable over FTP.
@@ -503,6 +506,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.60 =
+PHP snippets no longer hide themselves on sites that set DISALLOW_FILE_EDIT — a constant most hardened sites use.
 
 = 1.2.59 =
 Adds optional PHP snippets, gated behind two-factor authentication, a 15-minute unlock, pre-save syntax checking, auto-disable on crash and code signing.

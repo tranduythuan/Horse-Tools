@@ -715,7 +715,11 @@ $vi = array(
     'Something went wrong. Please try again.' => 'Có lỗi xảy ra. Vui lòng thử lại.',
     'Table %d' => 'Bảng %d',
     'copy' => 'bản sao',
-    // PHP snippets (1.2.59)
+    // PHP snippets (1.2.59) + hardening-constant policy (1.2.60)
+    'This site has WordPress\'s built-in file editor switched off (DISALLOW_FILE_EDIT) — good. PHP snippets still work, because they carry their own protections: two-factor unlock, a syntax check before saving, auto-disable on a crash, and code signing. To switch them off as well, add HORSETOOLS_NO_PHP to wp-config.php.' => 'Site này đã tắt trình sửa file có sẵn của WordPress (DISALLOW_FILE_EDIT) — rất tốt. Snippet PHP vẫn dùng được vì nó có lớp bảo vệ riêng: mở khóa bằng xác thực hai lớp, kiểm tra cú pháp trước khi lưu, tự tắt khi gây lỗi và ký xác thực code. Nếu muốn tắt luôn cả snippet PHP, hãy thêm HORSETOOLS_NO_PHP vào wp-config.php.',
+    'PHP snippets are unavailable because this site sets DISALLOW_FILE_MODS — the platform does not allow code changes at all.' => 'Snippet PHP không khả dụng vì site đặt DISALLOW_FILE_MODS — nền tảng không cho phép thay đổi code.',
+    'This site sets DISALLOW_FILE_MODS, so running PHP from the database is not allowed.' => 'Site này đặt DISALLOW_FILE_MODS nên không được chạy PHP từ cơ sở dữ liệu.',
+    'PHP snippets are switched off by HORSETOOLS_NO_PHP in wp-config.php.' => 'Snippet PHP đã bị tắt bởi HORSETOOLS_NO_PHP trong wp-config.php.',
     'Run this snippet as PHP' => 'Chạy snippet này dưới dạng PHP',
     'PHP runs with full access to your site, so it stays locked. Enter a current code from your authenticator to unlock it for 15 minutes.' => 'PHP có toàn quyền trên site nên luôn ở trạng thái khóa. Nhập mã hiện tại từ ứng dụng xác thực để mở khóa trong 15 phút.',
     '6-digit code' => 'Mã 6 số',

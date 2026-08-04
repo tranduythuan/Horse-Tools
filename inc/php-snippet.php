@@ -39,11 +39,27 @@ function horsetools_php_blocked() {
 	if ( defined( 'HORSETOOLS_NO_PHP' ) && HORSETOOLS_NO_PHP ) {
 		return 'constant';
 	}
-	if ( defined( 'DISALLOW_FILE_EDIT' ) && DISALLOW_FILE_EDIT ) {
-		return 'file_edit';
-	}
+	// DISALLOW_FILE_MODS means the platform has taken code changes off the
+	// table entirely — no plugin or theme may even be installed — so honouring
+	// it is meaningful: there is genuinely no other way in.
 	if ( defined( 'DISALLOW_FILE_MODS' ) && DISALLOW_FILE_MODS ) {
 		return 'file_mods';
+	}
+	// DISALLOW_FILE_EDIT deliberately does NOT block. It closes WordPress's
+	// built-in theme/plugin file editor, and is set by most hardened sites (by
+	// hosts, by security plugins, by this plugin's own Security tab). Blocking
+	// on it would stop exactly the careful site owners this feature is for,
+	// while stopping nobody determined — an administrator who wants to run PHP
+	// can still install any snippet plugin. Worse, it would push people to
+	// switch off real hardening to use a feature that is itself better guarded
+	// than the editor that constant closes. It is surfaced as a note instead.
+	return '';
+}
+
+/** A condition worth telling the user about that does not stop them. */
+function horsetools_php_notice_reason() {
+	if ( defined( 'DISALLOW_FILE_EDIT' ) && DISALLOW_FILE_EDIT ) {
+		return 'file_edit';
 	}
 	return '';
 }
@@ -402,7 +418,6 @@ function horsetools_php_prepare_save( array &$snip, array $prev, $slug ) {
 	if ( '' !== $why ) {
 		$map = array(
 			'constant'     => __( 'PHP snippets are switched off by HORSETOOLS_NO_PHP in wp-config.php.', 'horse-tools' ),
-			'file_edit'    => __( 'This site sets DISALLOW_FILE_EDIT, so running PHP from the database is not allowed.', 'horse-tools' ),
 			'file_mods'    => __( 'This site sets DISALLOW_FILE_MODS, so running PHP from the database is not allowed.', 'horse-tools' ),
 			'cap'          => __( 'Only a full administrator may use PHP snippets.', 'horse-tools' ),
 			'no2fa_module' => __( 'Switch on Horse Tools two-factor authentication (Security tab) before using PHP snippets.', 'horse-tools' ),
