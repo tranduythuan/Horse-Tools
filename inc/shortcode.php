@@ -539,6 +539,10 @@ function horsetools_table_shortcode( $atts, $content = '' ) {
 		'sort'    => '0', // 1 = clickable column sorting on the front end
 		'search'  => '0', // 1 = search box above the table
 		'page'    => '0', // rows per page (0 = no pagination)
+		'index'   => '0', // 1 = leading row-number column
+		'colfilter' => '0', // 1 = a filter dropdown under each column header
+		'tools'   => '0', // 1 = copy / CSV / print / column-visibility buttons
+		'freeze'  => '0', // 1 = keep the first column in place when scrolling
 	), $atts, 'ht-table' );
 
 	// Stored, reusable table: [ht-table id="5"]. The saved options win; any
@@ -578,10 +582,14 @@ function horsetools_table_shortcode( $atts, $content = '' ) {
 		$cls .= ' ht-th-' . $a['hcolor'];
 	}
 	$fx = horsetools_table_fx_attrs( array(
-		'sort'     => '1' === (string) $a['sort'],
-		'search'   => '1' === (string) $a['search'],
-		'paginate' => (int) $a['page'] > 0,
-		'pagesize' => (int) $a['page'],
+		'sort'      => '1' === (string) $a['sort'],
+		'search'    => '1' === (string) $a['search'],
+		'paginate'  => (int) $a['page'] > 0,
+		'pagesize'  => (int) $a['page'],
+		'index'     => '1' === (string) $a['index'],
+		'colfilter' => '1' === (string) $a['colfilter'],
+		'tools'     => '1' === (string) $a['tools'],
+		'freeze'    => '1' === (string) $a['freeze'],
 	) );
 	return '<div class="' . esc_attr( $cls ) . '"' . $fx . '><div class="ht-table-scroll">' . do_shortcode( $inner ) . '</div></div>';
 }
@@ -600,6 +608,18 @@ function horsetools_table_fx_attrs( $opts ) {
 	if ( ! empty( $opts['paginate'] ) && $per > 0 ) {
 		$fx .= ' data-ht-page="' . min( 100, max( 1, $per ) ) . '"';
 	}
+	if ( ! empty( $opts['index'] ) ) {
+		$fx .= ' data-ht-index="1"';
+	}
+	if ( ! empty( $opts['colfilter'] ) ) {
+		$fx .= ' data-ht-colfilter="1"';
+	}
+	if ( ! empty( $opts['tools'] ) ) {
+		$fx .= ' data-ht-tools="1"';
+	}
+	if ( ! empty( $opts['freeze'] ) ) {
+		$fx .= ' data-ht-freeze="1"';
+	}
 	return $fx;
 }
 
@@ -614,10 +634,20 @@ function horsetools_table_css_maybe() {
 		// unless a table on the page carries the data-ht-* attributes.
 		wp_enqueue_script( 'horsetools-table-fx', HORSETOOLS_URL . 'link/ht-table-fx.js', array(), HORSETOOLS_VERSION, true );
 		wp_localize_script( 'horsetools-table-fx', 'htTableFx', array(
-			'search' => __( 'Search the table…', 'horse-tools' ),
-			'empty'  => __( 'No matching rows.', 'horse-tools' ),
-			'prev'   => __( 'Previous', 'horse-tools' ),
-			'next'   => __( 'Next', 'horse-tools' ),
+			'search'    => __( 'Search the table…', 'horse-tools' ),
+			'empty'     => __( 'No matching rows.', 'horse-tools' ),
+			'prev'      => __( 'Previous', 'horse-tools' ),
+			'next'      => __( 'Next', 'horse-tools' ),
+			'copy'      => __( 'Copy', 'horse-tools' ),
+			'copied'    => __( 'Copied', 'horse-tools' ),
+			'csv'       => __( 'CSV', 'horse-tools' ),
+			'print'     => __( 'Print', 'horse-tools' ),
+			// Not 'Columns': that msgid already means "number of columns" in the
+			// builder, which would read wrong on a show/hide button.
+			'columns'   => __( 'Show columns', 'horse-tools' ),
+			'column'    => __( 'Column', 'horse-tools' ),
+			'filterAll' => __( 'All', 'horse-tools' ),
+			'indexHead' => '#',
 		) );
 	}
 }
@@ -702,6 +732,10 @@ function horsetools_table_builder_i18n() {
 		'optSearch'  => __( 'Search box', 'horse-tools' ),
 		'optPage'    => __( 'Pagination', 'horse-tools' ),
 		'optPer'     => __( 'Rows/page', 'horse-tools' ),
+		'optIndex'   => __( 'Row-number column', 'horse-tools' ),
+		'optColfil'  => __( 'Filter per column', 'horse-tools' ),
+		'optTools'   => __( 'Copy / CSV / Print buttons', 'horse-tools' ),
+		'optFreeze'  => __( 'Freeze first column', 'horse-tools' ),
 		'fxNote'     => __( 'Sorting, search and pagination appear on the published page.', 'horse-tools' ),
 		'titleSave'  => __( 'Save a table', 'horse-tools' ),
 		'save'       => __( 'Save table', 'horse-tools' ),
@@ -1104,6 +1138,11 @@ function horsetools_table_sanitize_payload() {
 		'search'   => ! empty( $opts['search'] ),
 		'paginate' => ! empty( $opts['paginate'] ),
 		'pagesize' => min( 100, max( 1, isset( $opts['pagesize'] ) ? (int) $opts['pagesize'] : 10 ) ),
+		// Reader tools.
+		'index'     => ! empty( $opts['index'] ),
+		'colfilter' => ! empty( $opts['colfilter'] ),
+		'tools'     => ! empty( $opts['tools'] ),
+		'freeze'    => ! empty( $opts['freeze'] ),
 	);
 	// Google Sheet source: only accept a real Sheets URL; sync only with a sheet.
 	$sheet = isset( $_POST['sheet'] ) ? esc_url_raw( wp_unslash( $_POST['sheet'] ) ) : '';

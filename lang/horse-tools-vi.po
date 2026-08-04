@@ -6361,3 +6361,27 @@ msgstr "Chuyển sắc biển"
 
 msgid "Search all plugin features…"
 msgstr "Tìm mọi tính năng của plugin…"
+
+msgid "Row-number column"
+msgstr "Cột số thứ tự"
+
+msgid "Filter per column"
+msgstr "Lọc theo từng cột"
+
+msgid "Copy / CSV / Print buttons"
+msgstr "Nút Sao chép / CSV / In"
+
+msgid "Freeze first column"
+msgstr "Ghim cột đầu khi cuộn"
+
+msgid "Copy"
+msgstr "Sao chép"
+
+msgid "Print"
+msgstr "In"
+
+msgid "Show columns"
+msgstr "Hiện cột"
+
+msgid "All"
+msgstr "Tất cả"

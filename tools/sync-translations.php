@@ -715,6 +715,16 @@ $vi = array(
     'Something went wrong. Please try again.' => 'Có lỗi xảy ra. Vui lòng thử lại.',
     'Table %d' => 'Bảng %d',
     'copy' => 'bản sao',
+    // Reader tools for tables (1.2.57)
+    'Row-number column' => 'Cột số thứ tự',
+    'Filter per column' => 'Lọc theo từng cột',
+    'Copy / CSV / Print buttons' => 'Nút Sao chép / CSV / In',
+    'Freeze first column' => 'Ghim cột đầu khi cuộn',
+    'Copy' => 'Sao chép',
+    'Copied' => 'Đã sao chép',
+    'Print' => 'In',
+    'Show columns' => 'Hiện cột',
+    'All' => 'Tất cả',
     // Global feature search (1.2.52)
     'Search all plugin features…' => 'Tìm mọi tính năng của plugin…',
     // Richer table themes & colours (1.2.51)

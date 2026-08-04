@@ -72,7 +72,11 @@
 			sort: els.sort ? els.sort.checked : false,
 			search: els.search ? els.search.checked : false,
 			paginate: els.paginate ? els.paginate.checked : false,
-			pagesize: els.pagesize ? Math.max( 1, Math.min( 100, parseInt( els.pagesize.value, 10 ) || 10 ) ) : 10
+			pagesize: els.pagesize ? Math.max( 1, Math.min( 100, parseInt( els.pagesize.value, 10 ) || 10 ) ) : 10,
+			index: els.index ? els.index.checked : false,
+			colfilter: els.colfilter ? els.colfilter.checked : false,
+			tools: els.tools ? els.tools.checked : false,
+			freeze: els.freeze ? els.freeze.checked : false
 		};
 	}
 
@@ -253,6 +257,10 @@
 		if ( o.sort ) { a.push( 'sort="1"' ); }
 		if ( o.search ) { a.push( 'search="1"' ); }
 		if ( o.paginate && o.pagesize ) { a.push( 'page="' + o.pagesize + '"' ); }
+		if ( o.index ) { a.push( 'index="1"' ); }
+		if ( o.colfilter ) { a.push( 'colfilter="1"' ); }
+		if ( o.tools ) { a.push( 'tools="1"' ); }
+		if ( o.freeze ) { a.push( 'freeze="1"' ); }
 		return '[ht-table' + ( a.length ? ' ' + a.join( ' ' ) : '' ) + ']' + inner + '[/ht-table]';
 	}
 
@@ -502,6 +510,10 @@
 						'<label><input type="checkbox" class="ht-tb-search"> ' + escHtml( t( 'optSearch', 'Search box' ) ) + '</label>' +
 						'<label><input type="checkbox" class="ht-tb-paginate"> ' + escHtml( t( 'optPage', 'Pagination' ) ) + '</label>' +
 						'<label>' + escHtml( t( 'optPer', 'Rows/page' ) ) + ' <input type="number" class="ht-tb-pagesize" min="1" max="100" value="10"></label>' +
+						'<label><input type="checkbox" class="ht-tb-index"> ' + escHtml( t( 'optIndex', 'Row-number column' ) ) + '</label>' +
+						'<label><input type="checkbox" class="ht-tb-colfilter"> ' + escHtml( t( 'optColfil', 'Filter per column' ) ) + '</label>' +
+						'<label><input type="checkbox" class="ht-tb-tools"> ' + escHtml( t( 'optTools', 'Copy / CSV / Print buttons' ) ) + '</label>' +
+						'<label><input type="checkbox" class="ht-tb-freeze"> ' + escHtml( t( 'optFreeze', 'Freeze first column' ) ) + '</label>' +
 						'<span class="ht-tb-fxnote">' + escHtml( t( 'fxNote', 'Sorting, search and pagination appear on the published page.' ) ) + '</span>' +
 					'</div>' +
 					'<div class="ht-tb-prevwrap"><div class="ht-tb-prevlabel">' + escHtml( t( 'preview', 'Preview' ) ) + '</div><div class="ht-tb-preview"></div></div>' +
@@ -537,6 +549,10 @@
 		els.search = overlay.querySelector( '.ht-tb-search' );
 		els.paginate = overlay.querySelector( '.ht-tb-paginate' );
 		els.pagesize = overlay.querySelector( '.ht-tb-pagesize' );
+		els.index = overlay.querySelector( '.ht-tb-index' );
+		els.colfilter = overlay.querySelector( '.ht-tb-colfilter' );
+		els.tools = overlay.querySelector( '.ht-tb-tools' );
+		els.freeze = overlay.querySelector( '.ht-tb-freeze' );
 		els.preview = overlay.querySelector( '.ht-tb-preview' );
 		els.insertBtn = overlay.querySelector( '.ht-tb-insert' );
 
@@ -658,6 +674,9 @@
 		if ( els.search ) { els.search.checked = false; }
 		if ( els.paginate ) { els.paginate.checked = false; }
 		if ( els.pagesize ) { els.pagesize.value = 10; }
+		[ 'index', 'colfilter', 'tools', 'freeze' ].forEach( function ( k ) {
+			if ( els[ k ] ) { els[ k ].checked = false; }
+		} );
 		if ( els.sheet ) { els.sheet.value = ''; }
 		if ( els.sync ) { els.sync.value = 'off'; }
 		if ( els.sheetmsg ) { els.sheetmsg.textContent = ''; }
@@ -677,6 +696,9 @@
 		if ( els.search ) { els.search.checked = !! o.search; }
 		if ( els.paginate ) { els.paginate.checked = !! o.paginate; }
 		if ( els.pagesize ) { els.pagesize.value = o.pagesize || 10; }
+		[ 'index', 'colfilter', 'tools', 'freeze' ].forEach( function ( k ) {
+			if ( els[ k ] ) { els[ k ].checked = !! o[ k ]; }
+		} );
 		if ( els.sheet && init.sheet != null ) { els.sheet.value = init.sheet; }
 		if ( els.sync && init.sync != null ) { els.sync.value = init.sync || 'off'; }
 		if ( els.css && init.css != null ) { els.css.value = init.css; }

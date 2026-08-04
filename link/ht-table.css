@@ -3,7 +3,9 @@
 .ht-table table{border-collapse:collapse;width:100%;margin:0;background:#fff;font-size:15px;line-height:1.5;}
 .ht-table caption{caption-side:top;text-align:left;font-weight:600;padding:0 2px 8px;color:#333;}
 .ht-table th,.ht-table td{padding:11px 14px;border-bottom:1px solid #edeff2;border-right:1px solid #f3f4f6;text-align:left;vertical-align:top;}
-.ht-table thead th{background:#f5f7fa;font-weight:600;color:#1f2733;white-space:nowrap;position:sticky;top:0;}
+.ht-table thead th{background:#f5f7fa;font-weight:600;color:#1f2733;white-space:nowrap;}
+/* Only the label row sticks: a filter row underneath must not stack on top. */
+.ht-table thead tr:first-child th{position:sticky;top:0;z-index:2;}
 .ht-table tbody tr:last-child td{border-bottom:none;}
 .ht-table tfoot td{font-weight:600;background:#f5f7fa;border-top:2px solid #dfe3e8;border-bottom:none;}
 .ht-table th:last-child,.ht-table td:last-child{border-right:none;}
@@ -83,3 +85,33 @@
 .ht-table .ht-t-pagenav button:disabled{opacity:.45;cursor:default;}
 .ht-table .ht-t-pageinfo{color:#66707c;}
 .ht-table td.ht-t-empty{text-align:center;color:#8a94a0;padding:20px;}
+/* --- reader tools: index column, column filters, highlight, buttons ------ */
+.ht-table .ht-t-bar{align-items:center;gap:10px;flex-wrap:wrap;}
+.ht-table .ht-t-tools{display:flex;gap:6px;flex-wrap:wrap;}
+.ht-table .ht-t-btn{padding:6px 11px;border:1px solid #d5dbe2;background:#fff;border-radius:8px;cursor:pointer;font-size:13px;color:#1f2733;}
+.ht-table .ht-t-btn:hover{border-color:#2271b1;color:#2271b1;}
+.ht-table .ht-t-colmenu{position:relative;display:inline-block;}
+.ht-table .ht-t-colpanel{position:absolute;right:0;top:calc(100% + 4px);z-index:5;background:#fff;border:1px solid #d5dbe2;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.12);padding:8px 10px;min-width:170px;max-height:260px;overflow:auto;text-align:left;}
+.ht-table .ht-t-colpanel label{display:flex;align-items:center;gap:6px;font-size:13px;padding:3px 0;white-space:nowrap;color:#1f2733;}
+.ht-table th.ht-t-idx,.ht-table td.ht-t-idx{width:1%;white-space:nowrap;text-align:right;color:#8a94a0;font-variant-numeric:tabular-nums;}
+.ht-table thead th.ht-t-idx{color:inherit;}
+.ht-table .ht-t-filterrow th{padding:6px 8px;background:#fbfcfd;border-bottom:1px solid #e3e6ea;}
+.ht-table .ht-t-colsel{width:100%;max-width:190px;padding:4px 6px;font-size:12px;border:1px solid #d5dbe2;border-radius:6px;background:#fff;color:#1f2733;}
+.ht-table mark.ht-t-hl{background:#fff2a8;color:inherit;padding:0 1px;border-radius:2px;}
+/* Freeze the first column while the table scrolls sideways. */
+.ht-table.ht-t-freeze thead th:first-child,
+.ht-table.ht-t-freeze tbody td:first-child,
+.ht-table.ht-t-freeze tfoot td:first-child{position:sticky;left:0;z-index:1;background:var(--ht-freezebg,#fff);}
+.ht-table.ht-t-freeze thead tr:first-child th:first-child{z-index:3;}
+.ht-table.ht-t-freeze.ht-table-striped tbody tr:nth-child(even) td:first-child{background:var(--ht-freezealt,#fafbfc);}
+.ht-table.ht-t-freeze thead th:first-child{background:var(--ht-thgrad,var(--ht-thbg,#f5f7fa));}
+/* Dark + soft themes keep the added chrome in key. */
+.ht-table.ht-tt-dark .ht-t-btn{background:#1f2733;color:#e8ecf1;border-color:#3a4657;}
+.ht-table.ht-tt-dark .ht-t-colpanel{background:#1f2733;border-color:#3a4657;}
+.ht-table.ht-tt-dark .ht-t-colpanel label{color:#e8ecf1;}
+.ht-table.ht-tt-dark .ht-t-filterrow th{background:#1a2230;border-bottom-color:#2c3644;}
+.ht-table.ht-tt-dark .ht-t-colsel{background:#1f2733;color:#e8ecf1;border-color:#3a4657;}
+.ht-table.ht-tt-dark mark.ht-t-hl{background:#7a6a1f;color:#fff;}
+.ht-table.ht-tt-dark{--ht-freezebg:#1f2733;--ht-freezealt:#232e3d;}
+.ht-table.ht-tt-soft{--ht-freezealt:color-mix(in srgb,var(--ht-soft) 7%,#fff);}
+.ht-table.ht-tt-soft .ht-t-filterrow th{background:color-mix(in srgb,var(--ht-soft) 8%,#fff);}
