@@ -663,6 +663,14 @@ function horsetools_table_builder_i18n() {
 		'cDark'      => __( 'Dark', 'horse-tools' ),
 		'captionL'   => __( 'Caption', 'horse-tools' ),
 		'captionPh'  => __( 'optional title above the table', 'horse-tools' ),
+		'sheetL'     => __( 'Google Sheet', 'horse-tools' ),
+		'sheetPh'    => __( 'Paste a Google Sheets link (shared: anyone with the link)', 'horse-tools' ),
+		'sheetPull'  => __( 'Pull data', 'horse-tools' ),
+		'sheetHint'  => __( 'The sheet must be shared as “Anyone with the link can view”. With auto-refresh on, the table updates itself from the sheet.', 'horse-tools' ),
+		'syncOff'    => __( 'No auto-refresh', 'horse-tools' ),
+		'syncHourly' => __( 'Refresh hourly', 'horse-tools' ),
+		'syncDaily'  => __( 'Refresh daily', 'horse-tools' ),
+		'sheetRows'  => __( 'rows loaded', 'horse-tools' ),
 		'rowAdd'     => __( 'Insert row below', 'horse-tools' ),
 		'rowDel'     => __( 'Delete row', 'horse-tools' ),
 		'rowUp'      => __( 'Move row up', 'horse-tools' ),
@@ -876,8 +884,177 @@ function horsetools_table_sanitize_payload() {
 		'paginate' => ! empty( $opts['paginate'] ),
 		'pagesize' => min( 100, max( 1, isset( $opts['pagesize'] ) ? (int) $opts['pagesize'] : 10 ) ),
 	);
-	return array( 'name' => $name, 'data' => $clean, 'opts' => $copt );
+	// Google Sheet source: only accept a real Sheets URL; sync only with a sheet.
+	$sheet = isset( $_POST['sheet'] ) ? esc_url_raw( wp_unslash( $_POST['sheet'] ) ) : '';
+	if ( '' !== $sheet && ! horsetools_table_sheet_csv_url( $sheet ) ) {
+		$sheet = '';
+	}
+	$sync = isset( $_POST['sync'] ) ? sanitize_key( wp_unslash( $_POST['sync'] ) ) : 'off';
+	if ( '' === $sheet || ! in_array( $sync, array( 'hourly', 'daily' ), true ) ) {
+		$sync = 'off';
+	}
+	return array( 'name' => $name, 'data' => $clean, 'opts' => $copt, 'sheet' => $sheet, 'sync' => $sync );
 }
+
+/* ---- Google Sheet sync (Phase 4). A public sheet ("Anyone with the link can
+ * view") exports as CSV without any API key: /export?format=csv&gid=N. The
+ * server fetches it — on demand from the builder/manager, and on WP-Cron for
+ * tables set to auto-refresh — and replaces the stored table's data. ---- */
+
+/** Turn any pasted Google Sheets URL into its CSV export URL, or false. */
+function horsetools_table_sheet_csv_url( $url ) {
+	if ( ! preg_match( '#^https://docs\.google\.com/spreadsheets/d/([a-zA-Z0-9_-]+)#', (string) $url, $m ) ) {
+		return false;
+	}
+	$gid = 0;
+	if ( preg_match( '/[#?&]gid=(\d+)/', (string) $url, $g ) ) {
+		$gid = (int) $g[1];
+	}
+	return 'https://docs.google.com/spreadsheets/d/' . $m[1] . '/export?format=csv&gid=' . $gid;
+}
+
+/** Fetch + parse a public sheet. Returns a rows×cols string matrix or WP_Error. */
+function horsetools_table_fetch_sheet( $url ) {
+	$csv_url = horsetools_table_sheet_csv_url( $url );
+	if ( ! $csv_url ) {
+		return new WP_Error( 'bad_url', __( 'That does not look like a Google Sheets link.', 'horse-tools' ) );
+	}
+	$res = wp_remote_get( $csv_url, array( 'timeout' => 15, 'redirection' => 3, 'user-agent' => 'horse-tools-sheet-sync' ) );
+	if ( is_wp_error( $res ) ) {
+		return $res;
+	}
+	if ( 200 !== wp_remote_retrieve_response_code( $res ) ) {
+		return new WP_Error( 'not_public', __( 'Google refused the request — make sure the sheet is shared as “Anyone with the link can view”.', 'horse-tools' ) );
+	}
+	$body = wp_remote_retrieve_body( $res );
+	if ( strlen( $body ) > 1048576 ) {
+		return new WP_Error( 'too_big', __( 'The sheet is too large (over 1 MB of CSV).', 'horse-tools' ) );
+	}
+	// A login/consent HTML page means the sheet is not actually public.
+	if ( false !== stripos( substr( $body, 0, 300 ), '<html' ) ) {
+		return new WP_Error( 'not_public', __( 'Google refused the request — make sure the sheet is shared as “Anyone with the link can view”.', 'horse-tools' ) );
+	}
+	// fgetcsv on a temp stream handles quoted commas AND quoted newlines.
+	$fh = fopen( 'php://temp', 'r+' );
+	fwrite( $fh, $body );
+	rewind( $fh );
+	$data = array();
+	while ( false !== ( $row = fgetcsv( $fh, null, ',', '"', '' ) ) ) {
+		if ( count( $data ) >= 500 ) {
+			break; // cap: nobody wants a 10k-row HTML table on a page
+		}
+		$row = array_slice( (array) $row, 0, 40 );
+		$clean = array();
+		$hasContent = false;
+		foreach ( $row as $cell ) {
+			$cell = sanitize_textarea_field( (string) $cell );
+			if ( '' !== trim( $cell ) ) {
+				$hasContent = true;
+			}
+			$clean[] = $cell;
+		}
+		if ( $hasContent ) {
+			$data[] = $clean;
+		}
+	}
+	fclose( $fh );
+	if ( empty( $data ) ) {
+		return new WP_Error( 'empty', __( 'The sheet appears to be empty.', 'horse-tools' ) );
+	}
+	// Pad every row to the widest row so the grid/table stays rectangular.
+	$max = 0;
+	foreach ( $data as $r ) {
+		$max = max( $max, count( $r ) );
+	}
+	foreach ( $data as $k => $r ) {
+		while ( count( $data[ $k ] ) < $max ) {
+			$data[ $k ][] = '';
+		}
+	}
+	return $data;
+}
+
+/** Builder "Pull data" button: fetch a sheet and hand the matrix to the grid. */
+function horsetools_tbl_sheet_fetch_ajax() {
+	check_ajax_referer( 'horsetools_tbl', 'nonce' );
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error();
+	}
+	$url  = isset( $_POST['url'] ) ? esc_url_raw( wp_unslash( $_POST['url'] ) ) : '';
+	$data = horsetools_table_fetch_sheet( $url );
+	if ( is_wp_error( $data ) ) {
+		wp_send_json_error( array( 'msg' => $data->get_error_message() ) );
+	}
+	wp_send_json_success( array( 'data' => $data ) );
+}
+add_action( 'wp_ajax_horsetools_tbl_sheet_fetch', 'horsetools_tbl_sheet_fetch_ajax' );
+
+/** Manager "Sync now" button: refresh one table from its sheet immediately. */
+function horsetools_tbl_sync_now_ajax() {
+	check_ajax_referer( 'horsetools_tbl', 'nonce' );
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error();
+	}
+	$id     = isset( $_POST['id'] ) ? (int) $_POST['id'] : 0;
+	$tables = horsetools_tables_get();
+	if ( ! isset( $tables[ $id ] ) || empty( $tables[ $id ]['sheet'] ) ) {
+		wp_send_json_error();
+	}
+	$data = horsetools_table_fetch_sheet( $tables[ $id ]['sheet'] );
+	if ( is_wp_error( $data ) ) {
+		wp_send_json_error( array( 'msg' => $data->get_error_message() ) );
+	}
+	$tables[ $id ]['data']      = $data;
+	$tables[ $id ]['last_sync'] = time();
+	update_option( 'horsetools_tables', $tables, false );
+	wp_send_json_success( array( 'rows' => count( $data ) ) );
+}
+add_action( 'wp_ajax_horsetools_tbl_sync_now', 'horsetools_tbl_sync_now_ajax' );
+
+/** Keep the hourly cron scheduled exactly while any table auto-syncs. */
+function horsetools_tables_sync_schedule() {
+	$need = false;
+	foreach ( horsetools_tables_get() as $t ) {
+		if ( ! empty( $t['sheet'] ) && ! empty( $t['sync'] ) && 'off' !== $t['sync'] ) {
+			$need = true;
+			break;
+		}
+	}
+	$next = wp_next_scheduled( 'horsetools_tables_sync' );
+	if ( $need && ! $next ) {
+		wp_schedule_event( time() + HOUR_IN_SECONDS, 'hourly', 'horsetools_tables_sync' );
+	} elseif ( ! $need && $next ) {
+		wp_unschedule_event( $next, 'horsetools_tables_sync' );
+	}
+}
+add_action( 'admin_init', 'horsetools_tables_sync_schedule' );
+
+function horsetools_tables_sync_run() {
+	$tables  = horsetools_tables_get();
+	$changed = false;
+	foreach ( $tables as $id => $t ) {
+		if ( empty( $t['sheet'] ) || empty( $t['sync'] ) || 'off' === $t['sync'] ) {
+			continue;
+		}
+		$age = time() - (int) ( isset( $t['last_sync'] ) ? $t['last_sync'] : 0 );
+		$min = ( 'daily' === $t['sync'] ) ? DAY_IN_SECONDS - 300 : HOUR_IN_SECONDS - 300;
+		if ( $age < $min ) {
+			continue;
+		}
+		// Stamp before the result so a broken sheet is retried on the NEXT
+		// interval instead of on every cron tick.
+		$tables[ $id ]['last_sync'] = time();
+		$changed                    = true;
+		$data = horsetools_table_fetch_sheet( $t['sheet'] );
+		if ( ! is_wp_error( $data ) ) {
+			$tables[ $id ]['data'] = $data;
+		}
+	}
+	if ( $changed ) {
+		update_option( 'horsetools_tables', $tables, false );
+	}
+}
+add_action( 'horsetools_tables_sync', 'horsetools_tables_sync_run' );
 
 function horsetools_tbl_save_ajax() {
 	check_ajax_referer( 'horsetools_tbl', 'nonce' );
@@ -896,12 +1073,16 @@ function horsetools_tbl_save_ajax() {
 		}
 	}
 	$tables[ $id ] = array(
-		'id'   => $id,
-		'name' => '' !== $payload['name'] ? $payload['name'] : sprintf( __( 'Table %d', 'horse-tools' ), $id ),
-		'data' => $payload['data'],
-		'opts' => $payload['opts'],
+		'id'        => $id,
+		'name'      => '' !== $payload['name'] ? $payload['name'] : sprintf( __( 'Table %d', 'horse-tools' ), $id ),
+		'data'      => $payload['data'],
+		'opts'      => $payload['opts'],
+		'sheet'     => $payload['sheet'],
+		'sync'      => $payload['sync'],
+		'last_sync' => isset( $tables[ $id ]['last_sync'] ) ? $tables[ $id ]['last_sync'] : 0,
 	);
 	update_option( 'horsetools_tables', $tables, false );
+	horsetools_tables_sync_schedule();
 	wp_send_json_success( array( 'id' => $id, 'name' => $tables[ $id ]['name'] ) );
 }
 add_action( 'wp_ajax_horsetools_tbl_save', 'horsetools_tbl_save_ajax' );
@@ -915,6 +1096,7 @@ function horsetools_tbl_delete_ajax() {
 	$tables = horsetools_tables_get();
 	unset( $tables[ $id ] );
 	update_option( 'horsetools_tables', $tables, false );
+	horsetools_tables_sync_schedule();
 	wp_send_json_success();
 }
 add_action( 'wp_ajax_horsetools_tbl_delete', 'horsetools_tbl_delete_ajax' );
@@ -974,9 +1156,11 @@ function horsetools_tables_page() {
 	$payload = array();
 	foreach ( $tables as $id => $tb ) {
 		$payload[ (string) $id ] = array(
-			'name' => isset( $tb['name'] ) ? (string) $tb['name'] : ( 'Table ' . $id ),
-			'data' => isset( $tb['data'] ) ? $tb['data'] : array(),
-			'opts' => isset( $tb['opts'] ) ? $tb['opts'] : array(),
+			'name'  => isset( $tb['name'] ) ? (string) $tb['name'] : ( 'Table ' . $id ),
+			'data'  => isset( $tb['data'] ) ? $tb['data'] : array(),
+			'opts'  => isset( $tb['opts'] ) ? $tb['opts'] : array(),
+			'sheet' => isset( $tb['sheet'] ) ? (string) $tb['sheet'] : '',
+			'sync'  => isset( $tb['sync'] ) ? (string) $tb['sync'] : 'off',
 		);
 	}
 	?>
@@ -1014,6 +1198,9 @@ function horsetools_tables_page() {
 							<button type="button" class="button ht-tbl-edit"><?php esc_html_e( 'Edit', 'horse-tools' ); ?></button>
 							<button type="button" class="button ht-tbl-dup"><?php esc_html_e( 'Duplicate', 'horse-tools' ); ?></button>
 							<button type="button" class="button ht-tbl-del"><?php esc_html_e( 'Delete', 'horse-tools' ); ?></button>
+							<?php if ( ! empty( $tb['sheet'] ) ) : ?>
+								<button type="button" class="button ht-tbl-sync" title="<?php echo esc_attr( $tb['sheet'] ); ?>"><?php esc_html_e( 'Sync from Sheet', 'horse-tools' ); ?></button>
+							<?php endif; ?>
 						</td>
 					</tr>
 				<?php endforeach; ?>
@@ -1028,7 +1215,9 @@ function horsetools_tables_page() {
 		var AJAX  = <?php echo wp_json_encode( admin_url( 'admin-ajax.php' ) ); ?>;
 		var STR   = {
 			sure: <?php echo wp_json_encode( __( 'Click again to delete', 'horse-tools' ) ); ?>,
-			fail: <?php echo wp_json_encode( __( 'Something went wrong. Please try again.', 'horse-tools' ) ); ?>
+			fail: <?php echo wp_json_encode( __( 'Something went wrong. Please try again.', 'horse-tools' ) ); ?>,
+			syncing: <?php echo wp_json_encode( __( 'Syncing…', 'horse-tools' ) ); ?>,
+			synced: <?php echo wp_json_encode( __( 'Synced', 'horse-tools' ) ); ?>
 		};
 		function post( action, data, cb ) {
 			data = data || {};
@@ -1044,7 +1233,9 @@ function horsetools_tables_page() {
 					id: payload.id || 0,
 					name: payload.name || '',
 					data: JSON.stringify( payload.data || [] ),
-					opts: JSON.stringify( payload.opts || {} )
+					opts: JSON.stringify( payload.opts || {} ),
+					sheet: payload.sheet || '',
+					sync: payload.sync || 'off'
 				}, function ( res ) {
 					if ( res && res.success ) { location.reload(); } else { alert( STR.fail ); }
 				} );
@@ -1063,6 +1254,20 @@ function horsetools_tables_page() {
 					save( parseInt( id, 10 ), init );
 				} else if ( e.target.classList.contains( 'ht-tbl-dup' ) ) {
 					post( 'horsetools_tbl_duplicate', { id: id }, function ( res ) { if ( res && res.success ) { location.reload(); } else { alert( STR.fail ); } } );
+				} else if ( e.target.classList.contains( 'ht-tbl-sync' ) ) {
+					var sb = e.target, sbLabel = sb.textContent;
+					sb.disabled = true;
+					sb.textContent = STR.syncing;
+					post( 'horsetools_tbl_sync_now', { id: id }, function ( res ) {
+						if ( res && res.success ) {
+							sb.textContent = STR.synced + ' (' + res.data.rows + ')';
+							setTimeout( function () { location.reload(); }, 700 );
+						} else {
+							sb.disabled = false;
+							sb.textContent = sbLabel;
+							alert( ( res && res.data && res.data.msg ) ? res.data.msg : STR.fail );
+						}
+					} );
 				} else if ( e.target.classList.contains( 'ht-tbl-del' ) ) {
 					// Two-step confirm instead of a native confirm() dialog: first
 					// click arms the button for 4 s, second click deletes.

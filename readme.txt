@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.47
+Stable tag: 1.2.48
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.48 =
+* **New: Google Sheets sync for stored tables.** Paste the link of a public Google Sheet (shared as “Anyone with the link can view”) into the table builder, click **Pull data**, and the sheet lands in the grid — no API key, no Google account connection, the server reads the sheet's CSV export directly. Optionally set the table to **refresh itself hourly or daily** (via WP-Cron), so editing the spreadsheet updates the website on its own; a **“Sync from Sheet”** button on the Tables screen refreshes on demand. Safety rails: only `docs.google.com` links are accepted, downloads are capped at 1 MB / 500 rows / 40 columns, every cell is sanitised as plain text, and a sheet that stops responding is retried on the next interval instead of hammering Google. Privacy: your server only ever *reads* the public sheet; nothing is sent.
 
 = 1.2.47 =
 * **New: spreadsheet-style editing in the table builder.** The manual grid is no longer a fixed block: every column gets small controls to **insert a column, delete it, or move it left/right**, and every row gets the same for **inserting below, deleting, and moving up/down** — so you can restructure a table without retyping it. Pressing **Enter** in a cell jumps to the cell below (and adds a row on the last one), the way a spreadsheet does. Also replaced the Tables screen's old browser confirm dialog for Delete with a friendlier two-step button: first click arms it (“Click again to delete”), second click deletes.
@@ -466,6 +469,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.48 =
+Stored tables can now pull their data from a public Google Sheet and refresh hourly/daily — edit the spreadsheet, the website updates itself. No API key needed.
 
 = 1.2.47 =
 The table builder's grid becomes a mini-spreadsheet: insert/delete/move rows and columns anywhere, and Enter jumps to the next cell.

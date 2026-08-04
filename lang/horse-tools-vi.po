@@ -6274,3 +6274,48 @@ msgstr "Chuyển cột sang phải"
 
 msgid "Click again to delete"
 msgstr "Bấm lần nữa để xóa"
+
+msgid "Google Sheet"
+msgstr "Google Sheet"
+
+msgid "Paste a Google Sheets link (shared: anyone with the link)"
+msgstr "Dán link Google Sheets (chia sẻ: ai có link đều xem được)"
+
+msgid "Pull data"
+msgstr "Kéo dữ liệu"
+
+msgid "The sheet must be shared as “Anyone with the link can view”. With auto-refresh on, the table updates itself from the sheet."
+msgstr "Sheet phải được chia sẻ “Ai có đường liên kết đều có thể xem”. Bật tự làm mới thì bảng sẽ tự cập nhật theo Sheet."
+
+msgid "No auto-refresh"
+msgstr "Không tự làm mới"
+
+msgid "Refresh hourly"
+msgstr "Tự làm mới mỗi giờ"
+
+msgid "Refresh daily"
+msgstr "Tự làm mới hàng ngày"
+
+msgid "rows loaded"
+msgstr "dòng đã tải"
+
+msgid "That does not look like a Google Sheets link."
+msgstr "Đây không phải link Google Sheets."
+
+msgid "Google refused the request — make sure the sheet is shared as “Anyone with the link can view”."
+msgstr "Google từ chối yêu cầu — hãy chắc chắn Sheet được chia sẻ “Ai có đường liên kết đều có thể xem”."
+
+msgid "The sheet is too large (over 1 MB of CSV)."
+msgstr "Sheet quá lớn (CSV vượt 1 MB)."
+
+msgid "The sheet appears to be empty."
+msgstr "Sheet có vẻ đang trống."
+
+msgid "Sync from Sheet"
+msgstr "Đồng bộ từ Sheet"
+
+msgid "Syncing…"
+msgstr "Đang đồng bộ…"
+
+msgid "Synced"
+msgstr "Đã đồng bộ"

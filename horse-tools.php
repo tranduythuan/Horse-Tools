@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.2.47
+ * Version: 1.2.48
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.2.47' );
+define( 'HORSETOOLS_VERSION', '1.2.48' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
@@ -222,5 +222,6 @@ register_activation_hook( __FILE__, 'horsetools_activation' );
  */
 function horsetools_deactivation() {
 	wp_clear_scheduled_hook( 'horsetools_scheduled_clean' );
+	wp_clear_scheduled_hook( 'horsetools_tables_sync' );
 }
 register_deactivation_hook( __FILE__, 'horsetools_deactivation' );

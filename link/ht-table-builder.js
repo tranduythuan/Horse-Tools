@@ -324,6 +324,13 @@
 			'<div class="ht-tb-modal" role="dialog" aria-modal="true">' +
 				'<div class="ht-tb-head"><span class="ht-tb-title">' + escHtml( t( 'title', 'Insert a table' ) ) + '</span><button type="button" class="ht-tb-x" aria-label="Close">&times;</button></div>' +
 				'<div class="ht-tb-namerow" style="display:none;"><label>' + escHtml( t( 'nameL', 'Table name' ) ) + ' <input type="text" class="ht-tb-name" placeholder="' + escAttr( t( 'namePh', 'e.g. Price list' ) ) + '"></label></div>' +
+				'<div class="ht-tb-sheetrow" style="display:none;">' +
+					'<label>' + escHtml( t( 'sheetL', 'Google Sheet' ) ) + ' <input type="url" class="ht-tb-sheet" placeholder="' + escAttr( t( 'sheetPh', 'Paste a Google Sheets link (shared: anyone with the link)' ) ) + '"></label>' +
+					'<button type="button" class="button ht-tb-sheetpull">' + escHtml( t( 'sheetPull', 'Pull data' ) ) + '</button>' +
+					'<select class="ht-tb-sync"><option value="off">' + escHtml( t( 'syncOff', 'No auto-refresh' ) ) + '</option><option value="hourly">' + escHtml( t( 'syncHourly', 'Refresh hourly' ) ) + '</option><option value="daily">' + escHtml( t( 'syncDaily', 'Refresh daily' ) ) + '</option></select>' +
+					'<span class="ht-tb-sheetmsg"></span>' +
+					'<span class="ht-tb-sheethint">' + escHtml( t( 'sheetHint', 'The sheet must be shared as “Anyone with the link can view”. With auto-refresh on, the table updates itself from the sheet.' ) ) + '</span>' +
+				'</div>' +
 				'<div class="ht-tb-tabs">' +
 					'<button type="button" class="ht-tb-tab active" data-tab="manual">' + escHtml( t( 'manual', 'Type it in' ) ) + '</button>' +
 					'<button type="button" class="ht-tb-tab" data-tab="paste">' + escHtml( t( 'paste', 'Paste from Excel' ) ) + '</button>' +
@@ -375,6 +382,10 @@
 		els.title = overlay.querySelector( '.ht-tb-title' );
 		els.namerow = overlay.querySelector( '.ht-tb-namerow' );
 		els.name = overlay.querySelector( '.ht-tb-name' );
+		els.sheetrow = overlay.querySelector( '.ht-tb-sheetrow' );
+		els.sheet = overlay.querySelector( '.ht-tb-sheet' );
+		els.sync = overlay.querySelector( '.ht-tb-sync' );
+		els.sheetmsg = overlay.querySelector( '.ht-tb-sheetmsg' );
 		els.rows = overlay.querySelector( '.ht-tb-rows' );
 		els.cols = overlay.querySelector( '.ht-tb-cols' );
 		els.grid = overlay.querySelector( '.ht-tb-grid' );
@@ -427,8 +438,37 @@
 			if ( e.target.closest( '.ht-tb-opts, .ht-tb-opts2' ) ) { renderPreview(); }
 		} );
 		overlay.querySelector( '.ht-tb-file' ).addEventListener( 'change', function ( e ) { handleFile( e.target.files && e.target.files[ 0 ] ); } );
+		overlay.querySelector( '.ht-tb-sheetpull' ).addEventListener( 'click', pullSheet );
 
 		buildGrid();
+	}
+
+	// Fetch a public Google Sheet (server-side, via admin-ajax) into the grid.
+	function pullSheet() {
+		var S = window.htTableStore || {};
+		var url = els.sheet ? els.sheet.value.trim() : '';
+		if ( ! url || ! S.ajaxurl || ! S.nonce ) { return; }
+		els.sheetmsg.textContent = t( 'reading', 'Reading…' );
+		els.sheetmsg.style.color = '';
+		var body = 'action=horsetools_tbl_sheet_fetch&nonce=' + encodeURIComponent( S.nonce ) + '&url=' + encodeURIComponent( url );
+		fetch( S.ajaxurl, { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body } )
+			.then( function ( r ) { return r.json(); } )
+			.then( function ( res ) {
+				if ( res && res.success && res.data && res.data.data ) {
+					loadData( res.data.data );
+					switchTab( 'manual' );
+					els.sheetmsg.textContent = res.data.data.length + ' ' + t( 'sheetRows', 'rows loaded' );
+					els.sheetmsg.style.color = '#1d9e75';
+					renderPreview();
+				} else {
+					els.sheetmsg.textContent = ( res && res.data && res.data.msg ) ? res.data.msg : t( 'readfail', 'Could not read the file.' );
+					els.sheetmsg.style.color = '#b32d2e';
+				}
+			} )
+			.catch( function () {
+				els.sheetmsg.textContent = t( 'readfail', 'Could not read the file.' );
+				els.sheetmsg.style.color = '#b32d2e';
+			} );
 	}
 
 	// The primary (footer) action — insert a shortcode, insert a saved-table
@@ -439,7 +479,16 @@
 			if ( ! data.length || ! data.some( function ( r ) { return r.some( function ( c ) { return String( c ).trim() !== ''; } ); } ) ) {
 				showErr(); return;
 			}
-			if ( typeof onInsert === 'function' ) { onInsert( { id: editId, name: els.name ? els.name.value.trim() : '', data: data, opts: opts() } ); }
+			if ( typeof onInsert === 'function' ) {
+				onInsert( {
+					id: editId,
+					name: els.name ? els.name.value.trim() : '',
+					data: data,
+					opts: opts(),
+					sheet: els.sheet ? els.sheet.value.trim() : '',
+					sync: els.sync ? els.sync.value : 'off'
+				} );
+			}
 			closeIt();
 			return;
 		}
@@ -473,6 +522,9 @@
 		if ( els.search ) { els.search.checked = false; }
 		if ( els.paginate ) { els.paginate.checked = false; }
 		if ( els.pagesize ) { els.pagesize.value = 10; }
+		if ( els.sheet ) { els.sheet.value = ''; }
+		if ( els.sync ) { els.sync.value = 'off'; }
+		if ( els.sheetmsg ) { els.sheetmsg.textContent = ''; }
 		uploadData = null;
 		if ( ! init ) { els.rows.value = 3; els.cols.value = 3; buildGrid(); switchTab( 'manual' ); return; }
 		var o = init.opts || {};
@@ -487,6 +539,8 @@
 		if ( els.search ) { els.search.checked = !! o.search; }
 		if ( els.paginate ) { els.paginate.checked = !! o.paginate; }
 		if ( els.pagesize ) { els.pagesize.value = o.pagesize || 10; }
+		if ( els.sheet && init.sheet != null ) { els.sheet.value = init.sheet; }
+		if ( els.sync && init.sync != null ) { els.sync.value = init.sync || 'off'; }
 		if ( els.name && init.name != null ) { els.name.value = init.name; }
 		loadData( init.data || [] );
 		switchTab( 'manual' );
@@ -502,6 +556,11 @@
 			+ '.ht-tb-x{border:none;background:none;font-size:24px;line-height:1;cursor:pointer;color:#666;}'
 			+ '.ht-tb-namerow{padding:12px 18px 0;font-size:13px;}'
 			+ '.ht-tb-namerow input{min-width:280px;padding:5px 8px;border:1px solid #dcdcde;border-radius:4px;margin-left:5px;}'
+			+ '.ht-tb-sheetrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 18px 0;font-size:13px;}'
+			+ '.ht-tb-sheetrow label{display:flex;align-items:center;gap:5px;flex:1;min-width:260px;}'
+			+ '.ht-tb-sheet{flex:1;min-width:220px;padding:5px 8px;border:1px solid #dcdcde;border-radius:4px;}'
+			+ '.ht-tb-sheetmsg{font-size:12px;}'
+			+ '.ht-tb-sheethint{flex-basis:100%;font-size:12px;color:#7a8590;}'
 			+ '.ht-tb-tabs{display:flex;gap:4px;padding:10px 18px 0;flex-wrap:wrap;}'
 			+ '.ht-tb-tab{border:1px solid transparent;background:#f0f0f1;padding:8px 14px;border-radius:6px 6px 0 0;cursor:pointer;font-size:13px;}'
 			+ '.ht-tb-tab.active{background:#fff;border-color:#e2e4e7;border-bottom-color:#fff;font-weight:600;}'
@@ -554,6 +613,7 @@
 			// Title, name row and the primary button reflect the mode.
 			if ( els.title ) { els.title.textContent = mode === 'save' ? t( 'titleSave', 'Save a table' ) : t( 'title', 'Insert a table' ); }
 			if ( els.namerow ) { els.namerow.style.display = mode === 'save' ? 'block' : 'none'; }
+			if ( els.sheetrow ) { els.sheetrow.style.display = mode === 'save' ? 'block' : 'none'; }
 			if ( els.insertBtn ) { els.insertBtn.textContent = mode === 'save' ? t( 'save', 'Save table' ) : t( 'insert', 'Insert table' ); }
 			applyInitial( pendingInitial );
 			renderPreview();
