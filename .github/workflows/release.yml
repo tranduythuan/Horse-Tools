@@ -25,6 +25,22 @@ jobs:
           # the one every screen actually renders.
           php tools/export-brand-mark.php --check
 
+      - name: Check every string has a Vietnamese translation
+        run: |
+          set -euo pipefail
+          # The admin reads half Vietnamese and half English the moment a batch of
+          # new strings ships untranslated — which is what happened when the
+          # screens were regrouped and 85 new group and tab names arrived in
+          # English. Catch it here rather than after release.
+          # --count exits 1 when anything is missing, so read it without set -e
+          # tearing the step down before the message below is printed.
+          MISSING="$(php tools/check-translations.php --count || true)"
+          if [ "$MISSING" != "0" ]; then
+            echo "::error::$MISSING translatable strings have no Vietnamese translation."
+            php tools/check-translations.php || true
+            exit 1
+          fi
+
       - name: Build plugin ZIP
         run: |
           set -euo pipefail

@@ -61,19 +61,35 @@ function horsetools_track_detect() {
 	$out = horsetools_track_detect_stored();
 
 	if ( ! $out['found'] ) {
-		$res = wp_remote_get( home_url( '/' ), array( 'timeout' => 8, 'sslverify' => false ) );
+		$res = wp_remote_get(
+			home_url( '/' ),
+			array(
+				'timeout'     => 8,
+				'sslverify'   => false,
+				'redirection' => 3,
+				// A plain WordPress user agent is what optimisers and bot filters
+				// serve a stripped page to, and a stripped page has no tag in it.
+				'user-agent'  => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0 Safari/537.36',
+			)
+		);
+		$body = is_wp_error( $res ) ? '' : wp_remote_retrieve_body( $res );
+
 		if ( is_wp_error( $res ) || 200 !== (int) wp_remote_retrieve_response_code( $res ) ) {
 			// Say so, rather than claiming the tag is absent.
 			$out['how'] = 'unreachable';
+		} elseif ( ! horsetools_track_is_own_page( $body ) ) {
+			// A 200 is not proof we reached the site. On shared hosting a
+			// loopback often lands on the default vhost, a parking page or a
+			// bot-check page, all of which answer 200 with no tag — and reading
+			// that as "you have no analytics" is the confident wrong answer this
+			// screen must never give.
+			$out['how'] = 'unreachable';
+		} elseif ( preg_match( '~\b(G-[A-Z0-9]{6,})\b~', $body, $m ) ) {
+			$out = array( 'found' => true, 'id' => $m[1], 'how' => 'page' );
+		} elseif ( preg_match( '~\b(GTM-[A-Z0-9]{4,})\b~', $body, $m ) ) {
+			$out = array( 'found' => true, 'id' => $m[1], 'how' => 'page' );
 		} else {
-			$body = wp_remote_retrieve_body( $res );
-			if ( preg_match( '~\b(G-[A-Z0-9]{6,})\b~', $body, $m ) ) {
-				$out = array( 'found' => true, 'id' => $m[1], 'how' => 'page' );
-			} elseif ( preg_match( '~\b(GTM-[A-Z0-9]{4,})\b~', $body, $m ) ) {
-				$out = array( 'found' => true, 'id' => $m[1], 'how' => 'page' );
-			} else {
-				$out['how'] = 'absent';
-			}
+			$out['how'] = 'absent';
 		}
 	}
 
@@ -82,13 +98,40 @@ function horsetools_track_detect() {
 }
 
 /**
- * Look for a measurement ID in options other analytics plugins have saved.
+ * Is this really our own front page, or something the host answered with?
  *
- * Names are matched rather than listed, because every one of these plugins has
- * renamed its options at some point and a hard-coded list quietly stops finding
- * anything after an update. The plugin's own code boxes are included because
- * pasting the gtag snippet there is a perfectly ordinary way to install GA4,
- * and the ID is then sitting in our own option.
+ * Loopback requests on shared hosting routinely land somewhere else and still
+ * return 200. Two independent markers have to be absent before we give up on
+ * the body: WordPress's own asset paths, and the site's own host name.
+ *
+ * @param string $body
+ * @return bool
+ */
+function horsetools_track_is_own_page( $body ) {
+	if ( strlen( $body ) < 512 ) {
+		return false;
+	}
+	if ( false !== stripos( $body, 'wp-content' ) || false !== stripos( $body, 'wp-includes' ) ) {
+		return true;
+	}
+	$host = wp_parse_url( home_url(), PHP_URL_HOST );
+	return $host && false !== stripos( $body, $host );
+}
+
+/**
+ * Look for a measurement ID anywhere in the site's own options.
+ *
+ * Searched by value rather than by option name. The first version listed the
+ * option names of the analytics plugins it knew about, which missed every other
+ * ordinary way of installing GA4 — pasted into a header-and-footer plugin, into
+ * a theme option, into a page builder's global scripts — and, because that name
+ * list also matched dozens of unrelated rows, a LIMIT could push the one row
+ * that mattered out of the result set entirely. A measurement ID has a shape
+ * nothing else has, so looking for the shape needs no list to maintain and
+ * cannot be defeated by a plugin renaming its options.
+ *
+ * Transients are skipped (they hold cached copies of pages, not settings) and
+ * huge values are left alone, so this stays a cheap query on a bloated table.
  *
  * @return array{found:bool, id:string, how:string}
  */
@@ -97,14 +140,17 @@ function horsetools_track_detect_stored() {
 
 	$rows = $wpdb->get_col(
 		"SELECT option_value FROM {$wpdb->options}
-		 WHERE option_name LIKE '%sitekit%'
-		    OR option_name LIKE '%monsterinsights%'
-		    OR option_name LIKE '%analytics%'
-		    OR option_name LIKE '%gtm%'
-		    OR option_name = 'horsetools_code_settings'
-		 LIMIT 60"
+		 WHERE option_name NOT LIKE '\\_transient%'
+		   AND option_name NOT LIKE '\\_site\\_transient%'
+		   AND LENGTH( option_value ) BETWEEN 10 AND 200000
+		   AND ( option_value LIKE '%G-%' OR option_value LIKE '%GTM-%' )
+		 LIMIT 200"
 	); // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- one read, cached in a transient by the caller.
 
+	// A GA4 property ID is what the tracker actually needs; a container ID only
+	// means Tag Manager is present and still has to be wired up. Collect both
+	// and prefer the former, rather than returning whichever row came first.
+	$gtm = '';
 	foreach ( (array) $rows as $value ) {
 		if ( ! is_string( $value ) || '' === $value ) {
 			continue;
@@ -112,9 +158,12 @@ function horsetools_track_detect_stored() {
 		if ( preg_match( '~\b(G-[A-Z0-9]{6,})\b~', $value, $m ) ) {
 			return array( 'found' => true, 'id' => $m[1], 'how' => 'stored' );
 		}
-		if ( preg_match( '~\b(GTM-[A-Z0-9]{4,})\b~', $value, $m ) ) {
-			return array( 'found' => true, 'id' => $m[1], 'how' => 'stored' );
+		if ( '' === $gtm && preg_match( '~\b(GTM-[A-Z0-9]{4,})\b~', $value, $m ) ) {
+			$gtm = $m[1];
 		}
+	}
+	if ( '' !== $gtm ) {
+		return array( 'found' => true, 'id' => $gtm, 'how' => 'stored' );
 	}
 	return array( 'found' => false, 'id' => '', 'how' => '' );
 }

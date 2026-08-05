@@ -22,11 +22,36 @@ Horse Tools là bản fork được **duy trì tích cực và tăng cường b�
 - **Tăng cường bảo mật** — giới hạn số lần đăng nhập, chặn dò tên người dùng, header bảo mật, tắt trình sửa file, kiểm soát REST/XML-RPC và dọn header.
 - **Riêng tư** — tự host Google Fonts và quét các request ra ngoài ở giao diện người dùng.
 - **Ảnh & media** — chuyển đổi WebP/AVIF, đóng dấu mờ, kiểm soát thumbnail.
-- **SEO & nội dung** — mục lục tự động, tự tạo chuyển hướng 301 khi đổi đường dẫn kèm nhật ký 404, tích hợp Google Search Console / Indexing API.
+- **SEO** — schema FAQ cho kết quả nổi bật, tự sinh từ chính các tiêu đề hỏi–đáp trong bài; mục lục tự động; tự tạo chuyển hướng 301 khi đổi đường dẫn kèm nhật ký 404; dọn đường dẫn tĩnh và alt ảnh; tích hợp Google Search Console / Indexing API.
+- **Đo lượt bấm liên hệ** — ghi nhận khách có thật sự bấm nút liên hệ nào không (điện thoại, Zalo, Messenger, WhatsApp, Telegram, Viber…) dưới dạng sự kiện GA4, dùng luôn mã analytics site đã có. Không lưu gì trên site.
 - **Tối ưu & sức khỏe site** — các tùy chọn tối ưu và kiểm tra sức khỏe site một chạm.
 - **Dọn dẹp** — công cụ dọn cơ sở dữ liệu và nội dung.
 - **Quản trị & đăng nhập** — tùy biến giao diện quản trị và bảng màu, cấu hình mẫu sẵn (Blog, WooCommerce, Hiệu năng, Bảo mật), và tùy biến trang đăng nhập WordPress.
 - **Khác** — hỗ trợ WooCommerce, kiểm tra gửi mail, công cụ vai trò/quyền người dùng, tiện ích bài viết & trang, thông báo và popup.
+
+## Các chức năng nằm ở đâu
+
+Menu quản trị được sắp theo **việc bạn đang làm**, không theo module nào chứa
+cài đặt đó. Bấm **Horse Tools** ở thanh bên WordPress sẽ mở trang **Tổng quan**
+liệt kê các nhóm; mỗi nhóm là một trang có các tab ở trên và **một nút Lưu duy nhất**.
+
+| Nhóm | Các tab |
+| --- | --- |
+| **Tốc độ** | Tối ưu · Ảnh · Dọn bài viết · Dọn bình luận · Dọn media · Lịch dọn dẹp |
+| **SEO** | Liên kết & đường dẫn · Kết quả nổi bật (schema FAQ) · Chuyển hướng 301 · Liên kết hỏng 404 · Index now · Mục lục |
+| **Bảo mật** | Bảo vệ · Trang đăng nhập · Bảo trì 503 |
+| **Nội dung** | Bài viết · Khoá nội dung · Chữ ký · Shortcode ngày · Google fetch · Biểu tượng · Đoạn mã · Bảng |
+| **Giao diện** | Website · Khu quản trị · Tìm kiếm · Phông chữ · Cài đặt phông |
+| **Khách hàng** | Chat · WooCommerce · Chặn ad-block · Thanh thông báo · Popup · Thông báo cookie · Lượt bấm quảng cáo · AdSense · ads.txt · Đo lường |
+| **Tài khoản & Email** | Người dùng · Email · Đăng nhập Google |
+| **Công cụ** | Công cụ quản trị · Cài đặt plugin · CSS tuỳ chỉnh · Mã ở head/body/footer/đăng nhập · Debug · Sao lưu |
+
+Bên dưới còn hai mục: **Tính năng mở rộng (Extend)** để bật/tắt các module tuỳ
+chọn, và **Giới thiệu**.
+
+Chỉ nhóm bạn mở mới được nạp, nên màn hình không bao giờ vào thì không tốn gì.
+Các liên kết cũ tới trang riêng của từng module vẫn dùng được — chúng tự chuyển
+hướng tới đúng nhóm và tab chứa cài đặt đó.
 
 ## Cài đặt
 
@@ -82,10 +107,13 @@ Không — xem mục [Riêng tư](#riêng-tư). Chỉ kết nối tới dịch v
 Tải file ZIP mới ở [Releases](https://github.com/tranduythuan/Horse-Tools/releases), tải lên qua **Plugins → Cài mới → Tải plugin lên**, rồi chọn **“Thay thế bản hiện tại bằng bản tải lên”**. Cài đặt của bạn được giữ nguyên.
 
 **Không thấy Popup (hoặc tính năng khác) ở đâu?**
-Phần lớn module là tùy chọn. Hãy bật chúng ở trang **Tính năng mở rộng (Extend)** trước; trang cài đặt của tính năng đó sẽ xuất hiện trong menu.
+Phần lớn module là tùy chọn. Hãy bật chúng ở trang **Tính năng mở rộng (Extend)** trước; tab của tính năng đó sẽ hiện ra trong đúng nhóm chứa nó — xem [Các chức năng nằm ở đâu](#các-chức-năng-nằm-ở-đâu). Trang Tổng quan cũng có ô tìm kiếm để tra cài đặt theo tên.
 
 **Làm sao hiện popup khuyến mãi?**
-Bật module **Notify** ở trang Extend, rồi vào **Notify → Popup**: bật lên và chọn bố cục, hiệu ứng xuất hiện, vị trí và kiểu kích hoạt.
+Bật module **Notify** ở trang Extend, rồi vào **Khách hàng → Popup**: bật lên và chọn bố cục, hiệu ứng xuất hiện, vị trí và kiểu kích hoạt.
+
+**Plugin có hỗ trợ SEO không?**
+Có — nhóm **SEO** lo đường dẫn tĩnh, alt ảnh, liên kết ra ngoài, schema FAQ cho kết quả nổi bật, chuyển hướng 301 kèm nhật ký 404, Google Indexing API và mục lục.
 
 **Dùng được tiếng của tôi không?**
 Tiếng Việt hoàn chỉnh; 11 ngôn ngữ khác là bản dịch máy làm điểm khởi đầu. Bạn cũng có thể bỏ file `.mo` của mình vào `wp-content/languages/plugins/`.

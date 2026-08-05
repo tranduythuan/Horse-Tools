@@ -20,8 +20,8 @@ $ht_track = function_exists( 'horsetools_track_detect' ) ? horsetools_track_dete
 				<?php esc_html_e( 'Could not check: this server was unable to open your own home page, which many hosts block. That says nothing about whether analytics is installed — if you have Site Kit or another GA4 plugin, switch this on and check the result in Analytics under Admin → DebugView.', 'horse-tools' ); ?>
 			</p>
 			<?php else : ?>
-			<p class="ht-note ht-note-red"><i class="ti ti-alert-triangle"></i>
-				<?php esc_html_e( 'No Google Analytics tag was found on your site, so there is nowhere for clicks to be recorded yet. Install Site Kit by Google (or any GA4 plugin) first — this setting will then start working on its own.', 'horse-tools' ); ?>
+			<p class="ht-note"><i class="ti ti-help-circle"></i>
+				<?php esc_html_e( 'No Google Analytics tag turned up, either in your settings or on the home page. If you have not installed one yet, Site Kit by Google (or any GA4 plugin) is the usual way. If you know you do have one — added through Tag Manager, a caching layer, or a consent tool that loads it later — this check simply could not see it: switch the setting on anyway. It looks for analytics at the moment of the click, not now, so it starts working the instant a tag is present.', 'horse-tools' ); ?>
 			</p>
 			<?php endif; ?>
 

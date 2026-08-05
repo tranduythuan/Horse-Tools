@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.94
+Stable tag: 1.2.95
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,16 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.95 =
+* **The measurement screen stops saying "no analytics" when there is analytics.** It searched a hand-written list of option names, so it only ever found the plugins it already knew about — and because that list also matched dozens of unrelated rows, a row limit could push the one row holding the ID out of the results. It now searches the settings by the shape of a measurement ID instead of by option name, which finds it wherever it was put: Site Kit, MonsterInsights, a header-and-footer plugin, a theme option, or pasted into the plugin's own code box. A GA4 property is preferred over a Tag Manager container rather than whichever came first.
+* **A loopback that lands somewhere else is no longer read as "you have no tag".** On shared hosting a site fetching itself often reaches the default vhost or a bot-check page, which answers 200 with no analytics in it. The body is now checked for being our own page before its contents are believed, and the request identifies itself as a browser so optimisers do not serve it a stripped page.
+* **When nothing is found, the screen says so without asserting it.** The old wording flatly stated there was nowhere for clicks to be recorded. It now explains that the switch can be turned on regardless — the tracker looks for analytics at the moment of the click, so it starts working the instant a tag is present.
+* **The admin is fully Vietnamese again.** Regrouping the screens created 85 new strings — the group names, every tab name, and the description under each one on the Overview page — and none of them had a translation, so the interface read half Vietnamese and half English. All 85 are translated; 1,613 of 1,613 translatable strings now have Vietnamese.
+* **A release can no longer ship untranslated strings.** The build now refuses to publish if any string is missing its Vietnamese, which is the check that was missing when the mixed-language interface went out.
+* Fixed the translation checker itself: it read the catalogue line by line, so any entry gettext had wrapped across several lines looked untranslated. It was reporting 97 strings missing that were all present.
+* **The guides match the new structure.** The README (English and Vietnamese) gains a table of what lives on which screen and which tab, the "I can't find the Popup" answer no longer points at a menu entry that does not exist, and the chat guide's opening path is now Customers → Chat.
+* **The chat guide explains the new click measurement** — which events reach GA4, where to read them, what Tag Manager users have to build themselves, and how the traffic source is still attributed.
 
 = 1.2.94 =
 * **Fixed a double-count risk in the new click measurement.** A site can load both gtag and Tag Manager against the same property, and the click was being sent down both routes. It now takes one route only.

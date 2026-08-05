@@ -1,8 +1,8 @@
 # User Guide: Floating Contact / Chat Button (Horse Tools)
 
-This guide explains how to use the **CHAT tab** in Horse Tools — the floating contact button on desktop, the contact bar pinned to the bottom of mobile screens, and the “Services” panel.
+This guide explains how to use the **Chat tab** in Horse Tools — the floating contact button on desktop, the contact bar pinned to the bottom of mobile screens, and the “Services” panel.
 
-Go to **WordPress Admin → Horse Tools → CHAT tab** to configure everything.
+Go to **WordPress Admin → Horse Tools → Customers → Chat** to configure everything. (If the module is off, switch it on under **Horse Tools → Extend** first.)
 
 ## Contents
 1. [Getting started: turn the module on](#1-getting-started-turn-the-module-on)
@@ -18,6 +18,7 @@ Go to **WordPress Admin → Horse Tools → CHAT tab** to configure everything.
 4. [Contact bar on mobile](#4-contact-bar-on-mobile)
 5. [The “Services” panel](#5-the-services-panel)
 6. [Tips & common issues](#6-tips--common-issues)
+7. [Did anyone actually press the buttons?](#7-did-anyone-actually-press-the-buttons)
 
 ---
 
@@ -248,5 +249,35 @@ A slide-up panel that showcases your services / promotions — tap a button to o
 - **WhatsApp/Viber numbers** should be in **international format** (e.g. `84901234567`, drop the leading 0) so they open correctly.
 
 ---
+
+## 7. Did anyone actually press the buttons?
+
+**Horse Tools → Customers → Measurement** answers that. Switch it on and every
+press of a contact link — the floating button, the mobile bar, a quick-reply chip,
+even a phone number you pasted into an article — is reported to Google Analytics 4
+as an event named after the channel: `contact_phone`, `contact_zalo`,
+`contact_messenger`, `contact_whatsapp`, `contact_telegram`, `contact_viber`,
+`contact_sms`, `contact_email`.
+
+- **Nothing is stored on your site.** The click is handed to whatever analytics
+  tag the site already loads (GA4 via `gtag`, or Tag Manager) and that is the end
+  of it — no new data to keep, nothing to declare in a privacy policy.
+- **You need an analytics tag already installed** — Site Kit, MonsterInsights, a
+  hand-pasted GA4 snippet, or Tag Manager all work. The screen checks for one and
+  tells you what it found.
+- **Where to read the numbers:** GA4 → *Reports → Engagement → Events*. The
+  channel is in the event **name**, so it shows up in the standard reports with no
+  custom dimensions to register.
+- **Tag Manager only?** GTM gives you `dataLayer` but not `gtag`, so you must
+  build one GA4 event tag with a Custom Event trigger matching `contact_.*` (use
+  the regex matcher). Until you do, the pushes sit in the dataLayer unused.
+- **Attribution still works.** The event carries the session's normal source /
+  medium / campaign, so *Traffic acquisition* will tell you whether the calls came
+  from Google Ads, organic search or Facebook. Google Ads clicks are identified by
+  their `gclid` and appear as *Google Ads* rather than *google / organic*.
+- Each event also carries `placement` (`floating`, `navbar`, `chatbox`,
+  `services`, `quickreply`, `content`) and a short `label` — useful for asking
+  whether the mobile bar is pulling its weight or the floating button is doing all
+  the work.
 
 *Documentation for Horse Tools — Chat module. UI labels appear in Vietnamese when the site language is Vietnamese; the meaning of each option is the same as described above. See also: [Vietnamese guide](huong-dan-chat.md).*

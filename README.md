@@ -22,11 +22,37 @@ Horse Tools is an actively-maintained, security-hardened fork of **Foxtool** by 
 - **Security hardening** — limit login attempts, block user enumeration, security response headers, disable the file editor, REST/XML-RPC controls and header cleanup.
 - **Privacy** — self-host Google Fonts and scan the front end for external requests.
 - **Media** — WebP/AVIF conversion, watermarking and thumbnail control.
-- **SEO & content** — table of contents, automatic 301 redirects on slug change with a 404 log, and Google Search Console / Indexing API integration.
+- **SEO** — FAQ rich-result schema generated from the article's own Q&A headings, a table of contents, automatic 301 redirects on slug change with a 404 log, permalink and image-alt tidying, and Google Search Console / Indexing API integration.
+- **Contact-click measurement** — records which contact buttons visitors actually press (phone, Zalo, Messenger, WhatsApp, Telegram, Viber…) as GA4 events, using whatever analytics tag the site already loads. Nothing is stored on the site.
 - **Optimisation & health** — site optimisation options and a one-click site-health audit.
 - **Cleanup** — database and content cleanup tools.
 - **Admin & login** — customisable admin display and colour scheme, configuration presets (Blog, WooCommerce, Performance, Security), and a customisable WordPress login screen.
 - **Extras** — WooCommerce helpers, mail testing, user role/permission tools, post & page utilities, notifications and popups.
+
+## Where everything lives
+
+The admin menu is organised by the job you are doing, not by which module a
+setting happens to belong to. **Horse Tools** in the WordPress sidebar opens an
+**Overview** page listing the groups; each group is one page with tabs across the
+top and a single Save button.
+
+| Group | Tabs |
+| --- | --- |
+| **Speed** | Optimisation · Images · Clean posts · Clean comments · Clean media · Cleanup schedule |
+| **SEO** | Links & URLs · Rich results (FAQ schema) · Redirects 301 · Broken links 404 · Index now · Table of contents |
+| **Security** | Protection · Login page · Maintenance 503 |
+| **Content** | Posts · Lock content · Signature · Date shortcodes · Google fetch · Icons · Snippets · Tables |
+| **Appearance** | Site · Admin area · Site search · Fonts · Font settings |
+| **Customers** | Chat · WooCommerce · Ad-block notice · Notification bar · Popup · Cookie notice · Ad clicks · AdSense · ads.txt · Measurement |
+| **Accounts & Email** | Users · Email · Google sign-in |
+| **Tools** | Admin tools · Plugin settings · Custom CSS · Code in head/body/footer/login · Debug · Backup |
+
+Two more entries sit below them: **Extend**, where optional modules are switched
+on and off, and **About**.
+
+Only the group you open is loaded, so a screen you never visit costs nothing.
+Old bookmarks to the previous per-module pages still work — they redirect to the
+group and tab that setting now lives on.
 
 ## Installation
 
@@ -82,10 +108,13 @@ No — see [Privacy](#privacy). It only contacts services you explicitly configu
 Download the newer ZIP from [Releases](https://github.com/tranduythuan/Horse-Tools/releases) and upload it via **Plugins → Add New → Upload Plugin**, then choose **“Replace current with uploaded”**. Your settings are kept.
 
 **I can't find the Popup (or another feature) — where is it?**
-Most modules are opt-in. Turn them on under the **Extend** page first; the feature's own settings page then appears in the menu.
+Most modules are opt-in. Turn them on under the **Extend** page first; the feature's tab then appears inside the group it belongs to — see [Where everything lives](#where-everything-lives). There is also a search box on the Overview page that finds a setting by name.
 
 **How do I show a promotional popup?**
-Enable the **Notify** module on the Extend page, then go to **Notify → Popup**: switch it on and choose a layout, entrance effect, position and trigger.
+Enable the **Notify** module on the Extend page, then go to **Customers → Popup**: switch it on and choose a layout, entrance effect, position and trigger.
+
+**Does the plugin do anything for SEO?**
+Yes — the **SEO** group covers permalinks, image alt text, external links, FAQ rich results, 301 redirects with a 404 log, Google Indexing API and the table of contents.
 
 **Can I use it in my language?**
 Vietnamese is complete; 11 more languages ship as machine-translated starting points. You can also drop your own `.mo` into `wp-content/languages/plugins/`.

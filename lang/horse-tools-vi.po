@@ -6640,3 +6640,261 @@ msgstr "Tag Manager không tự chuyển tiếp sự kiện. Lượt bấm đư�
 
 msgid "1. Triggers → New → Custom Event, event name ^contact_ with \"use regex matching\" ticked. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Submit and publish the container."
 msgstr "1. Triggers → New → Custom Event, tên sự kiện ^contact_ và tích \"use regex matching\". 2. Tags → New → Google Analytics GA4 Event, trỏ tới mã đo lường của anh, Event Name đặt là {{Event}} để mỗi kênh giữ tên riêng, dùng trigger ở bước 1. 3. Submit rồi publish container."
+
+msgid "Speed"
+msgstr "Tốc độ"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "Appearance"
+msgstr "Giao diện"
+
+msgid "Customers"
+msgstr "Khách hàng"
+
+msgid "Tools"
+msgstr "Công cụ"
+
+msgid "Accounts & Email"
+msgstr "Tài khoản & Email"
+
+msgid "Users"
+msgstr "Người dùng"
+
+msgid "Google sign-in"
+msgstr "Đăng nhập Google"
+
+msgid "Posts"
+msgstr "Bài viết"
+
+msgid "Lock content"
+msgstr "Khoá nội dung"
+
+msgid "Signature"
+msgstr "Chữ ký"
+
+msgid "Date shortcodes"
+msgstr "Shortcode ngày tháng"
+
+msgid "Google fetch"
+msgstr "Lấy dữ liệu Google"
+
+msgid "Icons"
+msgstr "Biểu tượng"
+
+msgid "Snippets"
+msgstr "Đoạn mã"
+
+msgid "Chat"
+msgstr "Chat"
+
+msgid "Ad-block notice"
+msgstr "Thông báo chặn quảng cáo"
+
+msgid "Notification bar"
+msgstr "Thanh thông báo"
+
+msgid "Popup"
+msgstr "Popup"
+
+msgid "Cookie notice"
+msgstr "Thông báo cookie"
+
+msgid "Ad clicks"
+msgstr "Ép click quảng cáo"
+
+msgid "AdSense"
+msgstr "AdSense"
+
+msgid "ads.txt"
+msgstr "ads.txt"
+
+msgid "Site"
+msgstr "Ngoài site"
+
+msgid "Admin area"
+msgstr "Trong quản trị"
+
+msgid "Site search"
+msgstr "Tìm kiếm trên site"
+
+msgid "Fonts"
+msgstr "Phông chữ"
+
+msgid "Protection"
+msgstr "Bảo vệ"
+
+msgid "Login page"
+msgstr "Trang đăng nhập"
+
+msgid "Maintenance 503"
+msgstr "Trang bảo trì 503"
+
+msgid "Links & URLs"
+msgstr "Liên kết & đường dẫn"
+
+msgid "Rich results"
+msgstr "Kết quả nổi bật"
+
+msgid "Redirects 301"
+msgstr "Chuyển hướng 301"
+
+msgid "Broken links 404"
+msgstr "Liên kết gãy 404"
+
+msgid "Table of contents"
+msgstr "Mục lục"
+
+msgid "Optimisation"
+msgstr "Tối ưu"
+
+msgid "Images"
+msgstr "Hình ảnh"
+
+msgid "Clean posts"
+msgstr "Dọn bài viết"
+
+msgid "Clean comments"
+msgstr "Dọn bình luận"
+
+msgid "Clean media"
+msgstr "Dọn thư viện"
+
+msgid "Cleanup schedule"
+msgstr "Lịch dọn dẹp"
+
+msgid "Admin tools"
+msgstr "Công cụ quản trị"
+
+msgid "Plugin settings"
+msgstr "Cài đặt plugin"
+
+msgid "Code in head"
+msgstr "Chèn code vào head"
+
+msgid "Code in body"
+msgstr "Chèn code vào body"
+
+msgid "Code in footer"
+msgstr "Chèn code vào footer"
+
+msgid "Code on login"
+msgstr "Chèn code trang đăng nhập"
+
+msgid "Quick guide — how the chat feature works"
+msgstr "Hướng dẫn nhanh — chức năng chat hoạt động thế nào"
+
+msgid "Pick a button skin"
+msgstr "Chọn kiểu nút"
+
+msgid "Add contact channels"
+msgstr "Thêm kênh liên hệ"
+
+msgid "Services panel (mobile)"
+msgstr "Bảng dịch vụ (điện thoại)"
+
+msgid "Panel layout"
+msgstr "Bố cục bảng"
+
+msgid "Theme colour"
+msgstr "Màu chủ đạo"
+
+msgid "Display style (where the panel appears)"
+msgstr "Kiểu hiển thị (bảng hiện ở đâu)"
+
+msgid "Custom / Maps:"
+msgstr "Tuỳ chỉnh / Bản đồ:"
+
+msgid "Choose a built-in icon"
+msgstr "Chọn biểu tượng có sẵn"
+
+msgid "— or paste your own SVG."
+msgstr "— hoặc dán mã SVG của bạn."
+
+msgid "Click an SVG box, then"
+msgstr "Bấm vào ô SVG, rồi"
+
+msgid "Save"
+msgstr "Lưu"
+
+msgid "Two-factor authentication"
+msgstr "Xác thực hai lớp"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Scripts, styles, lazy loading, image compression and WebP."
+msgstr "Script, CSS, hoãn tải ảnh, nén ảnh và WebP."
+
+msgid "Permalinks, image alt text, external links and FAQ schema."
+msgstr "Đường dẫn tĩnh, alt ảnh, link ra ngoài và schema FAQ."
+
+msgid "Login lockout, two-factor, reCAPTCHA and the login page."
+msgstr "Khoá đăng nhập, xác thực hai lớp, reCAPTCHA và trang đăng nhập."
+
+msgid "Post images, duplicating posts and the image lightbox."
+msgstr "Ảnh trong bài, nhân bản bài viết và xem ảnh phóng to."
+
+msgid "Dark mode, scrollbar, effects, and the look of the admin area."
+msgstr "Chế độ tối, thanh cuộn, hiệu ứng và giao diện trang quản trị."
+
+msgid "Chat buttons, contact channels and WooCommerce tweaks."
+msgstr "Nút chat, kênh liên hệ và tinh chỉnh WooCommerce."
+
+msgid "Roles, avatars, SMTP and signing in with Google."
+msgstr "Phân quyền, ảnh đại diện, SMTP và đăng nhập bằng Google."
+
+msgid "Admin housekeeping and the plugin's own settings."
+msgstr "Dọn dẹp trang quản trị và cài đặt của chính plugin."
+
+msgid "Settings are grouped by what they do. Pick a group below, or search for a setting by name in the panel on the right."
+msgstr "Cài đặt được gom theo công việc. Chọn một nhóm bên dưới, hoặc tìm theo tên trong ô bên phải."
+
+msgid "This section could not be displayed. The rest of the screen still works."
+msgstr "Không hiển thị được mục này. Phần còn lại của màn hình vẫn dùng bình thường."
+
+msgid "This snippet’s code no longer matches its signature — it was changed outside this screen and will not run. Review it and save again to re-sign it."
+msgstr "Mã của đoạn này không còn khớp chữ ký — nó đã bị sửa từ nơi khác nên sẽ không chạy. Hãy xem lại rồi lưu để ký lại."
+
+msgid "choose how the floating button looks from the visual grid below (17 styles). What you see is what visitors get."
+msgstr "chọn kiểu nút nổi từ lưới mẫu bên dưới (17 kiểu). Bạn thấy sao thì khách thấy vậy."
+
+msgid "pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically. For a custom button, choose a built-in icon or paste your own SVG."
+msgstr "chọn một kênh (Zalo, Messenger, Điện thoại…) là logo tự được gắn. Với nút tự tạo, chọn biểu tượng có sẵn hoặc dán mã SVG của bạn."
+
+msgid "a panel that slides up to show your services or articles. Pick its layout, colour and how it appears from the visual grids. To open it, point a bottom-bar item at"
+msgstr "một bảng trượt lên để giới thiệu dịch vụ hoặc bài viết. Chọn bố cục, màu và cách xuất hiện từ lưới mẫu. Muốn mở bảng thì trỏ một mục ở thanh dưới tới"
+
+msgid "a bar pinned to the bottom of the phone screen. Choose one of 5 styles from the grid."
+msgstr "một thanh ghim ở đáy màn hình điện thoại. Chọn một trong 5 kiểu từ lưới mẫu."
+
+msgid "a greeting bubble, business hours (shows Online / Away), scan-to-open QR on desktop, and pre-filled WhatsApp / SMS messages."
+msgstr "bong bóng chào, giờ làm việc (hiện Đang online / Bận), mã QR quét để mở trên máy tính, và tin nhắn WhatsApp / SMS soạn sẵn."
+
+msgid "click SAVE CONTENT at the bottom of the page. The Services panel has its own “Save services” button."
+msgstr "bấm LƯU NỘI DUNG ở cuối trang. Riêng bảng Dịch vụ có nút “Lưu dịch vụ” của nó."
+
+msgid "Pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically — no icon needed."
+msgstr "Chọn một kênh (Zalo, Messenger, Điện thoại…) là logo tự được gắn — không cần chọn biểu tượng."
+
+msgid "Phone, SMS, Messenger, Telegram, Zalo, Whatsapp, Viber, Skype, Tiktok, Mail:"
+msgstr "Điện thoại, SMS, Messenger, Telegram, Zalo, Whatsapp, Viber, Skype, Tiktok, Mail:"
+
+msgid "Only for a custom icon: click the SVG box below, then"
+msgstr "Chỉ dùng khi muốn biểu tượng riêng: bấm vào ô SVG bên dưới, rồi"
+
+msgid "The PHP snippet \"%s\" stopped the page it ran on, so Horse Tools switched it off. Edit it and switch it back on when it is fixed."
+msgstr "Đoạn PHP \"%s\" làm chết trang mà nó chạy, nên Horse Tools đã tắt nó đi. Hãy sửa lại rồi bật lên khi đã xong."
+
+msgid "Heads up: a PHP snippet was just changed on %1$s. Snippet: \"%2$s\". By: %3$s (IP %4$s). If this was not you, change your password and review Horse Tools → Shortcode immediately."
+msgstr "Lưu ý: vừa có một đoạn PHP bị thay đổi trên %1$s. Đoạn mã: \"%2$s\". Bởi: %3$s (IP %4$s). Nếu không phải bạn, hãy đổi mật khẩu và kiểm tra ngay Horse Tools → Shortcode."
+
+msgid "Switch on Horse Tools two-factor authentication (Security tab) before using PHP snippets."
+msgstr "Hãy bật xác thực hai lớp của Horse Tools (mục Bảo mật) trước khi dùng đoạn mã PHP."
+
+msgid "You are not allowed to change these settings."
+msgstr "Bạn không có quyền thay đổi các cài đặt này."
+
+msgid "No Google Analytics tag turned up, either in your settings or on the home page. If you have not installed one yet, Site Kit by Google (or any GA4 plugin) is the usual way. If you know you do have one — added through Tag Manager, a caching layer, or a consent tool that loads it later — this check simply could not see it: switch the setting on anyway. It looks for analytics at the moment of the click, not now, so it starts working the instant a tag is present."
+msgstr "Không tìm ra mã Google Analytics nào, cả trong cài đặt lẫn trên trang chủ. Nếu bạn chưa cài thì Site Kit by Google (hoặc plugin GA4 bất kỳ) là cách phổ biến nhất. Còn nếu bạn biết chắc site đã có mã — gắn qua Tag Manager, qua lớp cache, hay qua công cụ xin đồng ý cookie nạp muộn — thì chỉ là lần kiểm tra này không nhìn thấy: cứ bật lên bình thường. Nó dò analytics ngay lúc khách bấm chứ không phải lúc này, nên có mã là chạy ngay."

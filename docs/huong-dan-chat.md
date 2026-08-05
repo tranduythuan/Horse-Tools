@@ -1,8 +1,8 @@
 # Hướng dẫn sử dụng: Nút liên hệ / Chat nổi (Horse Tools)
 
-Tài liệu này hướng dẫn chi tiết cách dùng **tab CHAT** trong Horse Tools — nút liên hệ nổi trên máy tính, thanh liên hệ dưới đáy điện thoại, và panel “Dịch vụ”.
+Tài liệu này hướng dẫn chi tiết cách dùng **tab Chat** trong Horse Tools — nút liên hệ nổi trên máy tính, thanh liên hệ dưới đáy điện thoại, và panel “Dịch vụ”.
 
-Vào **WordPress Admin → Horse Tools → tab CHAT** để cấu hình.
+Vào **WordPress Admin → Horse Tools → Khách hàng → Chat** để cấu hình. (Nếu module đang tắt, bật nó ở **Horse Tools → Tính năng mở rộng** trước.)
 
 ## Mục lục
 1. [Bắt đầu: bật module](#1-bắt-đầu-bật-module)
@@ -18,6 +18,7 @@ Vào **WordPress Admin → Horse Tools → tab CHAT** để cấu hình.
 4. [Thanh liên hệ trên điện thoại](#4-thanh-liên-hệ-trên-điện-thoại)
 5. [Panel “Dịch vụ” (Services)](#5-panel-dịch-vụ-services)
 6. [Mẹo & lỗi thường gặp](#6-mẹo--lỗi-thường-gặp)
+7. [Khách có thật sự bấm nút không?](#7-khách-có-thật-sự-bấm-nút-không)
 
 ---
 
@@ -248,5 +249,33 @@ Panel trượt lên giới thiệu dịch vụ / khuyến mãi — bấm một n
 - **Số WhatsApp/Viber** nên nhập **dạng quốc tế** (vd `84901234567`, bỏ số 0 đầu) để mở đúng.
 
 ---
+
+## 7. Khách có thật sự bấm nút không?
+
+**Horse Tools → Khách hàng → Đo lường** trả lời câu đó. Bật lên là mỗi lượt bấm
+vào một liên kết liên hệ — nút nổi, thanh dưới đáy điện thoại, chip trả lời nhanh,
+kể cả số điện thoại bạn dán thẳng vào bài viết — đều được báo về Google Analytics 4
+dưới dạng sự kiện đặt tên theo kênh: `contact_phone`, `contact_zalo`,
+`contact_messenger`, `contact_whatsapp`, `contact_telegram`, `contact_viber`,
+`contact_sms`, `contact_email`.
+
+- **Không lưu gì trên site của bạn.** Lượt bấm được đẩy thẳng sang mã analytics
+  site đã có (GA4 qua `gtag`, hoặc Tag Manager) rồi thôi — không sinh thêm dữ liệu
+  phải giữ, không có gì phải khai trong chính sách riêng tư.
+- **Site phải có sẵn mã analytics** — Site Kit, MonsterInsights, đoạn GA4 dán tay
+  hay Tag Manager đều được. Màn hình này tự dò và báo cho bạn biết nó thấy gì.
+- **Xem số ở đâu:** GA4 → *Báo cáo → Mức độ tương tác → Sự kiện*. Tên kênh nằm
+  ngay trong **tên sự kiện** nên hiện luôn ở báo cáo chuẩn, không phải khai báo
+  thứ nguyên tuỳ chỉnh nào.
+- **Chỉ có Tag Manager?** GTM cho bạn `dataLayer` chứ không có `gtag`, nên bạn
+  phải tạo một thẻ sự kiện GA4 với trigger Custom Event khớp `contact_.*` (dùng
+  kiểu so khớp regex). Chưa làm bước này thì dữ liệu nằm im trong dataLayer.
+- **Vẫn phân tách được nguồn.** Sự kiện mang theo source / medium / campaign của
+  phiên, nên báo cáo *Thu nạp lưu lượng* sẽ cho biết cuộc gọi đến từ Google Ads,
+  tìm kiếm tự nhiên hay Facebook. Lượt từ Google Ads được nhận bằng `gclid` và
+  hiện là *Google Ads* chứ không phải *google / organic*.
+- Mỗi sự kiện còn kèm `placement` (`floating`, `navbar`, `chatbox`, `services`,
+  `quickreply`, `content`) và một `label` ngắn — tiện để biết thanh dưới đáy có
+  đáng giá không, hay nút nổi mới là cái gánh hết.
 
 *Tài liệu cho Horse Tools — module Chat. Nhãn trong ảnh chụp có thể là tiếng Anh nếu website đang để ngôn ngữ tiếng Anh; ý nghĩa từng mục vẫn như mô tả ở trên. Xem thêm: [English guide](chat-guide.md).*
