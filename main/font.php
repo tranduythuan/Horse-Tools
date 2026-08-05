@@ -63,7 +63,7 @@ function horsetools_font_options_page( $embed = false ) {
                                     </div>
                                     <div class="ht-box-dow">
                                         <div class="font-dele">
-										<a onclick="if (!confirm('<?php _e('Do you want to delete?', 'horse-tools'); ?>')){return false;}" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin.php?page=horsetools-font-options&delete_font_key=' . rawurlencode( sanitize_key( $key ) ) ), 'horsetools_delete_font_' . sanitize_key( $key ) ) ); ?>"><i class="ti ti-trash"></i></a>
+										<a onclick="if (!confirm('<?php _e('Do you want to delete?', 'horse-tools'); ?>')){return false;}" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin.php?page=' . ( $embed ? 'horsetools-display-options' : 'horsetools-font-options' ) . '&delete_font_key=' . rawurlencode( sanitize_key( $key ) ) ), 'horsetools_delete_font_' . sanitize_key( $key ) ) ); ?>"><i class="ti ti-trash"></i></a>
 										</div>
                                     </div>
                                 </article>

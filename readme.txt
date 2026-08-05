@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.89
+Stable tag: 1.2.90
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.90 =
+* **Fixed: deleting an uploaded font did nothing.** The delete link still pointed at the old Fonts screen, which no longer exists as a page of its own, so it answered "Sorry, you are not allowed to access this page" and the font stayed. It now points at the screen you are on.
+* **Fixed: every old bookmark showed that same permissions message.** The thirteen addresses that moved into tabs were meant to redirect since 1.2.73, but WordPress rejects an unknown ?page= before the redirect could run, so none of them ever did. They redirect now.
 
 = 1.2.89 =
 * **Font settings are now saved by the screen's own Save button.** 1.2.83 only relabelled the second button so the two could be told apart; the settings have now moved into the screen's form, so there is one Save again. Uploading a font keeps its own button, but that one says UPLOAD, so there is nothing to mistake.
@@ -624,6 +628,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.90 =
+Fixes font deletion and the redirects for addresses that moved into tabs.
 
 = 1.2.89 =
 Font settings now use the screen's own Save button. Brand artwork added.

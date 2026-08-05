@@ -275,3 +275,10 @@ function horsetools_group_legacy_redirect() {
 	}
 }
 add_action( 'admin_init', 'horsetools_group_legacy_redirect' );
+// admin_init alone was not enough and the redirects never once ran: WordPress
+// checks that ?page= names a registered screen and calls wp_die() before any of
+// them could fire, so every old bookmark got "Sorry, you are not allowed to
+// access this page" — a permissions message for a page that had simply moved.
+// This action is fired immediately before that wp_die(), which is the last
+// point at which a moved page can still answer for itself.
+add_action( 'admin_page_access_denied', 'horsetools_group_legacy_redirect' );
