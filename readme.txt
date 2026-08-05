@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.95
+Stable tag: 1.2.96
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.96 =
+* **The analytics check now runs in your own browser, which is the only place that can see what a visitor sees.** Every server-side answer was a guess: a host can block the site from fetching itself, route that request to another site on the same account, or serve it a page built for bots — and if the tag was placed in a theme file rather than a setting, there was nothing in the database to find either. The screen now reads the home page from the browser you have open, without cookies so the tag is not withheld the way it is for logged-in users. The server-side check remains as the fallback when the browser cannot run it.
+* A loopback that lands on another WordPress site on the same hosting account is no longer accepted as this site's home page — it has to carry this site's own host name.
+* **Fixed: the "no analytics found" message shipped in English.** The compile step that turns the translations into the file WordPress reads was cut short, so the Vietnamese for that one string never made it into 1.2.95. The release check now compares the compiled file against its source and refuses to publish when they disagree, which is what let this through.
 
 = 1.2.95 =
 * **The measurement screen stops saying "no analytics" when there is analytics.** It searched a hand-written list of option names, so it only ever found the plugins it already knew about — and because that list also matched dozens of unrelated rows, a row limit could push the one row holding the ID out of the results. It now searches the settings by the shape of a measurement ID instead of by option name, which finds it wherever it was put: Site Kit, MonsterInsights, a header-and-footer plugin, a theme option, or pasted into the plugin's own code box. A GA4 property is preferred over a Tag Manager container rather than whichever came first.

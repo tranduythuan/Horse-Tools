@@ -111,11 +111,12 @@ function horsetools_track_is_own_page( $body ) {
 	if ( strlen( $body ) < 512 ) {
 		return false;
 	}
-	if ( false !== stripos( $body, 'wp-content' ) || false !== stripos( $body, 'wp-includes' ) ) {
-		return true;
-	}
+	// The host name, not merely "this is some WordPress site". On shared hosting
+	// a loopback commonly lands on the account's primary domain, which is a real
+	// WordPress install and would pass a wp-content check — and if that other
+	// site has no analytics, its page gets read as proof that this one has none.
 	$host = wp_parse_url( home_url(), PHP_URL_HOST );
-	return $host && false !== stripos( $body, $host );
+	return $host && false !== stripos( $body, (string) $host );
 }
 
 /**

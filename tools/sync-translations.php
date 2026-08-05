@@ -1065,6 +1065,8 @@ $vi = array(
 
 	'No Google Analytics tag turned up, either in your settings or on the home page. If you have not installed one yet, Site Kit by Google (or any GA4 plugin) is the usual way. If you know you do have one — added through Tag Manager, a caching layer, or a consent tool that loads it later — this check simply could not see it: switch the setting on anyway. It looks for analytics at the moment of the click, not now, so it starts working the instant a tag is present.' => 'Không tìm ra mã Google Analytics nào, cả trong cài đặt lẫn trên trang chủ. Nếu bạn chưa cài thì Site Kit by Google (hoặc plugin GA4 bất kỳ) là cách phổ biến nhất. Còn nếu bạn biết chắc site đã có mã — gắn qua Tag Manager, qua lớp cache, hay qua công cụ xin đồng ý cookie nạp muộn — thì chỉ là lần kiểm tra này không nhìn thấy: cứ bật lên bình thường. Nó dò analytics ngay lúc khách bấm chứ không phải lúc này, nên có mã là chạy ngay.',
 
+	'Checked from your own browser: the home page a visitor receives carries no Google Analytics tag. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own.' => 'Đã kiểm tra từ chính trình duyệt của bạn: trang chủ mà khách nhận được không có mã Google Analytics nào. Hãy cài Site Kit by Google, hoặc plugin GA4 bất kỳ, rồi cài đặt này sẽ tự chạy.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

@@ -5,6 +5,7 @@ $ht_track = function_exists( 'horsetools_track_detect' ) ? horsetools_track_dete
 ?>
 			<h3><i class="ti ti-chart-dots"></i> <?php _e( 'Contact click measurement', 'horse-tools' ) ?></h3>
 
+			<div id="ht-track-state">
 			<?php if ( $ht_track['found'] ) : ?>
 			<p class="ht-note"><i class="ti ti-circle-check"></i>
 				<?php
@@ -24,10 +25,62 @@ $ht_track = function_exists( 'horsetools_track_detect' ) ? horsetools_track_dete
 				<?php esc_html_e( 'No Google Analytics tag turned up, either in your settings or on the home page. If you have not installed one yet, Site Kit by Google (or any GA4 plugin) is the usual way. If you know you do have one — added through Tag Manager, a caching layer, or a consent tool that loads it later — this check simply could not see it: switch the setting on anyway. It looks for analytics at the moment of the click, not now, so it starts working the instant a tag is present.', 'horse-tools' ); ?>
 			</p>
 			<?php endif; ?>
+			</div>
 
 			<p>
 				<a class="ht-btn-sub" href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'horsetools-track-recheck', '1' ), 'horsetools_track_recheck' ) ); ?>"><i class="ti ti-refresh"></i> <?php esc_html_e( 'Check again', 'horse-tools' ); ?></a>
 			</p>
+
+			<?php
+			/**
+			 * Ask the browser, not the server.
+			 *
+			 * Every server-side answer here is a guess about what a visitor
+			 * receives: a host can block a site from fetching itself, route the
+			 * loopback to a different site on the same account, or hand it a
+			 * page built for bots — and the analytics tag may not live in the
+			 * options table at all if it was put in a theme file. The admin's own
+			 * browser has none of those problems. The home page is same-origin,
+			 * so it can simply be read; sent without cookies, because plugins
+			 * routinely leave the tag out for logged-in users and the tag we care
+			 * about is the one a visitor gets.
+			 */
+			$ht_probe = array(
+				'home'  => home_url( '/' ),
+				/* translators: %s: the measurement ID found on the site, e.g. G-XXXXXXX. */
+				'found' => __( 'Analytics found on your site: %s. Clicks will be recorded there.', 'horse-tools' ),
+				'none'  => __( 'Checked from your own browser: the home page a visitor receives carries no Google Analytics tag. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own.', 'horse-tools' ),
+			);
+			?>
+			<script>
+			(function () {
+				var cfg = <?php echo wp_json_encode( $ht_probe ); ?>;
+				var box = document.getElementById('ht-track-state');
+				if (!box || !window.fetch) { return; }
+
+				fetch(cfg.home, { credentials: 'omit', cache: 'no-store' })
+					.then(function (r) { return r.ok ? r.text() : ''; })
+					.then(function (html) {
+						if (!html) { return; }   // leave the server's answer alone
+						var m = html.match(/\bG-[A-Z0-9]{6,}\b/) || html.match(/\bGTM-[A-Z0-9]{4,}\b/);
+						var p = document.createElement('p');
+						var i = document.createElement('i');
+						p.className = 'ht-note';
+						i.className = m ? 'ti ti-circle-check' : 'ti ti-alert-triangle';
+						p.appendChild(i);
+						p.appendChild(document.createTextNode(
+							' ' + (m ? cfg.found.replace('%s', m[0]) : cfg.none)
+						));
+						if (!m) { p.className = 'ht-note ht-note-red'; }
+						box.innerHTML = '';
+						box.appendChild(p);
+
+						var gtm = document.getElementById('ht-track-gtm');
+						if (gtm && m && m[0].indexOf('GTM-') === 0) { gtm.style.display = ''; }
+					})
+					.catch(function () {});   // offline or blocked: the server's answer stands
+			}());
+			</script>
 
 			<?php
 			horsetools_toggle( 'track-contact1', __( 'Record contact button clicks', 'horse-tools' ), array(
@@ -44,7 +97,8 @@ $ht_track = function_exists( 'horsetools_track_detect' ) ? horsetools_track_dete
 			<p class="ht-note"><i class="ti ti-bulb"></i>
 				<?php esc_html_e( 'Optional: in Admin → Events, switch on "Mark as key event" for the channels that matter to you. They then appear in the acquisition reports, so you can see which traffic source produces contacts, and they can be imported into Google Ads as a conversion.', 'horse-tools' ); ?>
 			</p>
-			<?php if ( 'GTM' === substr( (string) $ht_track['id'], 0, 3 ) ) : ?>
+			<?php // Always rendered, hidden until Tag Manager is what was found — the browser probe reveals it without a page reload. ?>
+			<div id="ht-track-gtm"<?php echo 'GTM' === substr( (string) $ht_track['id'], 0, 3 ) ? '' : ' style="display:none"'; ?>>
 			<h4><?php _e( 'You are using Tag Manager — one setup step is required', 'horse-tools' ) ?></h4>
 			<p class="ht-note ht-note-red"><i class="ti ti-alert-triangle"></i>
 				<?php esc_html_e( 'Tag Manager does not pass events on by itself. The click is placed in the dataLayer and stops there until you build a tag for it, so nothing reaches Analytics until this is done once.', 'horse-tools' ); ?>
@@ -52,7 +106,7 @@ $ht_track = function_exists( 'horsetools_track_detect' ) ? horsetools_track_dete
 			<p class="ht-note"><i class="ti ti-bulb"></i>
 				<?php esc_html_e( '1. Triggers → New → Custom Event, event name ^contact_ with "use regex matching" ticked. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Submit and publish the container.', 'horse-tools' ); ?>
 			</p>
-			<?php endif; ?>
+			</div>
 
 			<p class="ht-note"><i class="ti ti-alert-triangle"></i>
 				<?php esc_html_e( 'Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see.', 'horse-tools' ); ?>

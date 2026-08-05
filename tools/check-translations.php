@@ -51,6 +51,20 @@ foreach ( horsetools_read_po( $root . '/lang/horse-tools-vi.po' ) as $msgid => $
 	}
 }
 
+// The .po is the source; the .mo is what WordPress actually reads. They drift
+// the moment the compile step is interrupted — which is how a screen shipped in
+// English while this script, reading only the .po, reported nothing missing.
+$mo_stale = false;
+$mo_path  = $root . '/lang/horse-tools-vi.mo';
+if ( is_readable( $mo_path ) ) {
+	// The MO header's third uint32 is the string count, including the header
+	// entry itself; the .po contributes one entry per non-empty translation.
+	$head     = unpack( 'Vmagic/Vrev/Vcount', file_get_contents( $mo_path, false, null, 0, 12 ) );
+	$mo_stale = ( (int) $head['count'] !== count( $have ) + 1 );
+} else {
+	$mo_stale = true;
+}
+
 $missing = array();
 foreach ( $strings as $text => $where ) {
 	if ( ! isset( $have[ $text ] ) ) {
@@ -60,7 +74,7 @@ foreach ( $strings as $text => $where ) {
 
 if ( in_array( '--count', $argv, true ) ) {
 	echo count( $missing ), "\n";
-	exit( $missing ? 1 : 0 );
+	exit( ( $missing || $mo_stale ) ? 1 : 0 );
 }
 
 // Full text, untruncated, for writing the translations from.
@@ -83,4 +97,8 @@ foreach ( $missing as $text => $where ) {
 	printf( "  [%s] %s\n", $where, mb_substr( $text, 0, 90 ) );
 }
 
-exit( $missing ? 1 : 0 );
+if ( $mo_stale ) {
+	echo "\n  horse-tools-vi.mo is out of date with the .po — run: php tools/sync-translations.php\n";
+}
+
+exit( ( $missing || $mo_stale ) ? 1 : 0 );
