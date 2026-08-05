@@ -92,7 +92,7 @@ $ht_track = function_exists( 'horsetools_track_detect' ) ? horsetools_track_dete
 			horsetools_toggle( 'track-contact1', __( 'Record contact button clicks', 'horse-tools' ), array(
 				'tab'         => 'CUSTOMERS',
 				'section'     => 'Contact click measurement',
-				'description' => __( 'Sends one event to your analytics each time a visitor taps a phone, SMS, email, Zalo, Messenger, Telegram, WhatsApp, Viber, Skype, Line, TikTok or Maps link — including links inside your posts, not only the chat buttons. A Custom chat button pointing anywhere else is recorded under its own domain name. Nothing is stored on your site and no personal data is involved.', 'horse-tools' ),
+				'description' => __( 'Sends one event to your analytics each time a visitor taps a contact link — phone, SMS, email, Zalo, Messenger, Telegram, WhatsApp, Viber, Line, WeChat, TikTok, Maps and the rest. Any other chat button is recorded under its own site name, so Instagram, Shopee, Signal and anything you add later are covered without waiting for an update. Phone, SMS, email and Viber links count anywhere on the site, including inside your posts; the others count inside the chat widgets, so an article full of outbound links does not flood the report. Nothing is stored on your site and no personal data is involved.', 'horse-tools' ),
 			) );
 			?>
 

@@ -112,12 +112,38 @@ global $horsetools_options; ?>
 	</p>
 	<div id="sortable-list">
 	<div data-id="1" class="ui-state-default ht-button-grid">
-	<?php $styles = array('Custom', 'Phone', 'SMS', 'Zalo', 'Messenger', 'Telegram', 'Whatsapp', 'Viber', 'Line', 'WeChat', 'Signal', 'Shopee', 'Grab', 'Instagram', 'Facebook', 'Threads', 'Tiktok', 'Youtube', 'X', 'Pinterest', 'Linkedin', 'Reddit', 'Twitch', 'Spotify', 'VK', 'Discord', 'Google', 'Skype', 'Mail', 'Maps'); ?>
-	<select name="horsetools_settings[chat-nut11]"> 
-	<?php foreach($styles as $style) { ?> 
+	<?php
+	$styles = array('Custom', 'Phone', 'SMS', 'Zalo', 'Messenger', 'Telegram', 'Whatsapp', 'Viber', 'Line', 'WeChat', 'Signal', 'Shopee', 'Grab', 'Instagram', 'Facebook', 'Threads', 'Tiktok', 'Youtube', 'X', 'Pinterest', 'Linkedin', 'Reddit', 'Twitch', 'Spotify', 'VK', 'Discord', 'Google', 'Skype', 'Mail', 'Maps');
+
+	// Microsoft closed Skype on 5 May 2025, so a skype: link now opens nothing.
+	// The option is kept, and kept selectable, only so that a site already using
+	// it does not have its button silently changed into something else the next
+	// time this screen is saved — the label says what happened, and the notice
+	// below appears while one is still configured.
+	$ht_style_label = function ( $style ) {
+		return 'Skype' === $style ? __( 'Skype (service closed)', 'horse-tools' ) : $style;
+	};
+
+	$ht_dead_skype = false;
+	if ( is_array( $horsetools_options ) ) {
+		foreach ( $horsetools_options as $k => $v ) {
+			if ( preg_match( '/^chat-nut1\d+$/', $k ) && 'Skype' === $v ) {
+				$ht_dead_skype = true;
+				break;
+			}
+		}
+	}
+	if ( $ht_dead_skype ) :
+	?>
+	<p class="ht-note ht-note-red"><i class="ti ti-alert-triangle"></i>
+		<?php esc_html_e( 'One of your buttons is set to Skype. Microsoft closed Skype on 5 May 2025 and moved everyone to Teams, so that button now opens nothing for visitors. Change it to another channel — it has been left in place rather than removed for you, so that nothing changes on your site without your say-so.', 'horse-tools' ); ?>
+	</p>
+	<?php endif; ?>
+	<select name="horsetools_settings[chat-nut11]">
+	<?php foreach($styles as $style) { ?>
 	<?php if(isset($horsetools_options['chat-nut11']) && $horsetools_options['chat-nut11'] == $style) { $selected = 'selected="selected"'; } else { $selected = ''; } ?>
-	<option value="<?php echo $style; ?>" <?php echo $selected; ?>><?php echo $style; ?></option> 
-	<?php } ?> 
+	<option value="<?php echo $style; ?>" <?php echo $selected; ?>><?php echo esc_html( $ht_style_label( $style ) ); ?></option>
+	<?php } ?>
 	</select>
 	<div class="ht-button-grid-in">
 	<input class="ht-input-big" placeholder="<?php _e('Enter button name', 'horse-tools'); ?>" type="text" name="horsetools_settings[chat-nut21]" value="<?php if(!empty($horsetools_options['chat-nut21'])){echo sanitize_text_field($horsetools_options['chat-nut21']);} ?>" />
@@ -135,7 +161,7 @@ global $horsetools_options; ?>
 				echo '<select name="horsetools_settings[chat-nut1' . $n . ']">';
 				foreach ($styles as $style) {
 					$selected = ($style == $value) ? 'selected="selected"' : '';
-					echo '<option value="' . $style . '" ' . $selected . '>' . $style . '</option>';
+					echo '<option value="' . $style . '" ' . $selected . '>' . esc_html( $ht_style_label( $style ) ) . '</option>';
 				}
 				echo '</select>';
 				echo '<div class="ht-button-grid-in">';

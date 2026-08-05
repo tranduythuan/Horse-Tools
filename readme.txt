@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.99
+Stable tag: 1.3.0
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.0 =
+* **Skype is marked as closed.** Microsoft shut Skype down on 5 May 2025 and moved everyone to Teams, so a skype: link opens nothing — yet the channel was still offered as though it worked. It is now labelled "service closed" in the channel list, and a site with a Skype button set sees a notice saying what happened. The button is left in place rather than removed for you: nothing on your site should change without your say-so.
+* **All 29 channels are measured, not twelve.** The chat button offers far more channels than the click tracker knew about, because half of them live in a separate file the tracker's list was never checked against. Every channel is now covered, and anything added in future is covered automatically — a button whose channel is not on the list is recorded under its own site name. WeChat and Google Business were reading as "qq" and "g", which nobody would recognise in a report; both are named properly now.
+* Corrected the channel count in both READMEs. Yesterday's release changed it from "30+" to 11, which was wrong in the other direction — it counted only the channels in one of the two files. There are 29 plus a Custom button.
 
 = 1.2.99 =
 * **Only a completed click is counted.** 1.2.98 sent the event the moment a finger came down on the button, to remove a wait that turned out not to be noticeable in practice. It also counted a press that moved away again. A contact figure is only worth reading if every number in it was a decision somebody actually made, so that is reverted: the event goes out on the click, as it did in 1.2.97, and the link is held for the few moments it takes to send — never more than 350ms, and it opens regardless if anything goes wrong.

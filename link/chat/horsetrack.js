@@ -20,8 +20,7 @@
 		'tel:': 'phone',
 		'sms:': 'sms',
 		'mailto:': 'email',
-		'viber:': 'viber',
-		'skype:': 'skype'
+		'viber:': 'viber'
 	};
 
 	var CHANNEL_BY_HOST = {
@@ -35,10 +34,13 @@
 		'web.whatsapp.com': 'whatsapp',
 		't.me': 'telegram',
 		'telegram.me': 'telegram',
-		'join.skype.com': 'skype',
-		'web.skype.com': 'skype',
 		'line.me': 'line',
 		'zalo.com.vn': 'zalo',
+		// Two hosts the domain-name fallback gets wrong: it would read these as
+		// "qq" and "g", which nobody would recognise in a report.
+		'weixin.qq.com': 'wechat',
+		'wechat.com': 'wechat',
+		'g.page': 'google',
 		'www.tiktok.com': 'tiktok',
 		'tiktok.com': 'tiktok',
 		'vt.tiktok.com': 'tiktok',
@@ -48,7 +50,7 @@
 	// Tapping one of these hands the phone straight to another app. The page is
 	// suspended the moment it happens, which is the whole problem this file has
 	// to work around — see send() below.
-	var HANDOFF = { 'tel:': 1, 'sms:': 1, 'mailto:': 1, 'viber:': 1, 'skype:': 1 };
+	var HANDOFF = { 'tel:': 1, 'sms:': 1, 'mailto:': 1, 'viber:': 1 };
 
 	// Where on the page the link sits, worked out from the nearest container the
 	// plugin renders. Useful for the question owners actually ask: is the bar at
