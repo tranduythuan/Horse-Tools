@@ -794,7 +794,8 @@ function horsetools_table_block_render( $attrs ) {
 
 // Classic editor / widgets screen: make the builder available for the media button.
 function horsetools_table_builder_classic( $hook ) {
-	if ( in_array( $hook, array( 'post.php', 'post-new.php', 'widgets.php' ), true ) || 'horsetools-tables' === horsetools_current_admin_page() ) {
+	if ( in_array( $hook, array( 'post.php', 'post-new.php', 'widgets.php' ), true )
+		|| in_array( horsetools_current_admin_page(), array( 'horsetools-tables', 'horsetools-content-options' ), true ) ) {
 		wp_enqueue_script( 'horsetools-table-builder' );
 		// So the modal's live preview shows the real styles (themes, header
 		// colour, alignment) exactly as they will appear on the site.

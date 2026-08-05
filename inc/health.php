@@ -179,7 +179,7 @@ function horsetools_health_report() {
 	$add(
 		'debug', $env_cat, __( 'PHP errors are not shown to visitors', 'horse-tools' ),
 		$debug_leaks ? 'fail' : 'pass', 2,
-		isset( $ex['debug'] ) ? admin_url( 'admin.php?page=horsetools-debug-options' ) : '',
+		isset( $ex['debug'] ) ? admin_url( 'admin.php?page=horsetools-tools-options' ) : '',
 		__( 'Turn off WP_DEBUG_DISPLAY on a live site.', 'horse-tools' )
 	);
 

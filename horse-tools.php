@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.2.79
+ * Version: 1.2.80
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.2.79' );
+define( 'HORSETOOLS_VERSION', '1.2.80' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
@@ -142,15 +142,35 @@ window.httab = window.httab || function (evt, tabname) {
 }
 add_action( 'admin_head', 'horsetools_inline_tab_fallback' );
 
+/**
+ * Which admin screens need a given heavy asset.
+ *
+ * These lists used to name the per-module screens directly. Those screens
+ * became tabs during the regrouping, so the names stopped matching anything
+ * and the assets silently stopped loading — the code boxes lose their editor
+ * and the image pickers their media library, with no error to notice.
+ *
+ * @param string $asset media | codemirror | select2
+ * @return string[]
+ */
+function horsetools_screens_needing( $asset ) {
+	$map = array(
+		'media'      => array( 'horsetools-options', 'horsetools-customers-options', 'horsetools-content-options', 'horsetools-display-options', 'horsetools-security-options', 'horsetools-speed-options' ),
+		'codemirror' => array( 'horsetools-tools-options', 'horsetools-customers-options' ),
+		'select2'    => array( 'horsetools-font-options', 'horsetools-display-options' ),
+	);
+	return isset( $map[ $asset ] ) ? $map[ $asset ] : array();
+}
+
 function horsetools_enqueue_media_uploader() {
 	$page = horsetools_current_admin_page();
 
-	if ( function_exists( 'wp_enqueue_media' ) && in_array( $page, array( 'horsetools-options', 'horsetools-notify-options', 'horsetools-shortcode-options' ), true ) ) {
+	if ( function_exists( 'wp_enqueue_media' ) && in_array( $page, horsetools_screens_needing( 'media' ), true ) ) {
 		wp_enqueue_media();
 		wp_enqueue_editor();
 	}
 
-	if ( in_array( $page, array( 'horsetools-code-options', 'horsetools-ads-options' ), true ) ) {
+	if ( in_array( $page, horsetools_screens_needing( 'codemirror' ), true ) ) {
 		wp_enqueue_style( 'codemirror-horsetools', HORSETOOLS_URL . 'link/codeline/codemirror.css', array(), '6.65.7' );
 		wp_enqueue_script( 'codemirror-horsetools', HORSETOOLS_URL . 'link/codeline/codemirror.js', array(), '6.65.7', true );
 		wp_enqueue_script( 'perl-horsetools', HORSETOOLS_URL . 'link/codeline/perl.js', array( 'codemirror-horsetools' ), '6.65.7', true );
@@ -161,7 +181,7 @@ function horsetools_enqueue_media_uploader() {
 		wp_enqueue_style( 'dialog-horsetools', HORSETOOLS_URL . 'link/codeline/dialog.css', array(), '6.65.7' );
 	}
 
-	if ( 'horsetools-font-options' === $page ) {
+	if ( in_array( $page, horsetools_screens_needing( 'select2' ), true ) ) {
 		wp_enqueue_script( 'select2-horsetools', HORSETOOLS_URL . 'link/select2.js', array( 'jquery' ), '4.1.0', true );
 		wp_enqueue_style( 'select2-horsetools', HORSETOOLS_URL . 'link/select2.css', array(), '4.1.0' );
 	}

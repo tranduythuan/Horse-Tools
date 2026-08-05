@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.79
+Stable tag: 1.2.80
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.80 =
+* **Fixes assets that stopped loading after the regrouping.** The code editor, the media picker, the font selector and the table builder were each loaded by naming the screen they belonged to. Those screens became tabs, the names stopped matching anything, and the assets quietly stopped loading — the code boxes would have been plain textareas and the image pickers would not have opened. Which screen needs what is now one list instead of three scattered checks.
+* The site health panel's debug link pointed at a screen that no longer exists.
 
 = 1.2.79 =
 * **Shortcodes and the table manager move onto the Content screen.** The six shortcode groups become tabs, and the stored-tables manager joins them. Two more menu entries gone.
@@ -587,6 +591,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.80 =
+Fixes the code editor, media picker and table builder not loading after the regrouping.
 
 = 1.2.79 =
 Shortcodes and the table manager become tabs on the Content screen.
