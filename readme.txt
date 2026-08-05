@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.1 =
+* **Fixed: Zalo clicks were lost, and phone clicks arrived only sometimes.** The link was held back until the event had been sent, but only for the schemes that name an app — tel:, sms:, mailto:, viber:. Zalo and Messenger links look like ordinary web links and were treated as such, when on a phone they hand over to the app exactly the same way. Messenger got away with it because Facebook serves a real page before handing over, which leaves time for the event to go; Zalo hands over at once, so the event never left. Every contact link is now held, unless it opens in a new tab, where the page survives and there is nothing to protect against.
+* **And the wait now actually waits.** It used to end the moment GA4's callback fired, but that callback means the request has been handed to the browser, not that it has left the machine — which is why the same phone button reported one time and not the next. A floor of 200ms has to pass as well, and the link still opens by 450ms whatever happens, so a contact button can never be left hanging.
 
 = 1.3.0 =
 * **Skype is marked as closed.** Microsoft shut Skype down on 5 May 2025 and moved everyone to Teams, so a skype: link opens nothing — yet the channel was still offered as though it worked. It is now labelled "service closed" in the channel list, and a site with a Skype button set sees a notice saying what happened. The button is left in place rather than removed for you: nothing on your site should change without your say-so.

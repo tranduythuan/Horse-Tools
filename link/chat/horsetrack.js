@@ -149,25 +149,37 @@
 	 * Hand the event to analytics, and hold the link until it has gone.
 	 *
 	 * GA4 does not send an event the instant gtag() is called — it collects
-	 * events for a moment and sends them together. That is invisible on an
-	 * ordinary link, because the batch is flushed as the page unloads. It is
-	 * fatal on tel: and sms:, where the phone switches to the dialler and
-	 * suspends the page while the batch is still waiting: the click that matters
-	 * most is the one that never arrives.
+	 * events for a moment and sends them together. That batch is flushed as the
+	 * page unloads, which is why an ordinary link is fine. A contact link is not
+	 * an ordinary link: it hands the device to another app, and the page is
+	 * suspended with the batch still waiting.
 	 *
 	 * (An earlier version passed transport_type:'beacon' believing it solved
-	 * this. That field belongs to Universal Analytics; GA4 ignores it, which is
-	 * why phone clicks were missing while every other channel reported fine.)
+	 * this. That field belongs to Universal Analytics; GA4 ignores it.)
 	 *
-	 * So for those links the default is cancelled, the event is sent with a
-	 * callback, and the browser is sent to the href once the callback fires — or
-	 * after 350ms, whichever comes first. A hard timeout is not optional: if
-	 * anything at all goes wrong the link must still open, or the plugin has
-	 * turned a working phone number into a dead one.
+	 * Every contact link is held, not only the tel: family. The first attempt at
+	 * this held only the schemes that name an app — tel:, sms:, mailto:, viber: —
+	 * and treated zalo.me and m.me as ordinary web links. On a phone they are
+	 * not: they switch to the app just the same. Messenger survived only because
+	 * Facebook serves a real page before handing over, which gives the flush time
+	 * to happen; Zalo hands over immediately and the event was lost every time.
+	 *
+	 * The wait is also no longer ended by event_callback alone. That callback
+	 * means gtag has dispatched the request, not that it has left the machine, so
+	 * releasing on it produced a click that arrived sometimes and not others. A
+	 * floor of 200ms has to pass as well.
+	 *
+	 * A hard cap still opens the link whatever happens. That is not optional: a
+	 * plugin that turns a working phone number into a dead one is far worse than
+	 * one that loses a statistic.
 	 */
+	var HOLD_FLOOR = 200;
+	var HOLD_CAP = 450;
+
 	function send(name, params, ev, a) {
 		var href = a.getAttribute('href') || '';
-		var hold = !!HANDOFF[schemeOf(href)] &&
+		var hold = ('' !== href) &&
+			0 !== href.indexOf('#') &&
 			!ev.defaultPrevented &&
 			!ev.metaKey && !ev.ctrlKey && !ev.shiftKey && !ev.altKey &&
 			a.target !== '_blank';
@@ -188,9 +200,18 @@
 		if (typeof window.gtag === 'function') {
 			if (hold) {
 				ev.preventDefault();
-				params.event_callback = release;
-				params.event_timeout = 300;
-				setTimeout(release, 350);
+				var floorPassed = false;
+				var dispatched = false;
+				setTimeout(function () {
+					floorPassed = true;
+					if (dispatched) { release(); }
+				}, HOLD_FLOOR);
+				params.event_callback = function () {
+					dispatched = true;
+					if (floorPassed) { release(); }
+				};
+				params.event_timeout = HOLD_CAP;
+				setTimeout(release, HOLD_CAP);
 			}
 			// One route only. A site can have gtag() and Tag Manager at once,
 			// both feeding the same property, and sending to both would count
@@ -203,7 +224,7 @@
 		if (window.dataLayer && typeof window.dataLayer.push === 'function') {
 			if (hold) {
 				ev.preventDefault();
-				setTimeout(release, 350);
+				setTimeout(release, HOLD_CAP);
 			}
 			window.dataLayer.push({
 				event: name,
