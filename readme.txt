@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.87
+Stable tag: 1.2.88
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.88 =
+* **The Horse Tools mark is now a file as well as code**, at img/horse-tools-mark.svg, for anything outside PHP — a README, a listing icon, a favicon. It is generated from the same function every screen renders, not drawn a second time, and a check in the build fails if the two ever disagree.
 
 = 1.2.87 =
 * **Clicking an entry in the table of contents now always jumps to the heading.** It asked the browser for a smooth scroll and cancelled the ordinary link jump first — so anywhere smooth scrolling is unavailable or suppressed, clicking an entry did nothing at all. It still scrolls smoothly where it can, and jumps where it cannot.
@@ -617,6 +620,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.88 =
+Adds a standalone SVG of the brand mark, generated from the same source the plugin renders.
 
 = 1.2.87 =
 Table of contents entries now always jump to their heading, even where smooth scrolling is unavailable.

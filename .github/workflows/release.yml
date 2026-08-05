@@ -17,6 +17,14 @@ jobs:
       - name: Check out
         uses: actions/checkout@v4
 
+      - name: Check the brand mark file is in sync
+        run: |
+          set -euo pipefail
+          # img/horse-tools-mark.svg is generated from horsetools_brand_mark_svg().
+          # A hand-edited copy would be a second drawing that quietly drifts from
+          # the one every screen actually renders.
+          php tools/export-brand-mark.php --check
+
       - name: Build plugin ZIP
         run: |
           set -euo pipefail
