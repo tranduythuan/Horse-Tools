@@ -62,6 +62,11 @@ function horsetools_customers_page() {
 			'module' => 'ads',
 			'files'  => array( 'main/section/cu-ads3.php' ),
 		),
+		'cu-tab10' => array(
+			'label'  => __( 'Measurement', 'horse-tools' ),
+			'icon'   => 'ti-chart-dots',
+			'files'  => array( 'main/section/cu-track.php' ),
+		),
 	) );
 }
 

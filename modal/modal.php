@@ -104,6 +104,9 @@ $horsetools_option_files = array(
     'custom'  => 'inc/custom.php',
     'goo'     => 'inc/goo.php',
     'chat'    => 'inc/chat.php',
+    // Keyed on the feature's own switch, not a tab: measuring contact clicks
+    // covers links inside posts too, so it must not depend on the chat module.
+    'track-contact1' => 'inc/chat-track.php',
 );
 // These modules register nothing but admin_*, load-* and wp_ajax_* hooks, so
 // there is no reason to parse them on a front-end page view. admin-ajax.php

@@ -6595,3 +6595,36 @@ msgstr "Cài đặt font"
 
 msgid "Upload a font on the Fonts tab first, then choose where to use it here."
 msgstr "Tải font lên ở tab Fonts trước, rồi chọn nơi dùng font đó tại đây."
+
+msgid "Measurement"
+msgstr "Đo lường"
+
+msgid "Contact click measurement"
+msgstr "Đo lượt bấm nút liên hệ"
+
+msgid "Record contact button clicks"
+msgstr "Ghi nhận lượt bấm nút liên hệ"
+
+msgid "Check again"
+msgstr "Kiểm tra lại"
+
+msgid "Where to read the numbers"
+msgstr "Xem số liệu ở đâu"
+
+msgid "Analytics found on your site: %s. Clicks will be recorded there."
+msgstr "Đã tìm thấy Analytics trên site: %s. Lượt bấm sẽ được ghi vào đó."
+
+msgid "No Google Analytics tag was found on your site, so there is nowhere for clicks to be recorded yet. Install Site Kit by Google (or any GA4 plugin) first — this setting will then start working on its own."
+msgstr "Chưa tìm thấy mã Google Analytics trên site, nên lượt bấm chưa có chỗ để ghi. Hãy cài Site Kit by Google (hoặc plugin GA4 bất kỳ) trước — sau đó cài đặt này tự chạy."
+
+msgid "Sends one event to your analytics each time a visitor taps a phone, Zalo, Messenger, Telegram, WhatsApp, Viber, SMS or email link — including links inside your posts, not only the chat buttons. Nothing is stored on your site and no personal data is involved."
+msgstr "Mỗi lần khách bấm link gọi điện, Zalo, Messenger, Telegram, WhatsApp, Viber, SMS hay email thì gửi một sự kiện sang analytics — tính cả link nằm trong bài viết chứ không riêng nút chat. Không lưu gì trên site và không dính dữ liệu cá nhân."
+
+msgid "In Google Analytics: Reports → Engagement → Events. Each channel appears under its own name — contact_phone, contact_zalo, contact_messenger and so on — so there is nothing to configure first. Allow 24 hours for the standard reports; to see it immediately instead, open Admin → DebugView and tap a button on your phone."
+msgstr "Trong Google Analytics: Báo cáo → Mức độ tương tác → Sự kiện. Mỗi kênh hiện dưới tên riêng — contact_phone, contact_zalo, contact_messenger… — nên không phải cấu hình gì trước. Báo cáo thường cần khoảng 24 giờ; muốn thấy ngay thì mở Quản trị → DebugView rồi bấm thử trên điện thoại."
+
+msgid "Optional: in Admin → Events, switch on \"Mark as key event\" for the channels that matter to you. They then appear in the acquisition reports, so you can see which traffic source produces contacts, and they can be imported into Google Ads as a conversion."
+msgstr "Tuỳ chọn: vào Quản trị → Sự kiện, bật \"Đánh dấu là sự kiện chính\" cho kênh anh quan tâm. Khi đó chúng hiện trong báo cáo thu nạp để biết nguồn nào đẻ ra liên hệ, và nhập được sang Google Ads làm chuyển đổi."
+
+msgid "Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see."
+msgstr "Hiểu đây là ý định chứ không phải kết quả: một lượt bấm nghĩa là khách đã mở màn hình gọi hoặc mở app chat, không có nghĩa cuộc gọi đã kết nối hay tin nhắn đã gửi. Trình chặn quảng cáo cũng làm rơi một phần, nên số thật cao hơn số anh thấy đôi chút."

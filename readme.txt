@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.91
+Stable tag: 1.2.92
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.92 =
+* **You can now see whether anyone actually presses the contact buttons.** One switch on Customers → Measurement sends an event to the Google Analytics your site already loads, every time a visitor taps a phone, Zalo, Messenger, Telegram, WhatsApp, Viber, SMS or email link. Links inside your posts count too, not only the chat buttons. Nothing is stored on your site and no personal data is involved.
+* **Nothing to configure in Analytics.** The channel is part of the event name — contact_phone, contact_zalo and so on — so the breakdown shows up in the standard Events report on its own. The screen also tells you whether a tag was found on your site at all, which is the thing people usually get stuck on.
+* **Fixed: redirects were losing the tracking parameters on the address.** A visitor arriving from an ad at /old-page/?gclid=… was sent to the bare new address, so Analytics filed the visit under organic or direct and Google Ads never learned the click led anywhere. Everything on the address is now carried across, unless the redirect sets that parameter itself.
 
 = 1.2.91 =
 * **Fixed: FAQ schema was invalid on any post whose answer contains a quotation mark.** WordPress strips one level of backslashes from anything saved as post meta, which removed the escaping from every quote inside the stored JSON. Search engines rejected the whole block — Google's Rich Results Test reports "Missing ',' or '}' in object declaration" — while the page itself looked perfectly normal. Every affected post regenerates itself on its next view; there is nothing to click.
@@ -631,6 +636,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.92 =
+Adds contact-click measurement, and stops redirects losing ad tracking parameters.
 
 = 1.2.91 =
 Fixes invalid FAQ schema on posts whose answers contain quotation marks. Update if you use FAQ schema.

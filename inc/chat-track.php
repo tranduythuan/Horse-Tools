@@ -1,0 +1,81 @@
+<?php
+/**
+ * Horse Tools — contact-click measurement.
+ *
+ * Answers the question a site owner cannot otherwise answer: does anyone
+ * actually press the contact buttons, and which ones.
+ *
+ * Nothing is stored on the site. The click is handed to whatever analytics the
+ * site already loads (GA4 via gtag, or Tag Manager) and that is the end of it,
+ * so there is no new data to keep, no personal data involved, and nothing to
+ * declare in a privacy policy.
+ *
+ * @package Horse Tools
+ */
+
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+/**
+ * Load the tracker on the front end.
+ *
+ * In the footer and without dependencies: it binds one delegated listener and
+ * needs neither jQuery nor the analytics library to have loaded first — it
+ * checks for gtag at click time, not at load time.
+ */
+function horsetools_track_enqueue() {
+	if ( is_admin() ) {
+		return;
+	}
+	wp_enqueue_script(
+		'horsetools-track',
+		HORSETOOLS_URL . 'link/chat/horsetrack.js',
+		array(),
+		HORSETOOLS_VERSION,
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', 'horsetools_track_enqueue' );
+
+/**
+ * Report whether an analytics tag is present, for the settings screen.
+ *
+ * Read from the front page rather than guessed from active plugins: what
+ * matters is whether a tag actually reaches a visitor, and that depends on
+ * caching, consent tools and optimisers as much as on which plugin is
+ * installed. Cached for an hour so opening the screen is not a page fetch.
+ *
+ * @return array{found:bool, id:string, how:string}
+ */
+function horsetools_track_detect() {
+	$cached = get_transient( 'horsetools_track_detect' );
+	if ( is_array( $cached ) ) {
+		return $cached;
+	}
+
+	$out = array( 'found' => false, 'id' => '', 'how' => '' );
+	$res = wp_remote_get( home_url( '/' ), array( 'timeout' => 8, 'sslverify' => false ) );
+
+	if ( ! is_wp_error( $res ) && 200 === wp_remote_retrieve_response_code( $res ) ) {
+		$body = wp_remote_retrieve_body( $res );
+		if ( preg_match( '~\b(G-[A-Z0-9]{6,})\b~', $body, $m ) ) {
+			$out = array( 'found' => true, 'id' => $m[1], 'how' => 'gtag' );
+		} elseif ( preg_match( '~\b(GTM-[A-Z0-9]{4,})\b~', $body, $m ) ) {
+			$out = array( 'found' => true, 'id' => $m[1], 'how' => 'gtm' );
+		}
+	}
+
+	set_transient( 'horsetools_track_detect', $out, HOUR_IN_SECONDS );
+	return $out;
+}
+
+/** Clear the cached detection when asked to look again. */
+function horsetools_track_recheck() {
+	if ( ! isset( $_GET['horsetools-track-recheck'] ) || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	check_admin_referer( 'horsetools_track_recheck' );
+	delete_transient( 'horsetools_track_detect' );
+	wp_safe_redirect( remove_query_arg( array( 'horsetools-track-recheck', '_wpnonce' ) ) );
+	exit;
+}
+add_action( 'admin_init', 'horsetools_track_recheck' );

@@ -10,6 +10,41 @@ global $horsetools_redirects_options;
  * segment defeated the exemption and locked the administrator out of their own
  * site while maintenance mode was on.
  */
+/**
+ * Carry the incoming query string across a redirect.
+ *
+ * A visitor arriving from an ad lands on /old-page/?gclid=… . Redirecting to
+ * the bare new address drops that, so Analytics files the session under
+ * organic or direct and Google Ads never learns the click converted — the
+ * campaign looks worse than it is. Nothing errors and the visitor reaches the
+ * right page, which is why it goes unnoticed.
+ *
+ * Parameters already on the target win: a redirect that deliberately sets one
+ * means it.
+ *
+ * @param string $to Redirect target.
+ * @return string
+ */
+function horsetools_redirect_keep_query( $to ) {
+	$incoming = (string) ( $_SERVER['QUERY_STRING'] ?? '' );
+	if ( '' === $incoming || '' === (string) $to ) {
+		return $to;
+	}
+	parse_str( $incoming, $args );
+	if ( ! $args ) {
+		return $to;
+	}
+	$existing = array();
+	$q = wp_parse_url( $to, PHP_URL_QUERY );
+	if ( $q ) {
+		parse_str( $q, $existing );
+	}
+	foreach ( array_keys( $existing ) as $k ) {
+		unset( $args[ $k ] );
+	}
+	return $args ? add_query_arg( $args, $to ) : $to;
+}
+
 function horsetools_redirect_is_exempt() {
 	global $horsetools_options;
 
@@ -95,7 +130,7 @@ function horsetools_redirect_404_to_home() {
 		? '/' . ltrim( (string) $horsetools_redirects_options['redi21'], '/' )
 		: home_url();
     if (is_404()) {
-        wp_safe_redirect($target);
+        wp_safe_redirect( horsetools_redirect_keep_query( $target ) );
         exit();
     }
 }
@@ -192,7 +227,7 @@ if ( isset( $horsetools_redirects_options['redi-autoslug'] ) ) {
 		if ( isset( $map[ md5( $path ) ]['to'] ) && '' !== $map[ md5( $path ) ]['to'] ) {
 			$to = $map[ md5( $path ) ]['to'];
 			// A stored target is a local path or a permalink on this site.
-			wp_safe_redirect( $to, 301 );
+			wp_safe_redirect( horsetools_redirect_keep_query( $to ), 301 );
 			exit;
 		}
 	}
