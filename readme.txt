@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.81
+Stable tag: 1.2.82
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.82 =
+* **Fixes the Fonts tab opening blank, and the same fault waiting in Backup.** Both screens keep their own internal tabs, and a tab inside a tab is hidden by the tab switcher — so the tab opened at no height at all with everything present but invisible. Their inner sections now simply stack.
 
 = 1.2.81 =
 * **Fonts and Backup are now tabs too, and the regrouping is complete.** Fonts sits on Appearance, Backup on Tools. The menu is down from sixteen entries to nine screens named after what they do, plus Extend and About.
@@ -595,6 +598,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.82 =
+Fixes the Fonts tab opening blank. Update if you installed 1.2.81.
 
 = 1.2.81 =
 Fonts and Backup become tabs. The settings reorganisation is complete.

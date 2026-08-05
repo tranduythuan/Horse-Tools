@@ -31,6 +31,31 @@ function horsetools_module_on( $key ) {
 	return isset( $ex[ $key ] );
 }
 
+/**
+ * Defuse a tab strip that arrived inside a section.
+ *
+ * A screen folded into a tab brings its own .sotab-box panels, and the tab
+ * switcher hides every .htbox on the page — so the tab opens at zero height
+ * with all of its content present and invisible. Renaming the class is not
+ * enough on its own: the panels after the first also carry an inline
+ * display:none, and once the switcher can no longer see them there is nothing
+ * left to turn them back on. Both have to go. The sections then simply stack,
+ * which is what a tab of a grouped screen should show anyway.
+ *
+ * @param string $html
+ * @return string
+ */
+function horsetools_group_defuse_tabs( $html ) {
+	return preg_replace_callback(
+		'~<div\b[^>]*\bclass="[^"]*\bsotab-box\b[^"]*"[^>]*>~i',
+		function ( $m ) {
+			$tag = preg_replace( '~\b(sotab-box|htbox)\b~', 'ht-subsection', $m[0] );
+			return preg_replace( '~\s*display\s*:\s*none\s*;?~i', '', $tag );
+		},
+		$html
+	);
+}
+
 function horsetools_group_render( array $tabs ) {
 	global $horsetools_options;
 	ob_start();
@@ -103,11 +128,7 @@ function horsetools_group_render( array $tabs ) {
 						);
 					}
 				}
-				echo preg_replace(
-					'~(<[^>]*class="[^"]*)\bsotab-box\b([^"]*)\bhtbox\b~',
-					'$1ht-subsection$2',
-					ob_get_clean()
-				); // phpcs:ignore WordPress.Security.EscapeOutput -- already-rendered section markup
+				echo horsetools_group_defuse_tabs( ob_get_clean() ); // phpcs:ignore WordPress.Security.EscapeOutput -- already-rendered section markup
 				echo '</div></div>';
 				$first = false;
 			}
@@ -129,6 +150,9 @@ function horsetools_group_render( array $tabs ) {
 				if ( empty( $tab['raw'] ) ) { continue; }
 				if ( ! empty( $tab['module'] ) && ! horsetools_module_on( $tab['module'] ) ) { continue; }
 				printf( '<div class="sotab-box htbox" id="%s" style="display:none">', esc_attr( $id ) );
+				// Buffered for the same reason as the in-form sections: a whole
+				// screen folded in here brings its own tab strip with it.
+				ob_start();
 				foreach ( (array) $tab['files'] as $file ) {
 					try { include( HORSETOOLS_DIR . $file ); } catch ( Throwable $e ) {
 						printf( '<p class="ht-note ht-note-red">%s<br><code>%s</code></p>',
@@ -136,6 +160,7 @@ function horsetools_group_render( array $tabs ) {
 							esc_html( $e->getMessage() ) );
 					}
 				}
+				echo horsetools_group_defuse_tabs( ob_get_clean() ); // phpcs:ignore WordPress.Security.EscapeOutput -- already-rendered markup
 				echo '</div>';
 			}
 			?>
