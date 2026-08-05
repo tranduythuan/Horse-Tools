@@ -33,6 +33,12 @@ function horsetools_display_page() {
 			'raw'    => true,
 			'files'  => array( 'main/section/ct-font.php' ),
 		),
+		'dp-tab5' => array(
+			'label'  => __( 'Font settings', 'horse-tools' ),
+			'icon'   => 'ti-letter-case',
+			'module' => 'font',
+			'files'  => array( 'main/section/dp-fontset.php' ),
+		),
 	) );
 }
 

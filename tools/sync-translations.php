@@ -858,6 +858,9 @@ $vi = array(
 	'Icon colour' => 'Màu icon',
 	'Leave empty and the icon follows the list colour.' => 'Để trống thì icon lấy theo màu tiêu đề danh sách.',
 
+	'Font settings' => 'Cài đặt font',
+	'Upload a font on the Fonts tab first, then choose where to use it here.' => 'Tải font lên ở tab Fonts trước, rồi chọn nơi dùng font đó tại đây.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

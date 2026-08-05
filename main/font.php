@@ -76,6 +76,7 @@ function horsetools_font_options_page( $embed = false ) {
 			</form>
 			</div>
 			<!-- set font -->
+			<?php if ( ! $embed ) : // Rendered as its own section of the Appearance screen when embedded. ?>
 			<div class="sotab-box htbox" id="tab2" style="display:none">
 			<?php 
 			global $horsetools_fontset_options;
@@ -139,6 +140,7 @@ function horsetools_font_options_page( $embed = false ) {
 			</div>
 			</div>
 			
+			<?php endif; ?>
 		<?php if ( ! $embed ) : ?>
 		</div>
 	  </div>

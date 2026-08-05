@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.88
+Stable tag: 1.2.89
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.89 =
+* **Font settings are now saved by the screen's own Save button.** 1.2.83 only relabelled the second button so the two could be told apart; the settings have now moved into the screen's form, so there is one Save again. Uploading a font keeps its own button, but that one says UPLOAD, so there is nothing to mistake.
+* **Listing artwork added**, at img/brand/. Like the mark file, it is generated from the same function the plugin renders rather than drawn again, and the build fails if any of the three files no longer matches.
 
 = 1.2.88 =
 * **The Horse Tools mark is now a file as well as code**, at img/horse-tools-mark.svg, for anything outside PHP — a README, a listing icon, a favicon. It is generated from the same function every screen renders, not drawn a second time, and a check in the build fails if the two ever disagree.
@@ -620,6 +624,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.89 =
+Font settings now use the screen's own Save button. Brand artwork added.
 
 = 1.2.88 =
 Adds a standalone SVG of the brand mark, generated from the same source the plugin renders.
