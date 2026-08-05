@@ -163,10 +163,9 @@
 	 * anything at all goes wrong the link must still open, or the plugin has
 	 * turned a working phone number into a dead one.
 	 */
-	function send(name, params, ev, a, noHold) {
+	function send(name, params, ev, a) {
 		var href = a.getAttribute('href') || '';
-		var hold = !noHold &&
-			!!HANDOFF[schemeOf(href)] &&
+		var hold = !!HANDOFF[schemeOf(href)] &&
 			!ev.defaultPrevented &&
 			!ev.metaKey && !ev.ctrlKey && !ev.shiftKey && !ev.altKey &&
 			a.target !== '_blank';
@@ -230,42 +229,14 @@
 		};
 	}
 
-	// Which link we have already reported, so the click that follows a press does
-	// not send it a second time.
-	var primed = null;
-	var primedAt = 0;
-
 	/**
-	 * Send on press, not on click, for the links that hand off to another app.
+	 * Only a completed click counts.
 	 *
-	 * Holding the link back until the event has gone works, but the wait is felt:
-	 * a phone button that takes a third of a second to bring up the dialler feels
-	 * broken, and a measurement feature has no business making the thing it
-	 * measures worse. Pressing happens 50–300ms before the click that opens the
-	 * dialler, and that gap is free — the request is already in flight by the
-	 * time the app takes over, so nothing has to be held at all.
-	 *
-	 * The cost is that a press abandoned before it becomes a click still counts.
-	 * On a contact button that is rare, and these numbers were always intent
-	 * rather than outcome — a tap has never meant a call connected.
+	 * Sending on press instead would remove the short wait below, but it would
+	 * also count a finger that came down on the button and moved away again. A
+	 * contact figure is only worth reading if every number in it was a decision
+	 * somebody actually made, so the wait stays and the press is ignored.
 	 */
-	document.addEventListener('pointerdown', function (ev) {
-		if ('mouse' === ev.pointerType && 0 !== ev.button) {
-			return;
-		}
-		var a = linkOf(ev);
-		if (!a || !HANDOFF[schemeOf(a.getAttribute('href') || '')]) {
-			return;
-		}
-		var hit = describe(a);
-		if (!hit) {
-			return;
-		}
-		primed = a;
-		primedAt = Date.now();
-		send(hit.name, hit.params, ev, a, true);
-	}, true);
-
 	document.addEventListener('click', function (ev) {
 		if (ev.button !== 0 && ev.type === 'click') {
 			return; // middle/right click opens nothing we can attribute
@@ -274,18 +245,10 @@
 		if (!a) {
 			return;
 		}
-		// Already sent on press a moment ago: let the link open untouched.
-		if (a === primed && Date.now() - primedAt < 2000) {
-			primed = null;
-			return;
-		}
 		var hit = describe(a);
 		if (!hit) {
 			return;
 		}
-		// No press was seen — a keyboard activation, or a browser without pointer
-		// events. Fall back to holding the link, which is slower but never loses
-		// the event.
-		send(hit.name, hit.params, ev, a, false);
+		send(hit.name, hit.params, ev, a);
 	}, true);
 }());

@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.98
+Stable tag: 1.2.99
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.99 =
+* **Only a completed click is counted.** 1.2.98 sent the event the moment a finger came down on the button, to remove a wait that turned out not to be noticeable in practice. It also counted a press that moved away again. A contact figure is only worth reading if every number in it was a decision somebody actually made, so that is reverted: the event goes out on the click, as it did in 1.2.97, and the link is held for the few moments it takes to send — never more than 350ms, and it opens regardless if anything goes wrong.
 
 = 1.2.98 =
 * **The call button is instant again.** Yesterday's fix held the link back until the event had been sent, which worked but was felt: a third of a second before the dialler appears makes a button feel broken, and a measurement feature has no business making the thing it measures worse. The event is now sent when the button is pressed rather than when the press completes — the 50–300ms between the two is free time, so the request is already on its way before the dialler takes over and nothing has to be held at all. Nothing is sent twice, and a keyboard activation, where there is no press to hook, still falls back to the old reliable-but-slower path.
