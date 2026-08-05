@@ -115,10 +115,14 @@
 		if (!box) {
 			box = document.createElement('div');
 			box.id = 'ht-debug-log';
-			box.setAttribute('style', 'position:fixed;left:8px;bottom:8px;z-index:2147483647;' +
-				'max-width:min(92vw,420px);max-height:45vh;overflow:auto;background:#101418;color:#d7e2ea;' +
-				'font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;padding:8px 10px;border-radius:8px;' +
-				'box-shadow:0 4px 18px rgba(0,0,0,.4);opacity:.94');
+			// Top of the screen, and transparent to touch. The first version sat
+			// bottom-left — directly on top of the contact bar it exists to test,
+			// so the buttons could not be tapped at all. pointer-events:none means
+			// it can never do that again, wherever it ends up.
+			box.setAttribute('style', 'position:fixed;left:8px;right:8px;top:8px;z-index:2147483647;' +
+				'pointer-events:none;max-width:min(92vw,420px);max-height:30vh;overflow:hidden;' +
+				'background:#101418;color:#d7e2ea;font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;' +
+				'padding:8px 10px;border-radius:8px;box-shadow:0 4px 18px rgba(0,0,0,.4);opacity:.94');
 			document.body.appendChild(box);
 		}
 		box.textContent = '';
@@ -131,7 +135,9 @@
 			none.textContent = 'No contact click recorded yet. Tap a button.';
 			box.appendChild(none);
 		}
-		lines.forEach(function (line) {
+		// Newest first: the panel is short and cannot be scrolled (it has to stay
+		// transparent to touch), so the line you just made must be the visible one.
+		lines.slice().reverse().forEach(function (line) {
 			var row = document.createElement('div');
 			if (line.indexOf('NOT confirmed') > -1) { row.setAttribute('style', 'color:#ff9b9b'); }
 			row.textContent = line;

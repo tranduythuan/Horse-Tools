@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.3 =
+* **Fixed: the debug panel sat on top of the buttons it exists to test.** It was pinned to the bottom-left corner, which on a phone is exactly where the contact bar is, so the buttons could not be tapped at all. It now sits at the top and is transparent to touch — taps pass straight through it to whatever is underneath, so it can never block anything again. Newest line first, since a panel that cannot be scrolled must show the line you just made.
 
 = 1.3.2 =
 * **A running log on the phone itself, so "it seems flaky" can be checked instead of guessed.** Open the site with ?ht_debug=1 and a small panel appears in the corner. Every contact button you tap adds a line: the time, the event name, and either how many milliseconds it took to be confirmed sent, or — in red — that it was never confirmed. The log survives the jump to the dialler or the chat app, so tapping a button and coming back shows what happened to it. Analytics is a poor instrument for this question: the report is minutes behind, ad blockers filter it, and a click that never left the phone looks identical to one that left and was dropped later. This measures at the moment of the click. It appears only with the debug flag on; ordinary visitors never see it and nothing extra is loaded for them.
