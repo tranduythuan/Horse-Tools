@@ -54,6 +54,47 @@ function horsetools_chat_append_msg( $href, $msg, $param = 'text' ) {
  *
  * @return bool
  */
+/**
+ * One button on the bottom contact bar, or nothing at all.
+ *
+ * The four slots used to be drawn on the strength of their icon: an icon meant
+ * a real button, no icon meant an <a> with a placeholder icon, a placeholder
+ * name and no destination. An empty slot therefore appeared in the bar as a
+ * button that looked exactly like the others and did nothing when tapped —
+ * found on a live site, where the third slot had been sitting there unused.
+ *
+ * A slot is a button if it has been given anything at all; the icon is the one
+ * part that has a sensible fallback. Nothing configured, nothing drawn.
+ *
+ * @param array  $opts    Plugin options.
+ * @param int    $i       Slot number, 1-4.
+ * @param string $attr    id="" or class="" built from the slot's #id/.class field.
+ * @param string $svg_no  Fallback icon.
+ * @param string $tit_no  Fallback name.
+ * @return string
+ */
+function horsetools_navi_button( $opts, $i, $attr, $svg_no, $tit_no ) {
+	$svg    = (string) ( $opts[ 'chat-nav1' . $i ] ?? '' );
+	$title  = (string) ( $opts[ 'chat-nav2' . $i ] ?? '' );
+	$link   = (string) ( $opts[ 'chat-nav3' . $i ] ?? '' );
+	$anchor = (string) ( $opts[ 'chat-nav4' . $i ] ?? '' );
+
+	if ( '' === $svg && '' === $title && '' === $link && '' === $anchor ) {
+		return '';
+	}
+
+	// A slot pointed at an on-page target by #id/.class has no link of its own;
+	// it still has to be clickable for the script that opens the panel.
+	$href = '' !== $link ? esc_url( $link ) : ( '' !== $anchor ? '#' : '' );
+	$name = '' !== $title ? esc_html( $title ) : $tit_no;
+	// Intentionally raw: custom inline SVG icon, allow-listed in inc/sanitize.php (manage_options only).
+	$icon = '' !== $svg ? $svg : $svg_no;
+
+	return '<a ' . $attr . ' rel="nofollow" title="' . $name . '"'
+		. ( '' !== $href ? ' href="' . $href . '"' : '' ) . '>'
+		. $icon . '<span class="ht-navi-span">' . $name . '</span></a>';
+}
+
 function horsetools_chat_is_open() {
 	global $horsetools_options;
 	if ( ! isset( $horsetools_options['chat-bh'] ) ) {
@@ -557,11 +598,7 @@ function horsetools_add_chat(){
 			} else {
 				$id_nav41 = null;
 			}
-		// Intentionally raw: custom inline SVG icon, allow-listed in inc/sanitize.php (manage_options only).
-		$nav1_svg = !empty($horsetools_options['chat-nav11']) ? $horsetools_options['chat-nav11'] : $nav_svg_no;
-		$nav1_tit = !empty($horsetools_options['chat-nav21']) ? esc_html($horsetools_options['chat-nav21']) : $nav_tit_no;	
-		
-		$nav1 = !empty($horsetools_options['chat-nav11']) ? '<a '. $id_nav41 .' rel="nofollow" title="'. $nav1_tit .'" href="'. esc_url($horsetools_options['chat-nav31']) .'">'. $nav1_svg .'<span class="ht-navi-span">'. $nav1_tit .'</span></a>' : '<a>'. $nav1_svg .'<span class="ht-navi-span">'. $nav1_tit .'</span></a>';
+		$nav1 = horsetools_navi_button( $horsetools_options, 1, $id_nav41, $nav_svg_no, $nav_tit_no );
 			
 			$nav42_id = $horsetools_options['chat-nav42'] ?? '';
 			if (strpos($nav42_id, '#') === 0) {
@@ -572,11 +609,7 @@ function horsetools_add_chat(){
 				$id_nav42 = null;
 			}
 		
-		// Intentionally raw: custom inline SVG icon, allow-listed in inc/sanitize.php (manage_options only).
-		$nav2_svg = !empty($horsetools_options['chat-nav12']) ? $horsetools_options['chat-nav12'] : $nav_svg_no;
-		$nav2_tit = !empty($horsetools_options['chat-nav22']) ? esc_html($horsetools_options['chat-nav22']) : $nav_tit_no;		
-		
-		$nav2 = !empty($horsetools_options['chat-nav12']) ? '<a '. $id_nav42 .' rel="nofollow" title="'. $nav2_tit .'" href="'. esc_url($horsetools_options['chat-nav32']) .'">'. $nav2_svg .'<span class="ht-navi-span">'. $nav2_tit .'</span></a>' : '<a>'. $nav2_svg .'<span class="ht-navi-span">'. $nav2_tit .'</span></a>'; 
+		$nav2 = horsetools_navi_button( $horsetools_options, 2, $id_nav42, $nav_svg_no, $nav_tit_no );
 			
 			$nav43_id = $horsetools_options['chat-nav43'] ?? '';
 			if (strpos($nav43_id, '#') === 0) {
@@ -587,11 +620,7 @@ function horsetools_add_chat(){
 				$id_nav43 = null;
 			}
 			
-		// Intentionally raw: custom inline SVG icon, allow-listed in inc/sanitize.php (manage_options only).
-		$nav3_svg = !empty($horsetools_options['chat-nav13']) ? $horsetools_options['chat-nav13'] : $nav_svg_no;
-		$nav3_tit = !empty($horsetools_options['chat-nav23']) ? esc_html($horsetools_options['chat-nav23']) : $nav_tit_no;		
-			
-		$nav3 = !empty($horsetools_options['chat-nav13']) ? '<a '. $id_nav43 .' rel="nofollow" title="'. $nav3_tit .'" href="'. esc_url($horsetools_options['chat-nav33']) .'">'. $nav3_svg .'<span class="ht-navi-span">'. $nav3_tit .'</span></a>' : '<a>'. $nav3_svg .'<span class="ht-navi-span">'. $nav3_tit .'</span></a>'; 
+		$nav3 = horsetools_navi_button( $horsetools_options, 3, $id_nav43, $nav_svg_no, $nav_tit_no );
 			
 			$nav44_id = $horsetools_options['chat-nav44'] ?? '';
 			if (strpos($nav44_id, '#') === 0) {
@@ -602,11 +631,7 @@ function horsetools_add_chat(){
 				$id_nav44 = null;
 			}
 		
-		// Intentionally raw: custom inline SVG icon, allow-listed in inc/sanitize.php (manage_options only).
-		$nav4_svg = !empty($horsetools_options['chat-nav14']) ? $horsetools_options['chat-nav14'] : $nav_svg_no;
-		$nav4_tit = !empty($horsetools_options['chat-nav24']) ? esc_html($horsetools_options['chat-nav24']) : $nav_tit_no;		
-			
-		$nav4 = !empty($horsetools_options['chat-nav14']) ? '<a '. $id_nav44 .' rel="nofollow" title="'. $nav4_tit .'" href="'. esc_url($horsetools_options['chat-nav34']) .'">'. $nav4_svg .'<span class="ht-navi-span">'. $nav4_tit .'</span></a>' : '<a>'. $nav4_svg .'<span class="ht-navi-span">'. $nav4_tit .'</span></a>';
+		$nav4 = horsetools_navi_button( $horsetools_options, 4, $id_nav44, $nav_svg_no, $nav_tit_no );
 		
 	// chat navi skin
 		$momo1 = '';

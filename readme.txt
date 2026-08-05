@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.4 =
+* **An unused slot on the bottom contact bar no longer draws a dead button.** The four slots were drawn on the strength of their icon, so a slot nobody had filled in still appeared in the bar — same size, same style as the real buttons, and nothing at all when tapped. Found on a live site, where the third slot had been sitting there unused. A slot is now drawn only if something has been put in it.
+* **And a slot with a link but no icon keeps its link.** The same test caught this: because the icon decided everything, filling in a name and a destination but leaving the icon empty produced a button with the fallback icon and no destination at all. It now uses the fallback icon and keeps the link, which is what anyone filling that form would expect.
 
 = 1.3.3 =
 * **Fixed: the debug panel sat on top of the buttons it exists to test.** It was pinned to the bottom-left corner, which on a phone is exactly where the contact bar is, so the buttons could not be tapped at all. It now sits at the top and is transparent to touch — taps pass straight through it to whatever is underneath, so it can never block anything again. Newest line first, since a panel that cannot be scrolled must show the line you just made.
