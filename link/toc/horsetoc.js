@@ -90,11 +90,24 @@ document.addEventListener("DOMContentLoaded", function () {
             const targetHeading = document.querySelector(this.getAttribute("href"));
             const offset = 50;
             const elementPosition = targetHeading.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            const startPosition = window.pageYOffset;
+            const offsetPosition = elementPosition + startPosition - offset;
             window.scrollTo({
                 top: offsetPosition,
                 behavior: "smooth"
             });
+
+            // Not every browser or embedded view honours smooth scrolling, and
+            // some pages suppress it. preventDefault() has already cancelled the
+            // ordinary anchor jump, so where smooth scrolling does nothing the
+            // link does nothing at all — worse than the behaviour it replaced.
+            // If nothing has moved shortly after, jump.
+            setTimeout(function () {
+                if (Math.abs(window.pageYOffset - startPosition) < 2 &&
+                    Math.abs(offsetPosition - startPosition) > 2) {
+                    window.scrollTo(0, offsetPosition);
+                }
+            }, 300);
 
             targetHeading.classList.add("ht-toc-light");
             setTimeout(() => {
