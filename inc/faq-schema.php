@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  * Bump when the extraction rules or the stand-aside rules change, so cached
  * results from the old rules are recomputed rather than served for ever.
  */
-define( 'HORSETOOLS_FAQ_RULES', 2 );
+define( 'HORSETOOLS_FAQ_RULES', 3 );
 
 /** The phrases that mark a FAQ section, as one case-insensitive regex. */
 function horsetools_faq_keys() {
@@ -300,7 +300,12 @@ function horsetools_faq_json( $post_id, $force = false ) {
 		);
 	}
 
-	update_post_meta( $post_id, '_ht_faq_ld', $json );
+	// wp_slash() before storing, because update_post_meta() runs wp_unslash()
+	// on the value. Without it every \" that json_encode produced comes back as
+	// a bare " and the stored JSON no longer parses — so any answer containing
+	// a quotation mark silently published a broken FAQPage. Search engines
+	// reject the whole block; nothing on the site looks wrong.
+	update_post_meta( $post_id, '_ht_faq_ld', wp_slash( $json ) );
 	update_post_meta( $post_id, '_ht_faq_stamp', $stamp );
 	return $json;
 }

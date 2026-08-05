@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.90
+Stable tag: 1.2.91
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.91 =
+* **Fixed: FAQ schema was invalid on any post whose answer contains a quotation mark.** WordPress strips one level of backslashes from anything saved as post meta, which removed the escaping from every quote inside the stored JSON. Search engines rejected the whole block — Google's Rich Results Test reports "Missing ',' or '}' in object declaration" — while the page itself looked perfectly normal. Every affected post regenerates itself on its next view; there is nothing to click.
 
 = 1.2.90 =
 * **Fixed: deleting an uploaded font did nothing.** The delete link still pointed at the old Fonts screen, which no longer exists as a page of its own, so it answered "Sorry, you are not allowed to access this page" and the font stayed. It now points at the screen you are on.
@@ -628,6 +631,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.91 =
+Fixes invalid FAQ schema on posts whose answers contain quotation marks. Update if you use FAQ schema.
 
 = 1.2.90 =
 Fixes font deletion and the redirects for addresses that moved into tabs.
