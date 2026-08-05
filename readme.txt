@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.85
+Stable tag: 1.2.86
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.86 =
+* **Fixes a fatal error on the front end, introduced in 1.2.67. Update immediately if you are on any version from 1.2.67 onward.** Two helpers that check colours and sizes before they go into a style block lived in the settings file, and 1.2.67 stopped loading that file on the front end. Any page then died with a critical error as soon as one of these features had a colour set: chat, the custom login page, dark mode, popups and cookie notices, search, shortcodes, and the table of contents. Sites with no colours configured were unaffected, which is why it went unnoticed.
+* The two helpers now live in their own file that always loads. Nothing else changes.
 
 = 1.2.85 =
 * **The table of contents no longer shows the old Foxtool mark.** The default icon was still the logo of the plugin this one was forked from, sitting on the front end of every site using the contents list. It is the Horse Tools mark now.
@@ -610,6 +614,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.86 =
+Fixes a critical error on the front end affecting every version since 1.2.67. Update immediately.
 
 = 1.2.85 =
 The table of contents icon is the Horse Tools mark, can be replaced with your own SVG, and has its own colour.

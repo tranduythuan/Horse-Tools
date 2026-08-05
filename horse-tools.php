@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.2.85
+ * Version: 1.2.86
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.2.85' );
+define( 'HORSETOOLS_VERSION', '1.2.86' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
@@ -47,6 +47,9 @@ function horsetools_is_backend() {
 
 include( HORSETOOLS_DIR . 'inc/registry.php' );
 include( HORSETOOLS_DIR . 'inc/http.php' );
+// Validators for values printed into inline <style> blocks. Front-end code
+// uses these, so they must never be behind the backend-only gate below.
+include( HORSETOOLS_DIR . 'inc/css.php' );
 // Sanitizing is what happens when settings are written, which only the admin
 // screens, the activation migration and WP-CLI ever do. A page view never
 // needs it.
