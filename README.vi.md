@@ -15,7 +15,7 @@ Horse Tools là bản fork được **duy trì tích cực và tăng cường b�
 
 ## Tính năng
 
-- **Nút chat liên hệ** — widget liên hệ đa kênh nổi (Zalo, Messenger, WhatsApp, Telegram, điện thoại, Line, WeChat, Instagram và hơn 30 kênh khác), 17 kiểu nút, bộ chọn icon tích hợp (hơn 5.000 icon Tabler), giờ làm việc (đang trực tuyến / ngoài giờ), bong bóng chào, tin nhắn soạn sẵn, và mã QR quét-để-mở trên máy tính.
+- **Nút chat liên hệ** — widget liên hệ đa kênh nổi với 11 loại kênh dựng sẵn (điện thoại, SMS, email, Zalo, Messenger, Telegram, WhatsApp, Viber, Skype, TikTok, Bản đồ) cùng nút Custom trỏ tới đâu cũng được, 17 kiểu nút, bộ chọn icon tích hợp (hơn 5.000 icon Tabler), giờ làm việc (đang trực tuyến / ngoài giờ), bong bóng chào, tin nhắn soạn sẵn, và mã QR quét-để-mở trên máy tính.
 - **Panel Dịch vụ cho di động** — bảng trượt/toast hướng tới chuyển đổi, làm nổi bật các trang & ưu đãi chính, với nhiều bố cục, tông màu và kiểu hiển thị.
 - **Popup** — popup ảnh/nội dung với 4 bố cục, **13 hiệu ứng xuất hiện**, 4 vị trí hiển thị (giữa màn hình, toast ở góc, thanh dưới đáy) và 4 kiểu kích hoạt (ngay khi mở, sau vài giây, sau khi cuộn, hoặc khi khách sắp rời trang).
 - **Shortcode & quản lý snippet** — tạo các đoạn nội dung/HTML/JS dùng lại (soạn bằng trình soạn thảo WordPress quen thuộc — tab Trực quan để chèn link/ảnh/định dạng, hoặc tab Văn bản để dán mã), hơn 20 shortcode dựng sẵn cho hiển thị theo điều kiện, bố cục (accordion, tab, cảnh báo), dữ liệu động và mã QR, công cụ "tìm shortcode đang dùng ở đâu", và bảng bật/tắt shortcode.

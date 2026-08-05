@@ -169,6 +169,44 @@ function horsetools_track_detect_stored() {
 	return array( 'found' => false, 'id' => '', 'how' => '' );
 }
 
+/**
+ * Is a Tag Manager container present, whatever the measurement check concluded?
+ *
+ * Worth its own question because the two answers matter separately: the check
+ * above stops at the first ID it finds and will report a GA4 property on a site
+ * that also runs Tag Manager. Somebody who built click tags in that container
+ * needs warning before this setting doubles their numbers — the case that cost
+ * a real site a day of confused reports.
+ *
+ * @return bool
+ */
+function horsetools_track_has_gtm() {
+	$found = get_transient( 'horsetools_track_gtm' );
+	if ( false !== $found ) {
+		return '1' === $found;
+	}
+
+	global $wpdb;
+	$rows = $wpdb->get_col(
+		"SELECT option_value FROM {$wpdb->options}
+		 WHERE option_name NOT LIKE '\\_transient%'
+		   AND option_name NOT LIKE '\\_site\\_transient%'
+		   AND LENGTH( option_value ) BETWEEN 10 AND 200000
+		   AND option_value LIKE '%GTM-%'
+		 LIMIT 100"
+	); // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- one read, cached below.
+
+	$found = '0';
+	foreach ( (array) $rows as $value ) {
+		if ( is_string( $value ) && preg_match( '~\bGTM-[A-Z0-9]{4,}\b~', $value ) ) {
+			$found = '1';
+			break;
+		}
+	}
+	set_transient( 'horsetools_track_gtm', $found, DAY_IN_SECONDS );
+	return '1' === $found;
+}
+
 /** Clear the cached detection when asked to look again. */
 function horsetools_track_recheck() {
 	if ( ! isset( $_GET['horsetools-track-recheck'] ) || ! current_user_can( 'manage_options' ) ) {
@@ -176,6 +214,7 @@ function horsetools_track_recheck() {
 	}
 	check_admin_referer( 'horsetools_track_recheck' );
 	delete_transient( 'horsetools_track_detect' );
+	delete_transient( 'horsetools_track_gtm' );
 	wp_safe_redirect( remove_query_arg( array( 'horsetools-track-recheck', '_wpnonce' ) ) );
 	exit;
 }

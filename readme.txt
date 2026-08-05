@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.96
+Stable tag: 1.2.97
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,14 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.97 =
+* **Fixed: phone clicks were never recorded.** Every other channel reported correctly, which is what made this hard to see. Tapping a phone number hands the device straight to the dialler and suspends the page — and GA4 does not send an event the moment gtag is called, it collects events for a short while and sends them together. On an ordinary link that batch is flushed as the page unloads; on a tel: link the page never unloads, it freezes, and the click that matters most is the one that never arrives. The link is now held for as long as it takes the event to leave, and no longer: a hard 350ms timeout opens the dialler regardless, because a plugin that turns a working phone number into a dead one is far worse than a missing statistic. Same fix for SMS and e-mail links.
+* The previous code passed transport_type:'beacon' believing it prevented exactly this. That field belongs to Universal Analytics; GA4 ignores it. The comment claiming otherwise has gone with it.
+* **Four more channels, and Custom buttons at last.** Skype, Line, TikTok and Maps links are now recognised, and a Custom chat button pointing anywhere else is recorded under its own domain name — previously every one of those clicks was invisible. Outside the chat widgets only known channels count, so an article full of outbound links does not flood the report.
+* **?ht_debug=1 makes GA4's DebugView usable.** Open the site with that on the end of the address and the events identify themselves as debug events. Without it DebugView stays empty however many buttons you tap, and there was nothing on screen to explain why.
+* **A warning when Tag Manager is present.** If click tags already exist in a container, switching this on counts the same click twice under two names. The screen now says so, and points out that the Tag Manager side may also be firing Google Ads conversions, which this setting does not.
+* Corrected the channel count in both READMEs: 11 built-in channel types plus a Custom button, not "30+".
 
 = 1.2.96 =
 * **The analytics check now runs in your own browser, which is the only place that can see what a visitor sees.** Every server-side answer was a guess: a host can block the site from fetching itself, route that request to another site on the same account, or serve it a page built for bots — and if the tag was placed in a theme file rather than a setting, there was nothing in the database to find either. The screen now reads the home page from the browser you have open, without cookies so the tag is not withheld the way it is for logged-in users. The server-side check remains as the fallback when the browser cannot run it.
