@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.92
+Stable tag: 1.2.93
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.93 =
+* **Fixed: the measurement screen said no analytics was installed on sites that plainly have it.** It checked by asking the server to open its own home page, and many hosts block exactly that — so a failed check was reported as a definite "not found". It now reads the ID that Site Kit, MonsterInsights or a Tag Manager plugin has already saved, which needs no network at all, and when it genuinely cannot look it says so instead of guessing.
 
 = 1.2.92 =
 * **You can now see whether anyone actually presses the contact buttons.** One switch on Customers → Measurement sends an event to the Google Analytics your site already loads, every time a visitor taps a phone, Zalo, Messenger, Telegram, WhatsApp, Viber, SMS or email link. Links inside your posts count too, not only the chat buttons. Nothing is stored on your site and no personal data is involved.
@@ -636,6 +639,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.93 =
+Fixes the measurement screen wrongly reporting that no analytics is installed.
 
 = 1.2.92 =
 Adds contact-click measurement, and stops redirects losing ad tracking parameters.

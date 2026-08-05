@@ -52,20 +52,68 @@ function horsetools_track_detect() {
 		return $cached;
 	}
 
-	$out = array( 'found' => false, 'id' => '', 'how' => '' );
-	$res = wp_remote_get( home_url( '/' ), array( 'timeout' => 8, 'sslverify' => false ) );
+	// Ask the site's own settings first. Fetching the home page is the more
+	// honest test — it shows what a visitor really receives — but a site
+	// fetching itself is exactly the request many hosts block, and the first
+	// version of this reported "no tag found" when the truth was "I could not
+	// look". Site Kit and friends have already stored the ID; reading it needs
+	// no network at all and cannot be wrong in that direction.
+	$out = horsetools_track_detect_stored();
 
-	if ( ! is_wp_error( $res ) && 200 === wp_remote_retrieve_response_code( $res ) ) {
-		$body = wp_remote_retrieve_body( $res );
-		if ( preg_match( '~\b(G-[A-Z0-9]{6,})\b~', $body, $m ) ) {
-			$out = array( 'found' => true, 'id' => $m[1], 'how' => 'gtag' );
-		} elseif ( preg_match( '~\b(GTM-[A-Z0-9]{4,})\b~', $body, $m ) ) {
-			$out = array( 'found' => true, 'id' => $m[1], 'how' => 'gtm' );
+	if ( ! $out['found'] ) {
+		$res = wp_remote_get( home_url( '/' ), array( 'timeout' => 8, 'sslverify' => false ) );
+		if ( is_wp_error( $res ) || 200 !== (int) wp_remote_retrieve_response_code( $res ) ) {
+			// Say so, rather than claiming the tag is absent.
+			$out['how'] = 'unreachable';
+		} else {
+			$body = wp_remote_retrieve_body( $res );
+			if ( preg_match( '~\b(G-[A-Z0-9]{6,})\b~', $body, $m ) ) {
+				$out = array( 'found' => true, 'id' => $m[1], 'how' => 'page' );
+			} elseif ( preg_match( '~\b(GTM-[A-Z0-9]{4,})\b~', $body, $m ) ) {
+				$out = array( 'found' => true, 'id' => $m[1], 'how' => 'page' );
+			} else {
+				$out['how'] = 'absent';
+			}
 		}
 	}
 
 	set_transient( 'horsetools_track_detect', $out, HOUR_IN_SECONDS );
 	return $out;
+}
+
+/**
+ * Look for a measurement ID in options other analytics plugins have saved.
+ *
+ * Names are matched rather than listed, because every one of these plugins has
+ * renamed its options at some point and a hard-coded list quietly stops finding
+ * anything after an update.
+ *
+ * @return array{found:bool, id:string, how:string}
+ */
+function horsetools_track_detect_stored() {
+	global $wpdb;
+
+	$rows = $wpdb->get_col(
+		"SELECT option_value FROM {$wpdb->options}
+		 WHERE option_name LIKE '%sitekit%'
+		    OR option_name LIKE '%monsterinsights%'
+		    OR option_name LIKE '%analytics%'
+		    OR option_name LIKE '%gtm%'
+		 LIMIT 60"
+	); // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- one read, cached in a transient by the caller.
+
+	foreach ( (array) $rows as $value ) {
+		if ( ! is_string( $value ) || '' === $value ) {
+			continue;
+		}
+		if ( preg_match( '~\b(G-[A-Z0-9]{6,})\b~', $value, $m ) ) {
+			return array( 'found' => true, 'id' => $m[1], 'how' => 'stored' );
+		}
+		if ( preg_match( '~\b(GTM-[A-Z0-9]{4,})\b~', $value, $m ) ) {
+			return array( 'found' => true, 'id' => $m[1], 'how' => 'stored' );
+		}
+	}
+	return array( 'found' => false, 'id' => '', 'how' => '' );
 }
 
 /** Clear the cached detection when asked to look again. */

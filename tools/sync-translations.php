@@ -873,6 +873,8 @@ $vi = array(
 	'Optional: in Admin → Events, switch on "Mark as key event" for the channels that matter to you. They then appear in the acquisition reports, so you can see which traffic source produces contacts, and they can be imported into Google Ads as a conversion.' => 'Tuỳ chọn: vào Quản trị → Sự kiện, bật "Đánh dấu là sự kiện chính" cho kênh anh quan tâm. Khi đó chúng hiện trong báo cáo thu nạp để biết nguồn nào đẻ ra liên hệ, và nhập được sang Google Ads làm chuyển đổi.',
 	'Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see.' => 'Hiểu đây là ý định chứ không phải kết quả: một lượt bấm nghĩa là khách đã mở màn hình gọi hoặc mở app chat, không có nghĩa cuộc gọi đã kết nối hay tin nhắn đã gửi. Trình chặn quảng cáo cũng làm rơi một phần, nên số thật cao hơn số anh thấy đôi chút.',
 
+	'Could not check: this server was unable to open your own home page, which many hosts block. That says nothing about whether analytics is installed — if you have Site Kit or another GA4 plugin, switch this on and check the result in Analytics under Admin → DebugView.' => 'Chưa kiểm được: máy chủ không tự mở được trang chủ của chính nó, nhiều nhà cung cấp hosting chặn việc này. Điều đó KHÔNG có nghĩa là site chưa có analytics — nếu anh đang dùng Site Kit hay plugin GA4 khác thì cứ bật lên, rồi kiểm kết quả trong Analytics ở Quản trị → DebugView.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';
