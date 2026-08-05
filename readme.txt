@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.83
+Stable tag: 1.2.84
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.84 =
+* **Removed the rest of the shouty duplicate headings.** 1.2.83 cleared them from the folded-in sections but missed the thirteen original tabs, so Users still opened onto USER, Optimisation onto OPTIMIZE, Site onto DISPLAY and Admin area onto CUSTOM. All gone; the tab already names what you are looking at.
 
 = 1.2.83 =
 * **Fixed: the Appearance screen had two identical Save buttons, and the big one did not save fonts.** Editing a font setting and pressing the Save at the bottom of the screen looked like it worked and wrote nothing. The font section now says so and its own button is labelled for what it saves.
@@ -602,6 +605,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.84 =
+Removes the duplicate headings 1.2.83 missed on the original thirteen tabs.
 
 = 1.2.83 =
 Fixes two Save buttons on Appearance and removes duplicate headings inside tabs.

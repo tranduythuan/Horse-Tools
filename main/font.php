@@ -37,7 +37,6 @@ function horsetools_font_options_page( $embed = false ) {
 			<!-- FONT -->
 			<div class="sotab-box htbox" id="tab1" style="margin-bottom:-80px;">
 			<form id="ht-form-font" method="post" enctype="multipart/form-data">
-			<h2><?php _e('ADD FONT', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="ti ti-book"></i> <?php _e('Add fonts', 'horse-tools') ?></h3>
 			    <p>
@@ -86,7 +85,6 @@ function horsetools_font_options_page( $embed = false ) {
 			?>
 			<form method="post" action="options.php">
 			<?php settings_fields('horsetools_fontset_settings_group'); ?>
-			<h2><?php _e('USE FONT', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="ti ti-letter-case"></i> <?php _e('Use fonts on the web', 'horse-tools') ?></h3>
 				<?php

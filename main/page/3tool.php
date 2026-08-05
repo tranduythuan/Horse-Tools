@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_options; ?>
-<h2><?php _e('TOOL', 'horse-tools'); ?></h2>
 <div class="ht-on">
 <label class="nut-hton">
 <input class="toggle-checkbox" id="check3" data-target="play3" type="checkbox" name="horsetools_settings[tool]" value="1" <?php if ( isset($horsetools_options['tool']) && 1 == $horsetools_options['tool'] ) echo 'checked="checked"'; ?> />

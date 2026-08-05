@@ -425,7 +425,6 @@ function horsetools_export_options_page( $embed = false ) {
 			?>
 
 			<div class="sotab-box htbox" id="tab1">
-			<h2><?php _e( 'BACKUP', 'horse-tools' ); ?></h2>
 
 			<div class="ht-card">
 			  <h3><i class="ti ti-download"></i> <?php _e( 'Export', 'horse-tools' ); ?></h3>
@@ -495,7 +494,6 @@ function horsetools_export_options_page( $embed = false ) {
 			</div>
 
 			<div class="sotab-box htbox" id="tab2" style="display:none">
-			<h2><?php _e( 'PRESETS', 'horse-tools' ); ?></h2>
 			<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e( 'One click applies a set of recommended settings for your kind of site. Presets only turn options on and tune a few values — they never switch off anything you have already enabled, and a one-click Undo is always kept.', 'horse-tools' ); ?></p>
 			<?php foreach ( horsetools_presets() as $preset_id => $preset ) : ?>
 				<div class="ht-card ht-preset">

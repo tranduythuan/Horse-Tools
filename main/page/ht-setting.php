@@ -1,7 +1,6 @@
 <?php 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_options; ?>
-<h2><?php _e('SETTING', 'horse-tools'); ?></h2>
   <h3><i class="ti ti-bomb"></i> <?php _e('Advanced settings', 'horse-tools') ?></h3>
 	<!-- horsetools 1 -->
 	<?php horsetools_toggle( 'horsetools1', __( 'Hide Admin account from profile page', 'horse-tools' ), array(

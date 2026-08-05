@@ -11,7 +11,6 @@ if ( ! function_exists( 'horsetools_services_get' ) ) {
 	require_once HORSETOOLS_DIR . 'inc/chat-services.php';
 }
 global $horsetools_options; ?>
-<h2><?php _e('CHAT', 'horse-tools'); ?></h2>
 <div class="ht-on">
 <label class="nut-hton">
 <input class="toggle-checkbox" id="check12" data-target="play12" type="checkbox" name="horsetools_settings[chat]" value="1" <?php if ( isset($horsetools_options['chat']) && 1 == $horsetools_options['chat'] ) echo 'checked="checked"'; ?> />
