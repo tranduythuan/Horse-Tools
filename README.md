@@ -119,6 +119,15 @@ Yes — the **SEO** group covers permalinks, image alt text, external links, FAQ
 **Can I use it in my language?**
 Vietnamese is complete; 11 more languages ship as machine-translated starting points. You can also drop your own `.mo` into `wp-content/languages/plugins/`.
 
+**My security scanner flagged a file in this plugin. Is it malware?**
+No. The whole plugin contains exactly two `eval()` calls, both in `inc/php-snippet.php`, and that file is the PHP snippet feature — running PHP you have written yourself is what it is for, and no plugin can offer that without `eval()`. Scanners flag the word on sight, without reading the code.
+
+One of the two is `eval( 'if ( false ) { … }' )`: the branch is never entered, so nothing runs. It exists only to catch a syntax error when you save a snippet, instead of letting a broken snippet take the site down.
+
+The other one runs your snippet, and only after two gates: two-factor authentication must be on for the account, and the code must still match the signature stored when it was saved — so a snippet altered by anyone who did not go through this screen stops running rather than executing. If a snippet ever crashes a page, it is switched off automatically and you are told which one.
+
+If you do not use PHP snippets, turn the **Shortcode** module off under **Extend** and the file is never loaded at all.
+
 **Where do I report a bug or request a feature?**
 Open a GitHub [issue](https://github.com/tranduythuan/Horse-Tools/issues).
 

@@ -118,6 +118,15 @@ Có — nhóm **SEO** lo đường dẫn tĩnh, alt ảnh, liên kết ra ngoài
 **Dùng được tiếng của tôi không?**
 Tiếng Việt hoàn chỉnh; 11 ngôn ngữ khác là bản dịch máy làm điểm khởi đầu. Bạn cũng có thể bỏ file `.mo` của mình vào `wp-content/languages/plugins/`.
 
+**Phần mềm quét bảo mật báo một file của plugin là khả nghi, có phải virus không?**
+Không. Toàn bộ plugin có đúng hai lần `eval()`, đều nằm trong `inc/php-snippet.php` — file của tính năng "đoạn mã PHP". Chạy đoạn PHP do chính bạn viết là mục đích của nó, và không plugin nào làm được việc đó mà không dùng `eval()`. Trình quét thấy từ khoá là báo, chứ không đọc nội dung.
+
+Một trong hai là `eval( 'if ( false ) { … }' )`: nhánh này không bao giờ được vào nên **không chạy gì cả**. Nó chỉ để bắt lỗi cú pháp ngay lúc bạn lưu, thay vì để một đoạn mã hỏng làm sập site.
+
+Cái còn lại mới thật sự chạy đoạn mã của bạn, và phải qua hai cửa: tài khoản bắt buộc đã bật xác thực hai lớp, và mã phải còn khớp chữ ký lưu lúc bạn bấm lưu — nên đoạn mã bị ai đó sửa từ ngoài màn hình quản trị sẽ ngừng chạy chứ không thực thi. Nếu một đoạn mã làm chết trang, plugin tự tắt nó và báo cho bạn biết là đoạn nào.
+
+Nếu bạn không dùng đoạn mã PHP, hãy tắt module **Shortcode** ở trang **Tính năng mở rộng** — khi đó file này không được nạp.
+
 **Báo lỗi hoặc góp ý tính năng ở đâu?**
 Mở một [issue](https://github.com/tranduythuan/Horse-Tools/issues) trên GitHub.
 
