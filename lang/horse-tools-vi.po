@@ -6577,3 +6577,15 @@ msgstr "Gửi đường dẫn"
 
 msgid "Google API settings"
 msgstr "Cài đặt Google API"
+
+msgid "Your own icon (paste an SVG)"
+msgstr "Icon riêng của bạn (dán mã SVG)"
+
+msgid "Leave empty to use the icon chosen above; anything pasted here replaces it. Its colour comes from the Icon colour setting below, so the fill in your SVG is ignored. Scripts and event handlers are removed."
+msgstr "Để trống thì dùng icon chọn ở trên; dán gì vào đây sẽ thay thế icon đó. Màu lấy từ ô Màu icon bên dưới, nên thuộc tính fill trong SVG bị bỏ qua. Mã script và trình xử lý sự kiện đều bị loại."
+
+msgid "Icon colour"
+msgstr "Màu icon"
+
+msgid "Leave empty and the icon follows the list colour."
+msgstr "Để trống thì icon lấy theo màu tiêu đề danh sách."

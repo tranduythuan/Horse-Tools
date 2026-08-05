@@ -853,6 +853,11 @@ $vi = array(
 	'Submit URLs' => 'Gửi đường dẫn',
 	'Google API settings' => 'Cài đặt Google API',
 
+	'Your own icon (paste an SVG)' => 'Icon riêng của bạn (dán mã SVG)',
+	'Leave empty to use the icon chosen above; anything pasted here replaces it. Its colour comes from the Icon colour setting below, so the fill in your SVG is ignored. Scripts and event handlers are removed.' => 'Để trống thì dùng icon chọn ở trên; dán gì vào đây sẽ thay thế icon đó. Màu lấy từ ô Màu icon bên dưới, nên thuộc tính fill trong SVG bị bỏ qua. Mã script và trình xử lý sự kiện đều bị loại.',
+	'Icon colour' => 'Màu icon',
+	'Leave empty and the icon follows the list colour.' => 'Để trống thì icon lấy theo màu tiêu đề danh sách.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

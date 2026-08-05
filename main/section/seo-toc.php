@@ -228,6 +228,16 @@ global $horsetools_toc_options; ?>
 				<label class="ht-right-text"><?php _e('Select icon', 'horse-tools'); ?></label>
 				</p>
 				<p>
+				<label class="ht-field-label" for="ht-toc-icosvg"><?php _e( 'Your own icon (paste an SVG)', 'horse-tools' ); ?></label>
+				<textarea id="ht-toc-icosvg" class="ht-input-big" rows="4" name="horsetools_toc_settings[main-icosvg]" placeholder="&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;…&lt;/svg&gt;"><?php if(!empty($horsetools_toc_options['main-icosvg'])){echo esc_textarea($horsetools_toc_options['main-icosvg']);} ?></textarea>
+				</p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e( 'Leave empty to use the icon chosen above; anything pasted here replaces it. Its colour comes from the Icon colour setting below, so the fill in your SVG is ignored. Scripts and event handlers are removed.', 'horse-tools' ); ?></p>
+				<p>
+				<input class="ht-input-color" name="horsetools_toc_settings[main-c8]" type="text" data-coloris value="<?php if(!empty($horsetools_toc_options['main-c8'])){echo sanitize_text_field($horsetools_toc_options['main-c8']);} ?>"/>
+				<label class="ht-right-text"><?php _e( 'Icon colour', 'horse-tools' ); ?></label>
+				</p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e( 'Leave empty and the icon follows the list colour.', 'horse-tools' ); ?></p>
+				<p>
 				<?php $styles = array('Right', 'Left'); ?>
 				<select name="horsetools_toc_settings[main-her1]"> 
 				<?php foreach($styles as $style) { ?> 

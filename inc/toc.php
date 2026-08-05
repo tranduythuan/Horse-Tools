@@ -16,6 +16,39 @@ function horsetools_enqueue_toc(){
 }
 add_action('wp_enqueue_scripts', 'horsetools_enqueue_toc');
 # functions add
+/**
+ * Sanitise a pasted SVG icon.
+ *
+ * Allows only the shape elements an icon needs, and no attribute that can
+ * execute anything: no script, no on* handler, no href. wp_kses drops the
+ * rest silently rather than refusing, so a nearly-right paste still works
+ * instead of leaving the icon blank with no explanation.
+ *
+ * @param string $svg
+ * @return string Empty when nothing usable survives.
+ */
+function horsetools_toc_clean_svg( $svg ) {
+	$svg = trim( (string) $svg );
+	if ( '' === $svg || false === stripos( $svg, '<svg' ) ) {
+		return '';
+	}
+	$common = array( 'fill' => true, 'stroke' => true, 'stroke-width' => true, 'stroke-linecap' => true, 'stroke-linejoin' => true, 'opacity' => true, 'transform' => true, 'class' => true, 'style' => true, 'fill-rule' => true, 'clip-rule' => true );
+	$allowed = array(
+		'svg'      => array_merge( $common, array( 'xmlns' => true, 'viewbox' => true, 'width' => true, 'height' => true, 'role' => true, 'aria-label' => true, 'aria-hidden' => true, 'focusable' => true ) ),
+		'path'     => array_merge( $common, array( 'd' => true ) ),
+		'g'        => $common,
+		'circle'   => array_merge( $common, array( 'cx' => true, 'cy' => true, 'r' => true ) ),
+		'ellipse'  => array_merge( $common, array( 'cx' => true, 'cy' => true, 'rx' => true, 'ry' => true ) ),
+		'rect'     => array_merge( $common, array( 'x' => true, 'y' => true, 'width' => true, 'height' => true, 'rx' => true, 'ry' => true ) ),
+		'line'     => array_merge( $common, array( 'x1' => true, 'y1' => true, 'x2' => true, 'y2' => true ) ),
+		'polyline' => array_merge( $common, array( 'points' => true ) ),
+		'polygon'  => array_merge( $common, array( 'points' => true ) ),
+		'title'    => array(),
+	);
+	$clean = wp_kses( $svg, $allowed );
+	return ( false !== stripos( $clean, '<svg' ) ) ? $clean : '';
+}
+
 function horsetools_toc_fun(){
 	global $horsetools_toc_options;
 	$tags = []; 
@@ -37,7 +70,12 @@ function horsetools_toc_fun(){
 	$onnumber = !isset($horsetools_toc_options['tit-c4']) ? 'data-on="on"' : NULL;
 	$hiddenlist = isset($horsetools_toc_options['tit-c5']) ? 'style="display:none"' : NULL;
 	$hiddenicon = isset($horsetools_toc_options['tit-c6']) ? 'data-ico="off"' : NULL;
-	$dtocicon = '<svg width="100%" height="100%" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><path d="M88.96,62.672l-38.96,19.477l-38.96,-19.477l-0,-44.821l38.967,19.494l38.953,-19.494l0,44.821Zm-70.163,-32.02l-0.081,28.051l31.231,13.893l26.676,-12.541l-57.826,-29.403Zm31.21,6.693l38.83,19.327l-31.632,-22.929l-7.198,3.602Z"/></svg>';
+	// The default was still Foxtool's mark — the shape this plugin was forked
+	// from — sitting on the front end of every site using the table of contents.
+	// currentColor so it takes the list colour like the other icons do.
+	$dtocicon = function_exists( 'horsetools_brand_mark_svg' )
+		? horsetools_brand_mark_svg( 'currentColor' )
+		: '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>';
 	if (isset($horsetools_toc_options['main-ico'])) {
 		$tocico_option = $horsetools_toc_options['main-ico'];
 		switch ($tocico_option) {
@@ -62,8 +100,19 @@ function horsetools_toc_fun(){
 	} else {
 		$tocicoset = $dtocicon;
 	}
-	
-	$iconcl = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1024 1024"><path fill="currentColor" d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504L738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512L828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496L285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512L195.2 285.696a64 64 0 0 1 0-90.496"/></svg>';
+
+	// A pasted SVG wins over every built-in choice. Kept to <svg> only and run
+	// through wp_kses so a stored icon can never carry a script or an event
+	// handler — this is echoed on the front end of every page with a contents
+	// list, so it is exactly the wrong place to trust stored markup.
+	if ( ! empty( $horsetools_toc_options['main-icosvg'] ) ) {
+		$custom = horsetools_toc_clean_svg( $horsetools_toc_options['main-icosvg'] );
+		if ( '' !== $custom ) {
+			$tocicoset = $custom;
+		}
+	}
+
+	$iconcl ='<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1024 1024"><path fill="currentColor" d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504L738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512L828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496L285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512L195.2 285.696a64 64 0 0 1 0-90.496"/></svg>';
 	$iconhi = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1024 1024"><path fill="currentColor" d="M104.704 685.248a64 64 0 0 0 90.496 0l316.8-316.8l316.8 316.8a64 64 0 0 0 90.496-90.496L557.248 232.704a64 64 0 0 0-90.496 0L104.704 594.752a64 64 0 0 0 0 90.496"/></svg>';
 	$toc_html = '<div class="ht-toc-placeholder" data-h="'. $tagh .'" '. $onnumber .' '. $hiddenicon .'><div class="ht-toc-main '. $show .' ">
 		<div class="ht-toc-close" onclick="tocclose();" style="display:none">'. $tocicoset .'</div>
@@ -174,6 +223,7 @@ function horsetools_color_toc(){
 				
 				$titback = !empty($horsetools_toc_options['main-t1']) ? '--toctitback:'. horsetools_css_color($horsetools_toc_options['main-t1']) .';' : NULL;
 				$tittext = !empty($horsetools_toc_options['main-t2']) ? '--toctit:'. horsetools_css_color($horsetools_toc_options['main-t2']) .';' : NULL;
+				$ticon   = !empty($horsetools_toc_options['main-c8']) ? '--tocico:'. horsetools_css_color($horsetools_toc_options['main-c8']) .';' : NULL;
 				
 				$scr = !empty($horsetools_toc_options['main-c6']) ? '.ht-toc-scrol *{scrollbar-color: '. horsetools_css_color($horsetools_toc_options['main-c6']) .' #ffffff00;}.ht-toc-scrol ::-webkit-scrollbar-thumb{background-color: '. horsetools_css_color($horsetools_toc_options['main-c6']) .';}' : NULL;
 				$lig = !empty($horsetools_toc_options['main-c7']) ? '--toclight:'. horsetools_css_color($horsetools_toc_options['main-c7']) .';' : NULL;
@@ -187,7 +237,7 @@ function horsetools_color_toc(){
 				$mradius = !empty($horsetools_toc_options['main-r1']) && $horsetools_toc_options['main-r1'] != 10 ? '--tocradius:'. horsetools_css_number($horsetools_toc_options['main-r1'], '10') .'px;' : NULL;
 				$nradius = !empty($horsetools_toc_options['main-r2']) && $horsetools_toc_options['main-r2'] != 10 ? '--tocnutradius:'. horsetools_css_number($horsetools_toc_options['main-r2'], '10') .'px;' : NULL;
 				
-				echo ':root{'. $bgr . $bor . $titback . $tittext . $lin . $sec . $lig . $nutbgr . $nutbor . $nutico . $mradius . $nradius . $fontsize .'} '. $scr;
+				echo ':root{'. $bgr . $bor . $titback . $tittext . $ticon . $lin . $sec . $lig . $nutbgr . $nutbor . $nutico . $mradius . $nradius . $fontsize .'} '. $scr;
 				}
 				$piton = isset($horsetools_toc_options['main-her1']) && $horsetools_toc_options['main-her1'] == 'Left' ? '.ht-toc-close{right:-55px;left:unset;}.ht-toc-main.ht-toc-main-vuot.ht-toc-main-open{left:10px;right:unset;}.ht-toc-main-vuot {left:-350px;right:unset;transition:left 0.7s ease;}@media(max-width: 400px){.ht-toc-main-open{left: unset;right: 10px !important;}}' : NULL;
 				$long = !empty($horsetools_toc_options['main-her2']) && $horsetools_toc_options['main-her2'] != 30 ? '.ht-toc-close {top: '. horsetools_css_number($horsetools_toc_options['main-her2'], '30') .'%;}' : NULL;

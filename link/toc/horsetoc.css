@@ -135,8 +135,16 @@
 	height:20px;
 	vertical-align: middle;
 }
-.ht-toc-tit svg path{
-	fill:var(--toctit);
+/* The heading icon can have a colour of its own; with none set it follows the
+   title colour exactly as before. Every shape, not just <path>, so a pasted
+   icon built from circles or rects is coloured too. */
+.ht-toc-tit svg path,
+.ht-toc-tit svg circle,
+.ht-toc-tit svg ellipse,
+.ht-toc-tit svg rect,
+.ht-toc-tit svg polygon,
+.ht-toc-tit svg polyline{
+	fill:var(--tocico, var(--toctit));
 }
 .ht-toc-tit span{
 	width:100%;

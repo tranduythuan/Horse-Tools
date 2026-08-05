@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.84
+Stable tag: 1.2.85
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.85 =
+* **The table of contents no longer shows the old Foxtool mark.** The default icon was still the logo of the plugin this one was forked from, sitting on the front end of every site using the contents list. It is the Horse Tools mark now.
+* **You can paste your own icon.** Any SVG, in a box under the icon chooser; leave it empty and the chosen icon is used as before. Scripts, event handlers and links are stripped from anything pasted, because this is echoed on every page that shows a contents list.
+* **The icon has its own colour setting.** Leave it empty and it follows the title colour exactly as it did before. Circles, rectangles and polygons are coloured too, not just paths, so a pasted icon is not left half black.
 
 = 1.2.84 =
 * **Removed the rest of the shouty duplicate headings.** 1.2.83 cleared them from the folded-in sections but missed the thirteen original tabs, so Users still opened onto USER, Optimisation onto OPTIMIZE, Site onto DISPLAY and Admin area onto CUSTOM. All gone; the tab already names what you are looking at.
@@ -605,6 +610,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.85 =
+The table of contents icon is the Horse Tools mark, can be replaced with your own SVG, and has its own colour.
 
 = 1.2.84 =
 Removes the duplicate headings 1.2.83 missed on the original thirteen tabs.
