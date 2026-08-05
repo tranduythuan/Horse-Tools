@@ -26,6 +26,13 @@ function horsetools_display_page() {
 			'module' => 'search',
 			'files'  => array( 'main/section/ap-search1.php' ),
 		),
+		'dp-tab4' => array(
+			'label'  => __( 'Fonts', 'horse-tools' ),
+			'icon'   => 'ti-book',
+			'module' => 'font',
+			'raw'    => true,
+			'files'  => array( 'main/section/ct-font.php' ),
+		),
 	) );
 }
 

@@ -330,7 +330,7 @@ function horsetools_preset_merged( array $preset ) {
 	return $merged;
 }
 
-function horsetools_export_options_page() {
+function horsetools_export_options_page( $embed = false ) {
 	$payload  = horsetools_export_payload();
 	$json     = wp_json_encode( $payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
 	$notice   = '';        // rendered above the form: array( type, html )
@@ -401,6 +401,7 @@ function horsetools_export_options_page() {
 
 	ob_start();
 	?>
+		<?php if ( ! $embed ) : ?>
 	<div class="wrap ht-wrap">
 	<div class="ht-wrap-top"></div>
 	<div class="ht-wrap2">
@@ -415,6 +416,7 @@ function horsetools_export_options_page() {
 			<button class="sotab" onclick="httab(event, 'tab2')"><i class="ti ti-adjustments-check"></i> <?php _e( 'PRESETS', 'horse-tools' ); ?></button>
 		</div>
 		<div class="ht-main">
+		<?php endif; ?>
 			<?php
 			if ( $notice ) {
 				$cls = ( 'ok' === $notice[0] ) ? 'ht-updated' : 'ht-updated ht-updated-err';
@@ -436,7 +438,7 @@ function horsetools_export_options_page() {
 
 			<div class="ht-card">
 			  <h3><i class="ti ti-upload"></i> <?php _e( 'Import', 'horse-tools' ); ?></h3>
-				<form method="post" action="<?php echo esc_url( menu_page_url( 'horsetools-export-options', false ) ); ?>">
+				<form method="post" action="<?php echo esc_url( admin_url( 'admin.php?page=horsetools-tools-options' ) ); ?>">
 				<?php wp_nonce_field( 'horsetools_import', 'horsetools_import_nonce' ); ?>
 				<p>
 				<textarea style="height:200px" class="ht-code-textarea" id="horsetools-import-json" name="horsetools_export_tool" placeholder="<?php esc_attr_e( 'Paste an export here, or upload a .json file', 'horse-tools' ); ?>"><?php echo isset( $preview['raw'] ) ? esc_textarea( $preview['raw'] ) : ''; ?></textarea>
@@ -481,7 +483,7 @@ function horsetools_export_options_page() {
 			<div class="ht-card">
 			  <h3><i class="ti ti-rotate"></i> <?php _e( 'Undo the last import', 'horse-tools' ); ?></h3>
 				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e( 'The configuration from before your most recent import is stored. Restoring reverts every group to that snapshot.', 'horse-tools' ); ?></p>
-				<form method="post" action="<?php echo esc_url( menu_page_url( 'horsetools-export-options', false ) ); ?>">
+				<form method="post" action="<?php echo esc_url( admin_url( 'admin.php?page=horsetools-tools-options' ) ); ?>">
 					<?php wp_nonce_field( 'horsetools_import', 'horsetools_import_nonce' ); ?>
 					<div class="ht-submit">
 						<button type="submit" name="horsetools_import_undo"><i class="ti ti-rotate"></i> <?php _e( 'Restore previous configuration', 'horse-tools' ); ?></button>
@@ -504,7 +506,7 @@ function horsetools_export_options_page() {
 							<li><i class="ti ti-circle-check"></i> <?php echo esc_html( $item ); ?></li>
 						<?php endforeach; ?>
 					</ul>
-					<form method="post" action="<?php echo esc_url( menu_page_url( 'horsetools-export-options', false ) ); ?>">
+					<form method="post" action="<?php echo esc_url( admin_url( 'admin.php?page=horsetools-tools-options' ) ); ?>">
 						<?php wp_nonce_field( 'horsetools_import', 'horsetools_import_nonce' ); ?>
 						<input type="hidden" name="horsetools_preset" value="<?php echo esc_attr( $preset_id ); ?>" />
 						<div class="ht-submit">
@@ -519,11 +521,13 @@ function horsetools_export_options_page() {
 			.ht-preset-list li i{color:#2e9e5b;font-size:17px;flex-shrink:0;margin-top:1px}
 			</style>
 			</div>
+		<?php if ( ! $embed ) : ?>
 		</div>
 	  </div>
 	  <div class="ht-sidebar"></div>
 	</div>
 	</div>
+		<?php endif; ?>
 
 	<script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
@@ -567,4 +571,5 @@ function horsetools_export_options_link() {
 	add_submenu_page( 'horsetools-options', 'Backup', '<i class="ti ti-file-export" style="width:20px;"></i> ' . __( 'Backup', 'horse-tools' ), 'manage_options', 'horsetools-export-options', 'horsetools_export_options_page' );
 }
 
-add_action( 'admin_menu', 'horsetools_export_options_link' );
+// Menu removed in 1.2.81: now a tab on a grouped screen.
+// add_action( 'admin_menu', 'horsetools_export_options_link' );

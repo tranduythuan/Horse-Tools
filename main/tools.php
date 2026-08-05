@@ -56,6 +56,13 @@ function horsetools_tools_page() {
 			'module' => 'debug',
 			'files'  => array( 'main/section/tl-debug1.php' ),
 		),
+		'tl-tab9' => array(
+			'label'  => __( 'Backup', 'horse-tools' ),
+			'icon'   => 'ti-file-export',
+			'module' => 'export',
+			'raw'    => true,
+			'files'  => array( 'main/section/tl-backup.php' ),
+		),
 	) );
 }
 

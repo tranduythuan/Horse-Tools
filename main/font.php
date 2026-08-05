@@ -1,11 +1,12 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
-function horsetools_font_options_page() {
+function horsetools_font_options_page( $embed = false ) {
 	if( isset($_GET['delete_font_key']) ){
        $delete = horsetools_delete_font();
     }
 	ob_start(); 
 	?>
+		<?php if ( ! $embed ) : ?>
 	<div class="wrap ht-wrap">
 	<div class="ht-wrap-top">
 	</div>
@@ -22,6 +23,7 @@ function horsetools_font_options_page() {
 		</div>
 
 		<div class="ht-main">
+		<?php endif; ?>
 			<?php 
 			if( isset($_GET['valid']) && $_GET['valid'] == 'true' ){
                     echo '<div class="ht-updated">'. __('Upload font success', 'horse-tools'). '</div>';
@@ -133,12 +135,14 @@ function horsetools_font_options_page() {
 			</div>
 			</div>
 			
+		<?php if ( ! $embed ) : ?>
 		</div>
 	  </div>
       <div class="ht-sidebar">
 	  </div>
 	</div>	
 	</div>
+		<?php endif; ?>
 	<script>
 	jQuery('#ht-form-font').on('submit', function(e){
 		e.preventDefault();
@@ -156,9 +160,9 @@ function horsetools_font_options_page() {
 			beforeSend: function(){},
 			success: function(response) {
 				if (response == '1' || response == 1) {
-					window.location.href = "admin.php?page=horsetools-font-options&valid=true";
+					window.location.href = "admin.php?page=horsetools-display-options&valid=true";
 				} else {
-					window.location.href = "admin.php?page=horsetools-font-options&valid=false";
+					window.location.href = "admin.php?page=horsetools-display-options&valid=false";
 				}
 			},
 		})
@@ -205,7 +209,8 @@ function horsetools_font_options_link() {
 	add_submenu_page ('horsetools-options', 'Font', '<i class="ti ti-book" style="width:20px;"></i> '. __('Font', 'horse-tools'), 'manage_options', 'horsetools-font-options', 'horsetools_font_options_page');
 }
 
-add_action('admin_menu', 'horsetools_font_options_link');
+// Menu removed in 1.2.81: now a tab on a grouped screen.
+// add_action('admin_menu', 'horsetools_font_options_link');
 function horsetools_font_register_settings() {
 	register_setting( 'horsetools_fontset_settings_group', 'horsetools_fontset_settings', array( 'sanitize_callback' => 'horsetools_sanitize_font' ) );
 }

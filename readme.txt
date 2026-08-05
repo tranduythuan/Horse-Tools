@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.80
+Stable tag: 1.2.81
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.81 =
+* **Fonts and Backup are now tabs too, and the regrouping is complete.** Fonts sits on Appearance, Backup on Tools. The menu is down from sixteen entries to nine screens named after what they do, plus Extend and About.
+* These two took a different approach from the rest. Both do real work before drawing anything — reading a font deletion, building the export file, preparing an import preview — so lifting their markup into a tab would have left that behind and shown an empty panel. Instead each screen learned to render without its own page frame, and the tab asks it to.
 
 = 1.2.80 =
 * **Fixes assets that stopped loading after the regrouping.** The code editor, the media picker, the font selector and the table builder were each loaded by naming the screen they belonged to. Those screens became tabs, the names stopped matching anything, and the assets quietly stopped loading — the code boxes would have been plain textareas and the image pickers would not have opened. Which screen needs what is now one list instead of three scattered checks.
@@ -591,6 +595,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.81 =
+Fonts and Backup become tabs. The settings reorganisation is complete.
 
 = 1.2.80 =
 Fixes the code editor, media picker and table builder not loading after the regrouping.

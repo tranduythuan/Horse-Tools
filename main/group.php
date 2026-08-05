@@ -240,6 +240,8 @@ function horsetools_group_legacy_redirect() {
 		'horsetools-clean-options'     => 'horsetools-speed-options',
 		'horsetools-shortcode-options' => 'horsetools-content-options',
 		'horsetools-tables'            => 'horsetools-content-options',
+		'horsetools-font-options'      => 'horsetools-display-options',
+		'horsetools-export-options'    => 'horsetools-tools-options',
 	);
 	$page = isset( $_GET['page'] ) ? sanitize_key( wp_unslash( $_GET['page'] ) ) : '';
 	if ( isset( $moved[ $page ] ) && current_user_can( 'manage_options' ) ) {
