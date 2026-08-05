@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_notify_options; ?>
-			<h2><?php _e('NOTIFY', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="ti ti-bell"></i> <?php _e('Notification at the top of the page', 'horse-tools') ?></h3>
 				<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'Shows a thin notice bar across the very top of every page — handy for a promotion, a hotline, or a delivery note. To use: turn on the switch, type your message, then choose the background colour.', 'horse-tools' ); ?></span></div>

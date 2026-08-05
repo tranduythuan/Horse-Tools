@@ -2,7 +2,6 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_toc_options; ?>
 			<!-- SETTING -->
-			<h2><?php _e('TOC', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="ti ti-list"></i> <?php _e('Table of contents configuration', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'toc1', __( 'Enable table of contents', 'horse-tools' ), array(

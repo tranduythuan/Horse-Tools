@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_ads_options; ?>
-			<h2><?php _e('ADS.TXT', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="ti ti-file-check"></i> <?php _e('Set up the ads.txt file', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'ads-adstxt1', __( 'Enable ads.txt', 'horse-tools' ), array(

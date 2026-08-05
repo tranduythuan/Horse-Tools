@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_gindex_options; ?>
-			<h2><?php _e('SETTING', 'horse-tools'); ?></h2>
+			<h3>Google API settings</h3>
 			<div class="ht-card">
 			  <h3><i class="ti ti-settings"></i> <?php _e('Configure Google index API', 'horse-tools') ?></h3>
 				<?php 

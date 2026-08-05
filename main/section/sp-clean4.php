@@ -13,7 +13,6 @@ $next_run = wp_next_scheduled( 'horsetools_scheduled_clean' );
 		'monthly' => __( 'Monthly', 'horse-tools' ),
 	);
 ?>
-			<h2><?php _e( 'SCHEDULE', 'horse-tools' ); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="ti ti-history"></i> <?php _e( 'Automatic cleanup', 'horse-tools' ); ?></h3>
 				<?php

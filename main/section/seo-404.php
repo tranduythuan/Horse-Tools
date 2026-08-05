@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_redirects_options; ?>
-			<h2><?php _e('Broken links (404)', 'horse-tools'); ?></h2>
 			<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'Handle dead links: send visitors who hit a “404 – not found” page to a page you choose, and keep a log of the broken URLs so you know what to fix.', 'horse-tools' ); ?></span></div>
 			<div class="ht-card">
 			  <h3><i class="ti ti-ban"></i> <?php _e('404 redirects', 'horse-tools') ?></h3>

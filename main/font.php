@@ -129,7 +129,13 @@ function horsetools_font_options_page( $embed = false ) {
 				} 
 				?>
 			<div class="ht-submit">
-			<button type="submit"><i class="ti ti-device-floppy"></i> <?php _e('SAVE CONTENT', 'horse-tools'); ?></button>
+			<?php
+			// Inside a tab this button sits on a screen that already has a Save
+			// of its own, and that one does not write font settings — two
+			// identical buttons where only one saves what you just edited is how
+			// people lose work while believing they saved it. Name it.
+			?>
+			<button type="submit"><i class="ti ti-device-floppy"></i> <?php echo $embed ? esc_html__( 'SAVE FONT SETTINGS', 'horse-tools' ) : esc_html__( 'SAVE CONTENT', 'horse-tools' ); ?></button>
 			</div>
 			</form>
 			</div>

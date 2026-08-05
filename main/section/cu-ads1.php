@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_ads_options; ?>
-			<h2><?php _e('CLICK', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="ti ti-alert-circle"></i> <?php _e('Forced ad clicks — removed', 'horse-tools') ?></h3>
 				<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i>

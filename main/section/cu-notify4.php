@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_notify_options; ?>
-			<h2><?php _e('COOKIE', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="ti ti-cookie"></i> <?php _e('Set up cookie notifications', 'horse-tools') ?></h3>
 				<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'Shows a small cookie notice in the corner so your site meets privacy rules. To use: turn on the switch, type the notice and your policy-page link, then choose which side it appears on.', 'horse-tools' ); ?></span></div>

@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_notify_options; ?>
-			<h2><?php _e('BLOCKER', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="ti ti-shield-half"></i> <?php _e('Browser ad-block notification', 'horse-tools') ?></h3>
 				<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'Spots visitors who have an ad-blocker turned on and shows them a message asking to switch it off. To use: turn on the switch, type a title and message, then pick the button colours below.', 'horse-tools' ); ?></span></div>

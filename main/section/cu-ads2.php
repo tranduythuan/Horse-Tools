@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_ads_options; ?>
-			<h2><?php _e('ADSENSE', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="ti ti-ad"></i> <?php _e('Set up Adsense ads', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'ads-sense1', __( 'Enable Adsense', 'horse-tools' ), array(

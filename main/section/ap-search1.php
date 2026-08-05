@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_search_options; ?>
-			<h2><?php _e('HORSE SEARCH', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="ti ti-search"></i> <?php _e('Quick search', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'main-search1', __( 'Enable quick search', 'horse-tools' ), array(

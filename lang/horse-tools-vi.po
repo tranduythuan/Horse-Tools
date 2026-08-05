@@ -6565,3 +6565,15 @@ msgstr "Câu trả lời dài nhất được gắn (ký tự)"
 
 msgid "A longer answer is shortened in the schema only — your post is never touched. Leave empty to use 500."
 msgstr "Câu trả lời dài hơn sẽ được rút gọn CHỈ trong schema — bài viết của bạn không hề bị đụng tới. Để trống thì dùng mức 500."
+
+msgid "SAVE FONT SETTINGS"
+msgstr "LƯU CÀI ĐẶT FONT"
+
+msgid "Fonts have their own Save button below. The Save at the bottom of this screen does not write font settings."
+msgstr "Phần font có nút Lưu riêng bên dưới. Nút Lưu ở cuối màn hình này không ghi cài đặt font."
+
+msgid "Submit URLs"
+msgstr "Gửi đường dẫn"
+
+msgid "Google API settings"
+msgstr "Cài đặt Google API"

@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_shortcode_options; ?>
-			<h2><?php _e('SNIPPETS', 'horse-tools'); ?></h2>
 			<div class="ht-card ht-snip" data-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_snip' ) ); ?>" data-ajax="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>">
 			  <h3><i class="ti ti-file-code"></i> <?php _e('Custom shortcodes (snippets)', 'horse-tools') ?></h3>
 				<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('Create a named block of HTML/CSS/JS and drop it anywhere with [ht-snippet name="your-name"]. Placeholders {{param}} or %%param%% are filled from the shortcode’s attributes, plus built-ins: currentyear, currentdate, postid, posttitle, sitename, siteurl.', 'horse-tools'); ?></p>

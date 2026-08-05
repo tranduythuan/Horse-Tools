@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_notify_options; ?>
-			<h2><?php _e('POPUP', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="ti ti-app-window"></i> <?php _e('Create an outstanding popup', 'horse-tools') ?></h3>
 				<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'Shows an eye-catching popup in the middle of the screen when someone opens your site — great for a sale, an announcement or a poster. To use: turn on the switch, pick a layout below, add an image / title / content, then set how many hours before it shows again.', 'horse-tools' ); ?></span></div>

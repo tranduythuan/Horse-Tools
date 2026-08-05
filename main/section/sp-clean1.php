@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_clean_options; ?>
-			<h2><?php _e( 'CONTENT', 'horse-tools' ); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="ti ti-trash"></i> <?php _e( 'Optimize deletion of content in the database', 'horse-tools' ); ?></h3>
 				<div class="ht-del">

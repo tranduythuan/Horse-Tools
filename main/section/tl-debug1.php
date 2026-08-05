@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_debug_options; ?>
-			<h2><?php _e('DEBUG', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="ti ti-bug-off"></i> <?php _e('Debug settings', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'debug1', __( 'Enable WP_DEBUG', 'horse-tools' ), array(

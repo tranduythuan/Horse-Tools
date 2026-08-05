@@ -848,6 +848,11 @@ $vi = array(
     'Horse Tools is up to date (version %s).' => 'Horse Tools đang ở bản mới nhất (phiên bản %s).',
     'All-in-one WordPress toolkit: contact chat, shortcodes, security & privacy, media optimisation, SEO, cleanup and more — in one plugin.' => 'Bộ công cụ WordPress tất-cả-trong-một: nút chat liên hệ, shortcode, bảo mật & quyền riêng tư, tối ưu media, SEO, dọn dẹp và hơn thế — trong một plugin.',
     'See the GitHub release page for details.' => 'Xem trang phát hành trên GitHub để biết chi tiết.',
+	'SAVE FONT SETTINGS' => 'LƯU CÀI ĐẶT FONT',
+	'Fonts have their own Save button below. The Save at the bottom of this screen does not write font settings.' => 'Phần font có nút Lưu riêng bên dưới. Nút Lưu ở cuối màn hình này không ghi cài đặt font.',
+	'Submit URLs' => 'Gửi đường dẫn',
+	'Google API settings' => 'Cài đặt Google API',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

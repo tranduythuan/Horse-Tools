@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_shortcode_options; ?>
-			<h2><?php _e('ICON', 'horse-tools'); ?></h2>
 			<div class="ht-card">
 			  <h3><i class="ti ti-mood-smile"></i> <?php _e('Insert icons anywhere with a shortcode', 'horse-tools') ?></h3>
 				<?php horsetools_toggle( 'shortcode-s5', __( 'Enable the [ht-icon] shortcode', 'horse-tools' ), array(

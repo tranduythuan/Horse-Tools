@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_clean_options; ?>
-			<h2><?php _e( 'MEDIA', 'horse-tools' ); ?></h2>
 			<div class="ht-card">
 			   <h3><i class="ti ti-photo-off"></i> <?php _e( 'Find and delete all 404 images in media', 'horse-tools' ); ?></h3>
 				<div class="ht-del">

@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_redirects_options; ?>
-			<h2><?php _e('Redirects (301)', 'horse-tools'); ?></h2>
 			<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'When a URL changes or an old link should point somewhere new, this sends visitors (and Google) straight to the right page instead of a “not found” error — so you don’t lose traffic.', 'horse-tools' ); ?></span></div>
 			<div class="ht-card">
 			  <h3><i class="ti ti-compass"></i> <?php _e('Redirect 301 whole page', 'horse-tools') ?></h3>

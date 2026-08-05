@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_redirects_options; ?>
-			<h2><?php _e('Maintenance (503)', 'horse-tools'); ?></h2>
 			<div class="ht-howto"><i class="ti ti-info-circle"></i><span><?php _e( 'Temporarily close the site with a “under maintenance” notice while you make changes. You (and other logged-in admins) still see the site normally, so you can work in peace.', 'horse-tools' ); ?></span></div>
 			<div class="ht-card">
 			  <h3><i class="ti ti-bug"></i> <?php _e('Maintenance mode for developers (503)', 'horse-tools') ?></h3>

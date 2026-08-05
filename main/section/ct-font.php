@@ -9,6 +9,10 @@
  * chrome so it fits inside the tab.
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
+printf(
+	'<p class="ht-note"><i class="ti ti-bulb"></i> %s</p>',
+	esc_html__( 'Fonts have their own Save button below. The Save at the bottom of this screen does not write font settings.', 'horse-tools' )
+);
 if ( function_exists( 'horsetools_font_options_page' ) ) {
 	horsetools_font_options_page( true );
 }

@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_gindex_options; ?>
-			<h2><?php _e('INDEX', 'horse-tools'); ?></h2>
+			<h3>Submit URLs</h3>
 			<div class="ht-card">
 			  <h3><i class="ti ti-hand-finger"></i> <?php _e('Enter manually', 'horse-tools') ?></h3>
 			    

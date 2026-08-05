@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.82
+Stable tag: 1.2.83
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.83 =
+* **Fixed: the Appearance screen had two identical Save buttons, and the big one did not save fonts.** Editing a font setting and pressing the Save at the bottom of the screen looked like it worked and wrote nothing. The font section now says so and its own button is labelled for what it saves.
+* **Removed the shouty duplicate headings inside tabs.** Every screen folded into a tab kept its old page title as a heading, so opening the Popup tab showed 'POPUP' again, and several disagreed with the tab above them — 'Index now' opened onto 'INDEX', 'Table of contents' onto 'TOC', 'Site search' onto 'HORSE SEARCH'. The tab already names the section.
 
 = 1.2.82 =
 * **Fixes the Fonts tab opening blank, and the same fault waiting in Backup.** Both screens keep their own internal tabs, and a tab inside a tab is hidden by the tab switcher — so the tab opened at no height at all with everything present but invisible. Their inner sections now simply stack.
@@ -598,6 +602,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.83 =
+Fixes two Save buttons on Appearance and removes duplicate headings inside tabs.
 
 = 1.2.82 =
 Fixes the Fonts tab opening blank. Update if you installed 1.2.81.
