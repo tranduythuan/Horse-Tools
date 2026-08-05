@@ -80,6 +80,73 @@
 		}
 	}());
 
+	/**
+	 * A running log on the phone itself, in debug mode only.
+	 *
+	 * "It seems to work sometimes" is not something either side can act on, and
+	 * GA4 is a poor instrument for answering it: the report is minutes behind, it
+	 * is filtered by ad blockers, and a click that never left the phone looks
+	 * exactly like one that left and was dropped later. This records what
+	 * happened at the moment of the click — was the event confirmed dispatched
+	 * before the link opened, and how long it took — and keeps it across the
+	 * navigation, so tapping a button and coming back shows the answer.
+	 */
+	var LOG_KEY = 'htDebugLog';
+
+	function logLine(text) {
+		if (!DEBUG) { return; }
+		try {
+			var lines = JSON.parse(sessionStorage.getItem(LOG_KEY) || '[]');
+			lines.push(text);
+			sessionStorage.setItem(LOG_KEY, JSON.stringify(lines.slice(-12)));
+		} catch (e) {}
+		renderLog();
+	}
+
+	function renderLog() {
+		if (!DEBUG || !document.body) { return; }
+		var lines;
+		try {
+			lines = JSON.parse(sessionStorage.getItem(LOG_KEY) || '[]');
+		} catch (e) {
+			lines = [];
+		}
+		var box = document.getElementById('ht-debug-log');
+		if (!box) {
+			box = document.createElement('div');
+			box.id = 'ht-debug-log';
+			box.setAttribute('style', 'position:fixed;left:8px;bottom:8px;z-index:2147483647;' +
+				'max-width:min(92vw,420px);max-height:45vh;overflow:auto;background:#101418;color:#d7e2ea;' +
+				'font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;padding:8px 10px;border-radius:8px;' +
+				'box-shadow:0 4px 18px rgba(0,0,0,.4);opacity:.94');
+			document.body.appendChild(box);
+		}
+		box.textContent = '';
+		var head = document.createElement('div');
+		head.setAttribute('style', 'color:#7fd1a8;margin-bottom:4px');
+		head.textContent = 'Horse Tools — contact tracking (ht_debug=1)';
+		box.appendChild(head);
+		if (!lines.length) {
+			var none = document.createElement('div');
+			none.textContent = 'No contact click recorded yet. Tap a button.';
+			box.appendChild(none);
+		}
+		lines.forEach(function (line) {
+			var row = document.createElement('div');
+			if (line.indexOf('NOT confirmed') > -1) { row.setAttribute('style', 'color:#ff9b9b'); }
+			row.textContent = line;
+			box.appendChild(row);
+		});
+	}
+
+	if (DEBUG) {
+		if ('loading' === document.readyState) {
+			document.addEventListener('DOMContentLoaded', renderLog);
+		} else {
+			renderLog();
+		}
+	}
+
 	function schemeOf(href) {
 		return href.slice(0, href.indexOf(':') + 1).toLowerCase();
 	}
@@ -184,10 +251,22 @@
 			!ev.metaKey && !ev.ctrlKey && !ev.shiftKey && !ev.altKey &&
 			a.target !== '_blank';
 
+		var started = new Date();
+		var dispatched = false;
+		var dispatchedAt = 0;
 		var released = false;
 		var release = function () {
 			if (released) { return; }
 			released = true;
+			if (DEBUG) {
+				logLine(
+					started.toTimeString().slice(0, 8) + '  ' + name + '  ' +
+					(dispatched
+						? 'sent in ' + dispatchedAt + 'ms'
+						: 'NOT confirmed after ' + (new Date() - started) + 'ms') +
+					(hold ? '' : ' (link not held)')
+				);
+			}
 			if (hold) {
 				window.location.href = href;
 			}
@@ -198,19 +277,25 @@
 		}
 
 		if (typeof window.gtag === 'function') {
+			var markSent = function () {
+				dispatched = true;
+				dispatchedAt = new Date() - started;
+			};
 			if (hold) {
 				ev.preventDefault();
 				var floorPassed = false;
-				var dispatched = false;
 				setTimeout(function () {
 					floorPassed = true;
 					if (dispatched) { release(); }
 				}, HOLD_FLOOR);
 				params.event_callback = function () {
-					dispatched = true;
+					markSent();
 					if (floorPassed) { release(); }
 				};
 				params.event_timeout = HOLD_CAP;
+				setTimeout(release, HOLD_CAP);
+			} else if (DEBUG) {
+				params.event_callback = markSent;
 				setTimeout(release, HOLD_CAP);
 			}
 			// One route only. A site can have gtag() and Tag Manager at once,

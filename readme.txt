@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.2 =
+* **A running log on the phone itself, so "it seems flaky" can be checked instead of guessed.** Open the site with ?ht_debug=1 and a small panel appears in the corner. Every contact button you tap adds a line: the time, the event name, and either how many milliseconds it took to be confirmed sent, or — in red — that it was never confirmed. The log survives the jump to the dialler or the chat app, so tapping a button and coming back shows what happened to it. Analytics is a poor instrument for this question: the report is minutes behind, ad blockers filter it, and a click that never left the phone looks identical to one that left and was dropped later. This measures at the moment of the click. It appears only with the debug flag on; ordinary visitors never see it and nothing extra is loaded for them.
 
 = 1.3.1 =
 * **Fixed: Zalo clicks were lost, and phone clicks arrived only sometimes.** The link was held back until the event had been sent, but only for the schemes that name an app — tel:, sms:, mailto:, viber:. Zalo and Messenger links look like ordinary web links and were treated as such, when on a phone they hand over to the app exactly the same way. Messenger got away with it because Facebook serves a real page before handing over, which leaves time for the event to go; Zalo hands over at once, so the event never left. Every contact link is now held, unless it opens in a new tab, where the page survives and there is nothing to protect against.
