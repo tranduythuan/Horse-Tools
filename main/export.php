@@ -566,4 +566,5 @@ function horsetools_export_options_page() {
 function horsetools_export_options_link() {
 	add_submenu_page( 'horsetools-options', 'Backup', '<i class="ti ti-file-export" style="width:20px;"></i> ' . __( 'Backup', 'horse-tools' ), 'manage_options', 'horsetools-export-options', 'horsetools_export_options_page' );
 }
+
 add_action( 'admin_menu', 'horsetools_export_options_link' );

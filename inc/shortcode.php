@@ -1418,7 +1418,8 @@ function horsetools_tables_menu() {
 // screen becomes unreachable — the menu shows a bare "horsetools-tables" href
 // and opening admin.php?page=horsetools-tables says "you are not allowed".
 // Registering after the parent (priority 10) fixes both.
-add_action( 'admin_menu', 'horsetools_tables_menu', 20 );
+// Menu removed in 1.2.79: the manager is now the Tables tab on Content.
+// add_action( 'admin_menu', 'horsetools_tables_menu', 20 );
 
 function horsetools_tables_page() {
 	$tables = horsetools_tables_get();

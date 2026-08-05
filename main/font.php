@@ -204,6 +204,7 @@ function horsetools_font_options_page() {
 function horsetools_font_options_link() {
 	add_submenu_page ('horsetools-options', 'Font', '<i class="ti ti-book" style="width:20px;"></i> '. __('Font', 'horse-tools'), 'manage_options', 'horsetools-font-options', 'horsetools_font_options_page');
 }
+
 add_action('admin_menu', 'horsetools_font_options_link');
 function horsetools_font_register_settings() {
 	register_setting( 'horsetools_fontset_settings_group', 'horsetools_fontset_settings', array( 'sanitize_callback' => 'horsetools_sanitize_font' ) );

@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.78
+Stable tag: 1.2.79
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.79 =
+* **Shortcodes and the table manager move onto the Content screen.** The six shortcode groups become tabs, and the stored-tables manager joins them. Two more menu entries gone.
+* A tab can now hold a screen that has forms of its own — a file upload, a download, a list with its own buttons. Those render outside the shared form, because a form inside a form is invalid and browsers drop the inner one along with whatever it was meant to submit.
+* Fonts and Backup stay where they are for now. Both do work before drawing anything — reading a deleted font, building an export file, preparing an import preview — and that work lives above the markup, so lifting the markup alone would leave the tab looking empty. They need their own change rather than a rushed one here.
 
 = 1.2.78 =
 * **Fixes the cleanup schedule tab, which 1.2.77 shipped empty.** The schedule needs a list of what can be cleaned and a list of frequencies, both of which were built by the screen it was lifted out of, so the tab drew its heading and then nothing. It also carried a second form and Save button of its own, inside the screen's form, which browsers discard.
@@ -582,6 +587,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.79 =
+Shortcodes and the table manager become tabs on the Content screen.
 
 = 1.2.78 =
 Fixes the cleanup schedule tab, which shipped empty in 1.2.77.

@@ -71,6 +71,10 @@ function horsetools_group_render( array $tabs ) {
 				if ( ! empty( $tab['module'] ) && ! horsetools_module_on( $tab['module'] ) ) {
 					continue;
 				}
+				// Standalone tabs are rendered after the form, not here.
+				if ( ! empty( $tab['raw'] ) ) {
+					continue;
+				}
 				printf(
 					'<div class="sotab-box htbox" id="%s"%s><div class="ht-card">',
 					esc_attr( $id ),
@@ -114,6 +118,27 @@ function horsetools_group_render( array $tabs ) {
 			</div>
 				<button id="ht-save-fast" type="submit"><i class="ti ti-device-floppy"></i></button>
 			</form>
+			<?php
+			// Standalone tabs render after the form closes, because they bring
+			// forms of their own — a file upload, a download, a list screen with
+			// its own actions. A form inside a form is invalid markup and browsers
+			// drop the inner one silently, taking its upload with it. Tab
+			// switching still works: httab() finds .htbox anywhere on the page,
+			// not only inside the form.
+			foreach ( $tabs as $id => $tab ) {
+				if ( empty( $tab['raw'] ) ) { continue; }
+				if ( ! empty( $tab['module'] ) && ! horsetools_module_on( $tab['module'] ) ) { continue; }
+				printf( '<div class="sotab-box htbox" id="%s" style="display:none">', esc_attr( $id ) );
+				foreach ( (array) $tab['files'] as $file ) {
+					try { include( HORSETOOLS_DIR . $file ); } catch ( Throwable $e ) {
+						printf( '<p class="ht-note ht-note-red">%s<br><code>%s</code></p>',
+							esc_html__( 'This section could not be displayed. The rest of the screen still works.', 'horse-tools' ),
+							esc_html( $e->getMessage() ) );
+					}
+				}
+				echo '</div>';
+			}
+			?>
 		</div>
 
 	  </div>
@@ -213,6 +238,8 @@ function horsetools_group_legacy_redirect() {
 		'horsetools-code-options'      => 'horsetools-tools-options',
 		'horsetools-debug-options'     => 'horsetools-tools-options',
 		'horsetools-clean-options'     => 'horsetools-speed-options',
+		'horsetools-shortcode-options' => 'horsetools-content-options',
+		'horsetools-tables'            => 'horsetools-content-options',
 	);
 	$page = isset( $_GET['page'] ) ? sanitize_key( wp_unslash( $_GET['page'] ) ) : '';
 	if ( isset( $moved[ $page ] ) && current_user_can( 'manage_options' ) ) {
