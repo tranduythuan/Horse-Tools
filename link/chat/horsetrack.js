@@ -99,16 +99,19 @@
 		// tapping tel: hands the phone to the dialler immediately and an ordinary
 		// request is cancelled in flight, losing exactly the clicks that matter
 		// most.
+		// One route only. A site can have gtag() and Tag Manager at once, both
+		// feeding the same property, and sending to both would count every
+		// contact twice. gtag() wins because it reaches GA4 by itself; the
+		// dataLayer push needs a tag and trigger built in Tag Manager first.
 		if (typeof window.gtag === 'function') {
 			window.gtag('event', name, {
 				placement: placement,
 				label: label,
 				transport_type: 'beacon'
 			});
+			return;
 		}
 
-		// Also for Tag Manager, where gtag() may not exist at all. Harmless when
-		// nothing is listening.
 		if (window.dataLayer && typeof window.dataLayer.push === 'function') {
 			window.dataLayer.push({
 				event: name,

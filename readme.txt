@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.93
+Stable tag: 1.2.94
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.94 =
+* **Fixed a double-count risk in the new click measurement.** A site can load both gtag and Tag Manager against the same property, and the click was being sent down both routes. It now takes one route only.
+* **Tag Manager users are told what they still have to do.** Tag Manager does not forward events on its own, so the measurement screen now shows the three steps needed to build the tag — otherwise the switch looks on and nothing ever arrives.
+* Analytics pasted into the plugin's own code boxes is recognised too, which is an ordinary way to install GA4 and was previously reported as "not found".
 
 = 1.2.93 =
 * **Fixed: the measurement screen said no analytics was installed on sites that plainly have it.** It checked by asking the server to open its own home page, and many hosts block exactly that — so a failed check was reported as a definite "not found". It now reads the ID that Site Kit, MonsterInsights or a Tag Manager plugin has already saved, which needs no network at all, and when it genuinely cannot look it says so instead of guessing.
@@ -639,6 +644,9 @@ Design:
 * New brand mark, replacing the original author's logo.
 
 == Upgrade Notice ==
+
+= 1.2.94 =
+Fixes a double-count risk and explains the extra step Tag Manager users need.
 
 = 1.2.93 =
 Fixes the measurement screen wrongly reporting that no analytics is installed.

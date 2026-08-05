@@ -44,6 +44,16 @@ $ht_track = function_exists( 'horsetools_track_detect' ) ? horsetools_track_dete
 			<p class="ht-note"><i class="ti ti-bulb"></i>
 				<?php esc_html_e( 'Optional: in Admin → Events, switch on "Mark as key event" for the channels that matter to you. They then appear in the acquisition reports, so you can see which traffic source produces contacts, and they can be imported into Google Ads as a conversion.', 'horse-tools' ); ?>
 			</p>
+			<?php if ( 'GTM' === substr( (string) $ht_track['id'], 0, 3 ) ) : ?>
+			<h4><?php _e( 'You are using Tag Manager — one setup step is required', 'horse-tools' ) ?></h4>
+			<p class="ht-note ht-note-red"><i class="ti ti-alert-triangle"></i>
+				<?php esc_html_e( 'Tag Manager does not pass events on by itself. The click is placed in the dataLayer and stops there until you build a tag for it, so nothing reaches Analytics until this is done once.', 'horse-tools' ); ?>
+			</p>
+			<p class="ht-note"><i class="ti ti-bulb"></i>
+				<?php esc_html_e( '1. Triggers → New → Custom Event, event name ^contact_ with "use regex matching" ticked. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Submit and publish the container.', 'horse-tools' ); ?>
+			</p>
+			<?php endif; ?>
+
 			<p class="ht-note"><i class="ti ti-alert-triangle"></i>
 				<?php esc_html_e( 'Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see.', 'horse-tools' ); ?>
 			</p>

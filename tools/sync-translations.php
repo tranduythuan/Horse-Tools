@@ -875,6 +875,10 @@ $vi = array(
 
 	'Could not check: this server was unable to open your own home page, which many hosts block. That says nothing about whether analytics is installed — if you have Site Kit or another GA4 plugin, switch this on and check the result in Analytics under Admin → DebugView.' => 'Chưa kiểm được: máy chủ không tự mở được trang chủ của chính nó, nhiều nhà cung cấp hosting chặn việc này. Điều đó KHÔNG có nghĩa là site chưa có analytics — nếu anh đang dùng Site Kit hay plugin GA4 khác thì cứ bật lên, rồi kiểm kết quả trong Analytics ở Quản trị → DebugView.',
 
+	'You are using Tag Manager — one setup step is required' => 'Anh đang dùng Tag Manager — cần cấu hình một bước',
+	'Tag Manager does not pass events on by itself. The click is placed in the dataLayer and stops there until you build a tag for it, so nothing reaches Analytics until this is done once.' => 'Tag Manager không tự chuyển tiếp sự kiện. Lượt bấm được đưa vào dataLayer rồi nằm im ở đó cho tới khi anh tạo tag cho nó — chưa làm thì Analytics không nhận được gì.',
+	'1. Triggers → New → Custom Event, event name ^contact_ with "use regex matching" ticked. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Submit and publish the container.' => '1. Triggers → New → Custom Event, tên sự kiện ^contact_ và tích "use regex matching". 2. Tags → New → Google Analytics GA4 Event, trỏ tới mã đo lường của anh, Event Name đặt là {{Event}} để mỗi kênh giữ tên riêng, dùng trigger ở bước 1. 3. Submit rồi publish container.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

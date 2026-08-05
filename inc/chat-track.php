@@ -86,7 +86,9 @@ function horsetools_track_detect() {
  *
  * Names are matched rather than listed, because every one of these plugins has
  * renamed its options at some point and a hard-coded list quietly stops finding
- * anything after an update.
+ * anything after an update. The plugin's own code boxes are included because
+ * pasting the gtag snippet there is a perfectly ordinary way to install GA4,
+ * and the ID is then sitting in our own option.
  *
  * @return array{found:bool, id:string, how:string}
  */
@@ -99,6 +101,7 @@ function horsetools_track_detect_stored() {
 		    OR option_name LIKE '%monsterinsights%'
 		    OR option_name LIKE '%analytics%'
 		    OR option_name LIKE '%gtm%'
+		    OR option_name = 'horsetools_code_settings'
 		 LIMIT 60"
 	); // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- one read, cached in a transient by the caller.
 
