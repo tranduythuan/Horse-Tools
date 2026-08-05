@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.2.97
+Stable tag: 1.2.98
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.2.98 =
+* **The call button is instant again.** Yesterday's fix held the link back until the event had been sent, which worked but was felt: a third of a second before the dialler appears makes a button feel broken, and a measurement feature has no business making the thing it measures worse. The event is now sent when the button is pressed rather than when the press completes — the 50–300ms between the two is free time, so the request is already on its way before the dialler takes over and nothing has to be held at all. Nothing is sent twice, and a keyboard activation, where there is no press to hook, still falls back to the old reliable-but-slower path.
 
 = 1.2.97 =
 * **Fixed: phone clicks were never recorded.** Every other channel reported correctly, which is what made this hard to see. Tapping a phone number hands the device straight to the dialler and suspends the page — and GA4 does not send an event the moment gtag is called, it collects events for a short while and sends them together. On an ordinary link that batch is flushed as the page unloads; on a tel: link the page never unloads, it freezes, and the click that matters most is the one that never arrives. The link is now held for as long as it takes the event to leave, and no longer: a hard 350ms timeout opens the dialler regardless, because a plugin that turns a working phone number into a dead one is far worse than a missing statistic. Same fix for SMS and e-mail links.
