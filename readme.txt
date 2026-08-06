@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.11
+Stable tag: 1.3.12
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.12 =
+* **A snippet body is stored exactly as you typed it again.** Snippets became one record each in 1.3.8, and a record is a post — which means WordPress ran the body through the same filters it runs a blog post through. On most sites those filters change nothing and nobody would ever notice. On a site where "correct invalidly nested XHTML" is switched on, on multisite, or with another plugin filtering saved content, they would: an unclosed tag gets closed, PHP gets rewritten. That matters most for PHP snippets, which are signed character by character and refuse to run — reporting themselves as tampered with — if the body comes back even slightly different. The body is now checked after saving and put back byte for byte if anything touched it. Sites where nothing touches it pay one cached read and no extra write.
+* Found by checking rather than by a report; the sites I can test on were not affected, because a single-site administrator is allowed to save unfiltered HTML.
 
 = 1.3.11 =
 * **"Detect my chat ID" no longer shows you everyone else's Telegram.** Setting up Telegram recovery used to list every recent chat the site's bot had received, for you to pick yours out of — which on a shop, where customers have accounts, meant any logged-in user could read the names, @usernames and chat IDs of everyone else who had messaged it. You are now given a short pairing code to send to the bot, and the site hands back only the chat that sent it. Nobody learns anybody else's chat, and it is easier too: nothing to pick out of a list of people who might all be called the same thing.

@@ -77,6 +77,10 @@ function get_page_by_path( $slug, $out = OBJECT, $type = 'post' ) {
 }
 function get_post( $id ) { return $GLOBALS['posts'][ $id ] ?? null; }
 
+// Set to a callable to imitate a site whose content_save_pre filters rewrite
+// what is saved — kses without unfiltered_html, balanceTags, another plugin.
+$GLOBALS['mangle'] = null;
+
 function wp_insert_post( $args, $err = false ) {
 	if ( ! empty( $args['ID'] ) ) {
 		$p = $GLOBALS['posts'][ $args['ID'] ];
@@ -88,8 +92,29 @@ function wp_insert_post( $args, $err = false ) {
 	foreach ( array( 'post_title', 'post_name', 'post_excerpt', 'post_content', 'post_type', 'post_status' ) as $f ) {
 		if ( isset( $args[ $f ] ) ) { $p->$f = $args[ $f ]; }
 	}
+	if ( $GLOBALS['mangle'] ) {
+		$p->post_content = call_user_func( $GLOBALS['mangle'], $p->post_content );
+	}
 	return $p->ID;
 }
+function get_post_field( $field, $id, $context = 'display' ) {
+	$p = get_post( $id );
+	return $p ? $p->$field : '';
+}
+function clean_post_cache( $id ) {}
+
+/** The bypass writes straight to the posts table. */
+class HT_Fake_WPDB {
+	public $posts = 'wp_posts';
+	public function update( $table, $data, $where ) {
+		$p = get_post( $where['ID'] );
+		foreach ( $data as $k => $v ) { $p->$k = $v; }
+		$GLOBALS['repairs']++;
+		return 1;
+	}
+}
+$GLOBALS['wpdb']    = new HT_Fake_WPDB();
+$GLOBALS['repairs'] = 0;
 function wp_delete_post( $id, $force = false ) {
 	unset( $GLOBALS['posts'][ $id ], $GLOBALS['meta'][ $id ], $GLOBALS['terms'][ $id ] );
 	return true;
@@ -167,6 +192,30 @@ function get_posts( $args ) {
 }
 
 require_once dirname( __DIR__ ) . '/inc/snippet-store.php';
+
+// The two functions that decide whether a PHP snippet is allowed to run, lifted
+// from the real file. Deliberately only these two: horsetools_php_exec() itself
+// contains the eval() that is the feature, and a scratch file containing eval()
+// is the exact shape antivirus heuristics call a webshell. Neither of these
+// touches eval, and between them they are the gate.
+function wp_salt( $scheme = 'auth' ) { return 'harness-salt'; }
+$php_src = '';
+foreach ( array( 'horsetools_php_sign', 'horsetools_php_signature_ok' ) as $fn ) {
+	$code = file_get_contents( dirname( __DIR__ ) . '/inc/php-snippet.php' );
+	preg_match( '/function\s+' . $fn . '\s*\(/', $code, $m, PREG_OFFSET_CAPTURE );
+	$start = strpos( $code, '{', $m[0][1] );
+	$d     = 0;
+	for ( $j = $start, $len = strlen( $code ); $j < $len; $j++ ) {
+		if ( '{' === $code[ $j ] ) { $d++; } elseif ( '}' === $code[ $j ] ) {
+			$d--;
+			if ( 0 === $d ) { $php_src .= substr( $code, $m[0][1], $j - $m[0][1] + 1 ) . "\n"; break; }
+		}
+	}
+}
+$php_tmp = __DIR__ . '/_extracted-php-sig.php';
+file_put_contents( $php_tmp, "<?php\n" . $php_src );
+require $php_tmp;
+unlink( $php_tmp );
 
 /* --------------------------------------------------------------- the tests */
 
@@ -284,7 +333,39 @@ eq( count( $GLOBALS['posts'] ), 2, 'the missing half is created' );
 ok( ! isset( $GLOBALS['opt']['horsetools_snippets'] ), 'and the migration completes rather than retrying forever' );
 eq( get_option( 'horsetools_snip_migrated' ), 1, 'marked done' );
 
-echo "\n10. Reading one snippet costs one lookup, not the whole store\n";
+echo "\n10. A body survives a site whose filters rewrite post content\n";
+// PHP snippets are signed byte for byte, and wp_insert_post() puts post_content
+// through content_save_pre — kses, balanceTags, other plugins. If any of them
+// change one character the snippet stops running and calls itself tampered
+// with. This is that site.
+$php_body = '<?php if ( $a < 5 && $b > 3 ) { echo "<div class=\'x\'>hi"; } ?>';
+$GLOBALS['repairs'] = 0;
+$GLOBALS['mangle']  = function ( $c ) {
+	// Roughly what kses + balanceTags between them would do to that line.
+	return str_replace( array( '<?php', '?>', '<div class=\'x\'>' ), array( '', '', '<div class="x"></div>' ), $c );
+};
+horsetools_snip_write( 'signed-php', array( 'title' => 'Signed', 'content' => $php_body, 'on' => 1, 'php' => 1 ) );
+eq( horsetools_snip_read( 'signed-php' )['content'], $php_body, 'body comes back byte for byte despite the filters' );
+ok( $GLOBALS['repairs'] > 0, 'and it took the repair to do it — the filters really did bite' );
+
+// Not a hand-rolled HMAC — the actual gate horsetools_php_exec() consults
+// before it will run anything. This is the whole question: after the move to
+// posts, does a signed body still pass its own signature check?
+$signed = horsetools_snip_read( 'signed-php' );
+$signed['sig'] = horsetools_php_sign( $php_body );          // signed at save time
+ok( horsetools_php_signature_ok( $signed ), 'the real signature gate accepts it — the snippet would still run' );
+$tampered = $signed;
+$tampered['content'] .= ' ';
+ok( ! horsetools_php_signature_ok( $tampered ), 'and still rejects a body changed by one character' );
+
+$GLOBALS['mangle']  = null;
+$GLOBALS['repairs'] = 0;
+horsetools_snip_write( 'clean-php', array( 'title' => 'Clean', 'content' => $php_body, 'on' => 1 ) );
+eq( $GLOBALS['repairs'], 0, 'on a site that changes nothing, no extra write happens' );
+horsetools_snip_remove( 'signed-php' );
+horsetools_snip_remove( 'clean-php' );
+
+echo "\n11. Reading one snippet costs one lookup, not the whole store\n";
 $GLOBALS['q'] = 0;
 horsetools_snip_read( 'hello' );
 horsetools_snip_read( 'bulk-9' );

@@ -239,8 +239,9 @@ function horsetools_snip_write( $slug, array $data ) {
 		'post_name'    => $slug,
 		'post_title'   => isset( $data['title'] ) ? (string) $data['title'] : $slug,
 		'post_excerpt' => isset( $data['desc'] ) ? (string) $data['desc'] : '',
-		// Intentionally raw: snippet bodies are HTML/JS/PHP written on a
-		// manage_options screen, the same trust model as unfiltered_html.
+		// Stored raw: snippet bodies are HTML/JS/PHP written on a manage_options
+		// screen, the same trust model as unfiltered_html. See the repair below
+		// — wp_insert_post() does not honour that on its own.
 		'post_content' => isset( $data['content'] ) ? (string) $data['content'] : '',
 	);
 	if ( $post ) {
@@ -249,6 +250,30 @@ function horsetools_snip_write( $slug, array $data ) {
 	$id = wp_insert_post( wp_slash( $args ), true );
 	if ( is_wp_error( $id ) || ! $id ) {
 		return false;
+	}
+
+	// wp_insert_post() runs post_content through content_save_pre. WordPress
+	// hangs kses off that for anyone without unfiltered_html, and balanceTags
+	// when "correct invalidly nested XHTML" is switched on; plugins hang their
+	// own filters there too. Any of them will happily rewrite PHP or an
+	// unclosed tag — and a PHP snippet is signed byte for byte, so a body that
+	// comes back one character different stops running and reports itself as
+	// tampered with. The store used to be a single option, which none of that
+	// touched, so this is a hazard the move to posts introduced.
+	//
+	// Rather than tear filters off globally and hope nothing else was relying
+	// on them, check what actually landed and put the exact bytes back if
+	// something changed them. Normally nothing has, and this costs one cached
+	// read.
+	$stored = get_post_field( 'post_content', $id, 'raw' );
+	if ( $stored !== $args['post_content'] ) {
+		global $wpdb;
+		$wpdb->update( // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- the point is to bypass the filters wp_insert_post applies.
+			$wpdb->posts,
+			array( 'post_content' => $args['post_content'] ),
+			array( 'ID' => $id )
+		);
+		clean_post_cache( $id );
 	}
 	foreach ( horsetools_snip_meta_keys() as $key ) {
 		if ( array_key_exists( $key, $data ) ) {
