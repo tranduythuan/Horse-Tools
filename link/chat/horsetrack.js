@@ -261,6 +261,10 @@
 		var dispatched = false;
 		var dispatchedAt = 0;
 		var released = false;
+		// Which of the two routes this click actually took. Reported rather than
+		// guessed: the settings screen has to work it out in advance from the
+		// page and the container, and this is the one place that simply knows.
+		var route = '';
 		var release = function () {
 			if (released) { return; }
 			released = true;
@@ -270,6 +274,7 @@
 					(dispatched
 						? 'sent in ' + dispatchedAt + 'ms'
 						: 'NOT confirmed after ' + (new Date() - started) + 'ms') +
+					'  ' + route +
 					(hold ? '' : ' (link not held)')
 				);
 			}
@@ -283,6 +288,7 @@
 		}
 
 		if (typeof window.gtag === 'function') {
+			route = 'via gtag';
 			var markSent = function () {
 				dispatched = true;
 				dispatchedAt = new Date() - started;
@@ -313,6 +319,7 @@
 		}
 
 		if (window.dataLayer && typeof window.dataLayer.push === 'function') {
+			route = 'via dataLayer — needs a GTM tag';
 			if (hold) {
 				ev.preventDefault();
 				setTimeout(release, HOLD_CAP);

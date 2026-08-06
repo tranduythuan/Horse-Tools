@@ -60,31 +60,36 @@ function horsetools_track_detect() {
 	// no network at all and cannot be wrong in that direction.
 	$out = horsetools_track_detect_stored();
 
-	if ( ! $out['found'] ) {
-		$res = wp_remote_get(
-			home_url( '/' ),
-			array(
-				'timeout'     => 8,
-				'sslverify'   => false,
-				'redirection' => 3,
-				// A plain WordPress user agent is what optimisers and bot filters
-				// serve a stripped page to, and a stripped page has no tag in it.
-				'user-agent'  => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0 Safari/537.36',
-			)
-		);
-		$body = is_wp_error( $res ) ? '' : wp_remote_retrieve_body( $res );
+	// The page is read whether or not an ID was found in the options, because it
+	// answers a second question the options cannot: which of the two routes a
+	// click will take. See horsetools_track_route().
+	$res = wp_remote_get(
+		home_url( '/' ),
+		array(
+			'timeout'     => 8,
+			'sslverify'   => false,
+			'redirection' => 3,
+			// A plain WordPress user agent is what optimisers and bot filters
+			// serve a stripped page to, and a stripped page has no tag in it.
+			'user-agent'  => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0 Safari/537.36',
+		)
+	);
+	$body = is_wp_error( $res ) ? '' : wp_remote_retrieve_body( $res );
+	$ok   = ! is_wp_error( $res )
+		&& 200 === (int) wp_remote_retrieve_response_code( $res )
+		// A 200 is not proof we reached the site. On shared hosting a loopback
+		// often lands on the default vhost, a parking page or a bot-check page,
+		// all of which answer 200 with no tag — and reading that as "you have no
+		// analytics" is the confident wrong answer this screen must never give.
+		&& horsetools_track_is_own_page( $body );
 
-		if ( is_wp_error( $res ) || 200 !== (int) wp_remote_retrieve_response_code( $res ) ) {
-			// Say so, rather than claiming the tag is absent.
+	if ( ! $ok ) {
+		$body = '';
+		if ( ! $out['found'] ) {
 			$out['how'] = 'unreachable';
-		} elseif ( ! horsetools_track_is_own_page( $body ) ) {
-			// A 200 is not proof we reached the site. On shared hosting a
-			// loopback often lands on the default vhost, a parking page or a
-			// bot-check page, all of which answer 200 with no tag — and reading
-			// that as "you have no analytics" is the confident wrong answer this
-			// screen must never give.
-			$out['how'] = 'unreachable';
-		} elseif ( preg_match( '~\b(G-[A-Z0-9]{6,})\b~', $body, $m ) ) {
+		}
+	} elseif ( ! $out['found'] ) {
+		if ( preg_match( '~\b(G-[A-Z0-9]{6,})\b~', $body, $m ) ) {
 			$out = array( 'found' => true, 'id' => $m[1], 'how' => 'page' );
 		} elseif ( preg_match( '~\b(GTM-[A-Z0-9]{4,})\b~', $body, $m ) ) {
 			$out = array( 'found' => true, 'id' => $m[1], 'how' => 'page' );
@@ -92,6 +97,8 @@ function horsetools_track_detect() {
 			$out['how'] = 'absent';
 		}
 	}
+
+	$out['route'] = horsetools_track_route( $body );
 
 	set_transient( 'horsetools_track_detect', $out, HOUR_IN_SECONDS );
 	return $out;
@@ -167,6 +174,64 @@ function horsetools_track_detect_stored() {
 		return array( 'found' => true, 'id' => $gtm, 'how' => 'stored' );
 	}
 	return array( 'found' => false, 'id' => '', 'how' => '' );
+}
+
+/**
+ * Which of the two routes a click will actually take on this site.
+ *
+ * The tracker asks one question at the moment of the click: is there a gtag()
+ * on the page? If there is, the event goes straight to GA4 and the owner has
+ * nothing to set up. If there is not, it goes into the dataLayer and sits there
+ * until a tag and trigger are built in Tag Manager.
+ *
+ * Getting this wrong in either direction wastes somebody's afternoon, and the
+ * obvious signal is misleading: a site can run Tag Manager and still have
+ * gtag(), because a GA4 tag inside a container loads gtag.js itself. Telling
+ * every Tag Manager user to go and build a trigger would send most of them on
+ * an errand they do not need.
+ *
+ * So the container is opened and read. It is a public script; fetching it from
+ * the server avoids the browser's cross-origin rules, and a GA4 measurement ID
+ * inside it means a GA4 tag is configured, which means gtag() will exist.
+ *
+ * @param string $body Home page HTML, or '' when it could not be read.
+ * @return string 'gtag' | 'datalayer' | 'none' | 'unknown'
+ */
+function horsetools_track_route( $body ) {
+	if ( '' === $body ) {
+		return 'unknown';
+	}
+	// gtag.js on the page, or the stub the snippet defines: nothing to set up.
+	if ( preg_match( '~gtag/js\?id=G-~i', $body ) || preg_match( '~function\s+gtag\s*\(~i', $body ) ) {
+		return 'gtag';
+	}
+	if ( ! preg_match( '~\b(GTM-[A-Z0-9]{4,})\b~', $body, $m ) ) {
+		return 'none';
+	}
+
+	$cached = get_transient( 'horsetools_track_route_' . $m[1] );
+	if ( false !== $cached ) {
+		return $cached;
+	}
+	$res  = wp_remote_get(
+		'https://www.googletagmanager.com/gtm.js?id=' . rawurlencode( $m[1] ),
+		array( 'timeout' => 8 )
+	);
+	$route = 'datalayer';
+	if ( ! is_wp_error( $res ) && 200 === (int) wp_remote_retrieve_response_code( $res ) ) {
+		// A GA4 measurement ID inside the container means a GA4 tag is
+		// configured there, and that tag brings gtag() with it.
+		if ( preg_match( '~\bG-[A-Z0-9]{6,}\b~', wp_remote_retrieve_body( $res ) ) ) {
+			$route = 'gtag';
+		}
+	} else {
+		// Could not read the container. Say so rather than guess: the Tag
+		// Manager instructions are wasted effort for someone who does not need
+		// them, and their absence is a silent failure for someone who does.
+		$route = 'unknown';
+	}
+	set_transient( 'horsetools_track_route_' . $m[1], $route, DAY_IN_SECONDS );
+	return $route;
 }
 
 /**

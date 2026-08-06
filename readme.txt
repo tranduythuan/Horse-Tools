@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.4
+Stable tag: 1.3.5
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.5 =
+* **The measurement screen now works out which case your site is in, instead of leaving you to.** A click takes one of two routes: straight to Analytics if the page loads the Google tag, or into the dataLayer if it does not, where it waits for a tag to be built in Tag Manager. The screen used to show the Tag Manager instructions to anyone who had a container at all — which is the wrong question, because a GA4 tag inside a container loads the Google tag itself. Most Tag Manager users were being sent on an errand they did not need. The container is now opened and read: if it has a GA4 tag in it, the screen says there is nothing to set up. Four outcomes, one shown at a time — ready, install analytics first, build the tag, or "could not check" with the one-line console test that settles it.
+* **The Tag Manager instructions gained the step that was missing.** One trigger with regex `^contact_` covers every channel including any added later, and there is now a step for pulling `placement` and `label` through as event parameters — without it those two never reach Analytics on a Tag Manager site.
+* **The debug panel says which route each click actually took** — `via gtag` or `via dataLayer — needs a GTM tag`. Reported at the moment of the click rather than worked out in advance, so it settles the question even where the check above cannot.
 
 = 1.3.4 =
 * **An unused slot on the bottom contact bar no longer draws a dead button.** The four slots were drawn on the strength of their icon, so a slot nobody had filled in still appeared in the bar — same size, same style as the real buttons, and nothing at all when tapped. Found on a live site, where the third slot had been sitting there unused. A slot is now drawn only if something has been put in it.

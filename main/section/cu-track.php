@@ -74,9 +74,6 @@ $ht_track = function_exists( 'horsetools_track_detect' ) ? horsetools_track_dete
 						if (!m) { p.className = 'ht-note ht-note-red'; }
 						box.innerHTML = '';
 						box.appendChild(p);
-
-						var gtm = document.getElementById('ht-track-gtm');
-						if (gtm && m && m[0].indexOf('GTM-') === 0) { gtm.style.display = ''; }
 					})
 					.catch(function () {});   // offline or blocked: the server's answer stands
 			}());
@@ -112,15 +109,46 @@ $ht_track = function_exists( 'horsetools_track_detect' ) ? horsetools_track_dete
 			<p class="ht-note"><i class="ti ti-bulb"></i>
 				<?php esc_html_e( 'Optional: in Admin → Events, switch on "Mark as key event" for the channels that matter to you. They then appear in the acquisition reports, so you can see which traffic source produces contacts, and they can be imported into Google Ads as a conversion.', 'horse-tools' ); ?>
 			</p>
-			<?php // Always rendered, hidden until Tag Manager is what was found — the browser probe reveals it without a page reload. ?>
-			<div id="ht-track-gtm"<?php echo 'GTM' === substr( (string) $ht_track['id'], 0, 3 ) ? '' : ' style="display:none"'; ?>>
-			<h4><?php _e( 'You are using Tag Manager — one setup step is required', 'horse-tools' ) ?></h4>
+			<?php
+			/**
+			 * Only the case this site is actually in.
+			 *
+			 * These instructions used to appear for anyone with a container,
+			 * which asks the wrong question: a GA4 tag inside a container brings
+			 * gtag() with it, and those owners have nothing to do. Sending them
+			 * to build a trigger is a wasted afternoon; hiding it from the owners
+			 * who do need it is a silent failure. horsetools_track_route() opens
+			 * the container and settles it.
+			 */
+			$ht_route = isset( $ht_track['route'] ) ? $ht_track['route'] : 'unknown';
+			?>
+			<div id="ht-track-route">
+			<?php if ( 'gtag' === $ht_route ) : ?>
+			<h4><?php _e( 'Nothing to set up', 'horse-tools' ) ?></h4>
+			<p class="ht-note"><i class="ti ti-circle-check"></i>
+				<?php esc_html_e( 'Your site loads the Google tag, so a click goes straight to Analytics. This is the usual case, and it includes sites where Analytics was installed through Tag Manager — a GA4 tag inside a container loads the Google tag itself.', 'horse-tools' ); ?>
+			</p>
+			<?php elseif ( 'none' === $ht_route ) : ?>
+			<h4><?php _e( 'Install analytics first', 'horse-tools' ) ?></h4>
+			<p class="ht-note"><i class="ti ti-info-circle"></i>
+				<?php esc_html_e( 'The page carries no analytics at all yet, so there is nowhere for a click to be recorded. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own with nothing further to configure.', 'horse-tools' ); ?>
+			</p>
+			<?php else : ?>
+			<?php if ( 'datalayer' === $ht_route ) : ?>
+			<h4><?php _e( 'Your site has Tag Manager but no Google tag — one setup step is required', 'horse-tools' ) ?></h4>
 			<p class="ht-note ht-note-red"><i class="ti ti-alert-triangle"></i>
-				<?php esc_html_e( 'Tag Manager does not pass events on by itself. The click is placed in the dataLayer and stops there until you build a tag for it, so nothing reaches Analytics until this is done once.', 'horse-tools' ); ?>
+				<?php esc_html_e( 'Your container has no GA4 tag in it, so Tag Manager has nothing to pass the click on to. It is placed in the dataLayer and stops there until you build the tag below — until then nothing reaches Analytics.', 'horse-tools' ); ?>
 			</p>
+			<?php else : ?>
+			<h4><?php _e( 'If your site has Tag Manager but no Google tag', 'horse-tools' ) ?></h4>
+			<p class="ht-note"><i class="ti ti-help-circle"></i>
+				<?php esc_html_e( 'This could not be checked from here, so the instructions are shown just in case. To find out whether they apply to you: open your site, press F12, and type gtag in the console. An answer of "function" means you have nothing to do; "undefined" means follow the steps below.', 'horse-tools' ); ?>
+			</p>
+			<?php endif; ?>
 			<p class="ht-note"><i class="ti ti-bulb"></i>
-				<?php esc_html_e( '1. Triggers → New → Custom Event, event name ^contact_ with "use regex matching" ticked. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Submit and publish the container.', 'horse-tools' ); ?>
+				<?php esc_html_e( '1. Triggers → New → Custom Event, event name ^contact_ with "use regex matching" ticked — one trigger covers every channel, including any added later. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Optionally add event parameters placement and label, taking their values from Data Layer Variables contact_placement and contact_label. 4. Submit and publish the container.', 'horse-tools' ); ?>
 			</p>
+			<?php endif; ?>
 			</div>
 
 			<p class="ht-note"><i class="ti ti-alert-triangle"></i>
