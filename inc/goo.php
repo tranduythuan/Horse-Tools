@@ -121,6 +121,48 @@ function horsetools_login_shortcode_google() {
     }
 }
 add_shortcode('google-login', 'horsetools_login_shortcode_google');
+
+/**
+ * Finish a Google sign-in — the only place this flow issues a session.
+ *
+ * Google has proved the person controls that mailbox. That is one factor. If
+ * the account also carries two-factor authentication, this must not hand out a
+ * session: it used to call wp_set_auth_cookie() directly, which fires no
+ * wp_login hook, so the second factor never ran and an administrator with 2FA
+ * switched on could be signed in by whoever held their Google account. The
+ * password door was locked and this one was not.
+ *
+ * So: when a second factor is owed, no cookie is set here at all. The browser
+ * is sent to wp-login.php, which asks for the code and issues the session
+ * itself once the code is right. When none is owed, the cookie is set and
+ * wp_login is fired the way core does after wp_signon — which also gives every
+ * other plugin (login logs, WooCommerce sessions, security tools) the hook it
+ * has always expected and never received from this path.
+ *
+ * @param WP_User|false $user
+ */
+function horsetools_google_finish_login( $user ) {
+	if ( ! ( $user instanceof WP_User ) ) {
+		wp_safe_redirect( home_url() );
+		exit;
+	}
+
+	$dest = class_exists( 'WooCommerce' ) ? wc_get_page_permalink( 'myaccount' ) : admin_url();
+
+	// The 2FA module is loaded only when the setting is on, so ask before using.
+	if ( function_exists( 'horsetools_2fa_second_factor_due' )
+		&& horsetools_2fa_second_factor_due( $user->ID ) ) {
+		wp_safe_redirect( horsetools_2fa_handoff_url( $user->ID, $dest ) );
+		exit;
+	}
+
+	wp_set_current_user( $user->ID );
+	wp_set_auth_cookie( $user->ID, true );
+	do_action( 'wp_login', $user->user_login, $user );
+	wp_safe_redirect( $dest );
+	exit;
+}
+
 # cau hinh nhan thong tin
 function horsetools_login_google() {
     global $horsetools_options;
@@ -184,29 +226,14 @@ function horsetools_login_google() {
             ));
             if (!is_wp_error($new_user_id)) {
                 //wp_new_user_notification($new_user_id);
-                wp_set_current_user($new_user_id);
-                wp_set_auth_cookie($new_user_id, true);
-				// chuyen den trang sau khi dang nhap
-				if (class_exists('WooCommerce')) {
-					wp_safe_redirect(wc_get_page_permalink('myaccount'));
-				} else {
-					wp_safe_redirect(admin_url());
-				}
+                horsetools_google_finish_login( get_user_by( 'id', $new_user_id ) );
 
                 exit;
             }
         } else {
             $user = get_user_by('email', $user_email);
             if ($user) {
-                wp_set_current_user($user->ID);
-                wp_set_auth_cookie($user->ID, true);
-				// chuyen den trang sau khi dang nhap
-				if (class_exists('WooCommerce')) {
-					wp_safe_redirect(wc_get_page_permalink('myaccount'));
-				} else {
-					wp_safe_redirect(admin_url());
-				}
-				
+                horsetools_google_finish_login( $user );
                 exit;
             }
         }

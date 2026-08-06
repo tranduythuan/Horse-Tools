@@ -419,6 +419,54 @@ function horsetools_2fa_block_xmlrpc( $user ) {
 	}
 	return $user;
 }
+/* ---------------------------------------------------------------------------
+ * Second factor for a first factor that did not happen on wp-login.php.
+ *
+ * Signing in with Google proves who you are to Google. It says nothing about
+ * this site's second factor, so that flow has to come through here too — and it
+ * cannot draw the code screen itself, because it runs inside admin-ajax.php
+ * where login_header() does not exist. It hands over instead: it sends the
+ * browser to wp-login.php carrying a pending token, this renders the same
+ * prompt a password login gets, and the same handler verifies the code.
+ *
+ * The token identifies an account and expires in five minutes. It is not a
+ * login and cannot be traded for one: the code is still required, and the auth
+ * cookie is set only by horsetools_2fa_do_verify() once that code checks out.
+ * ------------------------------------------------------------------------- */
+
+/** Does this account still owe a second factor, whatever proved the first? */
+function horsetools_2fa_second_factor_due( $user_id ) {
+	return horsetools_2fa_enabled( $user_id ) && ! horsetools_2fa_device_trusted( $user_id );
+}
+
+/** Where to send a browser that has cleared a first factor somewhere else. */
+function horsetools_2fa_handoff_url( $user_id, $redirect_to = '' ) {
+	$args = array(
+		'action' => 'horsetools_2fa_start',
+		'ht2fa'  => rawurlencode( horsetools_2fa_pending_token( $user_id ) ),
+	);
+	if ( '' !== $redirect_to ) {
+		$args['redirect_to'] = rawurlencode( $redirect_to );
+	}
+	return add_query_arg( $args, wp_login_url() );
+}
+
+function horsetools_2fa_start_handoff() {
+	$uid  = horsetools_2fa_read_pending( isset( $_GET['ht2fa'] ) ? wp_unslash( $_GET['ht2fa'] ) : '' ); // phpcs:ignore WordPress.Security.NonceVerification -- the token is signed and expiring; it is the credential.
+	$user = $uid ? get_user_by( 'id', $uid ) : false;
+	if ( ! $user ) {
+		wp_safe_redirect( wp_login_url() );
+		exit;
+	}
+	// Nothing is trusted from this request but the signed token. In particular
+	// the cookie is NOT set here; horsetools_2fa_do_verify() does that, after
+	// the code. redirect_to is confined by wp_safe_redirect() there.
+	$redirect = isset( $_GET['redirect_to'] ) ? wp_unslash( $_GET['redirect_to'] ) : admin_url(); // phpcs:ignore WordPress.Security.NonceVerification
+	horsetools_2fa_prompt( $user, $redirect, false );
+	exit;
+}
+add_action( 'login_form_horsetools_2fa_start', 'horsetools_2fa_start_handoff' );
+
 add_action( 'wp_login', 'horsetools_2fa_after_login', 10, 2 );
 function horsetools_2fa_after_login( $user_login, $user ) {
 	if ( ! ( $user instanceof WP_User ) || ! horsetools_2fa_enabled( $user->ID ) ) { return; }

@@ -14,5 +14,12 @@ _*.json
 *.log
 # Gettext sources — only the compiled .mo is needed at runtime; .po stays in git.
 /lang/*.po
+# Command-line scripts inside vendored libraries. Nothing here uses them, they
+# carry no ABSPATH guard, and a PHP file that reads $argv becomes reachable over
+# HTTP on any host with register_argc_argv on — which turns a query string into
+# a filename the script will try to read. svg-scanner.php was one; this keeps
+# the next one out even if composer puts it back.
+svg-scanner.php
+*-cli.php
 .DS_Store
 Thumbs.db

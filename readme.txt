@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.9
+Stable tag: 1.3.10
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.10 =
+* **Security: signing in with Google no longer skips two-factor authentication.** Google proves you control that mailbox, which is one factor — but that flow issued the session itself, by calling WordPress's cookie function directly. That fires no login hook, so this plugin's own second factor never ran: an administrator with 2FA switched on could be signed straight in by whoever held their Google account. The password door was locked and this one was not. When a second factor is owed, no session is issued there at all now; the browser is sent to the normal code screen, which grants the session only once the code is right. Nothing else about the flow changes, and sites without 2FA see no difference — except that the login hook now fires the way it should, so login logs, WooCommerce sessions and other plugins finally see these sign-ins too. **Only affects sites that had switched Google sign-in on.**
+* **Security: a command-line script inside a bundled library is no longer shipped.** `svg-scanner.php` came with the SVG sanitiser, was used by nothing here, and had no guard against being requested over the web. It reads `$argv` — which on any host with `register_argc_argv` enabled is filled in from the query string — and then tries to read the filename it finds there. It is deleted, and the packaging rules now keep this class of file out even if the library brings another one back. The SVG sanitiser itself is untouched and still strips scripts from uploaded SVGs.
+* Both were found by an audit of the whole plugin rather than by anything going wrong: SQL, all 52 AJAX endpoints, dynamic code execution, redirects, outbound requests, IP handling and file writes were checked alongside them.
 
 = 1.3.9 =
 * **Opening a snippet to edit no longer ticks "Run this snippet as PHP".** The four yes/no settings are stored as post meta, which returns them as text, and the editor is fed them as JSON — where the string "0" is not empty and therefore counts as true. So every snippet opened for editing came up marked as PHP, disabled snippets came up as enabled, and saving was refused with a demand for a two-factor code. On a site where PHP editing was already unlocked it would have been worse: saving would have turned a plain HTML snippet into a PHP one. The flags now cross that boundary as numbers. Introduced in 1.3.8, found on a live site within the hour.
