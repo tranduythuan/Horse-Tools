@@ -119,9 +119,30 @@ jobs:
           case "$VERSION" in
             *-*) PRERELEASE="--prerelease" ;;
           esac
-          gh release create "$GITHUB_REF_NAME" \
-            "horse-tools-${VERSION}.zip" \
-            update.json \
-            --title "Horse Tools ${VERSION}" \
-            --notes-file release-notes.md \
-            $PRERELEASE
+
+          # `gh release create` from a workstation creates the tag as well, which
+          # pushes the tag, which starts this workflow — and it then failed on
+          # "a release with the same tag name already exists". Five releases in a
+          # row went out red that way. The releases were fine; what was lost is
+          # everything above this step, because a hand-made release skips the
+          # brand-mark check, the translation gate, and the ZIP build that packs
+          # link/google-api down to one archive. So this replaces the assets of a
+          # release that is already there rather than giving up: whichever way a
+          # release was started, what ends up attached to it is what CI built.
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            echo "::notice::Release $GITHUB_REF_NAME already exists — replacing its assets with the ones built here."
+            gh release upload "$GITHUB_REF_NAME" \
+              "horse-tools-${VERSION}.zip" \
+              update.json \
+              --clobber
+            gh release edit "$GITHUB_REF_NAME" \
+              --title "Horse Tools ${VERSION}" \
+              --notes-file release-notes.md
+          else
+            gh release create "$GITHUB_REF_NAME" \
+              "horse-tools-${VERSION}.zip" \
+              update.json \
+              --title "Horse Tools ${VERSION}" \
+              --notes-file release-notes.md \
+              $PRERELEASE
+          fi
