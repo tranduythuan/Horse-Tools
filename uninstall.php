@@ -27,15 +27,41 @@ delete_option('horsetools_gfont_local');
 delete_option('horsetools_gfont_ver');
 delete_option('horsetools_gfont_seen');
 delete_option('horsetools_snippets');
+delete_option('horsetools_snippets_legacy');
+delete_option('horsetools_snip_index');
+delete_option('horsetools_snip_migrated');
 delete_option('horsetools_sc_disabled');
 delete_option('horsetools_services');
+
+// Snippets are one record each, with their tags in their own taxonomy. None of
+// that is registered during an uninstall — the plugin's files are not loaded —
+// so wp_delete_post() and wp_delete_term() would refuse to act on a post type
+// and a taxonomy WordPress does not currently know about. These go out by hand.
+global $wpdb;
+$horsetools_snip_ids = $wpdb->get_col(
+	$wpdb->prepare( "SELECT ID FROM {$wpdb->posts} WHERE post_type = %s", 'ht_snippet' )
+);
+foreach ( (array) $horsetools_snip_ids as $horsetools_snip_id ) {
+	$horsetools_snip_id = (int) $horsetools_snip_id;
+	$wpdb->delete( $wpdb->term_relationships, array( 'object_id' => $horsetools_snip_id ) );
+	$wpdb->delete( $wpdb->postmeta, array( 'post_id' => $horsetools_snip_id ) );
+	$wpdb->delete( $wpdb->posts, array( 'ID' => $horsetools_snip_id ) );
+}
+// The tag terms themselves, which nothing points at any more.
+$horsetools_snip_tt = $wpdb->get_results(
+	$wpdb->prepare( "SELECT term_id, term_taxonomy_id FROM {$wpdb->term_taxonomy} WHERE taxonomy = %s", 'ht_snippet_tag' )
+);
+foreach ( (array) $horsetools_snip_tt as $horsetools_snip_row ) {
+	$wpdb->delete( $wpdb->term_relationships, array( 'term_taxonomy_id' => (int) $horsetools_snip_row->term_taxonomy_id ) );
+	$wpdb->delete( $wpdb->term_taxonomy, array( 'term_taxonomy_id' => (int) $horsetools_snip_row->term_taxonomy_id ) );
+	$wpdb->delete( $wpdb->terms, array( 'term_id' => (int) $horsetools_snip_row->term_id ) );
+}
 
 // Drop the scheduled cleanup event too, in case the plugin is removed without
 // being deactivated first.
 wp_clear_scheduled_hook('horsetools_scheduled_clean');
 
 // Drop the 404 log table.
-global $wpdb;
 $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}horsetools_404" );
 
 // Remove the self-hosted Google Fonts downloaded into uploads.

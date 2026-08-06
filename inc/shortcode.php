@@ -1,6 +1,10 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } 
 global $horsetools_shortcode_options;
+
+// Where snippets are kept. Loaded first: it registers the record type on
+// init, and everything below reads through it.
+require_once HORSETOOLS_DIR . 'inc/snippet-store.php';
 /**
  * Does the current user hold the given role, or a more privileged one?
  *
@@ -272,12 +276,6 @@ if ( isset( $horsetools_shortcode_options['shortcode-s5'] ) ) {
  * run through wp_kses.
  * ---------------------------------------------------------------------- */
 
-/** All defined snippets: slug => array( title, content, on ). */
-function horsetools_snippets_get() {
-	$s = get_option( 'horsetools_snippets', array() );
-	return is_array( $s ) ? $s : array();
-}
-
 /**
  * Evaluate the display conditions shared by snippets and [ht-if].
  *
@@ -330,12 +328,13 @@ function horsetools_condition_passes( array $c ) {
  * @return string
  */
 function horsetools_render_snippet( $slug, $atts ) {
-	$snips = horsetools_snippets_get();
-	$slug  = sanitize_key( $slug );
-	if ( '' === $slug || empty( $snips[ $slug ] ) ) {
+	// One record, not the whole store. A page with three snippets on it used to
+	// unserialise every snippet on the site three times over.
+	$slug = sanitize_key( $slug );
+	$s    = '' !== $slug ? horsetools_snip_read( $slug ) : null;
+	if ( ! $s ) {
 		return '';
 	}
-	$s = $snips[ $slug ];
 	if ( empty( $s['on'] ) ) {
 		return '';
 	}
@@ -408,8 +407,12 @@ add_action( 'init', function () {
  *
  * A writer can't be expected to remember every snippet slug. This adds a
  * "Shortcode" button beside "Add Media" (the Classic editor and the Classic
- * block) that drops down the site's own snippets and inserts
+ * block) that opens a search box over the site's snippets and inserts
  * [ht-snippet name="…"] at the cursor — visual editor or Text tab.
+ *
+ * It searches rather than lists. A menu of everything is fine at three snippets
+ * and unusable well before a hundred, and building one would mean putting every
+ * snippet name into the source of every editor page.
  * ---------------------------------------------------------------------- */
 function horsetools_snippet_editor_button( $editor_id ) {
 	echo ' <button type="button" class="button ht-scpick-btn" data-editor="' . esc_attr( $editor_id ) . '">'
@@ -426,35 +429,77 @@ function horsetools_snippet_editor_button( $editor_id ) {
 	}
 	$printed = true;
 
-	$items = '';
-	foreach ( horsetools_snippets_get() as $slug => $snip ) {
-		if ( empty( $snip['on'] ) ) {
-			continue;
-		}
-		$title  = ! empty( $snip['title'] ) ? $snip['title'] : $slug;
-		$items .= '<a href="#" class="ht-scpick-item" data-sc="' . esc_attr( '[ht-snippet name="' . $slug . '"]' ) . '">'
-			. '<strong>' . esc_html( $title ) . '</strong> <code>' . esc_html( $slug ) . '</code></a>';
-	}
-	if ( '' === $items ) {
-		$items = '<p style="margin:10px 12px;color:#646970;">' . esc_html__( 'No snippets yet — create them on the Shortcode screen.', 'horse-tools' ) . '</p>';
-	}
+	// The list is fetched when the picker opens, and again as the writer types.
+	// Nothing about this page grows with the number of snippets on the site.
 	?>
-	<div id="ht-scpick" style="display:none;position:absolute;z-index:100050;background:#fff;border:1px solid #c3c4c7;box-shadow:0 2px 10px rgba(0,0,0,.15);border-radius:6px;max-height:340px;overflow:auto;min-width:240px;max-width:380px;">
+	<div id="ht-scpick" style="display:none;position:absolute;z-index:100050;background:#fff;border:1px solid #c3c4c7;box-shadow:0 2px 10px rgba(0,0,0,.15);border-radius:6px;min-width:280px;max-width:380px;">
 		<div style="padding:8px 12px;border-bottom:1px solid #eee;font-weight:600;"><?php esc_html_e( 'Insert a snippet', 'horse-tools' ); ?></div>
-		<?php echo $items; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+		<div style="padding:8px 12px;border-bottom:1px solid #eee;">
+			<input type="search" id="ht-scpick-s" class="widefat" autocomplete="off"
+				placeholder="<?php esc_attr_e( 'Search by name…', 'horse-tools' ); ?>">
+		</div>
+		<div id="ht-scpick-list" style="max-height:280px;overflow:auto;"></div>
 	</div>
 	<style>
 	#ht-scpick .ht-scpick-item{display:block;padding:8px 12px;text-decoration:none;color:#1d2327;border-bottom:1px solid #f0f0f1;}
-	#ht-scpick .ht-scpick-item:hover{background:#f0f6fc;}
+	#ht-scpick .ht-scpick-item:hover,#ht-scpick .ht-scpick-item.ht-on{background:#f0f6fc;}
 	#ht-scpick .ht-scpick-item code{color:#646970;font-size:11px;}
+	#ht-scpick .ht-scpick-note{margin:10px 12px;color:#646970;}
 	.ht-scpick-btn .dashicons{margin-right:2px;}
 	</style>
 	<script>
 	(function(){
 		var pick=document.getElementById('ht-scpick'); if(!pick){return;}
 		document.body.appendChild(pick);
-		var curEd='';
+		var box=document.getElementById('ht-scpick-s');
+		var list=document.getElementById('ht-scpick-list');
+		var ajax=<?php echo wp_json_encode( admin_url( 'admin-ajax.php' ) ); ?>;
+		var nonce=<?php echo wp_json_encode( wp_create_nonce( 'horsetools_snip_pick' ) ); ?>;
+		var T=<?php echo wp_json_encode( array(
+			'none'    => __( 'No snippets yet — create them on the Shortcode screen.', 'horse-tools' ),
+			'nomatch' => __( 'Nothing matches that.', 'horse-tools' ),
+			'more'    => __( 'Showing the first %1$d of %2$d — keep typing to narrow it down.', 'horse-tools' ),
+			'wait'    => __( 'Loading…', 'horse-tools' ),
+			'fail'    => __( 'Could not load the list.', 'horse-tools' ),
+		) ); ?>;
+		var curEd='',timer=null,seq=0;
 		function hide(){ pick.style.display='none'; }
+		function note(text){ list.innerHTML='<p class="ht-scpick-note"></p>'; list.firstChild.textContent=text; }
+		function draw(d){
+			if(!d.items.length){ note(box.value?T.nomatch:T.none); return; }
+			var html='';
+			for(var i=0;i<d.items.length;i++){
+				var s=d.items[i];
+				html+='<a href="#" class="ht-scpick-item" data-slug="'+s.slug.replace(/"/g,'&quot;')+'"><strong></strong> <code></code></a>';
+			}
+			list.innerHTML=html;
+			var nodes=list.querySelectorAll('.ht-scpick-item');
+			for(var j=0;j<nodes.length;j++){
+				nodes[j].querySelector('strong').textContent=d.items[j].title;
+				nodes[j].querySelector('code').textContent=d.items[j].slug;
+			}
+			if(d.more){
+				var p=document.createElement('p');
+				p.className='ht-scpick-note';
+				p.textContent=T.more.replace('%1$d',d.items.length).replace('%2$d',d.total);
+				list.appendChild(p);
+			}
+		}
+		function load(){
+			var mine=++seq;
+			note(T.wait);
+			var body='action=horsetools_snip_pick&nonce='+encodeURIComponent(nonce)+'&s='+encodeURIComponent(box.value);
+			fetch(ajax,{method:'POST',credentials:'same-origin',
+				headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+			.then(function(r){return r.json();})
+			.then(function(j){ if(mine!==seq){return;} if(j&&j.success){draw(j.data);}else{note(T.fail);} })
+			.catch(function(){ if(mine===seq){note(T.fail);} });
+		}
+		box.addEventListener('input',function(){ clearTimeout(timer); timer=setTimeout(load,200); });
+		box.addEventListener('keydown',function(ev){
+			if('Escape'===ev.key){ hide(); }
+			if('Enter'===ev.key){ ev.preventDefault(); var f=list.querySelector('.ht-scpick-item'); if(f){ f.click(); } }
+		});
 		function insert(text){
 			if(window.tinymce){ var t=tinymce.get(curEd); if(t && !t.isHidden()){ t.execCommand('mceInsertContent',false,text); hide(); return; } }
 			var ta=document.getElementById(curEd);
@@ -466,11 +511,13 @@ function horsetools_snippet_editor_button( $editor_id ) {
 			var btn=t.closest ? t.closest('.ht-scpick-btn') : null;
 			if(btn){ ev.preventDefault(); curEd=btn.getAttribute('data-editor')||''; var r=btn.getBoundingClientRect();
 				pick.style.top=(r.bottom+window.scrollY+4)+'px'; pick.style.left=(r.left+window.scrollX)+'px';
-				pick.style.display=(pick.style.display==='none'?'block':'none'); return; }
+				if('none'===pick.style.display){ pick.style.display='block'; box.value=''; load(); box.focus(); }
+				else { hide(); }
+				return; }
 			var tbl=t.closest ? t.closest('.ht-tbl-btn') : null;
 			if(tbl){ ev.preventDefault(); curEd=tbl.getAttribute('data-editor')||''; if(window.htTableBuilder){ window.htTableBuilder.open(function(sc){ insert(sc); }); } else { alert('Table builder not loaded'); } return; }
 			var item=t.closest ? t.closest('.ht-scpick-item') : null;
-			if(item){ ev.preventDefault(); insert(item.getAttribute('data-sc')); return; }
+			if(item){ ev.preventDefault(); insert('[ht-snippet name="'+item.getAttribute('data-slug')+'"]'); return; }
 			if(!t.closest || !t.closest('#ht-scpick')){ hide(); }
 		});
 	})();
@@ -481,9 +528,11 @@ add_action( 'media_buttons', 'horsetools_snippet_editor_button' );
 
 /* -------------------------------------------------------------------------
  * The same quick-insert for the block editor (Gutenberg): a dynamic
- * "Horse Tools snippet" block. You pick a snippet from a dropdown; it is
- * rendered server-side as [ht-snippet name="…"], so there is nothing to keep in
- * sync and no block-validation to go stale.
+ * "Horse Tools snippet" block. You pick a snippet by typing part of its name —
+ * the choices come from the same search endpoint the Classic picker uses, not
+ * from a list baked into the page. It is rendered server-side as
+ * [ht-snippet name="…"], so there is nothing to keep in sync and no
+ * block-validation to go stale.
  * ---------------------------------------------------------------------- */
 function horsetools_register_snippet_block() {
 	if ( ! function_exists( 'register_block_type' ) ) {
@@ -496,18 +545,18 @@ function horsetools_register_snippet_block() {
 		HORSETOOLS_VERSION,
 		true
 	);
-	$list = array();
-	foreach ( horsetools_snippets_get() as $slug => $snip ) {
-		if ( empty( $snip['on'] ) ) {
-			continue;
-		}
-		$list[] = array( 'slug' => $slug, 'title' => ! empty( $snip['title'] ) ? $snip['title'] : $slug );
-	}
 	wp_localize_script( 'horsetools-snippet-block', 'htSnippetData', array(
-		'list'  => $list,
+		'ajax'  => admin_url( 'admin-ajax.php' ),
+		'nonce' => wp_create_nonce( 'horsetools_snip_pick' ),
 		'pick'  => __( 'Select a snippet', 'horse-tools' ),
 		'hint'  => __( 'Pick a snippet to insert', 'horse-tools' ),
 		'label' => __( 'Horse Tools snippet', 'horse-tools' ),
+		'i18n'  => array(
+			'search' => __( 'Search by name…', 'horse-tools' ),
+			'none'   => __( 'No snippets yet — create them on the Shortcode screen.', 'horse-tools' ),
+			'more'   => __( 'Showing the first %1$d of %2$d — keep typing to narrow it down.', 'horse-tools' ),
+			'fail'   => __( 'Could not load the list.', 'horse-tools' ),
+		),
 	) );
 	register_block_type( 'horse-tools/snippet', array(
 		'editor_script'   => 'horsetools-snippet-block',

@@ -6949,3 +6949,27 @@ msgstr "1. Điều kiện kích hoạt → Mới → Sự kiện tuỳ chỉnh, 
 
 msgid "Checking your site…"
 msgstr "Đang kiểm tra site của bạn…"
+
+msgid "That snippet no longer exists."
+msgstr "Snippet này không còn nữa."
+
+msgid "%1$d of %2$d"
+msgstr "%1$d trong %2$d"
+
+msgid "Page %1$d of %2$d"
+msgstr "Trang %1$d / %2$d"
+
+msgid "Search by name…"
+msgstr "Tìm theo tên…"
+
+msgid "Nothing matches that."
+msgstr "Không có gì khớp."
+
+msgid "Showing the first %1$d of %2$d — keep typing to narrow it down."
+msgstr "Đang hiện %1$d đầu tiên trong %2$d — gõ thêm để thu hẹp lại."
+
+msgid "Loading…"
+msgstr "Đang tải…"
+
+msgid "Could not load the list."
+msgstr "Không tải được danh sách."

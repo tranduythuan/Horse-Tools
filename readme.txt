@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.7
+Stable tag: 1.3.8
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -99,6 +99,14 @@ Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or l
 
 == Changelog ==
 
+= 1.3.8 =
+* **Snippets are no longer kept in one lump.** Every snippet on the site — names, settings and the whole body of each — lived in a single database row that was read in full to fetch any one of them, and read on every front-end request just to find out which snippets wanted a PHP hook. Each snippet is now its own record. Fetching one costs one lookup; the front end reads a small index instead of the bodies; changing one snippet no longer rewrites all of them. Nothing about how you use them changes, and `[ht-snippet name="…"]` is unchanged. The old row is not deleted — it is kept as `horsetools_snippets_legacy`, and the move resumes safely if it is interrupted part-way.
+* **The pickers search instead of listing everything.** The Shortcode button in the Classic editor and the snippet block in the block editor used to be handed every snippet on the site when the page loaded, and drew them as one long menu — fine at three, unusable well before a hundred, and it put every snippet name into the source of every editor page. Both now ask for what you type, twenty at a time. The fixed shortcode menu no longer carries snippets at all; it offers the empty `[ht-snippet]` tag and leaves choosing a name to the picker.
+* **The snippets screen pages.** Twenty-five at a time, with the search box and the tag filter both answered by the server, so opening the screen no longer means loading the site's entire snippet library into the page. A snippet's body is fetched when you open it to edit, not before.
+* **Tags became real tags.** They were an array inside a database row, so filtering by one meant a text match against a serialised string. They are a taxonomy now: the tag menu shows what is actually in use with a count beside each, and filtering is an indexed lookup.
+* **Searching finds snippets by the name you type the shortcode with.** WordPress's own search looks inside post content, which for a snippet is HTML — searching "div" would have matched nearly everything while searching the snippet's own name matched nothing. Search now looks at the display name, the description and the slug.
+* The snippets screen existed twice, byte for byte, in two files. It is one file now, so a change to it happens once.
+* Covered by a test suite that runs the storage layer against a stand-in WordPress: 42 checks over the migration, an interrupted migration resuming, the record shape, the PHP index, paging, searching, tag round-tripping and deletion.
 = 1.3.7 =
 * **Opening the Customers screen no longer waits for the site to answer itself.** The measurement check made up to two blocking requests while the screen was being built, and the tab is not gated behind the feature — so every admin who opened Customers paid for it once an hour, whether or not they had ever switched contact tracking on. The hosts it stalls hardest are the ones that block a site from fetching itself, which are precisely the hosts this check exists for: eight seconds of nothing. The screen now draws immediately from cache and asks for the answer over ajax afterwards.
 * **"Check again" now really checks everything again.** It cleared two cached answers but not the one holding the Tag Manager container reading, which lives for a day — so fixing your container and pressing the button showed you yesterday's verdict.

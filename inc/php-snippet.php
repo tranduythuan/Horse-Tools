@@ -193,10 +193,6 @@ function horsetools_php_lint( $code ) {
 /* -------------------------------------------------------------------------
  * Crash guard
  * ---------------------------------------------------------------------- */
-function horsetools_php_store( array $snips ) {
-	update_option( 'horsetools_snippets', $snips, false );
-}
-
 /**
  * A snippet that has never completed a run is flagged before it runs. If the
  * request never gets to clear the flag, the snippet killed it — so the next
@@ -209,11 +205,7 @@ function horsetools_php_guard_recover() {
 		return;
 	}
 	delete_option( 'horsetools_php_guard' );
-	$snips = horsetools_snippets_get();
-	if ( isset( $snips[ $slug ] ) ) {
-		$snips[ $slug ]['on'] = 0;
-		horsetools_php_store( $snips );
-	}
+	horsetools_snip_set( $slug, 'on', 0 );
 	update_option( 'horsetools_php_crashed', $slug, false );
 	horsetools_php_log( 'auto_disabled', $slug );
 }
@@ -267,11 +259,7 @@ function horsetools_php_exec( $slug, $snip ) {
 	$out = (string) ob_get_clean();
 	if ( $first ) {
 		delete_option( 'horsetools_php_guard' );
-		$snips = horsetools_snippets_get();
-		if ( isset( $snips[ $slug ] ) ) {
-			$snips[ $slug ]['ok'] = 1;
-			horsetools_php_store( $snips );
-		}
+		horsetools_snip_set( $slug, 'ok', 1 );
 	}
 	return $out;
 }
@@ -311,21 +299,24 @@ function horsetools_php_register_hooks() {
 	if ( '' !== horsetools_php_blocked() ) {
 		return;
 	}
-	foreach ( horsetools_snippets_get() as $slug => $snip ) {
-		if ( empty( $snip['php'] ) || empty( $snip['on'] ) ) {
-			continue;
-		}
-		$hook = isset( $snip['hook'] ) ? (string) $snip['hook'] : '';
-		if ( '' === $hook ) {
+	// The index, not the snippets. This runs on plugins_loaded, on every single
+	// request, and reading the store here meant unserialising every snippet body
+	// on the site to answer a question about a handful of them. The index holds
+	// slug, hook and scope and nothing else; a body is read only if that hook
+	// actually fires, and only the one body.
+	foreach ( horsetools_snip_index() as $entry ) {
+		$slug = isset( $entry['slug'] ) ? (string) $entry['slug'] : '';
+		$hook = isset( $entry['hook'] ) ? (string) $entry['hook'] : '';
+		if ( '' === $slug || '' === $hook ) {
 			continue; // shortcode-only; horsetools_render_snippet() handles it
 		}
-		$scope = isset( $snip['scope'] ) ? (string) $snip['scope'] : 'front';
+		$scope = isset( $entry['scope'] ) ? (string) $entry['scope'] : 'front';
 		if ( ! horsetools_php_scope_ok( $scope ) ) {
 			continue;
 		}
 		$run = function () use ( $slug ) {
-			$snips = horsetools_snippets_get();
-			return isset( $snips[ $slug ] ) ? horsetools_php_exec( $slug, $snips[ $slug ] ) : '';
+			$snip = horsetools_snip_read( $slug );
+			return $snip ? horsetools_php_exec( $slug, $snip ) : '';
 		};
 		if ( 'the_content_before' === $hook || 'the_content_after' === $hook ) {
 			$after = 'the_content_after' === $hook;

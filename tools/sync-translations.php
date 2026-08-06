@@ -1087,6 +1087,17 @@ $vi = array(
 
 	'Checking your site…' => 'Đang kiểm tra site của bạn…',
 
+	// Snippets moved to one record each; the pickers and the list now search
+	// and page instead of showing everything at once (1.3.8).
+	'That snippet no longer exists.' => 'Snippet này không còn nữa.',
+	'%1$d of %2$d' => '%1$d trong %2$d',
+	'Page %1$d of %2$d' => 'Trang %1$d / %2$d',
+	'Search by name…' => 'Tìm theo tên…',
+	'Nothing matches that.' => 'Không có gì khớp.',
+	'Showing the first %1$d of %2$d — keep typing to narrow it down.' => 'Đang hiện %1$d đầu tiên trong %2$d — gõ thêm để thu hẹp lại.',
+	'Loading…' => 'Đang tải…',
+	'Could not load the list.' => 'Không tải được danh sách.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';
