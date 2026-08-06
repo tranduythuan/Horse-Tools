@@ -214,6 +214,15 @@ eq( $s['on'], 1, 'on' );
 eq( $s['tags'], array( 'promo', 'contact' ), 'tags survive as a plain array' );
 eq( horsetools_snip_read( 'nope' ), null, 'a missing slug reads as null' );
 
+// The flags cross into JavaScript as JSON, where the string "0" is truthy.
+horsetools_snip_write( 'flagcheck', array( 'title' => 'Flags', 'content' => 'x', 'on' => 0, 'no_admin' => 0, 'php' => 0, 'ok' => 0 ) );
+$GLOBALS['meta'][ horsetools_snip_post( 'flagcheck' )->ID ]['_ht_php'] = '0'; // as post meta really stores it
+$f = horsetools_snip_read( 'flagcheck' );
+foreach ( array( 'on', 'no_admin', 'php', 'ok' ) as $flag ) {
+	eq( $f[ $flag ], 0, "$flag reads back as the integer 0, not the string \"0\"" );
+}
+horsetools_snip_remove( 'flagcheck' );
+
 echo "\n4. The front-end index holds only what has to run\n";
 $idx = horsetools_snip_index();
 eq( count( $idx ), 1, 'one entry: enabled + php + a hook' );

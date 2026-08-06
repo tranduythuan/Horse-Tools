@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.8
+Stable tag: 1.3.9
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -99,6 +99,9 @@ Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or l
 
 == Changelog ==
 
+= 1.3.9 =
+* **Opening a snippet to edit no longer ticks "Run this snippet as PHP".** The four yes/no settings are stored as post meta, which returns them as text, and the editor is fed them as JSON — where the string "0" is not empty and therefore counts as true. So every snippet opened for editing came up marked as PHP, disabled snippets came up as enabled, and saving was refused with a demand for a two-factor code. On a site where PHP editing was already unlocked it would have been worse: saving would have turned a plain HTML snippet into a PHP one. The flags now cross that boundary as numbers. Introduced in 1.3.8, found on a live site within the hour.
+* **"Clear the form" now clears the PHP switch too**, instead of carrying it over from the last snippet edited into the next one saved.
 = 1.3.8 =
 * **Snippets are no longer kept in one lump.** Every snippet on the site — names, settings and the whole body of each — lived in a single database row that was read in full to fetch any one of them, and read on every front-end request just to find out which snippets wanted a PHP hook. Each snippet is now its own record. Fetching one costs one lookup; the front end reads a small index instead of the bodies; changing one snippet no longer rewrites all of them. Nothing about how you use them changes, and `[ht-snippet name="…"]` is unchanged. The old row is not deleted — it is kept as `horsetools_snippets_legacy`, and the move resumes safely if it is interrupted part-way.
 * **The pickers search instead of listing everything.** The Shortcode button in the Classic editor and the snippet block in the block editor used to be handed every snippet on the site when the page loaded, and drew them as one long menu — fine at three, unusable well before a hundred, and it put every snippet name into the source of every editor page. Both now ask for what you type, twenty at a time. The fixed shortcode menu no longer carries snippets at all; it offers the empty `[ht-snippet]` tag and leaves choosing a name to the picker.

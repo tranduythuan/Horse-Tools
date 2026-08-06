@@ -415,7 +415,13 @@ global $horsetools_shortcode_options;
 				$('ht-snip-clear').addEventListener('click', function(){
 					F.name.value=F.title.value=F.desc.value=F.content.value=F.tags.value=F.from.value=F.to.value='';
 					htSetEditor('');
-					F.on.value='1'; F.noadmin.value='0'; F.device.value=''; F.login.value=''; F.role.value=''; say(msg,''); F.name.focus();
+					F.on.value='1'; F.noadmin.value='0'; F.device.value=''; F.login.value=''; F.role.value='';
+					// Including the PHP switch. Leaving it ticked from the last
+					// snippet edited means the next thing saved becomes PHP.
+					if (F.php){ F.php.checked=false; F.php.dispatchEvent(new Event('change')); }
+					if (F.phpHook){ F.phpHook.value=''; }
+					if (F.phpScope){ F.phpScope.value='front'; }
+					say(msg,''); F.name.focus();
 				});
 				$('ht-snip-import').addEventListener('click', function(){
 					var d=listArgs(); d.action='horsetools_snip_import_sc';

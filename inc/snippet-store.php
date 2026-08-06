@@ -207,9 +207,15 @@ function horsetools_snip_read( $slug ) {
 		'content' => $post->post_content,
 		'tags'    => horsetools_snip_tags_of( $post->ID ),
 	);
+	// The four flags come back as integers, never as the strings post meta
+	// stores them in. PHP treats "0" as false, so this looks like a formality
+	// here — but this array is also sent to the browser as JSON, and in
+	// JavaScript "0" is a non-empty string and therefore true. That turned
+	// `on`, `no_admin`, `php` and `ok` inside out on the way to the editor.
+	$flags = array( 'on', 'no_admin', 'php', 'ok' );
 	foreach ( horsetools_snip_meta_keys() as $key ) {
-		$value = get_post_meta( $post->ID, '_ht_' . $key, true );
-		$out[ $key ] = ( '' === $value && in_array( $key, array( 'on', 'no_admin', 'php', 'ok' ), true ) ) ? 0 : $value;
+		$value       = get_post_meta( $post->ID, '_ht_' . $key, true );
+		$out[ $key ] = in_array( $key, $flags, true ) ? (int) $value : $value;
 	}
 	return $out;
 }
