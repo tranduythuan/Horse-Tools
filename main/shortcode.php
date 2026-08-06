@@ -421,6 +421,11 @@ function horsetools_snip_get_ajax() {
 	$snip['slug']    = $slug;
 	$snip['php_bad'] = ! empty( $snip['php'] ) && function_exists( 'horsetools_php_signature_ok' )
 		&& ! horsetools_php_signature_ok( $snip );
+	// The signature is checked here, on the server, and the answer is what the
+	// screen needs. The signature itself is not: it is derived from the site's
+	// auth salt and the editor has no use for it, so it does not go out over
+	// the wire, into a proxy log, or into anyone's browser history.
+	unset( $snip['sig'] );
 	wp_send_json_success( $snip );
 }
 

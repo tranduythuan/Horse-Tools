@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.10
+Stable tag: 1.3.11
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,13 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.11 =
+* **"Detect my chat ID" no longer shows you everyone else's Telegram.** Setting up Telegram recovery used to list every recent chat the site's bot had received, for you to pick yours out of — which on a shop, where customers have accounts, meant any logged-in user could read the names, @usernames and chat IDs of everyone else who had messaged it. You are now given a short pairing code to send to the bot, and the site hands back only the chat that sent it. Nobody learns anybody else's chat, and it is easier too: nothing to pick out of a list of people who might all be called the same thing.
+* **The public search index no longer includes password-protected posts.** Adding a post one at a time already excluded them; rebuilding the whole index did not, so the title, price and link of every protected post could end up in a file anyone can read. The two paths agree now.
+* **Deleting a font is confined to the fonts folder.** The check was written but never applied, so the delete trusted whatever path was stored. It needs administrator rights to reach either way; this is the guard that stops a mistake somewhere else turning into a deleted file somewhere it shouldn't.
+* **The snippet editor is no longer sent a snippet's signature.** The signature is checked on the server and only the answer is needed in the browser, so it stops travelling over the wire.
+* **`CLAUDE.md` and `README.md` are no longer packaged.** They are notes for whoever works on the plugin, not for the sites running it, and they were sitting at a guessable public URL.
 
 = 1.3.10 =
 * **Security: signing in with Google no longer skips two-factor authentication.** Google proves you control that mailbox, which is one factor — but that flow issued the session itself, by calling WordPress's cookie function directly. That fires no login hook, so this plugin's own second factor never ran: an administrator with 2FA switched on could be signed straight in by whoever held their Google account. The password door was locked and this one was not. When a second factor is owed, no session is issued there at all now; the browser is sent to the normal code screen, which grants the session only once the code is right. Nothing else about the flow changes, and sites without 2FA see no difference — except that the login hook now fires the way it should, so login logs, WooCommerce sessions and other plugins finally see these sign-ins too. **Only affects sites that had switched Google sign-in on.**

@@ -9,6 +9,13 @@
 /node_modules
 /.vscode
 /.idea
+# Notes written for whoever is working on the plugin, not for the sites running
+# it. Shipping them puts internal working notes at a guessable public URL.
+# readme.txt stays — that is the one WordPress itself reads. So do the READMEs
+# inside link/*/vendor/, which are third-party licence and attribution material.
+/CLAUDE.md
+/README.md
+/README.vi.md
 _*.json
 *.zip
 *.log

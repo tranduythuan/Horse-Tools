@@ -195,6 +195,12 @@ function horsetools_search($page = 1, $posts_per_page = 2000) {
         'numberposts' => $posts_per_page,
         'offset'      => ($page - 1) * $posts_per_page,
         'post_type'   => array_keys($post_types),
+        // get_posts() already limits itself to published posts, but "published"
+        // includes password-protected ones — and this index is a public JSON
+        // file. Without this, rebuilding the whole index puts the title, price
+        // and permalink of every protected post where anyone can read them,
+        // which is exactly what the per-post path below deliberately prevents.
+        'has_password' => false,
     );
     $posts = get_posts($args);
     $results = array();

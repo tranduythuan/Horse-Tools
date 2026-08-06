@@ -181,33 +181,102 @@ function horsetools_2fa_use_recovery( $user_id, $code ) {
 
 /* ---------------------------------------------------------------------------
  * "Detect my chat ID" — self-contained, uses the site's OWN bot (no dependency
- * on any third-party @userinfobot that could disappear). The user messages the
- * site bot, clicks the button, and we read the bot's getUpdates and list the
- * recent chats to pick from.
+ * on any third-party @userinfobot that could disappear).
+ *
+ * It used to read the bot's getUpdates and hand back every recent chat for the
+ * user to pick theirs out of. That works, but the bot is the site's, not the
+ * user's: on a shop where customers have accounts, any logged-in subscriber
+ * could press the button and read the names, @usernames and chat IDs of
+ * everyone else who had ever messaged it. A list of other people is not what
+ * anyone asked for; they asked which chat is *mine*.
+ *
+ * So each user is given a short pairing code, sends that to the bot, and the
+ * server hands back only the chat that sent it. Nobody learns anybody else's
+ * chat, and it is more reliable too — nothing to pick out of a list of people
+ * who may all be called the same thing.
  * ------------------------------------------------------------------------- */
+
+/**
+ * The pairing code this user must send to the bot.
+ *
+ * Random, per user, and short-lived. Random rather than derived, so nobody can
+ * work out somebody else's code and pair their own chat to that account.
+ *
+ * @param int  $user_id
+ * @param bool $fresh Mint a new one instead of reusing the pending code.
+ * @return string
+ */
+function horsetools_2fa_tg_pair_code( $user_id, $fresh = false ) {
+	$key  = 'horsetools_2fa_pair_' . (int) $user_id;
+	$code = $fresh ? '' : (string) get_transient( $key );
+	if ( '' === $code ) {
+		$code = 'HT-' . strtoupper( wp_generate_password( 6, false, false ) );
+		set_transient( $key, $code, 30 * MINUTE_IN_SECONDS );
+	}
+	return $code;
+}
+
+/**
+ * The chat that sent this pairing code, and nothing else.
+ *
+ * Separate from the request handling so the matching itself can be tested
+ * against real getUpdates shapes: it is the part that decides whose chat gets
+ * handed over, and it must never answer with somebody else's.
+ *
+ * @param array  $updates The `result` array from Telegram's getUpdates.
+ * @param string $code    The pairing code to look for.
+ * @return string Chat id, or '' when no message carried the code.
+ */
+function horsetools_2fa_tg_match_chat( array $updates, $code ) {
+	$code = trim( (string) $code );
+	if ( '' === $code ) {
+		return ''; // never match "everything" on an empty code.
+	}
+	foreach ( $updates as $u ) {
+		if ( ! is_array( $u ) ) {
+			continue;
+		}
+		$m = isset( $u['message'] ) ? $u['message'] : ( isset( $u['channel_post'] ) ? $u['channel_post'] : null );
+		if ( ! is_array( $m ) || empty( $m['chat']['id'] ) || ! isset( $m['text'] ) ) {
+			continue;
+		}
+		if ( false !== stripos( (string) $m['text'], $code ) ) {
+			return (string) $m['chat']['id'];
+		}
+	}
+	return '';
+}
+
 add_action( 'wp_ajax_horsetools_2fa_getchat', 'horsetools_2fa_getchat_ajax' );
 function horsetools_2fa_getchat_ajax() {
 	if ( ! is_user_logged_in() ) { wp_send_json_error( array( 'msg' => esc_html__( 'Not allowed.', 'horse-tools' ) ) ); }
 	check_ajax_referer( 'horsetools_2fa_getchat', 'nonce' );
 	global $horsetools_options;
+
+	$user_id = get_current_user_id();
+	$code    = (string) get_transient( 'horsetools_2fa_pair_' . $user_id );
+	if ( '' === $code ) {
+		wp_send_json_error( array( 'msg' => esc_html__( 'Your pairing code has expired. Reload this page to get a new one.', 'horse-tools' ) ) );
+	}
+
 	$token = ! empty( $horsetools_options['woo-tele11'] ) ? $horsetools_options['woo-tele11'] : '';
 	if ( '' === $token ) { wp_send_json_error( array( 'msg' => esc_html__( 'No Telegram bot token is set yet (WooCommerce module).', 'horse-tools' ) ) ); }
 	$r = wp_remote_get( 'https://api.telegram.org/bot' . rawurlencode( $token ) . '/getUpdates', array( 'timeout' => 8 ) );
 	if ( is_wp_error( $r ) ) { wp_send_json_error( array( 'msg' => $r->get_error_message() ) ); }
 	$body = json_decode( wp_remote_retrieve_body( $r ), true );
 	if ( empty( $body['ok'] ) ) { wp_send_json_error( array( 'msg' => esc_html__( 'Telegram returned no updates (the bot may use a webhook, or the token is wrong).', 'horse-tools' ) ) ); }
-	$chats = array();
-	foreach ( (array) $body['result'] as $u ) {
-		$c = isset( $u['message']['chat'] ) ? $u['message']['chat'] : ( isset( $u['channel_post']['chat'] ) ? $u['channel_post']['chat'] : null );
-		if ( ! $c || ! isset( $c['id'] ) ) { continue; }
-		$name = isset( $c['title'] ) ? $c['title'] : trim( ( isset( $c['first_name'] ) ? $c['first_name'] : '' ) . ' ' . ( isset( $c['last_name'] ) ? $c['last_name'] : '' ) );
-		if ( isset( $c['username'] ) ) { $name = trim( $name . ' (@' . $c['username'] . ')' ); }
-		$chats[ (string) $c['id'] ] = '' !== $name ? $name : (string) $c['id'];
+
+	$chat_id = horsetools_2fa_tg_match_chat( (array) $body['result'], $code );
+	if ( '' !== $chat_id ) {
+		// Spend it: a code that has done its job should not still work.
+		delete_transient( 'horsetools_2fa_pair_' . $user_id );
+		wp_send_json_success( array( 'id' => $chat_id ) );
 	}
-	if ( empty( $chats ) ) { wp_send_json_error( array( 'msg' => esc_html__( 'No recent chats. Send your bot a message first, then try again.', 'horse-tools' ) ) ); }
-	$out = array();
-	foreach ( $chats as $id => $label ) { $out[] = array( 'id' => $id, 'label' => $label ); }
-	wp_send_json_success( array( 'chats' => $out ) );
+
+	wp_send_json_error( array(
+		/* translators: %s: the pairing code, e.g. HT-A1B2C3 */
+		'msg' => sprintf( esc_html__( 'No message containing %s yet. Send that exact code to the bot, then press this again.', 'horse-tools' ), $code ),
+	) );
 }
 
 // The bot's @username (via getMe) so the profile can show a "message this bot"
@@ -325,14 +394,17 @@ function horsetools_2fa_profile( $user ) {
 			$bot = horsetools_2fa_bot_username();
 			echo '<p style="margin-top:4px"><label>' . esc_html__( 'Your Telegram chat ID (for recovery codes)', 'horse-tools' ) . '<br/>';
 			echo '<input type="text" name="horsetools_2fa_tg_chat" id="ht-2fa-tgchat" value="' . esc_attr( $tg ) . '" class="regular-text" placeholder="123456789" /></label></p>';
+			$pair = horsetools_2fa_tg_pair_code( $user->ID );
 			if ( '' !== $bot ) {
-				echo '<p><strong>' . esc_html__( 'Step 1 —', 'horse-tools' ) . '</strong> ' . esc_html__( 'open this site’s Telegram bot and press Start:', 'horse-tools' )
+				echo '<p><strong>' . esc_html__( 'Step 1 —', 'horse-tools' ) . '</strong> ' . esc_html__( 'open this site’s Telegram bot:', 'horse-tools' )
 					. ' <a href="' . esc_url( 'https://t.me/' . $bot ) . '" target="_blank" rel="noopener"><strong>@' . esc_html( $bot ) . '</strong></a></p>';
 			} else {
-				echo '<p class="description">' . esc_html__( 'Message the site’s Telegram bot once (ask the site admin which bot if you’re not sure), then use the button below.', 'horse-tools' ) . '</p>';
+				echo '<p><strong>' . esc_html__( 'Step 1 —', 'horse-tools' ) . '</strong> ' . esc_html__( 'open the site’s Telegram bot (ask the site admin which bot if you’re not sure).', 'horse-tools' ) . '</p>';
 			}
-			echo '<p><strong>' . esc_html__( 'Step 2 —', 'horse-tools' ) . '</strong> <button type="button" class="button" id="ht-2fa-getchat" data-nonce="' . esc_attr( wp_create_nonce( 'horsetools_2fa_getchat' ) ) . '">' . esc_html__( 'Detect my chat ID', 'horse-tools' ) . '</button> <span id="ht-2fa-getchat-msg" class="description" style="margin-left:6px"></span></p>';
-			echo '<p class="description">' . esc_html__( 'The code then reaches your own Telegram, not the admin. (You can also type the chat ID number in manually.)', 'horse-tools' ) . '</p>';
+			echo '<p><strong>' . esc_html__( 'Step 2 —', 'horse-tools' ) . '</strong> ' . esc_html__( 'send it this code:', 'horse-tools' )
+				. ' <code style="font-size:15px;padding:3px 10px;background:#fff8e1;border:1px solid #f0d98a;border-radius:5px">' . esc_html( $pair ) . '</code></p>';
+			echo '<p><strong>' . esc_html__( 'Step 3 —', 'horse-tools' ) . '</strong> <button type="button" class="button" id="ht-2fa-getchat" data-nonce="' . esc_attr( wp_create_nonce( 'horsetools_2fa_getchat' ) ) . '">' . esc_html__( 'Detect my chat ID', 'horse-tools' ) . '</button> <span id="ht-2fa-getchat-msg" class="description" style="margin-left:6px"></span></p>';
+			echo '<p class="description">' . esc_html__( 'The code is how the site tells your chat apart from everyone else’s — it finds only the chat that sent it. Recovery codes then reach your own Telegram, not the admin. (You can also type the chat ID number in manually.)', 'horse-tools' ) . '</p>';
 			?>
 			<script>
 			document.addEventListener('DOMContentLoaded',function(){
@@ -344,13 +416,9 @@ function horsetools_2fa_profile( $user ) {
 					.then(function(r){return r.json();}).then(function(res){
 						b.disabled=false;
 						if(!res.success){ msg.textContent=(res.data&&res.data.msg)||'Error'; return; }
-						msg.textContent='';
-						res.data.chats.forEach(function(c){
-							var pick=document.createElement('button'); pick.type='button'; pick.className='button-link'; pick.style.marginRight='10px';
-							pick.textContent=c.label+' → '+c.id;
-							pick.addEventListener('click',function(){ inp.value=c.id; msg.textContent='✓ '+c.id; });
-							msg.appendChild(pick);
-						});
+						// One chat, the user's own — fill it in and say so.
+						inp.value=res.data.id;
+						msg.textContent='✓ '+res.data.id+' — '+<?php echo wp_json_encode( __( 'remember to press “Update profile”.', 'horse-tools' ) ); ?>;
 					}).catch(function(){ b.disabled=false; msg.textContent='Error'; });
 				});
 			});

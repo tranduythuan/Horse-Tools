@@ -6973,3 +6973,27 @@ msgstr "Đang tải…"
 
 msgid "Could not load the list."
 msgstr "Không tải được danh sách."
+
+msgid "Your pairing code has expired. Reload this page to get a new one."
+msgstr "Mã ghép nối của bạn đã hết hạn. Tải lại trang này để lấy mã mới."
+
+msgid "No message containing %s yet. Send that exact code to the bot, then press this again."
+msgstr "Chưa thấy tin nhắn nào chứa %s. Hãy gửi đúng mã đó cho bot rồi bấm lại."
+
+msgid "open this site’s Telegram bot:"
+msgstr "mở bot Telegram của site này:"
+
+msgid "open the site’s Telegram bot (ask the site admin which bot if you’re not sure)."
+msgstr "mở bot Telegram của site (không rõ bot nào thì hỏi quản trị viên)."
+
+msgid "send it this code:"
+msgstr "gửi cho bot mã này:"
+
+msgid "Step 3 —"
+msgstr "Bước 3 —"
+
+msgid "The code is how the site tells your chat apart from everyone else’s — it finds only the chat that sent it. Recovery codes then reach your own Telegram, not the admin. (You can also type the chat ID number in manually.)"
+msgstr "Mã này là cách site phân biệt chat của bạn với của người khác — nó chỉ tìm đúng chat đã gửi mã. Mã khôi phục sau đó về thẳng Telegram của bạn, không phải của quản trị viên. (Bạn cũng có thể tự nhập số chat ID.)"
+
+msgid "remember to press “Update profile”."
+msgstr "nhớ bấm “Cập nhật hồ sơ”."

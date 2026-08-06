@@ -137,7 +137,15 @@ function horsetools_delete_font() {
     $fontsData = horsetools_get_uploaded_font_data();
     if (isset($fontsData[$key_to_delete])) {
         $font_path = realpath($fontsData[$key_to_delete]['font_path']);
-        if ($font_path && is_file($font_path)) {
+        // Only ever delete inside the fonts folder. The path comes out of an
+        // option, so today it is only ever one this plugin wrote — but that is
+        // an assumption about every other piece of code on the site, and the
+        // cost of not assuming it is one comparison. realpath() has already
+        // resolved any ".." by this point, so comparing prefixes is enough.
+        $custom_real = realpath($custom_dir);
+        $inside      = $font_path && $custom_real
+            && 0 === strpos($font_path, $custom_real . DIRECTORY_SEPARATOR);
+        if ($inside && is_file($font_path)) {
             if (@unlink($font_path)) {
                 $return['status'] = __('Deleted successfully', 'horse-tools');
             } else {

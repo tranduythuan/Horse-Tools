@@ -1098,6 +1098,17 @@ $vi = array(
 	'Loading…' => 'Đang tải…',
 	'Could not load the list.' => 'Không tải được danh sách.',
 
+	// Telegram pairing now matches a per-user code instead of listing every
+	// chat the site's bot has ever received (1.3.11).
+	'Your pairing code has expired. Reload this page to get a new one.' => 'Mã ghép nối của bạn đã hết hạn. Tải lại trang này để lấy mã mới.',
+	'No message containing %s yet. Send that exact code to the bot, then press this again.' => 'Chưa thấy tin nhắn nào chứa %s. Hãy gửi đúng mã đó cho bot rồi bấm lại.',
+	'open this site’s Telegram bot:' => 'mở bot Telegram của site này:',
+	'open the site’s Telegram bot (ask the site admin which bot if you’re not sure).' => 'mở bot Telegram của site (không rõ bot nào thì hỏi quản trị viên).',
+	'send it this code:' => 'gửi cho bot mã này:',
+	'Step 3 —' => 'Bước 3 —',
+	'The code is how the site tells your chat apart from everyone else’s — it finds only the chat that sent it. Recovery codes then reach your own Telegram, not the admin. (You can also type the chat ID number in manually.)' => 'Mã này là cách site phân biệt chat của bạn với của người khác — nó chỉ tìm đúng chat đã gửi mã. Mã khôi phục sau đó về thẳng Telegram của bạn, không phải của quản trị viên. (Bạn cũng có thể tự nhập số chat ID.)',
+	'remember to press “Update profile”.' => 'nhớ bấm “Cập nhật hồ sơ”.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';
