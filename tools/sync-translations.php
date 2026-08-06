@@ -1085,6 +1085,8 @@ $vi = array(
 	'This could not be checked from here, so the instructions are shown just in case. To find out whether they apply to you: open your site, press F12, and type gtag in the console. An answer of "function" means you have nothing to do; "undefined" means follow the steps below.' => 'Từ đây không kiểm tra được nên hướng dẫn cứ hiện ra phòng khi cần. Muốn biết nó có áp dụng cho bạn không: mở site, bấm F12, gõ gtag vào console. Trả lời "function" là bạn không phải làm gì; trả lời "undefined" thì làm theo các bước bên dưới.',
 	'1. Triggers → New → Custom Event, event name ^contact_ with "use regex matching" ticked — one trigger covers every channel, including any added later. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Optionally add event parameters placement and label, taking their values from Data Layer Variables contact_placement and contact_label. 4. Submit and publish the container.' => '1. Điều kiện kích hoạt → Mới → Sự kiện tuỳ chỉnh, tên sự kiện ^contact_ và tick "Sử dụng khớp biểu thức chính quy" — một trigger là đủ cho mọi kênh, kể cả kênh thêm sau này. 2. Thẻ → Mới → Google Analytics: Sự kiện GA4, trỏ vào mã đo lường của bạn, đặt Tên sự kiện = {{Event}} để mỗi kênh giữ tên riêng, dùng trigger ở bước 1. 3. Tuỳ chọn: thêm tham số sự kiện placement và label, lấy giá trị từ Biến lớp dữ liệu contact_placement và contact_label. 4. Bấm Gửi và xuất bản container.',
 
+	'Checking your site…' => 'Đang kiểm tra site của bạn…',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

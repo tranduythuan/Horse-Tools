@@ -46,9 +46,25 @@ add_action( 'wp_enqueue_scripts', 'horsetools_track_enqueue' );
  *
  * @return array{found:bool, id:string, how:string}
  */
-function horsetools_track_detect() {
+function horsetools_track_cached() {
 	$cached = get_transient( 'horsetools_track_detect' );
-	if ( is_array( $cached ) ) {
+	return is_array( $cached ) ? $cached : null;
+}
+
+/**
+ * Work out the state, reaching the network to do it.
+ *
+ * Never call this while a page is being built. It makes up to two blocking
+ * requests, and the sites it exists to help are precisely the ones where the
+ * first of them hangs until it times out — a host that blocks a site from
+ * fetching itself. Rendering the settings screen used to call it, so opening
+ * Customers could stall for eight seconds once an hour, for every admin,
+ * including ones who had never switched the feature on. It is now reached
+ * through admin-ajax after the screen has already drawn.
+ */
+function horsetools_track_detect() {
+	$cached = horsetools_track_cached();
+	if ( null !== $cached ) {
 		return $cached;
 	}
 
@@ -209,7 +225,7 @@ function horsetools_track_route( $body ) {
 		return 'none';
 	}
 
-	$cached = get_transient( 'horsetools_track_route_' . $m[1] );
+	$cached = get_transient( 'horsetools_track_route' );
 	if ( false !== $cached ) {
 		return $cached;
 	}
@@ -230,7 +246,7 @@ function horsetools_track_route( $body ) {
 		// them, and their absence is a silent failure for someone who does.
 		$route = 'unknown';
 	}
-	set_transient( 'horsetools_track_route_' . $m[1], $route, DAY_IN_SECONDS );
+	set_transient( 'horsetools_track_route', $route, DAY_IN_SECONDS );
 	return $route;
 }
 
@@ -272,6 +288,19 @@ function horsetools_track_has_gtm() {
 	return '1' === $found;
 }
 
+/**
+ * Run the detection out of band, once the screen is already on the reader's
+ * eyes. Same work as opening the screen used to do, minus the wait.
+ */
+function horsetools_track_ajax() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error( array(), 403 );
+	}
+	check_ajax_referer( 'horsetools_track_probe' );
+	wp_send_json_success( horsetools_track_detect() );
+}
+add_action( 'wp_ajax_horsetools_track_probe', 'horsetools_track_ajax' );
+
 /** Clear the cached detection when asked to look again. */
 function horsetools_track_recheck() {
 	if ( ! isset( $_GET['horsetools-track-recheck'] ) || ! current_user_can( 'manage_options' ) ) {
@@ -280,6 +309,7 @@ function horsetools_track_recheck() {
 	check_admin_referer( 'horsetools_track_recheck' );
 	delete_transient( 'horsetools_track_detect' );
 	delete_transient( 'horsetools_track_gtm' );
+	delete_transient( 'horsetools_track_route' );
 	wp_safe_redirect( remove_query_arg( array( 'horsetools-track-recheck', '_wpnonce' ) ) );
 	exit;
 }

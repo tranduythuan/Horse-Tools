@@ -1,12 +1,27 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 global $horsetools_options;
-$ht_track = function_exists( 'horsetools_track_detect' ) ? horsetools_track_detect() : array( 'found' => false, 'id' => '', 'how' => '' );
+/*
+ * Cache only. Working the answer out costs up to two blocking requests, and the
+ * hosts this feature exists for are the ones where the first of them hangs — so
+ * it must never happen while this screen is being built. When there is nothing
+ * cached the screen draws a neutral "checking" state and the script at the
+ * bottom asks for the answer over ajax.
+ */
+$ht_track = function_exists( 'horsetools_track_cached' ) ? horsetools_track_cached() : null;
+$ht_known = is_array( $ht_track );
+if ( ! $ht_known ) {
+	$ht_track = array( 'found' => false, 'id' => '', 'how' => 'checking', 'route' => 'checking' );
+}
 ?>
 			<h3><i class="ti ti-chart-dots"></i> <?php _e( 'Contact click measurement', 'horse-tools' ) ?></h3>
 
 			<div id="ht-track-state">
-			<?php if ( $ht_track['found'] ) : ?>
+			<?php if ( ! $ht_known ) : ?>
+			<p class="ht-note"><i class="ti ti-loader"></i>
+				<?php esc_html_e( 'Checking your site…', 'horse-tools' ); ?>
+			</p>
+			<?php elseif ( $ht_track['found'] ) : ?>
 			<p class="ht-note"><i class="ti ti-circle-check"></i>
 				<?php
 				printf(
@@ -50,6 +65,8 @@ $ht_track = function_exists( 'horsetools_track_detect' ) ? horsetools_track_dete
 				/* translators: %s: the measurement ID found on the site, e.g. G-XXXXXXX. */
 				'found' => __( 'Analytics found on your site: %s. Clicks will be recorded there.', 'horse-tools' ),
 				'none'  => __( 'Checked from your own browser: the home page a visitor receives carries no Google Analytics tag. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own.', 'horse-tools' ),
+				'ajax'  => $ht_known ? '' : admin_url( 'admin-ajax.php' ),
+				'nonce' => $ht_known ? '' : wp_create_nonce( 'horsetools_track_probe' ),
 			);
 			?>
 			<script>
@@ -57,6 +74,28 @@ $ht_track = function_exists( 'horsetools_track_detect' ) ? horsetools_track_dete
 				var cfg = <?php echo wp_json_encode( $ht_probe ); ?>;
 				var box = document.getElementById('ht-track-state');
 				if (!box || !window.fetch) { return; }
+
+				// Nothing was cached, so the server has not looked yet. Ask it to,
+				// now that the screen is drawn, and reveal the case it comes back
+				// with. Every case is already on the page; only one is visible.
+				if (cfg.ajax) {
+					var body = 'action=horsetools_track_probe&_wpnonce=' + encodeURIComponent(cfg.nonce);
+					fetch(cfg.ajax, {
+						method: 'POST',
+						credentials: 'same-origin',
+						headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+						body: body
+					})
+						.then(function (r) { return r.json(); })
+						.then(function (j) {
+							var route = j && j.success && j.data ? j.data.route : 'unknown';
+							var cases = document.querySelectorAll('#ht-track-route .ht-route-case');
+							for (var i = 0; i < cases.length; i++) {
+								cases[i].style.display = cases[i].getAttribute('data-case') === route ? '' : 'none';
+							}
+						})
+						.catch(function () {});
+				}
 
 				fetch(cfg.home, { credentials: 'omit', cache: 'no-store' })
 					.then(function (r) { return r.ok ? r.text() : ''; })
@@ -123,32 +162,36 @@ $ht_track = function_exists( 'horsetools_track_detect' ) ? horsetools_track_dete
 			$ht_route = isset( $ht_track['route'] ) ? $ht_track['route'] : 'unknown';
 			?>
 			<div id="ht-track-route">
-			<?php if ( 'gtag' === $ht_route ) : ?>
+			<div class="ht-route-case" data-case="gtag"<?php echo 'gtag' === $ht_route ? '' : ' style="display:none"'; ?>>
 			<h4><?php _e( 'Nothing to set up', 'horse-tools' ) ?></h4>
 			<p class="ht-note"><i class="ti ti-circle-check"></i>
 				<?php esc_html_e( 'Your site loads the Google tag, so a click goes straight to Analytics. This is the usual case, and it includes sites where Analytics was installed through Tag Manager — a GA4 tag inside a container loads the Google tag itself.', 'horse-tools' ); ?>
 			</p>
-			<?php elseif ( 'none' === $ht_route ) : ?>
+			</div>
+			<div class="ht-route-case" data-case="none"<?php echo 'none' === $ht_route ? '' : ' style="display:none"'; ?>>
 			<h4><?php _e( 'Install analytics first', 'horse-tools' ) ?></h4>
 			<p class="ht-note"><i class="ti ti-info-circle"></i>
 				<?php esc_html_e( 'The page carries no analytics at all yet, so there is nowhere for a click to be recorded. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own with nothing further to configure.', 'horse-tools' ); ?>
 			</p>
-			<?php else : ?>
-			<?php if ( 'datalayer' === $ht_route ) : ?>
+			</div>
+			<div class="ht-route-case" data-case="datalayer"<?php echo 'datalayer' === $ht_route ? '' : ' style="display:none"'; ?>>
 			<h4><?php _e( 'Your site has Tag Manager but no Google tag — one setup step is required', 'horse-tools' ) ?></h4>
 			<p class="ht-note ht-note-red"><i class="ti ti-alert-triangle"></i>
 				<?php esc_html_e( 'Your container has no GA4 tag in it, so Tag Manager has nothing to pass the click on to. It is placed in the dataLayer and stops there until you build the tag below — until then nothing reaches Analytics.', 'horse-tools' ); ?>
 			</p>
-			<?php else : ?>
+			<p class="ht-note"><i class="ti ti-bulb"></i>
+				<?php esc_html_e( '1. Triggers → New → Custom Event, event name ^contact_ with "use regex matching" ticked — one trigger covers every channel, including any added later. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Optionally add event parameters placement and label, taking their values from Data Layer Variables contact_placement and contact_label. 4. Submit and publish the container.', 'horse-tools' ); ?>
+			</p>
+			</div>
+			<div class="ht-route-case" data-case="unknown"<?php echo 'unknown' === $ht_route ? '' : ' style="display:none"'; ?>>
 			<h4><?php _e( 'If your site has Tag Manager but no Google tag', 'horse-tools' ) ?></h4>
 			<p class="ht-note"><i class="ti ti-help-circle"></i>
 				<?php esc_html_e( 'This could not be checked from here, so the instructions are shown just in case. To find out whether they apply to you: open your site, press F12, and type gtag in the console. An answer of "function" means you have nothing to do; "undefined" means follow the steps below.', 'horse-tools' ); ?>
 			</p>
-			<?php endif; ?>
 			<p class="ht-note"><i class="ti ti-bulb"></i>
 				<?php esc_html_e( '1. Triggers → New → Custom Event, event name ^contact_ with "use regex matching" ticked — one trigger covers every channel, including any added later. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Optionally add event parameters placement and label, taking their values from Data Layer Variables contact_placement and contact_label. 4. Submit and publish the container.', 'horse-tools' ); ?>
 			</p>
-			<?php endif; ?>
+			</div>
 			</div>
 
 			<p class="ht-note"><i class="ti ti-alert-triangle"></i>

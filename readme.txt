@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.6
+Stable tag: 1.3.7
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.7 =
+* **Opening the Customers screen no longer waits for the site to answer itself.** The measurement check made up to two blocking requests while the screen was being built, and the tab is not gated behind the feature — so every admin who opened Customers paid for it once an hour, whether or not they had ever switched contact tracking on. The hosts it stalls hardest are the ones that block a site from fetching itself, which are precisely the hosts this check exists for: eight seconds of nothing. The screen now draws immediately from cache and asks for the answer over ajax afterwards.
+* **"Check again" now really checks everything again.** It cleared two cached answers but not the one holding the Tag Manager container reading, which lives for a day — so fixing your container and pressing the button showed you yesterday's verdict.
+* Found by reading the two days of changes back rather than by anything breaking. Nothing else turned up: no leftovers from the approaches that were tried and dropped, the ajax endpoint checks capability before nonce, the option query escapes the LIKE wildcards, the container ID is regex-bounded before it reaches a URL, and everything printed into the page is escaped.
 
 = 1.3.6 =
 * **A contact link can no longer be left dead by a browser that refuses the delayed open.** Holding a link means cancelling the tap and going to the address a moment later, from a timer rather than from the tap itself, and some browsers restrict exactly that. Being wrong about which ones would not cost a statistic — it would cost a phone button that does nothing, on a platform nobody here can test. So the plugin no longer needs to know: after holding, it checks whether its own navigation actually happened, and if it did not, holding is switched off for the rest of the session and every later tap opens the browser's own way. At most one tap is affected, on browsers that would otherwise have been broken outright. Where the check misfires — a desktop showing an "open with" prompt and staying on the page — holding was doing nothing useful there anyway, because nothing was going to suspend that page. Verified against a refusing browser, a real navigation, and an app taking the page over; only the first switches it off.
