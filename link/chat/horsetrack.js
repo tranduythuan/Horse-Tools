@@ -249,9 +249,35 @@
 	var HOLD_FLOOR = 200;
 	var HOLD_CAP = 450;
 
+	/**
+	 * Has this browser refused a navigation that came from a timer?
+	 *
+	 * Holding the link means cancelling the tap and going to the address a
+	 * moment later, from a timer rather than from the tap itself. Some engines
+	 * restrict that, and the cost of being wrong is not a lost statistic — it is
+	 * a phone button that does nothing. Rather than keep a list of which
+	 * browsers behave which way, and rather than guess about one that cannot be
+	 * tested here, the release below checks whether its own navigation actually
+	 * happened. If it did not, holding is switched off for the rest of the
+	 * session and every later tap opens natively.
+	 *
+	 * At most one tap is affected, on browsers that would otherwise be broken
+	 * entirely. Where the check misfires — a desktop that shows an "open with"
+	 * prompt and stays on the page — holding was doing nothing useful anyway,
+	 * because nothing was going to suspend that page.
+	 */
+	var NO_HOLD = (function () {
+		try {
+			return sessionStorage.getItem('htNoHold') === '1';
+		} catch (e) {
+			return false;
+		}
+	}());
+
 	function send(name, params, ev, a) {
 		var href = a.getAttribute('href') || '';
-		var hold = ('' !== href) &&
+		var hold = !NO_HOLD &&
+			('' !== href) &&
 			0 !== href.indexOf('#') &&
 			!ev.defaultPrevented &&
 			!ev.metaKey && !ev.ctrlKey && !ev.shiftKey && !ev.altKey &&
@@ -278,9 +304,23 @@
 					(hold ? '' : ' (link not held)')
 				);
 			}
-			if (hold) {
-				window.location.href = href;
+			if (!hold) {
+				return;
 			}
+			var before = window.location.href;
+			window.location.href = href;
+
+			// Did that actually go anywhere? If the page is still here and still
+			// on the same address, the browser refused it — stop holding from now
+			// on, so the next tap is the browser's own and cannot be blocked.
+			setTimeout(function () {
+				if ('hidden' === document.visibilityState || window.location.href !== before) {
+					return;
+				}
+				try { sessionStorage.setItem('htNoHold', '1'); } catch (e) {}
+				NO_HOLD = true;
+				logLine('this browser blocked the delayed open — links will no longer be held');
+			}, 800);
 		};
 
 		if (DEBUG) {

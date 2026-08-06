@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.5
+Stable tag: 1.3.6
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.6 =
+* **A contact link can no longer be left dead by a browser that refuses the delayed open.** Holding a link means cancelling the tap and going to the address a moment later, from a timer rather than from the tap itself, and some browsers restrict exactly that. Being wrong about which ones would not cost a statistic — it would cost a phone button that does nothing, on a platform nobody here can test. So the plugin no longer needs to know: after holding, it checks whether its own navigation actually happened, and if it did not, holding is switched off for the rest of the session and every later tap opens the browser's own way. At most one tap is affected, on browsers that would otherwise have been broken outright. Where the check misfires — a desktop showing an "open with" prompt and staying on the page — holding was doing nothing useful there anyway, because nothing was going to suspend that page. Verified against a refusing browser, a real navigation, and an app taking the page over; only the first switches it off.
 
 = 1.3.5 =
 * **The measurement screen now works out which case your site is in, instead of leaving you to.** A click takes one of two routes: straight to Analytics if the page loads the Google tag, or into the dataLayer if it does not, where it waits for a tag to be built in Tag Manager. The screen used to show the Tag Manager instructions to anyone who had a container at all — which is the wrong question, because a GA4 tag inside a container loads the Google tag itself. Most Tag Manager users were being sent on an errand they did not need. The container is now opened and read: if it has a GA4 tag in it, the screen says there is nothing to set up. Four outcomes, one shown at a time — ready, install analytics first, build the tag, or "could not check" with the one-line console test that settles it.
