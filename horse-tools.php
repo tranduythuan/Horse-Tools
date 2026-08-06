@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.3.12
+ * Version: 1.3.13
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.3.12' );
+define( 'HORSETOOLS_VERSION', '1.3.13' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
@@ -266,6 +266,39 @@ function horsetools_activation() {
 	horsetools_migrate_legacy_options();
 }
 register_activation_hook( __FILE__, 'horsetools_activation' );
+
+/**
+ * Jobs that have to run once after an update.
+ *
+ * Not the activation hook: WordPress does not fire that when a plugin is
+ * updated in place, which is how every update reaches a site. Keyed on the
+ * version so it costs one option read per admin request and nothing else.
+ */
+function horsetools_housekeeping() {
+	if ( wp_doing_ajax() || wp_doing_cron() ) {
+		return;
+	}
+	if ( HORSETOOLS_VERSION === get_option( 'horsetools_housekeeping' ) ) {
+		return;
+	}
+
+	// Up to 1.3.12 the Debug module kept a copy of wp-config.php beside itself,
+	// named wp-config.php.horsetools.bak. The intent was a way back after a bad
+	// write; the effect was that .bak is not a PHP extension, so a web server
+	// hands the file over as plain text — database password, every salt, the
+	// table prefix — to anyone who guesses the name. An .htaccess would not have
+	// helped on nginx. The backup is gone (wp-config.php is written atomically
+	// now); this removes any copy already sitting on a site.
+	foreach ( array( ABSPATH, trailingslashit( dirname( ABSPATH ) ) ) as $horsetools_dir ) {
+		$horsetools_stale = $horsetools_dir . 'wp-config.php.horsetools.bak';
+		if ( file_exists( $horsetools_stale ) ) {
+			@unlink( $horsetools_stale ); // phpcs:ignore WordPress.PHP.NoSilencedErrors
+		}
+	}
+
+	update_option( 'horsetools_housekeeping', HORSETOOLS_VERSION, true );
+}
+add_action( 'admin_init', 'horsetools_housekeeping', 5 );
 
 /**
  * On deactivation, drop the scheduled cleanup event. wp_clear_scheduled_hook()

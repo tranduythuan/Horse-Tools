@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.12
+Stable tag: 1.3.13
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,12 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.13 =
+* **Security: the Debug module no longer leaves a readable copy of wp-config.php on the server.** Before changing a debug constant it kept the original as `wp-config.php.horsetools.bak`, right beside the real one, so that a bad write could be undone over FTP. The intent was sound and the filename was the problem: `.bak` is not a PHP extension, so a web server hands that file over as plain text — database password, every salt, the table prefix — to anyone who asks for it by name. An `.htaccess` would not have covered nginx. The copy is gone: wp-config.php is now written to a temporary file and renamed into place, which is atomic and protects against the half-written file the backup existed for. Updating deletes any copy already on the server. **Check your site for `wp-config.php.horsetools.bak` if you ever used this module — if it is still there, delete it and change your database password.**
+* **Security: the debug log is no longer written where anyone can read it.** Switching logging on used to fill `wp-content/debug.log`, which is public by default. PHP errors carry absolute server paths, fragments of SQL and sometimes the contents of the request that failed. The log now goes to its own folder under an unguessable name, with the folder blocked as well; an existing log is moved there rather than left behind or thrown away.
+* The value written into wp-config.php is now checked against the two shapes this module ever produces. The existing parse check catches broken syntax, but `true ) ; foo ( bar` is perfectly valid PHP and would have taken a site down when it ran rather than when it parsed. Found by writing the test, not in the wild.
+* Covered by `tools/test-config-writer.php`: 15 checks against real files, including that nothing containing a password is left in the directory afterwards.
 
 = 1.3.12 =
 * **A snippet body is stored exactly as you typed it again.** Snippets became one record each in 1.3.8, and a record is a post — which means WordPress ran the body through the same filters it runs a blog post through. On most sites those filters change nothing and nobody would ever notice. On a site where "correct invalidly nested XHTML" is switched on, on multisite, or with another plugin filtering saved content, they would: an unclosed tag gets closed, PHP gets rewritten. That matters most for PHP snippets, which are signed character by character and refuse to run — reporting themselves as tampered with — if the body comes back even slightly different. The body is now checked after saving and put back byte for byte if anything touched it. Sites where nothing touches it pay one cached read and no extra write.

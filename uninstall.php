@@ -82,6 +82,27 @@ if ( ! empty( $horsetools_up['basedir'] ) ) {
 // into wp-config.php. Those constants are deliberately NOT touched here —
 // editing wp-config.php from an uninstall routine is riskier than leaving it.
 // If you enabled WP_DEBUG_DISPLAY, turn it off in wp-config.php by hand after
-// uninstalling, or the site keeps printing PHP warnings to visitors. A copy of
-// the file as it was before the plugin first edited it is at
-// wp-config.php.horsetools.bak.
+// uninstalling, or the site keeps printing PHP warnings to visitors.
+//
+// Versions up to 1.3.12 also left a copy of wp-config.php beside itself, named
+// wp-config.php.horsetools.bak. Updating to 1.3.13 deletes it; if one is still
+// on the server, delete it — a web server hands that file over as plain text,
+// database password and salts included.
+delete_option('horsetools_debug_log_name');
+delete_option('horsetools_housekeeping');
+
+// The debug log and its folder.
+$horsetools_logs = WP_CONTENT_DIR . '/horsetools-logs';
+if ( is_dir( $horsetools_logs ) ) {
+	foreach ( (array) glob( $horsetools_logs . '/*' ) as $horsetools_logfile ) {
+		if ( is_file( $horsetools_logfile ) ) {
+			@unlink( $horsetools_logfile );
+		}
+	}
+	@rmdir( $horsetools_logs );
+}
+foreach ( array( ABSPATH, trailingslashit( dirname( ABSPATH ) ) ) as $horsetools_dir ) {
+	if ( file_exists( $horsetools_dir . 'wp-config.php.horsetools.bak' ) ) {
+		@unlink( $horsetools_dir . 'wp-config.php.horsetools.bak' );
+	}
+}

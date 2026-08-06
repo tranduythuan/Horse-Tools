@@ -48,7 +48,7 @@ function horsetools_debug_options_page() {
 				) ); ?>
 				<?php
 				if (defined('WP_DEBUG_LOG') && WP_DEBUG_LOG) {
-				$debug_log_path = WP_CONTENT_DIR . '/debug.log';
+				$debug_log_path = function_exists( 'horsetools_debug_log_current' ) ? horsetools_debug_log_current() : WP_CONTENT_DIR . '/debug.log';
 				if (file_exists($debug_log_path)) { ?>
 						<p>
 						<div class="ht-pre-tit"><span></span><span></span><span></span></div>
