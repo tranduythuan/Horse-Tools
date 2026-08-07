@@ -146,6 +146,30 @@ function horsetools_health_report() {
 			$c_row[0], 3, '', $c_row[1]
 		);
 	}
+	// The same watch over post content. Separate row because it takes a while to
+	// finish the first time, and "still reading" is not the same answer as "all
+	// agreed" — reporting it as a pass would be claiming a guard that is not up
+	// yet.
+	if ( function_exists( 'horsetools_contact_content_status' ) ) {
+		$cc = horsetools_contact_content_status();
+		if ( 'scanning' === $cc['state'] ) {
+			$read  = isset( $cc['progress']['read'] ) ? (int) $cc['progress']['read'] : 0;
+			$total = isset( $cc['progress']['total'] ) ? (int) $cc['progress']['total'] : 0;
+			$note  = $total
+				/* translators: 1: posts read so far, 2: posts in total. */
+				? sprintf( __( 'Reading your content: %1$d of %2$d', 'horse-tools' ), $read, $total )
+				: __( 'Reading your content…', 'horse-tools' );
+			$add( 'contact_content', $sec_cat, __( 'Contact details in your posts are watched', 'horse-tools' ), 'warn', 2, '', $note );
+		} else {
+			$cc_map = array(
+				'clean'   => array( 'pass', '' ),
+				'unset'   => array( 'warn', __( 'Confirm them once, from the banner on any Horse Tools screen', 'horse-tools' ) ),
+				'changed' => array( 'fail', __( 'A new one appeared in a post — see the banner', 'horse-tools' ) ),
+			);
+			$cc_row = isset( $cc_map[ $cc['state'] ] ) ? $cc_map[ $cc['state'] ] : $cc_map['unset'];
+			$add( 'contact_content', $sec_cat, __( 'Contact details in your posts are watched', 'horse-tools' ), $cc_row[0], 2, '', $cc_row[1] );
+		}
+	}
 	// A stray wp-config copy or database dump in the web root is worse than any
 	// of the settings above being off.
 	if ( function_exists( 'horsetools_exposure_status' ) ) {

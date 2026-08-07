@@ -383,6 +383,10 @@ function horsetools_contact_confirm_ajax() {
 	}
 	check_ajax_referer( 'horsetools_contact', 'nonce' );
 	horsetools_contact_confirm();
+	// One button agrees to whatever is on the screen, and what is on the screen
+	// may be either side. Confirming both is right in each case: the settings set
+	// is re-read anyway, and the content set is empty until its first pass ends.
+	horsetools_contact_content_confirm();
 	wp_send_json_success();
 }
 
@@ -398,7 +402,8 @@ function horsetools_contact_notice() {
 		return;
 	}
 	$s = horsetools_contact_status();
-	if ( 'clean' === $s['state'] ) {
+	$c = horsetools_contact_content_status();
+	if ( 'clean' === $s['state'] && in_array( $c['state'], array( 'clean', 'scanning' ), true ) ) {
 		return;
 	}
 
@@ -418,6 +423,23 @@ function horsetools_contact_notice() {
 	$nonce  = wp_create_nonce( 'horsetools_contact' );
 	$button = '<button type="button" class="button button-primary" id="ht-contact-confirm" data-nonce="' . esc_attr( $nonce ) . '">'
 		. esc_html__( 'These are correct — remember them', 'horse-tools' ) . '</button>';
+
+	// The settings side is already agreed and only the content side has
+	// something to say: keep the two apart rather than folding a first reading
+	// of eight hundred posts into a "your details changed" alarm.
+	if ( 'clean' === $s['state'] ) {
+		ob_start();
+		if ( 'unset' === $c['state'] ) {
+			echo '<p><strong>' . esc_html__( 'Finished reading your posts and pages.', 'horse-tools' ) . '</strong></p>';
+			echo '<p>' . esc_html__( 'These contact details appear in your content. Confirm them and you will be told if a new one ever turns up in a post — which is what happens when somebody edits an old article to put their own number in it.', 'horse-tools' ) . '</p>';
+		} else {
+			echo '<p><strong>' . esc_html__( 'A contact detail that was not there before has appeared in your content.', 'horse-tools' ) . '</strong></p>';
+		}
+		$list( $c['added'] );
+		echo '<p>' . $button . '</p>';
+		horsetools_admin_banner( 'unset' === $c['state'] ? 'info' : 'bad', ob_get_clean() );
+		return;
+	}
 
 	if ( 'unset' === $s['state'] ) {
 		ob_start();
@@ -456,3 +478,222 @@ function horsetools_contact_notice() {
 	<?php
 }
 add_action( 'admin_notices', 'horsetools_contact_notice' );
+
+/* -------------------------------------------------------------------------
+ * The same question, asked of the content.
+ *
+ * The settings are a handful of options and can be read on every admin load.
+ * Post content is eight hundred rows on one of these sites, so it is walked in
+ * batches, resumes where it stopped, and afterwards reads only what changed.
+ *
+ * Its baseline is deliberately separate from the settings one. Sharing a
+ * baseline would mean that the moment the first content pass finished, every
+ * number in every post appeared as a change — on a site whose owner had just
+ * confirmed everything — a false alarm caused by nothing but the plugin's own
+ * progress.
+ * ---------------------------------------------------------------------- */
+
+const HORSETOOLS_CONTACT_CONTENT   = 'horsetools_contact_content';
+const HORSETOOLS_CONTACT_CONTENT_B = 'horsetools_contact_baseline_content';
+const HORSETOOLS_CONTACT_SCAN      = 'horsetools_contact_scan';
+
+/** Post types carrying text a visitor can read. */
+function horsetools_contact_post_types() {
+	$types = get_post_types( array( 'public' => true ), 'names' );
+	unset( $types['attachment'] );
+	// Snippets are not public themselves, but their bodies are printed into
+	// pages that are.
+	if ( post_type_exists( 'ht_snippet' ) ) {
+		$types['ht_snippet'] = 'ht_snippet';
+	}
+	return array_values( $types );
+}
+
+/**
+ * @return array{done:bool,offset:int,since:string,total:int}
+ */
+function horsetools_contact_scan_state() {
+	$s = get_option( HORSETOOLS_CONTACT_SCAN, array() );
+	$s = is_array( $s ) ? $s : array();
+	return array(
+		'done'   => ! empty( $s['done'] ),
+		'offset' => isset( $s['offset'] ) ? (int) $s['offset'] : 0,
+		'since'  => isset( $s['since'] ) ? (string) $s['since'] : '',
+		'total'  => isset( $s['total'] ) ? (int) $s['total'] : 0,
+	);
+}
+
+/**
+ * Read one batch and fold what it finds into the stored set.
+ *
+ * @param int $size Posts per batch.
+ * @return array{done:bool,offset:int,total:int,scanned:int}
+ */
+function horsetools_contact_scan_batch( $size = 25 ) {
+	global $wpdb;
+
+	$state = horsetools_contact_scan_state();
+	$types = horsetools_contact_post_types();
+	if ( ! $types ) {
+		return array( 'done' => true, 'offset' => 0, 'total' => 0, 'scanned' => 0 );
+	}
+	$in = implode( ',', array_fill( 0, count( $types ), '%s' ) );
+
+	if ( $state['done'] ) {
+		// Steady state: only what changed. On a site where nothing has been
+		// edited this reads no post content at all.
+		$sql  = "SELECT ID, post_title, post_excerpt, post_content FROM {$wpdb->posts}"
+			. " WHERE post_status = 'publish' AND post_type IN ($in) AND post_modified > %s"
+			. ' ORDER BY post_modified ASC LIMIT %d';
+		$args = array_merge( $types, array( '' !== $state['since'] ? $state['since'] : '1970-01-01 00:00:00', (int) $size ) );
+	} else {
+		if ( ! $state['total'] ) {
+			$state['total'] = (int) $wpdb->get_var(
+				$wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_status = 'publish' AND post_type IN ($in)", $types ) // phpcs:ignore WordPress.DB
+			);
+		}
+		$sql  = "SELECT ID, post_title, post_excerpt, post_content FROM {$wpdb->posts}"
+			. " WHERE post_status = 'publish' AND post_type IN ($in)"
+			. ' ORDER BY ID ASC LIMIT %d OFFSET %d';
+		$args = array_merge( $types, array( (int) $size, (int) $state['offset'] ) );
+	}
+
+	$rows  = $wpdb->get_results( $wpdb->prepare( $sql, $args ) ); // phpcs:ignore WordPress.DB
+	$found = get_option( HORSETOOLS_CONTACT_CONTENT, array() );
+	$found = is_array( $found ) ? $found : array();
+
+	foreach ( (array) $rows as $row ) {
+		$text = $row->post_title . "\n" . $row->post_excerpt . "\n" . $row->post_content;
+		foreach ( horsetools_contact_extract( $text ) as $id => $hit ) {
+			if ( ! isset( $found[ $id ] ) ) {
+				if ( count( $found ) >= 200 ) {
+					continue; // a set this size is not a contact list; stop growing.
+				}
+				$hit['posts'] = array();
+				$hit['count'] = 0;
+				$found[ $id ] = $hit;
+			}
+			$found[ $id ]['count'] += $hit['count'];
+			if ( count( $found[ $id ]['posts'] ) < 8 && ! in_array( (int) $row->ID, $found[ $id ]['posts'], true ) ) {
+				$found[ $id ]['posts'][] = (int) $row->ID;
+			}
+		}
+	}
+	update_option( HORSETOOLS_CONTACT_CONTENT, $found, false );
+
+	$n = count( (array) $rows );
+
+	if ( $state['done'] ) {
+		if ( $n ) {
+			$state['since'] = current_time( 'mysql' );
+			update_option( HORSETOOLS_CONTACT_SCAN, $state, false );
+		}
+		return array( 'done' => true, 'offset' => $state['total'], 'total' => $state['total'], 'scanned' => $n );
+	}
+
+	$state['offset'] += $n;
+	if ( $n < $size ) {
+		$state['done']  = true;
+		$state['since'] = current_time( 'mysql' );
+	}
+	update_option( HORSETOOLS_CONTACT_SCAN, $state, false );
+
+	return array(
+		'done'    => $state['done'],
+		'offset'  => $state['offset'],
+		'total'   => $state['total'],
+		'scanned' => $n,
+	);
+}
+
+/** Identities found in content — empty while the first pass is still running. */
+function horsetools_contact_content_found() {
+	$state = horsetools_contact_scan_state();
+	if ( ! $state['done'] ) {
+		return array();
+	}
+	$f = get_option( HORSETOOLS_CONTACT_CONTENT, array() );
+	return is_array( $f ) ? $f : array();
+}
+
+function horsetools_contact_content_baseline() {
+	$b = get_option( HORSETOOLS_CONTACT_CONTENT_B, null );
+	return is_array( $b ) ? $b : array();
+}
+
+function horsetools_contact_content_has_baseline() {
+	return is_array( get_option( HORSETOOLS_CONTACT_CONTENT_B, null ) );
+}
+
+/**
+ * Content is judged on what appeared, not on what left.
+ *
+ * A number vanishing from the content usually means a post was deleted or
+ * rewritten, which is ordinary work and would be a weekly false alarm. A number
+ * *appearing* is the swap: whoever edits one post to put their own number in
+ * leaves the original standing in the other eight hundred, so nothing is ever
+ * reported missing anyway.
+ *
+ * @return array{state:string,added:array,progress:array}
+ */
+function horsetools_contact_content_status() {
+	static $memo = null;
+	if ( null !== $memo ) {
+		return $memo;
+	}
+	$scan = horsetools_contact_scan_state();
+	if ( ! $scan['done'] ) {
+		$memo = array(
+			'state'    => 'scanning',
+			'added'    => array(),
+			'progress' => array( 'read' => $scan['offset'], 'total' => $scan['total'] ),
+		);
+		return $memo;
+	}
+	$now = horsetools_contact_content_found();
+	if ( ! horsetools_contact_content_has_baseline() ) {
+		$memo = array( 'state' => 'unset', 'added' => $now, 'progress' => array() );
+		return $memo;
+	}
+	$added = array_diff_key( $now, horsetools_contact_content_baseline() );
+	$memo  = array(
+		'state'    => $added ? 'changed' : 'clean',
+		'added'    => $added,
+		'progress' => array(),
+	);
+	return $memo;
+}
+
+function horsetools_contact_content_confirm() {
+	update_option( HORSETOOLS_CONTACT_CONTENT_B, horsetools_contact_content_found(), false );
+}
+
+/**
+ * Walk the scan forward while somebody is using the admin.
+ *
+ * WP-Cron is not reliable enough to be the only driver — this plugin has
+ * already shipped a scheduled task that never ran once — and the first pass has
+ * to finish before the watch means anything. One small batch per admin page
+ * load gets there without a screen to sit and watch. Once it is done the cost
+ * is a single indexed query every quarter of an hour that usually returns
+ * nothing.
+ */
+function horsetools_contact_scan_tick() {
+	if ( wp_doing_ajax() || wp_doing_cron() || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	if ( get_transient( 'horsetools_contact_tick' ) ) {
+		return;
+	}
+	set_transient( 'horsetools_contact_tick', 1, 5 );
+
+	$state = horsetools_contact_scan_state();
+	if ( $state['done'] ) {
+		if ( get_transient( 'horsetools_contact_seen' ) ) {
+			return;
+		}
+		set_transient( 'horsetools_contact_seen', 1, 15 * MINUTE_IN_SECONDS );
+	}
+	horsetools_contact_scan_batch( 25 );
+}
+add_action( 'admin_init', 'horsetools_contact_scan_tick', 20 );

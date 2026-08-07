@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.20
+Stable tag: 1.3.21
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.21 =
+* **The contact watch now covers your posts and pages, not just your settings.** A number swapped inside an old article is the same attack as one swapped in the chat button, and on a site with hundreds of posts nobody re-reads the old ones. Content is walked in batches that resume where they stopped, and once the first pass is finished only what has been edited is read again — on a site where nothing changed, that costs one indexed query.
+* Content is judged on what **appeared**, not on what left. A number vanishing usually means a post was deleted or rewritten, which is ordinary work and would be a weekly false alarm; a number appearing is the swap, because whoever edits one post leaves the original standing in all the others.
+* Its baseline is kept separate from the settings one. Sharing it would mean that the moment the first pass finished, every number in every post appeared as a change on a site whose owner had just confirmed everything — an alarm caused by nothing but the plugin's own progress.
 
 = 1.3.20 =
 * **Horse Tools now checks whether your site is handing out its own secrets.** A stray copy of wp-config, a database dump, a .git directory, a forgotten phpinfo — these are the first things anyone scanning a WordPress site asks for, and finding one is worth more to them than every casino link they could inject. It looks for the short list of files that should never sit in a web root, and says something only when one is actually there.

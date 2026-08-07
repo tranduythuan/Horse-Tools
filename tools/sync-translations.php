@@ -1153,6 +1153,16 @@ $vi = array(
 	'Somebody has asked for this path %d times.' => 'Đã có người hỏi tới đường dẫn này %d lần.',
 	'Delete them, or move them somewhere outside the folder your site is served from. If one of them is a copy of wp-config.php, change your database password afterwards — assume it has been read.' => 'Hãy xoá chúng đi, hoặc chuyển ra ngoài thư mục mà site đang chạy. Nếu có cái nào là bản sao của wp-config.php thì sau đó đổi luôn mật khẩu database — cứ coi như nó đã bị đọc.',
 
+	// Watching contact details inside post content (1.3.21).
+	'Contact details in your posts are watched' => 'Thông tin liên hệ trong bài viết được canh',
+	'Reading your content: %1$d of %2$d' => 'Đang đọc nội dung: %1$d / %2$d',
+	'Reading your content…' => 'Đang đọc nội dung…',
+	'Confirm them once, from the banner on any Horse Tools screen' => 'Xác nhận một lần, ở bảng thông báo trên bất kỳ màn hình Horse Tools nào',
+	'A new one appeared in a post — see the banner' => 'Có cái mới xuất hiện trong một bài — xem bảng thông báo',
+	'Finished reading your posts and pages.' => 'Đã đọc xong bài viết và trang của bạn.',
+	'These contact details appear in your content. Confirm them and you will be told if a new one ever turns up in a post — which is what happens when somebody edits an old article to put their own number in it.' => 'Đây là những thông tin liên hệ xuất hiện trong nội dung của bạn. Xác nhận đi, rồi sau này có cái mới nào lòi ra trong bài là bạn được báo — đó chính là chuyện xảy ra khi ai đó sửa một bài cũ để nhét số của họ vào.',
+	'A contact detail that was not there before has appeared in your content.' => 'Trong nội dung của bạn vừa xuất hiện một thông tin liên hệ trước đây không có.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

@@ -7111,3 +7111,27 @@ msgstr "Đã có người hỏi tới đường dẫn này %d lần."
 
 msgid "Delete them, or move them somewhere outside the folder your site is served from. If one of them is a copy of wp-config.php, change your database password afterwards — assume it has been read."
 msgstr "Hãy xoá chúng đi, hoặc chuyển ra ngoài thư mục mà site đang chạy. Nếu có cái nào là bản sao của wp-config.php thì sau đó đổi luôn mật khẩu database — cứ coi như nó đã bị đọc."
+
+msgid "Contact details in your posts are watched"
+msgstr "Thông tin liên hệ trong bài viết được canh"
+
+msgid "Reading your content: %1$d of %2$d"
+msgstr "Đang đọc nội dung: %1$d / %2$d"
+
+msgid "Reading your content…"
+msgstr "Đang đọc nội dung…"
+
+msgid "Confirm them once, from the banner on any Horse Tools screen"
+msgstr "Xác nhận một lần, ở bảng thông báo trên bất kỳ màn hình Horse Tools nào"
+
+msgid "A new one appeared in a post — see the banner"
+msgstr "Có cái mới xuất hiện trong một bài — xem bảng thông báo"
+
+msgid "Finished reading your posts and pages."
+msgstr "Đã đọc xong bài viết và trang của bạn."
+
+msgid "These contact details appear in your content. Confirm them and you will be told if a new one ever turns up in a post — which is what happens when somebody edits an old article to put their own number in it."
+msgstr "Đây là những thông tin liên hệ xuất hiện trong nội dung của bạn. Xác nhận đi, rồi sau này có cái mới nào lòi ra trong bài là bạn được báo — đó chính là chuyện xảy ra khi ai đó sửa một bài cũ để nhét số của họ vào."
+
+msgid "A contact detail that was not there before has appeared in your content."
+msgstr "Trong nội dung của bạn vừa xuất hiện một thông tin liên hệ trước đây không có."
