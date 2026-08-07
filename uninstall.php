@@ -90,8 +90,13 @@ if ( ! empty( $horsetools_up['basedir'] ) ) {
 // database password and salts included.
 delete_option('horsetools_debug_log_name');
 delete_option('horsetools_housekeeping');
+// Which web server was in front of PHP, remembered so cron could answer the
+// question too. See inc/server.php.
+delete_option('horsetools_server_software');
 
-// The debug log and its folder.
+// The debug log and its folder. glob() does not return dot-files, so the
+// .htaccess has to be named: without it the unlink loop leaves one file behind,
+// the rmdir fails, and uninstalling leaves the folder on the server for ever.
 $horsetools_logs = WP_CONTENT_DIR . '/horsetools-logs';
 if ( is_dir( $horsetools_logs ) ) {
 	foreach ( (array) glob( $horsetools_logs . '/*' ) as $horsetools_logfile ) {
@@ -99,6 +104,7 @@ if ( is_dir( $horsetools_logs ) ) {
 			@unlink( $horsetools_logfile );
 		}
 	}
+	@unlink( $horsetools_logs . '/.htaccess' );
 	@rmdir( $horsetools_logs );
 }
 foreach ( array( ABSPATH, trailingslashit( dirname( ABSPATH ) ) ) as $horsetools_dir ) {

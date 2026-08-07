@@ -7444,3 +7444,6 @@ msgstr "KHÔNG KHỚP — có thứ gì đó đã sửa mà không đi qua màn 
 
 msgid "no copy on disk yet"
 msgstr "chưa có bản sao trên đĩa"
+
+msgid "This server does not read .htaccess files, so nothing is hiding this one but its name. Horse Tools now stores these as .php files that stop on their first line, which works on every server."
+msgstr "Máy chủ này không đọc file .htaccess, nên không có gì che file này ngoài chính cái tên của nó. Horse Tools nay lưu các file kiểu này dưới dạng .php dừng ngay ở dòng đầu tiên — cách đó chạy được trên mọi máy chủ."

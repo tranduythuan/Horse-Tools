@@ -1659,7 +1659,7 @@ msgstr ""
 msgid "Debug is not enabled"
 msgstr ""
 
-#: inc/debug.php:455
+#: inc/debug.php:667
 msgid "Debug log file does not exist"
 msgstr ""
 
@@ -1771,7 +1771,7 @@ msgstr ""
 msgid "Delete settings:"
 msgstr ""
 
-#: inc/watch-exposure.php:200
+#: inc/watch-exposure.php:288
 msgid "Delete them, or move them somewhere outside the folder your site is served from. If one of them is a copy of wp-config.php, change your database password afterwards — assume it has been read."
 msgstr ""
 
@@ -2726,7 +2726,7 @@ msgstr ""
 msgid "Failed to delete the file"
 msgstr ""
 
-#: inc/debug.php:452
+#: inc/debug.php:664
 msgid "Failed to load debug log"
 msgstr ""
 
@@ -3120,7 +3120,7 @@ msgstr ""
 msgid "Horse Tools is up to date (version %s)."
 msgstr ""
 
-#: inc/anchor.php:298
+#: inc/anchor.php:289
 msgid "Horse Tools keeps a copy of your decisions in a file as well as in the database, precisely so that a change made straight to the database can be seen. These no longer match:"
 msgstr ""
 
@@ -3269,7 +3269,7 @@ msgstr ""
 msgid "If you had it enabled it is now inactive. The AdSense and ads.txt tools on the other tabs are unaffected."
 msgstr ""
 
-#: inc/anchor.php:302
+#: inc/anchor.php:293
 msgid "If you have just restored a database backup, or copied the database from another copy of this site, that is the explanation — the file stayed while the database went back in time. Press the button and it will match again."
 msgstr ""
 
@@ -3277,7 +3277,7 @@ msgstr ""
 msgid "If you have members and do not want them to upload images with excessively large sizes, causing storage space usage, you can limit the maximum size allowed for upload"
 msgstr ""
 
-#: inc/anchor.php:303
+#: inc/anchor.php:294
 msgid "If you have not done either of those things, then something can write to your database that should not be able to. Changing passwords will not fix that on its own; the way in has to be found."
 msgstr ""
 
@@ -3487,7 +3487,7 @@ msgstr ""
 
 #: inc/clean.php:77 inc/clean.php:90 inc/clean.php:103 inc/clean.php:154
 #: inc/clean.php:163 inc/clean.php:172 inc/clean.php:181 inc/clean.php:225
-#: inc/clean.php:265 inc/clean.php:364 inc/debug.php:420 inc/font.php:131
+#: inc/clean.php:265 inc/clean.php:364 inc/debug.php:628 inc/font.php:131
 #: inc/font.php:170 inc/search.php:282 inc/search.php:322
 msgid "Insufficient permissions"
 msgstr ""
@@ -5423,7 +5423,7 @@ msgstr ""
 msgid "Setting group"
 msgstr ""
 
-#: horse-tools.php:246
+#: horse-tools.php:250
 msgid "Settings"
 msgstr ""
 
@@ -5632,11 +5632,11 @@ msgstr ""
 msgid "Soft pastel"
 msgstr ""
 
-#: inc/watch-exposure.php:192
+#: inc/watch-exposure.php:280
 msgid "Somebody has asked for this path %d times."
 msgstr ""
 
-#: inc/anchor.php:297
+#: inc/anchor.php:288
 msgid "Something changed what you approved, without going through this screen."
 msgstr ""
 
@@ -5982,7 +5982,7 @@ msgstr ""
 msgid "That snippet no longer exists."
 msgstr ""
 
-#: inc/anchor.php:305
+#: inc/anchor.php:296
 msgid "That was me — line them up again"
 msgstr ""
 
@@ -6166,7 +6166,7 @@ msgstr ""
 msgid "Theme colour"
 msgstr ""
 
-#: inc/watch-exposure.php:178
+#: inc/watch-exposure.php:266
 msgid "There are files in your site’s folder that anyone can download."
 msgstr ""
 
@@ -6300,6 +6300,10 @@ msgstr ""
 
 #: main/group.php:126 main/group.php:159
 msgid "This section could not be displayed. The rest of the screen still works."
+msgstr ""
+
+#: inc/watch-exposure.php:113
+msgid "This server does not read .htaccess files, so nothing is hiding this one but its name. Horse Tools now stores these as .php files that stop on their first line, which works on every server."
 msgstr ""
 
 #: main/section/ct-sc1.php:28 main/shortcode.php:61
@@ -7195,15 +7199,15 @@ msgstr ""
 msgid "still reading"
 msgstr ""
 
-#: inc/anchor.php:268
+#: inc/anchor.php:259
 msgid "the contact details you confirmed in your posts"
 msgstr ""
 
-#: inc/anchor.php:267
+#: inc/anchor.php:258
 msgid "the contact details you confirmed in your settings"
 msgstr ""
 
-#: inc/anchor.php:269
+#: inc/anchor.php:260
 msgid "the list of domains you approved"
 msgstr ""
 

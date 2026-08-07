@@ -59,6 +59,84 @@ function horsetools_exposure_paths() {
 }
 
 /**
+ * The directories this plugin keeps its own files in, inside wp-content.
+ *
+ * @return string[] Absolute paths.
+ */
+function horsetools_exposure_own_dirs() {
+	return array(
+		WP_CONTENT_DIR . '/horsetools-logs',
+		WP_CONTENT_DIR . '/horsetools-anchor',
+	);
+}
+
+/**
+ * Files this plugin left in wp-content that nothing but an `.htaccess` is hiding.
+ *
+ * Both of those directories are protected twice over: an `.htaccess` saying deny,
+ * and — the part that actually holds — a `.php` extension on every file inside,
+ * each one starting `<?php exit; ?>`. The second is what works on a server that
+ * has never read an `.htaccess` in its life. See inc/server.php.
+ *
+ * So this fires in exactly one situation: the server is one of the ones we know
+ * ignores `.htaccess`, and there is a file in one of those folders whose name
+ * does not end in `.php`. That is a file with no protection left. It happens on a
+ * site upgrading from a version that named the debug log `.log`, and it happens
+ * if somebody drops a copy of something in there.
+ *
+ * Deliberately not "this server ignores .htaccess", full stop. That would be true
+ * of a very large share of WordPress sites, permanently, with nothing the owner
+ * could do about it — a warning that is always on is a warning that is never
+ * read, and this file's whole argument is that a security notice nobody believes
+ * is worse than none. The fact only becomes a finding when it is costing
+ * something, and then it names the file that is costing it.
+ *
+ * `glob()` skips dot-files, so the `.htaccess` and the temporary `.ht-anchor-*`
+ * files are not reported as their own problem.
+ *
+ * @return array<int,array{why:string,grave:bool,path:string,size:int}>
+ */
+function horsetools_exposure_unguarded() {
+	if ( ! horsetools_htaccess_ignored() ) {
+		return array();
+	}
+	$found = array();
+	foreach ( horsetools_exposure_own_dirs() as $dir ) {
+		if ( ! is_dir( $dir ) ) {
+			continue;
+		}
+		foreach ( (array) glob( $dir . '/*' ) as $full ) {
+			if ( ! is_file( $full ) || '.php' === substr( $full, -4 ) ) {
+				continue;
+			}
+			$found[] = array(
+				'why'   => __( 'This server does not read .htaccess files, so nothing is hiding this one but its name. Horse Tools now stores these as .php files that stop on their first line, which works on every server.', 'horse-tools' ),
+				'grave' => false,
+				'path'  => horsetools_exposure_relative( $full ),
+				'size'  => (int) @filesize( $full ), // phpcs:ignore
+			);
+		}
+	}
+	return $found;
+}
+
+/**
+ * A path to show a person: relative to the site folder, never the server's own.
+ *
+ * @param string $full
+ * @return string
+ */
+function horsetools_exposure_relative( $full ) {
+	$full = str_replace( '\\', '/', $full );
+	$root = str_replace( '\\', '/', ABSPATH );
+	if ( 0 === strpos( $full, $root ) ) {
+		return substr( $full, strlen( $root ) );
+	}
+	// wp-content moved outside the web root. Say enough to find it and no more.
+	return basename( dirname( $full ) ) . '/' . basename( $full );
+}
+
+/**
  * Which of them are actually here.
  *
  * Checked on the filesystem rather than over HTTP. A loopback request is slower,
@@ -79,6 +157,11 @@ function horsetools_exposure_scan() {
 		$row['size'] = (int) @filesize( $full );
 		$found[]     = $row;
 	}
+	// Same list, because they are the same sentence to the owner: here is a file
+	// on your site that anyone can download. One number, one banner, one health
+	// row — splitting them would mean a site could be clean by one count and not
+	// by the other.
+	$found = array_merge( $found, horsetools_exposure_unguarded() );
 	usort( $found, function ( $a, $b ) {
 		return ( $b['grave'] ? 1 : 0 ) <=> ( $a['grave'] ? 1 : 0 );
 	} );
@@ -142,7 +225,7 @@ function horsetools_exposure_probes() {
  * Nineteen stat() calls and one query is not much, but it is not nothing on
  * every admin page load, and the answer does not change between two of them.
  *
- * @return array{found:array,probes:array}
+ * @return array{found:array,probes:array,htaccess:string}
  */
 function horsetools_exposure_status() {
 	static $memo = null;
@@ -152,13 +235,18 @@ function horsetools_exposure_status() {
 	$cached = get_transient( 'horsetools_exposure' );
 	if ( is_array( $cached ) ) {
 		$memo = $cached;
-		return $memo;
+	} else {
+		$memo = array(
+			'found'  => horsetools_exposure_scan(),
+			'probes' => horsetools_exposure_probes(),
+		);
+		set_transient( 'horsetools_exposure', $memo, DAY_IN_SECONDS );
 	}
-	$memo = array(
-		'found'  => horsetools_exposure_scan(),
-		'probes' => horsetools_exposure_probes(),
-	);
-	set_transient( 'horsetools_exposure', $memo, DAY_IN_SECONDS );
+	// Free to work out, and it must not sit inside a day-long cache: moving host
+	// changes this answer and nothing else on the page. Reported as a fact for
+	// the screens that want to state it, never on its own as a warning — see
+	// horsetools_exposure_unguarded() for why.
+	$memo['htaccess'] = horsetools_htaccess_state();
 	return $memo;
 }
 

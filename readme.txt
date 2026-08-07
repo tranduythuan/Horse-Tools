@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.26
+Stable tag: 1.3.27
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,17 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.27 =
+* **The debug log was downloadable on every nginx site, and this fixes it rather than warning about it.** Switching on WP_DEBUG_LOG here writes the log to `wp-content/horsetools-logs/` instead of WordPress' public `wp-content/debug.log`, with an `.htaccess` in the folder saying deny. nginx has never read an `.htaccess` and never will. Verified on a live host on 7 August 2026: requesting the `.htaccess` itself came back HTTP 200 with all 134 bytes of it. The log beside it was served the same way — database queries, absolute server paths, fragments of failed requests — and the only thing in the way was a sixteen-character file name.
+* The log is now a `.php` file whose first line is an opening tag and an `exit`. A server that hands it over hands it to PHP, PHP stops on the first instruction, and the response is zero bytes — on Apache, nginx, Caddy and IIS alike, with no configuration and no secret to keep. This is exactly what the anchor file has done since 1.3.26; the log should have been doing it from the start.
+* **A log written by an earlier version is taken in rather than left or deleted.** Its contents are appended to the protected file and the exposed copy is removed, and this happens whether or not logging is switched on now — turning the feature off last year did not un-publish the file. `wp-content/debug.log`, WordPress' own default, is taken in the same way when logging is on.
+* The one file it will not move is the one WP_DEBUG_LOG still points at. On a site where wp-config.php is not writable, renaming it would only have PHP recreate the same exposed name on the next notice, on every admin page load, for ever. There the honest outcome is the exposure warning, and that is what happens.
+* **The "Clear all" button no longer truncates the guard away.** It used to write an empty string, which on a `.php` log leaves a file with no first instruction — served in full the moment the next notice is appended to it. A protection that holds until somebody presses Clear is not a protection. The log viewer hides that first line too, since it is plumbing and showing it invites somebody to helpfully delete it.
+* **A downloadable file left in this plugin's own folders is now reported as one.** Not "this server ignores .htaccess", which is true of a very large share of WordPress sites, permanently, with nothing the owner can do about it — a warning that is always on is a warning that is never read. It becomes a finding only when the server is one that ignores `.htaccess` **and** there is a file in those folders that is not protecting itself, and then it names that file. It joins the same list, the same count and the same health row as a stray wp-config copy, because to the owner it is the same sentence.
+* Which server is in front of PHP is read from `SERVER_SOFTWARE` and nothing else. A loopback HTTP request would be a stronger test and is deliberately not used: it is slow, and the hosts that block loopback requests are exactly the hosts where the answer matters. Apache and LiteSpeed are recorded as reading `.htaccess`; nginx, Caddy, lighttpd, OpenResty and IIS as not; anything unrecognised as **unknown** rather than guessed at. The answer is remembered so that WP-Cron and WP-CLI, which have no `SERVER_SOFTWARE` at all, do not report something different from the screens.
+* Uninstalling now removes the `.htaccess` from the log folder as well. `glob()` does not return dot-files, so the old cleanup left one file behind and the folder with it.
+* Covered by `tools/test-debug-log.php`: 53 checks. The central one does not compare strings — it runs the log file through the PHP binary and requires the output to be empty, including after twenty appends, after the Clear button, and after somebody deletes the file by hand and PHP recreates it. `tools/test-watch-exposure.php` grows to 32, most of the new ones about the warning staying silent when nothing is actually exposed.
 
 = 1.3.26 =
 * **What you approved is now kept outside the database as well as in it.** Every baseline here lived in `wp_options`: the contact details you confirmed, the domains you approved. That is fine against somebody editing posts and useless against somebody who can write to the database directly — an injection in another plugin, a leaked database password, a backup tool with its own hole. They do not need to hide their link; they add their own domain to the approved list, and from then on the watcher reports "all clear" about it for ever. A watch that vouches for the attacker is worse than no watch.

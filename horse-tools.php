@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.3.26
+ * Version: 1.3.27
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.3.26' );
+define( 'HORSETOOLS_VERSION', '1.3.27' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
@@ -46,6 +46,10 @@ function horsetools_is_backend() {
 }
 
 include( HORSETOOLS_DIR . 'inc/registry.php' );
+// Which web server is in front of PHP, and therefore whether an .htaccess this
+// plugin writes means anything at all. Always loaded and deliberately tiny: the
+// file guards below use it, and so does the cron-side check-in message.
+include( HORSETOOLS_DIR . 'inc/server.php' );
 include( HORSETOOLS_DIR . 'inc/http.php' );
 // Validators for values printed into inline <style> blocks. Front-end code
 // uses these, so they must never be behind the backend-only gate below.

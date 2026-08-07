@@ -15,7 +15,14 @@ mkdir( $root );
 mkdir( $root . 'wp-content' );
 
 define( 'ABSPATH', $root );
+define( 'WP_CONTENT_DIR', $root . 'wp-content' );
 define( 'DAY_IN_SECONDS', 86400 );
+
+$GLOBALS['opts'] = array();
+function get_option( $k, $default = false ) {
+	return array_key_exists( $k, $GLOBALS['opts'] ) ? $GLOBALS['opts'][ $k ] : $default;
+}
+function update_option( $k, $v, $a = null ) { $GLOBALS['opts'][ $k ] = $v; return true; }
 
 function __( $s, $d = '' ) { return $s; }
 function esc_html__( $s, $d = '' ) { return $s; }
@@ -27,6 +34,8 @@ function add_action( $h, $f, $p = 10, $a = 1 ) {}
 function current_user_can( $c ) { return true; }
 function horsetools_is_plugin_screen() { return false; }
 function horsetools_admin_banner( $tone, $html ) {}
+function wp_unslash( $s ) { return is_string( $s ) ? stripslashes( $s ) : $s; }
+function sanitize_text_field( $s ) { return trim( strip_tags( (string) $s ) ); }
 
 /** Just enough $wpdb to answer "is there a 404 table". */
 class HT_WPDB {
@@ -48,6 +57,7 @@ class HT_WPDB {
 }
 $GLOBALS['wpdb'] = new HT_WPDB();
 
+require_once dirname( __DIR__ ) . '/inc/server.php';
 require_once dirname( __DIR__ ) . '/inc/watch-exposure.php';
 
 $pass = 0;
@@ -126,6 +136,67 @@ foreach ( $list as $rel => $row ) {
 	if ( '' === trim( $row['why'] ) ) { $fail++; echo "  FAIL  '$rel' không nói lý do\n"; }
 }
 ok( true, 'mọi mục đều có lời giải thích' );
+
+echo "\n8. Máy chủ không đọc .htaccess — chỉ báo khi nó thực sự đang gây thiệt hại\n";
+// Đây là chỗ dễ làm sai nhất trong cả file này. "Máy chủ này bỏ qua .htaccess"
+// đúng với một phần rất lớn số site WordPress, vĩnh viễn, và chủ site không làm
+// gì được — biến nó thành một cảnh báo thường trực là cách nhanh nhất để mọi
+// cảnh báo khác ở đây bị đóng lại mà không đọc. Nên nó chỉ thành một mục khi có
+// đúng một file cụ thể đang hở vì lý do đó.
+$logs   = WP_CONTENT_DIR . '/horsetools-logs';
+$anchor = WP_CONTENT_DIR . '/horsetools-anchor';
+mkdir( $logs );
+mkdir( $anchor );
+file_put_contents( $logs . '/index.php', "<?php\n" );
+file_put_contents( $logs . '/.htaccess', "Require all denied\n" );
+file_put_contents( $logs . '/debug-aaaabbbbccccdddd.log.php', "<?php exit; ?>\nloi\n" );
+file_put_contents( $anchor . '/ht-anchor-1111222233334444.php', "<?php exit; ?>\n{}" );
+
+$_SERVER['SERVER_SOFTWARE'] = 'Apache/2.4.58 (Unix)';
+eq( horsetools_exposure_unguarded(), array(), 'trên Apache thì .htaccess có tác dụng → không có gì để nói' );
+
+$_SERVER['SERVER_SOFTWARE'] = 'nginx/1.24.0';
+eq( horsetools_exposure_unguarded(), array(), 'trên nginx mà mọi file đều là .php tự chặn → VẪN im, vì không có gì hở' );
+
+file_put_contents( $logs . '/debug-eeeeffff00001111.log', "PHP Notice: /home/site/public_html\nSELECT * FROM wp_users\n" );
+$un = horsetools_exposure_unguarded();
+eq( count( $un ), 1, 'thả một file .log kiểu cũ vào → đúng một mục' );
+eq( $un[0]['path'], 'wp-content/horsetools-logs/debug-eeeeffff00001111.log', 'gọi đúng tên file đang hở, không nói chung chung' );
+ok( false === strpos( $un[0]['path'], ABSPATH ), 'không in đường dẫn tuyệt đối của máy chủ ra màn hình' );
+ok( '' !== trim( $un[0]['why'] ), 'có nói lý do' );
+
+$_SERVER['SERVER_SOFTWARE'] = 'Apache/2.4.58 (Unix)';
+eq( horsetools_exposure_unguarded(), array(), 'đúng file đó trên Apache thì không phải là mục — .htaccess che nó thật' );
+
+echo "\n9. Hở kiểu này gộp chung một danh sách với file lộ khác\n";
+// Một con số, một bảng cảnh báo, một dòng sức khoẻ. Tách ra thì site có thể
+// "sạch" theo cách đếm này và không sạch theo cách đếm kia.
+$_SERVER['SERVER_SOFTWARE'] = 'nginx/1.24.0';
+$found = paths_found();
+ok( in_array( 'wp-content/horsetools-logs/debug-eeeeffff00001111.log', $found, true ), 'nằm trong cùng danh sách với .env và các thứ khác' );
+$rows = horsetools_exposure_scan();
+eq( $rows[0]['grave'], true, 'vẫn xếp mục nghiêm trọng lên trước' );
+$graves     = array_column( $rows, 'grave' );
+$seen_light = false;
+$order_ok   = true;
+foreach ( $graves as $g ) {
+	if ( ! $g ) { $seen_light = true; } elseif ( $seen_light ) { $order_ok = false; }
+}
+ok( $order_ok, 'thứ tự vẫn không lẫn' );
+
+$s = horsetools_exposure_status();
+eq( $s['htaccess'], 'ignored', 'trạng thái máy chủ được ghi lại như một sự thật, để màn hình nào cần thì nói' );
+
+echo "\n10. Không có thư mục của plugin thì không được nổ\n";
+unlink( $logs . '/debug-eeeeffff00001111.log' );
+unlink( $logs . '/debug-aaaabbbbccccdddd.log.php' );
+unlink( $logs . '/index.php' );
+unlink( $logs . '/.htaccess' );
+unlink( $anchor . '/ht-anchor-1111222233334444.php' );
+rmdir( $logs );
+rmdir( $anchor );
+eq( horsetools_exposure_unguarded(), array(), 'site chưa từng bật debug → không có thư mục → không có mục nào' );
+unset( $_SERVER['SERVER_SOFTWARE'] );
 
 // dọn
 foreach ( array( '.env', 'wp-config.php.horsetools.bak', 'wp-config.php', 'readme.html', '.git/config', 'wp-content/debug.log', 'wp-content/index.php' ) as $f ) {

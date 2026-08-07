@@ -295,56 +295,214 @@ class horsetools_get_config {
     }
 }
 // Chi ghi wp-config.php khi admin thuc su thay doi cai dat (khong chay moi request)
+/** @return string The folder the log lives in. */
+function horsetools_debug_log_dir() {
+	return WP_CONTENT_DIR . '/horsetools-logs';
+}
+
 /**
- * Where the debug log should be written.
+ * The log's file name.
+ *
+ * Two things are doing work here and only one of them used to.
+ *
+ * The random part means the URL cannot be guessed. That was the whole defence
+ * until now, and it was thinner than it looked: it is the only thing standing
+ * between a passer-by and the log on every nginx site, because the `.htaccess`
+ * written next to it is inert there — see inc/server.php. Sixteen hex digits is
+ * a real amount of entropy, but "nobody can guess the name" is a secret, and a
+ * secret that leaks through a directory listing, a backup plugin's file browser,
+ * or a stray `ls` in a support ticket takes the protection with it.
+ *
+ * The `.php` on the end is the part that does not depend on anything. The file
+ * begins `<?php exit; ?>`, so a server that hands it over hands it to PHP, PHP
+ * stops on the first statement, and the response is empty. Same answer on Apache,
+ * nginx, Caddy and IIS, with no configuration and no secret. This is exactly what
+ * inc/anchor.php already does with its own file; the log should have been doing
+ * it from the start.
+ *
+ * PHP appends to this file through `error_log()`, which never touches the first
+ * line, so the guard survives every write the logger makes.
+ *
+ * @return string
+ */
+function horsetools_debug_log_name() {
+	$name = get_option( 'horsetools_debug_log_name' );
+	// The old pattern — debug-<16 hex>.log — fails this deliberately, so a site
+	// upgrading from an earlier version is given a new, protected name and the
+	// old file is adopted below rather than left where it is.
+	if ( ! is_string( $name ) || ! preg_match( '/^debug-[a-f0-9]{16}\.log\.php$/', $name ) ) {
+		$name = 'debug-' . bin2hex( random_bytes( 8 ) ) . '.log.php';
+		update_option( 'horsetools_debug_log_name', $name, false );
+	}
+	return $name;
+}
+
+/**
+ * Where the debug log should be written, with the folder and the guard in place.
  *
  * Not wp-content/debug.log. That is WordPress' default, it is inside the web
  * root, and it is served to anyone who asks for it — PHP errors carry absolute
  * server paths, fragments of SQL, and sometimes whatever was in the request
  * that failed. Switching logging on should not publish that.
  *
- * WordPress has accepted a path for WP_DEBUG_LOG since 5.1, so the log goes in
- * a folder of its own with an unguessable file name. The folder gets the usual
- * index.php and an .htaccess for Apache; the random name is what covers nginx,
- * where a plugin cannot write server config at all.
+ * WordPress has accepted a path for WP_DEBUG_LOG since 5.1, so the log goes in a
+ * folder of its own, under a name that ends in `.php` and a first line that
+ * exits.
  *
  * @return string Absolute path.
  */
 function horsetools_debug_log_path() {
-	$name = get_option( 'horsetools_debug_log_name' );
-	if ( ! is_string( $name ) || ! preg_match( '/^debug-[a-f0-9]{16}\.log$/', $name ) ) {
-		$name = 'debug-' . bin2hex( random_bytes( 8 ) ) . '.log';
-		update_option( 'horsetools_debug_log_name', $name, false );
-	}
+	$dir  = horsetools_debug_log_dir();
+	$name = horsetools_debug_log_name();
 
-	$dir = WP_CONTENT_DIR . '/horsetools-logs';
 	if ( ! is_dir( $dir ) ) {
 		wp_mkdir_p( $dir );
 	}
-	if ( is_dir( $dir ) ) {
-		if ( ! file_exists( $dir . '/index.php' ) ) {
-			@file_put_contents( $dir . '/index.php', "<?php\n// Silence is golden.\n" );
-		}
-		if ( ! file_exists( $dir . '/.htaccess' ) ) {
-			// Both spellings, each behind its own guard. An unguarded "Require"
-			// is a 500 on Apache 2.2, and an unguarded "Deny" is deprecated on 2.4.
-			@file_put_contents(
-				$dir . '/.htaccess',
-				"<IfModule mod_authz_core.c>\n\tRequire all denied\n</IfModule>\n"
-				. "<IfModule !mod_authz_core.c>\n\tOrder allow,deny\n\tDeny from all\n</IfModule>\n"
-			);
+	horsetools_guard_directory( $dir );
+
+	$path = $dir . '/' . $name;
+	// Create it now rather than letting error_log() create it. A file PHP makes
+	// itself has no first line, and a `.php` file with no first line is served as
+	// the log it is.
+	if ( is_dir( $dir ) && ! file_exists( $path ) ) {
+		@file_put_contents( $path, horsetools_php_guard(), LOCK_EX ); // phpcs:ignore
+	}
+	return $path;
+}
+
+/**
+ * Put the guard back if it has gone.
+ *
+ * It goes if somebody deletes the file while logging is on — PHP recreates it on
+ * the next notice, empty of everything including the exit. Cheap enough to check
+ * on the admin requests that already look at this: sixteen bytes off the front
+ * of one file.
+ *
+ * @param string $path
+ * @return void
+ */
+function horsetools_debug_log_guard_keep( $path ) {
+	// Only files this plugin named. If the owner pointed WP_DEBUG_LOG somewhere
+	// of their own, it is theirs and prepending a PHP tag to it would be rude at
+	// best and would corrupt whatever reads it at worst.
+	if ( '.log.php' !== substr( $path, -8 ) || 0 !== strpos( $path, horsetools_debug_log_dir() . '/' ) ) {
+		return;
+	}
+	if ( ! file_exists( $path ) ) {
+		@file_put_contents( $path, horsetools_php_guard(), LOCK_EX ); // phpcs:ignore
+		return;
+	}
+	$head = (string) @file_get_contents( $path, false, null, 0, 5 ); // phpcs:ignore
+	if ( '<?php' === $head ) {
+		return;
+	}
+	$body = (string) @file_get_contents( $path ); // phpcs:ignore
+	@file_put_contents( $path, horsetools_php_guard() . $body, LOCK_EX ); // phpcs:ignore
+}
+
+/**
+ * Move one exposed log into a protected one and stop the old copy publishing.
+ *
+ * Appended rather than replaced: the destination may already hold entries, and
+ * the source is the owner's data — they may be mid-debug. Emptied rather than
+ * left if the unlink fails, because by then the contents are safely in the new
+ * file and the only thing the old one still does is publish them.
+ *
+ * @param string $src
+ * @param string $dest
+ * @return bool
+ */
+function horsetools_debug_log_absorb( $src, $dest ) {
+	if ( ! is_file( $src ) || $src === $dest || ! file_exists( $dest ) ) {
+		return false;
+	}
+	$body = (string) @file_get_contents( $src ); // phpcs:ignore
+	if ( '' !== $body ) {
+		if ( false === @file_put_contents( $dest, $body, FILE_APPEND | LOCK_EX ) ) { // phpcs:ignore
+			// Nowhere safe to put it. Leaving the exposed file alone is the right
+			// answer — the exposure watcher reports it, which is better than
+			// destroying a log to make a warning go away.
+			return false;
 		}
 	}
+	if ( ! @unlink( $src ) ) { // phpcs:ignore
+		@file_put_contents( $src, '', LOCK_EX ); // phpcs:ignore
+	}
+	return true;
+}
 
-	// Whatever WordPress already wrote to the public default is the same log,
-	// and it is readable by anyone right now. Move it rather than leave it, and
-	// rather than delete it — it is the owner's data and they may be mid-debug.
-	$public = WP_CONTENT_DIR . '/debug.log';
-	if ( is_dir( $dir ) && file_exists( $public ) && ! file_exists( $dir . '/' . $name ) ) {
-		@rename( $public, $dir . '/' . $name );
+/**
+ * Rescue logs that earlier versions of this plugin left downloadable.
+ *
+ * `wp-content/horsetools-logs/debug-<hex>.log` is where versions up to 1.3.26
+ * put it. On Apache the `.htaccess` in that folder covered it. On nginx nothing
+ * did, and that is the case this whole change exists for — the file was served
+ * in full, and its owner believed it was hidden, which is the worse half.
+ *
+ * Renamed into the guarded `.php` file rather than deleted: it is a log somebody
+ * switched on deliberately and may still be reading.
+ *
+ * Runs whether or not logging is currently on. A site that turned WP_DEBUG_LOG
+ * off last year still has the file, and turning the feature off is not a reason
+ * to leave it published.
+ *
+ * The one file it will not touch is the one WP_DEBUG_LOG still points at. On a
+ * site where wp-config.php is not writable the constant cannot be moved, so
+ * renaming the file would only have PHP recreate it under the same exposed name
+ * on the next notice — a rename repeated on every admin page load, for ever, that
+ * fixes nothing. There the honest outcome is the exposure warning, and that is
+ * what happens.
+ *
+ * @return int How many were rescued.
+ */
+function horsetools_debug_log_secure_orphans() {
+	$dir = horsetools_debug_log_dir();
+	if ( ! is_dir( $dir ) ) {
+		return 0;
+	}
+	// 'debug-*.log' does not match 'debug-<hex>.log.php' — a glob pattern matches
+	// the whole name — so the protected file is never a candidate for absorbing
+	// itself.
+	$orphans = (array) glob( $dir . '/debug-*.log' );
+	if ( ! $orphans ) {
+		return 0;
 	}
 
-	return $dir . '/' . $name;
+	$in_use = horsetools_debug_log_current();
+	$dest   = horsetools_debug_log_path();
+	$done   = 0;
+	foreach ( $orphans as $src ) {
+		if ( $src === $in_use ) {
+			continue;
+		}
+		if ( horsetools_debug_log_absorb( $src, $dest ) ) {
+			$done++;
+		}
+	}
+	return $done;
+}
+
+/**
+ * Also take in `wp-content/debug.log`.
+ *
+ * That is WordPress' own default: inside the web root, served to anyone who asks,
+ * on every server rather than only on the ones that ignore `.htaccess`. Switching
+ * logging on through this plugin should not publish it.
+ *
+ * Called *after* the new path has been written into wp-config.php, never before.
+ * Moving the log while WP_DEBUG_LOG still points at the old name would simply
+ * have PHP recreate that name on the next notice — an exposed file deleted and
+ * immediately put back.
+ *
+ * @return int
+ */
+function horsetools_debug_log_adopt() {
+	$done = horsetools_debug_log_secure_orphans();
+	$pub  = WP_CONTENT_DIR . '/debug.log';
+	if ( horsetools_debug_log_absorb( $pub, horsetools_debug_log_path() ) ) {
+		$done++;
+	}
+	return $done;
 }
 
 /**
@@ -371,11 +529,27 @@ function horsetools_apply_debug_constants() {
 		return;
 	}
 
+	// Before anything else, and regardless of whether logging is on now: a log
+	// left behind by an earlier version is downloadable on every nginx site, and
+	// turning the feature off does not un-publish it. Costs one is_dir() and one
+	// glob() over a folder with three entries in it, and only on admin requests by
+	// somebody who could change these settings anyway.
+	horsetools_debug_log_secure_orphans();
+
+	$want_log = isset( $horsetools_debug_options['debug2'] );
+
 	// var_export() so the path becomes a properly quoted PHP literal — the
 	// transformer writes the value verbatim ('raw' => true).
-	$log = isset($horsetools_debug_options['debug2'])
-		? var_export( horsetools_debug_log_path(), true )
-		: 'false';
+	$log = 'false';
+	if ( $want_log ) {
+		$path = horsetools_debug_log_path();
+		// Runs on every admin request that gets this far, including the ones that
+		// return at the "already applied" check below: the guard is what makes the
+		// log unreadable over HTTP, and a file deleted by hand comes back without
+		// it. Checking is five bytes; being wrong is the whole log.
+		horsetools_debug_log_guard_keep( $path );
+		$log = var_export( $path, true );
+	}
 
 	$desired = array(
 		'WP_DEBUG'         => isset($horsetools_debug_options['debug1']) ? 'true' : 'false',
@@ -408,11 +582,45 @@ function horsetools_apply_debug_constants() {
 			$transformer->update('constant', $constant_name, $constant_value, array('raw' => true));
 		}
 		update_option('horsetools_debug_applied', $desired);
+		if ( $want_log ) {
+			// Only now, with wp-config.php pointing at the protected file. Doing it
+			// any earlier would delete an exposed log that PHP then recreates under
+			// the same exposed name on the next notice.
+			horsetools_debug_log_adopt();
+		}
 	} catch ( Exception $e ) {
 		return;
 	}
 }
 add_action('admin_init', 'horsetools_apply_debug_constants');
+
+/**
+ * Empty a log without emptying the line that keeps it private.
+ *
+ * The first line of the log is an opening PHP tag and an exit, and it is the
+ * only reason the file is not downloadable — see horsetools_debug_log_name().
+ * Truncating to an empty string, which is what the Clear button used to do,
+ * leaves a `.php` log with no first instruction, and a server hands the whole
+ * thing over the moment PHP appends the next notice to it. A protection that
+ * holds until somebody presses Clear is not a protection.
+ *
+ * The header is read back rather than assumed, so a log the owner pointed
+ * WP_DEBUG_LOG at themselves — no PHP tag, not ours — is still emptied
+ * completely, and one carrying a header of their own keeps that instead.
+ *
+ * @param string $path
+ * @return int|false Bytes written, as file_put_contents().
+ */
+function horsetools_debug_log_truncate( $path ) {
+	$head = (string) @file_get_contents( $path, false, null, 0, 512 ); // phpcs:ignore
+	$keep = '';
+	if ( 0 === strpos( $head, '<?php' ) ) {
+		$nl   = strpos( $head, "\n" );
+		$keep = ( false === $nl ) ? $head : substr( $head, 0, $nl + 1 );
+	}
+	return file_put_contents( $path, $keep ); // phpcs:ignore
+}
+
 // xoa debug log
 function horsetools_clear_debug_log() {
 	check_ajax_referer('horsetools_nonce_deldebug', 'security');
@@ -422,7 +630,7 @@ function horsetools_clear_debug_log() {
     if (defined('WP_DEBUG_LOG') && WP_DEBUG_LOG) {
         $debug_log_path = horsetools_debug_log_current();
         if (file_exists($debug_log_path)) {
-            $result = file_put_contents($debug_log_path, '');
+            $result = horsetools_debug_log_truncate($debug_log_path);
             if ($result !== false) {
                 wp_send_json_success();
             } else {
@@ -447,6 +655,10 @@ function horsetools_get_debug_log_callback() {
     if (file_exists($debug_log_path)) {
         $debug_log_content = file_get_contents($debug_log_path);
         if ($debug_log_content !== false) {
+            // The first line is the opening PHP tag and exit that keep this file
+            // from being downloadable. It is plumbing, not a log entry, and
+            // showing it invites somebody to helpfully delete it.
+            $debug_log_content = horsetools_php_guard_strip($debug_log_content);
             wp_send_json_success(esc_html($debug_log_content));
         } else {
             wp_send_json_error(__('Failed to load debug log', 'horse-tools'));

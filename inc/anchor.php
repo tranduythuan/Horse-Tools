@@ -75,16 +75,7 @@ function horsetools_anchor_prepare() {
 	if ( ! is_dir( $dir ) || ! wp_is_writable( $dir ) ) {
 		return false;
 	}
-	if ( ! file_exists( $dir . '/index.php' ) ) {
-		@file_put_contents( $dir . '/index.php', "<?php\n// Silence is golden.\n" ); // phpcs:ignore
-	}
-	if ( ! file_exists( $dir . '/.htaccess' ) ) {
-		@file_put_contents( // phpcs:ignore
-			$dir . '/.htaccess',
-			"<IfModule mod_authz_core.c>\n\tRequire all denied\n</IfModule>\n"
-			. "<IfModule !mod_authz_core.c>\n\tOrder allow,deny\n\tDeny from all\n</IfModule>\n"
-		);
-	}
+	horsetools_guard_directory( $dir );
 	return true;
 }
 
@@ -161,7 +152,7 @@ function horsetools_anchor_write() {
 		$path = horsetools_anchor_dir() . '/ht-anchor-' . bin2hex( random_bytes( 8 ) ) . '.php';
 	}
 
-	$body = "<?php exit; ?>\n" . wp_json_encode( $data );
+	$body = horsetools_php_guard() . wp_json_encode( $data );
 	$tmp  = horsetools_anchor_dir() . '/.ht-anchor-' . bin2hex( random_bytes( 6 ) ) . '.tmp';
 	if ( false === @file_put_contents( $tmp, $body, LOCK_EX ) ) { // phpcs:ignore
 		return false;

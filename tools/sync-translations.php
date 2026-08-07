@@ -1273,6 +1273,9 @@ $vi = array(
 	'THEY DO NOT — something changed them without going through the screens' => 'KHÔNG KHỚP — có thứ gì đó đã sửa mà không đi qua màn hình nào',
 	'no copy on disk yet' => 'chưa có bản sao trên đĩa',
 
+	// The debug log stops depending on .htaccess (1.3.27).
+	'This server does not read .htaccess files, so nothing is hiding this one but its name. Horse Tools now stores these as .php files that stop on their first line, which works on every server.' => 'Máy chủ này không đọc file .htaccess, nên không có gì che file này ngoài chính cái tên của nó. Horse Tools nay lưu các file kiểu này dưới dạng .php dừng ngay ở dòng đầu tiên — cách đó chạy được trên mọi máy chủ.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

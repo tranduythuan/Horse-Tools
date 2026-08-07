@@ -42,11 +42,17 @@ function home_url( $p = '' ) { return 'https://giathuanshop.com' . $p; }
 function wp_mkdir_p( $d ) { return is_dir( $d ) || mkdir( $d, 0777, true ); }
 function wp_is_writable( $d ) { return is_writable( $d ); }
 function wp_json_encode( $v ) { return json_encode( $v, JSON_UNESCAPED_UNICODE ); }
+function wp_unslash( $s ) { return is_string( $s ) ? stripslashes( $s ) : $s; }
+function sanitize_text_field( $s ) { return trim( strip_tags( (string) $s ) ); }
 function horsetools_is_plugin_screen() { return false; }
 function horsetools_admin_banner( $t, $h ) {}
 
 $GLOBALS['opts'] = array();
 
+// The directory guards and the `<?php exit;` first line now come from the shared
+// helpers, so the anchor and the debug log cannot drift into having different
+// ideas about what actually protects a file in wp-content.
+require_once dirname( __DIR__ ) . '/inc/server.php';
 require_once dirname( __DIR__ ) . '/inc/anchor.php';
 
 $pass = 0;
