@@ -170,6 +170,28 @@ function horsetools_health_report() {
 			$add( 'contact_content', $sec_cat, __( 'Contact details in your posts are watched', 'horse-tools' ), $cc_row[0], 2, '', $cc_row[1] );
 		}
 	}
+	// Who the content links to. The row that would have caught three old posts
+	// quietly carrying casino links for two years.
+	if ( function_exists( 'horsetools_link_status' ) ) {
+		$ls = horsetools_link_status();
+		if ( 'scanning' === $ls['state'] ) {
+			$add(
+				'links', $sec_cat, __( 'Outbound links are watched', 'horse-tools' ), 'warn', 3, '',
+				__( 'Still reading your content', 'horse-tools' )
+			);
+		} else {
+			$l_map = array(
+				'clean'   => array( 'pass', '' ),
+				'unset'   => array( 'warn', __( 'Go through the list once and approve it', 'horse-tools' ) ),
+				'changed' => array( 'fail', __( 'A domain you have not approved is linked from your content', 'horse-tools' ) ),
+			);
+			$l_row = isset( $l_map[ $ls['state'] ] ) ? $l_map[ $ls['state'] ] : $l_map['unset'];
+			$add(
+				'links', $sec_cat, __( 'Outbound links are watched', 'horse-tools' ),
+				$l_row[0], 3, horsetools_link_screen_url(), $l_row[1]
+			);
+		}
+	}
 	// A stray wp-config copy or database dump in the web root is worse than any
 	// of the settings above being off.
 	if ( function_exists( 'horsetools_exposure_status' ) ) {

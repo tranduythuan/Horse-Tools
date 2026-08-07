@@ -28,7 +28,13 @@ function get_transient( $k ) { return $GLOBALS['trans'][ $k ] ?? false; }
 function set_transient( $k, $v, $t = 0 ) { $GLOBALS['trans'][ $k ] = $v; return true; }
 function delete_transient( $k ) { unset( $GLOBALS['trans'][ $k ] ); return true; }
 function add_action( $h, $f, $p = 10, $a = 1 ) {}
+function add_filter( $h, $f, $p = 10, $a = 1 ) {}
+function delete_option( $k ) { unset( $GLOBALS['opts'][ $k ] ); return true; }
 function current_user_can( $c ) { return true; }
+// The shared walk over post content lives in inc/watch-scan.php; this suite is
+// about what the watcher makes of the text, not about the cursor.
+function horsetools_scan_finished() { return true; }
+function horsetools_scan_progress() { return array( 'read' => 0, 'total' => 0 ); }
 function check_ajax_referer( $a, $b ) { return true; }
 function wp_send_json_error( $d = null ) {}
 function wp_send_json_success( $d = null ) {}

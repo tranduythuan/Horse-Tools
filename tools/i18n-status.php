@@ -9,8 +9,12 @@
 
 require_once __DIR__ . '/po-lib.php';
 
-$root = rtrim($argv[1] ?? dirname(__DIR__), '/\\');
 $listAll = in_array('--all', $argv, true);
+// Flags must not be mistaken for the plugin root, which is what happened to
+// `--all`: it was taken as argv[1], the .pot was looked for under ./--all/lang,
+// and the tool reported "no .pot yet" on a repo that had one.
+$args = array_values(array_filter(array_slice($argv, 1), function ($a) { return '-' !== substr($a, 0, 1); }));
+$root = rtrim($args[0] ?? dirname(__DIR__), '/\\');
 
 $pot = $root . '/lang/horse-tools.pot';
 if (!file_exists($pot)) {

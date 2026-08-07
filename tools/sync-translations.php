@@ -1163,11 +1163,65 @@ $vi = array(
 	'These contact details appear in your content. Confirm them and you will be told if a new one ever turns up in a post — which is what happens when somebody edits an old article to put their own number in it.' => 'Đây là những thông tin liên hệ xuất hiện trong nội dung của bạn. Xác nhận đi, rồi sau này có cái mới nào lòi ra trong bài là bạn được báo — đó chính là chuyện xảy ra khi ai đó sửa một bài cũ để nhét số của họ vào.',
 	'A contact detail that was not there before has appeared in your content.' => 'Trong nội dung của bạn vừa xuất hiện một thông tin liên hệ trước đây không có.',
 
+	// The outbound-link inventory and its review screen (1.3.22).
+	'Outbound links' => 'Liên kết ra ngoài',
+	'Outbound links are watched' => 'Liên kết ra ngoài được canh',
+	'Where your content links to' => 'Nội dung của bạn trỏ đi đâu',
+	'Still reading your content' => 'Đang đọc nội dung',
+	'Still reading your content. Come back in a minute.' => 'Đang đọc nội dung. Lát nữa quay lại nhé.',
+	'Still reading your content: %1$d of %2$d. Come back in a minute.' => 'Đang đọc nội dung: %1$d / %2$d. Lát nữa quay lại nhé.',
+	'Your posts and pages do not link anywhere outside this site.' => 'Bài viết và trang của bạn không trỏ ra ngoài site này chỗ nào cả.',
+	'Every other website your posts and pages point at, one row per domain. Untick anything you do not recognise, then save — you will be told the moment a domain that is not on this list turns up in your content.' => 'Toàn bộ những website khác mà bài viết và trang của bạn trỏ tới, mỗi tên miền một dòng. Cái nào bạn không nhận ra thì bỏ tick rồi lưu lại — sau đó hễ có tên miền nào không nằm trong danh sách này lòi ra trong nội dung là bạn được báo ngay.',
+	'Rarely-linked domains are listed first, because the one that was added without your knowing is almost never the one you link to from two hundred posts.' => 'Tên miền ít được trỏ tới nhất nằm trên đầu, vì cái bị chèn vào mà bạn không hay biết gần như không bao giờ là cái bạn trỏ tới từ hai trăm bài.',
+	'Domain' => 'Tên miền',
+	'Links' => 'Số liên kết',
+	'In' => 'Trong bài',
+	'Link text' => 'Chữ hiển thị',
+	'Loads a script or an embedded frame from this domain' => 'Có nạp script hoặc khung nhúng từ tên miền này',
+	'passes SEO value' => 'có truyền giá trị SEO',
+	'Tick all' => 'Tick hết',
+	'Untick all' => 'Bỏ tick hết',
+	'Save this list' => 'Lưu danh sách này',
+	'Saved. Everything on this page is approved.' => 'Đã lưu. Mọi thứ trên trang này đều đã duyệt.',
+	'Saved. %d domain is still not approved.' => 'Đã lưu. Còn %d tên miền chưa duyệt.',
+	'Review the list' => 'Xem lại danh sách',
+	'Go through the list once and approve it' => 'Soát qua danh sách một lần rồi duyệt',
+	'A domain you have not approved is linked from your content' => 'Nội dung của bạn đang trỏ tới một tên miền bạn chưa duyệt',
+	'Horse Tools can tell you when your content starts linking somewhere new.' => 'Horse Tools báo cho bạn khi nội dung bắt đầu trỏ tới một nơi mới.',
+	'Your posts and pages link to %d other domain. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing.' => 'Bài viết và trang của bạn trỏ tới %d tên miền khác. Soát qua một lần và xác nhận cái nào đúng là của bạn; sau đó, một tên miền không có trong danh sách chỉ tốn của bạn một dòng trên màn hình, thay vì hai năm không ai để ý.',
+	'Your content links to %d domain you have not approved.' => 'Nội dung của bạn đang trỏ tới %d tên miền bạn chưa duyệt.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';
 $added = horsetools_append_po( $viPo, $vi );
 printf( "horse-tools-vi.po: %d entries appended\n", $added );
+
+/**
+ * How many plural forms each language actually has.
+ *
+ * This is not decoration. A .po here stores one translation per string, and
+ * WordPress picks a translation by plural index: with the English default
+ * `nplurals=2`, any `_n()` call with a count other than 1 asks for index 1,
+ * finds nothing there, and falls back to the English plural. So `%d question
+ * found` was translated into Vietnamese and displayed in English the moment
+ * there were two questions.
+ *
+ * Vietnamese, Thai, Chinese and Indonesian mark no plural at all — one form is
+ * the truthful answer for them, and it also happens to be the one that makes the
+ * single stored translation the one that gets used. The rest keep the value
+ * their grammar calls for; where nothing is translated the fallback to English
+ * is the correct outcome anyway.
+ */
+$plural_forms = array(
+    'horse-tools-vi'    => 'nplurals=1; plural=0;',
+    'horse-tools-th'    => 'nplurals=1; plural=0;',
+    'horse-tools-zh_CN' => 'nplurals=1; plural=0;',
+    'horse-tools-ja'    => 'nplurals=1; plural=0;',
+    'horse-tools-id_ID' => 'nplurals=1; plural=0;',
+    'horse-tools-ru_RU' => 'nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);',
+    'horse-tools-ar'    => 'nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);',
+);
 
 // Recompile every .po to its .mo so the shipped binaries match the sources.
 foreach ( glob( $root . '/lang/*.po' ) as $po ) {
@@ -1177,7 +1231,7 @@ foreach ( glob( $root . '/lang/*.po' ) as $po ) {
         . "MIME-Version: 1.0\n"
         . "Content-Type: text/plain; charset=UTF-8\n"
         . "Content-Transfer-Encoding: 8bit\n"
-        . "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+        . 'Plural-Forms: ' . ( $plural_forms[ $locale ] ?? 'nplurals=2; plural=(n != 1);' ) . "\n"
         . "X-Domain: horse-tools\n";
     $count = horsetools_write_mo( $root . '/lang/' . $locale . '.mo', $entries, $header );
     printf( "%-28s compiled %d entries -> %s.mo\n", basename( $po ), $count, $locale );

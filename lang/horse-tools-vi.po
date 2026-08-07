@@ -7135,3 +7135,81 @@ msgstr "Đây là những thông tin liên hệ xuất hiện trong nội dung c
 
 msgid "A contact detail that was not there before has appeared in your content."
 msgstr "Trong nội dung của bạn vừa xuất hiện một thông tin liên hệ trước đây không có."
+
+msgid "Outbound links"
+msgstr "Liên kết ra ngoài"
+
+msgid "Outbound links are watched"
+msgstr "Liên kết ra ngoài được canh"
+
+msgid "Where your content links to"
+msgstr "Nội dung của bạn trỏ đi đâu"
+
+msgid "Still reading your content"
+msgstr "Đang đọc nội dung"
+
+msgid "Still reading your content. Come back in a minute."
+msgstr "Đang đọc nội dung. Lát nữa quay lại nhé."
+
+msgid "Still reading your content: %1$d of %2$d. Come back in a minute."
+msgstr "Đang đọc nội dung: %1$d / %2$d. Lát nữa quay lại nhé."
+
+msgid "Your posts and pages do not link anywhere outside this site."
+msgstr "Bài viết và trang của bạn không trỏ ra ngoài site này chỗ nào cả."
+
+msgid "Every other website your posts and pages point at, one row per domain. Untick anything you do not recognise, then save — you will be told the moment a domain that is not on this list turns up in your content."
+msgstr "Toàn bộ những website khác mà bài viết và trang của bạn trỏ tới, mỗi tên miền một dòng. Cái nào bạn không nhận ra thì bỏ tick rồi lưu lại — sau đó hễ có tên miền nào không nằm trong danh sách này lòi ra trong nội dung là bạn được báo ngay."
+
+msgid "Rarely-linked domains are listed first, because the one that was added without your knowing is almost never the one you link to from two hundred posts."
+msgstr "Tên miền ít được trỏ tới nhất nằm trên đầu, vì cái bị chèn vào mà bạn không hay biết gần như không bao giờ là cái bạn trỏ tới từ hai trăm bài."
+
+msgid "Domain"
+msgstr "Tên miền"
+
+msgid "Links"
+msgstr "Số liên kết"
+
+msgid "In"
+msgstr "Trong bài"
+
+msgid "Link text"
+msgstr "Chữ hiển thị"
+
+msgid "Loads a script or an embedded frame from this domain"
+msgstr "Có nạp script hoặc khung nhúng từ tên miền này"
+
+msgid "passes SEO value"
+msgstr "có truyền giá trị SEO"
+
+msgid "Save this list"
+msgstr "Lưu danh sách này"
+
+msgid "Saved. Everything on this page is approved."
+msgstr "Đã lưu. Mọi thứ trên trang này đều đã duyệt."
+
+msgid "Saved. %d domain is still not approved."
+msgstr "Đã lưu. Còn %d tên miền chưa duyệt."
+
+msgid "Review the list"
+msgstr "Xem lại danh sách"
+
+msgid "Go through the list once and approve it"
+msgstr "Soát qua danh sách một lần rồi duyệt"
+
+msgid "A domain you have not approved is linked from your content"
+msgstr "Nội dung của bạn đang trỏ tới một tên miền bạn chưa duyệt"
+
+msgid "Horse Tools can tell you when your content starts linking somewhere new."
+msgstr "Horse Tools báo cho bạn khi nội dung bắt đầu trỏ tới một nơi mới."
+
+msgid "Your posts and pages link to %d other domain. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
+msgstr "Bài viết và trang của bạn trỏ tới %d tên miền khác. Soát qua một lần và xác nhận cái nào đúng là của bạn; sau đó, một tên miền không có trong danh sách chỉ tốn của bạn một dòng trên màn hình, thay vì hai năm không ai để ý."
+
+msgid "Your content links to %d domain you have not approved."
+msgstr "Nội dung của bạn đang trỏ tới %d tên miền bạn chưa duyệt."
+
+msgid "Tick all"
+msgstr "Tick hết"
+
+msgid "Untick all"
+msgstr "Bỏ tick hết"

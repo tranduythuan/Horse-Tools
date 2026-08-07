@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.21
+Stable tag: 1.3.22
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,14 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.22 =
+* **Horse Tools now keeps a list of every other website your content links to.** This is the one aimed squarely at what actually happens: an administrator account nobody recognises edits three old posts, leaves links in them, and the site runs that way for years. Nothing breaks, nothing looks wrong, and no amount of reading the dashboard would show it — because until now the dashboard had no list of who the site links to.
+* The unit is the domain, not the link. A page with forty links to eight domains is eight decisions, and a person will make eight. It also survives the obvious evasion: changing the path, the link text or the tracking parameters every week does not change the domain, and the domain is the thing being paid for.
+* **A first-review screen, with the rarely-linked domains at the top.** The one added without your knowing is almost never the one you link to from two hundred posts, so the ordering does the work — and it needs no list of known-bad domains to do it. There is no keyword blacklist in this plugin and there is not going to be one; a list like that is out of date the week it ships.
+* Reads the ways a link hides from someone skimming: the protocol-relative `//domain/…`, the unclosed anchor tag, the bare URL, single-quoted and unquoted attributes, a subdomain of a domain you do trust. A `<script>` or `<iframe>` loading from somewhere else is called out separately — that only reaches a post body if whoever wrote it was an administrator.
+* Whether a link passes SEO value is shown per domain, because a `nofollow` link is not what a paid link is bought for.
+* **One walk over your content instead of one per watcher.** The contact watch and the link inventory now share a single batched pass, so eight hundred post bodies are read once. The cursor carries a signature of what is reading it: add a watcher, or change how an existing one reads a post, and the pass starts again by itself rather than reporting old results as current. Covered by `tools/test-watch-scan.php` (30 checks) and `tools/test-watch-links.php` (67 checks).
 
 = 1.3.21 =
 * **The contact watch now covers your posts and pages, not just your settings.** A number swapped inside an old article is the same attack as one swapped in the chat button, and on a site with hundreds of posts nobody re-reads the old ones. Content is walked in batches that resume where they stopped, and once the first pass is finished only what has been edited is read again — on a site where nothing changed, that costs one indexed query.
