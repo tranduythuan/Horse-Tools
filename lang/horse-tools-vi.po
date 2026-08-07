@@ -7492,3 +7492,69 @@ msgstr "Nội dung của bạn trỏ tới hơn %d tên miền, đó là mức c
 
 msgid "Your content links to more domains than the list can hold, so it is incomplete"
 msgstr "Nội dung trỏ tới nhiều tên miền hơn sức chứa của danh sách, nên danh sách bị thiếu"
+
+msgid "Waiting for you"
+msgstr "Đang chờ bạn"
+
+msgid "Already approved"
+msgstr "Đã duyệt"
+
+msgid "Nothing. Every domain your content points at is one you have agreed to."
+msgstr "Không có gì. Mọi tên miền nội dung của bạn trỏ tới đều là cái bạn đã đồng ý."
+
+msgid "Your content links to %1$s domains you have not agreed to, and %2$s you have. You will be told the moment one arrives that is on neither list."
+msgstr "Nội dung của bạn trỏ tới %1$s tên miền bạn chưa đồng ý, và %2$s tên miền bạn đã đồng ý. Hễ có cái nào tới mà không nằm trong cả hai danh sách là bạn được báo ngay."
+
+msgid "Least-linked first, because the one added without your knowing is almost never the one you link to from two hundred posts. Tick what belongs and approve it; leave the rest here."
+msgstr "Ít link nhất lên trước, vì cái bị chèn vào mà bạn không hay biết gần như không bao giờ là cái bạn trỏ tới từ hai trăm bài. Tick những cái đúng là của bạn rồi duyệt; còn lại cứ để đây."
+
+msgid "A long list on a first pass is normal and does not have to be read row by row."
+msgstr "Lượt soát đầu mà danh sách dài là bình thường, và không cần đọc từng dòng."
+
+msgid "Look down this page, deal with anything that makes you stop, and use “Approve everything” below for the rest — what matters is having a baseline, so that tomorrow’s arrival stands out against it."
+msgstr "Liếc qua trang này, cái nào làm bạn khựng lại thì xử, phần còn lại bấm “Duyệt hết” bên dưới — điều quan trọng là có một cái mốc, để ngày mai có gì mới thì nó nổi bật lên."
+
+msgid "Tick all on this page"
+msgstr "Tick hết trang này"
+
+msgid "Approve the ticked ones"
+msgstr "Duyệt những cái đã tick"
+
+msgid "Approve everything (%d)"
+msgstr "Duyệt hết (%d)"
+
+msgid "Approve all %d domains your content currently links to?"
+msgstr "Duyệt hết %d tên miền mà nội dung của bạn đang trỏ tới?"
+
+msgid "Approved %d domain."
+msgstr "Đã duyệt %d tên miền."
+
+msgid "%d domain is no longer approved."
+msgstr "%d tên miền không còn được duyệt."
+
+msgid "Nothing was ticked, so nothing changed."
+msgstr "Không tick cái nào nên không có gì thay đổi."
+
+msgid "Saved. Everything found so far is approved."
+msgstr "Đã lưu. Mọi thứ tìm được cho tới lúc này đều đã duyệt."
+
+msgid "Find a domain"
+msgstr "Tìm một tên miền"
+
+msgid "type part of a domain…"
+msgstr "gõ một phần tên miền…"
+
+msgid "No post titles here on purpose — this list is long, and looking up a title for every row is what made this screen slow. Tick anything you want to take back and press the button; it moves up to “Waiting for you” with its posts listed."
+msgstr "Ở đây cố ý không hiện tên bài — danh sách này dài, mà tra tên bài cho từng dòng chính là thứ làm màn hình này chậm. Cái nào muốn lấy lại thì tick rồi bấm nút; nó sẽ chuyển lên mục “Đang chờ bạn” kèm danh sách bài."
+
+msgid "Take back the ticked ones"
+msgstr "Lấy lại những cái đã tick"
+
+msgid "%d link"
+msgstr "%d link"
+
+msgid "script or embedded frame"
+msgstr "script hoặc khung nhúng"
+
+msgid "Save this choice"
+msgstr "Lưu lựa chọn này"

@@ -57,6 +57,15 @@ function horsetools_current_admin_page() { return ''; }
 // suite (tools/test-anchor.php). Here it only has to exist.
 function horsetools_anchor_touch() { $GLOBALS["anchored"] = ( $GLOBALS["anchored"] ?? 0 ) + 1; }
 function horsetools_admin_banner( $t, $h ) {}
+function number_format_i18n( $n ) { return (string) $n; }
+function _prime_post_caches( $ids, $a = true, $b = true ) {}
+function add_query_arg( $k, $v, $u ) { return $u . '&' . $k . '=' . $v; }
+function esc_attr_e( $s, $d = '' ) { echo $s; }
+function wp_json_encode( $v ) { return json_encode( $v ); }
+// The screen writes the guard mode; the guard itself has its own suite.
+function horsetools_link_guard_set( $m ) { $GLOBALS['opts']['horsetools_link_guard'] = in_array($m,array('nofollow','strip'),true)?$m:'off'; }
+function horsetools_link_guard_mode() { $m = $GLOBALS['opts']['horsetools_link_guard'] ?? 'off'; return in_array($m,array('nofollow','strip'),true)?$m:'off'; }
+function horsetools_link_guard_active() { return 'off' !== horsetools_link_guard_mode() && horsetools_link_reviewed(); }
 function horsetools_group_menu( $s, $t, $i, $c, $p ) { $GLOBALS['menu_slug'] = 'horsetools-' . $s; }
 function add_submenu_page() {}
 
@@ -275,7 +284,54 @@ eq( horsetools_link_status()['truncated'], true, 'trạng thái mang cờ đó r
 horsetools_link_collect_reset();
 eq( horsetools_link_truncated(), false, 'quét lại từ đầu thì xoá cờ — nếu không nó kẹt mãi' );
 
-echo "\n21. Màn duyệt phải nằm trong menu — giấu nó đi là WordPress chặn luôn\n";
+echo "\n21. Lưu chỉ gửi lên NGOẠI LỆ, không gửi cả danh sách\n";
+// Bản cũ gửi 1 input ẩn + 1 checkbox cho MỖI tên miền. Site 686 tên miền =
+// 1372 trường, mà PHP `max_input_vars` mặc định dừng ở 1000 và lặng lẽ vứt phần
+// dư — chủ site tick hết, bấm lưu, rồi vài trăm tên miền vẫn không được duyệt
+// mà màn hình không nói gì. Bất cứ thứ gì tăng theo số dòng đều sai ở đây.
+function screen_post( array $post ) {
+	$_POST = array_merge( array( 'ht_links_nonce' => 'n' ), $post );
+	ob_start();
+	horsetools_link_screen();
+	$out = ob_get_clean();
+	$_POST = array();
+	return $out;
+}
+$GLOBALS['opts'] = array();
+horsetools_link_collect( array(
+	$row( 30, '<a href="https://a1.com/x">x</a><a href="https://a2.com/x">x</a><a href="https://a3.com/x">x</a>' ),
+) );
+
+screen_post( array( 'do' => 'approve', 'pick' => array( 'a1.com', 'a2.com' ) ) );
+eq( array_keys( horsetools_link_approved() ), array( 'a1.com', 'a2.com' ), 'duyệt đúng cái được tick' );
+eq( array_keys( horsetools_link_status()['new'] ), array( 'a3.com' ), 'cái không tick vẫn nằm ở hàng chờ' );
+
+screen_post( array( 'do' => 'revoke', 'pick' => array( 'a1.com' ) ) );
+ok( ! isset( horsetools_link_approved()['a1.com'] ), 'bỏ duyệt được' );
+ok( isset( horsetools_link_approved()['a2.com'] ), 'và không đụng cái khác' );
+
+screen_post( array( 'do' => 'approve_all' ) );
+eq( count( horsetools_link_approved() ), 3, 'nút duyệt hết không cần liệt kê từng dòng — 1 trường thay vì 1372' );
+eq( horsetools_link_status()['state'], 'clean', 'sạch' );
+
+echo "\n22. Đặt chế độ chặn KHÔNG được tính là đã soát danh sách\n";
+// Nếu tính, thì trên site chưa duyệt gì: reviewed=true + danh sách duyệt rỗng
+// = guard vô hiệu hoá TOÀN BỘ link ra ngoài của site, chỉ vì người ta bấm lưu
+// một cái radio.
+$GLOBALS['opts'] = array();
+horsetools_link_collect( array( $row( 31, '<a href="https://doitac.vn/x">x</a>' ) ) );
+eq( horsetools_link_reviewed(), false, 'chưa soát' );
+screen_post( array( 'guard' => 'nofollow' ) );
+eq( horsetools_link_guard_mode(), 'nofollow', 'chế độ được lưu' );
+eq( horsetools_link_reviewed(), false, 'nhưng VẪN chưa soát — guard chưa được phép chạy' );
+eq( horsetools_link_guard_active(), false, 'nên guard nằm im' );
+
+echo "\n23. \"Tôi soát rồi, không cái nào của tôi\" vẫn là một câu trả lời\n";
+screen_post( array( 'do' => 'approve', 'pick' => array() ) );
+eq( horsetools_link_reviewed(), true, 'bấm duyệt mà không tick gì → đã soát' );
+eq( horsetools_link_guard_active(), true, 'và lúc đó guard mới chặn hết' );
+
+echo "\n24. Màn duyệt phải nằm trong menu — giấu nó đi là WordPress chặn luôn\n";
 // remove_submenu_page() từng được dùng để giấu trang này. WordPress quyết định
 // bạn có được mở admin.php?page=… hay không bằng cách tra slug trong $submenu và
 // đọc quyền từ mục tìm thấy; gỡ mục đó ra là chính admin cũng bị chặn.

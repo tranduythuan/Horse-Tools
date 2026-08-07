@@ -38,6 +38,12 @@ msgstr ""
 msgid "%d NEW"
 msgstr ""
 
+#: inc/watch-links.php:408
+msgid "%d domain is no longer approved."
+msgid_plural "%d domains are no longer approved."
+msgstr[0] ""
+msgstr[1] ""
+
 #: inc/watch-heartbeat.php:144
 msgid "%d domains, all approved"
 msgstr ""
@@ -45,6 +51,12 @@ msgstr ""
 #: inc/ui.php:515
 msgid "%d enabled"
 msgstr ""
+
+#: inc/watch-links.php:636
+msgid "%d link"
+msgid_plural "%d links"
+msgstr[0] ""
+msgstr[1] ""
 
 #: main/section/seo-faq.php:71
 msgid "%d post(s) already get FAQ schema from another plugin, so they are left alone."
@@ -142,6 +154,10 @@ msgstr ""
 
 #: inc/scuri.php:309
 msgid "A login was locked out on your site"
+msgstr ""
+
+#: inc/watch-links.php:518
+msgid "A long list on a first pass is normal and does not have to be read row by row."
 msgstr ""
 
 #: main/section/seo-faq.php:53
@@ -381,7 +397,7 @@ msgstr ""
 msgid "Add nofollow and _blank for external links"
 msgstr ""
 
-#: inc/watch-links.php:533
+#: inc/watch-links.php:673
 msgid "Add nofollow to it (recommended)"
 msgstr ""
 
@@ -541,6 +557,10 @@ msgstr ""
 msgid "Allows uploading AVIF photos"
 msgstr ""
 
+#: inc/watch-links.php:611
+msgid "Already approved"
+msgstr ""
+
 #: inc/gindex.php:128 inc/gindex.php:243
 msgid "Already declared"
 msgstr ""
@@ -553,7 +573,7 @@ msgstr ""
 msgid "Analytics found on your site: %s. Clicks will be recorded there."
 msgstr ""
 
-#: inc/watch-links.php:520
+#: inc/watch-links.php:660
 msgid "And what should happen to a domain that is not on the list?"
 msgstr ""
 
@@ -596,6 +616,24 @@ msgstr ""
 #: main/export.php:469
 msgid "Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it."
 msgstr ""
+
+#: inc/watch-links.php:596
+msgid "Approve all %d domains your content currently links to?"
+msgstr ""
+
+#: inc/watch-links.php:600
+msgid "Approve everything (%d)"
+msgstr ""
+
+#: inc/watch-links.php:594
+msgid "Approve the ticked ones"
+msgstr ""
+
+#: inc/watch-links.php:402
+msgid "Approved %d domain."
+msgid_plural "Approved %d domains."
+msgstr[0] ""
+msgstr[1] ""
 
 #: main/notify.php:121 main/section/cu-notify3.php:36
 msgid "As soon as the page opens"
@@ -2027,7 +2065,7 @@ msgstr ""
 msgid "Does not exist"
 msgstr ""
 
-#: inc/watch-links.php:465
+#: inc/watch-links.php:552
 msgid "Domain"
 msgstr ""
 
@@ -2646,10 +2684,6 @@ msgstr ""
 msgid "Every month"
 msgstr ""
 
-#: inc/watch-links.php:430
-msgid "Every other website your posts and pages point at, one row per domain. Untick anything you do not recognise, then save — you will be told the moment a domain that is not on this list turns up in your content."
-msgstr ""
-
 #: inc/php-snippet.php:271
 msgid "Every page load (init)"
 msgstr ""
@@ -2670,7 +2704,7 @@ msgstr ""
 msgid "Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off."
 msgstr ""
 
-#: inc/watch-links.php:522
+#: inc/watch-links.php:662
 msgid "Everything above only tells you. Telling you leaves a gap: the link goes in, the warning appears on a screen, and the link keeps working until you log in and read it. That gap is how three old posts carried casino links for two years."
 msgstr ""
 
@@ -2772,6 +2806,10 @@ msgstr ""
 
 #: main/page/9user.php:13
 msgid "Filter posts and images"
+msgstr ""
+
+#: inc/watch-links.php:615
+msgid "Find a domain"
 msgstr ""
 
 #: main/clean.php:111 main/section/sp-clean3.php:5
@@ -3112,7 +3150,7 @@ msgstr ""
 msgid "Horse Tools beat #%1$d — %2$s"
 msgstr ""
 
-#: inc/watch-links.php:592
+#: inc/watch-links.php:751
 msgid "Horse Tools can tell you when your content starts linking somewhere new."
 msgstr ""
 
@@ -3425,7 +3463,7 @@ msgstr ""
 msgid "Imported %d setting group(s). You can undo this below."
 msgstr ""
 
-#: inc/watch-links.php:467
+#: inc/watch-links.php:554
 msgid "In"
 msgstr ""
 
@@ -3556,6 +3594,10 @@ msgstr ""
 msgid "Lazy-load images; drop Emoji and jQuery Migrate"
 msgstr ""
 
+#: inc/watch-links.php:513
+msgid "Least-linked first, because the one added without your knowing is almost never the one you link to from two hundred posts. Tick what belongs and approve it; leave the rest here."
+msgstr ""
+
 #: main/section/snippets-screen.php:586
 msgid "Leave another shortcode plugin"
 msgstr ""
@@ -3644,11 +3686,11 @@ msgstr ""
 msgid "Link display color"
 msgstr ""
 
-#: inc/watch-links.php:468
+#: inc/watch-links.php:555
 msgid "Link text"
 msgstr ""
 
-#: inc/watch-links.php:466
+#: inc/watch-links.php:553
 msgid "Links"
 msgstr ""
 
@@ -3692,7 +3734,7 @@ msgstr ""
 msgid "Loading…"
 msgstr ""
 
-#: inc/watch-links.php:493
+#: inc/watch-links.php:567
 msgid "Loads a script or an embedded frame from this domain"
 msgstr ""
 
@@ -3767,6 +3809,10 @@ msgstr ""
 
 #: main/section/seo-faq.php:44
 msgid "Longest answer to publish (characters)"
+msgstr ""
+
+#: inc/watch-links.php:519
+msgid "Look down this page, deal with anything that makes you stop, and use “Approve everything” below for the rest — what matters is having a baseline, so that tomorrow’s arrival stands out against it."
 msgstr ""
 
 #: main/page/6post.php:217
@@ -4057,6 +4103,10 @@ msgstr ""
 msgid "No pages selected"
 msgstr ""
 
+#: inc/watch-links.php:621
+msgid "No post titles here on purpose — this list is long, and looking up a title for every row is what made this screen slow. Tick anything you want to take back and press the button; it moves up to “Waiting for you” with its posts listed."
+msgstr ""
+
 #: inc/search.php:403
 msgid "No results found"
 msgstr ""
@@ -4105,7 +4155,7 @@ msgstr ""
 msgid "No third-party requests found. Nothing leaks to other servers."
 msgstr ""
 
-#: inc/watch-links.php:539
+#: inc/watch-links.php:679
 msgid "Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it."
 msgstr ""
 
@@ -4165,8 +4215,16 @@ msgstr ""
 msgid "Nothing to set up"
 msgstr ""
 
-#: inc/watch-links.php:528
+#: inc/watch-links.php:403 inc/watch-links.php:409
+msgid "Nothing was ticked, so nothing changed."
+msgstr ""
+
+#: inc/watch-links.php:668
 msgid "Nothing — just tell me"
+msgstr ""
+
+#: inc/watch-links.php:490
+msgid "Nothing. Every domain your content points at is one you have agreed to."
 msgstr ""
 
 #: main/notify.php:69 main/section/cu-notify2.php:5
@@ -4439,7 +4497,7 @@ msgstr ""
 msgid "PRESETS"
 msgstr ""
 
-#: main/section/snippets-screen.php:261
+#: inc/watch-links.php:533 main/section/snippets-screen.php:261
 msgid "Page %1$d of %2$d"
 msgstr ""
 
@@ -4713,10 +4771,6 @@ msgstr ""
 msgid "REST API left ON so the store keeps working"
 msgstr ""
 
-#: inc/watch-links.php:433
-msgid "Rarely-linked domains are listed first, because the one that was added without your knowing is almost never the one you link to from two hundred posts."
-msgstr ""
-
 #: main/section/cu-track.php:198
 msgid "Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see."
 msgstr ""
@@ -4913,7 +4967,7 @@ msgstr ""
 msgid "Reveal"
 msgstr ""
 
-#: inc/watch-links.php:588
+#: inc/watch-links.php:747
 msgid "Review the list"
 msgstr ""
 
@@ -5087,8 +5141,8 @@ msgstr ""
 msgid "Save these one-time backup codes somewhere safe — each works once if you lose your phone:"
 msgstr ""
 
-#: inc/watch-links.php:548
-msgid "Save this list"
+#: inc/watch-links.php:687
+msgid "Save this choice"
 msgstr ""
 
 #: main/page/12chat.php:539
@@ -5099,18 +5153,12 @@ msgstr ""
 msgid "Saved tables"
 msgstr ""
 
-#: main/section/snippets-screen.php:642
+#: inc/watch-links.php:417 main/section/snippets-screen.php:642
 msgid "Saved."
 msgstr ""
 
-#: inc/watch-links.php:398
-msgid "Saved. %d domain is still not approved."
-msgid_plural "Saved. %d domains are still not approved."
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/watch-links.php:399
-msgid "Saved. Everything on this page is approved."
+#: inc/watch-links.php:397
+msgid "Saved. Everything found so far is approved."
 msgstr ""
 
 #: main/page/2scuri.php:217
@@ -5757,11 +5805,11 @@ msgstr ""
 msgid "Still reading your content"
 msgstr ""
 
-#: inc/watch-links.php:422
+#: inc/watch-links.php:450
 msgid "Still reading your content. Come back in a minute."
 msgstr ""
 
-#: inc/watch-links.php:421
+#: inc/watch-links.php:449
 msgid "Still reading your content: %1$d of %2$d. Come back in a minute."
 msgstr ""
 
@@ -5910,7 +5958,11 @@ msgstr ""
 msgid "Tags (comma separated)"
 msgstr ""
 
-#: inc/watch-links.php:538
+#: inc/watch-links.php:652
+msgid "Take back the ticked ones"
+msgstr ""
+
+#: inc/watch-links.php:678
 msgid "Take the link away, keep the words"
 msgstr ""
 
@@ -6122,7 +6174,7 @@ msgstr ""
 msgid "The last one could not be sent — Security tab → Check-in"
 msgstr ""
 
-#: inc/watch-links.php:534
+#: inc/watch-links.php:674
 msgid "The link still works for a reader and stops passing any SEO value — which is the whole reason a link like that is worth paying for. Nothing in your posts is changed; only what gets printed."
 msgstr ""
 
@@ -6330,19 +6382,15 @@ msgstr ""
 msgid "This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site."
 msgstr ""
 
-#: inc/watch-links.php:438
-msgid "This is a long list, and nobody reads a long list carefully. That is fine — on a site this size the point of the first pass is not to audit every row, it is to agree that what is here today is what you meant. Glance down the first screenful, untick anything that makes you stop, and save. What the list is for starts tomorrow, when something arrives that is not on it."
-msgstr ""
-
 #: inc/mail.php:123
 msgid "This is an email notification of your successful registration"
 msgstr ""
 
-#: inc/watch-links.php:444
+#: inc/watch-links.php:464
 msgid "This list is incomplete."
 msgstr ""
 
-#: inc/watch-links.php:544
+#: inc/watch-links.php:684
 msgid "This never touches what is stored. Switch it off and every link is back as it was on the next page load."
 msgstr ""
 
@@ -6398,8 +6446,8 @@ msgstr ""
 msgid "Thu"
 msgstr ""
 
-#: inc/watch-links.php:458
-msgid "Tick all"
+#: inc/watch-links.php:526
+msgid "Tick all on this page"
 msgstr ""
 
 #: main/page/2scuri.php:197
@@ -6594,7 +6642,7 @@ msgstr ""
 msgid "Unlock"
 msgstr ""
 
-#: inc/watch-links.php:459
+#: inc/watch-links.php:527
 msgid "Untick all"
 msgstr ""
 
@@ -6699,6 +6747,10 @@ msgstr ""
 msgid "Wait..."
 msgstr ""
 
+#: inc/watch-links.php:487
+msgid "Waiting for you"
+msgstr ""
+
 #: main/page/5media.php:263
 msgid "Watermark image compared to main image"
 msgstr ""
@@ -6783,7 +6835,7 @@ msgstr ""
 msgid "Where to run it"
 msgstr ""
 
-#: inc/watch-heartbeat.php:140 inc/watch-links.php:407
+#: inc/watch-heartbeat.php:140 inc/watch-links.php:435
 msgid "Where your content links to"
 msgstr ""
 
@@ -6995,7 +7047,11 @@ msgstr ""
 msgid "Your content has not been read all the way through yet."
 msgstr ""
 
-#: inc/watch-links.php:601
+#: inc/watch-links.php:479
+msgid "Your content links to %1$s domains you have not agreed to, and %2$s you have. You will be told the moment one arrives that is on neither list."
+msgstr ""
+
+#: inc/watch-links.php:760
 msgid "Your content links to %d domain you have not approved."
 msgid_plural "Your content links to %d domains you have not approved."
 msgstr[0] ""
@@ -7005,7 +7061,7 @@ msgstr[1] ""
 msgid "Your content links to more domains than the list can hold, so it is incomplete"
 msgstr ""
 
-#: inc/watch-links.php:448
+#: inc/watch-links.php:468
 msgid "Your content links to more than %d domains, which is as many as can be held. Domains beyond that were not recorded, so this cannot tell you when one of them is new — it would say it was already there."
 msgstr ""
 
@@ -7033,7 +7089,7 @@ msgstr ""
 msgid "Your own icon (paste an SVG)"
 msgstr ""
 
-#: inc/watch-links.php:529
+#: inc/watch-links.php:669
 msgid "Your pages go out exactly as written."
 msgstr ""
 
@@ -7041,11 +7097,11 @@ msgstr ""
 msgid "Your pairing code has expired. Reload this page to get a new one."
 msgstr ""
 
-#: inc/watch-links.php:427
+#: inc/watch-links.php:458
 msgid "Your posts and pages do not link anywhere outside this site."
 msgstr ""
 
-#: inc/watch-links.php:595
+#: inc/watch-links.php:754
 msgid "Your posts and pages link to %d other domain. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
 msgid_plural "Your posts and pages link to %d other domains. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
 msgstr[0] ""
@@ -7215,7 +7271,7 @@ msgstr ""
 msgid "optional title above the table"
 msgstr ""
 
-#: inc/watch-links.php:499
+#: inc/watch-links.php:573
 msgid "passes SEO value"
 msgstr ""
 
@@ -7241,6 +7297,10 @@ msgstr ""
 
 #: main/page/1speed.php:200
 msgid "runs now"
+msgstr ""
+
+#: inc/watch-links.php:643
+msgid "script or embedded frame"
 msgstr ""
 
 #: inc/shortcodes-lib.php:32
@@ -7273,6 +7333,10 @@ msgstr ""
 
 #: main/page/2scuri.php:251
 msgid "third-party host(s) found"
+msgstr ""
+
+#: inc/watch-links.php:616
+msgid "type part of a domain…"
 msgstr ""
 
 #: main/clean.php:216

@@ -1297,6 +1297,32 @@ $vi = array(
 	'Your content links to more than %d domains, which is as many as can be held. Domains beyond that were not recorded, so this cannot tell you when one of them is new — it would say it was already there.' => 'Nội dung của bạn trỏ tới hơn %d tên miền, đó là mức chứa tối đa. Những tên miền vượt quá không được ghi lại, nên cái này không báo được khi một trong số đó là mới — nó sẽ nói là đã có sẵn.',
 	'Your content links to more domains than the list can hold, so it is incomplete' => 'Nội dung trỏ tới nhiều tên miền hơn sức chứa của danh sách, nên danh sách bị thiếu',
 
+
+	// The review screen rebuilt for a site with 686 domains (1.3.31).
+	'Waiting for you' => 'Đang chờ bạn',
+	'Already approved' => 'Đã duyệt',
+	'Nothing. Every domain your content points at is one you have agreed to.' => 'Không có gì. Mọi tên miền nội dung của bạn trỏ tới đều là cái bạn đã đồng ý.',
+	'Your content links to %1$s domains you have not agreed to, and %2$s you have. You will be told the moment one arrives that is on neither list.' => 'Nội dung của bạn trỏ tới %1$s tên miền bạn chưa đồng ý, và %2$s tên miền bạn đã đồng ý. Hễ có cái nào tới mà không nằm trong cả hai danh sách là bạn được báo ngay.',
+	'Least-linked first, because the one added without your knowing is almost never the one you link to from two hundred posts. Tick what belongs and approve it; leave the rest here.' => 'Ít link nhất lên trước, vì cái bị chèn vào mà bạn không hay biết gần như không bao giờ là cái bạn trỏ tới từ hai trăm bài. Tick những cái đúng là của bạn rồi duyệt; còn lại cứ để đây.',
+	'A long list on a first pass is normal and does not have to be read row by row.' => 'Lượt soát đầu mà danh sách dài là bình thường, và không cần đọc từng dòng.',
+	'Look down this page, deal with anything that makes you stop, and use “Approve everything” below for the rest — what matters is having a baseline, so that tomorrow’s arrival stands out against it.' => 'Liếc qua trang này, cái nào làm bạn khựng lại thì xử, phần còn lại bấm “Duyệt hết” bên dưới — điều quan trọng là có một cái mốc, để ngày mai có gì mới thì nó nổi bật lên.',
+	'Tick all on this page' => 'Tick hết trang này',
+	'Approve the ticked ones' => 'Duyệt những cái đã tick',
+	'Approve everything (%d)' => 'Duyệt hết (%d)',
+	'Approve all %d domains your content currently links to?' => 'Duyệt hết %d tên miền mà nội dung của bạn đang trỏ tới?',
+	'Approved %d domain.' => 'Đã duyệt %d tên miền.',
+	'%d domain is no longer approved.' => '%d tên miền không còn được duyệt.',
+	'Nothing was ticked, so nothing changed.' => 'Không tick cái nào nên không có gì thay đổi.',
+	'Saved. Everything found so far is approved.' => 'Đã lưu. Mọi thứ tìm được cho tới lúc này đều đã duyệt.',
+	'Find a domain' => 'Tìm một tên miền',
+	'type part of a domain…' => 'gõ một phần tên miền…',
+	'No post titles here on purpose — this list is long, and looking up a title for every row is what made this screen slow. Tick anything you want to take back and press the button; it moves up to “Waiting for you” with its posts listed.' => 'Ở đây cố ý không hiện tên bài — danh sách này dài, mà tra tên bài cho từng dòng chính là thứ làm màn hình này chậm. Cái nào muốn lấy lại thì tick rồi bấm nút; nó sẽ chuyển lên mục “Đang chờ bạn” kèm danh sách bài.',
+	'Take back the ticked ones' => 'Lấy lại những cái đã tick',
+	'%d link' => '%d link',
+	'script or embedded frame' => 'script hoặc khung nhúng',
+	'Save this choice' => 'Lưu lựa chọn này',
+	'Page %1$d of %2$d' => 'Trang %1$d / %2$d',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

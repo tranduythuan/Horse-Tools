@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.30
+Stable tag: 1.3.31
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,13 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.31 =
+* **The review screen was one table of every domain, which on a real site meant 686 rows.** That is not a review, it is a wall — and it hid two real faults behind the length.
+* **It could not be saved.** The form posted a hidden field and a checkbox for every domain: 1372 fields on that site, against PHP's default `max_input_vars` of 1000, which drops the rest without a word. You would tick everything, press save, and several hundred domains would quietly stay unapproved with nothing on screen to explain it. Nothing on this screen scales with the number of rows any more — only the exceptions are posted, and “Approve everything” sends one field.
+* **It was slow for a reason that had nothing to do with the size of the list.** Every row printed up to eight post titles, which is five thousand title lookups on one page. Post titles now appear only in the short list where you would actually go and look, and the posts on a page are fetched in one query instead of one each.
+* **Two lists instead of one**, because they are two different jobs: *Waiting for you* is a decision to make, fifty at a time, worst first; *Already approved* is a reference you occasionally look something up in, collapsed, with a search box and no per-row cost.
+* Fixed while rebuilding: saving the guard setting on its own used to record that a review had happened. On a site that had approved nothing, that is the exact state in which the guard defuses *every* outbound link — so choosing what happens to unapproved domains is now firmly not the same act as saying which domains are approved.
 
 = 1.3.30 =
 * **Makes 1.3.29 actually apply to the sites that needed it.** Raising the link inventory's ceiling changed how much a collector keeps, which is a change in how it reads — and that has to bump the scan signature or nothing re-reads. It did not. So on the one site that had already hit the old ceiling, the inventory stayed truncated at 400 and the flag that reports truncation, which is only set while collecting, stayed unset. The site carried on reporting that its content was watched. A fix that only reaches installations which have not yet hit the bug is not a fix.

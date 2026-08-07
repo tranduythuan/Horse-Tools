@@ -377,31 +377,59 @@ function horsetools_link_screen() {
 
 	$done = '';
 	if ( isset( $_POST['ht_links_nonce'] ) && wp_verify_nonce( sanitize_key( wp_unslash( $_POST['ht_links_nonce'] ) ), 'horsetools_links' ) ) {
-		$ticked = isset( $_POST['ok'] ) ? array_map( 'sanitize_text_field', (array) wp_unslash( $_POST['ok'] ) ) : array();
-		$listed = isset( $_POST['seen'] ) ? array_map( 'sanitize_text_field', (array) wp_unslash( $_POST['seen'] ) ) : array();
-
-		// Approve what was ticked and un-approve what was on the page and was not.
-		// Only what was on the page: a host discovered after this form was rendered
-		// must not be silently un-approved by a decision nobody made about it.
-		// Approving writes the option even when nothing was ticked, which is what
-		// records that a review happened at all — "I looked, and none of these
-		// belong" is an answer, and the screen must stop asking for a first review
-		// once it has been given one.
 		if ( isset( $_POST['guard'] ) ) {
 			horsetools_link_guard_set( sanitize_key( wp_unslash( $_POST['guard'] ) ) );
 		}
-		horsetools_link_approve( $ticked );
-		horsetools_link_revoke( array_values( array_diff( $listed, $ticked ) ) );
-		$left = count( array_diff( $listed, $ticked ) );
-		$done = $left
-			/* translators: %d: number of domains left unapproved. */
-			? sprintf( _n( 'Saved. %d domain is still not approved.', 'Saved. %d domains are still not approved.', $left, 'horse-tools' ), $left )
-			: __( 'Saved. Everything on this page is approved.', 'horse-tools' );
+
+		// Only ever the exceptions are posted, never the whole list.
+		//
+		// It used to post one hidden field and one checkbox per domain. On a site
+		// with 686 of them that is 1372 fields, and PHP's max_input_vars stops at
+		// 1000 by default and drops the rest without a word — so the owner would
+		// tick everything, press save, and several hundred domains would quietly
+		// stay unapproved with nothing on screen to explain it. Anything that
+		// scales with the number of rows is wrong here.
+		$action = isset( $_POST['do'] ) ? sanitize_key( wp_unslash( $_POST['do'] ) ) : '';
+		$picked = isset( $_POST['pick'] ) ? array_map( 'sanitize_text_field', (array) wp_unslash( $_POST['pick'] ) ) : array();
+
+		if ( 'approve_all' === $action ) {
+			horsetools_link_approve( array_keys( horsetools_link_found() ) );
+			$done = __( 'Saved. Everything found so far is approved.', 'horse-tools' );
+		} elseif ( 'approve' === $action ) {
+			horsetools_link_approve( $picked );
+			$done = $picked
+				/* translators: %d: number of domains approved. */
+				? sprintf( _n( 'Approved %d domain.', 'Approved %d domains.', count( $picked ), 'horse-tools' ), count( $picked ) )
+				: __( 'Nothing was ticked, so nothing changed.', 'horse-tools' );
+		} elseif ( 'revoke' === $action ) {
+			horsetools_link_revoke( $picked );
+			$done = $picked
+				/* translators: %d: number of domains no longer approved. */
+				? sprintf( _n( '%d domain is no longer approved.', '%d domains are no longer approved.', count( $picked ), 'horse-tools' ), count( $picked ) )
+				: __( 'Nothing was ticked, so nothing changed.', 'horse-tools' );
+		} else {
+			// The guard setting on its own, and deliberately nothing else. Writing
+			// the approved list here would record that a review had happened while
+			// the list was still empty — and "reviewed, nothing approved" is exactly
+			// the state in which the guard defuses every outbound link on the site.
+			// Choosing what should happen to unapproved domains is not the same act
+			// as saying which domains are approved.
+			$done = __( 'Saved.', 'horse-tools' );
+		}
 	}
 
 	$status   = horsetools_link_status();
-	$found    = horsetools_link_sort( horsetools_link_found() );
+	$found    = horsetools_link_found();
 	$approved = horsetools_link_approved();
+
+	// Two lists, because they are two different jobs. The short one is a decision
+	// waiting to be made; the long one is a reference you occasionally look
+	// something up in. Showing them as one table of 686 rows made the second bury
+	// the first, which is the wrong way round — the whole feature is about the
+	// handful that is not agreed yet.
+	$waiting = horsetools_link_sort( array_diff_key( $found, $approved ) );
+	$settled = array_intersect_key( $found, $approved );
+	ksort( $settled );
 	?>
 	<div class="wrap">
 		<h1><?php esc_html_e( 'Where your content links to', 'horse-tools' ); ?></h1>
@@ -423,41 +451,100 @@ function horsetools_link_screen() {
 				);
 				?>
 			</p>
-		<?php elseif ( ! $found ) : ?>
+			<?php return; ?>
+		<?php endif; ?>
+
+		<?php if ( ! $found ) : ?>
 			<p><?php esc_html_e( 'Your posts and pages do not link anywhere outside this site.', 'horse-tools' ); ?></p>
+			<?php return; ?>
+		<?php endif; ?>
+
+		<?php if ( horsetools_link_truncated() ) : ?>
+			<div class="notice notice-error" style="max-width:46em">
+				<p><strong><?php esc_html_e( 'This list is incomplete.', 'horse-tools' ); ?></strong></p>
+				<p><?php
+				printf(
+					/* translators: %d: the maximum number of domains that can be held. */
+					esc_html__( 'Your content links to more than %d domains, which is as many as can be held. Domains beyond that were not recorded, so this cannot tell you when one of them is new — it would say it was already there.', 'horse-tools' ),
+					(int) HORSETOOLS_LINK_MAX
+				);
+				?></p>
+			</div>
+		<?php endif; ?>
+
+		<p style="max-width:48em">
+			<?php
+			printf(
+				/* translators: 1: number waiting, 2: number already approved. */
+				esc_html__( 'Your content links to %1$s domains you have not agreed to, and %2$s you have. You will be told the moment one arrives that is on neither list.', 'horse-tools' ),
+				'<strong>' . number_format_i18n( count( $waiting ) ) . '</strong>',
+				'<strong>' . number_format_i18n( count( $settled ) ) . '</strong>'
+			);
+			?>
+		</p>
+
+		<?php /* ---------- waiting ---------- */ ?>
+		<h2><?php esc_html_e( 'Waiting for you', 'horse-tools' ); ?></h2>
+
+		<?php if ( ! $waiting ) : ?>
+			<p><?php esc_html_e( 'Nothing. Every domain your content points at is one you have agreed to.', 'horse-tools' ); ?></p>
 		<?php else : ?>
-			<p style="max-width:46em">
-				<?php esc_html_e( 'Every other website your posts and pages point at, one row per domain. Untick anything you do not recognise, then save — you will be told the moment a domain that is not on this list turns up in your content.', 'horse-tools' ); ?>
-			</p>
-			<p style="max-width:46em">
-				<?php esc_html_e( 'Rarely-linked domains are listed first, because the one that was added without your knowing is almost never the one you link to from two hundred posts.', 'horse-tools' ); ?>
+			<?php
+			// One page at a time, worst first. Rendering all of them was the other
+			// half of the problem: each row prints up to eight post titles, and at
+			// 686 rows that is five thousand get_the_title() calls on one screen.
+			$per   = 50;
+			$pages = (int) ceil( count( $waiting ) / $per );
+			$page  = isset( $_GET['ht_page'] ) ? max( 1, min( $pages, (int) $_GET['ht_page'] ) ) : 1; // phpcs:ignore WordPress.Security.NonceVerification
+			$slice = array_slice( $waiting, ( $page - 1 ) * $per, $per, true );
+
+			// Prime every post this page will name in one query instead of one each.
+			$ids = array();
+			foreach ( $slice as $row ) {
+				foreach ( ( isset( $row['posts'] ) ? $row['posts'] : array() ) as $pid ) {
+					$ids[] = (int) $pid;
+				}
+			}
+			if ( $ids ) {
+				_prime_post_caches( array_unique( $ids ), false, false );
+			}
+			?>
+			<p style="max-width:48em">
+				<?php esc_html_e( 'Least-linked first, because the one added without your knowing is almost never the one you link to from two hundred posts. Tick what belongs and approve it; leave the rest here.', 'horse-tools' ); ?>
 			</p>
 
-			<?php if ( count( $found ) > 80 ) : ?>
-				<p style="max-width:46em">
-					<?php esc_html_e( 'This is a long list, and nobody reads a long list carefully. That is fine — on a site this size the point of the first pass is not to audit every row, it is to agree that what is here today is what you meant. Glance down the first screenful, untick anything that makes you stop, and save. What the list is for starts tomorrow, when something arrives that is not on it.', 'horse-tools' ); ?>
+			<?php if ( count( $waiting ) > $per ) : ?>
+				<p style="max-width:48em">
+					<strong><?php esc_html_e( 'A long list on a first pass is normal and does not have to be read row by row.', 'horse-tools' ); ?></strong>
+					<?php esc_html_e( 'Look down this page, deal with anything that makes you stop, and use “Approve everything” below for the rest — what matters is having a baseline, so that tomorrow’s arrival stands out against it.', 'horse-tools' ); ?>
 				</p>
-			<?php endif; ?>
-
-			<?php if ( horsetools_link_truncated() ) : ?>
-				<div class="notice notice-error" style="max-width:46em">
-					<p><strong><?php esc_html_e( 'This list is incomplete.', 'horse-tools' ); ?></strong></p>
-					<p><?php
-					printf(
-						/* translators: %d: the maximum number of domains that can be held. */
-						esc_html__( 'Your content links to more than %d domains, which is as many as can be held. Domains beyond that were not recorded, so this cannot tell you when one of them is new — it would say it was already there.', 'horse-tools' ),
-						(int) HORSETOOLS_LINK_MAX
-					);
-					?></p>
-				</div>
 			<?php endif; ?>
 
 			<form method="post">
 				<?php wp_nonce_field( 'horsetools_links', 'ht_links_nonce' ); ?>
 				<p>
-					<button type="button" class="button" id="ht-links-all"><?php esc_html_e( 'Tick all', 'horse-tools' ); ?></button>
+					<button type="button" class="button" id="ht-links-all"><?php esc_html_e( 'Tick all on this page', 'horse-tools' ); ?></button>
 					<button type="button" class="button" id="ht-links-none"><?php esc_html_e( 'Untick all', 'horse-tools' ); ?></button>
+					<?php if ( $pages > 1 ) : ?>
+						<span style="margin-left:12px">
+						<?php
+						printf(
+							/* translators: 1: current page, 2: total pages. */
+							esc_html__( 'Page %1$d of %2$d', 'horse-tools' ),
+							(int) $page,
+							(int) $pages
+						);
+						?>
+						</span>
+						<?php if ( $page > 1 ) : ?>
+							<a class="button" href="<?php echo esc_url( add_query_arg( 'ht_page', $page - 1, horsetools_link_screen_url() ) ); ?>">&laquo;</a>
+						<?php endif; ?>
+						<?php if ( $page < $pages ) : ?>
+							<a class="button" href="<?php echo esc_url( add_query_arg( 'ht_page', $page + 1, horsetools_link_screen_url() ) ); ?>">&raquo;</a>
+						<?php endif; ?>
+					<?php endif; ?>
 				</p>
+
 				<table class="wp-list-table widefat striped">
 					<thead>
 					<tr>
@@ -469,23 +556,10 @@ function horsetools_link_screen() {
 					</tr>
 					</thead>
 					<tbody>
-					<?php foreach ( $found as $host => $row ) : ?>
-						<?php
-						// Before the first review nothing is approved yet, so every box
-						// would start empty and agreeing to a site's own forty domains
-						// would mean forty clicks. That is a screen people close. The
-						// first pass starts ticked and asks to have the odd one taken
-						// out — which is the shape of the answer anyway, and the odd one
-						// is already at the top. After that the stored decision rules,
-						// so a domain that turned up later starts unticked and stays
-						// visible until somebody says otherwise.
-						$is_ok = horsetools_link_reviewed() ? isset( $approved[ $host ] ) : true;
-						$posts = isset( $row['posts'] ) ? $row['posts'] : array();
-						?>
-						<tr<?php echo $is_ok ? '' : ' style="background:#fdecea"'; ?>>
+					<?php foreach ( $slice as $host => $row ) : ?>
+						<tr>
 							<th class="check-column">
-								<input type="hidden" name="seen[]" value="<?php echo esc_attr( $host ); ?>">
-								<input type="checkbox" name="ok[]" value="<?php echo esc_attr( $host ); ?>" <?php checked( $is_ok ); ?>>
+								<input type="checkbox" name="pick[]" value="<?php echo esc_attr( $host ); ?>" checked>
 							</th>
 							<td>
 								<strong><?php echo esc_html( $host ); ?></strong>
@@ -501,7 +575,7 @@ function horsetools_link_screen() {
 							</td>
 							<td>
 								<?php
-								foreach ( $posts as $pid ) {
+								foreach ( ( isset( $row['posts'] ) ? $row['posts'] : array() ) as $pid ) {
 									$title = get_the_title( $pid );
 									printf(
 										'<a href="%s">%s</a><br>',
@@ -516,52 +590,137 @@ function horsetools_link_screen() {
 					<?php endforeach; ?>
 					</tbody>
 				</table>
-
-				<h2 style="margin-top:26px"><?php esc_html_e( 'And what should happen to a domain that is not on the list?', 'horse-tools' ); ?></h2>
-				<p style="max-width:46em">
-					<?php esc_html_e( 'Everything above only tells you. Telling you leaves a gap: the link goes in, the warning appears on a screen, and the link keeps working until you log in and read it. That gap is how three old posts carried casino links for two years.', 'horse-tools' ); ?>
+				<p class="submit">
+					<button type="submit" name="do" value="approve" class="button button-primary"><?php esc_html_e( 'Approve the ticked ones', 'horse-tools' ); ?></button>
+					<button type="submit" name="do" value="approve_all" class="button"
+						onclick="return confirm(<?php echo esc_attr( wp_json_encode( sprintf( /* translators: %d: number of domains. */ __( 'Approve all %d domains your content currently links to?', 'horse-tools' ), count( $found ) ) ) ); ?>);">
+						<?php
+						printf(
+							/* translators: %d: number of domains. */
+							esc_html__( 'Approve everything (%d)', 'horse-tools' ),
+							count( $found )
+						);
+						?>
+					</button>
 				</p>
-				<?php $guard = horsetools_link_guard_mode(); ?>
-				<p class="ht-field">
-					<label style="display:block;margin:6px 0">
-						<input type="radio" name="guard" value="off" <?php checked( 'off', $guard ); ?>>
-						<strong><?php esc_html_e( 'Nothing — just tell me', 'horse-tools' ); ?></strong><br>
-						<span class="description" style="margin-left:24px"><?php esc_html_e( 'Your pages go out exactly as written.', 'horse-tools' ); ?></span>
-					</label>
-					<label style="display:block;margin:6px 0">
-						<input type="radio" name="guard" value="nofollow" <?php checked( 'nofollow', $guard ); ?>>
-						<strong><?php esc_html_e( 'Add nofollow to it (recommended)', 'horse-tools' ); ?></strong><br>
-						<span class="description" style="margin-left:24px"><?php esc_html_e( 'The link still works for a reader and stops passing any SEO value — which is the whole reason a link like that is worth paying for. Nothing in your posts is changed; only what gets printed.', 'horse-tools' ); ?></span>
-					</label>
-					<label style="display:block;margin:6px 0">
-						<input type="radio" name="guard" value="strip" <?php checked( 'strip', $guard ); ?>>
-						<strong><?php esc_html_e( 'Take the link away, keep the words', 'horse-tools' ); ?></strong><br>
-						<span class="description" style="margin-left:24px"><?php esc_html_e( 'Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it.', 'horse-tools' ); ?></span>
-					</label>
+			</form>
+		<?php endif; ?>
+
+		<?php /* ---------- settled ---------- */ ?>
+		<?php if ( $settled ) : ?>
+			<h2><?php esc_html_e( 'Already approved', 'horse-tools' ); ?></h2>
+			<form method="post">
+				<?php wp_nonce_field( 'horsetools_links', 'ht_links_nonce' ); ?>
+				<p>
+					<label for="ht-links-find"><?php esc_html_e( 'Find a domain', 'horse-tools' ); ?></label>
+					<input type="search" id="ht-links-find" class="regular-text" placeholder="<?php esc_attr_e( 'type part of a domain…', 'horse-tools' ); ?>">
+					<span id="ht-links-count"></span>
 				</p>
 				<p class="ht-note">
 					<i class="ti ti-bulb"></i>
-					<?php esc_html_e( 'This never touches what is stored. Switch it off and every link is back as it was on the next page load.', 'horse-tools' ); ?>
+					<?php esc_html_e( 'No post titles here on purpose — this list is long, and looking up a title for every row is what made this screen slow. Tick anything you want to take back and press the button; it moves up to “Waiting for you” with its posts listed.', 'horse-tools' ); ?>
 				</p>
-
+				<div style="max-height:420px;overflow:auto;border:1px solid #dcdcde;background:#fff">
+					<table class="wp-list-table widefat striped" id="ht-links-settled">
+						<tbody>
+						<?php foreach ( $settled as $host => $row ) : ?>
+							<tr data-host="<?php echo esc_attr( $host ); ?>">
+								<th class="check-column" style="width:2.2em">
+									<input type="checkbox" name="pick[]" value="<?php echo esc_attr( $host ); ?>">
+								</th>
+								<td><?php echo esc_html( $host ); ?></td>
+								<td style="width:8em">
+									<?php
+									printf(
+										/* translators: %d: number of links. */
+										esc_html( _n( '%d link', '%d links', (int) $row['count'], 'horse-tools' ) ),
+										(int) $row['count']
+									);
+									?>
+								</td>
+								<td style="width:16em">
+									<?php if ( ! empty( $row['embed'] ) ) : ?>
+										<span style="color:#c0392b"><?php esc_html_e( 'script or embedded frame', 'horse-tools' ); ?></span>
+									<?php endif; ?>
+								</td>
+							</tr>
+						<?php endforeach; ?>
+						</tbody>
+					</table>
+				</div>
 				<p class="submit">
-					<button type="submit" class="button button-primary"><?php esc_html_e( 'Save this list', 'horse-tools' ); ?></button>
+					<button type="submit" name="do" value="revoke" class="button"><?php esc_html_e( 'Take back the ticked ones', 'horse-tools' ); ?></button>
 				</p>
 			</form>
-			<script>
-			document.addEventListener('DOMContentLoaded',function(){
-				var set=function(v){
-					var b=document.querySelectorAll('input[name="ok[]"]'),i;
-					for(i=0;i<b.length;i++){ b[i].checked=v; }
-				};
-				var a=document.getElementById('ht-links-all');
-				var n=document.getElementById('ht-links-none');
-				if(a){ a.addEventListener('click',function(){set(true);}); }
-				if(n){ n.addEventListener('click',function(){set(false);}); }
-			});
-			</script>
 		<?php endif; ?>
+
+		<?php /* ---------- guard ---------- */ ?>
+		<form method="post">
+			<?php wp_nonce_field( 'horsetools_links', 'ht_links_nonce' ); ?>
+			<h2 style="margin-top:26px"><?php esc_html_e( 'And what should happen to a domain that is not on the list?', 'horse-tools' ); ?></h2>
+			<p style="max-width:46em">
+				<?php esc_html_e( 'Everything above only tells you. Telling you leaves a gap: the link goes in, the warning appears on a screen, and the link keeps working until you log in and read it. That gap is how three old posts carried casino links for two years.', 'horse-tools' ); ?>
+			</p>
+			<?php $guard = horsetools_link_guard_mode(); ?>
+			<p class="ht-field">
+				<label style="display:block;margin:6px 0">
+					<input type="radio" name="guard" value="off" <?php checked( 'off', $guard ); ?>>
+					<strong><?php esc_html_e( 'Nothing — just tell me', 'horse-tools' ); ?></strong><br>
+					<span class="description" style="margin-left:24px"><?php esc_html_e( 'Your pages go out exactly as written.', 'horse-tools' ); ?></span>
+				</label>
+				<label style="display:block;margin:6px 0">
+					<input type="radio" name="guard" value="nofollow" <?php checked( 'nofollow', $guard ); ?>>
+					<strong><?php esc_html_e( 'Add nofollow to it (recommended)', 'horse-tools' ); ?></strong><br>
+					<span class="description" style="margin-left:24px"><?php esc_html_e( 'The link still works for a reader and stops passing any SEO value — which is the whole reason a link like that is worth paying for. Nothing in your posts is changed; only what gets printed.', 'horse-tools' ); ?></span>
+				</label>
+				<label style="display:block;margin:6px 0">
+					<input type="radio" name="guard" value="strip" <?php checked( 'strip', $guard ); ?>>
+					<strong><?php esc_html_e( 'Take the link away, keep the words', 'horse-tools' ); ?></strong><br>
+					<span class="description" style="margin-left:24px"><?php esc_html_e( 'Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it.', 'horse-tools' ); ?></span>
+				</label>
+			</p>
+			<p class="ht-note">
+				<i class="ti ti-bulb"></i>
+				<?php esc_html_e( 'This never touches what is stored. Switch it off and every link is back as it was on the next page load.', 'horse-tools' ); ?>
+			</p>
+			<p class="submit">
+				<button type="submit" class="button button-primary"><?php esc_html_e( 'Save this choice', 'horse-tools' ); ?></button>
+			</p>
+		</form>
 	</div>
+	<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		var page = document.querySelectorAll('form input[name="pick[]"]');
+		var set = function (v) {
+			var rows = document.querySelectorAll('#ht-links-settled');
+			var boxes = document.querySelectorAll('input[name="pick[]"]'), i;
+			for (i = 0; i < boxes.length; i++) {
+				if (rows.length && rows[0].contains(boxes[i])) { continue; }
+				boxes[i].checked = v;
+			}
+		};
+		var a = document.getElementById('ht-links-all');
+		var n = document.getElementById('ht-links-none');
+		if (a) { a.addEventListener('click', function () { set(true); }); }
+		if (n) { n.addEventListener('click', function () { set(false); }); }
+
+		var find = document.getElementById('ht-links-find');
+		var out  = document.getElementById('ht-links-count');
+		var tbl  = document.getElementById('ht-links-settled');
+		if (find && tbl) {
+			var rows = tbl.querySelectorAll('tbody tr');
+			find.addEventListener('input', function () {
+				var q = find.value.toLowerCase().trim(), shown = 0, i;
+				for (i = 0; i < rows.length; i++) {
+					var hit = !q || rows[i].getAttribute('data-host').indexOf(q) > -1;
+					rows[i].style.display = hit ? '' : 'none';
+					if (hit) { shown++; }
+				}
+				if (out) { out.textContent = q ? (shown + '/' + rows.length) : ''; }
+			});
+		}
+	});
+	</script>
 	<?php
 }
 
