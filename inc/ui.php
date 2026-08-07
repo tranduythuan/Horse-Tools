@@ -618,3 +618,45 @@ function horsetools_scope_print( $html, $option, $owns_all = false ) {
 	}
 	echo $html; // phpcs:ignore WordPress.Security.EscapeOutput -- already-rendered form markup
 }
+
+/* -------------------------------------------------------------------------
+ * Banners on the plugin's own screens.
+ *
+ * Not WordPress notices. WordPress moves anything carrying .notice, .updated
+ * or .error with a line of JavaScript — it drops them after the first heading
+ * inside .wrap — and on these screens that lands the message *inside a tab
+ * pane*. Whichever tab happens to be open decides whether the reader ever sees
+ * it, which for a security warning is no good at all: it was there, in the DOM,
+ * and invisible.
+ *
+ * The proper WordPress answer is an <hr class="wp-header-end"> marker saying
+ * where notices belong, but that means editing sixteen page templates. Using
+ * our own class names instead keeps the banner exactly where admin_notices
+ * printed it — the top of the content area, above everything, in or out of any
+ * tab.
+ * ---------------------------------------------------------------------- */
+
+/**
+ * @param string $tone 'info' | 'warn' | 'bad'
+ * @param string $html Already-escaped inner markup.
+ */
+function horsetools_admin_banner( $tone, $html ) {
+	static $styled = false;
+	if ( ! $styled ) {
+		$styled = true;
+		echo '<style>
+.ht-banner{margin:14px 20px 0 2px;padding:13px 18px;border:1px solid #e0a800;border-top-width:3px;background:#fff8e1;color:#5c3d00;border-radius:0 0 6px 6px;font-size:13.5px;line-height:1.6}
+.ht-banner p{margin:0 0 8px}
+.ht-banner p:last-child{margin-bottom:0}
+.ht-banner strong{color:#3d2900}
+.ht-banner code{background:rgba(0,0,0,.05);border-radius:3px;padding:1px 6px;font-size:12px}
+.ht-banner .button{vertical-align:baseline}
+.ht-banner-bad{border-color:#c0392b;background:#fdecea;color:#7a1d13}
+.ht-banner-bad strong{color:#5e1610}
+.ht-banner-info{border-color:#3a6ea5;background:#eef3f8;color:#1f3f61}
+.ht-banner-info strong{color:#14293f}
+</style>';
+	}
+	$class = 'ht-banner' . ( 'warn' === $tone ? '' : ' ht-banner-' . preg_replace( '/[^a-z]/', '', $tone ) );
+	echo '<div class="' . esc_attr( $class ) . '">' . $html . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput -- caller escapes.
+}

@@ -166,7 +166,7 @@ function horsetools_salt_notice() {
 		return;
 	}
 	?>
-	<div class="notice notice-error">
+	<?php ob_start(); ?>
 		<p><strong><?php esc_html_e( 'This site’s signing keys are stored in the database, not in wp-config.php.', 'horse-tools' ); ?></strong></p>
 		<p><?php esc_html_e( 'Two Horse Tools protections are signed with those keys: the PHP snippet signature, which is meant to refuse code written straight into the database, and the “trusted device” cookie that skips two-factor authentication. Anyone who can read your database can read the keys, so both can be forged. Moving the keys into wp-config.php — a file — restores them.', 'horse-tools' ); ?></p>
 		<details>
@@ -181,7 +181,7 @@ function horsetools_salt_notice() {
 				</button>
 			</p>
 		</details>
-	</div>
 	<?php
+	horsetools_admin_banner( 'bad', ob_get_clean() );
 }
 add_action( 'admin_notices', 'horsetools_salt_notice' );

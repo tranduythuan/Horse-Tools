@@ -404,19 +404,23 @@ function horsetools_contact_notice() {
 		. esc_html__( 'These are correct — remember them', 'horse-tools' ) . '</button>';
 
 	if ( 'unset' === $s['state'] ) {
-		echo '<div class="notice notice-info"><p><strong>'
+		ob_start();
+		echo '<p><strong>'
 			. esc_html__( 'Horse Tools can watch your contact details for changes.', 'horse-tools' ) . '</strong></p><p>'
 			. esc_html__( 'These are the phone numbers, Zalo, Messenger links and email addresses currently in your settings. Check them, then confirm — after that you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest.', 'horse-tools' )
 			. '</p>';
 		$list( horsetools_contact_scan_settings() );
-		echo '<p>' . $button . '</p></div>';
+		echo '<p>' . $button . '</p>';
+		horsetools_admin_banner( 'info', ob_get_clean() );
 	} else {
-		echo '<div class="notice notice-error"><p><strong>'
+		ob_start();
+		echo '<p><strong>'
 			. esc_html__( 'Your contact details have changed.', 'horse-tools' ) . '</strong></p>';
 		$list( $s['added'], __( 'New', 'horse-tools' ) );
 		$list( $s['removed'], __( 'Gone', 'horse-tools' ) );
 		echo '<p>' . esc_html__( 'If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else.', 'horse-tools' )
-			. '</p><p>' . $button . '</p></div>';
+			. '</p><p>' . $button . '</p>';
+		horsetools_admin_banner( 'bad', ob_get_clean() );
 	}
 	?>
 	<script>
