@@ -27,8 +27,23 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 const HORSETOOLS_LINK_HOSTS = 'horsetools_link_hosts';
 
-/** Stop growing here. Past this it is not an inventory, it is a scrape. */
-const HORSETOOLS_LINK_MAX = 400;
+/**
+ * Stop growing here.
+ *
+ * Was 400, which a real site went straight through: a blog of 866 posts that
+ * cites its sources reached the ceiling and the inventory stopped recording
+ * anything new — silently, reporting "all clear" about domains it had never
+ * looked at. The cap is meant to stop an option growing without bound on a site
+ * that has been scraped into; it is not meant to be reachable by writing.
+ *
+ * Two thousand hosts is roughly 300 KB in an option that does not autoload, and
+ * a site legitimately linking to more than that has bigger questions than this
+ * one. When it *is* reached it now says so — see horsetools_link_truncated().
+ */
+const HORSETOOLS_LINK_MAX = 2000;
+
+/** Set when the inventory could not record everything it found. */
+const HORSETOOLS_LINK_FULL = 'horsetools_link_full';
 
 /**
  * Every outbound host in a piece of markup.
@@ -171,6 +186,11 @@ function horsetools_link_collect( array $rows ) {
 		foreach ( horsetools_link_extract( (string) $row->post_content, $self ) as $host => $hit ) {
 			if ( ! isset( $found[ $host ] ) ) {
 				if ( count( $found ) >= HORSETOOLS_LINK_MAX ) {
+					// Say so rather than quietly stop. An inventory that is missing
+					// entries still answers "is this domain new?" — with "no" — for
+					// every domain it never managed to record, which is the one
+					// answer it must never give wrongly.
+					update_option( HORSETOOLS_LINK_FULL, 1, false );
 					continue;
 				}
 				// An empty row, not a zeroed copy of $hit: zeroing $hit itself
@@ -202,6 +222,19 @@ function horsetools_link_collect( array $rows ) {
 
 function horsetools_link_collect_reset() {
 	update_option( HORSETOOLS_LINK_HOSTS, array(), false );
+	delete_option( HORSETOOLS_LINK_FULL );
+}
+
+/**
+ * Did the inventory run out of room?
+ *
+ * If it did, "this domain is not new" is a claim it cannot make, and every
+ * screen that would otherwise say the content is clean has to say this instead.
+ *
+ * @return bool
+ */
+function horsetools_link_truncated() {
+	return (bool) get_option( HORSETOOLS_LINK_FULL, false );
 }
 
 /* -------------------------------------------------------------------------
@@ -261,10 +294,11 @@ function horsetools_link_status() {
 	$found = horsetools_link_found();
 	$new   = array_diff_key( $found, horsetools_link_approved() );
 	return array(
-		'state'    => horsetools_link_reviewed() ? ( $new ? 'changed' : 'clean' ) : 'unset',
-		'new'      => $new,
-		'total'    => count( $found ),
-		'progress' => array(),
+		'state'     => horsetools_link_reviewed() ? ( $new ? 'changed' : 'clean' ) : 'unset',
+		'new'       => $new,
+		'total'     => count( $found ),
+		'truncated' => horsetools_link_truncated(),
+		'progress'  => array(),
 	);
 }
 
@@ -398,6 +432,25 @@ function horsetools_link_screen() {
 			<p style="max-width:46em">
 				<?php esc_html_e( 'Rarely-linked domains are listed first, because the one that was added without your knowing is almost never the one you link to from two hundred posts.', 'horse-tools' ); ?>
 			</p>
+
+			<?php if ( count( $found ) > 80 ) : ?>
+				<p style="max-width:46em">
+					<?php esc_html_e( 'This is a long list, and nobody reads a long list carefully. That is fine — on a site this size the point of the first pass is not to audit every row, it is to agree that what is here today is what you meant. Glance down the first screenful, untick anything that makes you stop, and save. What the list is for starts tomorrow, when something arrives that is not on it.', 'horse-tools' ); ?>
+				</p>
+			<?php endif; ?>
+
+			<?php if ( horsetools_link_truncated() ) : ?>
+				<div class="notice notice-error" style="max-width:46em">
+					<p><strong><?php esc_html_e( 'This list is incomplete.', 'horse-tools' ); ?></strong></p>
+					<p><?php
+					printf(
+						/* translators: %d: the maximum number of domains that can be held. */
+						esc_html__( 'Your content links to more than %d domains, which is as many as can be held. Domains beyond that were not recorded, so this cannot tell you when one of them is new — it would say it was already there.', 'horse-tools' ),
+						(int) HORSETOOLS_LINK_MAX
+					);
+					?></p>
+				</div>
+			<?php endif; ?>
 
 			<form method="post">
 				<?php wp_nonce_field( 'horsetools_links', 'ht_links_nonce' ); ?>

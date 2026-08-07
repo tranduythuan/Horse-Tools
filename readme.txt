@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.28
+Stable tag: 1.3.29
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.29 =
+* **The outbound-link list stopped recording at 400 domains, silently.** Found by running it on a real site rather than by thinking about it: a blog of 866 posts that cites its sources went straight through the ceiling, and from that point the inventory quietly ignored everything new. That is the worst way for this to fail — a list with gaps in it still answers "is this domain new?", and answers "no" for every domain it never managed to record.
+* The ceiling is now 2000, which is roughly 300 KB in an option that does not autoload. More importantly, **reaching it is now reported** instead of passing in silence: the health row goes red, the screen says the list is incomplete, and neither pretends the content is being watched.
+* On a site with a long list, the review screen now says what the first pass is actually for. Nobody audits four hundred rows, and pretending otherwise just makes the screen a lie — the point is to agree that today's list is the baseline, so that tomorrow's arrival stands out.
 
 = 1.3.28 =
 * **A link to a domain you never approved can now be defused while the page is being printed.** Everything else here reports, and reporting leaves a window: the link goes in, the warning appears on a screen, and the link keeps working until somebody logs in and reads that screen. On the site this was written for, that window was two years wide. This closes it — whatever the link was worth to whoever put it there stops being worth that within one page view.

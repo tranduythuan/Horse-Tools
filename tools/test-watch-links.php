@@ -260,12 +260,20 @@ $order = array_keys( horsetools_link_sort( array(
 ) ) );
 eq( $order, array( 'nhacai.xyz', 'doitac.vn', 'facebook.com' ), 'cái lạ nằm dòng đầu, không cần danh sách đen nào' );
 
-echo "\n20. Không phình vô hạn\n";
+echo "\n20. Trần — và chạm trần thì PHẢI nói ra\n";
+// Một site thật (866 bài, hay dẫn nguồn) đâm thẳng qua trần 400 cũ, và danh sách
+// lặng lẽ ngừng ghi. Danh sách thiếu vẫn trả lời câu "tên miền này có mới không"
+// bằng "không" cho mọi thứ nó chưa từng ghi — đúng câu nó không được phép sai.
 $GLOBALS['opts'] = array();
 $big = '';
-for ( $i = 0; $i < 450; $i++ ) { $big .= '<a href="https://site' . $i . '.com/x">x</a>'; }
+for ( $i = 0; $i < HORSETOOLS_LINK_MAX + 50; $i++ ) { $big .= '<a href="https://site' . $i . '.com/x">x</a>'; }
+eq( horsetools_link_truncated(), false, 'chưa chạm thì không kêu' );
 horsetools_link_collect( array( $row( 20, $big ) ) );
 eq( count( horsetools_link_found() ), HORSETOOLS_LINK_MAX, 'dừng ở ' . HORSETOOLS_LINK_MAX );
+eq( horsetools_link_truncated(), true, 'và ghi nhận là đã thiếu' );
+eq( horsetools_link_status()['truncated'], true, 'trạng thái mang cờ đó ra ngoài' );
+horsetools_link_collect_reset();
+eq( horsetools_link_truncated(), false, 'quét lại từ đầu thì xoá cờ — nếu không nó kẹt mãi' );
 
 echo "\n21. Màn duyệt phải nằm trong menu — giấu nó đi là WordPress chặn luôn\n";
 // remove_submenu_page() từng được dùng để giấu trang này. WordPress quyết định

@@ -179,6 +179,15 @@ function horsetools_health_report() {
 				'links', $sec_cat, __( 'Outbound links are watched', 'horse-tools' ), 'warn', 3, '',
 				__( 'Still reading your content', 'horse-tools' )
 			);
+		} elseif ( ! empty( $ls['truncated'] ) ) {
+			// A list that ran out of room answers "is this domain new?" with "no"
+			// for everything it never recorded. That is the one answer it must not
+			// get wrong, so it cannot be reported as watching anything.
+			$add(
+				'links', $sec_cat, __( 'Outbound links are watched', 'horse-tools' ), 'fail', 3,
+				horsetools_link_screen_url(),
+				__( 'Your content links to more domains than the list can hold, so it is incomplete', 'horse-tools' )
+			);
 		} else {
 			$l_map = array(
 				'clean'   => array( 'pass', '' ),

@@ -1290,6 +1290,13 @@ $vi = array(
 	'Links to domains you did not approve are defused as they are printed' => 'Link tới tên miền chưa duyệt bị vô hiệu ngay lúc in ra',
 	'Outbound links screen — choose what should happen to them' => 'Màn Liên kết ra ngoài — chọn xem sẽ xử chúng thế nào',
 
+
+	// The inventory ran out of room on a real 866-post site (1.3.29).
+	'This is a long list, and nobody reads a long list carefully. That is fine — on a site this size the point of the first pass is not to audit every row, it is to agree that what is here today is what you meant. Glance down the first screenful, untick anything that makes you stop, and save. What the list is for starts tomorrow, when something arrives that is not on it.' => 'Danh sách này dài, mà dài thì chẳng ai đọc kỹ. Không sao — với một site cỡ này, lượt soát đầu tiên không phải để xét từng dòng, mà để chốt rằng những gì đang có hôm nay đúng là ý bạn. Liếc qua màn hình đầu, cái nào làm bạn khựng lại thì bỏ tick, rồi lưu. Cái danh sách này bắt đầu có giá trị từ ngày mai, khi có thứ không nằm trong đó xuất hiện.',
+	'This list is incomplete.' => 'Danh sách này bị thiếu.',
+	'Your content links to more than %d domains, which is as many as can be held. Domains beyond that were not recorded, so this cannot tell you when one of them is new — it would say it was already there.' => 'Nội dung của bạn trỏ tới hơn %d tên miền, đó là mức chứa tối đa. Những tên miền vượt quá không được ghi lại, nên cái này không báo được khi một trong số đó là mới — nó sẽ nói là đã có sẵn.',
+	'Your content links to more domains than the list can hold, so it is incomplete' => 'Nội dung trỏ tới nhiều tên miền hơn sức chứa của danh sách, nên danh sách bị thiếu',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';
