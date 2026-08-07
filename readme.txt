@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.18
+Stable tag: 1.3.19
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.19 =
+* **A chat button's icon is no longer mistaken for your phone number.** Custom icons are stored as inline SVG, and 1.3.17 — which taught the watcher that a leading 00 means an international number — started scraping the digits out of one: `viewBox="0 0 24 24" … stroke-width="1.8" … d="M4 5h16v10H8l-4 4z"` reduces to seventeen digits beginning 00. It was listed as a contact number, with the whole SVG printed as its value. A phone number now has to be a short string containing nothing but a phone number, which is what it always should have been.
 
 = 1.3.18 =
 * **The contact and signing-key warnings are now where you can see them.** WordPress moves anything styled as an admin notice with a line of JavaScript, dropping it after the first heading inside the page — and on a Horse Tools screen that lands it *inside a tab*, so whichever tab happened to be open decided whether you ever saw it. The warning was there, in the page, and invisible. Both now render as their own banner at the top of the screen, in or out of any tab.

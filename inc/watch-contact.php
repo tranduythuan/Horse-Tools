@@ -45,7 +45,23 @@ const HORSETOOLS_CONTACT_BASELINE = 'horsetools_contact_baseline';
  * @return string Canonical `0XXXXXXXXX`, or ''.
  */
 function horsetools_contact_phone( $raw ) {
-	$compact = preg_replace( '/[^\d+]/', '', (string) $raw );
+	$s = trim( (string) $raw );
+
+	// The string has to look like somebody wrote a phone number — digits and
+	// the punctuation people put between them, nothing else.
+	//
+	// Without this the digits get scraped out of anything at all. A custom chat
+	// icon is stored as inline SVG, and `viewBox="0 0 24 24" … stroke-width="1.8"
+	// … d="M4 5h16v10H8l-4 4z"` reduces to 00242418451610844: seventeen digits
+	// beginning 00, which is exactly the shape of an international number. It
+	// was reported as the shop's phone number, with the whole SVG printed as the
+	// value. Scraping digits out of arbitrary text is the wrong instinct; a
+	// phone number is a short string that contains nothing but a phone number.
+	if ( ! preg_match( '/^[+0-9()\[\]. \t-]{8,24}$/', $s ) ) {
+		return '';
+	}
+
+	$compact = preg_replace( '/[^\d+]/', '', $s );
 	if ( '' === $compact ) {
 		return '';
 	}

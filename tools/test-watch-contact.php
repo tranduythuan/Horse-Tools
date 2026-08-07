@@ -87,6 +87,21 @@ eq( horsetools_contact_phone( '+123' ), '', 'quá ngắn' );
 eq( horsetools_contact_phone( '+1234567890123456789' ), '', 'quá dài, ngoài E.164' );
 eq( horsetools_contact_phone( '2+3' ), '', 'biểu thức toán' );
 
+echo "\n2d. Chuỗi không phải số thì không được cạo chữ số ra\n";
+// Đây là icon SVG thật của nút chat. Nó rút ra 00242418451610844 — mười bảy
+// chữ số bắt đầu bằng 00, đúng hình dạng một số quốc tế — và từng bị báo là
+// số điện thoại của shop, in nguyên cả đoạn SVG ra màn hình.
+$svg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H8l-4 4z"/></svg>';
+eq( horsetools_contact_phone( $svg ), '', 'icon SVG không phải số điện thoại' );
+eq( horsetools_contact_phone( '<path d="M0 0 24 24 84 1234567"/>' ), '', 'mảnh SVG khác' );
+eq( horsetools_contact_phone( 'Gọi 0988343412 nhé' ), '', 'cả câu văn thì không — chỉ chuỗi thuần số mới tính' );
+eq( horsetools_contact_phone( '2026-08-07 09:15:00' ), '', 'dấu thời gian' );
+eq( horsetools_contact_phone( 'rgba(0, 0, 0, 0.05)' ), '', 'giá trị CSS' );
+// Mà những dạng viết thật của số điện thoại thì vẫn phải qua.
+foreach ( array( '0988343412', '0988.34.34.12', '0988 34 34 12', '+84 988 343 412', '+1 (415) 555-0123', '0084988343412' ) as $ok ) {
+	ok( '' !== horsetools_contact_phone( $ok ), "vẫn nhận: '$ok'" );
+}
+
 echo "\n3. Rút từ liên kết\n";
 $html = '<a href="tel:0838216168">Hotline</a> '
 	. '<a href="https://zalo.me/0917940068">Zalo</a> '
