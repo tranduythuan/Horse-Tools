@@ -355,6 +355,19 @@ function horsetools_contact_notice() {
 		return;
 	}
 
+	// Print a set of identifiers as one line each. Asking somebody to confirm
+	// "8 contact details" without showing which eight is asking them to click
+	// yes at nothing, which is how an approval step becomes a formality.
+	$list = function ( array $rows, $prefix = '' ) {
+		foreach ( $rows as $row ) {
+			echo '<p style="margin:2px 0">'
+				. ( '' !== $prefix ? '<code>' . esc_html( $prefix ) . '</code> ' : '' )
+				. esc_html( horsetools_contact_type_label( $row['type'] ) ) . ': <strong>'
+				. esc_html( isset( $row['raw'] ) && '' !== $row['raw'] ? $row['raw'] : $row['value'] )
+				. '</strong></p>';
+		}
+	};
+
 	$nonce  = wp_create_nonce( 'horsetools_contact' );
 	$button = '<button type="button" class="button button-primary" id="ht-contact-confirm" data-nonce="' . esc_attr( $nonce ) . '">'
 		. esc_html__( 'These are correct — remember them', 'horse-tools' ) . '</button>';
@@ -362,23 +375,15 @@ function horsetools_contact_notice() {
 	if ( 'unset' === $s['state'] ) {
 		echo '<div class="notice notice-info"><p><strong>'
 			. esc_html__( 'Horse Tools can watch your contact details for changes.', 'horse-tools' ) . '</strong></p><p>'
-			. sprintf(
-				/* translators: %d: how many phone numbers, emails and messenger links were found. */
-				esc_html__( 'It found %d contact details in your settings — phone numbers, Zalo, Messenger, email. Confirm them once and you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest.', 'horse-tools' ),
-				(int) $s['count']
-			)
-			. '</p><p>' . $button . '</p></div>';
+			. esc_html__( 'These are the phone numbers, Zalo, Messenger links and email addresses currently in your settings. Check them, then confirm — after that you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest.', 'horse-tools' )
+			. '</p>';
+		$list( horsetools_contact_scan_settings() );
+		echo '<p>' . $button . '</p></div>';
 	} else {
 		echo '<div class="notice notice-error"><p><strong>'
 			. esc_html__( 'Your contact details have changed.', 'horse-tools' ) . '</strong></p>';
-		foreach ( array( 'added' => __( 'New', 'horse-tools' ), 'removed' => __( 'Gone', 'horse-tools' ) ) as $k => $label ) {
-			foreach ( $s[ $k ] as $row ) {
-				echo '<p style="margin:2px 0"><code>' . esc_html( $label ) . '</code> '
-					. esc_html( horsetools_contact_type_label( $row['type'] ) ) . ': <strong>'
-					. esc_html( isset( $row['raw'] ) && '' !== $row['raw'] ? $row['raw'] : $row['value'] )
-					. '</strong></p>';
-			}
-		}
+		$list( $s['added'], __( 'New', 'horse-tools' ) );
+		$list( $s['removed'], __( 'Gone', 'horse-tools' ) );
 		echo '<p>' . esc_html__( 'If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else.', 'horse-tools' )
 			. '</p><p>' . $button . '</p></div>';
 	}

@@ -7060,3 +7060,6 @@ msgstr "Mất"
 
 msgid "If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else."
 msgstr "Nếu bạn vừa tự đổi thì bấm xác nhận. Nếu không phải bạn thì là người khác — hãy xem ai sửa cài đặt gần nhất trước khi đụng vào bất cứ thứ gì khác."
+
+msgid "These are the phone numbers, Zalo, Messenger links and email addresses currently in your settings. Check them, then confirm — after that you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest."
+msgstr "Đây là các số điện thoại, Zalo, liên kết Messenger và địa chỉ email đang có trong cài đặt của bạn. Xem lại rồi bấm xác nhận — sau đó cái nào đổi là bạn được báo. Đổi hotline của một shop là đòn trực diện nhất, và cũng lặng lẽ nhất."

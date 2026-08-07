@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.15
+Stable tag: 1.3.16
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.16 =
+* The contact-details notice now shows you the details. It said "found 8" and asked you to confirm them without listing what the eight were — which is asking somebody to click yes at nothing, and is exactly how a confirmation step turns into a formality nobody reads.
 
 = 1.3.15 =
 * **Horse Tools now watches your own contact details.** Your hotline, Zalo, Messenger and email are read out of your settings, you confirm them once, and you are told if any of them ever change. Swapping the number on a shop's floating chat button is the most direct attack there is — one value, one option, every page, and it takes the customers straight to somebody else. There is no link left behind to find and nothing for a link scanner to see.

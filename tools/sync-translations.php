@@ -1129,6 +1129,7 @@ $vi = array(
 	'These are correct — remember them' => 'Đúng rồi — ghi nhớ đi',
 	'Horse Tools can watch your contact details for changes.' => 'Horse Tools có thể canh thông tin liên hệ của bạn xem có bị đổi không.',
 	'It found %d contact details in your settings — phone numbers, Zalo, Messenger, email. Confirm them once and you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest.' => 'Đã tìm thấy %d thông tin liên hệ trong cài đặt — số điện thoại, Zalo, Messenger, email. Xác nhận một lần, rồi sau này cái nào đổi là bạn được báo. Đổi hotline của một shop là đòn trực diện nhất, và cũng lặng lẽ nhất.',
+	'These are the phone numbers, Zalo, Messenger links and email addresses currently in your settings. Check them, then confirm — after that you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest.' => 'Đây là các số điện thoại, Zalo, liên kết Messenger và địa chỉ email đang có trong cài đặt của bạn. Xem lại rồi bấm xác nhận — sau đó cái nào đổi là bạn được báo. Đổi hotline của một shop là đòn trực diện nhất, và cũng lặng lẽ nhất.',
 	'Your contact details have changed.' => 'Thông tin liên hệ của bạn đã thay đổi.',
 	'New' => 'Mới',
 	'Gone' => 'Mất',
