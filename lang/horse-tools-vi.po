@@ -6997,3 +6997,30 @@ msgstr "Mã này là cách site phân biệt chat của bạn với của ngư�
 
 msgid "remember to press “Update profile”."
 msgstr "nhớ bấm “Cập nhật hồ sơ”."
+
+msgid "Signing keys are in wp-config.php, not the database"
+msgstr "Khoá ký nằm trong wp-config.php, không nằm trong database"
+
+msgid "One half is in the database — still safe, but tidy it up"
+msgstr "Một nửa nằm trong database — vẫn an toàn, nhưng nên dọn lại cho gọn"
+
+msgid "Paste the eight keys into wp-config.php — see the notice at the top of any Horse Tools screen"
+msgstr "Dán 8 khoá vào wp-config.php — xem thông báo ở đầu bất kỳ màn hình Horse Tools nào"
+
+msgid "Could not be determined"
+msgstr "Không xác định được"
+
+msgid "This site’s signing keys are stored in the database, not in wp-config.php."
+msgstr "Khoá ký của site này đang nằm trong database, không nằm trong wp-config.php."
+
+msgid "Two Horse Tools protections are signed with those keys: the PHP snippet signature, which is meant to refuse code written straight into the database, and the “trusted device” cookie that skips two-factor authentication. Anyone who can read your database can read the keys, so both can be forged. Moving the keys into wp-config.php — a file — restores them."
+msgstr "Hai lớp bảo vệ của Horse Tools được ký bằng khoá đó: chữ ký snippet PHP — thứ sinh ra để từ chối mã được ghi thẳng vào database — và cookie “thiết bị tin cậy” cho phép bỏ qua xác thực hai lớp. Ai đọc được database của bạn là đọc được khoá, nên cả hai đều giả mạo được. Chuyển khoá vào wp-config.php — một file — là khôi phục lại được."
+
+msgid "Show new keys to paste"
+msgstr "Hiện khoá mới để dán"
+
+msgid "Paste all eight lines into wp-config.php, above the line that requires wp-settings.php. Replace any existing lines with the same names. Everyone signed in — including you — will be signed out afterwards, which is the point: it invalidates every cookie issued with the old keys."
+msgstr "Dán cả 8 dòng vào wp-config.php, phía trên dòng require wp-settings.php. Nếu đã có dòng cùng tên thì thay thế. Sau đó mọi người đang đăng nhập — kể cả bạn — sẽ bị đăng xuất, và đó chính là mục đích: nó vô hiệu hoá mọi cookie đã cấp bằng khoá cũ."
+
+msgid "Copy all eight lines"
+msgstr "Sao chép cả 8 dòng"

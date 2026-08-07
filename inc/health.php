@@ -112,6 +112,25 @@ function horsetools_health_report() {
 		( $sec_on && $on( $o, 'scuri-head1' ) ) ? 'pass' : 'warn', 2,
 		$jump( 'scuri-head1' ), __( 'Security tab → Security response headers', 'horse-tools' )
 	);
+	// Everything this plugin signs — the PHP snippet signature, the trusted
+	// device cookie — is keyed on wp_salt(). WordPress falls back to keys kept
+	// in the options table when wp-config.php does not define them, and says
+	// nothing about it. A signature whose key sits in the database cannot keep
+	// out somebody who is already in the database.
+	if ( function_exists( 'horsetools_salt_location' ) ) {
+		$salt_where = horsetools_salt_location();
+		$salt_map   = array(
+			'file'    => array( 'pass', '' ),
+			'partial' => array( 'pass', __( 'One half is in the database — still safe, but tidy it up', 'horse-tools' ) ),
+			'db'      => array( 'fail', __( 'Paste the eight keys into wp-config.php — see the notice at the top of any Horse Tools screen', 'horse-tools' ) ),
+			'unknown' => array( 'warn', __( 'Could not be determined', 'horse-tools' ) ),
+		);
+		$salt_row = isset( $salt_map[ $salt_where ] ) ? $salt_map[ $salt_where ] : $salt_map['unknown'];
+		$add(
+			'salt', $sec_cat, __( 'Signing keys are in wp-config.php, not the database', 'horse-tools' ),
+			$salt_row[0], 3, '', $salt_row[1]
+		);
+	}
 
 	// ---- Privacy --------------------------------------------------------
 	$seen  = (array) get_option( 'horsetools_gfont_seen', array() );

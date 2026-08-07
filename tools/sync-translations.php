@@ -1109,6 +1109,17 @@ $vi = array(
 	'The code is how the site tells your chat apart from everyone else’s — it finds only the chat that sent it. Recovery codes then reach your own Telegram, not the admin. (You can also type the chat ID number in manually.)' => 'Mã này là cách site phân biệt chat của bạn với của người khác — nó chỉ tìm đúng chat đã gửi mã. Mã khôi phục sau đó về thẳng Telegram của bạn, không phải của quản trị viên. (Bạn cũng có thể tự nhập số chat ID.)',
 	'remember to press “Update profile”.' => 'nhớ bấm “Cập nhật hồ sơ”.',
 
+	// Where the site's signing keys actually live (1.3.14).
+	'Signing keys are in wp-config.php, not the database' => 'Khoá ký nằm trong wp-config.php, không nằm trong database',
+	'One half is in the database — still safe, but tidy it up' => 'Một nửa nằm trong database — vẫn an toàn, nhưng nên dọn lại cho gọn',
+	'Paste the eight keys into wp-config.php — see the notice at the top of any Horse Tools screen' => 'Dán 8 khoá vào wp-config.php — xem thông báo ở đầu bất kỳ màn hình Horse Tools nào',
+	'Could not be determined' => 'Không xác định được',
+	'This site’s signing keys are stored in the database, not in wp-config.php.' => 'Khoá ký của site này đang nằm trong database, không nằm trong wp-config.php.',
+	'Two Horse Tools protections are signed with those keys: the PHP snippet signature, which is meant to refuse code written straight into the database, and the “trusted device” cookie that skips two-factor authentication. Anyone who can read your database can read the keys, so both can be forged. Moving the keys into wp-config.php — a file — restores them.' => 'Hai lớp bảo vệ của Horse Tools được ký bằng khoá đó: chữ ký snippet PHP — thứ sinh ra để từ chối mã được ghi thẳng vào database — và cookie “thiết bị tin cậy” cho phép bỏ qua xác thực hai lớp. Ai đọc được database của bạn là đọc được khoá, nên cả hai đều giả mạo được. Chuyển khoá vào wp-config.php — một file — là khôi phục lại được.',
+	'Show new keys to paste' => 'Hiện khoá mới để dán',
+	'Paste all eight lines into wp-config.php, above the line that requires wp-settings.php. Replace any existing lines with the same names. Everyone signed in — including you — will be signed out afterwards, which is the point: it invalidates every cookie issued with the old keys.' => 'Dán cả 8 dòng vào wp-config.php, phía trên dòng require wp-settings.php. Nếu đã có dòng cùng tên thì thay thế. Sau đó mọi người đang đăng nhập — kể cả bạn — sẽ bị đăng xuất, và đó chính là mục đích: nó vô hiệu hoá mọi cookie đã cấp bằng khoá cũ.',
+	'Copy all eight lines' => 'Sao chép cả 8 dòng',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

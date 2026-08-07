@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.3.13
+ * Version: 1.3.14
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.3.13' );
+define( 'HORSETOOLS_VERSION', '1.3.14' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
@@ -72,6 +72,10 @@ if ( horsetools_is_backend() ) {
 if ( is_admin() ) {
 	include( HORSETOOLS_DIR . 'inc/ui.php' );
 	include( HORSETOOLS_DIR . 'inc/health.php' );
+	// Reports whether this site's signing keys live in a file or in the
+	// database. Everything the plugin signs — PHP snippets, trusted devices —
+	// is only as strong as that answer, and nothing else says it out loud.
+	include( HORSETOOLS_DIR . 'inc/salt.php' );
 }
 include( HORSETOOLS_DIR . 'inc/horsetools.php' );
 include( HORSETOOLS_DIR . 'inc/code.php' );

@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.13
+Stable tag: 1.3.14
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.14 =
+* **Horse Tools now tells you where this site's signing keys are kept.** Two of its protections are signed with `wp_salt()`: the PHP snippet signature, which exists so that code written straight into the database — the usual pay-off of an SQL-injection hole in some *other* plugin — is refused, and the "trusted device" cookie that lets a browser skip two-factor authentication for thirty days. Both promises hold only while the key is in a file. WordPress reads it from wp-config.php when the constants are there, and quietly generates one into the options table when they are not — the very place such an attacker already is. Neither WordPress nor this plugin has ever said so. The Site Health card now reports it, and a notice on the plugin's own screens offers eight freshly generated lines to paste. **Nothing is written to wp-config.php; the lines are yours to copy.**
+* The check compares what `wp_salt()` actually produced against what the options table holds, rather than second-guessing WordPress's own rules about empty, placeholder and duplicated constants. A site with one half in a file and the other in the database is reported as fine, because it is — the half an attacker cannot see is still 64 characters of entropy.
+* Covered by `tools/test-salt-location.php`: 17 checks, including the case that must not be got wrong in either direction — a partial match reported as fully exposed would train owners to ignore the notice, and a miss would leave the snippet signature quietly worthless while the health card said everything was fine.
 
 = 1.3.13 =
 * **Security: the Debug module no longer leaves a readable copy of wp-config.php on the server.** Before changing a debug constant it kept the original as `wp-config.php.horsetools.bak`, right beside the real one, so that a bad write could be undone over FTP. The intent was sound and the filename was the problem: `.bak` is not a PHP extension, so a web server hands that file over as plain text — database password, every salt, the table prefix — to anyone who asks for it by name. An `.htaccess` would not have covered nginx. The copy is gone: wp-config.php is now written to a temporary file and renamed into place, which is atomic and protects against the half-written file the backup existed for. Updating deletes any copy already on the server. **Check your site for `wp-config.php.horsetools.bak` if you ever used this module — if it is still there, delete it and change your database password.**
