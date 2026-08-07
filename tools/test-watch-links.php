@@ -53,6 +53,9 @@ function get_the_title( $id ) { return 'Post ' . $id; }
 function get_edit_post_link( $id ) { return 'edit.php?post=' . $id; }
 function horsetools_is_plugin_screen() { return false; }
 function horsetools_current_admin_page() { return ''; }
+// The confirm paths re-anchor their decisions to a file; that file has its own
+// suite (tools/test-anchor.php). Here it only has to exist.
+function horsetools_anchor_touch() { $GLOBALS["anchored"] = ( $GLOBALS["anchored"] ?? 0 ) + 1; }
 function horsetools_admin_banner( $t, $h ) {}
 function horsetools_group_menu( $s, $t, $i, $c, $p ) { $GLOBALS['menu_slug'] = 'horsetools-' . $s; }
 function add_submenu_page() {}

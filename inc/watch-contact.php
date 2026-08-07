@@ -371,6 +371,7 @@ function horsetools_contact_status() {
 function horsetools_contact_confirm() {
 	delete_transient( 'horsetools_contact_now' );
 	horsetools_contact_baseline_set( horsetools_contact_scan_settings() );
+	horsetools_anchor_touch();
 }
 
 add_action( 'wp_ajax_horsetools_contact_confirm', 'horsetools_contact_confirm_ajax' );
@@ -608,5 +609,6 @@ function horsetools_contact_content_confirm() {
 	// hundred and sixty as new arrivals.
 	if ( horsetools_scan_finished() ) {
 		update_option( HORSETOOLS_CONTACT_CONTENT_B, horsetools_contact_content_found(), false );
+		horsetools_anchor_touch();
 	}
 }

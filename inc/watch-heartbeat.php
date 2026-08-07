@@ -161,6 +161,19 @@ function horsetools_hb_compose( $seq ) {
 		);
 	}
 
+	if ( function_exists( 'horsetools_anchor_status' ) ) {
+		$a = horsetools_anchor_status();
+		if ( 'ok' !== $a['state'] ) {
+			$say(
+				__( 'Your approvals match their copy on disk', 'horse-tools' ),
+				false,
+				'mismatch' === $a['state']
+					? __( 'THEY DO NOT — something changed them without going through the screens', 'horse-tools' )
+					: __( 'no copy on disk yet', 'horse-tools' )
+			);
+		}
+	}
+
 	$lines[] = '';
 	$lines[] = sprintf(
 		/* translators: %s: date the next message is due. */
@@ -246,7 +259,7 @@ add_action( 'admin_init', 'horsetools_hb_tick', 30 );
  */
 function horsetools_hb_cron() {
 	if ( ! function_exists( 'horsetools_contact_status' ) ) {
-		foreach ( array( 'watch-scan', 'watch-contact', 'watch-links', 'watch-exposure' ) as $file ) {
+		foreach ( array( 'anchor', 'watch-scan', 'watch-contact', 'watch-links', 'watch-exposure' ) as $file ) {
 			include_once HORSETOOLS_DIR . 'inc/' . $file . '.php';
 		}
 	}

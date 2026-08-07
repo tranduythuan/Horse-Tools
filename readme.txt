@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.25
+Stable tag: 1.3.26
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,15 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.26 =
+* **What you approved is now kept outside the database as well as in it.** Every baseline here lived in `wp_options`: the contact details you confirmed, the domains you approved. That is fine against somebody editing posts and useless against somebody who can write to the database directly — an injection in another plugin, a leaked database password, a backup tool with its own hole. They do not need to hide their link; they add their own domain to the approved list, and from then on the watcher reports "all clear" about it for ever. A watch that vouches for the attacker is worse than no watch.
+* Confirming through a screen writes both copies. A hand at the database can only reach one. When the two disagree, something changed what you agreed to without going through the screens — and that is the loudest thing this plugin says.
+* **It leaves the innocent explanation open**, because there is one: restoring a database backup, or copying a database from staging, moves the options without moving the files and lands here honestly. The warning offers "that was me" and a button, rather than announcing a break-in to somebody who just restored a backup.
+* **Only decisions are fingerprinted, never observations.** What the scanner found changes whenever a post is edited and is supposed to; what a person agreed to changes only when a person agrees to something. So a phone number appearing five more times is not a change, and a domain being added to the approved list is.
+* The anchor is found by looking in the folder, not by reading a path out of an option — otherwise the same attacker deletes one row and the plugin decides there never was an anchor. Deleting the file itself is loud.
+* **What it does not defend, stated in the code rather than left to be discovered:** an attacker with a real administrator account presses the same button you do and both copies update — only the check-in message reaching a human catches that. An attacker who can write files rewrites the anchor as easily as the database. It defends exactly the middle case, which is also the common one.
+* Covered by `tools/test-anchor.php`: 35 checks, most of them about what must **not** raise the alarm — an edited post, a changed count, a re-confirmation, an anchor written by an older version — plus two that prove the limits above are real.
 
 = 1.3.25 =
 * **A numbered check-in message, so that silence becomes a signal.** Every other watcher here reports trouble, and none of them can report the one failure that matters most: themselves stopping. Switch the plugin off, delete the options, let the site die — everything goes quiet, and quiet is exactly what a site with nothing wrong also looks like. Two years of casino links looked like quiet too.

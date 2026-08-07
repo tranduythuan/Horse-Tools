@@ -334,6 +334,7 @@ function horsetools_link_approve( array $hosts ) {
 		}
 	}
 	update_option( HORSETOOLS_LINK_OK, $approved, false );
+	horsetools_anchor_touch();
 }
 
 /** @param string[] $hosts */
@@ -346,6 +347,7 @@ function horsetools_link_revoke( array $hosts ) {
 		}
 	}
 	update_option( HORSETOOLS_LINK_OK, $approved, false );
+	horsetools_anchor_touch();
 }
 
 /**

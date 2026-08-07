@@ -1256,6 +1256,23 @@ $vi = array(
 	'This site has no valid admin email address.' => 'Site này không có địa chỉ email quản trị hợp lệ.',
 	'WordPress could not hand the message to the mail server.' => 'WordPress không chuyển được tin sang máy chủ mail.',
 
+	// The anchor file — decisions kept outside the database (1.3.26).
+	'What you approved is also kept outside the database' => 'Những gì bạn đã duyệt còn được giữ ngoài database',
+	'No copy on disk yet — it is written the first time you confirm something' => 'Chưa có bản sao trên đĩa — nó được ghi lần đầu tiên bạn xác nhận một thứ gì đó',
+	'wp-content is not writable, so there is nowhere to keep the copy' => 'wp-content không ghi được, nên không có chỗ nào để giữ bản sao',
+	'They no longer match — see the banner at the top of any Horse Tools screen' => 'Hai bên không còn khớp — xem bảng thông báo trên đầu bất kỳ màn hình Horse Tools nào',
+	'Something changed what you approved, without going through this screen.' => 'Có thứ gì đó đã sửa những gì bạn duyệt, mà không đi qua màn hình này.',
+	'Horse Tools keeps a copy of your decisions in a file as well as in the database, precisely so that a change made straight to the database can be seen. These no longer match:' => 'Horse Tools giữ một bản sao các quyết định của bạn trong một file, song song với database, chính là để nhìn ra được khi có ai sửa thẳng vào database. Những mục sau đã không còn khớp:',
+	'If you have just restored a database backup, or copied the database from another copy of this site, that is the explanation — the file stayed while the database went back in time. Press the button and it will match again.' => 'Nếu bạn vừa phục hồi một bản sao lưu database, hoặc chép database từ một bản khác của site này, thì đó chính là lý do — file thì đứng yên còn database thì lùi về quá khứ. Bấm nút là hai bên khớp lại.',
+	'If you have not done either of those things, then something can write to your database that should not be able to. Changing passwords will not fix that on its own; the way in has to be found.' => 'Còn nếu bạn không làm cả hai việc đó, thì có thứ gì đó đang ghi được vào database của bạn mà lẽ ra không được phép. Đổi mật khẩu một mình không sửa được chuyện này; phải tìm cho ra đường nó vào.',
+	'That was me — line them up again' => 'Tôi làm đó — cho khớp lại đi',
+	'the contact details you confirmed in your settings' => 'thông tin liên hệ bạn đã xác nhận trong cài đặt',
+	'the contact details you confirmed in your posts' => 'thông tin liên hệ bạn đã xác nhận trong bài viết',
+	'the list of domains you approved' => 'danh sách tên miền bạn đã duyệt',
+	'Your approvals match their copy on disk' => 'Những gì bạn duyệt khớp với bản sao trên đĩa',
+	'THEY DO NOT — something changed them without going through the screens' => 'KHÔNG KHỚP — có thứ gì đó đã sửa mà không đi qua màn hình nào',
+	'no copy on disk yet' => 'chưa có bản sao trên đĩa',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

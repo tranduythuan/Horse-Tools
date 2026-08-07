@@ -41,6 +41,9 @@ function wp_send_json_success( $d = null ) {}
 function wp_create_nonce( $a ) { return 'nonce'; }
 $GLOBALS['on_screen'] = false;
 function horsetools_is_plugin_screen() { return (bool) $GLOBALS['on_screen']; }
+// The confirm paths re-anchor their decisions to a file; that file has its own
+// suite (tools/test-anchor.php). Here it only has to exist.
+function horsetools_anchor_touch() { $GLOBALS["anchored"] = ( $GLOBALS["anchored"] ?? 0 ) + 1; }
 function horsetools_admin_banner( $tone, $html ) { echo '<div class="ht-banner ht-banner-' . $tone . '">' . $html . '</div>'; }
 function horsetools_option_names() { return array( 'horsetools_settings' ); }
 $GLOBALS['opts']  = array();

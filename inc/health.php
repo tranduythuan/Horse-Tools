@@ -192,6 +192,21 @@ function horsetools_health_report() {
 			);
 		}
 	}
+	// The only check here that can catch a hand at the database itself.
+	if ( function_exists( 'horsetools_anchor_status' ) ) {
+		$an     = horsetools_anchor_status();
+		$an_map = array(
+			'ok'         => array( 'pass', '' ),
+			'none'       => array( 'warn', __( 'No copy on disk yet — it is written the first time you confirm something', 'horse-tools' ) ),
+			'unwritable' => array( 'warn', __( 'wp-content is not writable, so there is nowhere to keep the copy', 'horse-tools' ) ),
+			'mismatch'   => array( 'fail', __( 'They no longer match — see the banner at the top of any Horse Tools screen', 'horse-tools' ) ),
+		);
+		$an_row = isset( $an_map[ $an['state'] ] ) ? $an_map[ $an['state'] ] : $an_map['none'];
+		$add(
+			'anchor', $sec_cat, __( 'What you approved is also kept outside the database', 'horse-tools' ),
+			$an_row[0], 3, '', $an_row[1]
+		);
+	}
 	// Everything above is only ever read by somebody who logs in and looks. This
 	// row is about whether anyone would find out otherwise — and it is the only
 	// row that can be wrong about *itself*, since a plugin that has been switched
