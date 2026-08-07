@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.27
+Stable tag: 1.3.28
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,15 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.28 =
+* **A link to a domain you never approved can now be defused while the page is being printed.** Everything else here reports, and reporting leaves a window: the link goes in, the warning appears on a screen, and the link keeps working until somebody logs in and reads that screen. On the site this was written for, that window was two years wide. This closes it — whatever the link was worth to whoever put it there stops being worth that within one page view.
+* Two strengths, on the Outbound links screen. **Add `nofollow`** keeps the link working for a reader and stops it passing any SEO value, which is the entire reason a link like that is worth paying for. **Take the link away, keep the words** stops the click too, and is more likely to get in your way.
+* **Nothing is written to your posts.** Only what gets printed changes. Switch it off and every link is back exactly as it was on the next page load.
+* **Off by default, and silent until you have been through the list once.** Without that second condition, installing this update would have quietly nofollowed every outbound link on every site — the partner, the courier, the payment gateway — because nothing had been approved yet.
+* Every other gate fails open too: relative links, page anchors, `mailto:`, `tel:`, `javascript:`, your own domain and its `www.` are all left untouched by construction, not by a list. A subdomain of an approved domain is *not* covered by it, which is deliberate — `promo.example.com` is frequently not the same people as `example.com`, and on a compromised site it is frequently not the same people on purpose.
+* Host normalisation and the approved list moved to `inc/link-list.php`, so a product page reaches them without loading six hundred lines of review screen. The inventory and the screen stay behind `is_admin()`.
+* Covered by `tools/test-link-guard.php`: 43 checks, most of them the not-list — the cases where touching the markup would break a working shop. 504 checks across thirteen files in total.
 
 = 1.3.27 =
 * **The debug log was downloadable on every nginx site, and this fixes it rather than warning about it.** Switching on WP_DEBUG_LOG here writes the log to `wp-content/horsetools-logs/` instead of WordPress' public `wp-content/debug.log`, with an `.htaccess` in the folder saying deny. nginx has never read an `.htaccess` and never will. Verified on a live host on 7 August 2026: requesting the `.htaccess` itself came back HTTP 200 with all 134 bytes of it. The log beside it was served the same way — database queries, absolute server paths, fragments of failed requests — and the only thing in the way was a sixteen-character file name.

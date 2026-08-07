@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.3.27
+ * Version: 1.3.28
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.3.27' );
+define( 'HORSETOOLS_VERSION', '1.3.28' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
@@ -73,6 +73,12 @@ if ( horsetools_is_backend() ) {
 if ( horsetools_is_backend() ) {
 	include( HORSETOOLS_DIR . 'inc/update.php' );
 }
+// Which domains this site links to on purpose, and taking the value out of a
+// link to one it does not. Front end as well as admin: this is the only part
+// of the watching that acts rather than reports, and it acts while the page is
+// being rendered. The inventory and the review screen stay behind is_admin().
+include( HORSETOOLS_DIR . 'inc/link-list.php' );
+include( HORSETOOLS_DIR . 'inc/link-guard.php' );
 if ( is_admin() ) {
 	include( HORSETOOLS_DIR . 'inc/ui.php' );
 	include( HORSETOOLS_DIR . 'inc/health.php' );

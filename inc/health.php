@@ -192,6 +192,18 @@ function horsetools_health_report() {
 			);
 		}
 	}
+	// Reporting leaves a window: the link goes in, the warning appears on a
+	// screen, and the link keeps working until somebody reads that screen. This
+	// row is about whether that window is open. Not scored — it is a deliberate
+	// choice with a real cost, not a box everyone should tick.
+	if ( function_exists( 'horsetools_link_guard_mode' ) ) {
+		$gm = horsetools_link_guard_mode();
+		$add(
+			'link_guard', $sec_cat, __( 'Links to domains you did not approve are defused as they are printed', 'horse-tools' ),
+			'off' === $gm ? 'warn' : 'pass', 0, horsetools_link_screen_url(),
+			'off' === $gm ? __( 'Outbound links screen — choose what should happen to them', 'horse-tools' ) : ''
+		);
+	}
 	// The only check here that can catch a hand at the database itself.
 	if ( function_exists( 'horsetools_anchor_status' ) ) {
 		$an     = horsetools_anchor_status();

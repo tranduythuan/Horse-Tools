@@ -1276,6 +1276,20 @@ $vi = array(
 	// The debug log stops depending on .htaccess (1.3.27).
 	'This server does not read .htaccess files, so nothing is hiding this one but its name. Horse Tools now stores these as .php files that stop on their first line, which works on every server.' => 'Máy chủ này không đọc file .htaccess, nên không có gì che file này ngoài chính cái tên của nó. Horse Tools nay lưu các file kiểu này dưới dạng .php dừng ngay ở dòng đầu tiên — cách đó chạy được trên mọi máy chủ.',
 
+
+	// Defusing an unapproved link while the page is being printed (1.3.28).
+	'And what should happen to a domain that is not on the list?' => 'Còn tên miền không có trong danh sách thì xử sao?',
+	'Everything above only tells you. Telling you leaves a gap: the link goes in, the warning appears on a screen, and the link keeps working until you log in and read it. That gap is how three old posts carried casino links for two years.' => 'Mọi thứ ở trên chỉ báo cho bạn biết. Mà báo thôi thì còn một khoảng hở: link được chèn vào, cảnh báo hiện lên một màn hình, và cái link vẫn chạy cho tới khi bạn đăng nhập vào đọc. Chính khoảng hở đó làm ba bài cũ mang link casino suốt hai năm.',
+	'Nothing — just tell me' => 'Không làm gì — chỉ báo cho tôi',
+	'Your pages go out exactly as written.' => 'Trang của bạn ra đúng như đã viết.',
+	'Add nofollow to it (recommended)' => 'Gắn nofollow vào (nên chọn)',
+	'The link still works for a reader and stops passing any SEO value — which is the whole reason a link like that is worth paying for. Nothing in your posts is changed; only what gets printed.' => 'Người đọc vẫn bấm được, còn giá trị SEO thì hết truyền — mà đó mới là toàn bộ lý do người ta bỏ tiền mua một cái link như vậy. Bài viết của bạn không bị sửa gì; chỉ thứ được in ra là khác.',
+	'Take the link away, keep the words' => 'Gỡ hẳn link, giữ lại chữ',
+	'Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it.' => 'Không ai bấm qua được. Mạnh hơn, và cũng dễ vướng chân bạn hơn — tên miền bạn thật sự muốn trỏ tới mà quên tick thì thôi không còn là link, cho tới khi bạn tick.',
+	'This never touches what is stored. Switch it off and every link is back as it was on the next page load.' => 'Cái này không bao giờ đụng tới thứ đã lưu. Tắt đi là ngay lần tải trang sau mọi link trở lại y như cũ.',
+	'Links to domains you did not approve are defused as they are printed' => 'Link tới tên miền chưa duyệt bị vô hiệu ngay lúc in ra',
+	'Outbound links screen — choose what should happen to them' => 'Màn Liên kết ra ngoài — chọn xem sẽ xử chúng thế nào',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

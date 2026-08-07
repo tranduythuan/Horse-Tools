@@ -26,72 +26,9 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 const HORSETOOLS_LINK_HOSTS = 'horsetools_link_hosts';
-const HORSETOOLS_LINK_OK    = 'horsetools_link_approved';
 
 /** Stop growing here. Past this it is not an inventory, it is a scrape. */
 const HORSETOOLS_LINK_MAX = 400;
-
-/**
- * A URL reduced to the host that would be paid for it, or '' if there is none.
- *
- * `www.` comes off because nobody approving `example.com` means to withhold
- * approval from `www.example.com`. A subdomain stays on: `promo.example.com` is
- * frequently not the same people as `example.com`, and on a compromised site it
- * is frequently not the same people on purpose.
- *
- * @param string $url
- * @return string
- */
-function horsetools_link_host( $url ) {
-	$url = trim( (string) $url );
-	if ( '' === $url ) {
-		return '';
-	}
-	// `//evil.com/x` is a real link that parse_url reads as a path unless it is
-	// given a scheme. Injected markup uses this form precisely because it is easy
-	// to skim past.
-	if ( 0 === strpos( $url, '//' ) ) {
-		$url = 'http:' . $url;
-	}
-	// mailto:, tel:, #anchor, javascript:, data: — none of them point anywhere,
-	// and contact details are somebody else's job (see watch-contact.php).
-	if ( ! preg_match( '~^https?://~i', $url ) ) {
-		return '';
-	}
-
-	$host = wp_parse_url( $url, PHP_URL_HOST );
-	if ( ! is_string( $host ) || '' === $host ) {
-		return '';
-	}
-	$host = strtolower( rtrim( trim( $host ), '.' ) );
-	if ( 0 === strpos( $host, 'www.' ) ) {
-		$host = substr( $host, 4 );
-	}
-
-	// Has to look like a host and not like the wreckage of a broken tag: at least
-	// one dot, and none of the characters that only appear when a regex has run
-	// off the end of an attribute.
-	if ( ! preg_match( '~^[^\s"\'<>/\\\\?#@]+\.[^\s"\'<>/\\\\?#@]{2,}$~u', $host ) ) {
-		return '';
-	}
-	return $host;
-}
-
-/** The hosts that are this site. Links to these are not outbound. */
-function horsetools_link_self_hosts() {
-	$hosts = array();
-	foreach ( array( home_url(), site_url() ) as $url ) {
-		$h = horsetools_link_host( $url );
-		if ( '' !== $h ) {
-			$hosts[ $h ] = true;
-		}
-	}
-	/**
-	 * Multisite, a separate media domain, a staging alias — anything the owner
-	 * considers "us" and does not want listed as somewhere else.
-	 */
-	return (array) apply_filters( 'horsetools_link_self_hosts', array_keys( $hosts ) );
-}
 
 /**
  * Every outbound host in a piece of markup.
@@ -281,47 +218,6 @@ function horsetools_link_found() {
 }
 
 /**
- * host => unix time it was approved.
- *
- * The timestamp is not used yet. It is stored because the question it answers —
- * "you agreed to this domain three years ago; is it still the same people?" —
- * cannot be asked retroactively, and a domain changing hands is the one way an
- * approved link goes bad without anything on this site changing at all.
- *
- * @return array<string,int>
- */
-function horsetools_link_approved() {
-	$a = get_option( HORSETOOLS_LINK_OK, null );
-	return is_array( $a ) ? $a : array();
-}
-
-function horsetools_link_reviewed() {
-	return is_array( get_option( HORSETOOLS_LINK_OK, null ) );
-}
-
-/**
- * A host as it arrives from the review form, normalised the same way the scan
- * normalised it.
- *
- * The form posts back bare hosts, but it must not matter: a value that has
- * already been through the scan and a value somebody typed have to land on the
- * same key, or approving a domain silently fails to approve it.
- *
- * @param string $s
- * @return string
- */
-function horsetools_link_host_input( $s ) {
-	$s = trim( (string) $s );
-	if ( '' === $s ) {
-		return '';
-	}
-	if ( ! preg_match( '~^(?:https?:)?//~i', $s ) ) {
-		$s = 'http://' . $s;
-	}
-	return horsetools_link_host( $s );
-}
-
-/**
  * @param string[] $hosts
  */
 function horsetools_link_approve( array $hosts ) {
@@ -457,6 +353,9 @@ function horsetools_link_screen() {
 		// records that a review happened at all — "I looked, and none of these
 		// belong" is an answer, and the screen must stop asking for a first review
 		// once it has been given one.
+		if ( isset( $_POST['guard'] ) ) {
+			horsetools_link_guard_set( sanitize_key( wp_unslash( $_POST['guard'] ) ) );
+		}
 		horsetools_link_approve( $ticked );
 		horsetools_link_revoke( array_values( array_diff( $listed, $ticked ) ) );
 		$left = count( array_diff( $listed, $ticked ) );
@@ -564,6 +463,34 @@ function horsetools_link_screen() {
 					<?php endforeach; ?>
 					</tbody>
 				</table>
+
+				<h2 style="margin-top:26px"><?php esc_html_e( 'And what should happen to a domain that is not on the list?', 'horse-tools' ); ?></h2>
+				<p style="max-width:46em">
+					<?php esc_html_e( 'Everything above only tells you. Telling you leaves a gap: the link goes in, the warning appears on a screen, and the link keeps working until you log in and read it. That gap is how three old posts carried casino links for two years.', 'horse-tools' ); ?>
+				</p>
+				<?php $guard = horsetools_link_guard_mode(); ?>
+				<p class="ht-field">
+					<label style="display:block;margin:6px 0">
+						<input type="radio" name="guard" value="off" <?php checked( 'off', $guard ); ?>>
+						<strong><?php esc_html_e( 'Nothing — just tell me', 'horse-tools' ); ?></strong><br>
+						<span class="description" style="margin-left:24px"><?php esc_html_e( 'Your pages go out exactly as written.', 'horse-tools' ); ?></span>
+					</label>
+					<label style="display:block;margin:6px 0">
+						<input type="radio" name="guard" value="nofollow" <?php checked( 'nofollow', $guard ); ?>>
+						<strong><?php esc_html_e( 'Add nofollow to it (recommended)', 'horse-tools' ); ?></strong><br>
+						<span class="description" style="margin-left:24px"><?php esc_html_e( 'The link still works for a reader and stops passing any SEO value — which is the whole reason a link like that is worth paying for. Nothing in your posts is changed; only what gets printed.', 'horse-tools' ); ?></span>
+					</label>
+					<label style="display:block;margin:6px 0">
+						<input type="radio" name="guard" value="strip" <?php checked( 'strip', $guard ); ?>>
+						<strong><?php esc_html_e( 'Take the link away, keep the words', 'horse-tools' ); ?></strong><br>
+						<span class="description" style="margin-left:24px"><?php esc_html_e( 'Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it.', 'horse-tools' ); ?></span>
+					</label>
+				</p>
+				<p class="ht-note">
+					<i class="ti ti-bulb"></i>
+					<?php esc_html_e( 'This never touches what is stored. Switch it off and every link is back as it was on the next page load.', 'horse-tools' ); ?>
+				</p>
+
 				<p class="submit">
 					<button type="submit" class="button button-primary"><?php esc_html_e( 'Save this list', 'horse-tools' ); ?></button>
 				</p>

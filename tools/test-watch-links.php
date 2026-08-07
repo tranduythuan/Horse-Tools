@@ -70,6 +70,10 @@ $GLOBALS['opts']    = array();
 $GLOBALS['trans']   = array();
 $GLOBALS['filters'] = array();
 
+// Host normalisation and the approved list moved to inc/link-list.php so the
+// front end can reach them without the review screen; watch-links.php builds
+// on top of them.
+require_once dirname( __DIR__ ) . '/inc/link-list.php';
 require_once dirname( __DIR__ ) . '/inc/watch-links.php';
 
 $pass = 0;
