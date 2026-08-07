@@ -146,6 +146,17 @@ function horsetools_health_report() {
 			$c_row[0], 3, '', $c_row[1]
 		);
 	}
+	// A stray wp-config copy or database dump in the web root is worse than any
+	// of the settings above being off.
+	if ( function_exists( 'horsetools_exposure_status' ) ) {
+		$exp   = horsetools_exposure_status();
+		$e_num = count( $exp['found'] );
+		$add(
+			'exposure', $sec_cat, __( 'No downloadable secrets in the site folder', 'horse-tools' ),
+			$e_num ? 'fail' : 'pass', 4, '',
+			$e_num ? __( 'See the banner at the top of any Horse Tools screen', 'horse-tools' ) : ''
+		);
+	}
 
 	// ---- Privacy --------------------------------------------------------
 	$seen  = (array) get_option( 'horsetools_gfont_seen', array() );

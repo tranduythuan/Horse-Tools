@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.19
+Stable tag: 1.3.20
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.20 =
+* **Horse Tools now checks whether your site is handing out its own secrets.** A stray copy of wp-config, a database dump, a .git directory, a forgotten phpinfo — these are the first things anyone scanning a WordPress site asks for, and finding one is worth more to them than every casino link they could inject. It looks for the short list of files that should never sit in a web root, and says something only when one is actually there.
+* It does not report being scanned. Every site on the internet is probed for these constantly; an alert about it is one you learn to ignore within a week. The 404 log the redirects module already keeps is used for the other half of the sentence instead — not "you are being scanned", but "the thing somebody went looking for on this site is here", which is the only reading of a 404 log worth waking up for.
+* Covered by `tools/test-watch-exposure.php`: 20 checks against real files in a throwaway folder, including that a clean site stays silent, that the real wp-config.php is not mistaken for a stray copy of one, and that nothing breaks when the redirects module — and so the 404 log — is switched off.
 
 = 1.3.19 =
 * **A chat button's icon is no longer mistaken for your phone number.** Custom icons are stored as inline SVG, and 1.3.17 — which taught the watcher that a leading 00 means an international number — started scraping the digits out of one: `viewBox="0 0 24 24" … stroke-width="1.8" … d="M4 5h16v10H8l-4 4z"` reduces to seventeen digits beginning 00. It was listed as a contact number, with the whole SVG printed as its value. A phone number now has to be a short string containing nothing but a phone number, which is what it always should have been.

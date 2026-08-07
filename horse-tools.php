@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.3.19
+ * Version: 1.3.20
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.3.19' );
+define( 'HORSETOOLS_VERSION', '1.3.20' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
@@ -80,6 +80,10 @@ if ( is_admin() ) {
 	// changes. Swapping a hotline is the most direct attack on a shop there is,
 	// and the one that leaves nothing behind to search for.
 	include( HORSETOOLS_DIR . 'inc/watch-contact.php' );
+	// Looks for the handful of files that should never sit in a web root — a
+	// stray wp-config copy, a database dump, a .git directory — and says so only
+	// when one is actually there.
+	include( HORSETOOLS_DIR . 'inc/watch-exposure.php' );
 }
 include( HORSETOOLS_DIR . 'inc/horsetools.php' );
 include( HORSETOOLS_DIR . 'inc/code.php' );

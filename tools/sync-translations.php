@@ -1135,6 +1135,24 @@ $vi = array(
 	'Gone' => 'Mất',
 	'If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else.' => 'Nếu bạn vừa tự đổi thì bấm xác nhận. Nếu không phải bạn thì là người khác — hãy xem ai sửa cài đặt gần nhất trước khi đụng vào bất cứ thứ gì khác.',
 
+	// Files in the web root that should not be there (1.3.20).
+	'No downloadable secrets in the site folder' => 'Không có file bí mật nào tải về được trong thư mục site',
+	'See the banner at the top of any Horse Tools screen' => 'Xem bảng thông báo ở đầu bất kỳ màn hình Horse Tools nào',
+	'Contains database credentials or signing keys.' => 'Chứa thông tin đăng nhập database hoặc khoá ký.',
+	'A database dump: everything on the site, downloadable.' => 'Bản kết xuất database: toàn bộ site, ai cũng tải được.',
+	'A .git directory exposes the whole source history, and often credentials with it.' => 'Thư mục .git để lộ toàn bộ lịch sử mã nguồn, và thường lộ cả mật khẩu kèm theo.',
+	'Version-control metadata exposes the source.' => 'Dữ liệu quản lý phiên bản để lộ mã nguồn.',
+	'A private key.' => 'Một khoá riêng tư.',
+	'A site archive, downloadable by anyone who guesses the name.' => 'Bản nén của site, ai đoán trúng tên là tải được.',
+	'Publishes the server configuration, paths and loaded modules.' => 'Phơi bày cấu hình máy chủ, đường dẫn và các module đang nạp.',
+	'Usually a phpinfo page.' => 'Thường là một trang phpinfo.',
+	'A database client. Anyone who finds it is one password from the database.' => 'Một công cụ truy cập database. Ai tìm ra nó thì chỉ còn cách database đúng một mật khẩu.',
+	'PHP errors: server paths, fragments of queries, sometimes the contents of a failed request.' => 'Lỗi PHP: đường dẫn máy chủ, mảnh câu truy vấn, đôi khi cả nội dung của yêu cầu bị lỗi.',
+	'Server errors, including absolute paths.' => 'Lỗi máy chủ, kèm đường dẫn tuyệt đối.',
+	'There are files in your site’s folder that anyone can download.' => 'Trong thư mục site của bạn có những file ai cũng tải về được.',
+	'Somebody has asked for this path %d times.' => 'Đã có người hỏi tới đường dẫn này %d lần.',
+	'Delete them, or move them somewhere outside the folder your site is served from. If one of them is a copy of wp-config.php, change your database password afterwards — assume it has been read.' => 'Hãy xoá chúng đi, hoặc chuyển ra ngoài thư mục mà site đang chạy. Nếu có cái nào là bản sao của wp-config.php thì sau đó đổi luôn mật khẩu database — cứ coi như nó đã bị đọc.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';
