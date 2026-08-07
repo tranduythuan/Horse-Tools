@@ -131,6 +131,21 @@ function horsetools_health_report() {
 			$salt_row[0], 3, '', $salt_row[1]
 		);
 	}
+	// The hotline, the Zalo, the email. Swapping one of those takes the
+	// customers directly and leaves no link behind to find.
+	if ( function_exists( 'horsetools_contact_status' ) ) {
+		$c_state = horsetools_contact_status();
+		$c_map   = array(
+			'clean'   => array( 'pass', '' ),
+			'unset'   => array( 'warn', __( 'Confirm them once, from the notice on any Horse Tools screen', 'horse-tools' ) ),
+			'changed' => array( 'fail', __( 'Something changed — see the notice on any Horse Tools screen', 'horse-tools' ) ),
+		);
+		$c_row = isset( $c_map[ $c_state['state'] ] ) ? $c_map[ $c_state['state'] ] : $c_map['unset'];
+		$add(
+			'contact', $sec_cat, __( 'Contact details are the ones you confirmed', 'horse-tools' ),
+			$c_row[0], 3, '', $c_row[1]
+		);
+	}
 
 	// ---- Privacy --------------------------------------------------------
 	$seen  = (array) get_option( 'horsetools_gfont_seen', array() );

@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.14
+Stable tag: 1.3.15
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,13 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.15 =
+* **Horse Tools now watches your own contact details.** Your hotline, Zalo, Messenger and email are read out of your settings, you confirm them once, and you are told if any of them ever change. Swapping the number on a shop's floating chat button is the most direct attack there is — one value, one option, every page, and it takes the customers straight to somebody else. There is no link left behind to find and nothing for a link scanner to see.
+* It compares, it does not guess. Trying to work out which number on a page "is the hotline" means being wrong about prices and product codes; recording what is there and reporting a difference does not. `0988.34.34.12`, `0988 34 34 12` and `+84988343412` are recognised as the same number, so reformatting your own hotline is not reported as a change — and `1.790.000` is not reported as a phone number.
+* The settings are walked rather than named. The chat buttons keep their value in `chat-nut3<n>` today, the navbar and services panel elsewhere, and those names have moved before — a watcher that has to be told each key is one that goes quiet the next time one is renamed.
+* **Cleanup no longer deletes the last month of post revisions.** Revisions are the only way back after somebody edits a published post, and the only source of a diff showing what was added. Horse Tools deletes them, and can be set to do it on a schedule, so it was quietly removing its own recovery path. Anything older than thirty days still goes — that is where the space actually is — and the preview count now matches what will really be removed.
+* Covered by `tools/test-watch-contact.php`: 36 checks, most of them about what must **not** be flagged.
 
 = 1.3.14 =
 * **Horse Tools now tells you where this site's signing keys are kept.** Two of its protections are signed with `wp_salt()`: the PHP snippet signature, which exists so that code written straight into the database — the usual pay-off of an SQL-injection hole in some *other* plugin — is refused, and the "trusted device" cookie that lets a browser skip two-factor authentication for thirty days. Both promises hold only while the key is in a file. WordPress reads it from wp-config.php when the constants are there, and quietly generates one into the options table when they are not — the very place such an attacker already is. Neither WordPress nor this plugin has ever said so. The Site Health card now reports it, and a notice on the plugin's own screens offers eight freshly generated lines to paste. **Nothing is written to wp-config.php; the lines are yours to copy.**

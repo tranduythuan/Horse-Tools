@@ -43,16 +43,43 @@ function horsetools_delete_posts_where( array $query_args ) {
     return $deleted;
 }
 
+/**
+ * How many days of post revisions are never deleted.
+ *
+ * Revisions are the only way back after somebody edits a published post — the
+ * incident flow's "restore the version from before this was injected" has
+ * nothing to work with once they are gone, and neither does the diff that shows
+ * what was added. Horse Tools deletes them, and can be set to do it on a
+ * schedule, so without a floor the plugin quietly removes its own recovery path.
+ *
+ * The point of the cleaner is reclaiming space from years of accumulation.
+ * Nobody frees a meaningful amount by deleting last month's, so keeping a month
+ * costs the feature almost nothing and keeps the way back open.
+ *
+ * @return int Days; 0 disables the floor entirely.
+ */
+function horsetools_clean_revision_keep_days() {
+	return (int) apply_filters( 'horsetools_clean_revision_keep_days', 30 );
+}
+
+/** The cut-off as a date_query, or an empty array when the floor is off. */
+function horsetools_clean_revision_window() {
+	$days = horsetools_clean_revision_keep_days();
+	if ( $days < 1 ) {
+		return array();
+	}
+	return array( 'date_query' => array( array( 'column' => 'post_date', 'before' => $days . ' days ago' ) ) );
+}
 # nhan nut xoa het ban ghi tam trong csdl làm sach csdl
 function horsetools_delete_post_revisions() {
 	check_ajax_referer('horsetools_post_revisions', 'security');
     if (!current_user_can('manage_options')){
         wp_die(__('Insufficient permissions', 'horse-tools'));
     }
-    $deleted = horsetools_delete_posts_where( array(
+    $deleted = horsetools_delete_posts_where( array_merge( array(
         'post_type'   => 'revision',
         'post_status' => 'any',
-    ) );
+    ), horsetools_clean_revision_window() ) );
     wp_send_json_success( array( 'deleted_count' => $deleted ) );
 }
 add_action('wp_ajax_horsetools_delete_revisions', 'horsetools_delete_post_revisions');
@@ -440,8 +467,16 @@ function horsetools_clean_targets() {
 
 function horsetools_clean_count_revisions() {
 	global $wpdb;
-	$count = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = %s", 'revision' ) );
-	$size  = (int) $wpdb->get_var( $wpdb->prepare( "SELECT SUM(LENGTH(post_content)) FROM {$wpdb->posts} WHERE post_type = %s", 'revision' ) );
+	// Count only what would actually be deleted. A preview that promises 4,182
+	// and then removes 900 is worse than no preview at all.
+	$days = horsetools_clean_revision_keep_days();
+	if ( $days > 0 ) {
+		$count = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = %s AND post_date < DATE_SUB( NOW(), INTERVAL %d DAY )", 'revision', $days ) );
+		$size  = (int) $wpdb->get_var( $wpdb->prepare( "SELECT SUM(LENGTH(post_content)) FROM {$wpdb->posts} WHERE post_type = %s AND post_date < DATE_SUB( NOW(), INTERVAL %d DAY )", 'revision', $days ) );
+	} else {
+		$count = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = %s", 'revision' ) );
+		$size  = (int) $wpdb->get_var( $wpdb->prepare( "SELECT SUM(LENGTH(post_content)) FROM {$wpdb->posts} WHERE post_type = %s", 'revision' ) );
+	}
 	return array( 'count' => $count, 'estimated' => false, 'size' => $size );
 }
 
@@ -488,7 +523,10 @@ function horsetools_clean_count_media() {
 /** Run callbacks, shared by the AJAX handlers and the cron driver. */
 
 function horsetools_clean_run_revisions() {
-	return horsetools_delete_posts_where( array( 'post_type' => 'revision', 'post_status' => 'any' ) );
+	return horsetools_delete_posts_where( array_merge(
+		array( 'post_type' => 'revision', 'post_status' => 'any' ),
+		horsetools_clean_revision_window()
+	) );
 }
 function horsetools_clean_run_auto_drafts() {
 	return horsetools_delete_posts_where( array( 'post_type' => 'any', 'post_status' => 'auto-draft' ) );

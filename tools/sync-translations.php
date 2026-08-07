@@ -1120,6 +1120,20 @@ $vi = array(
 	'Paste all eight lines into wp-config.php, above the line that requires wp-settings.php. Replace any existing lines with the same names. Everyone signed in — including you — will be signed out afterwards, which is the point: it invalidates every cookie issued with the old keys.' => 'Dán cả 8 dòng vào wp-config.php, phía trên dòng require wp-settings.php. Nếu đã có dòng cùng tên thì thay thế. Sau đó mọi người đang đăng nhập — kể cả bạn — sẽ bị đăng xuất, và đó chính là mục đích: nó vô hiệu hoá mọi cookie đã cấp bằng khoá cũ.',
 	'Copy all eight lines' => 'Sao chép cả 8 dòng',
 
+	// Watching the site's own contact details for changes (1.3.15).
+	'Contact details are the ones you confirmed' => 'Thông tin liên hệ đúng như đã xác nhận',
+	'Confirm them once, from the notice on any Horse Tools screen' => 'Xác nhận một lần, ở thông báo trên bất kỳ màn hình Horse Tools nào',
+	'Something changed — see the notice on any Horse Tools screen' => 'Có thứ đã thay đổi — xem thông báo trên bất kỳ màn hình Horse Tools nào',
+	'Phone number' => 'Số điện thoại',
+	'Email address' => 'Địa chỉ email',
+	'These are correct — remember them' => 'Đúng rồi — ghi nhớ đi',
+	'Horse Tools can watch your contact details for changes.' => 'Horse Tools có thể canh thông tin liên hệ của bạn xem có bị đổi không.',
+	'It found %d contact details in your settings — phone numbers, Zalo, Messenger, email. Confirm them once and you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest.' => 'Đã tìm thấy %d thông tin liên hệ trong cài đặt — số điện thoại, Zalo, Messenger, email. Xác nhận một lần, rồi sau này cái nào đổi là bạn được báo. Đổi hotline của một shop là đòn trực diện nhất, và cũng lặng lẽ nhất.',
+	'Your contact details have changed.' => 'Thông tin liên hệ của bạn đã thay đổi.',
+	'New' => 'Mới',
+	'Gone' => 'Mất',
+	'If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else.' => 'Nếu bạn vừa tự đổi thì bấm xác nhận. Nếu không phải bạn thì là người khác — hãy xem ai sửa cài đặt gần nhất trước khi đụng vào bất cứ thứ gì khác.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

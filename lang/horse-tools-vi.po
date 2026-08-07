@@ -7024,3 +7024,39 @@ msgstr "Dán cả 8 dòng vào wp-config.php, phía trên dòng require wp-setti
 
 msgid "Copy all eight lines"
 msgstr "Sao chép cả 8 dòng"
+
+msgid "Contact details are the ones you confirmed"
+msgstr "Thông tin liên hệ đúng như đã xác nhận"
+
+msgid "Confirm them once, from the notice on any Horse Tools screen"
+msgstr "Xác nhận một lần, ở thông báo trên bất kỳ màn hình Horse Tools nào"
+
+msgid "Something changed — see the notice on any Horse Tools screen"
+msgstr "Có thứ đã thay đổi — xem thông báo trên bất kỳ màn hình Horse Tools nào"
+
+msgid "Phone number"
+msgstr "Số điện thoại"
+
+msgid "Email address"
+msgstr "Địa chỉ email"
+
+msgid "These are correct — remember them"
+msgstr "Đúng rồi — ghi nhớ đi"
+
+msgid "Horse Tools can watch your contact details for changes."
+msgstr "Horse Tools có thể canh thông tin liên hệ của bạn xem có bị đổi không."
+
+msgid "It found %d contact details in your settings — phone numbers, Zalo, Messenger, email. Confirm them once and you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest."
+msgstr "Đã tìm thấy %d thông tin liên hệ trong cài đặt — số điện thoại, Zalo, Messenger, email. Xác nhận một lần, rồi sau này cái nào đổi là bạn được báo. Đổi hotline của một shop là đòn trực diện nhất, và cũng lặng lẽ nhất."
+
+msgid "Your contact details have changed."
+msgstr "Thông tin liên hệ của bạn đã thay đổi."
+
+msgid "New"
+msgstr "Mới"
+
+msgid "Gone"
+msgstr "Mất"
+
+msgid "If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else."
+msgstr "Nếu bạn vừa tự đổi thì bấm xác nhận. Nếu không phải bạn thì là người khác — hãy xem ai sửa cài đặt gần nhất trước khi đụng vào bất cứ thứ gì khác."
