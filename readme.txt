@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.29
+Stable tag: 1.3.30
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.30 =
+* **Makes 1.3.29 actually apply to the sites that needed it.** Raising the link inventory's ceiling changed how much a collector keeps, which is a change in how it reads — and that has to bump the scan signature or nothing re-reads. It did not. So on the one site that had already hit the old ceiling, the inventory stayed truncated at 400 and the flag that reports truncation, which is only set while collecting, stayed unset. The site carried on reporting that its content was watched. A fix that only reaches installations which have not yet hit the bug is not a fix.
+* Every site now re-reads its content once. On a small site that is a few seconds; on a large one it continues a batch at a time as you use the admin, and the screens say so while it runs.
 
 = 1.3.29 =
 * **The outbound-link list stopped recording at 400 domains, silently.** Found by running it on a real site rather than by thinking about it: a blog of 866 posts that cites its sources went straight through the ceiling, and from that point the inventory quietly ignored everything new. That is the worst way for this to fail — a list with gaps in it still answers "is this domain new?", and answers "no" for every domain it never managed to record.

@@ -31,8 +31,16 @@ const HORSETOOLS_SCAN_STATE = 'horsetools_content_scan';
  * Fixing a phone-number rule or teaching the link reader a new tag means the
  * stored results were produced by code that no longer exists. Re-reading is the
  * only way to make what is on screen match what the current code would say.
+ *
+ * "Reading" includes how much a collector is willing to keep. 1.3.29 raised the
+ * link inventory's ceiling from 400 to 2000 and did not bump this, so on the one
+ * site that had actually hit the old ceiling nothing re-read: the inventory
+ * stayed truncated at 400, and the flag that reports truncation — which is only
+ * set while collecting — stayed unset. The site went on reporting that its
+ * content was watched. A fix that only applies to installations which have not
+ * yet hit the bug is not a fix.
  */
-const HORSETOOLS_SCAN_SCHEMA = '2';
+const HORSETOOLS_SCAN_SCHEMA = '3';
 
 /**
  * The registered collectors.
