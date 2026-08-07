@@ -112,7 +112,7 @@ msgstr ""
 msgid "A PHP snippet changed on your site"
 msgstr ""
 
-#: inc/watch-contact.php:436
+#: inc/watch-contact.php:441
 msgid "A contact detail that was not there before has appeared in your content."
 msgstr ""
 
@@ -2714,7 +2714,7 @@ msgstr ""
 msgid "Find where a shortcode is used"
 msgstr ""
 
-#: inc/watch-contact.php:433
+#: inc/watch-contact.php:438
 msgid "Finished reading your posts and pages."
 msgstr ""
 
@@ -3032,7 +3032,7 @@ msgstr ""
 msgid "Horse Tools can tell you when your content starts linking somewhere new."
 msgstr ""
 
-#: inc/watch-contact.php:447
+#: inc/watch-contact.php:448
 msgid "Horse Tools can watch your contact details for changes."
 msgstr ""
 
@@ -5946,15 +5946,15 @@ msgstr ""
 msgid "There is no backup to restore."
 msgstr ""
 
-#: inc/watch-contact.php:425
+#: inc/watch-contact.php:422
 msgid "These are correct — remember them"
 msgstr ""
 
-#: inc/watch-contact.php:448
+#: inc/watch-contact.php:449
 msgid "These are the phone numbers, Zalo, Messenger links and email addresses currently in your settings. Check them, then confirm — after that you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest."
 msgstr ""
 
-#: inc/watch-contact.php:434
+#: inc/watch-contact.php:439
 msgid "These contact details appear in your content. Confirm them and you will be told if a new one ever turns up in a post — which is what happens when somebody edits an old article to put their own number in it."
 msgstr ""
 

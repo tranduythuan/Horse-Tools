@@ -343,11 +343,11 @@ function horsetools_contact_type_label( $type ) {
  *         state: 'unset' | 'clean' | 'changed'
  */
 function horsetools_contact_status() {
-	static $memo = null;
-	if ( null !== $memo ) {
-		return $memo;
-	}
-
+	// The transient is the cache. There used to be a `static` in front of it as
+	// well, which bought one array_diff and cost correctness: the answer was
+	// frozen for the rest of the request, so anything that confirmed a baseline
+	// and then asked again — a screen, a test, a script handling more than one
+	// case — was told the old answer.
 	$now = get_transient( 'horsetools_contact_now' );
 	if ( ! is_array( $now ) ) {
 		$now = horsetools_contact_scan_settings();
@@ -355,19 +355,16 @@ function horsetools_contact_status() {
 	}
 
 	if ( ! horsetools_contact_has_baseline() ) {
-		$memo = array( 'state' => 'unset', 'added' => array(), 'removed' => array(), 'count' => count( $now ) );
-		return $memo;
+		return array( 'state' => 'unset', 'added' => array(), 'removed' => array(), 'count' => count( $now ) );
 	}
 
-	$diff  = horsetools_contact_diff( $now, horsetools_contact_baseline() );
-	$state = ( $diff['added'] || $diff['removed'] ) ? 'changed' : 'clean';
-	$memo  = array(
-		'state'   => $state,
+	$diff = horsetools_contact_diff( $now, horsetools_contact_baseline() );
+	return array(
+		'state'   => ( $diff['added'] || $diff['removed'] ) ? 'changed' : 'clean',
 		'added'   => $diff['added'],
 		'removed' => $diff['removed'],
 		'count'   => count( $now ),
 	);
-	return $memo;
 }
 
 /** Confirm what is there now as the set to compare against. */
@@ -424,11 +421,19 @@ function horsetools_contact_notice() {
 	$button = '<button type="button" class="button button-primary" id="ht-contact-confirm" data-nonce="' . esc_attr( $nonce ) . '">'
 		. esc_html__( 'These are correct — remember them', 'horse-tools' ) . '</button>';
 
-	// The settings side is already agreed and only the content side has
-	// something to say: keep the two apart rather than folding a first reading
-	// of eight hundred posts into a "your details changed" alarm.
+	// One exit, deliberately. There used to be a `return` in the branch below and
+	// the script that binds the button sat after it, so in exactly the state a
+	// site reaches after confirming its settings — content read, content awaiting
+	// its first confirmation — the button was printed with nothing listening to
+	// it. It looked enabled, it looked like the other two cases, and pressing it
+	// did nothing at all. A confirm button that silently does nothing is worse
+	// than no button: the owner believes they have agreed to a baseline that was
+	// never written, and the watch they think is on is off.
+	ob_start();
 	if ( 'clean' === $s['state'] ) {
-		ob_start();
+		// The settings side is already agreed and only the content side has
+		// something to say: keep the two apart rather than folding a first reading
+		// of eight hundred posts into a "your details changed" alarm.
 		if ( 'unset' === $c['state'] ) {
 			echo '<p><strong>' . esc_html__( 'Finished reading your posts and pages.', 'horse-tools' ) . '</strong></p>';
 			echo '<p>' . esc_html__( 'These contact details appear in your content. Confirm them and you will be told if a new one ever turns up in a post — which is what happens when somebody edits an old article to put their own number in it.', 'horse-tools' ) . '</p>';
@@ -437,43 +442,47 @@ function horsetools_contact_notice() {
 		}
 		$list( $c['added'] );
 		echo '<p>' . $button . '</p>';
-		horsetools_admin_banner( 'unset' === $c['state'] ? 'info' : 'bad', ob_get_clean() );
-		return;
-	}
-
-	if ( 'unset' === $s['state'] ) {
-		ob_start();
+		$tone = 'unset' === $c['state'] ? 'info' : 'bad';
+	} elseif ( 'unset' === $s['state'] ) {
 		echo '<p><strong>'
 			. esc_html__( 'Horse Tools can watch your contact details for changes.', 'horse-tools' ) . '</strong></p><p>'
 			. esc_html__( 'These are the phone numbers, Zalo, Messenger links and email addresses currently in your settings. Check them, then confirm — after that you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest.', 'horse-tools' )
 			. '</p>';
 		$list( horsetools_contact_scan_settings() );
 		echo '<p>' . $button . '</p>';
-		horsetools_admin_banner( 'info', ob_get_clean() );
+		$tone = 'info';
 	} else {
-		ob_start();
 		echo '<p><strong>'
 			. esc_html__( 'Your contact details have changed.', 'horse-tools' ) . '</strong></p>';
 		$list( $s['added'], __( 'New', 'horse-tools' ) );
 		$list( $s['removed'], __( 'Gone', 'horse-tools' ) );
 		echo '<p>' . esc_html__( 'If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else.', 'horse-tools' )
 			. '</p><p>' . $button . '</p>';
-		horsetools_admin_banner( 'bad', ob_get_clean() );
+		$tone = 'bad';
 	}
+	horsetools_admin_banner( $tone, ob_get_clean() );
 	?>
 	<script>
-	document.addEventListener('DOMContentLoaded',function(){
-		var b=document.getElementById('ht-contact-confirm'); if(!b){return;}
-		b.addEventListener('click',function(){
-			b.disabled=true;
-			fetch(ajaxurl,{method:'POST',credentials:'same-origin',
+	// Delegated from the document rather than bound to the button. WordPress
+	// moves admin notices around after the page is parsed — that is how this
+	// banner ended up inside a hidden tab pane once — and a handler attached to
+	// a node that is then relocated, replaced or printed later than the script
+	// is a handler that quietly stops existing.
+	(function(){
+		if (window.htContactBound) { return; }
+		window.htContactBound = true;
+		document.addEventListener('click', function (e) {
+			var b = e.target && e.target.closest ? e.target.closest('#ht-contact-confirm') : null;
+			if (!b || b.disabled) { return; }
+			b.disabled = true;
+			fetch(ajaxurl, {method:'POST', credentials:'same-origin',
 				headers:{'Content-Type':'application/x-www-form-urlencoded'},
-				body:'action=horsetools_contact_confirm&nonce='+encodeURIComponent(b.dataset.nonce)})
-			.then(function(r){return r.json();})
-			.then(function(){ location.reload(); })
-			.catch(function(){ b.disabled=false; });
+				body:'action=horsetools_contact_confirm&nonce=' + encodeURIComponent(b.dataset.nonce)})
+			.then(function (r) { return r.json(); })
+			.then(function () { location.reload(); })
+			.catch(function () { b.disabled = false; });
 		});
-	});
+	})();
 	</script>
 	<?php
 }
@@ -572,30 +581,25 @@ function horsetools_contact_content_has_baseline() {
  * @return array{state:string,added:array,progress:array}
  */
 function horsetools_contact_content_status() {
-	static $memo = null;
-	if ( null !== $memo ) {
-		return $memo;
-	}
+	// Not memoised — two option reads and an array_diff, all object-cached. See
+	// the note in horsetools_contact_status() for why the static went.
 	if ( ! horsetools_scan_finished() ) {
-		$memo = array(
+		return array(
 			'state'    => 'scanning',
 			'added'    => array(),
 			'progress' => horsetools_scan_progress(),
 		);
-		return $memo;
 	}
 	$now = horsetools_contact_content_found();
 	if ( ! horsetools_contact_content_has_baseline() ) {
-		$memo = array( 'state' => 'unset', 'added' => $now, 'progress' => array() );
-		return $memo;
+		return array( 'state' => 'unset', 'added' => $now, 'progress' => array() );
 	}
 	$added = array_diff_key( $now, horsetools_contact_content_baseline() );
-	$memo  = array(
+	return array(
 		'state'    => $added ? 'changed' : 'clean',
 		'added'    => $added,
 		'progress' => array(),
 	);
-	return $memo;
 }
 
 function horsetools_contact_content_confirm() {

@@ -39,7 +39,9 @@ function check_ajax_referer( $a, $b ) { return true; }
 function wp_send_json_error( $d = null ) {}
 function wp_send_json_success( $d = null ) {}
 function wp_create_nonce( $a ) { return 'nonce'; }
-function horsetools_is_plugin_screen() { return false; }
+$GLOBALS['on_screen'] = false;
+function horsetools_is_plugin_screen() { return (bool) $GLOBALS['on_screen']; }
+function horsetools_admin_banner( $tone, $html ) { echo '<div class="ht-banner ht-banner-' . $tone . '">' . $html . '</div>'; }
 function horsetools_option_names() { return array( 'horsetools_settings' ); }
 $GLOBALS['opts']  = array();
 $GLOBALS['trans'] = array();
@@ -186,6 +188,87 @@ horsetools_contact_baseline_set( array( 'phone:0988343412' => array( 'type' => '
 ok( horsetools_contact_has_baseline(), 'đã có mốc' );
 horsetools_contact_baseline_set( array() );
 ok( horsetools_contact_has_baseline(), 'mốc rỗng vẫn là đã chốt, không phải chưa chốt' );
+
+/* -------------------------------------------------------------------------
+ * The banner itself.
+ *
+ * Everything above tests what the watcher concludes. None of it noticed that in
+ * one of the three states the confirm button was printed with nothing bound to
+ * it — an early `return` sat between the button and the script that made it
+ * work. It looked exactly like the two working cases and did nothing when
+ * pressed, which is worse than having no button: the owner believes they have
+ * agreed to a baseline that was never written.
+ *
+ * So: render each state and check that wherever the button appears, the thing
+ * that makes it work appears too.
+ * ---------------------------------------------------------------------- */
+
+$GLOBALS['on_screen'] = true;
+
+function render_notice() {
+	ob_start();
+	horsetools_contact_notice();
+	return ob_get_clean();
+}
+
+/** Put the watcher into one of the states the owner can actually be in. */
+function put_state( $settings_state, $content_state ) {
+	$GLOBALS['opts']  = array();
+	$GLOBALS['trans'] = array();
+	$GLOBALS['opts']['horsetools_settings'] = array( 'chat-nut31' => '0838216168' );
+
+	if ( 'unset' !== $settings_state ) {
+		horsetools_contact_baseline_set( horsetools_contact_scan_settings() );
+		delete_transient( 'horsetools_contact_now' );
+		if ( 'changed' === $settings_state ) {
+			$GLOBALS['opts']['horsetools_settings']['chat-nut31'] = '0900111222';
+		}
+	}
+
+	$GLOBALS['opts'][ HORSETOOLS_CONTACT_CONTENT ] = array(
+		'phone:0389737412' => array( 'type' => 'phone', 'value' => '0389737412', 'raw' => '0389737412', 'count' => 1 ),
+	);
+	if ( 'unset' !== $content_state ) {
+		update_option( HORSETOOLS_CONTACT_CONTENT_B, 'clean' === $content_state ? horsetools_contact_content_found() : array(), false );
+	}
+}
+
+echo "\n10. Bảng thông báo: có nút thì PHẢI có thứ làm nút chạy\n";
+$cases = array(
+	'cài đặt chưa chốt'        => array( 'unset', 'unset' ),
+	'cài đặt đã đổi'           => array( 'changed', 'clean' ),
+	'cài đặt sạch, nội dung chờ chốt lần đầu' => array( 'clean', 'unset' ),
+	'cài đặt sạch, nội dung có số mới'        => array( 'clean', 'changed' ),
+);
+foreach ( $cases as $why => $state ) {
+	put_state( $state[0], $state[1] );
+	$html = render_notice();
+	$has_button = false !== strpos( $html, 'id="ht-contact-confirm"' );
+	$has_script = false !== strpos( $html, 'horsetools_contact_confirm' );
+	ok( $has_button, "$why — có nút" );
+	eq( $has_button && $has_script, true, "$why — VÀ có mã chạy nút" );
+}
+
+echo "\n11. Không có gì để hỏi thì không được hiện bảng nào\n";
+put_state( 'clean', 'clean' );
+eq( render_notice(), '', 'cả hai bên đều sạch → im lặng' );
+
+echo "\n12. Ngoài màn hình của plugin thì không chen vào\n";
+$GLOBALS['on_screen'] = false;
+put_state( 'unset', 'unset' );
+eq( render_notice(), '', 'màn hình khác → không hiện' );
+$GLOBALS['on_screen'] = true;
+
+echo "\n13. Bảng thông báo phải liệt kê ra, không được bắt gật đầu với con số\n";
+put_state( 'clean', 'unset' );
+ok( false !== strpos( render_notice(), '0389737412' ), 'số tìm được có in ra để người ta soi' );
+
+echo "\n14. Chốt xong thì bảng phải tắt\n";
+put_state( 'clean', 'unset' );
+ok( '' !== render_notice(), 'trước khi chốt: có hỏi' );
+horsetools_contact_confirm();
+horsetools_contact_content_confirm();
+eq( render_notice(), '', 'sau khi chốt: im — trạng thái không bị đóng băng trong cùng một request' );
 
 printf( "\n%d passed, %d failed\n", $pass, $fail );
 exit( $fail ? 1 : 0 );

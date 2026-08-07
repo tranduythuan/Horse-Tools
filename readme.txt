@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.23
+Stable tag: 1.3.24
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,12 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.24 =
+* **Fixes the "These are correct — remember them" button, which did nothing on a site that had already confirmed its settings.** An early `return` sat between the button and the script that made it work, so in exactly that state — settings agreed, content read, content waiting for its first confirmation — the button was printed with nothing listening to it. It looked identical to the two cases that did work. A confirm button that silently does nothing is worse than no button at all: you believe you have agreed to a baseline that was never written, and the watch you think is on is off.
+* The handler is now delegated from the document rather than bound to the button. WordPress moves admin notices around after the page is parsed — that is how this same banner once ended up inside a hidden tab pane — and a handler attached to a node that is then relocated is a handler that quietly stops existing.
+* Two `static` caches removed from the contact status functions. They saved one array_diff and froze the answer for the rest of the request, so anything that confirmed a baseline and then asked again was told the old answer.
+* `tools/test-watch-contact.php` now renders the banner in each of the states a site can actually be in and checks that wherever the button appears, the thing that makes it work appears too. Reintroducing the bug fails exactly the two cases it broke.
 
 = 1.3.23 =
 * **Fixes the "Outbound links" screen, which 1.3.22 made impossible to open.** It was registered under the plugin menu and then hidden again with `remove_submenu_page()` — the usual trick for a screen you arrive at from a warning. It does not work: WordPress decides whether you may open a plugin page by looking the slug up in the submenu and reading the capability off the entry it finds there, so removing the entry answers every visit, administrators included, with "Sorry, you are not allowed to access this page."
