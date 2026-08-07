@@ -222,6 +222,9 @@ function horsetools_group_sort_menu() {
 		'horsetools-speed-options',
 		'horsetools-seo-options',
 		'horsetools-security-options',
+		// Not a settings group, but it belongs next to Security: it is the answer
+		// to "who does my content link to", which is a security question.
+		'horsetools-links',
 		'horsetools-content-options',
 		'horsetools-display-options',
 		'horsetools-customers-options',

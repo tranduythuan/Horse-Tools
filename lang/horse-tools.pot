@@ -1987,7 +1987,7 @@ msgstr ""
 msgid "Does not exist"
 msgstr ""
 
-#: inc/watch-links.php:500
+#: inc/watch-links.php:511
 msgid "Domain"
 msgstr ""
 
@@ -2586,7 +2586,7 @@ msgstr ""
 msgid "Every Horse Tools shortcode. Click any example to copy it."
 msgstr ""
 
-#: inc/watch-links.php:484
+#: inc/watch-links.php:495
 msgid "Every other website your posts and pages point at, one row per domain. Untick anything you do not recognise, then save — you will be told the moment a domain that is not on this list turns up in your content."
 msgstr ""
 
@@ -3028,7 +3028,7 @@ msgstr ""
 msgid "Horse Tools %s is available — an update link now appears under the plugin below. WordPress will download it directly from GitHub."
 msgstr ""
 
-#: inc/watch-links.php:599
+#: inc/watch-links.php:610
 msgid "Horse Tools can tell you when your content starts linking somewhere new."
 msgstr ""
 
@@ -3313,7 +3313,7 @@ msgstr ""
 msgid "Imported %d setting group(s). You can undo this below."
 msgstr ""
 
-#: inc/watch-links.php:502
+#: inc/watch-links.php:513
 msgid "In"
 msgstr ""
 
@@ -3516,11 +3516,11 @@ msgstr ""
 msgid "Link display color"
 msgstr ""
 
-#: inc/watch-links.php:503
+#: inc/watch-links.php:514
 msgid "Link text"
 msgstr ""
 
-#: inc/watch-links.php:501
+#: inc/watch-links.php:512
 msgid "Links"
 msgstr ""
 
@@ -3560,7 +3560,7 @@ msgstr ""
 msgid "Loading…"
 msgstr ""
 
-#: inc/watch-links.php:528
+#: inc/watch-links.php:539
 msgid "Loads a script or an embedded frame from this domain"
 msgstr ""
 
@@ -4203,7 +4203,7 @@ msgstr ""
 msgid "Other links"
 msgstr ""
 
-#: inc/watch-links.php:411 inc/watch-links.php:412
+#: inc/watch-links.php:424 inc/watch-links.php:429 inc/watch-links.php:430
 msgid "Outbound links"
 msgstr ""
 
@@ -4541,7 +4541,7 @@ msgstr ""
 msgid "REST API left ON so the store keeps working"
 msgstr ""
 
-#: inc/watch-links.php:487
+#: inc/watch-links.php:498
 msgid "Rarely-linked domains are listed first, because the one that was added without your knowing is almost never the one you link to from two hundred posts."
 msgstr ""
 
@@ -4741,7 +4741,7 @@ msgstr ""
 msgid "Reveal"
 msgstr ""
 
-#: inc/watch-links.php:595
+#: inc/watch-links.php:606
 msgid "Review the list"
 msgstr ""
 
@@ -4911,7 +4911,7 @@ msgstr ""
 msgid "Save these one-time backup codes somewhere safe — each works once if you lose your phone:"
 msgstr ""
 
-#: inc/watch-links.php:555
+#: inc/watch-links.php:566
 msgid "Save this list"
 msgstr ""
 
@@ -4927,13 +4927,13 @@ msgstr ""
 msgid "Saved."
 msgstr ""
 
-#: inc/watch-links.php:452
+#: inc/watch-links.php:463
 msgid "Saved. %d domain is still not approved."
 msgid_plural "Saved. %d domains are still not approved."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/watch-links.php:453
+#: inc/watch-links.php:464
 msgid "Saved. Everything on this page is approved."
 msgstr ""
 
@@ -5549,11 +5549,11 @@ msgstr ""
 msgid "Still reading your content"
 msgstr ""
 
-#: inc/watch-links.php:476
+#: inc/watch-links.php:487
 msgid "Still reading your content. Come back in a minute."
 msgstr ""
 
-#: inc/watch-links.php:475
+#: inc/watch-links.php:486
 msgid "Still reading your content: %1$d of %2$d. Come back in a minute."
 msgstr ""
 
@@ -6110,7 +6110,7 @@ msgstr ""
 msgid "Thu"
 msgstr ""
 
-#: inc/watch-links.php:493
+#: inc/watch-links.php:504
 msgid "Tick all"
 msgstr ""
 
@@ -6298,7 +6298,7 @@ msgstr ""
 msgid "Unlock"
 msgstr ""
 
-#: inc/watch-links.php:494
+#: inc/watch-links.php:505
 msgid "Untick all"
 msgstr ""
 
@@ -6479,7 +6479,7 @@ msgstr ""
 msgid "Where to run it"
 msgstr ""
 
-#: inc/watch-links.php:461
+#: inc/watch-links.php:472
 msgid "Where your content links to"
 msgstr ""
 
@@ -6671,7 +6671,7 @@ msgstr ""
 msgid "Your container has no GA4 tag in it, so Tag Manager has nothing to pass the click on to. It is placed in the dataLayer and stops there until you build the tag below — until then nothing reaches Analytics."
 msgstr ""
 
-#: inc/watch-links.php:608
+#: inc/watch-links.php:619
 msgid "Your content links to %d domain you have not approved."
 msgid_plural "Your content links to %d domains you have not approved."
 msgstr[0] ""
@@ -6705,11 +6705,11 @@ msgstr ""
 msgid "Your pairing code has expired. Reload this page to get a new one."
 msgstr ""
 
-#: inc/watch-links.php:481
+#: inc/watch-links.php:492
 msgid "Your posts and pages do not link anywhere outside this site."
 msgstr ""
 
-#: inc/watch-links.php:602
+#: inc/watch-links.php:613
 msgid "Your posts and pages link to %d other domain. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
 msgid_plural "Your posts and pages link to %d other domains. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
 msgstr[0] ""
@@ -6863,7 +6863,7 @@ msgstr ""
 msgid "optional title above the table"
 msgstr ""
 
-#: inc/watch-links.php:534
+#: inc/watch-links.php:545
 msgid "passes SEO value"
 msgstr ""
 

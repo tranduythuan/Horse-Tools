@@ -54,7 +54,7 @@ function get_edit_post_link( $id ) { return 'edit.php?post=' . $id; }
 function horsetools_is_plugin_screen() { return false; }
 function horsetools_current_admin_page() { return ''; }
 function horsetools_admin_banner( $t, $h ) {}
-function remove_submenu_page( $a, $b ) {}
+function horsetools_group_menu( $s, $t, $i, $c, $p ) { $GLOBALS['menu_slug'] = 'horsetools-' . $s; }
 function add_submenu_page() {}
 
 // The shared walk. The link watcher asks it whether the first pass has finished
@@ -259,6 +259,14 @@ $big = '';
 for ( $i = 0; $i < 450; $i++ ) { $big .= '<a href="https://site' . $i . '.com/x">x</a>'; }
 horsetools_link_collect( array( $row( 20, $big ) ) );
 eq( count( horsetools_link_found() ), HORSETOOLS_LINK_MAX, 'dừng ở ' . HORSETOOLS_LINK_MAX );
+
+echo "\n21. Màn duyệt phải nằm trong menu — giấu nó đi là WordPress chặn luôn\n";
+// remove_submenu_page() từng được dùng để giấu trang này. WordPress quyết định
+// bạn có được mở admin.php?page=… hay không bằng cách tra slug trong $submenu và
+// đọc quyền từ mục tìm thấy; gỡ mục đó ra là chính admin cũng bị chặn.
+horsetools_link_menu();
+eq( $GLOBALS['menu_slug'] ?? '', 'horsetools-links', 'đăng ký vào menu plugin, không giấu' );
+ok( false !== strpos( horsetools_link_screen_url(), 'page=horsetools-links' ), 'đường dẫn khớp đúng slug đã đăng ký' );
 
 echo "\n" . str_repeat( '-', 56 ) . "\n";
 echo "  $pass đạt, $fail hỏng\n\n";

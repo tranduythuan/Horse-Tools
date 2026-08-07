@@ -402,10 +402,28 @@ function horsetools_link_sort( array $hosts ) {
  * The review screen
  * ---------------------------------------------------------------------- */
 
-// Late, so it lands after every other submenu: main/admin.php positions its
-// first entry by array index, and slipping a page in ahead of it would move it.
+/**
+ * A visible entry in the menu, not a page you can only be sent to.
+ *
+ * It was hidden at first — registered under the plugin menu and then taken back
+ * out with remove_submenu_page(), the usual trick for a screen you arrive at
+ * from a warning. It does not work: WordPress decides whether you may open
+ * admin.php?page=… by looking the slug up in $submenu and reading the capability
+ * off the entry it finds. Take the entry away and the lookup fails, and every
+ * visit — including the administrator's — is answered with "Sorry, you are not
+ * allowed to access this page."
+ *
+ * Which is just as well. "Where does my content link to?" is a question that had
+ * no answer anywhere in this dashboard, and the whole point of the feature is
+ * that it now has one; burying the answer behind a warning that only appears
+ * when something is already wrong would give most of it back.
+ */
 add_action( 'admin_menu', 'horsetools_link_menu', 100 );
 function horsetools_link_menu() {
+	if ( function_exists( 'horsetools_group_menu' ) ) {
+		horsetools_group_menu( 'links', __( 'Outbound links', 'horse-tools' ), 'ti-external-link', 'horsetools_link_screen', 40 );
+		return;
+	}
 	add_submenu_page(
 		'horsetools-options',
 		__( 'Outbound links', 'horse-tools' ),
@@ -414,13 +432,6 @@ function horsetools_link_menu() {
 		'horsetools-links',
 		'horsetools_link_screen'
 	);
-}
-// Registered under the plugin menu so capabilities and screen detection work,
-// then taken back out of it: this is a page you arrive at from the warning that
-// sent you, not a sixteenth entry in an already long sidebar.
-add_action( 'admin_menu', 'horsetools_link_menu_hide', 999 );
-function horsetools_link_menu_hide() {
-	remove_submenu_page( 'horsetools-options', 'horsetools-links' );
 }
 
 function horsetools_link_screen_url() {

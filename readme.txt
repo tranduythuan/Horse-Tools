@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.22
+Stable tag: 1.3.23
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.23 =
+* **Fixes the "Outbound links" screen, which 1.3.22 made impossible to open.** It was registered under the plugin menu and then hidden again with `remove_submenu_page()` — the usual trick for a screen you arrive at from a warning. It does not work: WordPress decides whether you may open a plugin page by looking the slug up in the submenu and reading the capability off the entry it finds there, so removing the entry answers every visit, administrators included, with "Sorry, you are not allowed to access this page."
+* It now sits in the menu next to Security, where it belongs. "Where does my content link to?" is a question this dashboard could not answer at all until yesterday; putting the answer behind a warning that only shows up once something is wrong gave most of that back.
 
 = 1.3.22 =
 * **Horse Tools now keeps a list of every other website your content links to.** This is the one aimed squarely at what actually happens: an administrator account nobody recognises edits three old posts, leaves links in them, and the site runs that way for years. Nothing breaks, nothing looks wrong, and no amount of reading the dashboard would show it — because until now the dashboard had no list of who the site links to.
