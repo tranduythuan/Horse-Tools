@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.16
+Stable tag: 1.3.17
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.17 =
+* **The contact watcher now recognises foreign numbers instead of ignoring them.** It converted `+84…` to the usual `0…` form and threw away everything else, so replacing your hotline with an overseas number was noticed only because the old one had vanished — and *adding* one was not noticed at all, which is the easier attack and the quieter one. A leading `+` or `00` is now taken as the statement it is, the same way `tel:` is; a bare run of digits still has to look like a Vietnamese number, which is what keeps prices and order references out.
 
 = 1.3.16 =
 * The contact-details notice now shows you the details. It said "found 8" and asked you to confirm them without listing what the eight were — which is asking somebody to click yes at nothing, and is exactly how a confirmation step turns into a formality nobody reads.

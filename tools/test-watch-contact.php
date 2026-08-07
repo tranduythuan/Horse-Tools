@@ -71,6 +71,22 @@ foreach ( $reject as $raw => $why ) {
 	eq( horsetools_contact_phone( $raw ), '', "$why: '$raw'" );
 }
 
+echo "\n2b. Số quốc tế phải NHẬN, không được vứt\n";
+// Vứt chúng đi có nghĩa là thay hotline bằng số nước ngoài chỉ bị phát hiện
+// nhờ số cũ biến mất, còn THÊM một số nước ngoài thì hoàn toàn im lặng.
+eq( horsetools_contact_phone( '+14155550123' ), '+14155550123', 'số Mỹ' );
+eq( horsetools_contact_phone( '+1 (415) 555-0123' ), '+14155550123', 'số Mỹ có dấu ngoặc và gạch' );
+eq( horsetools_contact_phone( '+8613800138000' ), '+8613800138000', 'số Trung Quốc' );
+eq( horsetools_contact_phone( '+79001234567' ), '+79001234567', 'số Nga' );
+eq( horsetools_contact_phone( '0084988343412' ), '0988343412', '00 84 vẫn quy về dạng trong nước' );
+eq( horsetools_contact_phone( '+84838216168' ), '0838216168', '+84 vẫn quy về dạng trong nước, không thành +84…' );
+
+echo "\n2c. Nhưng dấu + không được biến mọi thứ thành số\n";
+eq( horsetools_contact_phone( '+1.790.000' ), '', 'giá có dấu + vẫn quá ngắn → loại' );
+eq( horsetools_contact_phone( '+123' ), '', 'quá ngắn' );
+eq( horsetools_contact_phone( '+1234567890123456789' ), '', 'quá dài, ngoài E.164' );
+eq( horsetools_contact_phone( '2+3' ), '', 'biểu thức toán' );
+
 echo "\n3. Rút từ liên kết\n";
 $html = '<a href="tel:0838216168">Hotline</a> '
 	. '<a href="https://zalo.me/0917940068">Zalo</a> '
@@ -88,6 +104,19 @@ $got  = horsetools_contact_extract( $text );
 ok( isset( $got['phone:0988343412'] ), 'bắt được số thứ nhất' );
 ok( isset( $got['phone:0917940068'] ), 'bắt được số thứ hai' );
 eq( count( array_filter( $got, function ( $r ) { return 'phone' === $r['type']; } ) ), 2, 'đúng 2 số — giá 1.790.000 và 300 không bị tính' );
+
+echo "\n4b. Số quốc tế viết trần trong bài\n";
+$got = horsetools_contact_extract( 'Hotline quốc tế +1 415 555 0123, giá +1.790.000đ, gọi 0988343412.' );
+ok( isset( $got['phone:+14155550123'] ), 'bắt được số nước ngoài viết trần' );
+ok( isset( $got['phone:0988343412'] ), 'vẫn bắt số trong nước' );
+ok( ! isset( $got['phone:+1790000'] ), 'giá viết kèm dấu + không bị tính' );
+
+echo "\n4c. Thêm một số lạ mà không xoá số cũ — trước đây hoàn toàn im lặng\n";
+$before = horsetools_contact_extract( 'Gọi 0988343412' );
+$after  = horsetools_contact_extract( 'Gọi 0988343412 hoặc +14155550123' );
+$d      = horsetools_contact_diff( $after, $before );
+eq( count( $d['added'] ), 1, 'phát hiện đúng một số mới' );
+eq( count( $d['removed'] ), 0, 'không có gì mất — kẻ tấn công chỉ thêm vào' );
 
 echo "\n5. Cùng số xuất hiện nhiều lần thì gom lại\n";
 $got = horsetools_contact_extract( 'Gọi 0988343412 · hoặc tel:0988.34.34.12 · hoặc 0988 34 34 12' );

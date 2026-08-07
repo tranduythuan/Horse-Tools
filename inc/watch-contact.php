@@ -45,29 +45,50 @@ const HORSETOOLS_CONTACT_BASELINE = 'horsetools_contact_baseline';
  * @return string Canonical `0XXXXXXXXX`, or ''.
  */
 function horsetools_contact_phone( $raw ) {
-	$s = (string) $raw;
+	$compact = preg_replace( '/[^\d+]/', '', (string) $raw );
+	if ( '' === $compact ) {
+		return '';
+	}
 
-	// Keep a leading + so the country code can be recognised, drop everything
-	// else that is not a digit.
-	$plus = ( '' !== $s && '+' === $s[0] );
-	$d    = preg_replace( '/\D+/', '', $s );
+	// A leading + or 00 is somebody stating that this is a phone number, the
+	// same way tel: does. Without one, only the 0… form a Vietnamese reader
+	// would write counts — that is what keeps prices and order references out.
+	//
+	// Foreign numbers have to be recognised, not discarded. Discarding them
+	// meant that replacing the hotline with an overseas number was noticed only
+	// because the old one had gone, and that *adding* one was not noticed at all.
+	$intl = false;
+	if ( '+' === $compact[0] ) {
+		$intl = true;
+		$d    = substr( $compact, 1 );
+	} elseif ( 0 === strpos( $compact, '00' ) ) {
+		$intl = true;
+		$d    = substr( $compact, 2 );
+	} else {
+		$d = $compact;
+	}
+	$d = preg_replace( '/\D+/', '', $d );
 	if ( '' === $d ) {
 		return '';
 	}
 
-	// +84… and 84… are the same number written for someone abroad.
-	if ( ( $plus || 11 === strlen( $d ) || 12 === strlen( $d ) ) && 0 === strpos( $d, '84' ) ) {
-		$d = '0' . substr( $d, 2 );
+	// +84…, 0084… and a bare 84… are the same number as the 0… form, and must
+	// collapse to it or the hotline reads as two different numbers.
+	if ( 0 === strpos( $d, '84' ) && ( $intl || 11 === strlen( $d ) || 12 === strlen( $d ) ) ) {
+		$d    = '0' . substr( $d, 2 );
+		$intl = false;
+	}
+
+	if ( $intl ) {
+		$len = strlen( $d );
+		return ( $len >= 8 && $len <= 15 ) ? '+' . $d : '';
 	}
 
 	if ( 0 !== strpos( $d, '0' ) ) {
 		return '';
 	}
 	$len = strlen( $d );
-	if ( $len < 10 || $len > 11 ) {
-		return '';
-	}
-	return $d;
+	return ( $len >= 10 && $len <= 11 ) ? $d : '';
 }
 
 /**
@@ -159,6 +180,16 @@ function horsetools_contact_extract( $text ) {
 		$text
 	);
 	if ( preg_match_all( '~(?<![0-9])(0[0-9][0-9. ]{7,16}[0-9])(?![0-9])~', $bare, $m ) ) {
+		foreach ( $m[1] as $hit ) {
+			$put( 'phone', horsetools_contact_phone( $hit ), trim( $hit ) );
+		}
+	}
+
+	// The same, written for someone abroad. The + is what makes this safe to
+	// look for: a run of digits with a plus in front of it is a phone number
+	// and almost nothing else. Anything too short to be one — a price written
+	// "+1.790.000" — is dropped by the length check in the normaliser.
+	if ( preg_match_all( '~(?<![0-9+])(\+\d[\d. -]{6,18}\d)(?![0-9])~', $bare, $m ) ) {
 		foreach ( $m[1] as $hit ) {
 			$put( 'phone', horsetools_contact_phone( $hit ), trim( $hit ) );
 		}
