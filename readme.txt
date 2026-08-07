@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.24
+Stable tag: 1.3.25
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,16 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.25 =
+* **A numbered check-in message, so that silence becomes a signal.** Every other watcher here reports trouble, and none of them can report the one failure that matters most: themselves stopping. Switch the plugin off, delete the options, let the site die — everything goes quiet, and quiet is exactly what a site with nothing wrong also looks like. Two years of casino links looked like quiet too.
+* So the site now sends you a short message on a schedule, with a number on it, **even when nothing is wrong**. Three different failures each leave their own mark: numbers that skip mean messages were sent and never reached you (a blocked bot, a spam filter); a message that arrives late means nothing was running the schedule; nothing at all means something stopped it — and that is the one you can only notice from outside the site, which is why every message says when the next is due.
+* The counter advances on every **attempt**, not on every success. If it only advanced on success there would be no gap to see, and a channel that has been failing for a month would look identical to a month with no messages due.
+* The message carries the state, not just "still here" — settings contacts, content contacts, outbound domains, exposed files, each with a plain OK or a warning. A heartbeat that says nothing is one you stop opening, and then the number in it stops being read too.
+* Telegram if the site has a bot, email otherwise, with a **test button** that reports what the channel actually said — "chat not found", "bot was blocked by the user" — instead of just "failed". A channel nobody has ever seen work is not a channel.
+* **An honest list of what is not protected**, on the health card and the settings screen. A green tick meaning "this is switched on" is not the same as "you would find out", and the difference is the whole point.
+* Driven by WP-Cron **and** by admin page loads, because neither alone is enough: cron does not run on a site with no visitors, and an admin hook does not run on a site whose owner does not log in. The cron half is loaded outside the `is_admin()` gate — registering a cron hook only in requests where cron never runs is how this plugin once shipped a scheduled task that never fired once.
+* Covered by `tools/test-heartbeat.php`: 54 checks, including that a failed send still advances the counter, that a failure does not turn into a retry loop on every admin page load, and that the "not protected" list says so while it is true and stops when it stops being true.
 
 = 1.3.24 =
 * **Fixes the "These are correct — remember them" button, which did nothing on a site that had already confirmed its settings.** An early `return` sat between the button and the script that made it work, so in exactly that state — settings agreed, content read, content waiting for its first confirmation — the button was printed with nothing listening to it. It looked identical to the two cases that did work. A confirm button that silently does nothing is worse than no button at all: you believe you have agreed to a baseline that was never written, and the watch you think is on is off.

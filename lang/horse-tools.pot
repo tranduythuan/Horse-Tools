@@ -30,6 +30,18 @@ msgstr ""
 msgid "%1$d post(s) will publish FAQ schema (%2$s questions on average)."
 msgstr ""
 
+#: inc/watch-heartbeat.php:160
+msgid "%d FOUND"
+msgstr ""
+
+#: inc/watch-heartbeat.php:134
+msgid "%d NEW"
+msgstr ""
+
+#: inc/watch-heartbeat.php:144
+msgid "%d domains, all approved"
+msgstr ""
+
 #: inc/ui.php:515
 msgid "%d enabled"
 msgstr ""
@@ -585,7 +597,7 @@ msgstr ""
 msgid "Ask a custom question on the login form"
 msgstr ""
 
-#: inc/health.php:252
+#: inc/health.php:274
 msgid "Ask your host to update PHP to 8.1 or newer."
 msgstr ""
 
@@ -863,6 +875,10 @@ msgstr ""
 msgid "By email — a one-time code is sent to your account address:"
 msgstr ""
 
+#: inc/watch-heartbeat.php:121
+msgid "CHANGED"
+msgstr ""
+
 #: main/gindex.php:64 main/section/seo-index.php:36
 msgid "CHECK"
 msgstr ""
@@ -981,6 +997,14 @@ msgstr ""
 
 #: inc/update.php:246
 msgid "Check for updates"
+msgstr ""
+
+#: inc/watch-heartbeat.php:312
+msgid "Check that WP-Cron is running on this site"
+msgstr ""
+
+#: main/security.php:24
+msgid "Check-in"
 msgstr ""
 
 #: main/section/cu-track.php:67
@@ -1263,8 +1287,16 @@ msgstr ""
 msgid "Contact details are the ones you confirmed"
 msgstr ""
 
+#: inc/watch-heartbeat.php:127
+msgid "Contact details in your posts"
+msgstr ""
+
 #: inc/health.php:162 inc/health.php:170
 msgid "Contact details in your posts are watched"
+msgstr ""
+
+#: inc/watch-heartbeat.php:117
+msgid "Contact details in your settings"
 msgstr ""
 
 #: inc/chat.php:374 inc/chat.php:431
@@ -1383,7 +1415,7 @@ msgstr ""
 msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
 msgstr ""
 
-#: inc/health.php:281
+#: inc/health.php:303
 msgid "Core, plugins and themes are up to date"
 msgstr ""
 
@@ -2012,6 +2044,10 @@ msgstr ""
 msgid "Download link"
 msgstr ""
 
+#: inc/watch-heartbeat.php:157
+msgid "Downloadable secrets in the site folder"
+msgstr ""
+
 #: main/page/2scuri.php:249
 msgid "Downloading fonts…"
 msgstr ""
@@ -2060,6 +2096,10 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
+#: main/section/sec-heartbeat.php:78
+msgid "Email is the fallback and not a good one — a security message sent by a shop's own server is exactly the kind that lands in spam. Set up the Telegram bot under WooCommerce if you can."
+msgstr ""
+
 #: inc/2fa.php:573
 msgid "Email me a code"
 msgstr ""
@@ -2082,6 +2122,10 @@ msgstr ""
 
 #: main/page/7mail.php:148
 msgid "Email subject"
+msgstr ""
+
+#: inc/alert.php:71
+msgid "Email to %s"
 msgstr ""
 
 #: main/page/ht-about2.php:21
@@ -2586,6 +2630,14 @@ msgstr ""
 msgid "Every Horse Tools shortcode. Click any example to copy it."
 msgstr ""
 
+#: main/section/sec-heartbeat.php:40
+msgid "Every day"
+msgstr ""
+
+#: main/section/sec-heartbeat.php:43
+msgid "Every month"
+msgstr ""
+
 #: inc/watch-links.php:495
 msgid "Every other website your posts and pages point at, one row per domain. Untick anything you do not recognise, then save — you will be told the moment a domain that is not on this list turns up in your content."
 msgstr ""
@@ -2594,12 +2646,24 @@ msgstr ""
 msgid "Every page load (init)"
 msgstr ""
 
+#: main/section/sec-heartbeat.php:42
+msgid "Every two weeks"
+msgstr ""
+
+#: main/section/sec-heartbeat.php:41
+msgid "Every week (recommended)"
+msgstr ""
+
 #: main/section/snippets-screen.php:47
 msgid "Everyone"
 msgstr ""
 
 #: main/page/2scuri.php:122
 msgid "Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off."
+msgstr ""
+
+#: main/section/sec-heartbeat.php:18
+msgid "Everything else on this page warns you when something is wrong — but only on a screen you have to open. It cannot warn you that it stopped: a site with the plugin switched off looks exactly like a site with nothing wrong."
 msgstr ""
 
 #: main/section/sec-login.php:14
@@ -2720,6 +2784,10 @@ msgstr ""
 
 #: inc/shortcode.php:728
 msgid "First row is a header"
+msgstr ""
+
+#: inc/watch-heartbeat.php:305
+msgid "Fix the channel and send a test message"
 msgstr ""
 
 #: main/notify.php:117 main/section/cu-notify3.php:32
@@ -2872,7 +2940,7 @@ msgstr ""
 msgid "Google sign-in"
 msgstr ""
 
-#: inc/health.php:350
+#: inc/health.php:372
 msgid "Grade %s"
 msgstr ""
 
@@ -3028,6 +3096,10 @@ msgstr ""
 msgid "Horse Tools %s is available — an update link now appears under the plugin below. WordPress will download it directly from GitHub."
 msgstr ""
 
+#: inc/watch-heartbeat.php:103 inc/watch-heartbeat.php:198
+msgid "Horse Tools beat #%1$d — %2$s"
+msgstr ""
+
 #: inc/watch-links.php:610
 msgid "Horse Tools can tell you when your content starts linking somewhere new."
 msgstr ""
@@ -3060,6 +3132,10 @@ msgstr ""
 msgid "Horse Tools table"
 msgstr ""
 
+#: inc/alert.php:126
+msgid "Horse Tools — %s"
+msgstr ""
+
 #: main/page/ht-about1.php:8
 msgid "Horse Tools:"
 msgstr ""
@@ -3078,6 +3154,10 @@ msgstr ""
 
 #: inc/chat.php:496
 msgid "Hours"
+msgstr ""
+
+#: main/section/sec-heartbeat.php:36
+msgid "How often"
 msgstr ""
 
 #: main/section/ct-sc5.php:14 main/shortcode.php:182
@@ -3137,12 +3217,20 @@ msgstr ""
 msgid "If a theme/plugin script misbehaves, add its handle or file name to the exclusion list below. Disable if you already use a full-page optimiser that defers scripts."
 msgstr ""
 
+#: inc/watch-heartbeat.php:170
+msgid "If it does not arrive, something stopped it — check the site."
+msgstr ""
+
 #: main/page/7mail.php:159
 msgid "If someone replies to a comment, there will be an email notification sent to the commenter"
 msgstr ""
 
 #: main/section/sec-recaptcha.php:33
 msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
+msgstr ""
+
+#: inc/watch-heartbeat.php:289
+msgid "If this site stops working, or Horse Tools is switched off, nobody is told. Every warning here is only seen by someone who logs in and looks."
 msgstr ""
 
 #: main/page/ht-setting.php:83
@@ -3281,7 +3369,7 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: inc/health.php:230
+#: inc/health.php:252
 msgid "Images are lazy-loaded"
 msgstr ""
 
@@ -3373,7 +3461,7 @@ msgstr ""
 msgid "Install analytics first"
 msgstr ""
 
-#: inc/health.php:283
+#: inc/health.php:305
 msgid "Install the pending updates."
 msgstr ""
 
@@ -3396,6 +3484,14 @@ msgstr ""
 msgid "Invalid code. Please try again."
 msgstr ""
 
+#: inc/watch-heartbeat.php:325
+msgid "It continues on its own each time you open an admin page"
+msgstr ""
+
+#: main/section/sec-heartbeat.php:112
+msgid "It failed: %s"
+msgstr ""
+
 #: main/page/1speed.php:104
 msgid "JavaScript &amp; connections"
 msgstr ""
@@ -3410,6 +3506,10 @@ msgstr ""
 
 #: main/page/ht-setting.php:81
 msgid "Language"
+msgstr ""
+
+#: main/section/sec-heartbeat.php:95
+msgid "Last message: #%1$d, %2$s ago."
 msgstr ""
 
 #: inc/shortcode.php:732
@@ -3442,6 +3542,10 @@ msgstr ""
 
 #: main/section/seo-toc.php:234
 msgid "Leave empty to use the icon chosen above; anything pasted here replaces it. Its colour comes from the Icon colour setting below, so the fill in your SVG is ignored. Scripts and event handlers are removed."
+msgstr ""
+
+#: main/section/sec-heartbeat.php:70
+msgid "Leave this empty and the message goes to the same Telegram chat as your order notifications, or by email if you have not set a bot up. Orders go to whoever packs them; this does not, so there is a field of its own."
 msgstr ""
 
 #: main/page/12chat.php:485
@@ -3629,7 +3733,7 @@ msgstr ""
 msgid "Login lockout, two-factor, reCAPTCHA and the login page."
 msgstr ""
 
-#: main/security.php:24
+#: main/security.php:29
 msgid "Login page"
 msgstr ""
 
@@ -3677,7 +3781,7 @@ msgstr ""
 msgid "Maintenance (503)"
 msgstr ""
 
-#: main/security.php:30
+#: main/security.php:35
 msgid "Maintenance 503"
 msgstr ""
 
@@ -3705,7 +3809,7 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: inc/health.php:237
+#: inc/health.php:259
 msgid "Media tab → JPG compression"
 msgstr ""
 
@@ -3785,8 +3889,12 @@ msgstr ""
 msgid "Move snippets between sites"
 msgstr ""
 
-#: inc/health.php:259
+#: inc/health.php:281
 msgid "Move the site address to https://"
+msgstr ""
+
+#: inc/watch-heartbeat.php:150
+msgid "NOT APPROVED: %s"
 msgstr ""
 
 #: main/notify.php:19 main/notify.php:67
@@ -3837,6 +3945,14 @@ msgstr ""
 msgid "Next automatic check: %s"
 msgstr ""
 
+#: inc/watch-heartbeat.php:167
+msgid "Next beat due: %s"
+msgstr ""
+
+#: main/section/sec-heartbeat.php:104
+msgid "Next one due %s."
+msgstr ""
+
 #: main/section/snippets-screen.php:43
 msgid "No"
 msgstr ""
@@ -3857,7 +3973,7 @@ msgstr ""
 msgid "No Google Analytics tag turned up, either in your settings or on the home page. If you have not installed one yet, Site Kit by Google (or any GA4 plugin) is the usual way. If you know you do have one — added through Tag Manager, a caching layer, or a consent tool that loads it later — this check simply could not see it: switch the setting on anyway. It looks for analytics at the moment of the click, not now, so it starts working the instant a tag is present."
 msgstr ""
 
-#: inc/health.php:221
+#: inc/health.php:243
 msgid "No Google Fonts leaking to Google"
 msgstr ""
 
@@ -3885,7 +4001,7 @@ msgstr ""
 msgid "No caption"
 msgstr ""
 
-#: inc/health.php:201
+#: inc/health.php:223
 msgid "No downloadable secrets in the site folder"
 msgstr ""
 
@@ -3969,8 +4085,12 @@ msgstr ""
 msgid "None: default not selected, Auto: background image automatically changes each time the page is loaded, Color: change the color you want, Upload: upload the background image you want"
 msgstr ""
 
-#: inc/2fa.php:252 inc/speed.php:518
+#: inc/2fa.php:252 inc/speed.php:518 inc/watch-heartbeat.php:339
 msgid "Not allowed."
+msgstr ""
+
+#: inc/watch-heartbeat.php:189
+msgid "Not due yet."
 msgstr ""
 
 #: inc/chat.php:173
@@ -3999,6 +4119,10 @@ msgstr ""
 
 #: inc/shortcode.php:736
 msgid "Nothing to preview yet."
+msgstr ""
+
+#: inc/alert.php:90
+msgid "Nothing to send."
 msgstr ""
 
 #: main/section/cu-track.php:166
@@ -4163,11 +4287,11 @@ msgstr ""
 msgid "Optimize saving post content into the database"
 msgstr ""
 
-#: inc/health.php:227
+#: inc/health.php:249
 msgid "Optimize tab"
 msgstr ""
 
-#: inc/health.php:232
+#: inc/health.php:254
 msgid "Optimize tab → image lazy loading"
 msgstr ""
 
@@ -4215,6 +4339,10 @@ msgstr ""
 msgid "Outstanding color"
 msgstr ""
 
+#: inc/health.php:208
+msgid "Overdue — nothing has been running the schedule"
+msgstr ""
+
 #: main/page/5media.php:197
 msgid "Overlay color"
 msgstr ""
@@ -4227,7 +4355,7 @@ msgstr ""
 msgid "PHP editing unlocked for %d minutes."
 msgstr ""
 
-#: inc/health.php:271
+#: inc/health.php:293
 msgid "PHP errors are not shown to visitors"
 msgstr ""
 
@@ -4235,7 +4363,7 @@ msgstr ""
 msgid "PHP errors: server paths, fragments of queries, sometimes the contents of a failed request."
 msgstr ""
 
-#: inc/health.php:251
+#: inc/health.php:273
 msgid "PHP is a supported version (%s)"
 msgstr ""
 
@@ -4549,7 +4677,7 @@ msgstr ""
 msgid "Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see."
 msgstr ""
 
-#: inc/health.php:266
+#: inc/health.php:288
 msgid "Reading settings → uncheck “Discourage search engines”"
 msgstr ""
 
@@ -4755,6 +4883,10 @@ msgstr ""
 
 #: main/page/12chat.php:485
 msgid "Right drawer"
+msgstr ""
+
+#: main/section/sec-heartbeat.php:74
+msgid "Right now these would go to: %s"
 msgstr ""
 
 #: main/page/11google.php:36 main/page/9user.php:48 main/section/ct-sc1.php:23 main/shortcode.php:56
@@ -5033,7 +5165,7 @@ msgstr ""
 msgid "Secret key"
 msgstr ""
 
-#: inc/health.php:83 main/admin.php:32 main/security.php:38
+#: inc/health.php:83 main/admin.php:32 main/security.php:43
 msgid "Security"
 msgstr ""
 
@@ -5069,6 +5201,10 @@ msgstr ""
 msgid "Security tab → Block user enumeration"
 msgstr ""
 
+#: inc/health.php:202
+msgid "Security tab → Check-in → turn on the regular message"
+msgstr ""
+
 #: inc/health.php:108
 msgid "Security tab → Disable unused endpoints"
 msgstr ""
@@ -5081,11 +5217,11 @@ msgstr ""
 msgid "Security tab → Lock down the admin"
 msgstr ""
 
-#: inc/health.php:212
+#: inc/health.php:234
 msgid "Security tab → Privacy → Scan external requests"
 msgstr ""
 
-#: inc/health.php:219
+#: inc/health.php:241
 msgid "Security tab → Privacy → self-host Google Fonts"
 msgstr ""
 
@@ -5101,7 +5237,7 @@ msgstr ""
 msgid "See the GitHub release page for details."
 msgstr ""
 
-#: inc/health.php:203
+#: inc/health.php:225
 msgid "See the banner at the top of any Horse Tools screen"
 msgstr ""
 
@@ -5183,6 +5319,18 @@ msgstr ""
 msgid "Send a Telegram code"
 msgstr ""
 
+#: inc/watch-heartbeat.php:298
+msgid "Send a test message"
+msgstr ""
+
+#: main/section/sec-heartbeat.php:84
+msgid "Send a test message now"
+msgstr ""
+
+#: main/section/sec-heartbeat.php:26
+msgid "Send me a regular check-in message"
+msgstr ""
+
 #: main/page/2scuri.php:132
 msgid "Send security headers"
 msgstr ""
@@ -5199,12 +5347,20 @@ msgstr ""
 msgid "Sender name"
 msgstr ""
 
+#: main/section/sec-heartbeat.php:125
+msgid "Sending…"
+msgstr ""
+
 #: main/section/cu-track.php:131
 msgid "Sends one event to your analytics each time a visitor taps a contact link — phone, SMS, email, Zalo, Messenger, Telegram, WhatsApp, Viber, Line, WeChat, TikTok, Maps and the rest. Any other chat button is recorded under its own site name, so Instagram, Shopee, Signal and anything you add later are covered without waiting for an update. Phone, SMS, email and Viber links count anywhere on the site, including inside your posts; the others count inside the chat widgets, so an article full of outbound links does not flood the report. Nothing is stored on your site and no personal data is involved."
 msgstr ""
 
 #: main/export.php:218
 msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
+msgstr ""
+
+#: inc/watch-heartbeat.php:350
+msgid "Sent. Check %s — if nothing arrives, the channel is not working even though the site thinks it is."
 msgstr ""
 
 #: inc/watch-exposure.php:57
@@ -5251,7 +5407,7 @@ msgstr ""
 msgid "Setting group"
 msgstr ""
 
-#: horse-tools.php:234
+#: horse-tools.php:243
 msgid "Settings"
 msgstr ""
 
@@ -5384,7 +5540,7 @@ msgstr ""
 msgid "Site"
 msgstr ""
 
-#: inc/health.php:342
+#: inc/health.php:364
 msgid "Site health"
 msgstr ""
 
@@ -5450,6 +5606,10 @@ msgstr ""
 
 #: main/content.php:49
 msgid "Snippets"
+msgstr ""
+
+#: main/section/sec-heartbeat.php:20
+msgid "So this sends you a short message on a schedule, with a number on it, even when everything is fine. Numbers that skip mean messages were sent and never reached you. A message that arrives late means nothing was running the schedule. Nothing at all means something stopped it — and that is the one you can only notice from outside the site, which is why each message tells you when to expect the next."
 msgstr ""
 
 #: inc/shortcode.php:750
@@ -5702,6 +5862,14 @@ msgstr ""
 msgid "Teal"
 msgstr ""
 
+#: inc/alert.php:68
+msgid "Telegram (chat %s)"
+msgstr ""
+
+#: main/section/sec-heartbeat.php:65
+msgid "Telegram chat ID for security messages (optional)"
+msgstr ""
+
 #: main/page/2scuri.php:120
 msgid "Telegram recovery is ON but this site has no bot token yet, so no recovery code can be sent. Add a bot token in the %1$s module (the “Configure order notifications to be sent to Telegram” section) — it is easy to miss because it lives there, not here — then each user pastes their own chat ID on their profile."
 msgstr ""
@@ -5716,6 +5884,10 @@ msgstr ""
 
 #: inc/2fa.php:267
 msgid "Telegram returned no updates (the bot may use a webhook, or the token is wrong)."
+msgstr ""
+
+#: main/section/sec-heartbeat.php:14
+msgid "Tell me the site is still being watched"
 msgstr ""
 
 #: main/page/1speed.php:121
@@ -5818,6 +5990,10 @@ msgstr ""
 msgid "The changing image is square, with the standard size being 100x100 pixels"
 msgstr ""
 
+#: inc/watch-heartbeat.php:297
+msgid "The check-in message is on but has never been sent. Until one arrives you do not know the channel works."
+msgstr ""
+
 #: inc/2fa.php:407
 msgid "The code is how the site tells your chat apart from everyone else’s — it finds only the chat that sent it. Recovery codes then reach your own Telegram, not the admin. (You can also type the chat ID number in manually.)"
 msgstr ""
@@ -5850,6 +6026,10 @@ msgstr ""
 msgid "The first image becomes the featured image"
 msgstr ""
 
+#: main/section/sec-heartbeat.php:30
+msgid "The first one goes out as soon as you save, so you find out straight away whether the channel works."
+msgstr ""
+
 #: inc/scuri.php:519
 msgid "The font files could not be downloaded."
 msgstr ""
@@ -5870,11 +6050,23 @@ msgstr ""
 msgid "The icon on its own."
 msgstr ""
 
+#: inc/watch-heartbeat.php:304
+msgid "The last check-in message could not be sent: %s"
+msgstr ""
+
+#: inc/watch-heartbeat.php:311
+msgid "The last check-in message went out %s ago, which is later than it should be. Nothing has been running the schedule."
+msgstr ""
+
+#: inc/health.php:206
+msgid "The last one could not be sent — Security tab → Check-in"
+msgstr ""
+
 #: main/page/1speed.php:245
 msgid "The most powerful but riskiest speed option. Without the Critical CSS below, the page can flash unstyled for a moment (FOUC). Paste your above-the-fold CSS, or keep the main theme stylesheet in the exclusion list. Test the front end carefully, and don’t combine it with another plugin that also optimises CSS delivery."
 msgstr ""
 
-#: inc/health.php:225
+#: inc/health.php:247
 msgid "The optimisation module is on"
 msgstr ""
 
@@ -5894,6 +6086,10 @@ msgstr ""
 msgid "The reCAPTCHA is invalid"
 msgstr ""
 
+#: main/section/sec-heartbeat.php:137
+msgid "The request itself failed."
+msgstr ""
+
 #: main/section/sec-recaptcha.php:32
 msgid "The score threshold applies to reCAPTCHA v3 only. Google returns 1.0 for traffic it is confident is human and 0.0 for traffic it is confident is a bot; 0.5 is the recommended starting point. Raise it to block more aggressively, lower it if real visitors are being turned away."
 msgstr ""
@@ -5910,11 +6106,15 @@ msgstr ""
 msgid "The sheet must be shared as “Anyone with the link can view”. With auto-refresh on, the table updates itself from the sheet."
 msgstr ""
 
-#: inc/health.php:257
+#: main/section/sec-heartbeat.php:108
+msgid "The site handed it over successfully. That is not the same as it arriving — if the numbers you receive skip, the channel is dropping them."
+msgstr ""
+
+#: inc/health.php:279
 msgid "The site is served over HTTPS"
 msgstr ""
 
-#: inc/health.php:264
+#: inc/health.php:286
 msgid "The site is visible to search engines"
 msgstr ""
 
@@ -6086,6 +6286,10 @@ msgstr ""
 msgid "This site has WordPress's built-in file editor switched off (DISALLOW_FILE_EDIT) — good. PHP snippets still work, because they carry their own protections: two-factor unlock, a syntax check before saving, auto-disable on a crash, and code signing. To switch them off as well, add HORSETOOLS_NO_PHP to wp-config.php."
 msgstr ""
 
+#: inc/alert.php:122
+msgid "This site has no valid admin email address."
+msgstr ""
+
 #: inc/php-snippet.php:412
 msgid "This site sets DISALLOW_FILE_MODS, so running PHP from the database is not allowed."
 msgstr ""
@@ -6218,8 +6422,16 @@ msgstr ""
 msgid "Turn it off for this user (e.g. they lost their device)"
 msgstr ""
 
-#: inc/health.php:274
+#: inc/health.php:296
 msgid "Turn off WP_DEBUG_DISPLAY on a live site."
+msgstr ""
+
+#: inc/watch-heartbeat.php:290
+msgid "Turn on the regular check-in message"
+msgstr ""
+
+#: inc/health.php:204
+msgid "Turned on but never sent — send a test message"
 msgstr ""
 
 #: main/page/2scuri.php:194
@@ -6322,7 +6534,7 @@ msgstr ""
 msgid "Upload font success"
 msgstr ""
 
-#: inc/health.php:235
+#: inc/health.php:257
 msgid "Uploaded images are compressed"
 msgstr ""
 
@@ -6427,6 +6639,10 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
+#: main/section/sec-heartbeat.php:59
+msgid "Weekly is the useful setting. Daily turns the one message that is supposed to mean something into noise within a fortnight, and once it is noise a gap in the numbering is not noticed either."
+msgstr ""
+
 #: inc/custom.php:257
 msgid "Welcome to Horse Tools"
 msgstr ""
@@ -6479,7 +6695,7 @@ msgstr ""
 msgid "Where to run it"
 msgstr ""
 
-#: inc/watch-links.php:472
+#: inc/watch-heartbeat.php:140 inc/watch-links.php:472
 msgid "Where your content links to"
 msgstr ""
 
@@ -6517,6 +6733,10 @@ msgstr ""
 
 #: main/export.php:241
 msgid "WooCommerce / Store"
+msgstr ""
+
+#: inc/alert.php:130
+msgid "WordPress could not hand the message to the mail server."
 msgstr ""
 
 #: main/section/snippets-screen.php:143
@@ -6643,6 +6863,10 @@ msgstr ""
 msgid "You need to activate this feature and customize the content below so that new registered users can receive emails"
 msgstr ""
 
+#: inc/health.php:213
+msgid "You would be told if this site went quiet"
+msgstr ""
+
 #: inc/goo.php:193
 msgid "Your Google account email address is not verified."
 msgstr ""
@@ -6669,6 +6893,14 @@ msgstr ""
 
 #: main/section/cu-track.php:180
 msgid "Your container has no GA4 tag in it, so Tag Manager has nothing to pass the click on to. It is placed in the dataLayer and stops there until you build the tag below — until then nothing reaches Analytics."
+msgstr ""
+
+#: inc/watch-heartbeat.php:323
+msgid "Your content has not been read all the way through yet (%1$d of %2$d), so nothing found in it can be trusted as complete."
+msgstr ""
+
+#: inc/watch-heartbeat.php:324
+msgid "Your content has not been read all the way through yet."
 msgstr ""
 
 #: inc/watch-links.php:619
@@ -6847,6 +7079,18 @@ msgstr ""
 msgid "nofollow + new tab on external links"
 msgstr ""
 
+#: inc/watch-heartbeat.php:160
+msgid "none"
+msgstr ""
+
+#: inc/watch-heartbeat.php:120 inc/watch-heartbeat.php:132
+msgid "not confirmed yet"
+msgstr ""
+
+#: inc/watch-heartbeat.php:148
+msgid "not reviewed yet"
+msgstr ""
+
 #: main/section/snippets-screen.php:255
 msgid "off"
 msgstr ""
@@ -6901,6 +7145,10 @@ msgstr ""
 
 #: main/section/ct-sc5.php:110 main/shortcode.php:278
 msgid "showing first"
+msgstr ""
+
+#: inc/watch-heartbeat.php:130 inc/watch-heartbeat.php:146
+msgid "still reading"
 msgstr ""
 
 #: main/page/2scuri.php:251

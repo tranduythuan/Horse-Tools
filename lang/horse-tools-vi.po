@@ -7213,3 +7213,189 @@ msgstr "Tick hết"
 
 msgid "Untick all"
 msgstr "Bỏ tick hết"
+
+msgid "Check-in"
+msgstr "Báo còn sống"
+
+msgid "Tell me the site is still being watched"
+msgstr "Báo cho tôi biết site vẫn đang được canh"
+
+msgid "You would be told if this site went quiet"
+msgstr "Site im tiếng thì bạn sẽ được báo"
+
+msgid "Send me a regular check-in message"
+msgstr "Gửi tin báo định kỳ cho tôi"
+
+msgid "The first one goes out as soon as you save, so you find out straight away whether the channel works."
+msgstr "Tin đầu tiên đi ngay khi bạn lưu, để biết luôn kênh gửi có chạy hay không."
+
+msgid "Everything else on this page warns you when something is wrong — but only on a screen you have to open. It cannot warn you that it stopped: a site with the plugin switched off looks exactly like a site with nothing wrong."
+msgstr "Mọi thứ khác trên trang này chỉ báo khi có chuyện — mà báo trên một màn hình bạn phải tự mở ra xem. Nó không thể báo rằng chính nó đã ngừng: một site bị tắt plugin trông y hệt một site không có gì sai."
+
+msgid "So this sends you a short message on a schedule, with a number on it, even when everything is fine. Numbers that skip mean messages were sent and never reached you. A message that arrives late means nothing was running the schedule. Nothing at all means something stopped it — and that is the one you can only notice from outside the site, which is why each message tells you when to expect the next."
+msgstr "Nên cái này gửi cho bạn một tin ngắn theo lịch, có đánh số, kể cả khi mọi thứ đều ổn. Số nhảy cóc nghĩa là tin có gửi mà không tới tay bạn. Tin tới trễ nghĩa là không có gì chạy lịch cả. Không có tin nào nghĩa là có thứ đã chặn nó lại — và đó là trường hợp duy nhất chỉ đứng ngoài site mới thấy được, nên tin nào cũng nói luôn khi nào có tin kế."
+
+msgid "How often"
+msgstr "Bao lâu một lần"
+
+msgid "Every day"
+msgstr "Mỗi ngày"
+
+msgid "Every week (recommended)"
+msgstr "Mỗi tuần (nên chọn)"
+
+msgid "Every two weeks"
+msgstr "Hai tuần một lần"
+
+msgid "Every month"
+msgstr "Mỗi tháng"
+
+msgid "Weekly is the useful setting. Daily turns the one message that is supposed to mean something into noise within a fortnight, and once it is noise a gap in the numbering is not noticed either."
+msgstr "Mỗi tuần là mức dùng được. Mỗi ngày thì chỉ hai tuần là cái tin lẽ ra phải có ý nghĩa biến thành tiếng ồn, mà đã thành tiếng ồn thì số nhảy cóc cũng chẳng ai để ý."
+
+msgid "Telegram chat ID for security messages (optional)"
+msgstr "Chat ID Telegram cho tin bảo mật (không bắt buộc)"
+
+msgid "Leave this empty and the message goes to the same Telegram chat as your order notifications, or by email if you have not set a bot up. Orders go to whoever packs them; this does not, so there is a field of its own."
+msgstr "Để trống thì tin đi vào đúng chat Telegram nhận đơn hàng, hoặc gửi email nếu bạn chưa dựng bot. Đơn hàng thì ai gói hàng nhận, còn cái này thì không, nên nó có ô riêng."
+
+msgid "Right now these would go to: %s"
+msgstr "Hiện tại tin sẽ gửi tới: %s"
+
+msgid "Email is the fallback and not a good one — a security message sent by a shop's own server is exactly the kind that lands in spam. Set up the Telegram bot under WooCommerce if you can."
+msgstr "Email chỉ là phương án chót và không hay ho gì — tin bảo mật do chính máy chủ cửa hàng gửi ra đúng là loại hay rơi vào spam. Dựng được bot Telegram bên WooCommerce thì nên dựng."
+
+msgid "Send a test message now"
+msgstr "Gửi thử một tin ngay"
+
+msgid "Send a test message"
+msgstr "Gửi thử một tin"
+
+msgid "Sending…"
+msgstr "Đang gửi…"
+
+msgid "The request itself failed."
+msgstr "Bản thân yêu cầu đã hỏng."
+
+msgid "Sent. Check %s — if nothing arrives, the channel is not working even though the site thinks it is."
+msgstr "Đã gửi. Kiểm tra %s — nếu không thấy gì tới thì kênh không chạy, dù site tưởng là chạy."
+
+msgid "Last message: #%1$d, %2$s ago."
+msgstr "Tin gần nhất: #%1$d, %2$s trước."
+
+msgid "Next one due %s."
+msgstr "Tin kế tới hạn %s."
+
+msgid "The site handed it over successfully. That is not the same as it arriving — if the numbers you receive skip, the channel is dropping them."
+msgstr "Site đã chuyển đi thành công. Cái đó không đồng nghĩa với việc nó tới nơi — nếu số bạn nhận được nhảy cóc thì kênh đang làm rơi tin."
+
+msgid "It failed: %s"
+msgstr "Gửi hỏng: %s"
+
+msgid "Horse Tools beat #%1$d — %2$s"
+msgstr "Horse Tools nhịp #%1$d — %2$s"
+
+msgid "Horse Tools — %s"
+msgstr "Horse Tools — %s"
+
+msgid "Next beat due: %s"
+msgstr "Nhịp kế tới hạn: %s"
+
+msgid "If it does not arrive, something stopped it — check the site."
+msgstr "Nếu không thấy nó tới, tức là có thứ đã chặn lại — kiểm tra site đi."
+
+msgid "Contact details in your settings"
+msgstr "Thông tin liên hệ trong cài đặt"
+
+msgid "Contact details in your posts"
+msgstr "Thông tin liên hệ trong bài viết"
+
+msgid "Downloadable secrets in the site folder"
+msgstr "File bí mật tải về được trong thư mục site"
+
+msgid "not confirmed yet"
+msgstr "chưa xác nhận"
+
+msgid "not reviewed yet"
+msgstr "chưa soát lần nào"
+
+msgid "still reading"
+msgstr "đang đọc"
+
+msgid "none"
+msgstr "không có"
+
+msgid "CHANGED"
+msgstr "ĐÃ ĐỔI"
+
+msgid "%d NEW"
+msgstr "%d CÁI MỚI"
+
+msgid "%d FOUND"
+msgstr "TÌM THẤY %d"
+
+msgid "%d domains, all approved"
+msgstr "%d tên miền, đã duyệt hết"
+
+msgid "NOT APPROVED: %s"
+msgstr "CHƯA DUYỆT: %s"
+
+msgid "If this site stops working, or Horse Tools is switched off, nobody is told. Every warning here is only seen by someone who logs in and looks."
+msgstr "Nếu site này ngừng chạy, hoặc Horse Tools bị tắt, sẽ không ai được báo. Mọi cảnh báo ở đây chỉ người nào đăng nhập vào và chịu nhìn mới thấy."
+
+msgid "Turn on the regular check-in message"
+msgstr "Bật tin báo định kỳ"
+
+msgid "The check-in message is on but has never been sent. Until one arrives you do not know the channel works."
+msgstr "Tin báo định kỳ đang bật nhưng chưa gửi lần nào. Chừng nào chưa có tin nào tới thì bạn chưa biết kênh có chạy hay không."
+
+msgid "The last check-in message could not be sent: %s"
+msgstr "Tin báo gần nhất không gửi được: %s"
+
+msgid "Fix the channel and send a test message"
+msgstr "Sửa kênh gửi rồi gửi thử một tin"
+
+msgid "The last check-in message went out %s ago, which is later than it should be. Nothing has been running the schedule."
+msgstr "Tin báo gần nhất đi từ %s trước, trễ hơn mức lẽ ra phải có. Không có gì chạy lịch cả."
+
+msgid "Check that WP-Cron is running on this site"
+msgstr "Kiểm tra xem WP-Cron trên site này còn chạy không"
+
+msgid "Your content has not been read all the way through yet (%1$d of %2$d), so nothing found in it can be trusted as complete."
+msgstr "Nội dung của bạn chưa được đọc hết một lượt (%1$d / %2$d), nên những gì tìm được trong đó chưa thể coi là đầy đủ."
+
+msgid "Your content has not been read all the way through yet."
+msgstr "Nội dung của bạn chưa được đọc hết một lượt."
+
+msgid "It continues on its own each time you open an admin page"
+msgstr "Nó tự chạy tiếp mỗi lần bạn mở một trang quản trị"
+
+msgid "Security tab → Check-in → turn on the regular message"
+msgstr "Tab Bảo mật → Báo còn sống → bật tin báo định kỳ"
+
+msgid "Turned on but never sent — send a test message"
+msgstr "Đã bật mà chưa gửi lần nào — gửi thử một tin"
+
+msgid "The last one could not be sent — Security tab → Check-in"
+msgstr "Tin gần nhất không gửi được — tab Bảo mật → Báo còn sống"
+
+msgid "Overdue — nothing has been running the schedule"
+msgstr "Quá hạn — không có gì chạy lịch cả"
+
+msgid "Telegram (chat %s)"
+msgstr "Telegram (chat %s)"
+
+msgid "Email to %s"
+msgstr "Email tới %s"
+
+msgid "Nothing to send."
+msgstr "Không có gì để gửi."
+
+msgid "Not due yet."
+msgstr "Chưa tới hạn."
+
+msgid "This site has no valid admin email address."
+msgstr "Site này không có địa chỉ email quản trị hợp lệ."
+
+msgid "WordPress could not hand the message to the mail server."
+msgstr "WordPress không chuyển được tin sang máy chủ mail."

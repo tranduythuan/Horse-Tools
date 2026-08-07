@@ -20,6 +20,11 @@ function horsetools_security_page() {
 			'icon'  => 'ti-shield-half',
 			'files' => array( 'main/page/2scuri.php' ),
 		),
+		'sec-tab-hb' => array(
+			'label' => __( 'Check-in', 'horse-tools' ),
+			'icon'  => 'ti-heartbeat',
+			'files' => array( 'main/section/sec-heartbeat.php' ),
+		),
 		'sec-tab2' => array(
 			'label' => __( 'Login page', 'horse-tools' ),
 			'icon'  => 'ti-login',

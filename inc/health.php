@@ -192,6 +192,28 @@ function horsetools_health_report() {
 			);
 		}
 	}
+	// Everything above is only ever read by somebody who logs in and looks. This
+	// row is about whether anyone would find out otherwise — and it is the only
+	// row that can be wrong about *itself*, since a plugin that has been switched
+	// off prints no rows at all.
+	if ( function_exists( 'horsetools_hb_enabled' ) ) {
+		$hb = horsetools_hb_state();
+		if ( ! horsetools_hb_enabled() ) {
+			$hb_row = array( 'warn', __( 'Security tab → Check-in → turn on the regular message', 'horse-tools' ) );
+		} elseif ( ! $hb['ever'] ) {
+			$hb_row = array( 'warn', __( 'Turned on but never sent — send a test message', 'horse-tools' ) );
+		} elseif ( ! $hb['ok'] ) {
+			$hb_row = array( 'fail', __( 'The last one could not be sent — Security tab → Check-in', 'horse-tools' ) );
+		} elseif ( time() > $hb['due'] + 2 * DAY_IN_SECONDS ) {
+			$hb_row = array( 'warn', __( 'Overdue — nothing has been running the schedule', 'horse-tools' ) );
+		} else {
+			$hb_row = array( 'pass', '' );
+		}
+		$add(
+			'heartbeat', $sec_cat, __( 'You would be told if this site went quiet', 'horse-tools' ),
+			$hb_row[0], 3, admin_url( 'admin.php?page=horsetools-security-options' ), $hb_row[1]
+		);
+	}
 	// A stray wp-config copy or database dump in the web root is worse than any
 	// of the settings above being off.
 	if ( function_exists( 'horsetools_exposure_status' ) ) {
