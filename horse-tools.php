@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.3.33
+ * Version: 1.3.34
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.3.33' );
+define( 'HORSETOOLS_VERSION', '1.3.34' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
@@ -104,6 +104,10 @@ if ( is_admin() ) {
 	// stray wp-config copy, a database dump, a .git directory — and says so only
 	// when one is actually there.
 	include( HORSETOOLS_DIR . 'inc/watch-exposure.php' );
+	// Whether this site is allowed to send mail as its own domain, read from
+	// DNS, and whether anybody has ever confirmed that a message arrived.
+	include( HORSETOOLS_DIR . 'inc/mail-dns.php' );
+	include( HORSETOOLS_DIR . 'inc/mail-proof.php' );
 }
 // The check-in message and the channel it goes out on. Backend rather than
 // admin-only, and deliberately: the beat is driven by WP-Cron as well as by

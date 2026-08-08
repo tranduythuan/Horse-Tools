@@ -212,6 +212,17 @@ function horsetools_health_report() {
 			);
 		}
 	}
+	// "SMTP is switched on" is the wrong thing to report and every plugin
+	// reports it. What matters is whether a message arrived, which only a person
+	// can see — so this row states what somebody observed, or admits nobody has.
+	if ( function_exists( 'horsetools_mail_proof_row' ) ) {
+		$mp = horsetools_mail_proof_row();
+		$add(
+			'mail', $sec_cat, __( 'Mail from this site is known to arrive', 'horse-tools' ),
+			$mp['status'], 2,
+			admin_url( 'admin.php?page=horsetools-accounts-options' ), $mp['text']
+		);
+	}
 	// Reporting leaves a window: the link goes in, the warning appears on a
 	// screen, and the link keeps working until somebody reads that screen. This
 	// row is about whether that window is open. Not scored — it is a deliberate

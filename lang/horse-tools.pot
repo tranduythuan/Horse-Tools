@@ -192,8 +192,16 @@ msgstr ""
 msgid "A private key."
 msgstr ""
 
+#: inc/mail-dns.php:435
+msgid "A safe first one collects reports and changes nothing: a TXT record at _dmarc.%1$s with the value %2$s"
+msgstr ""
+
 #: inc/watch-exposure.php:52
 msgid "A site archive, downloadable by anyone who guesses the name."
+msgstr ""
+
+#: inc/mail-proof.php:176
+msgid "A test was sent but you have not said whether it arrived"
 msgstr ""
 
 #: main/page/2scuri.php:160
@@ -248,7 +256,7 @@ msgstr ""
 msgid "Account"
 msgstr ""
 
-#: main/accounts.php:32 main/admin.php:52
+#: main/accounts.php:34 main/admin.php:52
 msgid "Accounts & Email"
 msgstr ""
 
@@ -315,6 +323,10 @@ msgstr ""
 
 #: main/ads.php:79 main/section/cu-ads2.php:37
 msgid "Add ads to the top of the article"
+msgstr ""
+
+#: inc/mail-dns.php:426
+msgid "Add an SPF record. Whichever email service you choose below will give you the exact line."
 msgstr ""
 
 #: main/page/3tool.php:64
@@ -593,6 +605,10 @@ msgstr ""
 msgid "Answer"
 msgstr ""
 
+#: main/section/ac-maildiag.php:46
+msgid "Answers are held for half a day; press this after changing anything in DNS."
+msgstr ""
+
 #: main/section/snippets-screen.php:49
 msgid "Any"
 msgstr ""
@@ -651,7 +667,7 @@ msgstr ""
 msgid "Ask a custom question on the login form"
 msgstr ""
 
-#: inc/health.php:321
+#: inc/health.php:332
 msgid "Ask your host to update PHP to 8.1 or newer."
 msgstr ""
 
@@ -1323,6 +1339,10 @@ msgstr ""
 msgid "Confirm them once, from the notice on any Horse Tools screen"
 msgstr ""
 
+#: inc/mail-proof.php:169
+msgid "Confirmed %s ago"
+msgstr ""
+
 #: inc/chat.php:377 inc/chat.php:403 inc/chat.php:415 inc/chat.php:434
 #: inc/chat.php:469 inc/chat.php:494 inc/chat.php:504 inc/chat.php:544
 #: inc/woo.php:78
@@ -1469,7 +1489,7 @@ msgstr ""
 msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
 msgstr ""
 
-#: inc/health.php:350
+#: inc/health.php:361
 msgid "Core, plugins and themes are up to date"
 msgstr ""
 
@@ -2069,6 +2089,10 @@ msgstr ""
 msgid "Do you want to delete?"
 msgstr ""
 
+#: main/section/ac-maildiag.php:23
+msgid "Does mail from this site actually arrive?"
+msgstr ""
+
 #: inc/horsetools.php:77
 msgid "Does not exist"
 msgstr ""
@@ -2140,6 +2164,10 @@ msgstr ""
 
 #: main/page/4main.php:30
 msgid "Effect"
+msgstr ""
+
+#: inc/mail-dns.php:444
+msgid "Either set up a mailbox for the domain, or make sure the address you send notifications to is one you actually read."
 msgstr ""
 
 #: inc/custom.php:211 main/accounts.php:20
@@ -2954,6 +2982,10 @@ msgstr ""
 msgid "Generate data"
 msgstr ""
 
+#: main/section/ac-maildiag.php:86
+msgid "Give it a minute before answering. “In the spam folder” is a useful answer, not a failure to report."
+msgstr ""
+
 #: main/shortcode.php:451
 msgid "Give the snippet a name (letters, numbers and dashes)."
 msgstr ""
@@ -2994,11 +3026,11 @@ msgstr ""
 msgid "Google refused the request — make sure the sheet is shared as “Anyone with the link can view”."
 msgstr ""
 
-#: main/accounts.php:25
+#: main/accounts.php:27
 msgid "Google sign-in"
 msgstr ""
 
-#: inc/health.php:419
+#: inc/health.php:430
 msgid "Grade %s"
 msgstr ""
 
@@ -3295,6 +3327,10 @@ msgstr ""
 msgid "If this site stops working, or Horse Tools is switched off, nobody is told. Every warning here is only seen by someone who logs in and looks."
 msgstr ""
 
+#: inc/mail-proof.php:96
+msgid "If you are reading it, mail from your site reaches this address. Go back to the Email screen and say where it turned up — the inbox or the spam folder — because those are two different answers and only you can see which one it was."
+msgstr ""
+
 #: main/page/ht-setting.php:83
 msgid "If you dont want to automatically switch the language based on WordPress context, please select the language you prefer"
 msgstr ""
@@ -3439,7 +3475,7 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: inc/health.php:299
+#: inc/health.php:310
 msgid "Images are lazy-loaded"
 msgstr ""
 
@@ -3479,8 +3515,16 @@ msgstr ""
 msgid "In Google Analytics: Reports → Engagement → Events. Each channel appears under its own name — contact_phone, contact_zalo, contact_messenger and so on — so there is nothing to configure first. Allow 24 hours for the standard reports; to see it immediately instead, open Admin → DebugView and tap a button on your phone."
 msgstr ""
 
+#: main/section/ac-maildiag.php:82
+msgid "In the inbox"
+msgstr ""
+
 #: inc/php-snippet.php:272
 msgid "In the page <head>"
+msgstr ""
+
+#: main/section/ac-maildiag.php:83
+msgid "In the spam folder"
 msgstr ""
 
 #: inc/gindex.php:288 main/extend.php:95 main/gindex.php:209 main/seo.php:41
@@ -3531,7 +3575,7 @@ msgstr ""
 msgid "Install analytics first"
 msgstr ""
 
-#: inc/health.php:352
+#: inc/health.php:363
 msgid "Install the pending updates."
 msgstr ""
 
@@ -3710,7 +3754,7 @@ msgstr ""
 msgid "Links every image in the content together so the viewer can flip through them. If an image already links to a file, that link is used."
 msgstr ""
 
-#: inc/health.php:222
+#: inc/health.php:233
 msgid "Links to domains you did not approve are defused as they are printed"
 msgstr ""
 
@@ -3843,6 +3887,14 @@ msgstr ""
 msgid "MEDIA"
 msgstr ""
 
+#: inc/health.php:221
+msgid "Mail from this site is known to arrive"
+msgstr ""
+
+#: inc/mail-dns.php:396
+msgid "Mail this site sends as %s is treated as forged. Your domain publishes a list of servers allowed to send for it, that list ends in “reject everything else”, and this web server is not on it."
+msgstr ""
+
 #: main/page/12chat.php:305
 msgid "Main button"
 msgstr ""
@@ -3891,7 +3943,7 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: inc/health.php:306
+#: inc/health.php:317
 msgid "Media tab → JPG compression"
 msgstr ""
 
@@ -3971,7 +4023,7 @@ msgstr ""
 msgid "Move snippets between sites"
 msgstr ""
 
-#: inc/health.php:328
+#: inc/health.php:339
 msgid "Move the site address to https://"
 msgstr ""
 
@@ -4055,7 +4107,7 @@ msgstr ""
 msgid "No Google Analytics tag turned up, either in your settings or on the home page. If you have not installed one yet, Site Kit by Google (or any GA4 plugin) is the usual way. If you know you do have one — added through Tag Manager, a caching layer, or a consent tool that loads it later — this check simply could not see it: switch the setting on anyway. It looks for analytics at the moment of the click, not now, so it starts working the instant a tag is present."
 msgstr ""
 
-#: inc/health.php:290
+#: inc/health.php:301
 msgid "No Google Fonts leaking to Google"
 msgstr ""
 
@@ -4083,11 +4135,11 @@ msgstr ""
 msgid "No caption"
 msgstr ""
 
-#: inc/health.php:232
+#: inc/health.php:243
 msgid "No copy on disk yet — it is written the first time you confirm something"
 msgstr ""
 
-#: inc/health.php:270
+#: inc/health.php:281
 msgid "No downloadable secrets in the site folder"
 msgstr ""
 
@@ -4167,6 +4219,10 @@ msgstr ""
 msgid "Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it."
 msgstr ""
 
+#: inc/mail-proof.php:178
+msgid "Nobody has ever checked that mail from this site arrives"
+msgstr ""
+
 #: main/page/6post.php:188 main/page/7mail.php:54
 msgid "None"
 msgstr ""
@@ -4179,7 +4235,7 @@ msgstr ""
 msgid "None: default not selected, Auto: background image automatically changes each time the page is loaded, Color: change the color you want, Upload: upload the background image you want"
 msgstr ""
 
-#: inc/2fa.php:252 inc/speed.php:518 inc/watch-heartbeat.php:352
+#: inc/2fa.php:252 inc/mail-proof.php:188 inc/speed.php:518 inc/watch-heartbeat.php:352
 msgid "Not allowed."
 msgstr ""
 
@@ -4195,6 +4251,10 @@ msgstr ""
 msgid "Not found in any post or page."
 msgstr ""
 
+#: inc/mail-dns.php:443
+msgid "Nothing accepts mail for %s, so any address at your own domain cannot receive replies. If you have stopped paying for a mailbox provider, its records may still be pointing there."
+msgstr ""
+
 #: inc/scuri.php:690
 msgid "Nothing could be self-hosted."
 msgstr ""
@@ -4205,6 +4265,10 @@ msgstr ""
 
 #: inc/ui.php:513
 msgid "Nothing on this page is enabled yet."
+msgstr ""
+
+#: main/section/ac-maildiag.php:66
+msgid "Nothing running on this server can find out whether a message arrived. You can. Send one, look, and say what you found — the answer is kept with the date, so this screen can afterwards report something that was seen rather than something that was switched on."
 msgstr ""
 
 #: main/clean.php:220
@@ -4253,6 +4317,10 @@ msgstr ""
 
 #: main/page/7mail.php:165
 msgid "Notify the post author when someone comments on the post"
+msgstr ""
+
+#: main/section/ac-maildiag.php:84
+msgid "Nowhere — it never came"
 msgstr ""
 
 #: main/search.php:168 main/section/ap-search1.php:140
@@ -4397,11 +4465,11 @@ msgstr ""
 msgid "Optimize saving post content into the database"
 msgstr ""
 
-#: inc/health.php:296
+#: inc/health.php:307
 msgid "Optimize tab"
 msgstr ""
 
-#: inc/health.php:301
+#: inc/health.php:312
 msgid "Optimize tab → image lazy loading"
 msgstr ""
 
@@ -4445,7 +4513,7 @@ msgstr ""
 msgid "Outbound links are watched"
 msgstr ""
 
-#: inc/health.php:224
+#: inc/health.php:235
 msgid "Outbound links screen — choose what should happen to them"
 msgstr ""
 
@@ -4453,7 +4521,7 @@ msgstr ""
 msgid "Outstanding color"
 msgstr ""
 
-#: inc/health.php:255
+#: inc/health.php:266
 msgid "Overdue — nothing has been running the schedule"
 msgstr ""
 
@@ -4469,7 +4537,7 @@ msgstr ""
 msgid "PHP editing unlocked for %d minutes."
 msgstr ""
 
-#: inc/health.php:340
+#: inc/health.php:351
 msgid "PHP errors are not shown to visitors"
 msgstr ""
 
@@ -4477,7 +4545,7 @@ msgstr ""
 msgid "PHP errors: server paths, fragments of queries, sometimes the contents of a failed request."
 msgstr ""
 
-#: inc/health.php:320
+#: inc/health.php:331
 msgid "PHP is a supported version (%s)"
 msgstr ""
 
@@ -4735,6 +4803,10 @@ msgstr ""
 msgid "Protection"
 msgstr ""
 
+#: main/section/ac-maildiag.php:62
+msgid "Prove it"
+msgstr ""
+
 #: main/section/seo-faq.php:5
 msgid "Publish FAQ schema automatically from the FAQ section in a post"
 msgstr ""
@@ -4783,11 +4855,15 @@ msgstr ""
 msgid "REST API left ON so the store keeps working"
 msgstr ""
 
+#: main/section/ac-maildiag.php:45
+msgid "Read the records again"
+msgstr ""
+
 #: main/section/cu-track.php:198
 msgid "Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see."
 msgstr ""
 
-#: inc/health.php:335
+#: inc/health.php:346
 msgid "Reading settings → uncheck “Discourage search engines”"
 msgstr ""
 
@@ -5305,7 +5381,7 @@ msgstr ""
 msgid "Security tab → Block user enumeration"
 msgstr ""
 
-#: inc/health.php:249
+#: inc/health.php:260
 msgid "Security tab → Check-in → turn on the regular message"
 msgstr ""
 
@@ -5321,11 +5397,11 @@ msgstr ""
 msgid "Security tab → Lock down the admin"
 msgstr ""
 
-#: inc/health.php:281
+#: inc/health.php:292
 msgid "Security tab → Privacy → Scan external requests"
 msgstr ""
 
-#: inc/health.php:288
+#: inc/health.php:299
 msgid "Security tab → Privacy → self-host Google Fonts"
 msgstr ""
 
@@ -5341,7 +5417,7 @@ msgstr ""
 msgid "See the GitHub release page for details."
 msgstr ""
 
-#: inc/health.php:272
+#: inc/health.php:283
 msgid "See the banner at the top of any Horse Tools screen"
 msgstr ""
 
@@ -5423,6 +5499,10 @@ msgstr ""
 msgid "Send a Telegram code"
 msgstr ""
 
+#: main/section/ac-maildiag.php:74
+msgid "Send a test"
+msgstr ""
+
 #: inc/watch-heartbeat.php:311
 msgid "Send a test message"
 msgstr ""
@@ -5443,6 +5523,18 @@ msgstr ""
 msgid "Send test email"
 msgstr ""
 
+#: inc/mail-dns.php:387
+msgid "Send through an email service instead — then the question does not arise."
+msgstr ""
+
+#: inc/mail-dns.php:397
+msgid "Send through an email service that is on the list, or add this server to it."
+msgstr ""
+
+#: inc/mail-dns.php:404
+msgid "Send through an email service that is on the list."
+msgstr ""
+
 #: main/page/7mail.php:30
 msgid "Sender email address"
 msgstr ""
@@ -5451,7 +5543,7 @@ msgstr ""
 msgid "Sender name"
 msgstr ""
 
-#: main/section/sec-heartbeat.php:125
+#: main/section/ac-maildiag.php:114 main/section/sec-heartbeat.php:125
 msgid "Sending…"
 msgstr ""
 
@@ -5463,8 +5555,16 @@ msgstr ""
 msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
 msgstr ""
 
+#: inc/mail-proof.php:203
+msgid "Sent to %s. Now go and look — and do not close this page, because the useful part is what you find."
+msgstr ""
+
 #: inc/watch-heartbeat.php:363
 msgid "Sent. Check %s — if nothing arrives, the channel is not working even though the site thinks it is."
+msgstr ""
+
+#: inc/mail-proof.php:99
+msgid "Sent: %s"
 msgstr ""
 
 #: inc/watch-exposure.php:57
@@ -5511,7 +5611,7 @@ msgstr ""
 msgid "Setting group"
 msgstr ""
 
-#: horse-tools.php:256
+#: horse-tools.php:260
 msgid "Settings"
 msgstr ""
 
@@ -5644,7 +5744,7 @@ msgstr ""
 msgid "Site"
 msgstr ""
 
-#: inc/health.php:411
+#: inc/health.php:422
 msgid "Site health"
 msgstr ""
 
@@ -6022,6 +6122,10 @@ msgstr ""
 msgid "Test SMTP email sending from your website"
 msgstr ""
 
+#: inc/mail-proof.php:106
+msgid "Test message from %s"
+msgstr ""
+
 #: main/page/1speed.php:146
 msgid "Test the site after turning this on. If something that must work before interaction breaks (a hero slider, a cookie bar), add its handle or file name to a list below. Do not use together with “Delay JS” in another optimiser."
 msgstr ""
@@ -6064,6 +6168,10 @@ msgstr ""
 
 #: main/shortcode.php:672
 msgid "That is not a valid snippet export file."
+msgstr ""
+
+#: inc/mail-proof.php:85
+msgid "That is not an email address."
 msgstr ""
 
 #: main/shortcode.php:456
@@ -6182,7 +6290,7 @@ msgstr ""
 msgid "The last check-in message went out %s ago, which is later than it should be. Nothing has been running the schedule."
 msgstr ""
 
-#: inc/health.php:253
+#: inc/health.php:264
 msgid "The last one could not be sent — Security tab → Check-in"
 msgstr ""
 
@@ -6194,7 +6302,7 @@ msgstr ""
 msgid "The most powerful but riskiest speed option. Without the Critical CSS below, the page can flash unstyled for a moment (FOUC). Paste your above-the-fold CSS, or keep the main theme stylesheet in the exclusion list. Test the front end carefully, and don’t combine it with another plugin that also optimises CSS delivery."
 msgstr ""
 
-#: inc/health.php:294
+#: inc/health.php:305
 msgid "The optimisation module is on"
 msgstr ""
 
@@ -6214,7 +6322,7 @@ msgstr ""
 msgid "The reCAPTCHA is invalid"
 msgstr ""
 
-#: main/section/sec-heartbeat.php:137
+#: main/section/ac-maildiag.php:124 main/section/sec-heartbeat.php:137
 msgid "The request itself failed."
 msgstr ""
 
@@ -6238,11 +6346,11 @@ msgstr ""
 msgid "The site handed it over successfully. That is not the same as it arriving — if the numbers you receive skip, the channel is dropping them."
 msgstr ""
 
-#: inc/health.php:326
+#: inc/health.php:337
 msgid "The site is served over HTTPS"
 msgstr ""
 
-#: inc/health.php:333
+#: inc/health.php:344
 msgid "The site is visible to search engines"
 msgstr ""
 
@@ -6294,7 +6402,7 @@ msgstr ""
 msgid "These stop WordPress installing updates on its own — the site still checks for them, so the Dashboard and Plugins screens keep showing what is available and you apply updates when you choose. It never stops checking, so you are never left unaware of a security release."
 msgstr ""
 
-#: inc/health.php:234
+#: inc/health.php:245
 msgid "They no longer match — see the banner at the top of any Horse Tools screen"
 msgstr ""
 
@@ -6390,8 +6498,16 @@ msgstr ""
 msgid "This function will redirect all of your website pages to the destination page of your choice"
 msgstr ""
 
+#: inc/mail-dns.php:367
+msgid "This host does not let the plugin read DNS, so none of the checks below can be made. That is not the same as everything being in order."
+msgstr ""
+
 #: main/export.php:431
 msgid "This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site."
+msgstr ""
+
+#: inc/mail-proof.php:93
+msgid "This is a test message from %s."
 msgstr ""
 
 #: inc/mail.php:123
@@ -6448,6 +6564,14 @@ msgstr ""
 
 #: inc/2fa.php:317
 msgid "This user has two-factor authentication ON."
+msgstr ""
+
+#: inc/mail-dns.php:403
+msgid "This web server is not on your domain’s list of allowed senders. The list says “treat anything else as suspicious” rather than “reject it”, so mail as %s will usually arrive in the spam folder."
+msgstr ""
+
+#: inc/mail-dns.php:409
+msgid "This web server is on your domain’s list of allowed senders."
 msgstr ""
 
 #: inc/notify.php:84
@@ -6566,7 +6690,7 @@ msgstr ""
 msgid "Turn it off for this user (e.g. they lost their device)"
 msgstr ""
 
-#: inc/health.php:343
+#: inc/health.php:354
 msgid "Turn off WP_DEBUG_DISPLAY on a live site."
 msgstr ""
 
@@ -6574,7 +6698,7 @@ msgstr ""
 msgid "Turn on the regular check-in message"
 msgstr ""
 
-#: inc/health.php:251
+#: inc/health.php:262
 msgid "Turned on but never sent — send a test message"
 msgstr ""
 
@@ -6678,7 +6802,7 @@ msgstr ""
 msgid "Upload font success"
 msgstr ""
 
-#: inc/health.php:304
+#: inc/health.php:315
 msgid "Uploaded images are compressed"
 msgstr ""
 
@@ -6799,7 +6923,7 @@ msgstr ""
 msgid "Welcome to the website"
 msgstr ""
 
-#: inc/health.php:238
+#: inc/health.php:249
 msgid "What you approved is also kept outside the database"
 msgstr ""
 
@@ -6827,6 +6951,10 @@ msgstr ""
 msgid "When your theme or a plugin loads fonts from Google, every visitor's IP is sent to Google — which GDPR treats as a data transfer. This serves downloaded copies from your own domain instead. Scan first, then click self-host; this works for fonts loaded the standard way (if a font still loads from Google afterwards, your theme hard-codes it — the scan will show you)."
 msgstr ""
 
+#: main/section/ac-maildiag.php:80
+msgid "Where did it turn up?"
+msgstr ""
+
 #: main/notify.php:133 main/section/cu-notify3.php:48
 msgid "Where it appears"
 msgstr ""
@@ -6837,6 +6965,10 @@ msgstr ""
 
 #: main/section/snippets-screen.php:142
 msgid "Where shortcodes run"
+msgstr ""
+
+#: main/section/ac-maildiag.php:90
+msgid "Where this stands:"
 msgstr ""
 
 #: main/section/cu-track.php:135
@@ -6887,8 +7019,16 @@ msgstr ""
 msgid "WooCommerce / Store"
 msgstr ""
 
+#: inc/mail-proof.php:111
+msgid "WordPress could not hand the message to the mail server at all, so it never left the site."
+msgstr ""
+
 #: inc/alert.php:130
 msgid "WordPress could not hand the message to the mail server."
+msgstr ""
+
+#: main/section/ac-maildiag.php:27
+msgid "WordPress reports a message as sent once it has handed it over. That says nothing about whether it arrived, and on a great many sites it does not — the domain names which servers may send for it, the web server is not one of them, and every notification the site sends is treated as forged. Nothing in WordPress mentions this. Below is what your domain’s own records say, read live."
 msgstr ""
 
 #: main/section/snippets-screen.php:143
@@ -7015,7 +7155,7 @@ msgstr ""
 msgid "You need to activate this feature and customize the content below so that new registered users can receive emails"
 msgstr ""
 
-#: inc/health.php:260
+#: inc/health.php:271
 msgid "You would be told if this site went quiet"
 msgstr ""
 
@@ -7083,6 +7223,38 @@ msgstr ""
 
 #: main/page/ht-about2.php:5
 msgid "Your database"
+msgstr ""
+
+#: inc/mail-dns.php:425
+msgid "Your domain does not say which servers are allowed to send mail for it. Anyone can send mail claiming to be you, and mail you really did send has nothing to vouch for it — Gmail and Yahoo both treat that as a reason for suspicion."
+msgstr ""
+
+#: inc/mail-dns.php:415
+msgid "Your domain has a list of allowed senders, but it could not be worked out from here whether this server is on it."
+msgstr ""
+
+#: inc/mail-dns.php:433
+msgid "Your domain has no DMARC record, so you are never told when somebody sends mail pretending to be you, and receivers have no instruction about what to do with it."
+msgstr ""
+
+#: main/section/ac-maildiag.php:55
+msgid "Your domain receives mail through %s. Sending through the same service is the setting most likely to work, because it is already on your domain’s list of allowed senders."
+msgstr ""
+
+#: inc/mail-dns.php:386
+msgid "Your domain says which servers may send mail for it, and this site is sending straight from the web server. Whether that server is on the list could not be determined here."
+msgstr ""
+
+#: inc/mail-proof.php:162
+msgid "Your email settings changed after the last test, so what is running now has not been tried"
+msgstr ""
+
+#: inc/mail-proof.php:172
+msgid "Your last test landed in the spam folder"
+msgstr ""
+
+#: inc/mail-proof.php:174
+msgid "Your last test never arrived"
 msgstr ""
 
 #: inc/2fa.php:158
@@ -7161,6 +7333,10 @@ msgstr ""
 
 #: main/customers.php:60
 msgid "ads.txt"
+msgstr ""
+
+#: main/section/ac-maildiag.php:72
+msgid "an address you can open right now"
 msgstr ""
 
 #: inc/watch-contact.php:448
@@ -7365,7 +7541,7 @@ msgstr ""
 msgid "v3 score threshold (0 – 1)"
 msgstr ""
 
-#: inc/health.php:233
+#: inc/health.php:244
 msgid "wp-content is not writable, so there is nowhere to keep the copy"
 msgstr ""
 

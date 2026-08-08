@@ -19,7 +19,9 @@ function horsetools_accounts_page() {
 		'ac-tab2' => array(
 			'label' => __( 'Email', 'horse-tools' ),
 			'icon'  => 'ti-mail',
-			'files' => array( 'main/page/7mail.php' ),
+			// The diagnosis goes above the form: the form asks eight questions,
+			// this answers the one the owner actually has.
+			'files' => array( 'main/section/ac-maildiag.php', 'main/page/7mail.php' ),
 		),
 		'ac-tab3' => array(
 			'label' => __( 'Google sign-in', 'horse-tools' ),

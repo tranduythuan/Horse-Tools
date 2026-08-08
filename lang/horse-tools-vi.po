@@ -7573,3 +7573,135 @@ msgstr "Còn %d cái nữa đang chờ."
 
 msgid "%d domain your content links to is not approved"
 msgstr "Nội dung của bạn trỏ tới %d tên miền chưa được duyệt"
+
+msgid "Does mail from this site actually arrive?"
+msgstr "Thư site này gửi đi có tới nơi thật không?"
+
+msgid "WordPress reports a message as sent once it has handed it over. That says nothing about whether it arrived, and on a great many sites it does not — the domain names which servers may send for it, the web server is not one of them, and every notification the site sends is treated as forged. Nothing in WordPress mentions this. Below is what your domain’s own records say, read live."
+msgstr "WordPress báo \"đã gửi\" ngay khi nó giao thư đi. Câu đó không nói gì về việc thư có tới hay không, và trên rất nhiều site thì không tới — tên miền khai rõ những máy chủ nào được phép gửi thay nó, web server lại không nằm trong số đó, nên mọi thông báo site gửi ra đều bị coi là giả mạo. WordPress không hề nhắc chuyện này. Bên dưới là những gì bản ghi của chính tên miền anh nói, đọc trực tiếp."
+
+msgid "Read the records again"
+msgstr "Đọc lại bản ghi"
+
+msgid "Answers are held for half a day; press this after changing anything in DNS."
+msgstr "Kết quả được giữ nửa ngày; đổi gì trong DNS thì bấm nút này."
+
+msgid "This host does not let the plugin read DNS, so none of the checks below can be made. That is not the same as everything being in order."
+msgstr "Hosting này không cho plugin đọc DNS, nên không kiểm được gì bên dưới. Cái đó khác với \"mọi thứ đều ổn\"."
+
+msgid "Mail this site sends as %s is treated as forged. Your domain publishes a list of servers allowed to send for it, that list ends in “reject everything else”, and this web server is not on it."
+msgstr "Thư site gửi danh nghĩa %s đang bị coi là giả mạo. Tên miền của anh có công bố danh sách máy chủ được phép gửi thay nó, danh sách đó kết thúc bằng \"còn lại thì chặn hết\", và web server này không nằm trong đó."
+
+msgid "This web server is not on your domain’s list of allowed senders. The list says “treat anything else as suspicious” rather than “reject it”, so mail as %s will usually arrive in the spam folder."
+msgstr "Web server này không nằm trong danh sách được phép gửi của tên miền. Danh sách ghi \"còn lại thì coi là đáng ngờ\" chứ không phải \"chặn\", nên thư danh nghĩa %s thường rơi vào thư mục spam."
+
+msgid "This web server is on your domain’s list of allowed senders."
+msgstr "Web server này nằm trong danh sách được phép gửi của tên miền."
+
+msgid "Your domain has a list of allowed senders, but it could not be worked out from here whether this server is on it."
+msgstr "Tên miền có danh sách máy chủ được phép gửi, nhưng từ đây không xác định được server này có nằm trong đó hay không."
+
+msgid "Your domain says which servers may send mail for it, and this site is sending straight from the web server. Whether that server is on the list could not be determined here."
+msgstr "Tên miền có khai những máy chủ nào được gửi thay nó, mà site đang gửi thẳng từ web server. Từ đây không xác định được server đó có nằm trong danh sách không."
+
+msgid "Send through an email service instead — then the question does not arise."
+msgstr "Gửi qua một dịch vụ email thì khỏi phải hỏi câu đó nữa."
+
+msgid "Send through an email service that is on the list, or add this server to it."
+msgstr "Gửi qua một dịch vụ email có trong danh sách, hoặc thêm server này vào danh sách."
+
+msgid "Send through an email service that is on the list."
+msgstr "Gửi qua một dịch vụ email có trong danh sách."
+
+msgid "Your domain does not say which servers are allowed to send mail for it. Anyone can send mail claiming to be you, and mail you really did send has nothing to vouch for it — Gmail and Yahoo both treat that as a reason for suspicion."
+msgstr "Tên miền của anh không khai máy chủ nào được phép gửi thư thay nó. Ai cũng có thể gửi thư tự xưng là anh, còn thư anh gửi thật thì chẳng có gì bảo chứng — Gmail lẫn Yahoo đều coi đó là lý do để nghi ngờ."
+
+msgid "Add an SPF record. Whichever email service you choose below will give you the exact line."
+msgstr "Thêm một bản ghi SPF. Dịch vụ email nào anh chọn bên dưới cũng sẽ đưa cho anh đúng dòng cần dán."
+
+msgid "Your domain has no DMARC record, so you are never told when somebody sends mail pretending to be you, and receivers have no instruction about what to do with it."
+msgstr "Tên miền không có bản ghi DMARC, nên có ai giả danh anh gửi thư thì anh không bao giờ biết, và bên nhận cũng không được chỉ dẫn phải làm gì với thư đó."
+
+msgid "A safe first one collects reports and changes nothing: a TXT record at _dmarc.%1$s with the value %2$s"
+msgstr "Bản đầu tiên an toàn nhất chỉ thu báo cáo chứ không đổi gì: một bản ghi TXT tại _dmarc.%1$s với giá trị %2$s"
+
+msgid "Nothing accepts mail for %s, so any address at your own domain cannot receive replies. If you have stopped paying for a mailbox provider, its records may still be pointing there."
+msgstr "Không có gì nhận thư cho %s cả, nên mọi địa chỉ ở tên miền của anh đều không nhận được thư trả lời. Nếu anh đã ngưng trả tiền cho một nhà cung cấp hộp thư, bản ghi có thể vẫn còn trỏ về đó."
+
+msgid "Either set up a mailbox for the domain, or make sure the address you send notifications to is one you actually read."
+msgstr "Hoặc dựng một hộp thư cho tên miền, hoặc bảo đảm địa chỉ nhận thông báo là địa chỉ anh thật sự có đọc."
+
+msgid "Your domain receives mail through %s. Sending through the same service is the setting most likely to work, because it is already on your domain’s list of allowed senders."
+msgstr "Tên miền của anh nhận thư qua %s. Gửi qua chính dịch vụ đó là cấu hình dễ chạy nhất, vì nó vốn đã nằm trong danh sách được phép gửi của tên miền."
+
+msgid "Prove it"
+msgstr "Chứng minh đi"
+
+msgid "Nothing running on this server can find out whether a message arrived. You can. Send one, look, and say what you found — the answer is kept with the date, so this screen can afterwards report something that was seen rather than something that was switched on."
+msgstr "Không thứ gì chạy trên server này biết được một lá thư có tới hay không. Anh thì biết. Gửi một cái, mở ra xem, rồi nói lại anh thấy gì — câu trả lời được lưu kèm ngày, để từ đó màn hình này báo cái đã được nhìn thấy chứ không phải cái đã được bật."
+
+msgid "an address you can open right now"
+msgstr "một địa chỉ anh mở ra xem được ngay bây giờ"
+
+msgid "Send a test"
+msgstr "Gửi thử"
+
+msgid "Sent to %s. Now go and look — and do not close this page, because the useful part is what you find."
+msgstr "Đã gửi tới %s. Giờ mở ra xem — và đừng đóng trang này, vì phần có ích chính là thứ anh tìm thấy."
+
+msgid "Where did it turn up?"
+msgstr "Nó nằm ở đâu?"
+
+msgid "In the inbox"
+msgstr "Trong hộp thư chính"
+
+msgid "In the spam folder"
+msgstr "Trong thư mục spam"
+
+msgid "Nowhere — it never came"
+msgstr "Không thấy đâu — không tới"
+
+msgid "Give it a minute before answering. “In the spam folder” is a useful answer, not a failure to report."
+msgstr "Chờ một phút rồi hãy trả lời. \"Trong thư mục spam\" là một câu trả lời có ích, không phải chuyện đáng ngại phải giấu."
+
+msgid "Where this stands:"
+msgstr "Tình trạng hiện tại:"
+
+msgid "Mail from this site is known to arrive"
+msgstr "Thư từ site này đã biết chắc là tới nơi"
+
+msgid "Confirmed %s ago"
+msgstr "Đã xác nhận %s trước"
+
+msgid "Your last test landed in the spam folder"
+msgstr "Lần thử gần nhất rơi vào thư mục spam"
+
+msgid "Your last test never arrived"
+msgstr "Lần thử gần nhất không tới nơi"
+
+msgid "A test was sent but you have not said whether it arrived"
+msgstr "Đã gửi thử nhưng anh chưa nói nó có tới hay không"
+
+msgid "Nobody has ever checked that mail from this site arrives"
+msgstr "Chưa ai từng kiểm xem thư từ site này có tới nơi không"
+
+msgid "Your email settings changed after the last test, so what is running now has not been tried"
+msgstr "Cài đặt email đã đổi sau lần thử gần nhất, nên cái đang chạy thì chưa được thử"
+
+msgid "That is not an email address."
+msgstr "Đó không phải một địa chỉ email."
+
+msgid "WordPress could not hand the message to the mail server at all, so it never left the site."
+msgstr "WordPress không giao được thư cho máy chủ mail, nên nó chưa hề rời khỏi site."
+
+msgid "Test message from %s"
+msgstr "Thư thử từ %s"
+
+msgid "This is a test message from %s."
+msgstr "Đây là thư thử từ %s."
+
+msgid "If you are reading it, mail from your site reaches this address. Go back to the Email screen and say where it turned up — the inbox or the spam folder — because those are two different answers and only you can see which one it was."
+msgstr "Nếu anh đang đọc được nó thì thư từ site có tới địa chỉ này. Quay lại màn Email và nói nó nằm ở đâu — hộp thư chính hay thư mục spam — vì đó là hai câu trả lời khác nhau, và chỉ anh mới thấy được là cái nào."
+
+msgid "Sent: %s"
+msgstr "Gửi lúc: %s"

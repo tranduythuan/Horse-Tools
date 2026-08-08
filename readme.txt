@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.33
+Stable tag: 1.3.34
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,14 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.34 =
+* **Horse Tools now tells you whether your site is allowed to send mail as its own domain — and whether anything it sends actually arrives.** These are the two questions behind almost every "the customer never got the email", and WordPress answers neither.
+* **The diagnosis reads your domain's own DNS records, live.** No account, no API key, no external service: SPF, DMARC and MX, and an evaluation of the SPF record against this server. It is deliberate about the third answer — where the honest result is "cannot tell from here", it says that instead of guessing. A checker that cries wolf is one people learn to ignore, and this one prints an accusation on a shop owner's screen.
+* It will not accuse the web server when the site is sending through an SMTP service, because then it is the service's address being checked and not yours — that false alarm is the classic one.
+* **It guesses the right provider from your MX records.** If your domain receives mail through Google or Zoho, sending through the same service is the setting most likely to work, and the screen says so rather than expecting you to know.
+* **"Test email sent successfully" now means what it says, which is very little.** `wp_mail()` returning true means the message left the building. So the test sends, then asks the one participant who can actually see the result: did it land in the inbox, in spam, or nowhere? The answer is kept with the date, and the health card reports what was observed instead of what was switched on. Change the sender or the password and the proof stops counting, because it is no longer about the thing that is running.
+* Covered by `tools/test-mail.php`: 54 checks, most of them about the SPF evaluator refusing to conclude — `ptr`, `exists:`, a record that includes itself, the ten-lookup limit, and a TXT record split into chunks that would evaluate to something else entirely if read short. The suite never touches real DNS; it runs in seven hundredths of a second.
 
 = 1.3.33 =
 * **The blue button on the outbound-links screen approved fifty of six hundred and eighty-six.** Somebody who meant "yes, all of this is mine" pressed the biggest button on the page, got 7% of the way, and had thirteen more pages to go with nothing on screen saying so. When the waiting list runs past one page, agreeing to the whole list is the common intent and now gets the primary button; the per-page action is secondary and states its own scope.
