@@ -397,10 +397,23 @@ function horsetools_link_screen() {
 			$done = __( 'Saved. Everything found so far is approved.', 'horse-tools' );
 		} elseif ( 'approve' === $action ) {
 			horsetools_link_approve( $picked );
-			$done = $picked
+			if ( ! $picked ) {
+				$done = __( 'Nothing was ticked, so nothing changed.', 'horse-tools' );
+			} else {
 				/* translators: %d: number of domains approved. */
-				? sprintf( _n( 'Approved %d domain.', 'Approved %d domains.', count( $picked ), 'horse-tools' ), count( $picked ) )
-				: __( 'Nothing was ticked, so nothing changed.', 'horse-tools' );
+				$done = sprintf( _n( 'Approved %d domain.', 'Approved %d domains.', count( $picked ), 'horse-tools' ), count( $picked ) );
+				// How many are left is the part that matters and the part that was
+				// missing: approving one page of fourteen said "approved 50" and
+				// stopped, so it read like the job was done.
+				$left = count( array_diff_key( horsetools_link_found(), horsetools_link_approved() ) );
+				if ( $left ) {
+					$done .= ' ' . sprintf(
+						/* translators: %d: number of domains still waiting. */
+						_n( '%d is still waiting.', '%d are still waiting.', $left, 'horse-tools' ),
+						$left
+					);
+				}
+			}
 		} elseif ( 'revoke' === $action ) {
 			horsetools_link_revoke( $picked );
 			$done = $picked
@@ -590,18 +603,43 @@ function horsetools_link_screen() {
 					<?php endforeach; ?>
 					</tbody>
 				</table>
+				<?php
+				// Which button is the blue one depends on how much is waiting.
+				//
+				// It did not, and the result was the obvious mistake to make: on a
+				// site with 686 domains over fourteen pages, the primary button
+				// approved the fifty on screen and left 636 behind. Somebody who
+				// meant "yes, all of this is mine" pressed the biggest button, got
+				// 7% of the way, and had thirteen more pages to go with nothing
+				// saying so. When there is more than one page, agreeing to the whole
+				// list is the common intent and gets the primary button; the
+				// per-page one is the niche action and says its own scope out loud.
+				$many = count( $waiting ) > $per;
+				?>
 				<p class="submit">
-					<button type="submit" name="do" value="approve" class="button button-primary"><?php esc_html_e( 'Approve the ticked ones', 'horse-tools' ); ?></button>
-					<button type="submit" name="do" value="approve_all" class="button"
-						onclick="return confirm(<?php echo esc_attr( wp_json_encode( sprintf( /* translators: %d: number of domains. */ __( 'Approve all %d domains your content currently links to?', 'horse-tools' ), count( $found ) ) ) ); ?>);">
-						<?php
-						printf(
-							/* translators: %d: number of domains. */
-							esc_html__( 'Approve everything (%d)', 'horse-tools' ),
-							count( $found )
-						);
-						?>
-					</button>
+					<?php if ( $many ) : ?>
+						<button type="submit" name="do" value="approve_all" class="button button-primary"
+							onclick="return confirm(<?php echo esc_attr( wp_json_encode( sprintf( /* translators: %d: number of domains. */ __( 'Approve all %d domains your content currently links to?', 'horse-tools' ), count( $found ) ) ) ); ?>);">
+							<?php
+							printf(
+								/* translators: %d: number of domains. */
+								esc_html__( 'Approve all %d — the whole list, not just this page', 'horse-tools' ),
+								count( $found )
+							);
+							?>
+						</button>
+						<button type="submit" name="do" value="approve" class="button">
+							<?php
+							printf(
+								/* translators: %d: how many rows are on this page. */
+								esc_html__( 'Only the ticked ones on this page (%d)', 'horse-tools' ),
+								count( $slice )
+							);
+							?>
+						</button>
+					<?php else : ?>
+						<button type="submit" name="do" value="approve" class="button button-primary"><?php esc_html_e( 'Approve the ticked ones', 'horse-tools' ); ?></button>
+					<?php endif; ?>
 				</p>
 			</form>
 		<?php endif; ?>

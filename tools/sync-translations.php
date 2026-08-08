@@ -1327,6 +1327,13 @@ $vi = array(
 	// The contact banner folded down on a site with 31 of them (1.3.32).
 	'and %d more — click to see it' => 'và %d cái nữa — bấm để xem',
 
+
+	// Nút duyệt cả danh sách vs duyệt một trang (1.3.33).
+	'Approve all %d — the whole list, not just this page' => 'Duyệt hết %d — cả danh sách, không phải chỉ trang này',
+	'Only the ticked ones on this page (%d)' => 'Chỉ những cái đã tick ở trang này (%d)',
+	'%d is still waiting.' => 'Còn %d cái nữa đang chờ.',
+	'%d domain your content links to is not approved' => 'Nội dung của bạn trỏ tới %d tên miền chưa được duyệt',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.32
+Stable tag: 1.3.33
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.33 =
+* **The blue button on the outbound-links screen approved fifty of six hundred and eighty-six.** Somebody who meant "yes, all of this is mine" pressed the biggest button on the page, got 7% of the way, and had thirteen more pages to go with nothing on screen saying so. When the waiting list runs past one page, agreeing to the whole list is the common intent and now gets the primary button; the per-page action is secondary and states its own scope.
+* **Approving a page now says how many are left.** "Approved 50" and nothing else reads like the job is finished.
+* The health row said "a domain you have not approved", singular, on a site where 636 were waiting — which reads as one stray link to go and look at rather than a list barely started. It says the number now.
 
 = 1.3.32 =
 * **The contact banner had the same fault the domain list just had, somewhere else.** A knowledge blog with 866 posts turns up 31 contact details — most of them example addresses out of tutorials about email — and all 31 were printed into a banner 810 pixels tall, sitting on top of every screen in the plugin.

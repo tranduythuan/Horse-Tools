@@ -7561,3 +7561,15 @@ msgstr "Lưu lựa chọn này"
 
 msgid "and %d more — click to see it"
 msgstr "và %d cái nữa — bấm để xem"
+
+msgid "Approve all %d — the whole list, not just this page"
+msgstr "Duyệt hết %d — cả danh sách, không phải chỉ trang này"
+
+msgid "Only the ticked ones on this page (%d)"
+msgstr "Chỉ những cái đã tick ở trang này (%d)"
+
+msgid "%d is still waiting."
+msgstr "Còn %d cái nữa đang chờ."
+
+msgid "%d domain your content links to is not approved"
+msgstr "Nội dung của bạn trỏ tới %d tên miền chưa được duyệt"

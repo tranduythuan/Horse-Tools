@@ -314,6 +314,18 @@ screen_post( array( 'do' => 'approve_all' ) );
 eq( count( horsetools_link_approved() ), 3, 'nút duyệt hết không cần liệt kê từng dòng — 1 trường thay vì 1372' );
 eq( horsetools_link_status()['state'], 'clean', 'sạch' );
 
+echo "\n21b. Duyệt một trang phải nói còn lại bao nhiêu\n";
+// Duyệt 1 trong 14 trang mà chỉ báo "đã duyệt 50" thì đọc như đã xong việc.
+// Chuyện có thật: chủ site bấm đúng cái nút to nhất trên màn hình, được 50/686,
+// và không có gì nói rằng còn 636 cái nữa.
+$GLOBALS['opts'] = array();
+$big = '';
+for ( $i = 0; $i < 60; $i++ ) { $big .= '<a href="https://s' . $i . '.com/x">x</a>'; }
+horsetools_link_collect( array( $row( 40, $big ) ) );
+$out = screen_post( array( 'do' => 'approve', 'pick' => array( 's0.com', 's1.com' ) ) );
+ok( false !== strpos( $out, '58' ), 'thông báo nói rõ còn 58 cái nữa' );
+eq( count( horsetools_link_approved() ), 2, 'và chỉ duyệt đúng 2 cái được tick' );
+
 echo "\n22. Đặt chế độ chặn KHÔNG được tính là đã soát danh sách\n";
 // Nếu tính, thì trên site chưa duyệt gì: reviewed=true + danh sách duyệt rỗng
 // = guard vô hiệu hoá TOÀN BỘ link ra ngoài của site, chỉ vì người ta bấm lưu

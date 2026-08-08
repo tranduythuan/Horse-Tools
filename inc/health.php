@@ -189,10 +189,21 @@ function horsetools_health_report() {
 				__( 'Your content links to more domains than the list can hold, so it is incomplete', 'horse-tools' )
 			);
 		} else {
+			$l_new = count( $ls['new'] );
 			$l_map = array(
 				'clean'   => array( 'pass', '' ),
 				'unset'   => array( 'warn', __( 'Go through the list once and approve it', 'horse-tools' ) ),
-				'changed' => array( 'fail', __( 'A domain you have not approved is linked from your content', 'horse-tools' ) ),
+				// Says the number. It used to say "a domain", singular, on a site
+				// where 636 were waiting — which reads as one stray link to go and
+				// look at rather than a list that has barely been started.
+				'changed' => array(
+					'fail',
+					sprintf(
+						/* translators: %d: number of domains not approved. */
+						_n( '%d domain your content links to is not approved', '%d domains your content links to are not approved', $l_new, 'horse-tools' ),
+						$l_new
+					),
+				),
 			);
 			$l_row = isset( $l_map[ $ls['state'] ] ) ? $l_map[ $ls['state'] ] : $l_map['unset'];
 			$add(
