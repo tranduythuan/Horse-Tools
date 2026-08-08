@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.31
+Stable tag: 1.3.32
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.32 =
+* **The contact banner had the same fault the domain list just had, somewhere else.** A knowledge blog with 866 posts turns up 31 contact details — most of them example addresses out of tutorials about email — and all 31 were printed into a banner 810 pixels tall, sitting on top of every screen in the plugin.
+* Twelve are shown and the rest fold into one line you can click open. Nothing is hidden and nothing is dropped; a wall is not more informative than a list, it is less, because nobody reads it and the confirm button underneath becomes a formality.
+* Rarest first, the same reasoning as the domain list: the hotline appears in two hundred posts and a number somebody quietly added appears in one, so ordering by how often each was seen puts the odd one where the eye lands.
 
 = 1.3.31 =
 * **The review screen was one table of every domain, which on a real site meant 686 rows.** That is not a review, it is a wall — and it hid two real faults behind the length.

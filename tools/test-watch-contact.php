@@ -19,6 +19,7 @@ define( 'ABSPATH', __DIR__ . '/' );
 define( 'HOUR_IN_SECONDS', 3600 );
 
 function __( $s, $d = '' ) { return $s; }
+function _n( $a, $b, $n, $d = '' ) { return 1 === $n ? $a : $b; }
 function esc_html__( $s, $d = '' ) { return $s; }
 function esc_html( $s ) { return $s; }
 function esc_attr( $s ) { return $s; }
@@ -265,6 +266,26 @@ $GLOBALS['on_screen'] = true;
 echo "\n13. Bảng thông báo phải liệt kê ra, không được bắt gật đầu với con số\n";
 put_state( 'clean', 'unset' );
 ok( false !== strpos( render_notice(), '0389737412' ), 'số tìm được có in ra để người ta soi' );
+
+echo "\n13b. Danh sách dài phải gấp lại, không đổ hết ra banner\n";
+// Một blog 866 bài lòi ra 31 thông tin liên hệ, phần lớn là email ví dụ trong
+// các bài dạy về email. In hết ra thành banner cao 810px nằm trên MỌI màn hình
+// của plugin. Tường không nhiều thông tin hơn danh sách — nó ít hơn, vì không ai
+// đọc, và cái nút xác nhận bên dưới thành thủ tục.
+put_state( 'clean', 'unset' );
+$many = array();
+for ( $i = 0; $i < 31; $i++ ) {
+	$v = sprintf( '0900%06d', $i );
+	$many[ 'phone:' . $v ] = array( 'type' => 'phone', 'value' => $v, 'raw' => $v, 'count' => 31 - $i );
+}
+$GLOBALS['opts'][ HORSETOOLS_CONTACT_CONTENT ] = $many;
+$html = render_notice();
+eq( substr_count( $html, '<p style="margin:2px 0">' ), 31, 'vẫn in đủ 31 — không nuốt cái nào' );
+eq( substr_count( $html, '<details' ), 1, 'nhưng phần dư nằm trong khối gấp lại' );
+$before = substr( $html, 0, strpos( $html, '<details' ) );
+eq( substr_count( $before, '<p style="margin:2px 0">' ), 12, 'chỉ 12 dòng hiện sẵn' );
+ok( false !== strpos( $before, '0900000030' ), 'cái HIẾM nhất nằm trong 12 dòng đầu — đó mới là cái đáng nghi' );
+ok( false === strpos( $before, '0900000000' ), 'cái xuất hiện nhiều nhất bị đẩy xuống dưới' );
 
 echo "\n14. Chốt xong thì bảng phải tắt\n";
 put_state( 'clean', 'unset' );

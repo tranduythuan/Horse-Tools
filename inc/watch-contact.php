@@ -408,13 +408,52 @@ function horsetools_contact_notice() {
 	// Print a set of identifiers as one line each. Asking somebody to confirm
 	// "8 contact details" without showing which eight is asking them to click
 	// yes at nothing, which is how an approval step becomes a formality.
+	// Show enough to judge, not everything found.
+	//
+	// A knowledge blog with 866 posts turns up 31 contact details, most of them
+	// example addresses out of tutorials about email — and printing all of them
+	// made an 810-pixel banner that sat on top of every screen in the plugin. A
+	// wall is not more informative than a list; it is less, because nobody reads
+	// it and the confirm button underneath becomes a formality.
+	//
+	// Rarest first, the same reasoning as the domain list: the hotline appears in
+	// two hundred posts and the number somebody quietly added appears in one, so
+	// ordering by how often each was seen puts the odd one where the eye lands.
+	// The remainder stays one click away rather than gone.
 	$list = function ( array $rows, $prefix = '' ) {
-		foreach ( $rows as $row ) {
+		$show = 12;
+		uasort( $rows, function ( $a, $b ) {
+			$ca = isset( $a['count'] ) ? (int) $a['count'] : 0;
+			$cb = isset( $b['count'] ) ? (int) $b['count'] : 0;
+			return $ca === $cb ? strcmp( (string) $a['value'], (string) $b['value'] ) : $ca <=> $cb;
+		} );
+
+		$line = function ( $row ) use ( $prefix ) {
 			echo '<p style="margin:2px 0">'
 				. ( '' !== $prefix ? '<code>' . esc_html( $prefix ) . '</code> ' : '' )
 				. esc_html( horsetools_contact_type_label( $row['type'] ) ) . ': <strong>'
 				. esc_html( isset( $row['raw'] ) && '' !== $row['raw'] ? $row['raw'] : $row['value'] )
 				. '</strong></p>';
+		};
+
+		$rest = array_slice( $rows, $show, null, true );
+		foreach ( array_slice( $rows, 0, $show, true ) as $row ) {
+			$line( $row );
+		}
+		if ( $rest ) {
+			echo '<details style="margin:6px 0"><summary style="cursor:pointer">'
+				. esc_html(
+					sprintf(
+						/* translators: %d: how many more contact details there are. */
+						_n( 'and %d more — click to see it', 'and %d more — click to see them', count( $rest ), 'horse-tools' ),
+						count( $rest )
+					)
+				)
+				. '</summary>';
+			foreach ( $rest as $row ) {
+				$line( $row );
+			}
+			echo '</details>';
 		}
 	};
 

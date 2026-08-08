@@ -136,7 +136,7 @@ msgstr ""
 msgid "A PHP snippet changed on your site"
 msgstr ""
 
-#: inc/watch-contact.php:442
+#: inc/watch-contact.php:481
 msgid "A contact detail that was not there before has appeared in your content."
 msgstr ""
 
@@ -2828,7 +2828,7 @@ msgstr ""
 msgid "Find where a shortcode is used"
 msgstr ""
 
-#: inc/watch-contact.php:439
+#: inc/watch-contact.php:478
 msgid "Finished reading your posts and pages."
 msgstr ""
 
@@ -2962,7 +2962,7 @@ msgstr ""
 msgid "Gold"
 msgstr ""
 
-#: inc/watch-contact.php:459
+#: inc/watch-contact.php:498
 msgid "Gone"
 msgstr ""
 
@@ -3154,7 +3154,7 @@ msgstr ""
 msgid "Horse Tools can tell you when your content starts linking somewhere new."
 msgstr ""
 
-#: inc/watch-contact.php:449
+#: inc/watch-contact.php:488
 msgid "Horse Tools can watch your contact details for changes."
 msgstr ""
 
@@ -3331,7 +3331,7 @@ msgstr ""
 msgid "If you have not done either of those things, then something can write to your database that should not be able to. Changing passwords will not fix that on its own; the way in has to be found."
 msgstr ""
 
-#: inc/watch-contact.php:460
+#: inc/watch-contact.php:499
 msgid "If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else."
 msgstr ""
 
@@ -3999,7 +3999,7 @@ msgstr ""
 msgid "Neutral"
 msgstr ""
 
-#: inc/watch-contact.php:458
+#: inc/watch-contact.php:497
 msgid "New"
 msgstr ""
 
@@ -6262,15 +6262,15 @@ msgstr ""
 msgid "There is no backup to restore."
 msgstr ""
 
-#: inc/watch-contact.php:423
+#: inc/watch-contact.php:462
 msgid "These are correct — remember them"
 msgstr ""
 
-#: inc/watch-contact.php:450
+#: inc/watch-contact.php:489
 msgid "These are the phone numbers, Zalo, Messenger links and email addresses currently in your settings. Check them, then confirm — after that you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest."
 msgstr ""
 
-#: inc/watch-contact.php:440
+#: inc/watch-contact.php:479
 msgid "These contact details appear in your content. Confirm them and you will be told if a new one ever turns up in a post — which is what happens when somebody edits an old article to put their own number in it."
 msgstr ""
 
@@ -7031,7 +7031,7 @@ msgstr ""
 msgid "Your configuration has been saved"
 msgstr ""
 
-#: inc/watch-contact.php:457
+#: inc/watch-contact.php:496
 msgid "Your contact details have changed."
 msgstr ""
 
@@ -7150,6 +7150,12 @@ msgstr ""
 #: main/customers.php:60
 msgid "ads.txt"
 msgstr ""
+
+#: inc/watch-contact.php:448
+msgid "and %d more — click to see it"
+msgid_plural "and %d more — click to see them"
+msgstr[0] ""
+msgstr[1] ""
 
 #: main/page/12chat.php:27
 msgid "choose how the floating button looks from the visual grid below (17 styles). What you see is what visitors get."

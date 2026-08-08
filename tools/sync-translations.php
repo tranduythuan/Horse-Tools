@@ -1323,6 +1323,10 @@ $vi = array(
 	'Save this choice' => 'Lưu lựa chọn này',
 	'Page %1$d of %2$d' => 'Trang %1$d / %2$d',
 
+
+	// The contact banner folded down on a site with 31 of them (1.3.32).
+	'and %d more — click to see it' => 'và %d cái nữa — bấm để xem',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

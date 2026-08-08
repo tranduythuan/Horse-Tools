@@ -7558,3 +7558,6 @@ msgstr "script hoặc khung nhúng"
 
 msgid "Save this choice"
 msgstr "Lưu lựa chọn này"
+
+msgid "and %d more — click to see it"
+msgstr "và %d cái nữa — bấm để xem"
