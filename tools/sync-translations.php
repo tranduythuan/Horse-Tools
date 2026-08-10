@@ -1414,6 +1414,11 @@ $vi = array(
 	'This server cannot reach any other mail server, so nothing it sends can ever be delivered. WordPress hands each message to a local mail program, that program accepts it — which is why every screen says “sent” — and then finds the way out closed. The message waits in a queue nobody reads, and there is no bounce, because a bounce would have to leave by the same door.' => 'Máy chủ này không kết nối được tới bất kỳ máy chủ thư nào khác, nên mọi thứ nó gửi đều không thể tới nơi. WordPress giao từng lá thư cho một chương trình thư nội bộ, chương trình đó nhận — nên màn hình nào cũng báo "đã gửi" — rồi mới thấy đường ra bị đóng. Lá thư nằm chờ trong một hàng đợi không ai đọc, và cũng không có thư báo lỗi, vì thư báo lỗi cũng phải đi ra bằng đúng cái cửa đó.',
 	'Nothing in DNS can change this. Send through an email service instead — those use a different port, which is open.' => 'Không bản ghi DNS nào sửa được chuyện này. Hãy gửi qua một dịch vụ email — chúng dùng cổng khác, và cổng đó mở.',
 
+
+	// IP không có reverse DNS — nguyên nhân thật trên site của chủ (1.3.39).
+	'This server sends mail from an address with no name attached to it (%s). Gmail and Yahoo both take that as the mark of a machine nobody set up to send mail, and Yahoo refuses it outright — which looks from here exactly like the message vanishing, because the refusal happens at the far end and the bounce goes somewhere you never read.' => 'Máy chủ này gửi thư từ một địa chỉ không gắn tên nào cả (%s). Gmail lẫn Yahoo đều coi đó là dấu hiệu của một cỗ máy không ai dựng lên để gửi thư, và Yahoo từ chối thẳng — nhìn từ đây thì y hệt như lá thư biến mất, vì việc từ chối xảy ra ở đầu bên kia và thư báo lỗi đi về một chỗ anh không bao giờ đọc.',
+	'Your host can attach a name to the address — ask them for “reverse DNS” or a “PTR record”. Or sidestep it entirely by sending through an email service, whose own servers already have one.' => 'Nhà cung cấp hosting có thể gắn tên cho địa chỉ đó — hỏi họ về "reverse DNS" hoặc "bản ghi PTR". Hoặc tránh hẳn bằng cách gửi qua một dịch vụ email, máy chủ của họ vốn đã có sẵn.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

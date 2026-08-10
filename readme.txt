@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.38
+Stable tag: 1.3.39
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,12 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.39 =
+* **Horse Tools now checks whether your server's address has a name.** Gmail and Yahoo both expect the address a message arrives from to resolve back to something, and Yahoo refuses outright when it does not — which from your side looks exactly like the message vanishing, because the refusal happens at the far end and the bounce goes somewhere you never read.
+* A plain VPS often has no such name, because nobody set one and nothing else needs it. The site owner cannot see it, and has no way to connect "no reverse DNS" to "the customer says the order email never came".
+* Only the unambiguous case is reported: no name at all. Whether an existing name is a *good* one has enough grey in it to produce false alarms, and this screen does not raise those.
+* This is what was actually wrong on the two sites it was written for — and the release before this one guessed differently. Port 25 turned out to be open; the addresses simply had no names. The check added in 1.3.38 stays, because it is right about the case it describes, but it was not this case.
 
 = 1.3.38 =
 * **Horse Tools now checks whether your server can reach any other mail server at all — the question nobody asks, and the answer that explains most vanished email.** WordPress hands each message to a local mail program, that program accepts it (which is why every screen says "sent"), and then finds outbound port 25 closed. DigitalOcean, Google Cloud and many others close it by default so their machines cannot be used for spam. The message waits in a queue nobody reads, and no bounce arrives, because a bounce would have to leave by the same door.

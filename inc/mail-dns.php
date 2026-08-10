@@ -399,6 +399,45 @@ function horsetools_mail_port25() {
 }
 
 /**
+ * Does this server's address have a name?
+ *
+ * Every serious receiver — Gmail and Yahoo certainly — expects the address a
+ * message arrives from to resolve back to a name, and Yahoo rejects outright
+ * when it does not. It is the cheapest possible sign of a machine that was set
+ * up to send mail rather than one that has been taken over, which is why it is
+ * checked before anything in the message is even read.
+ *
+ * A shared web server on a plain VPS often has none, because nobody set one and
+ * nothing else needs it. The site owner cannot see this, gets no bounce they
+ * ever read, and has no way to connect "no reverse DNS" to "customers say the
+ * order email never came".
+ *
+ * Only the unambiguous case is reported: no name at all. Judging whether an
+ * existing name is a *good* one — whether it matches the HELO, whether it
+ * resolves back — is a question with enough grey in it to produce false alarms,
+ * and this file does not raise those.
+ *
+ * @return string 'named' | 'nameless' | 'unknown'
+ */
+function horsetools_mail_rdns() {
+	$ip = horsetools_mail_server_ip();
+	if ( '' === $ip || ! filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 ) ) {
+		return 'unknown';
+	}
+	$key = 'horsetools_mail_rdns_' . md5( $ip );
+	$hit = get_transient( $key );
+	if ( is_string( $hit ) && '' !== $hit ) {
+		return $hit;
+	}
+	// gethostbyaddr() returns the address unchanged when there is no PTR record,
+	// which is the whole test.
+	$name   = @gethostbyaddr( $ip ); // phpcs:ignore
+	$result = ( is_string( $name ) && '' !== $name && $name !== $ip ) ? 'named' : 'nameless';
+	set_transient( $key, $result, HORSETOOLS_MAIL_DNS_TTL );
+	return $result;
+}
+
+/**
  * The findings, worst first, in words rather than record syntax.
  *
  * @return array<int,array{level:string,text:string,fix:string}> level: bad | warn | note | ok
@@ -425,6 +464,14 @@ function horsetools_mail_findings() {
 	// First, because it makes everything below beside the point. No DNS record
 	// fixes a closed port, and a site in this state can spend weeks adjusting SPF
 	// while every message goes on sitting in a queue.
+	if ( ! horsetools_mail_via_smtp() && 'nameless' === horsetools_mail_rdns() ) {
+		$out[] = array(
+			'level' => 'bad',
+			/* translators: %s: the server's IP address. */
+			'text'  => sprintf( __( 'This server sends mail from an address with no name attached to it (%s). Gmail and Yahoo both take that as the mark of a machine nobody set up to send mail, and Yahoo refuses it outright — which looks from here exactly like the message vanishing, because the refusal happens at the far end and the bounce goes somewhere you never read.', 'horse-tools' ), horsetools_mail_server_ip() ),
+			'fix'   => __( 'Your host can attach a name to the address — ask them for “reverse DNS” or a “PTR record”. Or sidestep it entirely by sending through an email service, whose own servers already have one.', 'horse-tools' ),
+		);
+	}
 	if ( ! horsetools_mail_via_smtp() && 'blocked' === horsetools_mail_port25() ) {
 		$out[] = array(
 			'level' => 'bad',

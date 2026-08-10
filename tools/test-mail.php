@@ -67,6 +67,8 @@ function wp_cache_flush() {}
 
 $GLOBALS['opts']  = array();
 $GLOBALS['trans'] = array();
+// Phải đặt sớm: khoá cache của rDNS tính theo IP này, và hàm trả 'unknown' khi thiếu.
+$_SERVER['SERVER_ADDR'] = '9.9.9.9';
 $GLOBALS['mail_ok'] = true;
 $GLOBALS['sent'] = array();
 function wp_mail( $to, $s, $b ) { $GLOBALS['sent'][] = $to; return $GLOBALS['mail_ok']; }
@@ -230,7 +232,9 @@ echo "\n11b. CỔNG 25 BỊ CHẶN — nguyên nhân thật của phần lớn t
 // không có SPF nào), cùng báo "đã gửi", cùng không giao được gì. DNS khác nhau mà
 // kết quả giống hệt → nguyên nhân không nằm ở DNS.
 function port25( $v ) { $GLOBALS['trans']['horsetools_mail_port25'] = $v; }
+function rdns( $v ) { $GLOBALS['trans'][ 'horsetools_mail_rdns_' . md5( $_SERVER['SERVER_ADDR'] ) ] = $v; }
 reset_zone();
+rdns( 'named' );
 port25( 'blocked' );
 $GLOBALS['horsetools_options'] = array();
 $f = horsetools_mail_findings();
@@ -246,6 +250,30 @@ $GLOBALS['horsetools_options']['mail-gsmtp1'] = 1;
 $txt = implode( ' ', array_column( horsetools_mail_findings(), 'text' ) );
 ok( false === strpos( $txt, 'cannot reach any other mail server' ), 'đang dùng SMTP thì cổng 25 không liên quan — SMTP đi cổng khác' );
 $GLOBALS['horsetools_options'] = array();
+
+echo "\n11c. IP KHÔNG CÓ TÊN — cái thật sự làm thư biến mất trên site thật\n";
+// Giả thuyết cổng 25 SAI: plugin thử trên máy chủ thật thì cổng mở. Kiểm tiếp mới
+// ra 128.199.244.225 không có bản ghi PTR nào cả. Yahoo từ chối thẳng IP không
+// tên — và đó là thuộc tính của MÁY CHỦ, nên khớp đúng chuyện hai tên miền có DNS
+// trái ngược nhau lại cùng thất bại.
+reset_zone();
+port25( 'open' );
+$GLOBALS['horsetools_options'] = array();
+rdns( 'nameless' );
+$f = horsetools_mail_findings();
+eq( $f[0]['level'], 'bad', 'IP không tên → báo đỏ, xếp trước' );
+ok( false !== strpos( $f[0]['fix'], 'PTR' ), 'nói đúng thuật ngữ để đi hỏi nhà cung cấp' );
+
+rdns( 'named' );
+$txt = implode( ' ', array_column( horsetools_mail_findings(), 'text' ) );
+ok( false === strpos( $txt, 'no name attached' ), 'có tên thì không kêu' );
+
+rdns( 'nameless' );
+$GLOBALS['horsetools_options']['mail-gsmtp1'] = 1;
+$txt = implode( ' ', array_column( horsetools_mail_findings(), 'text' ) );
+ok( false === strpos( $txt, 'no name attached' ), 'gửi qua SMTP thì IP của mình không còn liên quan' );
+$GLOBALS['horsetools_options'] = array();
+rdns( 'named' );
 
 echo "\n12. Kết luận trên màn hình\n";
 reset_zone();

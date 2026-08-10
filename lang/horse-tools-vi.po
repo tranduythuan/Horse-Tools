@@ -7768,3 +7768,9 @@ msgstr "Máy chủ này không kết nối được tới bất kỳ máy chủ 
 
 msgid "Nothing in DNS can change this. Send through an email service instead — those use a different port, which is open."
 msgstr "Không bản ghi DNS nào sửa được chuyện này. Hãy gửi qua một dịch vụ email — chúng dùng cổng khác, và cổng đó mở."
+
+msgid "This server sends mail from an address with no name attached to it (%s). Gmail and Yahoo both take that as the mark of a machine nobody set up to send mail, and Yahoo refuses it outright — which looks from here exactly like the message vanishing, because the refusal happens at the far end and the bounce goes somewhere you never read."
+msgstr "Máy chủ này gửi thư từ một địa chỉ không gắn tên nào cả (%s). Gmail lẫn Yahoo đều coi đó là dấu hiệu của một cỗ máy không ai dựng lên để gửi thư, và Yahoo từ chối thẳng — nhìn từ đây thì y hệt như lá thư biến mất, vì việc từ chối xảy ra ở đầu bên kia và thư báo lỗi đi về một chỗ anh không bao giờ đọc."
+
+msgid "Your host can attach a name to the address — ask them for “reverse DNS” or a “PTR record”. Or sidestep it entirely by sending through an email service, whose own servers already have one."
+msgstr "Nhà cung cấp hosting có thể gắn tên cho địa chỉ đó — hỏi họ về \"reverse DNS\" hoặc \"bản ghi PTR\". Hoặc tránh hẳn bằng cách gửi qua một dịch vụ email, máy chủ của họ vốn đã có sẵn."
