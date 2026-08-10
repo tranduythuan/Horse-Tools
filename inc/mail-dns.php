@@ -352,6 +352,53 @@ function horsetools_mail_guess_provider() {
  * ---------------------------------------------------------------------- */
 
 /**
+ * Can this server open a connection to another mail server at all?
+ *
+ * The question nobody asks, and the answer that explains most vanished mail.
+ * PHP's mail() hands the message to a local mail agent, which accepts it — so
+ * wp_mail() returns true and every screen says "sent" — and then tries to reach
+ * the outside world on port 25. On a great many providers, DigitalOcean and
+ * Google Cloud among them, outbound 25 is closed by default to stop the machines
+ * being used for spam. The message sits in a local queue for ever. There is no
+ * bounce, because the bounce would have to go out the same door.
+ *
+ * That is exactly the shape this was diagnosed from: two sites on one server with
+ * opposite DNS — one publishing a hard-fail SPF, the other publishing none at all
+ * — both reporting mail sent and neither delivering anything. Different DNS,
+ * identical outcome, so the DNS was not the cause.
+ *
+ * The check is a bare TCP connect to a well-known mail exchanger. Nothing is sent
+ * and no message is involved; it asks only whether the door opens. Held for half a
+ * day, because whether a host blocks a port is not something that changes hourly.
+ *
+ * @return string 'open' | 'blocked' | 'unknown'
+ */
+function horsetools_mail_port25() {
+	$hit = get_transient( 'horsetools_mail_port25' );
+	if ( is_string( $hit ) && '' !== $hit ) {
+		return $hit;
+	}
+	if ( ! function_exists( 'fsockopen' ) ) {
+		return 'unknown';
+	}
+
+	$errno  = 0;
+	$errstr = '';
+	// A five second ceiling: a blocked port usually fails instantly with
+	// "connection refused" and sometimes hangs until it times out, and an admin
+	// screen must not wait on the second case.
+	$sock = @fsockopen( 'aspmx.l.google.com', 25, $errno, $errstr, 5 ); // phpcs:ignore
+	if ( $sock ) {
+		fclose( $sock );
+		$result = 'open';
+	} else {
+		$result = 'blocked';
+	}
+	set_transient( 'horsetools_mail_port25', $result, HORSETOOLS_MAIL_DNS_TTL );
+	return $result;
+}
+
+/**
  * The findings, worst first, in words rather than record syntax.
  *
  * @return array<int,array{level:string,text:string,fix:string}> level: bad | warn | note | ok
@@ -374,6 +421,17 @@ function horsetools_mail_findings() {
 	$dmarc = horsetools_mail_dmarc( $domain );
 	$mx    = horsetools_mail_mx( $domain );
 	$ip    = horsetools_mail_server_ip();
+
+	// First, because it makes everything below beside the point. No DNS record
+	// fixes a closed port, and a site in this state can spend weeks adjusting SPF
+	// while every message goes on sitting in a queue.
+	if ( ! horsetools_mail_via_smtp() && 'blocked' === horsetools_mail_port25() ) {
+		$out[] = array(
+			'level' => 'bad',
+			'text'  => __( 'This server cannot reach any other mail server, so nothing it sends can ever be delivered. WordPress hands each message to a local mail program, that program accepts it — which is why every screen says “sent” — and then finds the way out closed. The message waits in a queue nobody reads, and there is no bounce, because a bounce would have to leave by the same door.', 'horse-tools' ),
+			'fix'   => __( 'Nothing in DNS can change this. Send through an email service instead — those use a different port, which is open.', 'horse-tools' ),
+		);
+	}
 
 	// The one that stops mail dead, and only when the site is sending from this
 	// machine. Through an SMTP service it is the service's address that is

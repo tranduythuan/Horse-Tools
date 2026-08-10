@@ -1409,6 +1409,11 @@ $vi = array(
 	// Dùng luôn chat Telegram mà 2FA đã ghép đôi (1.3.37).
 	'Telegram (chat %s — the one paired for two-factor recovery)' => 'Telegram (chat %s — cái đã ghép đôi cho khôi phục hai lớp)',
 
+
+	// Cổng 25 bị chặn — nguyên nhân thật của thư biến mất (1.3.38).
+	'This server cannot reach any other mail server, so nothing it sends can ever be delivered. WordPress hands each message to a local mail program, that program accepts it — which is why every screen says “sent” — and then finds the way out closed. The message waits in a queue nobody reads, and there is no bounce, because a bounce would have to leave by the same door.' => 'Máy chủ này không kết nối được tới bất kỳ máy chủ thư nào khác, nên mọi thứ nó gửi đều không thể tới nơi. WordPress giao từng lá thư cho một chương trình thư nội bộ, chương trình đó nhận — nên màn hình nào cũng báo "đã gửi" — rồi mới thấy đường ra bị đóng. Lá thư nằm chờ trong một hàng đợi không ai đọc, và cũng không có thư báo lỗi, vì thư báo lỗi cũng phải đi ra bằng đúng cái cửa đó.',
+	'Nothing in DNS can change this. Send through an email service instead — those use a different port, which is open.' => 'Không bản ghi DNS nào sửa được chuyện này. Hãy gửi qua một dịch vụ email — chúng dùng cổng khác, và cổng đó mở.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

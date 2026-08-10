@@ -225,6 +225,28 @@ reset_zone();
 zone_mx( 'vidu.com', 'mail.laquacuatoi.vn' );
 eq( horsetools_mail_guess_provider()['key'], '', 'không nhận ra thì không đoán bừa' );
 
+echo "\n11b. CỔNG 25 BỊ CHẶN — nguyên nhân thật của phần lớn thư biến mất\n";
+// Hai site trên cùng một máy chủ, DNS trái ngược nhau (một cái SPF -all, một cái
+// không có SPF nào), cùng báo "đã gửi", cùng không giao được gì. DNS khác nhau mà
+// kết quả giống hệt → nguyên nhân không nằm ở DNS.
+function port25( $v ) { $GLOBALS['trans']['horsetools_mail_port25'] = $v; }
+reset_zone();
+port25( 'blocked' );
+$GLOBALS['horsetools_options'] = array();
+$f = horsetools_mail_findings();
+eq( $f[0]['level'], 'bad', 'báo đỏ, và xếp TRƯỚC mọi thứ khác' );
+ok( false !== strpos( $f[0]['fix'], 'DNS' ), 'nói thẳng là không bản ghi DNS nào sửa được' );
+
+port25( 'open' );
+$txt = implode( ' ', array_column( horsetools_mail_findings(), 'text' ) );
+ok( false === strpos( $txt, 'cannot reach any other mail server' ), 'cổng mở thì không kêu' );
+
+port25( 'blocked' );
+$GLOBALS['horsetools_options']['mail-gsmtp1'] = 1;
+$txt = implode( ' ', array_column( horsetools_mail_findings(), 'text' ) );
+ok( false === strpos( $txt, 'cannot reach any other mail server' ), 'đang dùng SMTP thì cổng 25 không liên quan — SMTP đi cổng khác' );
+$GLOBALS['horsetools_options'] = array();
+
 echo "\n12. Kết luận trên màn hình\n";
 reset_zone();
 $_SERVER['SERVER_ADDR'] = '9.9.9.9';

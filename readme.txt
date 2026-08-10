@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.37
+Stable tag: 1.3.38
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,12 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.38 =
+* **Horse Tools now checks whether your server can reach any other mail server at all — the question nobody asks, and the answer that explains most vanished email.** WordPress hands each message to a local mail program, that program accepts it (which is why every screen says "sent"), and then finds outbound port 25 closed. DigitalOcean, Google Cloud and many others close it by default so their machines cannot be used for spam. The message waits in a queue nobody reads, and no bounce arrives, because a bounce would have to leave by the same door.
+* This is reported **first**, above everything else, because no DNS record can change it. A site in this state can spend weeks adjusting SPF while every message goes on sitting in a queue.
+* Diagnosed from two sites on one server with opposite DNS — one publishing a hard-fail SPF, the other publishing none at all — both reporting mail sent and neither delivering anything. Different DNS, identical outcome, so the DNS was not the cause. The earlier releases' focus on SPF was right about what those records say and wrong about why the mail was disappearing.
+* The check is a bare TCP connect to a well-known mail exchanger, held for half a day. Nothing is sent and no message is involved; it asks only whether the door opens. It is skipped entirely when the site already sends through an SMTP service, because those use a different port.
 
 = 1.3.37 =
 * **If you have already paired Telegram for two-factor recovery, security messages now go there — no extra setup.** Asking for a chat ID was asking a question the plugin had already answered. A site with the bot token filled in and an administrator paired has a working bot, a known chat and a proven route; the alert code reported "no Telegram" anyway and pushed everything into email, because it only knew to look at the WooCommerce order chat field.

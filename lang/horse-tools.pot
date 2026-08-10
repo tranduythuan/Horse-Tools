@@ -202,7 +202,7 @@ msgstr ""
 msgid "A private key."
 msgstr ""
 
-#: inc/mail-dns.php:435
+#: inc/mail-dns.php:493
 msgid "A safe first one collects reports and changes nothing: a TXT record at _dmarc.%1$s with the value %2$s"
 msgstr ""
 
@@ -335,7 +335,7 @@ msgstr ""
 msgid "Add ads to the top of the article"
 msgstr ""
 
-#: inc/mail-dns.php:426
+#: inc/mail-dns.php:484
 msgid "Add an SPF record. Whichever email service you choose below will give you the exact line."
 msgstr ""
 
@@ -2180,7 +2180,7 @@ msgstr ""
 msgid "Effect"
 msgstr ""
 
-#: inc/mail-dns.php:444
+#: inc/mail-dns.php:502
 msgid "Either set up a mailbox for the domain, or make sure the address you send notifications to is one you actually read."
 msgstr ""
 
@@ -3909,7 +3909,7 @@ msgstr ""
 msgid "Mail from this site is known to arrive"
 msgstr ""
 
-#: inc/mail-dns.php:396
+#: inc/mail-dns.php:454
 msgid "Mail this site sends as %s is treated as forged. Your domain publishes a list of servers allowed to send for it, that list ends in “reject everything else”, and this web server is not on it."
 msgstr ""
 
@@ -4269,12 +4269,16 @@ msgstr ""
 msgid "Not found in any post or page."
 msgstr ""
 
-#: inc/mail-dns.php:443
+#: inc/mail-dns.php:501
 msgid "Nothing accepts mail for %s, so any address at your own domain cannot receive replies. If you have stopped paying for a mailbox provider, its records may still be pointing there."
 msgstr ""
 
 #: inc/scuri.php:690
 msgid "Nothing could be self-hosted."
+msgstr ""
+
+#: inc/mail-dns.php:432
+msgid "Nothing in DNS can change this. Send through an email service instead — those use a different port, which is open."
 msgstr ""
 
 #: inc/shortcode.php:460
@@ -5557,15 +5561,15 @@ msgstr ""
 msgid "Send test email"
 msgstr ""
 
-#: inc/mail-dns.php:387
+#: inc/mail-dns.php:445
 msgid "Send through an email service instead — then the question does not arise."
 msgstr ""
 
-#: inc/mail-dns.php:397
+#: inc/mail-dns.php:455
 msgid "Send through an email service that is on the list, or add this server to it."
 msgstr ""
 
-#: inc/mail-dns.php:404
+#: inc/mail-dns.php:462
 msgid "Send through an email service that is on the list."
 msgstr ""
 
@@ -6540,7 +6544,7 @@ msgstr ""
 msgid "This function will redirect all of your website pages to the destination page of your choice"
 msgstr ""
 
-#: inc/mail-dns.php:367
+#: inc/mail-dns.php:414
 msgid "This host does not let the plugin read DNS, so none of the checks below can be made. That is not the same as everything being in order."
 msgstr ""
 
@@ -6566,6 +6570,10 @@ msgstr ""
 
 #: main/group.php:126 main/group.php:159
 msgid "This section could not be displayed. The rest of the screen still works."
+msgstr ""
+
+#: inc/mail-dns.php:431
+msgid "This server cannot reach any other mail server, so nothing it sends can ever be delivered. WordPress hands each message to a local mail program, that program accepts it — which is why every screen says “sent” — and then finds the way out closed. The message waits in a queue nobody reads, and there is no bounce, because a bounce would have to leave by the same door."
 msgstr ""
 
 #: inc/watch-exposure.php:113
@@ -6612,11 +6620,11 @@ msgstr ""
 msgid "This user has two-factor authentication ON."
 msgstr ""
 
-#: inc/mail-dns.php:403
+#: inc/mail-dns.php:461
 msgid "This web server is not on your domain’s list of allowed senders. The list says “treat anything else as suspicious” rather than “reject it”, so mail as %s will usually arrive in the spam folder."
 msgstr ""
 
-#: inc/mail-dns.php:409
+#: inc/mail-dns.php:467
 msgid "This web server is on your domain’s list of allowed senders."
 msgstr ""
 
@@ -7279,15 +7287,15 @@ msgstr ""
 msgid "Your database"
 msgstr ""
 
-#: inc/mail-dns.php:425
+#: inc/mail-dns.php:483
 msgid "Your domain does not say which servers are allowed to send mail for it. Anyone can send mail claiming to be you, and mail you really did send has nothing to vouch for it — Gmail and Yahoo both treat that as a reason for suspicion."
 msgstr ""
 
-#: inc/mail-dns.php:415
+#: inc/mail-dns.php:473
 msgid "Your domain has a list of allowed senders, but it could not be worked out from here whether this server is on it."
 msgstr ""
 
-#: inc/mail-dns.php:433
+#: inc/mail-dns.php:491
 msgid "Your domain has no DMARC record, so you are never told when somebody sends mail pretending to be you, and receivers have no instruction about what to do with it."
 msgstr ""
 
@@ -7295,7 +7303,7 @@ msgstr ""
 msgid "Your domain receives mail through %s. Sending through the same service is the setting most likely to work, because it is already on your domain’s list of allowed senders."
 msgstr ""
 
-#: inc/mail-dns.php:386
+#: inc/mail-dns.php:444
 msgid "Your domain says which servers may send mail for it, and this site is sending straight from the web server. Whether that server is on the list could not be determined here."
 msgstr ""
 
