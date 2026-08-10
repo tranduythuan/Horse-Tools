@@ -310,7 +310,24 @@ function horsetools_mail_spf_eval( $ip, $domain, &$budget = 10, $depth = 0 ) {
  */
 function horsetools_mail_server_ip() {
 	$ip = isset( $_SERVER['SERVER_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['SERVER_ADDR'] ) ) : '';
-	return filter_var( $ip, FILTER_VALIDATE_IP ) ? $ip : '';
+	if ( ! filter_var( $ip, FILTER_VALIDATE_IP ) ) {
+		return '';
+	}
+	// A private or loopback address is not the address anything leaves by. Sites
+	// behind a proxy, a load balancer or a container runtime see 127.0.0.1 or a
+	// 10.x here, and judging either the sender policy or the reverse name against
+	// it produces an answer about a machine that does not exist on the internet.
+	//
+	// Returning '' says "cannot tell", which every caller already handles, and
+	// which is the truthful answer. It matters more than it sounds: without this,
+	// the sender-policy check could evaluate a 10.x against a record ending in
+	// "reject everything else" and print a confident accusation that happened to
+	// be right for the wrong reason — and would be wrong the first time it met a
+	// host whose real address was authorised.
+	if ( ! filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE ) ) {
+		return '';
+	}
+	return $ip;
 }
 
 /** Is WordPress sending through a configured SMTP service rather than the local machine? */

@@ -275,6 +275,26 @@ ok( false === strpos( $txt, 'no name attached' ), 'gửi qua SMTP thì IP của 
 $GLOBALS['horsetools_options'] = array();
 rdns( 'named' );
 
+echo "\n11d. IP riêng tư thì KHÔNG được kết luận gì — cả SPF lẫn tên\n";
+// Site nằm sau proxy, cân bằng tải hay container thấy 127.0.0.1 hoặc 10.x ở đây.
+// Xét SPF hay reverse DNS với địa chỉ đó là trả lời về một cỗ máy không tồn tại
+// trên Internet — và có thể in ra một lời buộc tội ĐÚNG VÌ MAY.
+$giu = $_SERVER['SERVER_ADDR'];
+foreach ( array( '127.0.0.1', '10.0.0.5', '192.168.1.10', '172.16.0.9' ) as $riengtu ) {
+	$_SERVER['SERVER_ADDR'] = $riengtu;
+	eq( horsetools_mail_server_ip(), '', "$riengtu → coi như không biết" );
+}
+$_SERVER['SERVER_ADDR'] = '';
+eq( horsetools_mail_rdns(), 'unknown', 'không biết địa chỉ thì không phán về tên' );
+reset_zone();
+zone_txt( 'vidu.com', 'v=spf1 ip4:1.2.3.0/24 -all' );
+$GLOBALS['horsetools_options'] = array();
+$txt = implode( ' ', array_column( horsetools_mail_findings(), 'text' ) );
+ok( false === strpos( $txt, 'treated as forged' ), 'KHÔNG buộc tội giả mạo khi không biết mình là ai' );
+ok( false !== strpos( $txt, 'could not be determined' ), 'mà nói thẳng là không xác định được' );
+$_SERVER['SERVER_ADDR'] = $giu;
+eq( horsetools_mail_server_ip(), $giu, 'IP công khai thì vẫn dùng bình thường' );
+
 echo "\n12. Kết luận trên màn hình\n";
 reset_zone();
 $_SERVER['SERVER_ADDR'] = '9.9.9.9';

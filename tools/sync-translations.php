@@ -1419,6 +1419,12 @@ $vi = array(
 	'This server sends mail from an address with no name attached to it (%s). Gmail and Yahoo both take that as the mark of a machine nobody set up to send mail, and Yahoo refuses it outright — which looks from here exactly like the message vanishing, because the refusal happens at the far end and the bounce goes somewhere you never read.' => 'Máy chủ này gửi thư từ một địa chỉ không gắn tên nào cả (%s). Gmail lẫn Yahoo đều coi đó là dấu hiệu của một cỗ máy không ai dựng lên để gửi thư, và Yahoo từ chối thẳng — nhìn từ đây thì y hệt như lá thư biến mất, vì việc từ chối xảy ra ở đầu bên kia và thư báo lỗi đi về một chỗ anh không bao giờ đọc.',
 	'Your host can attach a name to the address — ask them for “reverse DNS” or a “PTR record”. Or sidestep it entirely by sending through an email service, whose own servers already have one.' => 'Nhà cung cấp hosting có thể gắn tên cho địa chỉ đó — hỏi họ về "reverse DNS" hoặc "bản ghi PTR". Hoặc tránh hẳn bằng cách gửi qua một dịch vụ email, máy chủ của họ vốn đã có sẵn.',
 
+
+	// Không phán khi không biết địa chỉ thật của mình (1.3.40).
+	'Mail from this site leaves by %1$s, and that address is known as %2$s.' => 'Thư từ site này đi ra bằng %1$s, và địa chỉ đó được biết tới với tên %2$s.',
+	'nothing at all' => 'không gì cả',
+	'This site cannot see its own public address — it sits behind a proxy or a load balancer — so the checks above that depend on knowing it were skipped rather than guessed at.' => 'Site này không tự nhìn thấy địa chỉ công khai của mình — nó nằm sau một proxy hoặc bộ cân bằng tải — nên những phép kiểm ở trên cần biết địa chỉ đó đã được bỏ qua chứ không đoán bừa.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

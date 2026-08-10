@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.39
+Stable tag: 1.3.40
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.40 =
+* **The mail checks no longer draw conclusions from an address the site does not really send from.** Sites behind a proxy, a load balancer or a container runtime see `127.0.0.1` or a `10.x` where the public address should be, and judging either the sender policy or the reverse name against that answers a question about a machine which does not exist on the internet.
+* It mattered more than it sounds. The sender-policy check could evaluate a private address against a record ending in "reject everything else" and print a confident accusation that happened to be right for the wrong reason — and would have been wrong the first time it met a host whose real address was authorised. It now says it cannot tell, which every screen already knows how to show.
+* The Email screen states the address mail leaves by, and the name that address carries. Half the checks on that screen are about it, and when it is unknown they are skipped — which is a different thing from passing, and now reads as one.
 
 = 1.3.39 =
 * **Horse Tools now checks whether your server's address has a name.** Gmail and Yahoo both expect the address a message arrives from to resolve back to something, and Yahoo refuses outright when it does not — which from your side looks exactly like the message vanishing, because the refusal happens at the far end and the bounce goes somewhere you never read.

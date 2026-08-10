@@ -7774,3 +7774,12 @@ msgstr "Máy chủ này gửi thư từ một địa chỉ không gắn tên nà
 
 msgid "Your host can attach a name to the address — ask them for “reverse DNS” or a “PTR record”. Or sidestep it entirely by sending through an email service, whose own servers already have one."
 msgstr "Nhà cung cấp hosting có thể gắn tên cho địa chỉ đó — hỏi họ về \"reverse DNS\" hoặc \"bản ghi PTR\". Hoặc tránh hẳn bằng cách gửi qua một dịch vụ email, máy chủ của họ vốn đã có sẵn."
+
+msgid "Mail from this site leaves by %1$s, and that address is known as %2$s."
+msgstr "Thư từ site này đi ra bằng %1$s, và địa chỉ đó được biết tới với tên %2$s."
+
+msgid "nothing at all"
+msgstr "không gì cả"
+
+msgid "This site cannot see its own public address — it sits behind a proxy or a load balancer — so the checks above that depend on knowing it were skipped rather than guessed at."
+msgstr "Site này không tự nhìn thấy địa chỉ công khai của mình — nó nằm sau một proxy hoặc bộ cân bằng tải — nên những phép kiểm ở trên cần biết địa chỉ đó đã được bỏ qua chứ không đoán bừa."

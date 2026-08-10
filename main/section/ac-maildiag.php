@@ -46,6 +46,29 @@ $ht_icon     = array( 'bad' => 'ti-circle-x', 'warn' => 'ti-alert-triangle', 'no
 	<span class="description" style="margin-left:8px"><?php esc_html_e( 'Answers are held for half a day; press this after changing anything in DNS.', 'horse-tools' ); ?></span>
 </p>
 
+<?php
+// Shown because half the checks above are about this address, and when it is
+// missing they cannot be made at all — which is a different thing from passing.
+$ht_ip = horsetools_mail_server_ip();
+?>
+<p class="ht-note">
+	<i class="ti ti-server"></i>
+	<?php if ( '' !== $ht_ip ) : ?>
+		<?php
+		printf(
+			/* translators: 1: IP address, 2: its reverse name or a note that it has none. */
+			esc_html__( 'Mail from this site leaves by %1$s, and that address is known as %2$s.', 'horse-tools' ),
+			'<code>' . esc_html( $ht_ip ) . '</code>',
+			'nameless' === horsetools_mail_rdns()
+				? '<strong>' . esc_html__( 'nothing at all', 'horse-tools' ) . '</strong>'
+				: '<code>' . esc_html( (string) @gethostbyaddr( $ht_ip ) ) . '</code>' // phpcs:ignore
+		);
+		?>
+	<?php else : ?>
+		<?php esc_html_e( 'This site cannot see its own public address — it sits behind a proxy or a load balancer — so the checks above that depend on knowing it were skipped rather than guessed at.', 'horse-tools' ); ?>
+	<?php endif; ?>
+</p>
+
 <?php if ( '' !== $ht_guess['name'] ) : ?>
 	<p class="ht-note">
 		<i class="ti ti-bulb"></i>

@@ -202,7 +202,7 @@ msgstr ""
 msgid "A private key."
 msgstr ""
 
-#: inc/mail-dns.php:540
+#: inc/mail-dns.php:557
 msgid "A safe first one collects reports and changes nothing: a TXT record at _dmarc.%1$s with the value %2$s"
 msgstr ""
 
@@ -335,7 +335,7 @@ msgstr ""
 msgid "Add ads to the top of the article"
 msgstr ""
 
-#: inc/mail-dns.php:531
+#: inc/mail-dns.php:548
 msgid "Add an SPF record. Whichever email service you choose below will give you the exact line."
 msgstr ""
 
@@ -2180,7 +2180,7 @@ msgstr ""
 msgid "Effect"
 msgstr ""
 
-#: inc/mail-dns.php:549
+#: inc/mail-dns.php:566
 msgid "Either set up a mailbox for the domain, or make sure the address you send notifications to is one you actually read."
 msgstr ""
 
@@ -2996,7 +2996,7 @@ msgstr ""
 msgid "Generate data"
 msgstr ""
 
-#: main/section/ac-maildiag.php:86
+#: main/section/ac-maildiag.php:109
 msgid "Give it a minute before answering. “In the spam folder” is a useful answer, not a failure to report."
 msgstr ""
 
@@ -3529,7 +3529,7 @@ msgstr ""
 msgid "In Google Analytics: Reports → Engagement → Events. Each channel appears under its own name — contact_phone, contact_zalo, contact_messenger and so on — so there is nothing to configure first. Allow 24 hours for the standard reports; to see it immediately instead, open Admin → DebugView and tap a button on your phone."
 msgstr ""
 
-#: main/section/ac-maildiag.php:82
+#: main/section/ac-maildiag.php:105
 msgid "In the inbox"
 msgstr ""
 
@@ -3537,7 +3537,7 @@ msgstr ""
 msgid "In the page <head>"
 msgstr ""
 
-#: main/section/ac-maildiag.php:83
+#: main/section/ac-maildiag.php:106
 msgid "In the spam folder"
 msgstr ""
 
@@ -3909,7 +3909,11 @@ msgstr ""
 msgid "Mail from this site is known to arrive"
 msgstr ""
 
-#: inc/mail-dns.php:501
+#: main/section/ac-maildiag.php:60
+msgid "Mail from this site leaves by %1$s, and that address is known as %2$s."
+msgstr ""
+
+#: inc/mail-dns.php:518
 msgid "Mail this site sends as %s is treated as forged. Your domain publishes a list of servers allowed to send for it, that list ends in “reject everything else”, and this web server is not on it."
 msgstr ""
 
@@ -4269,7 +4273,7 @@ msgstr ""
 msgid "Not found in any post or page."
 msgstr ""
 
-#: inc/mail-dns.php:548
+#: inc/mail-dns.php:565
 msgid "Nothing accepts mail for %s, so any address at your own domain cannot receive replies. If you have stopped paying for a mailbox provider, its records may still be pointing there."
 msgstr ""
 
@@ -4277,7 +4281,7 @@ msgstr ""
 msgid "Nothing could be self-hosted."
 msgstr ""
 
-#: inc/mail-dns.php:479
+#: inc/mail-dns.php:496
 msgid "Nothing in DNS can change this. Send through an email service instead — those use a different port, which is open."
 msgstr ""
 
@@ -4289,7 +4293,7 @@ msgstr ""
 msgid "Nothing on this page is enabled yet."
 msgstr ""
 
-#: main/section/ac-maildiag.php:66
+#: main/section/ac-maildiag.php:89
 msgid "Nothing running on this server can find out whether a message arrived. You can. Send one, look, and say what you found — the answer is kept with the date, so this screen can afterwards report something that was seen rather than something that was switched on."
 msgstr ""
 
@@ -4341,7 +4345,7 @@ msgstr ""
 msgid "Notify the post author when someone comments on the post"
 msgstr ""
 
-#: main/section/ac-maildiag.php:84
+#: main/section/ac-maildiag.php:107
 msgid "Nowhere — it never came"
 msgstr ""
 
@@ -4833,7 +4837,7 @@ msgstr ""
 msgid "Protection"
 msgstr ""
 
-#: main/section/ac-maildiag.php:62
+#: main/section/ac-maildiag.php:85
 msgid "Prove it"
 msgstr ""
 
@@ -5537,7 +5541,7 @@ msgstr ""
 msgid "Send a Telegram code"
 msgstr ""
 
-#: main/section/ac-maildiag.php:74
+#: main/section/ac-maildiag.php:97
 msgid "Send a test"
 msgstr ""
 
@@ -5561,15 +5565,15 @@ msgstr ""
 msgid "Send test email"
 msgstr ""
 
-#: inc/mail-dns.php:492
+#: inc/mail-dns.php:509
 msgid "Send through an email service instead — then the question does not arise."
 msgstr ""
 
-#: inc/mail-dns.php:502
+#: inc/mail-dns.php:519
 msgid "Send through an email service that is on the list, or add this server to it."
 msgstr ""
 
-#: inc/mail-dns.php:509
+#: inc/mail-dns.php:526
 msgid "Send through an email service that is on the list."
 msgstr ""
 
@@ -5581,7 +5585,7 @@ msgstr ""
 msgid "Sender name"
 msgstr ""
 
-#: main/section/ac-maildiag.php:114 main/section/sec-heartbeat.php:125
+#: main/section/ac-maildiag.php:137 main/section/sec-heartbeat.php:125
 msgid "Sending…"
 msgstr ""
 
@@ -6368,7 +6372,7 @@ msgstr ""
 msgid "The reCAPTCHA is invalid"
 msgstr ""
 
-#: main/section/ac-maildiag.php:124 main/section/sec-heartbeat.php:137
+#: main/section/ac-maildiag.php:147 main/section/sec-heartbeat.php:137
 msgid "The request itself failed."
 msgstr ""
 
@@ -6544,7 +6548,7 @@ msgstr ""
 msgid "This function will redirect all of your website pages to the destination page of your choice"
 msgstr ""
 
-#: inc/mail-dns.php:453
+#: inc/mail-dns.php:470
 msgid "This host does not let the plugin read DNS, so none of the checks below can be made. That is not the same as everything being in order."
 msgstr ""
 
@@ -6572,7 +6576,7 @@ msgstr ""
 msgid "This section could not be displayed. The rest of the screen still works."
 msgstr ""
 
-#: inc/mail-dns.php:478
+#: inc/mail-dns.php:495
 msgid "This server cannot reach any other mail server, so nothing it sends can ever be delivered. WordPress hands each message to a local mail program, that program accepts it — which is why every screen says “sent” — and then finds the way out closed. The message waits in a queue nobody reads, and there is no bounce, because a bounce would have to leave by the same door."
 msgstr ""
 
@@ -6580,7 +6584,7 @@ msgstr ""
 msgid "This server does not read .htaccess files, so nothing is hiding this one but its name. Horse Tools now stores these as .php files that stop on their first line, which works on every server."
 msgstr ""
 
-#: inc/mail-dns.php:471
+#: inc/mail-dns.php:488
 msgid "This server sends mail from an address with no name attached to it (%s). Gmail and Yahoo both take that as the mark of a machine nobody set up to send mail, and Yahoo refuses it outright — which looks from here exactly like the message vanishing, because the refusal happens at the far end and the bounce goes somewhere you never read."
 msgstr ""
 
@@ -6594,6 +6598,10 @@ msgstr ""
 
 #: main/section/ct-sc3.php:24 main/shortcode.php:119
 msgid "This shortcode is used to display the date in the post title. Please note that you need to enable the shortcode usage in the post title under the POST, PAGE section"
+msgstr ""
+
+#: main/section/ac-maildiag.php:68
+msgid "This site cannot see its own public address — it sits behind a proxy or a load balancer — so the checks above that depend on knowing it were skipped rather than guessed at."
 msgstr ""
 
 #: main/section/snippets-screen.php:69
@@ -6624,11 +6632,11 @@ msgstr ""
 msgid "This user has two-factor authentication ON."
 msgstr ""
 
-#: inc/mail-dns.php:508
+#: inc/mail-dns.php:525
 msgid "This web server is not on your domain’s list of allowed senders. The list says “treat anything else as suspicious” rather than “reject it”, so mail as %s will usually arrive in the spam folder."
 msgstr ""
 
-#: inc/mail-dns.php:514
+#: inc/mail-dns.php:531
 msgid "This web server is on your domain’s list of allowed senders."
 msgstr ""
 
@@ -7009,7 +7017,7 @@ msgstr ""
 msgid "When your theme or a plugin loads fonts from Google, every visitor's IP is sent to Google — which GDPR treats as a data transfer. This serves downloaded copies from your own domain instead. Scan first, then click self-host; this works for fonts loaded the standard way (if a font still loads from Google afterwards, your theme hard-codes it — the scan will show you)."
 msgstr ""
 
-#: main/section/ac-maildiag.php:80
+#: main/section/ac-maildiag.php:103
 msgid "Where did it turn up?"
 msgstr ""
 
@@ -7025,7 +7033,7 @@ msgstr ""
 msgid "Where shortcodes run"
 msgstr ""
 
-#: main/section/ac-maildiag.php:90
+#: main/section/ac-maildiag.php:113
 msgid "Where this stands:"
 msgstr ""
 
@@ -7291,23 +7299,23 @@ msgstr ""
 msgid "Your database"
 msgstr ""
 
-#: inc/mail-dns.php:530
+#: inc/mail-dns.php:547
 msgid "Your domain does not say which servers are allowed to send mail for it. Anyone can send mail claiming to be you, and mail you really did send has nothing to vouch for it — Gmail and Yahoo both treat that as a reason for suspicion."
 msgstr ""
 
-#: inc/mail-dns.php:520
+#: inc/mail-dns.php:537
 msgid "Your domain has a list of allowed senders, but it could not be worked out from here whether this server is on it."
 msgstr ""
 
-#: inc/mail-dns.php:538
+#: inc/mail-dns.php:555
 msgid "Your domain has no DMARC record, so you are never told when somebody sends mail pretending to be you, and receivers have no instruction about what to do with it."
 msgstr ""
 
-#: main/section/ac-maildiag.php:55
+#: main/section/ac-maildiag.php:78
 msgid "Your domain receives mail through %s. Sending through the same service is the setting most likely to work, because it is already on your domain’s list of allowed senders."
 msgstr ""
 
-#: inc/mail-dns.php:491
+#: inc/mail-dns.php:508
 msgid "Your domain says which servers may send mail for it, and this site is sending straight from the web server. Whether that server is on the list could not be determined here."
 msgstr ""
 
@@ -7315,7 +7323,7 @@ msgstr ""
 msgid "Your email settings changed after the last test, so what is running now has not been tried"
 msgstr ""
 
-#: inc/mail-dns.php:472
+#: inc/mail-dns.php:489
 msgid "Your host can attach a name to the address — ask them for “reverse DNS” or a “PTR record”. Or sidestep it entirely by sending through an email service, whose own servers already have one."
 msgstr ""
 
@@ -7415,7 +7423,7 @@ msgstr ""
 msgid "ads.txt"
 msgstr ""
 
-#: main/section/ac-maildiag.php:72
+#: main/section/ac-maildiag.php:95
 msgid "an address you can open right now"
 msgstr ""
 
@@ -7535,6 +7543,10 @@ msgstr ""
 
 #: inc/watch-heartbeat.php:150
 msgid "not reviewed yet"
+msgstr ""
+
+#: main/section/ac-maildiag.php:63
+msgid "nothing at all"
 msgstr ""
 
 #: main/section/snippets-screen.php:255
