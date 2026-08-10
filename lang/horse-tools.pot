@@ -30,17 +30,23 @@ msgstr ""
 msgid "%1$d post(s) will publish FAQ schema (%2$s questions on average)."
 msgstr ""
 
-#: inc/watch-heartbeat.php:160
+#: inc/watch-heartbeat.php:162
 msgid "%d FOUND"
 msgstr ""
 
-#: inc/watch-heartbeat.php:134
+#: inc/watch-heartbeat.php:136
 msgid "%d NEW"
 msgstr ""
 
-#: inc/watch-links.php:421
+#: inc/watch-links.php:427
 msgid "%d domain is no longer approved."
 msgid_plural "%d domains are no longer approved."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/watch-links.php:421
+msgid "%d domain looked at again."
+msgid_plural "%d domains looked at again."
 msgstr[0] ""
 msgstr[1] ""
 
@@ -50,7 +56,7 @@ msgid_plural "%d domains your content links to are not approved"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/watch-heartbeat.php:144
+#: inc/watch-heartbeat.php:146
 msgid "%d domains, all approved"
 msgstr ""
 
@@ -64,7 +70,7 @@ msgid_plural "%d are still waiting."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/watch-links.php:674
+#: inc/watch-links.php:680
 msgid "%d link"
 msgid_plural "%d links"
 msgstr[0] ""
@@ -160,11 +166,15 @@ msgstr ""
 msgid "A database dump: everything on the site, downloadable."
 msgstr ""
 
+#: inc/watch-links.php:705
+msgid "A domain can go bad without anything on your site changing: it expires, somebody else buys it, and a link you approved years ago now points at whatever they sell. These were approved over a year ago and are each linked from only one or two posts — the kind that can change hands without anybody here noticing."
+msgstr ""
+
 #: inc/scuri.php:309
 msgid "A login was locked out on your site"
 msgstr ""
 
-#: inc/watch-links.php:531
+#: inc/watch-links.php:537
 msgid "A long list on a first pass is normal and does not have to be read row by row."
 msgstr ""
 
@@ -417,7 +427,7 @@ msgstr ""
 msgid "Add nofollow and _blank for external links"
 msgstr ""
 
-#: inc/watch-links.php:721
+#: inc/watch-links.php:757
 msgid "Add nofollow to it (recommended)"
 msgstr ""
 
@@ -577,7 +587,7 @@ msgstr ""
 msgid "Allows uploading AVIF photos"
 msgstr ""
 
-#: inc/watch-links.php:649
+#: inc/watch-links.php:655
 msgid "Already approved"
 msgstr ""
 
@@ -593,7 +603,7 @@ msgstr ""
 msgid "Analytics found on your site: %s. Clicks will be recorded there."
 msgstr ""
 
-#: inc/watch-links.php:708
+#: inc/watch-links.php:744
 msgid "And what should happen to a domain that is not on the list?"
 msgstr ""
 
@@ -641,15 +651,15 @@ msgstr ""
 msgid "Applying overwrites these groups with the imported values. A one-click backup is kept so you can undo it."
 msgstr ""
 
-#: inc/watch-links.php:622
+#: inc/watch-links.php:628
 msgid "Approve all %d domains your content currently links to?"
 msgstr ""
 
-#: inc/watch-links.php:626
+#: inc/watch-links.php:632
 msgid "Approve all %d — the whole list, not just this page"
 msgstr ""
 
-#: inc/watch-links.php:641
+#: inc/watch-links.php:647
 msgid "Approve the ticked ones"
 msgstr ""
 
@@ -667,7 +677,7 @@ msgstr ""
 msgid "Ask a custom question on the login form"
 msgstr ""
 
-#: inc/health.php:332
+#: inc/health.php:334
 msgid "Ask your host to update PHP to 8.1 or newer."
 msgstr ""
 
@@ -945,7 +955,7 @@ msgstr ""
 msgid "By email — a one-time code is sent to your account address:"
 msgstr ""
 
-#: inc/watch-heartbeat.php:121
+#: inc/watch-heartbeat.php:123
 msgid "CHANGED"
 msgstr ""
 
@@ -1069,7 +1079,7 @@ msgstr ""
 msgid "Check for updates"
 msgstr ""
 
-#: inc/watch-heartbeat.php:339
+#: inc/watch-heartbeat.php:370
 msgid "Check that WP-Cron is running on this site"
 msgstr ""
 
@@ -1079,6 +1089,10 @@ msgstr ""
 
 #: main/section/cu-track.php:67
 msgid "Checked from your own browser: the home page a visitor receives carries no Google Analytics tag. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own."
+msgstr ""
+
+#: inc/watch-links.php:724
+msgid "Checked — still fine"
 msgstr ""
 
 #: main/section/cu-track.php:22
@@ -1361,7 +1375,7 @@ msgstr ""
 msgid "Contact details are the ones you confirmed"
 msgstr ""
 
-#: inc/watch-heartbeat.php:127
+#: inc/watch-heartbeat.php:129
 msgid "Contact details in your posts"
 msgstr ""
 
@@ -1369,7 +1383,7 @@ msgstr ""
 msgid "Contact details in your posts are watched"
 msgstr ""
 
-#: inc/watch-heartbeat.php:117
+#: inc/watch-heartbeat.php:119
 msgid "Contact details in your settings"
 msgstr ""
 
@@ -1489,7 +1503,7 @@ msgstr ""
 msgid "Copy the link below to add it to the Authorized redirect URLs in your Google Developers project"
 msgstr ""
 
-#: inc/health.php:361
+#: inc/health.php:363
 msgid "Core, plugins and themes are up to date"
 msgstr ""
 
@@ -2097,7 +2111,7 @@ msgstr ""
 msgid "Does not exist"
 msgstr ""
 
-#: inc/watch-links.php:565
+#: inc/watch-links.php:571
 msgid "Domain"
 msgstr ""
 
@@ -2122,7 +2136,7 @@ msgstr ""
 msgid "Download link"
 msgstr ""
 
-#: inc/watch-heartbeat.php:157
+#: inc/watch-heartbeat.php:159
 msgid "Downloadable secrets in the site folder"
 msgstr ""
 
@@ -2740,7 +2754,7 @@ msgstr ""
 msgid "Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off."
 msgstr ""
 
-#: inc/watch-links.php:710
+#: inc/watch-links.php:746
 msgid "Everything above only tells you. Telling you leaves a gap: the link goes in, the warning appears on a screen, and the link keeps working until you log in and read it. That gap is how three old posts carried casino links for two years."
 msgstr ""
 
@@ -2844,7 +2858,7 @@ msgstr ""
 msgid "Filter posts and images"
 msgstr ""
 
-#: inc/watch-links.php:653
+#: inc/watch-links.php:659
 msgid "Find a domain"
 msgstr ""
 
@@ -2872,7 +2886,7 @@ msgstr ""
 msgid "First row is a header"
 msgstr ""
 
-#: inc/watch-heartbeat.php:332
+#: inc/watch-heartbeat.php:356
 msgid "Fix the channel and send a test message"
 msgstr ""
 
@@ -3030,7 +3044,7 @@ msgstr ""
 msgid "Google sign-in"
 msgstr ""
 
-#: inc/health.php:430
+#: inc/health.php:432
 msgid "Grade %s"
 msgstr ""
 
@@ -3186,11 +3200,11 @@ msgstr ""
 msgid "Horse Tools %s is available — an update link now appears under the plugin below. WordPress will download it directly from GitHub."
 msgstr ""
 
-#: inc/watch-heartbeat.php:103 inc/watch-heartbeat.php:211
+#: inc/watch-heartbeat.php:105 inc/watch-heartbeat.php:229
 msgid "Horse Tools beat #%1$d — %2$s"
 msgstr ""
 
-#: inc/watch-links.php:799
+#: inc/watch-links.php:835
 msgid "Horse Tools can tell you when your content starts linking somewhere new."
 msgstr ""
 
@@ -3226,7 +3240,7 @@ msgstr ""
 msgid "Horse Tools table"
 msgstr ""
 
-#: inc/alert.php:126
+#: inc/alert.php:201
 msgid "Horse Tools — %s"
 msgstr ""
 
@@ -3311,7 +3325,7 @@ msgstr ""
 msgid "If a theme/plugin script misbehaves, add its handle or file name to the exclusion list below. Disable if you already use a full-page optimiser that defers scripts."
 msgstr ""
 
-#: inc/watch-heartbeat.php:183
+#: inc/watch-heartbeat.php:201
 msgid "If it does not arrive, something stopped it — check the site."
 msgstr ""
 
@@ -3323,7 +3337,7 @@ msgstr ""
 msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
 msgstr ""
 
-#: inc/watch-heartbeat.php:316
+#: inc/watch-heartbeat.php:340
 msgid "If this site stops working, or Horse Tools is switched off, nobody is told. Every warning here is only seen by someone who logs in and looks."
 msgstr ""
 
@@ -3475,7 +3489,7 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: inc/health.php:310
+#: inc/health.php:312
 msgid "Images are lazy-loaded"
 msgstr ""
 
@@ -3507,7 +3521,7 @@ msgstr ""
 msgid "Imported %d setting group(s). You can undo this below."
 msgstr ""
 
-#: inc/watch-links.php:567
+#: inc/watch-links.php:573
 msgid "In"
 msgstr ""
 
@@ -3575,7 +3589,7 @@ msgstr ""
 msgid "Install analytics first"
 msgstr ""
 
-#: inc/health.php:363
+#: inc/health.php:365
 msgid "Install the pending updates."
 msgstr ""
 
@@ -3598,7 +3612,7 @@ msgstr ""
 msgid "Invalid code. Please try again."
 msgstr ""
 
-#: inc/watch-heartbeat.php:352
+#: inc/watch-heartbeat.php:383
 msgid "It continues on its own each time you open an admin page"
 msgstr ""
 
@@ -3650,7 +3664,7 @@ msgstr ""
 msgid "Lazy-load images; drop Emoji and jQuery Migrate"
 msgstr ""
 
-#: inc/watch-links.php:526
+#: inc/watch-links.php:532
 msgid "Least-linked first, because the one added without your knowing is almost never the one you link to from two hundred posts. Tick what belongs and approve it; leave the rest here."
 msgstr ""
 
@@ -3742,11 +3756,11 @@ msgstr ""
 msgid "Link display color"
 msgstr ""
 
-#: inc/watch-links.php:568
+#: inc/watch-links.php:574
 msgid "Link text"
 msgstr ""
 
-#: inc/watch-links.php:566
+#: inc/watch-links.php:572
 msgid "Links"
 msgstr ""
 
@@ -3790,7 +3804,7 @@ msgstr ""
 msgid "Loading…"
 msgstr ""
 
-#: inc/watch-links.php:580
+#: inc/watch-links.php:586
 msgid "Loads a script or an embedded frame from this domain"
 msgstr ""
 
@@ -3867,7 +3881,7 @@ msgstr ""
 msgid "Longest answer to publish (characters)"
 msgstr ""
 
-#: inc/watch-links.php:532
+#: inc/watch-links.php:538
 msgid "Look down this page, deal with anything that makes you stop, and use “Approve everything” below for the rest — what matters is having a baseline, so that tomorrow’s arrival stands out against it."
 msgstr ""
 
@@ -3947,7 +3961,7 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: inc/health.php:317
+#: inc/health.php:319
 msgid "Media tab → JPG compression"
 msgstr ""
 
@@ -4027,11 +4041,11 @@ msgstr ""
 msgid "Move snippets between sites"
 msgstr ""
 
-#: inc/health.php:339
+#: inc/health.php:341
 msgid "Move the site address to https://"
 msgstr ""
 
-#: inc/watch-heartbeat.php:150
+#: inc/watch-heartbeat.php:152
 msgid "NOT APPROVED: %s"
 msgstr ""
 
@@ -4083,7 +4097,7 @@ msgstr ""
 msgid "Next automatic check: %s"
 msgstr ""
 
-#: inc/watch-heartbeat.php:180
+#: inc/watch-heartbeat.php:198
 msgid "Next beat due: %s"
 msgstr ""
 
@@ -4111,7 +4125,7 @@ msgstr ""
 msgid "No Google Analytics tag turned up, either in your settings or on the home page. If you have not installed one yet, Site Kit by Google (or any GA4 plugin) is the usual way. If you know you do have one — added through Tag Manager, a caching layer, or a consent tool that loads it later — this check simply could not see it: switch the setting on anyway. It looks for analytics at the moment of the click, not now, so it starts working the instant a tag is present."
 msgstr ""
 
-#: inc/health.php:301
+#: inc/health.php:303
 msgid "No Google Fonts leaking to Google"
 msgstr ""
 
@@ -4143,7 +4157,7 @@ msgstr ""
 msgid "No copy on disk yet — it is written the first time you confirm something"
 msgstr ""
 
-#: inc/health.php:281
+#: inc/health.php:283
 msgid "No downloadable secrets in the site folder"
 msgstr ""
 
@@ -4167,7 +4181,7 @@ msgstr ""
 msgid "No pages selected"
 msgstr ""
 
-#: inc/watch-links.php:659
+#: inc/watch-links.php:665
 msgid "No post titles here on purpose — this list is long, and looking up a title for every row is what made this screen slow. Tick anything you want to take back and press the button; it moves up to “Waiting for you” with its posts listed."
 msgstr ""
 
@@ -4219,7 +4233,7 @@ msgstr ""
 msgid "No third-party requests found. Nothing leaks to other servers."
 msgstr ""
 
-#: inc/watch-links.php:727
+#: inc/watch-links.php:763
 msgid "Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it."
 msgstr ""
 
@@ -4239,11 +4253,11 @@ msgstr ""
 msgid "None: default not selected, Auto: background image automatically changes each time the page is loaded, Color: change the color you want, Upload: upload the background image you want"
 msgstr ""
 
-#: inc/2fa.php:252 inc/mail-proof.php:203 inc/speed.php:518 inc/watch-heartbeat.php:366
+#: inc/2fa.php:252 inc/mail-proof.php:203 inc/speed.php:518 inc/watch-heartbeat.php:397
 msgid "Not allowed."
 msgstr ""
 
-#: inc/watch-heartbeat.php:202
+#: inc/watch-heartbeat.php:220
 msgid "Not due yet."
 msgstr ""
 
@@ -4283,7 +4297,7 @@ msgstr ""
 msgid "Nothing to preview yet."
 msgstr ""
 
-#: inc/alert.php:90
+#: inc/alert.php:121
 msgid "Nothing to send."
 msgstr ""
 
@@ -4291,15 +4305,15 @@ msgstr ""
 msgid "Nothing to set up"
 msgstr ""
 
-#: inc/watch-links.php:401 inc/watch-links.php:422
+#: inc/watch-links.php:401 inc/watch-links.php:422 inc/watch-links.php:428
 msgid "Nothing was ticked, so nothing changed."
 msgstr ""
 
-#: inc/watch-links.php:716
+#: inc/watch-links.php:752
 msgid "Nothing — just tell me"
 msgstr ""
 
-#: inc/watch-links.php:503
+#: inc/watch-links.php:509
 msgid "Nothing. Every domain your content points at is one you have agreed to."
 msgstr ""
 
@@ -4425,12 +4439,20 @@ msgstr ""
 msgid "Only supported from PHP 8.1 and above"
 msgstr ""
 
-#: inc/watch-links.php:635
+#: inc/health.php:266
+msgid "Only the backup route worked — your main channel is down"
+msgstr ""
+
+#: inc/watch-links.php:641
 msgid "Only the ticked ones on this page (%d)"
 msgstr ""
 
 #: inc/php-snippet.php:270
 msgid "Only where I place its shortcode"
+msgstr ""
+
+#: inc/watch-links.php:727
+msgid "Open a couple and glance at them. “Still fine” only resets the clock; it does not change what is approved."
 msgstr ""
 
 #: main/page/6post.php:166
@@ -4469,11 +4491,11 @@ msgstr ""
 msgid "Optimize saving post content into the database"
 msgstr ""
 
-#: inc/health.php:307
+#: inc/health.php:309
 msgid "Optimize tab"
 msgstr ""
 
-#: inc/health.php:312
+#: inc/health.php:314
 msgid "Optimize tab → image lazy loading"
 msgstr ""
 
@@ -4525,7 +4547,7 @@ msgstr ""
 msgid "Outstanding color"
 msgstr ""
 
-#: inc/health.php:266
+#: inc/health.php:268
 msgid "Overdue — nothing has been running the schedule"
 msgstr ""
 
@@ -4541,7 +4563,7 @@ msgstr ""
 msgid "PHP editing unlocked for %d minutes."
 msgstr ""
 
-#: inc/health.php:351
+#: inc/health.php:353
 msgid "PHP errors are not shown to visitors"
 msgstr ""
 
@@ -4549,7 +4571,7 @@ msgstr ""
 msgid "PHP errors: server paths, fragments of queries, sometimes the contents of a failed request."
 msgstr ""
 
-#: inc/health.php:331
+#: inc/health.php:333
 msgid "PHP is a supported version (%s)"
 msgstr ""
 
@@ -4581,7 +4603,7 @@ msgstr ""
 msgid "PRESETS"
 msgstr ""
 
-#: inc/watch-links.php:546 main/section/snippets-screen.php:261
+#: inc/watch-links.php:552 main/section/snippets-screen.php:261
 msgid "Page %1$d of %2$d"
 msgstr ""
 
@@ -4871,7 +4893,7 @@ msgstr ""
 msgid "Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see."
 msgstr ""
 
-#: inc/health.php:346
+#: inc/health.php:348
 msgid "Reading settings → uncheck “Discourage search engines”"
 msgstr ""
 
@@ -5067,7 +5089,7 @@ msgstr ""
 msgid "Reveal"
 msgstr ""
 
-#: inc/watch-links.php:795
+#: inc/watch-links.php:831
 msgid "Review the list"
 msgstr ""
 
@@ -5241,7 +5263,7 @@ msgstr ""
 msgid "Save these one-time backup codes somewhere safe — each works once if you lose your phone:"
 msgstr ""
 
-#: inc/watch-links.php:735
+#: inc/watch-links.php:771
 msgid "Save this choice"
 msgstr ""
 
@@ -5253,7 +5275,7 @@ msgstr ""
 msgid "Saved tables"
 msgstr ""
 
-#: inc/watch-links.php:430 main/section/snippets-screen.php:642
+#: inc/watch-links.php:436 main/section/snippets-screen.php:642
 msgid "Saved."
 msgstr ""
 
@@ -5409,11 +5431,11 @@ msgstr ""
 msgid "Security tab → Lock down the admin"
 msgstr ""
 
-#: inc/health.php:292
+#: inc/health.php:294
 msgid "Security tab → Privacy → Scan external requests"
 msgstr ""
 
-#: inc/health.php:299
+#: inc/health.php:301
 msgid "Security tab → Privacy → self-host Google Fonts"
 msgstr ""
 
@@ -5429,7 +5451,7 @@ msgstr ""
 msgid "See the GitHub release page for details."
 msgstr ""
 
-#: inc/health.php:283
+#: inc/health.php:285
 msgid "See the banner at the top of any Horse Tools screen"
 msgstr ""
 
@@ -5515,7 +5537,7 @@ msgstr ""
 msgid "Send a test"
 msgstr ""
 
-#: inc/watch-heartbeat.php:325
+#: inc/watch-heartbeat.php:349
 msgid "Send a test message"
 msgstr ""
 
@@ -5571,7 +5593,7 @@ msgstr ""
 msgid "Sent to %s. Now go and look — and do not close this page, because the useful part is what you find."
 msgstr ""
 
-#: inc/watch-heartbeat.php:377
+#: inc/watch-heartbeat.php:408
 msgid "Sent. Check %s — if nothing arrives, the channel is not working even though the site thinks it is."
 msgstr ""
 
@@ -5756,7 +5778,7 @@ msgstr ""
 msgid "Site"
 msgstr ""
 
-#: inc/health.php:422
+#: inc/health.php:424
 msgid "Site health"
 msgstr ""
 
@@ -5933,11 +5955,11 @@ msgstr ""
 msgid "Still reading your content"
 msgstr ""
 
-#: inc/watch-links.php:463
+#: inc/watch-links.php:469
 msgid "Still reading your content. Come back in a minute."
 msgstr ""
 
-#: inc/watch-links.php:462
+#: inc/watch-links.php:468
 msgid "Still reading your content: %1$d of %2$d. Come back in a minute."
 msgstr ""
 
@@ -6021,7 +6043,7 @@ msgstr ""
 msgid "System"
 msgstr ""
 
-#: inc/watch-heartbeat.php:171
+#: inc/watch-heartbeat.php:189
 msgid "THEY DO NOT — something changed them without going through the screens"
 msgstr ""
 
@@ -6086,11 +6108,11 @@ msgstr ""
 msgid "Tags (comma separated)"
 msgstr ""
 
-#: inc/watch-links.php:690
+#: inc/watch-links.php:696 inc/watch-links.php:725
 msgid "Take back the ticked ones"
 msgstr ""
 
-#: inc/watch-links.php:726
+#: inc/watch-links.php:762
 msgid "Take the link away, keep the words"
 msgstr ""
 
@@ -6238,7 +6260,7 @@ msgstr ""
 msgid "The changing image is square, with the standard size being 100x100 pixels"
 msgstr ""
 
-#: inc/watch-heartbeat.php:324
+#: inc/watch-heartbeat.php:348
 msgid "The check-in message is on but has never been sent. Until one arrives you do not know the channel works."
 msgstr ""
 
@@ -6298,11 +6320,11 @@ msgstr ""
 msgid "The icon on its own."
 msgstr ""
 
-#: inc/watch-heartbeat.php:331
+#: inc/watch-heartbeat.php:355
 msgid "The last check-in message could not be sent: %s"
 msgstr ""
 
-#: inc/watch-heartbeat.php:338
+#: inc/watch-heartbeat.php:369
 msgid "The last check-in message went out %s ago, which is later than it should be. Nothing has been running the schedule."
 msgstr ""
 
@@ -6310,7 +6332,7 @@ msgstr ""
 msgid "The last one could not be sent — Security tab → Check-in"
 msgstr ""
 
-#: inc/watch-links.php:722
+#: inc/watch-links.php:758
 msgid "The link still works for a reader and stops passing any SEO value — which is the whole reason a link like that is worth paying for. Nothing in your posts is changed; only what gets printed."
 msgstr ""
 
@@ -6318,7 +6340,7 @@ msgstr ""
 msgid "The most powerful but riskiest speed option. Without the Critical CSS below, the page can flash unstyled for a moment (FOUC). Paste your above-the-fold CSS, or keep the main theme stylesheet in the exclusion list. Test the front end carefully, and don’t combine it with another plugin that also optimises CSS delivery."
 msgstr ""
 
-#: inc/health.php:305
+#: inc/health.php:307
 msgid "The optimisation module is on"
 msgstr ""
 
@@ -6362,11 +6384,11 @@ msgstr ""
 msgid "The site handed it over successfully. That is not the same as it arriving — if the numbers you receive skip, the channel is dropping them."
 msgstr ""
 
-#: inc/health.php:337
+#: inc/health.php:339
 msgid "The site is served over HTTPS"
 msgstr ""
 
-#: inc/health.php:344
+#: inc/health.php:346
 msgid "The site is visible to search engines"
 msgstr ""
 
@@ -6530,11 +6552,11 @@ msgstr ""
 msgid "This is an email notification of your successful registration"
 msgstr ""
 
-#: inc/watch-links.php:477
+#: inc/watch-links.php:483
 msgid "This list is incomplete."
 msgstr ""
 
-#: inc/watch-links.php:732
+#: inc/watch-links.php:768
 msgid "This never touches what is stored. Switch it off and every link is back as it was on the next page load."
 msgstr ""
 
@@ -6562,8 +6584,12 @@ msgstr ""
 msgid "This site has WordPress's built-in file editor switched off (DISALLOW_FILE_EDIT) — good. PHP snippets still work, because they carry their own protections: two-factor unlock, a syntax check before saving, auto-disable on a crash, and code signing. To switch them off as well, add HORSETOOLS_NO_PHP to wp-config.php."
 msgstr ""
 
-#: inc/alert.php:122
+#: inc/alert.php:197
 msgid "This site has no valid admin email address."
+msgstr ""
+
+#: inc/alert.php:124
+msgid "This site has no way to reach you: no Telegram bot, and no valid admin email address."
 msgstr ""
 
 #: inc/php-snippet.php:412
@@ -6598,7 +6624,7 @@ msgstr ""
 msgid "Thu"
 msgstr ""
 
-#: inc/watch-links.php:539
+#: inc/watch-links.php:545
 msgid "Tick all on this page"
 msgstr ""
 
@@ -6706,11 +6732,11 @@ msgstr ""
 msgid "Turn it off for this user (e.g. they lost their device)"
 msgstr ""
 
-#: inc/health.php:354
+#: inc/health.php:356
 msgid "Turn off WP_DEBUG_DISPLAY on a live site."
 msgstr ""
 
-#: inc/watch-heartbeat.php:317
+#: inc/watch-heartbeat.php:341
 msgid "Turn on the regular check-in message"
 msgstr ""
 
@@ -6794,7 +6820,7 @@ msgstr ""
 msgid "Unlock"
 msgstr ""
 
-#: inc/watch-links.php:540
+#: inc/watch-links.php:546
 msgid "Untick all"
 msgstr ""
 
@@ -6818,7 +6844,7 @@ msgstr ""
 msgid "Upload font success"
 msgstr ""
 
-#: inc/health.php:315
+#: inc/health.php:317
 msgid "Uploaded images are compressed"
 msgstr ""
 
@@ -6899,7 +6925,7 @@ msgstr ""
 msgid "Wait..."
 msgstr ""
 
-#: inc/watch-links.php:500
+#: inc/watch-links.php:506
 msgid "Waiting for you"
 msgstr ""
 
@@ -6995,7 +7021,7 @@ msgstr ""
 msgid "Where to run it"
 msgstr ""
 
-#: inc/watch-heartbeat.php:140 inc/watch-links.php:448
+#: inc/watch-heartbeat.php:142 inc/watch-links.php:454
 msgid "Where your content links to"
 msgstr ""
 
@@ -7039,7 +7065,7 @@ msgstr ""
 msgid "WordPress could not hand the message to the mail server at all, so it never left the site."
 msgstr ""
 
-#: inc/alert.php:130
+#: inc/alert.php:205
 msgid "WordPress could not hand the message to the mail server."
 msgstr ""
 
@@ -7053,6 +7079,10 @@ msgstr ""
 
 #: main/page/1speed.php:71
 msgid "WordPress “Heartbeat” pings the server every 15–60 seconds (autosave, post-lock, dashboard). Slowing or limiting it cuts admin-ajax.php load, especially with several admin tabs open."
+msgstr ""
+
+#: inc/watch-links.php:703
+msgid "Worth a second look"
 msgstr ""
 
 #: main/section/snippets-screen.php:87
@@ -7171,7 +7201,7 @@ msgstr ""
 msgid "You need to activate this feature and customize the content below so that new registered users can receive emails"
 msgstr ""
 
-#: inc/health.php:271
+#: inc/health.php:273
 msgid "You would be told if this site went quiet"
 msgstr ""
 
@@ -7183,8 +7213,12 @@ msgstr ""
 msgid "Your Telegram chat ID (for recovery codes)"
 msgstr ""
 
-#: inc/watch-heartbeat.php:168
+#: inc/watch-heartbeat.php:186
 msgid "Your approvals match their copy on disk"
+msgstr ""
+
+#: inc/watch-heartbeat.php:362
+msgid "Your check-in message only got through on the backup route (%s). Your main channel is not working, and you have one left instead of two."
 msgstr ""
 
 #: inc/mail.php:84
@@ -7207,19 +7241,19 @@ msgstr ""
 msgid "Your container has no GA4 tag in it, so Tag Manager has nothing to pass the click on to. It is placed in the dataLayer and stops there until you build the tag below — until then nothing reaches Analytics."
 msgstr ""
 
-#: inc/watch-heartbeat.php:350
+#: inc/watch-heartbeat.php:381
 msgid "Your content has not been read all the way through yet (%1$d of %2$d), so nothing found in it can be trusted as complete."
 msgstr ""
 
-#: inc/watch-heartbeat.php:351
+#: inc/watch-heartbeat.php:382
 msgid "Your content has not been read all the way through yet."
 msgstr ""
 
-#: inc/watch-links.php:492
+#: inc/watch-links.php:498
 msgid "Your content links to %1$s domains you have not agreed to, and %2$s you have. You will be told the moment one arrives that is on neither list."
 msgstr ""
 
-#: inc/watch-links.php:808
+#: inc/watch-links.php:844
 msgid "Your content links to %d domain you have not approved."
 msgid_plural "Your content links to %d domains you have not approved."
 msgstr[0] ""
@@ -7229,7 +7263,7 @@ msgstr[1] ""
 msgid "Your content links to more domains than the list can hold, so it is incomplete"
 msgstr ""
 
-#: inc/watch-links.php:481
+#: inc/watch-links.php:487
 msgid "Your content links to more than %d domains, which is as many as can be held. Domains beyond that were not recorded, so this cannot tell you when one of them is new — it would say it was already there."
 msgstr ""
 
@@ -7289,7 +7323,7 @@ msgstr ""
 msgid "Your own icon (paste an SVG)"
 msgstr ""
 
-#: inc/watch-links.php:717
+#: inc/watch-links.php:753
 msgid "Your pages go out exactly as written."
 msgstr ""
 
@@ -7297,11 +7331,11 @@ msgstr ""
 msgid "Your pairing code has expired. Reload this page to get a new one."
 msgstr ""
 
-#: inc/watch-links.php:471
+#: inc/watch-links.php:477
 msgid "Your posts and pages do not link anywhere outside this site."
 msgstr ""
 
-#: inc/watch-links.php:802
+#: inc/watch-links.php:838
 msgid "Your posts and pages link to %d other domain. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
 msgid_plural "Your posts and pages link to %d other domains. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
 msgstr[0] ""
@@ -7327,9 +7361,19 @@ msgstr ""
 msgid "Zoom out"
 msgstr ""
 
+#: inc/alert.php:136
+msgid "[!] This went by %1$s because %2$s would not send: %3$s"
+msgstr ""
+
 #: inc/mail.php:111
 msgid "[%s] New comment on the article \"%s\""
 msgstr ""
+
+#: inc/watch-heartbeat.php:175
+msgid "[?] %1$d domain was approved over a year ago and is barely linked: %2$s"
+msgid_plural "[?] %1$d domains were approved over a year ago and are barely linked: %2$s"
+msgstr[0] ""
+msgstr[1] ""
 
 #: main/page/12chat.php:30
 msgid "a bar pinned to the bottom of the phone screen. Choose one of 5 styles from the grid."
@@ -7360,6 +7404,10 @@ msgid "and %d more — click to see it"
 msgid_plural "and %d more — click to see them"
 msgstr[0] ""
 msgstr[1] ""
+
+#: inc/watch-links.php:717
+msgid "approved %s ago"
+msgstr ""
 
 #: main/page/12chat.php:27
 msgid "choose how the floating button looks from the visual grid below (17 styles). What you see is what visitors get."
@@ -7405,6 +7453,10 @@ msgstr ""
 msgid "e.g. sc, ht-snippet, vip"
 msgstr ""
 
+#: inc/alert.php:97
+msgid "email"
+msgstr ""
+
 #: main/font.php:62
 msgid "font-family:"
 msgstr ""
@@ -7445,7 +7497,7 @@ msgstr ""
 msgid "mobile"
 msgstr ""
 
-#: inc/watch-heartbeat.php:172
+#: inc/watch-heartbeat.php:190
 msgid "no copy on disk yet"
 msgstr ""
 
@@ -7453,15 +7505,15 @@ msgstr ""
 msgid "nofollow + new tab on external links"
 msgstr ""
 
-#: inc/watch-heartbeat.php:160
+#: inc/watch-heartbeat.php:162
 msgid "none"
 msgstr ""
 
-#: inc/watch-heartbeat.php:120 inc/watch-heartbeat.php:132
+#: inc/watch-heartbeat.php:122 inc/watch-heartbeat.php:134
 msgid "not confirmed yet"
 msgstr ""
 
-#: inc/watch-heartbeat.php:148
+#: inc/watch-heartbeat.php:150
 msgid "not reviewed yet"
 msgstr ""
 
@@ -7481,7 +7533,7 @@ msgstr ""
 msgid "optional title above the table"
 msgstr ""
 
-#: inc/watch-links.php:586
+#: inc/watch-links.php:592
 msgid "passes SEO value"
 msgstr ""
 
@@ -7509,7 +7561,7 @@ msgstr ""
 msgid "runs now"
 msgstr ""
 
-#: inc/watch-links.php:681
+#: inc/watch-links.php:687
 msgid "script or embedded frame"
 msgstr ""
 
@@ -7525,7 +7577,7 @@ msgstr ""
 msgid "showing first"
 msgstr ""
 
-#: inc/watch-heartbeat.php:130 inc/watch-heartbeat.php:146
+#: inc/watch-heartbeat.php:132 inc/watch-heartbeat.php:148
 msgid "still reading"
 msgstr ""
 
@@ -7545,8 +7597,12 @@ msgstr ""
 msgid "third-party host(s) found"
 msgstr ""
 
-#: inc/watch-links.php:654
+#: inc/watch-links.php:660
 msgid "type part of a domain…"
+msgstr ""
+
+#: inc/alert.php:147
+msgid "unknown error"
 msgstr ""
 
 #: main/clean.php:216

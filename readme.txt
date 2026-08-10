@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.35
+Stable tag: 1.3.36
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,13 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.36 =
+* **The check-in message now falls back to the other channel — and says so, loudly.** If Telegram will not send, the message goes by email instead, with a line at the top naming the channel that failed and repeating the reason it gave. A quiet fallback is the classic mistake: Telegram breaks, email carries everything without comment, and a year later you believe you have two channels when you have had one since March — and find out when the second one goes too. The delivery is not the news; the failure is.
+* Arriving by the backup route is therefore recorded as a **fault**, not a success. It shows on the health card and in the "not protected" list until the main channel works again.
+* **Domains you approved a long time ago are now brought back for a second look.** A domain can go bad without anything on your site changing: it expires, somebody else buys it, and a link approved in 2019 points at whatever they sell now. Nothing here moved, so nothing here noticed.
+* That nudge is filtered so it cannot become a wall. A site that approved 686 domains in one click would otherwise get all 686 back a year later, which is not a review. Only domains that are **both** over a year old **and** linked from one or two posts are raised — a domain you link from two hundred posts is one whose going bad you would hear about from a customer within the week; a domain reached once, from an article nobody has opened since 2019, is the one that can change hands in silence.
+* "Checked — still fine" only resets the clock. It never changes what is approved.
 
 = 1.3.35 =
 **A self-audit of everything added this week. Five holes, two of them serious.**

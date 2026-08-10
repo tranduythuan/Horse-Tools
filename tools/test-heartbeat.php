@@ -138,7 +138,7 @@ echo "\n2. Gửi thật qua Telegram\n";
 reset_all();
 $GLOBALS['horsetools_options']['woo-tele11'] = 'TOKEN';
 $GLOBALS['horsetools_options']['watch-tg']   = '222';
-eq( horsetools_alert_send( 'xin chào' ), true, 'Telegram trả ok:true → thành công' );
+eq( horsetools_alert_send( 'xin chào' )['ok'], true, 'Telegram trả ok:true → thành công' );
 eq( $GLOBALS['sent'][0]['body']['chat_id'], '222', 'gửi đúng chat' );
 eq( $GLOBALS['sent'][0]['body']['text'], 'xin chào', 'gửi đúng nội dung' );
 
@@ -147,19 +147,21 @@ reset_all();
 $GLOBALS['horsetools_options']['woo-tele11'] = 'TOKEN';
 $GLOBALS['horsetools_options']['watch-tg']   = '222';
 $GLOBALS['tg_reply'] = array( 'code' => 400, 'body' => '{"ok":false,"description":"chat not found"}' );
+$GLOBALS['admin_email'] = '';   // chặn hẳn đường lui để xét riêng Telegram
 $r = horsetools_alert_send( 'x' );
-ok( is_wp_error( $r ), 'trả về lỗi' );
-eq( $r->get_error_message(), 'chat not found', 'giữ nguyên lời Telegram — đó là thứ giúp người ta sửa được' );
+eq( $r['ok'], false, 'trả về hỏng' );
+eq( $r['tried']['telegram'], 'chat not found', 'giữ nguyên lời Telegram — đó là thứ giúp người ta sửa được' );
 $GLOBALS['tg_reply'] = 'network';
-ok( is_wp_error( horsetools_alert_send( 'x' ) ), 'mạng hỏng cũng là lỗi' );
+eq( horsetools_alert_send( 'x' )['ok'], false, 'mạng hỏng cũng là hỏng' );
+$GLOBALS['admin_email'] = 'chu@giathuanshop.com';
 
 echo "\n4. Email là sàn cuối\n";
 reset_all();
-eq( horsetools_alert_send( 'x', 'chủ đề' ), true, 'gửi email' );
+eq( horsetools_alert_send( 'x', 'chủ đề' )['ok'], true, 'gửi email' );
 eq( $GLOBALS['sent'][0]['how'], 'email', 'đúng đường email' );
 eq( $GLOBALS['sent'][0]['to'], 'chu@giathuanshop.com', 'tới admin_email' );
 $GLOBALS['mail_ok'] = false;
-ok( is_wp_error( horsetools_alert_send( 'x' ) ), 'mail server từ chối → lỗi' );
+eq( horsetools_alert_send( 'x' )['ok'], false, 'mail server từ chối → hỏng' );
 
 echo "\n5. Lịch\n";
 reset_all();
@@ -198,16 +200,57 @@ $GLOBALS['horsetools_options']['watch-tg']   = '222';
 horsetools_hb_fire();
 eq( horsetools_hb_state()['seq'], 1, 'nhịp 1 gửi được' );
 $GLOBALS['tg_reply'] = array( 'code' => 403, 'body' => '{"ok":false,"description":"bot was blocked by the user"}' );
+$GLOBALS['mail_ok'] = false;   // chặn cả đường lui, nếu không email sẽ đỡ mất
 age_last_beat( 8 * DAY_IN_SECONDS );
-ok( is_wp_error( horsetools_hb_fire() ), 'nhịp 2 gửi không được' );
+ok( is_wp_error( horsetools_hb_fire() ), 'nhịp 2 gửi không được (cả hai kênh đều hỏng)' );
 eq( horsetools_hb_state()['seq'], 2, 'số VẪN tăng — nếu không thì kênh hỏng cả tháng trông y hệt tháng không có nhịp nào' );
 eq( horsetools_hb_state()['ok'], false, 'ghi nhận là hỏng' );
-eq( horsetools_hb_state()['error'], 'bot was blocked by the user', 'ghi lại lý do' );
+ok( false !== strpos( horsetools_hb_state()['error'], 'bot was blocked by the user' ), 'ghi lại lý do của kênh chính' );
+$GLOBALS['mail_ok'] = true;
 age_last_beat( 8 * DAY_IN_SECONDS );
 $GLOBALS['tg_reply'] = array( 'code' => 200, 'body' => '{"ok":true}' );
 horsetools_hb_fire();
 eq( horsetools_hb_state()['seq'], 3, 'nhịp 3' );
 // Chủ site nhận được #1 rồi #3: khoảng trống đó chính là thông tin.
+
+echo "\n9b. CHUYỂN KÊNH DỰ PHÒNG — và nó phải ỒN ÀO\n";
+// Dự phòng im lặng là sai lầm kinh điển: Telegram hỏng, email lặng lẽ gánh hết,
+// một năm sau chủ site tưởng mình có hai kênh trong khi chỉ còn một từ tháng Ba
+// — và biết được đúng lúc cái thứ hai cũng hỏng nốt.
+reset_all();
+$GLOBALS['horsetools_options']['woo-tele11'] = 'TOKEN';
+$GLOBALS['horsetools_options']['watch-tg']   = '222';
+eq( horsetools_alert_channels(), array( 'telegram', 'email' ), 'có hai kênh, Telegram trước' );
+
+$GLOBALS['tg_reply'] = array( 'code' => 403, 'body' => '{"ok":false,"description":"bot was blocked by the user"}' );
+$r = horsetools_alert_send( 'nội dung gốc' );
+eq( $r['ok'], true, 'Telegram hỏng → email vẫn đưa được tin đi' );
+eq( $r['channel'], 'email', 'đi bằng email' );
+eq( $r['fell_back'], true, 'và biết là đã phải dùng đường lui' );
+eq( $r['tried']['telegram'], 'bot was blocked by the user', 'nhớ vì sao kênh chính hỏng' );
+
+$body = end( $GLOBALS['sent'] )['body'];
+ok( false !== strpos( $body, 'nội dung gốc' ), 'nội dung gốc vẫn nguyên' );
+ok( false !== strpos( $body, 'Telegram' ), 'tin nói rõ kênh nào đã hỏng' );
+ok( false !== strpos( $body, 'bot was blocked by the user' ), 'và nhắc lại nguyên văn lý do — đó mới là tin tức' );
+
+echo "\n9c. Đi bằng đường lui là một LỖI phải báo, không phải chuyện êm xuôi\n";
+reset_all();
+$GLOBALS['horsetools_options']['woo-tele11'] = 'TOKEN';
+$GLOBALS['horsetools_options']['watch-tg']   = '222';
+$GLOBALS['tg_reply'] = array( 'code' => 403, 'body' => '{"ok":false,"description":"chat not found"}' );
+horsetools_hb_fire();
+eq( horsetools_hb_state()['ok'], true, 'nhịp vẫn đi được' );
+eq( horsetools_hb_state()['fell_back'], true, 'nhưng ghi nhận là bằng đường lui' );
+$keys = array_column( horsetools_watch_gaps(), 'key' );
+ok( in_array( 'hb-fallback', $keys, true ), 'và nằm trong danh sách "chưa được bảo vệ" — im lặng ở đây là giấu lỗi' );
+
+echo "\n9d. Không còn kênh nào thì nói thẳng\n";
+reset_all();
+$GLOBALS['admin_email'] = '';
+eq( horsetools_alert_channels(), array(), 'không kênh nào' );
+eq( horsetools_alert_send( 'x' )['ok'], false, 'không gửi được' );
+$GLOBALS['admin_email'] = 'chu@giathuanshop.com';
 
 echo "\n10. Gửi hỏng KHÔNG được biến thành vòng lặp thử lại\n";
 reset_all();

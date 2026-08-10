@@ -69,6 +69,8 @@ function horsetools_hb_state() {
 		'due'   => $sent ? $sent + horsetools_hb_interval() : 0,
 		'ok'    => ! empty( $s['ok'] ),
 		'error' => isset( $s['error'] ) ? (string) $s['error'] : '',
+		'channel'   => isset( $s['channel'] ) ? (string) $s['channel'] : '',
+		'fell_back' => ! empty( $s['fell_back'] ),
 		'ever'  => $sent > 0,
 	);
 }
@@ -161,6 +163,22 @@ function horsetools_hb_compose( $seq ) {
 		);
 	}
 
+	if ( function_exists( 'horsetools_link_stale' ) && function_exists( 'horsetools_link_found' ) ) {
+		$stale = horsetools_link_stale( horsetools_link_found() );
+		if ( $stale ) {
+			// Not a fault, so not a warning marker — a domain approved long ago is
+			// not evidence of anything. It is the one thing this plugin cannot see
+			// for itself: whether the people behind a domain are still the same
+			// people. Only worth a line, and only in the message the owner reads.
+			$lines[] = sprintf(
+				/* translators: 1: how many domains, 2: the first few of them. */
+				_n( '[?] %1$d domain was approved over a year ago and is barely linked: %2$s', '[?] %1$d domains were approved over a year ago and are barely linked: %2$s', count( $stale ), 'horse-tools' ),
+				count( $stale ),
+				implode( ', ', array_slice( array_keys( $stale ), 0, 4 ) )
+			);
+		}
+	}
+
 	if ( function_exists( 'horsetools_anchor_status' ) ) {
 		$a = horsetools_anchor_status();
 		if ( 'ok' !== $a['state'] ) {
@@ -205,7 +223,7 @@ function horsetools_hb_fire( $force = false ) {
 	$state = horsetools_hb_state();
 	$seq   = $state['seq'] + 1;
 
-	$result = horsetools_alert_send(
+	$r = horsetools_alert_send(
 		horsetools_hb_compose( $seq ),
 		/* translators: 1: sequence number, 2: site name. */
 		sprintf( __( 'Horse Tools beat #%1$d — %2$s', 'horse-tools' ), $seq, wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES ) )
@@ -214,15 +232,21 @@ function horsetools_hb_fire( $force = false ) {
 	update_option(
 		HORSETOOLS_HB,
 		array(
-			'seq'   => $seq,
-			'sent'  => time(),
-			'ok'    => true === $result,
-			'error' => is_wp_error( $result ) ? $result->get_error_message() : '',
+			'seq'       => $seq,
+			'sent'      => time(),
+			'ok'        => $r['ok'],
+			'channel'   => $r['channel'],
+			// Recorded because a beat that only arrived by the backup route is a
+			// beat that arrived AND a fault worth a line on the screen. Failover
+			// that leaves no trace is failover that hides the thing it worked
+			// around.
+			'fell_back' => $r['fell_back'],
+			'error'     => $r['ok'] ? '' : implode( ' · ', $r['tried'] ),
 		),
 		false
 	);
 
-	return $result;
+	return $r['ok'] ? true : new WP_Error( 'horsetools_hb_send', implode( ' · ', $r['tried'] ) );
 }
 
 /**
@@ -330,6 +354,13 @@ function horsetools_watch_gaps() {
 				/* translators: %s: the error the channel reported. */
 				'text' => sprintf( __( 'The last check-in message could not be sent: %s', 'horse-tools' ), $s['error'] ),
 				'fix'  => __( 'Fix the channel and send a test message', 'horse-tools' ),
+			);
+		} elseif ( $s['fell_back'] ) {
+			$gaps[] = array(
+				'key'  => 'hb-fallback',
+				/* translators: %s: the channel that did work, e.g. "email". */
+				'text' => sprintf( __( 'Your check-in message only got through on the backup route (%s). Your main channel is not working, and you have one left instead of two.', 'horse-tools' ), horsetools_alert_channel_name( $s['channel'] ) ),
+				'fix'  => $s['error'],
 			);
 		} elseif ( $s['due'] > 0 && time() > $s['due'] + 2 * DAY_IN_SECONDS ) {
 			$gaps[] = array(

@@ -1389,6 +1389,22 @@ $vi = array(
 	'Last confirmed %s ago — worth testing again' => 'Xác nhận lần cuối %s trước — nên thử lại',
 	'whether the watching is switched on at all' => 'việc canh gác có đang được bật hay không',
 
+
+	// Chuyển kênh dự phòng + nhắc duyệt lại tên miền cũ (1.3.36).
+	'Worth a second look' => 'Nên xem lại',
+	'A domain can go bad without anything on your site changing: it expires, somebody else buys it, and a link you approved years ago now points at whatever they sell. These were approved over a year ago and are each linked from only one or two posts — the kind that can change hands without anybody here noticing.' => 'Một tên miền có thể hỏng mà không có gì trên site anh đổi: nó hết hạn, người khác mua lại, và cái link anh duyệt mấy năm trước giờ trỏ vào thứ họ bán. Mấy cái dưới đây được duyệt hơn một năm trước và mỗi cái chỉ được trỏ từ một hai bài — đúng loại có thể sang tay mà không ai ở đây hay biết.',
+	'Checked — still fine' => 'Đã xem — vẫn ổn',
+	'Open a couple and glance at them. “Still fine” only resets the clock; it does not change what is approved.' => 'Mở vài cái ra liếc qua. "Vẫn ổn" chỉ đặt lại đồng hồ, không đổi gì trong danh sách đã duyệt.',
+	'approved %s ago' => 'duyệt %s trước',
+	'%d domain looked at again.' => 'Đã xem lại %d tên miền.',
+	'[?] %1$d domain was approved over a year ago and is barely linked: %2$s' => '[?] Có %1$d tên miền được duyệt hơn một năm trước và gần như không được trỏ tới: %2$s',
+	'[!] This went by %1$s because %2$s would not send: %3$s' => '[!] Tin này đi bằng %1$s vì %2$s không gửi được: %3$s',
+	'Your check-in message only got through on the backup route (%s). Your main channel is not working, and you have one left instead of two.' => 'Tin báo định kỳ chỉ lọt qua được bằng đường dự phòng (%s). Kênh chính của anh đang hỏng, và anh còn một kênh thay vì hai.',
+	'Only the backup route worked — your main channel is down' => 'Chỉ đường dự phòng chạy — kênh chính đang hỏng',
+	'This site has no way to reach you: no Telegram bot, and no valid admin email address.' => 'Site này không còn cách nào liên lạc với anh: không có bot Telegram, cũng không có email quản trị hợp lệ.',
+	'email' => 'email',
+	'unknown error' => 'lỗi không rõ',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

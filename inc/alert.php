@@ -72,25 +72,100 @@ function horsetools_alert_target() {
 }
 
 /**
- * Send one message out of the site.
+ * Which channels this site could use, best first.
  *
- * Blocking on purpose, unlike the order notifier. That one runs during a
- * shopper's checkout and must never make them wait; this one runs from cron or
- * an admin page and its whole value is knowing whether it worked. A fire-and-
- * forget security alert is a security alert that can fail every time for a year
- * without anyone finding out.
+ * @return string[]
+ */
+function horsetools_alert_channels() {
+	$out = array();
+	if ( '' !== horsetools_alert_token() && '' !== horsetools_alert_chat() ) {
+		$out[] = 'telegram';
+	}
+	if ( is_email( get_option( 'admin_email' ) ) ) {
+		$out[] = 'email';
+	}
+	return $out;
+}
+
+/**
+ * Human name for a channel.
+ *
+ * @param string $channel
+ * @return string
+ */
+function horsetools_alert_channel_name( $channel ) {
+	return ( 'telegram' === $channel ) ? 'Telegram' : __( 'email', 'horse-tools' );
+}
+
+/**
+ * Send one message, falling back to the other channel if the first will not go.
+ *
+ * The fallback is deliberately loud. A quiet one is the classic mistake: Telegram
+ * breaks, email carries everything without comment, and a year later the owner
+ * believes they have two channels when they have had one since March — and finds
+ * out only when the second one goes too. So a message that arrives by the second
+ * route says, at the top, that it did and why. The failure is the news; the
+ * delivery is just how the news got there.
  *
  * @param string $text    Plain text. Telegram gets it as-is; email gets it as the body.
  * @param string $subject Email subject. Ignored by Telegram.
- * @return true|WP_Error
+ * @return array{ok:bool,channel:string,fell_back:bool,tried:array<string,string>}
+ *               tried: channel => error message, for the ones that did not go.
  */
 function horsetools_alert_send( $text, $subject = '' ) {
-	$text = (string) $text;
+	$text     = (string) $text;
+	$channels = horsetools_alert_channels();
+	$tried    = array();
+
 	if ( '' === trim( $text ) ) {
-		return new WP_Error( 'horsetools_alert_empty', __( 'Nothing to send.', 'horse-tools' ) );
+		return array( 'ok' => false, 'channel' => '', 'fell_back' => false, 'tried' => array( '' => __( 'Nothing to send.', 'horse-tools' ) ) );
+	}
+	if ( ! $channels ) {
+		return array( 'ok' => false, 'channel' => '', 'fell_back' => false, 'tried' => array( '' => __( 'This site has no way to reach you: no Telegram bot, and no valid admin email address.', 'horse-tools' ) ) );
 	}
 
-	if ( 'telegram' === horsetools_alert_channel() ) {
+	foreach ( $channels as $i => $channel ) {
+		$body = $text;
+		if ( $i > 0 ) {
+			// Name the channel that failed and repeat what it said. "Delivered by
+			// the backup" is not the useful part; "your main channel is broken,
+			// and here is the reason it gave" is.
+			$first = array_key_first( $tried );
+			$body  = sprintf(
+				/* translators: 1: this channel, 2: the channel that failed, 3: the reason it gave. */
+				__( '[!] This went by %1$s because %2$s would not send: %3$s', 'horse-tools' ),
+				horsetools_alert_channel_name( $channel ),
+				horsetools_alert_channel_name( $first ),
+				$tried[ $first ]
+			) . "\n\n" . $text;
+		}
+
+		$r = horsetools_alert_send_via( $channel, $body, $subject );
+		if ( true === $r ) {
+			return array( 'ok' => true, 'channel' => $channel, 'fell_back' => ( $i > 0 ), 'tried' => $tried );
+		}
+		$tried[ $channel ] = is_wp_error( $r ) ? $r->get_error_message() : __( 'unknown error', 'horse-tools' );
+	}
+
+	return array( 'ok' => false, 'channel' => '', 'fell_back' => false, 'tried' => $tried );
+}
+
+/**
+ * One attempt down one channel.
+ *
+ * Blocking on purpose, unlike the order notifier. That one runs during a
+ * shopper's checkout and must never make them wait; this one runs from cron and
+ * its whole value is knowing whether it worked. A fire-and-forget security alert
+ * is a security alert that can fail every time for a year without anyone finding
+ * out.
+ *
+ * @param string $channel 'telegram' | 'email'
+ * @param string $text
+ * @param string $subject
+ * @return true|WP_Error
+ */
+function horsetools_alert_send_via( $channel, $text, $subject = '' ) {
+	if ( 'telegram' === $channel ) {
 		$r = wp_safe_remote_post(
 			'https://api.telegram.org/bot' . rawurlencode( horsetools_alert_token() ) . '/sendMessage',
 			array(

@@ -414,6 +414,12 @@ function horsetools_link_screen() {
 					);
 				}
 			}
+		} elseif ( 'refresh' === $action ) {
+			horsetools_link_refresh( $picked );
+			$done = $picked
+				/* translators: %d: number of domains looked at again. */
+				? sprintf( _n( '%d domain looked at again.', '%d domains looked at again.', count( $picked ), 'horse-tools' ), count( $picked ) )
+				: __( 'Nothing was ticked, so nothing changed.', 'horse-tools' );
 		} elseif ( 'revoke' === $action ) {
 			horsetools_link_revoke( $picked );
 			$done = $picked
@@ -689,6 +695,36 @@ function horsetools_link_screen() {
 				<p class="submit">
 					<button type="submit" name="do" value="revoke" class="button"><?php esc_html_e( 'Take back the ticked ones', 'horse-tools' ); ?></button>
 				</p>
+			</form>
+		<?php endif; ?>
+
+		<?php $ht_stale = horsetools_link_stale( $found ); ?>
+		<?php if ( $ht_stale ) : ?>
+			<h2><?php esc_html_e( 'Worth a second look', 'horse-tools' ); ?></h2>
+			<p style="max-width:48em">
+				<?php esc_html_e( 'A domain can go bad without anything on your site changing: it expires, somebody else buys it, and a link you approved years ago now points at whatever they sell. These were approved over a year ago and are each linked from only one or two posts — the kind that can change hands without anybody here noticing.', 'horse-tools' ); ?>
+			</p>
+			<form method="post">
+				<?php wp_nonce_field( 'horsetools_links', 'ht_links_nonce' ); ?>
+				<table class="wp-list-table widefat striped">
+					<tbody>
+					<?php foreach ( $ht_stale as $host => $when ) : ?>
+						<tr>
+							<th class="check-column" style="width:2.2em"><input type="checkbox" name="pick[]" value="<?php echo esc_attr( $host ); ?>" checked></th>
+							<td><a href="<?php echo esc_url( 'https://' . $host ); ?>" target="_blank" rel="noopener nofollow"><?php echo esc_html( $host ); ?></a></td>
+							<td style="width:16em"><?php
+								/* translators: %s: how long ago, e.g. "2 years". */
+								printf( esc_html__( 'approved %s ago', 'horse-tools' ), esc_html( human_time_diff( $when ) ) );
+							?></td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
+				<p class="submit">
+					<button type="submit" name="do" value="refresh" class="button button-primary"><?php esc_html_e( 'Checked — still fine', 'horse-tools' ); ?></button>
+					<button type="submit" name="do" value="revoke" class="button"><?php esc_html_e( 'Take back the ticked ones', 'horse-tools' ); ?></button>
+				</p>
+				<p class="ht-note"><i class="ti ti-bulb"></i> <?php esc_html_e( 'Open a couple and glance at them. “Still fine” only resets the clock; it does not change what is approved.', 'horse-tools' ); ?></p>
 			</form>
 		<?php endif; ?>
 

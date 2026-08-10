@@ -123,3 +123,75 @@ function horsetools_link_approved() {
 function horsetools_link_reviewed() {
 	return is_array( get_option( HORSETOOLS_LINK_OK, null ) );
 }
+
+/** How old an approval has to be before it is worth a second look. */
+const HORSETOOLS_LINK_STALE_DAYS = 365;
+
+/**
+ * Approvals old enough to be worth asking about again — and few enough to ask.
+ *
+ * A domain can go bad without anything on this site changing. It expires, it is
+ * bought by somebody else, and the link in a post from 2019 now points at
+ * whatever the new owner sells. Nothing on the site moved, so nothing here
+ * noticed, and the approval given three years ago is still standing.
+ *
+ * The timestamp for this has been stored since the approvals were first written
+ * and never read until now. Reading it naively would have produced the same wall
+ * the review screen already had once: a site that approved 686 domains in one
+ * click gets all 686 back a year later, which is not a review, it is a wall with
+ * a date on it.
+ *
+ * So the same filter that has worked everywhere else in this feature applies —
+ * how *thinly* linked the domain is. A domain reached from two hundred posts is
+ * one whose going bad you would hear about from a customer within the week. A
+ * domain reached once, from an article nobody has opened since 2019, is the one
+ * that can change hands in silence. That is where a second look is worth asking
+ * for, and it turns hundreds into a handful.
+ *
+ * @param array<string,array> $found The inventory, for the link counts.
+ * @param int                 $now   Injectable for testing.
+ * @return array<string,int> host => when it was approved, oldest first.
+ */
+function horsetools_link_stale( array $found, $now = 0 ) {
+	$now   = $now ? (int) $now : time();
+	$limit = $now - ( HORSETOOLS_LINK_STALE_DAYS * DAY_IN_SECONDS );
+	$out   = array();
+
+	foreach ( horsetools_link_approved() as $host => $when ) {
+		$when = (int) $when;
+		if ( $when <= 0 || $when > $limit ) {
+			continue;
+		}
+		// Still linked from somewhere — a domain no longer in the content is not
+		// worth anybody's attention, whatever its age.
+		if ( ! isset( $found[ $host ] ) ) {
+			continue;
+		}
+		$posts = isset( $found[ $host ]['posts'] ) ? count( $found[ $host ]['posts'] ) : 0;
+		if ( $posts > 2 ) {
+			continue;
+		}
+		$out[ $host ] = $when;
+	}
+
+	asort( $out );
+	return $out;
+}
+
+/** Mark these as looked at again, without changing what is approved. */
+function horsetools_link_refresh( array $hosts ) {
+	$approved = horsetools_link_approved();
+	$now      = time();
+	$hit      = false;
+	foreach ( $hosts as $host ) {
+		$host = horsetools_link_host_input( $host );
+		if ( '' !== $host && isset( $approved[ $host ] ) ) {
+			$approved[ $host ] = $now;
+			$hit               = true;
+		}
+	}
+	if ( $hit ) {
+		update_option( HORSETOOLS_LINK_OK, $approved, false );
+	}
+	return $hit;
+}

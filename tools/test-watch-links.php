@@ -18,6 +18,7 @@
 
 define( 'ABSPATH', __DIR__ . '/' );
 define( 'MINUTE_IN_SECONDS', 60 );
+define( 'DAY_IN_SECONDS', 86400 );
 
 function __( $s, $d = '' ) { return $s; }
 function _n( $a, $b, $n, $d = '' ) { return 1 === $n ? $a : $b; }
@@ -51,6 +52,7 @@ function sanitize_text_field( $s ) { return trim( $s ); }
 function wp_unslash( $s ) { return $s; }
 function get_the_title( $id ) { return 'Post ' . $id; }
 function get_edit_post_link( $id ) { return 'edit.php?post=' . $id; }
+function human_time_diff( $a, $b = 0 ) { return '1 năm'; }
 function horsetools_is_plugin_screen() { return false; }
 function horsetools_current_admin_page() { return ''; }
 // The confirm paths re-anchor their decisions to a file; that file has its own
@@ -344,6 +346,44 @@ echo "\n23. \"Tôi soát rồi, không cái nào của tôi\" vẫn là một c�
 screen_post( array( 'do' => 'approve', 'pick' => array() ) );
 eq( horsetools_link_reviewed(), true, 'bấm duyệt mà không tick gì → đã soát' );
 eq( horsetools_link_guard_active(), true, 'và lúc đó guard mới chặn hết' );
+
+echo "\n23b. Nhắc duyệt lại tên miền cũ — và KHÔNG được thành bức tường lần nữa\n";
+// Một tên miền có thể hỏng mà không có gì trên site đổi: nó hết hạn, người khác
+// mua, và cái link duyệt từ 2019 giờ trỏ vào thứ họ bán. Nhưng site duyệt 686
+// tên miền trong một cú bấm thì một năm sau cả 686 cùng già — đúng bức tường đã
+// phải dỡ hôm nay. Nên lọc thêm: chỉ nhắc cái ÍT được trỏ tới.
+$GLOBALS['opts'] = array();
+$nay  = 1780000000;
+$cu   = $nay - 400 * 86400;   // hơn một năm
+$moi  = $nay - 30 * 86400;
+$found = array(
+	'hiem.com'    => array( 'host' => 'hiem.com',    'count' => 1,   'posts' => array( 7 ) ),
+	'namvai.com'  => array( 'host' => 'namvai.com',  'count' => 2,   'posts' => array( 8, 9 ) ),
+	'khap.com'    => array( 'host' => 'khap.com',    'count' => 300, 'posts' => array( 1,2,3,4,5,6,7,8 ) ),
+	'vuaduyet.com'=> array( 'host' => 'vuaduyet.com','count' => 1,   'posts' => array( 10 ) ),
+);
+$GLOBALS['opts']['horsetools_link_approved'] = array(
+	'hiem.com'     => $cu,
+	'namvai.com'   => $cu - 86400,
+	'khap.com'     => $cu,
+	'vuaduyet.com' => $moi,
+	'daxoa.com'    => $cu,
+);
+$stale = horsetools_link_stale( $found, $nay );
+eq( array_keys( $stale ), array( 'namvai.com', 'hiem.com' ), 'chỉ cái CŨ và ÍT link, cũ nhất trước' );
+ok( ! isset( $stale['khap.com'] ), 'tên miền trỏ từ 300 chỗ thì hỏng là biết ngay — không nhắc' );
+ok( ! isset( $stale['vuaduyet.com'] ), 'mới duyệt thì chưa nhắc' );
+ok( ! isset( $stale['daxoa.com'] ), 'không còn trong nội dung nữa thì nhắc làm gì' );
+
+echo "\n23c. \"Đã xem, vẫn ổn\" chỉ đặt lại đồng hồ, KHÔNG đổi cái gì được duyệt\n";
+$truoc = horsetools_link_approved();
+horsetools_link_refresh( array( 'hiem.com' ) );
+$sau = horsetools_link_approved();
+eq( array_keys( $sau ), array_keys( $truoc ), 'danh sách duyệt y nguyên' );
+ok( $sau['hiem.com'] > $truoc['hiem.com'], 'nhưng mốc thời gian được làm mới' );
+eq( $sau['namvai.com'], $truoc['namvai.com'], 'không đụng cái khác' );
+eq( horsetools_link_stale( $found, $nay ), array( 'namvai.com' => $cu - 86400 ), 'nó rời khỏi danh sách nhắc' );
+ok( ! horsetools_link_refresh( array( 'khongcotrongds.com' ) ), 'làm mới thứ chưa duyệt thì không thêm nó vào' );
 
 echo "\n24. Màn duyệt phải nằm trong menu — giấu nó đi là WordPress chặn luôn\n";
 // remove_submenu_page() từng được dùng để giấu trang này. WordPress quyết định

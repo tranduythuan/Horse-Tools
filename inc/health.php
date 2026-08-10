@@ -262,6 +262,8 @@ function horsetools_health_report() {
 			$hb_row = array( 'warn', __( 'Turned on but never sent — send a test message', 'horse-tools' ) );
 		} elseif ( ! $hb['ok'] ) {
 			$hb_row = array( 'fail', __( 'The last one could not be sent — Security tab → Check-in', 'horse-tools' ) );
+		} elseif ( $hb['fell_back'] ) {
+			$hb_row = array( 'warn', __( 'Only the backup route worked — your main channel is down', 'horse-tools' ) );
 		} elseif ( time() > $hb['due'] + 2 * DAY_IN_SECONDS ) {
 			$hb_row = array( 'warn', __( 'Overdue — nothing has been running the schedule', 'horse-tools' ) );
 		} else {
