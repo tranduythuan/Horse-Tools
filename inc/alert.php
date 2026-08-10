@@ -47,7 +47,62 @@ function horsetools_alert_chat() {
 	if ( '' !== $own ) {
 		return $own;
 	}
-	return isset( $horsetools_options['woo-tele12'] ) ? trim( (string) $horsetools_options['woo-tele12'] ) : '';
+	$orders = isset( $horsetools_options['woo-tele12'] ) ? trim( (string) $horsetools_options['woo-tele12'] ) : '';
+	if ( '' !== $orders ) {
+		return $orders;
+	}
+	// The chat this plugin already talks to.
+	//
+	// Asking for a chat ID was asking a question the plugin had already answered.
+	// Two-factor recovery pairs an administrator's Telegram and stores the chat
+	// on their account, and a site set up that way has a working bot, a known
+	// chat, and a proven route — while this function reported "no Telegram" and
+	// sent security mail into a spam folder instead, because it only knew to look
+	// at the WooCommerce order chat. Found on a live site whose owner said the bot
+	// had been filled in for ages. They were right.
+	return horsetools_alert_paired_chat();
+}
+
+/**
+ * The Telegram chat of the lowest-numbered administrator who has paired one.
+ *
+ * Lowest-numbered so the answer is the same every time, including from cron
+ * where there is no current user. Administrators only: a paired subscriber is
+ * not somebody to send the site's security state to.
+ *
+ * @return string
+ */
+function horsetools_alert_paired_chat() {
+	// No static. It would save four user queries on the one admin page that
+	// renders this and a handful on a weekly cron run, and it would freeze the
+	// answer for the rest of the request — which has already made two functions
+	// in this plugin untestable today, and one of them wrong.
+	if ( ! function_exists( 'get_users' ) ) {
+		return '';
+	}
+	$users = get_users(
+		array(
+			'role'       => 'administrator',
+			'orderby'    => 'ID',
+			'order'      => 'ASC',
+			'number'     => 5,
+			'fields'     => 'ID',
+			'meta_query' => array( // phpcs:ignore WordPress.DB.SlowDBQuery
+				array(
+					'key'     => '_horsetools_2fa_tg_chat',
+					'value'   => '',
+					'compare' => '!=',
+				),
+			),
+		)
+	);
+	foreach ( (array) $users as $id ) {
+		$chat = trim( (string) get_user_meta( (int) $id, '_horsetools_2fa_tg_chat', true ) );
+		if ( '' !== $chat ) {
+			return $chat;
+		}
+	}
+	return '';
 }
 
 /**
@@ -64,8 +119,17 @@ function horsetools_alert_channel() {
  */
 function horsetools_alert_target() {
 	if ( 'telegram' === horsetools_alert_channel() ) {
+		$chat = horsetools_alert_chat();
+		// Where the chat came from matters as much as what it is. A site that
+		// never typed a chat ID anywhere is about to start receiving Telegram
+		// messages, and being told why is the difference between a feature and a
+		// surprise.
+		if ( $chat === horsetools_alert_paired_chat() ) {
+			/* translators: %s: Telegram chat ID. */
+			return sprintf( __( 'Telegram (chat %s — the one paired for two-factor recovery)', 'horse-tools' ), $chat );
+		}
 		/* translators: %s: Telegram chat ID. */
-		return sprintf( __( 'Telegram (chat %s)', 'horse-tools' ), horsetools_alert_chat() );
+		return sprintf( __( 'Telegram (chat %s)', 'horse-tools' ), $chat );
 	}
 	/* translators: %s: email address. */
 	return sprintf( __( 'Email to %s', 'horse-tools' ), get_option( 'admin_email' ) );

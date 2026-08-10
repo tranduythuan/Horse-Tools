@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.36
+Stable tag: 1.3.37
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.37 =
+* **If you have already paired Telegram for two-factor recovery, security messages now go there — no extra setup.** Asking for a chat ID was asking a question the plugin had already answered. A site with the bot token filled in and an administrator paired has a working bot, a known chat and a proven route; the alert code reported "no Telegram" anyway and pushed everything into email, because it only knew to look at the WooCommerce order chat field.
+* Found on a live site whose owner said the bot had been set up ages ago. They were right — token present, bot reachable, chat on file since the day they turned on two-factor recovery. The gap was mine.
+* The screen names where the chat came from, so a site that never typed one anywhere is told why it is suddenly receiving Telegram messages. A dedicated field still wins, then the order chat, then the paired one.
 
 = 1.3.36 =
 * **The check-in message now falls back to the other channel — and says so, loudly.** If Telegram will not send, the message goes by email instead, with a line at the top naming the channel that failed and repeating the reason it gave. A quiet fallback is the classic mistake: Telegram breaks, email carries everything without comment, and a year later you believe you have two channels when you have had one since March — and find out when the second one goes too. The delivery is not the news; the failure is.

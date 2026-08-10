@@ -2220,7 +2220,7 @@ msgstr ""
 msgid "Email subject"
 msgstr ""
 
-#: inc/alert.php:71
+#: inc/alert.php:135
 msgid "Email to %s"
 msgstr ""
 
@@ -3240,7 +3240,7 @@ msgstr ""
 msgid "Horse Tools table"
 msgstr ""
 
-#: inc/alert.php:201
+#: inc/alert.php:265
 msgid "Horse Tools — %s"
 msgstr ""
 
@@ -4297,7 +4297,7 @@ msgstr ""
 msgid "Nothing to preview yet."
 msgstr ""
 
-#: inc/alert.php:121
+#: inc/alert.php:185
 msgid "Nothing to send."
 msgstr ""
 
@@ -6120,7 +6120,11 @@ msgstr ""
 msgid "Teal"
 msgstr ""
 
-#: inc/alert.php:68
+#: inc/alert.php:129
+msgid "Telegram (chat %s — the one paired for two-factor recovery)"
+msgstr ""
+
+#: inc/alert.php:132
 msgid "Telegram (chat %s)"
 msgstr ""
 
@@ -6584,11 +6588,11 @@ msgstr ""
 msgid "This site has WordPress's built-in file editor switched off (DISALLOW_FILE_EDIT) — good. PHP snippets still work, because they carry their own protections: two-factor unlock, a syntax check before saving, auto-disable on a crash, and code signing. To switch them off as well, add HORSETOOLS_NO_PHP to wp-config.php."
 msgstr ""
 
-#: inc/alert.php:197
+#: inc/alert.php:261
 msgid "This site has no valid admin email address."
 msgstr ""
 
-#: inc/alert.php:124
+#: inc/alert.php:188
 msgid "This site has no way to reach you: no Telegram bot, and no valid admin email address."
 msgstr ""
 
@@ -7065,7 +7069,7 @@ msgstr ""
 msgid "WordPress could not hand the message to the mail server at all, so it never left the site."
 msgstr ""
 
-#: inc/alert.php:205
+#: inc/alert.php:269
 msgid "WordPress could not hand the message to the mail server."
 msgstr ""
 
@@ -7361,7 +7365,7 @@ msgstr ""
 msgid "Zoom out"
 msgstr ""
 
-#: inc/alert.php:136
+#: inc/alert.php:200
 msgid "[!] This went by %1$s because %2$s would not send: %3$s"
 msgstr ""
 
@@ -7453,7 +7457,7 @@ msgstr ""
 msgid "e.g. sc, ht-snippet, vip"
 msgstr ""
 
-#: inc/alert.php:97
+#: inc/alert.php:161
 msgid "email"
 msgstr ""
 
@@ -7601,7 +7605,7 @@ msgstr ""
 msgid "type part of a domain…"
 msgstr ""
 
-#: inc/alert.php:147
+#: inc/alert.php:211
 msgid "unknown error"
 msgstr ""
 

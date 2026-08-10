@@ -67,6 +67,10 @@ function human_time_diff( $from, $to = 0 ) {
 	return (int) round( $d / DAY_IN_SECONDS ) . ' ngày';
 }
 function is_email( $e ) { return (bool) filter_var( $e, FILTER_VALIDATE_EMAIL ); }
+// Chat Telegram mà 2FA đã ghép đôi sẵn — plugin vốn đã biết nó.
+$GLOBALS['admins'] = array();
+function get_users( $a = array() ) { return array_keys( $GLOBALS['admins'] ); }
+function get_user_meta( $id, $k, $single = false ) { return $GLOBALS['admins'][ $id ] ?? ''; }
 
 // `time()` is what the whole schedule turns on, so the test owns the clock.
 // Overriding it in the plugin's namespace is not possible here, so the plugin
@@ -133,6 +137,31 @@ eq( horsetools_alert_channel(), 'telegram', 'đủ token + chat → Telegram' );
 eq( horsetools_alert_chat(), '111', 'chưa khai riêng thì dùng chat của đơn hàng' );
 $GLOBALS['horsetools_options']['watch-tg'] = '222';
 eq( horsetools_alert_chat(), '222', 'khai riêng thì ưu tiên — cảnh báo bảo mật không đi chung với đơn hàng' );
+
+echo "\n1b. Chat mà plugin VỐN ĐÃ BIẾT — 2FA ghép đôi rồi thì đừng hỏi lại\n";
+// Lỗi thật, tìm ra trên site thật: chủ site nói "bot điền sẵn đời nào rồi", và
+// đúng — token 46 ký tự, bot @TDTNotifyBot, chat 724254522 nằm sẵn trong user
+// meta từ lúc ghép đôi 2FA. Nhưng hàm này chỉ nhìn ô chat của đơn hàng
+// WooCommerce, nên nó báo "không có Telegram" và đẩy tin bảo mật vào spam.
+reset_all();
+$GLOBALS['horsetools_options']['woo-tele11'] = 'TOKEN';
+$GLOBALS['admins'] = array();
+eq( horsetools_alert_channel(), 'email', 'không ai ghép đôi → email' );
+
+$GLOBALS['admins'] = array( 7 => '724254522' );
+eq( horsetools_alert_paired_chat(), '724254522', 'lấy được chat 2FA đã ghép' );
+eq( horsetools_alert_chat(), '724254522', 'và dùng nó khi không có ô nào được khai' );
+eq( horsetools_alert_channel(), 'telegram', 'site có bot + có chat đã ghép → Telegram, không cần khai thêm gì' );
+ok( false !== strpos( horsetools_alert_target(), 'two-factor' ), 'màn hình nói rõ chat này lấy từ đâu — không được làm người ta bất ngờ' );
+
+$GLOBALS['admins'] = array( 9 => '999', 3 => '333' );
+eq( horsetools_alert_paired_chat(), '999', 'nhiều admin thì lấy cái get_users trả về trước — kết quả phải ỔN ĐỊNH, kể cả trong cron' );
+
+$GLOBALS['horsetools_options']['woo-tele12'] = '111';
+eq( horsetools_alert_chat(), '111', 'ô đơn hàng vẫn ưu tiên hơn chat 2FA' );
+$GLOBALS['horsetools_options']['watch-tg'] = '222';
+eq( horsetools_alert_chat(), '222', 'ô bảo mật riêng ưu tiên cao nhất' );
+$GLOBALS['admins'] = array();
 
 echo "\n2. Gửi thật qua Telegram\n";
 reset_all();

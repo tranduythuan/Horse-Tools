@@ -7759,3 +7759,6 @@ msgstr "email"
 
 msgid "unknown error"
 msgstr "lỗi không rõ"
+
+msgid "Telegram (chat %s — the one paired for two-factor recovery)"
+msgstr "Telegram (chat %s — cái đã ghép đôi cho khôi phục hai lớp)"

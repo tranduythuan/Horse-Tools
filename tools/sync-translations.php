@@ -1405,6 +1405,10 @@ $vi = array(
 	'email' => 'email',
 	'unknown error' => 'lỗi không rõ',
 
+
+	// Dùng luôn chat Telegram mà 2FA đã ghép đôi (1.3.37).
+	'Telegram (chat %s — the one paired for two-factor recovery)' => 'Telegram (chat %s — cái đã ghép đôi cho khôi phục hai lớp)',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';
