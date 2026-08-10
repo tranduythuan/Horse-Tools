@@ -263,7 +263,7 @@ function horsetools_link_approve( array $hosts ) {
 		}
 	}
 	update_option( HORSETOOLS_LINK_OK, $approved, false );
-	horsetools_anchor_touch();
+	horsetools_anchor_touch( array( HORSETOOLS_LINK_OK ) );
 }
 
 /** @param string[] $hosts */
@@ -276,7 +276,7 @@ function horsetools_link_revoke( array $hosts ) {
 		}
 	}
 	update_option( HORSETOOLS_LINK_OK, $approved, false );
-	horsetools_anchor_touch();
+	horsetools_anchor_touch( array( HORSETOOLS_LINK_OK ) );
 }
 
 /**
@@ -691,6 +691,16 @@ function horsetools_link_screen() {
 				</p>
 			</form>
 		<?php endif; ?>
+
+		<?php
+		// Guarded: the button belongs to the shared walk in another file. In
+		// production they always load together, but a screen that fatals because
+		// of a call across a file boundary is a worse outcome than a screen with
+		// one button missing — and the test suite proved the point by dying here.
+		if ( function_exists( 'horsetools_scan_rescan_button' ) ) {
+			horsetools_scan_rescan_button();
+		}
+		?>
 
 		<?php /* ---------- guard ---------- */ ?>
 		<form method="post">

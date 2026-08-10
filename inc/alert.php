@@ -94,7 +94,7 @@ function horsetools_alert_send( $text, $subject = '' ) {
 		$r = wp_safe_remote_post(
 			'https://api.telegram.org/bot' . rawurlencode( horsetools_alert_token() ) . '/sendMessage',
 			array(
-				'timeout' => 15,
+				'timeout' => 10,
 				'body'    => array(
 					'chat_id'                  => horsetools_alert_chat(),
 					'text'                     => $text,

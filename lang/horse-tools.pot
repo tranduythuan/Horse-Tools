@@ -200,7 +200,7 @@ msgstr ""
 msgid "A site archive, downloadable by anyone who guesses the name."
 msgstr ""
 
-#: inc/mail-proof.php:176
+#: inc/mail-proof.php:191
 msgid "A test was sent but you have not said whether it arrived"
 msgstr ""
 
@@ -417,7 +417,7 @@ msgstr ""
 msgid "Add nofollow and _blank for external links"
 msgstr ""
 
-#: inc/watch-links.php:711
+#: inc/watch-links.php:721
 msgid "Add nofollow to it (recommended)"
 msgstr ""
 
@@ -593,7 +593,7 @@ msgstr ""
 msgid "Analytics found on your site: %s. Clicks will be recorded there."
 msgstr ""
 
-#: inc/watch-links.php:698
+#: inc/watch-links.php:708
 msgid "And what should happen to a domain that is not on the list?"
 msgstr ""
 
@@ -1069,7 +1069,7 @@ msgstr ""
 msgid "Check for updates"
 msgstr ""
 
-#: inc/watch-heartbeat.php:325
+#: inc/watch-heartbeat.php:339
 msgid "Check that WP-Cron is running on this site"
 msgstr ""
 
@@ -1339,7 +1339,7 @@ msgstr ""
 msgid "Confirm them once, from the notice on any Horse Tools screen"
 msgstr ""
 
-#: inc/mail-proof.php:169
+#: inc/mail-proof.php:184
 msgid "Confirmed %s ago"
 msgstr ""
 
@@ -2740,7 +2740,7 @@ msgstr ""
 msgid "Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off."
 msgstr ""
 
-#: inc/watch-links.php:700
+#: inc/watch-links.php:710
 msgid "Everything above only tells you. Telling you leaves a gap: the link goes in, the warning appears on a screen, and the link keeps working until you log in and read it. That gap is how three old posts carried casino links for two years."
 msgstr ""
 
@@ -2872,7 +2872,7 @@ msgstr ""
 msgid "First row is a header"
 msgstr ""
 
-#: inc/watch-heartbeat.php:318
+#: inc/watch-heartbeat.php:332
 msgid "Fix the channel and send a test message"
 msgstr ""
 
@@ -3190,7 +3190,7 @@ msgstr ""
 msgid "Horse Tools beat #%1$d — %2$s"
 msgstr ""
 
-#: inc/watch-links.php:789
+#: inc/watch-links.php:799
 msgid "Horse Tools can tell you when your content starts linking somewhere new."
 msgstr ""
 
@@ -3210,7 +3210,7 @@ msgstr ""
 msgid "Horse Tools is up to date (version %s)."
 msgstr ""
 
-#: inc/anchor.php:289
+#: inc/anchor.php:339
 msgid "Horse Tools keeps a copy of your decisions in a file as well as in the database, precisely so that a change made straight to the database can be seen. These no longer match:"
 msgstr ""
 
@@ -3323,11 +3323,11 @@ msgstr ""
 msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
 msgstr ""
 
-#: inc/watch-heartbeat.php:302
+#: inc/watch-heartbeat.php:316
 msgid "If this site stops working, or Horse Tools is switched off, nobody is told. Every warning here is only seen by someone who logs in and looks."
 msgstr ""
 
-#: inc/mail-proof.php:96
+#: inc/mail-proof.php:99
 msgid "If you are reading it, mail from your site reaches this address. Go back to the Email screen and say where it turned up — the inbox or the spam folder — because those are two different answers and only you can see which one it was."
 msgstr ""
 
@@ -3363,7 +3363,7 @@ msgstr ""
 msgid "If you had it enabled it is now inactive. The AdSense and ads.txt tools on the other tabs are unaffected."
 msgstr ""
 
-#: inc/anchor.php:293
+#: inc/anchor.php:343
 msgid "If you have just restored a database backup, or copied the database from another copy of this site, that is the explanation — the file stayed while the database went back in time. Press the button and it will match again."
 msgstr ""
 
@@ -3371,7 +3371,7 @@ msgstr ""
 msgid "If you have members and do not want them to upload images with excessively large sizes, causing storage space usage, you can limit the maximum size allowed for upload"
 msgstr ""
 
-#: inc/anchor.php:294
+#: inc/anchor.php:344
 msgid "If you have not done either of those things, then something can write to your database that should not be able to. Changing passwords will not fix that on its own; the way in has to be found."
 msgstr ""
 
@@ -3598,7 +3598,7 @@ msgstr ""
 msgid "Invalid code. Please try again."
 msgstr ""
 
-#: inc/watch-heartbeat.php:338
+#: inc/watch-heartbeat.php:352
 msgid "It continues on its own each time you open an admin page"
 msgstr ""
 
@@ -3620,6 +3620,10 @@ msgstr ""
 
 #: main/page/ht-setting.php:81
 msgid "Language"
+msgstr ""
+
+#: inc/mail-proof.php:178
+msgid "Last confirmed %s ago — worth testing again"
 msgstr ""
 
 #: main/section/sec-heartbeat.php:95
@@ -4215,11 +4219,11 @@ msgstr ""
 msgid "No third-party requests found. Nothing leaks to other servers."
 msgstr ""
 
-#: inc/watch-links.php:717
+#: inc/watch-links.php:727
 msgid "Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it."
 msgstr ""
 
-#: inc/mail-proof.php:178
+#: inc/mail-proof.php:193
 msgid "Nobody has ever checked that mail from this site arrives"
 msgstr ""
 
@@ -4235,7 +4239,7 @@ msgstr ""
 msgid "None: default not selected, Auto: background image automatically changes each time the page is loaded, Color: change the color you want, Upload: upload the background image you want"
 msgstr ""
 
-#: inc/2fa.php:252 inc/mail-proof.php:188 inc/speed.php:518 inc/watch-heartbeat.php:352
+#: inc/2fa.php:252 inc/mail-proof.php:203 inc/speed.php:518 inc/watch-heartbeat.php:366
 msgid "Not allowed."
 msgstr ""
 
@@ -4291,7 +4295,7 @@ msgstr ""
 msgid "Nothing was ticked, so nothing changed."
 msgstr ""
 
-#: inc/watch-links.php:706
+#: inc/watch-links.php:716
 msgid "Nothing — just tell me"
 msgstr ""
 
@@ -4855,6 +4859,10 @@ msgstr ""
 msgid "REST API left ON so the store keeps working"
 msgstr ""
 
+#: inc/watch-scan.php:269
+msgid "Read all my content again"
+msgstr ""
+
 #: main/section/ac-maildiag.php:45
 msgid "Read the records again"
 msgstr ""
@@ -4991,6 +4999,10 @@ msgstr ""
 msgid "Removed"
 msgstr ""
 
+#: inc/watch-scan.php:262
+msgid "Removed something from a post and it is still listed here? The lists only grow as your content is read, and a post that no longer contains something cannot say so. Read everything again and the lists will match what is actually there now."
+msgstr ""
+
 #: main/clean.php:117 main/section/sp-clean3.php:11
 msgid "Removes attachments whose file is missing from disk. Every attachment is scanned, so the count is known only after it runs."
 msgstr ""
@@ -5055,7 +5067,7 @@ msgstr ""
 msgid "Reveal"
 msgstr ""
 
-#: inc/watch-links.php:785
+#: inc/watch-links.php:795
 msgid "Review the list"
 msgstr ""
 
@@ -5229,7 +5241,7 @@ msgstr ""
 msgid "Save these one-time backup codes somewhere safe — each works once if you lose your phone:"
 msgstr ""
 
-#: inc/watch-links.php:725
+#: inc/watch-links.php:735
 msgid "Save this choice"
 msgstr ""
 
@@ -5503,7 +5515,7 @@ msgstr ""
 msgid "Send a test"
 msgstr ""
 
-#: inc/watch-heartbeat.php:311
+#: inc/watch-heartbeat.php:325
 msgid "Send a test message"
 msgstr ""
 
@@ -5555,15 +5567,15 @@ msgstr ""
 msgid "Sensible defaults for a content site: a table of contents on long posts, lighter pages and the baseline security hardening."
 msgstr ""
 
-#: inc/mail-proof.php:203
+#: inc/mail-proof.php:218
 msgid "Sent to %s. Now go and look — and do not close this page, because the useful part is what you find."
 msgstr ""
 
-#: inc/watch-heartbeat.php:363
+#: inc/watch-heartbeat.php:377
 msgid "Sent. Check %s — if nothing arrives, the channel is not working even though the site thinks it is."
 msgstr ""
 
-#: inc/mail-proof.php:99
+#: inc/mail-proof.php:102
 msgid "Sent: %s"
 msgstr ""
 
@@ -5824,7 +5836,7 @@ msgstr ""
 msgid "Somebody has asked for this path %d times."
 msgstr ""
 
-#: inc/anchor.php:288
+#: inc/anchor.php:338
 msgid "Something changed what you approved, without going through this screen."
 msgstr ""
 
@@ -5883,6 +5895,10 @@ msgstr ""
 
 #: main/page/1speed.php:133
 msgid "Start fetching a few important files immediately (the LCP image, a web font, the main CSS). The type is detected from the file extension. Do not preload many files — it competes with everything else for bandwidth."
+msgstr ""
+
+#: inc/watch-scan.php:282
+msgid "Starting…"
 msgstr ""
 
 #: inc/2fa.php:315 inc/2fa.php:326
@@ -6074,7 +6090,7 @@ msgstr ""
 msgid "Take back the ticked ones"
 msgstr ""
 
-#: inc/watch-links.php:716
+#: inc/watch-links.php:726
 msgid "Take the link away, keep the words"
 msgstr ""
 
@@ -6122,7 +6138,7 @@ msgstr ""
 msgid "Test SMTP email sending from your website"
 msgstr ""
 
-#: inc/mail-proof.php:106
+#: inc/mail-proof.php:109
 msgid "Test message from %s"
 msgstr ""
 
@@ -6170,7 +6186,7 @@ msgstr ""
 msgid "That is not a valid snippet export file."
 msgstr ""
 
-#: inc/mail-proof.php:85
+#: inc/mail-proof.php:88
 msgid "That is not an email address."
 msgstr ""
 
@@ -6186,7 +6202,7 @@ msgstr ""
 msgid "That snippet no longer exists."
 msgstr ""
 
-#: inc/anchor.php:296
+#: inc/anchor.php:346
 msgid "That was me — line them up again"
 msgstr ""
 
@@ -6222,7 +6238,7 @@ msgstr ""
 msgid "The changing image is square, with the standard size being 100x100 pixels"
 msgstr ""
 
-#: inc/watch-heartbeat.php:310
+#: inc/watch-heartbeat.php:324
 msgid "The check-in message is on but has never been sent. Until one arrives you do not know the channel works."
 msgstr ""
 
@@ -6282,11 +6298,11 @@ msgstr ""
 msgid "The icon on its own."
 msgstr ""
 
-#: inc/watch-heartbeat.php:317
+#: inc/watch-heartbeat.php:331
 msgid "The last check-in message could not be sent: %s"
 msgstr ""
 
-#: inc/watch-heartbeat.php:324
+#: inc/watch-heartbeat.php:338
 msgid "The last check-in message went out %s ago, which is later than it should be. Nothing has been running the schedule."
 msgstr ""
 
@@ -6294,7 +6310,7 @@ msgstr ""
 msgid "The last one could not be sent — Security tab → Check-in"
 msgstr ""
 
-#: inc/watch-links.php:712
+#: inc/watch-links.php:722
 msgid "The link still works for a reader and stops passing any SEO value — which is the whole reason a link like that is worth paying for. Nothing in your posts is changed; only what gets printed."
 msgstr ""
 
@@ -6506,7 +6522,7 @@ msgstr ""
 msgid "This includes every setting group, whether or not its module is currently enabled. Uploaded font files are not included — they live on this site."
 msgstr ""
 
-#: inc/mail-proof.php:93
+#: inc/mail-proof.php:96
 msgid "This is a test message from %s."
 msgstr ""
 
@@ -6518,7 +6534,7 @@ msgstr ""
 msgid "This list is incomplete."
 msgstr ""
 
-#: inc/watch-links.php:722
+#: inc/watch-links.php:732
 msgid "This never touches what is stored. Switch it off and every link is back as it was on the next page load."
 msgstr ""
 
@@ -6694,7 +6710,7 @@ msgstr ""
 msgid "Turn off WP_DEBUG_DISPLAY on a live site."
 msgstr ""
 
-#: inc/watch-heartbeat.php:303
+#: inc/watch-heartbeat.php:317
 msgid "Turn on the regular check-in message"
 msgstr ""
 
@@ -7019,7 +7035,7 @@ msgstr ""
 msgid "WooCommerce / Store"
 msgstr ""
 
-#: inc/mail-proof.php:111
+#: inc/mail-proof.php:114
 msgid "WordPress could not hand the message to the mail server at all, so it never left the site."
 msgstr ""
 
@@ -7191,11 +7207,11 @@ msgstr ""
 msgid "Your container has no GA4 tag in it, so Tag Manager has nothing to pass the click on to. It is placed in the dataLayer and stops there until you build the tag below — until then nothing reaches Analytics."
 msgstr ""
 
-#: inc/watch-heartbeat.php:336
+#: inc/watch-heartbeat.php:350
 msgid "Your content has not been read all the way through yet (%1$d of %2$d), so nothing found in it can be trusted as complete."
 msgstr ""
 
-#: inc/watch-heartbeat.php:337
+#: inc/watch-heartbeat.php:351
 msgid "Your content has not been read all the way through yet."
 msgstr ""
 
@@ -7203,7 +7219,7 @@ msgstr ""
 msgid "Your content links to %1$s domains you have not agreed to, and %2$s you have. You will be told the moment one arrives that is on neither list."
 msgstr ""
 
-#: inc/watch-links.php:798
+#: inc/watch-links.php:808
 msgid "Your content links to %d domain you have not approved."
 msgid_plural "Your content links to %d domains you have not approved."
 msgstr[0] ""
@@ -7245,15 +7261,15 @@ msgstr ""
 msgid "Your domain says which servers may send mail for it, and this site is sending straight from the web server. Whether that server is on the list could not be determined here."
 msgstr ""
 
-#: inc/mail-proof.php:162
+#: inc/mail-proof.php:165
 msgid "Your email settings changed after the last test, so what is running now has not been tried"
 msgstr ""
 
-#: inc/mail-proof.php:172
+#: inc/mail-proof.php:187
 msgid "Your last test landed in the spam folder"
 msgstr ""
 
-#: inc/mail-proof.php:174
+#: inc/mail-proof.php:189
 msgid "Your last test never arrived"
 msgstr ""
 
@@ -7273,7 +7289,7 @@ msgstr ""
 msgid "Your own icon (paste an SVG)"
 msgstr ""
 
-#: inc/watch-links.php:707
+#: inc/watch-links.php:717
 msgid "Your pages go out exactly as written."
 msgstr ""
 
@@ -7285,7 +7301,7 @@ msgstr ""
 msgid "Your posts and pages do not link anywhere outside this site."
 msgstr ""
 
-#: inc/watch-links.php:792
+#: inc/watch-links.php:802
 msgid "Your posts and pages link to %d other domain. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
 msgid_plural "Your posts and pages link to %d other domains. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
 msgstr[0] ""
@@ -7513,15 +7529,15 @@ msgstr ""
 msgid "still reading"
 msgstr ""
 
-#: inc/anchor.php:259
+#: inc/anchor.php:308
 msgid "the contact details you confirmed in your posts"
 msgstr ""
 
-#: inc/anchor.php:258
+#: inc/anchor.php:307
 msgid "the contact details you confirmed in your settings"
 msgstr ""
 
-#: inc/anchor.php:260
+#: inc/anchor.php:309
 msgid "the list of domains you approved"
 msgstr ""
 
@@ -7539,6 +7555,10 @@ msgstr ""
 
 #: main/section/sec-recaptcha.php:21
 msgid "v3 score threshold (0 – 1)"
+msgstr ""
+
+#: inc/anchor.php:310
+msgid "whether the watching is switched on at all"
 msgstr ""
 
 #: inc/health.php:244

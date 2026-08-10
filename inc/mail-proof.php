@@ -24,6 +24,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 const HORSETOOLS_MAIL_PROOF = 'horsetools_mail_proof';
 
+/** How long a confirmed delivery keeps counting. Ninety days. */
+const HORSETOOLS_MAIL_PROOF_TTL = 90 * DAY_IN_SECONDS;
+
 /**
  * A fingerprint of everything that decides how mail leaves this site.
  *
@@ -163,6 +166,18 @@ function horsetools_mail_proof_row() {
 	}
 	switch ( $p['state'] ) {
 		case 'inbox':
+			// Evidence goes off. Deliverability is not a property of the settings,
+			// it is a property of a relationship between two mail systems that
+			// drifts: an IP picks up a reputation, a provider tightens its rules,
+			// a domain loses its records. A green tick resting on a year-old test
+			// is the same lie as a green tick resting on a switch.
+			if ( $p['when'] > 0 && ( time() - $p['when'] ) > HORSETOOLS_MAIL_PROOF_TTL ) {
+				return array(
+					'status' => 'warn',
+					/* translators: %s: how long ago, e.g. "4 months". */
+					'text'   => sprintf( __( 'Last confirmed %s ago — worth testing again', 'horse-tools' ), human_time_diff( $p['when'] ) ),
+				);
+			}
 			return array(
 				'status' => 'pass',
 				/* translators: %s: how long ago, e.g. "3 days". */

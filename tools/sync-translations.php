@@ -1381,6 +1381,14 @@ $vi = array(
 	'If you are reading it, mail from your site reaches this address. Go back to the Email screen and say where it turned up — the inbox or the spam folder — because those are two different answers and only you can see which one it was.' => 'Nếu anh đang đọc được nó thì thư từ site có tới địa chỉ này. Quay lại màn Email và nói nó nằm ở đâu — hộp thư chính hay thư mục spam — vì đó là hai câu trả lời khác nhau, và chỉ anh mới thấy được là cái nào.',
 	'Sent: %s' => 'Gửi lúc: %s',
 
+
+	// Tự rà soát: đường dọn dẹp, neo công tắc, bằng chứng thư hết hạn (1.3.35).
+	'Read all my content again' => 'Đọc lại toàn bộ nội dung',
+	'Removed something from a post and it is still listed here? The lists only grow as your content is read, and a post that no longer contains something cannot say so. Read everything again and the lists will match what is actually there now.' => 'Đã gỡ thứ gì đó khỏi bài mà ở đây vẫn còn liệt kê? Danh sách chỉ dài thêm theo lúc nội dung được đọc, mà một bài không còn chứa thứ gì thì không thể tự nói ra điều đó. Đọc lại toàn bộ là danh sách khớp với thứ đang thực sự có.',
+	'Starting…' => 'Đang bắt đầu…',
+	'Last confirmed %s ago — worth testing again' => 'Xác nhận lần cuối %s trước — nên thử lại',
+	'whether the watching is switched on at all' => 'việc canh gác có đang được bật hay không',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

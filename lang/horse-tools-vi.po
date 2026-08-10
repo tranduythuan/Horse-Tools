@@ -7705,3 +7705,18 @@ msgstr "Nếu anh đang đọc được nó thì thư từ site có tới địa
 
 msgid "Sent: %s"
 msgstr "Gửi lúc: %s"
+
+msgid "Read all my content again"
+msgstr "Đọc lại toàn bộ nội dung"
+
+msgid "Removed something from a post and it is still listed here? The lists only grow as your content is read, and a post that no longer contains something cannot say so. Read everything again and the lists will match what is actually there now."
+msgstr "Đã gỡ thứ gì đó khỏi bài mà ở đây vẫn còn liệt kê? Danh sách chỉ dài thêm theo lúc nội dung được đọc, mà một bài không còn chứa thứ gì thì không thể tự nói ra điều đó. Đọc lại toàn bộ là danh sách khớp với thứ đang thực sự có."
+
+msgid "Starting…"
+msgstr "Đang bắt đầu…"
+
+msgid "Last confirmed %s ago — worth testing again"
+msgstr "Xác nhận lần cuối %s trước — nên thử lại"
+
+msgid "whether the watching is switched on at all"
+msgstr "việc canh gác có đang được bật hay không"

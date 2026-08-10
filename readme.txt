@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.34
+Stable tag: 1.3.35
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,16 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.35 =
+**A self-audit of everything added this week. Five holes, two of them serious.**
+
+* **You could not clean up.** Both inventories only ever grew: a domain or a number found once stayed on the list, because the steady-state pass reads only posts that changed and a post that no longer contains something cannot report its absence. So the response to an incident broke at the exact moment it mattered — somebody injects a link, the plugin says so, you clean the post, and the domain is *still* unapproved, the health row is *still* red, and the only button that makes it stop is the one that approves the attacker's domain. Doing the right thing left the alarm on; doing the wrong thing turned it off. There is now a **"Read all my content again"** button, and the lists come back matching what is actually there.
+* **The anchor was guarding the wrong door.** It watched the approval lists — the expensive thing to tamper with — and not the switches that decide whether any of it runs. An attacker with database access would not add their domain to the approved list; they would set the render guard to "off" and the check-in message to "off", and every alarm would go quiet with no alarm about the quiet. The switches are anchored now.
+* **And re-anchoring is per-item, not wholesale.** Writing every mark on every decision would have made the anchor easy to launder: tamper through the database, wait for the owner to confirm something unrelated, and the mismatch is written over as though agreed to. Each anchored thing is refreshed only by the act that legitimately changes it.
+* **A confirmed email delivery no longer counts for ever.** Deliverability is not a property of your settings, it is a relationship between two mail systems that drifts. After ninety days the row asks to be tested again rather than resting green on year-old evidence.
+* The render guard rebuilt the full approved list for every post — six hundred and eighty-six entries, twenty times over on an archive page, for an answer identical every time. And the check-in message could block an admin page for fifteen seconds; cron now gets first refusal and the admin hook only steps in once a beat is properly late.
+* The review screen called a function from another file with no guard, and would have fataled if the two ever loaded apart. The test suite found that one by dying.
 
 = 1.3.34 =
 * **Horse Tools now tells you whether your site is allowed to send mail as its own domain — and whether anything it sends actually arrives.** These are the two questions behind almost every "the customer never got the email", and WordPress answers neither.

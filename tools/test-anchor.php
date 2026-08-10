@@ -46,6 +46,9 @@ function wp_unslash( $s ) { return is_string( $s ) ? stripslashes( $s ) : $s; }
 function sanitize_text_field( $s ) { return trim( strip_tags( (string) $s ) ); }
 function horsetools_is_plugin_screen() { return false; }
 function horsetools_admin_banner( $t, $h ) {}
+// Các công tắc phòng thủ mà neo giờ canh thêm.
+if ( ! defined( 'HORSETOOLS_LINK_GUARD' ) ) { define( 'HORSETOOLS_LINK_GUARD', 'horsetools_link_guard' ); }
+$GLOBALS['horsetools_options'] = array();
 
 $GLOBALS['opts'] = array();
 
@@ -196,6 +199,56 @@ eq( state(), 'ok', 'admin thật thì KHÔNG bắt được — chỉ tin báo t
 $GLOBALS['opts']['horsetools_link_approved']['thu2.xyz'] = 1770000000;
 horsetools_anchor_write();
 eq( state(), 'ok', 'ghi được file thì cũng KHÔNG bắt được — không plugin PHP nào chống nổi' );
+
+echo "\n11b. CÔNG TẮC — kẻ tấn công không sửa danh sách duyệt, nó TẮT phòng thủ\n";
+// Neo chỉ canh danh sách duyệt là canh nhầm cửa. Sửa danh sách duyệt là nước đi
+// đắt và bị bắt to; TẮT canh gác là nước đi rẻ và trước đây không ai canh.
+wipe();
+$GLOBALS['horsetools_options'] = array( 'watch-hb' => 1 );
+$GLOBALS['opts']['horsetools_link_guard'] = 'nofollow';
+approve_some();
+horsetools_anchor_write();
+eq( state(), 'ok', 'khớp' );
+
+$GLOBALS['opts']['horsetools_link_guard'] = 'off';       // ghi thẳng SQL
+eq( state(), 'mismatch', 'TẮT guard bằng SQL → BỊ BẮT' );
+eq( horsetools_anchor_mismatches(), array( '@switches' ), 'chỉ tay đúng vào công tắc' );
+
+$GLOBALS['opts']['horsetools_link_guard'] = 'nofollow';
+eq( state(), 'ok', 'trả lại thì hết kêu' );
+$GLOBALS['horsetools_options']['watch-hb'] = 0;          // ghi thẳng SQL
+eq( state(), 'mismatch', 'TẮT nhịp tim bằng SQL → BỊ BẮT' );
+
+echo "\n11c. Đổi qua màn hình thì KHÔNG kêu\n";
+horsetools_anchor_touch( array( '@switches' ) );
+eq( state(), 'ok', 'neo lại phần công tắc → chấp nhận' );
+
+echo "\n11d. Neo lại một thứ KHÔNG được rửa sạch thứ khác\n";
+// Đây là lỗ nếu neo lại tất cả mỗi lần: kẻ tấn công sửa danh sách duyệt bằng SQL
+// rồi chờ chủ site bấm lưu một cài đặt bất kỳ, thế là dấu vết bị ghi đè.
+wipe();
+$GLOBALS['horsetools_options'] = array( 'watch-hb' => 1 );
+$GLOBALS['opts']['horsetools_link_guard'] = 'nofollow';
+approve_some();
+horsetools_anchor_write();
+$GLOBALS['opts']['horsetools_link_approved']['nhacai.xyz'] = 1770000000;  // SQL
+eq( horsetools_anchor_mismatches(), array( 'horsetools_link_approved' ), 'phát hiện' );
+horsetools_anchor_touch( array( '@switches' ) );   // chủ site đổi một công tắc, việc không liên quan
+eq( horsetools_anchor_mismatches(), array( 'horsetools_link_approved' ), 'vẫn còn dấu vết — KHÔNG bị rửa' );
+horsetools_anchor_touch( array( 'horsetools_link_approved' ) );
+eq( state(), 'ok', 'chỉ khi chính danh sách đó được duyệt lại mới hết' );
+
+echo "\n11e. Bản neo cũ chưa biết công tắc thì đừng kêu oan\n";
+wipe();
+approve_some();
+horsetools_anchor_write();
+$path = horsetools_anchor_file();
+$raw  = file_get_contents( $path );
+$data = json_decode( substr( $raw, strpos( $raw, "\n" ) + 1 ), true );
+unset( $data['marks']['@switches'] );                    // như neo do bản 1.3.33 ghi
+file_put_contents( $path, "<?php exit; ?>\n" . json_encode( $data ) );
+$GLOBALS['opts']['horsetools_link_guard'] = 'strip';
+eq( state(), 'ok', 'khoá chưa từng được neo thì bỏ qua, không phải báo động' );
 
 echo "\n12. Vân tay\n";
 eq( horsetools_anchor_fingerprint( array( 'a' => 1, 'b' => 2 ) ), horsetools_anchor_fingerprint( array( 'b' => 9, 'a' => 8 ) ), 'chỉ tính khoá, không tính giá trị, không phụ thuộc thứ tự' );

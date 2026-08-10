@@ -233,8 +233,21 @@ function horsetools_hb_fire( $force = false ) {
  * run on a site whose owner does not log in. Either one is allowed to be the one
  * that fires; the stored timestamp is what stops them doing it twice.
  */
-function horsetools_hb_tick() {
+function horsetools_hb_tick( $grace = 0 ) {
 	if ( ! horsetools_hb_due() ) {
+		return;
+	}
+	// Let cron go first.
+	//
+	// Sending is blocking on purpose — the value of this message is knowing
+	// whether it went — but that means whoever triggers it waits, and an admin
+	// page load waiting fifteen seconds on a mail server is a bad way to learn
+	// that the plugin cares about you. Cron requests are nobody's page load, so
+	// they fire the moment a beat is due and the admin hook only steps in once
+	// the beat is properly late — which is also the only case where cron has
+	// evidently stopped running.
+	$s = horsetools_hb_state();
+	if ( $grace > 0 && $s['ever'] && time() < $s['due'] + $grace ) {
 		return;
 	}
 	// A short lock, because two page loads a second apart would otherwise both
@@ -245,7 +258,8 @@ function horsetools_hb_tick() {
 	set_transient( 'horsetools_hb_lock', 1, 5 * MINUTE_IN_SECONDS );
 	horsetools_hb_fire();
 }
-add_action( 'admin_init', 'horsetools_hb_tick', 30 );
+add_action( 'admin_init', 'horsetools_hb_tick_admin', 30 );
+function horsetools_hb_tick_admin() { horsetools_hb_tick( DAY_IN_SECONDS ); }
 
 /**
  * The cron entry point.

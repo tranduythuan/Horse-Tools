@@ -47,6 +47,45 @@ function horsetools_anchor_options() {
 }
 
 /**
+ * The switches that decide whether any of this is running.
+ *
+ * Anchoring only the approvals guarded the wrong door. Tampering with an
+ * approval list is the expensive move and it was caught loudly; turning the
+ * watching *off* is the cheap move and nothing watched it at all. An attacker
+ * with database access would not add their domain to the approved list — they
+ * would set the render guard to "off" and the check-in message to "off", and
+ * every alarm in this plugin would go quiet with no alarm about the quiet.
+ *
+ * Kept deliberately short. Every key added here is a key an ordinary
+ * administrator might change for ordinary reasons, and the value of this alarm
+ * is that it has never once been wrong.
+ *
+ * @return array<string,string> label => current value, in a stable order.
+ */
+function horsetools_anchor_switches() {
+	global $horsetools_options;
+	$o = is_array( $horsetools_options ) ? $horsetools_options : array();
+	return array(
+		'heartbeat' => empty( $o['watch-hb'] ) ? '0' : '1',
+		'guard'     => (string) get_option( HORSETOOLS_LINK_GUARD, 'off' ),
+	);
+}
+
+/** Every anchored thing, as name => fingerprint. */
+function horsetools_anchor_marks() {
+	$marks = array();
+	foreach ( horsetools_anchor_options() as $name ) {
+		$stored = get_option( $name, null );
+		// A null means "never confirmed", which is a real state and not the same
+		// as "confirmed nothing". Recorded as such so the check can tell them
+		// apart instead of reading an empty approval as a missing one.
+		$marks[ $name ] = is_array( $stored ) ? horsetools_anchor_fingerprint( $stored ) : null;
+	}
+	$marks['@switches'] = hash( 'sha256', wp_json_encode( horsetools_anchor_switches() ) );
+	return $marks;
+}
+
+/**
  * Where the anchor lives.
  *
  * wp-content, not the plugin folder: an update replaces the plugin folder, and
@@ -128,24 +167,35 @@ function horsetools_anchor_fingerprint( $value ) {
  *
  * @return bool
  */
-function horsetools_anchor_write() {
+function horsetools_anchor_write( array $only = array() ) {
 	if ( ! horsetools_anchor_prepare() ) {
 		return false;
+	}
+
+	$fresh = horsetools_anchor_marks();
+
+	// Re-anchor one thing at a time, not everything at once.
+	//
+	// Writing all the marks on every decision would have made the anchor easy to
+	// launder: tamper with the approved domains through the database, wait for
+	// the owner to confirm something unrelated — a phone number, a settings
+	// change — and the mismatch is written over as though it had been agreed to.
+	// Each anchored thing is now refreshed only by the act that legitimately
+	// changes it.
+	$prev  = horsetools_anchor_read();
+	$marks = ( $only && null !== $prev ) ? $prev['marks'] : array();
+	foreach ( $fresh as $key => $value ) {
+		if ( ! $only || in_array( $key, $only, true ) || ! array_key_exists( $key, $marks ) ) {
+			$marks[ $key ] = $value;
+		}
 	}
 
 	$data = array(
 		'v'       => 1,
 		'written' => time(),
 		'site'    => home_url( '/' ),
-		'marks'   => array(),
+		'marks'   => $marks,
 	);
-	foreach ( horsetools_anchor_options() as $name ) {
-		$stored = get_option( $name, null );
-		// A null means "never confirmed", which is a real state and not the same
-		// as "confirmed nothing". Recorded as such so the check can tell them
-		// apart instead of reading an empty approval as a missing one.
-		$data['marks'][ $name ] = is_array( $stored ) ? horsetools_anchor_fingerprint( $stored ) : null;
-	}
 
 	$path = horsetools_anchor_file();
 	if ( '' === $path ) {
@@ -173,8 +223,8 @@ function horsetools_anchor_write() {
  * separate ideas — and so the watchers have one symbol to depend on. This file
  * is loaded wherever they are, including the cron path that pulls them in.
  */
-function horsetools_anchor_touch() {
-	horsetools_anchor_write();
+function horsetools_anchor_touch( array $only = array() ) {
+	horsetools_anchor_write( $only );
 }
 
 /**
@@ -204,15 +254,14 @@ function horsetools_anchor_mismatches() {
 	if ( null === $anchor ) {
 		return array();
 	}
-	$off = array();
-	foreach ( horsetools_anchor_options() as $name ) {
+	$off  = array();
+	$fresh = horsetools_anchor_marks();
+	foreach ( $fresh as $name => $now ) {
 		if ( ! array_key_exists( $name, $anchor['marks'] ) ) {
 			// Written by a version that did not watch this one yet. Not a change
 			// anybody made; the next confirmation records it.
 			continue;
 		}
-		$stored = get_option( $name, null );
-		$now    = is_array( $stored ) ? horsetools_anchor_fingerprint( $stored ) : null;
 		if ( $now !== $anchor['marks'][ $name ] ) {
 			$off[] = $name;
 		}
@@ -258,6 +307,7 @@ function horsetools_anchor_label( $option ) {
 		'horsetools_contact_baseline'         => __( 'the contact details you confirmed in your settings', 'horse-tools' ),
 		'horsetools_contact_baseline_content' => __( 'the contact details you confirmed in your posts', 'horse-tools' ),
 		'horsetools_link_approved'            => __( 'the list of domains you approved', 'horse-tools' ),
+		'@switches'                           => __( 'whether the watching is switched on at all', 'horse-tools' ),
 	);
 	return isset( $map[ $option ] ) ? $map[ $option ] : $option;
 }
@@ -325,6 +375,25 @@ function horsetools_anchor_ok_ajax() {
 	check_ajax_referer( 'horsetools_anchor', 'nonce' );
 	horsetools_anchor_write();
 	wp_send_json_success();
+}
+
+/**
+ * Re-anchor the switches when they are changed the way a person changes them.
+ *
+ * update_option() fires this; raw SQL does not, and that asymmetry is the whole
+ * mechanism. An administrator turning the guard off through the screen leaves
+ * the anchor agreeing with the database; the same change made straight to the
+ * options table leaves it disagreeing, and disagreeing loudly.
+ */
+add_action( 'update_option_horsetools_settings', 'horsetools_anchor_switch_touch' );
+add_action( 'add_option_horsetools_settings', 'horsetools_anchor_switch_touch' );
+function horsetools_anchor_switch_touch() {
+	// The global still holds the pre-save values at this point on some paths, so
+	// read the option back rather than trusting it.
+	global $horsetools_options;
+	$fresh = get_option( 'horsetools_settings', array() );
+	if ( is_array( $fresh ) ) { $horsetools_options = $fresh; }
+	horsetools_anchor_touch( array( '@switches' ) );
 }
 
 /**

@@ -41,6 +41,12 @@ function horsetools_link_guard_mode() {
 /** @param string $mode */
 function horsetools_link_guard_set( $mode ) {
 	update_option( HORSETOOLS_LINK_GUARD, in_array( $mode, array( 'nofollow', 'strip' ), true ) ? $mode : 'off', false );
+	// Switching this off is what an attacker with database access would do first,
+	// so the anchor watches it. Changed here, through the screen, it is agreed to;
+	// changed by SQL it is not.
+	if ( function_exists( 'horsetools_anchor_touch' ) ) {
+		horsetools_anchor_touch( array( '@switches' ) );
+	}
 }
 
 /**
@@ -78,10 +84,13 @@ function horsetools_link_guard_active() {
  * @return array<string,true>
  */
 function horsetools_link_guard_allowed() {
-	$allowed = array();
-	foreach ( array_keys( horsetools_link_approved() ) as $host ) {
-		$allowed[ $host ] = true;
-	}
+	// The approved list is used as it is stored, not copied into a new array.
+	// Copying it cost nothing worth measuring on a shop with six domains and
+	// rebuilt six hundred and eighty-six entries per post on a blog that has
+	// that many — twenty times over on an archive page, for an answer that is
+	// identical every time. Only the site's own hosts, of which there are two,
+	// are merged in.
+	$allowed = horsetools_link_approved();
 	foreach ( horsetools_link_self_hosts() as $host ) {
 		$allowed[ $host ] = true;
 	}

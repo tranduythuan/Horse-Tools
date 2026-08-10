@@ -226,6 +226,73 @@ function horsetools_scan_tick() {
 add_action( 'admin_init', 'horsetools_scan_tick', 20 );
 
 /**
+ * Read everything again from the beginning, at the owner's request.
+ *
+ * Without this the watchers had no way back. Both inventories only ever add: a
+ * domain or a phone number found once stays on the list for good, because the
+ * steady-state pass only reads posts that changed and a post that no longer
+ * contains something cannot report its absence.
+ *
+ * Which broke the response to an incident at the exact moment it mattered.
+ * Somebody injects a link, the plugin says so, the owner cleans the post — and
+ * the domain is still on the unapproved list, the health row is still red, and
+ * the only button that makes it stop is the one that approves the attacker's
+ * domain. Doing the right thing left the alarm on; doing the wrong thing turned
+ * it off. That is the worst incentive a security feature can have.
+ */
+add_action( 'wp_ajax_horsetools_scan_rescan', 'horsetools_scan_rescan_ajax' );
+function horsetools_scan_rescan_ajax() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error();
+	}
+	check_ajax_referer( 'horsetools_scan', 'nonce' );
+	horsetools_scan_reset();
+	wp_send_json_success();
+}
+
+/**
+ * The button for it, with the sentence that explains when to press it.
+ *
+ * @param string $why Extra line of context for where it is being shown.
+ */
+function horsetools_scan_rescan_button( $why = '' ) {
+	?>
+	<p class="ht-note" style="max-width:48em">
+		<i class="ti ti-bulb"></i>
+		<?php esc_html_e( 'Removed something from a post and it is still listed here? The lists only grow as your content is read, and a post that no longer contains something cannot say so. Read everything again and the lists will match what is actually there now.', 'horse-tools' ); ?>
+		<?php if ( '' !== $why ) : ?>
+			<br><?php echo esc_html( $why ); ?>
+		<?php endif; ?>
+	</p>
+	<p>
+		<button type="button" class="button" id="ht-rescan" data-nonce="<?php echo esc_attr( wp_create_nonce( 'horsetools_scan' ) ); ?>">
+			<?php esc_html_e( 'Read all my content again', 'horse-tools' ); ?>
+		</button>
+		<span id="ht-rescan-out" style="margin-left:10px"></span>
+	</p>
+	<script>
+	(function(){
+		if (window.htRescanBound) { return; }
+		window.htRescanBound = true;
+		document.addEventListener('click', function (e) {
+			var b = e.target && e.target.closest ? e.target.closest('#ht-rescan') : null;
+			if (!b || b.disabled) { return; }
+			b.disabled = true;
+			var out = document.getElementById('ht-rescan-out');
+			if (out) { out.textContent = <?php echo wp_json_encode( __( 'Starting…', 'horse-tools' ) ); ?>; }
+			fetch(ajaxurl, {method:'POST', credentials:'same-origin',
+				headers:{'Content-Type':'application/x-www-form-urlencoded'},
+				body:'action=horsetools_scan_rescan&nonce=' + encodeURIComponent(b.dataset.nonce)})
+			.then(function (r) { return r.json(); })
+			.then(function () { location.reload(); })
+			.catch(function () { b.disabled = false; });
+		});
+	})();
+	</script>
+	<?php
+}
+
+/**
  * Has the first full pass finished under the current signature?
  *
  * Every watcher has to ask this before it says anything: a set assembled from

@@ -74,6 +74,8 @@ function add_submenu_page() {}
 $GLOBALS['scan_done'] = true;
 function horsetools_scan_finished() { return (bool) $GLOBALS['scan_done']; }
 function horsetools_scan_progress() { return array( 'read' => 0, 'total' => 0 ); }
+// Nút "đọc lại toàn bộ" nằm ở inc/watch-scan.php; ở đây chỉ cần nó tồn tại.
+function horsetools_scan_rescan_button( $why = '' ) { echo '<button id="ht-rescan"></button>'; }
 
 $GLOBALS['opts']    = array();
 $GLOBALS['trans']   = array();

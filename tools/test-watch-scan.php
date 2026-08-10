@@ -27,6 +27,13 @@ function apply_filters( $h, $v ) {
 	return $v;
 }
 function current_user_can( $c ) { return true; }
+function wp_create_nonce( $a ) { return 'n'; }
+function check_ajax_referer( $a, $b ) { return true; }
+function wp_send_json_error( $d = null ) {}
+function wp_send_json_success( $d = null ) {}
+function esc_attr( $s ) { return $s; }
+function esc_html_e( $s, $d = '' ) { echo $s; }
+function wp_json_encode( $v ) { return json_encode( $v ); }
 function wp_doing_ajax() { return false; }
 function wp_doing_cron() { return false; }
 function get_post_types( $a = array(), $b = 'names' ) { return array( 'post' => 'post', 'page' => 'page', 'attachment' => 'attachment' ); }
@@ -189,6 +196,32 @@ horsetools_scan_tick();
 horsetools_scan_tick();
 eq( $GLOBALS['seen_a'], array(), 'đã xong và chưa có gì đổi thì ba lần gọi cũng không đọc gì' );
 ok( isset( $GLOBALS['trans']['horsetools_scan_tick'] ), 'có khoá chặn 5 giây' );
+
+echo "\n7b. DỌN DẸP — sau khi gỡ thứ bị chèn, phải có đường về\n";
+// Đây là lỗ nặng nhất tìm ra khi tự rà soát. Kho chỉ THÊM, không bao giờ BỚT, và
+// lượt quét thường chỉ đọc bài vừa sửa — mà một bài không còn chứa thứ gì thì
+// không thể tự báo là nó không còn chứa. Hậu quả: kẻ tấn công chèn link, plugin
+// báo, chủ site dọn bài — và tên miền vẫn nằm nguyên trong danh sách chưa duyệt,
+// dòng sức khoẻ vẫn đỏ, và cái nút duy nhất làm nó im là nút DUYỆT tên miền của
+// kẻ tấn công. Làm đúng thì chuông vẫn kêu, làm sai thì chuông tắt.
+$GLOBALS['seen_a'] = array();
+$GLOBALS['seen_b'] = array();
+$wpdb->rows = array();
+for ( $i = 1; $i <= 3; $i++ ) { $wpdb->rows[] = fake_post( $i ); }
+$GLOBALS['opts'] = array();
+$GLOBALS['trans'] = array();
+horsetools_scan_batch( 100 );
+eq( horsetools_scan_finished(), true, 'quét xong' );
+eq( $GLOBALS['seen_a'], array( 1, 2, 3 ), 'đọc cả ba bài' );
+
+// Chủ site dọn bài 2 rồi muốn danh sách phản ánh hiện tại.
+$GLOBALS['seen_a'] = array();
+horsetools_scan_reset();
+eq( horsetools_scan_finished(), false, 'quét lại: chưa xong nữa' );
+eq( $GLOBALS['seen_a'], array(), 'và collector đã bị xoá sạch — nếu không thì số cũ vẫn còn' );
+horsetools_scan_batch( 100 );
+eq( $GLOBALS['seen_a'], array( 1, 2, 3 ), 'đọc lại toàn bộ từ đầu' );
+eq( horsetools_scan_finished(), true, 'xong lại' );
 
 echo "\n8. Tệp đính kèm không phải nội dung\n";
 ok( ! in_array( 'attachment', horsetools_scan_post_types(), true ), 'bỏ attachment' );
