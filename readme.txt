@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.41
+Stable tag: 1.3.42
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.42 =
+* **Choosing an email service now switches the Email module on.** Found by opening the new screen on a live site rather than trusting it: every SMTP setting filled in correctly and the module's own on/off switch stayed off, which is a configuration that looks complete and cannot send a thing — the exact failure this screen was built to prevent.
+* The line explaining that your existing settings already look like a particular service now disappears once you pick one, instead of sitting above help that contradicts it.
 
 = 1.3.41 =
 * **Pick your email service and the SMTP settings fill themselves in.** The form asked eight questions. Seven of them have exactly one right answer once you know which service you are using, and the eighth is a password — so it now asks which service, and answers the seven itself. Gmail and Google Workspace, Brevo, Resend, SendGrid, Mailgun, Zoho, Microsoft 365 and Yandex.

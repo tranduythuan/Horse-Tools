@@ -80,7 +80,7 @@ $ht_sugg = horsetools_mail_preset_for_mx( $ht_guess['key'] );
 </p>
 
 <?php if ( '' === $ht_chosen && '' !== $ht_looks ) : ?>
-	<p class="ht-note">
+	<p class="ht-note" id="ht-preset-looks">
 		<i class="ti ti-info-circle"></i>
 		<?php
 		printf(
@@ -141,25 +141,40 @@ document.addEventListener('DOMContentLoaded', function () {
 		el.value = value;
 		el.dispatchEvent(new Event('change', {bubbles: true}));
 	};
+	// The change event is what reveals the block a switch controls, so it has to
+	// be dispatched rather than just setting .checked — otherwise the settings
+	// turn on behind a panel that stays shut.
+	var tick = function (name) {
+		var el = field(name);
+		if (!el || el.type !== 'checkbox' || el.checked) { return; }
+		el.checked = true;
+		el.dispatchEvent(new Event('change', {bubbles: true}));
+	};
 
 	var draw = function (key, apply) {
 		var p = PRESETS[key];
+
+		// This described what was stored before anything was picked. Once
+		// something is picked it contradicts the help directly below it — and
+		// picking the blank entry again makes it true once more.
+		if (apply) {
+			var looks = document.getElementById('ht-preset-looks');
+			if (looks) { looks.style.display = p ? 'none' : ''; }
+		}
+
 		if (!p) { help.innerHTML = ''; return; }
 
 		if (apply) {
 			setVal('mail-gsmtp15', p.host);
 			setVal('mail-gsmtp16', p.port);
 			setVal('mail-gsmtp17', p.enc);
-			var auth = field('mail-gsmtp18');
-			if (auth && auth.type === 'checkbox' && !auth.checked) {
-				auth.checked = true;
-				auth.dispatchEvent(new Event('change', {bubbles: true}));
-			}
-			var on = field('mail-gsmtp1');
-			if (on && on.type === 'checkbox' && !on.checked) {
-				on.checked = true;
-				on.dispatchEvent(new Event('change', {bubbles: true}));
-			}
+			tick('mail-gsmtp18');
+			tick('mail-gsmtp1');
+			// The master switch for the whole Email module. Leaving it alone was
+			// a way to end up with eight perfect settings and nothing sending —
+			// which is the exact failure this screen exists to prevent. Choosing
+			// a service is not an ambiguous signal about whether you want mail on.
+			tick('mail');
 			if (p.user) { setVal('mail-gsmtp13', p.user); }
 		}
 
