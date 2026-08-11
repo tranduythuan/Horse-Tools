@@ -20,7 +20,9 @@ function horsetools_accounts_page() {
 			'label' => __( 'Email', 'horse-tools' ),
 			'icon'  => 'ti-mail',
 			// The diagnosis goes above the form: the form asks eight questions,
-			// this answers the one the owner actually has.
+			// this answers the one the owner actually has. The service picker is
+			// not listed here — it is included from inside the SMTP block, next
+			// to the fields it fills, so they are seen changing.
 			'files' => array( 'main/section/ac-maildiag.php', 'main/page/7mail.php' ),
 		),
 		'ac-tab3' => array(

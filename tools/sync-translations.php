@@ -1425,6 +1425,36 @@ $vi = array(
 	'nothing at all' => 'không gì cả',
 	'This site cannot see its own public address — it sits behind a proxy or a load balancer — so the checks above that depend on knowing it were skipped rather than guessed at.' => 'Site này không tự nhìn thấy địa chỉ công khai của mình — nó nằm sau một proxy hoặc bộ cân bằng tải — nên những phép kiểm ở trên cần biết địa chỉ đó đã được bỏ qua chứ không đoán bừa.',
 
+
+	// Chọn dịch vụ email, bảy ô còn lại tự điền (1.3.41).
+	'Which service should send your email?' => 'Dịch vụ nào sẽ gửi thư cho anh?',
+	'The form below asks eight questions. Seven of them have exactly one right answer once you know which service you are using, and the eighth is a password. Choose here and the seven fill themselves in — you are left with the one thing nothing can guess.' => 'Cái form bên dưới hỏi tám câu. Bảy câu trong đó chỉ có đúng một đáp án duy nhất một khi đã biết anh dùng dịch vụ nào, còn câu thứ tám là mật khẩu. Chọn ở đây thì bảy câu tự điền — anh chỉ còn lại đúng thứ mà không gì đoán được.',
+	'Service' => 'Dịch vụ',
+	'— choose, or fill the form in yourself —' => '— chọn một cái, hoặc tự điền form bên dưới —',
+	'Email service (SMTP preset)' => 'Dịch vụ email (mẫu SMTP dựng sẵn)',
+	'Filled in for you: server %host%, port %port%, %enc%.' => 'Đã điền giùm anh: máy chủ %host%, cổng %port%, %enc%.',
+	'What you still have to paste: %secret%.' => 'Thứ anh vẫn phải tự dán vào: %secret%.',
+	'Where to get it' => 'Lấy ở đâu',
+	'The account name for this service is the literal word “%user%”. It is not your email address, and putting your address there is why it says the password is wrong.' => 'Tên tài khoản của dịch vụ này đúng y chữ “%user%”. Nó không phải địa chỉ email của anh, và điền địa chỉ vào đó chính là lý do nó báo sai mật khẩu.',
+	'Send as the same address you sign in with. This service refuses anything else.' => 'Gửi bằng đúng địa chỉ dùng để đăng nhập. Dịch vụ này từ chối mọi địa chỉ khác.',
+	'You may send as any address on a domain you have verified with this service. An unverified one will be refused.' => 'Anh được gửi bằng bất kỳ địa chỉ nào thuộc tên miền đã xác minh với dịch vụ này. Địa chỉ chưa xác minh sẽ bị từ chối.',
+	'Your settings already look like %s, so its notes apply to you even though nothing is selected above.' => 'Cấu hình sẵn có của anh trông đã đúng là %s rồi, nên các ghi chú của nó vẫn áp dụng cho anh dù ở trên chưa chọn gì.',
+	'Your domain already receives mail through %1$s, so choose %2$s below. Sending through the service that already handles your mail is the one most likely to work first time.' => 'Tên miền của anh vốn đã nhận thư qua %1$s, nên hãy chọn %2$s bên dưới. Gửi qua chính dịch vụ đang lo thư cho anh là cách dễ chạy ngay lần đầu nhất.',
+	'These two addresses do not match, and that is enough to stop your mail.' => 'Hai địa chỉ này không khớp nhau, và chừng đó đủ để chặn đứng thư của anh.',
+	'%1$s will only send as the account you sign in with. You are signing in as %3$s but sending as %2$s, which it will refuse or quietly drop — and refusing looks from here exactly like the message vanishing.' => '%1$s chỉ cho gửi bằng đúng tài khoản dùng để đăng nhập. Anh đang đăng nhập bằng %3$s mà lại gửi danh nghĩa %2$s, nên nó sẽ từ chối hoặc lặng lẽ bỏ thư — mà nhìn từ đây thì từ chối trông y hệt như lá thư biến mất.',
+
+	// Tên các loại khoá và ghi chú riêng của từng dịch vụ.
+	'API key' => 'Khoá API',
+	'SMTP key' => 'Khoá SMTP',
+	'SMTP password' => 'Mật khẩu SMTP',
+	'Password or app password' => 'Mật khẩu hoặc mật khẩu ứng dụng',
+	'Not your normal password — Google requires an app password, and the page that makes them only appears once two-step verification is on.' => 'Không phải mật khẩu thường ngày — Google bắt buộc dùng mật khẩu ứng dụng, và trang tạo ra nó chỉ hiện lên sau khi đã bật xác minh hai bước.',
+	'Free for 300 messages a day with no card. The account login is the username; the SMTP key is not the same thing as the API key.' => 'Miễn phí 300 thư mỗi ngày, không cần thẻ. Tên đăng nhập chính là email tài khoản; khoá SMTP không phải là khoá API.',
+	'The username is the literal word “resend”, not your address. You must add and verify your domain before it will send as you.' => 'Tên đăng nhập đúng y chữ “resend”, không phải địa chỉ của anh. Phải thêm và xác minh tên miền thì nó mới chịu gửi danh nghĩa anh.',
+	'The username is the literal word “apikey”, not your address.' => 'Tên đăng nhập đúng y chữ “apikey”, không phải địa chỉ của anh.',
+	'The username is the postmaster address Mailgun shows on your sending domain, not your login.' => 'Tên đăng nhập là địa chỉ postmaster mà Mailgun hiện ra ở tên miền gửi của anh, không phải tài khoản anh dùng để vào trang của họ.',
+	'Microsoft has been switching this off for new tenants; if it refuses to authenticate, that is why, and another service is the quicker road.' => 'Microsoft đang tắt dần tính năng này với các tổ chức mới; nếu nó không cho xác thực thì đó là lý do, và đổi sang dịch vụ khác là đường nhanh hơn.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

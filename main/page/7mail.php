@@ -18,12 +18,15 @@ global $horsetools_options; ?>
 	) ); ?>
 	<p class="ht-note ht-note-red"><i class="ti ti-bulb"></i> <?php _e('Enable SMTP mail to allow SMTP mail to function and send emails when you perform a test', 'horse-tools'); ?>
 	</p>
-	<div class="ht-card-mail-set">
-	<a title="Gmail" id="mail1"><img src="<?php echo esc_url(HORSETOOLS_URL .'img/gmail.png'); ?>" /></a>
-	<a title="Larksuite" id="mail2"><img src="<?php echo esc_url(HORSETOOLS_URL .'img/larksuite.png'); ?>" /></a>
-	<a title="Yandex" id="mail3"><img src="<?php echo esc_url(HORSETOOLS_URL .'img/yandex.png'); ?>" /></a>
-	</div>
-	
+	<?php
+	// Three logos used to sit here and fill the server, port and protocol when
+	// clicked. They filled them silently, for three services, and said nothing
+	// about the two fields that decide whether the mail actually goes: what the
+	// account name has to be, and which address you are allowed to send as. The
+	// list below does the same filling for more services and explains itself.
+	include( HORSETOOLS_DIR . 'main/section/ac-mailpreset.php' );
+	?>
+
 	<p style="font-weight:bold"><?php _e('Sender name', 'horse-tools'); ?><p>
 	<p><input class="ht-input-big"  placeholder="<?php _e('Sender name', 'horse-tools'); ?>" name="horsetools_settings[mail-gsmtp11]" type="text" value="<?php if(!empty($horsetools_options['mail-gsmtp11'])){echo sanitize_text_field($horsetools_options['mail-gsmtp11']);} ?>"/></p>
 	
@@ -77,42 +80,6 @@ global $horsetools_options; ?>
 	<div id="ht-sen-end"></div>
 	<div class="edoi" style="display:none"><div class="ht-sload"></div>  <?php _e('Please wait for the email to be sent', 'horse-tools'); ?></div>
 	<script>
-	// cấu hình email
-	function updateFields(buttonId) {
-			var serverInput = document.getElementById("mail-sever");
-			var hostInput = document.getElementById("mail-host");
-			var checkSelect = document.getElementById("mail-check");
-			var scutiCheckbox = document.getElementById("mail-scuti");
-			switch (buttonId) {
-				case "mail1":
-					serverInput.value = "smtp.gmail.com";
-					hostInput.value = 587;
-					checkSelect.value = "tls";
-					scutiCheckbox.checked = true;
-					break;
-				case "mail2":
-					serverInput.value = "smtp.larksuite.com";
-					hostInput.value = 465;
-					checkSelect.value = "ssl";
-					scutiCheckbox.checked = true;
-					break;
-				case "mail3":
-					serverInput.value = "smtp.yandex.com";
-					hostInput.value = 465;
-					checkSelect.value = "ssl";
-					scutiCheckbox.checked = true;
-					break;
-			}
-		}
-		document.getElementById("mail1").addEventListener("click", function () {
-			updateFields("mail1");
-		});
-		document.getElementById("mail2").addEventListener("click", function () {
-			updateFields("mail2");
-		});
-		document.getElementById("mail3").addEventListener("click", function () {
-			updateFields("mail3");
-	});
 	// Gửi email
 	jQuery(document).ready(function($) {
 		$('#ht-send-email').click(function(event) {

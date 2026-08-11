@@ -17,6 +17,10 @@
 
 define( 'ABSPATH', __DIR__ . '/' );
 define( 'HOUR_IN_SECONDS', 3600 );
+// Thiếu hằng này thì file chết ngay lúc require, trước cả dòng test đầu tiên —
+// chạy ra 0 kết quả chứ không phải 0 lỗi. Đã im lặng như vậy từ khi mail-proof
+// đặt hạn 90 ngày.
+define( 'DAY_IN_SECONDS', 86400 );
 if ( ! defined( 'ENT_QUOTES' ) ) { define( 'ENT_QUOTES', 3 ); }
 if ( ! defined( 'DNS_TXT' ) ) { define( 'DNS_TXT', 32 ); }
 if ( ! defined( 'DNS_MX' ) ) { define( 'DNS_MX', 16384 ); }

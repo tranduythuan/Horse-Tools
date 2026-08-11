@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.40
+Stable tag: 1.3.41
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,15 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.41 =
+* **Pick your email service and the SMTP settings fill themselves in.** The form asked eight questions. Seven of them have exactly one right answer once you know which service you are using, and the eighth is a password — so it now asks which service, and answers the seven itself. Gmail and Google Workspace, Brevo, Resend, SendGrid, Mailgun, Zoho, Microsoft 365 and Yandex.
+* **It says what the password is called and where to find it**, per service, because "app password" and "SMTP key" and "API key" are three different things in three different places, and a site owner who has never sent mail through a relay has no way to know which one this box wants.
+* **Two services want a fixed account name** — Resend wants the literal word `resend`, SendGrid wants `apikey` — and people quite reasonably type their email address there instead, then read "the password is wrong" and change the password. The screen now says so before that happens.
+* **Signing in as one address and sending as another is now caught and explained.** It is the commonest way to end up with settings that connect perfectly and mail that never lands: the service accepts the login, then refuses or quietly drops the message, and from your side those look identical to nothing happening. Only stated for the services that actually have the rule, and only when both addresses are filled in.
+* If your domain already receives mail through one of the listed services, the screen names the entry to choose — sending through the service that already handles your mail is the one most likely to work first time.
+* A site that filled the eight fields in by hand years ago is not asked to start again: the service is recognised from the server name and its notes apply as they stand.
+* The three provider logos that used to sit above the form are gone. They filled in three of the fields, silently, for three services, and said nothing about the two that decide whether the mail actually arrives.
 
 = 1.3.40 =
 * **The mail checks no longer draw conclusions from an address the site does not really send from.** Sites behind a proxy, a load balancer or a container runtime see `127.0.0.1` or a `10.x` where the public address should be, and judging either the sender policy or the reverse name against that answers a question about a machine which does not exist on the internet.
