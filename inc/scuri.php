@@ -169,7 +169,9 @@ if ( isset( $horsetools_options['scuri-enum1'] ) ) {
 	 * had gone out.
 	 */
 	function horsetools_generic_login_error( $message ) {
-		if ( ! empty( $GLOBALS['horsetools_lq_failed'] ) ) {
+		// Messages that are identical whether or not the account exists. Masking
+		// them protects nobody and costs the owner the only clue there is.
+		if ( ! empty( $GLOBALS['horsetools_lq_failed'] ) || ! empty( $GLOBALS['horsetools_recaptcha_failed'] ) ) {
 			return $message;
 		}
 		return esc_html__( 'Login failed. Check your details and try again.', 'horse-tools' );

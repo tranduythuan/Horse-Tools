@@ -174,7 +174,7 @@ msgstr ""
 msgid "A domain can go bad without anything on your site changing: it expires, somebody else buys it, and a link you approved years ago now points at whatever they sell. These were approved over a year ago and are each linked from only one or two posts — the kind that can change hands without anybody here noticing."
 msgstr ""
 
-#: inc/scuri.php:325
+#: inc/scuri.php:327
 msgid "A login was locked out on your site"
 msgstr ""
 
@@ -216,6 +216,10 @@ msgstr ""
 
 #: inc/mail-proof.php:191
 msgid "A test was sent but you have not said whether it arrived"
+msgstr ""
+
+#: main/section/sec-recaptcha.php:38
+msgid "A v2 key and a v3 key look identical and are not interchangeable. Put a v2 key in the box while the dropdown says V3 and Google refuses to load the widget, so the token is never produced and every login is rejected — which reaches whoever is trying to sign in as “wrong password”. Press the button above after changing a key; it asks Google directly."
 msgstr ""
 
 #: main/page/2scuri.php:160
@@ -688,6 +692,10 @@ msgstr ""
 
 #: inc/health.php:334
 msgid "Ask your host to update PHP to 8.1 or newer."
+msgstr ""
+
+#: main/section/sec-recaptcha.php:49
+msgid "Asking Google…"
 msgstr ""
 
 #: main/page/1speed.php:136
@@ -1536,7 +1544,7 @@ msgstr ""
 msgid "Could not check: this server was unable to open your own home page, which many hosts block. That says nothing about whether analytics is installed — if you have Site Kit or another GA4 plugin, switch this on and check the result in Analytics under Admin → DebugView."
 msgstr ""
 
-#: inc/scuri.php:538
+#: inc/scuri.php:540
 msgid "Could not create the fonts folder in uploads."
 msgstr ""
 
@@ -1544,7 +1552,7 @@ msgstr ""
 msgid "Could not load the Excel reader — save the file as CSV and try again."
 msgstr ""
 
-#: inc/speed.php:528
+#: inc/speed.php:589
 msgid "Could not load the home page from the server:"
 msgstr ""
 
@@ -1564,7 +1572,7 @@ msgstr ""
 msgid "Could not read the file."
 msgstr ""
 
-#: inc/speed.php:534
+#: inc/speed.php:595
 msgid "Could not read the home page (HTTP %s). Your host may block the site from calling itself; check the scripts via “View source” instead."
 msgstr ""
 
@@ -2803,7 +2811,7 @@ msgstr ""
 msgid "Extend"
 msgstr ""
 
-#: inc/scuri.php:657
+#: inc/scuri.php:659
 msgid "External"
 msgstr ""
 
@@ -3049,8 +3057,16 @@ msgstr ""
 msgid "Google Sheet"
 msgstr ""
 
-#: inc/scuri.php:547
+#: inc/goo.php:413
+msgid "Google accepts both keys."
+msgstr ""
+
+#: inc/scuri.php:549
 msgid "Google did not return the stylesheet (HTTP error)."
+msgstr ""
+
+#: inc/goo.php:402
+msgid "Google does not recognise this Secret key. Check you copied the secret and not the site key — they come from the same page and are easy to swap."
 msgstr ""
 
 #: main/content.php:37
@@ -3059,6 +3075,10 @@ msgstr ""
 
 #: inc/shortcode.php:1247 inc/shortcode.php:1255
 msgid "Google refused the request — make sure the sheet is shared as “Anyone with the link can view”."
+msgstr ""
+
+#: inc/goo.php:396
+msgid "Google refuses this Site key for reCAPTCHA v3. It is almost certainly a v2 key — either switch the dropdown to V2, or paste the key from a v3 project. Until then the widget never loads and every login is rejected."
 msgstr ""
 
 #: main/accounts.php:29
@@ -3354,7 +3374,7 @@ msgstr ""
 msgid "If someone replies to a comment, there will be an email notification sent to the commenter"
 msgstr ""
 
-#: main/section/sec-recaptcha.php:33
+#: main/section/sec-recaptcha.php:78
 msgid "If the Secret key is empty the check is skipped entirely rather than rejecting every login."
 msgstr ""
 
@@ -3882,7 +3902,7 @@ msgstr ""
 msgid "Login attempts are rate-limited"
 msgstr ""
 
-#: inc/scuri.php:175
+#: inc/scuri.php:177
 msgid "Login failed. Check your details and try again."
 msgstr ""
 
@@ -4190,7 +4210,7 @@ msgstr ""
 msgid "No downloadable secrets in the site folder"
 msgstr ""
 
-#: inc/scuri.php:554
+#: inc/scuri.php:556
 msgid "No font files were found in the stylesheet."
 msgstr ""
 
@@ -4282,7 +4302,8 @@ msgstr ""
 msgid "None: default not selected, Auto: background image automatically changes each time the page is loaded, Color: change the color you want, Upload: upload the background image you want"
 msgstr ""
 
-#: inc/2fa.php:252 inc/mail-proof.php:203 inc/speed.php:518 inc/watch-heartbeat.php:397
+#: inc/2fa.php:252 inc/goo.php:419 inc/mail-proof.php:203 inc/speed.php:579
+#: inc/watch-heartbeat.php:397
 msgid "Not allowed."
 msgstr ""
 
@@ -4306,7 +4327,7 @@ msgstr ""
 msgid "Nothing accepts mail for %s, so any address at your own domain cannot receive replies. If you have stopped paying for a mailbox provider, its records may still be pointing there."
 msgstr ""
 
-#: inc/scuri.php:753
+#: inc/scuri.php:755
 msgid "Nothing could be self-hosted."
 msgstr ""
 
@@ -4700,7 +4721,7 @@ msgstr ""
 msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
 msgstr ""
 
-#: inc/chat-services.php:328 inc/scuri.php:664 inc/scuri.php:730 main/shortcode.php:356
+#: inc/chat-services.php:328 inc/scuri.php:666 inc/scuri.php:732 main/shortcode.php:356
 msgid "Permission denied."
 msgstr ""
 
@@ -4746,10 +4767,6 @@ msgstr ""
 
 #: inc/shortcodes-lib.php:455
 msgid "Play video"
-msgstr ""
-
-#: inc/goo.php:303
-msgid "Please complete the reCAPTCHA to verify that you are not a robot"
 msgstr ""
 
 #: inc/notify.php:34
@@ -5122,7 +5139,7 @@ msgstr ""
 msgid "Retrieve the API Client ID and Client Secret from your Google Developers project and add them to the two fields above"
 msgstr ""
 
-#: main/section/sec-recaptcha.php:31
+#: main/section/sec-recaptcha.php:76
 msgid "Retrieve the Site Key and Secret Key from your Google reCAPTCHA project and add them to the two fields above"
 msgstr ""
 
@@ -5190,7 +5207,7 @@ msgstr ""
 msgid "Run shortcodes in widgets"
 msgstr ""
 
-#: inc/scuri.php:736
+#: inc/scuri.php:738
 msgid "Run the scan first so there is something to self-host."
 msgstr ""
 
@@ -6229,6 +6246,10 @@ msgstr ""
 msgid "Test the site after turning this on. If something that must work before interaction breaks (a hero slider, a cookie bar), add its handle or file name to a list below. Do not use together with “Delay JS” in another optimiser."
 msgstr ""
 
+#: main/section/sec-recaptcha.php:33
+msgid "Test these keys against Google"
+msgstr ""
+
 #: main/page/5media.php:222
 msgid "Text color"
 msgstr ""
@@ -6249,7 +6270,7 @@ msgstr ""
 msgid "That code is not right."
 msgstr ""
 
-#: inc/scuri.php:551
+#: inc/scuri.php:553
 msgid "That did not look like a Google Fonts stylesheet."
 msgstr ""
 
@@ -6309,11 +6330,19 @@ msgstr ""
 msgid "The PHP snippet \"%s\" stopped the page it ran on, so Horse Tools switched it off. Edit it and switch it back on when it is fixed."
 msgstr ""
 
+#: inc/goo.php:408
+msgid "The Secret key box is empty, so the check is skipped entirely and reCAPTCHA is doing nothing at all."
+msgstr ""
+
+#: inc/goo.php:431
+msgid "The Site key box is empty."
+msgstr ""
+
 #: main/section/ac-mailpreset.php:122
 msgid "The account name for this service is the literal word “%user%”. It is not your email address, and putting your address there is why it says the password is wrong."
 msgstr ""
 
-#: inc/scuri.php:328
+#: inc/scuri.php:330
 msgid "The address %1$s was locked out after repeated failed logins on %2$s."
 msgstr ""
 
@@ -6365,7 +6394,7 @@ msgstr ""
 msgid "The first one goes out as soon as you save, so you find out straight away whether the channel works."
 msgstr ""
 
-#: inc/scuri.php:582
+#: inc/scuri.php:584
 msgid "The font files could not be downloaded."
 msgstr ""
 
@@ -6381,7 +6410,7 @@ msgstr ""
 msgid "The function of lazy loading images"
 msgstr ""
 
-#: inc/scuri.php:677
+#: inc/scuri.php:679
 msgid "The home page returned no HTML to scan."
 msgstr ""
 
@@ -6425,19 +6454,19 @@ msgstr ""
 msgid "The previous configuration has been restored."
 msgstr ""
 
-#: inc/goo.php:329
+#: inc/goo.php:335
 msgid "The reCAPTCHA is invalid"
 msgstr ""
 
-#: main/section/ac-maildiag.php:147 main/section/sec-heartbeat.php:137
+#: main/section/ac-maildiag.php:147 main/section/sec-heartbeat.php:137 main/section/sec-recaptcha.php:68
 msgid "The request itself failed."
 msgstr ""
 
-#: main/section/sec-recaptcha.php:32
+#: main/section/sec-recaptcha.php:77
 msgid "The score threshold applies to reCAPTCHA v3 only. Google returns 1.0 for traffic it is confident is human and 0.0 for traffic it is confident is a bot; 0.5 is the recommended starting point. Raise it to block more aggressively, lower it if real visitors are being turned away."
 msgstr ""
 
-#: inc/scuri.php:464
+#: inc/scuri.php:466
 msgid "The security question below the password was left empty."
 msgstr ""
 
@@ -6785,7 +6814,7 @@ msgstr ""
 msgid "To use PHP snippets, switch on two-factor authentication for your own account first (Users → Profile)."
 msgstr ""
 
-#: inc/scuri.php:293
+#: inc/scuri.php:295
 msgid "Too many failed attempts. Try again in about %s."
 msgstr ""
 
@@ -7206,7 +7235,7 @@ msgstr ""
 msgid "Write your block just like a post: type text and use the toolbar to insert links, images and formatting. Need raw HTML/CSS/JS? Switch to the “Text” tab. Placeholders like {{url}} still work in both."
 msgstr ""
 
-#: inc/scuri.php:465
+#: inc/scuri.php:467
 msgid "Wrong answer to the security question."
 msgstr ""
 
@@ -7676,6 +7705,18 @@ msgstr ""
 
 #: main/section/snippets-screen.php:589
 msgid "post type, e.g. shortcoder"
+msgstr ""
+
+#: inc/goo.php:568
+msgid "reCAPTCHA could not load in this browser, so this form cannot be submitted. Check the site key, or switch reCAPTCHA off in Horse Tools."
+msgstr ""
+
+#: inc/goo.php:309
+msgid "reCAPTCHA did not run in your browser, so this form could not be submitted. This is not your password."
+msgstr ""
+
+#: inc/goo.php:428
+msgid "reCAPTCHA is switched off, so there is nothing to test."
 msgstr ""
 
 #: inc/2fa.php:421

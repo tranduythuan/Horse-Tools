@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.43
+Stable tag: 1.3.44
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,14 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.44 =
+* **Fixed: a reCAPTCHA key in the wrong box locked people out of their own site, and nothing said so.** A v2 key and a v3 key are indistinguishable by eye. Put a v2 key in the box with the dropdown on V3 and Google refuses to load the widget; the hidden token is never filled; the server rejects the empty token; and the generic-error setting turns all of that into "Login failed". The person at the keyboard sees a wrong password on a password that is right, with the word reCAPTCHA appearing nowhere.
+* **The login form now says when reCAPTCHA failed to load**, above the fields, before anything is typed. The old code called into `grecaptcha` without checking it existed, so a failed load threw a script error and the form went on looking normal.
+* **The reCAPTCHA error is no longer replaced by the generic "Login failed".** Naming reCAPTCHA reveals nothing about which accounts exist, which is the only thing that masking is for.
+* **New: "Test these keys against Google" on the Google tab.** It checks the keys currently in the boxes, not the saved ones, and tells you which of the two is wrong — v2 key in the v3 slot, secret and site key swapped, or an empty secret meaning reCAPTCHA is protecting nothing. A transport failure is reported as "could not tell" rather than as a bad key.
+* **Fixed: deferring JavaScript could break WordPress's own scripts.** Scripts carrying inline code are skipped, and skipped scripts run *before* deferred ones — so anything they depend on must not be deferred either. It wasn't, and on the login screen `clipboard` and `dom-ready` were deferred while `user-profile` and `a11y`, which need them, were not. The whole dependency chain is now walked, not just one level.
+* Found by reading a site that could not be logged into, rather than from the report — the report said "wrong password", which was the one thing it was not.
 
 = 1.3.43 =
 * **Fixed: the login security question rejected correct Vietnamese answers.** The answer was compared with `strtolower()`, which only lowercases the 26 English letters. It turns "Bé" into "bé" but leaves "Đào", "Ánh", "Út" and "Ơn" exactly as they were — so an owner who saved "Đào" and typed "đào" was refused, every time, with an answer that was right. Accented capitals are precisely where nicknames and names begin, so the commonest kind of answer was the one that could not work.

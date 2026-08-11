@@ -300,7 +300,13 @@ function horsetools_recaptcha_verify( $token, $expected_action = null, $min_scor
 		return true;
 	}
 	if ( ! is_string( $token ) || '' === $token ) {
-		return new WP_Error( 'recaptcha_error', __( 'Please complete the reCAPTCHA to verify that you are not a robot', 'horse-tools' ) );
+		// Say reCAPTCHA. The generic-error mask (inc/scuri.php) reads this flag
+		// and lets the message through: naming reCAPTCHA reveals nothing about
+		// which accounts exist, and without it an empty token — which almost
+		// always means the widget never loaded — reaches the person as "wrong
+		// password" on a password that is right.
+		$GLOBALS['horsetools_recaptcha_failed'] = true;
+		return new WP_Error( 'recaptcha_error', __( 'reCAPTCHA did not run in your browser, so this form could not be submitted. This is not your password.', 'horse-tools' ) );
 	}
 
 	$response = wp_remote_post(
@@ -354,6 +360,113 @@ function horsetools_recaptcha_verify( $token, $expected_action = null, $min_scor
 
 	return true;
 }
+
+/* -------------------------------------------------------------------------
+ * Are these keys the right keys?
+ *
+ * Nothing used to ask. The two boxes accept any string, the dropdown offers V2
+ * and V3, and a v2 key looks exactly like a v3 key — so the commonest way to
+ * misconfigure this is invisible until somebody cannot log in, at which point
+ * the only thing on screen is a failed password.
+ *
+ * Two questions, both answerable in one round trip each:
+ *   - the SITE key, by fetching the v3 loader the login form itself uses. Google
+ *     serves it for a v3 key and refuses it for anything else.
+ *   - the SECRET key, by verifying an obviously bogus token. A working secret
+ *     comes back with error-codes ["invalid-input-response"] — the token is
+ *     rubbish, which is the point; a broken one says "invalid-input-secret".
+ * ---------------------------------------------------------------------- */
+
+/**
+ * Turn Google's two answers into one sentence for the person who pasted a key.
+ *
+ * Pure so it can be tested: everything network-shaped is resolved by the caller.
+ *
+ * @param string    $mode        'V2', 'V3' or 'None' — what the dropdown says.
+ * @param int|null  $loader_code HTTP status from api.js?render=<site key>, null if not asked.
+ * @param string[]  $secret_errs error-codes from siteverify, empty when it accepted the secret.
+ * @param bool      $secret_asked Whether the secret was checked at all.
+ * @return array{ok:bool,message:string}
+ */
+function horsetools_recaptcha_verdict( $mode, $loader_code, array $secret_errs, $secret_asked ) {
+	if ( 'V3' === $mode && null !== $loader_code && 200 !== (int) $loader_code ) {
+		return array(
+			'ok'      => false,
+			// The exact fault found on a live site: a v2 key in the v3 box.
+			'message' => __( 'Google refuses this Site key for reCAPTCHA v3. It is almost certainly a v2 key — either switch the dropdown to V2, or paste the key from a v3 project. Until then the widget never loads and every login is rejected.', 'horse-tools' ),
+		);
+	}
+	if ( $secret_asked && in_array( 'invalid-input-secret', $secret_errs, true ) ) {
+		return array(
+			'ok'      => false,
+			'message' => __( 'Google does not recognise this Secret key. Check you copied the secret and not the site key — they come from the same page and are easy to swap.', 'horse-tools' ),
+		);
+	}
+	if ( ! $secret_asked ) {
+		return array(
+			'ok'      => false,
+			'message' => __( 'The Secret key box is empty, so the check is skipped entirely and reCAPTCHA is doing nothing at all.', 'horse-tools' ),
+		);
+	}
+	return array(
+		'ok'      => true,
+		'message' => __( 'Google accepts both keys.', 'horse-tools' ),
+	);
+}
+
+function horsetools_recaptcha_check_ajax() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error( array( 'message' => __( 'Not allowed.', 'horse-tools' ) ), 403 );
+	}
+	check_ajax_referer( 'horsetools_cap_check', 'nonce' );
+
+	$mode   = isset( $_POST['mode'] ) ? sanitize_text_field( wp_unslash( $_POST['mode'] ) ) : '';
+	$site   = isset( $_POST['site'] ) ? sanitize_text_field( wp_unslash( $_POST['site'] ) ) : '';
+	$secret = isset( $_POST['secret'] ) ? sanitize_text_field( wp_unslash( $_POST['secret'] ) ) : '';
+
+	if ( 'None' === $mode || '' === $mode ) {
+		wp_send_json_error( array( 'message' => __( 'reCAPTCHA is switched off, so there is nothing to test.', 'horse-tools' ) ) );
+	}
+	if ( '' === $site ) {
+		wp_send_json_error( array( 'message' => __( 'The Site key box is empty.', 'horse-tools' ) ) );
+	}
+
+	$loader_code = null;
+	if ( 'V3' === $mode ) {
+		$res = wp_remote_get(
+			'https://www.google.com/recaptcha/api.js?render=' . rawurlencode( $site ),
+			array( 'timeout' => 8 )
+		);
+		// A transport failure says nothing about the key, so it must not be
+		// reported as a bad key — the same reasoning the verifier already uses.
+		$loader_code = is_wp_error( $res ) ? null : (int) wp_remote_retrieve_response_code( $res );
+	}
+
+	$secret_errs  = array();
+	$secret_asked = ( '' !== $secret );
+	if ( $secret_asked ) {
+		$res = wp_remote_post(
+			'https://www.google.com/recaptcha/api/siteverify',
+			array(
+				'timeout' => 8,
+				'body'    => array( 'secret' => $secret, 'response' => 'horsetools-key-test' ),
+			)
+		);
+		if ( ! is_wp_error( $res ) ) {
+			$body = json_decode( wp_remote_retrieve_body( $res ), true );
+			if ( is_array( $body ) && ! empty( $body['error-codes'] ) ) {
+				$secret_errs = array_map( 'strval', (array) $body['error-codes'] );
+			}
+		}
+	}
+
+	$verdict = horsetools_recaptcha_verdict( $mode, $loader_code, $secret_errs, $secret_asked );
+	if ( $verdict['ok'] ) {
+		wp_send_json_success( array( 'message' => $verdict['message'] ) );
+	}
+	wp_send_json_error( array( 'message' => $verdict['message'] ) );
+}
+add_action( 'wp_ajax_horsetools_cap_check', 'horsetools_recaptcha_check_ajax' );
 
 /**
  * login_form_middle is a FILTER that builds a string, not an action. Hooking an
@@ -423,18 +536,62 @@ if (isset($horsetools_options['goo-cap1']) && $horsetools_options['goo-cap1'] ==
 function horsetools_authentication_login_form_v3() {
 	global $horsetools_options;
 	$site_key = !empty($horsetools_options['goo-cap11']) ? $horsetools_options['goo-cap11'] : NULL;
-    ?>
-    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo esc_attr($site_key); ?>"></script>
-    <script>
-        grecaptcha.ready(function() {
-            grecaptcha.execute('<?php echo esc_js($site_key); ?>', {action: 'login'})
-            .then(function(token) {
-                document.getElementById('g-recaptcha-response').value = token;
-            });
-        });
-    </script>
-    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-    <?php
+	horsetools_recaptcha_v3_markup( $site_key, 'login' );
+}
+
+/**
+ * The v3 widget, written so a failure to load is visible instead of fatal.
+ *
+ * `grecaptcha.ready()` called when api.js has not loaded throws a ReferenceError,
+ * which stops that script block dead — so the hidden token stays empty, and an
+ * empty token is refused by the server. The whole chain then presents to the
+ * person at the keyboard as "wrong password", on a correct password, with
+ * nothing anywhere saying reCAPTCHA.
+ *
+ * That is not hypothetical. It was diagnosed on a live site whose owner could
+ * not log in: a reCAPTCHA **v2** site key had been pasted into the **v3** box.
+ * Google's v3 loader rejects a v2 key — `api.js?render=<v2 key>` simply fails —
+ * and every login attempt after that was refused for a reason nobody could see.
+ *
+ * So: load api.js with onerror, never call into grecaptcha unless it is really
+ * there, and when it is not, say so above the form. A visible sentence costs an
+ * attacker nothing (the token is verified server-side regardless) and is the
+ * difference between a five-minute fix and being locked out of your own site.
+ *
+ * @param string $site_key
+ * @param string $action 'login' or 'register' — what the token is minted for.
+ */
+function horsetools_recaptcha_v3_markup( $site_key, $action ) {
+	$dom = 'ht-cap3-' . $action;
+	?>
+	<div id="<?php echo esc_attr( $dom ); ?>-warn" style="display:none;margin:0 0 12px;padding:10px 12px;border-left:4px solid #c0392b;background:#fdf3f2;font-size:13px;line-height:1.5">
+		<?php esc_html_e( 'reCAPTCHA could not load in this browser, so this form cannot be submitted. Check the site key, or switch reCAPTCHA off in Horse Tools.', 'horse-tools' ); ?>
+	</div>
+	<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+	<script src="https://www.google.com/recaptcha/api.js?render=<?php echo esc_attr( $site_key ); ?>"
+		onerror="document.getElementById('<?php echo esc_js( $dom ); ?>-warn').style.display='block';"></script>
+	<script>
+	(function () {
+		var warn = function () {
+			var el = document.getElementById(<?php echo wp_json_encode( $dom . '-warn' ); ?>);
+			if (el) { el.style.display = 'block'; }
+		};
+		// api.js is a plain blocking script, so by here it has either defined
+		// grecaptcha or failed. Asking is the whole fix.
+		if (typeof grecaptcha === 'undefined' || !grecaptcha.ready) { warn(); return; }
+		try {
+			grecaptcha.ready(function () {
+				grecaptcha.execute(<?php echo wp_json_encode( (string) $site_key ); ?>, {action: <?php echo wp_json_encode( $action ); ?>})
+				.then(function (token) {
+					var f = document.getElementById('g-recaptcha-response');
+					if (f) { f.value = token; }
+				})
+				.catch(warn);
+			});
+		} catch (e) { warn(); }
+	})();
+	</script>
+	<?php
 }
 /**
  * Same widget, but reporting action "register".
@@ -446,18 +603,7 @@ function horsetools_authentication_login_form_v3() {
 function horsetools_authentication_register_form_v3() {
 	global $horsetools_options;
 	$site_key = !empty($horsetools_options['goo-cap11']) ? $horsetools_options['goo-cap11'] : NULL;
-    ?>
-    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo esc_attr($site_key); ?>"></script>
-    <script>
-        grecaptcha.ready(function() {
-            grecaptcha.execute('<?php echo esc_js($site_key); ?>', {action: 'register'})
-            .then(function(token) {
-                document.getElementById('g-recaptcha-response').value = token;
-            });
-        });
-    </script>
-    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-    <?php
+	horsetools_recaptcha_v3_markup( $site_key, 'register' );
 }
 add_action('login_form', 'horsetools_authentication_login_form_v3');
 add_filter('login_form_middle', function ( $content ) {

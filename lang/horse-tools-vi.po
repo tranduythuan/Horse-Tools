@@ -7861,3 +7861,36 @@ msgstr "Microsoft đang tắt dần tính năng này với các tổ chức mớ
 
 msgid "The security question below the password was left empty."
 msgstr "Câu hỏi bảo mật ngay dưới ô mật khẩu đang bị bỏ trống."
+
+msgid "reCAPTCHA did not run in your browser, so this form could not be submitted. This is not your password."
+msgstr "reCAPTCHA không chạy được trên trình duyệt của bạn nên biểu mẫu này không gửi đi được. Đây không phải lỗi mật khẩu."
+
+msgid "reCAPTCHA could not load in this browser, so this form cannot be submitted. Check the site key, or switch reCAPTCHA off in Horse Tools."
+msgstr "reCAPTCHA không nạp được trên trình duyệt này nên biểu mẫu không gửi đi được. Hãy kiểm tra Site key, hoặc tắt reCAPTCHA trong Horse Tools."
+
+msgid "Test these keys against Google"
+msgstr "Kiểm tra cặp khoá này với Google"
+
+msgid "Asking Google…"
+msgstr "Đang hỏi Google…"
+
+msgid "Google accepts both keys."
+msgstr "Google chấp nhận cả hai khoá."
+
+msgid "Google refuses this Site key for reCAPTCHA v3. It is almost certainly a v2 key — either switch the dropdown to V2, or paste the key from a v3 project. Until then the widget never loads and every login is rejected."
+msgstr "Google từ chối Site key này ở chế độ reCAPTCHA v3. Gần như chắc chắn đây là khoá v2 — hoặc chuyển ô chọn sang V2, hoặc dán khoá lấy từ một dự án v3. Chừng nào chưa sửa thì widget không bao giờ nạp được và mọi lần đăng nhập đều bị từ chối."
+
+msgid "Google does not recognise this Secret key. Check you copied the secret and not the site key — they come from the same page and are easy to swap."
+msgstr "Google không nhận Secret key này. Kiểm tra xem có chép nhầm site key thành secret không — hai khoá nằm cùng một trang nên rất dễ lộn."
+
+msgid "The Secret key box is empty, so the check is skipped entirely and reCAPTCHA is doing nothing at all."
+msgstr "Ô Secret key đang trống, nên phần kiểm bị bỏ qua hoàn toàn và reCAPTCHA thực chất không bảo vệ gì cả."
+
+msgid "The Site key box is empty."
+msgstr "Ô Site key đang trống."
+
+msgid "reCAPTCHA is switched off, so there is nothing to test."
+msgstr "reCAPTCHA đang tắt nên không có gì để kiểm."
+
+msgid "A v2 key and a v3 key look identical and are not interchangeable. Put a v2 key in the box while the dropdown says V3 and Google refuses to load the widget, so the token is never produced and every login is rejected — which reaches whoever is trying to sign in as “wrong password”. Press the button above after changing a key; it asks Google directly."
+msgstr "Khoá v2 và khoá v3 trông y hệt nhau nhưng không dùng thay nhau được. Dán khoá v2 vào trong khi ô chọn đang để V3 thì Google từ chối nạp widget, token không bao giờ sinh ra, và mọi lần đăng nhập đều bị từ chối — đến tay người đang đăng nhập thì nó hiện ra thành \"sai mật khẩu\". Đổi khoá xong hãy bấm nút ở trên; nút đó hỏi thẳng Google."

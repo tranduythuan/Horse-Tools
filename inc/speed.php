@@ -235,6 +235,61 @@ add_action( 'init', 'horsetools_init_minify_html', 1 );
  *     natively), and inline scripts (no src).
  * ---------------------------------------------------------------------- */
 if ( isset( $horsetools_options['speed-defer1'] ) ) {
+	/**
+	 * Handles that must stay undeferred because something undeferred needs them.
+	 *
+	 * Deferring preserves order *among deferred scripts*, but every undeferred
+	 * script still runs first. So the moment one script is skipped and another is
+	 * not, the dependency graph can inverse: the skipped one runs early and calls
+	 * into a library that has not been fetched yet.
+	 *
+	 * That is not theoretical — it was found on a live login screen. `clipboard`
+	 * and `dom-ready` carry no inline companion, so they were deferred; the
+	 * scripts that depend on them, `user-profile` and `a11y`, carry inline
+	 * translation blocks, so they were skipped, ran first, and threw
+	 * "ClipboardJS is not defined". Two of WordPress's own core scripts, broken by
+	 * a speed setting, on the page where breakage matters most.
+	 *
+	 * The rule that fixes it: never defer a script that an undeferred script
+	 * depends on. Walk the whole dependency closure, not one level — the
+	 * dependency of a dependency is just as early.
+	 *
+	 * Not cached in a static. The registry is still being added to while tags
+	 * print, and a frozen answer here would be a wrong answer for whatever
+	 * enqueues last.
+	 *
+	 * @return array<string,true> Handles keyed by name.
+	 */
+	function horsetools_defer_blocked_handles() {
+		$blocked    = array();
+		$wp_scripts = wp_scripts();
+		if ( ! $wp_scripts || empty( $wp_scripts->registered ) ) {
+			return $blocked;
+		}
+		// Seeds: everything that will be skipped for carrying inline code.
+		$queue = array();
+		foreach ( $wp_scripts->registered as $handle => $obj ) {
+			if ( $wp_scripts->get_data( $handle, 'after' ) || $wp_scripts->get_data( $handle, 'before' ) ) {
+				$queue[] = $handle;
+			}
+		}
+		$guard = 0;
+		while ( $queue && $guard++ < 2000 ) {
+			$h = array_pop( $queue );
+			if ( ! isset( $wp_scripts->registered[ $h ] ) ) {
+				continue;
+			}
+			foreach ( (array) $wp_scripts->registered[ $h ]->deps as $dep ) {
+				if ( isset( $blocked[ $dep ] ) ) {
+					continue; // also closes the loop on a circular dependency
+				}
+				$blocked[ $dep ] = true;
+				$queue[]         = $dep;
+			}
+		}
+		return $blocked;
+	}
+
 	function horsetools_defer_scripts( $tag, $handle ) {
 		if ( is_admin() ) {
 			return $tag;
@@ -273,6 +328,12 @@ if ( isset( $horsetools_options['speed-defer1'] ) ) {
 			return $tag;
 		}
 		if ( substr_count( $tag, '<script' ) > 1 ) {
+			return $tag;
+		}
+		// …and leave alone anything one of those skipped scripts depends on,
+		// or it runs after the script that needs it. See the note above.
+		$blocked = horsetools_defer_blocked_handles();
+		if ( isset( $blocked[ $handle ] ) ) {
 			return $tag;
 		}
 		return preg_replace( '/<script(\s)/', '<script defer$1', $tag, 1 );

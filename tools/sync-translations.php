@@ -1459,6 +1459,20 @@ $vi = array(
 	// Câu hỏi bảo mật: nói rõ là hỏng ở đâu (1.3.43).
 	'The security question below the password was left empty.' => 'Câu hỏi bảo mật ngay dưới ô mật khẩu đang bị bỏ trống.',
 
+
+	// reCAPTCHA: khoá sai phải bị bắt ở chỗ dán khoá, không phải ở màn đăng nhập (1.3.44).
+	'reCAPTCHA did not run in your browser, so this form could not be submitted. This is not your password.' => 'reCAPTCHA không chạy được trên trình duyệt của bạn nên biểu mẫu này không gửi đi được. Đây không phải lỗi mật khẩu.',
+	'reCAPTCHA could not load in this browser, so this form cannot be submitted. Check the site key, or switch reCAPTCHA off in Horse Tools.' => 'reCAPTCHA không nạp được trên trình duyệt này nên biểu mẫu không gửi đi được. Hãy kiểm tra Site key, hoặc tắt reCAPTCHA trong Horse Tools.',
+	'Test these keys against Google' => 'Kiểm tra cặp khoá này với Google',
+	'Asking Google…' => 'Đang hỏi Google…',
+	'Google accepts both keys.' => 'Google chấp nhận cả hai khoá.',
+	'Google refuses this Site key for reCAPTCHA v3. It is almost certainly a v2 key — either switch the dropdown to V2, or paste the key from a v3 project. Until then the widget never loads and every login is rejected.' => 'Google từ chối Site key này ở chế độ reCAPTCHA v3. Gần như chắc chắn đây là khoá v2 — hoặc chuyển ô chọn sang V2, hoặc dán khoá lấy từ một dự án v3. Chừng nào chưa sửa thì widget không bao giờ nạp được và mọi lần đăng nhập đều bị từ chối.',
+	'Google does not recognise this Secret key. Check you copied the secret and not the site key — they come from the same page and are easy to swap.' => 'Google không nhận Secret key này. Kiểm tra xem có chép nhầm site key thành secret không — hai khoá nằm cùng một trang nên rất dễ lộn.',
+	'The Secret key box is empty, so the check is skipped entirely and reCAPTCHA is doing nothing at all.' => 'Ô Secret key đang trống, nên phần kiểm bị bỏ qua hoàn toàn và reCAPTCHA thực chất không bảo vệ gì cả.',
+	'The Site key box is empty.' => 'Ô Site key đang trống.',
+	'reCAPTCHA is switched off, so there is nothing to test.' => 'reCAPTCHA đang tắt nên không có gì để kiểm.',
+	'A v2 key and a v3 key look identical and are not interchangeable. Put a v2 key in the box while the dropdown says V3 and Google refuses to load the widget, so the token is never produced and every login is rejected — which reaches whoever is trying to sign in as “wrong password”. Press the button above after changing a key; it asks Google directly.' => 'Khoá v2 và khoá v3 trông y hệt nhau nhưng không dùng thay nhau được. Dán khoá v2 vào trong khi ô chọn đang để V3 thì Google từ chối nạp widget, token không bao giờ sinh ra, và mọi lần đăng nhập đều bị từ chối — đến tay người đang đăng nhập thì nó hiện ra thành "sai mật khẩu". Đổi khoá xong hãy bấm nút ở trên; nút đó hỏi thẳng Google.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';
