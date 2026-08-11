@@ -174,7 +174,7 @@ msgstr ""
 msgid "A domain can go bad without anything on your site changing: it expires, somebody else buys it, and a link you approved years ago now points at whatever they sell. These were approved over a year ago and are each linked from only one or two posts — the kind that can change hands without anybody here noticing."
 msgstr ""
 
-#: inc/scuri.php:309
+#: inc/scuri.php:325
 msgid "A login was locked out on your site"
 msgstr ""
 
@@ -1536,7 +1536,7 @@ msgstr ""
 msgid "Could not check: this server was unable to open your own home page, which many hosts block. That says nothing about whether analytics is installed — if you have Site Kit or another GA4 plugin, switch this on and check the result in Analytics under Admin → DebugView."
 msgstr ""
 
-#: inc/scuri.php:475
+#: inc/scuri.php:538
 msgid "Could not create the fonts folder in uploads."
 msgstr ""
 
@@ -2803,7 +2803,7 @@ msgstr ""
 msgid "Extend"
 msgstr ""
 
-#: inc/scuri.php:594
+#: inc/scuri.php:657
 msgid "External"
 msgstr ""
 
@@ -3049,7 +3049,7 @@ msgstr ""
 msgid "Google Sheet"
 msgstr ""
 
-#: inc/scuri.php:484
+#: inc/scuri.php:547
 msgid "Google did not return the stylesheet (HTTP error)."
 msgstr ""
 
@@ -3882,7 +3882,7 @@ msgstr ""
 msgid "Login attempts are rate-limited"
 msgstr ""
 
-#: inc/scuri.php:160
+#: inc/scuri.php:175
 msgid "Login failed. Check your details and try again."
 msgstr ""
 
@@ -4190,7 +4190,7 @@ msgstr ""
 msgid "No downloadable secrets in the site folder"
 msgstr ""
 
-#: inc/scuri.php:491
+#: inc/scuri.php:554
 msgid "No font files were found in the stylesheet."
 msgstr ""
 
@@ -4306,7 +4306,7 @@ msgstr ""
 msgid "Nothing accepts mail for %s, so any address at your own domain cannot receive replies. If you have stopped paying for a mailbox provider, its records may still be pointing there."
 msgstr ""
 
-#: inc/scuri.php:690
+#: inc/scuri.php:753
 msgid "Nothing could be self-hosted."
 msgstr ""
 
@@ -4700,7 +4700,7 @@ msgstr ""
 msgid "Permanently delete %1$s from “%2$s”? This cannot be undone."
 msgstr ""
 
-#: inc/chat-services.php:328 inc/scuri.php:601 inc/scuri.php:667 main/shortcode.php:356
+#: inc/chat-services.php:328 inc/scuri.php:664 inc/scuri.php:730 main/shortcode.php:356
 msgid "Permission denied."
 msgstr ""
 
@@ -5190,7 +5190,7 @@ msgstr ""
 msgid "Run shortcodes in widgets"
 msgstr ""
 
-#: inc/scuri.php:673
+#: inc/scuri.php:736
 msgid "Run the scan first so there is something to self-host."
 msgstr ""
 
@@ -6249,7 +6249,7 @@ msgstr ""
 msgid "That code is not right."
 msgstr ""
 
-#: inc/scuri.php:488
+#: inc/scuri.php:551
 msgid "That did not look like a Google Fonts stylesheet."
 msgstr ""
 
@@ -6313,7 +6313,7 @@ msgstr ""
 msgid "The account name for this service is the literal word “%user%”. It is not your email address, and putting your address there is why it says the password is wrong."
 msgstr ""
 
-#: inc/scuri.php:312
+#: inc/scuri.php:328
 msgid "The address %1$s was locked out after repeated failed logins on %2$s."
 msgstr ""
 
@@ -6365,7 +6365,7 @@ msgstr ""
 msgid "The first one goes out as soon as you save, so you find out straight away whether the channel works."
 msgstr ""
 
-#: inc/scuri.php:519
+#: inc/scuri.php:582
 msgid "The font files could not be downloaded."
 msgstr ""
 
@@ -6381,7 +6381,7 @@ msgstr ""
 msgid "The function of lazy loading images"
 msgstr ""
 
-#: inc/scuri.php:614
+#: inc/scuri.php:677
 msgid "The home page returned no HTML to scan."
 msgstr ""
 
@@ -6435,6 +6435,10 @@ msgstr ""
 
 #: main/section/sec-recaptcha.php:32
 msgid "The score threshold applies to reCAPTCHA v3 only. Google returns 1.0 for traffic it is confident is human and 0.0 for traffic it is confident is a bot; 0.5 is the recommended starting point. Raise it to block more aggressively, lower it if real visitors are being turned away."
+msgstr ""
+
+#: inc/scuri.php:464
+msgid "The security question below the password was left empty."
 msgstr ""
 
 #: inc/shortcode.php:1282
@@ -6781,7 +6785,7 @@ msgstr ""
 msgid "To use PHP snippets, switch on two-factor authentication for your own account first (Users → Profile)."
 msgstr ""
 
-#: inc/scuri.php:277
+#: inc/scuri.php:293
 msgid "Too many failed attempts. Try again in about %s."
 msgstr ""
 
@@ -7202,7 +7206,7 @@ msgstr ""
 msgid "Write your block just like a post: type text and use the toolbar to insert links, images and formatting. Need raw HTML/CSS/JS? Switch to the “Text” tab. Placeholders like {{url}} still work in both."
 msgstr ""
 
-#: inc/scuri.php:403
+#: inc/scuri.php:465
 msgid "Wrong answer to the security question."
 msgstr ""
 

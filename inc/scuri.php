@@ -156,9 +156,25 @@ if ( isset( $horsetools_options['scuri-enum1'] ) ) {
 		return $data;
 	} );
 
-	add_filter( 'login_errors', function () {
+	/**
+	 * Make login errors generic — but not the ones that say nothing about accounts.
+	 *
+	 * The point of this filter is to stop the login screen answering "does this
+	 * username exist?". A failed security question answers no such question: it is
+	 * the same message whether the account exists or not. Replacing it costs the
+	 * owner the only clue they have and buys an attacker nothing — and it is the
+	 * second time this masking has swallowed a message it should not have. The
+	 * first was the 2FA screen in 1.3.5, where "code sent" and "wrong code" both
+	 * came out as "Login failed" and nobody could tell whether the recovery code
+	 * had gone out.
+	 */
+	function horsetools_generic_login_error( $message ) {
+		if ( ! empty( $GLOBALS['horsetools_lq_failed'] ) ) {
+			return $message;
+		}
 		return esc_html__( 'Login failed. Check your details and try again.', 'horse-tools' );
-	} );
+	}
+	add_filter( 'login_errors', 'horsetools_generic_login_error' );
 }
 
 /* -------------------------------------------------------------------------
@@ -388,6 +404,44 @@ if ( isset( $horsetools_options['scuri-lq1'] )
 	}
 	add_action( 'login_form', 'horsetools_login_question_field' );
 
+	/**
+	 * Put an answer in the one form both sides get compared in.
+	 *
+	 * `strtolower()` is ASCII-only. On a Vietnamese site that is not a detail: it
+	 * lowercases "Bé" to "bé" but leaves "Đào", "Ánh", "Út" and "Ơn" exactly as
+	 * they are, so an admin who saved "Đào" and an owner who types "đào" never
+	 * match — the answer is right, the login is refused, and with generic errors
+	 * on it reads as a wrong password. Nicknames are precisely where accented
+	 * capitals live, so the commonest kind of answer was the one that broke.
+	 *
+	 * Two more shapes of "I typed exactly the right thing":
+	 * - The same Vietnamese letter has two legal encodings (composed U+1EAF vs
+	 *   a + two combining marks). They look identical and compare unequal, and
+	 *   which one you get depends on the keyboard and the device — so an answer
+	 *   pasted from a phone can fail against one typed on a laptop.
+	 * - A stray double space between words.
+	 *
+	 * None of this loosens the answer: diacritics still count, so "dao" is still
+	 * not "đào".
+	 *
+	 * @param string $s
+	 * @return string
+	 */
+	function horsetools_lq_norm( $s ) {
+		$s = trim( (string) $s );
+		if ( '' === $s ) {
+			return '';
+		}
+		if ( class_exists( 'Normalizer' ) ) {
+			$n = Normalizer::normalize( $s, Normalizer::FORM_C );
+			if ( is_string( $n ) ) {
+				$s = $n;
+			}
+		}
+		$s = function_exists( 'mb_strtolower' ) ? mb_strtolower( $s, 'UTF-8' ) : strtolower( $s );
+		return (string) preg_replace( '/\s+/u', ' ', $s );
+	}
+
 	function horsetools_login_question_check( $user, $username = '' ) {
 		if ( '' === $username ) {
 			return $user; // page load, not a submitted attempt
@@ -397,10 +451,19 @@ if ( isset( $horsetools_options['scuri-lq1'] )
 			return $user;
 		}
 		global $horsetools_options;
-		$expected = strtolower( trim( (string) $horsetools_options['scuri-lq-a'] ) );
-		$given    = isset( $_POST['horsetools_lq'] ) ? strtolower( trim( (string) wp_unslash( $_POST['horsetools_lq'] ) ) ) : '';
+		$expected = horsetools_lq_norm( $horsetools_options['scuri-lq-a'] );
+		$given    = isset( $_POST['horsetools_lq'] ) ? horsetools_lq_norm( wp_unslash( $_POST['horsetools_lq'] ) ) : '';
 		if ( $given !== $expected ) {
-			return new WP_Error( 'horsetools_lq', esc_html__( 'Wrong answer to the security question.', 'horse-tools' ) );
+			// Read by the generic-error filter, which lets this one message
+			// through: it is identical whether or not the account exists, so it
+			// gives an attacker nothing and gives the owner the only clue there is.
+			$GLOBALS['horsetools_lq_failed'] = true;
+			return new WP_Error(
+				'horsetools_lq',
+				'' === $given
+					? esc_html__( 'The security question below the password was left empty.', 'horse-tools' )
+					: esc_html__( 'Wrong answer to the security question.', 'horse-tools' )
+			);
 		}
 		return $user;
 	}

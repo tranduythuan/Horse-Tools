@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 1.3.42
+Stable tag: 1.3.43
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,12 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.43 =
+* **Fixed: the login security question rejected correct Vietnamese answers.** The answer was compared with `strtolower()`, which only lowercases the 26 English letters. It turns "Bé" into "bé" but leaves "Đào", "Ánh", "Út" and "Ơn" exactly as they were — so an owner who saved "Đào" and typed "đào" was refused, every time, with an answer that was right. Accented capitals are precisely where nicknames and names begin, so the commonest kind of answer was the one that could not work.
+* **And you were never told which field was wrong.** With user-enumeration protection on, every login error is replaced by a generic "Login failed" so the screen cannot reveal whether an account exists. A failed security question reveals no such thing — the message is identical whether or not the account exists — so it now comes through intact, and says specifically whether the answer was wrong or the box was left empty. Reported from a site where a correct password read as a wrong one for exactly this reason. It is the second time this masking has swallowed a message it should not have; the first was the 2FA screen in 1.3.5.
+* Two more ways a right answer used to be a wrong one: a double space between words, and the two legal encodings of the same Vietnamese letter (composed "ắ" versus "ă" plus a separate accent — identical on screen, different bytes, and which one you get depends on the keyboard). Both are now handled. Unicode normalisation needs the `intl` extension; without it the rest still applies.
+* Diacritics still count. "dao" is not "đào" — nothing here makes the answer easier to guess.
 
 = 1.3.42 =
 * **Choosing an email service now switches the Email module on.** Found by opening the new screen on a live site rather than trusting it: every SMTP setting filled in correctly and the module's own on/off switch stayed off, which is a configuration that looks complete and cannot send a thing — the exact failure this screen was built to prevent.

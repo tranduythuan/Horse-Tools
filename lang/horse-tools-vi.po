@@ -7858,3 +7858,6 @@ msgstr "Tên đăng nhập là địa chỉ postmaster mà Mailgun hiện ra ở
 
 msgid "Microsoft has been switching this off for new tenants; if it refuses to authenticate, that is why, and another service is the quicker road."
 msgstr "Microsoft đang tắt dần tính năng này với các tổ chức mới; nếu nó không cho xác thực thì đó là lý do, và đổi sang dịch vụ khác là đường nhanh hơn."
+
+msgid "The security question below the password was left empty."
+msgstr "Câu hỏi bảo mật ngay dưới ô mật khẩu đang bị bỏ trống."

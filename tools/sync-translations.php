@@ -1455,6 +1455,10 @@ $vi = array(
 	'The username is the postmaster address Mailgun shows on your sending domain, not your login.' => 'Tên đăng nhập là địa chỉ postmaster mà Mailgun hiện ra ở tên miền gửi của anh, không phải tài khoản anh dùng để vào trang của họ.',
 	'Microsoft has been switching this off for new tenants; if it refuses to authenticate, that is why, and another service is the quicker road.' => 'Microsoft đang tắt dần tính năng này với các tổ chức mới; nếu nó không cho xác thực thì đó là lý do, và đổi sang dịch vụ khác là đường nhanh hơn.',
 
+
+	// Câu hỏi bảo mật: nói rõ là hỏng ở đâu (1.3.43).
+	'The security question below the password was left empty.' => 'Câu hỏi bảo mật ngay dưới ô mật khẩu đang bị bỏ trống.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';
