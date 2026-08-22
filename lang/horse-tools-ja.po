@@ -3482,3 +3482,2436 @@ msgstr "v3 スコアのしきい値（0 – 1）"
 
 msgid "— Insert a shortcode —"
 msgstr "— ショートコードを挿入 —"
+
+msgid "%1$d of %2$d"
+msgstr "%2$d 件中 %1$d 件"
+
+msgid "%1$d post(s) will publish FAQ schema (%2$s questions on average)."
+msgstr "%1$d 件の投稿が FAQ スキーマを公開します（平均 %2$s 問）。"
+
+msgid "%1$s will only send as the account you sign in with. You are signing in as %3$s but sending as %2$s, which it will refuse or quietly drop — and refusing looks from here exactly like the message vanishing."
+msgstr "%1$s はログインに使用したアカウントとしてのみ送信します。あなたは %3$s としてログインしていますが %2$s として送信しようとしており、これは拒否されるか静かに破棄されます — 拒否された場合、ここではメッセージが消えたように見えるだけです。"
+
+msgid "%d FOUND"
+msgstr "%d 件見つかりました"
+
+msgid "%d NEW"
+msgstr "%d 件の新規"
+
+msgid "%d domain is no longer approved."
+msgstr "%d 件のドメインが承認対象から外れました。"
+
+msgid "%d domain looked at again."
+msgstr "%d 件のドメインを再確認しました。"
+
+msgid "%d domain your content links to is not approved"
+msgstr "コンテンツがリンクしている %d 件のドメインが承認されていません"
+
+msgid "%d domains, all approved"
+msgstr "%d 件のドメイン、すべて承認済み"
+
+msgid "%d is still waiting."
+msgstr "%d 件がまだ保留中です。"
+
+msgid "%d link"
+msgstr "%d 件のリンク"
+
+msgid "%d post(s) already get FAQ schema from another plugin, so they are left alone."
+msgstr "%d 件の投稿はすでに別のプラグインから FAQ スキーマを取得しているため、そのままにしています。"
+
+msgid "%d post(s) have a FAQ section but too few questions:"
+msgstr "%d 件の投稿に FAQ セクションはありますが、質問が少なすぎます："
+
+msgid "%d post(s) have no FAQ section."
+msgstr "%d 件の投稿に FAQ セクションがありません。"
+
+msgid "%d post(s) mention a FAQ but no question could be read — unusual structure:"
+msgstr "%d 件の投稿に FAQ への言及はありますが、質問を読み取れませんでした — 構造が特殊です："
+
+msgid "%d question found"
+msgstr "%d 件の質問が見つかりました"
+
+msgid "%d scripts found — “+ Delay” holds one back, “+ Exclude” keeps it running immediately:"
+msgstr "%d 件のスクリプトが見つかりました — 「+ 遅延」で1件を保留、「+ 除外」で即座に実行したままにできます："
+
+msgid "+ Delay"
+msgstr "+ 遅延"
+
+msgid "+ Exclude"
+msgstr "+ 除外"
+
+msgid "1. Triggers → New → Custom Event, event name ^contact_ with \"use regex matching\" ticked — one trigger covers every channel, including any added later. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Optionally add event parameters placement and label, taking their values from Data Layer Variables contact_placement and contact_label. 4. Submit and publish the container."
+msgstr "1. トリガー → 新規 → カスタムイベント、イベント名を ^contact_ とし「正規表現マッチングを使用」にチェック — 1つのトリガーですべてのチャネル（後から追加されるものも含む）をカバーできます。2. タグ → 新規 → Google アナリティクス GA4 イベント、測定 ID を指定し、イベント名を {{Event}} に設定して各チャネルが独自の名前を保持できるようにし、手順1のトリガーを使用します。3. 必要に応じて、データレイヤー変数 contact_placement と contact_label から値を取得するイベントパラメータ placement と label を追加します。4. コンテナを送信して公開します。"
+
+msgid "6-digit code"
+msgstr "6 桁のコード"
+
+msgid "A .git directory exposes the whole source history, and often credentials with it."
+msgstr ".git ディレクトリはソースコードの全履歴を公開してしまい、多くの場合、認証情報まで一緒に公開されます。"
+
+msgid "A PHP snippet changed on your site"
+msgstr "サイト上の PHP スニペットが変更されました"
+
+msgid "A contact detail that was not there before has appeared in your content."
+msgstr "以前は存在しなかった連絡先情報がコンテンツ内に出現しました。"
+
+msgid "A database client. Anyone who finds it is one password from the database."
+msgstr "データベースクライアントです。これを見つけた人は、パスワード1つでデータベースにアクセスできます。"
+
+msgid "A database dump: everything on the site, downloadable."
+msgstr "データベースダンプ：サイト上のすべての情報が含まれ、ダウンロード可能です。"
+
+msgid "A domain can go bad without anything on your site changing: it expires, somebody else buys it, and a link you approved years ago now points at whatever they sell. These were approved over a year ago and are each linked from only one or two posts — the kind that can change hands without anybody here noticing."
+msgstr "ドメインは、あなたのサイトに何の変更がなくても悪化することがあります：期限切れになる、他人が購入する、そして何年も前に承認したリンクが、今では相手が売っているものを指すようになる、といった具合です。これらは 1 年以上前に承認され、それぞれ 1〜2 件の投稿からしかリンクされていません — 誰にも気づかれずに持ち主が変わり得る類のものです。"
+
+msgid "A long list on a first pass is normal and does not have to be read row by row."
+msgstr "最初に見たときリストが長いのは普通のことであり、1行ずつ読む必要はありません。"
+
+msgid "A longer answer is shortened in the schema only — your post is never touched. Leave empty to use 500."
+msgstr "長い回答はスキーマ内でのみ短縮されます — 投稿自体が変更されることはありません。空欄にすると 500 が使われます。"
+
+msgid "A new one appeared in a post — see the banner"
+msgstr "投稿に新しいものが出現しました — バナーをご確認ください"
+
+msgid "A no-Google, no-badge challenge that loads only on the wp-login.php page — zero effect on your front-end or its speed. Bots that hammer the login page cannot answer a site-specific question. It does not stop a person who reads the question, so pair it with the attempt limiter above."
+msgstr "Google 不使用、バッジ非表示のチャレンジで、wp-login.php ページでのみ読み込まれます — フロントエンドやその速度への影響はゼロです。ログインページを連打するボットは、サイト固有の質問に答えられません。質問を読む人間は止められないため、上記の試行回数制限と組み合わせてご利用ください。"
+
+msgid "A one-time code has been sent. Enter it above."
+msgstr "ワンタイムコードを送信しました。上記に入力してください。"
+
+msgid "A post with fewer questions than this gets no schema. Leave empty to use 2, which is the safer choice."
+msgstr "これより質問数が少ない投稿にはスキーマが生成されません。空欄にすると、より安全な選択である 2 が使われます。"
+
+msgid "A private key."
+msgstr "秘密鍵です。"
+
+msgid "A safe first one collects reports and changes nothing: a TXT record at _dmarc.%1$s with the value %2$s"
+msgstr "安全な最初の一歩はレポートを収集するだけで何も変更しません：_dmarc.%1$s に値 %2$s の TXT レコードを追加します"
+
+msgid "A site archive, downloadable by anyone who guesses the name."
+msgstr "サイトのアーカイブで、名前を推測できれば誰でもダウンロードできます。"
+
+msgid "A test was sent but you have not said whether it arrived"
+msgstr "テストは送信されましたが、届いたかどうかまだ回答されていません"
+
+msgid "A v2 key and a v3 key look identical and are not interchangeable. Put a v2 key in the box while the dropdown says V3 and Google refuses to load the widget, so the token is never produced and every login is rejected — which reaches whoever is trying to sign in as “wrong password”. Press the button above after changing a key; it asks Google directly."
+msgstr "v2 キーと v3 キーは見た目が同一ですが、互換性はありません。ドロップダウンが V3 になっているのに v2 キーを入力すると、Google はウィジェットの読み込みを拒否するためトークンが生成されず、すべてのログインが拒否されます — これはログインしようとしている人には「パスワードが間違っている」ように見えます。キーを変更した後は上のボタンを押してください。Google に直接問い合わせます。"
+
+msgid "API key"
+msgstr "API キー"
+
+msgid "Above the post content"
+msgstr "投稿本文の上"
+
+msgid "Accent colour (toolbar / active thumbnail)"
+msgstr "アクセントカラー（ツールバー／アクティブなサムネイル）"
+
+msgid "Accept button text (default: Agree)"
+msgstr "同意ボタンのテキスト（既定：同意する）"
+
+msgid "Accounts & Email"
+msgstr "アカウントとメール"
+
+msgid "Ad clicks"
+msgstr "広告クリック"
+
+msgid "Ad-block notice"
+msgstr "広告ブロック通知"
+
+msgid "AdSense"
+msgstr "AdSense"
+
+msgid "Add an SPF record. Whichever email service you choose below will give you the exact line."
+msgstr "SPF レコードを追加してください。下で選択したメールサービスが正確な記述内容を教えてくれます。"
+
+msgid "Add contact channels"
+msgstr "連絡チャネルを追加"
+
+msgid "Add new table"
+msgstr "新しいテーブルを追加"
+
+msgid "Add nofollow to it (recommended)"
+msgstr "nofollow を追加する（推奨）"
+
+msgid "Add some data first."
+msgstr "まずデータを追加してください。"
+
+msgid "Add “defer” to front-end scripts so they no longer block the page from rendering; they run in order once the HTML is parsed. jQuery is never deferred (inline snippets depend on it). Big Core Web Vitals win."
+msgstr "フロントエンドスクリプトに「defer」を追加し、ページの描画をブロックしないようにします。これらは HTML の解析後に順番に実行されます。jQuery は遅延されません（インラインスニペットがこれに依存しているため）。Core Web Vitals に大きな改善をもたらします。"
+
+msgid "Adds decoding=\"async\" to images so the browser decodes them off the main thread, and relies on WordPress’ built-in native lazy-load (which correctly keeps the first/LCP image eager). Replaces the old script-based method that removed image src — that hurt SEO and broke images with JavaScript off."
+msgstr "画像に decoding=\"async\" を追加し、ブラウザがメインスレッド外でデコードできるようにし、WordPress 標準のネイティブ遅延読み込み（最初の/LCP 画像は正しく即座に読み込まれます）を利用します。画像の src を削除していた旧来のスクリプト方式を置き換えます — その方式は SEO を損ない、JavaScript を無効にすると画像が壊れていました。"
+
+msgid "Admin area"
+msgstr "管理エリア"
+
+msgid "Admin housekeeping and the plugin's own settings."
+msgstr "管理の整理とプラグイン自体の設定です。"
+
+msgid "Admin only"
+msgstr "管理者のみ"
+
+msgid "Admin tools"
+msgstr "管理ツール"
+
+msgid "Advanced options — device, visitors, schedule, tags (optional)"
+msgstr "詳細オプション — デバイス、訪問者、スケジュール、タグ（任意）"
+
+msgid "After a few seconds"
+msgstr "数秒後"
+
+msgid "After scrolling down"
+msgstr "下にスクロールした後"
+
+msgid "All"
+msgstr "すべて"
+
+msgid "All single content (incl. custom types)"
+msgstr "すべての単一コンテンツ（カスタムタイプを含む）"
+
+msgid "All-in-one WordPress toolkit: contact chat, shortcodes, security & privacy, media optimisation, SEO, cleanup and more — in one plugin."
+msgstr "オールインワンの WordPress ツールキット：連絡チャット、ショートコード、セキュリティとプライバシー、メディア最適化、SEO、クリーンアップなど — 1つのプラグインに集約。"
+
+msgid "Allow a recovery code by Telegram"
+msgstr "Telegram による復旧コードを許可"
+
+msgid "Allow a recovery code by email"
+msgstr "メールによる復旧コードを許可"
+
+msgid "Already approved"
+msgstr "承認済み"
+
+msgid "Analytics found on your site: %s. Clicks will be recorded there."
+msgstr "サイトで分析ツールが見つかりました：%s。クリックはそこに記録されます。"
+
+msgid "And what should happen to a domain that is not on the list?"
+msgstr "リストにないドメインはどう扱われるべきですか？"
+
+msgid "Another plugin already publishes FAQ schema for this post, so Horse Tools is staying out of the way."
+msgstr "別のプラグインがすでにこの投稿の FAQ スキーマを公開しているため、Horse Tools は関与しません。"
+
+msgid "Answer"
+msgstr "回答"
+
+msgid "Answers are held for half a day; press this after changing anything in DNS."
+msgstr "回答は半日保持されます。DNS を変更した後にこれを押してください。"
+
+msgid "Appearance"
+msgstr "外観"
+
+msgid "Apply to Pages as well, not just Posts"
+msgstr "投稿だけでなく固定ページにも適用する"
+
+msgid "Approve all %d domains your content currently links to?"
+msgstr "コンテンツが現在リンクしている全 %d 件のドメインを承認しますか？"
+
+msgid "Approve all %d — the whole list, not just this page"
+msgstr "全 %d 件を承認 — このページだけでなくリスト全体"
+
+msgid "Approve the ticked ones"
+msgstr "チェックした項目を承認"
+
+msgid "Approved %d domain."
+msgstr "%d 件のドメインを承認しました。"
+
+msgid "As soon as the page opens"
+msgstr "ページが開いたらすぐに"
+
+msgid "Ask a custom question on the login form"
+msgstr "ログインフォームでカスタム質問を尋ねる"
+
+msgid "Asking Google…"
+msgstr "Google に問い合わせ中…"
+
+msgid "Asset URLs to preload (one per line — .woff2/.css/.js/.jpg/.webp…)"
+msgstr "事前読み込みするアセット URL（1 行に 1 つ — .woff2/.css/.js/.jpg/.webp…）"
+
+msgid "Async CSS — remove render-blocking stylesheets"
+msgstr "非同期 CSS — 描画をブロックするスタイルシートを除去"
+
+msgid "Authentication code"
+msgstr "認証コード"
+
+msgid "Backdrop theme"
+msgstr "背景テーマ"
+
+msgid "Bar across the bottom"
+msgstr "下部の帯"
+
+msgid "Before </body>"
+msgstr "</body> の直前"
+
+msgid "Below the post content"
+msgstr "投稿本文の下"
+
+msgid "Besides your one-time backup codes, a fresh code can also be sent to you here:"
+msgstr "ワンタイムバックアップコードのほかに、ここから新しいコードを送信することもできます："
+
+msgid "Blur (frosted glass)"
+msgstr "ぼかし（すりガラス）"
+
+msgid "Bordered"
+msgstr "枠線あり"
+
+msgid "Both engines are bundled locally — no external requests. Gallery grouping, looping and the slide transition apply to GLightbox; PhotoSwipe always groups the content images (previous/next) and has its own smooth zoom/pan."
+msgstr "両方のエンジンはローカルにバンドルされており、外部リクエストはありません。ギャラリーのグループ化、ループ、スライド遷移は GLightbox に適用されます。PhotoSwipe は常にコンテンツ画像をグループ化し（前へ／次へ）、独自の滑らかなズーム／パン機能を備えています。"
+
+msgid "Both engines are free and open-source (MIT). GLightbox is the easy all-rounder (adds video + slide transitions); PhotoSwipe has the smoothest zoom/pan for photo galleries."
+msgstr "両方のエンジンは無料かつオープンソース（MIT）です。GLightbox はシンプルなオールラウンダー（動画とスライド遷移を追加）。PhotoSwipe は写真ギャラリー向けに最も滑らかなズーム／パンを備えています。"
+
+msgid "Bounce"
+msgstr "バウンス"
+
+msgid "Broken links (404)"
+msgstr "リンク切れ（404）"
+
+msgid "Broken links 404"
+msgstr "リンク切れ 404"
+
+msgid "Build a table once here, then insert it into any post or page with its shortcode. Edit it here and every place that uses it updates automatically."
+msgstr "ここでテーブルを一度作成すれば、そのショートコードで任意の投稿や固定ページに挿入できます。ここで編集すると、使用しているすべての箇所が自動的に更新されます。"
+
+msgid "Build grid"
+msgstr "グリッドを作成"
+
+msgid "Buttons"
+msgstr "ボタン"
+
+msgid "By Telegram"
+msgstr "Telegram 経由"
+
+msgid "By default the lockout counts the direct connection IP, which cannot be faked. Only turn this on if your site is reachable ONLY through Cloudflare or a proxy — it then reads the real visitor IP from the proxy header (CF-Connecting-IP / X-Forwarded-For). Do NOT enable it on a normally-hosted site: those headers can be forged, letting an attacker dodge the lockout or get an innocent visitor locked out."
+msgstr "既定では、ロックアウトは直接接続の IP を数えており、これは偽装できません。サイトが Cloudflare またはプロキシ経由でのみアクセス可能な場合に限り、これを有効にしてください — その場合、プロキシヘッダー（CF-Connecting-IP／X-Forwarded-For）から実際の訪問者 IP を読み取ります。通常のホスティングのサイトでは有効にしないでください：これらのヘッダーは偽装可能で、攻撃者がロックアウトを回避したり、無関係な訪問者を誤ってロックアウトさせたりする恐れがあります。"
+
+msgid "By email — a one-time code is sent to your account address:"
+msgstr "メールによる — ワンタイムコードがアカウントのアドレスに送信されます："
+
+msgid "CHANGED"
+msgstr "変更あり"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Cache cleared. Each post will be read again the next time it is viewed."
+msgstr "キャッシュをクリアしました。各投稿は次回表示時に再度読み込まれます。"
+
+msgid "Caption"
+msgstr "キャプション"
+
+msgid "Caption from"
+msgstr "キャプションの取得元"
+
+msgid "Card (shadow)"
+msgstr "カード（影付き）"
+
+msgid "Centre of screen"
+msgstr "画面中央"
+
+msgid "Chat"
+msgstr "チャット"
+
+msgid "Chat buttons, contact channels and WooCommerce tweaks."
+msgstr "チャットボタン、連絡チャネル、WooCommerce の微調整です。"
+
+msgid "Check again"
+msgstr "再確認"
+
+msgid "Check for updates"
+msgstr "更新を確認"
+
+msgid "Check that WP-Cron is running on this site"
+msgstr "このサイトで WP-Cron が動作しているか確認"
+
+msgid "Check-in"
+msgstr "チェックイン"
+
+msgid "Checked from your own browser: the home page a visitor receives carries no Google Analytics tag. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own."
+msgstr "あなた自身のブラウザから確認しました：訪問者が受け取るホームページには Google アナリティクスのタグが含まれていません。Site Kit by Google や任意の GA4 プラグインをインストールすると、この設定は自動的に機能し始めます。"
+
+msgid "Checked — still fine"
+msgstr "確認済み — 問題なし"
+
+msgid "Checking your site…"
+msgstr "サイトを確認中…"
+
+msgid "Checking…"
+msgstr "確認中…"
+
+msgid "Choose a .xlsx, .xls or .csv file:"
+msgstr ".xlsx、.xls、または .csv ファイルを選択してください："
+
+msgid "Choose a built-in icon"
+msgstr "内蔵アイコンを選択"
+
+msgid "Choose an icon"
+msgstr "アイコンを選択"
+
+msgid "Choose icon"
+msgstr "アイコンを選択"
+
+msgid "Choose the position (corner box or full-width bar) and customise the message and button labels. The Accept/Decline choice is stored in the browser (localStorage + an “ht_cookie_consent” cookie), so the notice won’t nag returning visitors. Note: this is an informational notice — Horse Tools does not itself block third-party tracking scripts, so for strict consent-gating you would still gate your own scripts on that cookie."
+msgstr "位置（角のボックスまたは全幅の帯）を選択し、メッセージとボタンのラベルをカスタマイズしてください。同意／拒否の選択はブラウザに保存され（localStorage + 「ht_cookie_consent」クッキー）、再訪問者には通知が繰り返し表示されません。注：これはあくまで情報提供の通知です — Horse Tools 自体はサードパーティ製の追跡スクリプトをブロックしません。厳格な同意管理が必要な場合は、そのクッキーに合わせて独自のスクリプトを制御してください。"
+
+msgid "Cinema (pure black)"
+msgstr "シネマ（純黒）"
+
+msgid "Clean comments"
+msgstr "コメントをクリーンアップ"
+
+msgid "Clean media"
+msgstr "メディアをクリーンアップ"
+
+msgid "Clean posts"
+msgstr "投稿をクリーンアップ"
+
+msgid "Cleanup schedule"
+msgstr "クリーンアップのスケジュール"
+
+msgid "Clear cache & re-read"
+msgstr "キャッシュをクリアして再読み込み"
+
+msgid "Cleared all lockouts."
+msgstr "すべてのロックアウトを解除しました。"
+
+msgid "Click again to delete"
+msgstr "もう一度クリックすると削除されます"
+
+msgid "Click an SVG box, then"
+msgstr "SVG のボックスをクリックし、次に"
+
+msgid "Click an icon to drop it into the selected field. Search by its English name (cart, gift, phone…), or Vietnamese for popular icons. Over 5,000 in total — use “Load more” to see them all."
+msgstr "アイコンをクリックすると選択中のフィールドに挿入されます。英語名（cart、gift、phone…）で検索するか、人気のアイコンについてはベトナム語でも検索できます。合計 5,000 件以上 — 「もっと読み込む」ですべて表示できます。"
+
+msgid "Click an image in your content to open it in a full-screen viewer. Choose the engine and how it looks below."
+msgstr "コンテンツ内の画像をクリックすると、全画面ビューアーで開きます。エンジンと見た目を以下で選択してください。"
+
+msgid "Code in body"
+msgstr "body 内のコード"
+
+msgid "Code in footer"
+msgstr "フッター内のコード"
+
+msgid "Code in head"
+msgstr "head 内のコード"
+
+msgid "Code on login"
+msgstr "ログイン時のコード"
+
+msgid "Column"
+msgstr "列"
+
+msgid "Columns"
+msgstr "列"
+
+msgid "Comma separated. A heading containing any of these opens the FAQ section; every heading below it until the next heading of the same level is treated as a question."
+msgstr "カンマ区切り。これらのいずれかを含む見出しは FAQ セクションを開始し、その下にある同じレベルの次の見出しまでのすべての見出しが質問として扱われます。"
+
+msgid "Compact"
+msgstr "コンパクト"
+
+msgid "Confirm them once, from the banner on any Horse Tools screen"
+msgstr "Horse Tools の任意の画面にあるバナーから、一度だけ確認してください"
+
+msgid "Confirm them once, from the notice on any Horse Tools screen"
+msgstr "Horse Tools の任意の画面にある通知から、一度だけ確認してください"
+
+msgid "Confirmed %s ago"
+msgstr "%s 前に確認済み"
+
+msgid "Contact click measurement"
+msgstr "連絡先クリック計測"
+
+msgid "Contact details are the ones you confirmed"
+msgstr "連絡先情報とは、あなたが確認したものを指します"
+
+msgid "Contact details in your posts"
+msgstr "投稿内の連絡先情報"
+
+msgid "Contact details in your posts are watched"
+msgstr "投稿内の連絡先情報を監視中"
+
+msgid "Contact details in your settings"
+msgstr "設定内の連絡先情報"
+
+msgid "Contains database credentials or signing keys."
+msgstr "データベースの認証情報や署名鍵を含みます。"
+
+msgid "Control the Heartbeat API"
+msgstr "Heartbeat API を制御"
+
+msgid "Cookie notice"
+msgstr "クッキー通知"
+
+msgid "Copy"
+msgstr "コピー"
+
+msgid "Copy / CSV / Print buttons"
+msgstr "コピー／CSV／印刷ボタン"
+
+msgid "Copy all eight lines"
+msgstr "8行すべてをコピー"
+
+msgid "Copy cells in Excel / Google Sheets (or paste CSV) and paste here:"
+msgstr "Excel／Google スプレッドシートでセルをコピー（または CSV を貼り付け）し、ここに貼り付けてください："
+
+msgid "Corner — bottom left"
+msgstr "角 — 左下"
+
+msgid "Corner — bottom right"
+msgstr "角 — 右下"
+
+msgid "Could not be determined"
+msgstr "判定できませんでした"
+
+msgid "Could not check: this server was unable to open your own home page, which many hosts block. That says nothing about whether analytics is installed — if you have Site Kit or another GA4 plugin, switch this on and check the result in Analytics under Admin → DebugView."
+msgstr "確認できませんでした：このサーバーは自分自身のホームページを開けませんでした。これは多くのホストがブロックしていることです。分析ツールが導入されているかどうかとは無関係です — Site Kit や他の GA4 プラグインをお使いの場合は、これをオンにして、管理画面 → DebugView で Analytics の結果を確認してください。"
+
+msgid "Could not load the Excel reader — save the file as CSV and try again."
+msgstr "Excel リーダーを読み込めませんでした — ファイルを CSV として保存してから再度お試しください。"
+
+msgid "Could not load the home page from the server:"
+msgstr "サーバーからホームページを読み込めませんでした："
+
+msgid "Could not load the list."
+msgstr "リストを読み込めませんでした。"
+
+msgid "Could not read the file."
+msgstr "ファイルを読み込めませんでした。"
+
+msgid "Could not read the home page (HTTP %s). Your host may block the site from calling itself; check the scripts via “View source” instead."
+msgstr "ホームページを読み込めませんでした（HTTP %s）。お使いのホストがサイト自身への呼び出しをブロックしている可能性があります。代わりに「ページのソースを表示」でスクリプトを確認してください。"
+
+msgid "Could not send the recovery code — message the bot first, then check your chat ID."
+msgstr "復旧コードを送信できませんでした — まずボットにメッセージを送り、それからチャット ID を確認してください。"
+
+msgid "Create table"
+msgstr "テーブルを作成"
+
+msgid "Critical CSS — the above-the-fold styles, inlined in the head to prevent the flash (optional, but strongly recommended)"
+msgstr "クリティカル CSS — ファーストビューのスタイルを head 内にインラインで記述し、ちらつきを防ぎます（任意ですが強く推奨されます）"
+
+msgid "Custom / Maps:"
+msgstr "カスタム／マップ："
+
+msgid "Custom CSS"
+msgstr "カスタム CSS"
+
+msgid "Customers"
+msgstr "顧客"
+
+msgid "Dark background"
+msgstr "ダーク背景"
+
+msgid "Dark mode, scrollbar, effects, and the look of the admin area."
+msgstr "ダークモード、スクロールバー、エフェクト、管理画面の見た目です。"
+
+msgid "Date shortcodes"
+msgstr "日付ショートコード"
+
+msgid "Day(s)"
+msgstr "日"
+
+msgid "Decline"
+msgstr "拒否"
+
+msgid "Decline button text (default: Decline)"
+msgstr "拒否ボタンのテキスト（既定：拒否する）"
+
+msgid "Default"
+msgstr "既定"
+
+msgid "Defer JavaScript"
+msgstr "JavaScript を遅延"
+
+msgid "Defer JavaScript so it no longer blocks the page"
+msgstr "JavaScript を遅延させてページをブロックしないようにする"
+
+msgid "Delay JavaScript execution"
+msgstr "JavaScript の実行を遅延"
+
+msgid "Delay JavaScript until interaction"
+msgstr "操作があるまで JavaScript を遅延"
+
+msgid "Delay all scripts except the exclusions (most aggressive)"
+msgstr "除外項目を除くすべてのスクリプトを遅延（最も積極的）"
+
+msgid "Delay analytics/ads/chat until interaction, and defer JavaScript"
+msgstr "操作があるまで分析／広告／チャットを遅延させ、JavaScript も遅延させる"
+
+msgid "Delay analytics/ads/chat until interaction, and defer JavaScript (cart & checkout untouched)"
+msgstr "操作があるまで分析／広告／チャットを遅延させ、JavaScript も遅延させる（カート・決済は対象外）"
+
+msgid "Delay only the scripts I list (recommended, safe)"
+msgstr "指定したスクリプトのみ遅延させる（推奨、安全）"
+
+msgid "Delay third-party scripts (analytics, ads, chat) until the visitor interacts — safe built-in list, with a 5-second fall-back"
+msgstr "訪問者の操作があるまでサードパーティ製スクリプト（分析、広告、チャット）を遅延 — 安全な内蔵リスト、5秒後のフォールバック付き"
+
+msgid "Delete column"
+msgstr "列を削除"
+
+msgid "Delete row"
+msgstr "行を削除"
+
+msgid "Delete them, or move them somewhere outside the folder your site is served from. If one of them is a copy of wp-config.php, change your database password afterwards — assume it has been read."
+msgstr "それらを削除するか、サイトが配信されているフォルダーの外に移動してください。それらのうちの一つが wp-config.php のコピーである場合は、その後データベースのパスワードを変更してください — 読み取られたものと想定してください。"
+
+msgid "Detect my chat ID"
+msgstr "チャット ID を検出"
+
+msgid "Disable Dashicons for visitors"
+msgstr "訪問者向けに Dashicons を無効化"
+
+msgid "Disable on the front-end, slow in admin"
+msgstr "フロントエンドで無効化、管理画面では低速に"
+
+msgid "Display style (where the panel appears)"
+msgstr "表示スタイル（パネルの表示位置）"
+
+msgid "Does mail from this site actually arrive?"
+msgstr "このサイトからのメールは実際に届いていますか？"
+
+msgid "Domain"
+msgstr "ドメイン"
+
+msgid "Downloadable secrets in the site folder"
+msgstr "サイトフォルダー内にダウンロード可能な機密情報"
+
+msgid "Drop Emoji, jQuery Migrate and admin icons; calm the Heartbeat"
+msgstr "絵文字、jQuery Migrate、管理画面アイコンを削除。Heartbeat を抑制"
+
+msgid "Each user turns it on for their own account under Users → Profile (scan a QR with Google Authenticator / Authy). After the password they enter a 6-digit code, so a stolen password alone is not enough. Uses standard WordPress hooks — safe across WordPress updates, and disabling the plugin instantly restores the normal login."
+msgstr "各ユーザーは「ユーザー → プロフィール」から自分のアカウントに対してこれを有効化します（Google Authenticator／Authy で QR をスキャン）。パスワードの後に 6 桁のコードを入力するため、パスワードが盗まれただけでは不十分です。標準の WordPress フックを使用しており、WordPress の更新をまたいでも安全です。プラグインを無効化すれば通常のログインが即座に復元されます。"
+
+msgid "Edit table"
+msgstr "テーブルを編集"
+
+msgid "Either set up a mailbox for the domain, or make sure the address you send notifications to is one you actually read."
+msgstr "ドメイン用のメールボックスを設定するか、通知を送るアドレスが実際に読んでいるものであることを確認してください。"
+
+msgid "Email address"
+msgstr "メールアドレス"
+
+msgid "Email is the fallback and not a good one — a security message sent by a shop's own server is exactly the kind that lands in spam. Set up the Telegram bot under WooCommerce if you can."
+msgstr "メールは代替手段であり、あまり良いものではありません — ショップ自身のサーバーから送られるセキュリティメッセージは、まさに迷惑メールに分類されやすい種類のものです。可能であれば WooCommerce 内で Telegram ボットを設定してください。"
+
+msgid "Email me a code"
+msgstr "コードをメールで受け取る"
+
+msgid "Email service (SMTP preset)"
+msgstr "メールサービス（SMTP プリセット）"
+
+msgid "Email to %s"
+msgstr "%s へメール送信"
+
+msgid "Enable image lightbox"
+msgstr "画像ライトボックスを有効化"
+
+msgid "Enable two-factor authentication"
+msgstr "二段階認証を有効化"
+
+msgid "Enter a current two-factor code to unlock PHP editing first."
+msgstr "まず現在の二段階認証コードを入力して PHP 編集をロック解除してください。"
+
+msgid "Enter the 6-digit code from your app, or a backup code."
+msgstr "アプリの 6 桁のコード、またはバックアップコードを入力してください。"
+
+msgid "Enter your authentication code."
+msgstr "認証コードを入力してください。"
+
+msgid "Entrance effect"
+msgstr "登場エフェクト"
+
+msgid "Every day"
+msgstr "毎日"
+
+msgid "Every month"
+msgstr "毎月"
+
+msgid "Every page load (init)"
+msgstr "ページ読み込みごと（init）"
+
+msgid "Every two weeks"
+msgstr "2週間ごと"
+
+msgid "Every week (recommended)"
+msgstr "毎週（推奨）"
+
+msgid "Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off."
+msgstr "登録時には全員がワンタイムバックアップコードも取得します — 保存しておいてください。電話、バックアップコード、復旧チャネルのいずれもなくロックアウトされた場合は、FTP でプラグインフォルダーの名前を変更して 2FA をオフにしてください。"
+
+msgid "Everything above only tells you. Telling you leaves a gap: the link goes in, the warning appears on a screen, and the link keeps working until you log in and read it. That gap is how three old posts carried casino links for two years."
+msgstr "上記はすべて通知するだけです。通知だけでは隙間が残ります：リンクが仕込まれ、警告が画面に表示されても、ログインして読むまでそのリンクは機能し続けます。この隙間のせいで、3件の古い投稿が2年間カジノリンクを保持していました。"
+
+msgid "Everything else on this page warns you when something is wrong — but only on a screen you have to open. It cannot warn you that it stopped: a site with the plugin switched off looks exactly like a site with nothing wrong."
+msgstr "このページの他の項目はすべて問題があるときに警告してくれますが、それはあなたが自ら開いた画面上でだけです。停止したこと自体は警告できません — プラグインがオフになったサイトは、問題のないサイトとまったく同じに見えます。"
+
+msgid "Export CSV"
+msgstr "CSV をエクスポート"
+
+msgid "FAQ schema (Horse Tools)"
+msgstr "FAQ スキーマ（Horse Tools）"
+
+msgid "FAQ schema (rich results)"
+msgstr "FAQ スキーマ（リッチリザルト）"
+
+msgid "Fade"
+msgstr "フェード"
+
+msgid "Fade in"
+msgstr "フェードイン"
+
+msgid "Fall-back timer — run the delayed scripts after this many seconds even with no interaction (0 = only on interaction)"
+msgstr "フォールバックタイマー — 操作がなくてもこの秒数後に遅延スクリプトを実行します（0 = 操作時のみ）"
+
+msgid "Filled in for you: server %host%, port %port%, %enc%."
+msgstr "あなたのために入力済み：サーバー %host%、ポート %port%、%enc%。"
+
+msgid "Filter per column"
+msgstr "列ごとにフィルター"
+
+msgid "Find a domain"
+msgstr "ドメインを検索"
+
+msgid "Finished reading your posts and pages."
+msgstr "投稿と固定ページの読み込みが完了しました。"
+
+msgid "First row is a header"
+msgstr "最初の行はヘッダーです"
+
+msgid "Fix the channel and send a test message"
+msgstr "チャネルを修正してテストメッセージを送信"
+
+msgid "Flip"
+msgstr "反転"
+
+msgid "Font settings"
+msgstr "フォント設定"
+
+msgid "Fonts"
+msgstr "フォント"
+
+msgid "For non-technical users: this switches on the safe, high-impact speed features — delay & defer JavaScript (safe mode, with a 5-second fall-back), lazy-load, Instant-page, HTML compression, and dropping Emoji / jQuery Migrate / Dashicons. The riskier options (async CSS, “delay all”) are left off. The switches below light up so you can see what changed — then press SAVE to apply."
+msgstr "非技術者向け：安全で効果の高い速度向上機能をオンにします — JavaScript の遅延と延期（安全モード、5秒のフォールバック付き）、遅延読み込み、Instant-page、HTML 圧縮、絵文字／jQuery Migrate／Dashicons の削除です。リスクの高いオプション（非同期 CSS、「すべて遅延」）はオフのままです。以下のスイッチが点灯し、何が変更されたかを確認できます — その後「保存」を押して適用してください。"
+
+msgid "Free for 300 messages a day with no card. The account login is the username; the SMTP key is not the same thing as the API key."
+msgstr "カードなしで1日300メッセージまで無料です。アカウントのログイン名はユーザー名で、SMTP キーは API キーとは別物です。"
+
+msgid "Freeze first column"
+msgstr "最初の列を固定"
+
+msgid "Front end and admin"
+msgstr "フロントエンドと管理画面"
+
+msgid "Front end only"
+msgstr "フロントエンドのみ"
+
+msgid "GLightbox — light, images + video, slide effects"
+msgstr "GLightbox — 軽量、画像 + 動画、スライドエフェクト"
+
+msgid "Give it a minute before answering. “In the spam folder” is a useful answer, not a failure to report."
+msgstr "回答する前に少し時間をおいてください。「迷惑メールフォルダーの中」は有用な回答であり、確認の失敗ではありません。"
+
+msgid "Go through the list once and approve it"
+msgstr "リストを一度確認して承認してください"
+
+msgid "Gone"
+msgstr "消失"
+
+msgid "Google Sheet"
+msgstr "Google スプレッドシート"
+
+msgid "Google accepts both keys."
+msgstr "Google はどちらのキーも受け付けます。"
+
+msgid "Google does not recognise this Secret key. Check you copied the secret and not the site key — they come from the same page and are easy to swap."
+msgstr "Google はこのシークレットキーを認識しません。サイトキーではなくシークレットキーをコピーしたか確認してください — どちらも同じページにあり、取り違えやすいです。"
+
+msgid "Google fetch"
+msgstr "Google 取得"
+
+msgid "Google refused the request — make sure the sheet is shared as “Anyone with the link can view”."
+msgstr "Google がリクエストを拒否しました — シートが「リンクを知っている全員が閲覧可能」で共有されていることを確認してください。"
+
+msgid "Google refuses this Site key for reCAPTCHA v3. It is almost certainly a v2 key — either switch the dropdown to V2, or paste the key from a v3 project. Until then the widget never loads and every login is rejected."
+msgstr "Google はこのサイトキーを reCAPTCHA v3 用として拒否しています。ほぼ確実に v2 キーです — ドロップダウンを V2 に切り替えるか、v3 プロジェクトのキーを貼り付けてください。それまではウィジェットが読み込まれず、すべてのログインが拒否されます。"
+
+msgid "Google sign-in"
+msgstr "Google サインイン"
+
+msgid "Gradient blue-violet"
+msgstr "グラデーション ブルーバイオレット"
+
+msgid "Gradient ocean"
+msgstr "グラデーション オーシャン"
+
+msgid "Gradient sunset"
+msgstr "グラデーション サンセット"
+
+msgid "Grey"
+msgstr "グレー"
+
+msgid "Group images into a gallery (previous / next)"
+msgstr "画像をギャラリーとしてグループ化（前へ／次へ）"
+
+msgid "HTML compression; compress JPGs and serve WebP"
+msgstr "HTML 圧縮。JPG を圧縮して WebP を配信"
+
+msgid "Handle dead links: send visitors who hit a “404 – not found” page to a page you choose, and keep a log of the broken URLs so you know what to fix."
+msgstr "リンク切れの処理：「404 – 見つかりません」に到達した訪問者を選択したページへ送り、修正すべき内容がわかるよう壊れた URL のログを保持します。"
+
+msgid "Header colour"
+msgstr "ヘッダー色"
+
+msgid "Heads up: a PHP snippet was just changed on %1$s. Snippet: \"%2$s\". By: %3$s (IP %4$s). If this was not you, change your password and review Horse Tools → Shortcode immediately."
+msgstr "お知らせ：%1$s 上の PHP スニペットがたった今変更されました。スニペット：「%2$s」。実行者：%3$s（IP %4$s）。もしこれがあなたでなければ、直ちにパスワードを変更し、Horse Tools → Shortcode を確認してください。"
+
+msgid "Heartbeat mode"
+msgstr "Heartbeat モード"
+
+msgid "Hold heavy third-party scripts (analytics, tag managers, pixels, chat, ads) until the visitor first interacts — scroll, mouse move, tap, key or click — then run them in order. The single biggest win for Total Blocking Time and “Reduce unused JavaScript”. It re-fires the page-ready events afterwards, keeps script order, and never touches JSON-LD structured data or ES modules."
+msgstr "訪問者が最初に操作する — スクロール、マウス移動、タップ、キー入力、クリック — までサードパーティ製の重いスクリプト（分析、タグマネージャー、ピクセル、チャット、広告）を保留し、その後順番に実行します。Total Blocking Time と「使用していない JavaScript の削減」に対する単独で最大の改善策です。その後 page-ready イベントを再発火させ、スクリプトの順序を保持し、JSON-LD 構造化データや ES モジュールには一切触れません。"
+
+msgid "Horse Tools %s is available — an update link now appears under the plugin below. WordPress will download it directly from GitHub."
+msgstr "Horse Tools %s が利用可能です — 下のプラグイン欄に更新リンクが表示されるようになりました。WordPress は GitHub から直接ダウンロードします。"
+
+msgid "Horse Tools beat #%1$d — %2$s"
+msgstr "Horse Tools ビート #%1$d — %2$s"
+
+msgid "Horse Tools can tell you when your content starts linking somewhere new."
+msgstr "Horse Tools は、あなたのコンテンツが新しい場所へのリンクを始めたときに知らせることができます。"
+
+msgid "Horse Tools can watch your contact details for changes."
+msgstr "Horse Tools は連絡先情報の変更を監視できます。"
+
+msgid "Horse Tools could not reach GitHub to check for updates. Please try again later."
+msgstr "Horse Tools は更新を確認するために GitHub に接続できませんでした。後でもう一度お試しください。"
+
+msgid "Horse Tools is up to date (version %s)."
+msgstr "Horse Tools は最新版です（バージョン %s）。"
+
+msgid "Horse Tools keeps a copy of your decisions in a file as well as in the database, precisely so that a change made straight to the database can be seen. These no longer match:"
+msgstr "Horse Tools は、あなたの判断内容のコピーをファイルとデータベースの両方に保持しており、これはデータベースに直接加えられた変更を検知できるようにするためです。以下は一致しなくなっています："
+
+msgid "Horse Tools snippet"
+msgstr "Horse Tools スニペット"
+
+msgid "Horse Tools table"
+msgstr "Horse Tools テーブル"
+
+msgid "Horse Tools — %s"
+msgstr "Horse Tools — %s"
+
+msgid "Hosts to preconnect (one per line — host or full URL)"
+msgstr "事前接続するホスト（1 行に 1 つ — ホスト名または完全な URL）"
+
+msgid "Hour(s)"
+msgstr "時間"
+
+msgid "How often"
+msgstr "頻度"
+
+msgid "Icon colour"
+msgstr "アイコンの色"
+
+msgid "Icons"
+msgstr "アイコン"
+
+msgid "If a theme/plugin script misbehaves, add its handle or file name to the exclusion list below. Disable if you already use a full-page optimiser that defers scripts."
+msgstr "テーマやプラグインのスクリプトが誤動作する場合は、下記の除外リストにそのハンドルまたはファイル名を追加してください。スクリプトを遅延させるページ全体最適化プラグインをすでに使用している場合は無効化してください。"
+
+msgid "If it does not arrive, something stopped it — check the site."
+msgstr "届かない場合は、何かがそれを止めています — サイトを確認してください。"
+
+msgid "If this site stops working, or Horse Tools is switched off, nobody is told. Every warning here is only seen by someone who logs in and looks."
+msgstr "このサイトが動作を停止したり、Horse Tools がオフにされたりしても、誰にも知らされません。ここでの警告は、ログインして確認した人だけが目にします。"
+
+msgid "If you are reading it, mail from your site reaches this address. Go back to the Email screen and say where it turned up — the inbox or the spam folder — because those are two different answers and only you can see which one it was."
+msgstr "これを読んでいるということは、サイトからのメールがこのアドレスに届いているということです。メール画面に戻り、それがどこに現れたか — 受信トレイか迷惑メールフォルダーか — をお答えください。この2つは異なる結果であり、それを判断できるのはあなただけです。"
+
+msgid "If you have just restored a database backup, or copied the database from another copy of this site, that is the explanation — the file stayed while the database went back in time. Press the button and it will match again."
+msgstr "データベースのバックアップを復元した、あるいはこのサイトの別のコピーからデータベースをコピーした直後であれば、それが理由です — データベースが過去に巻き戻っている間、ファイルはそのままだったのです。ボタンを押せば再び一致します。"
+
+msgid "If you have not done either of those things, then something can write to your database that should not be able to. Changing passwords will not fix that on its own; the way in has to be found."
+msgstr "どちらも行っていない場合、本来書き込めないはずの何かがデータベースに書き込んでいることになります。パスワードを変更するだけではそれ自体は解決しません。侵入経路を突き止める必要があります。"
+
+msgid "If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else."
+msgstr "これらをご自身で変更したばかりであれば、確認してください。そうでなければ他の誰かが変更したということです — 他の設定を変更する前に、最後に誰が設定を編集したか確認してください。"
+
+msgid "If you lose your phone"
+msgstr "携帯電話を紛失した場合"
+
+msgid "If your site has Tag Manager but no Google tag"
+msgstr "サイトに Tag Manager はあるが Google タグがない場合"
+
+msgid "Image alt text"
+msgstr "画像の代替テキスト"
+
+msgid "Image caption (figcaption)"
+msgstr "画像キャプション（figcaption）"
+
+msgid "Image lightbox"
+msgstr "画像ライトボックス"
+
+msgid "Image title"
+msgstr "画像タイトル"
+
+msgid "Images"
+msgstr "画像"
+
+msgid "In"
+msgstr "内"
+
+msgid "In Google Analytics: Reports → Engagement → Events. Each channel appears under its own name — contact_phone, contact_zalo, contact_messenger and so on — so there is nothing to configure first. Allow 24 hours for the standard reports; to see it immediately instead, open Admin → DebugView and tap a button on your phone."
+msgstr "Google アナリティクスでは：レポート → エンゲージメント → イベント。各チャネルはそれぞれの名前（contact_phone、contact_zalo、contact_messenger など）で表示されるため、事前に設定する必要はありません。標準レポートには 24 時間の猶予を見てください。すぐに確認したい場合は、管理画面 → DebugView を開き、携帯電話でボタンをタップしてください。"
+
+msgid "In the inbox"
+msgstr "受信トレイの中"
+
+msgid "In the page <head>"
+msgstr "ページの <head> 内"
+
+msgid "In the spam folder"
+msgstr "迷惑メールフォルダーの中"
+
+msgid "Indigo"
+msgstr "インディゴ"
+
+msgid "Insert a snippet"
+msgstr "スニペットを挿入"
+
+msgid "Insert a table"
+msgstr "テーブルを挿入"
+
+msgid "Insert a table you saved earlier:"
+msgstr "以前保存したテーブルを挿入："
+
+msgid "Insert column right"
+msgstr "右に列を挿入"
+
+msgid "Insert row below"
+msgstr "下に行を挿入"
+
+msgid "Insert table"
+msgstr "テーブルを挿入"
+
+msgid "Install analytics first"
+msgstr "まず分析ツールを導入してください"
+
+msgid "Invalid code. Please try again."
+msgstr "コードが無効です。もう一度お試しください。"
+
+msgid "It continues on its own each time you open an admin page"
+msgstr "管理ページを開くたびに自動的に続きます"
+
+msgid "It failed: %s"
+msgstr "失敗しました：%s"
+
+msgid "JavaScript &amp; connections"
+msgstr "JavaScript と接続"
+
+msgid "Last confirmed %s ago — worth testing again"
+msgstr "最終確認から %s 経過 — 再テストする価値があります"
+
+msgid "Last message: #%1$d, %2$s ago."
+msgstr "最新のメッセージ：#%1$d、%2$s 前。"
+
+msgid "Last row is a total row (pinned to the bottom)"
+msgstr "最終行は合計行です（下部に固定）"
+
+msgid "Least-linked first, because the one added without your knowing is almost never the one you link to from two hundred posts. Tick what belongs and approve it; leave the rest here."
+msgstr "リンク数が最も少ないものを先頭に表示します。なぜなら、知らないうちに追加されたリンクは、200件の投稿からリンクするようなものにはほぼ該当しないからです。該当するものにチェックを入れて承認し、それ以外はここに残してください。"
+
+msgid "Leave empty and the icon follows the list colour."
+msgstr "空欄にすると、アイコンはリストの色に従います。"
+
+msgid "Leave empty to use the icon chosen above; anything pasted here replaces it. Its colour comes from the Icon colour setting below, so the fill in your SVG is ignored. Scripts and event handlers are removed."
+msgstr "空欄にすると、上で選択したアイコンが使用されます。ここに貼り付けた内容はそれを置き換えます。色は下の「アイコンの色」設定から適用されるため、あなたの SVG 内の塗りは無視されます。スクリプトとイベントハンドラーは削除されます。"
+
+msgid "Leave this empty and the message goes to the same Telegram chat as your order notifications, or by email if you have not set a bot up. Orders go to whoever packs them; this does not, so there is a field of its own."
+msgstr "これを空欄にすると、メッセージは注文通知と同じ Telegram チャットに送られます。ボットが未設定の場合はメールで送られます。注文は梱包担当者に届きますが、これは異なるため、専用のフィールドがあります。"
+
+msgid "Light"
+msgstr "ライト"
+
+msgid "Lightbox engine"
+msgstr "ライトボックスエンジン"
+
+msgid "Lines only"
+msgstr "線のみ"
+
+msgid "Link text"
+msgstr "リンクテキスト"
+
+msgid "Links"
+msgstr "リンク"
+
+msgid "Links & URLs"
+msgstr "リンクと URL"
+
+msgid "Links every image in the content together so the viewer can flip through them. If an image already links to a file, that link is used."
+msgstr "コンテンツ内のすべての画像を相互にリンクし、ビューアーでめくれるようにします。画像がすでにファイルにリンクしている場合は、そのリンクが使用されます。"
+
+msgid "Links to domains you did not approve are defused as they are printed"
+msgstr "承認していないドメインへのリンクは、出力時に無効化されます"
+
+msgid "Load CSS without blocking render"
+msgstr "レンダリングをブロックせずに CSS を読み込む"
+
+msgid "Load more icons"
+msgstr "アイコンをさらに読み込む"
+
+msgid "Loading…"
+msgstr "読み込み中…"
+
+msgid "Loads a script or an embedded frame from this domain"
+msgstr "このドメインからスクリプトまたは埋め込みフレームを読み込みます"
+
+msgid "Loads stylesheets without blocking the first paint (the media-toggle technique), so the page appears on screen sooner. A big win for First Contentful Paint and Lighthouse’s “Eliminate render-blocking resources”."
+msgstr "最初の描画をブロックせずにスタイルシートを読み込みます（メディア切り替え手法）。これによりページがより早く画面に表示されます。First Contentful Paint と Lighthouse の「レンダリングを妨げるリソースの除外」に大きく貢献します。"
+
+msgid "Lock content"
+msgstr "コンテンツをロック"
+
+msgid "Locked yourself out? Log in from a different network (e.g. your phone on mobile data = a different IP), then click the button above to clear all lockouts — or just wait for the lockout time to pass. As a last resort, disable the plugin by renaming its folder via FTP."
+msgstr "自分自身をロックアウトしてしまいましたか？別のネットワークからログインしてください（例：携帯回線を使ったスマートフォン = 別の IP）。その後、上のボタンをクリックしてすべてのロックアウトを解除するか、ロックアウト時間が過ぎるのを待ってください。最終手段として、FTP でプラグインフォルダーの名前を変更してプラグインを無効化してください。"
+
+msgid "Lockout length"
+msgstr "ロックアウトの長さ"
+
+msgid "Lockout time unit"
+msgstr "ロックアウト時間の単位"
+
+msgid "Login lockout, two-factor, reCAPTCHA and the login page."
+msgstr "ログインロックアウト、二段階認証、reCAPTCHA、ログインページです。"
+
+msgid "Login page"
+msgstr "ログインページ"
+
+msgid "Longest answer to publish (characters)"
+msgstr "公開する回答の最大文字数"
+
+msgid "Look down this page, deal with anything that makes you stop, and use “Approve everything” below for the rest — what matters is having a baseline, so that tomorrow’s arrival stands out against it."
+msgstr "このページを一通り確認し、立ち止まったものにはすべて対処し、それ以外は下の「すべて承認」を使用してください — 重要なのは基準を作ることです。そうすれば、明日到着するものはそれと比較して際立ちます。"
+
+msgid "Loop back to the first image"
+msgstr "最初の画像に戻ってループ"
+
+msgid "Lost your device?"
+msgstr "デバイスを紛失しましたか？"
+
+msgid "Mail from this site is known to arrive"
+msgstr "このサイトからのメールが届くことは確認済みです"
+
+msgid "Mail from this site leaves by %1$s, and that address is known as %2$s."
+msgstr "このサイトからのメールは %1$s 経由で送信され、そのアドレスは %2$s として知られています。"
+
+msgid "Mail this site sends as %s is treated as forged. Your domain publishes a list of servers allowed to send for it, that list ends in “reject everything else”, and this web server is not on it."
+msgstr "このサイトが %s として送信するメールは偽装として扱われます。あなたのドメインは、代理送信を許可するサーバーのリストを公開しており、そのリストは「それ以外はすべて拒否」で終わっていますが、この Web サーバーはそのリストに含まれていません。"
+
+msgid "Maintenance (503)"
+msgstr "メンテナンス（503）"
+
+msgid "Maintenance 503"
+msgstr "メンテナンス 503"
+
+msgid "Measurement"
+msgstr "測定"
+
+msgid "Merge cells: type #colspan# to merge into the cell on the left, #rowspan# to merge into the cell above. Formulas: =SUM(B2:B10), also AVG / MIN / MAX."
+msgstr "セルの結合：#colspan# を入力すると左のセルと結合、#rowspan# を入力すると上のセルと結合します。数式：=SUM(B2:B10)、AVG／MIN／MAX にも対応。"
+
+msgid "Microsoft has been switching this off for new tenants; if it refuses to authenticate, that is why, and another service is the quicker road."
+msgstr "Microsoft は新規テナントに対してこれを段階的に無効化しています。認証が拒否される場合はこれが理由であり、別のサービスの方が早い解決策です。"
+
+msgid "Minimal"
+msgstr "ミニマル"
+
+msgid "Minimum number of questions"
+msgstr "最低質問数"
+
+msgid "Minute(s)"
+msgstr "分"
+
+msgid "Mode"
+msgstr "モード"
+
+msgid "Move column left"
+msgstr "列を左へ移動"
+
+msgid "Move column right"
+msgstr "列を右へ移動"
+
+msgid "Move row down"
+msgstr "行を下へ移動"
+
+msgid "Move row up"
+msgstr "行を上へ移動"
+
+msgid "NOT APPROVED: %s"
+msgstr "未承認：%s"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "Native image lazy-load + async decode"
+msgstr "ネイティブ画像遅延読み込み + 非同期デコード"
+
+msgid "New"
+msgstr "新規"
+
+msgid "Next"
+msgstr "次へ"
+
+msgid "Next beat due: %s"
+msgstr "次のビート予定：%s"
+
+msgid "Next one due %s."
+msgstr "次回は %s に予定されています。"
+
+msgid "No FAQ section recognised in this post."
+msgstr "この投稿では FAQ セクションが認識されませんでした。"
+
+msgid "No Google Analytics tag turned up, either in your settings or on the home page. If you have not installed one yet, Site Kit by Google (or any GA4 plugin) is the usual way. If you know you do have one — added through Tag Manager, a caching layer, or a consent tool that loads it later — this check simply could not see it: switch the setting on anyway. It looks for analytics at the moment of the click, not now, so it starts working the instant a tag is present."
+msgstr "設定にもホームページにも Google アナリティクスのタグが見つかりませんでした。まだ導入していない場合は、Site Kit by Google（または任意の GA4 プラグイン）が一般的な方法です。導入済みであることをご存じの場合 — Tag Manager、キャッシュ層、後から読み込む同意ツールなどを介して追加した場合 — この確認では単に検出できなかっただけです。それでも設定はオンにしてください。分析ツールはクリックの瞬間に探すため、今この瞬間ではなく、タグが存在すればすぐに機能し始めます。"
+
+msgid "No Telegram bot token is set yet (WooCommerce module)."
+msgstr "Telegram ボットのトークンがまだ設定されていません（WooCommerce モジュール）。"
+
+msgid "No auto-refresh"
+msgstr "自動更新なし"
+
+msgid "No caption"
+msgstr "キャプションなし"
+
+msgid "No copy on disk yet — it is written the first time you confirm something"
+msgstr "ディスク上にコピーはまだありません — 何かを最初に確認したときに書き込まれます"
+
+msgid "No downloadable secrets in the site folder"
+msgstr "サイトフォルダー内にダウンロード可能な機密情報はありません"
+
+msgid "No matching rows."
+msgstr "一致する行がありません。"
+
+msgid "No message containing %s yet. Send that exact code to the bot, then press this again."
+msgstr "%s を含むメッセージはまだありません。その正確なコードをボットに送信し、再度これを押してください。"
+
+msgid "No post titles here on purpose — this list is long, and looking up a title for every row is what made this screen slow. Tick anything you want to take back and press the button; it moves up to “Waiting for you” with its posts listed."
+msgstr "意図的にここには投稿タイトルを表示していません — このリストは長く、行ごとにタイトルを検索することがこの画面を遅くしていた原因です。取り戻したい項目にチェックを入れてボタンを押すと、投稿一覧とともに「対応待ち」に戻ります。"
+
+msgid "No saved tables yet."
+msgstr "保存されたテーブルはまだありません。"
+
+msgid "No scripts found."
+msgstr "スクリプトは見つかりませんでした。"
+
+msgid "No snippet matches your search."
+msgstr "検索条件に一致するスニペットはありません。"
+
+msgid "No snippets yet — create them on the Shortcode screen."
+msgstr "スニペットはまだありません — Shortcode 画面で作成してください。"
+
+msgid "No table yet."
+msgstr "テーブルはまだありません。"
+
+msgid "No tables yet. Click “Add new table” to create your first one."
+msgstr "テーブルはまだありません。「新しいテーブルを追加」をクリックして最初のテーブルを作成してください。"
+
+msgid "Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it."
+msgstr "誰もクリックできません。より厳格で、支障が出る可能性も高くなります — リンクするつもりでチェックを忘れたドメインは、チェックするまでリンクではなくなります。"
+
+msgid "Nobody has ever checked that mail from this site arrives"
+msgstr "このサイトからのメールが届くかどうか、誰も確認したことがありません"
+
+msgid "None (instant)"
+msgstr "なし（即時）"
+
+msgid "Not allowed."
+msgstr "許可されていません。"
+
+msgid "Not due yet."
+msgstr "まだ予定時刻ではありません。"
+
+msgid "Not your normal password — Google requires an app password, and the page that makes them only appears once two-step verification is on."
+msgstr "通常のパスワードではありません — Google はアプリパスワードを要求しており、それを作成するページは二段階認証がオンになって初めて表示されます。"
+
+msgid "Nothing accepts mail for %s, so any address at your own domain cannot receive replies. If you have stopped paying for a mailbox provider, its records may still be pointing there."
+msgstr "%s 宛のメールを受け取るものが何もないため、あなた自身のドメインのどのアドレスも返信を受け取れません。メールボックスのプロバイダーへの支払いを停止した場合、そのレコードがまだそこを指している可能性があります。"
+
+msgid "Nothing in DNS can change this. Send through an email service instead — those use a different port, which is open."
+msgstr "DNS ではこれを変更できません。代わりにメールサービス経由で送信してください — それらは開放されている別のポートを使用します。"
+
+msgid "Nothing matches that."
+msgstr "それに一致するものはありません。"
+
+msgid "Nothing running on this server can find out whether a message arrived. You can. Send one, look, and say what you found — the answer is kept with the date, so this screen can afterwards report something that was seen rather than something that was switched on."
+msgstr "このサーバー上で動いているものは、メッセージが届いたかどうかを知る手段を持ちません。しかし、あなたにはそれができます。1通送って確認し、何がわかったかをお伝えください — その回答は日付とともに保存され、この画面はその後、単に有効化されたことではなく、実際に確認されたことを報告できるようになります。"
+
+msgid "Nothing to preview yet."
+msgstr "プレビューする内容はまだありません。"
+
+msgid "Nothing to send."
+msgstr "送信するものがありません。"
+
+msgid "Nothing to set up"
+msgstr "設定は不要です"
+
+msgid "Nothing was ticked, so nothing changed."
+msgstr "何もチェックされなかったため、何も変わりませんでした。"
+
+msgid "Nothing — just tell me"
+msgstr "特にありません — ただ知らせてください"
+
+msgid "Nothing. Every domain your content points at is one you have agreed to."
+msgstr "何もありません。あなたのコンテンツが指し示すすべてのドメインは、あなたが同意したものです。"
+
+msgid "Notification bar"
+msgstr "通知バー"
+
+msgid "Nowhere — it never came"
+msgstr "どこにも — 一度も届いていません"
+
+msgid "On the code screen the user can have a one-time code emailed to their account address if they lose their phone."
+msgstr "コード画面では、携帯電話を紛失した場合にユーザーがアカウントのアドレス宛にワンタイムコードをメールで受け取ることができます。"
+
+msgid "One click for the safe, high-impact speed features — including delaying third-party scripts and deferring JavaScript. It deliberately leaves out the advanced, riskier options (async CSS, the aggressive “delay all” mode), which you can still turn on yourself later. Gutenberg and Classic CSS are left alone, since removing those can change how a theme looks."
+msgstr "安全で効果の高い速度向上機能をワンクリックで有効にします — サードパーティ製スクリプトの遅延や JavaScript の延期を含みます。より高度でリスクの高いオプション（非同期 CSS、積極的な「すべて遅延」モード）は意図的に除外されており、後からご自身で有効にすることができます。Gutenberg と Classic CSS はそのままにされます。これらを取り除くとテーマの見た目が変わる可能性があるためです。"
+
+msgid "One half is in the database — still safe, but tidy it up"
+msgstr "半分はデータベースにあります — まだ安全ですが、整理する価値があります"
+
+msgid "One of your buttons is set to Skype. Microsoft closed Skype on 5 May 2025 and moved everyone to Teams, so that button now opens nothing for visitors. Change it to another channel — it has been left in place rather than removed for you, so that nothing changes on your site without your say-so."
+msgstr "あなたのボタンの1つが Skype に設定されています。Microsoft は 2025 年 5 月 5 日に Skype を終了し、全員を Teams に移行させたため、そのボタンは訪問者に対して何も開かなくなっています。別のチャネルに変更してください — これはあなたの許可なくサイト上で何も変わらないよう、削除ではなくそのまま残してあります。"
+
+msgid "One-click safe speed setup"
+msgstr "ワンクリックの安全な速度設定"
+
+msgid "Only %1$d question found; at least %2$d are needed before schema is published."
+msgstr "%1$d 件の質問しか見つかりませんでした。スキーマを公開するには少なくとも %2$d 件が必要です。"
+
+msgid "Only a full administrator may use PHP snippets."
+msgstr "フル権限の管理者のみが PHP スニペットを使用できます。"
+
+msgid "Only add hosts the page really uses. Preconnecting to a host you do not load from wastes a connection."
+msgstr "ページが実際に使用しているホストのみを追加してください。読み込んでいないホストへの事前接続は、接続を無駄にします。"
+
+msgid "Only affects enqueued stylesheets, and only for logged-out visitors. A fallback keeps every stylesheet working when JavaScript is turned off."
+msgstr "エンキューされたスタイルシートにのみ影響し、対象はログアウトした訪問者のみです。JavaScript がオフのときは、フォールバックによりすべてのスタイルシートが機能し続けます。"
+
+msgid "Only for a custom icon: click the SVG box below, then"
+msgstr "カスタムアイコン専用：下の SVG ボックスをクリックし、その後"
+
+msgid "Only in the post editor (autosave/locking)"
+msgstr "投稿エディター内のみ（自動保存／ロック）"
+
+msgid "Only in these category IDs"
+msgstr "これらのカテゴリー ID 内のみ"
+
+msgid "Only the backup route worked — your main channel is down"
+msgstr "バックアップ経路のみ成功しました — メインチャネルはダウンしています"
+
+msgid "Only the ticked ones on this page (%d)"
+msgstr "このページでチェックされたものだけ（%d 件）"
+
+msgid "Only where I place its shortcode"
+msgstr "そのショートコードを配置した場所のみ"
+
+msgid "Open a couple and glance at them. “Still fine” only resets the clock; it does not change what is approved."
+msgstr "いくつか開いてざっと確認してください。「まだ問題なし」はタイマーをリセットするだけで、承認内容自体は変更しません。"
+
+msgid "Open animation"
+msgstr "開くアニメーション"
+
+msgid "Optimisation"
+msgstr "最適化"
+
+msgid "Optional: in Admin → Events, switch on \"Mark as key event\" for the channels that matter to you. They then appear in the acquisition reports, so you can see which traffic source produces contacts, and they can be imported into Google Ads as a conversion."
+msgstr "任意：管理画面 → イベントで、重要なチャネルについて「主要イベントとしてマーク」をオンにしてください。すると獲得レポートに表示されるようになり、どのトラフィックソースが問い合わせを生んでいるかがわかります。また、Google 広告にコンバージョンとしてインポートすることもできます。"
+
+msgid "Or enter this key manually:"
+msgstr "またはこのキーを手動で入力してください："
+
+msgid "Orange"
+msgstr "オレンジ"
+
+msgid "Outbound links"
+msgstr "外部リンク"
+
+msgid "Outbound links are watched"
+msgstr "外部リンクを監視中"
+
+msgid "Outbound links screen — choose what should happen to them"
+msgstr "外部リンク画面 — それらに対して行う処理を選択してください"
+
+msgid "Overdue — nothing has been running the schedule"
+msgstr "期限超過 — スケジュールが実行されていません"
+
+msgid "PHP editing unlocked for %d minutes."
+msgstr "PHP の編集が %d 分間ロック解除されました。"
+
+msgid "PHP errors: server paths, fragments of queries, sometimes the contents of a failed request."
+msgstr "PHP エラー：サーバーのパス、クエリの断片、失敗したリクエストの内容が含まれることもあります。"
+
+msgid "PHP runs with full access to your site, so it stays locked. Enter a current code from your authenticator to unlock it for 15 minutes."
+msgstr "PHP はサイトへの完全なアクセス権で動作するため、ロックされたままです。認証アプリの現在のコードを入力して 15 分間ロック解除してください。"
+
+msgid "PHP snippets are not available."
+msgstr "PHP スニペットは利用できません。"
+
+msgid "PHP snippets are switched off by HORSETOOLS_NO_PHP in wp-config.php."
+msgstr "PHP スニペットは wp-config.php の HORSETOOLS_NO_PHP によって無効化されています。"
+
+msgid "PHP snippets are unavailable because this site sets DISALLOW_FILE_MODS — the platform does not allow code changes at all."
+msgstr "このサイトは DISALLOW_FILE_MODS を設定しているため、PHP スニペットは利用できません — プラットフォーム自体がコードの変更を一切許可していません。"
+
+msgid "PHP syntax error — nothing was saved: %s"
+msgstr "PHP 構文エラー — 何も保存されませんでした：%s"
+
+msgid "Page %1$d of %2$d"
+msgstr "%1$d ページ目／全 %2$d ページ"
+
+msgid "Pagination"
+msgstr "ページネーション"
+
+msgid "Panel layout"
+msgstr "パネルのレイアウト"
+
+msgid "Password or app password"
+msgstr "パスワードまたはアプリパスワード"
+
+msgid "Paste a Google Sheets link (shared: anyone with the link)"
+msgstr "Google スプレッドシートのリンクを貼り付け（共有：リンクを知っている全員）"
+
+msgid "Paste all eight lines into wp-config.php, above the line that requires wp-settings.php. Replace any existing lines with the same names. Everyone signed in — including you — will be signed out afterwards, which is the point: it invalidates every cookie issued with the old keys."
+msgstr "8行すべてを wp-config.php に、wp-settings.php を require している行の上に貼り付けてください。同じ名前の既存の行があれば置き換えてください。あなたを含め、ログイン中の全員がその後ログアウトされます。これは意図的な動作です — 古いキーで発行されたすべての Cookie を無効化します。"
+
+msgid "Paste from Excel"
+msgstr "Excel から貼り付け"
+
+msgid "Paste the eight keys into wp-config.php — see the notice at the top of any Horse Tools screen"
+msgstr "8つのキーを wp-config.php に貼り付けてください — 任意の Horse Tools 画面の上部にある通知をご覧ください"
+
+msgid "Permalinks, image alt text, external links and FAQ schema."
+msgstr "パーマリンク、画像の代替テキスト、外部リンク、FAQ スキーマです。"
+
+msgid "Phone number"
+msgstr "電話番号"
+
+msgid "Phone, SMS, Messenger, Telegram, Zalo, Whatsapp, Viber, Skype, Tiktok, Mail:"
+msgstr "電話、SMS、Messenger、Telegram、Zalo、Whatsapp、Viber、Skype、Tiktok、メール："
+
+msgid "PhotoSwipe — best pinch-zoom / pan for photos"
+msgstr "PhotoSwipe — 写真に最適なピンチズーム／パン"
+
+msgid "Phrases that mark the FAQ section"
+msgstr "FAQ セクションを示すフレーズ"
+
+msgid "Pick a button skin"
+msgstr "ボタンのスキンを選択"
+
+msgid "Pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically — no icon needed."
+msgstr "チャネル（Zalo、Messenger、電話…）を選ぶとロゴが自動的に追加されます — アイコンは不要です。"
+
+msgid "Pick a snippet to insert"
+msgstr "挿入するスニペットを選択"
+
+msgid "Pink"
+msgstr "ピンク"
+
+msgid "Plugin settings"
+msgstr "プラグイン設定"
+
+msgid "Policy link text (default: Policy)"
+msgstr "ポリシーリンクのテキスト（既定：ポリシー）"
+
+msgid "Pop"
+msgstr "ポップ"
+
+msgid "Popup"
+msgstr "ポップアップ"
+
+msgid "Post images, duplicating posts and the image lightbox."
+msgstr "投稿画像、投稿の複製、画像ライトボックスです。"
+
+msgid "Posts"
+msgstr "投稿"
+
+msgid "Posts and pages"
+msgstr "投稿と固定ページ"
+
+msgid "Posts only"
+msgstr "投稿のみ"
+
+msgid "Preconnect to third-party hosts"
+msgstr "サードパーティホストへの事前接続"
+
+msgid "Preload critical assets"
+msgstr "重要なアセットの事前読み込み"
+
+msgid "Previous"
+msgstr "前へ"
+
+msgid "Print"
+msgstr "印刷"
+
+msgid "Protection"
+msgstr "保護"
+
+msgid "Prove it"
+msgstr "証明してください"
+
+msgid "Publish FAQ schema automatically from the FAQ section in a post"
+msgstr "投稿内の FAQ セクションから FAQ スキーマを自動的に公開する"
+
+msgid "Publishes the server configuration, paths and loaded modules."
+msgstr "サーバー構成、パス、読み込み済みモジュールを公開します。"
+
+msgid "Pull data"
+msgstr "データを取得"
+
+msgid "Question"
+msgstr "質問"
+
+msgid "Quick guide — how the chat feature works"
+msgstr "クイックガイド — チャット機能の仕組み"
+
+msgid "Read all my content again"
+msgstr "すべてのコンテンツを再読み込み"
+
+msgid "Read the records again"
+msgstr "レコードを再読み込み"
+
+msgid "Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see."
+msgstr "これらは結果ではなく意図として捉えてください：タップは誰かがダイヤラーやチャットアプリを開いたことを意味し、通話がつながったりメッセージが送信されたりしたことを意味するわけではありません。広告ブロッカーも一部のクリックが Analytics に届くのを妨げるため、実際の数値は表示されている数値よりわずかに多くなります。"
+
+msgid "Reading your content: %1$d of %2$d"
+msgstr "コンテンツを読み込み中：%1$d／%2$d"
+
+msgid "Reading your content…"
+msgstr "コンテンツを読み込み中…"
+
+msgid "Reading…"
+msgstr "読み込み中…"
+
+msgid "Reads the “frequently asked questions” part your posts already have — a heading that names the section, then one heading per question with its answer below — and publishes the matching JSON-LD so Google can show them as FAQ rich results. Nothing in your posts is changed. If another SEO plugin already publishes FAQ schema for a post, Horse Tools stays out of the way."
+msgstr "投稿にすでにある「よくある質問」の部分を読み取ります — セクションを示す見出しがあり、その後に質問ごとの見出しとその下の回答が続く形式です。それに対応する JSON-LD を公開し、Google が FAQ のリッチリザルトとして表示できるようにします。投稿の内容自体は一切変更されません。別の SEO プラグインがすでに投稿の FAQ スキーマを公開している場合、Horse Tools は関与しません。"
+
+msgid "Record contact button clicks"
+msgstr "連絡先ボタンのクリックを記録"
+
+msgid "Redirects (301)"
+msgstr "リダイレクト（301）"
+
+msgid "Redirects 301"
+msgstr "リダイレクト 301"
+
+msgid "Refresh daily"
+msgstr "毎日更新"
+
+msgid "Refresh hourly"
+msgstr "毎時更新"
+
+msgid "Removed something from a post and it is still listed here? The lists only grow as your content is read, and a post that no longer contains something cannot say so. Read everything again and the lists will match what is actually there now."
+msgstr "投稿から何かを削除したのに、まだここに表示されていますか？リストはコンテンツが読み取られるたびに増えるだけであり、何かを含まなくなった投稿はそれを伝えることができません。すべてを再度読み込めば、リストは実際の状態と一致します。"
+
+msgid "Removes the admin icon font (Dashicons) on the front-end for logged-out visitors, who never see it. It is kept for logged-in users because the admin bar uses it."
+msgstr "ログアウトした訪問者向けにフロントエンドの管理アイコンフォント（Dashicons）を削除します。彼らはそれを目にすることがないためです。ログイン中のユーザーには、管理バーがそれを使用するため保持されます。"
+
+msgid "Reset all login lockouts now"
+msgstr "すべてのログインロックアウトを今すぐリセット"
+
+msgid "Review the list"
+msgstr "リストを確認"
+
+msgid "Rich results"
+msgstr "リッチリザルト"
+
+msgid "Right now these would go to: %s"
+msgstr "現在、これらは次の宛先に送られます：%s"
+
+msgid "Roles, avatars, SMTP and signing in with Google."
+msgstr "役割、アバター、SMTP、Google でのサインインです。"
+
+msgid "Rotate in"
+msgstr "回転して表示"
+
+msgid "Row-number column"
+msgstr "行番号列"
+
+msgid "Rows"
+msgstr "行"
+
+msgid "Rows/page"
+msgstr "1ページあたりの行数"
+
+msgid "Run this snippet as PHP"
+msgstr "このスニペットを PHP として実行"
+
+msgid "SAVE FONT SETTINGS"
+msgstr "フォント設定を保存"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "SMTP key"
+msgstr "SMTP キー"
+
+msgid "SMTP password"
+msgstr "SMTP パスワード"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Save a table"
+msgstr "テーブルを保存"
+
+msgid "Save table"
+msgstr "テーブルを保存"
+
+msgid "Save these one-time backup codes somewhere safe — each works once if you lose your phone:"
+msgstr "これらのワンタイムバックアップコードを安全な場所に保存してください — 携帯電話を紛失した場合、それぞれ1回使用できます："
+
+msgid "Save this choice"
+msgstr "この選択を保存"
+
+msgid "Saved tables"
+msgstr "保存済みのテーブル"
+
+msgid "Saved. Everything found so far is approved."
+msgstr "保存しました。これまでに見つかったものはすべて承認されています。"
+
+msgid "Scan failed."
+msgstr "スキャンに失敗しました。"
+
+msgid "Scan the scripts running on the home page"
+msgstr "ホームページで実行中のスクリプトをスキャン"
+
+msgid "Scan the whole site"
+msgstr "サイト全体をスキャン"
+
+msgid "Scan this with Google Authenticator, Authy or a similar app, then enter the 6-digit code it shows to turn 2FA on."
+msgstr "これを Google Authenticator、Authy、または類似のアプリでスキャンし、表示された 6 桁のコードを入力して 2FA をオンにしてください。"
+
+msgid "Scanning…"
+msgstr "スキャン中…"
+
+msgid "Scripts to exclude from defer (one per line — a script handle or part of its URL)"
+msgstr "遅延から除外するスクリプト（1 行に 1 つ — スクリプトハンドルまたは URL の一部）"
+
+msgid "Scripts, styles, lazy loading, image compression and WebP."
+msgstr "スクリプト、スタイル、遅延読み込み、画像圧縮、WebP です。"
+
+msgid "Search all plugin features…"
+msgstr "すべてのプラグイン機能を検索…"
+
+msgid "Search box"
+msgstr "検索ボックス"
+
+msgid "Search by name…"
+msgstr "名前で検索…"
+
+msgid "Search snippets by name, description or tag…"
+msgstr "名前、説明、タグでスニペットを検索…"
+
+msgid "Search the table…"
+msgstr "テーブルを検索…"
+
+msgid "Search: cart, gift, phone… (English name, or Vietnamese for popular icons)"
+msgstr "検索：cart、gift、phone…（英語名、または人気アイコンについてはベトナム語）"
+
+msgid "Seconds to wait, or scroll percent (used by the two options above)"
+msgstr "待機する秒数、またはスクロール率（上の2つのオプションで使用）"
+
+msgid "Security question on the login form"
+msgstr "ログインフォームのセキュリティ質問"
+
+msgid "Security tab → Check-in → turn on the regular message"
+msgstr "「セキュリティ」タブ → チェックイン → 定期メッセージをオンにする"
+
+msgid "See the GitHub release page for details."
+msgstr "詳細は GitHub のリリースページをご覧ください。"
+
+msgid "See the banner at the top of any Horse Tools screen"
+msgstr "任意の Horse Tools 画面の上部にあるバナーをご覧ください"
+
+msgid "Select a snippet"
+msgstr "スニペットを選択"
+
+msgid "Send a Telegram code"
+msgstr "Telegram コードを送信"
+
+msgid "Send a test"
+msgstr "テストを送信"
+
+msgid "Send a test message"
+msgstr "テストメッセージを送信"
+
+msgid "Send a test message now"
+msgstr "今すぐテストメッセージを送信"
+
+msgid "Send as the same address you sign in with. This service refuses anything else."
+msgstr "ログインに使用している同じアドレスとして送信してください。このサービスはそれ以外を拒否します。"
+
+msgid "Send me a regular check-in message"
+msgstr "定期的なチェックインメッセージを送信する"
+
+msgid "Send through an email service instead — then the question does not arise."
+msgstr "代わりにメールサービス経由で送信してください — そうすればこの問題は発生しません。"
+
+msgid "Send through an email service that is on the list, or add this server to it."
+msgstr "リストに載っているメールサービス経由で送信するか、このサーバーをリストに追加してください。"
+
+msgid "Send through an email service that is on the list."
+msgstr "リストに載っているメールサービス経由で送信してください。"
+
+msgid "Sending…"
+msgstr "送信中…"
+
+msgid "Sends one event to your analytics each time a visitor taps a contact link — phone, SMS, email, Zalo, Messenger, Telegram, WhatsApp, Viber, Line, WeChat, TikTok, Maps and the rest. Any other chat button is recorded under its own site name, so Instagram, Shopee, Signal and anything you add later are covered without waiting for an update. Phone, SMS, email and Viber links count anywhere on the site, including inside your posts; the others count inside the chat widgets, so an article full of outbound links does not flood the report. Nothing is stored on your site and no personal data is involved."
+msgstr "訪問者が連絡先リンク — 電話、SMS、メール、Zalo、Messenger、Telegram、WhatsApp、Viber、Line、WeChat、TikTok、地図など — をタップするたびに、分析ツールへ1つのイベントを送信します。それ以外のチャットボタンもそれぞれのサイト名の下で記録されるため、Instagram、Shopee、Signal、そして今後追加されるものも、更新を待たずに対応できます。電話、SMS、メール、Viber のリンクは、投稿内も含めサイト内のどこでもカウントされます。それ以外はチャットウィジェット内でのみカウントされるため、外部リンクが多い記事がレポートを埋め尽くすことはありません。サイトには何も保存されず、個人データも一切関与しません。"
+
+msgid "Sent to %s. Now go and look — and do not close this page, because the useful part is what you find."
+msgstr "%s へ送信しました。今すぐ確認してください — このページは閉じないでください。有用なのは、あなたが確認した結果だからです。"
+
+msgid "Sent. Check %s — if nothing arrives, the channel is not working even though the site thinks it is."
+msgstr "送信しました。%s を確認してください — 何も届かない場合、サイトは正常だと判断していても、そのチャネルは機能していません。"
+
+msgid "Sent: %s"
+msgstr "送信済み：%s"
+
+msgid "Server errors, including absolute paths."
+msgstr "絶対パスを含む、サーバーエラーです。"
+
+msgid "Service"
+msgstr "サービス"
+
+msgid "Services panel (mobile)"
+msgstr "サービスパネル（モバイル）"
+
+msgid "Settings are grouped by what they do. Pick a group below, or search for a setting by name in the panel on the right."
+msgstr "設定はその機能ごとにグループ化されています。下でグループを選択するか、右側のパネルで名前による設定の検索を行ってください。"
+
+msgid "Settings → WooCommerce → “Configure order notifications to be sent to Telegram”"
+msgstr "設定 → WooCommerce → 「Telegram に送信する注文通知を設定」"
+
+msgid "Sharpen (blur to clear)"
+msgstr "シャープ化（ぼかしから鮮明へ）"
+
+msgid "Show a “Decline” button"
+msgstr "「拒否」ボタンを表示"
+
+msgid "Show columns"
+msgstr "列を表示"
+
+msgid "Show new keys to paste"
+msgstr "貼り付け用の新しいキーを表示"
+
+msgid "Showing the first %1$d of %2$d — keep typing to narrow it down."
+msgstr "最初の %1$d 件／全 %2$d 件を表示中 — 絞り込むには入力を続けてください。"
+
+msgid "Shows a small cookie notice in the corner so your site meets privacy rules. To use: turn on the switch, type the notice and your policy-page link, then choose which side it appears on."
+msgstr "隅に小さなクッキー通知を表示し、プライバシー規則にサイトを準拠させます。使い方：スイッチをオンにし、通知文とポリシーページへのリンクを入力し、それが表示される側を選択してください。"
+
+msgid "Shows a thin notice bar across the very top of every page — handy for a promotion, a hotline, or a delivery note. To use: turn on the switch, type your message, then choose the background colour."
+msgstr "各ページの最上部に細い通知バーを表示します — プロモーション、ホットライン、配送に関する案内などに便利です。使い方：スイッチをオンにし、メッセージを入力し、背景色を選択してください。"
+
+msgid "Shows an eye-catching popup in the middle of the screen when someone opens your site — great for a sale, an announcement or a poster. To use: turn on the switch, pick a layout below, add an image / title / content, then set how many hours before it shows again."
+msgstr "誰かがサイトを開いたときに、画面中央に目を引くポップアップを表示します — セール、告知、ポスターなどに最適です。使い方：スイッチをオンにし、下でレイアウトを選択し、画像／タイトル／内容を追加し、再表示までの時間（時間単位）を設定してください。"
+
+msgid "Side of the site"
+msgstr "サイトの側"
+
+msgid "Signature"
+msgstr "署名"
+
+msgid "Signing keys are in wp-config.php, not the database"
+msgstr "署名キーはデータベースではなく wp-config.php にあります"
+
+msgid "Site"
+msgstr "サイト"
+
+msgid "Site is behind Cloudflare or a proxy (use the real visitor IP)"
+msgstr "サイトは Cloudflare またはプロキシの背後にあります（実際の訪問者 IP を使用）"
+
+msgid "Site search"
+msgstr "サイト内検索"
+
+msgid "Size"
+msgstr "サイズ"
+
+msgid "Skype (service closed)"
+msgstr "Skype（サービス終了）"
+
+msgid "Slide"
+msgstr "スライド"
+
+msgid "Slide down"
+msgstr "下へスライド"
+
+msgid "Slide in from left"
+msgstr "左からスライドイン"
+
+msgid "Slide in from right"
+msgstr "右からスライドイン"
+
+msgid "Slide transition (GLightbox)"
+msgstr "スライド遷移（GLightbox）"
+
+msgid "Slide up"
+msgstr "上へスライド"
+
+msgid "Slow down to 60 seconds (safe)"
+msgstr "60 秒まで速度を落とす（安全）"
+
+msgid "Snippets"
+msgstr "スニペット"
+
+msgid "So this sends you a short message on a schedule, with a number on it, even when everything is fine. Numbers that skip mean messages were sent and never reached you. A message that arrives late means nothing was running the schedule. Nothing at all means something stopped it — and that is the one you can only notice from outside the site, which is why each message tells you when to expect the next."
+msgstr "これにより、問題がなくてもスケジュールに従って番号付きの短いメッセージが届きます。番号が飛んでいる場合、メッセージは送信されたもののあなたには届かなかったことを意味します。メッセージが遅れて届く場合、スケジュールが実行されていなかったことを意味します。何も届かない場合は何かがそれを止めていることを意味します — これはサイトの外からしか気づけないことであり、だからこそ各メッセージは次をいつ期待すべきかを伝えます。"
+
+msgid "Soft pastel"
+msgstr "ソフトパステル"
+
+msgid "Somebody has asked for this path %d times."
+msgstr "このパスは %d 回リクエストされています。"
+
+msgid "Something changed what you approved, without going through this screen."
+msgstr "この画面を経由せずに、承認内容が変更されました。"
+
+msgid "Something changed — see the notice on any Horse Tools screen"
+msgstr "何かが変更されました — 任意の Horse Tools 画面の通知をご覧ください"
+
+msgid "Something went wrong. Please try again."
+msgstr "問題が発生しました。もう一度お試しください。"
+
+msgid "Sortable columns"
+msgstr "並べ替え可能な列"
+
+msgid "Sorting, search and pagination appear on the published page."
+msgstr "並べ替え、検索、ページネーションは公開されたページに表示されます。"
+
+msgid "Speed"
+msgstr "速度"
+
+msgid "Spots visitors who have an ad-blocker turned on and shows them a message asking to switch it off. To use: turn on the switch, type a title and message, then pick the button colours below."
+msgstr "広告ブロッカーをオンにしている訪問者を検出し、オフにするよう求めるメッセージを表示します。使い方：スイッチをオンにし、タイトルとメッセージを入力し、下でボタンの色を選択してください。"
+
+msgid "Stack into cards on mobile"
+msgstr "モバイルではカード形式で積み重ねる"
+
+msgid "Start fetching a few important files immediately (the LCP image, a web font, the main CSS). The type is detected from the file extension. Do not preload many files — it competes with everything else for bandwidth."
+msgstr "いくつかの重要なファイル（LCP 画像、Web フォント、メインの CSS）を即座に取得し始めます。種類はファイル拡張子から判定されます。ファイルを多数事前読み込みしないでください — 他のすべてと帯域を奪い合うことになります。"
+
+msgid "Starting…"
+msgstr "開始中…"
+
+msgid "Status"
+msgstr "ステータス"
+
+msgid "Step 1 —"
+msgstr "手順 1 —"
+
+msgid "Step 2 —"
+msgstr "手順 2 —"
+
+msgid "Step 3 —"
+msgstr "手順 3 —"
+
+msgid "Still reading your content"
+msgstr "コンテンツを読み込み中です"
+
+msgid "Still reading your content. Come back in a minute."
+msgstr "コンテンツをまだ読み込んでいます。少し経ってから戻ってきてください。"
+
+msgid "Still reading your content: %1$d of %2$d. Come back in a minute."
+msgstr "コンテンツを読み込み中：%1$d／%2$d。少し経ってから戻ってきてください。"
+
+msgid "Striped rows"
+msgstr "縞模様の行"
+
+msgid "Style"
+msgstr "スタイル"
+
+msgid "Stylesheets to keep render-blocking (one per line — a handle or part of the URL). Put your main theme CSS here if you don’t have critical CSS yet."
+msgstr "レンダリングをブロックしたままにするスタイルシート（1 行に 1 つ — ハンドルまたは URL の一部）。クリティカル CSS がまだない場合は、ここにメインテーマの CSS を指定してください。"
+
+msgid "Swing"
+msgstr "スイング"
+
+msgid "Switch on Horse Tools two-factor authentication (Security tab) before using PHP snippets."
+msgstr "PHP スニペットを使用する前に、Horse Tools の二段階認証（「セキュリティ」タブ）をオンにしてください。"
+
+msgid "Sync from Sheet"
+msgstr "シートから同期"
+
+msgid "Synced"
+msgstr "同期済み"
+
+msgid "Syncing…"
+msgstr "同期中…"
+
+msgid "THEY DO NOT — something changed them without going through the screens"
+msgstr "一致していません — この画面を経由せずに何かがそれらを変更しました"
+
+msgid "Table"
+msgstr "テーブル"
+
+msgid "Table %d"
+msgstr "テーブル %d"
+
+msgid "Table of contents"
+msgstr "目次"
+
+msgid "Table ready — click to edit."
+msgstr "テーブルの準備ができました — クリックして編集してください。"
+
+msgid "Tables"
+msgstr "テーブル"
+
+msgid "Tag Manager is installed on this site. If you already built click tags there — a trigger on tel: links, on zalo.me, on m.me — switching this on records the same click twice, once under your own event name and once as contact_phone. Open your container, check whether such tags exist, and pause either those or this setting. Keep whichever one also fires your Google Ads conversions; this setting does not."
+msgstr "このサイトには Tag Manager が導入されています。すでにそこでクリックタグを作成している場合（tel: リンク、zalo.me、m.me へのトリガーなど）、これをオンにすると同じクリックが2回記録されます — 一度は独自のイベント名で、もう一度は contact_phone としてです。コンテナを開き、そのようなタグが存在するか確認し、どちらか一方を停止してください。Google 広告のコンバージョンも発火させる方を残してください — この設定はそれを発火させません。"
+
+msgid "Take back the ticked ones"
+msgstr "チェック済みの項目を取り戻す"
+
+msgid "Take the link away, keep the words"
+msgstr "リンクを外し、文言は残す"
+
+msgid "Teal"
+msgstr "ティール"
+
+msgid "Telegram (chat %s — the one paired for two-factor recovery)"
+msgstr "Telegram（チャット %s — 二段階認証の復旧用にペアリングされたもの）"
+
+msgid "Telegram (chat %s)"
+msgstr "Telegram（チャット %s）"
+
+msgid "Telegram chat ID for security messages (optional)"
+msgstr "セキュリティメッセージ用の Telegram チャット ID（任意）"
+
+msgid "Telegram recovery is ON but this site has no bot token yet, so no recovery code can be sent. Add a bot token in the %1$s module (the “Configure order notifications to be sent to Telegram” section) — it is easy to miss because it lives there, not here — then each user pastes their own chat ID on their profile."
+msgstr "Telegram 復旧はオンになっていますが、このサイトにはまだボットトークンが設定されていないため、復旧コードを送信できません。%1$s モジュール（「Telegram に送信する注文通知を設定」セクション）にボットトークンを追加してください — ここではなくそちらにあるため見落としやすいです — その後、各ユーザーが自分のプロフィールに自分自身のチャット ID を貼り付けます。"
+
+msgid "Telegram recovery is turned on but this site has no bot token yet, so no code can be sent. Add a bot token under %s, then reload this page."
+msgstr "Telegram 復旧はオンになっていますが、このサイトにはまだボットトークンが設定されていないため、コードを送信できません。%s の下でボットトークンを追加し、このページを再読み込みしてください。"
+
+msgid "Telegram recovery isn’t fully set up on this site yet — ask the site admin, or just use email or a backup code instead."
+msgstr "このサイトでは Telegram 復旧がまだ完全には設定されていません — サイト管理者に尋ねるか、代わりにメールやバックアップコードを使用してください。"
+
+msgid "Telegram returned no updates (the bot may use a webhook, or the token is wrong)."
+msgstr "Telegram から更新が返されませんでした（ボットが webhook を使用しているか、トークンが間違っている可能性があります）。"
+
+msgid "Tell me the site is still being watched"
+msgstr "サイトが引き続き監視されていることを知らせてください"
+
+msgid "Tell the browser to start the DNS + TCP + TLS handshake to external hosts early (fonts, CDN, analytics), so their files arrive sooner. Adds preconnect and dns-prefetch hints to the page head."
+msgstr "外部ホスト（フォント、CDN、分析）への DNS + TCP + TLS ハンドシェイクを早期に開始するようブラウザに指示し、それらのファイルがより早く届くようにします。ページの head に preconnect と dns-prefetch のヒントを追加します。"
+
+msgid "Temporarily close the site with a “under maintenance” notice while you make changes. You (and other logged-in admins) still see the site normally, so you can work in peace."
+msgstr "変更作業中は「メンテナンス中」の通知でサイトを一時的に閉鎖します。あなた（および他のログイン中の管理者）は引き続きサイトを通常どおり閲覧できるため、落ち着いて作業できます。"
+
+msgid "Test message from %s"
+msgstr "%s からのテストメッセージ"
+
+msgid "Test the site after turning this on. If something that must work before interaction breaks (a hero slider, a cookie bar), add its handle or file name to a list below. Do not use together with “Delay JS” in another optimiser."
+msgstr "これをオンにした後、サイトをテストしてください。操作前に動作しなければならない何か（ヒーロースライダー、クッキーバーなど）が壊れる場合は、そのハンドルまたはファイル名を下のリストに追加してください。他の最適化プラグインの「JS を遅延」と併用しないでください。"
+
+msgid "Test these keys against Google"
+msgstr "これらのキーを Google に対してテスト"
+
+msgid "That code is not right."
+msgstr "そのコードは正しくありません。"
+
+msgid "That does not look like a Google Sheets link."
+msgstr "それは Google スプレッドシートのリンクのようには見えません。"
+
+msgid "That is not an email address."
+msgstr "それはメールアドレスではありません。"
+
+msgid "That snippet no longer exists."
+msgstr "そのスニペットはもう存在しません。"
+
+msgid "That was me — line them up again"
+msgstr "私が行いました — 再び整列させてください"
+
+msgid "The PHP snippet \"%s\" stopped the page it ran on, so Horse Tools switched it off. Edit it and switch it back on when it is fixed."
+msgstr "PHP スニペット「%s」が実行中のページを停止させたため、Horse Tools はそれをオフにしました。修正後に編集して再度オンにしてください。"
+
+msgid "The Secret key box is empty, so the check is skipped entirely and reCAPTCHA is doing nothing at all."
+msgstr "シークレットキーの欄が空のため、確認は完全にスキップされ、reCAPTCHA はまったく何も行っていません。"
+
+msgid "The Site key box is empty."
+msgstr "サイトキーの欄が空です。"
+
+msgid "The account name for this service is the literal word “%user%”. It is not your email address, and putting your address there is why it says the password is wrong."
+msgstr "このサービスのアカウント名は文字どおりの単語「%user%」です。あなたのメールアドレスではありません。そこにあなたのアドレスを入力することが、パスワードが間違っていると表示される原因です。"
+
+msgid "The answer is matched ignoring case and surrounding spaces. Remember it — if you ever forget it you can still get back in by renaming the plugin folder over FTP to switch the plugin off."
+msgstr "回答は大文字小文字と前後の空白を無視して照合されます。覚えておいてください — もし忘れてしまっても、FTP でプラグインフォルダーの名前を変更してプラグインをオフにすれば再びアクセスできます。"
+
+msgid "The check-in message is on but has never been sent. Until one arrives you do not know the channel works."
+msgstr "チェックインメッセージはオンになっていますが、一度も送信されていません。1通届くまでは、そのチャネルが機能しているかどうかわかりません。"
+
+msgid "The code is how the site tells your chat apart from everyone else’s — it finds only the chat that sent it. Recovery codes then reach your own Telegram, not the admin. (You can also type the chat ID number in manually.)"
+msgstr "このコードは、サイトがあなたのチャットを他の全員のチャットと区別する方法です — それを送信したチャットだけを見つけ出します。復旧コードはその後、管理者ではなくあなた自身の Telegram に届きます。（チャット ID の番号を手動で入力することもできます。）"
+
+msgid "The first one goes out as soon as you save, so you find out straight away whether the channel works."
+msgstr "最初の1通は保存するとすぐに送られるため、そのチャネルが機能しているかどうかをすぐに確認できます。"
+
+msgid "The form below asks eight questions. Seven of them have exactly one right answer once you know which service you are using, and the eighth is a password. Choose here and the seven fill themselves in — you are left with the one thing nothing can guess."
+msgstr "下のフォームは8つの質問をします。どのサービスを使用しているかがわかれば、そのうち7つは正解が1つだけに決まり、8番目はパスワードです。ここで選択すると、その7つが自動的に入力されます — 誰にも推測できない、たった1つのものだけが残ります。"
+
+msgid "The last check-in message could not be sent: %s"
+msgstr "最後のチェックインメッセージを送信できませんでした：%s"
+
+msgid "The last check-in message went out %s ago, which is later than it should be. Nothing has been running the schedule."
+msgstr "最後のチェックインメッセージは %s 前に送信されましたが、予定より遅くなっています。スケジュールが実行されていませんでした。"
+
+msgid "The last one could not be sent — Security tab → Check-in"
+msgstr "最後の1通が送信できませんでした — 「セキュリティ」タブ → チェックイン"
+
+msgid "The link still works for a reader and stops passing any SEO value — which is the whole reason a link like that is worth paying for. Nothing in your posts is changed; only what gets printed."
+msgstr "そのリンクは読者にとって引き続き機能しますが、SEO の価値を渡さなくなります — これこそが、そのようなリンクにお金を払う価値がある理由そのものです。投稿の内容自体は一切変更されません。変わるのは出力結果だけです。"
+
+msgid "The most powerful but riskiest speed option. Without the Critical CSS below, the page can flash unstyled for a moment (FOUC). Paste your above-the-fold CSS, or keep the main theme stylesheet in the exclusion list. Test the front end carefully, and don’t combine it with another plugin that also optimises CSS delivery."
+msgstr "最も強力ですが最もリスクの高い速度オプションです。下のクリティカル CSS がないと、ページが一瞬スタイルなしで表示される（FOUC）ことがあります。ファーストビューの CSS を貼り付けるか、メインテーマのスタイルシートを除外リストに残しておいてください。フロントエンドを注意深くテストし、同じく CSS の配信を最適化する別のプラグインと組み合わせないでください。"
+
+msgid "The page carries no analytics at all yet, so there is nowhere for a click to be recorded. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own with nothing further to configure."
+msgstr "このページにはまだ分析ツールがまったくないため、クリックを記録する場所がありません。Site Kit by Google や任意の GA4 プラグインを導入すれば、この設定はそれ以上の設定なしで自動的に機能し始めます。"
+
+msgid "The request itself failed."
+msgstr "リクエスト自体が失敗しました。"
+
+msgid "The security question below the password was left empty."
+msgstr "パスワード下のセキュリティ質問が空欄のままでした。"
+
+msgid "The sheet appears to be empty."
+msgstr "シートは空のようです。"
+
+msgid "The sheet is too large (over 1 MB of CSV)."
+msgstr "シートが大きすぎます（CSV で 1 MB を超えています）。"
+
+msgid "The sheet must be shared as “Anyone with the link can view”. With auto-refresh on, the table updates itself from the sheet."
+msgstr "シートは「リンクを知っている全員が閲覧可能」で共有されている必要があります。自動更新がオンの場合、テーブルはシートから自動的に更新されます。"
+
+msgid "The site handed it over successfully. That is not the same as it arriving — if the numbers you receive skip, the channel is dropping them."
+msgstr "サイトは正常にそれを引き渡しました。それは届いたことと同じではありません — 受け取った番号が飛んでいる場合、そのチャネルが取りこぼしています。"
+
+msgid "The username is the literal word “apikey”, not your address."
+msgstr "ユーザー名は文字どおりの単語「apikey」であり、あなたのアドレスではありません。"
+
+msgid "The username is the literal word “resend”, not your address. You must add and verify your domain before it will send as you."
+msgstr "ユーザー名は文字どおりの単語「resend」であり、あなたのアドレスではありません。あなたとして送信する前に、ドメインを追加して確認する必要があります。"
+
+msgid "The username is the postmaster address Mailgun shows on your sending domain, not your login."
+msgstr "ユーザー名は、Mailgun が送信ドメイン上に表示する postmaster アドレスであり、あなたのログイン名ではありません。"
+
+msgid "Theme colour"
+msgstr "テーマカラー"
+
+msgid "There are files in your site’s folder that anyone can download."
+msgstr "サイトのフォルダー内に、誰でもダウンロードできるファイルがあります。"
+
+msgid "These are correct — remember them"
+msgstr "これらは正しいです — 覚えておいてください"
+
+msgid "These are the phone numbers, Zalo, Messenger links and email addresses currently in your settings. Check them, then confirm — after that you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest."
+msgstr "これらは現在あなたの設定にある電話番号、Zalo、Messenger リンク、メールアドレスです。確認してから承認してください — その後、いずれかが変更された場合に通知されます。ショップのホットラインを変更することは、最も直接的で、かつ最も静かな攻撃です。"
+
+msgid "These contact details appear in your content. Confirm them and you will be told if a new one ever turns up in a post — which is what happens when somebody edits an old article to put their own number in it."
+msgstr "これらの連絡先情報はあなたのコンテンツ内に表示されます。確認しておけば、新しいものが投稿に現れたときに通知されます — これは、誰かが古い記事を編集して自分の番号を挿入したときに起こることです。"
+
+msgid "These two addresses do not match, and that is enough to stop your mail."
+msgstr "これら2つのアドレスは一致しておらず、それだけでメールが止まるのに十分です。"
+
+msgid "They no longer match — see the banner at the top of any Horse Tools screen"
+msgstr "これらは一致しなくなりました — 任意の Horse Tools 画面の上部にあるバナーをご覧ください"
+
+msgid "This account uses two-factor authentication; XML-RPC password login is disabled."
+msgstr "このアカウントは二段階認証を使用しています。XML-RPC のパスワードログインは無効化されています。"
+
+msgid "This could not be checked from here, so the instructions are shown just in case. To find out whether they apply to you: open your site, press F12, and type gtag in the console. An answer of \"function\" means you have nothing to do; \"undefined\" means follow the steps below."
+msgstr "これはここから確認できなかったため、念のため手順を表示しています。あなたに当てはまるか確認するには：サイトを開き、F12 を押し、コンソールで gtag と入力してください。「function」という応答であれば何もする必要はありません。「undefined」であれば以下の手順に従ってください。"
+
+msgid "This host does not let the plugin read DNS, so none of the checks below can be made. That is not the same as everything being in order."
+msgstr "このホストはプラグインが DNS を読み取ることを許可していないため、以下の確認はいずれも行えません。これはすべてが正常であることを意味するものではありません。"
+
+msgid "This is a test message from %s."
+msgstr "これは %s からのテストメッセージです。"
+
+msgid "This list is incomplete."
+msgstr "このリストは不完全です。"
+
+msgid "This never touches what is stored. Switch it off and every link is back as it was on the next page load."
+msgstr "これは保存されているデータには一切触れません。オフにすると、次回のページ読み込み時にすべてのリンクが元の状態に戻ります。"
+
+msgid "This section could not be displayed. The rest of the screen still works."
+msgstr "このセクションを表示できませんでした。画面の残りの部分は引き続き機能します。"
+
+msgid "This server cannot reach any other mail server, so nothing it sends can ever be delivered. WordPress hands each message to a local mail program, that program accepts it — which is why every screen says “sent” — and then finds the way out closed. The message waits in a queue nobody reads, and there is no bounce, because a bounce would have to leave by the same door."
+msgstr "このサーバーは他のメールサーバーに到達できないため、送信したものは決して配信されません。WordPress は各メッセージをローカルのメールプログラムに渡し、そのプログラムがそれを受け付けます — だからこそすべての画面で「送信済み」と表示されます — そしてその後、出口が閉じていることに気づきます。メッセージは誰も読まないキューで待機し続け、バウンスも発生しません。バウンスは同じ出口から出ていく必要があるためです。"
+
+msgid "This server does not read .htaccess files, so nothing is hiding this one but its name. Horse Tools now stores these as .php files that stop on their first line, which works on every server."
+msgstr "このサーバーは .htaccess ファイルを読み取らないため、名前以外にこれを隠すものは何もありません。Horse Tools は現在、これらを最初の1行で実行を停止する .php ファイルとして保存しており、これはどのサーバーでも機能します。"
+
+msgid "This server sends mail from an address with no name attached to it (%s). Gmail and Yahoo both take that as the mark of a machine nobody set up to send mail, and Yahoo refuses it outright — which looks from here exactly like the message vanishing, because the refusal happens at the far end and the bounce goes somewhere you never read."
+msgstr "このサーバーは名前が紐付けられていないアドレス（%s）からメールを送信しています。Gmail と Yahoo はどちらも、これを誰もメール送信用に設定していないマシンの兆候とみなし、Yahoo は完全に拒否します — これはここから見ると、メッセージが消えたのとまったく同じように見えます。拒否は相手側で発生し、バウンスはあなたが決して読まない場所へ送られるからです。"
+
+msgid "This site cannot see its own public address — it sits behind a proxy or a load balancer — so the checks above that depend on knowing it were skipped rather than guessed at."
+msgstr "このサイトは自身の公開アドレスを把握できません — プロキシまたはロードバランサーの背後にあります — そのため、それを把握していることに依存する上記の確認は、推測ではなくスキップされました。"
+
+msgid "This site has WordPress's built-in file editor switched off (DISALLOW_FILE_EDIT) — good. PHP snippets still work, because they carry their own protections: two-factor unlock, a syntax check before saving, auto-disable on a crash, and code signing. To switch them off as well, add HORSETOOLS_NO_PHP to wp-config.php."
+msgstr "このサイトは WordPress 標準のファイルエディター（DISALLOW_FILE_EDIT）を無効化しています — 良いことです。PHP スニペットは、独自の保護機構（二段階認証によるロック解除、保存前の構文チェック、クラッシュ時の自動無効化、コード署名）を備えているため、引き続き機能します。これらも無効にするには、wp-config.php に HORSETOOLS_NO_PHP を追加してください。"
+
+msgid "This site has no valid admin email address."
+msgstr "このサイトには有効な管理者メールアドレスがありません。"
+
+msgid "This site has no way to reach you: no Telegram bot, and no valid admin email address."
+msgstr "このサイトにはあなたに連絡する手段がありません：Telegram ボットもなく、有効な管理者メールアドレスもありません。"
+
+msgid "This site sets DISALLOW_FILE_MODS, so running PHP from the database is not allowed."
+msgstr "このサイトは DISALLOW_FILE_MODS を設定しているため、データベースからの PHP 実行は許可されていません。"
+
+msgid "This site’s signing keys are stored in the database, not in wp-config.php."
+msgstr "このサイトの署名キーは wp-config.php ではなくデータベースに保存されています。"
+
+msgid "This snippet’s code no longer matches its signature — it was changed outside this screen and will not run. Review it and save again to re-sign it."
+msgstr "このスニペットのコードはもう署名と一致していません — この画面の外部で変更されたため実行されません。確認して再度保存し、再署名してください。"
+
+msgid "This user has two-factor authentication ON."
+msgstr "このユーザーは二段階認証がオンになっています。"
+
+msgid "This web server is not on your domain’s list of allowed senders. The list says “treat anything else as suspicious” rather than “reject it”, so mail as %s will usually arrive in the spam folder."
+msgstr "この Web サーバーはあなたのドメインの許可された送信者リストに含まれていません。そのリストは「拒否する」ではなく「それ以外はすべて疑わしいものとして扱う」となっているため、%s として送信されたメールは通常、迷惑メールフォルダーに届きます。"
+
+msgid "This web server is on your domain’s list of allowed senders."
+msgstr "この Web サーバーはあなたのドメインの許可された送信者リストに含まれています。"
+
+msgid "Tick all on this page"
+msgstr "このページのすべてにチェックを入れる"
+
+msgid "Tip: to stop one specific script from ever being delayed, add the attribute data-ht-no-delay to its tag. Logged-in users are never affected."
+msgstr "ヒント：特定のスクリプトを決して遅延させたくない場合は、そのタグに data-ht-no-delay 属性を追加してください。ログイン中のユーザーは常に影響を受けません。"
+
+msgid "To check it works right now rather than waiting: open your site with %s on the end of the address, tap a contact button, and watch GA4 → Admin → DebugView. Without that flag DebugView stays empty however many times you tap, because it only lists devices that identify themselves as debug devices — which is not a fault in the buttons."
+msgstr "待つのではなく今すぐ機能を確認するには：アドレスの末尾に %s を付けてサイトを開き、連絡先ボタンをタップして、GA4 → 管理 → DebugView を確認してください。このフラグがないと、何回タップしても DebugView は空のままです。デバッグデバイスとして自己識別しているデバイスのみを一覧表示するためであり、ボタン自体の不具合ではありません。"
+
+msgid "To use PHP snippets, switch on two-factor authentication first (Horse Tools → Overview → Security)."
+msgstr "PHP スニペットを使用するには、まず二段階認証をオンにしてください（Horse Tools → 概要 → セキュリティ）。"
+
+msgid "To use PHP snippets, switch on two-factor authentication for your own account first (Users → Profile)."
+msgstr "PHP スニペットを使用するには、まずご自身のアカウントで二段階認証をオンにしてください（ユーザー → プロフィール）。"
+
+msgid "Too many failed attempts. Try again in about %s."
+msgstr "失敗した試行が多すぎます。約 %s 後に再度お試しください。"
+
+msgid "Tools"
+msgstr "ツール"
+
+msgid "Trust this device for 30 days"
+msgstr "このデバイスを 30 日間信頼する"
+
+msgid "Turn it off (uncheck stays on)"
+msgstr "オフにする（チェックを外してもオンのままです）"
+
+msgid "Turn it off for this user (e.g. they lost their device)"
+msgstr "このユーザーに対してオフにする（例：デバイスを紛失した場合）"
+
+msgid "Turn on the regular check-in message"
+msgstr "定期的なチェックインメッセージをオンにする"
+
+msgid "Turned on but never sent — send a test message"
+msgstr "オンになっていますが、一度も送信されていません — テストメッセージを送信"
+
+msgid "Two Horse Tools protections are signed with those keys: the PHP snippet signature, which is meant to refuse code written straight into the database, and the “trusted device” cookie that skips two-factor authentication. Anyone who can read your database can read the keys, so both can be forged. Moving the keys into wp-config.php — a file — restores them."
+msgstr "Horse Tools の2つの保護機能がこれらのキーで署名されています：データベースに直接書き込まれたコードを拒否するための PHP スニペット署名と、二段階認証をスキップする「信頼済みデバイス」クッキーです。データベースを読み取れる人であれば誰でもこれらのキーを読み取れるため、両方とも偽造される可能性があります。キーを wp-config.php — ファイル — に移すことで、それらを復元できます。"
+
+msgid "Two-factor authentication"
+msgstr "二段階認証"
+
+msgid "Two-factor authentication (2FA)"
+msgstr "二段階認証（2FA）"
+
+msgid "Two-factor authentication is ON for your account."
+msgstr "あなたのアカウントは二段階認証がオンになっています。"
+
+msgid "Type it in"
+msgstr "手入力する"
+
+msgid "Unlock"
+msgstr "ロック解除"
+
+msgid "Untick all"
+msgstr "すべてのチェックを外す"
+
+msgid "Upload a file"
+msgstr "ファイルをアップロード"
+
+msgid "Upload a font on the Fonts tab first, then choose where to use it here."
+msgstr "まず「フォント」タブでフォントをアップロードし、それをどこで使用するかをここで選択してください。"
+
+msgid "Users"
+msgstr "ユーザー"
+
+msgid "Uses the site’s Telegram bot (configured in the WooCommerce module), but each user pastes their OWN chat ID on their profile — so a recovery code always reaches that user’s Telegram, never pooled to the admin. Users without a chat ID simply don’t see the Telegram option."
+msgstr "サイトの Telegram ボット（WooCommerce モジュールで設定済み）を使用しますが、各ユーザーは自分のプロフィールに自分自身のチャット ID を貼り付けます — そのため復旧コードは常にそのユーザー自身の Telegram に届き、管理者にまとめられることはありません。チャット ID がないユーザーには、Telegram のオプション自体が表示されません。"
+
+msgid "Usually a phpinfo page."
+msgstr "通常は phpinfo ページです。"
+
+msgid "Verify"
+msgstr "確認"
+
+msgid "Version-control metadata exposes the source."
+msgstr "バージョン管理のメタデータがソースコードを公開してしまいます。"
+
+msgid "Waiting for you"
+msgstr "対応待ち"
+
+msgid "Weekly is the useful setting. Daily turns the one message that is supposed to mean something into noise within a fortnight, and once it is noise a gap in the numbering is not noticed either."
+msgstr "週次が有用な設定です。日次にすると、本来何かを意味するはずだった1通のメッセージが、2週間以内にただのノイズになってしまい、ノイズになった時点で、番号の欠落にも誰も気づかなくなります。"
+
+msgid "What you approved is also kept outside the database"
+msgstr "あなたが承認した内容は、データベースの外にも保持されます"
+
+msgid "What you still have to paste: %secret%."
+msgstr "あと貼り付けが必要な内容：%secret%。"
+
+msgid "When a URL changes or an old link should point somewhere new, this sends visitors (and Google) straight to the right page instead of a “not found” error — so you don’t lose traffic."
+msgstr "URL が変更されたり、古いリンクが新しい場所を指すべきときに、これは訪問者（および Google）を「見つかりません」エラーではなく正しいページへ直接誘導します — トラフィックを失わずに済みます。"
+
+msgid "When about to leave the page"
+msgstr "ページを離れようとしているとき"
+
+msgid "When it appears"
+msgstr "表示されるタイミング"
+
+msgid "Where did it turn up?"
+msgstr "どこに現れましたか？"
+
+msgid "Where it appears"
+msgstr "表示される場所"
+
+msgid "Where it runs"
+msgstr "実行される場所"
+
+msgid "Where this stands:"
+msgstr "現在の状況："
+
+msgid "Where to get it"
+msgstr "入手先"
+
+msgid "Where to read the numbers"
+msgstr "数値を確認する場所"
+
+msgid "Where to run it"
+msgstr "実行する場所"
+
+msgid "Where your content links to"
+msgstr "あなたのコンテンツがリンクしている先"
+
+msgid "Which service should send your email?"
+msgstr "どのサービスにメールを送信させるべきですか？"
+
+msgid "Wiggle now and then to catch the eye"
+msgstr "目を引くために時々揺れる"
+
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+msgid "WordPress could not hand the message to the mail server at all, so it never left the site."
+msgstr "WordPress はメッセージをメールサーバーに渡すことすらできなかったため、サイトを離れることは一度もありませんでした。"
+
+msgid "WordPress could not hand the message to the mail server."
+msgstr "WordPress はメッセージをメールサーバーに渡すことができませんでした。"
+
+msgid "WordPress reports a message as sent once it has handed it over. That says nothing about whether it arrived, and on a great many sites it does not — the domain names which servers may send for it, the web server is not one of them, and every notification the site sends is treated as forged. Nothing in WordPress mentions this. Below is what your domain’s own records say, read live."
+msgstr "WordPress はメッセージを渡した時点でそれを「送信済み」として報告します。それは実際に届いたかどうかとは無関係であり、非常に多くのサイトで届いていません — ドメインは代理送信を許可するサーバーを指定していますが、Web サーバーはその中に含まれておらず、サイトが送るすべての通知は偽装として扱われます。WordPress はこれについて何も伝えません。以下はあなたのドメイン自身のレコードをリアルタイムで読み取った内容です。"
+
+msgid "WordPress “Heartbeat” pings the server every 15–60 seconds (autosave, post-lock, dashboard). Slowing or limiting it cuts admin-ajax.php load, especially with several admin tabs open."
+msgstr "WordPress の「Heartbeat」は 15〜60 秒ごとにサーバーへ ping を送ります（自動保存、投稿ロック、ダッシュボード）。これを遅くしたり制限したりすることで、特に複数の管理タブを開いている場合の admin-ajax.php の負荷を軽減できます。"
+
+msgid "Worth a second look"
+msgstr "もう一度確認する価値があります"
+
+msgid "Write plain PHP — no opening tag needed. The code is checked for syntax errors before it is saved, and if it ever crashes a page Horse Tools switches it off automatically."
+msgstr "通常の PHP を書いてください — 開始タグは不要です。コードは保存前に構文エラーがチェックされ、もしページをクラッシュさせた場合、Horse Tools が自動的にそれをオフにします。"
+
+msgid "Write your block just like a post: type text and use the toolbar to insert links, images and formatting. Need raw HTML/CSS/JS? Switch to the “Text” tab. Placeholders like {{url}} still work in both."
+msgstr "投稿を書くのと同じようにブロックを記述してください：テキストを入力し、ツールバーを使ってリンク、画像、書式を挿入します。生の HTML/CSS/JS が必要ですか？「テキスト」タブに切り替えてください。{{url}} のようなプレースホルダーはどちらでも引き続き機能します。"
+
+msgid "Wrong answer to the security question."
+msgstr "セキュリティ質問の回答が間違っています。"
+
+msgid "You are not allowed to change these settings."
+msgstr "これらの設定を変更する権限がありません。"
+
+msgid "You are not allowed to use PHP snippets."
+msgstr "PHP スニペットを使用する権限がありません。"
+
+msgid "You may send as any address on a domain you have verified with this service. An unverified one will be refused."
+msgstr "このサービスで確認済みのドメイン上の任意のアドレスとして送信できます。未確認のものは拒否されます。"
+
+msgid "You would be told if this site went quiet"
+msgstr "このサイトが静かになった場合、通知されます"
+
+msgid "Your Telegram chat ID (for recovery codes)"
+msgstr "あなたの Telegram チャット ID（復旧コード用）"
+
+msgid "Your approvals match their copy on disk"
+msgstr "あなたの承認内容はディスク上のコピーと一致しています"
+
+msgid "Your check-in message only got through on the backup route (%s). Your main channel is not working, and you have one left instead of two."
+msgstr "チェックインメッセージはバックアップ経路（%s）でしか届きませんでした。メインチャネルが機能しておらず、2つのうち1つしか残っていません。"
+
+msgid "Your contact details have changed."
+msgstr "連絡先情報が変更されました。"
+
+msgid "Your container has no GA4 tag in it, so Tag Manager has nothing to pass the click on to. It is placed in the dataLayer and stops there until you build the tag below — until then nothing reaches Analytics."
+msgstr "あなたのコンテナには GA4 タグが含まれていないため、Tag Manager にはクリックを渡す先がありません。それは dataLayer に配置され、下でタグを作成するまでそこに留まります — それまでは何も Analytics に届きません。"
+
+msgid "Your content has not been read all the way through yet (%1$d of %2$d), so nothing found in it can be trusted as complete."
+msgstr "あなたのコンテンツはまだ最後まで読み込まれていないため（%1$d／%2$d）、そこから見つかったものは完全であると信頼できません。"
+
+msgid "Your content has not been read all the way through yet."
+msgstr "あなたのコンテンツはまだ最後まで読み込まれていません。"
+
+msgid "Your content links to %1$s domains you have not agreed to, and %2$s you have. You will be told the moment one arrives that is on neither list."
+msgstr "あなたのコンテンツは、あなたが同意していない %1$s 件のドメインと、同意済みの %2$s 件のドメインにリンクしています。どちらのリストにもないドメインが現れた瞬間に通知されます。"
+
+msgid "Your content links to %d domain you have not approved."
+msgstr "あなたのコンテンツは、あなたが承認していない %d 件のドメインにリンクしています。"
+
+msgid "Your content links to more domains than the list can hold, so it is incomplete"
+msgstr "あなたのコンテンツはリストが保持できる件数を超えるドメインにリンクしているため、不完全です"
+
+msgid "Your content links to more than %d domains, which is as many as can be held. Domains beyond that were not recorded, so this cannot tell you when one of them is new — it would say it was already there."
+msgstr "あなたのコンテンツは保持可能な最大件数である %d 件を超えるドメインにリンクしています。それを超えるドメインは記録されなかったため、それが新しいものかどうかを判定できません — すでに存在していたと表示されてしまいます。"
+
+msgid "Your domain already receives mail through %1$s, so choose %2$s below. Sending through the service that already handles your mail is the one most likely to work first time."
+msgstr "あなたのドメインはすでに %1$s 経由でメールを受信しているため、下で %2$s を選択してください。すでにメールを処理しているサービス経由で送信することが、初回から機能する可能性が最も高い方法です。"
+
+msgid "Your domain does not say which servers are allowed to send mail for it. Anyone can send mail claiming to be you, and mail you really did send has nothing to vouch for it — Gmail and Yahoo both treat that as a reason for suspicion."
+msgstr "あなたのドメインは、どのサーバーが代理送信を許可されているかを示していません。誰でもあなたを装ってメールを送信でき、あなたが実際に送信したメールにもそれを保証するものが何もありません — Gmail と Yahoo はどちらもこれを疑いの理由とみなします。"
+
+msgid "Your domain has a list of allowed senders, but it could not be worked out from here whether this server is on it."
+msgstr "あなたのドメインには許可された送信者のリストがありますが、このサーバーがその中に含まれているかどうかはここからは判断できませんでした。"
+
+msgid "Your domain has no DMARC record, so you are never told when somebody sends mail pretending to be you, and receivers have no instruction about what to do with it."
+msgstr "あなたのドメインには DMARC レコードがないため、誰かがあなたになりすましてメールを送信しても決して通知されず、受信側にはそれをどう扱うかの指示もありません。"
+
+msgid "Your domain receives mail through %s. Sending through the same service is the setting most likely to work, because it is already on your domain’s list of allowed senders."
+msgstr "あなたのドメインは %s 経由でメールを受信しています。同じサービス経由で送信することが最も機能する可能性の高い設定です。すでにあなたのドメインの許可された送信者リストに含まれているためです。"
+
+msgid "Your domain says which servers may send mail for it, and this site is sending straight from the web server. Whether that server is on the list could not be determined here."
+msgstr "あなたのドメインは、どのサーバーが代理送信できるかを示しており、このサイトは Web サーバーから直接送信しています。そのサーバーがリストに含まれているかどうかは、ここでは判定できませんでした。"
+
+msgid "Your email settings changed after the last test, so what is running now has not been tried"
+msgstr "前回のテスト以降にメール設定が変更されたため、現在実行中の設定はまだテストされていません"
+
+msgid "Your host can attach a name to the address — ask them for “reverse DNS” or a “PTR record”. Or sidestep it entirely by sending through an email service, whose own servers already have one."
+msgstr "あなたのホストはアドレスに名前を紐付けることができます — 「逆引き DNS」または「PTR レコード」を依頼してください。あるいは、すでにそれを備えているメールサービス経由で送信することで、この問題を完全に回避することもできます。"
+
+msgid "Your last test landed in the spam folder"
+msgstr "前回のテストは迷惑メールフォルダーに入りました"
+
+msgid "Your last test never arrived"
+msgstr "前回のテストは一度も届きませんでした"
+
+msgid "Your login recovery code"
+msgstr "あなたのログイン復旧コード"
+
+msgid "Your one-time login code for %1$s is: %2$s (valid 10 minutes)."
+msgstr "%1$s 用のワンタイムログインコードは：%2$s（10 分間有効）です。"
+
+msgid "Your own account must have two-factor authentication switched on before you can use PHP snippets."
+msgstr "PHP スニペットを使用する前に、あなた自身のアカウントで二段階認証をオンにする必要があります。"
+
+msgid "Your own icon (paste an SVG)"
+msgstr "あなた独自のアイコン（SVG を貼り付け）"
+
+msgid "Your pages go out exactly as written."
+msgstr "あなたのページは書いたとおりに正確に配信されます。"
+
+msgid "Your pairing code has expired. Reload this page to get a new one."
+msgstr "ペアリングコードの有効期限が切れました。このページを再読み込みして新しいコードを取得してください。"
+
+msgid "Your posts and pages do not link anywhere outside this site."
+msgstr "あなたの投稿と固定ページは、このサイトの外部には一切リンクしていません。"
+
+msgid "Your posts and pages link to %d other domain. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
+msgstr "あなたの投稿と固定ページは %d 件の他のドメインにリンクしています。一度確認して、どれがそこに属するべきかを承認してください。その後、リストになかったドメインは、誰にも気づかれないまま2年間放置されるのではなく、画面上の一文で済むようになります。"
+
+msgid "Your settings already look like %s, so its notes apply to you even though nothing is selected above."
+msgstr "あなたの設定はすでに %s に似ているため、上で何も選択されていなくても、その注意事項はあなたに当てはまります。"
+
+msgid "Your site has Tag Manager but no Google tag — one setup step is required"
+msgstr "あなたのサイトには Tag Manager がありますが Google タグがありません — 1つの設定手順が必要です"
+
+msgid "Your site loads the Google tag, so a click goes straight to Analytics. This is the usual case, and it includes sites where Analytics was installed through Tag Manager — a GA4 tag inside a container loads the Google tag itself."
+msgstr "あなたのサイトは Google タグを読み込んでいるため、クリックは直接 Analytics に送られます。これは通常のケースであり、Tag Manager 経由で Analytics が導入されたサイトも含まれます — コンテナ内の GA4 タグ自体が Google タグを読み込みます。"
+
+msgid "Zoom"
+msgstr "ズーム"
+
+msgid "Zoom in"
+msgstr "拡大"
+
+msgid "Zoom out"
+msgstr "縮小"
+
+msgid "[!] This went by %1$s because %2$s would not send: %3$s"
+msgstr "[!] これは %2$s が送信できなかったため %1$s 経由で送られました：%3$s"
+
+msgid "[?] %1$d domain was approved over a year ago and is barely linked: %2$s"
+msgstr "[?] %1$d 件のドメインは1年以上前に承認され、ほとんどリンクされていません：%2$s"
+
+msgid "a bar pinned to the bottom of the phone screen. Choose one of 5 styles from the grid."
+msgstr "携帯電話の画面下部に固定される帯です。グリッドから5つのスタイルのいずれかを選択してください。"
+
+msgid "a greeting bubble, business hours (shows Online / Away), scan-to-open QR on desktop, and pre-filled WhatsApp / SMS messages."
+msgstr "挨拶バブル、営業時間（オンライン／離席を表示）、デスクトップでスキャンして開ける QR コード、あらかじめ入力された WhatsApp／SMS メッセージです。"
+
+msgid "a panel that slides up to show your services or articles. Pick its layout, colour and how it appears from the visual grids. To open it, point a bottom-bar item at"
+msgstr "上へスライドして表示され、サービスや記事を表示するパネルです。ビジュアルグリッドからそのレイアウト、色、表示方法を選択してください。開くには、下部バーの項目をこれに向けてください："
+
+msgid "added ✓"
+msgstr "追加済み ✓"
+
+msgid "ads.txt"
+msgstr "ads.txt"
+
+msgid "an address you can open right now"
+msgstr "今すぐ開けるアドレス"
+
+msgid "and %d more — click to see it"
+msgstr "他に %d 件 — クリックして表示"
+
+msgid "approved %s ago"
+msgstr "%s 前に承認"
+
+msgid "choose how the floating button looks from the visual grid below (17 styles). What you see is what visitors get."
+msgstr "下のビジュアルグリッド（17 スタイル）からフローティングボタンの見た目を選択してください。表示されているとおりのものが訪問者にも見えます。"
+
+msgid "click SAVE CONTENT at the bottom of the page. The Services panel has its own “Save services” button."
+msgstr "ページ下部の「コンテンツを保存」をクリックしてください。サービスパネルには独自の「サービスを保存」ボタンがあります。"
+
+msgid "copy"
+msgstr "コピー"
+
+msgid "delayed"
+msgstr "遅延済み"
+
+msgid "e.g. Price list"
+msgstr "例：価格表"
+
+msgid "e.g. What is the shop mascot?"
+msgstr "例：ショップのマスコットは何ですか？"
+
+msgid "e.g. fox"
+msgstr "例：キツネ"
+
+msgid "email"
+msgstr "メール"
+
+msgid "leave empty for all categories"
+msgstr "すべてのカテゴリーを対象にする場合は空欄のままにしてください"
+
+msgid "no copy on disk yet"
+msgstr "ディスク上にコピーはまだありません"
+
+msgid "none"
+msgstr "なし"
+
+msgid "not confirmed yet"
+msgstr "まだ確認されていません"
+
+msgid "not reviewed yet"
+msgstr "まだレビューされていません"
+
+msgid "nothing at all"
+msgstr "まったく何もありません"
+
+msgid "open the site’s Telegram bot (ask the site admin which bot if you’re not sure)."
+msgstr "サイトの Telegram ボットを開いてください（どのボットか不明な場合はサイト管理者に尋ねてください）。"
+
+msgid "open this site’s Telegram bot:"
+msgstr "このサイトの Telegram ボットを開く："
+
+msgid "optional title above the table"
+msgstr "テーブル上部の任意タイトル"
+
+msgid "passes SEO value"
+msgstr "SEO の価値を渡します"
+
+msgid "pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically. For a custom button, choose a built-in icon or paste your own SVG."
+msgstr "チャネル（Zalo、Messenger、電話…）を選ぶとロゴが自動的に追加されます。カスタムボタンの場合は、内蔵アイコンを選ぶか、ご自身の SVG を貼り付けてください。"
+
+msgid "reCAPTCHA could not load in this browser, so this form cannot be submitted. Check the site key, or switch reCAPTCHA off in Horse Tools."
+msgstr "reCAPTCHA がこのブラウザで読み込めなかったため、このフォームは送信できません。サイトキーを確認するか、Horse Tools で reCAPTCHA をオフにしてください。"
+
+msgid "reCAPTCHA did not run in your browser, so this form could not be submitted. This is not your password."
+msgstr "reCAPTCHA がブラウザで実行されなかったため、このフォームは送信できませんでした。これはあなたのパスワードの問題ではありません。"
+
+msgid "reCAPTCHA is switched off, so there is nothing to test."
+msgstr "reCAPTCHA はオフになっているため、テストするものがありません。"
+
+msgid "remember to press “Update profile”."
+msgstr "忘れずに「プロフィールを更新」を押してください。"
+
+msgid "rows"
+msgstr "行"
+
+msgid "rows loaded"
+msgstr "読み込まれた行数"
+
+msgid "runs now"
+msgstr "今すぐ実行"
+
+msgid "script or embedded frame"
+msgstr "スクリプトまたは埋め込みフレーム"
+
+msgid "send it this code:"
+msgstr "次のコードを送信してください："
+
+msgid "still reading"
+msgstr "読み込み中"
+
+msgid "the contact details you confirmed in your posts"
+msgstr "投稿内で確認した連絡先情報"
+
+msgid "the contact details you confirmed in your settings"
+msgstr "設定内で確認した連絡先情報"
+
+msgid "the list of domains you approved"
+msgstr "承認したドメインのリスト"
+
+msgid "type part of a domain…"
+msgstr "ドメインの一部を入力…"
+
+msgid "unknown error"
+msgstr "不明なエラー"
+
+msgid "whether the watching is switched on at all"
+msgstr "監視自体がオンになっているかどうか"
+
+msgid "wp-content is not writable, so there is nowhere to keep the copy"
+msgstr "wp-content は書き込み不可のため、コピーを保存する場所がありません"
+
+msgid "— choose, or fill the form in yourself —"
+msgstr "— 選択するか、フォームを自分で入力してください —"
+
+msgid "— or paste your own SVG."
+msgstr "— またはご自身の SVG を貼り付けてください。"
+
+msgid "“All” mode — scripts to NEVER delay (one per line). A hero slider or a cookie-consent script usually belongs here."
+msgstr "「すべて」モード — 決して遅延させないスクリプト（1 行に1つ）。ヒーロースライダーやクッキー同意スクリプトは通常ここに該当します。"
+
+msgid "“Listed” mode — scripts to delay (one per line: a handle, file name or part of a URL). Leave empty to use the built-in list of common trackers."
+msgstr "「リスト」モード — 遅延させるスクリプト（1 行に1つ：ハンドル、ファイル名、または URL の一部）。空欄にすると、一般的なトラッカーの内蔵リストが使用されます。"
+
+msgid "← enter code and press \"Update profile\" to enable"
+msgstr "← コードを入力して「プロフィールを更新」を押すと有効になります"
+
+msgid "✓ Turned on — press SAVE to apply"
+msgstr "✓ オンになっています — 適用するには「保存」を押してください"

@@ -131,7 +131,17 @@ function horsetools_toc( $content ) {
 	// <div id="ht-toc">, producing duplicate DOM ids — and the widget script,
 	// which does getElementById("ht-toc"), then listed the first post's headings
 	// for the whole page. The markup also shipped inside RSS items.
-	if ( ! is_singular() || ! in_the_loop() || ! is_main_query() || is_feed() ) {
+	//
+	// is_singular()/in_the_loop()/is_main_query() only describe the page's main
+	// query, not which post is actually being filtered right now. A "related
+	// posts" block or a card list on a singular page runs its own WP_Query and
+	// calls the_post() on that — the main query's flags stay unchanged, so the
+	// checks above still pass, and get_the_excerpt() on that secondary query
+	// applies this same the_content filter to a different post before trimming
+	// it, leaving the TOC title text stuck to the front of that post's excerpt.
+	// Comparing the post actually being filtered to the queried object closes
+	// that gap.
+	if ( ! is_singular() || ! in_the_loop() || ! is_main_query() || is_feed() || get_the_ID() !== get_queried_object_id() ) {
 		return $content;
 	}	global $horsetools_toc_options;
 	$pages_list = explode("\n", str_replace("\r", "",  $horsetools_toc_options['toc-page-hi'] ?? ''));
@@ -190,7 +200,12 @@ function horsetools_add_content_toc($content) {
 	// <div id="ht-toc">, producing duplicate DOM ids — and the widget script,
 	// which does getElementById("ht-toc"), then listed the first post's headings
 	// for the whole page. The markup also shipped inside RSS items.
-	if ( ! is_singular() || ! in_the_loop() || ! is_main_query() || is_feed() ) {
+	//
+	// See horsetools_toc() above for why get_the_ID() must also match the
+	// queried object: a secondary loop (related posts, card lists) on a
+	// singular page leaves is_singular()/in_the_loop()/is_main_query() looking
+	// unchanged while filtering a different post's excerpt.
+	if ( ! is_singular() || ! in_the_loop() || ! is_main_query() || is_feed() || get_the_ID() !== get_queried_object_id() ) {
 		return $content;
 	}	global $horsetools_toc_options;
 	$pages_list = explode("\n", str_replace("\r", "",  $horsetools_toc_options['toc-page-hi'] ?? ''));

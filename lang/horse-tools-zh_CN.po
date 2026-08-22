@@ -3482,3 +3482,2436 @@ msgstr "v3 分数阈值（0 – 1）"
 
 msgid "— Insert a shortcode —"
 msgstr "— 插入短代码 —"
+
+msgid "%1$d of %2$d"
+msgstr "%1$d / %2$d"
+
+msgid "%1$d post(s) will publish FAQ schema (%2$s questions on average)."
+msgstr "%1$d 篇文章将发布 FAQ 结构化数据（平均 %2$s 个问题）。"
+
+msgid "%1$s will only send as the account you sign in with. You are signing in as %3$s but sending as %2$s, which it will refuse or quietly drop — and refusing looks from here exactly like the message vanishing."
+msgstr "%1$s 仅以您登录时使用的账户发送邮件。您正以 %3$s 登录，但以 %2$s 发送，系统会拒绝或悄悄丢弃该邮件——而拒绝在这里看起来就像邮件凭空消失一样。"
+
+msgid "%d FOUND"
+msgstr "已发现 %d 个"
+
+msgid "%d NEW"
+msgstr "%d 个新"
+
+msgid "%d domain is no longer approved."
+msgstr "%d 个域名不再获得批准。"
+
+msgid "%d domain looked at again."
+msgstr "%d 个域名已重新检查。"
+
+msgid "%d domain your content links to is not approved"
+msgstr "您的内容链接到的 %d 个域名未获批准"
+
+msgid "%d domains, all approved"
+msgstr "%d 个域名，全部已批准"
+
+msgid "%d is still waiting."
+msgstr "%d 仍在等待中。"
+
+msgid "%d link"
+msgstr "%d 个链接"
+
+msgid "%d post(s) already get FAQ schema from another plugin, so they are left alone."
+msgstr "%d 篇文章已由其他插件发布 FAQ 结构化数据，因此不予处理。"
+
+msgid "%d post(s) have a FAQ section but too few questions:"
+msgstr "%d 篇文章包含 FAQ 板块，但问题数量过少："
+
+msgid "%d post(s) have no FAQ section."
+msgstr "%d 篇文章不包含 FAQ 板块。"
+
+msgid "%d post(s) mention a FAQ but no question could be read — unusual structure:"
+msgstr "%d 篇文章提到了 FAQ，但无法读取任何问题——结构异常："
+
+msgid "%d question found"
+msgstr "已找到 %d 个问题"
+
+msgid "%d scripts found — “+ Delay” holds one back, “+ Exclude” keeps it running immediately:"
+msgstr "已找到 %d 个脚本——“+ 延迟”可将其推迟，“+ 排除”可使其立即运行："
+
+msgid "+ Delay"
+msgstr "+ 延迟"
+
+msgid "+ Exclude"
+msgstr "+ 排除"
+
+msgid "1. Triggers → New → Custom Event, event name ^contact_ with \"use regex matching\" ticked — one trigger covers every channel, including any added later. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Optionally add event parameters placement and label, taking their values from Data Layer Variables contact_placement and contact_label. 4. Submit and publish the container."
+msgstr "1. 触发器 → 新建 → 自定义事件，事件名称填写 ^contact_ 并勾选“使用正则表达式匹配”——一个触发器即可覆盖所有渠道，包括之后新增的渠道。2. 代码 → 新建 → Google Analytics GA4 事件，指向您的衡量 ID，事件名称设置为 {{Event}}，让每个渠道保留各自的名称，并使用步骤 1 中的触发器。3. 可选择添加事件参数 placement 和 label，其值来自数据层变量 contact_placement 和 contact_label。4. 提交并发布该容器。"
+
+msgid "6-digit code"
+msgstr "6 位数验证码"
+
+msgid "A .git directory exposes the whole source history, and often credentials with it."
+msgstr ".git 目录会暴露完整的源代码历史，通常还会连带暴露凭据。"
+
+msgid "A PHP snippet changed on your site"
+msgstr "您网站上的一个 PHP 代码片段已更改"
+
+msgid "A contact detail that was not there before has appeared in your content."
+msgstr "您的内容中出现了此前不存在的联系方式。"
+
+msgid "A database client. Anyone who finds it is one password from the database."
+msgstr "一个数据库客户端。任何发现它的人都只差一个密码即可访问数据库。"
+
+msgid "A database dump: everything on the site, downloadable."
+msgstr "一份数据库转储文件：包含网站上的所有内容，可供下载。"
+
+msgid "A domain can go bad without anything on your site changing: it expires, somebody else buys it, and a link you approved years ago now points at whatever they sell. These were approved over a year ago and are each linked from only one or two posts — the kind that can change hands without anybody here noticing."
+msgstr "域名可能在您网站毫无变化的情况下变坏：它过期、被别人买下，而您多年前批准的链接如今指向对方所出售的任何东西。这些域名是一年多前批准的，且每个都只被一两篇文章链接——正是这种情况会在无人察觉的情况下易主。"
+
+msgid "A long list on a first pass is normal and does not have to be read row by row."
+msgstr "首次查看时列表较长是正常现象，不必逐行阅读。"
+
+msgid "A longer answer is shortened in the schema only — your post is never touched. Leave empty to use 500."
+msgstr "较长的答案仅在结构化数据中会被截短——您的文章内容本身不会被改动。留空则使用默认值 500。"
+
+msgid "A new one appeared in a post — see the banner"
+msgstr "文章中出现了一个新的——请查看横幅提示"
+
+msgid "A no-Google, no-badge challenge that loads only on the wp-login.php page — zero effect on your front-end or its speed. Bots that hammer the login page cannot answer a site-specific question. It does not stop a person who reads the question, so pair it with the attempt limiter above."
+msgstr "一种不依赖 Google、不显示徽章的验证方式，只在 wp-login.php 页面加载——对您的前台或速度毫无影响。频繁攻击登录页面的机器人无法回答特定于本站的问题。它无法阻止一个会读题的真人，因此请与上方的尝试次数限制搭配使用。"
+
+msgid "A one-time code has been sent. Enter it above."
+msgstr "一次性验证码已发送。请在上方输入。"
+
+msgid "A post with fewer questions than this gets no schema. Leave empty to use 2, which is the safer choice."
+msgstr "问题数量少于此值的文章将不会生成结构化数据。留空则使用 2，这是更安全的选择。"
+
+msgid "A private key."
+msgstr "一个私钥。"
+
+msgid "A safe first one collects reports and changes nothing: a TXT record at _dmarc.%1$s with the value %2$s"
+msgstr "安全的第一步只收集报告，不做任何更改：在 _dmarc.%1$s 添加一条值为 %2$s 的 TXT 记录"
+
+msgid "A site archive, downloadable by anyone who guesses the name."
+msgstr "一份网站压缩包，任何猜出文件名的人都能下载。"
+
+msgid "A test was sent but you have not said whether it arrived"
+msgstr "已发送测试，但您尚未确认是否收到"
+
+msgid "A v2 key and a v3 key look identical and are not interchangeable. Put a v2 key in the box while the dropdown says V3 and Google refuses to load the widget, so the token is never produced and every login is rejected — which reaches whoever is trying to sign in as “wrong password”. Press the button above after changing a key; it asks Google directly."
+msgstr "v2 密钥和 v3 密钥外观相同，但不能互换使用。如果下拉菜单选择了 V3，而您却在框中填入 v2 密钥，Google 将拒绝加载该控件，导致令牌永远无法生成，每次登录都会被拒绝——在尝试登录的人看来，这就像“密码错误”。更换密钥后请点击上方按钮，它会直接向 Google 查询验证。"
+
+msgid "API key"
+msgstr "API 密钥"
+
+msgid "Above the post content"
+msgstr "文章内容上方"
+
+msgid "Accent colour (toolbar / active thumbnail)"
+msgstr "强调色（工具栏 / 当前缩略图）"
+
+msgid "Accept button text (default: Agree)"
+msgstr "接受按钮文字（默认：同意）"
+
+msgid "Accounts & Email"
+msgstr "账户与邮件"
+
+msgid "Ad clicks"
+msgstr "广告点击"
+
+msgid "Ad-block notice"
+msgstr "广告拦截提示"
+
+msgid "AdSense"
+msgstr "AdSense"
+
+msgid "Add an SPF record. Whichever email service you choose below will give you the exact line."
+msgstr "添加一条 SPF 记录。无论您在下方选择哪个邮件服务，它都会给出确切的记录内容。"
+
+msgid "Add contact channels"
+msgstr "添加联系渠道"
+
+msgid "Add new table"
+msgstr "添加新表格"
+
+msgid "Add nofollow to it (recommended)"
+msgstr "为其添加 nofollow（推荐）"
+
+msgid "Add some data first."
+msgstr "请先添加一些数据。"
+
+msgid "Add “defer” to front-end scripts so they no longer block the page from rendering; they run in order once the HTML is parsed. jQuery is never deferred (inline snippets depend on it). Big Core Web Vitals win."
+msgstr "为前台脚本添加“defer”，使其不再阻塞页面渲染；HTML 解析完成后它们会按顺序执行。jQuery 永远不会被延迟（内联代码片段依赖它）。对 Core Web Vitals 有很大改善。"
+
+msgid "Adds decoding=\"async\" to images so the browser decodes them off the main thread, and relies on WordPress’ built-in native lazy-load (which correctly keeps the first/LCP image eager). Replaces the old script-based method that removed image src — that hurt SEO and broke images with JavaScript off."
+msgstr "为图片添加 decoding=\"async\"，让浏览器在主线程之外解码图片，并依赖 WordPress 内置的原生懒加载（它会正确地让首屏/LCP 图片立即加载）。取代了旧的基于脚本、会移除图片 src 的方法——那种方法损害 SEO，并在 JavaScript 关闭时破坏图片显示。"
+
+msgid "Admin area"
+msgstr "管理区域"
+
+msgid "Admin housekeeping and the plugin's own settings."
+msgstr "管理后台整理与插件自身设置。"
+
+msgid "Admin only"
+msgstr "仅管理员"
+
+msgid "Admin tools"
+msgstr "管理工具"
+
+msgid "Advanced options — device, visitors, schedule, tags (optional)"
+msgstr "高级选项——设备、访客、时间安排、标签（可选）"
+
+msgid "After a few seconds"
+msgstr "几秒钟后"
+
+msgid "After scrolling down"
+msgstr "向下滚动后"
+
+msgid "All"
+msgstr "全部"
+
+msgid "All single content (incl. custom types)"
+msgstr "所有单篇内容（含自定义类型）"
+
+msgid "All-in-one WordPress toolkit: contact chat, shortcodes, security & privacy, media optimisation, SEO, cleanup and more — in one plugin."
+msgstr "一体化 WordPress 工具包：联系聊天、短代码、安全与隐私、媒体优化、SEO、清理等——集于一个插件。"
+
+msgid "Allow a recovery code by Telegram"
+msgstr "允许通过 Telegram 获取恢复代码"
+
+msgid "Allow a recovery code by email"
+msgstr "允许通过邮件获取恢复代码"
+
+msgid "Already approved"
+msgstr "已批准"
+
+msgid "Analytics found on your site: %s. Clicks will be recorded there."
+msgstr "在您的网站上发现了分析工具：%s。点击将记录在那里。"
+
+msgid "And what should happen to a domain that is not on the list?"
+msgstr "对于不在列表中的域名，应该如何处理？"
+
+msgid "Another plugin already publishes FAQ schema for this post, so Horse Tools is staying out of the way."
+msgstr "另一个插件已为该文章发布了 FAQ 结构化数据，因此 Horse Tools 不做处理。"
+
+msgid "Answer"
+msgstr "答案"
+
+msgid "Answers are held for half a day; press this after changing anything in DNS."
+msgstr "结果会缓存半天；在 DNS 中做出任何更改后，请点击此处。"
+
+msgid "Appearance"
+msgstr "外观"
+
+msgid "Apply to Pages as well, not just Posts"
+msgstr "同时应用于页面，而不仅是文章"
+
+msgid "Approve all %d domains your content currently links to?"
+msgstr "批准您内容当前链接到的全部 %d 个域名？"
+
+msgid "Approve all %d — the whole list, not just this page"
+msgstr "批准全部 %d 个——整个列表，而不仅是本页"
+
+msgid "Approve the ticked ones"
+msgstr "批准已勾选的项"
+
+msgid "Approved %d domain."
+msgstr "已批准 %d 个域名。"
+
+msgid "As soon as the page opens"
+msgstr "页面一打开就"
+
+msgid "Ask a custom question on the login form"
+msgstr "在登录表单上提出自定义问题"
+
+msgid "Asking Google…"
+msgstr "正在询问 Google…"
+
+msgid "Asset URLs to preload (one per line — .woff2/.css/.js/.jpg/.webp…)"
+msgstr "要预加载的资源 URL（每行一个——.woff2/.css/.js/.jpg/.webp…）"
+
+msgid "Async CSS — remove render-blocking stylesheets"
+msgstr "异步 CSS——移除阻塞渲染的样式表"
+
+msgid "Authentication code"
+msgstr "验证码"
+
+msgid "Backdrop theme"
+msgstr "背景主题"
+
+msgid "Bar across the bottom"
+msgstr "底部通栏"
+
+msgid "Before </body>"
+msgstr "</body> 之前"
+
+msgid "Below the post content"
+msgstr "文章内容下方"
+
+msgid "Besides your one-time backup codes, a fresh code can also be sent to you here:"
+msgstr "除了一次性备用代码，也可以在此处给您发送一个新代码："
+
+msgid "Blur (frosted glass)"
+msgstr "模糊（磨砂玻璃）"
+
+msgid "Bordered"
+msgstr "带边框"
+
+msgid "Both engines are bundled locally — no external requests. Gallery grouping, looping and the slide transition apply to GLightbox; PhotoSwipe always groups the content images (previous/next) and has its own smooth zoom/pan."
+msgstr "两种引擎均已本地打包——无需外部请求。相册分组、循环播放和幻灯片切换效果适用于 GLightbox；PhotoSwipe 始终对内容图片进行分组（上一张/下一张），并拥有自己流畅的缩放/平移效果。"
+
+msgid "Both engines are free and open-source (MIT). GLightbox is the easy all-rounder (adds video + slide transitions); PhotoSwipe has the smoothest zoom/pan for photo galleries."
+msgstr "两种引擎均免费且开源（MIT 许可）。GLightbox 是简单的多面手（新增了视频和幻灯片切换效果）；PhotoSwipe 为照片相册提供最流畅的缩放/平移体验。"
+
+msgid "Bounce"
+msgstr "弹跳"
+
+msgid "Broken links (404)"
+msgstr "失效链接（404）"
+
+msgid "Broken links 404"
+msgstr "失效链接 404"
+
+msgid "Build a table once here, then insert it into any post or page with its shortcode. Edit it here and every place that uses it updates automatically."
+msgstr "在此处创建一次表格，然后通过其短代码将其插入任何文章或页面中。在此编辑它，所有使用该表格的地方都会自动更新。"
+
+msgid "Build grid"
+msgstr "生成网格"
+
+msgid "Buttons"
+msgstr "按钮"
+
+msgid "By Telegram"
+msgstr "通过 Telegram"
+
+msgid "By default the lockout counts the direct connection IP, which cannot be faked. Only turn this on if your site is reachable ONLY through Cloudflare or a proxy — it then reads the real visitor IP from the proxy header (CF-Connecting-IP / X-Forwarded-For). Do NOT enable it on a normally-hosted site: those headers can be forged, letting an attacker dodge the lockout or get an innocent visitor locked out."
+msgstr "默认情况下，锁定功能统计的是直连 IP，该 IP 无法伪造。仅当您的网站只能通过 Cloudflare 或代理访问时才启用此选项——启用后它会从代理请求头（CF-Connecting-IP / X-Forwarded-For）读取访客的真实 IP。请勿在普通托管的网站上启用它：这些请求头可以被伪造，攻击者可借此躲避锁定，或使无辜访客被误锁。"
+
+msgid "By email — a one-time code is sent to your account address:"
+msgstr "通过邮件——一次性代码将发送到您的账户邮箱："
+
+msgid "CHANGED"
+msgstr "已更改"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Cache cleared. Each post will be read again the next time it is viewed."
+msgstr "缓存已清除。每篇文章下次被查看时都会重新读取。"
+
+msgid "Caption"
+msgstr "说明文字"
+
+msgid "Caption from"
+msgstr "说明文字来源"
+
+msgid "Card (shadow)"
+msgstr "卡片（阴影）"
+
+msgid "Centre of screen"
+msgstr "屏幕中央"
+
+msgid "Chat"
+msgstr "聊天"
+
+msgid "Chat buttons, contact channels and WooCommerce tweaks."
+msgstr "聊天按钮、联系渠道与 WooCommerce 调整。"
+
+msgid "Check again"
+msgstr "再次检查"
+
+msgid "Check for updates"
+msgstr "检查更新"
+
+msgid "Check that WP-Cron is running on this site"
+msgstr "检查本站的 WP-Cron 是否正在运行"
+
+msgid "Check-in"
+msgstr "签到"
+
+msgid "Checked from your own browser: the home page a visitor receives carries no Google Analytics tag. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own."
+msgstr "已从您自己的浏览器检查：访客收到的首页不含 Google Analytics 标签。请安装 Site Kit by Google 或任意 GA4 插件，此设置便会自动生效。"
+
+msgid "Checked — still fine"
+msgstr "已检查——一切正常"
+
+msgid "Checking your site…"
+msgstr "正在检查您的网站…"
+
+msgid "Checking…"
+msgstr "正在检查…"
+
+msgid "Choose a .xlsx, .xls or .csv file:"
+msgstr "选择一个 .xlsx、.xls 或 .csv 文件："
+
+msgid "Choose a built-in icon"
+msgstr "选择一个内置图标"
+
+msgid "Choose an icon"
+msgstr "选择一个图标"
+
+msgid "Choose icon"
+msgstr "选择图标"
+
+msgid "Choose the position (corner box or full-width bar) and customise the message and button labels. The Accept/Decline choice is stored in the browser (localStorage + an “ht_cookie_consent” cookie), so the notice won’t nag returning visitors. Note: this is an informational notice — Horse Tools does not itself block third-party tracking scripts, so for strict consent-gating you would still gate your own scripts on that cookie."
+msgstr "选择位置（角落方块或通栏）并自定义提示信息与按钮文字。接受/拒绝的选择会存储在浏览器中（localStorage + 一个“ht_cookie_consent”Cookie），因此不会反复打扰回访的访客。注意：这只是一条信息性提示——Horse Tools 本身并不会阻止第三方跟踪脚本，如需严格的同意管控，您仍需将自己的脚本与该 Cookie 挂钩。"
+
+msgid "Cinema (pure black)"
+msgstr "影院（纯黑）"
+
+msgid "Clean comments"
+msgstr "清理评论"
+
+msgid "Clean media"
+msgstr "清理媒体文件"
+
+msgid "Clean posts"
+msgstr "清理文章"
+
+msgid "Cleanup schedule"
+msgstr "清理计划"
+
+msgid "Clear cache & re-read"
+msgstr "清除缓存并重新读取"
+
+msgid "Cleared all lockouts."
+msgstr "已清除所有锁定。"
+
+msgid "Click again to delete"
+msgstr "再次点击以删除"
+
+msgid "Click an SVG box, then"
+msgstr "点击 SVG 框，然后"
+
+msgid "Click an icon to drop it into the selected field. Search by its English name (cart, gift, phone…), or Vietnamese for popular icons. Over 5,000 in total — use “Load more” to see them all."
+msgstr "点击一个图标，将其放入所选字段。可按英文名称搜索（cart、gift、phone…），常用图标也支持越南语搜索。共计超过 5000 个——点击“加载更多”查看全部。"
+
+msgid "Click an image in your content to open it in a full-screen viewer. Choose the engine and how it looks below."
+msgstr "点击内容中的图片即可在全屏查看器中打开。请在下方选择引擎及其外观。"
+
+msgid "Code in body"
+msgstr "body 中的代码"
+
+msgid "Code in footer"
+msgstr "页脚中的代码"
+
+msgid "Code in head"
+msgstr "head 中的代码"
+
+msgid "Code on login"
+msgstr "登录时的代码"
+
+msgid "Column"
+msgstr "列"
+
+msgid "Columns"
+msgstr "列"
+
+msgid "Comma separated. A heading containing any of these opens the FAQ section; every heading below it until the next heading of the same level is treated as a question."
+msgstr "以英文逗号分隔。凡包含其中任意一个词的标题都会开启 FAQ 板块；该标题下方直到下一个同级标题之间的每个标题都会被视为一个问题。"
+
+msgid "Compact"
+msgstr "紧凑"
+
+msgid "Confirm them once, from the banner on any Horse Tools screen"
+msgstr "通过任意 Horse Tools 界面上的横幅一次性确认它们"
+
+msgid "Confirm them once, from the notice on any Horse Tools screen"
+msgstr "通过任意 Horse Tools 界面上的提示一次性确认它们"
+
+msgid "Confirmed %s ago"
+msgstr "%s 前已确认"
+
+msgid "Contact click measurement"
+msgstr "联系方式点击统计"
+
+msgid "Contact details are the ones you confirmed"
+msgstr "联系方式即您已确认的那些"
+
+msgid "Contact details in your posts"
+msgstr "文章中的联系方式"
+
+msgid "Contact details in your posts are watched"
+msgstr "正在监测文章中的联系方式"
+
+msgid "Contact details in your settings"
+msgstr "设置中的联系方式"
+
+msgid "Contains database credentials or signing keys."
+msgstr "包含数据库凭据或签名密钥。"
+
+msgid "Control the Heartbeat API"
+msgstr "控制 Heartbeat API"
+
+msgid "Cookie notice"
+msgstr "Cookie 提示"
+
+msgid "Copy"
+msgstr "复制"
+
+msgid "Copy / CSV / Print buttons"
+msgstr "复制 / CSV / 打印按钮"
+
+msgid "Copy all eight lines"
+msgstr "复制全部八行"
+
+msgid "Copy cells in Excel / Google Sheets (or paste CSV) and paste here:"
+msgstr "在 Excel / Google 表格中复制单元格（或粘贴 CSV），然后粘贴到此处："
+
+msgid "Corner — bottom left"
+msgstr "角落——左下"
+
+msgid "Corner — bottom right"
+msgstr "角落——右下"
+
+msgid "Could not be determined"
+msgstr "无法确定"
+
+msgid "Could not check: this server was unable to open your own home page, which many hosts block. That says nothing about whether analytics is installed — if you have Site Kit or another GA4 plugin, switch this on and check the result in Analytics under Admin → DebugView."
+msgstr "无法检查：此服务器未能打开您自己的首页，许多主机都会阻止这种行为。这并不代表分析工具未安装——如果您已安装 Site Kit 或其他 GA4 插件，请开启此项，并在 Analytics 的“管理 → DebugView”中查看结果。"
+
+msgid "Could not load the Excel reader — save the file as CSV and try again."
+msgstr "无法加载 Excel 读取器——请将文件另存为 CSV 后重试。"
+
+msgid "Could not load the home page from the server:"
+msgstr "无法从服务器加载首页："
+
+msgid "Could not load the list."
+msgstr "无法加载列表。"
+
+msgid "Could not read the file."
+msgstr "无法读取该文件。"
+
+msgid "Could not read the home page (HTTP %s). Your host may block the site from calling itself; check the scripts via “View source” instead."
+msgstr "无法读取首页（HTTP %s）。您的主机可能阻止网站访问自身；请改用“查看网页源代码”来检查脚本。"
+
+msgid "Could not send the recovery code — message the bot first, then check your chat ID."
+msgstr "无法发送恢复代码——请先给机器人发一条消息，然后再检查您的 Chat ID。"
+
+msgid "Create table"
+msgstr "创建表格"
+
+msgid "Critical CSS — the above-the-fold styles, inlined in the head to prevent the flash (optional, but strongly recommended)"
+msgstr "关键 CSS——首屏样式，内联在 head 中以防止闪烁（可选，但强烈建议开启）"
+
+msgid "Custom / Maps:"
+msgstr "自定义 / 地图："
+
+msgid "Custom CSS"
+msgstr "自定义 CSS"
+
+msgid "Customers"
+msgstr "客户"
+
+msgid "Dark background"
+msgstr "深色背景"
+
+msgid "Dark mode, scrollbar, effects, and the look of the admin area."
+msgstr "深色模式、滚动条、特效以及管理区域的外观。"
+
+msgid "Date shortcodes"
+msgstr "日期短代码"
+
+msgid "Day(s)"
+msgstr "天"
+
+msgid "Decline"
+msgstr "拒绝"
+
+msgid "Decline button text (default: Decline)"
+msgstr "拒绝按钮文字（默认：拒绝）"
+
+msgid "Default"
+msgstr "默认"
+
+msgid "Defer JavaScript"
+msgstr "延迟 JavaScript"
+
+msgid "Defer JavaScript so it no longer blocks the page"
+msgstr "延迟 JavaScript，使其不再阻塞页面"
+
+msgid "Delay JavaScript execution"
+msgstr "延迟 JavaScript 执行"
+
+msgid "Delay JavaScript until interaction"
+msgstr "延迟 JavaScript 直到有交互为止"
+
+msgid "Delay all scripts except the exclusions (most aggressive)"
+msgstr "延迟除排除项外的所有脚本（最激进）"
+
+msgid "Delay analytics/ads/chat until interaction, and defer JavaScript"
+msgstr "延迟分析/广告/聊天直到有交互为止，并延迟 JavaScript"
+
+msgid "Delay analytics/ads/chat until interaction, and defer JavaScript (cart & checkout untouched)"
+msgstr "延迟分析/广告/聊天直到有交互为止，并延迟 JavaScript（购物车与结账不受影响）"
+
+msgid "Delay only the scripts I list (recommended, safe)"
+msgstr "仅延迟我所列出的脚本（推荐，安全）"
+
+msgid "Delay third-party scripts (analytics, ads, chat) until the visitor interacts — safe built-in list, with a 5-second fall-back"
+msgstr "延迟第三方脚本（分析、广告、聊天）直到访客产生交互——内置安全列表，附带 5 秒后备触发"
+
+msgid "Delete column"
+msgstr "删除列"
+
+msgid "Delete row"
+msgstr "删除行"
+
+msgid "Delete them, or move them somewhere outside the folder your site is served from. If one of them is a copy of wp-config.php, change your database password afterwards — assume it has been read."
+msgstr "删除它们，或将其移到您网站所在目录之外。如果其中之一是 wp-config.php 的副本，请随后更改数据库密码——请假定它已被读取。"
+
+msgid "Detect my chat ID"
+msgstr "检测我的 Chat ID"
+
+msgid "Disable Dashicons for visitors"
+msgstr "为访客禁用 Dashicons"
+
+msgid "Disable on the front-end, slow in admin"
+msgstr "在前台禁用，在后台较慢"
+
+msgid "Display style (where the panel appears)"
+msgstr "显示样式（面板出现的位置）"
+
+msgid "Does mail from this site actually arrive?"
+msgstr "这个网站的邮件是否真的能送达？"
+
+msgid "Domain"
+msgstr "域名"
+
+msgid "Downloadable secrets in the site folder"
+msgstr "网站目录中可下载的敏感文件"
+
+msgid "Drop Emoji, jQuery Migrate and admin icons; calm the Heartbeat"
+msgstr "移除 Emoji、jQuery Migrate 和管理图标；减缓 Heartbeat"
+
+msgid "Each user turns it on for their own account under Users → Profile (scan a QR with Google Authenticator / Authy). After the password they enter a 6-digit code, so a stolen password alone is not enough. Uses standard WordPress hooks — safe across WordPress updates, and disabling the plugin instantly restores the normal login."
+msgstr "每个用户在“用户 → 个人资料”下自行为自己的账户开启此功能（用 Google Authenticator / Authy 扫描二维码）。输入密码后再输入一个 6 位数验证码，因此仅凭窃取的密码不足以登录。使用标准 WordPress 钩子——在 WordPress 更新后依然安全，禁用插件即可立即恢复正常登录。"
+
+msgid "Edit table"
+msgstr "编辑表格"
+
+msgid "Either set up a mailbox for the domain, or make sure the address you send notifications to is one you actually read."
+msgstr "要么为该域名设置一个邮箱，要么确保您接收通知的地址是您真正会查看的地址。"
+
+msgid "Email address"
+msgstr "电子邮件地址"
+
+msgid "Email is the fallback and not a good one — a security message sent by a shop's own server is exactly the kind that lands in spam. Set up the Telegram bot under WooCommerce if you can."
+msgstr "邮件只是备用方案，而且并不理想——由商店自身服务器发出的安全提醒邮件，正是最容易落入垃圾邮件的那种。如果可以，请在 WooCommerce 下设置 Telegram 机器人。"
+
+msgid "Email me a code"
+msgstr "给我发送一个邮件代码"
+
+msgid "Email service (SMTP preset)"
+msgstr "邮件服务（SMTP 预设）"
+
+msgid "Email to %s"
+msgstr "发送邮件到 %s"
+
+msgid "Enable image lightbox"
+msgstr "启用图片灯箱"
+
+msgid "Enable two-factor authentication"
+msgstr "启用双重验证"
+
+msgid "Enter a current two-factor code to unlock PHP editing first."
+msgstr "请先输入当前的双重验证代码以解锁 PHP 编辑功能。"
+
+msgid "Enter the 6-digit code from your app, or a backup code."
+msgstr "请输入您应用中的 6 位数代码，或使用一个备用代码。"
+
+msgid "Enter your authentication code."
+msgstr "请输入您的验证代码。"
+
+msgid "Entrance effect"
+msgstr "进入特效"
+
+msgid "Every day"
+msgstr "每天"
+
+msgid "Every month"
+msgstr "每月"
+
+msgid "Every page load (init)"
+msgstr "每次页面加载（init）"
+
+msgid "Every two weeks"
+msgstr "每两周"
+
+msgid "Every week (recommended)"
+msgstr "每周（推荐）"
+
+msgid "Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off."
+msgstr "每位用户在注册时也会获得一次性备用代码——请妥善保存。若您在没有手机、备用代码或恢复渠道的情况下被锁定，可通过 FTP 重命名插件目录以关闭双重验证。"
+
+msgid "Everything above only tells you. Telling you leaves a gap: the link goes in, the warning appears on a screen, and the link keeps working until you log in and read it. That gap is how three old posts carried casino links for two years."
+msgstr "以上内容只是通知您。仅仅通知会留下一个空档：链接被加入，警告出现在屏幕上，而在您登录并阅读之前，该链接会一直有效。正是这个空档，让三篇旧文章携带赌场链接长达两年。"
+
+msgid "Everything else on this page warns you when something is wrong — but only on a screen you have to open. It cannot warn you that it stopped: a site with the plugin switched off looks exactly like a site with nothing wrong."
+msgstr "本页上的其他内容会在出问题时提醒您——但仅限于您主动打开的界面。它无法提醒您它自己已经停止运作：一个插件被关闭的网站，看起来与一切正常的网站一模一样。"
+
+msgid "Export CSV"
+msgstr "导出 CSV"
+
+msgid "FAQ schema (Horse Tools)"
+msgstr "FAQ 结构化数据（Horse Tools）"
+
+msgid "FAQ schema (rich results)"
+msgstr "FAQ 结构化数据（富媒体结果）"
+
+msgid "Fade"
+msgstr "淡出"
+
+msgid "Fade in"
+msgstr "淡入"
+
+msgid "Fall-back timer — run the delayed scripts after this many seconds even with no interaction (0 = only on interaction)"
+msgstr "后备计时器——即使没有交互，也在这么多秒后运行被延迟的脚本（0 = 仅在交互时运行）"
+
+msgid "Filled in for you: server %host%, port %port%, %enc%."
+msgstr "已为您填好：服务器 %host%，端口 %port%，%enc%。"
+
+msgid "Filter per column"
+msgstr "按列筛选"
+
+msgid "Find a domain"
+msgstr "查找域名"
+
+msgid "Finished reading your posts and pages."
+msgstr "已读取完您的所有文章和页面。"
+
+msgid "First row is a header"
+msgstr "第一行是表头"
+
+msgid "Fix the channel and send a test message"
+msgstr "修复该渠道并发送一条测试消息"
+
+msgid "Flip"
+msgstr "翻转"
+
+msgid "Font settings"
+msgstr "字体设置"
+
+msgid "Fonts"
+msgstr "字体"
+
+msgid "For non-technical users: this switches on the safe, high-impact speed features — delay & defer JavaScript (safe mode, with a 5-second fall-back), lazy-load, Instant-page, HTML compression, and dropping Emoji / jQuery Migrate / Dashicons. The riskier options (async CSS, “delay all”) are left off. The switches below light up so you can see what changed — then press SAVE to apply."
+msgstr "面向非技术用户：这会开启安全、高效的速度优化功能——延迟并推迟 JavaScript（安全模式，附 5 秒后备触发）、懒加载、Instant-page、HTML 压缩，以及移除 Emoji / jQuery Migrate / Dashicons。风险较高的选项（异步 CSS、“延迟全部”）保持关闭。下方的开关会点亮，让您看到发生了哪些变化——然后点击“保存”以应用。"
+
+msgid "Free for 300 messages a day with no card. The account login is the username; the SMTP key is not the same thing as the API key."
+msgstr "免费额度为每天 300 条消息，无需信用卡。账户登录名即用户名；SMTP 密钥与 API 密钥并非同一样东西。"
+
+msgid "Freeze first column"
+msgstr "冻结第一列"
+
+msgid "Front end and admin"
+msgstr "前台与后台"
+
+msgid "Front end only"
+msgstr "仅前台"
+
+msgid "GLightbox — light, images + video, slide effects"
+msgstr "GLightbox——轻量，支持图片 + 视频，带幻灯片特效"
+
+msgid "Give it a minute before answering. “In the spam folder” is a useful answer, not a failure to report."
+msgstr "回答前请稍等片刻。“在垃圾邮件文件夹中”是一个有用的答案，而不是检查失败。"
+
+msgid "Go through the list once and approve it"
+msgstr "将列表过一遍并予以批准"
+
+msgid "Gone"
+msgstr "已消失"
+
+msgid "Google Sheet"
+msgstr "Google 表格"
+
+msgid "Google accepts both keys."
+msgstr "Google 同时接受两种密钥。"
+
+msgid "Google does not recognise this Secret key. Check you copied the secret and not the site key — they come from the same page and are easy to swap."
+msgstr "Google 无法识别此密钥（Secret key）。请检查您复制的是密钥而不是站点密钥——它们来自同一页面，很容易搞混。"
+
+msgid "Google fetch"
+msgstr "Google 抓取"
+
+msgid "Google refused the request — make sure the sheet is shared as “Anyone with the link can view”."
+msgstr "Google 拒绝了该请求——请确认该表格的共享方式为“知道链接的任何人均可查看”。"
+
+msgid "Google refuses this Site key for reCAPTCHA v3. It is almost certainly a v2 key — either switch the dropdown to V2, or paste the key from a v3 project. Until then the widget never loads and every login is rejected."
+msgstr "Google 拒绝将此站点密钥用于 reCAPTCHA v3。它几乎可以肯定是 v2 密钥——请将下拉菜单切换为 V2，或粘贴来自 v3 项目的密钥。在此之前，控件永远无法加载，每次登录都会被拒绝。"
+
+msgid "Google sign-in"
+msgstr "Google 登录"
+
+msgid "Gradient blue-violet"
+msgstr "渐变蓝紫色"
+
+msgid "Gradient ocean"
+msgstr "渐变海洋色"
+
+msgid "Gradient sunset"
+msgstr "渐变日落色"
+
+msgid "Grey"
+msgstr "灰色"
+
+msgid "Group images into a gallery (previous / next)"
+msgstr "将图片分组为相册（上一张 / 下一张）"
+
+msgid "HTML compression; compress JPGs and serve WebP"
+msgstr "HTML 压缩；压缩 JPG 并提供 WebP"
+
+msgid "Handle dead links: send visitors who hit a “404 – not found” page to a page you choose, and keep a log of the broken URLs so you know what to fix."
+msgstr "处理失效链接：将访问“404——未找到”页面的访客引导至您指定的页面，并记录失效 URL 的日志，方便您了解需要修复什么。"
+
+msgid "Header colour"
+msgstr "标题颜色"
+
+msgid "Heads up: a PHP snippet was just changed on %1$s. Snippet: \"%2$s\". By: %3$s (IP %4$s). If this was not you, change your password and review Horse Tools → Shortcode immediately."
+msgstr "提醒：%1$s 上的一个 PHP 代码片段刚刚被更改。片段：“%2$s”。操作者：%3$s（IP %4$s）。如果这不是您本人所为，请立即更改密码并检查 Horse Tools → Shortcode。"
+
+msgid "Heartbeat mode"
+msgstr "Heartbeat 模式"
+
+msgid "Hold heavy third-party scripts (analytics, tag managers, pixels, chat, ads) until the visitor first interacts — scroll, mouse move, tap, key or click — then run them in order. The single biggest win for Total Blocking Time and “Reduce unused JavaScript”. It re-fires the page-ready events afterwards, keeps script order, and never touches JSON-LD structured data or ES modules."
+msgstr "在访客首次产生交互之前——滚动、移动鼠标、点触、按键或点击——拖延较重的第三方脚本（分析、标签管理器、像素、聊天、广告），随后按顺序运行它们。这是提升 Total Blocking Time 及“减少未使用的 JavaScript”最大的一项改进。之后会重新触发页面就绪事件，保持脚本顺序，且绝不会触碰 JSON-LD 结构化数据或 ES 模块。"
+
+msgid "Horse Tools %s is available — an update link now appears under the plugin below. WordPress will download it directly from GitHub."
+msgstr "Horse Tools %s 已发布——下方插件条目下方现已显示更新链接。WordPress 将直接从 GitHub 下载它。"
+
+msgid "Horse Tools beat #%1$d — %2$s"
+msgstr "Horse Tools 心跳 #%1$d — %2$s"
+
+msgid "Horse Tools can tell you when your content starts linking somewhere new."
+msgstr "当您的内容开始链接到新地方时，Horse Tools 可以告诉您。"
+
+msgid "Horse Tools can watch your contact details for changes."
+msgstr "Horse Tools 可以监测您的联系方式是否发生变化。"
+
+msgid "Horse Tools could not reach GitHub to check for updates. Please try again later."
+msgstr "Horse Tools 未能连接到 GitHub 以检查更新。请稍后再试。"
+
+msgid "Horse Tools is up to date (version %s)."
+msgstr "Horse Tools 已是最新版本（版本 %s）。"
+
+msgid "Horse Tools keeps a copy of your decisions in a file as well as in the database, precisely so that a change made straight to the database can be seen. These no longer match:"
+msgstr "Horse Tools 会将您的决定同时保存一份副本到文件和数据库中，正是为了让直接修改数据库的行为能够被察觉。以下几项已不再一致："
+
+msgid "Horse Tools snippet"
+msgstr "Horse Tools 代码片段"
+
+msgid "Horse Tools table"
+msgstr "Horse Tools 表格"
+
+msgid "Horse Tools — %s"
+msgstr "Horse Tools — %s"
+
+msgid "Hosts to preconnect (one per line — host or full URL)"
+msgstr "要预连接的主机（每行一个——主机名或完整 URL）"
+
+msgid "Hour(s)"
+msgstr "小时"
+
+msgid "How often"
+msgstr "频率"
+
+msgid "Icon colour"
+msgstr "图标颜色"
+
+msgid "Icons"
+msgstr "图标"
+
+msgid "If a theme/plugin script misbehaves, add its handle or file name to the exclusion list below. Disable if you already use a full-page optimiser that defers scripts."
+msgstr "如果某个主题/插件脚本出现异常，请将其句柄或文件名添加到下方的排除列表中。如果您已在使用会延迟脚本的全页优化插件，请将此项关闭。"
+
+msgid "If it does not arrive, something stopped it — check the site."
+msgstr "如果它没有到达，说明有什么阻止了它——请检查网站。"
+
+msgid "If this site stops working, or Horse Tools is switched off, nobody is told. Every warning here is only seen by someone who logs in and looks."
+msgstr "如果该网站停止运行，或者 Horse Tools 被关闭，不会有人收到通知。这里的每条警告，都只有登录后主动查看的人才能看到。"
+
+msgid "If you are reading it, mail from your site reaches this address. Go back to the Email screen and say where it turned up — the inbox or the spam folder — because those are two different answers and only you can see which one it was."
+msgstr "如果您正在阅读它，说明您网站发出的邮件确实能送达这个地址。请返回邮件界面，说明它出现的位置——收件箱还是垃圾邮件文件夹——因为这是两种不同的结果，只有您能判断具体是哪一种。"
+
+msgid "If you have just restored a database backup, or copied the database from another copy of this site, that is the explanation — the file stayed while the database went back in time. Press the button and it will match again."
+msgstr "如果您刚刚恢复了数据库备份，或从本站点的另一份副本中复制了数据库，那就是原因所在——文件保持不变，而数据库却回到了过去。点击按钮，二者便会再次匹配。"
+
+msgid "If you have not done either of those things, then something can write to your database that should not be able to. Changing passwords will not fix that on its own; the way in has to be found."
+msgstr "如果您两者都没做过，那么就有某个东西能写入您的数据库，而它本不应该有这个权限。仅仅更改密码并不能解决问题；必须找到入侵的途径。"
+
+msgid "If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else."
+msgstr "如果这些是您刚刚自己更改的，请确认它们。如果不是，那就是别人改的——在更改其他任何内容之前，请先检查最近是谁编辑过您的设置。"
+
+msgid "If you lose your phone"
+msgstr "如果您丢失了手机"
+
+msgid "If your site has Tag Manager but no Google tag"
+msgstr "如果您的网站装有 Tag Manager 但没有 Google 标签"
+
+msgid "Image alt text"
+msgstr "图片替代文字"
+
+msgid "Image caption (figcaption)"
+msgstr "图片说明（figcaption）"
+
+msgid "Image lightbox"
+msgstr "图片灯箱"
+
+msgid "Image title"
+msgstr "图片标题"
+
+msgid "Images"
+msgstr "图片"
+
+msgid "In"
+msgstr "于"
+
+msgid "In Google Analytics: Reports → Engagement → Events. Each channel appears under its own name — contact_phone, contact_zalo, contact_messenger and so on — so there is nothing to configure first. Allow 24 hours for the standard reports; to see it immediately instead, open Admin → DebugView and tap a button on your phone."
+msgstr "在 Google Analytics 中：报告 → 互动 → 事件。每个渠道都会以自己的名称出现——contact_phone、contact_zalo、contact_messenger 等等——因此无需事先做任何配置。标准报告请等待 24 小时；若想立即查看，请打开“管理 → DebugView”，然后在手机上点一下按钮。"
+
+msgid "In the inbox"
+msgstr "在收件箱中"
+
+msgid "In the page <head>"
+msgstr "在页面 <head> 中"
+
+msgid "In the spam folder"
+msgstr "在垃圾邮件文件夹中"
+
+msgid "Indigo"
+msgstr "靛蓝色"
+
+msgid "Insert a snippet"
+msgstr "插入代码片段"
+
+msgid "Insert a table"
+msgstr "插入表格"
+
+msgid "Insert a table you saved earlier:"
+msgstr "插入一个您先前保存过的表格："
+
+msgid "Insert column right"
+msgstr "在右侧插入列"
+
+msgid "Insert row below"
+msgstr "在下方插入行"
+
+msgid "Insert table"
+msgstr "插入表格"
+
+msgid "Install analytics first"
+msgstr "请先安装一个分析工具"
+
+msgid "Invalid code. Please try again."
+msgstr "验证码无效，请重试。"
+
+msgid "It continues on its own each time you open an admin page"
+msgstr "每次您打开管理页面时，它都会自行继续"
+
+msgid "It failed: %s"
+msgstr "失败：%s"
+
+msgid "JavaScript &amp; connections"
+msgstr "JavaScript 与连接"
+
+msgid "Last confirmed %s ago — worth testing again"
+msgstr "上次确认于 %s 前——值得再次测试"
+
+msgid "Last message: #%1$d, %2$s ago."
+msgstr "最近一条消息：#%1$d，%2$s 前。"
+
+msgid "Last row is a total row (pinned to the bottom)"
+msgstr "最后一行是合计行（固定在底部）"
+
+msgid "Least-linked first, because the one added without your knowing is almost never the one you link to from two hundred posts. Tick what belongs and approve it; leave the rest here."
+msgstr "最少关联的排在最前，因为在您不知情的情况下被添加的域名，几乎从不会是您从两百篇文章中链接过去的那个。勾选属实的项并予以批准；其余的留在这里。"
+
+msgid "Leave empty and the icon follows the list colour."
+msgstr "留空则图标会跟随列表颜色。"
+
+msgid "Leave empty to use the icon chosen above; anything pasted here replaces it. Its colour comes from the Icon colour setting below, so the fill in your SVG is ignored. Scripts and event handlers are removed."
+msgstr "留空则使用上方选定的图标；此处粘贴的任何内容都会替换它。其颜色来自下方的“图标颜色”设置，因此您 SVG 中的填充色会被忽略。脚本与事件处理程序会被移除。"
+
+msgid "Leave this empty and the message goes to the same Telegram chat as your order notifications, or by email if you have not set a bot up. Orders go to whoever packs them; this does not, so there is a field of its own."
+msgstr "留空则消息会发送到与订单通知相同的 Telegram 聊天，若您尚未设置机器人则改为发邮件。订单会发给打包的人；这条消息不会，因此单独设有一个字段。"
+
+msgid "Light"
+msgstr "浅色"
+
+msgid "Lightbox engine"
+msgstr "灯箱引擎"
+
+msgid "Lines only"
+msgstr "仅线条"
+
+msgid "Link text"
+msgstr "链接文字"
+
+msgid "Links"
+msgstr "链接"
+
+msgid "Links & URLs"
+msgstr "链接与 URL"
+
+msgid "Links every image in the content together so the viewer can flip through them. If an image already links to a file, that link is used."
+msgstr "将内容中的所有图片相互链接起来，让查看器可以逐张浏览。如果图片已链接到某个文件，则会使用该链接。"
+
+msgid "Links to domains you did not approve are defused as they are printed"
+msgstr "未经您批准的域名链接，在输出时会被解除"
+
+msgid "Load CSS without blocking render"
+msgstr "加载 CSS 时不阻塞渲染"
+
+msgid "Load more icons"
+msgstr "加载更多图标"
+
+msgid "Loading…"
+msgstr "正在加载…"
+
+msgid "Loads a script or an embedded frame from this domain"
+msgstr "从该域名加载脚本或嵌入式框架"
+
+msgid "Loads stylesheets without blocking the first paint (the media-toggle technique), so the page appears on screen sooner. A big win for First Contentful Paint and Lighthouse’s “Eliminate render-blocking resources”."
+msgstr "在不阻塞首次绘制的情况下加载样式表（媒体切换技术），使页面更快出现在屏幕上。对 First Contentful Paint 及 Lighthouse 的“消除阻塞渲染的资源”有很大帮助。"
+
+msgid "Lock content"
+msgstr "锁定内容"
+
+msgid "Locked yourself out? Log in from a different network (e.g. your phone on mobile data = a different IP), then click the button above to clear all lockouts — or just wait for the lockout time to pass. As a last resort, disable the plugin by renaming its folder via FTP."
+msgstr "把自己锁在外面了？请换一个网络登录（例如用手机的移动数据网络 = 不同的 IP），然后点击上方按钮清除所有锁定——或者直接等待锁定时间过去。作为最后手段，可通过 FTP 重命名插件目录以禁用插件。"
+
+msgid "Lockout length"
+msgstr "锁定时长"
+
+msgid "Lockout time unit"
+msgstr "锁定时间单位"
+
+msgid "Login lockout, two-factor, reCAPTCHA and the login page."
+msgstr "登录锁定、双重验证、reCAPTCHA 和登录页面。"
+
+msgid "Login page"
+msgstr "登录页面"
+
+msgid "Longest answer to publish (characters)"
+msgstr "最长可发布答案（字符数）"
+
+msgid "Look down this page, deal with anything that makes you stop, and use “Approve everything” below for the rest — what matters is having a baseline, so that tomorrow’s arrival stands out against it."
+msgstr "浏览这个页面，处理任何让您停下来的内容，其余部分使用下方的“全部批准”——重要的是建立一个基准，这样明天新出现的内容才能与之形成对照。"
+
+msgid "Loop back to the first image"
+msgstr "循环返回第一张图片"
+
+msgid "Lost your device?"
+msgstr "设备丢失了？"
+
+msgid "Mail from this site is known to arrive"
+msgstr "已知本站发出的邮件能够送达"
+
+msgid "Mail from this site leaves by %1$s, and that address is known as %2$s."
+msgstr "本站发出的邮件经由 %1$s 发出，该地址被识别为 %2$s。"
+
+msgid "Mail this site sends as %s is treated as forged. Your domain publishes a list of servers allowed to send for it, that list ends in “reject everything else”, and this web server is not on it."
+msgstr "本站以 %s 名义发出的邮件被视为伪造。您的域名发布了一份被授权代其发信的服务器列表，该列表以“拒绝其余所有”结尾，而此 Web 服务器不在其中。"
+
+msgid "Maintenance (503)"
+msgstr "维护中（503）"
+
+msgid "Maintenance 503"
+msgstr "维护中 503"
+
+msgid "Measurement"
+msgstr "衡量"
+
+msgid "Merge cells: type #colspan# to merge into the cell on the left, #rowspan# to merge into the cell above. Formulas: =SUM(B2:B10), also AVG / MIN / MAX."
+msgstr "合并单元格：输入 #colspan# 以与左侧单元格合并，输入 #rowspan# 以与上方单元格合并。公式：=SUM(B2:B10)，也支持 AVG / MIN / MAX。"
+
+msgid "Microsoft has been switching this off for new tenants; if it refuses to authenticate, that is why, and another service is the quicker road."
+msgstr "Microsoft 正逐步为新租户关闭此功能；如果验证被拒绝，原因就在于此，改用其他服务会更快。"
+
+msgid "Minimal"
+msgstr "极简"
+
+msgid "Minimum number of questions"
+msgstr "最少问题数量"
+
+msgid "Minute(s)"
+msgstr "分钟"
+
+msgid "Mode"
+msgstr "模式"
+
+msgid "Move column left"
+msgstr "将列左移"
+
+msgid "Move column right"
+msgstr "将列右移"
+
+msgid "Move row down"
+msgstr "将行下移"
+
+msgid "Move row up"
+msgstr "将行上移"
+
+msgid "NOT APPROVED: %s"
+msgstr "未批准：%s"
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Native image lazy-load + async decode"
+msgstr "原生图片懒加载 + 异步解码"
+
+msgid "New"
+msgstr "新"
+
+msgid "Next"
+msgstr "下一个"
+
+msgid "Next beat due: %s"
+msgstr "下次心跳时间：%s"
+
+msgid "Next one due %s."
+msgstr "下一次预计在 %s。"
+
+msgid "No FAQ section recognised in this post."
+msgstr "该文章中未识别到 FAQ 板块。"
+
+msgid "No Google Analytics tag turned up, either in your settings or on the home page. If you have not installed one yet, Site Kit by Google (or any GA4 plugin) is the usual way. If you know you do have one — added through Tag Manager, a caching layer, or a consent tool that loads it later — this check simply could not see it: switch the setting on anyway. It looks for analytics at the moment of the click, not now, so it starts working the instant a tag is present."
+msgstr "未发现 Google Analytics 标签，无论是在您的设置中还是在首页上均未发现。如果您还未安装，通常的做法是使用 Site Kit by Google（或任意 GA4 插件）。如果您确知自己已经安装了——通过 Tag Manager、缓存层或延迟加载的同意工具添加的——本检测只是无法探测到它：请仍然开启此设置。它会在点击发生的那一刻查找分析工具，而不是现在，因此一旦标签存在，它便立即开始生效。"
+
+msgid "No Telegram bot token is set yet (WooCommerce module)."
+msgstr "尚未设置 Telegram 机器人令牌（WooCommerce 模块）。"
+
+msgid "No auto-refresh"
+msgstr "不自动刷新"
+
+msgid "No caption"
+msgstr "无说明文字"
+
+msgid "No copy on disk yet — it is written the first time you confirm something"
+msgstr "磁盘上尚无副本——它会在您首次确认某项内容时写入"
+
+msgid "No downloadable secrets in the site folder"
+msgstr "网站目录中没有可下载的敏感文件"
+
+msgid "No matching rows."
+msgstr "没有匹配的行。"
+
+msgid "No message containing %s yet. Send that exact code to the bot, then press this again."
+msgstr "目前还没有包含 %s 的消息。请将该确切代码发给机器人，然后再次点击此处。"
+
+msgid "No post titles here on purpose — this list is long, and looking up a title for every row is what made this screen slow. Tick anything you want to take back and press the button; it moves up to “Waiting for you” with its posts listed."
+msgstr "这里故意不显示文章标题——这份列表很长，为每一行查找标题正是导致这个界面变慢的原因。勾选任何您想收回的项并点击按钮；它会连同其文章列表一起移至“等待您处理”。"
+
+msgid "No saved tables yet."
+msgstr "目前还没有已保存的表格。"
+
+msgid "No scripts found."
+msgstr "未发现任何脚本。"
+
+msgid "No snippet matches your search."
+msgstr "没有符合您搜索条件的代码片段。"
+
+msgid "No snippets yet — create them on the Shortcode screen."
+msgstr "目前还没有代码片段——请在 Shortcode 界面创建它们。"
+
+msgid "No table yet."
+msgstr "暂无表格。"
+
+msgid "No tables yet. Click “Add new table” to create your first one."
+msgstr "目前还没有表格。点击“添加新表格”以创建第一个。"
+
+msgid "Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it."
+msgstr "任何人都无法点击进入。这种方式更严格，也更容易带来不便——您本想链接、却忘记勾选的域名，会在您勾选之前一直不再是一个链接。"
+
+msgid "Nobody has ever checked that mail from this site arrives"
+msgstr "从未有人检查过本站发出的邮件能否送达"
+
+msgid "None (instant)"
+msgstr "无（立即）"
+
+msgid "Not allowed."
+msgstr "不允许。"
+
+msgid "Not due yet."
+msgstr "尚未到期。"
+
+msgid "Not your normal password — Google requires an app password, and the page that makes them only appears once two-step verification is on."
+msgstr "不是您平时的密码——Google 要求使用应用专用密码，而生成该密码的页面只有在开启两步验证后才会出现。"
+
+msgid "Nothing accepts mail for %s, so any address at your own domain cannot receive replies. If you have stopped paying for a mailbox provider, its records may still be pointing there."
+msgstr "没有任何东西接收 %s 的邮件，因此您自己域名下的任何地址都无法收到回复。如果您已停止为某个邮箱提供商付费，其记录可能仍然指向那里。"
+
+msgid "Nothing in DNS can change this. Send through an email service instead — those use a different port, which is open."
+msgstr "DNS 中没有任何东西能改变这一点。请改用邮件服务发送——它们使用另一个端口，而该端口是开放的。"
+
+msgid "Nothing matches that."
+msgstr "没有匹配的内容。"
+
+msgid "Nothing running on this server can find out whether a message arrived. You can. Send one, look, and say what you found — the answer is kept with the date, so this screen can afterwards report something that was seen rather than something that was switched on."
+msgstr "运行在此服务器上的任何程序都无法得知消息是否送达。但您可以。发送一条，查看结果，并说明您发现了什么——该答案会连同日期一起保存，以便此界面日后能够汇报“曾被看到的情况”，而不是“曾被开启的情况”。"
+
+msgid "Nothing to preview yet."
+msgstr "目前还没有可预览的内容。"
+
+msgid "Nothing to send."
+msgstr "没有可发送的内容。"
+
+msgid "Nothing to set up"
+msgstr "无需设置"
+
+msgid "Nothing was ticked, so nothing changed."
+msgstr "没有勾选任何内容，因此没有任何变化。"
+
+msgid "Nothing — just tell me"
+msgstr "什么都没有——直接告诉我"
+
+msgid "Nothing. Every domain your content points at is one you have agreed to."
+msgstr "什么都没有。您内容所指向的每一个域名，都是您已经同意的。"
+
+msgid "Notification bar"
+msgstr "通知栏"
+
+msgid "Nowhere — it never came"
+msgstr "哪里都没有——它从未送达"
+
+msgid "On the code screen the user can have a one-time code emailed to their account address if they lose their phone."
+msgstr "在验证码界面，如果用户丢失手机，可以让系统将一次性验证码发送到其账户邮箱。"
+
+msgid "One click for the safe, high-impact speed features — including delaying third-party scripts and deferring JavaScript. It deliberately leaves out the advanced, riskier options (async CSS, the aggressive “delay all” mode), which you can still turn on yourself later. Gutenberg and Classic CSS are left alone, since removing those can change how a theme looks."
+msgstr "一键开启安全、高效的速度功能——包括延迟第三方脚本和推迟 JavaScript。它有意排除了更高级、更有风险的选项（异步 CSS、激进的“延迟全部”模式），您之后仍可自行开启这些选项。Gutenberg 和 Classic CSS 不受影响，因为移除它们可能改变主题的外观。"
+
+msgid "One half is in the database — still safe, but tidy it up"
+msgstr "一半保存在数据库中——依然安全，但值得整理一下"
+
+msgid "One of your buttons is set to Skype. Microsoft closed Skype on 5 May 2025 and moved everyone to Teams, so that button now opens nothing for visitors. Change it to another channel — it has been left in place rather than removed for you, so that nothing changes on your site without your say-so."
+msgstr "您的一个按钮被设置为 Skype。Microsoft 已于 2025 年 5 月 5 日关闭 Skype，并将所有人迁移至 Teams，因此该按钮如今对访客不再打开任何内容。请将其改为其他渠道——之所以保留而非替您移除，是为了确保未经您同意，网站上不会有任何改变。"
+
+msgid "One-click safe speed setup"
+msgstr "一键式安全速度设置"
+
+msgid "Only %1$d question found; at least %2$d are needed before schema is published."
+msgstr "只找到 %1$d 个问题；结构化数据发布前至少需要 %2$d 个。"
+
+msgid "Only a full administrator may use PHP snippets."
+msgstr "只有完整权限的管理员才能使用 PHP 代码片段。"
+
+msgid "Only add hosts the page really uses. Preconnecting to a host you do not load from wastes a connection."
+msgstr "只添加页面真正会用到的主机。预连接一个您并未从中加载任何内容的主机，只会白白浪费一次连接。"
+
+msgid "Only affects enqueued stylesheets, and only for logged-out visitors. A fallback keeps every stylesheet working when JavaScript is turned off."
+msgstr "仅影响已加入队列的样式表，且仅针对未登录的访客。当 JavaScript 被关闭时，有一个后备机制会确保每个样式表仍然生效。"
+
+msgid "Only for a custom icon: click the SVG box below, then"
+msgstr "仅适用于自定义图标：点击下方的 SVG 框，然后"
+
+msgid "Only in the post editor (autosave/locking)"
+msgstr "仅在文章编辑器中生效（自动保存/锁定）"
+
+msgid "Only in these category IDs"
+msgstr "仅在这些分类 ID 中"
+
+msgid "Only the backup route worked — your main channel is down"
+msgstr "只有备用渠道成功了——您的主渠道已中断"
+
+msgid "Only the ticked ones on this page (%d)"
+msgstr "仅本页已勾选的项（%d）"
+
+msgid "Only where I place its shortcode"
+msgstr "仅在我放置其短代码的位置"
+
+msgid "Open a couple and glance at them. “Still fine” only resets the clock; it does not change what is approved."
+msgstr "打开几个看一眼即可。“仍然正常”只会重置计时器；并不会改变已批准的内容。"
+
+msgid "Open animation"
+msgstr "打开动画"
+
+msgid "Optimisation"
+msgstr "优化"
+
+msgid "Optional: in Admin → Events, switch on \"Mark as key event\" for the channels that matter to you. They then appear in the acquisition reports, so you can see which traffic source produces contacts, and they can be imported into Google Ads as a conversion."
+msgstr "可选：在“管理 → 事件”中，为对您重要的渠道开启“标记为关键事件”。这样它们就会出现在获客报告中，让您了解哪个流量来源带来了联系，并且可以将其作为转化导入 Google Ads。"
+
+msgid "Or enter this key manually:"
+msgstr "或手动输入此密钥："
+
+msgid "Orange"
+msgstr "橙色"
+
+msgid "Outbound links"
+msgstr "外链"
+
+msgid "Outbound links are watched"
+msgstr "外链正在被监测"
+
+msgid "Outbound links screen — choose what should happen to them"
+msgstr "外链界面——选择应对它们采取的处理方式"
+
+msgid "Overdue — nothing has been running the schedule"
+msgstr "已逾期——没有任何东西在运行该计划"
+
+msgid "PHP editing unlocked for %d minutes."
+msgstr "PHP 编辑功能已解锁 %d 分钟。"
+
+msgid "PHP errors: server paths, fragments of queries, sometimes the contents of a failed request."
+msgstr "PHP 错误：服务器路径、查询片段，有时还包括失败请求的内容。"
+
+msgid "PHP runs with full access to your site, so it stays locked. Enter a current code from your authenticator to unlock it for 15 minutes."
+msgstr "PHP 拥有对您网站的完全访问权限，因此始终处于锁定状态。请输入您验证器应用中的当前代码，将其解锁 15 分钟。"
+
+msgid "PHP snippets are not available."
+msgstr "PHP 代码片段功能不可用。"
+
+msgid "PHP snippets are switched off by HORSETOOLS_NO_PHP in wp-config.php."
+msgstr "PHP 代码片段功能已被 wp-config.php 中的 HORSETOOLS_NO_PHP 关闭。"
+
+msgid "PHP snippets are unavailable because this site sets DISALLOW_FILE_MODS — the platform does not allow code changes at all."
+msgstr "PHP 代码片段功能不可用，因为本站启用了 DISALLOW_FILE_MODS——该平台完全不允许修改代码。"
+
+msgid "PHP syntax error — nothing was saved: %s"
+msgstr "PHP 语法错误——未保存任何内容：%s"
+
+msgid "Page %1$d of %2$d"
+msgstr "第 %1$d 页，共 %2$d 页"
+
+msgid "Pagination"
+msgstr "分页"
+
+msgid "Panel layout"
+msgstr "面板布局"
+
+msgid "Password or app password"
+msgstr "密码或应用专用密码"
+
+msgid "Paste a Google Sheets link (shared: anyone with the link)"
+msgstr "粘贴一个 Google 表格链接（共享方式：知道链接的任何人）"
+
+msgid "Paste all eight lines into wp-config.php, above the line that requires wp-settings.php. Replace any existing lines with the same names. Everyone signed in — including you — will be signed out afterwards, which is the point: it invalidates every cookie issued with the old keys."
+msgstr "将全部八行粘贴到 wp-config.php 中，位置在需要 wp-settings.php 的那一行之上。替换所有同名的现有行。所有已登录的用户——包括您本人——之后都会被登出，这正是重点所在：它会使用旧密钥签发的每个 Cookie 失效。"
+
+msgid "Paste from Excel"
+msgstr "从 Excel 粘贴"
+
+msgid "Paste the eight keys into wp-config.php — see the notice at the top of any Horse Tools screen"
+msgstr "将这八个密钥粘贴到 wp-config.php 中——请参阅任意 Horse Tools 界面顶部的提示"
+
+msgid "Permalinks, image alt text, external links and FAQ schema."
+msgstr "永久链接、图片替代文字、外部链接与 FAQ 结构化数据。"
+
+msgid "Phone number"
+msgstr "电话号码"
+
+msgid "Phone, SMS, Messenger, Telegram, Zalo, Whatsapp, Viber, Skype, Tiktok, Mail:"
+msgstr "电话、短信、Messenger、Telegram、Zalo、Whatsapp、Viber、Skype、Tiktok、邮件："
+
+msgid "PhotoSwipe — best pinch-zoom / pan for photos"
+msgstr "PhotoSwipe——最佳的图片双指缩放/平移体验"
+
+msgid "Phrases that mark the FAQ section"
+msgstr "标记 FAQ 板块的短语"
+
+msgid "Pick a button skin"
+msgstr "选择一种按钮外观"
+
+msgid "Pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically — no icon needed."
+msgstr "选择一个渠道（Zalo、Messenger、电话…），其图标会自动添加——无需自行选择图标。"
+
+msgid "Pick a snippet to insert"
+msgstr "选择要插入的代码片段"
+
+msgid "Pink"
+msgstr "粉色"
+
+msgid "Plugin settings"
+msgstr "插件设置"
+
+msgid "Policy link text (default: Policy)"
+msgstr "政策链接文字（默认：政策）"
+
+msgid "Pop"
+msgstr "弹出"
+
+msgid "Popup"
+msgstr "弹窗"
+
+msgid "Post images, duplicating posts and the image lightbox."
+msgstr "文章图片、文章去重以及图片灯箱。"
+
+msgid "Posts"
+msgstr "文章"
+
+msgid "Posts and pages"
+msgstr "文章与页面"
+
+msgid "Posts only"
+msgstr "仅文章"
+
+msgid "Preconnect to third-party hosts"
+msgstr "预连接第三方主机"
+
+msgid "Preload critical assets"
+msgstr "预加载关键资源"
+
+msgid "Previous"
+msgstr "上一个"
+
+msgid "Print"
+msgstr "打印"
+
+msgid "Protection"
+msgstr "防护"
+
+msgid "Prove it"
+msgstr "证明一下"
+
+msgid "Publish FAQ schema automatically from the FAQ section in a post"
+msgstr "根据文章中的 FAQ 板块自动发布 FAQ 结构化数据"
+
+msgid "Publishes the server configuration, paths and loaded modules."
+msgstr "公开服务器配置、路径与已加载的模块。"
+
+msgid "Pull data"
+msgstr "拉取数据"
+
+msgid "Question"
+msgstr "问题"
+
+msgid "Quick guide — how the chat feature works"
+msgstr "快速指南——聊天功能如何运作"
+
+msgid "Read all my content again"
+msgstr "重新读取我的全部内容"
+
+msgid "Read the records again"
+msgstr "重新读取记录"
+
+msgid "Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see."
+msgstr "请将这些理解为“意图”而非“结果”：一次点击意味着有人打开了拨号器或聊天应用，并不代表通话已接通或消息已发送。广告拦截器也会阻止部分点击到达 Analytics，因此真实数字会略高于您看到的数字。"
+
+msgid "Reading your content: %1$d of %2$d"
+msgstr "正在读取您的内容：%1$d / %2$d"
+
+msgid "Reading your content…"
+msgstr "正在读取您的内容…"
+
+msgid "Reading…"
+msgstr "读取中…"
+
+msgid "Reads the “frequently asked questions” part your posts already have — a heading that names the section, then one heading per question with its answer below — and publishes the matching JSON-LD so Google can show them as FAQ rich results. Nothing in your posts is changed. If another SEO plugin already publishes FAQ schema for a post, Horse Tools stays out of the way."
+msgstr "读取您文章中已有的“常见问题”部分——一个标注该板块的标题，随后每个问题各有一个标题及其下方的答案——并发布对应的 JSON-LD，让 Google 能够将其显示为 FAQ 富媒体结果。您文章中的任何内容都不会被更改。如果其他 SEO 插件已为某篇文章发布 FAQ 结构化数据，Horse Tools 不会插手。"
+
+msgid "Record contact button clicks"
+msgstr "记录联系按钮的点击情况"
+
+msgid "Redirects (301)"
+msgstr "重定向（301）"
+
+msgid "Redirects 301"
+msgstr "重定向 301"
+
+msgid "Refresh daily"
+msgstr "每日刷新"
+
+msgid "Refresh hourly"
+msgstr "每小时刷新"
+
+msgid "Removed something from a post and it is still listed here? The lists only grow as your content is read, and a post that no longer contains something cannot say so. Read everything again and the lists will match what is actually there now."
+msgstr "从文章中移除了某项内容，但这里仍然列出？列表只会随着内容被读取而增长，而不再包含某项内容的文章无法自行说明这一点。重新读取所有内容后，列表就会与实际情况相符。"
+
+msgid "Removes the admin icon font (Dashicons) on the front-end for logged-out visitors, who never see it. It is kept for logged-in users because the admin bar uses it."
+msgstr "为未登录访客移除前台的管理图标字体（Dashicons），因为他们从未见过它。已登录用户仍会保留它，因为管理栏用到了它。"
+
+msgid "Reset all login lockouts now"
+msgstr "立即重置所有登录锁定"
+
+msgid "Review the list"
+msgstr "查看该列表"
+
+msgid "Rich results"
+msgstr "富媒体结果"
+
+msgid "Right now these would go to: %s"
+msgstr "目前这些会发送到：%s"
+
+msgid "Roles, avatars, SMTP and signing in with Google."
+msgstr "角色、头像、SMTP 以及通过 Google 登录。"
+
+msgid "Rotate in"
+msgstr "旋入"
+
+msgid "Row-number column"
+msgstr "行号列"
+
+msgid "Rows"
+msgstr "行"
+
+msgid "Rows/page"
+msgstr "行数/页"
+
+msgid "Run this snippet as PHP"
+msgstr "以 PHP 方式运行此代码片段"
+
+msgid "SAVE FONT SETTINGS"
+msgstr "保存字体设置"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "SMTP key"
+msgstr "SMTP 密钥"
+
+msgid "SMTP password"
+msgstr "SMTP 密码"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Save a table"
+msgstr "保存表格"
+
+msgid "Save table"
+msgstr "保存表格"
+
+msgid "Save these one-time backup codes somewhere safe — each works once if you lose your phone:"
+msgstr "请将这些一次性备用代码保存在安全的地方——若丢失手机，每个代码可使用一次："
+
+msgid "Save this choice"
+msgstr "保存此选择"
+
+msgid "Saved tables"
+msgstr "已保存的表格"
+
+msgid "Saved. Everything found so far is approved."
+msgstr "已保存。目前找到的所有内容均已获批准。"
+
+msgid "Scan failed."
+msgstr "扫描失败。"
+
+msgid "Scan the scripts running on the home page"
+msgstr "扫描首页上运行的脚本"
+
+msgid "Scan the whole site"
+msgstr "扫描整个网站"
+
+msgid "Scan this with Google Authenticator, Authy or a similar app, then enter the 6-digit code it shows to turn 2FA on."
+msgstr "用 Google Authenticator、Authy 或类似应用扫描此项，然后输入其显示的 6 位数代码以开启双重验证。"
+
+msgid "Scanning…"
+msgstr "扫描中…"
+
+msgid "Scripts to exclude from defer (one per line — a script handle or part of its URL)"
+msgstr "从延迟中排除的脚本（每行一个——脚本句柄或其 URL 的一部分）"
+
+msgid "Scripts, styles, lazy loading, image compression and WebP."
+msgstr "脚本、样式、懒加载、图片压缩和 WebP。"
+
+msgid "Search all plugin features…"
+msgstr "搜索所有插件功能…"
+
+msgid "Search box"
+msgstr "搜索框"
+
+msgid "Search by name…"
+msgstr "按名称搜索…"
+
+msgid "Search snippets by name, description or tag…"
+msgstr "按名称、描述或标签搜索代码片段…"
+
+msgid "Search the table…"
+msgstr "搜索表格…"
+
+msgid "Search: cart, gift, phone… (English name, or Vietnamese for popular icons)"
+msgstr "搜索：cart、gift、phone…（英文名称，常用图标也支持越南语）"
+
+msgid "Seconds to wait, or scroll percent (used by the two options above)"
+msgstr "等待的秒数，或滚动百分比（用于上方两个选项）"
+
+msgid "Security question on the login form"
+msgstr "登录表单上的安全问题"
+
+msgid "Security tab → Check-in → turn on the regular message"
+msgstr "“安全”标签页 → 签到 → 开启定期消息"
+
+msgid "See the GitHub release page for details."
+msgstr "详情请见 GitHub 发布页面。"
+
+msgid "See the banner at the top of any Horse Tools screen"
+msgstr "请见任意 Horse Tools 界面顶部的横幅"
+
+msgid "Select a snippet"
+msgstr "选择一个代码片段"
+
+msgid "Send a Telegram code"
+msgstr "发送 Telegram 代码"
+
+msgid "Send a test"
+msgstr "发送测试"
+
+msgid "Send a test message"
+msgstr "发送测试消息"
+
+msgid "Send a test message now"
+msgstr "立即发送测试消息"
+
+msgid "Send as the same address you sign in with. This service refuses anything else."
+msgstr "以您登录所用的同一地址发送。此服务拒绝任何其他地址。"
+
+msgid "Send me a regular check-in message"
+msgstr "给我发送定期签到消息"
+
+msgid "Send through an email service instead — then the question does not arise."
+msgstr "请改用邮件服务发送——这样就不会出现这个问题。"
+
+msgid "Send through an email service that is on the list, or add this server to it."
+msgstr "请通过列表中的邮件服务发送，或将该服务器加入此列表。"
+
+msgid "Send through an email service that is on the list."
+msgstr "请通过列表中的邮件服务发送。"
+
+msgid "Sending…"
+msgstr "正在发送…"
+
+msgid "Sends one event to your analytics each time a visitor taps a contact link — phone, SMS, email, Zalo, Messenger, Telegram, WhatsApp, Viber, Line, WeChat, TikTok, Maps and the rest. Any other chat button is recorded under its own site name, so Instagram, Shopee, Signal and anything you add later are covered without waiting for an update. Phone, SMS, email and Viber links count anywhere on the site, including inside your posts; the others count inside the chat widgets, so an article full of outbound links does not flood the report. Nothing is stored on your site and no personal data is involved."
+msgstr "每当访客点击联系链接时——电话、短信、邮件、Zalo、Messenger、Telegram、WhatsApp、Viber、Line、WeChat、TikTok、地图及其他——都会向您的分析工具发送一个事件。任何其他聊天按钮都会以其自身的站点名称记录，因此 Instagram、Shopee、Signal 以及您日后添加的任何渠道，无需等待更新即可被覆盖。电话、短信、邮件和 Viber 链接在网站任何位置均会计入，包括文章内部；其他渠道则仅在聊天组件内计入，因此充满外链的文章不会淹没报告。您的网站不会存储任何内容，也不涉及任何个人数据。"
+
+msgid "Sent to %s. Now go and look — and do not close this page, because the useful part is what you find."
+msgstr "已发送到 %s。现在请前去查看——并且不要关闭此页面，因为有用的部分正是您所发现的内容。"
+
+msgid "Sent. Check %s — if nothing arrives, the channel is not working even though the site thinks it is."
+msgstr "已发送。请检查 %s——如果没有收到，即使网站认为渠道正常，实际上它也没有工作。"
+
+msgid "Sent: %s"
+msgstr "已发送：%s"
+
+msgid "Server errors, including absolute paths."
+msgstr "服务器错误，包括绝对路径。"
+
+msgid "Service"
+msgstr "服务"
+
+msgid "Services panel (mobile)"
+msgstr "服务面板（移动端）"
+
+msgid "Settings are grouped by what they do. Pick a group below, or search for a setting by name in the panel on the right."
+msgstr "设置已按功能分组。请在下方选择一个分组，或在右侧面板中按名称搜索某项设置。"
+
+msgid "Settings → WooCommerce → “Configure order notifications to be sent to Telegram”"
+msgstr "设置 → WooCommerce → “配置要发送到 Telegram 的订单通知”"
+
+msgid "Sharpen (blur to clear)"
+msgstr "锐化（从模糊到清晰）"
+
+msgid "Show a “Decline” button"
+msgstr "显示“拒绝”按钮"
+
+msgid "Show columns"
+msgstr "显示列"
+
+msgid "Show new keys to paste"
+msgstr "显示可粘贴的新密钥"
+
+msgid "Showing the first %1$d of %2$d — keep typing to narrow it down."
+msgstr "正在显示前 %1$d 项，共 %2$d 项——继续输入以缩小范围。"
+
+msgid "Shows a small cookie notice in the corner so your site meets privacy rules. To use: turn on the switch, type the notice and your policy-page link, then choose which side it appears on."
+msgstr "在角落显示一个小型 Cookie 提示，以使您的网站符合隐私规定。使用方法：开启开关，输入提示文字和您政策页面的链接，然后选择它出现的一侧。"
+
+msgid "Shows a thin notice bar across the very top of every page — handy for a promotion, a hotline, or a delivery note. To use: turn on the switch, type your message, then choose the background colour."
+msgstr "在每个页面的最顶部显示一条细长的提示栏——适用于促销、热线电话或配送说明。使用方法：开启开关，输入您的消息，然后选择背景颜色。"
+
+msgid "Shows an eye-catching popup in the middle of the screen when someone opens your site — great for a sale, an announcement or a poster. To use: turn on the switch, pick a layout below, add an image / title / content, then set how many hours before it shows again."
+msgstr "当有人打开您的网站时，在屏幕中央显示一个醒目的弹窗——非常适合促销、公告或海报。使用方法：开启开关，在下方选择一种布局，添加图片/标题/内容，然后设定多少小时后再次显示。"
+
+msgid "Side of the site"
+msgstr "网站的一侧"
+
+msgid "Signature"
+msgstr "签名"
+
+msgid "Signing keys are in wp-config.php, not the database"
+msgstr "签名密钥保存在 wp-config.php 中，而非数据库中"
+
+msgid "Site"
+msgstr "网站"
+
+msgid "Site is behind Cloudflare or a proxy (use the real visitor IP)"
+msgstr "网站位于 Cloudflare 或代理之后（使用访客的真实 IP）"
+
+msgid "Site search"
+msgstr "站内搜索"
+
+msgid "Size"
+msgstr "大小"
+
+msgid "Skype (service closed)"
+msgstr "Skype（服务已关闭）"
+
+msgid "Slide"
+msgstr "滑动"
+
+msgid "Slide down"
+msgstr "向下滑动"
+
+msgid "Slide in from left"
+msgstr "从左侧滑入"
+
+msgid "Slide in from right"
+msgstr "从右侧滑入"
+
+msgid "Slide transition (GLightbox)"
+msgstr "幻灯片切换效果（GLightbox）"
+
+msgid "Slide up"
+msgstr "向上滑动"
+
+msgid "Slow down to 60 seconds (safe)"
+msgstr "减慢至 60 秒（安全）"
+
+msgid "Snippets"
+msgstr "代码片段"
+
+msgid "So this sends you a short message on a schedule, with a number on it, even when everything is fine. Numbers that skip mean messages were sent and never reached you. A message that arrives late means nothing was running the schedule. Nothing at all means something stopped it — and that is the one you can only notice from outside the site, which is why each message tells you when to expect the next."
+msgstr "因此，即便一切正常，这也会按计划给您发送一条带编号的简短消息。编号出现跳跃，意味着消息已发出但从未送达您。消息迟到，意味着没有任何东西在运行该计划。什么都没有，则意味着有什么阻止了它——而这正是您只有在网站之外才能察觉的情况，这也是为什么每条消息都会告诉您下一条预计何时到达。"
+
+msgid "Soft pastel"
+msgstr "柔和粉彩"
+
+msgid "Somebody has asked for this path %d times."
+msgstr "有人已请求过此路径 %d 次。"
+
+msgid "Something changed what you approved, without going through this screen."
+msgstr "有东西更改了您批准的内容，且未经过此界面。"
+
+msgid "Something changed — see the notice on any Horse Tools screen"
+msgstr "有内容发生了变化——请见任意 Horse Tools 界面上的提示"
+
+msgid "Something went wrong. Please try again."
+msgstr "出现问题，请重试。"
+
+msgid "Sortable columns"
+msgstr "可排序的列"
+
+msgid "Sorting, search and pagination appear on the published page."
+msgstr "排序、搜索和分页会显示在已发布的页面上。"
+
+msgid "Speed"
+msgstr "速度"
+
+msgid "Spots visitors who have an ad-blocker turned on and shows them a message asking to switch it off. To use: turn on the switch, type a title and message, then pick the button colours below."
+msgstr "识别出开启了广告拦截器的访客，并向其显示一条要求关闭它的消息。使用方法：开启开关，输入标题和消息内容，然后在下方选择按钮颜色。"
+
+msgid "Stack into cards on mobile"
+msgstr "在移动端堆叠为卡片"
+
+msgid "Start fetching a few important files immediately (the LCP image, a web font, the main CSS). The type is detected from the file extension. Do not preload many files — it competes with everything else for bandwidth."
+msgstr "立即开始获取几个重要文件（LCP 图片、网页字体、主 CSS）。类型通过文件扩展名判断。请勿预加载过多文件——这会与其他一切争抢带宽。"
+
+msgid "Starting…"
+msgstr "正在启动…"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Step 1 —"
+msgstr "步骤 1 —"
+
+msgid "Step 2 —"
+msgstr "步骤 2 —"
+
+msgid "Step 3 —"
+msgstr "步骤 3 —"
+
+msgid "Still reading your content"
+msgstr "仍在读取您的内容"
+
+msgid "Still reading your content. Come back in a minute."
+msgstr "仍在读取您的内容。请稍候片刻再回来查看。"
+
+msgid "Still reading your content: %1$d of %2$d. Come back in a minute."
+msgstr "仍在读取您的内容：%1$d / %2$d。请稍候片刻再回来查看。"
+
+msgid "Striped rows"
+msgstr "斑马纹行"
+
+msgid "Style"
+msgstr "样式"
+
+msgid "Stylesheets to keep render-blocking (one per line — a handle or part of the URL). Put your main theme CSS here if you don’t have critical CSS yet."
+msgstr "需要保持阻塞渲染的样式表（每行一个——句柄或 URL 的一部分）。如果您还没有关键 CSS，请将主题的主 CSS 放在这里。"
+
+msgid "Swing"
+msgstr "摇摆"
+
+msgid "Switch on Horse Tools two-factor authentication (Security tab) before using PHP snippets."
+msgstr "使用 PHP 代码片段之前，请先开启 Horse Tools 的双重验证（“安全”标签页）。"
+
+msgid "Sync from Sheet"
+msgstr "从表格同步"
+
+msgid "Synced"
+msgstr "已同步"
+
+msgid "Syncing…"
+msgstr "正在同步…"
+
+msgid "THEY DO NOT — something changed them without going through the screens"
+msgstr "不再一致——有东西在未经过这些界面的情况下更改了它们"
+
+msgid "Table"
+msgstr "表格"
+
+msgid "Table %d"
+msgstr "表格 %d"
+
+msgid "Table of contents"
+msgstr "目录"
+
+msgid "Table ready — click to edit."
+msgstr "表格已就绪——点击即可编辑。"
+
+msgid "Tables"
+msgstr "表格"
+
+msgid "Tag Manager is installed on this site. If you already built click tags there — a trigger on tel: links, on zalo.me, on m.me — switching this on records the same click twice, once under your own event name and once as contact_phone. Open your container, check whether such tags exist, and pause either those or this setting. Keep whichever one also fires your Google Ads conversions; this setting does not."
+msgstr "本站已安装 Tag Manager。如果您已在其中构建了点击类标签——针对 tel: 链接、zalo.me、m.me 的触发器——开启此设置会使同一次点击被记录两次：一次以您自己的事件名称，一次作为 contact_phone。请打开您的容器，检查是否存在此类标签，然后暂停其中一方或此设置。请保留能同时触发您 Google Ads 转化的那一方；此设置不会触发转化。"
+
+msgid "Take back the ticked ones"
+msgstr "收回已勾选的项"
+
+msgid "Take the link away, keep the words"
+msgstr "移除链接，保留文字"
+
+msgid "Teal"
+msgstr "青色"
+
+msgid "Telegram (chat %s — the one paired for two-factor recovery)"
+msgstr "Telegram（聊天 %s——已配对用于双重验证恢复的那个）"
+
+msgid "Telegram (chat %s)"
+msgstr "Telegram（聊天 %s）"
+
+msgid "Telegram chat ID for security messages (optional)"
+msgstr "用于安全消息的 Telegram Chat ID（可选）"
+
+msgid "Telegram recovery is ON but this site has no bot token yet, so no recovery code can be sent. Add a bot token in the %1$s module (the “Configure order notifications to be sent to Telegram” section) — it is easy to miss because it lives there, not here — then each user pastes their own chat ID on their profile."
+msgstr "Telegram 恢复功能已开启，但本站尚未设置机器人令牌，因此无法发送恢复代码。请在 %1$s 模块中添加机器人令牌（“配置要发送到 Telegram 的订单通知”部分）——由于它位于那里而非此处，很容易被忽略——然后每位用户在自己的个人资料中粘贴各自的 Chat ID。"
+
+msgid "Telegram recovery is turned on but this site has no bot token yet, so no code can be sent. Add a bot token under %s, then reload this page."
+msgstr "Telegram 恢复功能已开启，但本站尚未设置机器人令牌，因此无法发送代码。请在 %s 下添加机器人令牌，然后重新加载此页面。"
+
+msgid "Telegram recovery isn’t fully set up on this site yet — ask the site admin, or just use email or a backup code instead."
+msgstr "本站尚未完全配置好 Telegram 恢复功能——请咨询网站管理员，或直接改用邮件或备用代码。"
+
+msgid "Telegram returned no updates (the bot may use a webhook, or the token is wrong)."
+msgstr "Telegram 未返回任何更新（机器人可能使用了 webhook，或令牌有误）。"
+
+msgid "Tell me the site is still being watched"
+msgstr "告诉我网站仍在被监测"
+
+msgid "Tell the browser to start the DNS + TCP + TLS handshake to external hosts early (fonts, CDN, analytics), so their files arrive sooner. Adds preconnect and dns-prefetch hints to the page head."
+msgstr "让浏览器提前开始与外部主机（字体、CDN、分析）握手 DNS + TCP + TLS，使这些文件能更快到达。会在页面 head 中添加 preconnect 和 dns-prefetch 提示。"
+
+msgid "Temporarily close the site with a “under maintenance” notice while you make changes. You (and other logged-in admins) still see the site normally, so you can work in peace."
+msgstr "在您进行修改期间，用“维护中”提示暂时关闭网站。您（以及其他已登录的管理员）仍会看到网站正常运行，因此可以安心操作。"
+
+msgid "Test message from %s"
+msgstr "来自 %s 的测试消息"
+
+msgid "Test the site after turning this on. If something that must work before interaction breaks (a hero slider, a cookie bar), add its handle or file name to a list below. Do not use together with “Delay JS” in another optimiser."
+msgstr "开启此项后请测试网站。如果某个必须在交互前就正常工作的功能出现故障（首屏轮播图、Cookie 提示栏），请将其句柄或文件名添加到下方列表中。请勿与其他优化插件中的“延迟 JS”同时使用。"
+
+msgid "Test these keys against Google"
+msgstr "针对 Google 测试这些密钥"
+
+msgid "That code is not right."
+msgstr "该验证码不正确。"
+
+msgid "That does not look like a Google Sheets link."
+msgstr "这看起来不像是 Google 表格链接。"
+
+msgid "That is not an email address."
+msgstr "这不是一个电子邮件地址。"
+
+msgid "That snippet no longer exists."
+msgstr "该代码片段已不存在。"
+
+msgid "That was me — line them up again"
+msgstr "是我操作的——重新排列它们"
+
+msgid "The PHP snippet \"%s\" stopped the page it ran on, so Horse Tools switched it off. Edit it and switch it back on when it is fixed."
+msgstr "PHP 代码片段“%s”导致其所在页面停止运行，因此 Horse Tools 已将其关闭。请修复后重新编辑并将其重新开启。"
+
+msgid "The Secret key box is empty, so the check is skipped entirely and reCAPTCHA is doing nothing at all."
+msgstr "密钥（Secret key）字段为空，因此验证被完全跳过，reCAPTCHA 实际上什么都没做。"
+
+msgid "The Site key box is empty."
+msgstr "站点密钥（Site key）字段为空。"
+
+msgid "The account name for this service is the literal word “%user%”. It is not your email address, and putting your address there is why it says the password is wrong."
+msgstr "该服务的账户名就是字面意义上的“%user%”一词。它并非您的电子邮件地址，而将您的地址填在那里，正是系统提示密码错误的原因。"
+
+msgid "The answer is matched ignoring case and surrounding spaces. Remember it — if you ever forget it you can still get back in by renaming the plugin folder over FTP to switch the plugin off."
+msgstr "答案比对时会忽略大小写及首尾空格。请牢记它——万一您忘记了，仍可通过 FTP 重命名插件目录来关闭插件，从而重新进入。"
+
+msgid "The check-in message is on but has never been sent. Until one arrives you do not know the channel works."
+msgstr "签到消息功能已开启，但从未发送过。在收到一条之前，您无法确定该渠道是否正常。"
+
+msgid "The code is how the site tells your chat apart from everyone else’s — it finds only the chat that sent it. Recovery codes then reach your own Telegram, not the admin. (You can also type the chat ID number in manually.)"
+msgstr "该代码是网站用来区分您的聊天与其他所有人聊天的方式——它只会找到发送该代码的那个聊天。恢复代码随后会送达您自己的 Telegram，而非管理员。（您也可以手动输入 Chat ID 号码。）"
+
+msgid "The first one goes out as soon as you save, so you find out straight away whether the channel works."
+msgstr "第一条会在您保存后立即发出，因此您能立刻知道该渠道是否正常工作。"
+
+msgid "The form below asks eight questions. Seven of them have exactly one right answer once you know which service you are using, and the eighth is a password. Choose here and the seven fill themselves in — you are left with the one thing nothing can guess."
+msgstr "下方表单会提出八个问题。一旦您知道自己使用的是哪种服务，其中七个问题就各自只有一个正确答案，第八个则是密码。在此处选择服务，那七项便会自行填好——只剩下那唯一一件任何人都无法猜到的东西。"
+
+msgid "The last check-in message could not be sent: %s"
+msgstr "最后一条签到消息未能发送：%s"
+
+msgid "The last check-in message went out %s ago, which is later than it should be. Nothing has been running the schedule."
+msgstr "最后一条签到消息是在 %s 前发出的，比预期要晚。没有任何东西在运行该计划。"
+
+msgid "The last one could not be sent — Security tab → Check-in"
+msgstr "最后一条未能发送——“安全”标签页 → 签到"
+
+msgid "The link still works for a reader and stops passing any SEO value — which is the whole reason a link like that is worth paying for. Nothing in your posts is changed; only what gets printed."
+msgstr "该链接对读者而言依旧有效，但不再传递任何 SEO 价值——这正是此类链接值得付费的全部原因所在。您文章中的任何内容都不会被更改；改变的只是输出的结果。"
+
+msgid "The most powerful but riskiest speed option. Without the Critical CSS below, the page can flash unstyled for a moment (FOUC). Paste your above-the-fold CSS, or keep the main theme stylesheet in the exclusion list. Test the front end carefully, and don’t combine it with another plugin that also optimises CSS delivery."
+msgstr "最强大但也最具风险的速度选项。若没有下方的关键 CSS，页面可能会瞬间出现无样式闪烁（FOUC）。请粘贴您首屏区域的 CSS，或将主主题样式表保留在排除列表中。请仔细测试前台效果，且不要与另一个同样优化 CSS 加载的插件一起使用。"
+
+msgid "The page carries no analytics at all yet, so there is nowhere for a click to be recorded. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own with nothing further to configure."
+msgstr "该页面目前完全没有任何分析工具，因此点击无处可记录。请安装 Site Kit by Google 或任意 GA4 插件，此设置便会自动开始工作，无需进一步配置。"
+
+msgid "The request itself failed."
+msgstr "请求本身失败了。"
+
+msgid "The security question below the password was left empty."
+msgstr "密码下方的安全问题被留空了。"
+
+msgid "The sheet appears to be empty."
+msgstr "该表格似乎是空的。"
+
+msgid "The sheet is too large (over 1 MB of CSV)."
+msgstr "该表格过大（CSV 超过 1 MB）。"
+
+msgid "The sheet must be shared as “Anyone with the link can view”. With auto-refresh on, the table updates itself from the sheet."
+msgstr "该表格必须共享为“知道链接的任何人均可查看”。开启自动刷新后，表格会自动从该表格中更新。"
+
+msgid "The site handed it over successfully. That is not the same as it arriving — if the numbers you receive skip, the channel is dropping them."
+msgstr "网站已成功将其移交出去。这与“已送达”并非一回事——如果您收到的编号出现跳跃，说明该渠道正在丢失部分消息。"
+
+msgid "The username is the literal word “apikey”, not your address."
+msgstr "用户名就是字面意义上的“apikey”一词，而非您的地址。"
+
+msgid "The username is the literal word “resend”, not your address. You must add and verify your domain before it will send as you."
+msgstr "用户名就是字面意义上的“resend”一词，而非您的地址。您必须先添加并验证您的域名，它才能以您的名义发送邮件。"
+
+msgid "The username is the postmaster address Mailgun shows on your sending domain, not your login."
+msgstr "用户名是 Mailgun 在您发信域名上显示的 postmaster 地址，而非您的登录名。"
+
+msgid "Theme colour"
+msgstr "主题颜色"
+
+msgid "There are files in your site’s folder that anyone can download."
+msgstr "您网站目录中存在任何人都能下载的文件。"
+
+msgid "These are correct — remember them"
+msgstr "这些是正确的——请牢记它们"
+
+msgid "These are the phone numbers, Zalo, Messenger links and email addresses currently in your settings. Check them, then confirm — after that you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest."
+msgstr "这些是您设置中当前的电话号码、Zalo、Messenger 链接和电子邮件地址。请检查它们，然后确认——之后只要其中任何一项发生变化，您都会收到通知。更改店铺的热线电话，是最直接也最悄无声息的一种攻击手段。"
+
+msgid "These contact details appear in your content. Confirm them and you will be told if a new one ever turns up in a post — which is what happens when somebody edits an old article to put their own number in it."
+msgstr "这些联系方式出现在您的内容中。请确认它们，此后只要文章中出现新的联系方式，您都会收到通知——这正是有人编辑旧文章、将自己的号码塞进去时会发生的情况。"
+
+msgid "These two addresses do not match, and that is enough to stop your mail."
+msgstr "这两个地址不一致，仅此一点就足以阻止您的邮件发送。"
+
+msgid "They no longer match — see the banner at the top of any Horse Tools screen"
+msgstr "它们已不再一致——请见任意 Horse Tools 界面顶部的横幅"
+
+msgid "This account uses two-factor authentication; XML-RPC password login is disabled."
+msgstr "此账户使用双重验证；已禁用通过 XML-RPC 的密码登录。"
+
+msgid "This could not be checked from here, so the instructions are shown just in case. To find out whether they apply to you: open your site, press F12, and type gtag in the console. An answer of \"function\" means you have nothing to do; \"undefined\" means follow the steps below."
+msgstr "此项无法从此处检查，因此这里仅显示相关说明以备不时之需。要判断它们是否适用于您：打开您的网站，按 F12，然后在控制台中输入 gtag。返回“function”表示您无需操作；返回“undefined”表示需要按照下方步骤操作。"
+
+msgid "This host does not let the plugin read DNS, so none of the checks below can be made. That is not the same as everything being in order."
+msgstr "此主机不允许插件读取 DNS，因此下方的检查项均无法执行。这并不代表一切正常。"
+
+msgid "This is a test message from %s."
+msgstr "这是来自 %s 的测试消息。"
+
+msgid "This list is incomplete."
+msgstr "此列表不完整。"
+
+msgid "This never touches what is stored. Switch it off and every link is back as it was on the next page load."
+msgstr "这从不会触及已存储的内容。将其关闭后，下次加载页面时每个链接都会恢复原状。"
+
+msgid "This section could not be displayed. The rest of the screen still works."
+msgstr "此部分内容无法显示。界面其余部分仍可正常使用。"
+
+msgid "This server cannot reach any other mail server, so nothing it sends can ever be delivered. WordPress hands each message to a local mail program, that program accepts it — which is why every screen says “sent” — and then finds the way out closed. The message waits in a queue nobody reads, and there is no bounce, because a bounce would have to leave by the same door."
+msgstr "此服务器无法连接到任何其他邮件服务器，因此它发送的任何内容都无法被送达。WordPress 会将每条消息交给本地邮件程序，该程序会接受它——这就是为什么每个界面都显示“已发送”——然后才发现出口是关闭的。消息会在无人查看的队列中等待，也不会有退信，因为退信必须从同一扇门离开。"
+
+msgid "This server does not read .htaccess files, so nothing is hiding this one but its name. Horse Tools now stores these as .php files that stop on their first line, which works on every server."
+msgstr "此服务器不会读取 .htaccess 文件，因此除了文件名之外，没有任何东西能隐藏这个文件。Horse Tools 现在将这些文件保存为 .php 文件，并在第一行就终止执行，这在任何服务器上都有效。"
+
+msgid "This server sends mail from an address with no name attached to it (%s). Gmail and Yahoo both take that as the mark of a machine nobody set up to send mail, and Yahoo refuses it outright — which looks from here exactly like the message vanishing, because the refusal happens at the far end and the bounce goes somewhere you never read."
+msgstr "此服务器发送的邮件所用地址没有绑定名称（%s）。Gmail 和 Yahoo 都将其视为一台无人配置用于发信的机器的标志，而 Yahoo 会直接拒收——从这里看来，这与消息凭空消失一模一样，因为拒收发生在对方那一端，退信也发往您从未查看的地方。"
+
+msgid "This site cannot see its own public address — it sits behind a proxy or a load balancer — so the checks above that depend on knowing it were skipped rather than guessed at."
+msgstr "此网站无法得知自己的公开地址——它位于代理或负载均衡器之后——因此上方那些依赖此信息的检查项被跳过，而非凭空猜测。"
+
+msgid "This site has WordPress's built-in file editor switched off (DISALLOW_FILE_EDIT) — good. PHP snippets still work, because they carry their own protections: two-factor unlock, a syntax check before saving, auto-disable on a crash, and code signing. To switch them off as well, add HORSETOOLS_NO_PHP to wp-config.php."
+msgstr "此网站已关闭 WordPress 内置的文件编辑器（DISALLOW_FILE_EDIT）——很好。PHP 代码片段依然可用，因为它们自带保护机制：双重验证解锁、保存前的语法检查、崩溃时自动禁用，以及代码签名。若要一并关闭它们，请在 wp-config.php 中添加 HORSETOOLS_NO_PHP。"
+
+msgid "This site has no valid admin email address."
+msgstr "此网站没有有效的管理员电子邮件地址。"
+
+msgid "This site has no way to reach you: no Telegram bot, and no valid admin email address."
+msgstr "此网站没有任何方式能联系到您：既没有 Telegram 机器人，也没有有效的管理员电子邮件地址。"
+
+msgid "This site sets DISALLOW_FILE_MODS, so running PHP from the database is not allowed."
+msgstr "此网站设置了 DISALLOW_FILE_MODS，因此不允许从数据库运行 PHP。"
+
+msgid "This site’s signing keys are stored in the database, not in wp-config.php."
+msgstr "此网站的签名密钥保存在数据库中，而非 wp-config.php 中。"
+
+msgid "This snippet’s code no longer matches its signature — it was changed outside this screen and will not run. Review it and save again to re-sign it."
+msgstr "此代码片段的代码已不再与其签名匹配——它在此界面之外被修改过，因此不会运行。请检查后重新保存以重新签名。"
+
+msgid "This user has two-factor authentication ON."
+msgstr "该用户的双重验证已开启。"
+
+msgid "This web server is not on your domain’s list of allowed senders. The list says “treat anything else as suspicious” rather than “reject it”, so mail as %s will usually arrive in the spam folder."
+msgstr "此 Web 服务器不在您域名的授权发信服务器列表中。该列表表示“将其余所有情况视为可疑”而非“拒绝它”，因此以 %s 发出的邮件通常会进入垃圾邮件文件夹。"
+
+msgid "This web server is on your domain’s list of allowed senders."
+msgstr "此 Web 服务器已在您域名的授权发信服务器列表中。"
+
+msgid "Tick all on this page"
+msgstr "勾选本页所有项"
+
+msgid "Tip: to stop one specific script from ever being delayed, add the attribute data-ht-no-delay to its tag. Logged-in users are never affected."
+msgstr "提示：若要让某个特定脚本永不被延迟，请在其标签中添加 data-ht-no-delay 属性。已登录用户永远不受影响。"
+
+msgid "To check it works right now rather than waiting: open your site with %s on the end of the address, tap a contact button, and watch GA4 → Admin → DebugView. Without that flag DebugView stays empty however many times you tap, because it only lists devices that identify themselves as debug devices — which is not a fault in the buttons."
+msgstr "要立即确认它是否生效而无需等待：请在网址末尾加上 %s 打开您的网站，点击一个联系按钮，然后查看 GA4 → 管理 → DebugView。若没有该标记，无论您点击多少次，DebugView 都会保持为空，因为它只列出自我标识为调试设备的设备——这并非按钮本身的缺陷。"
+
+msgid "To use PHP snippets, switch on two-factor authentication first (Horse Tools → Overview → Security)."
+msgstr "要使用 PHP 代码片段，请先开启双重验证（Horse Tools → 概览 → 安全）。"
+
+msgid "To use PHP snippets, switch on two-factor authentication for your own account first (Users → Profile)."
+msgstr "要使用 PHP 代码片段，请先为您自己的账户开启双重验证（用户 → 个人资料）。"
+
+msgid "Too many failed attempts. Try again in about %s."
+msgstr "失败尝试次数过多，请约 %s 后再试。"
+
+msgid "Tools"
+msgstr "工具"
+
+msgid "Trust this device for 30 days"
+msgstr "信任此设备 30 天"
+
+msgid "Turn it off (uncheck stays on)"
+msgstr "关闭它（取消勾选仍保持开启）"
+
+msgid "Turn it off for this user (e.g. they lost their device)"
+msgstr "为此用户关闭它（例如他们丢失了设备）"
+
+msgid "Turn on the regular check-in message"
+msgstr "开启定期签到消息"
+
+msgid "Turned on but never sent — send a test message"
+msgstr "已开启但从未发送过——发送测试消息"
+
+msgid "Two Horse Tools protections are signed with those keys: the PHP snippet signature, which is meant to refuse code written straight into the database, and the “trusted device” cookie that skips two-factor authentication. Anyone who can read your database can read the keys, so both can be forged. Moving the keys into wp-config.php — a file — restores them."
+msgstr "这些密钥用于签署 Horse Tools 的两项防护措施：PHP 代码片段签名（用于拒绝直接写入数据库的代码），以及用于跳过双重验证的“受信任设备”Cookie。任何能读取您数据库的人都能读取这些密钥，因此两者都可能被伪造。将密钥移至 wp-config.php——一个文件——即可恢复其安全性。"
+
+msgid "Two-factor authentication"
+msgstr "双重验证"
+
+msgid "Two-factor authentication (2FA)"
+msgstr "双重验证（2FA）"
+
+msgid "Two-factor authentication is ON for your account."
+msgstr "您账户的双重验证已开启。"
+
+msgid "Type it in"
+msgstr "手动输入"
+
+msgid "Unlock"
+msgstr "解锁"
+
+msgid "Untick all"
+msgstr "取消全部勾选"
+
+msgid "Upload a file"
+msgstr "上传文件"
+
+msgid "Upload a font on the Fonts tab first, then choose where to use it here."
+msgstr "请先在“字体”标签页上传一种字体，然后在此处选择在何处使用它。"
+
+msgid "Users"
+msgstr "用户"
+
+msgid "Uses the site’s Telegram bot (configured in the WooCommerce module), but each user pastes their OWN chat ID on their profile — so a recovery code always reaches that user’s Telegram, never pooled to the admin. Users without a chat ID simply don’t see the Telegram option."
+msgstr "使用网站的 Telegram 机器人（在 WooCommerce 模块中配置），但每位用户在其个人资料中粘贴的是各自“自己的”Chat ID——因此恢复代码始终会送达该用户自己的 Telegram，而绝不会汇总到管理员那里。没有 Chat ID 的用户则完全看不到 Telegram 这个选项。"
+
+msgid "Usually a phpinfo page."
+msgstr "通常是一个 phpinfo 页面。"
+
+msgid "Verify"
+msgstr "验证"
+
+msgid "Version-control metadata exposes the source."
+msgstr "版本控制元数据会暴露源代码。"
+
+msgid "Waiting for you"
+msgstr "等待您处理"
+
+msgid "Weekly is the useful setting. Daily turns the one message that is supposed to mean something into noise within a fortnight, and once it is noise a gap in the numbering is not noticed either."
+msgstr "每周是最有用的设置。每日会让原本应有意义的那条消息，在两周内变成噪音，而一旦变成噪音，编号中的缺口也就同样不会被注意到。"
+
+msgid "What you approved is also kept outside the database"
+msgstr "您批准的内容也会保存在数据库之外"
+
+msgid "What you still have to paste: %secret%."
+msgstr "您还需要粘贴的内容：%secret%。"
+
+msgid "When a URL changes or an old link should point somewhere new, this sends visitors (and Google) straight to the right page instead of a “not found” error — so you don’t lose traffic."
+msgstr "当某个 URL 发生变化，或旧链接应指向新的位置时，这会将访客（以及 Google）直接引导至正确的页面，而非“未找到”错误——这样您就不会流失流量。"
+
+msgid "When about to leave the page"
+msgstr "即将离开页面时"
+
+msgid "When it appears"
+msgstr "何时出现"
+
+msgid "Where did it turn up?"
+msgstr "它出现在哪里？"
+
+msgid "Where it appears"
+msgstr "出现在哪里"
+
+msgid "Where it runs"
+msgstr "在哪里运行"
+
+msgid "Where this stands:"
+msgstr "目前进展："
+
+msgid "Where to get it"
+msgstr "从哪里获取它"
+
+msgid "Where to read the numbers"
+msgstr "在哪里查看数字"
+
+msgid "Where to run it"
+msgstr "在哪里运行它"
+
+msgid "Where your content links to"
+msgstr "您的内容链接到哪里"
+
+msgid "Which service should send your email?"
+msgstr "应由哪个服务发送您的邮件？"
+
+msgid "Wiggle now and then to catch the eye"
+msgstr "时不时晃动以吸引注意"
+
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+msgid "WordPress could not hand the message to the mail server at all, so it never left the site."
+msgstr "WordPress 根本无法将消息交给邮件服务器，因此它从未离开过网站。"
+
+msgid "WordPress could not hand the message to the mail server."
+msgstr "WordPress 无法将消息交给邮件服务器。"
+
+msgid "WordPress reports a message as sent once it has handed it over. That says nothing about whether it arrived, and on a great many sites it does not — the domain names which servers may send for it, the web server is not one of them, and every notification the site sends is treated as forged. Nothing in WordPress mentions this. Below is what your domain’s own records say, read live."
+msgstr "WordPress 一旦将消息交出，就会将其报告为“已发送”。这并不代表它已送达，而在相当多的网站上，情况确实并非如此——域名指明了哪些服务器可以为其发信，而 Web 服务器不在其中，网站发出的每条通知都会被视为伪造。WordPress 中不会提及这一点。以下是您域名自身记录的实时读取结果。"
+
+msgid "WordPress “Heartbeat” pings the server every 15–60 seconds (autosave, post-lock, dashboard). Slowing or limiting it cuts admin-ajax.php load, especially with several admin tabs open."
+msgstr "WordPress 的“Heartbeat”每 15–60 秒向服务器发送一次心跳（自动保存、文章锁定、控制台）。放慢或限制它可以降低 admin-ajax.php 的负载，在打开多个管理标签页时尤其明显。"
+
+msgid "Worth a second look"
+msgstr "值得再看一眼"
+
+msgid "Write plain PHP — no opening tag needed. The code is checked for syntax errors before it is saved, and if it ever crashes a page Horse Tools switches it off automatically."
+msgstr "编写普通 PHP 代码即可——无需开头标签。代码在保存前会先检查语法错误，若它曾导致某页面崩溃，Horse Tools 会自动将其关闭。"
+
+msgid "Write your block just like a post: type text and use the toolbar to insert links, images and formatting. Need raw HTML/CSS/JS? Switch to the “Text” tab. Placeholders like {{url}} still work in both."
+msgstr "像撰写文章一样编写您的模块：输入文字，并使用工具栏插入链接、图片和格式。需要原始 HTML/CSS/JS？请切换到“文本”标签页。{{url}} 之类的占位符在两种模式下都可正常使用。"
+
+msgid "Wrong answer to the security question."
+msgstr "安全问题的答案错误。"
+
+msgid "You are not allowed to change these settings."
+msgstr "您无权更改这些设置。"
+
+msgid "You are not allowed to use PHP snippets."
+msgstr "您无权使用 PHP 代码片段。"
+
+msgid "You may send as any address on a domain you have verified with this service. An unverified one will be refused."
+msgstr "您可以以您在此服务中已验证域名下的任意地址发送邮件。未验证的地址将被拒绝。"
+
+msgid "You would be told if this site went quiet"
+msgstr "如果本站变得毫无动静，您会收到通知"
+
+msgid "Your Telegram chat ID (for recovery codes)"
+msgstr "您的 Telegram Chat ID（用于恢复代码）"
+
+msgid "Your approvals match their copy on disk"
+msgstr "您的批准情况与磁盘上的副本一致"
+
+msgid "Your check-in message only got through on the backup route (%s). Your main channel is not working, and you have one left instead of two."
+msgstr "您的签到消息仅通过了备用渠道（%s）送达。您的主渠道未能正常工作，目前只剩一个渠道而非两个。"
+
+msgid "Your contact details have changed."
+msgstr "您的联系方式已发生变化。"
+
+msgid "Your container has no GA4 tag in it, so Tag Manager has nothing to pass the click on to. It is placed in the dataLayer and stops there until you build the tag below — until then nothing reaches Analytics."
+msgstr "您的容器中没有 GA4 标签，因此 Tag Manager 无处传递该点击。它会被放入 dataLayer 并停留在那里，直到您在下方创建该标签为止——在此之前，任何内容都不会到达 Analytics。"
+
+msgid "Your content has not been read all the way through yet (%1$d of %2$d), so nothing found in it can be trusted as complete."
+msgstr "您的内容尚未被完整读取（%1$d / %2$d），因此其中发现的任何内容都不能视为完整可信。"
+
+msgid "Your content has not been read all the way through yet."
+msgstr "您的内容尚未被完整读取。"
+
+msgid "Your content links to %1$s domains you have not agreed to, and %2$s you have. You will be told the moment one arrives that is on neither list."
+msgstr "您的内容链接到 %1$s 个您尚未同意的域名，以及 %2$s 个您已同意的域名。一旦出现既不在同意列表也不在拒绝列表中的域名，您将立即收到通知。"
+
+msgid "Your content links to %d domain you have not approved."
+msgstr "您的内容链接到 %d 个您尚未批准的域名。"
+
+msgid "Your content links to more domains than the list can hold, so it is incomplete"
+msgstr "您的内容链接到的域名数量超出列表可容纳的上限，因此该列表并不完整"
+
+msgid "Your content links to more than %d domains, which is as many as can be held. Domains beyond that were not recorded, so this cannot tell you when one of them is new — it would say it was already there."
+msgstr "您的内容链接到超过 %d 个域名，这已是可容纳的最大数量。超出部分未被记录，因此本功能无法告诉您其中某个是否为新出现的域名——它只会显示为“早已存在”。"
+
+msgid "Your domain already receives mail through %1$s, so choose %2$s below. Sending through the service that already handles your mail is the one most likely to work first time."
+msgstr "您的域名已经通过 %1$s 接收邮件，因此请在下方选择 %2$s。通过已在处理您邮件的服务发送，是最有可能一次成功的方式。"
+
+msgid "Your domain does not say which servers are allowed to send mail for it. Anyone can send mail claiming to be you, and mail you really did send has nothing to vouch for it — Gmail and Yahoo both treat that as a reason for suspicion."
+msgstr "您的域名没有指明哪些服务器被授权代为发信。任何人都能以您的名义发送邮件，而您真正发出的邮件却没有任何东西为其背书——Gmail 和 Yahoo 都会将此视为可疑的理由。"
+
+msgid "Your domain has a list of allowed senders, but it could not be worked out from here whether this server is on it."
+msgstr "您的域名有一份授权发信服务器列表，但从这里无法判断此服务器是否在列表之中。"
+
+msgid "Your domain has no DMARC record, so you are never told when somebody sends mail pretending to be you, and receivers have no instruction about what to do with it."
+msgstr "您的域名没有 DMARC 记录，因此当有人冒充您发送邮件时，您永远不会收到通知，收件方也没有任何关于如何处理此类邮件的指引。"
+
+msgid "Your domain receives mail through %s. Sending through the same service is the setting most likely to work, because it is already on your domain’s list of allowed senders."
+msgstr "您的域名通过 %s 接收邮件。通过同一服务发送是最有可能成功的设置，因为它已经在您域名的授权发信服务器列表中。"
+
+msgid "Your domain says which servers may send mail for it, and this site is sending straight from the web server. Whether that server is on the list could not be determined here."
+msgstr "您的域名指明了哪些服务器可以代为发信，而本站正是直接从 Web 服务器发送邮件。此处无法判断该服务器是否在列表之中。"
+
+msgid "Your email settings changed after the last test, so what is running now has not been tried"
+msgstr "您的邮件设置在上次测试后发生了变化，因此当前运行的配置尚未经过测试"
+
+msgid "Your host can attach a name to the address — ask them for “reverse DNS” or a “PTR record”. Or sidestep it entirely by sending through an email service, whose own servers already have one."
+msgstr "您的主机可以为该地址绑定一个名称——向其索取“反向 DNS”或“PTR 记录”。或者完全绕开这个问题，改用邮件服务发送，其自身服务器早已配置好这类记录。"
+
+msgid "Your last test landed in the spam folder"
+msgstr "您上次的测试落入了垃圾邮件文件夹"
+
+msgid "Your last test never arrived"
+msgstr "您上次的测试从未送达"
+
+msgid "Your login recovery code"
+msgstr "您的登录恢复代码"
+
+msgid "Your one-time login code for %1$s is: %2$s (valid 10 minutes)."
+msgstr "您用于 %1$s 的一次性登录代码为：%2$s（10 分钟内有效）。"
+
+msgid "Your own account must have two-factor authentication switched on before you can use PHP snippets."
+msgstr "在您能够使用 PHP 代码片段之前，您自己的账户必须先开启双重验证。"
+
+msgid "Your own icon (paste an SVG)"
+msgstr "您自己的图标（粘贴一个 SVG）"
+
+msgid "Your pages go out exactly as written."
+msgstr "您的页面会完全按照所写内容原样输出。"
+
+msgid "Your pairing code has expired. Reload this page to get a new one."
+msgstr "您的配对代码已过期。请重新加载此页面以获取新的代码。"
+
+msgid "Your posts and pages do not link anywhere outside this site."
+msgstr "您的文章和页面没有链接到本站以外的任何地方。"
+
+msgid "Your posts and pages link to %d other domain. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
+msgstr "您的文章和页面链接到 %d 个其他域名。请过一遍并确认哪些属于合理链接；此后，一个不在列表中的域名，只需在您的界面上多一句提示即可，而不必等到两年后仍无人察觉。"
+
+msgid "Your settings already look like %s, so its notes apply to you even though nothing is selected above."
+msgstr "您的设置已经与 %s 相似，因此其说明同样适用于您，即使上方未选中任何项。"
+
+msgid "Your site has Tag Manager but no Google tag — one setup step is required"
+msgstr "您的网站装有 Tag Manager 但没有 Google 标签——还需要完成一步设置"
+
+msgid "Your site loads the Google tag, so a click goes straight to Analytics. This is the usual case, and it includes sites where Analytics was installed through Tag Manager — a GA4 tag inside a container loads the Google tag itself."
+msgstr "您的网站已加载 Google 标签，因此点击会直接进入 Analytics。这是最常见的情况，也包括那些通过 Tag Manager 安装 Analytics 的网站——容器内的 GA4 标签会自行加载 Google 标签。"
+
+msgid "Zoom"
+msgstr "缩放"
+
+msgid "Zoom in"
+msgstr "放大"
+
+msgid "Zoom out"
+msgstr "缩小"
+
+msgid "[!] This went by %1$s because %2$s would not send: %3$s"
+msgstr "[!] 此邮件改经 %1$s 发送，因为 %2$s 无法发送：%3$s"
+
+msgid "[?] %1$d domain was approved over a year ago and is barely linked: %2$s"
+msgstr "[?] %1$d 个域名是一年多前批准的，且几乎没有被链接：%2$s"
+
+msgid "a bar pinned to the bottom of the phone screen. Choose one of 5 styles from the grid."
+msgstr "一条固定在手机屏幕底部的横条。可从网格中选择 5 种样式之一。"
+
+msgid "a greeting bubble, business hours (shows Online / Away), scan-to-open QR on desktop, and pre-filled WhatsApp / SMS messages."
+msgstr "一个问候气泡、营业时间（显示在线/离开状态）、桌面端可扫码打开的二维码，以及预填的 WhatsApp / 短信消息。"
+
+msgid "a panel that slides up to show your services or articles. Pick its layout, colour and how it appears from the visual grids. To open it, point a bottom-bar item at"
+msgstr "一个向上滑出的面板，用于展示您的服务或文章。可从可视化网格中选择其布局、颜色以及出现方式。要打开它，请让底部导航栏中的某一项指向"
+
+msgid "added ✓"
+msgstr "已添加 ✓"
+
+msgid "ads.txt"
+msgstr "ads.txt"
+
+msgid "an address you can open right now"
+msgstr "一个您现在就可以打开的地址"
+
+msgid "and %d more — click to see it"
+msgstr "还有 %d 个——点击查看"
+
+msgid "approved %s ago"
+msgstr "于 %s 前批准"
+
+msgid "choose how the floating button looks from the visual grid below (17 styles). What you see is what visitors get."
+msgstr "从下方的可视化网格中选择浮动按钮的外观（17 种样式）。您看到的效果就是访客所获得的效果。"
+
+msgid "click SAVE CONTENT at the bottom of the page. The Services panel has its own “Save services” button."
+msgstr "点击页面底部的“保存内容”。服务面板另有一个独立的“保存服务”按钮。"
+
+msgid "copy"
+msgstr "复制"
+
+msgid "delayed"
+msgstr "已延迟"
+
+msgid "e.g. Price list"
+msgstr "例如：价目表"
+
+msgid "e.g. What is the shop mascot?"
+msgstr "例如：本店的吉祥物是什么？"
+
+msgid "e.g. fox"
+msgstr "例如：狐狸"
+
+msgid "email"
+msgstr "邮件"
+
+msgid "leave empty for all categories"
+msgstr "留空表示适用于所有分类"
+
+msgid "no copy on disk yet"
+msgstr "磁盘上尚无副本"
+
+msgid "none"
+msgstr "无"
+
+msgid "not confirmed yet"
+msgstr "尚未确认"
+
+msgid "not reviewed yet"
+msgstr "尚未审核"
+
+msgid "nothing at all"
+msgstr "什么都没有"
+
+msgid "open the site’s Telegram bot (ask the site admin which bot if you’re not sure)."
+msgstr "打开该网站的 Telegram 机器人（如不确定是哪个机器人，请咨询网站管理员）。"
+
+msgid "open this site’s Telegram bot:"
+msgstr "打开此网站的 Telegram 机器人："
+
+msgid "optional title above the table"
+msgstr "表格上方的可选标题"
+
+msgid "passes SEO value"
+msgstr "传递 SEO 价值"
+
+msgid "pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically. For a custom button, choose a built-in icon or paste your own SVG."
+msgstr "选择一个渠道（Zalo、Messenger、电话…），其图标会自动添加。若使用自定义按钮，可选择内置图标或粘贴您自己的 SVG。"
+
+msgid "reCAPTCHA could not load in this browser, so this form cannot be submitted. Check the site key, or switch reCAPTCHA off in Horse Tools."
+msgstr "reCAPTCHA 无法在此浏览器中加载，因此该表单无法提交。请检查站点密钥，或在 Horse Tools 中关闭 reCAPTCHA。"
+
+msgid "reCAPTCHA did not run in your browser, so this form could not be submitted. This is not your password."
+msgstr "reCAPTCHA 未能在您的浏览器中运行，因此该表单无法提交。这不是您的密码问题。"
+
+msgid "reCAPTCHA is switched off, so there is nothing to test."
+msgstr "reCAPTCHA 已关闭，因此没有可测试的内容。"
+
+msgid "remember to press “Update profile”."
+msgstr "请记得点击“更新个人资料”。"
+
+msgid "rows"
+msgstr "行"
+
+msgid "rows loaded"
+msgstr "已加载的行数"
+
+msgid "runs now"
+msgstr "现在运行"
+
+msgid "script or embedded frame"
+msgstr "脚本或嵌入式框架"
+
+msgid "send it this code:"
+msgstr "向其发送此代码："
+
+msgid "still reading"
+msgstr "仍在读取中"
+
+msgid "the contact details you confirmed in your posts"
+msgstr "您在文章中确认过的联系方式"
+
+msgid "the contact details you confirmed in your settings"
+msgstr "您在设置中确认过的联系方式"
+
+msgid "the list of domains you approved"
+msgstr "您已批准的域名列表"
+
+msgid "type part of a domain…"
+msgstr "输入域名的一部分…"
+
+msgid "unknown error"
+msgstr "未知错误"
+
+msgid "whether the watching is switched on at all"
+msgstr "是否已开启该监测功能"
+
+msgid "wp-content is not writable, so there is nowhere to keep the copy"
+msgstr "wp-content 不可写，因此没有地方可以保存副本"
+
+msgid "— choose, or fill the form in yourself —"
+msgstr "——选择一个，或自行填写表单——"
+
+msgid "— or paste your own SVG."
+msgstr "——或粘贴您自己的 SVG。"
+
+msgid "“All” mode — scripts to NEVER delay (one per line). A hero slider or a cookie-consent script usually belongs here."
+msgstr "“全部”模式——永不延迟的脚本（每行一个）。首屏轮播图或 Cookie 同意脚本通常应归于此类。"
+
+msgid "“Listed” mode — scripts to delay (one per line: a handle, file name or part of a URL). Leave empty to use the built-in list of common trackers."
+msgstr "“列表”模式——需要延迟的脚本（每行一个：句柄、文件名或 URL 的一部分）。留空则使用内置的常见跟踪器列表。"
+
+msgid "← enter code and press \"Update profile\" to enable"
+msgstr "← 输入代码并点击“更新个人资料”以启用"
+
+msgid "✓ Turned on — press SAVE to apply"
+msgstr "✓ 已开启——点击“保存”以应用"

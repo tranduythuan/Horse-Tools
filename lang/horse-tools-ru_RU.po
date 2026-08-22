@@ -3482,3 +3482,2436 @@ msgstr "порог оценки v3 (0 – 1)"
 
 msgid "— Insert a shortcode —"
 msgstr "— Вставить шорткод —"
+
+msgid "%1$d of %2$d"
+msgstr "%1$d из %2$d"
+
+msgid "%1$d post(s) will publish FAQ schema (%2$s questions on average)."
+msgstr "%1$d записей опубликуют схему FAQ (в среднем %2$s вопросов)."
+
+msgid "%1$s will only send as the account you sign in with. You are signing in as %3$s but sending as %2$s, which it will refuse or quietly drop — and refusing looks from here exactly like the message vanishing."
+msgstr "%1$s отправляет письма только с адреса аккаунта, под которым вы вошли. Вы вошли как %3$s, но отправляете как %2$s — это будет отклонено или незаметно отброшено, а отклонение выглядит отсюда точно так же, как исчезновение сообщения."
+
+msgid "%d FOUND"
+msgstr "%d НАЙДЕНО"
+
+msgid "%d NEW"
+msgstr "%d НОВЫХ"
+
+msgid "%d domain is no longer approved."
+msgstr "%d домен больше не одобрен."
+
+msgid "%d domain looked at again."
+msgstr "%d домен проверен повторно."
+
+msgid "%d domain your content links to is not approved"
+msgstr "%d домен, на который ссылается ваш контент, не одобрен"
+
+msgid "%d domains, all approved"
+msgstr "%d доменов, все одобрены"
+
+msgid "%d is still waiting."
+msgstr "%d всё ещё ожидает."
+
+msgid "%d link"
+msgstr "%d ссылка"
+
+msgid "%d post(s) already get FAQ schema from another plugin, so they are left alone."
+msgstr "%d записей уже получают схему FAQ от другого плагина, поэтому их не трогают."
+
+msgid "%d post(s) have a FAQ section but too few questions:"
+msgstr "%d записей содержат раздел FAQ, но в нём слишком мало вопросов:"
+
+msgid "%d post(s) have no FAQ section."
+msgstr "%d записей не содержат раздела FAQ."
+
+msgid "%d post(s) mention a FAQ but no question could be read — unusual structure:"
+msgstr "%d записей упоминают FAQ, но ни один вопрос не удалось прочитать — необычная структура:"
+
+msgid "%d question found"
+msgstr "%d вопрос найден"
+
+msgid "%d scripts found — “+ Delay” holds one back, “+ Exclude” keeps it running immediately:"
+msgstr "%d скриптов найдено — «+ Отложить» задерживает один, «+ Исключить» оставляет его выполняться немедленно:"
+
+msgid "+ Delay"
+msgstr "+ Отложить"
+
+msgid "+ Exclude"
+msgstr "+ Исключить"
+
+msgid "1. Triggers → New → Custom Event, event name ^contact_ with \"use regex matching\" ticked — one trigger covers every channel, including any added later. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Optionally add event parameters placement and label, taking their values from Data Layer Variables contact_placement and contact_label. 4. Submit and publish the container."
+msgstr "1. Триггеры → Создать → Пользовательское событие, имя события ^contact_ с отмеченной опцией «использовать сопоставление по регулярному выражению» — один триггер охватывает все каналы, включая добавленные позже. 2. Теги → Создать → Событие Google Analytics GA4, указывающее на ваш идентификатор измерения, имя события установлено как {{Event}}, чтобы каждый канал сохранял своё собственное имя, используя триггер из шага 1. 3. При желании добавьте параметры события placement и label, беря их значения из переменных слоя данных contact_placement и contact_label. 4. Отправьте и опубликуйте контейнер."
+
+msgid "6-digit code"
+msgstr "6-значный код"
+
+msgid "A .git directory exposes the whole source history, and often credentials with it."
+msgstr "Каталог .git раскрывает всю историю исходного кода, а часто и учётные данные вместе с ней."
+
+msgid "A PHP snippet changed on your site"
+msgstr "PHP-сниппет на вашем сайте изменился"
+
+msgid "A contact detail that was not there before has appeared in your content."
+msgstr "В вашем контенте появились контактные данные, которых раньше не было."
+
+msgid "A database client. Anyone who finds it is one password from the database."
+msgstr "Клиент базы данных. Тот, кто его найдёт, находится в одном пароле от базы данных."
+
+msgid "A database dump: everything on the site, downloadable."
+msgstr "Дамп базы данных: всё содержимое сайта, доступное для скачивания."
+
+msgid "A domain can go bad without anything on your site changing: it expires, somebody else buys it, and a link you approved years ago now points at whatever they sell. These were approved over a year ago and are each linked from only one or two posts — the kind that can change hands without anybody here noticing."
+msgstr "Домен может испортиться без каких-либо изменений на вашем сайте: срок его действия истекает, его покупает кто-то другой, и ссылка, которую вы одобрили годы назад, теперь указывает на то, что этот человек продаёт. Эти были одобрены более года назад и каждый связан всего с одной-двумя записями — именно такие могут сменить владельца незаметно для вас."
+
+msgid "A long list on a first pass is normal and does not have to be read row by row."
+msgstr "Длинный список при первом просмотре — это нормально, и его не нужно читать построчно."
+
+msgid "A longer answer is shortened in the schema only — your post is never touched. Leave empty to use 500."
+msgstr "Более длинный ответ сокращается только в схеме — сама запись никогда не изменяется. Оставьте пустым, чтобы использовать 500."
+
+msgid "A new one appeared in a post — see the banner"
+msgstr "Новый появился в записи — см. баннер"
+
+msgid "A no-Google, no-badge challenge that loads only on the wp-login.php page — zero effect on your front-end or its speed. Bots that hammer the login page cannot answer a site-specific question. It does not stop a person who reads the question, so pair it with the attempt limiter above."
+msgstr "Проверка без Google, без значка, которая загружается только на странице wp-login.php — никакого влияния на вашу витрину или её скорость. Боты, атакующие страницу входа, не могут ответить на вопрос, специфичный для сайта. Она не остановит человека, который прочитает вопрос, поэтому сочетайте её с ограничителем попыток выше."
+
+msgid "A one-time code has been sent. Enter it above."
+msgstr "Одноразовый код отправлен. Введите его выше."
+
+msgid "A post with fewer questions than this gets no schema. Leave empty to use 2, which is the safer choice."
+msgstr "Запись с меньшим числом вопросов, чем указано здесь, не получает схему. Оставьте пустым, чтобы использовать 2 — более безопасный выбор."
+
+msgid "A private key."
+msgstr "Приватный ключ."
+
+msgid "A safe first one collects reports and changes nothing: a TXT record at _dmarc.%1$s with the value %2$s"
+msgstr "Безопасный первый шаг собирает отчёты и ничего не меняет: TXT-запись на _dmarc.%1$s со значением %2$s"
+
+msgid "A site archive, downloadable by anyone who guesses the name."
+msgstr "Архив сайта, доступный для скачивания любому, кто угадает имя."
+
+msgid "A test was sent but you have not said whether it arrived"
+msgstr "Тест был отправлен, но вы не указали, дошёл ли он"
+
+msgid "A v2 key and a v3 key look identical and are not interchangeable. Put a v2 key in the box while the dropdown says V3 and Google refuses to load the widget, so the token is never produced and every login is rejected — which reaches whoever is trying to sign in as “wrong password”. Press the button above after changing a key; it asks Google directly."
+msgstr "Ключ v2 и ключ v3 выглядят одинаково и не взаимозаменяемы. Если вставить ключ v2 в поле, когда в раскрывающемся списке указано V3, Google откажется загружать виджет, поэтому токен никогда не создаётся, и каждый вход отклоняется — что для пытающегося войти выглядит как «неверный пароль». Нажмите кнопку выше после смены ключа; она напрямую спрашивает у Google."
+
+msgid "API key"
+msgstr "API-ключ"
+
+msgid "Above the post content"
+msgstr "Над содержимым записи"
+
+msgid "Accent colour (toolbar / active thumbnail)"
+msgstr "Акцентный цвет (панель инструментов / активная миниатюра)"
+
+msgid "Accept button text (default: Agree)"
+msgstr "Текст кнопки принятия (по умолчанию: Согласен)"
+
+msgid "Accounts & Email"
+msgstr "Аккаунты и почта"
+
+msgid "Ad clicks"
+msgstr "Клики по рекламе"
+
+msgid "Ad-block notice"
+msgstr "Уведомление о блокировщике рекламы"
+
+msgid "AdSense"
+msgstr "AdSense"
+
+msgid "Add an SPF record. Whichever email service you choose below will give you the exact line."
+msgstr "Добавьте SPF-запись. Какой бы почтовый сервис вы ни выбрали ниже, он даст вам точную строку."
+
+msgid "Add contact channels"
+msgstr "Добавить каналы связи"
+
+msgid "Add new table"
+msgstr "Добавить новую таблицу"
+
+msgid "Add nofollow to it (recommended)"
+msgstr "Добавить к ней nofollow (рекомендуется)"
+
+msgid "Add some data first."
+msgstr "Сначала добавьте данные."
+
+msgid "Add “defer” to front-end scripts so they no longer block the page from rendering; they run in order once the HTML is parsed. jQuery is never deferred (inline snippets depend on it). Big Core Web Vitals win."
+msgstr "Добавляет «defer» к клиентским скриптам, чтобы они больше не блокировали отрисовку страницы; они выполняются по порядку после разбора HTML. jQuery никогда не откладывается (от него зависят встроенные сниппеты). Значительный выигрыш для Core Web Vitals."
+
+msgid "Adds decoding=\"async\" to images so the browser decodes them off the main thread, and relies on WordPress’ built-in native lazy-load (which correctly keeps the first/LCP image eager). Replaces the old script-based method that removed image src — that hurt SEO and broke images with JavaScript off."
+msgstr "Добавляет к изображениям decoding=\"async\", чтобы браузер декодировал их вне основного потока, и полагается на встроенную нативную ленивую загрузку WordPress (которая корректно оставляет первое/LCP-изображение с немедленной загрузкой). Заменяет старый скриптовый метод, удалявший src изображения — это вредило SEO и ломало изображения при отключённом JavaScript."
+
+msgid "Admin area"
+msgstr "Область администратора"
+
+msgid "Admin housekeeping and the plugin's own settings."
+msgstr "Обслуживание админки и собственные настройки плагина."
+
+msgid "Admin only"
+msgstr "Только для админа"
+
+msgid "Admin tools"
+msgstr "Инструменты администратора"
+
+msgid "Advanced options — device, visitors, schedule, tags (optional)"
+msgstr "Расширенные настройки — устройство, посетители, расписание, теги (необязательно)"
+
+msgid "After a few seconds"
+msgstr "Через несколько секунд"
+
+msgid "After scrolling down"
+msgstr "После прокрутки вниз"
+
+msgid "All"
+msgstr "Все"
+
+msgid "All single content (incl. custom types)"
+msgstr "Весь одиночный контент (включая пользовательские типы)"
+
+msgid "All-in-one WordPress toolkit: contact chat, shortcodes, security & privacy, media optimisation, SEO, cleanup and more — in one plugin."
+msgstr "Универсальный набор инструментов WordPress: чат для связи, шорткоды, безопасность и конфиденциальность, оптимизация медиа, SEO, очистка и многое другое — в одном плагине."
+
+msgid "Allow a recovery code by Telegram"
+msgstr "Разрешить код восстановления через Telegram"
+
+msgid "Allow a recovery code by email"
+msgstr "Разрешить код восстановления по электронной почте"
+
+msgid "Already approved"
+msgstr "Уже одобрено"
+
+msgid "Analytics found on your site: %s. Clicks will be recorded there."
+msgstr "На вашем сайте обнаружена аналитика: %s. Клики будут записываться туда."
+
+msgid "And what should happen to a domain that is not on the list?"
+msgstr "А что должно происходить с доменом, которого нет в списке?"
+
+msgid "Another plugin already publishes FAQ schema for this post, so Horse Tools is staying out of the way."
+msgstr "Другой плагин уже публикует схему FAQ для этой записи, поэтому Horse Tools не вмешивается."
+
+msgid "Answer"
+msgstr "Ответ"
+
+msgid "Answers are held for half a day; press this after changing anything in DNS."
+msgstr "Ответы хранятся полдня; нажмите это после изменения чего-либо в DNS."
+
+msgid "Appearance"
+msgstr "Внешний вид"
+
+msgid "Apply to Pages as well, not just Posts"
+msgstr "Применить также к страницам, а не только к записям"
+
+msgid "Approve all %d domains your content currently links to?"
+msgstr "Одобрить все %d доменов, на которые в данный момент ссылается ваш контент?"
+
+msgid "Approve all %d — the whole list, not just this page"
+msgstr "Одобрить все %d — весь список, а не только эту страницу"
+
+msgid "Approve the ticked ones"
+msgstr "Одобрить отмеченные"
+
+msgid "Approved %d domain."
+msgstr "Одобрен %d домен."
+
+msgid "As soon as the page opens"
+msgstr "Как только откроется страница"
+
+msgid "Ask a custom question on the login form"
+msgstr "Задать пользовательский вопрос на форме входа"
+
+msgid "Asking Google…"
+msgstr "Запрос к Google…"
+
+msgid "Asset URLs to preload (one per line — .woff2/.css/.js/.jpg/.webp…)"
+msgstr "URL-адреса ресурсов для предзагрузки (по одному на строку — .woff2/.css/.js/.jpg/.webp…)"
+
+msgid "Async CSS — remove render-blocking stylesheets"
+msgstr "Асинхронный CSS — удаление блокирующих отрисовку таблиц стилей"
+
+msgid "Authentication code"
+msgstr "Код аутентификации"
+
+msgid "Backdrop theme"
+msgstr "Тема фона"
+
+msgid "Bar across the bottom"
+msgstr "Полоса внизу на всю ширину"
+
+msgid "Before </body>"
+msgstr "Перед </body>"
+
+msgid "Below the post content"
+msgstr "Под содержимым записи"
+
+msgid "Besides your one-time backup codes, a fresh code can also be sent to you here:"
+msgstr "Помимо ваших одноразовых резервных кодов, новый код также можно отправить вам здесь:"
+
+msgid "Blur (frosted glass)"
+msgstr "Размытие (матовое стекло)"
+
+msgid "Bordered"
+msgstr "С рамкой"
+
+msgid "Both engines are bundled locally — no external requests. Gallery grouping, looping and the slide transition apply to GLightbox; PhotoSwipe always groups the content images (previous/next) and has its own smooth zoom/pan."
+msgstr "Оба движка встроены локально — никаких внешних запросов. Группировка галереи, зацикливание и переход между слайдами применяются к GLightbox; PhotoSwipe всегда группирует изображения контента (предыдущее/следующее) и имеет собственное плавное масштабирование/перемещение."
+
+msgid "Both engines are free and open-source (MIT). GLightbox is the easy all-rounder (adds video + slide transitions); PhotoSwipe has the smoothest zoom/pan for photo galleries."
+msgstr "Оба движка бесплатны и с открытым исходным кодом (MIT). GLightbox — простое универсальное решение (добавляет видео + переходы между слайдами); PhotoSwipe обеспечивает самое плавное масштабирование/перемещение для фотогалерей."
+
+msgid "Bounce"
+msgstr "Отскок"
+
+msgid "Broken links (404)"
+msgstr "Битые ссылки (404)"
+
+msgid "Broken links 404"
+msgstr "Битые ссылки 404"
+
+msgid "Build a table once here, then insert it into any post or page with its shortcode. Edit it here and every place that uses it updates automatically."
+msgstr "Создайте таблицу здесь один раз, затем вставляйте её в любую запись или страницу с помощью её шорткода. Редактируйте её здесь, и каждое место, где она используется, обновится автоматически."
+
+msgid "Build grid"
+msgstr "Создать сетку"
+
+msgid "Buttons"
+msgstr "Кнопки"
+
+msgid "By Telegram"
+msgstr "Через Telegram"
+
+msgid "By default the lockout counts the direct connection IP, which cannot be faked. Only turn this on if your site is reachable ONLY through Cloudflare or a proxy — it then reads the real visitor IP from the proxy header (CF-Connecting-IP / X-Forwarded-For). Do NOT enable it on a normally-hosted site: those headers can be forged, letting an attacker dodge the lockout or get an innocent visitor locked out."
+msgstr "По умолчанию блокировка отслеживает IP прямого подключения, который невозможно подделать. Включайте это ТОЛЬКО если ваш сайт доступен ИСКЛЮЧИТЕЛЬНО через Cloudflare или прокси — тогда он считывает реальный IP посетителя из заголовка прокси (CF-Connecting-IP / X-Forwarded-For). НЕ включайте это на обычно размещённом сайте: эти заголовки можно подделать, что позволит злоумышленнику избежать блокировки или заблокирует невиновного посетителя."
+
+msgid "By email — a one-time code is sent to your account address:"
+msgstr "По электронной почте — одноразовый код отправляется на адрес вашего аккаунта:"
+
+msgid "CHANGED"
+msgstr "ИЗМЕНЕНО"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Cache cleared. Each post will be read again the next time it is viewed."
+msgstr "Кэш очищен. Каждая запись будет прочитана заново при следующем просмотре."
+
+msgid "Caption"
+msgstr "Подпись"
+
+msgid "Caption from"
+msgstr "Подпись из"
+
+msgid "Card (shadow)"
+msgstr "Карточка (тень)"
+
+msgid "Centre of screen"
+msgstr "Центр экрана"
+
+msgid "Chat"
+msgstr "Чат"
+
+msgid "Chat buttons, contact channels and WooCommerce tweaks."
+msgstr "Кнопки чата, каналы связи и настройки WooCommerce."
+
+msgid "Check again"
+msgstr "Проверить снова"
+
+msgid "Check for updates"
+msgstr "Проверить обновления"
+
+msgid "Check that WP-Cron is running on this site"
+msgstr "Проверить, что WP-Cron работает на этом сайте"
+
+msgid "Check-in"
+msgstr "Проверка активности"
+
+msgid "Checked from your own browser: the home page a visitor receives carries no Google Analytics tag. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own."
+msgstr "Проверено из вашего собственного браузера: главная страница, которую получает посетитель, не содержит тега Google Analytics. Установите Site Kit by Google или любой плагин GA4, и эта настройка начнёт работать сама по себе."
+
+msgid "Checked — still fine"
+msgstr "Проверено — всё в порядке"
+
+msgid "Checking your site…"
+msgstr "Проверка вашего сайта…"
+
+msgid "Checking…"
+msgstr "Проверка…"
+
+msgid "Choose a .xlsx, .xls or .csv file:"
+msgstr "Выберите файл .xlsx, .xls или .csv:"
+
+msgid "Choose a built-in icon"
+msgstr "Выбрать встроенный значок"
+
+msgid "Choose an icon"
+msgstr "Выберите значок"
+
+msgid "Choose icon"
+msgstr "Выбрать значок"
+
+msgid "Choose the position (corner box or full-width bar) and customise the message and button labels. The Accept/Decline choice is stored in the browser (localStorage + an “ht_cookie_consent” cookie), so the notice won’t nag returning visitors. Note: this is an informational notice — Horse Tools does not itself block third-party tracking scripts, so for strict consent-gating you would still gate your own scripts on that cookie."
+msgstr "Выберите положение (угловой блок или полоса на всю ширину) и настройте текст сообщения и подписи кнопок. Выбор «Принять/Отклонить» сохраняется в браузере (localStorage + куки «ht_cookie_consent»), поэтому уведомление не будет надоедать вернувшимся посетителям. Примечание: это информационное уведомление — сам Horse Tools не блокирует скрипты отслеживания третьих сторон, поэтому для строгого управления согласием вам всё равно нужно будет привязать собственные скрипты к этому куки."
+
+msgid "Cinema (pure black)"
+msgstr "Кинотеатр (чистый чёрный)"
+
+msgid "Clean comments"
+msgstr "Очистить комментарии"
+
+msgid "Clean media"
+msgstr "Очистить медиафайлы"
+
+msgid "Clean posts"
+msgstr "Очистить записи"
+
+msgid "Cleanup schedule"
+msgstr "Расписание очистки"
+
+msgid "Clear cache & re-read"
+msgstr "Очистить кэш и перечитать"
+
+msgid "Cleared all lockouts."
+msgstr "Все блокировки сняты."
+
+msgid "Click again to delete"
+msgstr "Нажмите ещё раз, чтобы удалить"
+
+msgid "Click an SVG box, then"
+msgstr "Нажмите на поле SVG, затем"
+
+msgid "Click an icon to drop it into the selected field. Search by its English name (cart, gift, phone…), or Vietnamese for popular icons. Over 5,000 in total — use “Load more” to see them all."
+msgstr "Нажмите на значок, чтобы вставить его в выбранное поле. Ищите по английскому названию (cart, gift, phone…) или по-вьетнамски для популярных значков. Всего более 5000 — используйте «Загрузить ещё», чтобы увидеть все."
+
+msgid "Click an image in your content to open it in a full-screen viewer. Choose the engine and how it looks below."
+msgstr "Нажмите на изображение в вашем контенте, чтобы открыть его в полноэкранном просмотрщике. Выберите движок и его внешний вид ниже."
+
+msgid "Code in body"
+msgstr "Код в body"
+
+msgid "Code in footer"
+msgstr "Код в подвале"
+
+msgid "Code in head"
+msgstr "Код в head"
+
+msgid "Code on login"
+msgstr "Код при входе"
+
+msgid "Column"
+msgstr "Столбец"
+
+msgid "Columns"
+msgstr "Столбцы"
+
+msgid "Comma separated. A heading containing any of these opens the FAQ section; every heading below it until the next heading of the same level is treated as a question."
+msgstr "Через запятую. Заголовок, содержащий любое из этих слов, открывает раздел FAQ; каждый заголовок под ним до следующего заголовка того же уровня считается вопросом."
+
+msgid "Compact"
+msgstr "Компактный"
+
+msgid "Confirm them once, from the banner on any Horse Tools screen"
+msgstr "Подтвердите их один раз через баннер на любом экране Horse Tools"
+
+msgid "Confirm them once, from the notice on any Horse Tools screen"
+msgstr "Подтвердите их один раз через уведомление на любом экране Horse Tools"
+
+msgid "Confirmed %s ago"
+msgstr "Подтверждено %s назад"
+
+msgid "Contact click measurement"
+msgstr "Измерение кликов по контактам"
+
+msgid "Contact details are the ones you confirmed"
+msgstr "Контактные данные — это те, которые вы подтвердили"
+
+msgid "Contact details in your posts"
+msgstr "Контактные данные в ваших записях"
+
+msgid "Contact details in your posts are watched"
+msgstr "Контактные данные в ваших записях отслеживаются"
+
+msgid "Contact details in your settings"
+msgstr "Контактные данные в ваших настройках"
+
+msgid "Contains database credentials or signing keys."
+msgstr "Содержит учётные данные базы данных или ключи подписи."
+
+msgid "Control the Heartbeat API"
+msgstr "Управление Heartbeat API"
+
+msgid "Cookie notice"
+msgstr "Уведомление о куки"
+
+msgid "Copy"
+msgstr "Копировать"
+
+msgid "Copy / CSV / Print buttons"
+msgstr "Кнопки Копировать / CSV / Печать"
+
+msgid "Copy all eight lines"
+msgstr "Скопировать все восемь строк"
+
+msgid "Copy cells in Excel / Google Sheets (or paste CSV) and paste here:"
+msgstr "Скопируйте ячейки в Excel / Google Таблицах (или вставьте CSV) и вставьте сюда:"
+
+msgid "Corner — bottom left"
+msgstr "Угол — снизу слева"
+
+msgid "Corner — bottom right"
+msgstr "Угол — снизу справа"
+
+msgid "Could not be determined"
+msgstr "Не удалось определить"
+
+msgid "Could not check: this server was unable to open your own home page, which many hosts block. That says nothing about whether analytics is installed — if you have Site Kit or another GA4 plugin, switch this on and check the result in Analytics under Admin → DebugView."
+msgstr "Не удалось проверить: этот сервер не смог открыть вашу собственную главную страницу, что блокируют многие хостинги. Это ничего не говорит о том, установлена ли аналитика — если у вас есть Site Kit или другой плагин GA4, включите это и проверьте результат в Analytics в разделе Админ → DebugView."
+
+msgid "Could not load the Excel reader — save the file as CSV and try again."
+msgstr "Не удалось загрузить средство чтения Excel — сохраните файл как CSV и попробуйте снова."
+
+msgid "Could not load the home page from the server:"
+msgstr "Не удалось загрузить главную страницу с сервера:"
+
+msgid "Could not load the list."
+msgstr "Не удалось загрузить список."
+
+msgid "Could not read the file."
+msgstr "Не удалось прочитать файл."
+
+msgid "Could not read the home page (HTTP %s). Your host may block the site from calling itself; check the scripts via “View source” instead."
+msgstr "Не удалось прочитать главную страницу (HTTP %s). Ваш хостинг может блокировать обращение сайта к самому себе; вместо этого проверьте скрипты через «Просмотр кода страницы»."
+
+msgid "Could not send the recovery code — message the bot first, then check your chat ID."
+msgstr "Не удалось отправить код восстановления — сначала напишите боту сообщение, затем проверьте свой Chat ID."
+
+msgid "Create table"
+msgstr "Создать таблицу"
+
+msgid "Critical CSS — the above-the-fold styles, inlined in the head to prevent the flash (optional, but strongly recommended)"
+msgstr "Критический CSS — стили верхней части страницы, встроенные в head для предотвращения мигания (необязательно, но настоятельно рекомендуется)"
+
+msgid "Custom / Maps:"
+msgstr "Пользовательский / Карты:"
+
+msgid "Custom CSS"
+msgstr "Пользовательский CSS"
+
+msgid "Customers"
+msgstr "Клиенты"
+
+msgid "Dark background"
+msgstr "Тёмный фон"
+
+msgid "Dark mode, scrollbar, effects, and the look of the admin area."
+msgstr "Тёмный режим, полоса прокрутки, эффекты и внешний вид админки."
+
+msgid "Date shortcodes"
+msgstr "Шорткоды даты"
+
+msgid "Day(s)"
+msgstr "День(дней)"
+
+msgid "Decline"
+msgstr "Отклонить"
+
+msgid "Decline button text (default: Decline)"
+msgstr "Текст кнопки отклонения (по умолчанию: Отклонить)"
+
+msgid "Default"
+msgstr "По умолчанию"
+
+msgid "Defer JavaScript"
+msgstr "Отложить JavaScript"
+
+msgid "Defer JavaScript so it no longer blocks the page"
+msgstr "Отложить JavaScript, чтобы он больше не блокировал страницу"
+
+msgid "Delay JavaScript execution"
+msgstr "Задержать выполнение JavaScript"
+
+msgid "Delay JavaScript until interaction"
+msgstr "Задержать JavaScript до взаимодействия"
+
+msgid "Delay all scripts except the exclusions (most aggressive)"
+msgstr "Задержать все скрипты, кроме исключений (самый агрессивный вариант)"
+
+msgid "Delay analytics/ads/chat until interaction, and defer JavaScript"
+msgstr "Задержать аналитику/рекламу/чат до взаимодействия и отложить JavaScript"
+
+msgid "Delay analytics/ads/chat until interaction, and defer JavaScript (cart & checkout untouched)"
+msgstr "Задержать аналитику/рекламу/чат до взаимодействия и отложить JavaScript (корзина и оформление заказа не затронуты)"
+
+msgid "Delay only the scripts I list (recommended, safe)"
+msgstr "Задерживать только перечисленные мной скрипты (рекомендуется, безопасно)"
+
+msgid "Delay third-party scripts (analytics, ads, chat) until the visitor interacts — safe built-in list, with a 5-second fall-back"
+msgstr "Задерживать сторонние скрипты (аналитика, реклама, чат) до взаимодействия посетителя — безопасный встроенный список с 5-секундным резервным запуском"
+
+msgid "Delete column"
+msgstr "Удалить столбец"
+
+msgid "Delete row"
+msgstr "Удалить строку"
+
+msgid "Delete them, or move them somewhere outside the folder your site is served from. If one of them is a copy of wp-config.php, change your database password afterwards — assume it has been read."
+msgstr "Удалите их, либо переместите куда-нибудь за пределы папки, из которой обслуживается ваш сайт. Если один из них — копия wp-config.php, после этого смените пароль базы данных — считайте, что его прочитали."
+
+msgid "Detect my chat ID"
+msgstr "Определить мой Chat ID"
+
+msgid "Disable Dashicons for visitors"
+msgstr "Отключить Dashicons для посетителей"
+
+msgid "Disable on the front-end, slow in admin"
+msgstr "Отключить на витрине, медленно в админке"
+
+msgid "Display style (where the panel appears)"
+msgstr "Стиль отображения (где появляется панель)"
+
+msgid "Does mail from this site actually arrive?"
+msgstr "Действительно ли доходит почта с этого сайта?"
+
+msgid "Domain"
+msgstr "Домен"
+
+msgid "Downloadable secrets in the site folder"
+msgstr "Доступные для скачивания секреты в папке сайта"
+
+msgid "Drop Emoji, jQuery Migrate and admin icons; calm the Heartbeat"
+msgstr "Убрать эмодзи, jQuery Migrate и значки админки; замедлить Heartbeat"
+
+msgid "Each user turns it on for their own account under Users → Profile (scan a QR with Google Authenticator / Authy). After the password they enter a 6-digit code, so a stolen password alone is not enough. Uses standard WordPress hooks — safe across WordPress updates, and disabling the plugin instantly restores the normal login."
+msgstr "Каждый пользователь включает это для своего собственного аккаунта в разделе Пользователи → Профиль (сканирование QR-кода с помощью Google Authenticator / Authy). После пароля они вводят 6-значный код, поэтому одного украденного пароля недостаточно. Использует стандартные хуки WordPress — безопасно при обновлениях WordPress, а отключение плагина мгновенно восстанавливает обычный вход."
+
+msgid "Edit table"
+msgstr "Редактировать таблицу"
+
+msgid "Either set up a mailbox for the domain, or make sure the address you send notifications to is one you actually read."
+msgstr "Либо настройте почтовый ящик для домена, либо убедитесь, что адрес, на который вы отправляете уведомления, — это тот, который вы действительно читаете."
+
+msgid "Email address"
+msgstr "Адрес электронной почты"
+
+msgid "Email is the fallback and not a good one — a security message sent by a shop's own server is exactly the kind that lands in spam. Set up the Telegram bot under WooCommerce if you can."
+msgstr "Электронная почта — это резервный вариант, и не очень хороший — сообщение о безопасности, отправленное собственным сервером магазина, — это именно то, что попадает в спам. Настройте Telegram-бота в разделе WooCommerce, если можете."
+
+msgid "Email me a code"
+msgstr "Отправить мне код по электронной почте"
+
+msgid "Email service (SMTP preset)"
+msgstr "Почтовый сервис (пресет SMTP)"
+
+msgid "Email to %s"
+msgstr "Письмо на %s"
+
+msgid "Enable image lightbox"
+msgstr "Включить лайтбокс для изображений"
+
+msgid "Enable two-factor authentication"
+msgstr "Включить двухфакторную аутентификацию"
+
+msgid "Enter a current two-factor code to unlock PHP editing first."
+msgstr "Сначала введите текущий двухфакторный код, чтобы разблокировать редактирование PHP."
+
+msgid "Enter the 6-digit code from your app, or a backup code."
+msgstr "Введите 6-значный код из вашего приложения или резервный код."
+
+msgid "Enter your authentication code."
+msgstr "Введите ваш код аутентификации."
+
+msgid "Entrance effect"
+msgstr "Эффект появления"
+
+msgid "Every day"
+msgstr "Каждый день"
+
+msgid "Every month"
+msgstr "Каждый месяц"
+
+msgid "Every page load (init)"
+msgstr "При каждой загрузке страницы (init)"
+
+msgid "Every two weeks"
+msgstr "Раз в две недели"
+
+msgid "Every week (recommended)"
+msgstr "Раз в неделю (рекомендуется)"
+
+msgid "Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off."
+msgstr "Каждый также получает одноразовые резервные коды при регистрации — сохраните их. Если вы когда-нибудь окажетесь заблокированы без телефона, резервного кода или канала восстановления, переименуйте папку плагина через FTP, чтобы отключить 2FA."
+
+msgid "Everything above only tells you. Telling you leaves a gap: the link goes in, the warning appears on a screen, and the link keeps working until you log in and read it. That gap is how three old posts carried casino links for two years."
+msgstr "Всё вышеперечисленное лишь уведомляет вас. Уведомление оставляет пробел: ссылка появляется, предупреждение выводится на экран, а ссылка продолжает работать, пока вы не войдёте и не прочитаете его. Именно этот пробел позволил трём старым записям два года содержать ссылки на казино."
+
+msgid "Everything else on this page warns you when something is wrong — but only on a screen you have to open. It cannot warn you that it stopped: a site with the plugin switched off looks exactly like a site with nothing wrong."
+msgstr "Всё остальное на этой странице предупреждает вас, когда что-то не так — но только на экране, который нужно открыть. Оно не может предупредить вас о том, что перестало работать: сайт с отключённым плагином выглядит точно так же, как сайт, на котором всё в порядке."
+
+msgid "Export CSV"
+msgstr "Экспорт CSV"
+
+msgid "FAQ schema (Horse Tools)"
+msgstr "Схема FAQ (Horse Tools)"
+
+msgid "FAQ schema (rich results)"
+msgstr "Схема FAQ (расширенные результаты)"
+
+msgid "Fade"
+msgstr "Затухание"
+
+msgid "Fade in"
+msgstr "Проявление"
+
+msgid "Fall-back timer — run the delayed scripts after this many seconds even with no interaction (0 = only on interaction)"
+msgstr "Резервный таймер — запускать отложенные скрипты через столько секунд, даже без взаимодействия (0 = только при взаимодействии)"
+
+msgid "Filled in for you: server %host%, port %port%, %enc%."
+msgstr "Заполнено за вас: сервер %host%, порт %port%, %enc%."
+
+msgid "Filter per column"
+msgstr "Фильтр по столбцу"
+
+msgid "Find a domain"
+msgstr "Найти домен"
+
+msgid "Finished reading your posts and pages."
+msgstr "Чтение ваших записей и страниц завершено."
+
+msgid "First row is a header"
+msgstr "Первая строка — заголовок"
+
+msgid "Fix the channel and send a test message"
+msgstr "Исправить канал и отправить тестовое сообщение"
+
+msgid "Flip"
+msgstr "Переворот"
+
+msgid "Font settings"
+msgstr "Настройки шрифта"
+
+msgid "Fonts"
+msgstr "Шрифты"
+
+msgid "For non-technical users: this switches on the safe, high-impact speed features — delay & defer JavaScript (safe mode, with a 5-second fall-back), lazy-load, Instant-page, HTML compression, and dropping Emoji / jQuery Migrate / Dashicons. The riskier options (async CSS, “delay all”) are left off. The switches below light up so you can see what changed — then press SAVE to apply."
+msgstr "Для нетехнических пользователей: это включает безопасные, эффективные функции скорости — задержку и откладывание JavaScript (безопасный режим с 5-секундным резервным запуском), ленивую загрузку, Instant-page, сжатие HTML и удаление эмодзи / jQuery Migrate / Dashicons. Более рискованные опции (асинхронный CSS, «задержать всё») остаются выключенными. Переключатели ниже загорятся, чтобы вы видели, что изменилось — затем нажмите СОХРАНИТЬ для применения."
+
+msgid "Free for 300 messages a day with no card. The account login is the username; the SMTP key is not the same thing as the API key."
+msgstr "Бесплатно для 300 сообщений в день без карты. Логин аккаунта — это имя пользователя; SMTP-ключ — это не то же самое, что API-ключ."
+
+msgid "Freeze first column"
+msgstr "Закрепить первый столбец"
+
+msgid "Front end and admin"
+msgstr "Витрина и админка"
+
+msgid "Front end only"
+msgstr "Только витрина"
+
+msgid "GLightbox — light, images + video, slide effects"
+msgstr "GLightbox — лёгкий, изображения + видео, эффекты слайдов"
+
+msgid "Give it a minute before answering. “In the spam folder” is a useful answer, not a failure to report."
+msgstr "Дайте этому минуту, прежде чем отвечать. «В папке спама» — это полезный ответ, а не провал проверки."
+
+msgid "Go through the list once and approve it"
+msgstr "Пройдите список один раз и одобрите его"
+
+msgid "Gone"
+msgstr "Пропало"
+
+msgid "Google Sheet"
+msgstr "Google Таблица"
+
+msgid "Google accepts both keys."
+msgstr "Google принимает оба ключа."
+
+msgid "Google does not recognise this Secret key. Check you copied the secret and not the site key — they come from the same page and are easy to swap."
+msgstr "Google не распознаёт этот секретный ключ. Проверьте, скопировали ли вы секретный ключ, а не ключ сайта — они находятся на одной странице, и их легко перепутать."
+
+msgid "Google fetch"
+msgstr "Запрос к Google"
+
+msgid "Google refused the request — make sure the sheet is shared as “Anyone with the link can view”."
+msgstr "Google отклонил запрос — убедитесь, что таблица открыта для доступа по ссылке «Все, у кого есть ссылка, могут просматривать»."
+
+msgid "Google refuses this Site key for reCAPTCHA v3. It is almost certainly a v2 key — either switch the dropdown to V2, or paste the key from a v3 project. Until then the widget never loads and every login is rejected."
+msgstr "Google отклоняет этот ключ сайта для reCAPTCHA v3. Это почти наверняка ключ v2 — либо переключите раскрывающийся список на V2, либо вставьте ключ из проекта v3. До тех пор виджет никогда не загружается, и каждый вход отклоняется."
+
+msgid "Google sign-in"
+msgstr "Вход через Google"
+
+msgid "Gradient blue-violet"
+msgstr "Градиент сине-фиолетовый"
+
+msgid "Gradient ocean"
+msgstr "Градиент океан"
+
+msgid "Gradient sunset"
+msgstr "Градиент закат"
+
+msgid "Grey"
+msgstr "Серый"
+
+msgid "Group images into a gallery (previous / next)"
+msgstr "Группировать изображения в галерею (предыдущее / следующее)"
+
+msgid "HTML compression; compress JPGs and serve WebP"
+msgstr "Сжатие HTML; сжатие JPG и отдача WebP"
+
+msgid "Handle dead links: send visitors who hit a “404 – not found” page to a page you choose, and keep a log of the broken URLs so you know what to fix."
+msgstr "Обработка нерабочих ссылок: отправляйте посетителей, попавших на страницу «404 – не найдено», на выбранную вами страницу и ведите журнал битых URL-адресов, чтобы знать, что исправлять."
+
+msgid "Header colour"
+msgstr "Цвет заголовка"
+
+msgid "Heads up: a PHP snippet was just changed on %1$s. Snippet: \"%2$s\". By: %3$s (IP %4$s). If this was not you, change your password and review Horse Tools → Shortcode immediately."
+msgstr "Внимание: PHP-сниппет только что был изменён на %1$s. Сниппет: «%2$s». Кем: %3$s (IP %4$s). Если это были не вы, немедленно смените пароль и проверьте Horse Tools → Shortcode."
+
+msgid "Heartbeat mode"
+msgstr "Режим Heartbeat"
+
+msgid "Hold heavy third-party scripts (analytics, tag managers, pixels, chat, ads) until the visitor first interacts — scroll, mouse move, tap, key or click — then run them in order. The single biggest win for Total Blocking Time and “Reduce unused JavaScript”. It re-fires the page-ready events afterwards, keeps script order, and never touches JSON-LD structured data or ES modules."
+msgstr "Задерживать тяжёлые сторонние скрипты (аналитика, менеджеры тегов, пиксели, чат, реклама) до первого взаимодействия посетителя — прокрутка, движение мыши, касание, клавиша или клик — а затем запускать их по порядку. Самый значительный выигрыш для Total Blocking Time и «Уменьшите влияние неиспользуемого JavaScript». Впоследствии заново вызывает события готовности страницы, сохраняет порядок скриптов и никогда не трогает структурированные данные JSON-LD или ES-модули."
+
+msgid "Horse Tools %s is available — an update link now appears under the plugin below. WordPress will download it directly from GitHub."
+msgstr "Доступен Horse Tools %s — теперь под плагином ниже появляется ссылка для обновления. WordPress загрузит его напрямую с GitHub."
+
+msgid "Horse Tools beat #%1$d — %2$s"
+msgstr "Пульс Horse Tools №%1$d — %2$s"
+
+msgid "Horse Tools can tell you when your content starts linking somewhere new."
+msgstr "Horse Tools может сообщать вам, когда ваш контент начинает ссылаться на что-то новое."
+
+msgid "Horse Tools can watch your contact details for changes."
+msgstr "Horse Tools может отслеживать изменения ваших контактных данных."
+
+msgid "Horse Tools could not reach GitHub to check for updates. Please try again later."
+msgstr "Horse Tools не удалось связаться с GitHub для проверки обновлений. Пожалуйста, попробуйте позже."
+
+msgid "Horse Tools is up to date (version %s)."
+msgstr "Horse Tools обновлён до последней версии (версия %s)."
+
+msgid "Horse Tools keeps a copy of your decisions in a file as well as in the database, precisely so that a change made straight to the database can be seen. These no longer match:"
+msgstr "Horse Tools хранит копию ваших решений как в файле, так и в базе данных, именно для того, чтобы изменение, сделанное напрямую в базе данных, можно было заметить. Они больше не совпадают:"
+
+msgid "Horse Tools snippet"
+msgstr "Сниппет Horse Tools"
+
+msgid "Horse Tools table"
+msgstr "Таблица Horse Tools"
+
+msgid "Horse Tools — %s"
+msgstr "Horse Tools — %s"
+
+msgid "Hosts to preconnect (one per line — host or full URL)"
+msgstr "Хосты для preconnect (по одному на строку — хост или полный URL)"
+
+msgid "Hour(s)"
+msgstr "Час(ов)"
+
+msgid "How often"
+msgstr "Как часто"
+
+msgid "Icon colour"
+msgstr "Цвет значка"
+
+msgid "Icons"
+msgstr "Значки"
+
+msgid "If a theme/plugin script misbehaves, add its handle or file name to the exclusion list below. Disable if you already use a full-page optimiser that defers scripts."
+msgstr "Если скрипт темы/плагина ведёт себя неправильно, добавьте его дескриптор или имя файла в список исключений ниже. Отключите, если вы уже используете полностраничный оптимизатор, который откладывает скрипты."
+
+msgid "If it does not arrive, something stopped it — check the site."
+msgstr "Если он не приходит, что-то его остановило — проверьте сайт."
+
+msgid "If this site stops working, or Horse Tools is switched off, nobody is told. Every warning here is only seen by someone who logs in and looks."
+msgstr "Если этот сайт перестанет работать или Horse Tools будет отключён, никто не узнает об этом. Каждое предупреждение здесь видит только тот, кто войдёт и посмотрит."
+
+msgid "If you are reading it, mail from your site reaches this address. Go back to the Email screen and say where it turned up — the inbox or the spam folder — because those are two different answers and only you can see which one it was."
+msgstr "Если вы это читаете, значит почта с вашего сайта доходит до этого адреса. Вернитесь на экран Почта и укажите, где она оказалась — во входящих или в папке спама — потому что это два разных ответа, и только вы можете видеть, каким он был."
+
+msgid "If you have just restored a database backup, or copied the database from another copy of this site, that is the explanation — the file stayed while the database went back in time. Press the button and it will match again."
+msgstr "Если вы только что восстановили резервную копию базы данных или скопировали базу данных с другой копии этого сайта, вот объяснение — файл остался прежним, пока база данных вернулась назад во времени. Нажмите кнопку, и они снова совпадут."
+
+msgid "If you have not done either of those things, then something can write to your database that should not be able to. Changing passwords will not fix that on its own; the way in has to be found."
+msgstr "Если вы не делали ни того, ни другого, значит что-то может писать в вашу базу данных, не имея на это права. Смена паролей сама по себе это не исправит; нужно найти путь проникновения."
+
+msgid "If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else."
+msgstr "Если вы только что сами их изменили, подтвердите их. Если нет — это сделал кто-то другой: проверьте, кто последним редактировал ваши настройки, прежде чем менять что-либо ещё."
+
+msgid "If you lose your phone"
+msgstr "Если вы потеряете телефон"
+
+msgid "If your site has Tag Manager but no Google tag"
+msgstr "Если на вашем сайте есть Tag Manager, но нет тега Google"
+
+msgid "Image alt text"
+msgstr "Альтернативный текст изображения"
+
+msgid "Image caption (figcaption)"
+msgstr "Подпись к изображению (figcaption)"
+
+msgid "Image lightbox"
+msgstr "Лайтбокс изображений"
+
+msgid "Image title"
+msgstr "Заголовок изображения"
+
+msgid "Images"
+msgstr "Изображения"
+
+msgid "In"
+msgstr "В"
+
+msgid "In Google Analytics: Reports → Engagement → Events. Each channel appears under its own name — contact_phone, contact_zalo, contact_messenger and so on — so there is nothing to configure first. Allow 24 hours for the standard reports; to see it immediately instead, open Admin → DebugView and tap a button on your phone."
+msgstr "В Google Analytics: Отчёты → Вовлечённость → События. Каждый канал появляется под своим собственным именем — contact_phone, contact_zalo, contact_messenger и так далее — поэтому предварительно ничего настраивать не нужно. Отведите 24 часа для стандартных отчётов; чтобы увидеть это сразу, откройте Админ → DebugView и нажмите кнопку на телефоне."
+
+msgid "In the inbox"
+msgstr "Во входящих"
+
+msgid "In the page <head>"
+msgstr "В <head> страницы"
+
+msgid "In the spam folder"
+msgstr "В папке спама"
+
+msgid "Indigo"
+msgstr "Индиго"
+
+msgid "Insert a snippet"
+msgstr "Вставить сниппет"
+
+msgid "Insert a table"
+msgstr "Вставить таблицу"
+
+msgid "Insert a table you saved earlier:"
+msgstr "Вставить ранее сохранённую таблицу:"
+
+msgid "Insert column right"
+msgstr "Вставить столбец справа"
+
+msgid "Insert row below"
+msgstr "Вставить строку ниже"
+
+msgid "Insert table"
+msgstr "Вставить таблицу"
+
+msgid "Install analytics first"
+msgstr "Сначала установите аналитику"
+
+msgid "Invalid code. Please try again."
+msgstr "Неверный код. Пожалуйста, попробуйте снова."
+
+msgid "It continues on its own each time you open an admin page"
+msgstr "Это продолжается само по себе каждый раз, когда вы открываете страницу админки"
+
+msgid "It failed: %s"
+msgstr "Ошибка: %s"
+
+msgid "JavaScript &amp; connections"
+msgstr "JavaScript и соединения"
+
+msgid "Last confirmed %s ago — worth testing again"
+msgstr "Последний раз подтверждено %s назад — стоит проверить снова"
+
+msgid "Last message: #%1$d, %2$s ago."
+msgstr "Последнее сообщение: №%1$d, %2$s назад."
+
+msgid "Last row is a total row (pinned to the bottom)"
+msgstr "Последняя строка — итоговая (закреплена внизу)"
+
+msgid "Least-linked first, because the one added without your knowing is almost never the one you link to from two hundred posts. Tick what belongs and approve it; leave the rest here."
+msgstr "Сначала наименее связанные, потому что тот, что добавлен без вашего ведома, почти никогда не является тем, на который вы ссылаетесь из двухсот записей. Отметьте то, что уместно, и одобрите это; остальное оставьте здесь."
+
+msgid "Leave empty and the icon follows the list colour."
+msgstr "Оставьте пустым, и значок будет следовать цвету списка."
+
+msgid "Leave empty to use the icon chosen above; anything pasted here replaces it. Its colour comes from the Icon colour setting below, so the fill in your SVG is ignored. Scripts and event handlers are removed."
+msgstr "Оставьте пустым, чтобы использовать значок, выбранный выше; всё, что вставлено сюда, заменяет его. Его цвет берётся из настройки «Цвет значка» ниже, поэтому заливка в вашем SVG игнорируется. Скрипты и обработчики событий удаляются."
+
+msgid "Leave this empty and the message goes to the same Telegram chat as your order notifications, or by email if you have not set a bot up. Orders go to whoever packs them; this does not, so there is a field of its own."
+msgstr "Оставьте это пустым, и сообщение пойдёт в тот же чат Telegram, что и ваши уведомления о заказах, либо по электронной почте, если вы не настроили бота. Заказы идут тому, кто их упаковывает; это — нет, поэтому здесь отдельное поле."
+
+msgid "Light"
+msgstr "Светлый"
+
+msgid "Lightbox engine"
+msgstr "Движок лайтбокса"
+
+msgid "Lines only"
+msgstr "Только линии"
+
+msgid "Link text"
+msgstr "Текст ссылки"
+
+msgid "Links"
+msgstr "Ссылки"
+
+msgid "Links & URLs"
+msgstr "Ссылки и URL"
+
+msgid "Links every image in the content together so the viewer can flip through them. If an image already links to a file, that link is used."
+msgstr "Связывает все изображения в контенте между собой, чтобы просмотрщик мог их пролистывать. Если изображение уже ссылается на файл, используется эта ссылка."
+
+msgid "Links to domains you did not approve are defused as they are printed"
+msgstr "Ссылки на домены, которые вы не одобрили, обезвреживаются при выводе"
+
+msgid "Load CSS without blocking render"
+msgstr "Загружать CSS без блокировки отрисовки"
+
+msgid "Load more icons"
+msgstr "Загрузить больше значков"
+
+msgid "Loading…"
+msgstr "Загрузка…"
+
+msgid "Loads a script or an embedded frame from this domain"
+msgstr "Загружает скрипт или встроенный фрейм с этого домена"
+
+msgid "Loads stylesheets without blocking the first paint (the media-toggle technique), so the page appears on screen sooner. A big win for First Contentful Paint and Lighthouse’s “Eliminate render-blocking resources”."
+msgstr "Загружает таблицы стилей без блокировки первой отрисовки (техника переключения media), поэтому страница появляется на экране быстрее. Значительный выигрыш для First Contentful Paint и «Устраните ресурсы, блокирующие отображение» в Lighthouse."
+
+msgid "Lock content"
+msgstr "Заблокировать контент"
+
+msgid "Locked yourself out? Log in from a different network (e.g. your phone on mobile data = a different IP), then click the button above to clear all lockouts — or just wait for the lockout time to pass. As a last resort, disable the plugin by renaming its folder via FTP."
+msgstr "Сами себя заблокировали? Войдите с другой сети (например, с телефона через мобильные данные = другой IP), затем нажмите кнопку выше, чтобы снять все блокировки — или просто дождитесь окончания времени блокировки. В крайнем случае отключите плагин, переименовав его папку через FTP."
+
+msgid "Lockout length"
+msgstr "Длительность блокировки"
+
+msgid "Lockout time unit"
+msgstr "Единица времени блокировки"
+
+msgid "Login lockout, two-factor, reCAPTCHA and the login page."
+msgstr "Блокировка входа, двухфакторная аутентификация, reCAPTCHA и страница входа."
+
+msgid "Login page"
+msgstr "Страница входа"
+
+msgid "Longest answer to publish (characters)"
+msgstr "Самый длинный публикуемый ответ (символов)"
+
+msgid "Look down this page, deal with anything that makes you stop, and use “Approve everything” below for the rest — what matters is having a baseline, so that tomorrow’s arrival stands out against it."
+msgstr "Просмотрите эту страницу, разберитесь со всем, что заставляет вас остановиться, и используйте «Одобрить всё» ниже для остального — важно иметь исходную точку отсчёта, чтобы завтрашнее появление выделялось на её фоне."
+
+msgid "Loop back to the first image"
+msgstr "Вернуться к первому изображению"
+
+msgid "Lost your device?"
+msgstr "Потеряли устройство?"
+
+msgid "Mail from this site is known to arrive"
+msgstr "Известно, что почта с этого сайта доходит"
+
+msgid "Mail from this site leaves by %1$s, and that address is known as %2$s."
+msgstr "Почта с этого сайта отправляется через %1$s, и этот адрес известен как %2$s."
+
+msgid "Mail this site sends as %s is treated as forged. Your domain publishes a list of servers allowed to send for it, that list ends in “reject everything else”, and this web server is not on it."
+msgstr "Почта, которую этот сайт отправляет как %s, считается подделанной. Ваш домен публикует список серверов, которым разрешено отправлять от его имени, этот список заканчивается на «отклонять всё остальное», и этого веб-сервера в нём нет."
+
+msgid "Maintenance (503)"
+msgstr "Технические работы (503)"
+
+msgid "Maintenance 503"
+msgstr "Технические работы 503"
+
+msgid "Measurement"
+msgstr "Измерение"
+
+msgid "Merge cells: type #colspan# to merge into the cell on the left, #rowspan# to merge into the cell above. Formulas: =SUM(B2:B10), also AVG / MIN / MAX."
+msgstr "Объединение ячеек: введите #colspan# для объединения с ячейкой слева, #rowspan# для объединения с ячейкой сверху. Формулы: =SUM(B2:B10), также AVG / MIN / MAX."
+
+msgid "Microsoft has been switching this off for new tenants; if it refuses to authenticate, that is why, and another service is the quicker road."
+msgstr "Microsoft постепенно отключает это для новых арендаторов; если аутентификация отклоняется, причина именно в этом, и другой сервис — более быстрый путь."
+
+msgid "Minimal"
+msgstr "Минимальный"
+
+msgid "Minimum number of questions"
+msgstr "Минимальное количество вопросов"
+
+msgid "Minute(s)"
+msgstr "Минута(ы)"
+
+msgid "Mode"
+msgstr "Режим"
+
+msgid "Move column left"
+msgstr "Переместить столбец влево"
+
+msgid "Move column right"
+msgstr "Переместить столбец вправо"
+
+msgid "Move row down"
+msgstr "Переместить строку вниз"
+
+msgid "Move row up"
+msgstr "Переместить строку вверх"
+
+msgid "NOT APPROVED: %s"
+msgstr "НЕ ОДОБРЕНО: %s"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Native image lazy-load + async decode"
+msgstr "Нативная ленивая загрузка изображений + асинхронное декодирование"
+
+msgid "New"
+msgstr "Новый"
+
+msgid "Next"
+msgstr "Далее"
+
+msgid "Next beat due: %s"
+msgstr "Следующий пульс ожидается: %s"
+
+msgid "Next one due %s."
+msgstr "Следующий ожидается через %s."
+
+msgid "No FAQ section recognised in this post."
+msgstr "В этой записи не распознан раздел FAQ."
+
+msgid "No Google Analytics tag turned up, either in your settings or on the home page. If you have not installed one yet, Site Kit by Google (or any GA4 plugin) is the usual way. If you know you do have one — added through Tag Manager, a caching layer, or a consent tool that loads it later — this check simply could not see it: switch the setting on anyway. It looks for analytics at the moment of the click, not now, so it starts working the instant a tag is present."
+msgstr "Не появился тег Google Analytics — ни в ваших настройках, ни на главной странице. Если вы его ещё не устанавливали, обычный способ — Site Kit by Google (или любой плагин GA4). Если вы знаете, что он у вас есть — добавлен через Tag Manager, слой кэширования или инструмент согласия, который загружает его позже, — эта проверка просто не смогла его увидеть: всё равно включите настройку. Она ищет аналитику в момент клика, а не сейчас, поэтому начинает работать в тот же миг, когда тег появляется."
+
+msgid "No Telegram bot token is set yet (WooCommerce module)."
+msgstr "Токен Telegram-бота ещё не задан (модуль WooCommerce)."
+
+msgid "No auto-refresh"
+msgstr "Без автообновления"
+
+msgid "No caption"
+msgstr "Нет подписи"
+
+msgid "No copy on disk yet — it is written the first time you confirm something"
+msgstr "Копии на диске пока нет — она записывается при первом подтверждении чего-либо"
+
+msgid "No downloadable secrets in the site folder"
+msgstr "Нет доступных для скачивания секретов в папке сайта"
+
+msgid "No matching rows."
+msgstr "Нет подходящих строк."
+
+msgid "No message containing %s yet. Send that exact code to the bot, then press this again."
+msgstr "Пока нет сообщения, содержащего %s. Отправьте этот точный код боту, затем нажмите здесь снова."
+
+msgid "No post titles here on purpose — this list is long, and looking up a title for every row is what made this screen slow. Tick anything you want to take back and press the button; it moves up to “Waiting for you” with its posts listed."
+msgstr "Здесь намеренно нет заголовков записей — этот список длинный, и поиск заголовка для каждой строки — то, что замедляло этот экран. Отметьте всё, что хотите вернуть, и нажмите кнопку; это переместится вверх в «Ожидает вас» со списком своих записей."
+
+msgid "No saved tables yet."
+msgstr "Пока нет сохранённых таблиц."
+
+msgid "No scripts found."
+msgstr "Скрипты не найдены."
+
+msgid "No snippet matches your search."
+msgstr "Ни один сниппет не соответствует вашему поиску."
+
+msgid "No snippets yet — create them on the Shortcode screen."
+msgstr "Пока нет сниппетов — создайте их на экране Shortcode."
+
+msgid "No table yet."
+msgstr "Пока нет таблицы."
+
+msgid "No tables yet. Click “Add new table” to create your first one."
+msgstr "Пока нет таблиц. Нажмите «Добавить новую таблицу», чтобы создать первую."
+
+msgid "Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it."
+msgstr "Никто не может по нему перейти. Строже и с большей вероятностью помешает вам — домен, на который вы хотели сослаться, но забыли отметить, перестаёт быть ссылкой, пока вы его не отметите."
+
+msgid "Nobody has ever checked that mail from this site arrives"
+msgstr "Никто никогда не проверял, доходит ли почта с этого сайта"
+
+msgid "None (instant)"
+msgstr "Нет (мгновенно)"
+
+msgid "Not allowed."
+msgstr "Не разрешено."
+
+msgid "Not due yet."
+msgstr "Ещё не пора."
+
+msgid "Not your normal password — Google requires an app password, and the page that makes them only appears once two-step verification is on."
+msgstr "Не ваш обычный пароль — Google требует пароль приложения, и страница, создающая их, появляется только после включения двухэтапной проверки."
+
+msgid "Nothing accepts mail for %s, so any address at your own domain cannot receive replies. If you have stopped paying for a mailbox provider, its records may still be pointing there."
+msgstr "Ничто не принимает почту для %s, поэтому ни один адрес на вашем собственном домене не может получать ответы. Если вы перестали платить за поставщика почтового ящика, его записи могут всё ещё указывать туда."
+
+msgid "Nothing in DNS can change this. Send through an email service instead — those use a different port, which is open."
+msgstr "Ничто в DNS не может это изменить. Вместо этого отправляйте через почтовый сервис — они используют другой порт, который открыт."
+
+msgid "Nothing matches that."
+msgstr "Ничего не соответствует этому."
+
+msgid "Nothing running on this server can find out whether a message arrived. You can. Send one, look, and say what you found — the answer is kept with the date, so this screen can afterwards report something that was seen rather than something that was switched on."
+msgstr "Ничто из работающего на этом сервере не может узнать, дошло ли сообщение. А вы можете. Отправьте одно, посмотрите и сообщите, что нашли — ответ сохраняется вместе с датой, чтобы этот экран впоследствии мог сообщить о том, что было увидено, а не о том, что было просто включено."
+
+msgid "Nothing to preview yet."
+msgstr "Пока нечего просматривать."
+
+msgid "Nothing to send."
+msgstr "Нечего отправлять."
+
+msgid "Nothing to set up"
+msgstr "Нечего настраивать"
+
+msgid "Nothing was ticked, so nothing changed."
+msgstr "Ничего не было отмечено, поэтому ничего не изменилось."
+
+msgid "Nothing — just tell me"
+msgstr "Ничего — просто скажите мне"
+
+msgid "Nothing. Every domain your content points at is one you have agreed to."
+msgstr "Ничего. Каждый домен, на который указывает ваш контент, — это тот, с которым вы согласились."
+
+msgid "Notification bar"
+msgstr "Панель уведомлений"
+
+msgid "Nowhere — it never came"
+msgstr "Нигде — она так и не пришла"
+
+msgid "On the code screen the user can have a one-time code emailed to their account address if they lose their phone."
+msgstr "На экране кода пользователь может получить одноразовый код на адрес электронной почты своего аккаунта, если потеряет телефон."
+
+msgid "One click for the safe, high-impact speed features — including delaying third-party scripts and deferring JavaScript. It deliberately leaves out the advanced, riskier options (async CSS, the aggressive “delay all” mode), which you can still turn on yourself later. Gutenberg and Classic CSS are left alone, since removing those can change how a theme looks."
+msgstr "Один клик для безопасных, эффективных функций скорости — включая задержку сторонних скриптов и откладывание JavaScript. Намеренно исключены продвинутые, более рискованные опции (асинхронный CSS, агрессивный режим «задержать всё»), которые вы всё же можете включить позже сами. Gutenberg и Classic CSS не затрагиваются, так как их удаление может изменить внешний вид темы."
+
+msgid "One half is in the database — still safe, but tidy it up"
+msgstr "Половина находится в базе данных — всё ещё безопасно, но стоит прибраться"
+
+msgid "One of your buttons is set to Skype. Microsoft closed Skype on 5 May 2025 and moved everyone to Teams, so that button now opens nothing for visitors. Change it to another channel — it has been left in place rather than removed for you, so that nothing changes on your site without your say-so."
+msgstr "Одна из ваших кнопок настроена на Skype. Microsoft закрыла Skype 5 мая 2025 года и перевела всех в Teams, поэтому эта кнопка теперь ничего не открывает для посетителей. Смените её на другой канал — она была оставлена, а не удалена за вас, чтобы ничего не менялось на вашем сайте без вашего согласия."
+
+msgid "One-click safe speed setup"
+msgstr "Безопасная настройка скорости в один клик"
+
+msgid "Only %1$d question found; at least %2$d are needed before schema is published."
+msgstr "Найден только %1$d вопрос; требуется как минимум %2$d, прежде чем схема будет опубликована."
+
+msgid "Only a full administrator may use PHP snippets."
+msgstr "Использовать PHP-сниппеты может только полноправный администратор."
+
+msgid "Only add hosts the page really uses. Preconnecting to a host you do not load from wastes a connection."
+msgstr "Добавляйте только те хосты, которые страница действительно использует. Preconnect к хосту, с которого вы ничего не загружаете, впустую расходует соединение."
+
+msgid "Only affects enqueued stylesheets, and only for logged-out visitors. A fallback keeps every stylesheet working when JavaScript is turned off."
+msgstr "Влияет только на поставленные в очередь таблицы стилей, и только для вышедших из системы посетителей. Резервный вариант сохраняет работоспособность каждой таблицы стилей при отключённом JavaScript."
+
+msgid "Only for a custom icon: click the SVG box below, then"
+msgstr "Только для пользовательского значка: нажмите на поле SVG ниже, затем"
+
+msgid "Only in the post editor (autosave/locking)"
+msgstr "Только в редакторе записей (автосохранение/блокировка)"
+
+msgid "Only in these category IDs"
+msgstr "Только в этих ID категорий"
+
+msgid "Only the backup route worked — your main channel is down"
+msgstr "Сработал только резервный путь — ваш основной канал не работает"
+
+msgid "Only the ticked ones on this page (%d)"
+msgstr "Только отмеченные на этой странице (%d)"
+
+msgid "Only where I place its shortcode"
+msgstr "Только там, куда я помещаю его шорткод"
+
+msgid "Open a couple and glance at them. “Still fine” only resets the clock; it does not change what is approved."
+msgstr "Откройте пару и бегло взгляните на них. «Всё ещё в порядке» лишь сбрасывает таймер; это не меняет то, что одобрено."
+
+msgid "Open animation"
+msgstr "Анимация открытия"
+
+msgid "Optimisation"
+msgstr "Оптимизация"
+
+msgid "Optional: in Admin → Events, switch on \"Mark as key event\" for the channels that matter to you. They then appear in the acquisition reports, so you can see which traffic source produces contacts, and they can be imported into Google Ads as a conversion."
+msgstr "Необязательно: в разделе Админ → События включите «Отметить как ключевое событие» для важных для вас каналов. Затем они появятся в отчётах о привлечении, чтобы вы могли видеть, какой источник трафика приносит контакты, и их можно импортировать в Google Ads как конверсию."
+
+msgid "Or enter this key manually:"
+msgstr "Или введите этот ключ вручную:"
+
+msgid "Orange"
+msgstr "Оранжевый"
+
+msgid "Outbound links"
+msgstr "Исходящие ссылки"
+
+msgid "Outbound links are watched"
+msgstr "Исходящие ссылки отслеживаются"
+
+msgid "Outbound links screen — choose what should happen to them"
+msgstr "Экран исходящих ссылок — выберите, что должно с ними происходить"
+
+msgid "Overdue — nothing has been running the schedule"
+msgstr "Просрочено — ничто не выполняло расписание"
+
+msgid "PHP editing unlocked for %d minutes."
+msgstr "Редактирование PHP разблокировано на %d минут."
+
+msgid "PHP errors: server paths, fragments of queries, sometimes the contents of a failed request."
+msgstr "Ошибки PHP: пути на сервере, фрагменты запросов, иногда содержимое неудавшегося запроса."
+
+msgid "PHP runs with full access to your site, so it stays locked. Enter a current code from your authenticator to unlock it for 15 minutes."
+msgstr "PHP работает с полным доступом к вашему сайту, поэтому он остаётся заблокированным. Введите текущий код из вашего приложения аутентификации, чтобы разблокировать его на 15 минут."
+
+msgid "PHP snippets are not available."
+msgstr "PHP-сниппеты недоступны."
+
+msgid "PHP snippets are switched off by HORSETOOLS_NO_PHP in wp-config.php."
+msgstr "PHP-сниппеты отключены параметром HORSETOOLS_NO_PHP в wp-config.php."
+
+msgid "PHP snippets are unavailable because this site sets DISALLOW_FILE_MODS — the platform does not allow code changes at all."
+msgstr "PHP-сниппеты недоступны, потому что этот сайт устанавливает DISALLOW_FILE_MODS — платформа вообще не разрешает изменения кода."
+
+msgid "PHP syntax error — nothing was saved: %s"
+msgstr "Синтаксическая ошибка PHP — ничего не сохранено: %s"
+
+msgid "Page %1$d of %2$d"
+msgstr "Страница %1$d из %2$d"
+
+msgid "Pagination"
+msgstr "Постраничная навигация"
+
+msgid "Panel layout"
+msgstr "Макет панели"
+
+msgid "Password or app password"
+msgstr "Пароль или пароль приложения"
+
+msgid "Paste a Google Sheets link (shared: anyone with the link)"
+msgstr "Вставьте ссылку на Google Таблицы (общий доступ: у кого есть ссылка)"
+
+msgid "Paste all eight lines into wp-config.php, above the line that requires wp-settings.php. Replace any existing lines with the same names. Everyone signed in — including you — will be signed out afterwards, which is the point: it invalidates every cookie issued with the old keys."
+msgstr "Вставьте все восемь строк в wp-config.php, над строкой, которая подключает wp-settings.php. Замените все существующие строки с такими же именами. Все вошедшие в систему — включая вас — после этого будут выведены из системы, в этом и смысл: это делает недействительным каждый куки, выданный со старыми ключами."
+
+msgid "Paste from Excel"
+msgstr "Вставить из Excel"
+
+msgid "Paste the eight keys into wp-config.php — see the notice at the top of any Horse Tools screen"
+msgstr "Вставьте восемь ключей в wp-config.php — см. уведомление вверху любого экрана Horse Tools"
+
+msgid "Permalinks, image alt text, external links and FAQ schema."
+msgstr "Постоянные ссылки, альтернативный текст изображений, внешние ссылки и схема FAQ."
+
+msgid "Phone number"
+msgstr "Номер телефона"
+
+msgid "Phone, SMS, Messenger, Telegram, Zalo, Whatsapp, Viber, Skype, Tiktok, Mail:"
+msgstr "Телефон, SMS, Messenger, Telegram, Zalo, Whatsapp, Viber, Skype, Tiktok, Почта:"
+
+msgid "PhotoSwipe — best pinch-zoom / pan for photos"
+msgstr "PhotoSwipe — лучший щипковый зум / панорамирование для фото"
+
+msgid "Phrases that mark the FAQ section"
+msgstr "Фразы, обозначающие раздел FAQ"
+
+msgid "Pick a button skin"
+msgstr "Выберите оформление кнопки"
+
+msgid "Pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically — no icon needed."
+msgstr "Выберите канал (Zalo, Messenger, Телефон…), и его логотип добавляется автоматически — значок не требуется."
+
+msgid "Pick a snippet to insert"
+msgstr "Выберите сниппет для вставки"
+
+msgid "Pink"
+msgstr "Розовый"
+
+msgid "Plugin settings"
+msgstr "Настройки плагина"
+
+msgid "Policy link text (default: Policy)"
+msgstr "Текст ссылки на политику (по умолчанию: Политика)"
+
+msgid "Pop"
+msgstr "Всплытие"
+
+msgid "Popup"
+msgstr "Всплывающее окно"
+
+msgid "Post images, duplicating posts and the image lightbox."
+msgstr "Изображения записей, дублирование записей и лайтбокс изображений."
+
+msgid "Posts"
+msgstr "Записи"
+
+msgid "Posts and pages"
+msgstr "Записи и страницы"
+
+msgid "Posts only"
+msgstr "Только записи"
+
+msgid "Preconnect to third-party hosts"
+msgstr "Preconnect к сторонним хостам"
+
+msgid "Preload critical assets"
+msgstr "Предзагрузка критических ресурсов"
+
+msgid "Previous"
+msgstr "Назад"
+
+msgid "Print"
+msgstr "Печать"
+
+msgid "Protection"
+msgstr "Защита"
+
+msgid "Prove it"
+msgstr "Докажите это"
+
+msgid "Publish FAQ schema automatically from the FAQ section in a post"
+msgstr "Публиковать схему FAQ автоматически из раздела FAQ в записи"
+
+msgid "Publishes the server configuration, paths and loaded modules."
+msgstr "Публикует конфигурацию сервера, пути и загруженные модули."
+
+msgid "Pull data"
+msgstr "Получить данные"
+
+msgid "Question"
+msgstr "Вопрос"
+
+msgid "Quick guide — how the chat feature works"
+msgstr "Краткое руководство — как работает функция чата"
+
+msgid "Read all my content again"
+msgstr "Прочитать весь мой контент заново"
+
+msgid "Read the records again"
+msgstr "Перечитать записи"
+
+msgid "Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see."
+msgstr "Воспринимайте это как намерение, а не результат: касание означает, что кто-то открыл номеронабиратель или приложение чата, а не то, что звонок состоялся или сообщение было отправлено. Блокировщики рекламы также не пропускают часть кликов в Analytics, поэтому реальное число немного выше того, что вы видите."
+
+msgid "Reading your content: %1$d of %2$d"
+msgstr "Чтение вашего контента: %1$d из %2$d"
+
+msgid "Reading your content…"
+msgstr "Чтение вашего контента…"
+
+msgid "Reading…"
+msgstr "Чтение…"
+
+msgid "Reads the “frequently asked questions” part your posts already have — a heading that names the section, then one heading per question with its answer below — and publishes the matching JSON-LD so Google can show them as FAQ rich results. Nothing in your posts is changed. If another SEO plugin already publishes FAQ schema for a post, Horse Tools stays out of the way."
+msgstr "Читает часть «часто задаваемые вопросы», которая уже есть в ваших записях, — заголовок, называющий раздел, затем по заголовку на каждый вопрос с ответом под ним, — и публикует соответствующий JSON-LD, чтобы Google мог показывать их как расширенные результаты FAQ. Ничто в ваших записях не изменяется. Если другой SEO-плагин уже публикует схему FAQ для записи, Horse Tools не вмешивается."
+
+msgid "Record contact button clicks"
+msgstr "Записывать клики по кнопкам контактов"
+
+msgid "Redirects (301)"
+msgstr "Перенаправления (301)"
+
+msgid "Redirects 301"
+msgstr "Перенаправления 301"
+
+msgid "Refresh daily"
+msgstr "Обновлять ежедневно"
+
+msgid "Refresh hourly"
+msgstr "Обновлять ежечасно"
+
+msgid "Removed something from a post and it is still listed here? The lists only grow as your content is read, and a post that no longer contains something cannot say so. Read everything again and the lists will match what is actually there now."
+msgstr "Удалили что-то из записи, а оно всё ещё указано здесь? Списки только растут по мере чтения вашего контента, и запись, которая больше не содержит чего-либо, не может об этом сообщить. Перечитайте всё заново, и списки будут соответствовать тому, что действительно есть сейчас."
+
+msgid "Removes the admin icon font (Dashicons) on the front-end for logged-out visitors, who never see it. It is kept for logged-in users because the admin bar uses it."
+msgstr "Удаляет шрифт значков админки (Dashicons) на витрине для вышедших из системы посетителей, которые никогда его не видят. Он сохраняется для вошедших пользователей, потому что панель админки его использует."
+
+msgid "Reset all login lockouts now"
+msgstr "Сбросить все блокировки входа сейчас"
+
+msgid "Review the list"
+msgstr "Просмотреть список"
+
+msgid "Rich results"
+msgstr "Расширенные результаты"
+
+msgid "Right now these would go to: %s"
+msgstr "Прямо сейчас они пойдут на: %s"
+
+msgid "Roles, avatars, SMTP and signing in with Google."
+msgstr "Роли, аватары, SMTP и вход через Google."
+
+msgid "Rotate in"
+msgstr "Поворот при появлении"
+
+msgid "Row-number column"
+msgstr "Столбец с номером строки"
+
+msgid "Rows"
+msgstr "Строки"
+
+msgid "Rows/page"
+msgstr "Строк/страница"
+
+msgid "Run this snippet as PHP"
+msgstr "Выполнить этот сниппет как PHP"
+
+msgid "SAVE FONT SETTINGS"
+msgstr "СОХРАНИТЬ НАСТРОЙКИ ШРИФТА"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "SMTP key"
+msgstr "SMTP-ключ"
+
+msgid "SMTP password"
+msgstr "Пароль SMTP"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Save a table"
+msgstr "Сохранить таблицу"
+
+msgid "Save table"
+msgstr "Сохранить таблицу"
+
+msgid "Save these one-time backup codes somewhere safe — each works once if you lose your phone:"
+msgstr "Сохраните эти одноразовые резервные коды в надёжном месте — каждый работает один раз, если вы потеряете телефон:"
+
+msgid "Save this choice"
+msgstr "Сохранить этот выбор"
+
+msgid "Saved tables"
+msgstr "Сохранённые таблицы"
+
+msgid "Saved. Everything found so far is approved."
+msgstr "Сохранено. Всё найденное на данный момент одобрено."
+
+msgid "Scan failed."
+msgstr "Сканирование не удалось."
+
+msgid "Scan the scripts running on the home page"
+msgstr "Сканировать скрипты, работающие на главной странице"
+
+msgid "Scan the whole site"
+msgstr "Сканировать весь сайт"
+
+msgid "Scan this with Google Authenticator, Authy or a similar app, then enter the 6-digit code it shows to turn 2FA on."
+msgstr "Отсканируйте это с помощью Google Authenticator, Authy или похожего приложения, затем введите показанный 6-значный код, чтобы включить 2FA."
+
+msgid "Scanning…"
+msgstr "Сканирование…"
+
+msgid "Scripts to exclude from defer (one per line — a script handle or part of its URL)"
+msgstr "Скрипты, исключаемые из отложенной загрузки (по одному на строку — дескриптор скрипта или часть его URL)"
+
+msgid "Scripts, styles, lazy loading, image compression and WebP."
+msgstr "Скрипты, стили, ленивая загрузка, сжатие изображений и WebP."
+
+msgid "Search all plugin features…"
+msgstr "Поиск по всем функциям плагина…"
+
+msgid "Search box"
+msgstr "Поле поиска"
+
+msgid "Search by name…"
+msgstr "Поиск по имени…"
+
+msgid "Search snippets by name, description or tag…"
+msgstr "Поиск сниппетов по имени, описанию или тегу…"
+
+msgid "Search the table…"
+msgstr "Поиск по таблице…"
+
+msgid "Search: cart, gift, phone… (English name, or Vietnamese for popular icons)"
+msgstr "Поиск: корзина, подарок, телефон… (английское название, или вьетнамское для популярных значков)"
+
+msgid "Seconds to wait, or scroll percent (used by the two options above)"
+msgstr "Секунд ожидания, либо процент прокрутки (используется двумя опциями выше)"
+
+msgid "Security question on the login form"
+msgstr "Секретный вопрос на форме входа"
+
+msgid "Security tab → Check-in → turn on the regular message"
+msgstr "Вкладка Безопасность → Проверка активности → включить регулярное сообщение"
+
+msgid "See the GitHub release page for details."
+msgstr "Подробности см. на странице релизов GitHub."
+
+msgid "See the banner at the top of any Horse Tools screen"
+msgstr "См. баннер вверху любого экрана Horse Tools"
+
+msgid "Select a snippet"
+msgstr "Выбрать сниппет"
+
+msgid "Send a Telegram code"
+msgstr "Отправить код Telegram"
+
+msgid "Send a test"
+msgstr "Отправить тест"
+
+msgid "Send a test message"
+msgstr "Отправить тестовое сообщение"
+
+msgid "Send a test message now"
+msgstr "Отправить тестовое сообщение сейчас"
+
+msgid "Send as the same address you sign in with. This service refuses anything else."
+msgstr "Отправлять с того же адреса, под которым вы входите. Этот сервис отклоняет всё остальное."
+
+msgid "Send me a regular check-in message"
+msgstr "Присылать мне регулярное сообщение о проверке активности"
+
+msgid "Send through an email service instead — then the question does not arise."
+msgstr "Вместо этого отправляйте через почтовый сервис — тогда этот вопрос вообще не возникнет."
+
+msgid "Send through an email service that is on the list, or add this server to it."
+msgstr "Отправляйте через почтовый сервис из списка, или добавьте этот сервер в него."
+
+msgid "Send through an email service that is on the list."
+msgstr "Отправляйте через почтовый сервис из списка."
+
+msgid "Sending…"
+msgstr "Отправка…"
+
+msgid "Sends one event to your analytics each time a visitor taps a contact link — phone, SMS, email, Zalo, Messenger, Telegram, WhatsApp, Viber, Line, WeChat, TikTok, Maps and the rest. Any other chat button is recorded under its own site name, so Instagram, Shopee, Signal and anything you add later are covered without waiting for an update. Phone, SMS, email and Viber links count anywhere on the site, including inside your posts; the others count inside the chat widgets, so an article full of outbound links does not flood the report. Nothing is stored on your site and no personal data is involved."
+msgstr "Отправляет одно событие в вашу аналитику каждый раз, когда посетитель нажимает на контактную ссылку — телефон, SMS, электронная почта, Zalo, Messenger, Telegram, WhatsApp, Viber, Line, WeChat, TikTok, Карты и остальные. Любая другая кнопка чата регистрируется под собственным именем сайта, поэтому Instagram, Shopee, Signal и всё, что вы добавите позже, охватываются без ожидания обновления. Ссылки телефона, SMS, электронной почты и Viber учитываются в любом месте сайта, включая ваши записи; остальные учитываются внутри виджетов чата, поэтому статья, полная исходящих ссылок, не переполняет отчёт. Ничего не хранится на вашем сайте, и никакие персональные данные не задействованы."
+
+msgid "Sent to %s. Now go and look — and do not close this page, because the useful part is what you find."
+msgstr "Отправлено на %s. Теперь пойдите проверьте — и не закрывайте эту страницу, потому что полезная часть — это то, что вы найдёте."
+
+msgid "Sent. Check %s — if nothing arrives, the channel is not working even though the site thinks it is."
+msgstr "Отправлено. Проверьте %s — если ничего не приходит, канал не работает, даже если сайт думает, что работает."
+
+msgid "Sent: %s"
+msgstr "Отправлено: %s"
+
+msgid "Server errors, including absolute paths."
+msgstr "Ошибки сервера, включая абсолютные пути."
+
+msgid "Service"
+msgstr "Сервис"
+
+msgid "Services panel (mobile)"
+msgstr "Панель услуг (мобильная)"
+
+msgid "Settings are grouped by what they do. Pick a group below, or search for a setting by name in the panel on the right."
+msgstr "Настройки сгруппированы по тому, что они делают. Выберите группу ниже, либо найдите настройку по имени в панели справа."
+
+msgid "Settings → WooCommerce → “Configure order notifications to be sent to Telegram”"
+msgstr "Настройки → WooCommerce → «Настроить отправку уведомлений о заказах в Telegram»"
+
+msgid "Sharpen (blur to clear)"
+msgstr "Резкость (от размытого к чёткому)"
+
+msgid "Show a “Decline” button"
+msgstr "Показывать кнопку «Отклонить»"
+
+msgid "Show columns"
+msgstr "Показать столбцы"
+
+msgid "Show new keys to paste"
+msgstr "Показать новые ключи для вставки"
+
+msgid "Showing the first %1$d of %2$d — keep typing to narrow it down."
+msgstr "Показаны первые %1$d из %2$d — продолжайте вводить, чтобы сузить список."
+
+msgid "Shows a small cookie notice in the corner so your site meets privacy rules. To use: turn on the switch, type the notice and your policy-page link, then choose which side it appears on."
+msgstr "Показывает небольшое уведомление о куки в углу, чтобы ваш сайт соответствовал правилам конфиденциальности. Использование: включите переключатель, введите текст уведомления и ссылку на страницу вашей политики, затем выберите, с какой стороны оно появляется."
+
+msgid "Shows a thin notice bar across the very top of every page — handy for a promotion, a hotline, or a delivery note. To use: turn on the switch, type your message, then choose the background colour."
+msgstr "Показывает тонкую полосу уведомлений по самому верху каждой страницы — удобно для акции, горячей линии или заметки о доставке. Использование: включите переключатель, введите ваше сообщение, затем выберите цвет фона."
+
+msgid "Shows an eye-catching popup in the middle of the screen when someone opens your site — great for a sale, an announcement or a poster. To use: turn on the switch, pick a layout below, add an image / title / content, then set how many hours before it shows again."
+msgstr "Показывает привлекающее внимание всплывающее окно в центре экрана, когда кто-то открывает ваш сайт — отлично подходит для распродажи, объявления или постера. Использование: включите переключатель, выберите макет ниже, добавьте изображение / заголовок / содержимое, затем задайте, через сколько часов оно появится снова."
+
+msgid "Side of the site"
+msgstr "Сторона сайта"
+
+msgid "Signature"
+msgstr "Подпись"
+
+msgid "Signing keys are in wp-config.php, not the database"
+msgstr "Ключи подписи находятся в wp-config.php, а не в базе данных"
+
+msgid "Site"
+msgstr "Сайт"
+
+msgid "Site is behind Cloudflare or a proxy (use the real visitor IP)"
+msgstr "Сайт находится за Cloudflare или прокси (использовать реальный IP посетителя)"
+
+msgid "Site search"
+msgstr "Поиск по сайту"
+
+msgid "Size"
+msgstr "Размер"
+
+msgid "Skype (service closed)"
+msgstr "Skype (сервис закрыт)"
+
+msgid "Slide"
+msgstr "Слайд"
+
+msgid "Slide down"
+msgstr "Сдвиг вниз"
+
+msgid "Slide in from left"
+msgstr "Выезд слева"
+
+msgid "Slide in from right"
+msgstr "Выезд справа"
+
+msgid "Slide transition (GLightbox)"
+msgstr "Переход слайдов (GLightbox)"
+
+msgid "Slide up"
+msgstr "Сдвиг вверх"
+
+msgid "Slow down to 60 seconds (safe)"
+msgstr "Замедлить до 60 секунд (безопасно)"
+
+msgid "Snippets"
+msgstr "Сниппеты"
+
+msgid "So this sends you a short message on a schedule, with a number on it, even when everything is fine. Numbers that skip mean messages were sent and never reached you. A message that arrives late means nothing was running the schedule. Nothing at all means something stopped it — and that is the one you can only notice from outside the site, which is why each message tells you when to expect the next."
+msgstr "Итак, это отправляет вам короткое сообщение по расписанию, с номером на нём, даже когда всё в порядке. Пропуски номеров означают, что сообщения были отправлены и никогда до вас не дошли. Сообщение, приходящее с опозданием, означает, что ничто не выполняло расписание. Полное отсутствие означает, что что-то его остановило — и это то, что вы можете заметить только извне сайта, поэтому каждое сообщение сообщает вам, когда ждать следующего."
+
+msgid "Soft pastel"
+msgstr "Мягкая пастель"
+
+msgid "Somebody has asked for this path %d times."
+msgstr "Кто-то запрашивал этот путь %d раз."
+
+msgid "Something changed what you approved, without going through this screen."
+msgstr "Что-то изменило то, что вы одобрили, минуя этот экран."
+
+msgid "Something changed — see the notice on any Horse Tools screen"
+msgstr "Что-то изменилось — см. уведомление на любом экране Horse Tools"
+
+msgid "Something went wrong. Please try again."
+msgstr "Что-то пошло не так. Пожалуйста, попробуйте снова."
+
+msgid "Sortable columns"
+msgstr "Сортируемые столбцы"
+
+msgid "Sorting, search and pagination appear on the published page."
+msgstr "Сортировка, поиск и постраничная навигация появляются на опубликованной странице."
+
+msgid "Speed"
+msgstr "Скорость"
+
+msgid "Spots visitors who have an ad-blocker turned on and shows them a message asking to switch it off. To use: turn on the switch, type a title and message, then pick the button colours below."
+msgstr "Выявляет посетителей с включённым блокировщиком рекламы и показывает им сообщение с просьбой отключить его. Использование: включите переключатель, введите заголовок и сообщение, затем выберите цвета кнопок ниже."
+
+msgid "Stack into cards on mobile"
+msgstr "Складывать в карточки на мобильных устройствах"
+
+msgid "Start fetching a few important files immediately (the LCP image, a web font, the main CSS). The type is detected from the file extension. Do not preload many files — it competes with everything else for bandwidth."
+msgstr "Начинает немедленно загружать несколько важных файлов (изображение LCP, веб-шрифт, основной CSS). Тип определяется по расширению файла. Не предзагружайте много файлов — это соперничает со всем остальным за пропускную способность."
+
+msgid "Starting…"
+msgstr "Запуск…"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Step 1 —"
+msgstr "Шаг 1 —"
+
+msgid "Step 2 —"
+msgstr "Шаг 2 —"
+
+msgid "Step 3 —"
+msgstr "Шаг 3 —"
+
+msgid "Still reading your content"
+msgstr "Ваш контент всё ещё читается"
+
+msgid "Still reading your content. Come back in a minute."
+msgstr "Ваш контент всё ещё читается. Вернитесь через минуту."
+
+msgid "Still reading your content: %1$d of %2$d. Come back in a minute."
+msgstr "Ваш контент всё ещё читается: %1$d из %2$d. Вернитесь через минуту."
+
+msgid "Striped rows"
+msgstr "Полосатые строки"
+
+msgid "Style"
+msgstr "Стиль"
+
+msgid "Stylesheets to keep render-blocking (one per line — a handle or part of the URL). Put your main theme CSS here if you don’t have critical CSS yet."
+msgstr "Таблицы стилей, которые должны продолжать блокировать отрисовку (по одной на строку — дескриптор или часть URL). Поместите сюда основной CSS вашей темы, если у вас пока нет критического CSS."
+
+msgid "Swing"
+msgstr "Качание"
+
+msgid "Switch on Horse Tools two-factor authentication (Security tab) before using PHP snippets."
+msgstr "Включите двухфакторную аутентификацию Horse Tools (вкладка Безопасность), прежде чем использовать PHP-сниппеты."
+
+msgid "Sync from Sheet"
+msgstr "Синхронизировать из таблицы"
+
+msgid "Synced"
+msgstr "Синхронизировано"
+
+msgid "Syncing…"
+msgstr "Синхронизация…"
+
+msgid "THEY DO NOT — something changed them without going through the screens"
+msgstr "ОНИ НЕ СОВПАДАЮТ — что-то изменило их, минуя экраны"
+
+msgid "Table"
+msgstr "Таблица"
+
+msgid "Table %d"
+msgstr "Таблица %d"
+
+msgid "Table of contents"
+msgstr "Оглавление"
+
+msgid "Table ready — click to edit."
+msgstr "Таблица готова — нажмите для редактирования."
+
+msgid "Tables"
+msgstr "Таблицы"
+
+msgid "Tag Manager is installed on this site. If you already built click tags there — a trigger on tel: links, on zalo.me, on m.me — switching this on records the same click twice, once under your own event name and once as contact_phone. Open your container, check whether such tags exist, and pause either those or this setting. Keep whichever one also fires your Google Ads conversions; this setting does not."
+msgstr "На этом сайте установлен Tag Manager. Если вы уже создали там теги кликов — триггер на ссылки tel:, на zalo.me, на m.me — включение этого регистрирует один и тот же клик дважды: один раз под вашим собственным именем события и один раз как contact_phone. Откройте свой контейнер, проверьте, существуют ли такие теги, и приостановите либо их, либо эту настройку. Оставьте активным то, что также запускает ваши конверсии Google Ads; эта настройка этого не делает."
+
+msgid "Take back the ticked ones"
+msgstr "Вернуть отмеченные"
+
+msgid "Take the link away, keep the words"
+msgstr "Убрать ссылку, оставить слова"
+
+msgid "Teal"
+msgstr "Бирюзовый"
+
+msgid "Telegram (chat %s — the one paired for two-factor recovery)"
+msgstr "Telegram (чат %s — привязанный для восстановления через двухфакторную аутентификацию)"
+
+msgid "Telegram (chat %s)"
+msgstr "Telegram (чат %s)"
+
+msgid "Telegram chat ID for security messages (optional)"
+msgstr "Chat ID Telegram для сообщений безопасности (необязательно)"
+
+msgid "Telegram recovery is ON but this site has no bot token yet, so no recovery code can be sent. Add a bot token in the %1$s module (the “Configure order notifications to be sent to Telegram” section) — it is easy to miss because it lives there, not here — then each user pastes their own chat ID on their profile."
+msgstr "Восстановление через Telegram ВКЛЮЧЕНО, но на этом сайте ещё нет токена бота, поэтому код восстановления отправить невозможно. Добавьте токен бота в модуле %1$s (раздел «Настроить отправку уведомлений о заказах в Telegram») — легко упустить из виду, так как он находится там, а не здесь — затем каждый пользователь вставляет свой собственный Chat ID в свой профиль."
+
+msgid "Telegram recovery is turned on but this site has no bot token yet, so no code can be sent. Add a bot token under %s, then reload this page."
+msgstr "Восстановление через Telegram включено, но на этом сайте ещё нет токена бота, поэтому код отправить невозможно. Добавьте токен бота в разделе %s, затем перезагрузите эту страницу."
+
+msgid "Telegram recovery isn’t fully set up on this site yet — ask the site admin, or just use email or a backup code instead."
+msgstr "Восстановление через Telegram ещё не полностью настроено на этом сайте — спросите администратора сайта, либо просто используйте электронную почту или резервный код вместо этого."
+
+msgid "Telegram returned no updates (the bot may use a webhook, or the token is wrong)."
+msgstr "Telegram не вернул обновлений (возможно, бот использует webhook, либо токен неверен)."
+
+msgid "Tell me the site is still being watched"
+msgstr "Сообщать мне, что сайт всё ещё отслеживается"
+
+msgid "Tell the browser to start the DNS + TCP + TLS handshake to external hosts early (fonts, CDN, analytics), so their files arrive sooner. Adds preconnect and dns-prefetch hints to the page head."
+msgstr "Указывает браузеру заранее начать рукопожатие DNS + TCP + TLS с внешними хостами (шрифты, CDN, аналитика), чтобы их файлы приходили быстрее. Добавляет подсказки preconnect и dns-prefetch в head страницы."
+
+msgid "Temporarily close the site with a “under maintenance” notice while you make changes. You (and other logged-in admins) still see the site normally, so you can work in peace."
+msgstr "Временно закрывает сайт с уведомлением «на техническом обслуживании», пока вы вносите изменения. Вы (и другие вошедшие в систему администраторы) по-прежнему видите сайт как обычно, чтобы вы могли работать спокойно."
+
+msgid "Test message from %s"
+msgstr "Тестовое сообщение от %s"
+
+msgid "Test the site after turning this on. If something that must work before interaction breaks (a hero slider, a cookie bar), add its handle or file name to a list below. Do not use together with “Delay JS” in another optimiser."
+msgstr "Протестируйте сайт после включения этого. Если что-то, что должно работать до взаимодействия, ломается (главный слайдер, полоса куки), добавьте его дескриптор или имя файла в список ниже. Не используйте вместе с «Отложить JS» в другом оптимизаторе."
+
+msgid "Test these keys against Google"
+msgstr "Проверить эти ключи через Google"
+
+msgid "That code is not right."
+msgstr "Этот код неверен."
+
+msgid "That does not look like a Google Sheets link."
+msgstr "Это не похоже на ссылку Google Таблиц."
+
+msgid "That is not an email address."
+msgstr "Это не адрес электронной почты."
+
+msgid "That snippet no longer exists."
+msgstr "Этого сниппета больше не существует."
+
+msgid "That was me — line them up again"
+msgstr "Это был я — выровняйте их снова"
+
+msgid "The PHP snippet \"%s\" stopped the page it ran on, so Horse Tools switched it off. Edit it and switch it back on when it is fixed."
+msgstr "PHP-сниппет «%s» остановил страницу, на которой он работал, поэтому Horse Tools отключил его. Отредактируйте его и включите обратно, когда он будет исправлен."
+
+msgid "The Secret key box is empty, so the check is skipped entirely and reCAPTCHA is doing nothing at all."
+msgstr "Поле секретного ключа пусто, поэтому проверка полностью пропускается, и reCAPTCHA вообще ничего не делает."
+
+msgid "The Site key box is empty."
+msgstr "Поле ключа сайта пусто."
+
+msgid "The account name for this service is the literal word “%user%”. It is not your email address, and putting your address there is why it says the password is wrong."
+msgstr "Имя аккаунта для этого сервиса — буквально слово «%user%». Это не ваш адрес электронной почты, и указание там вашего адреса — причина, по которой система сообщает о неверном пароле."
+
+msgid "The answer is matched ignoring case and surrounding spaces. Remember it — if you ever forget it you can still get back in by renaming the plugin folder over FTP to switch the plugin off."
+msgstr "Ответ сопоставляется без учёта регистра и окружающих пробелов. Запомните его — если вы когда-нибудь его забудете, вы всё равно сможете вернуться, переименовав папку плагина через FTP, чтобы отключить плагин."
+
+msgid "The check-in message is on but has never been sent. Until one arrives you do not know the channel works."
+msgstr "Сообщение проверки активности включено, но никогда не отправлялось. Пока оно не придёт, вы не знаете, работает ли канал."
+
+msgid "The code is how the site tells your chat apart from everyone else’s — it finds only the chat that sent it. Recovery codes then reach your own Telegram, not the admin. (You can also type the chat ID number in manually.)"
+msgstr "Код — это то, как сайт отличает ваш чат от всех остальных — он находит только тот чат, который его отправил. Коды восстановления затем приходят в ваш собственный Telegram, а не администратору. (Вы также можете ввести номер Chat ID вручную.)"
+
+msgid "The first one goes out as soon as you save, so you find out straight away whether the channel works."
+msgstr "Первое уходит сразу после сохранения, поэтому вы сразу узнаёте, работает ли канал."
+
+msgid "The form below asks eight questions. Seven of them have exactly one right answer once you know which service you are using, and the eighth is a password. Choose here and the seven fill themselves in — you are left with the one thing nothing can guess."
+msgstr "Форма ниже задаёт восемь вопросов. Семь из них имеют ровно один правильный ответ, как только вы знаете, какой сервис используете, а восьмой — это пароль. Выберите здесь, и семь заполнятся сами — остаётся только то единственное, что никто не сможет угадать."
+
+msgid "The last check-in message could not be sent: %s"
+msgstr "Последнее сообщение проверки активности не удалось отправить: %s"
+
+msgid "The last check-in message went out %s ago, which is later than it should be. Nothing has been running the schedule."
+msgstr "Последнее сообщение проверки активности ушло %s назад, что позже, чем должно быть. Ничто не выполняло расписание."
+
+msgid "The last one could not be sent — Security tab → Check-in"
+msgstr "Последнее не удалось отправить — вкладка Безопасность → Проверка активности"
+
+msgid "The link still works for a reader and stops passing any SEO value — which is the whole reason a link like that is worth paying for. Nothing in your posts is changed; only what gets printed."
+msgstr "Ссылка по-прежнему работает для читателя и перестаёт передавать SEO-ценность — что и есть вся причина, по которой такая ссылка стоит того, чтобы за неё платить. Ничто в ваших записях не изменяется; изменяется только то, что выводится."
+
+msgid "The most powerful but riskiest speed option. Without the Critical CSS below, the page can flash unstyled for a moment (FOUC). Paste your above-the-fold CSS, or keep the main theme stylesheet in the exclusion list. Test the front end carefully, and don’t combine it with another plugin that also optimises CSS delivery."
+msgstr "Самая мощная, но и самая рискованная опция скорости. Без критического CSS ниже страница может на мгновение мигнуть неоформленной (FOUC). Вставьте свой CSS для верхней части страницы, либо оставьте основную таблицу стилей темы в списке исключений. Тщательно протестируйте витрину и не сочетайте это с другим плагином, который также оптимизирует доставку CSS."
+
+msgid "The page carries no analytics at all yet, so there is nowhere for a click to be recorded. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own with nothing further to configure."
+msgstr "На странице пока вообще нет аналитики, поэтому клику негде записаться. Установите Site Kit by Google или любой плагин GA4, и эта настройка начнёт работать сама по себе, без дополнительной настройки."
+
+msgid "The request itself failed."
+msgstr "Сам запрос не удался."
+
+msgid "The security question below the password was left empty."
+msgstr "Секретный вопрос под паролем был оставлен пустым."
+
+msgid "The sheet appears to be empty."
+msgstr "Похоже, таблица пуста."
+
+msgid "The sheet is too large (over 1 MB of CSV)."
+msgstr "Таблица слишком большая (более 1 МБ CSV)."
+
+msgid "The sheet must be shared as “Anyone with the link can view”. With auto-refresh on, the table updates itself from the sheet."
+msgstr "Таблица должна быть открыта как «Все, у кого есть ссылка, могут просматривать». При включённом автообновлении таблица обновляется сама из Google Таблицы."
+
+msgid "The site handed it over successfully. That is not the same as it arriving — if the numbers you receive skip, the channel is dropping them."
+msgstr "Сайт успешно передал его. Это не то же самое, что доставка — если получаемые вами номера пропускаются, значит канал их теряет."
+
+msgid "The username is the literal word “apikey”, not your address."
+msgstr "Имя пользователя — буквально слово «apikey», а не ваш адрес."
+
+msgid "The username is the literal word “resend”, not your address. You must add and verify your domain before it will send as you."
+msgstr "Имя пользователя — буквально слово «resend», а не ваш адрес. Вы должны добавить и подтвердить свой домен, прежде чем он сможет отправлять от вашего имени."
+
+msgid "The username is the postmaster address Mailgun shows on your sending domain, not your login."
+msgstr "Имя пользователя — это адрес postmaster, который Mailgun показывает на вашем домене отправки, а не ваш логин."
+
+msgid "Theme colour"
+msgstr "Цвет темы"
+
+msgid "There are files in your site’s folder that anyone can download."
+msgstr "В папке вашего сайта есть файлы, которые может скачать кто угодно."
+
+msgid "These are correct — remember them"
+msgstr "Они верны — запомните их"
+
+msgid "These are the phone numbers, Zalo, Messenger links and email addresses currently in your settings. Check them, then confirm — after that you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest."
+msgstr "Это номера телефонов, ссылки Zalo, Messenger и адреса электронной почты, которые сейчас находятся в ваших настройках. Проверьте их, затем подтвердите — после этого вам сообщат, если любой из них когда-либо изменится. Изменение горячей линии магазина — самая прямая атака, какая только есть, и самая тихая."
+
+msgid "These contact details appear in your content. Confirm them and you will be told if a new one ever turns up in a post — which is what happens when somebody edits an old article to put their own number in it."
+msgstr "Эти контактные данные появляются в вашем контенте. Подтвердите их, и вам сообщат, если новые когда-либо появятся в записи — что происходит, когда кто-то редактирует старую статью, чтобы вставить туда свой собственный номер."
+
+msgid "These two addresses do not match, and that is enough to stop your mail."
+msgstr "Эти два адреса не совпадают, и этого достаточно, чтобы остановить вашу почту."
+
+msgid "They no longer match — see the banner at the top of any Horse Tools screen"
+msgstr "Они больше не совпадают — см. баннер вверху любого экрана Horse Tools"
+
+msgid "This account uses two-factor authentication; XML-RPC password login is disabled."
+msgstr "Этот аккаунт использует двухфакторную аутентификацию; вход по паролю через XML-RPC отключён."
+
+msgid "This could not be checked from here, so the instructions are shown just in case. To find out whether they apply to you: open your site, press F12, and type gtag in the console. An answer of \"function\" means you have nothing to do; \"undefined\" means follow the steps below."
+msgstr "Это не удалось проверить отсюда, поэтому инструкции показаны на всякий случай. Чтобы узнать, применимы ли они к вам: откройте свой сайт, нажмите F12 и введите gtag в консоли. Ответ «function» означает, что вам ничего делать не нужно; «undefined» означает, что нужно выполнить шаги ниже."
+
+msgid "This host does not let the plugin read DNS, so none of the checks below can be made. That is not the same as everything being in order."
+msgstr "Этот хостинг не позволяет плагину читать DNS, поэтому ни одна из проверок ниже не может быть выполнена. Это не то же самое, что «всё в порядке»."
+
+msgid "This is a test message from %s."
+msgstr "Это тестовое сообщение от %s."
+
+msgid "This list is incomplete."
+msgstr "Этот список неполон."
+
+msgid "This never touches what is stored. Switch it off and every link is back as it was on the next page load."
+msgstr "Это никогда не затрагивает то, что хранится. Отключите это, и каждая ссылка вернётся к прежнему виду при следующей загрузке страницы."
+
+msgid "This section could not be displayed. The rest of the screen still works."
+msgstr "Этот раздел не удалось отобразить. Остальная часть экрана по-прежнему работает."
+
+msgid "This server cannot reach any other mail server, so nothing it sends can ever be delivered. WordPress hands each message to a local mail program, that program accepts it — which is why every screen says “sent” — and then finds the way out closed. The message waits in a queue nobody reads, and there is no bounce, because a bounce would have to leave by the same door."
+msgstr "Этот сервер не может связаться ни с одним другим почтовым сервером, поэтому ничто из отправленного им никогда не может быть доставлено. WordPress передаёт каждое сообщение локальной почтовой программе, эта программа принимает его — поэтому каждый экран говорит «отправлено» — а затем обнаруживает, что выход закрыт. Сообщение ждёт в очереди, которую никто не читает, и отказа о недоставке нет, потому что такой отказ должен был бы выйти через ту же дверь."
+
+msgid "This server does not read .htaccess files, so nothing is hiding this one but its name. Horse Tools now stores these as .php files that stop on their first line, which works on every server."
+msgstr "Этот сервер не читает файлы .htaccess, поэтому ничто не скрывает этот файл, кроме его имени. Horse Tools теперь хранит их как файлы .php, которые останавливаются на первой строке, что работает на любом сервере."
+
+msgid "This server sends mail from an address with no name attached to it (%s). Gmail and Yahoo both take that as the mark of a machine nobody set up to send mail, and Yahoo refuses it outright — which looks from here exactly like the message vanishing, because the refusal happens at the far end and the bounce goes somewhere you never read."
+msgstr "Этот сервер отправляет почту с адреса без привязанного имени (%s). И Gmail, и Yahoo расценивают это как признак машины, которую никто не настроил для отправки почты, а Yahoo отклоняет это прямо — что отсюда выглядит точно как исчезновение сообщения, потому что отказ происходит на другом конце, и отказ уходит туда, куда вы никогда не заглядываете."
+
+msgid "This site cannot see its own public address — it sits behind a proxy or a load balancer — so the checks above that depend on knowing it were skipped rather than guessed at."
+msgstr "Этот сайт не может видеть свой собственный публичный адрес — он находится за прокси или балансировщиком нагрузки — поэтому вышеуказанные проверки, зависящие от его знания, были пропущены, а не угаданы."
+
+msgid "This site has WordPress's built-in file editor switched off (DISALLOW_FILE_EDIT) — good. PHP snippets still work, because they carry their own protections: two-factor unlock, a syntax check before saving, auto-disable on a crash, and code signing. To switch them off as well, add HORSETOOLS_NO_PHP to wp-config.php."
+msgstr "На этом сайте отключён встроенный редактор файлов WordPress (DISALLOW_FILE_EDIT) — хорошо. PHP-сниппеты всё ещё работают, потому что несут собственную защиту: разблокировку через двухфакторную аутентификацию, проверку синтаксиса перед сохранением, автоматическое отключение при сбое и подпись кода. Чтобы отключить и их тоже, добавьте HORSETOOLS_NO_PHP в wp-config.php."
+
+msgid "This site has no valid admin email address."
+msgstr "У этого сайта нет действительного адреса электронной почты администратора."
+
+msgid "This site has no way to reach you: no Telegram bot, and no valid admin email address."
+msgstr "У этого сайта нет способа связаться с вами: ни Telegram-бота, ни действительного адреса электронной почты администратора."
+
+msgid "This site sets DISALLOW_FILE_MODS, so running PHP from the database is not allowed."
+msgstr "Этот сайт устанавливает DISALLOW_FILE_MODS, поэтому запуск PHP из базы данных не разрешён."
+
+msgid "This site’s signing keys are stored in the database, not in wp-config.php."
+msgstr "Ключи подписи этого сайта хранятся в базе данных, а не в wp-config.php."
+
+msgid "This snippet’s code no longer matches its signature — it was changed outside this screen and will not run. Review it and save again to re-sign it."
+msgstr "Код этого сниппета больше не соответствует его подписи — он был изменён вне этого экрана и не будет выполняться. Проверьте его и сохраните снова, чтобы переподписать."
+
+msgid "This user has two-factor authentication ON."
+msgstr "У этого пользователя двухфакторная аутентификация ВКЛЮЧЕНА."
+
+msgid "This web server is not on your domain’s list of allowed senders. The list says “treat anything else as suspicious” rather than “reject it”, so mail as %s will usually arrive in the spam folder."
+msgstr "Этого веб-сервера нет в списке разрешённых отправителей вашего домена. Список гласит «считать всё остальное подозрительным», а не «отклонять это», поэтому почта как %s обычно будет попадать в папку спама."
+
+msgid "This web server is on your domain’s list of allowed senders."
+msgstr "Этот веб-сервер есть в списке разрешённых отправителей вашего домена."
+
+msgid "Tick all on this page"
+msgstr "Отметить всё на этой странице"
+
+msgid "Tip: to stop one specific script from ever being delayed, add the attribute data-ht-no-delay to its tag. Logged-in users are never affected."
+msgstr "Совет: чтобы конкретный скрипт никогда не откладывался, добавьте к его тегу атрибут data-ht-no-delay. Вошедших в систему пользователей это никогда не затрагивает."
+
+msgid "To check it works right now rather than waiting: open your site with %s on the end of the address, tap a contact button, and watch GA4 → Admin → DebugView. Without that flag DebugView stays empty however many times you tap, because it only lists devices that identify themselves as debug devices — which is not a fault in the buttons."
+msgstr "Чтобы проверить, что это работает прямо сейчас, а не ждать: откройте свой сайт с %s в конце адреса, нажмите кнопку контакта и наблюдайте за GA4 → Админ → DebugView. Без этого флага DebugView остаётся пустым, сколько бы вы ни нажимали, потому что он перечисляет только устройства, которые идентифицируют себя как отладочные — это не недостаток кнопок."
+
+msgid "To use PHP snippets, switch on two-factor authentication first (Horse Tools → Overview → Security)."
+msgstr "Чтобы использовать PHP-сниппеты, сначала включите двухфакторную аутентификацию (Horse Tools → Обзор → Безопасность)."
+
+msgid "To use PHP snippets, switch on two-factor authentication for your own account first (Users → Profile)."
+msgstr "Чтобы использовать PHP-сниппеты, сначала включите двухфакторную аутентификацию для своего собственного аккаунта (Пользователи → Профиль)."
+
+msgid "Too many failed attempts. Try again in about %s."
+msgstr "Слишком много неудачных попыток. Попробуйте снова примерно через %s."
+
+msgid "Tools"
+msgstr "Инструменты"
+
+msgid "Trust this device for 30 days"
+msgstr "Доверять этому устройству 30 дней"
+
+msgid "Turn it off (uncheck stays on)"
+msgstr "Отключить это (снятие галочки остаётся включённым)"
+
+msgid "Turn it off for this user (e.g. they lost their device)"
+msgstr "Отключить это для этого пользователя (например, он потерял устройство)"
+
+msgid "Turn on the regular check-in message"
+msgstr "Включить регулярное сообщение проверки активности"
+
+msgid "Turned on but never sent — send a test message"
+msgstr "Включено, но никогда не отправлялось — отправить тестовое сообщение"
+
+msgid "Two Horse Tools protections are signed with those keys: the PHP snippet signature, which is meant to refuse code written straight into the database, and the “trusted device” cookie that skips two-factor authentication. Anyone who can read your database can read the keys, so both can be forged. Moving the keys into wp-config.php — a file — restores them."
+msgstr "Двумя защитами Horse Tools подписываются этими ключами: подпись PHP-сниппета, предназначенная для отклонения кода, записанного напрямую в базу данных, и куки «доверенное устройство», которое пропускает двухфакторную аутентификацию. Любой, кто может прочитать вашу базу данных, может прочитать ключи, поэтому оба можно подделать. Перемещение ключей в wp-config.php — файл — восстанавливает их."
+
+msgid "Two-factor authentication"
+msgstr "Двухфакторная аутентификация"
+
+msgid "Two-factor authentication (2FA)"
+msgstr "Двухфакторная аутентификация (2FA)"
+
+msgid "Two-factor authentication is ON for your account."
+msgstr "Двухфакторная аутентификация ВКЛЮЧЕНА для вашего аккаунта."
+
+msgid "Type it in"
+msgstr "Ввести это"
+
+msgid "Unlock"
+msgstr "Разблокировать"
+
+msgid "Untick all"
+msgstr "Снять все отметки"
+
+msgid "Upload a file"
+msgstr "Загрузить файл"
+
+msgid "Upload a font on the Fonts tab first, then choose where to use it here."
+msgstr "Сначала загрузите шрифт на вкладке Шрифты, затем выберите здесь, где его использовать."
+
+msgid "Users"
+msgstr "Пользователи"
+
+msgid "Uses the site’s Telegram bot (configured in the WooCommerce module), but each user pastes their OWN chat ID on their profile — so a recovery code always reaches that user’s Telegram, never pooled to the admin. Users without a chat ID simply don’t see the Telegram option."
+msgstr "Использует Telegram-бота сайта (настроенного в модуле WooCommerce), но каждый пользователь вставляет свой СОБСТВЕННЫЙ Chat ID в свой профиль — поэтому код восстановления всегда приходит в Telegram этого пользователя, никогда не объединяясь с администратором. Пользователи без Chat ID просто не видят опцию Telegram."
+
+msgid "Usually a phpinfo page."
+msgstr "Обычно страница phpinfo."
+
+msgid "Verify"
+msgstr "Проверить"
+
+msgid "Version-control metadata exposes the source."
+msgstr "Метаданные системы контроля версий раскрывают исходный код."
+
+msgid "Waiting for you"
+msgstr "Ожидает вас"
+
+msgid "Weekly is the useful setting. Daily turns the one message that is supposed to mean something into noise within a fortnight, and once it is noise a gap in the numbering is not noticed either."
+msgstr "Еженедельно — полезная настройка. Ежедневно превращает то самое сообщение, которое должно что-то значить, в шум в течение двух недель, а как только это становится шумом, пропуск в нумерации тоже остаётся незамеченным."
+
+msgid "What you approved is also kept outside the database"
+msgstr "То, что вы одобрили, также хранится вне базы данных"
+
+msgid "What you still have to paste: %secret%."
+msgstr "Что вам ещё нужно вставить: %secret%."
+
+msgid "When a URL changes or an old link should point somewhere new, this sends visitors (and Google) straight to the right page instead of a “not found” error — so you don’t lose traffic."
+msgstr "Когда URL меняется или старая ссылка должна указывать на что-то новое, это направляет посетителей (и Google) прямо на нужную страницу вместо ошибки «не найдено» — так вы не теряете трафик."
+
+msgid "When about to leave the page"
+msgstr "Когда собираются покинуть страницу"
+
+msgid "When it appears"
+msgstr "Когда это появляется"
+
+msgid "Where did it turn up?"
+msgstr "Где это оказалось?"
+
+msgid "Where it appears"
+msgstr "Где это появляется"
+
+msgid "Where it runs"
+msgstr "Где это работает"
+
+msgid "Where this stands:"
+msgstr "Как обстоят дела:"
+
+msgid "Where to get it"
+msgstr "Где это получить"
+
+msgid "Where to read the numbers"
+msgstr "Где читать цифры"
+
+msgid "Where to run it"
+msgstr "Где это запускать"
+
+msgid "Where your content links to"
+msgstr "Куда ведут ссылки вашего контента"
+
+msgid "Which service should send your email?"
+msgstr "Какой сервис должен отправлять вашу почту?"
+
+msgid "Wiggle now and then to catch the eye"
+msgstr "Время от времени покачиваться, чтобы привлечь внимание"
+
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+msgid "WordPress could not hand the message to the mail server at all, so it never left the site."
+msgstr "WordPress вообще не смог передать сообщение почтовому серверу, поэтому оно так и не покинуло сайт."
+
+msgid "WordPress could not hand the message to the mail server."
+msgstr "WordPress не смог передать сообщение почтовому серверу."
+
+msgid "WordPress reports a message as sent once it has handed it over. That says nothing about whether it arrived, and on a great many sites it does not — the domain names which servers may send for it, the web server is not one of them, and every notification the site sends is treated as forged. Nothing in WordPress mentions this. Below is what your domain’s own records say, read live."
+msgstr "WordPress сообщает о сообщении как об отправленном, как только он его передал. Это ничего не говорит о том, дошло ли оно, а на очень многих сайтах это не так — домен указывает, какие серверы могут отправлять от его имени, веб-сервер не входит в их число, и каждое уведомление, отправленное сайтом, считается поддельным. В WordPress об этом ничего не сказано. Ниже приведено то, что говорят собственные записи вашего домена, прочитанные вживую."
+
+msgid "WordPress “Heartbeat” pings the server every 15–60 seconds (autosave, post-lock, dashboard). Slowing or limiting it cuts admin-ajax.php load, especially with several admin tabs open."
+msgstr "«Heartbeat» WordPress пингует сервер каждые 15–60 секунд (автосохранение, блокировка записи, панель управления). Замедление или ограничение этого снижает нагрузку на admin-ajax.php, особенно при нескольких открытых вкладках админки."
+
+msgid "Worth a second look"
+msgstr "Стоит взглянуть ещё раз"
+
+msgid "Write plain PHP — no opening tag needed. The code is checked for syntax errors before it is saved, and if it ever crashes a page Horse Tools switches it off automatically."
+msgstr "Пишите обычный PHP — открывающий тег не нужен. Код проверяется на синтаксические ошибки перед сохранением, и если он когда-либо вызовет сбой страницы, Horse Tools автоматически отключит его."
+
+msgid "Write your block just like a post: type text and use the toolbar to insert links, images and formatting. Need raw HTML/CSS/JS? Switch to the “Text” tab. Placeholders like {{url}} still work in both."
+msgstr "Пишите свой блок точно так же, как запись: вводите текст и используйте панель инструментов для вставки ссылок, изображений и форматирования. Нужен необработанный HTML/CSS/JS? Переключитесь на вкладку «Текст». Плейсхолдеры вроде {{url}} по-прежнему работают в обоих случаях."
+
+msgid "Wrong answer to the security question."
+msgstr "Неверный ответ на секретный вопрос."
+
+msgid "You are not allowed to change these settings."
+msgstr "Вам не разрешено изменять эти настройки."
+
+msgid "You are not allowed to use PHP snippets."
+msgstr "Вам не разрешено использовать PHP-сниппеты."
+
+msgid "You may send as any address on a domain you have verified with this service. An unverified one will be refused."
+msgstr "Вы можете отправлять с любого адреса на домене, который вы подтвердили в этом сервисе. Неподтверждённый будет отклонён."
+
+msgid "You would be told if this site went quiet"
+msgstr "Вам бы сообщили, если бы этот сайт замолчал"
+
+msgid "Your Telegram chat ID (for recovery codes)"
+msgstr "Ваш Chat ID Telegram (для кодов восстановления)"
+
+msgid "Your approvals match their copy on disk"
+msgstr "Ваши одобрения совпадают с их копией на диске"
+
+msgid "Your check-in message only got through on the backup route (%s). Your main channel is not working, and you have one left instead of two."
+msgstr "Ваше сообщение проверки активности прошло только по резервному пути (%s). Ваш основной канал не работает, и у вас остался один вместо двух."
+
+msgid "Your contact details have changed."
+msgstr "Ваши контактные данные изменились."
+
+msgid "Your container has no GA4 tag in it, so Tag Manager has nothing to pass the click on to. It is placed in the dataLayer and stops there until you build the tag below — until then nothing reaches Analytics."
+msgstr "В вашем контейнере нет тега GA4, поэтому Tag Manager не может ничего передать по клику. Он помещается в dataLayer и останавливается там, пока вы не создадите тег ниже — до этого момента ничто не доходит до Analytics."
+
+msgid "Your content has not been read all the way through yet (%1$d of %2$d), so nothing found in it can be trusted as complete."
+msgstr "Ваш контент ещё не был прочитан полностью (%1$d из %2$d), поэтому ничему найденному в нём нельзя доверять как полному."
+
+msgid "Your content has not been read all the way through yet."
+msgstr "Ваш контент ещё не был прочитан полностью."
+
+msgid "Your content links to %1$s domains you have not agreed to, and %2$s you have. You will be told the moment one arrives that is on neither list."
+msgstr "Ваш контент ссылается на %1$s доменов, с которыми вы не согласились, и на %2$s, с которыми согласились. Вам сообщат в тот момент, когда появится домен, которого нет ни в одном из списков."
+
+msgid "Your content links to %d domain you have not approved."
+msgstr "Ваш контент ссылается на %d домен, который вы не одобрили."
+
+msgid "Your content links to more domains than the list can hold, so it is incomplete"
+msgstr "Ваш контент ссылается на больше доменов, чем может вместить список, поэтому он неполон"
+
+msgid "Your content links to more than %d domains, which is as many as can be held. Domains beyond that were not recorded, so this cannot tell you when one of them is new — it would say it was already there."
+msgstr "Ваш контент ссылается более чем на %d доменов, что является максимумом, который может быть вмещён. Домены сверх этого не записывались, поэтому это не может сообщить вам, когда один из них новый — оно скажет, что он уже был там."
+
+msgid "Your domain already receives mail through %1$s, so choose %2$s below. Sending through the service that already handles your mail is the one most likely to work first time."
+msgstr "Ваш домен уже получает почту через %1$s, поэтому выберите %2$s ниже. Отправка через сервис, который уже обрабатывает вашу почту, с наибольшей вероятностью сработает с первого раза."
+
+msgid "Your domain does not say which servers are allowed to send mail for it. Anyone can send mail claiming to be you, and mail you really did send has nothing to vouch for it — Gmail and Yahoo both treat that as a reason for suspicion."
+msgstr "Ваш домен не указывает, каким серверам разрешено отправлять от его имени почту. Кто угодно может отправлять почту, выдавая себя за вас, и почта, которую вы действительно отправили, не имеет ничего, что бы за неё поручилось — и Gmail, и Yahoo расценивают это как повод для подозрений."
+
+msgid "Your domain has a list of allowed senders, but it could not be worked out from here whether this server is on it."
+msgstr "У вашего домена есть список разрешённых отправителей, но отсюда не удалось определить, входит ли этот сервер в него."
+
+msgid "Your domain has no DMARC record, so you are never told when somebody sends mail pretending to be you, and receivers have no instruction about what to do with it."
+msgstr "У вашего домена нет записи DMARC, поэтому вам никогда не сообщают, когда кто-то отправляет почту, выдавая себя за вас, и у получателей нет инструкций о том, что с ней делать."
+
+msgid "Your domain receives mail through %s. Sending through the same service is the setting most likely to work, because it is already on your domain’s list of allowed senders."
+msgstr "Ваш домен получает почту через %s. Отправка через тот же сервис — настройка, которая с наибольшей вероятностью сработает, потому что она уже есть в списке разрешённых отправителей вашего домена."
+
+msgid "Your domain says which servers may send mail for it, and this site is sending straight from the web server. Whether that server is on the list could not be determined here."
+msgstr "Ваш домен указывает, какие серверы могут отправлять от его имени почту, а этот сайт отправляет напрямую с веб-сервера. Определить отсюда, входит ли этот сервер в список, не удалось."
+
+msgid "Your email settings changed after the last test, so what is running now has not been tried"
+msgstr "Ваши настройки электронной почты изменились после последнего теста, поэтому то, что работает сейчас, не было проверено"
+
+msgid "Your host can attach a name to the address — ask them for “reverse DNS” or a “PTR record”. Or sidestep it entirely by sending through an email service, whose own servers already have one."
+msgstr "Ваш хостинг может привязать имя к адресу — попросите у него «обратный DNS» или «PTR-запись». Либо полностью обойдите это, отправляя через почтовый сервис, чей собственный сервер уже имеет такую запись."
+
+msgid "Your last test landed in the spam folder"
+msgstr "Ваш последний тест попал в папку спама"
+
+msgid "Your last test never arrived"
+msgstr "Ваш последний тест так и не пришёл"
+
+msgid "Your login recovery code"
+msgstr "Ваш код восстановления входа"
+
+msgid "Your one-time login code for %1$s is: %2$s (valid 10 minutes)."
+msgstr "Ваш одноразовый код входа для %1$s: %2$s (действителен 10 минут)."
+
+msgid "Your own account must have two-factor authentication switched on before you can use PHP snippets."
+msgstr "У вашего собственного аккаунта должна быть включена двухфакторная аутентификация, прежде чем вы сможете использовать PHP-сниппеты."
+
+msgid "Your own icon (paste an SVG)"
+msgstr "Ваш собственный значок (вставьте SVG)"
+
+msgid "Your pages go out exactly as written."
+msgstr "Ваши страницы выходят именно так, как написаны."
+
+msgid "Your pairing code has expired. Reload this page to get a new one."
+msgstr "Срок действия вашего кода сопряжения истёк. Перезагрузите эту страницу, чтобы получить новый."
+
+msgid "Your posts and pages do not link anywhere outside this site."
+msgstr "Ваши записи и страницы не ссылаются никуда за пределами этого сайта."
+
+msgid "Your posts and pages link to %d other domain. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
+msgstr "Ваши записи и страницы ссылаются на %d другой домен. Пройдите его один раз и подтвердите, какие из них там уместны; после этого домен, которого не было в списке, стоит одного предложения на вашем экране вместо двух лет, в течение которых никто этого не замечал."
+
+msgid "Your settings already look like %s, so its notes apply to you even though nothing is selected above."
+msgstr "Ваши настройки уже похожи на %s, поэтому его примечания применимы к вам, даже если выше ничего не выбрано."
+
+msgid "Your site has Tag Manager but no Google tag — one setup step is required"
+msgstr "На вашем сайте есть Tag Manager, но нет тега Google — требуется один шаг настройки"
+
+msgid "Your site loads the Google tag, so a click goes straight to Analytics. This is the usual case, and it includes sites where Analytics was installed through Tag Manager — a GA4 tag inside a container loads the Google tag itself."
+msgstr "Ваш сайт загружает тег Google, поэтому клик идёт прямо в Analytics. Это обычный случай, и он включает сайты, где Analytics была установлена через Tag Manager — тег GA4 внутри контейнера сам загружает тег Google."
+
+msgid "Zoom"
+msgstr "Масштаб"
+
+msgid "Zoom in"
+msgstr "Увеличить"
+
+msgid "Zoom out"
+msgstr "Уменьшить"
+
+msgid "[!] This went by %1$s because %2$s would not send: %3$s"
+msgstr "[!] Это прошло через %1$s, потому что %2$s не хотел отправлять: %3$s"
+
+msgid "[?] %1$d domain was approved over a year ago and is barely linked: %2$s"
+msgstr "[?] %1$d домен был одобрен более года назад и почти не связан: %2$s"
+
+msgid "a bar pinned to the bottom of the phone screen. Choose one of 5 styles from the grid."
+msgstr "полоса, закреплённая внизу экрана телефона. Выберите один из 5 стилей в сетке."
+
+msgid "a greeting bubble, business hours (shows Online / Away), scan-to-open QR on desktop, and pre-filled WhatsApp / SMS messages."
+msgstr "приветственный пузырь, часы работы (показывает Онлайн / Отошёл), QR-код для сканирования и открытия на десктопе, и предзаполненные сообщения WhatsApp / SMS."
+
+msgid "a panel that slides up to show your services or articles. Pick its layout, colour and how it appears from the visual grids. To open it, point a bottom-bar item at"
+msgstr "панель, которая выезжает вверх, чтобы показать ваши услуги или статьи. Выберите её макет, цвет и способ появления в визуальных сетках. Чтобы открыть её, направьте элемент нижней панели на"
+
+msgid "added ✓"
+msgstr "добавлено ✓"
+
+msgid "ads.txt"
+msgstr "ads.txt"
+
+msgid "an address you can open right now"
+msgstr "адрес, который вы можете открыть прямо сейчас"
+
+msgid "and %d more — click to see it"
+msgstr "и ещё %d — нажмите, чтобы увидеть"
+
+msgid "approved %s ago"
+msgstr "одобрено %s назад"
+
+msgid "choose how the floating button looks from the visual grid below (17 styles). What you see is what visitors get."
+msgstr "выберите, как выглядит плавающая кнопка, в визуальной сетке ниже (17 стилей). Что вы видите, то и получают посетители."
+
+msgid "click SAVE CONTENT at the bottom of the page. The Services panel has its own “Save services” button."
+msgstr "нажмите СОХРАНИТЬ СОДЕРЖИМОЕ внизу страницы. У панели Услуги есть собственная кнопка «Сохранить услуги»."
+
+msgid "copy"
+msgstr "копировать"
+
+msgid "delayed"
+msgstr "отложено"
+
+msgid "e.g. Price list"
+msgstr "например, Прайс-лист"
+
+msgid "e.g. What is the shop mascot?"
+msgstr "например, Какой у магазина талисман?"
+
+msgid "e.g. fox"
+msgstr "например, лиса"
+
+msgid "email"
+msgstr "эл. почта"
+
+msgid "leave empty for all categories"
+msgstr "оставьте пустым для всех категорий"
+
+msgid "no copy on disk yet"
+msgstr "копии на диске пока нет"
+
+msgid "none"
+msgstr "нет"
+
+msgid "not confirmed yet"
+msgstr "пока не подтверждено"
+
+msgid "not reviewed yet"
+msgstr "пока не проверено"
+
+msgid "nothing at all"
+msgstr "вообще ничего"
+
+msgid "open the site’s Telegram bot (ask the site admin which bot if you’re not sure)."
+msgstr "откройте Telegram-бота сайта (спросите у администратора сайта, какой это бот, если не уверены)."
+
+msgid "open this site’s Telegram bot:"
+msgstr "откройте Telegram-бота этого сайта:"
+
+msgid "optional title above the table"
+msgstr "необязательный заголовок над таблицей"
+
+msgid "passes SEO value"
+msgstr "передаёт SEO-ценность"
+
+msgid "pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically. For a custom button, choose a built-in icon or paste your own SVG."
+msgstr "выберите канал (Zalo, Messenger, Телефон…), и его логотип добавляется автоматически. Для пользовательской кнопки выберите встроенный значок или вставьте свой собственный SVG."
+
+msgid "reCAPTCHA could not load in this browser, so this form cannot be submitted. Check the site key, or switch reCAPTCHA off in Horse Tools."
+msgstr "reCAPTCHA не удалось загрузить в этом браузере, поэтому эту форму нельзя отправить. Проверьте ключ сайта, либо отключите reCAPTCHA в Horse Tools."
+
+msgid "reCAPTCHA did not run in your browser, so this form could not be submitted. This is not your password."
+msgstr "reCAPTCHA не запустилась в вашем браузере, поэтому эту форму не удалось отправить. Это не ваш пароль."
+
+msgid "reCAPTCHA is switched off, so there is nothing to test."
+msgstr "reCAPTCHA отключена, поэтому тестировать нечего."
+
+msgid "remember to press “Update profile”."
+msgstr "не забудьте нажать «Обновить профиль»."
+
+msgid "rows"
+msgstr "строки"
+
+msgid "rows loaded"
+msgstr "строк загружено"
+
+msgid "runs now"
+msgstr "выполняется сейчас"
+
+msgid "script or embedded frame"
+msgstr "скрипт или встроенный фрейм"
+
+msgid "send it this code:"
+msgstr "отправьте ему этот код:"
+
+msgid "still reading"
+msgstr "всё ещё читается"
+
+msgid "the contact details you confirmed in your posts"
+msgstr "контактные данные, которые вы подтвердили в своих записях"
+
+msgid "the contact details you confirmed in your settings"
+msgstr "контактные данные, которые вы подтвердили в своих настройках"
+
+msgid "the list of domains you approved"
+msgstr "список одобренных вами доменов"
+
+msgid "type part of a domain…"
+msgstr "введите часть домена…"
+
+msgid "unknown error"
+msgstr "неизвестная ошибка"
+
+msgid "whether the watching is switched on at all"
+msgstr "включено ли отслеживание вообще"
+
+msgid "wp-content is not writable, so there is nowhere to keep the copy"
+msgstr "wp-content недоступен для записи, поэтому копию негде хранить"
+
+msgid "— choose, or fill the form in yourself —"
+msgstr "— выберите, либо заполните форму сами —"
+
+msgid "— or paste your own SVG."
+msgstr "— или вставьте свой собственный SVG."
+
+msgid "“All” mode — scripts to NEVER delay (one per line). A hero slider or a cookie-consent script usually belongs here."
+msgstr "Режим «Все» — скрипты, которые НИКОГДА не откладывать (по одному на строку). Главный слайдер или скрипт согласия на куки обычно относятся сюда."
+
+msgid "“Listed” mode — scripts to delay (one per line: a handle, file name or part of a URL). Leave empty to use the built-in list of common trackers."
+msgstr "Режим «Список» — откладываемые скрипты (по одному на строку: дескриптор, имя файла или часть URL). Оставьте пустым, чтобы использовать встроенный список распространённых трекеров."
+
+msgid "← enter code and press \"Update profile\" to enable"
+msgstr "← введите код и нажмите «Обновить профиль», чтобы включить"
+
+msgid "✓ Turned on — press SAVE to apply"
+msgstr "✓ Включено — нажмите СОХРАНИТЬ, чтобы применить"

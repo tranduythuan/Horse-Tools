@@ -3482,3 +3482,2436 @@ msgstr "limite de pontuação v3 (0 – 1)"
 
 msgid "— Insert a shortcode —"
 msgstr "— Inserir um shortcode —"
+
+msgid "%1$d of %2$d"
+msgstr "%1$d de %2$d"
+
+msgid "%1$d post(s) will publish FAQ schema (%2$s questions on average)."
+msgstr "%1$d publicação(ões) vão publicar o esquema de FAQ (%2$s perguntas em média)."
+
+msgid "%1$s will only send as the account you sign in with. You are signing in as %3$s but sending as %2$s, which it will refuse or quietly drop — and refusing looks from here exactly like the message vanishing."
+msgstr "%1$s só envia como a conta com a qual você faz login. Você está entrando como %3$s mas enviando como %2$s, o que será recusado ou descartado silenciosamente — e a recusa parece, daqui, exatamente como a mensagem desaparecendo."
+
+msgid "%d FOUND"
+msgstr "%d ENCONTRADO(S)"
+
+msgid "%d NEW"
+msgstr "%d NOVO(S)"
+
+msgid "%d domain is no longer approved."
+msgstr "%d domínio não está mais aprovado."
+
+msgid "%d domain looked at again."
+msgstr "%d domínio revisado novamente."
+
+msgid "%d domain your content links to is not approved"
+msgstr "%d domínio para o qual seu conteúdo tem link não está aprovado"
+
+msgid "%d domains, all approved"
+msgstr "%d domínios, todos aprovados"
+
+msgid "%d is still waiting."
+msgstr "%d ainda está aguardando."
+
+msgid "%d link"
+msgstr "%d link"
+
+msgid "%d post(s) already get FAQ schema from another plugin, so they are left alone."
+msgstr "%d publicação(ões) já recebem esquema de FAQ de outro plugin, então foram deixadas de lado."
+
+msgid "%d post(s) have a FAQ section but too few questions:"
+msgstr "%d publicação(ões) têm uma seção de FAQ, mas poucas perguntas:"
+
+msgid "%d post(s) have no FAQ section."
+msgstr "%d publicação(ões) não têm seção de FAQ."
+
+msgid "%d post(s) mention a FAQ but no question could be read — unusual structure:"
+msgstr "%d publicação(ões) mencionam um FAQ, mas nenhuma pergunta pôde ser lida — estrutura incomum:"
+
+msgid "%d question found"
+msgstr "%d pergunta encontrada"
+
+msgid "%d scripts found — “+ Delay” holds one back, “+ Exclude” keeps it running immediately:"
+msgstr "%d scripts encontrados — “+ Adiar” retém um, “+ Excluir” mantém a execução imediata:"
+
+msgid "+ Delay"
+msgstr "+ Adiar"
+
+msgid "+ Exclude"
+msgstr "+ Excluir"
+
+msgid "1. Triggers → New → Custom Event, event name ^contact_ with \"use regex matching\" ticked — one trigger covers every channel, including any added later. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Optionally add event parameters placement and label, taking their values from Data Layer Variables contact_placement and contact_label. 4. Submit and publish the container."
+msgstr "1. Acionadores → Novo → Evento personalizado, nome do evento ^contact_ com “usar correspondência regex” marcado — um acionador cobre todos os canais, inclusive os adicionados depois. 2. Tags → Nova → Evento do Google Analytics GA4, apontando para seu ID de medição, com Nome do evento definido como {{Event}} para que cada canal mantenha seu próprio nome, usando o acionador do passo 1. 3. Opcionalmente adicione os parâmetros de evento placement e label, obtendo seus valores das Variáveis de camada de dados contact_placement e contact_label. 4. Envie e publique o contêiner."
+
+msgid "6-digit code"
+msgstr "Código de 6 dígitos"
+
+msgid "A .git directory exposes the whole source history, and often credentials with it."
+msgstr "Um diretório .git expõe todo o histórico do código-fonte, e muitas vezes credenciais junto."
+
+msgid "A PHP snippet changed on your site"
+msgstr "Um snippet PHP mudou no seu site"
+
+msgid "A contact detail that was not there before has appeared in your content."
+msgstr "Um dado de contato que não estava lá antes apareceu no seu conteúdo."
+
+msgid "A database client. Anyone who finds it is one password from the database."
+msgstr "Um cliente de banco de dados. Qualquer um que o encontre está a uma senha de distância do banco de dados."
+
+msgid "A database dump: everything on the site, downloadable."
+msgstr "Um dump do banco de dados: tudo do site, disponível para download."
+
+msgid "A domain can go bad without anything on your site changing: it expires, somebody else buys it, and a link you approved years ago now points at whatever they sell. These were approved over a year ago and are each linked from only one or two posts — the kind that can change hands without anybody here noticing."
+msgstr "Um domínio pode se corromper sem que nada mude no seu site: ele expira, outra pessoa o compra, e um link que você aprovou anos atrás agora aponta para o que quer que essa pessoa venda. Estes foram aprovados há mais de um ano e cada um tem link de apenas uma ou duas publicações — o tipo que pode trocar de mãos sem que ninguém aqui perceba."
+
+msgid "A long list on a first pass is normal and does not have to be read row by row."
+msgstr "Uma lista longa na primeira passagem é normal e não precisa ser lida linha por linha."
+
+msgid "A longer answer is shortened in the schema only — your post is never touched. Leave empty to use 500."
+msgstr "Uma resposta mais longa é encurtada apenas no esquema — sua publicação nunca é alterada. Deixe vazio para usar 500."
+
+msgid "A new one appeared in a post — see the banner"
+msgstr "Um novo apareceu em uma publicação — veja o aviso"
+
+msgid "A no-Google, no-badge challenge that loads only on the wp-login.php page — zero effect on your front-end or its speed. Bots that hammer the login page cannot answer a site-specific question. It does not stop a person who reads the question, so pair it with the attempt limiter above."
+msgstr "Um desafio sem Google, sem selo, que só carrega na página wp-login.php — efeito zero na parte pública do site ou em sua velocidade. Bots que martelam a página de login não conseguem responder a uma pergunta específica do site. Isso não impede uma pessoa que lê a pergunta, então combine com o limitador de tentativas acima."
+
+msgid "A one-time code has been sent. Enter it above."
+msgstr "Um código de uso único foi enviado. Digite-o acima."
+
+msgid "A post with fewer questions than this gets no schema. Leave empty to use 2, which is the safer choice."
+msgstr "Uma publicação com menos perguntas do que isso não recebe esquema. Deixe vazio para usar 2, que é a opção mais segura."
+
+msgid "A private key."
+msgstr "Uma chave privada."
+
+msgid "A safe first one collects reports and changes nothing: a TXT record at _dmarc.%1$s with the value %2$s"
+msgstr "Um primeiro passo seguro que coleta relatórios e não muda nada: um registro TXT em _dmarc.%1$s com o valor %2$s"
+
+msgid "A site archive, downloadable by anyone who guesses the name."
+msgstr "Um arquivo do site, disponível para download por qualquer um que adivinhe o nome."
+
+msgid "A test was sent but you have not said whether it arrived"
+msgstr "Um teste foi enviado, mas você ainda não disse se chegou"
+
+msgid "A v2 key and a v3 key look identical and are not interchangeable. Put a v2 key in the box while the dropdown says V3 and Google refuses to load the widget, so the token is never produced and every login is rejected — which reaches whoever is trying to sign in as “wrong password”. Press the button above after changing a key; it asks Google directly."
+msgstr "Uma chave v2 e uma chave v3 parecem idênticas e não são intercambiáveis. Coloque uma chave v2 no campo enquanto o menu suspenso diz V3 e o Google se recusa a carregar o widget, então o token nunca é gerado e todo login é rejeitado — o que chega a quem está tentando entrar como “senha incorreta”. Pressione o botão acima depois de trocar uma chave; ele pergunta diretamente ao Google."
+
+msgid "API key"
+msgstr "Chave da API"
+
+msgid "Above the post content"
+msgstr "Acima do conteúdo da publicação"
+
+msgid "Accent colour (toolbar / active thumbnail)"
+msgstr "Cor de destaque (barra de ferramentas / miniatura ativa)"
+
+msgid "Accept button text (default: Agree)"
+msgstr "Texto do botão de aceitar (padrão: Concordo)"
+
+msgid "Accounts & Email"
+msgstr "Contas e E-mail"
+
+msgid "Ad clicks"
+msgstr "Cliques em anúncios"
+
+msgid "Ad-block notice"
+msgstr "Aviso de bloqueador de anúncios"
+
+msgid "AdSense"
+msgstr "AdSense"
+
+msgid "Add an SPF record. Whichever email service you choose below will give you the exact line."
+msgstr "Adicione um registro SPF. Qualquer serviço de e-mail que você escolher abaixo vai lhe dar a linha exata."
+
+msgid "Add contact channels"
+msgstr "Adicionar canais de contato"
+
+msgid "Add new table"
+msgstr "Adicionar nova tabela"
+
+msgid "Add nofollow to it (recommended)"
+msgstr "Adicionar nofollow a ele (recomendado)"
+
+msgid "Add some data first."
+msgstr "Adicione alguns dados primeiro."
+
+msgid "Add “defer” to front-end scripts so they no longer block the page from rendering; they run in order once the HTML is parsed. jQuery is never deferred (inline snippets depend on it). Big Core Web Vitals win."
+msgstr "Adicione “defer” aos scripts da parte pública para que eles deixem de bloquear a renderização da página; eles são executados em ordem assim que o HTML é processado. O jQuery nunca é adiado (snippets inline dependem dele). Grande ganho nas Core Web Vitals."
+
+msgid "Adds decoding=\"async\" to images so the browser decodes them off the main thread, and relies on WordPress’ built-in native lazy-load (which correctly keeps the first/LCP image eager). Replaces the old script-based method that removed image src — that hurt SEO and broke images with JavaScript off."
+msgstr "Adiciona decoding=\"async\" às imagens para que o navegador as decodifique fora da thread principal, e conta com o carregamento preguiçoso nativo do WordPress (que corretamente mantém a primeira imagem/LCP com carregamento imediato). Substitui o antigo método baseado em script que removia o src da imagem — o que prejudicava o SEO e quebrava imagens com o JavaScript desativado."
+
+msgid "Admin area"
+msgstr "Área de administração"
+
+msgid "Admin housekeeping and the plugin's own settings."
+msgstr "Manutenção administrativa e as configurações do próprio plugin."
+
+msgid "Admin only"
+msgstr "Somente administrador"
+
+msgid "Admin tools"
+msgstr "Ferramentas de administração"
+
+msgid "Advanced options — device, visitors, schedule, tags (optional)"
+msgstr "Opções avançadas — dispositivo, visitantes, agenda, tags (opcional)"
+
+msgid "After a few seconds"
+msgstr "Depois de alguns segundos"
+
+msgid "After scrolling down"
+msgstr "Depois de rolar a página"
+
+msgid "All"
+msgstr "Todos"
+
+msgid "All single content (incl. custom types)"
+msgstr "Todo o conteúdo individual (incl. tipos personalizados)"
+
+msgid "All-in-one WordPress toolkit: contact chat, shortcodes, security & privacy, media optimisation, SEO, cleanup and more — in one plugin."
+msgstr "Kit completo para WordPress: chat de contato, shortcodes, segurança e privacidade, otimização de mídia, SEO, limpeza e mais — em um único plugin."
+
+msgid "Allow a recovery code by Telegram"
+msgstr "Permitir código de recuperação por Telegram"
+
+msgid "Allow a recovery code by email"
+msgstr "Permitir código de recuperação por e-mail"
+
+msgid "Already approved"
+msgstr "Já aprovado"
+
+msgid "Analytics found on your site: %s. Clicks will be recorded there."
+msgstr "Analytics encontrado no seu site: %s. Os cliques serão registrados lá."
+
+msgid "And what should happen to a domain that is not on the list?"
+msgstr "E o que deve acontecer com um domínio que não está na lista?"
+
+msgid "Another plugin already publishes FAQ schema for this post, so Horse Tools is staying out of the way."
+msgstr "Outro plugin já publica o esquema de FAQ para esta publicação, então o Horse Tools está ficando de fora."
+
+msgid "Answer"
+msgstr "Resposta"
+
+msgid "Answers are held for half a day; press this after changing anything in DNS."
+msgstr "As respostas ficam retidas por meio dia; pressione isto depois de mudar algo no DNS."
+
+msgid "Appearance"
+msgstr "Aparência"
+
+msgid "Apply to Pages as well, not just Posts"
+msgstr "Aplicar também a Páginas, não só a Publicações"
+
+msgid "Approve all %d domains your content currently links to?"
+msgstr "Aprovar todos os %d domínios para os quais seu conteúdo atualmente tem link?"
+
+msgid "Approve all %d — the whole list, not just this page"
+msgstr "Aprovar todos os %d — a lista inteira, não só esta página"
+
+msgid "Approve the ticked ones"
+msgstr "Aprovar os marcados"
+
+msgid "Approved %d domain."
+msgstr "%d domínio aprovado."
+
+msgid "As soon as the page opens"
+msgstr "Assim que a página abre"
+
+msgid "Ask a custom question on the login form"
+msgstr "Fazer uma pergunta personalizada no formulário de login"
+
+msgid "Asking Google…"
+msgstr "Perguntando ao Google…"
+
+msgid "Asset URLs to preload (one per line — .woff2/.css/.js/.jpg/.webp…)"
+msgstr "URLs de recursos para pré-carregar (um por linha — .woff2/.css/.js/.jpg/.webp…)"
+
+msgid "Async CSS — remove render-blocking stylesheets"
+msgstr "CSS assíncrono — remover folhas de estilo que bloqueiam a renderização"
+
+msgid "Authentication code"
+msgstr "Código de autenticação"
+
+msgid "Backdrop theme"
+msgstr "Tema de fundo"
+
+msgid "Bar across the bottom"
+msgstr "Barra na parte inferior"
+
+msgid "Before </body>"
+msgstr "Antes de </body>"
+
+msgid "Below the post content"
+msgstr "Abaixo do conteúdo da publicação"
+
+msgid "Besides your one-time backup codes, a fresh code can also be sent to you here:"
+msgstr "Além dos seus códigos de backup de uso único, um código novo também pode ser enviado para você aqui:"
+
+msgid "Blur (frosted glass)"
+msgstr "Desfoque (vidro fosco)"
+
+msgid "Bordered"
+msgstr "Com borda"
+
+msgid "Both engines are bundled locally — no external requests. Gallery grouping, looping and the slide transition apply to GLightbox; PhotoSwipe always groups the content images (previous/next) and has its own smooth zoom/pan."
+msgstr "Os dois motores estão incluídos localmente — sem requisições externas. O agrupamento de galeria, o loop e a transição de slide se aplicam ao GLightbox; o PhotoSwipe sempre agrupa as imagens do conteúdo (anterior/próxima) e tem seu próprio zoom/deslocamento suave."
+
+msgid "Both engines are free and open-source (MIT). GLightbox is the easy all-rounder (adds video + slide transitions); PhotoSwipe has the smoothest zoom/pan for photo galleries."
+msgstr "Os dois motores são gratuitos e de código aberto (MIT). O GLightbox é o versátil e fácil de usar (adiciona vídeo + transições de slide); o PhotoSwipe tem o zoom/deslocamento mais suave para galerias de fotos."
+
+msgid "Bounce"
+msgstr "Quicar"
+
+msgid "Broken links (404)"
+msgstr "Links quebrados (404)"
+
+msgid "Broken links 404"
+msgstr "Links quebrados 404"
+
+msgid "Build a table once here, then insert it into any post or page with its shortcode. Edit it here and every place that uses it updates automatically."
+msgstr "Crie uma tabela aqui uma vez e depois insira-a em qualquer publicação ou página com seu shortcode. Edite-a aqui e todo lugar que a usa é atualizado automaticamente."
+
+msgid "Build grid"
+msgstr "Construir grade"
+
+msgid "Buttons"
+msgstr "Botões"
+
+msgid "By Telegram"
+msgstr "Por Telegram"
+
+msgid "By default the lockout counts the direct connection IP, which cannot be faked. Only turn this on if your site is reachable ONLY through Cloudflare or a proxy — it then reads the real visitor IP from the proxy header (CF-Connecting-IP / X-Forwarded-For). Do NOT enable it on a normally-hosted site: those headers can be forged, letting an attacker dodge the lockout or get an innocent visitor locked out."
+msgstr "Por padrão, o bloqueio conta o IP da conexão direta, que não pode ser falsificado. Só ative isto se o seu site for acessível APENAS através do Cloudflare ou de um proxy — assim ele lê o IP real do visitante a partir do cabeçalho do proxy (CF-Connecting-IP / X-Forwarded-For). NÃO ative em um site hospedado normalmente: esses cabeçalhos podem ser falsificados, permitindo que um invasor escape do bloqueio ou faça um visitante inocente ser bloqueado."
+
+msgid "By email — a one-time code is sent to your account address:"
+msgstr "Por e-mail — um código de uso único é enviado ao endereço da sua conta:"
+
+msgid "CHANGED"
+msgstr "MUDOU"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Cache cleared. Each post will be read again the next time it is viewed."
+msgstr "Cache limpo. Cada publicação será lida novamente na próxima vez que for visualizada."
+
+msgid "Caption"
+msgstr "Legenda"
+
+msgid "Caption from"
+msgstr "Legenda de"
+
+msgid "Card (shadow)"
+msgstr "Cartão (sombra)"
+
+msgid "Centre of screen"
+msgstr "Centro da tela"
+
+msgid "Chat"
+msgstr "Chat"
+
+msgid "Chat buttons, contact channels and WooCommerce tweaks."
+msgstr "Botões de chat, canais de contato e ajustes do WooCommerce."
+
+msgid "Check again"
+msgstr "Verificar novamente"
+
+msgid "Check for updates"
+msgstr "Verificar atualizações"
+
+msgid "Check that WP-Cron is running on this site"
+msgstr "Verificar se o WP-Cron está sendo executado neste site"
+
+msgid "Check-in"
+msgstr "Check-in"
+
+msgid "Checked from your own browser: the home page a visitor receives carries no Google Analytics tag. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own."
+msgstr "Verificado a partir do seu próprio navegador: a página inicial que um visitante recebe não traz nenhuma tag do Google Analytics. Instale o Site Kit do Google, ou qualquer plugin GA4, e esta configuração começa a funcionar por conta própria."
+
+msgid "Checked — still fine"
+msgstr "Verificado — ainda está tudo bem"
+
+msgid "Checking your site…"
+msgstr "Verificando seu site…"
+
+msgid "Checking…"
+msgstr "Verificando…"
+
+msgid "Choose a .xlsx, .xls or .csv file:"
+msgstr "Escolha um arquivo .xlsx, .xls ou .csv:"
+
+msgid "Choose a built-in icon"
+msgstr "Escolha um ícone integrado"
+
+msgid "Choose an icon"
+msgstr "Escolha um ícone"
+
+msgid "Choose icon"
+msgstr "Escolher ícone"
+
+msgid "Choose the position (corner box or full-width bar) and customise the message and button labels. The Accept/Decline choice is stored in the browser (localStorage + an “ht_cookie_consent” cookie), so the notice won’t nag returning visitors. Note: this is an informational notice — Horse Tools does not itself block third-party tracking scripts, so for strict consent-gating you would still gate your own scripts on that cookie."
+msgstr "Escolha a posição (caixa no canto ou barra de largura total) e personalize a mensagem e os rótulos dos botões. A escolha de Aceitar/Recusar é armazenada no navegador (localStorage + um cookie “ht_cookie_consent”), então o aviso não vai incomodar visitantes recorrentes. Observação: este é um aviso informativo — o Horse Tools em si não bloqueia scripts de rastreamento de terceiros, então, para um controle de consentimento rigoroso, você ainda precisaria condicionar seus próprios scripts a esse cookie."
+
+msgid "Cinema (pure black)"
+msgstr "Cinema (preto puro)"
+
+msgid "Clean comments"
+msgstr "Limpar comentários"
+
+msgid "Clean media"
+msgstr "Limpar mídia"
+
+msgid "Clean posts"
+msgstr "Limpar publicações"
+
+msgid "Cleanup schedule"
+msgstr "Agenda de limpeza"
+
+msgid "Clear cache & re-read"
+msgstr "Limpar cache e reler"
+
+msgid "Cleared all lockouts."
+msgstr "Todos os bloqueios foram removidos."
+
+msgid "Click again to delete"
+msgstr "Clique novamente para excluir"
+
+msgid "Click an SVG box, then"
+msgstr "Clique em uma caixa SVG, depois"
+
+msgid "Click an icon to drop it into the selected field. Search by its English name (cart, gift, phone…), or Vietnamese for popular icons. Over 5,000 in total — use “Load more” to see them all."
+msgstr "Clique em um ícone para colocá-lo no campo selecionado. Busque pelo nome em inglês (cart, gift, phone…), ou em vietnamita para os ícones populares. Mais de 5.000 no total — use “Carregar mais” para ver todos."
+
+msgid "Click an image in your content to open it in a full-screen viewer. Choose the engine and how it looks below."
+msgstr "Clique em uma imagem do seu conteúdo para abri-la em um visualizador de tela cheia. Escolha o motor e a aparência abaixo."
+
+msgid "Code in body"
+msgstr "Código no body"
+
+msgid "Code in footer"
+msgstr "Código no rodapé"
+
+msgid "Code in head"
+msgstr "Código no head"
+
+msgid "Code on login"
+msgstr "Código no login"
+
+msgid "Column"
+msgstr "Coluna"
+
+msgid "Columns"
+msgstr "Colunas"
+
+msgid "Comma separated. A heading containing any of these opens the FAQ section; every heading below it until the next heading of the same level is treated as a question."
+msgstr "Separados por vírgula. Um título contendo qualquer um destes abre a seção de FAQ; todo título abaixo dele, até o próximo título do mesmo nível, é tratado como uma pergunta."
+
+msgid "Compact"
+msgstr "Compacto"
+
+msgid "Confirm them once, from the banner on any Horse Tools screen"
+msgstr "Confirme-os uma vez, a partir do aviso em qualquer tela do Horse Tools"
+
+msgid "Confirm them once, from the notice on any Horse Tools screen"
+msgstr "Confirme-os uma vez, a partir do aviso em qualquer tela do Horse Tools"
+
+msgid "Confirmed %s ago"
+msgstr "Confirmado há %s"
+
+msgid "Contact click measurement"
+msgstr "Medição de cliques em contato"
+
+msgid "Contact details are the ones you confirmed"
+msgstr "Os dados de contato são os que você confirmou"
+
+msgid "Contact details in your posts"
+msgstr "Dados de contato nas suas publicações"
+
+msgid "Contact details in your posts are watched"
+msgstr "Os dados de contato nas suas publicações estão sendo monitorados"
+
+msgid "Contact details in your settings"
+msgstr "Dados de contato nas suas configurações"
+
+msgid "Contains database credentials or signing keys."
+msgstr "Contém credenciais do banco de dados ou chaves de assinatura."
+
+msgid "Control the Heartbeat API"
+msgstr "Controlar a API Heartbeat"
+
+msgid "Cookie notice"
+msgstr "Aviso de cookies"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Copy / CSV / Print buttons"
+msgstr "Botões Copiar / CSV / Imprimir"
+
+msgid "Copy all eight lines"
+msgstr "Copiar as oito linhas"
+
+msgid "Copy cells in Excel / Google Sheets (or paste CSV) and paste here:"
+msgstr "Copie células no Excel / Google Sheets (ou cole CSV) e cole aqui:"
+
+msgid "Corner — bottom left"
+msgstr "Canto — inferior esquerdo"
+
+msgid "Corner — bottom right"
+msgstr "Canto — inferior direito"
+
+msgid "Could not be determined"
+msgstr "Não foi possível determinar"
+
+msgid "Could not check: this server was unable to open your own home page, which many hosts block. That says nothing about whether analytics is installed — if you have Site Kit or another GA4 plugin, switch this on and check the result in Analytics under Admin → DebugView."
+msgstr "Não foi possível verificar: este servidor não conseguiu abrir a sua própria página inicial, o que muitos provedores de hospedagem bloqueiam. Isso não indica se a analítica está instalada — se você tem o Site Kit ou outro plugin GA4, ative isto e confira o resultado no Analytics em Admin → DebugView."
+
+msgid "Could not load the Excel reader — save the file as CSV and try again."
+msgstr "Não foi possível carregar o leitor de Excel — salve o arquivo como CSV e tente novamente."
+
+msgid "Could not load the home page from the server:"
+msgstr "Não foi possível carregar a página inicial a partir do servidor:"
+
+msgid "Could not load the list."
+msgstr "Não foi possível carregar a lista."
+
+msgid "Could not read the file."
+msgstr "Não foi possível ler o arquivo."
+
+msgid "Could not read the home page (HTTP %s). Your host may block the site from calling itself; check the scripts via “View source” instead."
+msgstr "Não foi possível ler a página inicial (HTTP %s). Seu provedor de hospedagem pode bloquear o site de chamar a si mesmo; verifique os scripts pela opção “Ver código-fonte” em vez disso."
+
+msgid "Could not send the recovery code — message the bot first, then check your chat ID."
+msgstr "Não foi possível enviar o código de recuperação — envie uma mensagem ao bot primeiro, depois verifique o seu ID de chat."
+
+msgid "Create table"
+msgstr "Criar tabela"
+
+msgid "Critical CSS — the above-the-fold styles, inlined in the head to prevent the flash (optional, but strongly recommended)"
+msgstr "CSS crítico — os estilos do conteúdo visível sem rolar, incorporados no head para evitar o flash (opcional, mas fortemente recomendado)"
+
+msgid "Custom / Maps:"
+msgstr "Personalizado / Maps:"
+
+msgid "Custom CSS"
+msgstr "CSS personalizado"
+
+msgid "Customers"
+msgstr "Clientes"
+
+msgid "Dark background"
+msgstr "Fundo escuro"
+
+msgid "Dark mode, scrollbar, effects, and the look of the admin area."
+msgstr "Modo escuro, barra de rolagem, efeitos e a aparência da área de administração."
+
+msgid "Date shortcodes"
+msgstr "Shortcodes de data"
+
+msgid "Day(s)"
+msgstr "Dia(s)"
+
+msgid "Decline"
+msgstr "Recusar"
+
+msgid "Decline button text (default: Decline)"
+msgstr "Texto do botão de recusar (padrão: Recusar)"
+
+msgid "Default"
+msgstr "Padrão"
+
+msgid "Defer JavaScript"
+msgstr "Adiar JavaScript"
+
+msgid "Defer JavaScript so it no longer blocks the page"
+msgstr "Adiar o JavaScript para que ele deixe de bloquear a página"
+
+msgid "Delay JavaScript execution"
+msgstr "Atrasar a execução do JavaScript"
+
+msgid "Delay JavaScript until interaction"
+msgstr "Atrasar o JavaScript até a interação"
+
+msgid "Delay all scripts except the exclusions (most aggressive)"
+msgstr "Atrasar todos os scripts, exceto as exclusões (mais agressivo)"
+
+msgid "Delay analytics/ads/chat until interaction, and defer JavaScript"
+msgstr "Atrasar analítica/anúncios/chat até a interação, e adiar o JavaScript"
+
+msgid "Delay analytics/ads/chat until interaction, and defer JavaScript (cart & checkout untouched)"
+msgstr "Atrasar analítica/anúncios/chat até a interação, e adiar o JavaScript (carrinho e finalização de compra intocados)"
+
+msgid "Delay only the scripts I list (recommended, safe)"
+msgstr "Atrasar apenas os scripts que eu listar (recomendado, seguro)"
+
+msgid "Delay third-party scripts (analytics, ads, chat) until the visitor interacts — safe built-in list, with a 5-second fall-back"
+msgstr "Atrasar scripts de terceiros (analítica, anúncios, chat) até o visitante interagir — lista integrada segura, com um tempo limite de 5 segundos"
+
+msgid "Delete column"
+msgstr "Excluir coluna"
+
+msgid "Delete row"
+msgstr "Excluir linha"
+
+msgid "Delete them, or move them somewhere outside the folder your site is served from. If one of them is a copy of wp-config.php, change your database password afterwards — assume it has been read."
+msgstr "Exclua-os, ou mova-os para fora da pasta a partir da qual seu site é servido. Se um deles for uma cópia de wp-config.php, mude a senha do seu banco de dados depois — assuma que ela foi lida."
+
+msgid "Detect my chat ID"
+msgstr "Detectar meu ID de chat"
+
+msgid "Disable Dashicons for visitors"
+msgstr "Desativar Dashicons para visitantes"
+
+msgid "Disable on the front-end, slow in admin"
+msgstr "Desativar na parte pública, lento no admin"
+
+msgid "Display style (where the panel appears)"
+msgstr "Estilo de exibição (onde o painel aparece)"
+
+msgid "Does mail from this site actually arrive?"
+msgstr "O correio deste site realmente chega?"
+
+msgid "Domain"
+msgstr "Domínio"
+
+msgid "Downloadable secrets in the site folder"
+msgstr "Segredos disponíveis para download na pasta do site"
+
+msgid "Drop Emoji, jQuery Migrate and admin icons; calm the Heartbeat"
+msgstr "Remover Emoji, jQuery Migrate e ícones de administração; acalmar o Heartbeat"
+
+msgid "Each user turns it on for their own account under Users → Profile (scan a QR with Google Authenticator / Authy). After the password they enter a 6-digit code, so a stolen password alone is not enough. Uses standard WordPress hooks — safe across WordPress updates, and disabling the plugin instantly restores the normal login."
+msgstr "Cada usuário ativa isso para sua própria conta em Usuários → Perfil (escaneando um QR com Google Authenticator / Authy). Depois da senha, ele digita um código de 6 dígitos, então uma senha roubada sozinha não é suficiente. Usa hooks padrão do WordPress — seguro entre atualizações do WordPress, e desativar o plugin restaura instantaneamente o login normal."
+
+msgid "Edit table"
+msgstr "Editar tabela"
+
+msgid "Either set up a mailbox for the domain, or make sure the address you send notifications to is one you actually read."
+msgstr "Configure uma caixa de correio para o domínio, ou garanta que o endereço para o qual você envia notificações seja um que você realmente lê."
+
+msgid "Email address"
+msgstr "Endereço de e-mail"
+
+msgid "Email is the fallback and not a good one — a security message sent by a shop's own server is exactly the kind that lands in spam. Set up the Telegram bot under WooCommerce if you can."
+msgstr "O e-mail é o meio alternativo, e não um bom — uma mensagem de segurança enviada pelo próprio servidor de uma loja é exatamente o tipo que cai no spam. Configure o bot do Telegram em WooCommerce se puder."
+
+msgid "Email me a code"
+msgstr "Enviar-me um código por e-mail"
+
+msgid "Email service (SMTP preset)"
+msgstr "Serviço de e-mail (predefinição SMTP)"
+
+msgid "Email to %s"
+msgstr "E-mail para %s"
+
+msgid "Enable image lightbox"
+msgstr "Ativar lightbox de imagens"
+
+msgid "Enable two-factor authentication"
+msgstr "Ativar verificação em duas etapas"
+
+msgid "Enter a current two-factor code to unlock PHP editing first."
+msgstr "Digite um código de verificação em duas etapas atual para desbloquear a edição de PHP primeiro."
+
+msgid "Enter the 6-digit code from your app, or a backup code."
+msgstr "Digite o código de 6 dígitos do seu aplicativo, ou um código de backup."
+
+msgid "Enter your authentication code."
+msgstr "Digite seu código de autenticação."
+
+msgid "Entrance effect"
+msgstr "Efeito de entrada"
+
+msgid "Every day"
+msgstr "Todos os dias"
+
+msgid "Every month"
+msgstr "Todo mês"
+
+msgid "Every page load (init)"
+msgstr "A cada carregamento de página (init)"
+
+msgid "Every two weeks"
+msgstr "A cada duas semanas"
+
+msgid "Every week (recommended)"
+msgstr "Toda semana (recomendado)"
+
+msgid "Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off."
+msgstr "Todo mundo também recebe códigos de backup de uso único ao se cadastrar — salve-os. Se você algum dia ficar bloqueado sem telefone, código de backup ou canal de recuperação, renomeie a pasta do plugin por FTP para desativar a verificação em duas etapas."
+
+msgid "Everything above only tells you. Telling you leaves a gap: the link goes in, the warning appears on a screen, and the link keeps working until you log in and read it. That gap is how three old posts carried casino links for two years."
+msgstr "Tudo acima só te avisa. Avisar deixa uma lacuna: o link entra, o aviso aparece em uma tela, e o link continua funcionando até você fazer login e ler o aviso. Essa lacuna foi o motivo pelo qual três publicações antigas carregaram links de cassino por dois anos."
+
+msgid "Everything else on this page warns you when something is wrong — but only on a screen you have to open. It cannot warn you that it stopped: a site with the plugin switched off looks exactly like a site with nothing wrong."
+msgstr "Tudo o mais nesta página avisa quando algo está errado — mas só em uma tela que você precisa abrir. Isso não pode avisar que parou: um site com o plugin desativado parece exatamente igual a um site sem nada de errado."
+
+msgid "Export CSV"
+msgstr "Exportar CSV"
+
+msgid "FAQ schema (Horse Tools)"
+msgstr "Esquema de FAQ (Horse Tools)"
+
+msgid "FAQ schema (rich results)"
+msgstr "Esquema de FAQ (resultados enriquecidos)"
+
+msgid "Fade"
+msgstr "Esmaecer"
+
+msgid "Fade in"
+msgstr "Aparecer suavemente"
+
+msgid "Fall-back timer — run the delayed scripts after this many seconds even with no interaction (0 = only on interaction)"
+msgstr "Temporizador de reserva — executa os scripts atrasados após esse número de segundos mesmo sem interação (0 = somente na interação)"
+
+msgid "Filled in for you: server %host%, port %port%, %enc%."
+msgstr "Preenchido para você: servidor %host%, porta %port%, %enc%."
+
+msgid "Filter per column"
+msgstr "Filtrar por coluna"
+
+msgid "Find a domain"
+msgstr "Encontrar um domínio"
+
+msgid "Finished reading your posts and pages."
+msgstr "Leitura das suas publicações e páginas concluída."
+
+msgid "First row is a header"
+msgstr "A primeira linha é um cabeçalho"
+
+msgid "Fix the channel and send a test message"
+msgstr "Corrija o canal e envie uma mensagem de teste"
+
+msgid "Flip"
+msgstr "Virar"
+
+msgid "Font settings"
+msgstr "Configurações de fonte"
+
+msgid "Fonts"
+msgstr "Fontes"
+
+msgid "For non-technical users: this switches on the safe, high-impact speed features — delay & defer JavaScript (safe mode, with a 5-second fall-back), lazy-load, Instant-page, HTML compression, and dropping Emoji / jQuery Migrate / Dashicons. The riskier options (async CSS, “delay all”) are left off. The switches below light up so you can see what changed — then press SAVE to apply."
+msgstr "Para usuários não técnicos: isto ativa os recursos de velocidade seguros e de alto impacto — atrasar e adiar o JavaScript (modo seguro, com tempo limite de 5 segundos), carregamento preguiçoso, Instant-page, compressão de HTML, e remoção de Emoji / jQuery Migrate / Dashicons. As opções mais arriscadas (CSS assíncrono, “atrasar tudo”) ficam desativadas. Os interruptores abaixo se acendem para que você veja o que mudou — depois pressione SALVAR para aplicar."
+
+msgid "Free for 300 messages a day with no card. The account login is the username; the SMTP key is not the same thing as the API key."
+msgstr "Gratuito para 300 mensagens por dia sem cartão. O login da conta é o nome de usuário; a chave SMTP não é a mesma coisa que a chave da API."
+
+msgid "Freeze first column"
+msgstr "Fixar primeira coluna"
+
+msgid "Front end and admin"
+msgstr "Parte pública e admin"
+
+msgid "Front end only"
+msgstr "Somente parte pública"
+
+msgid "GLightbox — light, images + video, slide effects"
+msgstr "GLightbox — leve, imagens + vídeo, efeitos de slide"
+
+msgid "Give it a minute before answering. “In the spam folder” is a useful answer, not a failure to report."
+msgstr "Dê um minuto antes de responder. “Na pasta de spam” é uma resposta útil, não uma falha ao reportar."
+
+msgid "Go through the list once and approve it"
+msgstr "Percorra a lista uma vez e aprove-a"
+
+msgid "Gone"
+msgstr "Sumiu"
+
+msgid "Google Sheet"
+msgstr "Planilha Google"
+
+msgid "Google accepts both keys."
+msgstr "O Google aceita ambas as chaves."
+
+msgid "Google does not recognise this Secret key. Check you copied the secret and not the site key — they come from the same page and are easy to swap."
+msgstr "O Google não reconhece esta chave secreta. Verifique se você copiou a chave secreta e não a chave do site — elas vêm da mesma página e é fácil trocá-las."
+
+msgid "Google fetch"
+msgstr "Busca do Google"
+
+msgid "Google refused the request — make sure the sheet is shared as “Anyone with the link can view”."
+msgstr "O Google recusou a solicitação — certifique-se de que a planilha esteja compartilhada como “Qualquer pessoa com o link pode ver”."
+
+msgid "Google refuses this Site key for reCAPTCHA v3. It is almost certainly a v2 key — either switch the dropdown to V2, or paste the key from a v3 project. Until then the widget never loads and every login is rejected."
+msgstr "O Google recusa esta chave do site para o reCAPTCHA v3. Quase certamente é uma chave v2 — mude o menu suspenso para V2, ou cole a chave de um projeto v3. Até lá o widget nunca carrega e todo login é rejeitado."
+
+msgid "Google sign-in"
+msgstr "Login com o Google"
+
+msgid "Gradient blue-violet"
+msgstr "Gradiente azul-violeta"
+
+msgid "Gradient ocean"
+msgstr "Gradiente oceano"
+
+msgid "Gradient sunset"
+msgstr "Gradiente pôr do sol"
+
+msgid "Grey"
+msgstr "Cinza"
+
+msgid "Group images into a gallery (previous / next)"
+msgstr "Agrupar imagens em uma galeria (anterior / próxima)"
+
+msgid "HTML compression; compress JPGs and serve WebP"
+msgstr "Compressão de HTML; compactar JPGs e servir WebP"
+
+msgid "Handle dead links: send visitors who hit a “404 – not found” page to a page you choose, and keep a log of the broken URLs so you know what to fix."
+msgstr "Trate links mortos: envie visitantes que caírem em uma página “404 – não encontrada” para uma página que você escolher, e mantenha um registro das URLs quebradas para você saber o que consertar."
+
+msgid "Header colour"
+msgstr "Cor do cabeçalho"
+
+msgid "Heads up: a PHP snippet was just changed on %1$s. Snippet: \"%2$s\". By: %3$s (IP %4$s). If this was not you, change your password and review Horse Tools → Shortcode immediately."
+msgstr "Atenção: um snippet PHP acabou de ser alterado em %1$s. Snippet: \"%2$s\". Por: %3$s (IP %4$s). Se não foi você, mude sua senha e revise Horse Tools → Shortcode imediatamente."
+
+msgid "Heartbeat mode"
+msgstr "Modo Heartbeat"
+
+msgid "Hold heavy third-party scripts (analytics, tag managers, pixels, chat, ads) until the visitor first interacts — scroll, mouse move, tap, key or click — then run them in order. The single biggest win for Total Blocking Time and “Reduce unused JavaScript”. It re-fires the page-ready events afterwards, keeps script order, and never touches JSON-LD structured data or ES modules."
+msgstr "Segura scripts pesados de terceiros (analítica, gerenciadores de tags, pixels, chat, anúncios) até o visitante interagir pela primeira vez — rolar, mover o mouse, tocar, tecla ou clique — e então os executa em ordem. O maior ganho isolado para o Total Blocking Time e “Reduzir JavaScript não utilizado”. Depois dispara novamente os eventos de página pronta, mantém a ordem dos scripts, e nunca toca em dados estruturados JSON-LD ou módulos ES."
+
+msgid "Horse Tools %s is available — an update link now appears under the plugin below. WordPress will download it directly from GitHub."
+msgstr "O Horse Tools %s está disponível — um link de atualização agora aparece abaixo do plugin. O WordPress vai baixá-lo diretamente do GitHub."
+
+msgid "Horse Tools beat #%1$d — %2$s"
+msgstr "Batimento do Horse Tools #%1$d — %2$s"
+
+msgid "Horse Tools can tell you when your content starts linking somewhere new."
+msgstr "O Horse Tools pode te avisar quando seu conteúdo começar a ter link para algum lugar novo."
+
+msgid "Horse Tools can watch your contact details for changes."
+msgstr "O Horse Tools pode monitorar seus dados de contato em busca de mudanças."
+
+msgid "Horse Tools could not reach GitHub to check for updates. Please try again later."
+msgstr "O Horse Tools não conseguiu acessar o GitHub para verificar atualizações. Tente novamente mais tarde."
+
+msgid "Horse Tools is up to date (version %s)."
+msgstr "O Horse Tools está atualizado (versão %s)."
+
+msgid "Horse Tools keeps a copy of your decisions in a file as well as in the database, precisely so that a change made straight to the database can be seen. These no longer match:"
+msgstr "O Horse Tools mantém uma cópia das suas decisões em um arquivo além do banco de dados, justamente para que uma mudança feita diretamente no banco de dados possa ser vista. Estas não coincidem mais:"
+
+msgid "Horse Tools snippet"
+msgstr "Snippet do Horse Tools"
+
+msgid "Horse Tools table"
+msgstr "Tabela do Horse Tools"
+
+msgid "Horse Tools — %s"
+msgstr "Horse Tools — %s"
+
+msgid "Hosts to preconnect (one per line — host or full URL)"
+msgstr "Hosts para pré-conectar (um por linha — host ou URL completa)"
+
+msgid "Hour(s)"
+msgstr "Hora(s)"
+
+msgid "How often"
+msgstr "Com que frequência"
+
+msgid "Icon colour"
+msgstr "Cor do ícone"
+
+msgid "Icons"
+msgstr "Ícones"
+
+msgid "If a theme/plugin script misbehaves, add its handle or file name to the exclusion list below. Disable if you already use a full-page optimiser that defers scripts."
+msgstr "Se um script de tema/plugin se comportar mal, adicione seu handle ou nome de arquivo à lista de exclusão abaixo. Desative se você já usa um otimizador de página completa que adia scripts."
+
+msgid "If it does not arrive, something stopped it — check the site."
+msgstr "Se não chegar, algo o interrompeu — verifique o site."
+
+msgid "If this site stops working, or Horse Tools is switched off, nobody is told. Every warning here is only seen by someone who logs in and looks."
+msgstr "Se este site parar de funcionar, ou se o Horse Tools for desativado, ninguém é avisado. Todo aviso aqui só é visto por alguém que faz login e olha."
+
+msgid "If you are reading it, mail from your site reaches this address. Go back to the Email screen and say where it turned up — the inbox or the spam folder — because those are two different answers and only you can see which one it was."
+msgstr "Se você está lendo isto, o correio do seu site chega a este endereço. Volte para a tela de E-mail e diga onde ele apareceu — a caixa de entrada ou a pasta de spam — porque são duas respostas diferentes e só você pode ver qual foi."
+
+msgid "If you have just restored a database backup, or copied the database from another copy of this site, that is the explanation — the file stayed while the database went back in time. Press the button and it will match again."
+msgstr "Se você acabou de restaurar um backup do banco de dados, ou copiou o banco de dados de outra cópia deste site, essa é a explicação — o arquivo permaneceu enquanto o banco de dados voltou no tempo. Pressione o botão e eles voltarão a coincidir."
+
+msgid "If you have not done either of those things, then something can write to your database that should not be able to. Changing passwords will not fix that on its own; the way in has to be found."
+msgstr "Se você não fez nenhuma dessas duas coisas, então algo consegue escrever no seu banco de dados sem que deveria. Mudar senhas não resolve isso sozinho; é preciso encontrar a porta de entrada."
+
+msgid "If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else."
+msgstr "Se você mesmo acabou de mudá-los, confirme-os. Se não foi você, foi outra pessoa — verifique quem editou suas configurações pela última vez antes de mudar mais alguma coisa."
+
+msgid "If you lose your phone"
+msgstr "Se você perder seu telefone"
+
+msgid "If your site has Tag Manager but no Google tag"
+msgstr "Se o seu site tem Tag Manager mas não tem a tag do Google"
+
+msgid "Image alt text"
+msgstr "Texto alternativo da imagem"
+
+msgid "Image caption (figcaption)"
+msgstr "Legenda da imagem (figcaption)"
+
+msgid "Image lightbox"
+msgstr "Lightbox de imagens"
+
+msgid "Image title"
+msgstr "Título da imagem"
+
+msgid "Images"
+msgstr "Imagens"
+
+msgid "In"
+msgstr "Em"
+
+msgid "In Google Analytics: Reports → Engagement → Events. Each channel appears under its own name — contact_phone, contact_zalo, contact_messenger and so on — so there is nothing to configure first. Allow 24 hours for the standard reports; to see it immediately instead, open Admin → DebugView and tap a button on your phone."
+msgstr "No Google Analytics: Relatórios → Engajamento → Eventos. Cada canal aparece com o próprio nome — contact_phone, contact_zalo, contact_messenger e assim por diante — então não há nada para configurar antes. Espere 24 horas para os relatórios padrão; para ver imediatamente, abra Admin → DebugView e toque em um botão no seu telefone."
+
+msgid "In the inbox"
+msgstr "Na caixa de entrada"
+
+msgid "In the page <head>"
+msgstr "No <head> da página"
+
+msgid "In the spam folder"
+msgstr "Na pasta de spam"
+
+msgid "Indigo"
+msgstr "Índigo"
+
+msgid "Insert a snippet"
+msgstr "Inserir um snippet"
+
+msgid "Insert a table"
+msgstr "Inserir uma tabela"
+
+msgid "Insert a table you saved earlier:"
+msgstr "Insira uma tabela que você salvou antes:"
+
+msgid "Insert column right"
+msgstr "Inserir coluna à direita"
+
+msgid "Insert row below"
+msgstr "Inserir linha abaixo"
+
+msgid "Insert table"
+msgstr "Inserir tabela"
+
+msgid "Install analytics first"
+msgstr "Instale a analítica primeiro"
+
+msgid "Invalid code. Please try again."
+msgstr "Código inválido. Tente novamente."
+
+msgid "It continues on its own each time you open an admin page"
+msgstr "Continua sozinho cada vez que você abre uma página de administração"
+
+msgid "It failed: %s"
+msgstr "Falhou: %s"
+
+msgid "JavaScript &amp; connections"
+msgstr "JavaScript e conexões"
+
+msgid "Last confirmed %s ago — worth testing again"
+msgstr "Confirmado pela última vez há %s — vale a pena testar de novo"
+
+msgid "Last message: #%1$d, %2$s ago."
+msgstr "Última mensagem: nº %1$d, há %2$s."
+
+msgid "Last row is a total row (pinned to the bottom)"
+msgstr "A última linha é uma linha de totais (fixada embaixo)"
+
+msgid "Least-linked first, because the one added without your knowing is almost never the one you link to from two hundred posts. Tick what belongs and approve it; leave the rest here."
+msgstr "Os menos vinculados primeiro, porque o que foi adicionado sem o seu conhecimento quase nunca é aquele para o qual você tem link a partir de duzentas publicações. Marque o que pertence e aprove; deixe o resto aqui."
+
+msgid "Leave empty and the icon follows the list colour."
+msgstr "Deixe vazio e o ícone segue a cor da lista."
+
+msgid "Leave empty to use the icon chosen above; anything pasted here replaces it. Its colour comes from the Icon colour setting below, so the fill in your SVG is ignored. Scripts and event handlers are removed."
+msgstr "Deixe vazio para usar o ícone escolhido acima; qualquer coisa colada aqui o substitui. A cor dele vem da configuração Cor do ícone abaixo, então o preenchimento do seu SVG é ignorado. Scripts e manipuladores de eventos são removidos."
+
+msgid "Leave this empty and the message goes to the same Telegram chat as your order notifications, or by email if you have not set a bot up. Orders go to whoever packs them; this does not, so there is a field of its own."
+msgstr "Deixe isto vazio e a mensagem vai para o mesmo chat do Telegram das suas notificações de pedidos, ou por e-mail se você não configurou um bot. Os pedidos vão para quem os embala; isto não, por isso tem um campo próprio."
+
+msgid "Light"
+msgstr "Claro"
+
+msgid "Lightbox engine"
+msgstr "Motor do lightbox"
+
+msgid "Lines only"
+msgstr "Somente linhas"
+
+msgid "Link text"
+msgstr "Texto do link"
+
+msgid "Links"
+msgstr "Links"
+
+msgid "Links & URLs"
+msgstr "Links e URLs"
+
+msgid "Links every image in the content together so the viewer can flip through them. If an image already links to a file, that link is used."
+msgstr "Encadeia todas as imagens do conteúdo para que o visualizador possa navegar entre elas. Se uma imagem já tem link para um arquivo, esse link é usado."
+
+msgid "Links to domains you did not approve are defused as they are printed"
+msgstr "Links para domínios que você não aprovou são neutralizados no momento em que são impressos"
+
+msgid "Load CSS without blocking render"
+msgstr "Carregar CSS sem bloquear a renderização"
+
+msgid "Load more icons"
+msgstr "Carregar mais ícones"
+
+msgid "Loading…"
+msgstr "Carregando…"
+
+msgid "Loads a script or an embedded frame from this domain"
+msgstr "Carrega um script ou um frame incorporado deste domínio"
+
+msgid "Loads stylesheets without blocking the first paint (the media-toggle technique), so the page appears on screen sooner. A big win for First Contentful Paint and Lighthouse’s “Eliminate render-blocking resources”."
+msgstr "Carrega as folhas de estilo sem bloquear a primeira renderização (a técnica de alternar o atributo media), então a página aparece na tela mais cedo. Um grande ganho para o First Contentful Paint e para “Eliminar recursos que bloqueiam a renderização” do Lighthouse."
+
+msgid "Lock content"
+msgstr "Bloquear conteúdo"
+
+msgid "Locked yourself out? Log in from a different network (e.g. your phone on mobile data = a different IP), then click the button above to clear all lockouts — or just wait for the lockout time to pass. As a last resort, disable the plugin by renaming its folder via FTP."
+msgstr "Ficou bloqueado sozinho? Faça login de uma rede diferente (por exemplo, seu telefone com dados móveis = um IP diferente), depois clique no botão acima para limpar todos os bloqueios — ou simplesmente espere o tempo de bloqueio passar. Como último recurso, desative o plugin renomeando sua pasta via FTP."
+
+msgid "Lockout length"
+msgstr "Duração do bloqueio"
+
+msgid "Lockout time unit"
+msgstr "Unidade de tempo do bloqueio"
+
+msgid "Login lockout, two-factor, reCAPTCHA and the login page."
+msgstr "Bloqueio de login, verificação em duas etapas, reCAPTCHA e a página de login."
+
+msgid "Login page"
+msgstr "Página de login"
+
+msgid "Longest answer to publish (characters)"
+msgstr "Resposta mais longa a publicar (caracteres)"
+
+msgid "Look down this page, deal with anything that makes you stop, and use “Approve everything” below for the rest — what matters is having a baseline, so that tomorrow’s arrival stands out against it."
+msgstr "Percorra esta página, resolva qualquer coisa que te faça parar, e use “Aprovar tudo” abaixo para o resto — o que importa é ter um ponto de partida, para que o que chegar amanhã se destaque em relação a ele."
+
+msgid "Loop back to the first image"
+msgstr "Voltar para a primeira imagem ao chegar no final"
+
+msgid "Lost your device?"
+msgstr "Perdeu seu dispositivo?"
+
+msgid "Mail from this site is known to arrive"
+msgstr "Sabe-se que o correio deste site chega"
+
+msgid "Mail from this site leaves by %1$s, and that address is known as %2$s."
+msgstr "O correio deste site sai por %1$s, e esse endereço é conhecido como %2$s."
+
+msgid "Mail this site sends as %s is treated as forged. Your domain publishes a list of servers allowed to send for it, that list ends in “reject everything else”, and this web server is not on it."
+msgstr "O correio que este site envia como %s é tratado como falsificado. Seu domínio publica uma lista de servidores autorizados a enviar em seu nome, essa lista termina em “rejeitar tudo o mais”, e este servidor web não está nela."
+
+msgid "Maintenance (503)"
+msgstr "Manutenção (503)"
+
+msgid "Maintenance 503"
+msgstr "Manutenção 503"
+
+msgid "Measurement"
+msgstr "Medição"
+
+msgid "Merge cells: type #colspan# to merge into the cell on the left, #rowspan# to merge into the cell above. Formulas: =SUM(B2:B10), also AVG / MIN / MAX."
+msgstr "Mesclar células: digite #colspan# para mesclar com a célula à esquerda, #rowspan# para mesclar com a célula acima. Fórmulas: =SUM(B2:B10), também AVG / MIN / MAX."
+
+msgid "Microsoft has been switching this off for new tenants; if it refuses to authenticate, that is why, and another service is the quicker road."
+msgstr "A Microsoft tem desativado isso para novos locatários; se ele se recusar a autenticar, esse é o motivo, e outro serviço é o caminho mais rápido."
+
+msgid "Minimal"
+msgstr "Mínimo"
+
+msgid "Minimum number of questions"
+msgstr "Número mínimo de perguntas"
+
+msgid "Minute(s)"
+msgstr "Minuto(s)"
+
+msgid "Mode"
+msgstr "Modo"
+
+msgid "Move column left"
+msgstr "Mover coluna para a esquerda"
+
+msgid "Move column right"
+msgstr "Mover coluna para a direita"
+
+msgid "Move row down"
+msgstr "Mover linha para baixo"
+
+msgid "Move row up"
+msgstr "Mover linha para cima"
+
+msgid "NOT APPROVED: %s"
+msgstr "NÃO APROVADO: %s"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Native image lazy-load + async decode"
+msgstr "Carregamento preguiçoso nativo de imagens + decodificação assíncrona"
+
+msgid "New"
+msgstr "Novo"
+
+msgid "Next"
+msgstr "Próximo"
+
+msgid "Next beat due: %s"
+msgstr "Próximo batimento previsto: %s"
+
+msgid "Next one due %s."
+msgstr "O próximo vence %s."
+
+msgid "No FAQ section recognised in this post."
+msgstr "Nenhuma seção de FAQ reconhecida nesta publicação."
+
+msgid "No Google Analytics tag turned up, either in your settings or on the home page. If you have not installed one yet, Site Kit by Google (or any GA4 plugin) is the usual way. If you know you do have one — added through Tag Manager, a caching layer, or a consent tool that loads it later — this check simply could not see it: switch the setting on anyway. It looks for analytics at the moment of the click, not now, so it starts working the instant a tag is present."
+msgstr "Nenhuma tag do Google Analytics apareceu, nem nas suas configurações nem na página inicial. Se você ainda não instalou uma, o Site Kit do Google (ou qualquer plugin GA4) é o caminho habitual. Se você sabe que tem uma — adicionada via Tag Manager, uma camada de cache, ou uma ferramenta de consentimento que a carrega depois — esta verificação simplesmente pode não ter conseguido vê-la: ative a configuração mesmo assim. Ela procura pela analítica no momento do clique, não agora, então começa a funcionar assim que uma tag estiver presente."
+
+msgid "No Telegram bot token is set yet (WooCommerce module)."
+msgstr "Nenhum token de bot do Telegram foi definido ainda (módulo do WooCommerce)."
+
+msgid "No auto-refresh"
+msgstr "Sem atualização automática"
+
+msgid "No caption"
+msgstr "Sem legenda"
+
+msgid "No copy on disk yet — it is written the first time you confirm something"
+msgstr "Ainda não há cópia em disco — ela é escrita na primeira vez que você confirma algo"
+
+msgid "No downloadable secrets in the site folder"
+msgstr "Nenhum segredo disponível para download na pasta do site"
+
+msgid "No matching rows."
+msgstr "Nenhuma linha correspondente."
+
+msgid "No message containing %s yet. Send that exact code to the bot, then press this again."
+msgstr "Ainda nenhuma mensagem contendo %s. Envie esse código exato ao bot, depois pressione isto novamente."
+
+msgid "No post titles here on purpose — this list is long, and looking up a title for every row is what made this screen slow. Tick anything you want to take back and press the button; it moves up to “Waiting for you” with its posts listed."
+msgstr "Sem títulos de publicações aqui de propósito — esta lista é longa, e buscar um título para cada linha é o que deixava esta tela lenta. Marque o que você quer retomar e pressione o botão; isso sobe para “Esperando por você” com suas publicações listadas."
+
+msgid "No saved tables yet."
+msgstr "Ainda não há tabelas salvas."
+
+msgid "No scripts found."
+msgstr "Nenhum script encontrado."
+
+msgid "No snippet matches your search."
+msgstr "Nenhum snippet corresponde à sua busca."
+
+msgid "No snippets yet — create them on the Shortcode screen."
+msgstr "Ainda não há snippets — crie-os na tela de Shortcode."
+
+msgid "No table yet."
+msgstr "Ainda não há tabela."
+
+msgid "No tables yet. Click “Add new table” to create your first one."
+msgstr "Ainda não há tabelas. Clique em “Adicionar nova tabela” para criar a primeira."
+
+msgid "Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it."
+msgstr "Ninguém consegue clicar para acessar. Mais rigoroso, e mais propenso a atrapalhar — um domínio para o qual você pretendia ter link mas esqueceu de marcar deixa de ser um link até você marcá-lo."
+
+msgid "Nobody has ever checked that mail from this site arrives"
+msgstr "Ninguém nunca verificou se o correio deste site chega"
+
+msgid "None (instant)"
+msgstr "Nenhum (instantâneo)"
+
+msgid "Not allowed."
+msgstr "Não permitido."
+
+msgid "Not due yet."
+msgstr "Ainda não venceu."
+
+msgid "Not your normal password — Google requires an app password, and the page that makes them only appears once two-step verification is on."
+msgstr "Não é sua senha normal — o Google exige uma senha de aplicativo, e a página que as gera só aparece depois que a verificação em duas etapas está ativada."
+
+msgid "Nothing accepts mail for %s, so any address at your own domain cannot receive replies. If you have stopped paying for a mailbox provider, its records may still be pointing there."
+msgstr "Nada aceita correio para %s, então nenhum endereço do seu próprio domínio pode receber respostas. Se você parou de pagar por um provedor de caixa de correio, os registros dele podem ainda estar apontando para lá."
+
+msgid "Nothing in DNS can change this. Send through an email service instead — those use a different port, which is open."
+msgstr "Nada no DNS pode mudar isso. Envie por um serviço de e-mail em vez disso — eles usam uma porta diferente, que está aberta."
+
+msgid "Nothing matches that."
+msgstr "Nada corresponde a isso."
+
+msgid "Nothing running on this server can find out whether a message arrived. You can. Send one, look, and say what you found — the answer is kept with the date, so this screen can afterwards report something that was seen rather than something that was switched on."
+msgstr "Nada em execução neste servidor consegue descobrir se uma mensagem chegou. Você consegue. Envie uma, verifique, e diga o que você encontrou — a resposta é guardada com a data, para que esta tela possa depois informar algo que foi visto em vez de algo que foi apenas ativado."
+
+msgid "Nothing to preview yet."
+msgstr "Ainda não há nada para pré-visualizar."
+
+msgid "Nothing to send."
+msgstr "Nada para enviar."
+
+msgid "Nothing to set up"
+msgstr "Nada para configurar"
+
+msgid "Nothing was ticked, so nothing changed."
+msgstr "Nada foi marcado, então nada mudou."
+
+msgid "Nothing — just tell me"
+msgstr "Nada — apenas me avise"
+
+msgid "Nothing. Every domain your content points at is one you have agreed to."
+msgstr "Nada. Todo domínio para o qual seu conteúdo aponta é um que você já aceitou."
+
+msgid "Notification bar"
+msgstr "Barra de notificação"
+
+msgid "Nowhere — it never came"
+msgstr "Nenhum lugar — nunca chegou"
+
+msgid "On the code screen the user can have a one-time code emailed to their account address if they lose their phone."
+msgstr "Na tela do código, o usuário pode receber um código de uso único por e-mail no endereço da conta se perder o telefone."
+
+msgid "One click for the safe, high-impact speed features — including delaying third-party scripts and deferring JavaScript. It deliberately leaves out the advanced, riskier options (async CSS, the aggressive “delay all” mode), which you can still turn on yourself later. Gutenberg and Classic CSS are left alone, since removing those can change how a theme looks."
+msgstr "Um clique para os recursos de velocidade seguros e de alto impacto — incluindo atrasar scripts de terceiros e adiar o JavaScript. Deixa de fora deliberadamente as opções avançadas e mais arriscadas (CSS assíncrono, o modo agressivo “atrasar tudo”), que você ainda pode ativar por conta própria depois. Gutenberg e CSS clássico são deixados intocados, já que removê-los pode mudar a aparência de um tema."
+
+msgid "One half is in the database — still safe, but tidy it up"
+msgstr "Metade está no banco de dados — ainda segura, mas vale organizar"
+
+msgid "One of your buttons is set to Skype. Microsoft closed Skype on 5 May 2025 and moved everyone to Teams, so that button now opens nothing for visitors. Change it to another channel — it has been left in place rather than removed for you, so that nothing changes on your site without your say-so."
+msgstr "Um dos seus botões está configurado para o Skype. A Microsoft encerrou o Skype em 5 de maio de 2025 e migrou todo mundo para o Teams, então esse botão agora não abre nada para os visitantes. Mude-o para outro canal — ele foi deixado no lugar em vez de removido por você, para que nada mude no seu site sem o seu consentimento."
+
+msgid "One-click safe speed setup"
+msgstr "Configuração de velocidade segura em um clique"
+
+msgid "Only %1$d question found; at least %2$d are needed before schema is published."
+msgstr "Apenas %1$d pergunta encontrada; são necessárias pelo menos %2$d antes de o esquema ser publicado."
+
+msgid "Only a full administrator may use PHP snippets."
+msgstr "Somente um administrador completo pode usar snippets PHP."
+
+msgid "Only add hosts the page really uses. Preconnecting to a host you do not load from wastes a connection."
+msgstr "Adicione apenas os hosts que a página realmente usa. Pré-conectar a um host do qual você não carrega nada desperdiça uma conexão."
+
+msgid "Only affects enqueued stylesheets, and only for logged-out visitors. A fallback keeps every stylesheet working when JavaScript is turned off."
+msgstr "Afeta apenas folhas de estilo enfileiradas, e apenas para visitantes sem login. Um mecanismo alternativo mantém toda folha de estilo funcionando quando o JavaScript está desativado."
+
+msgid "Only for a custom icon: click the SVG box below, then"
+msgstr "Somente para um ícone personalizado: clique na caixa SVG abaixo, depois"
+
+msgid "Only in the post editor (autosave/locking)"
+msgstr "Somente no editor de publicações (autossalvamento/bloqueio)"
+
+msgid "Only in these category IDs"
+msgstr "Somente nestes IDs de categoria"
+
+msgid "Only the backup route worked — your main channel is down"
+msgstr "Somente a rota de backup funcionou — seu canal principal está fora do ar"
+
+msgid "Only the ticked ones on this page (%d)"
+msgstr "Somente os marcados nesta página (%d)"
+
+msgid "Only where I place its shortcode"
+msgstr "Somente onde eu colocar o shortcode dele"
+
+msgid "Open a couple and glance at them. “Still fine” only resets the clock; it does not change what is approved."
+msgstr "Abra alguns e dê uma olhada. “Ainda está tudo bem” só reinicia o cronômetro; não muda o que está aprovado."
+
+msgid "Open animation"
+msgstr "Animação de abertura"
+
+msgid "Optimisation"
+msgstr "Otimização"
+
+msgid "Optional: in Admin → Events, switch on \"Mark as key event\" for the channels that matter to you. They then appear in the acquisition reports, so you can see which traffic source produces contacts, and they can be imported into Google Ads as a conversion."
+msgstr "Opcional: em Admin → Eventos, ative “Marcar como evento-chave” para os canais que te interessam. Eles então aparecem nos relatórios de aquisição, para que você veja qual fonte de tráfego gera contatos, e podem ser importados para o Google Ads como conversão."
+
+msgid "Or enter this key manually:"
+msgstr "Ou digite esta chave manualmente:"
+
+msgid "Orange"
+msgstr "Laranja"
+
+msgid "Outbound links"
+msgstr "Links de saída"
+
+msgid "Outbound links are watched"
+msgstr "Os links de saída estão sendo monitorados"
+
+msgid "Outbound links screen — choose what should happen to them"
+msgstr "Tela de links de saída — escolha o que deve acontecer com eles"
+
+msgid "Overdue — nothing has been running the schedule"
+msgstr "Atrasado — nada está executando a agenda"
+
+msgid "PHP editing unlocked for %d minutes."
+msgstr "Edição de PHP desbloqueada por %d minutos."
+
+msgid "PHP errors: server paths, fragments of queries, sometimes the contents of a failed request."
+msgstr "Erros de PHP: caminhos do servidor, fragmentos de consultas, às vezes o conteúdo de uma requisição que falhou."
+
+msgid "PHP runs with full access to your site, so it stays locked. Enter a current code from your authenticator to unlock it for 15 minutes."
+msgstr "O PHP roda com acesso total ao seu site, por isso permanece bloqueado. Digite um código atual do seu autenticador para desbloqueá-lo por 15 minutos."
+
+msgid "PHP snippets are not available."
+msgstr "Snippets PHP não estão disponíveis."
+
+msgid "PHP snippets are switched off by HORSETOOLS_NO_PHP in wp-config.php."
+msgstr "Snippets PHP estão desativados por HORSETOOLS_NO_PHP no wp-config.php."
+
+msgid "PHP snippets are unavailable because this site sets DISALLOW_FILE_MODS — the platform does not allow code changes at all."
+msgstr "Snippets PHP estão indisponíveis porque este site define DISALLOW_FILE_MODS — a plataforma não permite nenhuma alteração de código."
+
+msgid "PHP syntax error — nothing was saved: %s"
+msgstr "Erro de sintaxe PHP — nada foi salvo: %s"
+
+msgid "Page %1$d of %2$d"
+msgstr "Página %1$d de %2$d"
+
+msgid "Pagination"
+msgstr "Paginação"
+
+msgid "Panel layout"
+msgstr "Layout do painel"
+
+msgid "Password or app password"
+msgstr "Senha ou senha de aplicativo"
+
+msgid "Paste a Google Sheets link (shared: anyone with the link)"
+msgstr "Cole um link do Google Sheets (compartilhado: qualquer pessoa com o link)"
+
+msgid "Paste all eight lines into wp-config.php, above the line that requires wp-settings.php. Replace any existing lines with the same names. Everyone signed in — including you — will be signed out afterwards, which is the point: it invalidates every cookie issued with the old keys."
+msgstr "Cole as oito linhas no wp-config.php, acima da linha que requer wp-settings.php. Substitua quaisquer linhas existentes com os mesmos nomes. Todos que estiverem logados — inclusive você — serão desconectados depois, e esse é o objetivo: isso invalida todo cookie emitido com as chaves antigas."
+
+msgid "Paste from Excel"
+msgstr "Colar do Excel"
+
+msgid "Paste the eight keys into wp-config.php — see the notice at the top of any Horse Tools screen"
+msgstr "Cole as oito chaves no wp-config.php — veja o aviso no topo de qualquer tela do Horse Tools"
+
+msgid "Permalinks, image alt text, external links and FAQ schema."
+msgstr "Links permanentes, texto alternativo de imagens, links externos e schema de FAQ."
+
+msgid "Phone number"
+msgstr "Número de telefone"
+
+msgid "Phone, SMS, Messenger, Telegram, Zalo, Whatsapp, Viber, Skype, Tiktok, Mail:"
+msgstr "Telefone, SMS, Messenger, Telegram, Zalo, Whatsapp, Viber, Skype, Tiktok, E-mail:"
+
+msgid "PhotoSwipe — best pinch-zoom / pan for photos"
+msgstr "PhotoSwipe — melhor zoom com pinça / navegação para fotos"
+
+msgid "Phrases that mark the FAQ section"
+msgstr "Frases que marcam a seção de FAQ"
+
+msgid "Pick a button skin"
+msgstr "Escolha um estilo de botão"
+
+msgid "Pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically — no icon needed."
+msgstr "Escolha um canal (Zalo, Messenger, Telefone…) e o logotipo dele é adicionado automaticamente — nenhum ícone é necessário."
+
+msgid "Pick a snippet to insert"
+msgstr "Escolha um snippet para inserir"
+
+msgid "Pink"
+msgstr "Rosa"
+
+msgid "Plugin settings"
+msgstr "Configurações do plugin"
+
+msgid "Policy link text (default: Policy)"
+msgstr "Texto do link da política (padrão: Política)"
+
+msgid "Pop"
+msgstr "Pop"
+
+msgid "Popup"
+msgstr "Popup"
+
+msgid "Post images, duplicating posts and the image lightbox."
+msgstr "Imagens de publicações, duplicação de publicações e o lightbox de imagens."
+
+msgid "Posts"
+msgstr "Publicações"
+
+msgid "Posts and pages"
+msgstr "Publicações e páginas"
+
+msgid "Posts only"
+msgstr "Somente publicações"
+
+msgid "Preconnect to third-party hosts"
+msgstr "Pré-conectar a hosts de terceiros"
+
+msgid "Preload critical assets"
+msgstr "Pré-carregar recursos críticos"
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Print"
+msgstr "Imprimir"
+
+msgid "Protection"
+msgstr "Proteção"
+
+msgid "Prove it"
+msgstr "Prove"
+
+msgid "Publish FAQ schema automatically from the FAQ section in a post"
+msgstr "Publicar schema de FAQ automaticamente a partir da seção de FAQ em uma publicação"
+
+msgid "Publishes the server configuration, paths and loaded modules."
+msgstr "Publica a configuração do servidor, caminhos e módulos carregados."
+
+msgid "Pull data"
+msgstr "Puxar dados"
+
+msgid "Question"
+msgstr "Pergunta"
+
+msgid "Quick guide — how the chat feature works"
+msgstr "Guia rápido — como funciona o recurso de chat"
+
+msgid "Read all my content again"
+msgstr "Ler todo o meu conteúdo novamente"
+
+msgid "Read the records again"
+msgstr "Ler os registros novamente"
+
+msgid "Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see."
+msgstr "Leia isto como intenção, não como resultado: um toque significa que alguém abriu o discador ou o aplicativo de chat, não que uma ligação se completou ou uma mensagem foi enviada. Bloqueadores de anúncios também impedem que alguns cliques cheguem ao Analytics, então o número real é um pouco maior do que o que você vê."
+
+msgid "Reading your content: %1$d of %2$d"
+msgstr "Lendo seu conteúdo: %1$d de %2$d"
+
+msgid "Reading your content…"
+msgstr "Lendo seu conteúdo…"
+
+msgid "Reading…"
+msgstr "Lendo…"
+
+msgid "Reads the “frequently asked questions” part your posts already have — a heading that names the section, then one heading per question with its answer below — and publishes the matching JSON-LD so Google can show them as FAQ rich results. Nothing in your posts is changed. If another SEO plugin already publishes FAQ schema for a post, Horse Tools stays out of the way."
+msgstr "Lê a parte de “perguntas frequentes” que suas publicações já têm — um título que nomeia a seção, depois um título por pergunta com a resposta abaixo — e publica o JSON-LD correspondente para que o Google possa exibi-las como resultados enriquecidos de FAQ. Nada nas suas publicações é alterado. Se outro plugin de SEO já publica schema de FAQ para uma publicação, o Horse Tools não interfere."
+
+msgid "Record contact button clicks"
+msgstr "Registrar cliques em botões de contato"
+
+msgid "Redirects (301)"
+msgstr "Redirecionamentos (301)"
+
+msgid "Redirects 301"
+msgstr "Redirecionamentos 301"
+
+msgid "Refresh daily"
+msgstr "Atualizar diariamente"
+
+msgid "Refresh hourly"
+msgstr "Atualizar a cada hora"
+
+msgid "Removed something from a post and it is still listed here? The lists only grow as your content is read, and a post that no longer contains something cannot say so. Read everything again and the lists will match what is actually there now."
+msgstr "Removeu algo de uma publicação e ainda aparece aqui? As listas só crescem conforme seu conteúdo é lido, e uma publicação que não contém mais algo não tem como avisar isso. Leia tudo novamente e as listas vão corresponder ao que realmente existe agora."
+
+msgid "Removes the admin icon font (Dashicons) on the front-end for logged-out visitors, who never see it. It is kept for logged-in users because the admin bar uses it."
+msgstr "Remove a fonte de ícones de administração (Dashicons) no front-end para visitantes deslogados, que nunca a veem. Ela é mantida para usuários logados porque a barra de administração a utiliza."
+
+msgid "Reset all login lockouts now"
+msgstr "Redefinir todos os bloqueios de login agora"
+
+msgid "Review the list"
+msgstr "Revisar a lista"
+
+msgid "Rich results"
+msgstr "Resultados enriquecidos"
+
+msgid "Right now these would go to: %s"
+msgstr "No momento, estes iriam para: %s"
+
+msgid "Roles, avatars, SMTP and signing in with Google."
+msgstr "Papéis, avatares, SMTP e login com o Google."
+
+msgid "Rotate in"
+msgstr "Girar para dentro"
+
+msgid "Row-number column"
+msgstr "Coluna de número de linha"
+
+msgid "Rows"
+msgstr "Linhas"
+
+msgid "Rows/page"
+msgstr "Linhas/página"
+
+msgid "Run this snippet as PHP"
+msgstr "Executar este snippet como PHP"
+
+msgid "SAVE FONT SETTINGS"
+msgstr "SALVAR CONFIGURAÇÕES DE FONTE"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "SMTP key"
+msgstr "Chave SMTP"
+
+msgid "SMTP password"
+msgstr "Senha SMTP"
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Save a table"
+msgstr "Salvar uma tabela"
+
+msgid "Save table"
+msgstr "Salvar tabela"
+
+msgid "Save these one-time backup codes somewhere safe — each works once if you lose your phone:"
+msgstr "Guarde estes códigos de backup de uso único em um lugar seguro — cada um funciona uma vez se você perder o telefone:"
+
+msgid "Save this choice"
+msgstr "Salvar esta escolha"
+
+msgid "Saved tables"
+msgstr "Tabelas salvas"
+
+msgid "Saved. Everything found so far is approved."
+msgstr "Salvo. Tudo o que foi encontrado até agora está aprovado."
+
+msgid "Scan failed."
+msgstr "A varredura falhou."
+
+msgid "Scan the scripts running on the home page"
+msgstr "Varrer os scripts em execução na página inicial"
+
+msgid "Scan the whole site"
+msgstr "Varrer o site inteiro"
+
+msgid "Scan this with Google Authenticator, Authy or a similar app, then enter the 6-digit code it shows to turn 2FA on."
+msgstr "Escaneie isto com o Google Authenticator, Authy ou um aplicativo similar, depois digite o código de 6 dígitos exibido para ativar a verificação em duas etapas."
+
+msgid "Scanning…"
+msgstr "Varrendo…"
+
+msgid "Scripts to exclude from defer (one per line — a script handle or part of its URL)"
+msgstr "Scripts a excluir do adiamento (um por linha — um identificador de script ou parte da URL dele)"
+
+msgid "Scripts, styles, lazy loading, image compression and WebP."
+msgstr "Scripts, estilos, carregamento preguiçoso, compressão de imagens e WebP."
+
+msgid "Search all plugin features…"
+msgstr "Buscar em todos os recursos do plugin…"
+
+msgid "Search box"
+msgstr "Caixa de busca"
+
+msgid "Search by name…"
+msgstr "Buscar por nome…"
+
+msgid "Search snippets by name, description or tag…"
+msgstr "Buscar snippets por nome, descrição ou tag…"
+
+msgid "Search the table…"
+msgstr "Buscar na tabela…"
+
+msgid "Search: cart, gift, phone… (English name, or Vietnamese for popular icons)"
+msgstr "Buscar: carrinho, presente, telefone… (nome em inglês, ou vietnamita para ícones populares)"
+
+msgid "Seconds to wait, or scroll percent (used by the two options above)"
+msgstr "Segundos a esperar, ou porcentagem de rolagem (usado pelas duas opções acima)"
+
+msgid "Security question on the login form"
+msgstr "Pergunta de segurança no formulário de login"
+
+msgid "Security tab → Check-in → turn on the regular message"
+msgstr "Aba Segurança → Check-in → ative a mensagem periódica"
+
+msgid "See the GitHub release page for details."
+msgstr "Veja a página de lançamentos do GitHub para detalhes."
+
+msgid "See the banner at the top of any Horse Tools screen"
+msgstr "Veja o banner no topo de qualquer tela do Horse Tools"
+
+msgid "Select a snippet"
+msgstr "Selecione um snippet"
+
+msgid "Send a Telegram code"
+msgstr "Enviar um código pelo Telegram"
+
+msgid "Send a test"
+msgstr "Enviar um teste"
+
+msgid "Send a test message"
+msgstr "Enviar uma mensagem de teste"
+
+msgid "Send a test message now"
+msgstr "Enviar uma mensagem de teste agora"
+
+msgid "Send as the same address you sign in with. This service refuses anything else."
+msgstr "Envie com o mesmo endereço que você usa para fazer login. Este serviço recusa qualquer outro."
+
+msgid "Send me a regular check-in message"
+msgstr "Envie-me uma mensagem de check-in periódica"
+
+msgid "Send through an email service instead — then the question does not arise."
+msgstr "Envie por um serviço de e-mail em vez disso — assim a questão nem surge."
+
+msgid "Send through an email service that is on the list, or add this server to it."
+msgstr "Envie por um serviço de e-mail que esteja na lista, ou adicione este servidor a ela."
+
+msgid "Send through an email service that is on the list."
+msgstr "Envie por um serviço de e-mail que esteja na lista."
+
+msgid "Sending…"
+msgstr "Enviando…"
+
+msgid "Sends one event to your analytics each time a visitor taps a contact link — phone, SMS, email, Zalo, Messenger, Telegram, WhatsApp, Viber, Line, WeChat, TikTok, Maps and the rest. Any other chat button is recorded under its own site name, so Instagram, Shopee, Signal and anything you add later are covered without waiting for an update. Phone, SMS, email and Viber links count anywhere on the site, including inside your posts; the others count inside the chat widgets, so an article full of outbound links does not flood the report. Nothing is stored on your site and no personal data is involved."
+msgstr "Envia um evento para sua analítica cada vez que um visitante toca em um link de contato — telefone, SMS, e-mail, Zalo, Messenger, Telegram, WhatsApp, Viber, Line, WeChat, TikTok, Maps e os demais. Qualquer outro botão de chat é registrado com o nome do próprio site, então Instagram, Shopee, Signal e qualquer coisa que você adicionar depois já estão cobertos, sem esperar por uma atualização. Links de telefone, SMS, e-mail e Viber contam em qualquer lugar do site, inclusive dentro das suas publicações; os demais contam dentro dos widgets de chat, então um artigo cheio de links de saída não inunda o relatório. Nada é armazenado no seu site e nenhum dado pessoal está envolvido."
+
+msgid "Sent to %s. Now go and look — and do not close this page, because the useful part is what you find."
+msgstr "Enviado para %s. Agora vá conferir — e não feche esta página, porque a parte útil é o que você encontrar."
+
+msgid "Sent. Check %s — if nothing arrives, the channel is not working even though the site thinks it is."
+msgstr "Enviado. Verifique %s — se nada chegar, o canal não está funcionando mesmo que o site pense que está."
+
+msgid "Sent: %s"
+msgstr "Enviado: %s"
+
+msgid "Server errors, including absolute paths."
+msgstr "Erros de servidor, incluindo caminhos absolutos."
+
+msgid "Service"
+msgstr "Serviço"
+
+msgid "Services panel (mobile)"
+msgstr "Painel de serviços (celular)"
+
+msgid "Settings are grouped by what they do. Pick a group below, or search for a setting by name in the panel on the right."
+msgstr "As configurações estão agrupadas pelo que fazem. Escolha um grupo abaixo, ou busque uma configuração pelo nome no painel à direita."
+
+msgid "Settings → WooCommerce → “Configure order notifications to be sent to Telegram”"
+msgstr "Configurações → WooCommerce → “Configurar notificações de pedidos para serem enviadas ao Telegram”"
+
+msgid "Sharpen (blur to clear)"
+msgstr "Nitidez (de desfocado a nítido)"
+
+msgid "Show a “Decline” button"
+msgstr "Mostrar um botão “Recusar”"
+
+msgid "Show columns"
+msgstr "Mostrar colunas"
+
+msgid "Show new keys to paste"
+msgstr "Mostrar novas chaves para colar"
+
+msgid "Showing the first %1$d of %2$d — keep typing to narrow it down."
+msgstr "Mostrando os primeiros %1$d de %2$d — continue digitando para refinar."
+
+msgid "Shows a small cookie notice in the corner so your site meets privacy rules. To use: turn on the switch, type the notice and your policy-page link, then choose which side it appears on."
+msgstr "Mostra um pequeno aviso de cookies no canto para que seu site cumpra as regras de privacidade. Para usar: ative a chave, digite o aviso e o link da sua página de política, depois escolha de que lado ele aparece."
+
+msgid "Shows a thin notice bar across the very top of every page — handy for a promotion, a hotline, or a delivery note. To use: turn on the switch, type your message, then choose the background colour."
+msgstr "Mostra uma barra de aviso fina bem no topo de cada página — útil para uma promoção, uma central de atendimento, ou um aviso de entrega. Para usar: ative a chave, digite sua mensagem, depois escolha a cor de fundo."
+
+msgid "Shows an eye-catching popup in the middle of the screen when someone opens your site — great for a sale, an announcement or a poster. To use: turn on the switch, pick a layout below, add an image / title / content, then set how many hours before it shows again."
+msgstr "Mostra um popup chamativo no meio da tela quando alguém abre seu site — ótimo para uma promoção, um anúncio ou um cartaz. Para usar: ative a chave, escolha um layout abaixo, adicione uma imagem / título / conteúdo, depois defina quantas horas até ele aparecer de novo."
+
+msgid "Side of the site"
+msgstr "Lado do site"
+
+msgid "Signature"
+msgstr "Assinatura"
+
+msgid "Signing keys are in wp-config.php, not the database"
+msgstr "As chaves de assinatura estão no wp-config.php, não no banco de dados"
+
+msgid "Site"
+msgstr "Site"
+
+msgid "Site is behind Cloudflare or a proxy (use the real visitor IP)"
+msgstr "O site está atrás do Cloudflare ou de um proxy (usar o IP real do visitante)"
+
+msgid "Site search"
+msgstr "Busca do site"
+
+msgid "Size"
+msgstr "Tamanho"
+
+msgid "Skype (service closed)"
+msgstr "Skype (serviço encerrado)"
+
+msgid "Slide"
+msgstr "Slide"
+
+msgid "Slide down"
+msgstr "Deslizar para baixo"
+
+msgid "Slide in from left"
+msgstr "Deslizar a partir da esquerda"
+
+msgid "Slide in from right"
+msgstr "Deslizar a partir da direita"
+
+msgid "Slide transition (GLightbox)"
+msgstr "Transição de slide (GLightbox)"
+
+msgid "Slide up"
+msgstr "Deslizar para cima"
+
+msgid "Slow down to 60 seconds (safe)"
+msgstr "Reduzir para 60 segundos (seguro)"
+
+msgid "Snippets"
+msgstr "Snippets"
+
+msgid "So this sends you a short message on a schedule, with a number on it, even when everything is fine. Numbers that skip mean messages were sent and never reached you. A message that arrives late means nothing was running the schedule. Nothing at all means something stopped it — and that is the one you can only notice from outside the site, which is why each message tells you when to expect the next."
+msgstr "Então isto envia a você uma mensagem curta em um horário programado, com um número nela, mesmo quando está tudo bem. Números que pulam significam que mensagens foram enviadas e nunca chegaram até você. Uma mensagem que chega atrasada significa que nada estava executando a agenda. Nenhuma mensagem significa que algo a interrompeu — e essa é a única que você só consegue perceber de fora do site, por isso cada mensagem diz quando esperar a próxima."
+
+msgid "Soft pastel"
+msgstr "Pastel suave"
+
+msgid "Somebody has asked for this path %d times."
+msgstr "Alguém pediu este caminho %d vezes."
+
+msgid "Something changed what you approved, without going through this screen."
+msgstr "Algo mudou o que você aprovou, sem passar por esta tela."
+
+msgid "Something changed — see the notice on any Horse Tools screen"
+msgstr "Algo mudou — veja o aviso em qualquer tela do Horse Tools"
+
+msgid "Something went wrong. Please try again."
+msgstr "Algo deu errado. Tente novamente."
+
+msgid "Sortable columns"
+msgstr "Colunas ordenáveis"
+
+msgid "Sorting, search and pagination appear on the published page."
+msgstr "Ordenação, busca e paginação aparecem na página publicada."
+
+msgid "Speed"
+msgstr "Velocidade"
+
+msgid "Spots visitors who have an ad-blocker turned on and shows them a message asking to switch it off. To use: turn on the switch, type a title and message, then pick the button colours below."
+msgstr "Detecta visitantes com um bloqueador de anúncios ativado e mostra a eles uma mensagem pedindo para desativá-lo. Para usar: ative a chave, digite um título e uma mensagem, depois escolha as cores do botão abaixo."
+
+msgid "Stack into cards on mobile"
+msgstr "Empilhar em cartões no celular"
+
+msgid "Start fetching a few important files immediately (the LCP image, a web font, the main CSS). The type is detected from the file extension. Do not preload many files — it competes with everything else for bandwidth."
+msgstr "Começa a buscar alguns arquivos importantes imediatamente (a imagem LCP, uma fonte web, o CSS principal). O tipo é detectado pela extensão do arquivo. Não pré-carregue muitos arquivos — isso disputa banda com tudo o mais."
+
+msgid "Starting…"
+msgstr "Iniciando…"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Step 1 —"
+msgstr "Etapa 1 —"
+
+msgid "Step 2 —"
+msgstr "Etapa 2 —"
+
+msgid "Step 3 —"
+msgstr "Etapa 3 —"
+
+msgid "Still reading your content"
+msgstr "Ainda lendo seu conteúdo"
+
+msgid "Still reading your content. Come back in a minute."
+msgstr "Ainda lendo seu conteúdo. Volte daqui a pouco."
+
+msgid "Still reading your content: %1$d of %2$d. Come back in a minute."
+msgstr "Ainda lendo seu conteúdo: %1$d de %2$d. Volte daqui a pouco."
+
+msgid "Striped rows"
+msgstr "Linhas listradas"
+
+msgid "Style"
+msgstr "Estilo"
+
+msgid "Stylesheets to keep render-blocking (one per line — a handle or part of the URL). Put your main theme CSS here if you don’t have critical CSS yet."
+msgstr "Folhas de estilo para manter bloqueando a renderização (uma por linha — um identificador ou parte da URL). Coloque o CSS principal do seu tema aqui se você ainda não tem CSS crítico."
+
+msgid "Swing"
+msgstr "Balanço"
+
+msgid "Switch on Horse Tools two-factor authentication (Security tab) before using PHP snippets."
+msgstr "Ative a verificação em duas etapas do Horse Tools (aba Segurança) antes de usar snippets PHP."
+
+msgid "Sync from Sheet"
+msgstr "Sincronizar da planilha"
+
+msgid "Synced"
+msgstr "Sincronizado"
+
+msgid "Syncing…"
+msgstr "Sincronizando…"
+
+msgid "THEY DO NOT — something changed them without going through the screens"
+msgstr "NÃO COINCIDEM — algo os alterou sem passar pelas telas"
+
+msgid "Table"
+msgstr "Tabela"
+
+msgid "Table %d"
+msgstr "Tabela %d"
+
+msgid "Table of contents"
+msgstr "Sumário"
+
+msgid "Table ready — click to edit."
+msgstr "Tabela pronta — clique para editar."
+
+msgid "Tables"
+msgstr "Tabelas"
+
+msgid "Tag Manager is installed on this site. If you already built click tags there — a trigger on tel: links, on zalo.me, on m.me — switching this on records the same click twice, once under your own event name and once as contact_phone. Open your container, check whether such tags exist, and pause either those or this setting. Keep whichever one also fires your Google Ads conversions; this setting does not."
+msgstr "O Tag Manager está instalado neste site. Se você já criou tags de clique lá — um gatilho em links tel:, em zalo.me, em m.me — ativar isto registra o mesmo clique duas vezes, uma sob o nome do seu próprio evento e outra como contact_phone. Abra seu contêiner, verifique se essas tags existem, e pause uma delas ou esta configuração. Mantenha a que também dispara suas conversões do Google Ads; esta configuração não dispara."
+
+msgid "Take back the ticked ones"
+msgstr "Retomar os marcados"
+
+msgid "Take the link away, keep the words"
+msgstr "Remover o link, manter as palavras"
+
+msgid "Teal"
+msgstr "Verde-azulado"
+
+msgid "Telegram (chat %s — the one paired for two-factor recovery)"
+msgstr "Telegram (chat %s — o pareado para recuperação por verificação em duas etapas)"
+
+msgid "Telegram (chat %s)"
+msgstr "Telegram (chat %s)"
+
+msgid "Telegram chat ID for security messages (optional)"
+msgstr "ID do chat do Telegram para mensagens de segurança (opcional)"
+
+msgid "Telegram recovery is ON but this site has no bot token yet, so no recovery code can be sent. Add a bot token in the %1$s module (the “Configure order notifications to be sent to Telegram” section) — it is easy to miss because it lives there, not here — then each user pastes their own chat ID on their profile."
+msgstr "A recuperação por Telegram está ATIVADA, mas este site ainda não tem um token de bot, então nenhum código de recuperação pode ser enviado. Adicione um token de bot no módulo %1$s (na seção “Configurar notificações de pedidos para serem enviadas ao Telegram”) — é fácil não perceber porque fica lá, não aqui — depois cada usuário cola o próprio ID de chat no perfil."
+
+msgid "Telegram recovery is turned on but this site has no bot token yet, so no code can be sent. Add a bot token under %s, then reload this page."
+msgstr "A recuperação por Telegram está ativada, mas este site ainda não tem um token de bot, então nenhum código pode ser enviado. Adicione um token de bot em %s, depois recarregue esta página."
+
+msgid "Telegram recovery isn’t fully set up on this site yet — ask the site admin, or just use email or a backup code instead."
+msgstr "A recuperação por Telegram ainda não está totalmente configurada neste site — peça ao administrador do site, ou simplesmente use e-mail ou um código de backup."
+
+msgid "Telegram returned no updates (the bot may use a webhook, or the token is wrong)."
+msgstr "O Telegram não retornou atualizações (o bot pode estar usando um webhook, ou o token está errado)."
+
+msgid "Tell me the site is still being watched"
+msgstr "Avise-me que o site ainda está sendo monitorado"
+
+msgid "Tell the browser to start the DNS + TCP + TLS handshake to external hosts early (fonts, CDN, analytics), so their files arrive sooner. Adds preconnect and dns-prefetch hints to the page head."
+msgstr "Diz ao navegador para iniciar cedo o handshake de DNS + TCP + TLS com hosts externos (fontes, CDN, analítica), para que os arquivos deles cheguem mais rápido. Adiciona dicas preconnect e dns-prefetch ao head da página."
+
+msgid "Temporarily close the site with a “under maintenance” notice while you make changes. You (and other logged-in admins) still see the site normally, so you can work in peace."
+msgstr "Feche o site temporariamente com um aviso de “em manutenção” enquanto você faz mudanças. Você (e outros administradores logados) ainda veem o site normalmente, para que possa trabalhar em paz."
+
+msgid "Test message from %s"
+msgstr "Mensagem de teste de %s"
+
+msgid "Test the site after turning this on. If something that must work before interaction breaks (a hero slider, a cookie bar), add its handle or file name to a list below. Do not use together with “Delay JS” in another optimiser."
+msgstr "Teste o site depois de ativar isso. Se algo que precisa funcionar antes da interação quebrar (um slider principal, uma barra de cookies), adicione o identificador ou nome do arquivo dele a uma lista abaixo. Não use junto com “Adiar JS” em outro otimizador."
+
+msgid "Test these keys against Google"
+msgstr "Testar estas chaves com o Google"
+
+msgid "That code is not right."
+msgstr "Esse código não está correto."
+
+msgid "That does not look like a Google Sheets link."
+msgstr "Isso não parece um link do Google Sheets."
+
+msgid "That is not an email address."
+msgstr "Isso não é um endereço de e-mail."
+
+msgid "That snippet no longer exists."
+msgstr "Esse snippet não existe mais."
+
+msgid "That was me — line them up again"
+msgstr "Fui eu — alinhe-os de novo"
+
+msgid "The PHP snippet \"%s\" stopped the page it ran on, so Horse Tools switched it off. Edit it and switch it back on when it is fixed."
+msgstr "O snippet PHP “%s” interrompeu a página em que rodava, então o Horse Tools o desativou. Edite-o e reative-o quando estiver corrigido."
+
+msgid "The Secret key box is empty, so the check is skipped entirely and reCAPTCHA is doing nothing at all."
+msgstr "A caixa da chave secreta está vazia, então a verificação é totalmente ignorada e o reCAPTCHA não está fazendo nada."
+
+msgid "The Site key box is empty."
+msgstr "A caixa da chave do site está vazia."
+
+msgid "The account name for this service is the literal word “%user%”. It is not your email address, and putting your address there is why it says the password is wrong."
+msgstr "O nome da conta para este serviço é literalmente a palavra “%user%”. Não é o seu endereço de e-mail, e colocar seu endereço ali é o motivo de ele dizer que a senha está errada."
+
+msgid "The answer is matched ignoring case and surrounding spaces. Remember it — if you ever forget it you can still get back in by renaming the plugin folder over FTP to switch the plugin off."
+msgstr "A resposta é comparada ignorando maiúsculas/minúsculas e espaços ao redor. Lembre-se dela — se você algum dia esquecê-la, ainda pode voltar a entrar renomeando a pasta do plugin via FTP para desativá-lo."
+
+msgid "The check-in message is on but has never been sent. Until one arrives you do not know the channel works."
+msgstr "A mensagem de check-in está ativada, mas nunca foi enviada. Até que uma chegue, você não sabe se o canal funciona."
+
+msgid "The code is how the site tells your chat apart from everyone else’s — it finds only the chat that sent it. Recovery codes then reach your own Telegram, not the admin. (You can also type the chat ID number in manually.)"
+msgstr "O código é como o site distingue seu chat dos demais — ele encontra somente o chat que o enviou. Os códigos de recuperação chegam então ao seu próprio Telegram, não ao administrador. (Você também pode digitar o número do ID do chat manualmente.)"
+
+msgid "The first one goes out as soon as you save, so you find out straight away whether the channel works."
+msgstr "A primeira sai assim que você salva, para que você descubra na hora se o canal funciona."
+
+msgid "The form below asks eight questions. Seven of them have exactly one right answer once you know which service you are using, and the eighth is a password. Choose here and the seven fill themselves in — you are left with the one thing nothing can guess."
+msgstr "O formulário abaixo faz oito perguntas. Sete delas têm exatamente uma resposta certa assim que você sabe qual serviço está usando, e a oitava é uma senha. Escolha aqui e as sete se preenchem sozinhas — resta apenas a única coisa que nada consegue adivinhar."
+
+msgid "The last check-in message could not be sent: %s"
+msgstr "A última mensagem de check-in não pôde ser enviada: %s"
+
+msgid "The last check-in message went out %s ago, which is later than it should be. Nothing has been running the schedule."
+msgstr "A última mensagem de check-in saiu há %s, o que é mais tarde do que deveria. Nada estava executando a agenda."
+
+msgid "The last one could not be sent — Security tab → Check-in"
+msgstr "A última não pôde ser enviada — aba Segurança → Check-in"
+
+msgid "The link still works for a reader and stops passing any SEO value — which is the whole reason a link like that is worth paying for. Nothing in your posts is changed; only what gets printed."
+msgstr "O link continua funcionando para um leitor e deixa de transmitir qualquer valor de SEO — que é todo o motivo pelo qual um link desses vale a pena pagar. Nada nas suas publicações é alterado; apenas o que é impresso."
+
+msgid "The most powerful but riskiest speed option. Without the Critical CSS below, the page can flash unstyled for a moment (FOUC). Paste your above-the-fold CSS, or keep the main theme stylesheet in the exclusion list. Test the front end carefully, and don’t combine it with another plugin that also optimises CSS delivery."
+msgstr "A opção de velocidade mais poderosa, mas também a mais arriscada. Sem o CSS crítico abaixo, a página pode piscar sem estilo por um instante (FOUC). Cole o CSS da parte visível sem rolagem, ou mantenha a folha de estilo principal do tema na lista de exclusão. Teste o front-end com cuidado, e não combine isto com outro plugin que também otimize a entrega de CSS."
+
+msgid "The page carries no analytics at all yet, so there is nowhere for a click to be recorded. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own with nothing further to configure."
+msgstr "A página ainda não carrega nenhuma analítica, então não há onde um clique ser registrado. Instale o Site Kit do Google, ou qualquer plugin GA4, e esta configuração começa a funcionar sozinha, sem mais nada a configurar."
+
+msgid "The request itself failed."
+msgstr "A própria requisição falhou."
+
+msgid "The security question below the password was left empty."
+msgstr "A pergunta de segurança abaixo da senha foi deixada vazia."
+
+msgid "The sheet appears to be empty."
+msgstr "A planilha parece estar vazia."
+
+msgid "The sheet is too large (over 1 MB of CSV)."
+msgstr "A planilha é grande demais (mais de 1 MB de CSV)."
+
+msgid "The sheet must be shared as “Anyone with the link can view”. With auto-refresh on, the table updates itself from the sheet."
+msgstr "A planilha precisa ser compartilhada como “Qualquer pessoa com o link pode ver”. Com a atualização automática ativada, a tabela se atualiza sozinha a partir da planilha."
+
+msgid "The site handed it over successfully. That is not the same as it arriving — if the numbers you receive skip, the channel is dropping them."
+msgstr "O site o entregou com sucesso. Isso não é o mesmo que ele chegar — se os números que você recebe pulam, o canal está descartando alguns."
+
+msgid "The username is the literal word “apikey”, not your address."
+msgstr "O nome de usuário é literalmente a palavra “apikey”, não o seu endereço."
+
+msgid "The username is the literal word “resend”, not your address. You must add and verify your domain before it will send as you."
+msgstr "O nome de usuário é literalmente a palavra “resend”, não o seu endereço. Você precisa adicionar e verificar seu domínio antes que ele envie em seu nome."
+
+msgid "The username is the postmaster address Mailgun shows on your sending domain, not your login."
+msgstr "O nome de usuário é o endereço postmaster que o Mailgun mostra no seu domínio de envio, não o seu login."
+
+msgid "Theme colour"
+msgstr "Cor do tema"
+
+msgid "There are files in your site’s folder that anyone can download."
+msgstr "Há arquivos na pasta do seu site que qualquer pessoa pode baixar."
+
+msgid "These are correct — remember them"
+msgstr "Estão corretos — memorize-os"
+
+msgid "These are the phone numbers, Zalo, Messenger links and email addresses currently in your settings. Check them, then confirm — after that you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest."
+msgstr "Estes são os números de telefone, links do Zalo, do Messenger e endereços de e-mail atualmente nas suas configurações. Confira-os, depois confirme — depois disso você será avisado se algum deles mudar. Mudar o número de contato de uma loja é o ataque mais direto que existe, e o mais silencioso."
+
+msgid "These contact details appear in your content. Confirm them and you will be told if a new one ever turns up in a post — which is what happens when somebody edits an old article to put their own number in it."
+msgstr "Estes dados de contato aparecem no seu conteúdo. Confirme-os e você será avisado se algum novo aparecer em uma publicação — o que acontece quando alguém edita um artigo antigo para colocar o próprio número nele."
+
+msgid "These two addresses do not match, and that is enough to stop your mail."
+msgstr "Estes dois endereços não coincidem, e isso já é o suficiente para bloquear seu correio."
+
+msgid "They no longer match — see the banner at the top of any Horse Tools screen"
+msgstr "Eles não coincidem mais — veja o banner no topo de qualquer tela do Horse Tools"
+
+msgid "This account uses two-factor authentication; XML-RPC password login is disabled."
+msgstr "Esta conta usa verificação em duas etapas; o login por senha via XML-RPC está desativado."
+
+msgid "This could not be checked from here, so the instructions are shown just in case. To find out whether they apply to you: open your site, press F12, and type gtag in the console. An answer of \"function\" means you have nothing to do; \"undefined\" means follow the steps below."
+msgstr "Isto não pôde ser verificado daqui, então as instruções são mostradas por precaução. Para descobrir se elas se aplicam a você: abra seu site, pressione F12 e digite gtag no console. Uma resposta “function” significa que você não precisa fazer nada; “undefined” significa que deve seguir os passos abaixo."
+
+msgid "This host does not let the plugin read DNS, so none of the checks below can be made. That is not the same as everything being in order."
+msgstr "Este host não permite que o plugin leia o DNS, então nenhuma das verificações abaixo pode ser feita. Isso não é o mesmo que estar tudo em ordem."
+
+msgid "This is a test message from %s."
+msgstr "Esta é uma mensagem de teste de %s."
+
+msgid "This list is incomplete."
+msgstr "Esta lista está incompleta."
+
+msgid "This never touches what is stored. Switch it off and every link is back as it was on the next page load."
+msgstr "Isto nunca toca no que está armazenado. Desative e todo link volta a ser como era no próximo carregamento da página."
+
+msgid "This section could not be displayed. The rest of the screen still works."
+msgstr "Esta seção não pôde ser exibida. O restante da tela continua funcionando."
+
+msgid "This server cannot reach any other mail server, so nothing it sends can ever be delivered. WordPress hands each message to a local mail program, that program accepts it — which is why every screen says “sent” — and then finds the way out closed. The message waits in a queue nobody reads, and there is no bounce, because a bounce would have to leave by the same door."
+msgstr "Este servidor não consegue alcançar nenhum outro servidor de e-mail, então nada do que ele envia pode ser entregue. O WordPress entrega cada mensagem a um programa de e-mail local, esse programa a aceita — por isso toda tela diz “enviado” — e então encontra a saída fechada. A mensagem espera em uma fila que ninguém lê, e não há retorno de erro, porque um retorno teria que sair pela mesma porta."
+
+msgid "This server does not read .htaccess files, so nothing is hiding this one but its name. Horse Tools now stores these as .php files that stop on their first line, which works on every server."
+msgstr "Este servidor não lê arquivos .htaccess, então nada esconde este a não ser o nome dele. O Horse Tools agora armazena esses arquivos como .php que param na primeira linha, o que funciona em qualquer servidor."
+
+msgid "This server sends mail from an address with no name attached to it (%s). Gmail and Yahoo both take that as the mark of a machine nobody set up to send mail, and Yahoo refuses it outright — which looks from here exactly like the message vanishing, because the refusal happens at the far end and the bounce goes somewhere you never read."
+msgstr "Este servidor envia correio de um endereço sem nenhum nome associado (%s). Tanto o Gmail quanto o Yahoo interpretam isso como a marca de uma máquina que ninguém configurou para enviar correio, e o Yahoo simplesmente recusa — o que daqui parece exatamente com a mensagem desaparecendo, porque a recusa acontece do outro lado e o retorno vai para um lugar que você nunca lê."
+
+msgid "This site cannot see its own public address — it sits behind a proxy or a load balancer — so the checks above that depend on knowing it were skipped rather than guessed at."
+msgstr "Este site não consegue ver o próprio endereço público — ele está atrás de um proxy ou de um balanceador de carga — então as verificações acima que dependem de conhecê-lo foram ignoradas em vez de arriscar um palpite."
+
+msgid "This site has WordPress's built-in file editor switched off (DISALLOW_FILE_EDIT) — good. PHP snippets still work, because they carry their own protections: two-factor unlock, a syntax check before saving, auto-disable on a crash, and code signing. To switch them off as well, add HORSETOOLS_NO_PHP to wp-config.php."
+msgstr "Este site tem o editor de arquivos embutido do WordPress desativado (DISALLOW_FILE_EDIT) — ótimo. Os snippets PHP continuam funcionando, porque carregam suas próprias proteções: desbloqueio por verificação em duas etapas, verificação de sintaxe antes de salvar, desativação automática em caso de falha, e assinatura de código. Para desativá-los também, adicione HORSETOOLS_NO_PHP ao wp-config.php."
+
+msgid "This site has no valid admin email address."
+msgstr "Este site não tem um endereço de e-mail de administrador válido."
+
+msgid "This site has no way to reach you: no Telegram bot, and no valid admin email address."
+msgstr "Este site não tem como te alcançar: nenhum bot do Telegram, e nenhum endereço de e-mail de administrador válido."
+
+msgid "This site sets DISALLOW_FILE_MODS, so running PHP from the database is not allowed."
+msgstr "Este site define DISALLOW_FILE_MODS, então executar PHP a partir do banco de dados não é permitido."
+
+msgid "This site’s signing keys are stored in the database, not in wp-config.php."
+msgstr "As chaves de assinatura deste site estão armazenadas no banco de dados, não no wp-config.php."
+
+msgid "This snippet’s code no longer matches its signature — it was changed outside this screen and will not run. Review it and save again to re-sign it."
+msgstr "O código deste snippet não coincide mais com sua assinatura — ele foi alterado fora desta tela e não vai rodar. Revise-o e salve novamente para reassiná-lo."
+
+msgid "This user has two-factor authentication ON."
+msgstr "Este usuário está com a verificação em duas etapas ATIVADA."
+
+msgid "This web server is not on your domain’s list of allowed senders. The list says “treat anything else as suspicious” rather than “reject it”, so mail as %s will usually arrive in the spam folder."
+msgstr "Este servidor web não está na lista de remetentes autorizados do seu domínio. A lista diz “trate qualquer outro como suspeito” em vez de “rejeite”, então o correio enviado como %s geralmente chega na pasta de spam."
+
+msgid "This web server is on your domain’s list of allowed senders."
+msgstr "Este servidor web está na lista de remetentes autorizados do seu domínio."
+
+msgid "Tick all on this page"
+msgstr "Marcar todos nesta página"
+
+msgid "Tip: to stop one specific script from ever being delayed, add the attribute data-ht-no-delay to its tag. Logged-in users are never affected."
+msgstr "Dica: para impedir que um script específico seja adiado, adicione o atributo data-ht-no-delay à sua tag. Usuários logados nunca são afetados."
+
+msgid "To check it works right now rather than waiting: open your site with %s on the end of the address, tap a contact button, and watch GA4 → Admin → DebugView. Without that flag DebugView stays empty however many times you tap, because it only lists devices that identify themselves as debug devices — which is not a fault in the buttons."
+msgstr "Para verificar se funciona agora em vez de esperar: abra seu site com %s no final do endereço, toque em um botão de contato, e observe GA4 → Admin → DebugView. Sem essa marcação, o DebugView fica vazio não importa quantas vezes você toque, porque ele só lista dispositivos que se identificam como dispositivos de depuração — o que não é uma falha nos botões."
+
+msgid "To use PHP snippets, switch on two-factor authentication first (Horse Tools → Overview → Security)."
+msgstr "Para usar snippets PHP, ative primeiro a verificação em duas etapas (Horse Tools → Visão geral → Segurança)."
+
+msgid "To use PHP snippets, switch on two-factor authentication for your own account first (Users → Profile)."
+msgstr "Para usar snippets PHP, ative primeiro a verificação em duas etapas para a sua própria conta (Usuários → Perfil)."
+
+msgid "Too many failed attempts. Try again in about %s."
+msgstr "Muitas tentativas malsucedidas. Tente novamente em cerca de %s."
+
+msgid "Tools"
+msgstr "Ferramentas"
+
+msgid "Trust this device for 30 days"
+msgstr "Confiar neste dispositivo por 30 dias"
+
+msgid "Turn it off (uncheck stays on)"
+msgstr "Desativar (desmarcar permanece ativo)"
+
+msgid "Turn it off for this user (e.g. they lost their device)"
+msgstr "Desativar para este usuário (por exemplo, perdeu o dispositivo)"
+
+msgid "Turn on the regular check-in message"
+msgstr "Ativar a mensagem de check-in periódica"
+
+msgid "Turned on but never sent — send a test message"
+msgstr "Ativado, mas nunca enviado — envie uma mensagem de teste"
+
+msgid "Two Horse Tools protections are signed with those keys: the PHP snippet signature, which is meant to refuse code written straight into the database, and the “trusted device” cookie that skips two-factor authentication. Anyone who can read your database can read the keys, so both can be forged. Moving the keys into wp-config.php — a file — restores them."
+msgstr "Duas proteções do Horse Tools são assinadas com essas chaves: a assinatura do snippet PHP, que serve para recusar código escrito diretamente no banco de dados, e o cookie de “dispositivo confiável” que pula a verificação em duas etapas. Qualquer um que consiga ler seu banco de dados consegue ler as chaves, então ambas podem ser forjadas. Mover as chaves para o wp-config.php — um arquivo — restaura essa proteção."
+
+msgid "Two-factor authentication"
+msgstr "Verificação em duas etapas"
+
+msgid "Two-factor authentication (2FA)"
+msgstr "Verificação em duas etapas (2FA)"
+
+msgid "Two-factor authentication is ON for your account."
+msgstr "A verificação em duas etapas está ATIVADA para sua conta."
+
+msgid "Type it in"
+msgstr "Digite"
+
+msgid "Unlock"
+msgstr "Desbloquear"
+
+msgid "Untick all"
+msgstr "Desmarcar todos"
+
+msgid "Upload a file"
+msgstr "Enviar um arquivo"
+
+msgid "Upload a font on the Fonts tab first, then choose where to use it here."
+msgstr "Envie uma fonte na aba Fontes primeiro, depois escolha onde usá-la aqui."
+
+msgid "Users"
+msgstr "Usuários"
+
+msgid "Uses the site’s Telegram bot (configured in the WooCommerce module), but each user pastes their OWN chat ID on their profile — so a recovery code always reaches that user’s Telegram, never pooled to the admin. Users without a chat ID simply don’t see the Telegram option."
+msgstr "Usa o bot do Telegram do site (configurado no módulo do WooCommerce), mas cada usuário cola o PRÓPRIO ID de chat no perfil — assim, um código de recuperação sempre chega ao Telegram daquele usuário, nunca é reunido no do administrador. Usuários sem um ID de chat simplesmente não veem a opção do Telegram."
+
+msgid "Usually a phpinfo page."
+msgstr "Geralmente uma página phpinfo."
+
+msgid "Verify"
+msgstr "Verificar"
+
+msgid "Version-control metadata exposes the source."
+msgstr "Metadados de controle de versão expõem o código-fonte."
+
+msgid "Waiting for you"
+msgstr "Esperando por você"
+
+msgid "Weekly is the useful setting. Daily turns the one message that is supposed to mean something into noise within a fortnight, and once it is noise a gap in the numbering is not noticed either."
+msgstr "Semanal é a configuração útil. Diária transforma a única mensagem que deveria significar algo em ruído em duas semanas, e uma vez que vira ruído, uma lacuna na numeração também passa despercebida."
+
+msgid "What you approved is also kept outside the database"
+msgstr "O que você aprovou também é mantido fora do banco de dados"
+
+msgid "What you still have to paste: %secret%."
+msgstr "O que você ainda precisa colar: %secret%."
+
+msgid "When a URL changes or an old link should point somewhere new, this sends visitors (and Google) straight to the right page instead of a “not found” error — so you don’t lose traffic."
+msgstr "Quando uma URL muda ou um link antigo deveria apontar para outro lugar, isto envia os visitantes (e o Google) diretamente para a página certa em vez de um erro “não encontrado” — assim você não perde tráfego."
+
+msgid "When about to leave the page"
+msgstr "Ao estar prestes a sair da página"
+
+msgid "When it appears"
+msgstr "Quando aparece"
+
+msgid "Where did it turn up?"
+msgstr "Onde ele apareceu?"
+
+msgid "Where it appears"
+msgstr "Onde aparece"
+
+msgid "Where it runs"
+msgstr "Onde roda"
+
+msgid "Where this stands:"
+msgstr "Como está a situação:"
+
+msgid "Where to get it"
+msgstr "Onde obtê-lo"
+
+msgid "Where to read the numbers"
+msgstr "Onde ler os números"
+
+msgid "Where to run it"
+msgstr "Onde executá-lo"
+
+msgid "Where your content links to"
+msgstr "Para onde seu conteúdo tem links"
+
+msgid "Which service should send your email?"
+msgstr "Qual serviço deve enviar seu e-mail?"
+
+msgid "Wiggle now and then to catch the eye"
+msgstr "Balançar de vez em quando para chamar atenção"
+
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+msgid "WordPress could not hand the message to the mail server at all, so it never left the site."
+msgstr "O WordPress não conseguiu nem entregar a mensagem ao servidor de e-mail, então ela nunca saiu do site."
+
+msgid "WordPress could not hand the message to the mail server."
+msgstr "O WordPress não conseguiu entregar a mensagem ao servidor de e-mail."
+
+msgid "WordPress reports a message as sent once it has handed it over. That says nothing about whether it arrived, and on a great many sites it does not — the domain names which servers may send for it, the web server is not one of them, and every notification the site sends is treated as forged. Nothing in WordPress mentions this. Below is what your domain’s own records say, read live."
+msgstr "O WordPress relata uma mensagem como enviada assim que a entrega. Isso não diz nada sobre se ela chegou, e em muitos sites não chega — o domínio nomeia quais servidores podem enviar por ele, o servidor web não é um deles, e toda notificação que o site envia é tratada como falsificada. Nada no WordPress menciona isso. Abaixo está o que os próprios registros do seu domínio dizem, lidos ao vivo."
+
+msgid "WordPress “Heartbeat” pings the server every 15–60 seconds (autosave, post-lock, dashboard). Slowing or limiting it cuts admin-ajax.php load, especially with several admin tabs open."
+msgstr "O “Heartbeat” do WordPress faz ping no servidor a cada 15–60 segundos (autossalvamento, bloqueio de publicação, painel). Reduzir ou limitar isso diminui a carga do admin-ajax.php, especialmente com várias abas de administração abertas."
+
+msgid "Worth a second look"
+msgstr "Vale uma segunda olhada"
+
+msgid "Write plain PHP — no opening tag needed. The code is checked for syntax errors before it is saved, and if it ever crashes a page Horse Tools switches it off automatically."
+msgstr "Escreva PHP puro — nenhuma tag de abertura é necessária. O código é verificado quanto a erros de sintaxe antes de ser salvo, e se algum dia derrubar uma página, o Horse Tools o desativa automaticamente."
+
+msgid "Write your block just like a post: type text and use the toolbar to insert links, images and formatting. Need raw HTML/CSS/JS? Switch to the “Text” tab. Placeholders like {{url}} still work in both."
+msgstr "Escreva seu bloco como se fosse uma publicação: digite o texto e use a barra de ferramentas para inserir links, imagens e formatação. Precisa de HTML/CSS/JS puro? Mude para a aba “Texto”. Placeholders como {{url}} continuam funcionando nas duas."
+
+msgid "Wrong answer to the security question."
+msgstr "Resposta errada para a pergunta de segurança."
+
+msgid "You are not allowed to change these settings."
+msgstr "Você não tem permissão para alterar estas configurações."
+
+msgid "You are not allowed to use PHP snippets."
+msgstr "Você não tem permissão para usar snippets PHP."
+
+msgid "You may send as any address on a domain you have verified with this service. An unverified one will be refused."
+msgstr "Você pode enviar como qualquer endereço em um domínio que verificou com este serviço. Um não verificado será recusado."
+
+msgid "You would be told if this site went quiet"
+msgstr "Você seria avisado se este site ficasse em silêncio"
+
+msgid "Your Telegram chat ID (for recovery codes)"
+msgstr "Seu ID de chat do Telegram (para códigos de recuperação)"
+
+msgid "Your approvals match their copy on disk"
+msgstr "Suas aprovações coincidem com a cópia em disco"
+
+msgid "Your check-in message only got through on the backup route (%s). Your main channel is not working, and you have one left instead of two."
+msgstr "Sua mensagem de check-in só passou pela rota de backup (%s). Seu canal principal não está funcionando, e você tem um restando em vez de dois."
+
+msgid "Your contact details have changed."
+msgstr "Seus dados de contato mudaram."
+
+msgid "Your container has no GA4 tag in it, so Tag Manager has nothing to pass the click on to. It is placed in the dataLayer and stops there until you build the tag below — until then nothing reaches Analytics."
+msgstr "Seu contêiner não tem uma tag GA4, então o Tag Manager não tem para onde passar o clique. Ele é colocado no dataLayer e para ali até você criar a tag abaixo — até lá, nada chega ao Analytics."
+
+msgid "Your content has not been read all the way through yet (%1$d of %2$d), so nothing found in it can be trusted as complete."
+msgstr "Seu conteúdo ainda não foi lido por completo (%1$d de %2$d), então nada encontrado nele pode ser considerado completo."
+
+msgid "Your content has not been read all the way through yet."
+msgstr "Seu conteúdo ainda não foi lido por completo."
+
+msgid "Your content links to %1$s domains you have not agreed to, and %2$s you have. You will be told the moment one arrives that is on neither list."
+msgstr "Seu conteúdo tem links para %1$s domínios que você não aprovou, e %2$s que aprovou. Você será avisado no momento em que um chegar que não está em nenhuma das listas."
+
+msgid "Your content links to %d domain you have not approved."
+msgstr "Seu conteúdo tem links para %d domínio que você não aprovou."
+
+msgid "Your content links to more domains than the list can hold, so it is incomplete"
+msgstr "Seu conteúdo tem links para mais domínios do que a lista comporta, então ela está incompleta"
+
+msgid "Your content links to more than %d domains, which is as many as can be held. Domains beyond that were not recorded, so this cannot tell you when one of them is new — it would say it was already there."
+msgstr "Seu conteúdo tem links para mais de %d domínios, que é o máximo que pode ser armazenado. Domínios além disso não foram registrados, então isto não consegue dizer quando um deles é novo — diria que já estava lá."
+
+msgid "Your domain already receives mail through %1$s, so choose %2$s below. Sending through the service that already handles your mail is the one most likely to work first time."
+msgstr "Seu domínio já recebe correio por %1$s, então escolha %2$s abaixo. Enviar pelo serviço que já cuida do seu correio é o mais provável de funcionar de primeira."
+
+msgid "Your domain does not say which servers are allowed to send mail for it. Anyone can send mail claiming to be you, and mail you really did send has nothing to vouch for it — Gmail and Yahoo both treat that as a reason for suspicion."
+msgstr "Seu domínio não diz quais servidores têm permissão para enviar correio por ele. Qualquer um pode enviar correio se passando por você, e o correio que você realmente enviou não tem nada que o garanta — tanto o Gmail quanto o Yahoo tratam isso como motivo de suspeita."
+
+msgid "Your domain has a list of allowed senders, but it could not be worked out from here whether this server is on it."
+msgstr "Seu domínio tem uma lista de remetentes autorizados, mas não foi possível determinar daqui se este servidor está nela."
+
+msgid "Your domain has no DMARC record, so you are never told when somebody sends mail pretending to be you, and receivers have no instruction about what to do with it."
+msgstr "Seu domínio não tem um registro DMARC, então você nunca é avisado quando alguém envia correio se passando por você, e os destinatários não têm instrução sobre o que fazer com ele."
+
+msgid "Your domain receives mail through %s. Sending through the same service is the setting most likely to work, because it is already on your domain’s list of allowed senders."
+msgstr "Seu domínio recebe correio por %s. Enviar pelo mesmo serviço é a configuração mais provável de funcionar, porque já está na lista de remetentes autorizados do seu domínio."
+
+msgid "Your domain says which servers may send mail for it, and this site is sending straight from the web server. Whether that server is on the list could not be determined here."
+msgstr "Seu domínio diz quais servidores podem enviar correio por ele, e este site está enviando diretamente pelo servidor web. Não foi possível determinar daqui se esse servidor está na lista."
+
+msgid "Your email settings changed after the last test, so what is running now has not been tried"
+msgstr "Suas configurações de e-mail mudaram depois do último teste, então o que está rodando agora ainda não foi testado"
+
+msgid "Your host can attach a name to the address — ask them for “reverse DNS” or a “PTR record”. Or sidestep it entirely by sending through an email service, whose own servers already have one."
+msgstr "Seu host pode associar um nome ao endereço — peça a eles “DNS reverso” ou um “registro PTR”. Ou contorne isso por completo enviando por um serviço de e-mail, cujos próprios servidores já têm um."
+
+msgid "Your last test landed in the spam folder"
+msgstr "Seu último teste caiu na pasta de spam"
+
+msgid "Your last test never arrived"
+msgstr "Seu último teste nunca chegou"
+
+msgid "Your login recovery code"
+msgstr "Seu código de recuperação de login"
+
+msgid "Your one-time login code for %1$s is: %2$s (valid 10 minutes)."
+msgstr "Seu código de login de uso único para %1$s é: %2$s (válido por 10 minutos)."
+
+msgid "Your own account must have two-factor authentication switched on before you can use PHP snippets."
+msgstr "Sua própria conta precisa ter a verificação em duas etapas ativada antes que você possa usar snippets PHP."
+
+msgid "Your own icon (paste an SVG)"
+msgstr "Seu próprio ícone (cole um SVG)"
+
+msgid "Your pages go out exactly as written."
+msgstr "Suas páginas saem exatamente como foram escritas."
+
+msgid "Your pairing code has expired. Reload this page to get a new one."
+msgstr "Seu código de pareamento expirou. Recarregue esta página para obter um novo."
+
+msgid "Your posts and pages do not link anywhere outside this site."
+msgstr "Suas publicações e páginas não têm links para fora deste site."
+
+msgid "Your posts and pages link to %d other domain. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
+msgstr "Suas publicações e páginas têm links para %d outro domínio. Percorra-o uma vez e confirme quais pertencem ali; depois disso, um domínio que não estava na lista vale uma frase na sua tela em vez de dois anos sem ninguém perceber."
+
+msgid "Your settings already look like %s, so its notes apply to you even though nothing is selected above."
+msgstr "Suas configurações já se parecem com %s, então as observações dele se aplicam a você mesmo que nada esteja selecionado acima."
+
+msgid "Your site has Tag Manager but no Google tag — one setup step is required"
+msgstr "Seu site tem Tag Manager mas não tem a tag do Google — uma etapa de configuração é necessária"
+
+msgid "Your site loads the Google tag, so a click goes straight to Analytics. This is the usual case, and it includes sites where Analytics was installed through Tag Manager — a GA4 tag inside a container loads the Google tag itself."
+msgstr "Seu site carrega a tag do Google, então um clique vai direto para o Analytics. Este é o caso mais comum, e inclui sites onde o Analytics foi instalado pelo Tag Manager — uma tag GA4 dentro de um contêiner carrega a própria tag do Google."
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Zoom in"
+msgstr "Aumentar zoom"
+
+msgid "Zoom out"
+msgstr "Diminuir zoom"
+
+msgid "[!] This went by %1$s because %2$s would not send: %3$s"
+msgstr "[!] Isto foi enviado por %1$s porque %2$s não quis enviar: %3$s"
+
+msgid "[?] %1$d domain was approved over a year ago and is barely linked: %2$s"
+msgstr "[?] %1$d domínio foi aprovado há mais de um ano e tem poucos links: %2$s"
+
+msgid "a bar pinned to the bottom of the phone screen. Choose one of 5 styles from the grid."
+msgstr "uma barra fixada na parte inferior da tela do celular. Escolha um dos 5 estilos na grade."
+
+msgid "a greeting bubble, business hours (shows Online / Away), scan-to-open QR on desktop, and pre-filled WhatsApp / SMS messages."
+msgstr "um balão de saudação, horário de funcionamento (mostra Online / Ausente), QR code para escanear e abrir no desktop, e mensagens pré-preenchidas de WhatsApp / SMS."
+
+msgid "a panel that slides up to show your services or articles. Pick its layout, colour and how it appears from the visual grids. To open it, point a bottom-bar item at"
+msgstr "um painel que desliza para cima para mostrar seus serviços ou artigos. Escolha o layout, a cor e como ele aparece nas grades visuais. Para abri-lo, aponte um item da barra inferior para"
+
+msgid "added ✓"
+msgstr "adicionado ✓"
+
+msgid "ads.txt"
+msgstr "ads.txt"
+
+msgid "an address you can open right now"
+msgstr "um endereço que você pode abrir agora mesmo"
+
+msgid "and %d more — click to see it"
+msgstr "e mais %d — clique para ver"
+
+msgid "approved %s ago"
+msgstr "aprovado há %s"
+
+msgid "choose how the floating button looks from the visual grid below (17 styles). What you see is what visitors get."
+msgstr "escolha a aparência do botão flutuante na grade visual abaixo (17 estilos). O que você vê é o que os visitantes recebem."
+
+msgid "click SAVE CONTENT at the bottom of the page. The Services panel has its own “Save services” button."
+msgstr "clique em SALVAR CONTEÚDO na parte inferior da página. O painel de Serviços tem seu próprio botão “Salvar serviços”."
+
+msgid "copy"
+msgstr "copiar"
+
+msgid "delayed"
+msgstr "adiado"
+
+msgid "e.g. Price list"
+msgstr "ex.: Lista de preços"
+
+msgid "e.g. What is the shop mascot?"
+msgstr "ex.: Qual é o mascote da loja?"
+
+msgid "e.g. fox"
+msgstr "ex.: raposa"
+
+msgid "email"
+msgstr "e-mail"
+
+msgid "leave empty for all categories"
+msgstr "deixe vazio para todas as categorias"
+
+msgid "no copy on disk yet"
+msgstr "ainda sem cópia em disco"
+
+msgid "none"
+msgstr "nenhum"
+
+msgid "not confirmed yet"
+msgstr "ainda não confirmado"
+
+msgid "not reviewed yet"
+msgstr "ainda não revisado"
+
+msgid "nothing at all"
+msgstr "nada"
+
+msgid "open the site’s Telegram bot (ask the site admin which bot if you’re not sure)."
+msgstr "abra o bot do Telegram do site (pergunte ao administrador do site qual bot é, se não tiver certeza)."
+
+msgid "open this site’s Telegram bot:"
+msgstr "abra o bot do Telegram deste site:"
+
+msgid "optional title above the table"
+msgstr "título opcional acima da tabela"
+
+msgid "passes SEO value"
+msgstr "transmite valor de SEO"
+
+msgid "pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically. For a custom button, choose a built-in icon or paste your own SVG."
+msgstr "escolha um canal (Zalo, Messenger, Telefone…) e o logotipo dele é adicionado automaticamente. Para um botão personalizado, escolha um ícone embutido ou cole seu próprio SVG."
+
+msgid "reCAPTCHA could not load in this browser, so this form cannot be submitted. Check the site key, or switch reCAPTCHA off in Horse Tools."
+msgstr "o reCAPTCHA não conseguiu carregar neste navegador, então este formulário não pode ser enviado. Verifique a chave do site, ou desative o reCAPTCHA no Horse Tools."
+
+msgid "reCAPTCHA did not run in your browser, so this form could not be submitted. This is not your password."
+msgstr "o reCAPTCHA não rodou no seu navegador, então este formulário não pôde ser enviado. Isto não é a sua senha."
+
+msgid "reCAPTCHA is switched off, so there is nothing to test."
+msgstr "o reCAPTCHA está desativado, então não há nada para testar."
+
+msgid "remember to press “Update profile”."
+msgstr "lembre-se de pressionar “Atualizar perfil”."
+
+msgid "rows"
+msgstr "linhas"
+
+msgid "rows loaded"
+msgstr "linhas carregadas"
+
+msgid "runs now"
+msgstr "roda agora"
+
+msgid "script or embedded frame"
+msgstr "script ou frame incorporado"
+
+msgid "send it this code:"
+msgstr "envie a ele este código:"
+
+msgid "still reading"
+msgstr "ainda lendo"
+
+msgid "the contact details you confirmed in your posts"
+msgstr "os dados de contato que você confirmou nas suas publicações"
+
+msgid "the contact details you confirmed in your settings"
+msgstr "os dados de contato que você confirmou nas suas configurações"
+
+msgid "the list of domains you approved"
+msgstr "a lista de domínios que você aprovou"
+
+msgid "type part of a domain…"
+msgstr "digite parte de um domínio…"
+
+msgid "unknown error"
+msgstr "erro desconhecido"
+
+msgid "whether the watching is switched on at all"
+msgstr "se o monitoramento está sequer ativado"
+
+msgid "wp-content is not writable, so there is nowhere to keep the copy"
+msgstr "wp-content não é gravável, então não há onde manter a cópia"
+
+msgid "— choose, or fill the form in yourself —"
+msgstr "— escolha, ou preencha o formulário você mesmo —"
+
+msgid "— or paste your own SVG."
+msgstr "— ou cole seu próprio SVG."
+
+msgid "“All” mode — scripts to NEVER delay (one per line). A hero slider or a cookie-consent script usually belongs here."
+msgstr "Modo “Todos” — scripts para NUNCA adiar (um por linha). Um slider principal ou um script de consentimento de cookies geralmente pertence aqui."
+
+msgid "“Listed” mode — scripts to delay (one per line: a handle, file name or part of a URL). Leave empty to use the built-in list of common trackers."
+msgstr "Modo “Listados” — scripts a adiar (um por linha: um identificador, nome de arquivo ou parte de uma URL). Deixe vazio para usar a lista embutida de rastreadores comuns."
+
+msgid "← enter code and press \"Update profile\" to enable"
+msgstr "← digite o código e pressione \"Atualizar perfil\" para ativar"
+
+msgid "✓ Turned on — press SAVE to apply"
+msgstr "✓ Ativado — pressione SALVAR para aplicar"

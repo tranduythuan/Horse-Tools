@@ -26,3 +26,4 @@ phpcs-report.*
 
 # Scratch files for the translation tooling (never committed)
 tools/_*.json
+tools/_apply-batch.php
