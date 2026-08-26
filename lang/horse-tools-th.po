@@ -3482,3 +3482,2436 @@ msgstr "เกณฑ์คะแนน v3 (0 – 1)"
 
 msgid "— Insert a shortcode —"
 msgstr "— แทรก shortcode —"
+
+msgid "%1$d of %2$d"
+msgstr "%2$d จาก %1$d"
+
+msgid "%1$d post(s) will publish FAQ schema (%2$s questions on average)."
+msgstr "โพสต์ %1$d รายการจะเผยแพร่สคีมา FAQ (เฉลี่ย %2$s คำถาม)"
+
+msgid "%1$s will only send as the account you sign in with. You are signing in as %3$s but sending as %2$s, which it will refuse or quietly drop — and refusing looks from here exactly like the message vanishing."
+msgstr "%1$s จะส่งจากบัญชีที่คุณลงชื่อเข้าใช้เท่านั้น คุณลงชื่อเข้าใช้ในชื่อ %3$s แต่กำลังส่งจาก %2$s ซึ่งระบบจะปฏิเสธหรือปล่อยเงียบ ๆ — และการปฏิเสธดูจากที่นี่เหมือนข้อความหายไป"
+
+msgid "%d FOUND"
+msgstr "พบ %d รายการ"
+
+msgid "%d NEW"
+msgstr "ใหม่ %d รายการ"
+
+msgid "%d domain is no longer approved."
+msgstr "โดเมน %d รายการไม่ได้รับการอนุมัติอีกต่อไป"
+
+msgid "%d domain looked at again."
+msgstr "ตรวจดูโดเมน %d รายการอีกครั้ง"
+
+msgid "%d domain your content links to is not approved"
+msgstr "โดเมน %d รายการที่เนื้อหาของคุณลิงก์ไปไม่ได้รับการอนุมัติ"
+
+msgid "%d domains, all approved"
+msgstr "โดเมน %d รายการ ได้รับการอนุมัติทั้งหมด"
+
+msgid "%d is still waiting."
+msgstr "%d ยังคงรออยู่"
+
+msgid "%d link"
+msgstr "%d ลิงก์"
+
+msgid "%d post(s) already get FAQ schema from another plugin, so they are left alone."
+msgstr "โพสต์ %d รายการได้รับสคีมา FAQ จากปลั๊กอินอื่นไปแล้ว จึงถูกปล่อยไว้"
+
+msgid "%d post(s) have a FAQ section but too few questions:"
+msgstr "โพสต์ %d รายการมีส่วน FAQ แต่มีคำถามน้อยเกินไป:"
+
+msgid "%d post(s) have no FAQ section."
+msgstr "โพสต์ %d รายการไม่มีส่วน FAQ"
+
+msgid "%d post(s) mention a FAQ but no question could be read — unusual structure:"
+msgstr "โพสต์ %d รายการกล่าวถึง FAQ แต่ไม่สามารถอ่านคำถามได้ — โครงสร้างผิดปกติ:"
+
+msgid "%d question found"
+msgstr "พบ %d คำถาม"
+
+msgid "%d scripts found — “+ Delay” holds one back, “+ Exclude” keeps it running immediately:"
+msgstr "พบสคริปต์ %d รายการ — \"+ Delay\" หยุดหนึ่งรายการไว้ \"+ Exclude\" ทำให้ทำงานทันที:"
+
+msgid "+ Delay"
+msgstr "+ หน่วงเวลา"
+
+msgid "+ Exclude"
+msgstr "+ ยกเว้น"
+
+msgid "1. Triggers → New → Custom Event, event name ^contact_ with \"use regex matching\" ticked — one trigger covers every channel, including any added later. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Optionally add event parameters placement and label, taking their values from Data Layer Variables contact_placement and contact_label. 4. Submit and publish the container."
+msgstr "1. Triggers → New → Custom Event ชื่อเหตุการณ์ ^contact_ โดยติ๊ก \"use regex matching\" — ทริกเกอร์เดียวครอบคลุมทุกช่องทาง รวมถึงที่เพิ่มในภายหลัง 2. Tags → New → Google Analytics GA4 Event ชี้ไปที่ measurement ID ของคุณ ตั้ง Event Name เป็น {{Event}} เพื่อให้แต่ละช่องทางมีชื่อของตัวเอง โดยใช้ทริกเกอร์จากขั้นตอนที่ 1 3. ทางเลือกเพิ่มพารามิเตอร์เหตุการณ์ placement และ label โดยใช้ค่าจาก Data Layer Variables contact_placement และ contact_label 4. ส่งและเผยแพร่คอนเทนเนอร์"
+
+msgid "6-digit code"
+msgstr "รหัส 6 หลัก"
+
+msgid "A .git directory exposes the whole source history, and often credentials with it."
+msgstr "ไดเร็กทอรี .git เปิดเผยประวัติซอร์สทั้งหมด และมักมีข้อมูลรับรองไปด้วย"
+
+msgid "A PHP snippet changed on your site"
+msgstr "มีการเปลี่ยนสนิปเป็ต PHP บนเว็บไซต์ของคุณ"
+
+msgid "A contact detail that was not there before has appeared in your content."
+msgstr "รายละเอียดการติดต่อที่ไม่เคยปรากฏมาก่อนปรากฏในเนื้อหาของคุณ"
+
+msgid "A database client. Anyone who finds it is one password from the database."
+msgstr "ไคลเอนต์ฐานข้อมูล ผู้ที่พบเห็นนั้นอยู่ห่างจากฐานข้อมูลเพียงรหัสผ่านเดียว"
+
+msgid "A database dump: everything on the site, downloadable."
+msgstr "ดัมพ์ฐานข้อมูล: ทุกอย่างในเว็บไซต์ ดาวน์โหลดได้"
+
+msgid "A domain can go bad without anything on your site changing: it expires, somebody else buys it, and a link you approved years ago now points at whatever they sell. These were approved over a year ago and are each linked from only one or two posts — the kind that can change hands without anybody here noticing."
+msgstr "โดเมนอาจเสื่อมลงโดยที่ไม่มีอะไรในเว็บไซต์ของคุณเปลี่ยน: หมดอายุ คนอื่นซื้อไป และลิงก์ที่คุณอนุมัติมานานแล้วตอนนี้ชี้ไปยังสิ่งที่พวกเขาขาย รายการเหล่านี้ได้รับการอนุมัติมานานกว่าหนึ่งปีและถูกลิงก์จากโพสต์เพียงหนึ่งหรือสองรายการเท่านั้น — ประเภทที่อาจเปลี่ยนมือโดยไม่มีใครที่นี่สังเกตเห็น"
+
+msgid "A long list on a first pass is normal and does not have to be read row by row."
+msgstr "รายการยาวในการผ่านครั้งแรกเป็นเรื่องปกติ ไม่จำเป็นต้องอ่านทีละแถว"
+
+msgid "A longer answer is shortened in the schema only — your post is never touched. Leave empty to use 500."
+msgstr "คำตอบที่ยาวกว่าจะถูกย่อในสคีมาเท่านั้น — โพสต์ของคุณจะไม่ถูกแตะ เว้นว่างไว้เพื่อใช้ 500"
+
+msgid "A new one appeared in a post — see the banner"
+msgstr "รายการใหม่ปรากฏในโพสต์ — ดูแบนเนอร์"
+
+msgid "A no-Google, no-badge challenge that loads only on the wp-login.php page — zero effect on your front-end or its speed. Bots that hammer the login page cannot answer a site-specific question. It does not stop a person who reads the question, so pair it with the attempt limiter above."
+msgstr "ความท้าทายแบบไม่ใช้ Google ไม่มีแบดจ์ ที่โหลดเฉพาะหน้า wp-login.php — ไม่ส่งผลต่อส่วนหน้าบ้านหรือความเร็วเลย บอทที่ถล่มหน้าเข้าสู่ระบบไม่สามารถตอบคำถามเฉพาะไซต์ได้ แต่ไม่ได้หยุดคนที่อ่านคำถาม จึงควรใช้ร่วมกับตัวจำกัดจำนวนครั้งที่อยู่ด้านบน"
+
+msgid "A one-time code has been sent. Enter it above."
+msgstr "ส่งรหัสใช้ครั้งเดียวไปแล้ว กรุณากรอกด้านบน"
+
+msgid "A post with fewer questions than this gets no schema. Leave empty to use 2, which is the safer choice."
+msgstr "โพสต์ที่มีคำถามน้อยกว่านี้จะไม่ได้รับสคีมา เว้นว่างไว้เพื่อใช้ 2 ซึ่งเป็นตัวเลือกที่ปลอดภัยกว่า"
+
+msgid "A private key."
+msgstr "คีย์ส่วนตัว"
+
+msgid "A safe first one collects reports and changes nothing: a TXT record at _dmarc.%1$s with the value %2$s"
+msgstr "ตัวแรกที่ปลอดภัยรวบรวมรายงานและไม่เปลี่ยนแปลงอะไร: บันทึก TXT ที่ _dmarc.%1$s ด้วยค่า %2$s"
+
+msgid "A site archive, downloadable by anyone who guesses the name."
+msgstr "ที่เก็บถาวรของเว็บไซต์ ดาวน์โหลดได้โดยผู้ที่เดาชื่อถูก"
+
+msgid "A test was sent but you have not said whether it arrived"
+msgstr "มีการส่งข้อความทดสอบ แต่คุณยังไม่ได้บอกว่ามาถึงหรือไม่"
+
+msgid "A v2 key and a v3 key look identical and are not interchangeable. Put a v2 key in the box while the dropdown says V3 and Google refuses to load the widget, so the token is never produced and every login is rejected — which reaches whoever is trying to sign in as “wrong password”. Press the button above after changing a key; it asks Google directly."
+msgstr "คีย์ v2 และคีย์ v3 ดูเหมือนกันและใช้แทนกันไม่ได้ ใส่คีย์ v2 ในขณะที่ดรอปดาวน์เลือก V3 Google จะปฏิเสธไม่โหลดวิดเจ็ต โทเค็นจึงไม่ถูกสร้างและการเข้าสู่ระบบทุกครั้งถูกปฏิเสธ — ซึ่งไปถึงผู้ที่พยายามเข้าสู่ระบบในรูปแบบ \"รหัสผ่านผิด\" กดปุ่มด้านบนหลังจากเปลี่ยนคีย์ จะถาม Google โดยตรง"
+
+msgid "API key"
+msgstr "API key"
+
+msgid "Above the post content"
+msgstr "เหนือเนื้อหาโพสต์"
+
+msgid "Accent colour (toolbar / active thumbnail)"
+msgstr "สีเน้น (แถบเครื่องมือ / ภาพย่อที่ใช้งานอยู่)"
+
+msgid "Accept button text (default: Agree)"
+msgstr "ข้อความปุ่มยอมรับ (ค่าเริ่มต้น: ยอมรับ)"
+
+msgid "Accounts & Email"
+msgstr "บัญชีและอีเมล"
+
+msgid "Ad clicks"
+msgstr "การคลิกโฆษณา"
+
+msgid "Ad-block notice"
+msgstr "ประกาศบล็อกโฆษณา"
+
+msgid "AdSense"
+msgstr "AdSense"
+
+msgid "Add an SPF record. Whichever email service you choose below will give you the exact line."
+msgstr "เพิ่มบันทึก SPF บริการอีเมลใด ๆ ที่คุณเลือกด้านล่างจะให้บรรทัดที่แน่นอน"
+
+msgid "Add contact channels"
+msgstr "เพิ่มช่องทางการติดต่อ"
+
+msgid "Add new table"
+msgstr "เพิ่มตารางใหม่"
+
+msgid "Add nofollow to it (recommended)"
+msgstr "เพิ่ม nofollow ให้ (แนะนำ)"
+
+msgid "Add some data first."
+msgstr "เพิ่มข้อมูลก่อน"
+
+msgid "Add “defer” to front-end scripts so they no longer block the page from rendering; they run in order once the HTML is parsed. jQuery is never deferred (inline snippets depend on it). Big Core Web Vitals win."
+msgstr "เพิ่ม \"defer\" ให้สคริปต์ส่วนหน้าบ้านเพื่อไม่ให้บล็อกการเรนเดอร์เพจอีกต่อไป สคริปต์จะทำงานตามลำดับเมื่อ HTML ถูกแยกวิเคราะห์ jQuery จะไม่ถูกหน่วงเวลา (สนิปเป็ตอินไลน์ต้องพึ่งพา) ได้ Core Web Vitals ที่ดีขึ้นมาก"
+
+msgid "Adds decoding=\"async\" to images so the browser decodes them off the main thread, and relies on WordPress’ built-in native lazy-load (which correctly keeps the first/LCP image eager). Replaces the old script-based method that removed image src — that hurt SEO and broke images with JavaScript off."
+msgstr "เพิ่ม decoding=\"async\" ให้รูปภาพเพื่อให้เบราว์เซอร์ถอดรหัสนอกเธรดหลัก และใช้ lazy-load ดั้งเดิมของ WordPress (ซึ่งเก็บภาพแรก/LCP ไว้แบบ eager อย่างถูกต้อง) แทนที่วิธีเดิมที่ใช้สคริปต์ลบ image src — ซึ่งทำร้าย SEO และทำให้ภาพเสียเมื่อปิด JavaScript"
+
+msgid "Admin area"
+msgstr "พื้นที่ผู้ดูแล"
+
+msgid "Admin housekeeping and the plugin's own settings."
+msgstr "งานบ้านของผู้ดูแลและการตั้งค่าของปลั๊กอินเอง"
+
+msgid "Admin only"
+msgstr "ผู้ดูแลเท่านั้น"
+
+msgid "Admin tools"
+msgstr "เครื่องมือผู้ดูแล"
+
+msgid "Advanced options — device, visitors, schedule, tags (optional)"
+msgstr "ตัวเลือกขั้นสูง — อุปกรณ์ ผู้เยี่ยมชม ตารางเวลา แท็ก (ไม่บังคับ)"
+
+msgid "After a few seconds"
+msgstr "หลังจากไม่กี่วินาที"
+
+msgid "After scrolling down"
+msgstr "หลังเลื่อนลง"
+
+msgid "All"
+msgstr "ทั้งหมด"
+
+msgid "All single content (incl. custom types)"
+msgstr "เนื้อหาเดี่ยวทั้งหมด (รวมประเภทที่กำหนดเอง)"
+
+msgid "All-in-one WordPress toolkit: contact chat, shortcodes, security & privacy, media optimisation, SEO, cleanup and more — in one plugin."
+msgstr "ชุดเครื่องมือ WordPress แบบ all-in-one: แชทติดต่อ รหัสย่อ ความปลอดภัยและความเป็นส่วนตัว การเพิ่มประสิทธิภาพสื่อ SEO การล้างข้อมูล และอื่น ๆ — ในปลั๊กอินเดียว"
+
+msgid "Allow a recovery code by Telegram"
+msgstr "อนุญาตรหัสกู้คืนทาง Telegram"
+
+msgid "Allow a recovery code by email"
+msgstr "อนุญาตรหัสกู้คืนทางอีเมล"
+
+msgid "Already approved"
+msgstr "อนุมัติแล้ว"
+
+msgid "Analytics found on your site: %s. Clicks will be recorded there."
+msgstr "พบ Analytics บนเว็บไซต์ของคุณ: %s การคลิกจะถูกบันทึกที่นั่น"
+
+msgid "And what should happen to a domain that is not on the list?"
+msgstr "แล้วจะเกิดอะไรขึ้นกับโดเมนที่ไม่อยู่ในรายการ?"
+
+msgid "Another plugin already publishes FAQ schema for this post, so Horse Tools is staying out of the way."
+msgstr "ปลั๊กอินอื่นเผยแพร่สคีมา FAQ สำหรับโพสต์นี้อยู่แล้ว Horse Tools จึงไม่เข้าไปยุ่ง"
+
+msgid "Answer"
+msgstr "คำตอบ"
+
+msgid "Answers are held for half a day; press this after changing anything in DNS."
+msgstr "คำตอบถูกเก็บไว้ครึ่งวัน กดปุ่มนี้หลังจากเปลี่ยนอะไรใน DNS"
+
+msgid "Appearance"
+msgstr "ลักษณะ"
+
+msgid "Apply to Pages as well, not just Posts"
+msgstr "ใช้กับ Pages ด้วย ไม่ใช่แค่ Posts"
+
+msgid "Approve all %d domains your content currently links to?"
+msgstr "อนุมัติโดเมน %d รายการทั้งหมดที่เนื้อหาของคุณลิงก์อยู่หรือไม่?"
+
+msgid "Approve all %d — the whole list, not just this page"
+msgstr "อนุมัติทั้ง %d — รายการทั้งหมด ไม่ใช่แค่หน้านี้"
+
+msgid "Approve the ticked ones"
+msgstr "อนุมัติเฉพาะที่ติ๊ก"
+
+msgid "Approved %d domain."
+msgstr "อนุมัติโดเมน %d รายการแล้ว"
+
+msgid "As soon as the page opens"
+msgstr "ทันทีที่เปิดหน้า"
+
+msgid "Ask a custom question on the login form"
+msgstr "ถามคำถามที่กำหนดเองในแบบฟอร์มเข้าสู่ระบบ"
+
+msgid "Asking Google…"
+msgstr "กำลังถาม Google…"
+
+msgid "Asset URLs to preload (one per line — .woff2/.css/.js/.jpg/.webp…)"
+msgstr "URL ของทรัพยากรที่จะโหลดล่วงหน้า (หนึ่งรายการต่อบรรทัด — .woff2/.css/.js/.jpg/.webp…)"
+
+msgid "Async CSS — remove render-blocking stylesheets"
+msgstr "CSS แบบ async — ลบสไตล์ชีตที่บล็อกการเรนเดอร์"
+
+msgid "Authentication code"
+msgstr "รหัสยืนยันตัวตน"
+
+msgid "Backdrop theme"
+msgstr "ธีมพื้นหลัง"
+
+msgid "Bar across the bottom"
+msgstr "แถบด้านล่าง"
+
+msgid "Before </body>"
+msgstr "ก่อน </body>"
+
+msgid "Below the post content"
+msgstr "ใต้เนื้อหาโพสต์"
+
+msgid "Besides your one-time backup codes, a fresh code can also be sent to you here:"
+msgstr "นอกเหนือจากรหัสสำรองใช้ครั้งเดียว ยังสามารถส่งรหัสใหม่มาที่นี่:"
+
+msgid "Blur (frosted glass)"
+msgstr "เบลอ (กระจกฝ้า)"
+
+msgid "Bordered"
+msgstr "มีขอบ"
+
+msgid "Both engines are bundled locally — no external requests. Gallery grouping, looping and the slide transition apply to GLightbox; PhotoSwipe always groups the content images (previous/next) and has its own smooth zoom/pan."
+msgstr "เอ็นจินทั้งสองรวมอยู่ในเครื่อง — ไม่มีการร้องขอภายนอก การจัดกลุ่มแกลเลอรี การวนซ้ำ และการเปลี่ยนสไลด์ใช้กับ GLightbox ส่วน PhotoSwipe จัดกลุ่มภาพเนื้อหาเสมอ (ก่อนหน้า/ถัดไป) และมีการซูม/แพนที่ราบรื่นของตัวเอง"
+
+msgid "Both engines are free and open-source (MIT). GLightbox is the easy all-rounder (adds video + slide transitions); PhotoSwipe has the smoothest zoom/pan for photo galleries."
+msgstr "เอ็นจินทั้งสองเป็นโอเพ่นซอร์สฟรี (MIT) GLightbox เป็นตัวเลือกอเนกประสงค์ที่ใช้ง่าย (เพิ่มวิดีโอ + การเปลี่ยนสไลด์) PhotoSwipe มีการซูม/แพนที่ราบรื่นที่สุดสำหรับแกลเลอรีภาพ"
+
+msgid "Bounce"
+msgstr "ข้อความตีกลับ"
+
+msgid "Broken links (404)"
+msgstr "ลิงก์เสีย (404)"
+
+msgid "Broken links 404"
+msgstr "ลิงก์เสีย 404"
+
+msgid "Build a table once here, then insert it into any post or page with its shortcode. Edit it here and every place that uses it updates automatically."
+msgstr "สร้างตารางที่นี่ครั้งเดียว แล้วแทรกลงในโพสต์หรือเพจใดก็ได้ด้วยรหัสย่อ แก้ไขที่นี่และทุกที่ที่ใช้จะอัปเดตอัตโนมัติ"
+
+msgid "Build grid"
+msgstr "สร้างกริด"
+
+msgid "Buttons"
+msgstr "ปุ่ม"
+
+msgid "By Telegram"
+msgstr "ทาง Telegram"
+
+msgid "By default the lockout counts the direct connection IP, which cannot be faked. Only turn this on if your site is reachable ONLY through Cloudflare or a proxy — it then reads the real visitor IP from the proxy header (CF-Connecting-IP / X-Forwarded-For). Do NOT enable it on a normally-hosted site: those headers can be forged, letting an attacker dodge the lockout or get an innocent visitor locked out."
+msgstr "โดยค่าเริ่มต้น การล็อกเอาต์จะนับ IP การเชื่อมต่อโดยตรง ซึ่งปลอมแปลงไม่ได้ เปิดสวิตช์นี้เฉพาะเมื่อเว็บไซต์ของคุณเข้าถึงได้ผ่าน Cloudflare หรือพร็อกซีเท่านั้น — จากนั้นจะอ่าน IP ผู้เยี่ยมชมจริงจากส่วนหัวของพร็อกซี (CF-Connecting-IP / X-Forwarded-For) อย่าเปิดบนเว็บไซต์ที่โฮสต์ตามปกติ: ส่วนหัวเหล่านั้นสามารถปลอมแปลงได้ ทำให้ผู้โจมตีหลีกเลี่ยงการล็อกเอาต์หรือล็อกผู้เยี่ยมชมที่ไม่รู้อิโหน่อิเหน่อออก"
+
+msgid "By email — a one-time code is sent to your account address:"
+msgstr "ทางอีเมล — รหัสใช้ครั้งเดียวจะถูกส่งไปยังที่อยู่บัญชีของคุณ:"
+
+msgid "CHANGED"
+msgstr "เปลี่ยนแล้ว"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Cache cleared. Each post will be read again the next time it is viewed."
+msgstr "ล้างแคชแล้ว แต่ละโพสต์จะถูกอ่านอีกครั้งเมื่อมีการเปิดดูครั้งต่อไป"
+
+msgid "Caption"
+msgstr "คำบรรยาย"
+
+msgid "Caption from"
+msgstr "คำบรรยายจาก"
+
+msgid "Card (shadow)"
+msgstr "การ์ด (เงา)"
+
+msgid "Centre of screen"
+msgstr "กลางหน้าจอ"
+
+msgid "Chat"
+msgstr "แชท"
+
+msgid "Chat buttons, contact channels and WooCommerce tweaks."
+msgstr "ปุ่มแชท ช่องทางการติดต่อ และการปรับแต่ง WooCommerce"
+
+msgid "Check again"
+msgstr "ตรวจสอบอีกครั้ง"
+
+msgid "Check for updates"
+msgstr "ตรวจสอบอัปเดต"
+
+msgid "Check that WP-Cron is running on this site"
+msgstr "ตรวจสอบว่า WP-Cron กำลังทำงานบนไซต์นี้"
+
+msgid "Check-in"
+msgstr "เช็คอิน"
+
+msgid "Checked from your own browser: the home page a visitor receives carries no Google Analytics tag. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own."
+msgstr "ตรวจสอบจากเบราว์เซอร์ของคุณเอง: หน้าแรกที่ผู้เยี่ยมชมได้รับไม่มีแท็ก Google Analytics ติดตั้ง Site Kit by Google หรือปลั๊กอิน GA4 ใด ๆ และการตั้งค่านี้จะเริ่มทำงานด้วยตัวเอง"
+
+msgid "Checked — still fine"
+msgstr "ตรวจสอบแล้ว — ยังปกติดี"
+
+msgid "Checking your site…"
+msgstr "กำลังตรวจสอบเว็บไซต์ของคุณ…"
+
+msgid "Checking…"
+msgstr "กำลังตรวจสอบ…"
+
+msgid "Choose a .xlsx, .xls or .csv file:"
+msgstr "เลือกไฟล์ .xlsx, .xls หรือ .csv:"
+
+msgid "Choose a built-in icon"
+msgstr "เลือกไอคอนในตัว"
+
+msgid "Choose an icon"
+msgstr "เลือกไอคอน"
+
+msgid "Choose icon"
+msgstr "เลือกไอคอน"
+
+msgid "Choose the position (corner box or full-width bar) and customise the message and button labels. The Accept/Decline choice is stored in the browser (localStorage + an “ht_cookie_consent” cookie), so the notice won’t nag returning visitors. Note: this is an informational notice — Horse Tools does not itself block third-party tracking scripts, so for strict consent-gating you would still gate your own scripts on that cookie."
+msgstr "เลือกตำแหน่ง (กล่องมุมหรือแถบเต็มความกว้าง) และปรับแต่งข้อความและป้ายปุ่ม ตัวเลือกยอมรับ/ปฏิเสธจะถูกเก็บไว้ในเบราว์เซอร์ (localStorage + คุกกี้ \"ht_cookie_consent\") ดังนั้นประกาศจะไม่กวนผู้เยี่ยมชมที่กลับมา หมายเหตุ: นี่เป็นประกาศเพื่อแจ้งข้อมูลเท่านั้น — Horse Tools ไม่ได้บล็อกสคริปต์ติดตามของบุคคลที่สามด้วยตัวเอง ดังนั้นสำหรับการกำหนดค่าคำยินยอมอย่างเข้มงวด คุณยังต้องกำหนดเกตสคริปต์ของคุณเองด้วยคุกกี้นั้น"
+
+msgid "Cinema (pure black)"
+msgstr "โรงภาพยนตร์ (ดำล้วน)"
+
+msgid "Clean comments"
+msgstr "ล้างความคิดเห็น"
+
+msgid "Clean media"
+msgstr "ล้างสื่อ"
+
+msgid "Clean posts"
+msgstr "ล้างโพสต์"
+
+msgid "Cleanup schedule"
+msgstr "ตารางเวลาการล้าง"
+
+msgid "Clear cache & re-read"
+msgstr "ล้างแคชและอ่านใหม่"
+
+msgid "Cleared all lockouts."
+msgstr "ล้างการล็อกเอาต์ทั้งหมดแล้ว"
+
+msgid "Click again to delete"
+msgstr "คลิกอีกครั้งเพื่อลบ"
+
+msgid "Click an SVG box, then"
+msgstr "คลิกกล่อง SVG แล้ว"
+
+msgid "Click an icon to drop it into the selected field. Search by its English name (cart, gift, phone…), or Vietnamese for popular icons. Over 5,000 in total — use “Load more” to see them all."
+msgstr "คลิกไอคอนเพื่อวางลงในฟิลด์ที่เลือก ค้นหาด้วยชื่อภาษาอังกฤษ (cart, gift, phone…) หรือภาษาเวียดนามสำหรับไอคอนยอดนิยม มีมากกว่า 5,000 รายการ — ใช้ \"Load more\" เพื่อดูทั้งหมด"
+
+msgid "Click an image in your content to open it in a full-screen viewer. Choose the engine and how it looks below."
+msgstr "คลิกรูปภาพในเนื้อหาของคุณเพื่อเปิดในโปรแกรมดูแบบเต็มหน้าจอ เลือกเอ็นจินและรูปลักษณ์ด้านล่าง"
+
+msgid "Code in body"
+msgstr "โค้ดใน body"
+
+msgid "Code in footer"
+msgstr "โค้ดใน footer"
+
+msgid "Code in head"
+msgstr "โค้ดใน head"
+
+msgid "Code on login"
+msgstr "โค้ดตอนล็อกอิน"
+
+msgid "Column"
+msgstr "คอลัมน์"
+
+msgid "Columns"
+msgstr "คอลัมน์"
+
+msgid "Comma separated. A heading containing any of these opens the FAQ section; every heading below it until the next heading of the same level is treated as a question."
+msgstr "คั่นด้วยจุลภาค หัวข้อที่มีคำเหล่านี้จะเปิดส่วน FAQ หัวข้อทุกรายการด้านล่างจนถึงหัวข้อถัดไปในระดับเดียวกันจะถูกนับเป็นคำถาม"
+
+msgid "Compact"
+msgstr "กะทัดรัด"
+
+msgid "Confirm them once, from the banner on any Horse Tools screen"
+msgstr "ยืนยันเพียงครั้งเดียว จากแบนเนอร์บนหน้าจอ Horse Tools ใดก็ได้"
+
+msgid "Confirm them once, from the notice on any Horse Tools screen"
+msgstr "ยืนยันเพียงครั้งเดียว จากประกาศบนหน้าจอ Horse Tools ใดก็ได้"
+
+msgid "Confirmed %s ago"
+msgstr "ยืนยันเมื่อ %s ที่แล้ว"
+
+msgid "Contact click measurement"
+msgstr "การวัดการคลิกการติดต่อ"
+
+msgid "Contact details are the ones you confirmed"
+msgstr "รายละเอียดการติดต่อคือสิ่งที่คุณยืนยันไว้"
+
+msgid "Contact details in your posts"
+msgstr "รายละเอียดการติดต่อในโพสต์ของคุณ"
+
+msgid "Contact details in your posts are watched"
+msgstr "รายละเอียดการติดต่อในโพสต์ของคุณถูกเฝ้าดู"
+
+msgid "Contact details in your settings"
+msgstr "รายละเอียดการติดต่อในการตั้งค่าของคุณ"
+
+msgid "Contains database credentials or signing keys."
+msgstr "มีข้อมูลรับรองฐานข้อมูลหรือคีย์ลงนาม"
+
+msgid "Control the Heartbeat API"
+msgstr "ควบคุม Heartbeat API"
+
+msgid "Cookie notice"
+msgstr "ประกาศคุกกี้"
+
+msgid "Copy"
+msgstr "คัดลอก"
+
+msgid "Copy / CSV / Print buttons"
+msgstr "ปุ่มคัดลอก / CSV / พิมพ์"
+
+msgid "Copy all eight lines"
+msgstr "คัดลอกทั้งแปดบรรทัด"
+
+msgid "Copy cells in Excel / Google Sheets (or paste CSV) and paste here:"
+msgstr "คัดลอกเซลล์ใน Excel / Google Sheets (หรือวาง CSV) แล้ววางที่นี่:"
+
+msgid "Corner — bottom left"
+msgstr "มุม — ล่างซ้าย"
+
+msgid "Corner — bottom right"
+msgstr "มุม — ล่างขวา"
+
+msgid "Could not be determined"
+msgstr "ไม่สามารถระบุได้"
+
+msgid "Could not check: this server was unable to open your own home page, which many hosts block. That says nothing about whether analytics is installed — if you have Site Kit or another GA4 plugin, switch this on and check the result in Analytics under Admin → DebugView."
+msgstr "ตรวจสอบไม่ได้: เซิร์ฟเวอร์นี้ไม่สามารถเปิดหน้าแรกของคุณเองได้ ซึ่งโฮสต์หลายแห่งบล็อก นั่นไม่ได้บอกอะไรเกี่ยวกับการติดตั้ง analytics — หากคุณมี Site Kit หรือปลั๊กอิน GA4 อื่น ให้เปิดสวิตช์นี้และตรวจสอบผลลัพธ์ใน Analytics ที่ Admin → DebugView"
+
+msgid "Could not load the Excel reader — save the file as CSV and try again."
+msgstr "โหลดตัวอ่าน Excel ไม่ได้ — บันทึกไฟล์เป็น CSV แล้วลองอีกครั้ง"
+
+msgid "Could not load the home page from the server:"
+msgstr "โหลดหน้าแรกจากเซิร์ฟเวอร์ไม่ได้:"
+
+msgid "Could not load the list."
+msgstr "โหลดรายการไม่ได้"
+
+msgid "Could not read the file."
+msgstr "อ่านไฟล์ไม่ได้"
+
+msgid "Could not read the home page (HTTP %s). Your host may block the site from calling itself; check the scripts via “View source” instead."
+msgstr "อ่านหน้าแรกไม่ได้ (HTTP %s) โฮสต์ของคุณอาจบล็อกไม่ให้เว็บไซต์เรียกตัวเอง ตรวจสอบสคริปต์ผ่าน \"View source\" แทน"
+
+msgid "Could not send the recovery code — message the bot first, then check your chat ID."
+msgstr "ส่งรหัสกู้คืนไม่ได้ — ส่งข้อความหาบอทก่อน แล้วตรวจสอบ chat ID ของคุณ"
+
+msgid "Create table"
+msgstr "สร้างตาราง"
+
+msgid "Critical CSS — the above-the-fold styles, inlined in the head to prevent the flash (optional, but strongly recommended)"
+msgstr "Critical CSS — สไตล์ของส่วนที่มองเห็นเหนือจอพับ ฝังใน head เพื่อป้องกันแฟลช (ไม่บังคับ แต่แนะนำอย่างยิ่ง)"
+
+msgid "Custom / Maps:"
+msgstr "กำหนดเอง / แผนที่:"
+
+msgid "Custom CSS"
+msgstr "CSS กำหนดเอง"
+
+msgid "Customers"
+msgstr "ลูกค้า"
+
+msgid "Dark background"
+msgstr "พื้นหลังมืด"
+
+msgid "Dark mode, scrollbar, effects, and the look of the admin area."
+msgstr "โหมดมืด แถบเลื่อน เอฟเฟกต์ และรูปลักษณ์ของพื้นที่ผู้ดูแล"
+
+msgid "Date shortcodes"
+msgstr "รหัสย่อวันที่"
+
+msgid "Day(s)"
+msgstr "วัน"
+
+msgid "Decline"
+msgstr "ปฏิเสธ"
+
+msgid "Decline button text (default: Decline)"
+msgstr "ข้อความปุ่มปฏิเสธ (ค่าเริ่มต้น: ปฏิเสธ)"
+
+msgid "Default"
+msgstr "ค่าเริ่มต้น"
+
+msgid "Defer JavaScript"
+msgstr "เลื่อน JavaScript"
+
+msgid "Defer JavaScript so it no longer blocks the page"
+msgstr "เลื่อน JavaScript เพื่อไม่ให้บล็อกเพจอีกต่อไป"
+
+msgid "Delay JavaScript execution"
+msgstr "หน่วงเวลาการทำงาน JavaScript"
+
+msgid "Delay JavaScript until interaction"
+msgstr "หน่วง JavaScript จนกว่าจะมีการโต้ตอบ"
+
+msgid "Delay all scripts except the exclusions (most aggressive)"
+msgstr "หน่วงสคริปต์ทั้งหมดยกเว้นที่ยกเว้นไว้ (ก้าวร้าวที่สุด)"
+
+msgid "Delay analytics/ads/chat until interaction, and defer JavaScript"
+msgstr "หน่วง analytics/ads/chat จนกว่าจะมีการโต้ตอบ และเลื่อน JavaScript"
+
+msgid "Delay analytics/ads/chat until interaction, and defer JavaScript (cart & checkout untouched)"
+msgstr "หน่วง analytics/ads/chat จนกว่าจะมีการโต้ตอบ และเลื่อน JavaScript (cart & checkout ไม่ถูกแตะ)"
+
+msgid "Delay only the scripts I list (recommended, safe)"
+msgstr "หน่วงเฉพาะสคริปต์ที่ฉันระบุ (แนะนำ ปลอดภัย)"
+
+msgid "Delay third-party scripts (analytics, ads, chat) until the visitor interacts — safe built-in list, with a 5-second fall-back"
+msgstr "หน่วงสคริปต์บุคคลที่สาม (analytics, ads, chat) จนกว่าผู้เยี่ยมชมจะโต้ตอบ — รายการในตัวที่ปลอดภัย พร้อมกับตัวตั้งเวลาสำรอง 5 วินาที"
+
+msgid "Delete column"
+msgstr "ลบคอลัมน์"
+
+msgid "Delete row"
+msgstr "ลบแถว"
+
+msgid "Delete them, or move them somewhere outside the folder your site is served from. If one of them is a copy of wp-config.php, change your database password afterwards — assume it has been read."
+msgstr "ลบทิ้งหรือย้ายออกไปนอกโฟลเดอร์ที่ให้บริการเว็บไซต์ หากมีไฟล์หนึ่งเป็นสำเนาของ wp-config.php ให้เปลี่ยนรหัสผ่านฐานข้อมูลหลังจากนั้น — สมมติว่าถูกอ่านไปแล้ว"
+
+msgid "Detect my chat ID"
+msgstr "ตรวจจับ chat ID ของฉัน"
+
+msgid "Disable Dashicons for visitors"
+msgstr "ปิด Dashicons สำหรับผู้เยี่ยมชม"
+
+msgid "Disable on the front-end, slow in admin"
+msgstr "ปิดที่ส่วนหน้าบ้าน ช้าในส่วนผู้ดูแล"
+
+msgid "Display style (where the panel appears)"
+msgstr "รูปแบบการแสดงผล (ที่ที่แผงปรากฏ)"
+
+msgid "Does mail from this site actually arrive?"
+msgstr "อีเมลจากเว็บไซต์นี้ไปถึงจริงหรือไม่?"
+
+msgid "Domain"
+msgstr "โดเมน"
+
+msgid "Downloadable secrets in the site folder"
+msgstr "ความลับที่ดาวน์โหลดได้ในโฟลเดอร์ของเว็บไซต์"
+
+msgid "Drop Emoji, jQuery Migrate and admin icons; calm the Heartbeat"
+msgstr "ตัด Emoji, jQuery Migrate และไอคอนผู้ดูแลออก ทำให้ Heartbeat สงบ"
+
+msgid "Each user turns it on for their own account under Users → Profile (scan a QR with Google Authenticator / Authy). After the password they enter a 6-digit code, so a stolen password alone is not enough. Uses standard WordPress hooks — safe across WordPress updates, and disabling the plugin instantly restores the normal login."
+msgstr "ผู้ใช้แต่ละคนเปิดใช้งานสำหรับบัญชีของตัวเองภายใต้ Users → Profile (สแกน QR ด้วย Google Authenticator / Authy) หลังจากรหัสผ่าน พวกเขากรอกรหัส 6 หลัก ดังนั้นรหัสผ่านที่ถูกขโมยเพียงอย่างเดียวจึงไม่เพียงพอ ใช้ฮุค WordPress มาตรฐาน — ปลอดภัยข้ามการอัปเดต WordPress และการปิดปลั๊กอินจะคืนค่าการเข้าสู่ระบบปกติทันที"
+
+msgid "Edit table"
+msgstr "แก้ไขตาราง"
+
+msgid "Either set up a mailbox for the domain, or make sure the address you send notifications to is one you actually read."
+msgstr "ตั้งค่าเมลบ็อกซ์สำหรับโดเมน หรือตรวจสอบให้แน่ใจว่าที่อยู่ที่คุณส่งการแจ้งเตือนไปเป็นที่อยู่ที่คุณอ่านจริง"
+
+msgid "Email address"
+msgstr "ที่อยู่อีเมล"
+
+msgid "Email is the fallback and not a good one — a security message sent by a shop's own server is exactly the kind that lands in spam. Set up the Telegram bot under WooCommerce if you can."
+msgstr "อีเมลเป็นตัวสำรองและไม่ดีนัก — ข้อความด้านความปลอดภัยที่ส่งโดยเซิร์ฟเวอร์ของร้านเองเป็นข้อความประเภทที่ตกไปอยู่ในสแปม ตั้งบอท Telegram ภายใต้ WooCommerce หากทำได้"
+
+msgid "Email me a code"
+msgstr "ส่งรหัสทางอีเมลให้ฉัน"
+
+msgid "Email service (SMTP preset)"
+msgstr "บริการอีเมล (ค่าตั้งต้น SMTP)"
+
+msgid "Email to %s"
+msgstr "ส่งอีเมลถึง %s"
+
+msgid "Enable image lightbox"
+msgstr "เปิดใช้งานไลท์บ็อกซ์รูปภาพ"
+
+msgid "Enable two-factor authentication"
+msgstr "เปิดใช้งานการยืนยันตัวตนสองปัจจัย"
+
+msgid "Enter a current two-factor code to unlock PHP editing first."
+msgstr "กรอกรหัสยืนยันตัวตนสองปัจจัยปัจจุบันเพื่อปลดล็อกการแก้ไข PHP ก่อน"
+
+msgid "Enter the 6-digit code from your app, or a backup code."
+msgstr "กรอกรหัส 6 หลักจากแอปของคุณ หรือรหัสสำรอง"
+
+msgid "Enter your authentication code."
+msgstr "กรอกรหัสยืนยันตัวตนของคุณ"
+
+msgid "Entrance effect"
+msgstr "เอฟเฟกต์ทางเข้า"
+
+msgid "Every day"
+msgstr "ทุกวัน"
+
+msgid "Every month"
+msgstr "ทุกเดือน"
+
+msgid "Every page load (init)"
+msgstr "ทุกการโหลดหน้า (init)"
+
+msgid "Every two weeks"
+msgstr "ทุกสองสัปดาห์"
+
+msgid "Every week (recommended)"
+msgstr "ทุกสัปดาห์ (แนะนำ)"
+
+msgid "Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off."
+msgstr "ทุกคนจะได้รับรหัสสำรองใช้ครั้งเดียวเมื่อลงทะเบียน — เก็บไว้ หากคุณถูกล็อกโดยไม่มีโทรศัพท์ รหัสสำรอง หรือช่องทางกู้คืน ให้เปลี่ยนชื่อโฟลเดอร์ปลั๊กอินผ่าน FTP เพื่อปิด 2FA"
+
+msgid "Everything above only tells you. Telling you leaves a gap: the link goes in, the warning appears on a screen, and the link keeps working until you log in and read it. That gap is how three old posts carried casino links for two years."
+msgstr "ทุกอย่างข้างต้นเป็นเพียงการบอกคุณ การบอกทำให้เหลือช่องว่าง: ลิงก์เข้าไป คำเตือนปรากฏบนหน้าจอ และลิงก์ยังคงทำงานจนกว่าคุณจะลงชื่อเข้าใช้และอ่าน ช่องว่างนี้คือเหตุที่โพสต์เก่าสามรายการมีลิงก์คาสิโนอยู่สองปี"
+
+msgid "Everything else on this page warns you when something is wrong — but only on a screen you have to open. It cannot warn you that it stopped: a site with the plugin switched off looks exactly like a site with nothing wrong."
+msgstr "ทุกอย่างอื่นในหน้านี้เตือนคุณเมื่อมีบางอย่างผิดปกติ — แต่เฉพาะบนหน้าจอที่คุณต้องเปิดเท่านั้น ไม่สามารถเตือนคุณว่ามันหยุดไปแล้ว: เว็บไซต์ที่ปิดปลั๊กอินดูเหมือนเว็บไซต์ที่ไม่มีอะไรผิดปกติ"
+
+msgid "Export CSV"
+msgstr "ส่งออก CSV"
+
+msgid "FAQ schema (Horse Tools)"
+msgstr "สคีมา FAQ (Horse Tools)"
+
+msgid "FAQ schema (rich results)"
+msgstr "สคีมา FAQ (ผลลัพธ์แบบสมบูรณ์)"
+
+msgid "Fade"
+msgstr "เฟด"
+
+msgid "Fade in"
+msgstr "เฟดอิน"
+
+msgid "Fall-back timer — run the delayed scripts after this many seconds even with no interaction (0 = only on interaction)"
+msgstr "ตัวตั้งเวลาสำรอง — รันสคริปต์ที่หน่วงไว้หลังจากจำนวนวินาทีนี้แม้ไม่มีการโต้ตอบ (0 = เฉพาะเมื่อมีการโต้ตอบ)"
+
+msgid "Filled in for you: server %host%, port %port%, %enc%."
+msgstr "กรอกให้คุณ: เซิร์ฟเวอร์ %host% พอร์ต %port% %enc%"
+
+msgid "Filter per column"
+msgstr "กรองต่อคอลัมน์"
+
+msgid "Find a domain"
+msgstr "ค้นหาโดเมน"
+
+msgid "Finished reading your posts and pages."
+msgstr "อ่านโพสต์และเพจของคุณเสร็จแล้ว"
+
+msgid "First row is a header"
+msgstr "แถวแรกคือส่วนหัว"
+
+msgid "Fix the channel and send a test message"
+msgstr "แก้ไขช่องทางและส่งข้อความทดสอบ"
+
+msgid "Flip"
+msgstr "พลิก"
+
+msgid "Font settings"
+msgstr "การตั้งค่าฟอนต์"
+
+msgid "Fonts"
+msgstr "ฟอนต์"
+
+msgid "For non-technical users: this switches on the safe, high-impact speed features — delay & defer JavaScript (safe mode, with a 5-second fall-back), lazy-load, Instant-page, HTML compression, and dropping Emoji / jQuery Migrate / Dashicons. The riskier options (async CSS, “delay all”) are left off. The switches below light up so you can see what changed — then press SAVE to apply."
+msgstr "สำหรับผู้ใช้ที่ไม่ใช่เทคนิค: นี่เป็นการเปิดคุณสมบัติความเร็วที่ปลอดภัยและมีผลกระทบสูง — หน่วงและเลื่อน JavaScript (โหมดปลอดภัย พร้อมกับตัวตั้งเวลาสำรอง 5 วินาที), lazy-load, Instant-page, การบีบอัด HTML และการตัด Emoji / jQuery Migrate / Dashicons ตัวเลือกที่เสี่ยงกว่า (async CSS, \"delay all\") ถูกปิดไว้ สวิตช์ด้านล่างจะสว่างขึ้นเพื่อให้คุณเห็นว่าอะไรเปลี่ยน — จากนั้นกด SAVE เพื่อใช้"
+
+msgid "Free for 300 messages a day with no card. The account login is the username; the SMTP key is not the same thing as the API key."
+msgstr "ฟรี 300 ข้อความต่อวันโดยไม่ต้องใช้บัตร การลงชื่อเข้าใช้บัญชีคือชื่อผู้ใช้ คีย์ SMTP ไม่ใช่สิ่งเดียวกับ API key"
+
+msgid "Freeze first column"
+msgstr "ตรึงคอลัมน์แรก"
+
+msgid "Front end and admin"
+msgstr "ส่วนหน้าบ้านและผู้ดูแล"
+
+msgid "Front end only"
+msgstr "เฉพาะส่วนหน้าบ้าน"
+
+msgid "GLightbox — light, images + video, slide effects"
+msgstr "GLightbox — เบา รูปภาพ + วิดีโอ เอฟเฟกต์สไลด์"
+
+msgid "Give it a minute before answering. “In the spam folder” is a useful answer, not a failure to report."
+msgstr "ให้เวลาสักนาทีก่อนตอบ \"อยู่ในโฟลเดอร์สแปม\" เป็นคำตอบที่มีประโยชน์ ไม่ใช่ความล้มเหลวในการรายงาน"
+
+msgid "Go through the list once and approve it"
+msgstr "ตรวจดูรายการหนึ่งครั้งและอนุมัติ"
+
+msgid "Gone"
+msgstr "หายไป"
+
+msgid "Google Sheet"
+msgstr "Google Sheet"
+
+msgid "Google accepts both keys."
+msgstr "Google ยอมรับทั้งสองคีย์"
+
+msgid "Google does not recognise this Secret key. Check you copied the secret and not the site key — they come from the same page and are easy to swap."
+msgstr "Google ไม่รู้จัก Secret key นี้ ตรวจสอบว่าคุณคัดลอก secret ไม่ใช่ site key — มาจากหน้าเดียวกันและสลับกันได้ง่าย"
+
+msgid "Google fetch"
+msgstr "Google fetch"
+
+msgid "Google refused the request — make sure the sheet is shared as “Anyone with the link can view”."
+msgstr "Google ปฏิเสธคำขอ — ตรวจสอบให้แน่ใจว่าชีตถูกแชร์เป็น \"Anyone with the link can view\""
+
+msgid "Google refuses this Site key for reCAPTCHA v3. It is almost certainly a v2 key — either switch the dropdown to V2, or paste the key from a v3 project. Until then the widget never loads and every login is rejected."
+msgstr "Google ปฏิเสธ Site key นี้สำหรับ reCAPTCHA v3 เกือบแน่นอนว่าเป็นคีย์ v2 — เปลี่ยนดรอปดาวน์เป็น V2 หรือวางคีย์จากโปรเจ็กต์ v3 จนกว่าจะถึงตอนนั้นวิดเจ็ตจะไม่โหลดและการเข้าสู่ระบบทุกครั้งถูกปฏิเสธ"
+
+msgid "Google sign-in"
+msgstr "ลงชื่อเข้าใช้ด้วย Google"
+
+msgid "Gradient blue-violet"
+msgstr "การไล่สีน้ำเงิน-ม่วง"
+
+msgid "Gradient ocean"
+msgstr "การไล่สีมหาสมุทร"
+
+msgid "Gradient sunset"
+msgstr "การไล่สีพระอาทิตย์ตก"
+
+msgid "Grey"
+msgstr "เทา"
+
+msgid "Group images into a gallery (previous / next)"
+msgstr "จัดกลุ่มรูปภาพเป็นแกลเลอรี (ก่อนหน้า / ถัดไป)"
+
+msgid "HTML compression; compress JPGs and serve WebP"
+msgstr "การบีบอัด HTML; บีบอัด JPG และเสิร์ฟ WebP"
+
+msgid "Handle dead links: send visitors who hit a “404 – not found” page to a page you choose, and keep a log of the broken URLs so you know what to fix."
+msgstr "จัดการลิงก์ที่ตายแล้ว: ส่งผู้เยี่ยมชมที่ติดหน้า \"404 – not found\" ไปยังหน้าที่คุณเลือก และเก็บล็อกของ URL ที่เสียเพื่อให้คุณรู้ว่าต้องแก้อะไร"
+
+msgid "Header colour"
+msgstr "สีส่วนหัว"
+
+msgid "Heads up: a PHP snippet was just changed on %1$s. Snippet: \"%2$s\". By: %3$s (IP %4$s). If this was not you, change your password and review Horse Tools → Shortcode immediately."
+msgstr "แจ้งเตือน: มีการเปลี่ยนสนิปเป็ต PHP บน %1$s สนิปเป็ต: \"%2$s\" โดย: %3$s (IP %4$s) หากไม่ใช่คุณ ให้เปลี่ยนรหัสผ่านและตรวจสอบ Horse Tools → Shortcode ทันที"
+
+msgid "Heartbeat mode"
+msgstr "โหมด Heartbeat"
+
+msgid "Hold heavy third-party scripts (analytics, tag managers, pixels, chat, ads) until the visitor first interacts — scroll, mouse move, tap, key or click — then run them in order. The single biggest win for Total Blocking Time and “Reduce unused JavaScript”. It re-fires the page-ready events afterwards, keeps script order, and never touches JSON-LD structured data or ES modules."
+msgstr "ระงับสคริปต์บุคคลที่สามที่หนัก (analytics, tag managers, pixels, chat, ads) ไว้จนกว่าผู้เยี่ยมชมจะโต้ตอบครั้งแรก — เลื่อน ขยับเมาส์ แตะ คีย์ หรือคลิก — แล้วจึงรันตามลำดับ ผลดีที่สุดเพียงอย่างเดียวสำหรับ Total Blocking Time และ \"Reduce unused JavaScript\" มันยิงเหตุการณ์ page-ready อีกครั้งในภายหลัง รักษาลำดับสคริปต์ และไม่แตะข้อมูลที่มีโครงสร้าง JSON-LD หรือโมดูล ES"
+
+msgid "Horse Tools %s is available — an update link now appears under the plugin below. WordPress will download it directly from GitHub."
+msgstr "Horse Tools %s พร้อมใช้งานแล้ว — ลิงก์อัปเดตจะปรากฏใต้ปลั๊กอินด้านล่าง WordPress จะดาวน์โหลดโดยตรงจาก GitHub"
+
+msgid "Horse Tools beat #%1$d — %2$s"
+msgstr "Horse Tools beat #%1$d — %2$s"
+
+msgid "Horse Tools can tell you when your content starts linking somewhere new."
+msgstr "Horse Tools สามารถบอกคุณเมื่อเนื้อหาของคุณเริ่มลิงก์ไปยังที่ใหม่"
+
+msgid "Horse Tools can watch your contact details for changes."
+msgstr "Horse Tools สามารถเฝ้าดูรายละเอียดการติดต่อของคุณเพื่อการเปลี่ยนแปลง"
+
+msgid "Horse Tools could not reach GitHub to check for updates. Please try again later."
+msgstr "Horse Tools ไม่สามารถเข้าถึง GitHub เพื่อตรวจสอบอัปเดตได้ กรุณาลองอีกครั้งในภายหลัง"
+
+msgid "Horse Tools is up to date (version %s)."
+msgstr "Horse Tools เป็นเวอร์ชันล่าสุดอยู่แล้ว (เวอร์ชัน %s)"
+
+msgid "Horse Tools keeps a copy of your decisions in a file as well as in the database, precisely so that a change made straight to the database can be seen. These no longer match:"
+msgstr "Horse Tools เก็บสำเนาการตัดสินใจของคุณไว้ในไฟล์และในฐานข้อมูล เพื่อที่การเปลี่ยนแปลงที่ทำตรงไปยังฐานข้อมูลจะถูกมองเห็นได้ รายการเหล่านี้ไม่ตรงกันอีกต่อไป:"
+
+msgid "Horse Tools snippet"
+msgstr "สนิปเป็ต Horse Tools"
+
+msgid "Horse Tools table"
+msgstr "ตาราง Horse Tools"
+
+msgid "Horse Tools — %s"
+msgstr "Horse Tools — %s"
+
+msgid "Hosts to preconnect (one per line — host or full URL)"
+msgstr "โฮสต์ที่จะ preconnect (หนึ่งรายการต่อบรรทัด — โฮสต์หรือ URL เต็ม)"
+
+msgid "Hour(s)"
+msgstr "ชั่วโมง"
+
+msgid "How often"
+msgstr "บ่อยแค่ไหน"
+
+msgid "Icon colour"
+msgstr "สีไอคอน"
+
+msgid "Icons"
+msgstr "ไอคอน"
+
+msgid "If a theme/plugin script misbehaves, add its handle or file name to the exclusion list below. Disable if you already use a full-page optimiser that defers scripts."
+msgstr "หากสคริปต์ของธีม/ปลั๊กอินทำงานผิดปกติ ให้เพิ่มแฮนเดิลหรือชื่อไฟล์ในรายการยกเว้นด้านล่าง ปิดหากคุณใช้ตัวเพิ่มประสิทธิภาพเต็มหน้าที่เลื่อนสคริปต์อยู่แล้ว"
+
+msgid "If it does not arrive, something stopped it — check the site."
+msgstr "หากไม่มาถึง แสดงว่ามีอะไรบางอย่างหยุดมัน — ตรวจสอบเว็บไซต์"
+
+msgid "If this site stops working, or Horse Tools is switched off, nobody is told. Every warning here is only seen by someone who logs in and looks."
+msgstr "หากเว็บไซต์นี้หยุดทำงาน หรือ Horse Tools ถูกปิด จะไม่มีใครรู้ คำเตือนทุกอย่างที่นี่จะมีเพียงผู้ที่ลงชื่อเข้าใช้และเปิดดูเท่านั้นที่เห็น"
+
+msgid "If you are reading it, mail from your site reaches this address. Go back to the Email screen and say where it turned up — the inbox or the spam folder — because those are two different answers and only you can see which one it was."
+msgstr "หากคุณกำลังอ่านข้อความนี้ แสดงว่าอีเมลจากเว็บไซต์ของคุณมาถึงที่อยู่นี้ กลับไปที่หน้าจอ Email และบอกว่ามันปรากฏที่ไหน — กล่องจดหมายเข้าหรือโฟลเดอร์สแปม — เพราะเป็นคำตอบสองแบบที่ต่างกันและมีเพียงคุณเท่านั้นที่เห็นว่าเป็นแบบใด"
+
+msgid "If you have just restored a database backup, or copied the database from another copy of this site, that is the explanation — the file stayed while the database went back in time. Press the button and it will match again."
+msgstr "หากคุณเพิ่งกู้คืนข้อมูลสำรองฐานข้อมูล หรือคัดลอกฐานข้อมูลจากสำเนาอื่นของเว็บไซต์นี้ นั่นคือคำอธิบาย — ไฟล์ยังคงอยู่ในขณะที่ฐานข้อมูลย้อนกลับไปในอดีต กดปุ่มและมันจะตรงกันอีกครั้ง"
+
+msgid "If you have not done either of those things, then something can write to your database that should not be able to. Changing passwords will not fix that on its own; the way in has to be found."
+msgstr "หากคุณไม่ได้ทำสิ่งใดสิ่งหนึ่งเหล่านี้ แสดงว่ามีบางสิ่งสามารถเขียนลงฐานข้อมูลของคุณได้โดยที่ไม่ควรทำได้ การเปลี่ยนรหัสผ่านเพียงอย่างเดียวจะไม่แก้ไข ต้องหาช่องทางที่เข้ามา"
+
+msgid "If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else."
+msgstr "หากคุณเพิ่งเปลี่ยนสิ่งเหล่านี้ด้วยตัวเอง ให้ยืนยัน หากไม่ใช่ คนอื่นเป็นคนเปลี่ยน — ตรวจสอบว่าใครเป็นคนแก้ไขการตั้งค่าของคุณล่าสุดก่อนเปลี่ยนสิ่งอื่น"
+
+msgid "If you lose your phone"
+msgstr "หากคุณทำโทรศัพท์หาย"
+
+msgid "If your site has Tag Manager but no Google tag"
+msgstr "หากเว็บไซต์ของคุณมี Tag Manager แต่ไม่มี Google tag"
+
+msgid "Image alt text"
+msgstr "ข้อความ alt ของรูปภาพ"
+
+msgid "Image caption (figcaption)"
+msgstr "คำบรรยายรูปภาพ (figcaption)"
+
+msgid "Image lightbox"
+msgstr "ไลท์บ็อกซ์รูปภาพ"
+
+msgid "Image title"
+msgstr "ชื่อรูปภาพ"
+
+msgid "Images"
+msgstr "รูปภาพ"
+
+msgid "In"
+msgstr "ใน"
+
+msgid "In Google Analytics: Reports → Engagement → Events. Each channel appears under its own name — contact_phone, contact_zalo, contact_messenger and so on — so there is nothing to configure first. Allow 24 hours for the standard reports; to see it immediately instead, open Admin → DebugView and tap a button on your phone."
+msgstr "ใน Google Analytics: Reports → Engagement → Events แต่ละช่องทางจะปรากฏใต้ชื่อของตัวเอง — contact_phone, contact_zalo, contact_messenger และอื่น ๆ — ดังนั้นจึงไม่มีอะไรต้องกำหนดค่าก่อน รอ 24 ชั่วโมงสำหรับรายงานมาตรฐาน หากต้องการเห็นทันที ให้เปิด Admin → DebugView แล้วแตะปุ่มบนโทรศัพท์ของคุณ"
+
+msgid "In the inbox"
+msgstr "ในกล่องจดหมายเข้า"
+
+msgid "In the page <head>"
+msgstr "ในส่วน <head> ของหน้า"
+
+msgid "In the spam folder"
+msgstr "ในโฟลเดอร์สแปม"
+
+msgid "Indigo"
+msgstr "สีคราม"
+
+msgid "Insert a snippet"
+msgstr "แทรกสนิปเป็ต"
+
+msgid "Insert a table"
+msgstr "แทรกตาราง"
+
+msgid "Insert a table you saved earlier:"
+msgstr "แทรกตารางที่บันทึกไว้ก่อนหน้า:"
+
+msgid "Insert column right"
+msgstr "แทรกคอลัมน์ทางขวา"
+
+msgid "Insert row below"
+msgstr "แทรกแถวด้านล่าง"
+
+msgid "Insert table"
+msgstr "แทรกตาราง"
+
+msgid "Install analytics first"
+msgstr "ติดตั้ง analytics ก่อน"
+
+msgid "Invalid code. Please try again."
+msgstr "รหัสไม่ถูกต้อง กรุณาลองอีกครั้ง"
+
+msgid "It continues on its own each time you open an admin page"
+msgstr "มันทำงานต่อเนื่องด้วยตัวเองทุกครั้งที่คุณเปิดหน้าผู้ดูแล"
+
+msgid "It failed: %s"
+msgstr "ล้มเหลว: %s"
+
+msgid "JavaScript &amp; connections"
+msgstr "JavaScript และการเชื่อมต่อ"
+
+msgid "Last confirmed %s ago — worth testing again"
+msgstr "ยืนยันล่าสุดเมื่อ %s ที่แล้ว — ควรทดสอบอีกครั้ง"
+
+msgid "Last message: #%1$d, %2$s ago."
+msgstr "ข้อความล่าสุด: #%1$d, %2$s ที่แล้ว"
+
+msgid "Last row is a total row (pinned to the bottom)"
+msgstr "แถวสุดท้ายเป็นแถวผลรวม (ปักหมุดด้านล่าง)"
+
+msgid "Least-linked first, because the one added without your knowing is almost never the one you link to from two hundred posts. Tick what belongs and approve it; leave the rest here."
+msgstr "ลิงก์น้อยที่สุดก่อน เพราะรายการที่ถูกเพิ่มโดยที่คุณไม่รู้แทบไม่ใช่รายการที่คุณลิงก์จากสองร้อยโพสต์ ติ๊กสิ่งที่เกี่ยวข้องและอนุมัติ ปล่อยที่เหลือไว้ที่นี่"
+
+msgid "Leave empty and the icon follows the list colour."
+msgstr "เว้นว่างไว้ ไอคอนจะใช้สีของรายการ"
+
+msgid "Leave empty to use the icon chosen above; anything pasted here replaces it. Its colour comes from the Icon colour setting below, so the fill in your SVG is ignored. Scripts and event handlers are removed."
+msgstr "เว้นว่างไว้เพื่อใช้ไอคอนที่เลือกไว้ด้านบน สิ่งที่วางที่นี่จะแทนที่ สีของมันมาจากการตั้งค่า Icon colour ด้านล่าง ดังนั้น fill ใน SVG ของคุณจะถูกละเว้น สคริปต์และตัวจัดการเหตุการณ์จะถูกลบออก"
+
+msgid "Leave this empty and the message goes to the same Telegram chat as your order notifications, or by email if you have not set a bot up. Orders go to whoever packs them; this does not, so there is a field of its own."
+msgstr "เว้นช่องนี้ว่างไว้ ข้อความจะไปยังแชท Telegram เดียวกับการแจ้งเตือนคำสั่งซื้อของคุณ หรือทางอีเมลหากคุณยังไม่ได้ตั้งบอท คำสั่งซื้อจะไปยังผู้ที่แพ็ค ส่วนนี้ไม่ใช่ จึงมีช่องของตัวเอง"
+
+msgid "Light"
+msgstr "สว่าง"
+
+msgid "Lightbox engine"
+msgstr "เอ็นจินไลท์บ็อกซ์"
+
+msgid "Lines only"
+msgstr "เฉพาะบรรทัด"
+
+msgid "Link text"
+msgstr "ข้อความลิงก์"
+
+msgid "Links"
+msgstr "ลิงก์"
+
+msgid "Links & URLs"
+msgstr "ลิงก์ & URL"
+
+msgid "Links every image in the content together so the viewer can flip through them. If an image already links to a file, that link is used."
+msgstr "เชื่อมโยงทุกภาพในเนื้อหาเข้าด้วยกันเพื่อให้ผู้ชมสามารถเลื่อนดูได้ หากภาพลิงก์ไปยังไฟล์อยู่แล้ว ลิงก์นั้นจะถูกใช้"
+
+msgid "Links to domains you did not approve are defused as they are printed"
+msgstr "ลิงก์ไปยังโดเมนที่คุณไม่ได้อนุมัติจะถูกปลดอาวุธเมื่อพิมพ์"
+
+msgid "Load CSS without blocking render"
+msgstr "โหลด CSS โดยไม่บล็อกการเรนเดอร์"
+
+msgid "Load more icons"
+msgstr "โหลดไอคอนเพิ่มเติม"
+
+msgid "Loading…"
+msgstr "กำลังโหลด…"
+
+msgid "Loads a script or an embedded frame from this domain"
+msgstr "โหลดสคริปต์หรือเฟรมฝังจากโดเมนนี้"
+
+msgid "Loads stylesheets without blocking the first paint (the media-toggle technique), so the page appears on screen sooner. A big win for First Contentful Paint and Lighthouse’s “Eliminate render-blocking resources”."
+msgstr "โหลดสไตล์ชีตโดยไม่บล็อกการทาสีครั้งแรก (เทคนิค media-toggle) เพื่อให้หน้าปรากฏบนหน้าจอเร็วขึ้น ได้ First Contentful Paint และ Lighthouse \"Eliminate render-blocking resources\" ที่ดีขึ้นมาก"
+
+msgid "Lock content"
+msgstr "ล็อกเนื้อหา"
+
+msgid "Locked yourself out? Log in from a different network (e.g. your phone on mobile data = a different IP), then click the button above to clear all lockouts — or just wait for the lockout time to pass. As a last resort, disable the plugin by renaming its folder via FTP."
+msgstr "ล็อกตัวเองออกหรือไม่? เข้าสู่ระบบจากเครือข่ายอื่น (เช่น โทรศัพท์บนข้อมูลมือถือ = IP อื่น) แล้วคลิกปุ่มด้านบนเพื่อล้างการล็อกเอาต์ทั้งหมด — หรือรอจนกว่าเวลาล็อกเอาต์จะผ่านไป ทางเลือกสุดท้าย ปิดปลั๊กอินโดยเปลี่ยนชื่อโฟลเดอร์ผ่าน FTP"
+
+msgid "Lockout length"
+msgstr "ระยะเวลาล็อกเอาต์"
+
+msgid "Lockout time unit"
+msgstr "หน่วยเวลาล็อกเอาต์"
+
+msgid "Login lockout, two-factor, reCAPTCHA and the login page."
+msgstr "การล็อกเอาต์การเข้าสู่ระบบ การยืนยันตัวตนสองปัจจัย reCAPTCHA และหน้าเข้าสู่ระบบ"
+
+msgid "Login page"
+msgstr "หน้าเข้าสู่ระบบ"
+
+msgid "Longest answer to publish (characters)"
+msgstr "คำตอบที่ยาวที่สุดที่จะเผยแพร่ (ตัวอักษร)"
+
+msgid "Look down this page, deal with anything that makes you stop, and use “Approve everything” below for the rest — what matters is having a baseline, so that tomorrow’s arrival stands out against it."
+msgstr "ดูหน้านี้ลงไป จัดการสิ่งที่ทำให้คุณหยุด และใช้ \"อนุมัติทั้งหมด\" ด้านล่างสำหรับส่วนที่เหลือ — สิ่งสำคัญคือการมีพื้นฐาน เพื่อที่การมาถึงของวันพรุ่งนี้จะโดดเด่น"
+
+msgid "Loop back to the first image"
+msgstr "วนกลับไปที่ภาพแรก"
+
+msgid "Lost your device?"
+msgstr "ทำอุปกรณ์หาย?"
+
+msgid "Mail from this site is known to arrive"
+msgstr "อีเมลจากเว็บไซต์นี้ขึ้นชื่อว่ามาถึง"
+
+msgid "Mail from this site leaves by %1$s, and that address is known as %2$s."
+msgstr "อีเมลจากเว็บไซต์นี้ออกทาง %1$s และที่อยู่นั้นเป็นที่รู้จักในชื่อ %2$s"
+
+msgid "Mail this site sends as %s is treated as forged. Your domain publishes a list of servers allowed to send for it, that list ends in “reject everything else”, and this web server is not on it."
+msgstr "อีเมลที่เว็บไซต์นี้ส่งในชื่อ %s ถูกปฏิบัติเสมือนเป็นอีเมลปลอม โดเมนของคุณเผยแพร่รายการเซิร์ฟเวอร์ที่ได้รับอนุญาตให้ส่งในนามของมัน รายการนั้นลงท้ายด้วย \"ปฏิเสธทุกอย่างอื่น\" และเว็บเซิร์ฟเวอร์นี้ไม่อยู่ในนั้น"
+
+msgid "Maintenance (503)"
+msgstr "การบำรุงรักษา (503)"
+
+msgid "Maintenance 503"
+msgstr "การบำรุงรักษา 503"
+
+msgid "Measurement"
+msgstr "การวัด"
+
+msgid "Merge cells: type #colspan# to merge into the cell on the left, #rowspan# to merge into the cell above. Formulas: =SUM(B2:B10), also AVG / MIN / MAX."
+msgstr "ผสานเซลล์: พิมพ์ #colspan# เพื่อผสานเข้ากับเซลล์ทางซ้าย #rowspan# เพื่อผสานเข้ากับเซลล์ด้านบน สูตร: =SUM(B2:B10) รวมถึง AVG / MIN / MAX"
+
+msgid "Microsoft has been switching this off for new tenants; if it refuses to authenticate, that is why, and another service is the quicker road."
+msgstr "Microsoft กำลังปิดสิ่งนี้สำหรับผู้เช่าใหม่ หากปฏิเสธการยืนยันตัวตน นั่นคือเหตุผล และบริการอื่นเป็นทางที่เร็วกว่า"
+
+msgid "Minimal"
+msgstr "น้อยที่สุด"
+
+msgid "Minimum number of questions"
+msgstr "จำนวนคำถามขั้นต่ำ"
+
+msgid "Minute(s)"
+msgstr "นาที"
+
+msgid "Mode"
+msgstr "โหมด"
+
+msgid "Move column left"
+msgstr "ย้ายคอลัมน์ไปทางซ้าย"
+
+msgid "Move column right"
+msgstr "ย้ายคอลัมน์ไปทางขวา"
+
+msgid "Move row down"
+msgstr "ย้ายแถวลง"
+
+msgid "Move row up"
+msgstr "ย้ายแถวขึ้น"
+
+msgid "NOT APPROVED: %s"
+msgstr "ไม่ได้รับการอนุมัติ: %s"
+
+msgid "Name"
+msgstr "ชื่อ"
+
+msgid "Native image lazy-load + async decode"
+msgstr "Native image lazy-load + async decode"
+
+msgid "New"
+msgstr "ใหม่"
+
+msgid "Next"
+msgstr "ถัดไป"
+
+msgid "Next beat due: %s"
+msgstr "Beat ถัดไปครบกำหนด: %s"
+
+msgid "Next one due %s."
+msgstr "รายการถัดไปครบกำหนด %s"
+
+msgid "No FAQ section recognised in this post."
+msgstr "ไม่พบส่วน FAQ ในโพสต์นี้"
+
+msgid "No Google Analytics tag turned up, either in your settings or on the home page. If you have not installed one yet, Site Kit by Google (or any GA4 plugin) is the usual way. If you know you do have one — added through Tag Manager, a caching layer, or a consent tool that loads it later — this check simply could not see it: switch the setting on anyway. It looks for analytics at the moment of the click, not now, so it starts working the instant a tag is present."
+msgstr "ไม่พบแท็ก Google Analytics ทั้งในการตั้งค่าของคุณและบนหน้าแรก หากคุณยังไม่ได้ติดตั้ง Site Kit by Google (หรือปลั๊กอิน GA4 ใด ๆ) เป็นวิธีปกติ หากคุณรู้ว่าคุณมี — เพิ่มผ่าน Tag Manager, เลเยอร์แคช หรือเครื่องมือยินยอมที่โหลดในภายหลัง — การตรวจสอบนี้เพียงแค่มองไม่เห็น: เปิดการตั้งค่าเปิดไว้ตามเดิม มันมองหา analytics ในขณะที่คลิก ไม่ใช่ตอนนี้ ดังนั้นจึงเริ่มทำงานทันทีที่มีแท็กอยู่"
+
+msgid "No Telegram bot token is set yet (WooCommerce module)."
+msgstr "ยังไม่ได้ตั้งค่า Telegram bot token (โมดูล WooCommerce)"
+
+msgid "No auto-refresh"
+msgstr "ไม่มีการรีเฟรชอัตโนมัติ"
+
+msgid "No caption"
+msgstr "ไม่มีคำบรรยาย"
+
+msgid "No copy on disk yet — it is written the first time you confirm something"
+msgstr "ยังไม่มีสำเนาบนดิสก์ — มันถูกเขียนครั้งแรกเมื่อคุณยืนยันบางอย่าง"
+
+msgid "No downloadable secrets in the site folder"
+msgstr "ไม่มีความลับที่ดาวน์โหลดได้ในโฟลเดอร์ของเว็บไซต์"
+
+msgid "No matching rows."
+msgstr "ไม่มีแถวที่ตรงกัน"
+
+msgid "No message containing %s yet. Send that exact code to the bot, then press this again."
+msgstr "ยังไม่มีข้อความที่มี %s ส่งรหัสที่ตรงกันนั้นไปยังบอท แล้วกดนี่อีกครั้ง"
+
+msgid "No post titles here on purpose — this list is long, and looking up a title for every row is what made this screen slow. Tick anything you want to take back and press the button; it moves up to “Waiting for you” with its posts listed."
+msgstr "ไม่มีชื่อโพสต์ที่นี่โดยตั้งใจ — รายการนี้ยาว และการค้นหาชื่อสำหรับทุกแถวเป็นสิ่งที่ทำให้หน้าจอนี้ช้า ติ๊กสิ่งที่คุณต้องการนำกลับและกดปุ่ม มันจะย้ายขึ้นไปยัง \"กำลังรอคุณ\" พร้อมรายชื่อโพสต์"
+
+msgid "No saved tables yet."
+msgstr "ยังไม่มีตารางที่บันทึกไว้"
+
+msgid "No scripts found."
+msgstr "ไม่พบสคริปต์"
+
+msgid "No snippet matches your search."
+msgstr "ไม่มีสนิปเป็ตที่ตรงกับการค้นหาของคุณ"
+
+msgid "No snippets yet — create them on the Shortcode screen."
+msgstr "ยังไม่มีสนิปเป็ต — สร้างในหน้าจอ Shortcode"
+
+msgid "No table yet."
+msgstr "ยังไม่มีตาราง"
+
+msgid "No tables yet. Click “Add new table” to create your first one."
+msgstr "ยังไม่มีตาราง คลิก \"เพิ่มตารางใหม่\" เพื่อสร้างอันแรกของคุณ"
+
+msgid "Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it."
+msgstr "ไม่มีใครคลิกผ่านได้ แข็งแกร่งกว่า และมีแนวโน้มที่จะขวางทาง — โดเมนที่คุณตั้งใจจะลิงก์แต่ลืมติ๊กจะหยุดเป็นลิงก์จนกว่าคุณจะติ๊ก"
+
+msgid "Nobody has ever checked that mail from this site arrives"
+msgstr "ไม่เคยมีใครตรวจสอบว่าอีเมลจากเว็บไซต์นี้มาถึง"
+
+msgid "None (instant)"
+msgstr "ไม่มี (ทันที)"
+
+msgid "Not allowed."
+msgstr "ไม่ได้รับอนุญาต"
+
+msgid "Not due yet."
+msgstr "ยังไม่ครบกำหนด"
+
+msgid "Not your normal password — Google requires an app password, and the page that makes them only appears once two-step verification is on."
+msgstr "ไม่ใช่รหัสผ่านปกติของคุณ — Google ต้องการรหัสผ่านแอป และหน้าที่สร้างรหัสเหล่านั้นจะปรากฏเมื่อเปิดการยืนยันสองขั้นตอนเท่านั้น"
+
+msgid "Nothing accepts mail for %s, so any address at your own domain cannot receive replies. If you have stopped paying for a mailbox provider, its records may still be pointing there."
+msgstr "ไม่มีอะไรยอมรับอีเมลสำหรับ %s ดังนั้นที่อยู่ใด ๆ ที่โดเมนของคุณเองจึงไม่สามารถรับการตอบกลับได้ หากคุณหยุดจ่ายค่าผู้ให้บริการเมลบ็อกซ์ บันทึกของพวกเขาอาจยังคงชี้ไปที่นั่น"
+
+msgid "Nothing in DNS can change this. Send through an email service instead — those use a different port, which is open."
+msgstr "ไม่มีอะไรใน DNS ที่สามารถเปลี่ยนสิ่งนี้ได้ ส่งผ่านบริการอีเมลแทน — พวกนั้นใช้พอร์ตอื่นที่เปิดอยู่"
+
+msgid "Nothing matches that."
+msgstr "ไม่มีอะไรตรงกับสิ่งนั้น"
+
+msgid "Nothing running on this server can find out whether a message arrived. You can. Send one, look, and say what you found — the answer is kept with the date, so this screen can afterwards report something that was seen rather than something that was switched on."
+msgstr "ไม่มีอะไรที่ทำงานบนเซิร์ฟเวอร์นี้สามารถค้นหาว่าข้อความมาถึงหรือไม่ คุณทำได้ ส่งข้อความ ดู และบอกว่าคุณพบอะไร — คำตอบจะถูกเก็บไว้พร้อมกับวันที่ เพื่อให้หน้าจอนี้ในภายหลังสามารถรายงานสิ่งที่เห็น ไม่ใช่สิ่งที่ถูกเปิด"
+
+msgid "Nothing to preview yet."
+msgstr "ยังไม่มีอะไรให้ดูตัวอย่าง"
+
+msgid "Nothing to send."
+msgstr "ไม่มีอะไรจะส่ง"
+
+msgid "Nothing to set up"
+msgstr "ไม่มีอะไรต้องตั้งค่า"
+
+msgid "Nothing was ticked, so nothing changed."
+msgstr "ไม่มีอะไรถูกติ๊ก จึงไม่มีอะไรเปลี่ยน"
+
+msgid "Nothing — just tell me"
+msgstr "ไม่มีอะไร — แค่บอกฉัน"
+
+msgid "Nothing. Every domain your content points at is one you have agreed to."
+msgstr "ไม่มีอะไร โดเมนทุกโดเมนที่เนื้อหาของคุณชี้ไปเป็นโดเมนที่คุณยินยอมแล้ว"
+
+msgid "Notification bar"
+msgstr "แถบแจ้งเตือน"
+
+msgid "Nowhere — it never came"
+msgstr "ไม่มีที่ไหน — มันไม่เคยมา"
+
+msgid "On the code screen the user can have a one-time code emailed to their account address if they lose their phone."
+msgstr "ในหน้าจอรหัส ผู้ใช้สามารถให้ส่งรหัสใช้ครั้งเดียวทางอีเมลไปยังที่อยู่บัญชีของพวกเขาหากพวกเขาทำโทรศัพท์หาย"
+
+msgid "One click for the safe, high-impact speed features — including delaying third-party scripts and deferring JavaScript. It deliberately leaves out the advanced, riskier options (async CSS, the aggressive “delay all” mode), which you can still turn on yourself later. Gutenberg and Classic CSS are left alone, since removing those can change how a theme looks."
+msgstr "คลิกเดียวสำหรับคุณสมบัติความเร็วที่ปลอดภัยและมีผลกระทบสูง — รวมถึงการหน่วงสคริปต์บุคคลที่สามและการเลื่อน JavaScript โดยเจตนาละเว้นตัวเลือกขั้นสูงที่เสี่ยงกว่า (async CSS, โหมด \"delay all\" ที่ก้าวร้าว) ซึ่งคุณยังสามารถเปิดใภายหลังได้ Gutenberg และ Classic CSS ถูกปล่อยไว้ เพราะการลบอาจเปลี่ยนรูปลักษณ์ของธีม"
+
+msgid "One half is in the database — still safe, but tidy it up"
+msgstr "ครึ่งหนึ่งอยู่ในฐานข้อมูล — ยังคงปลอดภัย แต่จัดระเบียบให้เรียบร้อย"
+
+msgid "One of your buttons is set to Skype. Microsoft closed Skype on 5 May 2025 and moved everyone to Teams, so that button now opens nothing for visitors. Change it to another channel — it has been left in place rather than removed for you, so that nothing changes on your site without your say-so."
+msgstr "ปุ่มของคุณปุ่มหนึ่งถูกตั้งเป็น Skype Microsoft ปิด Skype เมื่อ 5 พฤษภาคม 2025 และย้ายทุกคนไป Teams ดังนั้นปุ่มนั้นจึงไม่เปิดอะไรสำหรับผู้เยี่ยมชมอีกต่อไป เปลี่ยนเป็นช่องทางอื่น — มันถูกปล่อยไว้แทนที่จะลบออกให้คุณ เพื่อที่ไม่มีอะไรเปลี่ยนแปลงบนเว็บไซต์ของคุณโดยไม่ได้รับอนุญาตจากคุณ"
+
+msgid "One-click safe speed setup"
+msgstr "การตั้งค่าความเร็วที่ปลอดภัยแบบคลิกเดียว"
+
+msgid "Only %1$d question found; at least %2$d are needed before schema is published."
+msgstr "พบเพียง %1$d คำถาม ต้องมีอย่างน้อย %2$d ก่อนที่จะเผยแพร่สคีมา"
+
+msgid "Only a full administrator may use PHP snippets."
+msgstr "ผู้ดูแลระบบเต็มรูบแบบเท่านั้นที่สามารถใช้สนิปเป็ต PHP ได้"
+
+msgid "Only add hosts the page really uses. Preconnecting to a host you do not load from wastes a connection."
+msgstr "เพิ่มเฉพาะโฮสต์ที่หน้าใช้จริงเท่านั้น การ preconnect ไปยังโฮสต์ที่คุณไม่โหลดจะสิ้นเปลืองการเชื่อมต่อ"
+
+msgid "Only affects enqueued stylesheets, and only for logged-out visitors. A fallback keeps every stylesheet working when JavaScript is turned off."
+msgstr "ส่งผลเฉพาะสไตล์ชีตที่ถูก enqueue และเฉพาะผู้เยี่ยมชมที่ล็อกเอาต์ ตัวสำรองทำให้สไตล์ชีตทุกตัวทำงานเมื่อปิด JavaScript"
+
+msgid "Only for a custom icon: click the SVG box below, then"
+msgstr "เฉพาะไอคอนที่กำหนดเอง: คลิกกล่อง SVG ด้านล่าง แล้ว"
+
+msgid "Only in the post editor (autosave/locking)"
+msgstr "เฉพาะในตัวแก้ไขโพสต์ (autosave/locking)"
+
+msgid "Only in these category IDs"
+msgstr "เฉพาะใน ID หมวดหมู่เหล่านี้"
+
+msgid "Only the backup route worked — your main channel is down"
+msgstr "ใช้ได้เฉพาะเส้นทางสำรอง — ช่องทางหลักของคุณล่ม"
+
+msgid "Only the ticked ones on this page (%d)"
+msgstr "เฉพาะที่ติ๊กในหน้านี้ (%d)"
+
+msgid "Only where I place its shortcode"
+msgstr "เฉพาะที่ที่ฉันวางรหัสย่อ"
+
+msgid "Open a couple and glance at them. “Still fine” only resets the clock; it does not change what is approved."
+msgstr "เปิดสองสามรายการแล้วมองดู \"ยังปกติดี\" รีเซ็ตเพียงนาฬิกาเท่านั้น ไม่เปลี่ยนสิ่งที่ได้รับการอนุมัติ"
+
+msgid "Open animation"
+msgstr "แอนิเมชันเปิด"
+
+msgid "Optimisation"
+msgstr "การปรับให้เหมาะสม"
+
+msgid "Optional: in Admin → Events, switch on \"Mark as key event\" for the channels that matter to you. They then appear in the acquisition reports, so you can see which traffic source produces contacts, and they can be imported into Google Ads as a conversion."
+msgstr "ทางเลือก: ใน Admin → Events ให้เปิด \"Mark as key event\" สำหรับช่องทางที่สำคัญกับคุณ จากนั้นพวกมันจะปรากฏในรายงานการเข้าซื้อ เพื่อให้คุณเห็นว่าแหล่งที่มาของทราฟฟิกใดสร้างการติดต่อ และสามารถนำเข้าไปยัง Google Ads เป็น conversion ได้"
+
+msgid "Or enter this key manually:"
+msgstr "หรือกรอกคีย์นี้ด้วยตนเอง:"
+
+msgid "Orange"
+msgstr "สีส้ม"
+
+msgid "Outbound links"
+msgstr "ลิงก์ขาออก"
+
+msgid "Outbound links are watched"
+msgstr "ลิงก์ขาออกกำลังถูกเฝ้าดู"
+
+msgid "Outbound links screen — choose what should happen to them"
+msgstr "หน้าจอลิงก์ขาออก — เลือกว่าจะให้ทำอะไรกับพวกมัน"
+
+msgid "Overdue — nothing has been running the schedule"
+msgstr "เกินกำหนด — ไม่มีอะไรกำลังรันตารางเวลา"
+
+msgid "PHP editing unlocked for %d minutes."
+msgstr "การแก้ไข PHP ปลดล็อกเป็นเวลา %d นาที"
+
+msgid "PHP errors: server paths, fragments of queries, sometimes the contents of a failed request."
+msgstr "ข้อผิดพลาดของ PHP: เส้นทางเซิร์ฟเวอร์ ส่วนย่อยของคำสั่ง query บางครั้งเนื้อหาของคำขอที่ล้มเหลว"
+
+msgid "PHP runs with full access to your site, so it stays locked. Enter a current code from your authenticator to unlock it for 15 minutes."
+msgstr "PHP ทำงานด้วยสิทธิ์เต็มในการเข้าถึงเว็บไซต์ของคุณ ดังนั้นจึงยังคงล็อกอยู่ กรอกรหัสปัจจุบันจากแอปยืนยันตัวตนของคุณเพื่อปลดล็อกเป็นเวลา 15 นาที"
+
+msgid "PHP snippets are not available."
+msgstr "สนิปเป็ต PHP ไม่พร้อมใช้งาน"
+
+msgid "PHP snippets are switched off by HORSETOOLS_NO_PHP in wp-config.php."
+msgstr "สนิปเป็ต PHP ถูกปิดโดย HORSETOOLS_NO_PHP ใน wp-config.php"
+
+msgid "PHP snippets are unavailable because this site sets DISALLOW_FILE_MODS — the platform does not allow code changes at all."
+msgstr "สนิปเป็ต PHP ไม่พร้อมใช้งานเนื่องจากเว็บไซต์นี้ตั้งค่า DISALLOW_FILE_MODS — แพลตฟอร์มไม่อนุญาตให้มีการเปลี่ยนแปลงโค้ดเลย"
+
+msgid "PHP syntax error — nothing was saved: %s"
+msgstr "ข้อผิดพลาดทางไวยากรณ์ PHP — ไม่มีอะไรถูกบันทึก: %s"
+
+msgid "Page %1$d of %2$d"
+msgstr "หน้า %1$d จาก %2$d"
+
+msgid "Pagination"
+msgstr "การแบ่งหน้า"
+
+msgid "Panel layout"
+msgstr "เลย์เอาต์แผง"
+
+msgid "Password or app password"
+msgstr "รหัสผ่านหรือรหัสผ่านแอป"
+
+msgid "Paste a Google Sheets link (shared: anyone with the link)"
+msgstr "วางลิงก์ Google Sheets (แบ่งปัน: ใครก็ตามที่มีลิงก์)"
+
+msgid "Paste all eight lines into wp-config.php, above the line that requires wp-settings.php. Replace any existing lines with the same names. Everyone signed in — including you — will be signed out afterwards, which is the point: it invalidates every cookie issued with the old keys."
+msgstr "วางทั้งแปดบรรทัดลงใน wp-config.php เหนือบรรทัดที่ require wp-settings.php แทนที่บรรทัดที่มีอยู่ที่มีชื่อเดียวกัน ทุกคนที่ลงชื่อเข้าใช้ — รวมถึงคุณ — จะถูกออกจากระบบหลังจากนั้น ซึ่งเป็นจุดประสงค์: มันจะยกเลิกคุกกี้ทุกตัวที่ออกด้วยคีย์เก่า"
+
+msgid "Paste from Excel"
+msgstr "วางจาก Excel"
+
+msgid "Paste the eight keys into wp-config.php — see the notice at the top of any Horse Tools screen"
+msgstr "วางคีย์ทั้งแปดลงใน wp-config.php — ดูประกาศที่ด้านบนของหน้าจอ Horse Tools ใด ๆ"
+
+msgid "Permalinks, image alt text, external links and FAQ schema."
+msgstr "Permalink ข้อความ alt ของรูปภาพ ลิงก์ภายนอก และสคีมา FAQ"
+
+msgid "Phone number"
+msgstr "หมายเลขโทรศัพท์"
+
+msgid "Phone, SMS, Messenger, Telegram, Zalo, Whatsapp, Viber, Skype, Tiktok, Mail:"
+msgstr "โทรศัพท์ SMS Messenger Telegram Zalo Whatsapp Viber Skype Tiktok Mail:"
+
+msgid "PhotoSwipe — best pinch-zoom / pan for photos"
+msgstr "PhotoSwipe — การซูมแบบ pinch / แพนที่ดีที่สุดสำหรับรูปภาพ"
+
+msgid "Phrases that mark the FAQ section"
+msgstr "วลีที่ทำเครื่องหมายส่วน FAQ"
+
+msgid "Pick a button skin"
+msgstr "เลือกสกินปุ่ม"
+
+msgid "Pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically — no icon needed."
+msgstr "เลือกช่องทาง (Zalo Messenger โทรศัพท์…) และโลโก้จะถูกเพิ่มโดยอัตโนมัติ — ไม่ต้องใช้ไอคอน"
+
+msgid "Pick a snippet to insert"
+msgstr "เลือกสนิปเป็ตที่จะแทรก"
+
+msgid "Pink"
+msgstr "สีชมพู"
+
+msgid "Plugin settings"
+msgstr "การตั้งค่าปลั๊กอิน"
+
+msgid "Policy link text (default: Policy)"
+msgstr "ข้อความลิงก์นโยบาย (ค่าเริ่มต้น: Policy)"
+
+msgid "Pop"
+msgstr "ป๊อปอัป"
+
+msgid "Popup"
+msgstr "ป๊อปอัป"
+
+msgid "Post images, duplicating posts and the image lightbox."
+msgstr "รูปภาพในโพสต์ การทำซ้ำโพสต์ และไลท์บ็อกซ์รูปภาพ"
+
+msgid "Posts"
+msgstr "โพสต์"
+
+msgid "Posts and pages"
+msgstr "โพสต์และเพจ"
+
+msgid "Posts only"
+msgstr "เฉพาะโพสต์"
+
+msgid "Preconnect to third-party hosts"
+msgstr "Preconnect ไปยังโฮสต์ของบุคคลที่สาม"
+
+msgid "Preload critical assets"
+msgstr "โหลดทรัพย์สินที่สำคัญล่วงหน้า"
+
+msgid "Previous"
+msgstr "ก่อนหน้า"
+
+msgid "Print"
+msgstr "พิมพ์"
+
+msgid "Protection"
+msgstr "การป้องกัน"
+
+msgid "Prove it"
+msgstr "พิสูจน์"
+
+msgid "Publish FAQ schema automatically from the FAQ section in a post"
+msgstr "เผยแพร่สคีมา FAQ โดยอัตโนมัติจากส่วน FAQ ในโพสต์"
+
+msgid "Publishes the server configuration, paths and loaded modules."
+msgstr "เผยแพร่การกำหนดค่าเซิร์ฟเวอร์ เส้นทาง และโมดูลที่โหลด"
+
+msgid "Pull data"
+msgstr "ดึงข้อมูล"
+
+msgid "Question"
+msgstr "คำถาม"
+
+msgid "Quick guide — how the chat feature works"
+msgstr "คู่มือฉบับย่อ — วิธีการทำงานของฟีเจอร์แชท"
+
+msgid "Read all my content again"
+msgstr "อ่านเนื้อหาทั้งหมดของฉันอีกครั้ง"
+
+msgid "Read the records again"
+msgstr "อ่านบันทึกอีกครั้ง"
+
+msgid "Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see."
+msgstr "อ่านสิ่งเหล่านี้เป็นเจตนา ไม่ใช่ผลลัพธ์: การแตะหมายความว่ามีคนเปิดแอปโทรศัพท์หรือแอปแชท ไม่ใช่ว่ามีการเชื่อมต่อสายหรือส่งข้อความ Ad blocker ยังหยุดการคลิกบางอย่างไม่ให้ถึง Analytics ดังนั้นตัวเลขจริงจึงสูงกว่าที่คุณเห็นเล็กน้อย"
+
+msgid "Reading your content: %1$d of %2$d"
+msgstr "กำลังอ่านเนื้อหาของคุณ: %1$d จาก %2$d"
+
+msgid "Reading your content…"
+msgstr "กำลังอ่านเนื้อหาของคุณ…"
+
+msgid "Reading…"
+msgstr "กำลังอ่าน…"
+
+msgid "Reads the “frequently asked questions” part your posts already have — a heading that names the section, then one heading per question with its answer below — and publishes the matching JSON-LD so Google can show them as FAQ rich results. Nothing in your posts is changed. If another SEO plugin already publishes FAQ schema for a post, Horse Tools stays out of the way."
+msgstr "อ่านส่วน \"คำถามที่พบบ่อย\" ที่โพสต์ของคุณมีอยู่แล้ว — หัวเรื่องที่ตั้งชื่อส่วน จากนั้นหัวเรื่องหนึ่งต่อคำถามพร้อมคำตอบด้านล่าง — และเผยแพร่ JSON-LD ที่ตรงกันเพื่อให้ Google แสดงเป็นผลลัพธ์แบบ FAQ แบบสมบูรณ์ ไม่มีอะไรในโพสต์ของคุณถูกเปลี่ยน หากปลั๊กอิน SEO อื่นเผยแพร่สคีมา FAQ สำหรับโพสต์อยู่แล้ว Horse Tools จะไม่เข้าไปยุ่ง"
+
+msgid "Record contact button clicks"
+msgstr "บันทึกการคลิกปุ่มติดต่อ"
+
+msgid "Redirects (301)"
+msgstr "การเปลี่ยนเส้นทาง (301)"
+
+msgid "Redirects 301"
+msgstr "การเปลี่ยนเส้นทาง 301"
+
+msgid "Refresh daily"
+msgstr "รีเฟรชทุกวัน"
+
+msgid "Refresh hourly"
+msgstr "รีเฟรชทุกชั่วโมง"
+
+msgid "Removed something from a post and it is still listed here? The lists only grow as your content is read, and a post that no longer contains something cannot say so. Read everything again and the lists will match what is actually there now."
+msgstr "ลบบางอย่างออกจากโพสต์แล้วแต่ยังปรากฏอยู่ที่นี่? รายการจะเติบโตเมื่อเนื้อหาของคุณถูกอ่าน และโพสต์ที่ไม่มีบางอย่างอีกต่อไปไม่สามารถบอกได้ อ่านทุกอย่างอีกครั้งและรายการจะตรงกับสิ่งที่มีอยู่จริง"
+
+msgid "Removes the admin icon font (Dashicons) on the front-end for logged-out visitors, who never see it. It is kept for logged-in users because the admin bar uses it."
+msgstr "ลบไอคอนฟอนต์ผู้ดูแล (Dashicons) ที่ส่วนหน้าสำหรับผู้เยี่ยมชมที่ล็อกเอาต์ ซึ่งไม่เคยเห็น มันถูกเก็บไว้สำหรับผู้ใช้ที่ลงชื่อเข้าใช้เพราะแถบผู้ดูแลใช้มัน"
+
+msgid "Reset all login lockouts now"
+msgstr "รีเซ็ตการล็อกเอาต์ทั้งหมดทันที"
+
+msgid "Review the list"
+msgstr "ตรวจสอบรายการ"
+
+msgid "Rich results"
+msgstr "ผลลัพธ์แบบสมบูรณ์"
+
+msgid "Right now these would go to: %s"
+msgstr "ตอนนี้สิ่งเหล่านี้จะไปที่: %s"
+
+msgid "Roles, avatars, SMTP and signing in with Google."
+msgstr "บทบาท อวาตาร์ SMTP และการลงชื่อเข้าใช้ด้วย Google"
+
+msgid "Rotate in"
+msgstr "หมุนเข้า"
+
+msgid "Row-number column"
+msgstr "คอลัมน์เลขแถว"
+
+msgid "Rows"
+msgstr "แถว"
+
+msgid "Rows/page"
+msgstr "แถว/หน้า"
+
+msgid "Run this snippet as PHP"
+msgstr "รันสนิปเป็ตนี้เป็น PHP"
+
+msgid "SAVE FONT SETTINGS"
+msgstr "บันทึกการตั้งค่าฟอนต์"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "SMTP key"
+msgstr "คีย์ SMTP"
+
+msgid "SMTP password"
+msgstr "รหัสผ่าน SMTP"
+
+msgid "Save"
+msgstr "บันทึก"
+
+msgid "Save a table"
+msgstr "บันทึกตาราง"
+
+msgid "Save table"
+msgstr "บันทึกตาราง"
+
+msgid "Save these one-time backup codes somewhere safe — each works once if you lose your phone:"
+msgstr "บันทึกรหัสสำรองใช้ครั้งเดียวเหล่านี้ไว้ในที่ปลอดภัย — แต่ละรหัสใช้ได้ครั้งเดียวหากคุณทำโทรศัพท์หาย:"
+
+msgid "Save this choice"
+msgstr "บันทึกตัวเลือกนี้"
+
+msgid "Saved tables"
+msgstr "ตารางที่บันทึกไว้"
+
+msgid "Saved. Everything found so far is approved."
+msgstr "บันทึกแล้ว ทุกอย่างที่พบจนถึงตอนนี้ได้รับการอนุมัติ"
+
+msgid "Scan failed."
+msgstr "การสแกนล้มเหลว"
+
+msgid "Scan the scripts running on the home page"
+msgstr "สแกนสคริปต์ที่กำลังรันบนหน้าแรก"
+
+msgid "Scan the whole site"
+msgstr "สแกนทั้งเว็บไซต์"
+
+msgid "Scan this with Google Authenticator, Authy or a similar app, then enter the 6-digit code it shows to turn 2FA on."
+msgstr "สแกนสิ่งนี้ด้วย Google Authenticator Authy หรือแอปที่คล้ายกัน จากนั้นกรอกรหัส 6 หลักที่แสดงเพื่อเปิด 2FA"
+
+msgid "Scanning…"
+msgstr "กำลังสแกน…"
+
+msgid "Scripts to exclude from defer (one per line — a script handle or part of its URL)"
+msgstr "สคริปต์ที่จะยกเว้นจากการหน่วง (หนึ่งต่อบรรทัด — script handle หรือส่วนหนึ่งของ URL)"
+
+msgid "Scripts, styles, lazy loading, image compression and WebP."
+msgstr "สคริปต์ สไตล์ lazy loading การบีบอัดรูปภาพ และ WebP"
+
+msgid "Search all plugin features…"
+msgstr "ค้นหาฟีเจอร์ปลั๊กอินทั้งหมด…"
+
+msgid "Search box"
+msgstr "กล่องค้นหา"
+
+msgid "Search by name…"
+msgstr "ค้นหาตามชื่อ…"
+
+msgid "Search snippets by name, description or tag…"
+msgstr "ค้นหาสนิปเป็ตตามชื่อ คำอธิบาย หรือแท็ก…"
+
+msgid "Search the table…"
+msgstr "ค้นหาในตาราง…"
+
+msgid "Search: cart, gift, phone… (English name, or Vietnamese for popular icons)"
+msgstr "ค้นหา: cart gift phone… (ชื่อภาษาอังกฤษ หรือภาษาเวียดนามสำหรับไอคอนยอดนิยม)"
+
+msgid "Seconds to wait, or scroll percent (used by the two options above)"
+msgstr "วินาทีที่จะรอ หรือเปอร์เซ็นต์การเลื่อน (ใช้โดยสองตัวเลือกข้างต้น)"
+
+msgid "Security question on the login form"
+msgstr "คำถามความปลอดภัยในแบบฟอร์มเข้าสู่ระบบ"
+
+msgid "Security tab → Check-in → turn on the regular message"
+msgstr "แท็บความปลอดภัย → Check-in → เปิดข้อความปกติ"
+
+msgid "See the GitHub release page for details."
+msgstr "ดูหน้า release บน GitHub สำหรับรายละเอียด"
+
+msgid "See the banner at the top of any Horse Tools screen"
+msgstr "ดูแบนเนอร์ที่ด้านบนของหน้าจอ Horse Tools ใด ๆ"
+
+msgid "Select a snippet"
+msgstr "เลือกสนิปเป็ต"
+
+msgid "Send a Telegram code"
+msgstr "ส่งรหัส Telegram"
+
+msgid "Send a test"
+msgstr "ส่งข้อความทดสอบ"
+
+msgid "Send a test message"
+msgstr "ส่งข้อความทดสอบ"
+
+msgid "Send a test message now"
+msgstr "ส่งข้อความทดสอบทันที"
+
+msgid "Send as the same address you sign in with. This service refuses anything else."
+msgstr "ส่งในฐานะที่อยู่เดียวกับที่คุณลงชื่อเข้าใช้ บริการนี้ปฏิเสธสิ่งอื่น"
+
+msgid "Send me a regular check-in message"
+msgstr "ส่งข้อความเช็คอินปกติให้ฉัน"
+
+msgid "Send through an email service instead — then the question does not arise."
+msgstr "ส่งผ่านบริการอีเมลแทน — จากนั้นคำถามจะไม่เกิดขึ้น"
+
+msgid "Send through an email service that is on the list, or add this server to it."
+msgstr "ส่งผ่านบริการอีเมลที่อยู่ในรายการ หรือเพิ่มเซิร์ฟเวอร์นี้ลงในนั้น"
+
+msgid "Send through an email service that is on the list."
+msgstr "ส่งผ่านบริการอีเมลที่อยู่ในรายการ"
+
+msgid "Sending…"
+msgstr "กำลังส่ง…"
+
+msgid "Sends one event to your analytics each time a visitor taps a contact link — phone, SMS, email, Zalo, Messenger, Telegram, WhatsApp, Viber, Line, WeChat, TikTok, Maps and the rest. Any other chat button is recorded under its own site name, so Instagram, Shopee, Signal and anything you add later are covered without waiting for an update. Phone, SMS, email and Viber links count anywhere on the site, including inside your posts; the others count inside the chat widgets, so an article full of outbound links does not flood the report. Nothing is stored on your site and no personal data is involved."
+msgstr "ส่งหนึ่งเหตุการณ์ไปยัง analytics ของคุณทุกครั้งที่ผู้เยี่ยมชมแตะลิงก์ติดต่อ — โทรศัพท์ SMS อีเมล Zalo Messenger Telegram WhatsApp Viber Line WeChat TikTok Maps และอื่น ๆ ปุ่มแชทอื่น ๆ จะถูกบันทึกภายใต้ชื่อเว็บไซต์ของตัวเอง ดังนั้น Instagram Shopee Signal และทุกอย่างที่คุณเพิ่มในภายหลังจะครอบคลุมโดยไม่ต้องรอการอัปเดต ลิงก์โทรศัพท์ SMS อีเมล และ Viber จะถูกนับทุกที่บนเว็บไซต์ รวมถึงในโพสต์ของคุณ ส่วนลิงก์อื่น ๆ จะถูกนับภายในวิดเจ็ตแชท ดังนั้นบทความที่เต็มไปด้วยลิงก์ขาออกจะไม่ท่วมรายงาน ไม่มีอะไรถูกเก็บไว้บนเว็บไซต์ของคุณและไม่มีข้อมูลส่วนบุคคลเข้ามาเกี่ยวข้อง"
+
+msgid "Sent to %s. Now go and look — and do not close this page, because the useful part is what you find."
+msgstr "ส่งไปยัง %s แล้ว ตอนนี้ไปดู — และอย่าปิดหน้านี้ เพราะส่วนที่มีประโยชน์คือสิ่งที่คุณพบ"
+
+msgid "Sent. Check %s — if nothing arrives, the channel is not working even though the site thinks it is."
+msgstr "ส่งแล้ว ตรวจสอบ %s — หากไม่มีอะไรมาถึง แสดงว่าช่องทางไม่ทำงานแม้ว่าเว็บไซต์จะคิดว่าทำงาน"
+
+msgid "Sent: %s"
+msgstr "ส่งแล้ว: %s"
+
+msgid "Server errors, including absolute paths."
+msgstr "ข้อผิดพลาดของเซิร์ฟเวอร์ รวมถึงเส้นทางสัมบูรณ์"
+
+msgid "Service"
+msgstr "บริการ"
+
+msgid "Services panel (mobile)"
+msgstr "แผงบริการ (มือถือ)"
+
+msgid "Settings are grouped by what they do. Pick a group below, or search for a setting by name in the panel on the right."
+msgstr "การตั้งค่าถูกจัดกลุ่มตามสิ่งที่ทำ เลือกกลุ่มด้านล่าง หรือค้นหาการตั้งค่าตามชื่อในแผงด้านขวา"
+
+msgid "Settings → WooCommerce → “Configure order notifications to be sent to Telegram”"
+msgstr "ตั้งค่า → WooCommerce → \"กำหนดค่าการแจ้งเตือนคำสั่งซื้อที่จะส่งไปยัง Telegram\""
+
+msgid "Sharpen (blur to clear)"
+msgstr "คมชัดขึ้น (เบลอเป็นชัด)"
+
+msgid "Show a “Decline” button"
+msgstr "แสดงปุ่ม \"ปฏิเสธ\""
+
+msgid "Show columns"
+msgstr "แสดงคอลัมน์"
+
+msgid "Show new keys to paste"
+msgstr "แสดงคีย์ใหม่ที่จะวาง"
+
+msgid "Showing the first %1$d of %2$d — keep typing to narrow it down."
+msgstr "กำลังแสดง %1$d ตัวแรกจาก %2$d — พิมพ์ต่อเพื่อจำกัดให้แคบลง"
+
+msgid "Shows a small cookie notice in the corner so your site meets privacy rules. To use: turn on the switch, type the notice and your policy-page link, then choose which side it appears on."
+msgstr "แสดงประกาศคุกกี้เล็ก ๆ ที่มุมเพื่อให้เว็บไซต์ของคุณตรงตามกฎความเป็นส่วนตัว วิธีใช้: เปิดสวิตช์ พิมพ์ประกาศและลิงก์หน้านโยบายของคุณ จากนั้นเลือกด้านที่จะให้ปรากฏ"
+
+msgid "Shows a thin notice bar across the very top of every page — handy for a promotion, a hotline, or a delivery note. To use: turn on the switch, type your message, then choose the background colour."
+msgstr "แสดงแถบประกาศบาง ๆ ที่ด้านบนสุดของทุกหน้า — มีประโยชน์สำหรับโปรโมชั่น สายด่วน หรือบันทึกการจัดส่ง วิธีใช้: เปิดสวิตช์ พิมพ์ข้อความของคุณ จากนั้นเลือกสีพื้นหลัง"
+
+msgid "Shows an eye-catching popup in the middle of the screen when someone opens your site — great for a sale, an announcement or a poster. To use: turn on the switch, pick a layout below, add an image / title / content, then set how many hours before it shows again."
+msgstr "แสดงป๊อปอัปที่ดึงดูดความสนใจตรงกลางหน้าจอเมื่อมีคนเปิดเว็บไซต์ของคุณ — เยี่ยมสำหรับการลดราคา ประกาศ หรือโปสเตอร์ วิธีใช้: เปิดสวิตช์ เลือกเลย์เอาต์ด้านล่าง เพิ่มรูปภาพ / ชื่อเรื่อง / เนื้อหา จากนั้นตั้งค่าว่าจะให้แสดงอีกกี่ชั่วโมง"
+
+msgid "Side of the site"
+msgstr "ด้านข้างของเว็บไซต์"
+
+msgid "Signature"
+msgstr "ลายเซ็น"
+
+msgid "Signing keys are in wp-config.php, not the database"
+msgstr "คีย์การลงชื่ออยู่ใน wp-config.php ไม่ใช่ในฐานข้อมูล"
+
+msgid "Site"
+msgstr "เว็บไซต์"
+
+msgid "Site is behind Cloudflare or a proxy (use the real visitor IP)"
+msgstr "เว็บไซต์อยู่เบื้องหลัง Cloudflare หรือพร็อกซี (ใช้ IP ผู้เยี่ยมชมจริง)"
+
+msgid "Site search"
+msgstr "การค้นหาในเว็บไซต์"
+
+msgid "Size"
+msgstr "ขนาด"
+
+msgid "Skype (service closed)"
+msgstr "Skype (บริการปิดแล้ว)"
+
+msgid "Slide"
+msgstr "สไลด์"
+
+msgid "Slide down"
+msgstr "เลื่อนลง"
+
+msgid "Slide in from left"
+msgstr "เลื่อนเข้าจากซ้าย"
+
+msgid "Slide in from right"
+msgstr "เลื่อนเข้าจากขวา"
+
+msgid "Slide transition (GLightbox)"
+msgstr "การเปลี่ยนผ่านแบบสไลด์ (GLightbox)"
+
+msgid "Slide up"
+msgstr "เลื่อนขึ้น"
+
+msgid "Slow down to 60 seconds (safe)"
+msgstr "ช้าลงเหลือ 60 วินาที (ปลอดภัย)"
+
+msgid "Snippets"
+msgstr "สนิปเป็ต"
+
+msgid "So this sends you a short message on a schedule, with a number on it, even when everything is fine. Numbers that skip mean messages were sent and never reached you. A message that arrives late means nothing was running the schedule. Nothing at all means something stopped it — and that is the one you can only notice from outside the site, which is why each message tells you when to expect the next."
+msgstr "ดังนั้นสิ่งนี้จะส่งข้อความสั้น ๆ ถึงคุณตามกำหนดเวลา พร้อมตัวเลข แม้ในขณะที่ทุกอย่างเป็นปกติ ตัวเลขที่ข้ามหมายความว่าข้อความถูกส่งและไม่เคยมาถึงคุณ ข้อความที่มาถึงช้าหมายความว่าไม่มีอะไรกำลังรันตารางเวลา ไม่มีอะไรเลยหมายความว่ามีบางอย่างหยุดมัน — และนั่นคือสิ่งเดียวที่คุณสามารถสังเกตได้จากภายนอกเว็บไซต์ ซึ่งเป็นเหตุผลที่ข้อความแต่ละข้อความบอกคุณว่าควรคาดหวังข้อความถัดไปเมื่อใด"
+
+msgid "Soft pastel"
+msgstr "พาสเทลนุ่ม"
+
+msgid "Somebody has asked for this path %d times."
+msgstr "มีคนขอเส้นทางนี้แล้ว %d ครั้ง"
+
+msgid "Something changed what you approved, without going through this screen."
+msgstr "มีบางอย่างเปลี่ยนสิ่งที่คุณอนุมัติโดยไม่ผ่านหน้าจอนี้"
+
+msgid "Something changed — see the notice on any Horse Tools screen"
+msgstr "มีบางอย่างเปลี่ยน — ดูประกาศบนหน้าจอ Horse Tools ใด ๆ"
+
+msgid "Something went wrong. Please try again."
+msgstr "มีบางอย่างผิดพลาด กรุณาลองอีกครั้ง"
+
+msgid "Sortable columns"
+msgstr "คอลัมน์ที่เรียงลำดับได้"
+
+msgid "Sorting, search and pagination appear on the published page."
+msgstr "การเรียงลำดับ การค้นหา และการแบ่งหน้าปรากฏบนหน้าที่เผยแพร่"
+
+msgid "Speed"
+msgstr "ความเร็ว"
+
+msgid "Spots visitors who have an ad-blocker turned on and shows them a message asking to switch it off. To use: turn on the switch, type a title and message, then pick the button colours below."
+msgstr "ตรวจพบผู้เยี่ยมชมที่เปิด ad-blocker และแสดงข้อความขอให้ปิด วิธีใช้: เปิดสวิตช์ พิมพ์ชื่อเรื่องและข้อความ จากนั้นเลือกสีปุ่มด้านล่าง"
+
+msgid "Stack into cards on mobile"
+msgstr "ซ้อนเป็นการ์ดบนมือถือ"
+
+msgid "Start fetching a few important files immediately (the LCP image, a web font, the main CSS). The type is detected from the file extension. Do not preload many files — it competes with everything else for bandwidth."
+msgstr "เริ่มดึงไฟล์สำคัญบางไฟล์ทันที (รูปภาพ LCP เว็บฟอนต์ CSS หลัก) ประเภทถูกตรวจจากนามสกุลไฟล์ อย่าโหลดล่วงหน้าไฟล์จำนวนมาก — มันแข่งขันกับทุกอย่างอื่นเพื่อแบนด์วิดท์"
+
+msgid "Starting…"
+msgstr "กำลังเริ่ม…"
+
+msgid "Status"
+msgstr "สถานะ"
+
+msgid "Step 1 —"
+msgstr "ขั้นตอนที่ 1 —"
+
+msgid "Step 2 —"
+msgstr "ขั้นตอนที่ 2 —"
+
+msgid "Step 3 —"
+msgstr "ขั้นตอนที่ 3 —"
+
+msgid "Still reading your content"
+msgstr "ยังคงอ่านเนื้อหาของคุณอยู่"
+
+msgid "Still reading your content. Come back in a minute."
+msgstr "ยังคงอ่านเนื้อหาของคุณอยู่ กลับมาในอีกหนึ่งนาที"
+
+msgid "Still reading your content: %1$d of %2$d. Come back in a minute."
+msgstr "ยังคงอ่านเนื้อหาของคุณอยู่: %1$d จาก %2$d กลับมาในอีกหนึ่งนาที"
+
+msgid "Striped rows"
+msgstr "แถวลาย"
+
+msgid "Style"
+msgstr "สไตล์"
+
+msgid "Stylesheets to keep render-blocking (one per line — a handle or part of the URL). Put your main theme CSS here if you don’t have critical CSS yet."
+msgstr "สไตล์ชีตที่จะเก็บการบล็อกการเรนเดอร์ (หนึ่งต่อบรรทัด — handle หรือส่วนหนึ่งของ URL) ใส่ CSS ธีมหลักของคุณที่นี่หากคุณยังไม่มี critical CSS"
+
+msgid "Swing"
+msgstr "แกว่ง"
+
+msgid "Switch on Horse Tools two-factor authentication (Security tab) before using PHP snippets."
+msgstr "เปิดการยืนยันตัวตนสองปัจจัยของ Horse Tools (แท็บความปลอดภัย) ก่อนใช้สนิปเป็ต PHP"
+
+msgid "Sync from Sheet"
+msgstr "ซิงค์จากชีต"
+
+msgid "Synced"
+msgstr "ซิงค์แล้ว"
+
+msgid "Syncing…"
+msgstr "กำลังซิงค์…"
+
+msgid "THEY DO NOT — something changed them without going through the screens"
+msgstr "พวกเขาไม่ได้ — มีบางอย่างเปลี่ยนโดยไม่ผ่านหน้าจอ"
+
+msgid "Table"
+msgstr "ตาราง"
+
+msgid "Table %d"
+msgstr "ตาราง %d"
+
+msgid "Table of contents"
+msgstr "สารบัญ"
+
+msgid "Table ready — click to edit."
+msgstr "ตารางพร้อม — คลิกเพื่อแก้ไข"
+
+msgid "Tables"
+msgstr "ตาราง"
+
+msgid "Tag Manager is installed on this site. If you already built click tags there — a trigger on tel: links, on zalo.me, on m.me — switching this on records the same click twice, once under your own event name and once as contact_phone. Open your container, check whether such tags exist, and pause either those or this setting. Keep whichever one also fires your Google Ads conversions; this setting does not."
+msgstr "Tag Manager ถูกติดตั้งบนเว็บไซต์นี้ หากคุณสร้างแท็กการคลิกที่นั่นแล้ว — ทริกเกอร์บนลิงก์ tel: บน zalo.me บน m.me — การเปิดสิ่งนี้จะบันทึกการคลิกเดียวกันสองครั้ง หนึ่งครั้งภายใต้ชื่อเหตุการณ์ของคุณเองและหนึ่งครั้งเป็น contact_phone เปิดคอนเทนเนอร์ของคุณ ตรวจสอบว่ามีแท็กดังกล่าวอยู่หรือไม่ และหยุดชั่วคราวทั้งแท็กเหล่านั้นหรือการตั้งค่านี้ เก็บอันที่ยังยิง conversion ของ Google Ads ของคุณ การตั้งค่านี้ไม่ยิง"
+
+msgid "Take back the ticked ones"
+msgstr "นำรายการที่ติ๊กกลับคืน"
+
+msgid "Take the link away, keep the words"
+msgstr "เอาลิงก์ออก เก็บคำไว้"
+
+msgid "Teal"
+msgstr "สีเขียวคราม"
+
+msgid "Telegram (chat %s — the one paired for two-factor recovery)"
+msgstr "Telegram (แชท %s — อันที่จับคู่สำหรับการกู้คืนสองปัจจัย)"
+
+msgid "Telegram (chat %s)"
+msgstr "Telegram (แชท %s)"
+
+msgid "Telegram chat ID for security messages (optional)"
+msgstr "ID แชท Telegram สำหรับข้อความความปลอดภัย (ไม่บังคับ)"
+
+msgid "Telegram recovery is ON but this site has no bot token yet, so no recovery code can be sent. Add a bot token in the %1$s module (the “Configure order notifications to be sent to Telegram” section) — it is easy to miss because it lives there, not here — then each user pastes their own chat ID on their profile."
+msgstr "การกู้คืน Telegram เปิดอยู่ แต่เว็บไซต์นี้ยังไม่มี bot token ดังนั้นจึงไม่สามารถส่งรหัสกู้คืนได้ เพิ่ม bot token ในโมดูล %1$s (ส่วน \"กำหนดค่าการแจ้งเตือนคำสั่งซื้อที่จะส่งไปยัง Telegram\") — มันง่ายที่จะพลาดเพราะอยู่ที่นั่น ไม่ใช่ที่นี่ — จากนั้นผู้ใช้แต่ละคนวาง ID แชทของตัวเองในโปรไฟล์"
+
+msgid "Telegram recovery is turned on but this site has no bot token yet, so no code can be sent. Add a bot token under %s, then reload this page."
+msgstr "การกู้คืน Telegram เปิดอยู่ แต่เว็บไซต์นี้ยังไม่มี bot token ดังนั้นจึงไม่สามารถส่งรหัสได้ เพิ่ม bot token ภายใต้ %s จากนั้นโหลดหน้านี้ใหม่"
+
+msgid "Telegram recovery isn’t fully set up on this site yet — ask the site admin, or just use email or a backup code instead."
+msgstr "การกู้คืน Telegram ยังตั้งค่าไม่สมบูรณ์บนเว็บไซต์นี้ — ถามผู้ดูแลเว็บไซต์ หรือใช้อีเมลหรือรหัสสำรองแทน"
+
+msgid "Telegram returned no updates (the bot may use a webhook, or the token is wrong)."
+msgstr "Telegram ไม่ส่งคืนการอัปเดต (บอทอาจใช้ webhook หรือ token ผิด)"
+
+msgid "Tell me the site is still being watched"
+msgstr "บอกฉันว่าเว็บไซต์ยังถูกเฝ้าดูอยู่"
+
+msgid "Tell the browser to start the DNS + TCP + TLS handshake to external hosts early (fonts, CDN, analytics), so their files arrive sooner. Adds preconnect and dns-prefetch hints to the page head."
+msgstr "บอกเบราว์เซอร์ให้เริ่มการจับมือ DNS + TCP + TLS กับโฮสต์ภายนอกแต่เนิ่น ๆ (ฟอนต์ CDN analytics) เพื่อให้ไฟล์ของพวกเขามาถึงเร็วขึ้น เพิ่มคำใบ้ preconnect และ dns-prefetch ไปยังส่วน head ของหน้า"
+
+msgid "Temporarily close the site with a “under maintenance” notice while you make changes. You (and other logged-in admins) still see the site normally, so you can work in peace."
+msgstr "ปิดเว็บไซต์ชั่วคราวด้วยประกาศ \"อยู่ระหว่างการบำรุงรักษา\" ขณะที่คุณทำการเปลี่ยนแปลง คุณ (และผู้ดูแลอื่น ๆ ที่ลงชื่อเข้าใช้) ยังคงเห็นเว็บไซต์ตามปกติ ดังนั้นคุณสามารถทำงานได้อย่างสงบ"
+
+msgid "Test message from %s"
+msgstr "ข้อความทดสอบจาก %s"
+
+msgid "Test the site after turning this on. If something that must work before interaction breaks (a hero slider, a cookie bar), add its handle or file name to a list below. Do not use together with “Delay JS” in another optimiser."
+msgstr "ทดสอบเว็บไซต์หลังจากเปิดสิ่งนี้ หากมีบางอย่างที่ต้องทำงานก่อนการโต้ตอบเสีย (สไลเดอร์ฮีโร่ แถบคุกกี้) ให้เพิ่ม handle หรือชื่อไฟล์ไปยังรายการด้านล่าง อย่าใช้ร่วมกับ \"Delay JS\" ในเครื่องมือเพิ่มประสิทธิภาพอื่น"
+
+msgid "Test these keys against Google"
+msgstr "ทดสอบคีย์เหล่านี้กับ Google"
+
+msgid "That code is not right."
+msgstr "รหัสนั้นไม่ถูกต้อง"
+
+msgid "That does not look like a Google Sheets link."
+msgstr "นั่นไม่ดูเหมือนลิงก์ Google Sheets"
+
+msgid "That is not an email address."
+msgstr "นั่นไม่ใช่ที่อยู่อีเมล"
+
+msgid "That snippet no longer exists."
+msgstr "สนิปเป็ตนั้นไม่มีอยู่แล้ว"
+
+msgid "That was me — line them up again"
+msgstr "เป็นฉัน — จัดใหม่อีกครั้ง"
+
+msgid "The PHP snippet \"%s\" stopped the page it ran on, so Horse Tools switched it off. Edit it and switch it back on when it is fixed."
+msgstr "สนิปเป็ต PHP \"%s\" หยุดหน้าที่มันรัน ดังนั้น Horse Tools จึงปิดมัน แก้ไขและเปิดใหม่อีกครั้งเมื่อแก้ไขแล้ว"
+
+msgid "The Secret key box is empty, so the check is skipped entirely and reCAPTCHA is doing nothing at all."
+msgstr "กล่อง Secret key ว่างเปล่า ดังนั้นการตรวจสอบจึงถูกข้ามไปทั้งหมดและ reCAPTCHA ไม่ทำอะไรเลย"
+
+msgid "The Site key box is empty."
+msgstr "กล่อง Site key ว่างเปล่า"
+
+msgid "The account name for this service is the literal word “%user%”. It is not your email address, and putting your address there is why it says the password is wrong."
+msgstr "ชื่อบัญชีสำหรับบริการนี้คือคำว่า \"%user%\" ตามตัวอักษร มันไม่ใช่ที่อยู่อีเมลของคุณ และการใส่ที่อยู่ของคุณที่นั่นเป็นเหตุผลที่มันบอกว่ารหัสผ่านผิด"
+
+msgid "The answer is matched ignoring case and surrounding spaces. Remember it — if you ever forget it you can still get back in by renaming the plugin folder over FTP to switch the plugin off."
+msgstr "คำตอบถูกจับคู่โดยไม่สนใจตัวพิมพ์และช่องว่างรอบ ๆ จำไว้ — หากคุณลืมมัน คุณยังสามารถกลับเข้าไปได้โดยเปลี่ยนชื่อโฟลเดอร์ปลั๊กอินผ่าน FTP เพื่อปิดปลั๊กอิน"
+
+msgid "The check-in message is on but has never been sent. Until one arrives you do not know the channel works."
+msgstr "ข้อความเช็คอินเปิดอยู่ แต่ไม่เคยถูกส่ง จนกว่าจะมีข้อความมาถึง คุณไม่รู้ว่าช่องทางทำงาน"
+
+msgid "The code is how the site tells your chat apart from everyone else’s — it finds only the chat that sent it. Recovery codes then reach your own Telegram, not the admin. (You can also type the chat ID number in manually.)"
+msgstr "รหัสเป็นวิธีที่เว็บไซต์บอกแชทของคุณแยกจากแชทของคนอื่น — มันจะหาเฉพาะแชทที่ส่งมันเท่านั้น รหัสกู้คืนจะไปถึง Telegram ของคุณเอง ไม่ใช่ของผู้ดูแล (คุณยังสามารถพิมพ์หมายเลข ID แชทด้วยตนเอง)"
+
+msgid "The first one goes out as soon as you save, so you find out straight away whether the channel works."
+msgstr "อันแรกจะออกทันทีที่คุณบันทึก ดังนั้นคุณจะรู้ทันทีว่าช่องทางทำงาน"
+
+msgid "The form below asks eight questions. Seven of them have exactly one right answer once you know which service you are using, and the eighth is a password. Choose here and the seven fill themselves in — you are left with the one thing nothing can guess."
+msgstr "แบบฟอร์มด้านล่างถามแปดคำถาม เจ็ดข้อมีคำตอบที่ถูกต้องเพียงคำตอบเดียวเมื่อคุณรู้ว่ากำลังใช้บริการใด และข้อที่แปดเป็นรหัสผ่าน เลือกที่นี่และเจ็ดข้อจะกรอกเอง — คุณเหลือสิ่งเดียวที่ไม่มีอะไรเดาได้"
+
+msgid "The last check-in message could not be sent: %s"
+msgstr "ข้อความเช็คอินล่าสุดไม่สามารถส่งได้: %s"
+
+msgid "The last check-in message went out %s ago, which is later than it should be. Nothing has been running the schedule."
+msgstr "ข้อความเช็คอินล่าสุดออกไปเมื่อ %s ที่แล้ว ซึ่งช้ากว่าที่ควร ไม่มีอะไรกำลังรันตารางเวลา"
+
+msgid "The last one could not be sent — Security tab → Check-in"
+msgstr "อันล่าสุดไม่สามารถส่งได้ — แท็บความปลอดภัย → Check-in"
+
+msgid "The link still works for a reader and stops passing any SEO value — which is the whole reason a link like that is worth paying for. Nothing in your posts is changed; only what gets printed."
+msgstr "ลิงก์ยังคงใช้งานได้สำหรับผู้อ่านและหยุดส่งค่า SEO ใด ๆ — ซึ่งเป็นเหตุผลทั้งหมดที่ลิงก์แบบนั้นคุ้มค่าที่จะจ่าย ไม่มีอะไรในโพสต์ของคุณถูกเปลี่ยน มีเพียงสิ่งที่ถูกพิมพ์"
+
+msgid "The most powerful but riskiest speed option. Without the Critical CSS below, the page can flash unstyled for a moment (FOUC). Paste your above-the-fold CSS, or keep the main theme stylesheet in the exclusion list. Test the front end carefully, and don’t combine it with another plugin that also optimises CSS delivery."
+msgstr "ตัวเลือกความเร็วที่ทรงพลังที่สุดแต่เสี่ยงที่สุด หากไม่มี Critical CSS ด้านล่าง หน้าอาจกะพริบแบบไม่มีสไตล์ชั่วขณะ (FOUC) วาง CSS เหนือการพับของคุณ หรือเก็บสไตล์ชีตธีมหลักไว้ในรายการยกเว้น ทดสอบส่วนหน้าอย่างระมัดระวัง และอย่ารวมกับปลั๊กอินอื่นที่เพิ่มประสิทธิภาพการส่ง CSS"
+
+msgid "The page carries no analytics at all yet, so there is nowhere for a click to be recorded. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own with nothing further to configure."
+msgstr "หน้านี้ยังไม่มี analytics เลย ดังนั้นจึงไม่มีที่ไหนสำหรับบันทึกการคลิก ติดตั้ง Site Kit by Google หรือปลั๊กอิน GA4 ใด ๆ และการตั้งค่านี้จะเริ่มทำงานเองโดยไม่ต้องกำหนดค่าเพิ่มเติม"
+
+msgid "The request itself failed."
+msgstr "คำขอเองล้มเหลว"
+
+msgid "The security question below the password was left empty."
+msgstr "คำถามความปลอดภัยใต้รหัสผ่านถูกปล่อยว่างไว้"
+
+msgid "The sheet appears to be empty."
+msgstr "ชีตดูเหมือนว่างเปล่า"
+
+msgid "The sheet is too large (over 1 MB of CSV)."
+msgstr "ชีตใหญ่เกินไป (มากกว่า 1 MB ของ CSV)"
+
+msgid "The sheet must be shared as “Anyone with the link can view”. With auto-refresh on, the table updates itself from the sheet."
+msgstr "ชีตต้องแชร์เป็น \"ทุกคนที่มีลิงก์สามารถดูได้\" เมื่อเปิดการรีเฟรชอัตโนมัติ ตารางจะอัปเดตตัวเองจากชีต"
+
+msgid "The site handed it over successfully. That is not the same as it arriving — if the numbers you receive skip, the channel is dropping them."
+msgstr "เว็บไซต์ส่งมอบสำเร็จแล้ว นั่นไม่ใช่สิ่งเดียวกับการมาถึง — หากตัวเลขที่คุณได้รับข้าม ช่องทางกำลังทิ้งมัน"
+
+msgid "The username is the literal word “apikey”, not your address."
+msgstr "ชื่อผู้ใช้คือคำว่า \"apikey\" ตามตัวอักษร ไม่ใช่ที่อยู่ของคุณ"
+
+msgid "The username is the literal word “resend”, not your address. You must add and verify your domain before it will send as you."
+msgstr "ชื่อผู้ใช้คือคำว่า \"resend\" ตามตัวอักษร ไม่ใช่ที่อยู่ของคุณ คุณต้องเพิ่มและยืนยันโดเมนของคุณก่อนจึงจะส่งเป็นคุณได้"
+
+msgid "The username is the postmaster address Mailgun shows on your sending domain, not your login."
+msgstr "ชื่อผู้ใช้คือที่อยู่ postmaster ที่ Mailgun แสดงบนโดเมนการส่งของคุณ ไม่ใช่การเข้าสู่ระบบของคุณ"
+
+msgid "Theme colour"
+msgstr "สีธีม"
+
+msgid "There are files in your site’s folder that anyone can download."
+msgstr "มีไฟล์ในโฟลเดอร์เว็บไซต์ของคุณที่ทุกคนสามารถดาวน์โหลดได้"
+
+msgid "These are correct — remember them"
+msgstr "เหล่านี้ถูกต้อง — จำไว้"
+
+msgid "These are the phone numbers, Zalo, Messenger links and email addresses currently in your settings. Check them, then confirm — after that you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest."
+msgstr "เหล่านี้คือหมายเลขโทรศัพท์ Zalo ลิงก์ Messenger และที่อยู่อีเมลที่อยู่ในการตั้งค่าของคุณในปัจจุบัน ตรวจสอบ จากนั้นยืนยัน — หลังจากนั้นคุณจะได้รับแจ้งหากสิ่งเหล่านี้เปลี่ยน การเปลี่ยนสายด่วนในร้านค้าเป็นการโจมตีที่ตรงที่สุด และเงียบที่สุด"
+
+msgid "These contact details appear in your content. Confirm them and you will be told if a new one ever turns up in a post — which is what happens when somebody edits an old article to put their own number in it."
+msgstr "รายละเอียดการติดต่อเหล่านี้ปรากฏในเนื้อหาของคุณ ยืนยัน และคุณจะได้รับแจ้งหากมีอันใหม่ปรากฏในโพสต์ — ซึ่งเป็นสิ่งที่เกิดขึ้นเมื่อมีคนแก้ไขบทความเก่าเพื่อใส่หมายเลขของตัวเอง"
+
+msgid "These two addresses do not match, and that is enough to stop your mail."
+msgstr "ที่อยู่ทั้งสองนี้ไม่ตรงกัน และนั่นเพียงพอที่จะหยุดอีเมลของคุณ"
+
+msgid "They no longer match — see the banner at the top of any Horse Tools screen"
+msgstr "พวกเขาไม่ตรงกันอีกต่อไป — ดูแบนเนอร์ที่ด้านบนของหน้าจอ Horse Tools ใด ๆ"
+
+msgid "This account uses two-factor authentication; XML-RPC password login is disabled."
+msgstr "บัญชีนี้ใช้การยืนยันตัวตนสองปัจจัย การเข้าสู่ระบบด้วยรหัสผ่านผ่าน XML-RPC ถูกปิด"
+
+msgid "This could not be checked from here, so the instructions are shown just in case. To find out whether they apply to you: open your site, press F12, and type gtag in the console. An answer of \"function\" means you have nothing to do; \"undefined\" means follow the steps below."
+msgstr "ไม่สามารถตรวจสอบสิ่งนี้จากที่นี่ ดังนั้นคำแนะนำจึงแสดงไว้เผื่อ หากต้องการทราบว่ามันใช้กับคุณหรือไม่: เปิดเว็บไซต์ของคุณ กด F12 และพิมพ์ gtag ในคอนโซล คำตอบ \"function\" หมายความว่าคุณไม่ต้องทำอะไร \"undefined\" หมายความว่าทำตามขั้นตอนด้านล่าง"
+
+msgid "This host does not let the plugin read DNS, so none of the checks below can be made. That is not the same as everything being in order."
+msgstr "โฮสต์นี้ไม่อนุญาตให้ปลั๊กอินอ่าน DNS ดังนั้นการตรวจสอบด้านล่างไม่สามารถทำได้เลย นั่นไม่ใช่สิ่งเดียวกับทุกอย่างเรียบร้อย"
+
+msgid "This is a test message from %s."
+msgstr "นี่คือข้อความทดสอบจาก %s"
+
+msgid "This list is incomplete."
+msgstr "รายการนี้ไม่สมบูรณ์"
+
+msgid "This never touches what is stored. Switch it off and every link is back as it was on the next page load."
+msgstr "สิ่งนี้ไม่แตะสิ่งที่ถูกเก็บ ปิดและทุกลิงก์จะกลับมาเหมือนเดิมในการโหลดหน้าถัดไป"
+
+msgid "This section could not be displayed. The rest of the screen still works."
+msgstr "ส่วนนี้ไม่สามารถแสดงได้ ส่วนที่เหลือของหน้าจอยังคงทำงาน"
+
+msgid "This server cannot reach any other mail server, so nothing it sends can ever be delivered. WordPress hands each message to a local mail program, that program accepts it — which is why every screen says “sent” — and then finds the way out closed. The message waits in a queue nobody reads, and there is no bounce, because a bounce would have to leave by the same door."
+msgstr "เซิร์ฟเวอร์นี้ไม่สามารถเข้าถึงเมลเซิร์ฟเวอร์อื่นใดได้ ดังนั้นทุกสิ่งที่ส่งไม่สามารถส่งถึงได้ WordPress ส่งแต่ละข้อความไปยังโปรแกรมเมลในเครื่อง โปรแกรมนั้นยอมรับ — ซึ่งเป็นเหตุผลที่ทุกหน้าจอบอกว่า \"ส่งแล้ว\" — แล้วพบว่าทางออกปิด ข้อความรออยู่ในคิวที่ไม่มีใครอ่าน และไม่มีการตีกลับ เพราะการตีกลับต้องออกทางประตูเดียวกัน"
+
+msgid "This server does not read .htaccess files, so nothing is hiding this one but its name. Horse Tools now stores these as .php files that stop on their first line, which works on every server."
+msgstr "เซิร์ฟเวอร์นี้ไม่อ่านไฟล์ .htaccess ดังนั้นไม่มีอะไรซ่อนไฟล์นี้นอกจากชื่อ Horse Tools ตอนนี้เก็บสิ่งเหล่านี้เป็นไฟล์ .php ที่หยุดที่บรรทัดแรก ซึ่งทำงานบนทุกเซิร์ฟเวอร์"
+
+msgid "This server sends mail from an address with no name attached to it (%s). Gmail and Yahoo both take that as the mark of a machine nobody set up to send mail, and Yahoo refuses it outright — which looks from here exactly like the message vanishing, because the refusal happens at the far end and the bounce goes somewhere you never read."
+msgstr "เซิร์ฟเวอร์นี้ส่งเมลจากที่อยู่ที่ไม่มีชื่อแนบ (%s) ทั้ง Gmail และ Yahoo ถือว่าเป็นเครื่องหมายของเครื่องที่ไม่มีใครตั้งให้ส่งเมล และ Yahoo ปฏิเสธโดยตรง — ซึ่งดูจากที่นี่เหมือนข้อความหายไป เพราะการปฏิเสธเกิดขึ้นที่ปลายทางและการตีกลับไปที่ใดที่หนึ่งที่คุณไม่เคยอ่าน"
+
+msgid "This site cannot see its own public address — it sits behind a proxy or a load balancer — so the checks above that depend on knowing it were skipped rather than guessed at."
+msgstr "เว็บไซต์นี้มองไม่เห็นที่อยู่สาธารณะของตัวเอง — มันอยู่เบื้องหลังพร็อกซีหรือ load balancer — ดังนั้นการตรวจสอบข้างต้นที่ขึ้นอยู่กับการรู้จักมันจึงถูกข้ามไปมากกว่าที่จะเดา"
+
+msgid "This site has WordPress's built-in file editor switched off (DISALLOW_FILE_EDIT) — good. PHP snippets still work, because they carry their own protections: two-factor unlock, a syntax check before saving, auto-disable on a crash, and code signing. To switch them off as well, add HORSETOOLS_NO_PHP to wp-config.php."
+msgstr "เว็บไซต์นี้ปิดตัวแก้ไขไฟล์ที่มากับ WordPress (DISALLOW_FILE_EDIT) — ดี สนิปเป็ต PHP ยังคงทำงาน เพราะพวกมันมีการป้องกันของตัวเอง: การปลดล็อกสองปัจจัย การตรวจสอบไวยากรณ์ก่อนบันทึก ปิดอัตโนมัติเมื่อเกิดการขัดข้อง และการลงนามโค้ด หากต้องการปิดด้วย ให้เพิ่ม HORSETOOLS_NO_PHP ลงใน wp-config.php"
+
+msgid "This site has no valid admin email address."
+msgstr "เว็บไซต์นี้ไม่มีที่อยู่อีเมลผู้ดูแลที่ถูกต้อง"
+
+msgid "This site has no way to reach you: no Telegram bot, and no valid admin email address."
+msgstr "เว็บไซต์นี้ไม่มีวิธีเข้าถึงคุณ: ไม่มีบอท Telegram และไม่มีที่อยู่อีเมลผู้ดูแลที่ถูกต้อง"
+
+msgid "This site sets DISALLOW_FILE_MODS, so running PHP from the database is not allowed."
+msgstr "เว็บไซต์นี้ตั้งค่า DISALLOW_FILE_MODS ดังนั้นการรัน PHP จากฐานข้อมูลจึงไม่ได้รับอนุญาต"
+
+msgid "This site’s signing keys are stored in the database, not in wp-config.php."
+msgstr "คีย์การลงชื่อของเว็บไซต์นี้ถูกเก็บในฐานข้อมูล ไม่ใช่ใน wp-config.php"
+
+msgid "This snippet’s code no longer matches its signature — it was changed outside this screen and will not run. Review it and save again to re-sign it."
+msgstr "โค้ดของสนิปเป็ตนี้ไม่ตรงกับลายเซ็นอีกต่อไป — มันถูกเปลี่ยนนอกหน้าจอนี้และจะไม่รัน ตรวจสอบและบันทึกอีกครั้งเพื่อลงนามใหม่"
+
+msgid "This user has two-factor authentication ON."
+msgstr "ผู้ใช้นี้เปิดการยืนยันตัวตนสองปัจจัย"
+
+msgid "This web server is not on your domain’s list of allowed senders. The list says “treat anything else as suspicious” rather than “reject it”, so mail as %s will usually arrive in the spam folder."
+msgstr "เว็บเซิร์ฟเวอร์นี้ไม่อยู่ในรายการผู้ส่งที่ได้รับอนุญาตของโดเมนของคุณ รายการบอกว่า \"ปฏิบัติต่อสิ่งอื่นใดที่น่าสงสัย\" แทนที่จะ \"ปฏิเสธ\" ดังนั้นเมลในฐานะ %s มักจะไปลงในโฟลเดอร์สแปม"
+
+msgid "This web server is on your domain’s list of allowed senders."
+msgstr "เว็บเซิร์ฟเวอร์นี้อยู่ในรายการผู้ส่งที่ได้รับอนุญาตของโดเมนของคุณ"
+
+msgid "Tick all on this page"
+msgstr "ติ๊กทั้งหมดในหน้านี้"
+
+msgid "Tip: to stop one specific script from ever being delayed, add the attribute data-ht-no-delay to its tag. Logged-in users are never affected."
+msgstr "เคล็ดลับ: หากต้องการหยุดสคริปต์เฉพาะไม่ให้ล่าช้า ให้เพิ่มแอตทริบิวต์ data-ht-no-delay ในแท็ก ผู้ใช้ที่ลงชื่อเข้าใช้จะไม่ได้รับผลกระทบ"
+
+msgid "To check it works right now rather than waiting: open your site with %s on the end of the address, tap a contact button, and watch GA4 → Admin → DebugView. Without that flag DebugView stays empty however many times you tap, because it only lists devices that identify themselves as debug devices — which is not a fault in the buttons."
+msgstr "หากต้องการตรวจสอบว่าทำงานทันทีแทนที่จะรอ: เปิดเว็บไซต์ของคุณด้วย %s ต่อท้ายที่อยู่ แตะปุ่มติดต่อ และดู GA4 → Admin → DebugView หากไม่มีแฟล็กนี้ DebugView จะว่างเปล่าไม่ว่าคุณจะแตะกี่ครั้ง เพราะมันแสดงรายการเฉพาะอุปกรณ์ที่ระบุตัวเองว่าเป็นอุปกรณ์ดีบัก — ซึ่งไม่ใช่ข้อบกพร่องของปุ่ม"
+
+msgid "To use PHP snippets, switch on two-factor authentication first (Horse Tools → Overview → Security)."
+msgstr "หากต้องการใช้สนิปเป็ต PHP ให้เปิดการยืนยันตัวตนสองปัจจัยก่อน (Horse Tools → ภาพรวม → ความปลอดภัย)"
+
+msgid "To use PHP snippets, switch on two-factor authentication for your own account first (Users → Profile)."
+msgstr "หากต้องการใช้สนิปเป็ต PHP ให้เปิดการยืนยันตัวตนสองปัจจัยสำหรับบัญชีของคุณเองก่อน (ผู้ใช้ → โปรไฟล์)"
+
+msgid "Too many failed attempts. Try again in about %s."
+msgstr "ความพยายามล้มเหลวมากเกินไป ลองอีกครั้งในอีกประมาณ %s"
+
+msgid "Tools"
+msgstr "เครื่องมือ"
+
+msgid "Trust this device for 30 days"
+msgstr "เชื่อถืออุปกรณ์นี้เป็นเวลา 30 วัน"
+
+msgid "Turn it off (uncheck stays on)"
+msgstr "ปิด (ยกเลิกการติ๊กยังคงเปิดอยู่)"
+
+msgid "Turn it off for this user (e.g. they lost their device)"
+msgstr "ปิดสำหรับผู้ใช้นี้ (เช่น พวกเขาทำอุปกรณ์หาย)"
+
+msgid "Turn on the regular check-in message"
+msgstr "เปิดข้อความเช็คอินปกติ"
+
+msgid "Turned on but never sent — send a test message"
+msgstr "เปิดแล้วแต่ไม่เคยส่ง — ส่งข้อความทดสอบ"
+
+msgid "Two Horse Tools protections are signed with those keys: the PHP snippet signature, which is meant to refuse code written straight into the database, and the “trusted device” cookie that skips two-factor authentication. Anyone who can read your database can read the keys, so both can be forged. Moving the keys into wp-config.php — a file — restores them."
+msgstr "การป้องกันของ Horse Tools สองอย่างถูกลงนามด้วยคีย์เหล่านี้: ลายเซ็นสนิปเป็ต PHP ซึ่งมีจุดประสงค์เพื่อปฏิเสธโค้ดที่เขียนตรงไปยังฐานข้อมูล และคุกกี้ \"อุปกรณ์ที่เชื่อถือได้\" ที่ข้ามการยืนยันตัวตนสองปัจจัย ใครก็ตามที่สามารถอ่านฐานข้อมูลของคุณสามารถอ่านคีย์ได้ ดังนั้นทั้งสองสามารถปลอมแปลงได้ การย้ายคีย์ไปยัง wp-config.php — ไฟล์ — กู้คืนได้"
+
+msgid "Two-factor authentication"
+msgstr "การยืนยันตัวตนสองปัจจัย"
+
+msgid "Two-factor authentication (2FA)"
+msgstr "การยืนยันตัวตนสองปัจจัย (2FA)"
+
+msgid "Two-factor authentication is ON for your account."
+msgstr "การยืนยันตัวตนสองปัจจัยเปิดสำหรับบัญชีของคุณ"
+
+msgid "Type it in"
+msgstr "พิมพ์"
+
+msgid "Unlock"
+msgstr "ปลดล็อก"
+
+msgid "Untick all"
+msgstr "ยกเลิกการติ๊กทั้งหมด"
+
+msgid "Upload a file"
+msgstr "อัปโหลดไฟล์"
+
+msgid "Upload a font on the Fonts tab first, then choose where to use it here."
+msgstr "อัปโหลดฟอนต์ในแท็บ Fonts ก่อน จากนั้นเลือกว่าจะใช้ที่ไหนที่นี่"
+
+msgid "Users"
+msgstr "ผู้ใช้"
+
+msgid "Uses the site’s Telegram bot (configured in the WooCommerce module), but each user pastes their OWN chat ID on their profile — so a recovery code always reaches that user’s Telegram, never pooled to the admin. Users without a chat ID simply don’t see the Telegram option."
+msgstr "ใช้บอท Telegram ของเว็บไซต์ (กำหนดค่าในโมดูล WooCommerce) แต่ผู้ใช้แต่ละคนวาง ID แชทของตัวเองในโปรไฟล์ — ดังนั้นรหัสกู้คืนจะไปถึง Telegram ของผู้ใช้เสมอ ไม่รวมเข้ากับผู้ดูแล ผู้ใช้ที่ไม่มี ID แชทจะไม่เห็นตัวเลือก Telegram"
+
+msgid "Usually a phpinfo page."
+msgstr "ปกติเป็นหน้า phpinfo"
+
+msgid "Verify"
+msgstr "ยืนยัน"
+
+msgid "Version-control metadata exposes the source."
+msgstr "ข้อมูลเมตาของ Version-control เปิดเผยซอร์ส"
+
+msgid "Waiting for you"
+msgstr "กำลังรอคุณ"
+
+msgid "Weekly is the useful setting. Daily turns the one message that is supposed to mean something into noise within a fortnight, and once it is noise a gap in the numbering is not noticed either."
+msgstr "รายสัปดาห์เป็นการตั้งค่าที่มีประโยชน์ รายวันจะเปลี่ยนข้อความเดียวที่ควรหมายถึงบางอย่างให้กลายเป็นเสียงรบกวนภายในสองสัปดาห์ และเมื่อเป็นเสียงรบกวน ช่องว่างในการนับก็ไม่ได้รับการสังเกตเช่นกัน"
+
+msgid "What you approved is also kept outside the database"
+msgstr "สิ่งที่คุณอนุมัติถูกเก็บไว้นอกฐานข้อมูลด้วย"
+
+msgid "What you still have to paste: %secret%."
+msgstr "สิ่งที่คุณยังต้องวาง: %secret%"
+
+msgid "When a URL changes or an old link should point somewhere new, this sends visitors (and Google) straight to the right page instead of a “not found” error — so you don’t lose traffic."
+msgstr "เมื่อ URL เปลี่ยนหรือลิงก์เก่าควรชี้ไปที่ใหม่ สิ่งนี้จะส่งผู้เยี่ยมชม (และ Google) ไปยังหน้าที่ถูกต้องทันทีแทนที่จะเป็นข้อผิดพลาด \"ไม่พบ\" — ดังนั้นคุณจะไม่สูญเสียทราฟฟิก"
+
+msgid "When about to leave the page"
+msgstr "เมื่อกำลังจะออกจากหน้า"
+
+msgid "When it appears"
+msgstr "เมื่อปรากฏ"
+
+msgid "Where did it turn up?"
+msgstr "ปรากฏที่ไหน"
+
+msgid "Where it appears"
+msgstr "ที่ที่ปรากฏ"
+
+msgid "Where it runs"
+msgstr "ที่ที่รัน"
+
+msgid "Where this stands:"
+msgstr "ตำแหน่งปัจจุบัน:"
+
+msgid "Where to get it"
+msgstr "ที่ที่จะรับ"
+
+msgid "Where to read the numbers"
+msgstr "ที่ที่จะอ่านตัวเลข"
+
+msgid "Where to run it"
+msgstr "ที่ที่จะรัน"
+
+msgid "Where your content links to"
+msgstr "ที่ที่เนื้อหาของคุณลิงก์ไป"
+
+msgid "Which service should send your email?"
+msgstr "ควรใช้บริการใดในการส่งอีเมลของคุณ"
+
+msgid "Wiggle now and then to catch the eye"
+msgstr "แกว่งเป็นครั้งคราวเพื่อดึงดูดสายตา"
+
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+msgid "WordPress could not hand the message to the mail server at all, so it never left the site."
+msgstr "WordPress ไม่สามารถส่งมอบข้อความไปยังเมลเซิร์ฟเวอร์ได้เลย ดังนั้นมันจึงไม่ได้ออกจากเว็บไซต์"
+
+msgid "WordPress could not hand the message to the mail server."
+msgstr "WordPress ไม่สามารถส่งมอบข้อความไปยังเมลเซิร์ฟเวอร์"
+
+msgid "WordPress reports a message as sent once it has handed it over. That says nothing about whether it arrived, and on a great many sites it does not — the domain names which servers may send for it, the web server is not one of them, and every notification the site sends is treated as forged. Nothing in WordPress mentions this. Below is what your domain’s own records say, read live."
+msgstr "WordPress รายงานข้อความว่าส่งแล้วเมื่อส่งมอบแล้ว ซึ่งไม่ได้บอกอะไรเกี่ยวกับการมาถึง และในเว็บไซต์จำนวนมากมันไม่ได้มาถึง — ชื่อโดเมนที่เซิร์ฟเวอร์อาจส่งในนามของมัน เว็บเซิร์ฟเวอร์ไม่ใช่หนึ่งในนั้น และการแจ้งเตือนทุกครั้งที่เว็บไซต์ส่งจะถูกปฏิบัติเสมือนเป็นการปลอมแปลง ไม่มีอะไรใน WordPress กล่าวถึงสิ่งนี้ ด้านล่างคือสิ่งที่ระเบียนของโดเมนของคุณบอก อ่านสด"
+
+msgid "WordPress “Heartbeat” pings the server every 15–60 seconds (autosave, post-lock, dashboard). Slowing or limiting it cuts admin-ajax.php load, especially with several admin tabs open."
+msgstr "WordPress \"Heartbeat\" ส่ง ping ไปยังเซิร์ฟเวอร์ทุก ๆ 15-60 วินาที (autosave post-lock dashboard) การช้าลงหรือจำกัดจะลดภาระ admin-ajax.php โดยเฉพาะเมื่อมีแท็บผู้ดูแลหลายแท็บเปิดอยู่"
+
+msgid "Worth a second look"
+msgstr "ควรดูอีกครั้ง"
+
+msgid "Write plain PHP — no opening tag needed. The code is checked for syntax errors before it is saved, and if it ever crashes a page Horse Tools switches it off automatically."
+msgstr "เขียน PHP ธรรมดา — ไม่ต้องใช้แท็กเปิด โค้ดจะถูกตรวจสอบข้อผิดพลาดทางไวยากรณ์ก่อนบันทึก และหากมันทำให้หน้าเว็บขัดข้อง Horse Tools จะปิดมันโดยอัตโนมัติ"
+
+msgid "Write your block just like a post: type text and use the toolbar to insert links, images and formatting. Need raw HTML/CSS/JS? Switch to the “Text” tab. Placeholders like {{url}} still work in both."
+msgstr "เขียนบล็อกของคุณเหมือนโพสต์: พิมพ์ข้อความและใช้แถบเครื่องมือเพื่อแทรกลิงก์ รูปภาพ และการจัดรูปแบบ ต้องการ HTML/CSS/JS ดิบ? สลับไปที่แท็บ \"ข้อความ\" Placeholder เช่น {{url}} ยังคงทำงานในทั้งสอง"
+
+msgid "Wrong answer to the security question."
+msgstr "คำตอบผิดสำหรับคำถามความปลอดภัย"
+
+msgid "You are not allowed to change these settings."
+msgstr "คุณไม่ได้รับอนุญาตให้เปลี่ยนการตั้งค่าเหล่านี้"
+
+msgid "You are not allowed to use PHP snippets."
+msgstr "คุณไม่ได้รับอนุญาตให้ใช้สนิปเป็ต PHP"
+
+msgid "You may send as any address on a domain you have verified with this service. An unverified one will be refused."
+msgstr "คุณสามารถส่งในฐานะที่อยู่ใดก็ได้บนโดเมนที่คุณได้ยืนยันกับบริการนี้ ที่อยู่ที่ไม่ได้ยืนยันจะถูกปฏิเสธ"
+
+msgid "You would be told if this site went quiet"
+msgstr "คุณจะได้รับแจ้งหากเว็บไซต์นี้เงียบไป"
+
+msgid "Your Telegram chat ID (for recovery codes)"
+msgstr "ID แชท Telegram ของคุณ (สำหรับรหัสกู้คืน)"
+
+msgid "Your approvals match their copy on disk"
+msgstr "การอนุมัติของคุณตรงกับสำเนาบนดิสก์"
+
+msgid "Your check-in message only got through on the backup route (%s). Your main channel is not working, and you have one left instead of two."
+msgstr "ข้อความเช็คอินของคุณผ่านเข้ามาเฉพาะเส้นทางสำรอง (%s) ช่องทางหลักของคุณไม่ทำงาน และคุณเหลือหนึ่งช่องทางแทนที่จะเป็นสอง"
+
+msgid "Your contact details have changed."
+msgstr "รายละเอียดการติดต่อของคุณเปลี่ยนไป"
+
+msgid "Your container has no GA4 tag in it, so Tag Manager has nothing to pass the click on to. It is placed in the dataLayer and stops there until you build the tag below — until then nothing reaches Analytics."
+msgstr "คอนเทนเนอร์ของคุณไม่มีแท็ก GA4 ดังนั้น Tag Manager จึงไม่มีอะไรส่งต่อการคลิก มันถูกวางใน dataLayer และหยุดที่นั่นจนกว่าคุณจะสร้างแท็กด้านล่าง — จนถึงตอนนั้นไม่มีอะไรไปถึง Analytics"
+
+msgid "Your content has not been read all the way through yet (%1$d of %2$d), so nothing found in it can be trusted as complete."
+msgstr "เนื้อหาของคุณยังไม่ถูกอ่านตลอดทั้งหมด (%1$d จาก %2$d) ดังนั้นไม่มีอะไรที่พบในนั้นสามารถเชื่อถือได้ว่าสมบูรณ์"
+
+msgid "Your content has not been read all the way through yet."
+msgstr "เนื้อหาของคุณยังไม่ถูกอ่านตลอดทั้งหมด"
+
+msgid "Your content links to %1$s domains you have not agreed to, and %2$s you have. You will be told the moment one arrives that is on neither list."
+msgstr "เนื้อหาของคุณลิงก์ไปยัง %1$s โดเมนที่คุณไม่ได้ยินยอม และ %2$s ที่คุณยินยอม คุณจะได้รับแจ้งทันทีที่มีโดเมนที่ไม่อยู่ในรายการใด ๆ มาถึง"
+
+msgid "Your content links to %d domain you have not approved."
+msgstr "เนื้อหาของคุณลิงก์ไปยังโดเมนที่คุณไม่ได้อนุมัติ %d โดเมน"
+
+msgid "Your content links to more domains than the list can hold, so it is incomplete"
+msgstr "เนื้อหาของคุณลิงก์ไปยังโดเมนมากกว่าที่รายการจะเก็บได้ ดังนั้นจึงไม่สมบูรณ์"
+
+msgid "Your content links to more than %d domains, which is as many as can be held. Domains beyond that were not recorded, so this cannot tell you when one of them is new — it would say it was already there."
+msgstr "เนื้อหาของคุณลิงก์ไปยังมากกว่า %d โดเมน ซึ่งเป็นจำนวนสูงสุดที่สามารถเก็บได้ โดเมนที่เกินกว่านั้นไม่ถูกบันทึก ดังนั้นสิ่งนี้จึงบอกคุณไม่ได้เมื่อโดเมนใดโดเมนหนึ่งเป็นโดเมนใหม่ — มันจะบอกว่ามันอยู่ที่นั่นแล้ว"
+
+msgid "Your domain already receives mail through %1$s, so choose %2$s below. Sending through the service that already handles your mail is the one most likely to work first time."
+msgstr "โดเมนของคุณรับเมลผ่าน %1$s อยู่แล้ว ดังนั้นเลือก %2$s ด้านล่าง การส่งผ่านบริการที่จัดการเมลของคุณอยู่แล้วเป็นวิธีที่มีแนวโน้มจะทำงานตั้งแต่ครั้งแรกมากที่สุด"
+
+msgid "Your domain does not say which servers are allowed to send mail for it. Anyone can send mail claiming to be you, and mail you really did send has nothing to vouch for it — Gmail and Yahoo both treat that as a reason for suspicion."
+msgstr "โดเมนของคุณไม่ได้ระบุว่าเซิร์ฟเวอร์ใดได้รับอนุญาตให้ส่งเมลในนามของมัน ใครก็ตามสามารถส่งเมลอ้างเป็นคุณได้ และเมลที่คุณส่งจริงไม่มีอะไรรับรอง — ทั้ง Gmail และ Yahoo ถือว่าเป็นเหตุแห่งความสงสัย"
+
+msgid "Your domain has a list of allowed senders, but it could not be worked out from here whether this server is on it."
+msgstr "โดเมนของคุณมีรายการผู้ส่งที่ได้รับอนุญาต แต่ไม่สามารถระบุได้จากที่นี่ว่าเซิร์ฟเวอร์นี้อยู่ในรายการหรือไม่"
+
+msgid "Your domain has no DMARC record, so you are never told when somebody sends mail pretending to be you, and receivers have no instruction about what to do with it."
+msgstr "โดเมนของคุณไม่มีระเบียน DMARC ดังนั้นคุณจะไม่มีใครบอกคุณเมื่อมีคนส่งเมลแอบอ้างเป็นคุณ และผู้รับไม่มีคำแนะนำว่าจะทำอย่างไรกับมัน"
+
+msgid "Your domain receives mail through %s. Sending through the same service is the setting most likely to work, because it is already on your domain’s list of allowed senders."
+msgstr "โดเมนของคุณรับเมลผ่าน %s การส่งผ่านบริการเดียวกันเป็นการตั้งค่าที่มีแนวโน้มจะทำงานมากที่สุด เพราะมันอยู่ในรายการผู้ส่งที่ได้รับอนุญาตของโดเมนของคุณแล้ว"
+
+msgid "Your domain says which servers may send mail for it, and this site is sending straight from the web server. Whether that server is on the list could not be determined here."
+msgstr "โดเมนของคุณระบุว่าเซิร์ฟเวอร์ใดอาจส่งเมลในนามของมัน และเว็บไซต์นี้กำลังส่งตรงจากเว็บเซิร์ฟเวอร์ ไม่สามารถระบุได้จากที่นี่ว่าเซิร์ฟเวอร์นั้นอยู่ในรายการหรือไม่"
+
+msgid "Your email settings changed after the last test, so what is running now has not been tried"
+msgstr "การตั้งค่าอีเมลของคุณเปลี่ยนหลังจากการทดสอบครั้งล่าสุด ดังนั้นสิ่งที่กำลังรันอยู่จึงยังไม่ได้ลอง"
+
+msgid "Your host can attach a name to the address — ask them for “reverse DNS” or a “PTR record”. Or sidestep it entirely by sending through an email service, whose own servers already have one."
+msgstr "โฮสต์ของคุณสามารถแนบชื่อกับที่อยู่ได้ — ขอจากพวกเขา \"reverse DNS\" หรือ \"PTR record\" หรือหลีกเลี่ยงโดยการส่งผ่านบริการอีเมล ซึ่งเซิร์ฟเวอร์ของพวกเขามีอยู่แล้ว"
+
+msgid "Your last test landed in the spam folder"
+msgstr "การทดสอบครั้งสุดท้ายของคุณลงในโฟลเดอร์สแปม"
+
+msgid "Your last test never arrived"
+msgstr "การทดสอบครั้งสุดท้ายของคุณไม่เคยมาถึง"
+
+msgid "Your login recovery code"
+msgstr "รหัสกู้คืนการเข้าสู่ระบบของคุณ"
+
+msgid "Your one-time login code for %1$s is: %2$s (valid 10 minutes)."
+msgstr "รหัสเข้าสู่ระบบใช้ครั้งเดียวของคุณสำหรับ %1$s คือ: %2$s (ใช้ได้ 10 นาที)"
+
+msgid "Your own account must have two-factor authentication switched on before you can use PHP snippets."
+msgstr "บัญชีของคุณเองต้องเปิดการยืนยันตัวตนสองปัจจัยก่อนจึงจะใช้สนิปเป็ต PHP ได้"
+
+msgid "Your own icon (paste an SVG)"
+msgstr "ไอคอนของคุณเอง (วาง SVG)"
+
+msgid "Your pages go out exactly as written."
+msgstr "เพจของคุณออกไปตามที่เขียนไว้ทุกประการ"
+
+msgid "Your pairing code has expired. Reload this page to get a new one."
+msgstr "รหัสจับคู่ของคุณหมดอายุแล้ว โหลดหน้านี้ใหม่เพื่อรับรหัสใหม่"
+
+msgid "Your posts and pages do not link anywhere outside this site."
+msgstr "โพสต์และเพจของคุณไม่ลิงก์ไปที่ใดนอกเว็บไซต์นี้"
+
+msgid "Your posts and pages link to %d other domain. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
+msgstr "โพสต์และเพจของคุณลิงก์ไปยังโดเมนอื่น %d โดเมน ตรวจสอบทีละครั้งและยืนยันว่าโดเมนใดอยู่ที่นั่น หลังจากนั้น โดเมนที่ไม่อยู่ในรายการก็คุ้มค่ากับประโยคหนึ่งบนหน้าจอของคุณแทนที่จะเป็นสองปีที่ไม่มีใครสังเกต"
+
+msgid "Your settings already look like %s, so its notes apply to you even though nothing is selected above."
+msgstr "การตั้งค่าของคุณดูเหมือน %s อยู่แล้ว ดังนั้นบันทึกของมันจึงใช้กับคุณแม้ว่าจะไม่มีอะไรถูกเลือกข้างต้น"
+
+msgid "Your site has Tag Manager but no Google tag — one setup step is required"
+msgstr "เว็บไซต์ของคุณมี Tag Manager แต่ไม่มีแท็ก Google — ต้องตั้งค่าหนึ่งขั้นตอน"
+
+msgid "Your site loads the Google tag, so a click goes straight to Analytics. This is the usual case, and it includes sites where Analytics was installed through Tag Manager — a GA4 tag inside a container loads the Google tag itself."
+msgstr "เว็บไซต์ของคุณโหลดแท็ก Google ดังนั้นการคลิกจะไปยัง Analytics โดยตรง นี่เป็นกรณีปกติ และรวมถึงเว็บไซต์ที่ติดตั้ง Analytics ผ่าน Tag Manager — แท็ก GA4 ภายในคอนเทนเนอร์จะโหลดแท็ก Google เอง"
+
+msgid "Zoom"
+msgstr "ซูม"
+
+msgid "Zoom in"
+msgstr "ซูมเข้า"
+
+msgid "Zoom out"
+msgstr "ซูมออก"
+
+msgid "[!] This went by %1$s because %2$s would not send: %3$s"
+msgstr "[!] สิ่งนี้ถูกข้ามไปโดย %1$s เพราะ %2$s ไม่ส่ง: %3$s"
+
+msgid "[?] %1$d domain was approved over a year ago and is barely linked: %2$s"
+msgstr "[?] %1$d โดเมนได้รับการอนุมัติเมื่อกว่าหนึ่งปีก่อนและลิงก์แทบไม่: %2$s"
+
+msgid "a bar pinned to the bottom of the phone screen. Choose one of 5 styles from the grid."
+msgstr "แถบที่ปักหมุดที่ด้านล่างของหน้าจอโทรศัพท์ เลือกหนึ่งใน 5 สไตล์จากตาราง"
+
+msgid "a greeting bubble, business hours (shows Online / Away), scan-to-open QR on desktop, and pre-filled WhatsApp / SMS messages."
+msgstr "ฟองทักทาย เวลาทำการ (แสดง ออนไลน์ / ไม่อยู่) สแกนเพื่อเปิด QR บนเดสก์ท็อป และข้อความ WhatsApp / SMS ที่กรอกไว้ล่วงหน้า"
+
+msgid "a panel that slides up to show your services or articles. Pick its layout, colour and how it appears from the visual grids. To open it, point a bottom-bar item at"
+msgstr "แผงที่เลื่อนขึ้นเพื่อแสดงบริการหรือบทความของคุณ เลือกเลย์เอาต์ สี และวิธีที่ปรากฏจากตารางภาพ ในการเปิด ให้ชี้รายการแถบด้านล่างไปที่"
+
+msgid "added ✓"
+msgstr "เพิ่มแล้ว ✓"
+
+msgid "ads.txt"
+msgstr "ads.txt"
+
+msgid "an address you can open right now"
+msgstr "ที่อยู่ที่คุณสามารถเปิดได้ทันที"
+
+msgid "and %d more — click to see it"
+msgstr "และอีก %d — คลิกเพื่อดู"
+
+msgid "approved %s ago"
+msgstr "ได้รับการอนุมัติเมื่อ %s ที่แล้ว"
+
+msgid "choose how the floating button looks from the visual grid below (17 styles). What you see is what visitors get."
+msgstr "เลือกว่าปุ่มลอยจะมีลักษณะอย่างไรจากตารางภาพด้านล่าง (17 สไตล์) สิ่งที่คุณเห็นคือสิ่งที่ผู้เยี่ยมชมได้รับ"
+
+msgid "click SAVE CONTENT at the bottom of the page. The Services panel has its own “Save services” button."
+msgstr "คลิก SAVE CONTENT ที่ด้านล่างของหน้า แผงบริการมีปุ่ม \"บันทึกบริการ\" ของตัวเอง"
+
+msgid "copy"
+msgstr "คัดลอก"
+
+msgid "delayed"
+msgstr "ล่าช้า"
+
+msgid "e.g. Price list"
+msgstr "เช่น รายการราคา"
+
+msgid "e.g. What is the shop mascot?"
+msgstr "เช่น สัตว์นำโชคของร้านคืออะไร"
+
+msgid "e.g. fox"
+msgstr "เช่น fox"
+
+msgid "email"
+msgstr "อีเมล"
+
+msgid "leave empty for all categories"
+msgstr "เว้นว่างไว้สำหรับทุกหมวดหมู่"
+
+msgid "no copy on disk yet"
+msgstr "ยังไม่มีสำเนาบนดิสก์"
+
+msgid "none"
+msgstr "ไม่มี"
+
+msgid "not confirmed yet"
+msgstr "ยังไม่ได้ยืนยัน"
+
+msgid "not reviewed yet"
+msgstr "ยังไม่ได้ตรวจสอบ"
+
+msgid "nothing at all"
+msgstr "ไม่มีอะไรเลย"
+
+msgid "open the site’s Telegram bot (ask the site admin which bot if you’re not sure)."
+msgstr "เปิดบอท Telegram ของเว็บไซต์ (ถามผู้ดูแลเว็บไซต์ว่าเป็นบอทใดหากคุณไม่แน่ใจ)"
+
+msgid "open this site’s Telegram bot:"
+msgstr "เปิดบอท Telegram ของเว็บไซต์นี้:"
+
+msgid "optional title above the table"
+msgstr "ชื่อเรื่องเพิ่มเติมเหนือตาราง"
+
+msgid "passes SEO value"
+msgstr "ส่งค่า SEO"
+
+msgid "pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically. For a custom button, choose a built-in icon or paste your own SVG."
+msgstr "เลือกช่องทาง (Zalo Messenger โทรศัพท์…) และโลโก้จะถูกเพิ่มโดยอัตโนมัติ สำหรับปุ่มที่กำหนดเอง เลือกไอคอนที่มีอยู่หรือวาง SVG ของคุณเอง"
+
+msgid "reCAPTCHA could not load in this browser, so this form cannot be submitted. Check the site key, or switch reCAPTCHA off in Horse Tools."
+msgstr "reCAPTCHA โหลดไม่สำเร็จในเบราว์เซอร์นี้ ดังนั้นแบบฟอร์มนี้จึงไม่สามารถส่งได้ ตรวจสอบ site key หรือปิด reCAPTCHA ใน Horse Tools"
+
+msgid "reCAPTCHA did not run in your browser, so this form could not be submitted. This is not your password."
+msgstr "reCAPTCHA ไม่ได้รันในเบราว์เซอร์ของคุณ ดังนั้นแบบฟอร์มนี้จึงไม่สามารถส่งได้ นี่ไม่ใช่รหัสผ่านของคุณ"
+
+msgid "reCAPTCHA is switched off, so there is nothing to test."
+msgstr "reCAPTCHA ถูกปิด ดังนั้นจึงไม่มีอะไรให้ทดสอบ"
+
+msgid "remember to press “Update profile”."
+msgstr "อย่าลืมกด \"อัปเดตโปรไฟล์\""
+
+msgid "rows"
+msgstr "แถว"
+
+msgid "rows loaded"
+msgstr "แถวที่โหลด"
+
+msgid "runs now"
+msgstr "รันทันที"
+
+msgid "script or embedded frame"
+msgstr "สคริปต์หรือเฟรมฝัง"
+
+msgid "send it this code:"
+msgstr "ส่งรหัสนี้ให้:"
+
+msgid "still reading"
+msgstr "ยังคงอ่านอยู่"
+
+msgid "the contact details you confirmed in your posts"
+msgstr "รายละเอียดการติดต่อที่คุณยืนยันในโพสต์ของคุณ"
+
+msgid "the contact details you confirmed in your settings"
+msgstr "รายละเอียดการติดต่อที่คุณยืนยันในการตั้งค่าของคุณ"
+
+msgid "the list of domains you approved"
+msgstr "รายการโดเมนที่คุณอนุมัติ"
+
+msgid "type part of a domain…"
+msgstr "พิมพ์ส่วนหนึ่งของโดเมน…"
+
+msgid "unknown error"
+msgstr "ข้อผิดพลาดที่ไม่รู้จัก"
+
+msgid "whether the watching is switched on at all"
+msgstr "ไม่ว่าการเฝ้าดูจะเปิดอยู่เลยหรือไม่"
+
+msgid "wp-content is not writable, so there is nowhere to keep the copy"
+msgstr "wp-content ไม่สามารถเขียนได้ ดังนั้นจึงไม่มีที่ไหนเก็บสำเนา"
+
+msgid "— choose, or fill the form in yourself —"
+msgstr "— เลือก หรือกรอกแบบฟอร์มด้วยตัวเอง —"
+
+msgid "— or paste your own SVG."
+msgstr "— หรือวาง SVG ของคุณเอง"
+
+msgid "“All” mode — scripts to NEVER delay (one per line). A hero slider or a cookie-consent script usually belongs here."
+msgstr "โหมด \"ทั้งหมด\" — สคริปต์ที่จะไม่ล่าช้าเลย (หนึ่งต่อบรรทัด) สไลเดอร์ฮีโร่หรือสคริปต์ยินยอมคุกกี้มักอยู่ที่นี่"
+
+msgid "“Listed” mode — scripts to delay (one per line: a handle, file name or part of a URL). Leave empty to use the built-in list of common trackers."
+msgstr "โหมด \"ระบุ\" — สคริปต์ที่จะล่าช้า (หนึ่งต่อบรรทัด: handle ชื่อไฟล์ หรือส่วนหนึ่งของ URL) เว้นว่างไว้เพื่อใช้รายการตัวติดตามทั่วไปที่มีอยู่"
+
+msgid "← enter code and press \"Update profile\" to enable"
+msgstr "← กรอกรหัสและกด \"อัปเดตโปรไฟล์\" เพื่อเปิดใช้งาน"
+
+msgid "✓ Turned on — press SAVE to apply"
+msgstr "✓ เปิดแล้ว — กด SAVE เพื่อใช้"

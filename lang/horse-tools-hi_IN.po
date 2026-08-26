@@ -3482,3 +3482,2436 @@ msgstr "v3 स्कोर थ्रेशोल्ड (0 – 1)"
 
 msgid "— Insert a shortcode —"
 msgstr "— एक shortcode डालें —"
+
+msgid "%1$d of %2$d"
+msgstr "%1$d में से %2$d"
+
+msgid "%1$d post(s) will publish FAQ schema (%2$s questions on average)."
+msgstr "%1$d पोस्ट FAQ स्कीमा प्रकाशित करेंगी (औसतन %2$s प्रश्न)।"
+
+msgid "%1$s will only send as the account you sign in with. You are signing in as %3$s but sending as %2$s, which it will refuse or quietly drop — and refusing looks from here exactly like the message vanishing."
+msgstr "%1$s केवल उसी खाते से भेजेगा जिससे आप साइन इन करते हैं। आप %3$s से साइन इन कर रहे हैं लेकिन %2$s से भेज रहे हैं, जिसे यह अस्वीकार कर देगा या चुपचाप छोड़ देगा — और अस्वीकार करना यहाँ से बिल्कुल वैसा ही दिखता है जैसे संदेश गायब हो गया हो।"
+
+msgid "%d FOUND"
+msgstr "%d मिला"
+
+msgid "%d NEW"
+msgstr "%d नया"
+
+msgid "%d domain is no longer approved."
+msgstr "%d डोमेन अब स्वीकृत नहीं है।"
+
+msgid "%d domain looked at again."
+msgstr "%d डोमेन फिर से देखा गया।"
+
+msgid "%d domain your content links to is not approved"
+msgstr "%d डोमेन जिससे आपकी सामग्री लिंक करती है वह स्वीकृत नहीं है"
+
+msgid "%d domains, all approved"
+msgstr "%d डोमेन, सभी स्वीकृत"
+
+msgid "%d is still waiting."
+msgstr "%d अभी भी प्रतीक्षा में है।"
+
+msgid "%d link"
+msgstr "%d लिंक"
+
+msgid "%d post(s) already get FAQ schema from another plugin, so they are left alone."
+msgstr "%d पोस्ट को पहले से ही किसी अन्य प्लगइन से FAQ स्कीमा मिलता है, इसलिए उन्हें छोड़ दिया गया है।"
+
+msgid "%d post(s) have a FAQ section but too few questions:"
+msgstr "%d पोस्ट में FAQ सेक्शन है लेकिन प्रश्न बहुत कम हैं:"
+
+msgid "%d post(s) have no FAQ section."
+msgstr "%d पोस्ट में कोई FAQ सेक्शन नहीं है।"
+
+msgid "%d post(s) mention a FAQ but no question could be read — unusual structure:"
+msgstr "%d पोस्ट में FAQ का उल्लेख है लेकिन कोई प्रश्न नहीं पढ़ा जा सका — असामान्य संरचना:"
+
+msgid "%d question found"
+msgstr "%d प्रश्न मिला"
+
+msgid "%d scripts found — “+ Delay” holds one back, “+ Exclude” keeps it running immediately:"
+msgstr "%d स्क्रिप्ट मिलीं — “+ Delay” एक को रोकता है, “+ Exclude” उसे तुरंत चलते रहने देता है:"
+
+msgid "+ Delay"
+msgstr "+ देरी करें"
+
+msgid "+ Exclude"
+msgstr "+ बाहर रखें"
+
+msgid "1. Triggers → New → Custom Event, event name ^contact_ with \"use regex matching\" ticked — one trigger covers every channel, including any added later. 2. Tags → New → Google Analytics GA4 Event, pointing at your measurement ID, Event Name set to {{Event}} so each channel keeps its own name, using the trigger from step 1. 3. Optionally add event parameters placement and label, taking their values from Data Layer Variables contact_placement and contact_label. 4. Submit and publish the container."
+msgstr "1. Triggers → New → Custom Event, इवेंट नाम ^contact_ के साथ \"use regex matching\" चुना हुआ — एक ही ट्रिगर हर चैनल को कवर करता है, जिसमें बाद में जोड़े गए भी शामिल हैं। 2. Tags → New → Google Analytics GA4 Event, अपने measurement ID की ओर इशारा करते हुए, Event Name को {{Event}} पर सेट करें ताकि हर चैनल अपना नाम रखे, चरण 1 के ट्रिगर का उपयोग करते हुए। 3. वैकल्पिक रूप से Data Layer Variables contact_placement और contact_label से मान लेते हुए इवेंट पैरामीटर placement और label जोड़ें। 4. सबमिट करें और कंटेनर प्रकाशित करें।"
+
+msgid "6-digit code"
+msgstr "6-अंकीय कोड"
+
+msgid "A .git directory exposes the whole source history, and often credentials with it."
+msgstr "एक .git डायरेक्टरी पूरे स्रोत इतिहास को उजागर करती है, और अक्सर उसके साथ क्रेडेंशियल भी।"
+
+msgid "A PHP snippet changed on your site"
+msgstr "आपकी साइट पर एक PHP स्निपेट बदला गया"
+
+msgid "A contact detail that was not there before has appeared in your content."
+msgstr "एक संपर्क विवरण जो पहले नहीं था वह आपकी सामग्री में दिखाई दिया है।"
+
+msgid "A database client. Anyone who finds it is one password from the database."
+msgstr "एक डेटाबेस क्लाइंट। जो कोई इसे ढूंढ लेता है वह डेटाबेस से केवल एक पासवर्ड दूर है।"
+
+msgid "A database dump: everything on the site, downloadable."
+msgstr "एक डेटाबेस डंप: साइट पर सब कुछ, डाउनलोड करने योग्य।"
+
+msgid "A domain can go bad without anything on your site changing: it expires, somebody else buys it, and a link you approved years ago now points at whatever they sell. These were approved over a year ago and are each linked from only one or two posts — the kind that can change hands without anybody here noticing."
+msgstr "साइट पर कुछ भी बदले बिना एक डोमेन खराब हो सकता है: उसकी अवधि समाप्त हो जाती है, कोई और उसे खरीद लेता है, और जिस लिंक को आपने वर्षों पहले स्वीकृत किया था वह अब वे जो कुछ भी बेचते हैं उसकी ओर इशारा करता है। ये एक वर्ष से अधिक पहले स्वीकृत किए गए थे और प्रत्येक केवल एक या दो पोस्ट से लिंक किया गया है — इस तरह के डोमेन बिना किसी के ध्यान दिए हाथ बदल सकते हैं।"
+
+msgid "A long list on a first pass is normal and does not have to be read row by row."
+msgstr "पहली बार में एक लंबी सूची सामान्य है और उसे पंक्ति दर पंक्ति पढ़ने की आवश्यकता नहीं है।"
+
+msgid "A longer answer is shortened in the schema only — your post is never touched. Leave empty to use 500."
+msgstr "एक लंबा उत्तर केवल स्कीमा में छोटा किया जाता है — आपकी पोस्ट कभी नहीं बदली जाती। 500 का उपयोग करने के लिए खाली छोड़ें।"
+
+msgid "A new one appeared in a post — see the banner"
+msgstr "एक पोस्ट में नया दिखाई दिया — बैनर देखें"
+
+msgid "A no-Google, no-badge challenge that loads only on the wp-login.php page — zero effect on your front-end or its speed. Bots that hammer the login page cannot answer a site-specific question. It does not stop a person who reads the question, so pair it with the attempt limiter above."
+msgstr "बिना-Google, बिना-बैज वाली चुनौती जो केवल wp-login.php पेज पर लोड होती है — आपके फ्रंट-एंड या उसकी गति पर शून्य प्रभाव। जो बॉट लॉगिन पेज पर बार-बार हमला करते हैं वे साइट-विशिष्ट प्रश्न का जवाब नहीं दे सकते। यह उस व्यक्ति को नहीं रोकता जो प्रश्न पढ़ता है, इसलिए इसे ऊपर दिए गए प्रयास सीमक के साथ जोड़ें।"
+
+msgid "A one-time code has been sent. Enter it above."
+msgstr "एक बार का कोड भेजा गया है। इसे ऊपर दर्ज करें।"
+
+msgid "A post with fewer questions than this gets no schema. Leave empty to use 2, which is the safer choice."
+msgstr "इससे कम प्रश्नों वाली पोस्ट को कोई स्कीमा नहीं मिलती। 2 का उपयोग करने के लिए खाली छोड़ें, जो सुरक्षित विकल्प है।"
+
+msgid "A private key."
+msgstr "एक निजी कुंजी।"
+
+msgid "A safe first one collects reports and changes nothing: a TXT record at _dmarc.%1$s with the value %2$s"
+msgstr "एक सुरक्षित पहला कदम रिपोर्ट एकत्र करता है और कुछ नहीं बदलता: _dmarc.%1$s पर मान %2$s के साथ एक TXT रिकॉर्ड"
+
+msgid "A site archive, downloadable by anyone who guesses the name."
+msgstr "एक साइट संग्रह, जिसे कोई भी नाम का अनुमान लगाकर डाउनलोड कर सकता है।"
+
+msgid "A test was sent but you have not said whether it arrived"
+msgstr "एक परीक्षण भेजा गया था लेकिन आपने नहीं बताया कि वह पहुँचा या नहीं"
+
+msgid "A v2 key and a v3 key look identical and are not interchangeable. Put a v2 key in the box while the dropdown says V3 and Google refuses to load the widget, so the token is never produced and every login is rejected — which reaches whoever is trying to sign in as “wrong password”. Press the button above after changing a key; it asks Google directly."
+msgstr "एक v2 कुंजी और एक v3 कुंजी एक जैसी दिखती हैं और परस्पर बदली नहीं जा सकतीं। जब ड्रॉपडाउन V3 कहता है तो बॉक्स में v2 कुंजी डालें और Google विजेट लोड करने से इनकार कर देता है, इसलिए टोकन कभी नहीं बनता और हर लॉगिन अस्वीकार कर दिया जाता है — जो साइन इन करने की कोशिश कर रहे व्यक्ति तक “गलत पासवर्ड” के रूप में पहुँचता है। कुंजी बदलने के बाद ऊपर दिए गए बटन को दबाएँ; यह सीधे Google से पूछता है।"
+
+msgid "API key"
+msgstr "API कुंजी"
+
+msgid "Above the post content"
+msgstr "पोस्ट सामग्री के ऊपर"
+
+msgid "Accent colour (toolbar / active thumbnail)"
+msgstr "एक्सेंट रंग (टूलबार / सक्रिय थंबनेल)"
+
+msgid "Accept button text (default: Agree)"
+msgstr "स्वीकार बटन टेक्स्ट (डिफ़ॉल्ट: सहमत)"
+
+msgid "Accounts & Email"
+msgstr "खाते और ईमेल"
+
+msgid "Ad clicks"
+msgstr "विज्ञापन क्लिक"
+
+msgid "Ad-block notice"
+msgstr "एड-ब्लॉक सूचना"
+
+msgid "AdSense"
+msgstr "AdSense"
+
+msgid "Add an SPF record. Whichever email service you choose below will give you the exact line."
+msgstr "एक SPF रिकॉर्ड जोड़ें। नीचे आप जो भी ईमेल सेवा चुनेंगे वह आपको सटीक लाइन देगी।"
+
+msgid "Add contact channels"
+msgstr "संपर्क चैनल जोड़ें"
+
+msgid "Add new table"
+msgstr "नई तालिका जोड़ें"
+
+msgid "Add nofollow to it (recommended)"
+msgstr "इसमें nofollow जोड़ें (अनुशंसित)"
+
+msgid "Add some data first."
+msgstr "पहले कुछ डेटा जोड़ें।"
+
+msgid "Add “defer” to front-end scripts so they no longer block the page from rendering; they run in order once the HTML is parsed. jQuery is never deferred (inline snippets depend on it). Big Core Web Vitals win."
+msgstr "फ्रंट-एंड स्क्रिप्ट में “defer” जोड़ें ताकि वे अब पेज को रेंडर होने से न रोकें; HTML पार्स होने के बाद वे क्रम में चलती हैं। jQuery को कभी डेफर नहीं किया जाता (इनलाइन स्निपेट इस पर निर्भर करते हैं)। बड़ी Core Web Vitals जीत।"
+
+msgid "Adds decoding=\"async\" to images so the browser decodes them off the main thread, and relies on WordPress’ built-in native lazy-load (which correctly keeps the first/LCP image eager). Replaces the old script-based method that removed image src — that hurt SEO and broke images with JavaScript off."
+msgstr "छवियों में decoding=\"async\" जोड़ता है ताकि ब्राउज़र उन्हें मुख्य थ्रेड से हटकर डिकोड करे, और WordPress के अंतर्निहित नेटिव lazy-load पर निर्भर करता है (जो पहली/LCP छवि को सही ढंग से eager रखता है)। पुरानी स्क्रिप्ट-आधारित विधि की जगह लेता है जो image src हटाती थी — इससे SEO को नुकसान होता था और JavaScript बंद होने पर छवियाँ टूट जाती थीं।"
+
+msgid "Admin area"
+msgstr "एडमिन क्षेत्र"
+
+msgid "Admin housekeeping and the plugin's own settings."
+msgstr "एडमिन हाउसकीपिंग और प्लगइन की अपनी सेटिंग्स।"
+
+msgid "Admin only"
+msgstr "केवल एडमिन"
+
+msgid "Admin tools"
+msgstr "एडमिन उपकरण"
+
+msgid "Advanced options — device, visitors, schedule, tags (optional)"
+msgstr "उन्नत विकल्प — डिवाइस, विज़िटर, शेड्यूल, टैग (वैकल्पिक)"
+
+msgid "After a few seconds"
+msgstr "कुछ सेकंड बाद"
+
+msgid "After scrolling down"
+msgstr "नीचे स्क्रॉल करने के बाद"
+
+msgid "All"
+msgstr "सभी"
+
+msgid "All single content (incl. custom types)"
+msgstr "सभी एकल सामग्री (कस्टम प्रकार सहित)"
+
+msgid "All-in-one WordPress toolkit: contact chat, shortcodes, security & privacy, media optimisation, SEO, cleanup and more — in one plugin."
+msgstr "ऑल-इन-वन WordPress टूलकिट: संपर्क चैट, शॉर्टकोड, सुरक्षा और गोपनीयता, मीडिया अनुकूलन, SEO, क्लीनअप और अधिक — एक ही प्लगइन में।"
+
+msgid "Allow a recovery code by Telegram"
+msgstr "Telegram से रिकवरी कोड की अनुमति दें"
+
+msgid "Allow a recovery code by email"
+msgstr "ईमेल से रिकवरी कोड की अनुमति दें"
+
+msgid "Already approved"
+msgstr "पहले से स्वीकृत"
+
+msgid "Analytics found on your site: %s. Clicks will be recorded there."
+msgstr "आपकी साइट पर मिला Analytics: %s। क्लिक वहाँ रिकॉर्ड किए जाएँगे।"
+
+msgid "And what should happen to a domain that is not on the list?"
+msgstr "और जो डोमेन सूची में नहीं है उसके साथ क्या होना चाहिए?"
+
+msgid "Another plugin already publishes FAQ schema for this post, so Horse Tools is staying out of the way."
+msgstr "कोई अन्य प्लगइन पहले से ही इस पोस्ट के लिए FAQ स्कीमा प्रकाशित करता है, इसलिए Horse Tools दखल नहीं दे रहा है।"
+
+msgid "Answer"
+msgstr "उत्तर"
+
+msgid "Answers are held for half a day; press this after changing anything in DNS."
+msgstr "उत्तर आधे दिन के लिए रखे जाते हैं; DNS में कुछ भी बदलने के बाद इसे दबाएँ।"
+
+msgid "Appearance"
+msgstr "स्वरूप"
+
+msgid "Apply to Pages as well, not just Posts"
+msgstr "केवल पोस्ट पर ही नहीं, पृष्ठों पर भी लागू करें"
+
+msgid "Approve all %d domains your content currently links to?"
+msgstr "आपकी सामग्री वर्तमान में जिन %d डोमेन से लिंक करती है, उन सभी को स्वीकृत करें?"
+
+msgid "Approve all %d — the whole list, not just this page"
+msgstr "सभी %d को स्वीकृत करें — पूरी सूची, केवल यह पृष्ठ नहीं"
+
+msgid "Approve the ticked ones"
+msgstr "चुने गए को स्वीकृत करें"
+
+msgid "Approved %d domain."
+msgstr "%d डोमेन स्वीकृत किया गया।"
+
+msgid "As soon as the page opens"
+msgstr "पेज खुलते ही"
+
+msgid "Ask a custom question on the login form"
+msgstr "लॉगिन फ़ॉर्म पर एक कस्टम प्रश्न पूछें"
+
+msgid "Asking Google…"
+msgstr "Google से पूछ रहे हैं…"
+
+msgid "Asset URLs to preload (one per line — .woff2/.css/.js/.jpg/.webp…)"
+msgstr "प्रीलोड करने के लिए एसेट URL (एक प्रति पंक्ति — .woff2/.css/.js/.jpg/.webp…)"
+
+msgid "Async CSS — remove render-blocking stylesheets"
+msgstr "असिंक्रोनस CSS — रेंडर-ब्लॉकिंग स्टाइलशीट हटाएँ"
+
+msgid "Authentication code"
+msgstr "प्रमाणीकरण कोड"
+
+msgid "Backdrop theme"
+msgstr "बैकड्रॉप थीम"
+
+msgid "Bar across the bottom"
+msgstr "नीचे की ओर बार"
+
+msgid "Before </body>"
+msgstr "</body> से पहले"
+
+msgid "Below the post content"
+msgstr "पोस्ट सामग्री के नीचे"
+
+msgid "Besides your one-time backup codes, a fresh code can also be sent to you here:"
+msgstr "आपके एक बार के बैकअप कोड के अलावा, यहाँ आपको एक नया कोड भी भेजा जा सकता है:"
+
+msgid "Blur (frosted glass)"
+msgstr "धुंधला (फ्रॉस्टेड ग्लास)"
+
+msgid "Bordered"
+msgstr "बॉर्डर वाला"
+
+msgid "Both engines are bundled locally — no external requests. Gallery grouping, looping and the slide transition apply to GLightbox; PhotoSwipe always groups the content images (previous/next) and has its own smooth zoom/pan."
+msgstr "दोनों इंजन स्थानीय रूप से बंडल किए गए हैं — कोई बाहरी अनुरोध नहीं। गैलरी समूहीकरण, लूपिंग और स्लाइड ट्रांज़िशन GLightbox पर लागू होते हैं; PhotoSwipe हमेशा सामग्री की छवियों को समूहित करता है (पिछला/अगला) और इसका अपना स्मूथ ज़ूम/पैन है।"
+
+msgid "Both engines are free and open-source (MIT). GLightbox is the easy all-rounder (adds video + slide transitions); PhotoSwipe has the smoothest zoom/pan for photo galleries."
+msgstr "दोनों इंजन मुफ़्त और ओपन-सोर्स (MIT) हैं। GLightbox आसान ऑल-राउंडर है (वीडियो + स्लाइड ट्रांज़िशन जोड़ता है); PhotoSwipe में फोटो गैलरी के लिए सबसे स्मूथ ज़ूम/पैन है।"
+
+msgid "Bounce"
+msgstr "बाउंस"
+
+msgid "Broken links (404)"
+msgstr "टूटे हुए लिंक (404)"
+
+msgid "Broken links 404"
+msgstr "टूटे हुए लिंक 404"
+
+msgid "Build a table once here, then insert it into any post or page with its shortcode. Edit it here and every place that uses it updates automatically."
+msgstr "यहाँ एक बार तालिका बनाएँ, फिर उसे किसी भी पोस्ट या पेज में उसके शॉर्टकोड के साथ डालें। इसे यहाँ संपादित करें और हर जगह जहाँ यह उपयोग होता है वह अपने आप अपडेट हो जाता है।"
+
+msgid "Build grid"
+msgstr "ग्रिड बनाएँ"
+
+msgid "Buttons"
+msgstr "बटन"
+
+msgid "By Telegram"
+msgstr "Telegram से"
+
+msgid "By default the lockout counts the direct connection IP, which cannot be faked. Only turn this on if your site is reachable ONLY through Cloudflare or a proxy — it then reads the real visitor IP from the proxy header (CF-Connecting-IP / X-Forwarded-For). Do NOT enable it on a normally-hosted site: those headers can be forged, letting an attacker dodge the lockout or get an innocent visitor locked out."
+msgstr "डिफ़ॉल्ट रूप से लॉकआउट सीधे कनेक्शन के IP को गिनता है, जिसे नकली नहीं बनाया जा सकता। इसे केवल तभी चालू करें जब आपकी साइट केवल Cloudflare या किसी प्रॉक्सी के माध्यम से ही पहुँच योग्य हो — तब यह प्रॉक्सी हेडर (CF-Connecting-IP / X-Forwarded-For) से वास्तविक विज़िटर IP पढ़ता है। सामान्य रूप से होस्ट की गई साइट पर इसे चालू न करें: वे हेडर नकली बनाए जा सकते हैं, जिससे हमलावर लॉकआउट से बच सकता है या किसी निर्दोष विज़िटर को लॉकआउट कर सकता है।"
+
+msgid "By email — a one-time code is sent to your account address:"
+msgstr "ईमेल से — आपके खाते के पते पर एक बार का कोड भेजा जाता है:"
+
+msgid "CHANGED"
+msgstr "बदला गया"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Cache cleared. Each post will be read again the next time it is viewed."
+msgstr "कैश साफ़ कर दिया गया। हर पोस्ट अगली बार देखे जाने पर फिर से पढ़ी जाएगी।"
+
+msgid "Caption"
+msgstr "कैप्शन"
+
+msgid "Caption from"
+msgstr "से कैप्शन"
+
+msgid "Card (shadow)"
+msgstr "कार्ड (छाया)"
+
+msgid "Centre of screen"
+msgstr "स्क्रीन के केंद्र में"
+
+msgid "Chat"
+msgstr "चैट"
+
+msgid "Chat buttons, contact channels and WooCommerce tweaks."
+msgstr "चैट बटन, संपर्क चैनल और WooCommerce संशोधन।"
+
+msgid "Check again"
+msgstr "फिर से जाँचें"
+
+msgid "Check for updates"
+msgstr "अपडेट के लिए जाँचें"
+
+msgid "Check that WP-Cron is running on this site"
+msgstr "जाँचें कि इस साइट पर WP-Cron चल रहा है"
+
+msgid "Check-in"
+msgstr "चेक-इन"
+
+msgid "Checked from your own browser: the home page a visitor receives carries no Google Analytics tag. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own."
+msgstr "आपके अपने ब्राउज़र से जाँचा गया: विज़िटर को मिलने वाले होम पेज पर कोई Google Analytics टैग नहीं है। Site Kit by Google, या कोई भी GA4 प्लगइन इंस्टॉल करें, और यह सेटिंग अपने आप काम करना शुरू कर देगी।"
+
+msgid "Checked — still fine"
+msgstr "जाँचा गया — अभी भी ठीक है"
+
+msgid "Checking your site…"
+msgstr "आपकी साइट की जाँच हो रही है…"
+
+msgid "Checking…"
+msgstr "जाँच हो रही है…"
+
+msgid "Choose a .xlsx, .xls or .csv file:"
+msgstr "एक .xlsx, .xls या .csv फ़ाइल चुनें:"
+
+msgid "Choose a built-in icon"
+msgstr "एक अंतर्निहित आइकन चुनें"
+
+msgid "Choose an icon"
+msgstr "आइकन चुनें"
+
+msgid "Choose icon"
+msgstr "आइकन चुनें"
+
+msgid "Choose the position (corner box or full-width bar) and customise the message and button labels. The Accept/Decline choice is stored in the browser (localStorage + an “ht_cookie_consent” cookie), so the notice won’t nag returning visitors. Note: this is an informational notice — Horse Tools does not itself block third-party tracking scripts, so for strict consent-gating you would still gate your own scripts on that cookie."
+msgstr "स्थिति चुनें (कोने का बॉक्स या पूरी-चौड़ाई की बार) और संदेश व बटन लेबल को अनुकूलित करें। स्वीकार/अस्वीकार का चुनाव ब्राउज़र में संग्रहीत होता है (localStorage + एक “ht_cookie_consent” कुकी), इसलिए यह सूचना लौटने वाले विज़िटरों को बार-बार परेशान नहीं करेगी। ध्यान दें: यह केवल एक सूचनात्मक नोटिस है — Horse Tools स्वयं तृतीय-पक्ष ट्रैकिंग स्क्रिप्ट को ब्लॉक नहीं करता, इसलिए सख्त सहमति-गेटिंग के लिए आपको फिर भी अपनी स्क्रिप्ट को उस कुकी पर गेट करना होगा।"
+
+msgid "Cinema (pure black)"
+msgstr "सिनेमा (शुद्ध काला)"
+
+msgid "Clean comments"
+msgstr "टिप्पणियाँ साफ़ करें"
+
+msgid "Clean media"
+msgstr "मीडिया साफ़ करें"
+
+msgid "Clean posts"
+msgstr "पोस्ट साफ़ करें"
+
+msgid "Cleanup schedule"
+msgstr "क्लीनअप शेड्यूल"
+
+msgid "Clear cache & re-read"
+msgstr "कैश साफ़ करें और फिर से पढ़ें"
+
+msgid "Cleared all lockouts."
+msgstr "सभी लॉकआउट साफ़ कर दिए गए।"
+
+msgid "Click again to delete"
+msgstr "हटाने के लिए फिर से क्लिक करें"
+
+msgid "Click an SVG box, then"
+msgstr "एक SVG बॉक्स पर क्लिक करें, फिर"
+
+msgid "Click an icon to drop it into the selected field. Search by its English name (cart, gift, phone…), or Vietnamese for popular icons. Over 5,000 in total — use “Load more” to see them all."
+msgstr "किसी आइकन पर क्लिक करके उसे चुने गए फ़ील्ड में डालें। उसके अंग्रेज़ी नाम से खोजें (cart, gift, phone…), या लोकप्रिय आइकन के लिए वियतनामी से। कुल मिलाकर 5,000 से अधिक — सभी देखने के लिए “Load more” का उपयोग करें।"
+
+msgid "Click an image in your content to open it in a full-screen viewer. Choose the engine and how it looks below."
+msgstr "अपनी सामग्री में किसी छवि पर क्लिक करके उसे फ़ुल-स्क्रीन व्यूअर में खोलें। नीचे इंजन और उसका रूप चुनें।"
+
+msgid "Code in body"
+msgstr "बॉडी में कोड"
+
+msgid "Code in footer"
+msgstr "फ़ुटर में कोड"
+
+msgid "Code in head"
+msgstr "हेड में कोड"
+
+msgid "Code on login"
+msgstr "लॉगिन पर कोड"
+
+msgid "Column"
+msgstr "कॉलम"
+
+msgid "Columns"
+msgstr "कॉलम"
+
+msgid "Comma separated. A heading containing any of these opens the FAQ section; every heading below it until the next heading of the same level is treated as a question."
+msgstr "अल्पविराम से अलग किए गए। इनमें से किसी भी शब्द वाला शीर्षक FAQ सेक्शन खोलता है; समान स्तर के अगले शीर्षक तक इसके नीचे का प्रत्येक शीर्षक प्रश्न माना जाता है।"
+
+msgid "Compact"
+msgstr "कॉम्पैक्ट"
+
+msgid "Confirm them once, from the banner on any Horse Tools screen"
+msgstr "एक बार किसी भी Horse Tools स्क्रीन पर बैनर से उन्हें पुष्टि करें"
+
+msgid "Confirm them once, from the notice on any Horse Tools screen"
+msgstr "एक बार किसी भी Horse Tools स्क्रीन पर सूचना से उन्हें पुष्टि करें"
+
+msgid "Confirmed %s ago"
+msgstr "%s पहले पुष्टि की गई"
+
+msgid "Contact click measurement"
+msgstr "संपर्क क्लिक माप"
+
+msgid "Contact details are the ones you confirmed"
+msgstr "संपर्क विवरण वही हैं जिन्हें आपने पुष्टि किया है"
+
+msgid "Contact details in your posts"
+msgstr "आपकी पोस्ट में संपर्क विवरण"
+
+msgid "Contact details in your posts are watched"
+msgstr "आपकी पोस्ट में संपर्क विवरण देखे जा रहे हैं"
+
+msgid "Contact details in your settings"
+msgstr "आपकी सेटिंग्स में संपर्क विवरण"
+
+msgid "Contains database credentials or signing keys."
+msgstr "डेटाबेस क्रेडेंशियल या हस्ताक्षर कुंजियाँ शामिल हैं।"
+
+msgid "Control the Heartbeat API"
+msgstr "Heartbeat API को नियंत्रित करें"
+
+msgid "Cookie notice"
+msgstr "कुकी सूचना"
+
+msgid "Copy"
+msgstr "कॉपी करें"
+
+msgid "Copy / CSV / Print buttons"
+msgstr "कॉपी / CSV / प्रिंट बटन"
+
+msgid "Copy all eight lines"
+msgstr "सभी आठ पंक्तियाँ कॉपी करें"
+
+msgid "Copy cells in Excel / Google Sheets (or paste CSV) and paste here:"
+msgstr "Excel / Google Sheets में सेल कॉपी करें (या CSV पेस्ट करें) और यहाँ पेस्ट करें:"
+
+msgid "Corner — bottom left"
+msgstr "कोना — नीचे बाएँ"
+
+msgid "Corner — bottom right"
+msgstr "कोना — नीचे दाएँ"
+
+msgid "Could not be determined"
+msgstr "निर्धारित नहीं किया जा सका"
+
+msgid "Could not check: this server was unable to open your own home page, which many hosts block. That says nothing about whether analytics is installed — if you have Site Kit or another GA4 plugin, switch this on and check the result in Analytics under Admin → DebugView."
+msgstr "निर्धारित नहीं किया जा सका: यह सर्वर आपका अपना होम पेज नहीं खोल सका, जिसे कई होस्ट ब्लॉक करते हैं। यह यह नहीं बताता कि analytics इंस्टॉल है या नहीं — यदि आपके पास Site Kit या कोई अन्य GA4 प्लगइन है, तो इसे चालू करें और परिणाम Analytics के Admin → DebugView में देखें।"
+
+msgid "Could not load the Excel reader — save the file as CSV and try again."
+msgstr "Excel रीडर लोड नहीं हो सका — फ़ाइल को CSV के रूप में सेव करें और फिर से कोशिश करें।"
+
+msgid "Could not load the home page from the server:"
+msgstr "सर्वर से होम पेज लोड नहीं हो सका:"
+
+msgid "Could not load the list."
+msgstr "सूची लोड नहीं हो सकी।"
+
+msgid "Could not read the file."
+msgstr "फ़ाइल पढ़ी नहीं जा सकी।"
+
+msgid "Could not read the home page (HTTP %s). Your host may block the site from calling itself; check the scripts via “View source” instead."
+msgstr "होम पेज नहीं पढ़ा जा सका (HTTP %s)। आपका होस्ट साइट को स्वयं को कॉल करने से ब्लॉक कर सकता है; इसके बजाय \"View source\" के माध्यम से स्क्रिप्ट देखें।"
+
+msgid "Could not send the recovery code — message the bot first, then check your chat ID."
+msgstr "रिकवरी कोड भेजा नहीं जा सका — पहले बॉट को संदेश भेजें, फिर अपना चैट ID जाँचें।"
+
+msgid "Create table"
+msgstr "तालिका बनाएँ"
+
+msgid "Critical CSS — the above-the-fold styles, inlined in the head to prevent the flash (optional, but strongly recommended)"
+msgstr "क्रिटिकल CSS — फ्लैश रोकने के लिए हेड में इनलाइन किए गए ऊपर के हिस्से की स्टाइल (वैकल्पिक, लेकिन अत्यधिक अनुशंसित)"
+
+msgid "Custom / Maps:"
+msgstr "कस्टम / मैप्स:"
+
+msgid "Custom CSS"
+msgstr "कस्टम CSS"
+
+msgid "Customers"
+msgstr "ग्राहक"
+
+msgid "Dark background"
+msgstr "डार्क बैकग्राउंड"
+
+msgid "Dark mode, scrollbar, effects, and the look of the admin area."
+msgstr "डार्क मोड, स्क्रॉलबार, प्रभाव, और एडमिन क्षेत्र का रूप।"
+
+msgid "Date shortcodes"
+msgstr "तारीख शॉर्टकोड"
+
+msgid "Day(s)"
+msgstr "दिन"
+
+msgid "Decline"
+msgstr "अस्वीकार करें"
+
+msgid "Decline button text (default: Decline)"
+msgstr "अस्वीकार बटन टेक्स्ट (डिफ़ॉल्ट: अस्वीकार)"
+
+msgid "Default"
+msgstr "डिफ़ॉल्ट"
+
+msgid "Defer JavaScript"
+msgstr "JavaScript डिफर करें"
+
+msgid "Defer JavaScript so it no longer blocks the page"
+msgstr "JavaScript को डिफर करें ताकि वह अब पेज को ब्लॉक न करे"
+
+msgid "Delay JavaScript execution"
+msgstr "JavaScript निष्पादन में देरी करें"
+
+msgid "Delay JavaScript until interaction"
+msgstr "जावास्क्रिप्ट तब तक के लिए देरी करें जब तक कोई बातचीत न हो"
+
+msgid "Delay all scripts except the exclusions (most aggressive)"
+msgstr "छोड़कर सभी स्क्रिप्ट में देरी करें (सबसे आक्रामक)"
+
+msgid "Delay analytics/ads/chat until interaction, and defer JavaScript"
+msgstr "बातचीत होने तक analytics/ads/chat में देरी करें, और JavaScript को डिफर करें"
+
+msgid "Delay analytics/ads/chat until interaction, and defer JavaScript (cart & checkout untouched)"
+msgstr "बातचीत होने तक analytics/ads/chat में देरी करें, और JavaScript को डिफर करें (cart और checkout अछूता)"
+
+msgid "Delay only the scripts I list (recommended, safe)"
+msgstr "केवल मेरी सूचीबद्ध स्क्रिप्ट में देरी करें (अनुशंसित, सुरक्षित)"
+
+msgid "Delay third-party scripts (analytics, ads, chat) until the visitor interacts — safe built-in list, with a 5-second fall-back"
+msgstr "थर्ड-पार्टी स्क्रिप्ट (analytics, ads, chat) को तब तक के लिए रोकें जब तक विज़िटर बातचीत न करे — सुरक्षित अंतर्निहित सूची, 5-सेकंड फ़ॉल-बैक के साथ"
+
+msgid "Delete column"
+msgstr "कॉलम हटाएँ"
+
+msgid "Delete row"
+msgstr "पंक्ति हटाएँ"
+
+msgid "Delete them, or move them somewhere outside the folder your site is served from. If one of them is a copy of wp-config.php, change your database password afterwards — assume it has been read."
+msgstr "उन्हें हटाएँ, या उस फ़ोल्डर के बाहर ले जाएँ जहाँ से आपकी साइट सर्व की जाती है। यदि उनमें से एक wp-config.php की कॉपी है, तो उसके बाद अपना डेटाबेस पासवर्ड बदलें — मान लें कि वह पढ़ा जा चुका है।"
+
+msgid "Detect my chat ID"
+msgstr "मेरा चैट ID पता लगाएँ"
+
+msgid "Disable Dashicons for visitors"
+msgstr "विज़िटर के लिए Dashicons अक्षम करें"
+
+msgid "Disable on the front-end, slow in admin"
+msgstr "फ्रंट-एंड पर अक्षम करें, एडमिन में धीमा"
+
+msgid "Display style (where the panel appears)"
+msgstr "डिस्प्ले शैली (जहाँ पैनल दिखता है)"
+
+msgid "Does mail from this site actually arrive?"
+msgstr "क्या इस साइट से मेल वास्तव में पहुँचता है?"
+
+msgid "Domain"
+msgstr "डोमेन"
+
+msgid "Downloadable secrets in the site folder"
+msgstr "साइट फ़ोल्डर में डाउनलोड करने योग्य रहस्य"
+
+msgid "Drop Emoji, jQuery Migrate and admin icons; calm the Heartbeat"
+msgstr "Emoji, jQuery Migrate और एडमिन आइकन हटाएँ; Heartbeat को शांत करें"
+
+msgid "Each user turns it on for their own account under Users → Profile (scan a QR with Google Authenticator / Authy). After the password they enter a 6-digit code, so a stolen password alone is not enough. Uses standard WordPress hooks — safe across WordPress updates, and disabling the plugin instantly restores the normal login."
+msgstr "प्रत्येक उपयोगकर्ता इसे अपने खाते के लिए Users → Profile के तहत चालू करता है (Google Authenticator / Authy से QR स्कैन करें)। पासवर्ड के बाद वे 6-अंकीय कोड दर्ज करते हैं, इसलिए अकेला चुराया हुआ पासवर्ड काफ़ी नहीं है। मानक WordPress हुक का उपयोग करता है — WordPress अपडेट के दौरान सुरक्षित, और प्लगइन को अक्षम करने से तुरंत सामान्य लॉगिन बहाल हो जाता है।"
+
+msgid "Edit table"
+msgstr "तालिका संपादित करें"
+
+msgid "Either set up a mailbox for the domain, or make sure the address you send notifications to is one you actually read."
+msgstr "या तो डोमेन के लिए एक मेलबॉक्स सेट करें, या सुनिश्चित करें कि जिस पते पर आप सूचनाएँ भेज रहे हैं वह वही है जिसे आप वास्तव में पढ़ते हैं।"
+
+msgid "Email address"
+msgstr "ईमेल पता"
+
+msgid "Email is the fallback and not a good one — a security message sent by a shop's own server is exactly the kind that lands in spam. Set up the Telegram bot under WooCommerce if you can."
+msgstr "ईमेल एक फ़ॉलबैक है और अच्छा नहीं है — दुकान के अपने सर्वर द्वारा भेजा गया सुरक्षा संदेश स्पैम में जाने वाला संदेश है। यदि हो सके तो WooCommerce के अंतर्गत Telegram बॉट सेट करें।"
+
+msgid "Email me a code"
+msgstr "मुझे ईमेल से कोड भेजें"
+
+msgid "Email service (SMTP preset)"
+msgstr "ईमेल सेवा (SMTP प्रीसेट)"
+
+msgid "Email to %s"
+msgstr "%s को ईमेल"
+
+msgid "Enable image lightbox"
+msgstr "छवि लाइटबॉक्स सक्षम करें"
+
+msgid "Enable two-factor authentication"
+msgstr "दो-कारक प्रमाणीकरण सक्षम करें"
+
+msgid "Enter a current two-factor code to unlock PHP editing first."
+msgstr "पहले PHP संपादन अनलॉक करने के लिए एक वर्तमान दो-कारक कोड दर्ज करें।"
+
+msgid "Enter the 6-digit code from your app, or a backup code."
+msgstr "अपने ऐप से 6-अंकीय कोड, या बैकअप कोड दर्ज करें।"
+
+msgid "Enter your authentication code."
+msgstr "अपना प्रमाणीकरण कोड दर्ज करें।"
+
+msgid "Entrance effect"
+msgstr "प्रवेश प्रभाव"
+
+msgid "Every day"
+msgstr "हर दिन"
+
+msgid "Every month"
+msgstr "हर महीने"
+
+msgid "Every page load (init)"
+msgstr "हर पेज लोड पर (init)"
+
+msgid "Every two weeks"
+msgstr "हर दो सप्ताह"
+
+msgid "Every week (recommended)"
+msgstr "हर सप्ताह (अनुशंसित)"
+
+msgid "Everyone also gets one-time backup codes when they enrol — save them. If you are ever locked out with no phone, backup code or recovery channel, rename the plugin folder over FTP to switch 2FA off."
+msgstr "सभी को नामांकन पर एक-बारगी बैकअप कोड भी मिलते हैं — उन्हें सहेजें। यदि आप कभी फ़ोन, बैकअप कोड या रिकवरी चैनल के बिना लॉक हो जाएँ, तो 2FA बंद करने के लिए FTP के माध्यम से प्लगइन फ़ोल्डर का नाम बदलें।"
+
+msgid "Everything above only tells you. Telling you leaves a gap: the link goes in, the warning appears on a screen, and the link keeps working until you log in and read it. That gap is how three old posts carried casino links for two years."
+msgstr "ऊपर की हर चीज़ आपको केवल बताती है। बताने से एक अंतर रह जाता है: लिंक अंदर जाता है, चेतावनी एक स्क्रीन पर दिखती है, और लिंक तब तक काम करता रहता है जब तक आप लॉगिन करके उसे नहीं पढ़ लेते। इसी अंतर के कारण तीन पुरानी पोस्टों में दो साल तक कैसीनो लिंक रहे।"
+
+msgid "Everything else on this page warns you when something is wrong — but only on a screen you have to open. It cannot warn you that it stopped: a site with the plugin switched off looks exactly like a site with nothing wrong."
+msgstr "इस पृष्ठ पर बाकी सब कुछ आपको चेतावनी देता है जब कुछ ग़लत हो — लेकिन केवल उस स्क्रीन पर जिसे आपको खोलना है। यह यह चेतावनी नहीं दे सकता कि उसने बंद कर दिया: प्लगइन बंद होने वाली साइट ठीक वैसी ही दिखती है जैसी कोई ग़लती न होने वाली साइट।"
+
+msgid "Export CSV"
+msgstr "CSV निर्यात करें"
+
+msgid "FAQ schema (Horse Tools)"
+msgstr "FAQ स्कीमा (Horse Tools)"
+
+msgid "FAQ schema (rich results)"
+msgstr "FAQ स्कीमा (रिच रिज़ल्ट)"
+
+msgid "Fade"
+msgstr "फीका होना"
+
+msgid "Fade in"
+msgstr "अंदर फीका होना"
+
+msgid "Fall-back timer — run the delayed scripts after this many seconds even with no interaction (0 = only on interaction)"
+msgstr "फ़ॉल-बैक टाइमर — बिना किसी बातचीत के भी निर्दिष्ट सेकंड के बाद विलंबित स्क्रिप्ट चलाएँ (0 = केवल बातचीत पर)"
+
+msgid "Filled in for you: server %host%, port %port%, %enc%."
+msgstr "आपके लिए भरा गया: सर्वर %host%, पोर्ट %port%, %enc%।"
+
+msgid "Filter per column"
+msgstr "प्रति कॉलम फ़िल्टर करें"
+
+msgid "Find a domain"
+msgstr "डोमेन खोजें"
+
+msgid "Finished reading your posts and pages."
+msgstr "आपकी पोस्ट और पेज पढ़ना समाप्त हुआ।"
+
+msgid "First row is a header"
+msgstr "पहली पंक्ति शीर्षक है"
+
+msgid "Fix the channel and send a test message"
+msgstr "चैनल ठीक करें और परीक्षण संदेश भेजें"
+
+msgid "Flip"
+msgstr "उलटना"
+
+msgid "Font settings"
+msgstr "फ़ॉन्ट सेटिंग्स"
+
+msgid "Fonts"
+msgstr "फ़ॉन्ट"
+
+msgid "For non-technical users: this switches on the safe, high-impact speed features — delay & defer JavaScript (safe mode, with a 5-second fall-back), lazy-load, Instant-page, HTML compression, and dropping Emoji / jQuery Migrate / Dashicons. The riskier options (async CSS, “delay all”) are left off. The switches below light up so you can see what changed — then press SAVE to apply."
+msgstr "गैर-तकनीकी उपयोगकर्ताओं के लिए: यह सुरक्षित, उच्च-प्रभाव वाली गति सुविधाओं को चालू करता है — JavaScript में देरी और डिफर (सुरक्षित मोड, 5-सेकंड फ़ॉल-बैक के साथ), lazy-load, Instant-page, HTML कम्प्रेशन, और Emoji / jQuery Migrate / Dashicons हटाना। जोखिम भरे विकल्प (async CSS, \"delay all\") बंद रहते हैं। नीचे दिए स्विच चालू हो जाते हैं ताकि आप देख सकें कि क्या बदला — फिर लागू करने के लिए SAVE दबाएँ।"
+
+msgid "Free for 300 messages a day with no card. The account login is the username; the SMTP key is not the same thing as the API key."
+msgstr "बिना कार्ड के प्रतिदिन 300 संदेश मुफ़्त। खाता लॉगिन ही उपयोगकर्ता नाम है; SMTP कुंजी API कुंजी के समान नहीं है।"
+
+msgid "Freeze first column"
+msgstr "पहला कॉलम जमा दें"
+
+msgid "Front end and admin"
+msgstr "फ्रंट-एंड और एडमिन"
+
+msgid "Front end only"
+msgstr "केवल फ्रंट-एंड"
+
+msgid "GLightbox — light, images + video, slide effects"
+msgstr "GLightbox — हल्का, छवियाँ + वीडियो, स्लाइड प्रभाव"
+
+msgid "Give it a minute before answering. “In the spam folder” is a useful answer, not a failure to report."
+msgstr "जवाब देने से पहले एक मिनट दें। \"स्पैम फ़ोल्डर में है\" एक उपयोगी उत्तर है, रिपोर्ट करने में विफलता नहीं।"
+
+msgid "Go through the list once and approve it"
+msgstr "सूची को एक बार देखें और उसे स्वीकृत करें"
+
+msgid "Gone"
+msgstr "गायब"
+
+msgid "Google Sheet"
+msgstr "Google Sheet"
+
+msgid "Google accepts both keys."
+msgstr "Google दोनों कुंजियाँ स्वीकार करता है।"
+
+msgid "Google does not recognise this Secret key. Check you copied the secret and not the site key — they come from the same page and are easy to swap."
+msgstr "Google इस Secret कुंजी को पहचानता नहीं है। जाँचें कि आपने secret कॉपी किया है, site कुंजी नहीं — वे एक ही पृष्ठ से आती हैं और आसानी से बदल जाती हैं।"
+
+msgid "Google fetch"
+msgstr "Google fetch"
+
+msgid "Google refused the request — make sure the sheet is shared as “Anyone with the link can view”."
+msgstr "Google ने अनुरोध अस्वीकार कर दिया — सुनिश्चित करें कि शीट \"Anyone with the link can view\" के रूप में साझा की गई है।"
+
+msgid "Google refuses this Site key for reCAPTCHA v3. It is almost certainly a v2 key — either switch the dropdown to V2, or paste the key from a v3 project. Until then the widget never loads and every login is rejected."
+msgstr "Google reCAPTCHA v3 के लिए इस Site कुंजी को अस्वीकार करता है। यह लगभग निश्चित रूप से v2 कुंजी है — या तो ड्रॉपडाउन को V2 पर स्विच करें, या v3 प्रोजेक्ट से कुंजी पेस्ट करें। तब तक विजेट कभी लोड नहीं होता और हर लॉगिन अस्वीकार कर दिया जाता है।"
+
+msgid "Google sign-in"
+msgstr "Google साइन-इन"
+
+msgid "Gradient blue-violet"
+msgstr "नीला-बैंगनी ग्रेडिएंट"
+
+msgid "Gradient ocean"
+msgstr "समुद्र ग्रेडिएंट"
+
+msgid "Gradient sunset"
+msgstr "सूर्यास्त ग्रेडिएंट"
+
+msgid "Grey"
+msgstr "धूसर"
+
+msgid "Group images into a gallery (previous / next)"
+msgstr "छवियों को गैलरी में समूहित करें (पिछला / अगला)"
+
+msgid "HTML compression; compress JPGs and serve WebP"
+msgstr "HTML कम्प्रेशन; JPGs को कम्प्रेस करें और WebP परोसें"
+
+msgid "Handle dead links: send visitors who hit a “404 – not found” page to a page you choose, and keep a log of the broken URLs so you know what to fix."
+msgstr "मृत लिंक संभालें: \"404 – not found\" पृष्ठ पर पहुँचने वाले विज़िटरों को अपनी पसंद के पृष्ठ पर भेजें, और टूटे हुए URL का लॉग रखें ताकि आप जान सकें कि क्या ठीक करना है।"
+
+msgid "Header colour"
+msgstr "हेडर रंग"
+
+msgid "Heads up: a PHP snippet was just changed on %1$s. Snippet: \"%2$s\". By: %3$s (IP %4$s). If this was not you, change your password and review Horse Tools → Shortcode immediately."
+msgstr "सूचना: %1$s पर अभी एक PHP स्निपेट बदला गया। स्निपेट: \"%2$s\"। द्वारा: %3$s (IP %4$s)। यदि यह आपने नहीं किया, तो अपना पासवर्ड बदलें और तुरंत Horse Tools → Shortcode की समीक्षा करें।"
+
+msgid "Heartbeat mode"
+msgstr "Heartbeat मोड"
+
+msgid "Hold heavy third-party scripts (analytics, tag managers, pixels, chat, ads) until the visitor first interacts — scroll, mouse move, tap, key or click — then run them in order. The single biggest win for Total Blocking Time and “Reduce unused JavaScript”. It re-fires the page-ready events afterwards, keeps script order, and never touches JSON-LD structured data or ES modules."
+msgstr "भारी थर्ड-पार्टी स्क्रिप्ट (analytics, tag managers, pixels, chat, ads) को तब तक रोकें जब तक विज़िटर पहली बार बातचीत न करे — स्क्रॉल, माउस मूव, टैप, की या क्लिक — फिर उन्हें क्रम में चलाएँ। Total Blocking Time और \"Reduce unused JavaScript\" के लिए सबसे बड़ी जीत। यह बाद में page-ready इवेंट फिर से चलाता है, स्क्रिप्ट क्रम बनाए रखता है, और JSON-LD संरचित डेटा या ES मॉड्यूल को कभी नहीं छूता।"
+
+msgid "Horse Tools %s is available — an update link now appears under the plugin below. WordPress will download it directly from GitHub."
+msgstr "Horse Tools %s उपलब्ध है — अब प्लगइन के नीचे एक अपडेट लिंक दिखाई देता है। WordPress इसे सीधे GitHub से डाउनलोड करेगा।"
+
+msgid "Horse Tools beat #%1$d — %2$s"
+msgstr "Horse Tools बीट #%1$d — %2$s"
+
+msgid "Horse Tools can tell you when your content starts linking somewhere new."
+msgstr "Horse Tools आपको बता सकता है जब आपकी सामग्री कहीं नई जगह लिंक करना शुरू करे।"
+
+msgid "Horse Tools can watch your contact details for changes."
+msgstr "Horse Tools परिवर्तनों के लिए आपके संपर्क विवरण देख सकता है।"
+
+msgid "Horse Tools could not reach GitHub to check for updates. Please try again later."
+msgstr "Horse Tools अपडेट जाँचने के लिए GitHub तक नहीं पहुँच सका। कृपया बाद में फिर से कोशिश करें।"
+
+msgid "Horse Tools is up to date (version %s)."
+msgstr "Horse Tools अद्यतित है (संस्करण %s)।"
+
+msgid "Horse Tools keeps a copy of your decisions in a file as well as in the database, precisely so that a change made straight to the database can be seen. These no longer match:"
+msgstr "Horse Tools आपके निर्णयों की एक प्रति फ़ाइल में और डेटाबेस में रखता है, ठीक इसलिए कि सीधे डेटाबेस में किया गया परिवर्तन दिखाया जा सके। ये अब मेल नहीं खाते:"
+
+msgid "Horse Tools snippet"
+msgstr "Horse Tools स्निपेट"
+
+msgid "Horse Tools table"
+msgstr "Horse Tools तालिका"
+
+msgid "Horse Tools — %s"
+msgstr "Horse Tools — %s"
+
+msgid "Hosts to preconnect (one per line — host or full URL)"
+msgstr "प्रीकनेक्ट करने के लिए होस्ट (एक प्रति पंक्ति — होस्ट या पूरा URL)"
+
+msgid "Hour(s)"
+msgstr "घंटा"
+
+msgid "How often"
+msgstr "कितनी बार"
+
+msgid "Icon colour"
+msgstr "आइकन रंग"
+
+msgid "Icons"
+msgstr "आइकन"
+
+msgid "If a theme/plugin script misbehaves, add its handle or file name to the exclusion list below. Disable if you already use a full-page optimiser that defers scripts."
+msgstr "यदि कोई थीम/प्लगइन स्क्रिप्ट ग़लत व्यवहार करे, तो उसके हैंडल या फ़ाइल नाम को नीचे बहिष्करण सूची में जोड़ें। यदि आप पहले से ही स्क्रिप्ट डिफर करने वाले पूर्ण-पृष्ठ ऑप्टिमाइज़र का उपयोग करते हैं तो अक्षम करें।"
+
+msgid "If it does not arrive, something stopped it — check the site."
+msgstr "यदि यह नहीं पहुँचता, तो किसी ने इसे रोक दिया — साइट जाँचें।"
+
+msgid "If this site stops working, or Horse Tools is switched off, nobody is told. Every warning here is only seen by someone who logs in and looks."
+msgstr "यदि यह साइट काम करना बंद कर दे, या Horse Tools बंद हो जाए, तो किसी को नहीं बताया जाता। यहाँ की हर चेतावनी केवल उसी व्यक्ति को दिखती है जो लॉगिन करके देखे।"
+
+msgid "If you are reading it, mail from your site reaches this address. Go back to the Email screen and say where it turned up — the inbox or the spam folder — because those are two different answers and only you can see which one it was."
+msgstr "यदि आप इसे पढ़ रहे हैं, तो आपकी साइट से मेल इस पते पर पहुँचता है। वापस ईमेल स्क्रीन पर जाएँ और बताएँ कि यह कहाँ दिखा — इनबॉक्स या स्पैम फ़ोल्डर — क्योंकि ये दो अलग-अलग उत्तर हैं और केवल आप देख सकते हैं कि कौन-सा था।"
+
+msgid "If you have just restored a database backup, or copied the database from another copy of this site, that is the explanation — the file stayed while the database went back in time. Press the button and it will match again."
+msgstr "यदि आपने अभी डेटाबेस बैकअप पुनर्स्थापित किया है, या डेटाबेस को इस साइट की किसी अन्य कॉपी से कॉपी किया है, तो यही व्याख्या है — फ़ाइल रह गई जबकि डेटाबेस पुराने समय में वापस चला गया। बटन दबाएँ और वह फिर से मेल खाएगा।"
+
+msgid "If you have not done either of those things, then something can write to your database that should not be able to. Changing passwords will not fix that on its own; the way in has to be found."
+msgstr "यदि आपने ये दोनों में से कुछ नहीं किया है, तो कुछ आपके डेटाबेस में लिख सकता है जिसे नहीं लिखना चाहिए। केवल पासवर्ड बदलने से यह अपने आप ठीक नहीं होगा; रास्ता खोजना होगा।"
+
+msgid "If you just changed these yourself, confirm them. If you did not, somebody else did — check who last edited your settings before changing anything else."
+msgstr "यदि आपने अभी-अभी ये स्वयं बदले हैं, तो उन्हें पुष्टि करें। यदि नहीं, तो किसी और ने बदला है — कुछ और बदलने से पहले जाँचें कि आपकी सेटिंग्स को अंतिम बार किसने संपादित किया।"
+
+msgid "If you lose your phone"
+msgstr "यदि आप अपना फ़ोन खो दें"
+
+msgid "If your site has Tag Manager but no Google tag"
+msgstr "यदि आपकी साइट में Tag Manager है लेकिन कोई Google टैग नहीं"
+
+msgid "Image alt text"
+msgstr "छवि alt टेक्स्ट"
+
+msgid "Image caption (figcaption)"
+msgstr "छवि कैप्शन (figcaption)"
+
+msgid "Image lightbox"
+msgstr "छवि लाइटबॉक्स"
+
+msgid "Image title"
+msgstr "छवि शीर्षक"
+
+msgid "Images"
+msgstr "छवियाँ"
+
+msgid "In"
+msgstr "अंदर"
+
+msgid "In Google Analytics: Reports → Engagement → Events. Each channel appears under its own name — contact_phone, contact_zalo, contact_messenger and so on — so there is nothing to configure first. Allow 24 hours for the standard reports; to see it immediately instead, open Admin → DebugView and tap a button on your phone."
+msgstr "Google Analytics में: Reports → Engagement → Events। प्रत्येक चैनल अपने नाम के अंतर्गत दिखाई देता है — contact_phone, contact_zalo, contact_messenger इत्यादि — इसलिए पहले कॉन्फ़िगर करने के लिए कुछ नहीं है। मानक रिपोर्टों के लिए 24 घंटे दें; तुरंत देखने के लिए Admin → DebugView खोलें और अपने फ़ोन पर एक बटन दबाएँ।"
+
+msgid "In the inbox"
+msgstr "इनबॉक्स में"
+
+msgid "In the page <head>"
+msgstr "पृष्ठ <head> में"
+
+msgid "In the spam folder"
+msgstr "स्पैम फ़ोल्डर में"
+
+msgid "Indigo"
+msgstr "गहरा नीला"
+
+msgid "Insert a snippet"
+msgstr "एक स्निपेट डालें"
+
+msgid "Insert a table"
+msgstr "एक तालिका डालें"
+
+msgid "Insert a table you saved earlier:"
+msgstr "पहले से सहेजी गई तालिका डालें:"
+
+msgid "Insert column right"
+msgstr "दाएँ कॉलम डालें"
+
+msgid "Insert row below"
+msgstr "नीचे पंक्ति डालें"
+
+msgid "Insert table"
+msgstr "तालिका डालें"
+
+msgid "Install analytics first"
+msgstr "पहले analytics इंस्टॉल करें"
+
+msgid "Invalid code. Please try again."
+msgstr "अमान्य कोड। कृपया फिर से कोशिश करें।"
+
+msgid "It continues on its own each time you open an admin page"
+msgstr "यह अपने आप तब भी जारी रहता है जब आप एक एडमिन पृष्ठ खोलते हैं"
+
+msgid "It failed: %s"
+msgstr "यह विफल हुआ: %s"
+
+msgid "JavaScript &amp; connections"
+msgstr "JavaScript और कनेक्शन"
+
+msgid "Last confirmed %s ago — worth testing again"
+msgstr "अंतिम पुष्टि %s पहले — फिर से परीक्षण करने योग्य"
+
+msgid "Last message: #%1$d, %2$s ago."
+msgstr "अंतिम संदेश: #%1$d, %2$s पहले।"
+
+msgid "Last row is a total row (pinned to the bottom)"
+msgstr "अंतिम पंक्ति एक कुल पंक्ति है (नीचे पिन की हुई)"
+
+msgid "Least-linked first, because the one added without your knowing is almost never the one you link to from two hundred posts. Tick what belongs and approve it; leave the rest here."
+msgstr "सबसे पहले कम-लिंक वाले, क्योंकि बिना आपकी जानकारी जोड़ा गया वह लगभग कभी नहीं होता जिसे आप दो सौ पोस्टों से लिंक करते हैं। जो संबंधित है उसे टिक करें और स्वीकृत करें; बाकी को यहाँ छोड़ दें।"
+
+msgid "Leave empty and the icon follows the list colour."
+msgstr "खाली छोड़ें और आइकन सूची के रंग का अनुसरण करेगा।"
+
+msgid "Leave empty to use the icon chosen above; anything pasted here replaces it. Its colour comes from the Icon colour setting below, so the fill in your SVG is ignored. Scripts and event handlers are removed."
+msgstr "ऊपर चुने गए आइकन का उपयोग करने के लिए खाली छोड़ें; यहाँ पेस्ट की गई कोई भी चीज़ इसे बदल देती है। इसका रंग नीचे आइकन रंग सेटिंग से आता है, इसलिए आपके SVG में fill को अनदेखा किया जाता है। स्क्रिप्ट और इवेंट हैंडलर हटा दिए जाते हैं।"
+
+msgid "Leave this empty and the message goes to the same Telegram chat as your order notifications, or by email if you have not set a bot up. Orders go to whoever packs them; this does not, so there is a field of its own."
+msgstr "इसे खाली छोड़ें और संदेश उसी Telegram चैट पर जाएगा जहाँ आपके ऑर्डर सूचनाएँ जाती हैं, या ईमेल से यदि आपने बॉट सेट नहीं किया है। ऑर्डर उसे जाते हैं जो पैक करता है; यह नहीं, इसलिए इसका अपना क्षेत्र है।"
+
+msgid "Light"
+msgstr "हल्का"
+
+msgid "Lightbox engine"
+msgstr "लाइटबॉक्स इंजन"
+
+msgid "Lines only"
+msgstr "केवल पंक्तियाँ"
+
+msgid "Link text"
+msgstr "लिंक टेक्स्ट"
+
+msgid "Links"
+msgstr "लिंक"
+
+msgid "Links & URLs"
+msgstr "लिंक और URL"
+
+msgid "Links every image in the content together so the viewer can flip through them. If an image already links to a file, that link is used."
+msgstr "सामग्री में प्रत्येक छवि को एक साथ लिंक करता है ताकि दर्शक उनके माध्यम से पलट सकें। यदि कोई छवि पहले से किसी फ़ाइल से लिंक है, तो उस लिंक का उपयोग किया जाता है।"
+
+msgid "Links to domains you did not approve are defused as they are printed"
+msgstr "आपके द्वारा अस्वीकृत डोमेन के लिंक प्रिंट होने पर निष्क्रिय हो जाते हैं"
+
+msgid "Load CSS without blocking render"
+msgstr "CSS को रेंडर ब्लॉक किए बिना लोड करें"
+
+msgid "Load more icons"
+msgstr "अधिक आइकन लोड करें"
+
+msgid "Loading…"
+msgstr "लोड हो रहा है…"
+
+msgid "Loads a script or an embedded frame from this domain"
+msgstr "इस डोमेन से एक स्क्रिप्ट या एम्बेडेड फ़्रेम लोड करता है"
+
+msgid "Loads stylesheets without blocking the first paint (the media-toggle technique), so the page appears on screen sooner. A big win for First Contentful Paint and Lighthouse’s “Eliminate render-blocking resources”."
+msgstr "पहले पेंट को ब्लॉक किए बिना स्टाइलशीट लोड करता है (मीडिया-टॉगल तकनीक), इसलिए पृष्ठ स्क्रीन पर पहले दिखाई देता है। First Contentful Paint और Lighthouse के \"Eliminate render-blocking resources\" के लिए बड़ी जीत।"
+
+msgid "Lock content"
+msgstr "सामग्री लॉक करें"
+
+msgid "Locked yourself out? Log in from a different network (e.g. your phone on mobile data = a different IP), then click the button above to clear all lockouts — or just wait for the lockout time to pass. As a last resort, disable the plugin by renaming its folder via FTP."
+msgstr "खुद को बाहर लॉक कर लिया? किसी भिन्न नेटवर्क से लॉगिन करें (जैसे फ़ोन मोबाइल डेटा पर = एक भिन्न IP), फिर सभी लॉकआउट साफ़ करने के लिए ऊपर दिया गया बटन क्लिक करें — या बस लॉकआउट समय बीतने की प्रतीक्षा करें। अंतिम उपाय के रूप में, FTP के माध्यम से इसके फ़ोल्डर का नाम बदलकर प्लगइन अक्षम करें।"
+
+msgid "Lockout length"
+msgstr "लॉकआउट अवधि"
+
+msgid "Lockout time unit"
+msgstr "लॉकआउट समय इकाई"
+
+msgid "Login lockout, two-factor, reCAPTCHA and the login page."
+msgstr "लॉगिन लॉकआउट, दो-कारक, reCAPTCHA और लॉगिन पृष्ठ।"
+
+msgid "Login page"
+msgstr "लॉगिन पृष्ठ"
+
+msgid "Longest answer to publish (characters)"
+msgstr "प्रकाशित करने के लिए सबसे लंबा उत्तर (वर्ण)"
+
+msgid "Look down this page, deal with anything that makes you stop, and use “Approve everything” below for the rest — what matters is having a baseline, so that tomorrow’s arrival stands out against it."
+msgstr "इस पृष्ठ को नीचे देखें, जो कुछ भी आपको रोकता है उसे संभालें, और बाकी के लिए नीचे \"सब कुछ स्वीकृत करें\" का उपयोग करें — जो मायने रखता है वह यह है कि एक आधार रेखा हो, ताकि कल का आगमन उसके विरुद्ध खड़ा हो।"
+
+msgid "Loop back to the first image"
+msgstr "पहली छवि पर वापस लूप करें"
+
+msgid "Lost your device?"
+msgstr "अपना डिवाइस खो दिया?"
+
+msgid "Mail from this site is known to arrive"
+msgstr "इस साइट से मेल आने के लिए जाना जाता है"
+
+msgid "Mail from this site leaves by %1$s, and that address is known as %2$s."
+msgstr "इस साइट से मेल %1$s से निकलता है, और वह पता %2$s के रूप में जाना जाता है।"
+
+msgid "Mail this site sends as %s is treated as forged. Your domain publishes a list of servers allowed to send for it, that list ends in “reject everything else”, and this web server is not on it."
+msgstr "यह साइट %s के रूप में जो मेल भेजती है उसे जाली माना जाता है। आपका डोमेन मेल भेजने की अनुमति वाले सर्वरों की एक सूची प्रकाशित करता है, वह सूची \"बाकी सबको अस्वीकार करें\" पर समाप्त होती है, और यह वेब सर्वर उस पर नहीं है।"
+
+msgid "Maintenance (503)"
+msgstr "रखरनाव (503)"
+
+msgid "Maintenance 503"
+msgstr "रखरनाव 503"
+
+msgid "Measurement"
+msgstr "माप"
+
+msgid "Merge cells: type #colspan# to merge into the cell on the left, #rowspan# to merge into the cell above. Formulas: =SUM(B2:B10), also AVG / MIN / MAX."
+msgstr "सेल मर्ज करें: बाएँ वाले सेल में मर्ज करने के लिए #colspan#, ऊपर वाले सेल में मर्ज करने के लिए #rowspan# टाइप करें। सूत्र: =SUM(B2:B10), साथ ही AVG / MIN / MAX।"
+
+msgid "Microsoft has been switching this off for new tenants; if it refuses to authenticate, that is why, and another service is the quicker road."
+msgstr "Microsoft नई tenants के लिए इसे बंद कर रहा है; यदि यह प्रमाणीकरण से इनकार करता है, तो यही कारण है, और कोई अन्य सेवा तेज़ रास्ता है।"
+
+msgid "Minimal"
+msgstr "न्यूनतम"
+
+msgid "Minimum number of questions"
+msgstr "प्रश्नों की न्यूनतम संख्या"
+
+msgid "Minute(s)"
+msgstr "मिनट"
+
+msgid "Mode"
+msgstr "मोड"
+
+msgid "Move column left"
+msgstr "कॉलम बाएँ ले जाएँ"
+
+msgid "Move column right"
+msgstr "कॉलम दाएँ ले जाएँ"
+
+msgid "Move row down"
+msgstr "पंक्ति नीचे ले जाएँ"
+
+msgid "Move row up"
+msgstr "पंक्ति ऊपर ले जाएँ"
+
+msgid "NOT APPROVED: %s"
+msgstr "अस्वीकृत: %s"
+
+msgid "Name"
+msgstr "नाम"
+
+msgid "Native image lazy-load + async decode"
+msgstr "नेटिव छवि lazy-load + async डिकोड"
+
+msgid "New"
+msgstr "नया"
+
+msgid "Next"
+msgstr "अगला"
+
+msgid "Next beat due: %s"
+msgstr "अगली बीट देय: %s"
+
+msgid "Next one due %s."
+msgstr "अगला %s देय।"
+
+msgid "No FAQ section recognised in this post."
+msgstr "इस पोस्ट में कोई FAQ सेक्शन पहचाना नहीं गया।"
+
+msgid "No Google Analytics tag turned up, either in your settings or on the home page. If you have not installed one yet, Site Kit by Google (or any GA4 plugin) is the usual way. If you know you do have one — added through Tag Manager, a caching layer, or a consent tool that loads it later — this check simply could not see it: switch the setting on anyway. It looks for analytics at the moment of the click, not now, so it starts working the instant a tag is present."
+msgstr "आपकी सेटिंग्स या होम पेज पर कोई Google Analytics टैग नहीं मिला। यदि आपने अभी तक एक इंस्टॉल नहीं किया है, तो Site Kit by Google (या कोई भी GA4 प्लगइन) सामान्य तरीका है। यदि आप जानते हैं कि आपके पास एक है — Tag Manager, कैशिंग लेयर, या बाद में लोड होने वाले कंसेंट टूल के माध्यम से जोड़ा गया — तो यह जाँच बस उसे नहीं देख सकी: सेटिंग फिर भी चालू करें। यह क्लिक के समय analytics देखता है, अभी नहीं, इसलिए टैग मौजूद होते ही काम करना शुरू कर देता है।"
+
+msgid "No Telegram bot token is set yet (WooCommerce module)."
+msgstr "अभी तक कोई Telegram बॉट टोकन सेट नहीं है (WooCommerce मॉड्यूल)।"
+
+msgid "No auto-refresh"
+msgstr "कोई स्वचालित रीफ्रेश नहीं"
+
+msgid "No caption"
+msgstr "कोई कैप्शन नहीं"
+
+msgid "No copy on disk yet — it is written the first time you confirm something"
+msgstr "डिस्क पर अभी तक कोई प्रति नहीं — यह पहली बार तब लिखी जाती है जब आप कुछ पुष्टि करते हैं"
+
+msgid "No downloadable secrets in the site folder"
+msgstr "साइट फ़ोल्डर में कोई डाउनलोड करने योग्य रहस्य नहीं"
+
+msgid "No matching rows."
+msgstr "कोई मेल खाने वाली पंक्तियाँ नहीं।"
+
+msgid "No message containing %s yet. Send that exact code to the bot, then press this again."
+msgstr "%s वाला कोई संदेश अभी तक नहीं। बॉट को वही सटीक कोड भेजें, फिर यह फिर से दबाएँ।"
+
+msgid "No post titles here on purpose — this list is long, and looking up a title for every row is what made this screen slow. Tick anything you want to take back and press the button; it moves up to “Waiting for you” with its posts listed."
+msgstr "यहाँ जानबूझकर कोई पोस्ट शीर्षक नहीं — यह सूची लंबी है, और हर पंक्ति के लिए शीर्षक खोजना ही वह था जिसने इस स्क्रीन को धीमा किया। जिसे भी आप वापस लेना चाहते हैं उसे टिक करें और बटन दबाएँ; यह \"आपकी प्रतीक्षा में\" में अपनी पोस्टों के साथ चला जाता है।"
+
+msgid "No saved tables yet."
+msgstr "अभी तक कोई सहेजी गई तालिका नहीं।"
+
+msgid "No scripts found."
+msgstr "कोई स्क्रिप्ट नहीं मिली।"
+
+msgid "No snippet matches your search."
+msgstr "कोई स्निपेट आपकी खोज से मेल नहीं खाता।"
+
+msgid "No snippets yet — create them on the Shortcode screen."
+msgstr "अभी तक कोई स्निपेट नहीं — उन्हें शॉर्टकोड स्क्रीन पर बनाएँ।"
+
+msgid "No table yet."
+msgstr "अभी तक कोई तालिका नहीं।"
+
+msgid "No tables yet. Click “Add new table” to create your first one."
+msgstr "अभी तक कोई तालिका नहीं। अपनी पहली तालिका बनाने के लिए \"नई तालिका जोड़ें\" क्लिक करें।"
+
+msgid "Nobody can click through. Stronger, and more likely to get in your way — a domain you meant to link to but forgot to tick stops being a link until you tick it."
+msgstr "कोई क्लिक करके आगे नहीं जा सकता। मज़बूत, और आपके रास्ते में आने की अधिक संभावना — एक डोमेन जिसे आप लिंक करना चाहते थे लेकिन टिक करना भूल गए, तब तक लिंक नहीं रहता जब तक आप इसे टिक नहीं करते।"
+
+msgid "Nobody has ever checked that mail from this site arrives"
+msgstr "किसी ने कभी जाँचा नहीं कि इस साइट से मेल पहुँचता है"
+
+msgid "None (instant)"
+msgstr "कोई नहीं (तत्क्षण)"
+
+msgid "Not allowed."
+msgstr "अनुमति नहीं।"
+
+msgid "Not due yet."
+msgstr "अभी देय नहीं।"
+
+msgid "Not your normal password — Google requires an app password, and the page that makes them only appears once two-step verification is on."
+msgstr "आपका सामान्य पासवर्ड नहीं — Google को एक ऐप पासवर्ड चाहिए, और उन्हें बनाने वाला पृष्ठ केवल तब दिखाई देता है जब दो-चरण सत्यापन चालू हो।"
+
+msgid "Nothing accepts mail for %s, so any address at your own domain cannot receive replies. If you have stopped paying for a mailbox provider, its records may still be pointing there."
+msgstr "%s के लिए कुछ भी मेल स्वीकार नहीं करता, इसलिए आपके स्वयं के डोमेन पर कोई भी पता उत्तर प्राप्त नहीं कर सकता। यदि आपने मेलबॉक्स प्रदाता को भुगतान करना बंद कर दिया है, तो उसके रिकॉर्ड अभी भी वहाँ की ओर इशारा कर सकते हैं।"
+
+msgid "Nothing in DNS can change this. Send through an email service instead — those use a different port, which is open."
+msgstr "DNS में कुछ भी इसे नहीं बदल सकता। इसके बजाय एक ईमेल सेवा के माध्यम से भेजें — वे एक भिन्न पोर्ट का उपयोग करती हैं, जो खुला है।"
+
+msgid "Nothing matches that."
+msgstr "इससे कुछ नहीं मेल खाता।"
+
+msgid "Nothing running on this server can find out whether a message arrived. You can. Send one, look, and say what you found — the answer is kept with the date, so this screen can afterwards report something that was seen rather than something that was switched on."
+msgstr "इस सर्वर पर चल रहा कुछ भी यह पता नहीं लगा सकता कि कोई संदेश पहुँचा या नहीं। आप लगा सकते हैं। एक भेजें, देखें, और बताएँ कि आपने क्या पाया — उत्तर तारीख के साथ रखा जाता है, ताकि यह स्क्रीन बाद में कुछ ऐसा रिपोर्ट कर सके जो देखा गया था, न कि कुछ ऐसा जो चालू किया गया था।"
+
+msgid "Nothing to preview yet."
+msgstr "अभी तक देखने के लिए कुछ नहीं।"
+
+msgid "Nothing to send."
+msgstr "भेजने के लिए कुछ नहीं।"
+
+msgid "Nothing to set up"
+msgstr "सेट करने के लिए कुछ नहीं"
+
+msgid "Nothing was ticked, so nothing changed."
+msgstr "कुछ भी टिक नहीं किया गया, इसलिए कुछ भी नहीं बदला।"
+
+msgid "Nothing — just tell me"
+msgstr "कुछ नहीं — बस मुझे बताओ"
+
+msgid "Nothing. Every domain your content points at is one you have agreed to."
+msgstr "कुछ नहीं। जिस हर डोमेन पर आपकी सामग्री इंगित करती है वह एक है जिस पर आपने सहमति दी है।"
+
+msgid "Notification bar"
+msgstr "अधिसूचना पट्टी"
+
+msgid "Nowhere — it never came"
+msgstr "कहीं नहीं — वह कभी नहीं आया"
+
+msgid "On the code screen the user can have a one-time code emailed to their account address if they lose their phone."
+msgstr "कोड स्क्रीन पर, यदि उपयोगकर्ता अपना फ़ोन खो देता है तो उपयोगकर्ता अपने खाते के पते पर एक-बारगी कोड ईमेल करवा सकता है।"
+
+msgid "One click for the safe, high-impact speed features — including delaying third-party scripts and deferring JavaScript. It deliberately leaves out the advanced, riskier options (async CSS, the aggressive “delay all” mode), which you can still turn on yourself later. Gutenberg and Classic CSS are left alone, since removing those can change how a theme looks."
+msgstr "सुरक्षित, उच्च-प्रभाव वाली गति सुविधाओं के लिए एक क्लिक — जिसमें थर्ड-पार्टी स्क्रिप्ट में देरी और JavaScript डिफर करना शामिल है। यह जानबूझकर उन्नत, जोखिम भरे विकल्पों (async CSS, आक्रामक \"delay all\" मोड) को बाहर रखता है, जिन्हें आप बाद में स्वयं चालू कर सकते हैं। Gutenberg और Classic CSS को अकेला छोड़ दिया गया है, क्योंकि उन्हें हटाने से थीम का रूप बदल सकता है।"
+
+msgid "One half is in the database — still safe, but tidy it up"
+msgstr "आधा डेटाबेस में है — अभी भी सुरक्षित, लेकिन इसे व्यवस्थित करें"
+
+msgid "One of your buttons is set to Skype. Microsoft closed Skype on 5 May 2025 and moved everyone to Teams, so that button now opens nothing for visitors. Change it to another channel — it has been left in place rather than removed for you, so that nothing changes on your site without your say-so."
+msgstr "आपके एक बटन को Skype पर सेट किया गया है। Microsoft ने 5 मई 2025 को Skype बंद कर दिया और सभी को Teams पर स्थानांतरित कर दिया, इसलिए वह बटन अब विज़िटरों के लिए कुछ नहीं खोलता। इसे किसी अन्य चैनल पर बदलें — यह आपकी अनुमति के बिना आपकी साइट पर कुछ भी न बदले इसलिए हटाने के बजाय वहीं छोड़ा गया है।"
+
+msgid "One-click safe speed setup"
+msgstr "एक-क्लिक सुरक्षित गति सेटअप"
+
+msgid "Only %1$d question found; at least %2$d are needed before schema is published."
+msgstr "केवल %1$d प्रश्न मिला; स्कीमा प्रकाशित होने से पहले कम से कम %2$d आवश्यक हैं।"
+
+msgid "Only a full administrator may use PHP snippets."
+msgstr "केवल एक पूर्ण व्यवस्थापक ही PHP स्निपेट का उपयोग कर सकता है।"
+
+msgid "Only add hosts the page really uses. Preconnecting to a host you do not load from wastes a connection."
+msgstr "केवल उन होस्ट को जोड़ें जिनका पृष्ठ वास्तव में उपयोग करता है। जिस होस्ट से आप लोड नहीं करते उससे प्रीकनेक्ट करना एक कनेक्शन बर्बाद करता है।"
+
+msgid "Only affects enqueued stylesheets, and only for logged-out visitors. A fallback keeps every stylesheet working when JavaScript is turned off."
+msgstr "केवल enqueued स्टाइलशीट को प्रभावित करता है, और केवल लॉग-आउट विज़िटर के लिए। जब JavaScript बंद होता है तो एक फ़ॉलबैक हर स्टाइलशीट को काम करते रहता है।"
+
+msgid "Only for a custom icon: click the SVG box below, then"
+msgstr "केवल एक कस्टम आइकन के लिए: नीचे SVG बॉक्स क्लिक करें, फिर"
+
+msgid "Only in the post editor (autosave/locking)"
+msgstr "केवल पोस्ट एडिटर में (autosave/locking)"
+
+msgid "Only in these category IDs"
+msgstr "केवल इन श्रेणी ID में"
+
+msgid "Only the backup route worked — your main channel is down"
+msgstr "केवल बैकअप मार्ग काम किया — आपका मुख्य चैनल बंद है"
+
+msgid "Only the ticked ones on this page (%d)"
+msgstr "केवल इस पृष्ठ पर टिक किए गए (%d)"
+
+msgid "Only where I place its shortcode"
+msgstr "केवल जहाँ मैं इसका शॉर्टकोड रखूँ"
+
+msgid "Open a couple and glance at them. “Still fine” only resets the clock; it does not change what is approved."
+msgstr "कुछ को खोलें और एक नज़र डालें। \"अभी भी ठीक\" केवल घड़ी रीसेट करता है; यह स्वीकृत को नहीं बदलता।"
+
+msgid "Open animation"
+msgstr "खुलने की एनिमेशन"
+
+msgid "Optimisation"
+msgstr "अनुकूलन"
+
+msgid "Optional: in Admin → Events, switch on \"Mark as key event\" for the channels that matter to you. They then appear in the acquisition reports, so you can see which traffic source produces contacts, and they can be imported into Google Ads as a conversion."
+msgstr "वैकल्पिक: Admin → Events में, जो चैनल आपके लिए मायने रखते हैं उनके लिए \"Mark as key event\" चालू करें। वे फिर अधिग्रहण रिपोर्टों में दिखाई देते हैं, ताकि आप देख सकें कि कौन-सा ट्रैफ़िक स्रोत संपर्क उत्पन्न करता है, और उन्हें Google Ads में रूपांतरण के रूप में आयात किया जा सकता है।"
+
+msgid "Or enter this key manually:"
+msgstr "या यह कुंजी मैन्युअल रूप से दर्ज करें:"
+
+msgid "Orange"
+msgstr "नारंगी"
+
+msgid "Outbound links"
+msgstr "आउटबाउंड लिंक"
+
+msgid "Outbound links are watched"
+msgstr "आउटबाउंड लिंक देखे जा रहे हैं"
+
+msgid "Outbound links screen — choose what should happen to them"
+msgstr "आउटबाउंड लिंक स्क्रीन — उनके साथ क्या होना चाहिए चुनें"
+
+msgid "Overdue — nothing has been running the schedule"
+msgstr "अतिदेय — शेड्यूल चलाने वाला कुछ नहीं था"
+
+msgid "PHP editing unlocked for %d minutes."
+msgstr "PHP संपादन %d मिनट के लिए अनलॉक किया गया।"
+
+msgid "PHP errors: server paths, fragments of queries, sometimes the contents of a failed request."
+msgstr "PHP त्रुटियाँ: सर्वर पथ, क्वेरी के टुकड़े, कभी-कभी विफल अनुरोध की सामग्री।"
+
+msgid "PHP runs with full access to your site, so it stays locked. Enter a current code from your authenticator to unlock it for 15 minutes."
+msgstr "PHP आपकी साइट तक पूर्ण पहुँच के साथ चलता है, इसलिए यह लॉक रहता है। इसे 15 मिनट के लिए अनलॉक करने हेतु अपने authenticator से एक वर्तमान कोड दर्ज करें।"
+
+msgid "PHP snippets are not available."
+msgstr "PHP स्निपेट उपलब्ध नहीं हैं।"
+
+msgid "PHP snippets are switched off by HORSETOOLS_NO_PHP in wp-config.php."
+msgstr "PHP स्निपेट wp-config.php में HORSETOOLS_NO_PHP द्वारा बंद किए गए हैं।"
+
+msgid "PHP snippets are unavailable because this site sets DISALLOW_FILE_MODS — the platform does not allow code changes at all."
+msgstr "PHP स्निपेट अनुपलब्ध हैं क्योंकि यह साइट DISALLOW_FILE_MODS सेट करती है — प्लेटफ़ॉर्म किसी भी कोड परिवर्तन की अनुमति नहीं देता।"
+
+msgid "PHP syntax error — nothing was saved: %s"
+msgstr "PHP सिंटैक्स त्रुटि — कुछ भी सहेजा नहीं गया: %s"
+
+msgid "Page %1$d of %2$d"
+msgstr "पृष्ठ %2$d में से %1$d"
+
+msgid "Pagination"
+msgstr "पृष्ठांकन"
+
+msgid "Panel layout"
+msgstr "पैनल लेआउट"
+
+msgid "Password or app password"
+msgstr "पासवर्ड या ऐप पासवर्ड"
+
+msgid "Paste a Google Sheets link (shared: anyone with the link)"
+msgstr "Google Sheets लिंक पेस्ट करें (साझा: लिंक वाला कोई भी व्यक्ति)"
+
+msgid "Paste all eight lines into wp-config.php, above the line that requires wp-settings.php. Replace any existing lines with the same names. Everyone signed in — including you — will be signed out afterwards, which is the point: it invalidates every cookie issued with the old keys."
+msgstr "wp-config.php में सभी आठ पंक्तियाँ पेस्ट करें, उस पंक्ति के ऊपर जो wp-settings.php की आवश्यकता होती है। समान नाम वाली किसी भी मौजूदा पंक्ति को बदलें। उसके बाद सभी साइन-इन लोग — आप सहित — साइन आउट हो जाएँगे, जो उद्देश्य है: यह पुरानी कुंजियों के साथ जारी हर कुकी को अमान्य करता है।"
+
+msgid "Paste from Excel"
+msgstr "Excel से पेस्ट करें"
+
+msgid "Paste the eight keys into wp-config.php — see the notice at the top of any Horse Tools screen"
+msgstr "आठ कुंजियाँ wp-config.php में पेस्ट करें — किसी भी Horse Tools स्क्रीन के शीर्ष पर सूचना देखें"
+
+msgid "Permalinks, image alt text, external links and FAQ schema."
+msgstr "Permalinks, छवि alt टेक्स्ट, बाहरी लिंक और FAQ स्कीमा।"
+
+msgid "Phone number"
+msgstr "फ़ोन नंबर"
+
+msgid "Phone, SMS, Messenger, Telegram, Zalo, Whatsapp, Viber, Skype, Tiktok, Mail:"
+msgstr "फ़ोन, SMS, Messenger, Telegram, Zalo, WhatsApp, Viber, Skype, TikTok, मेल:"
+
+msgid "PhotoSwipe — best pinch-zoom / pan for photos"
+msgstr "PhotoSwipe — फ़ोटो के लिए सर्वश्रेष्ठ पिंच-ज़ूम / पैन"
+
+msgid "Phrases that mark the FAQ section"
+msgstr "वाक्यांश जो FAQ सेक्शन को चिह्नित करते हैं"
+
+msgid "Pick a button skin"
+msgstr "एক বটन स्किन चुनें"
+
+msgid "Pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically — no icon needed."
+msgstr "एक चैनल चुनें (Zalo, Messenger, फ़ोन…) और इसका लोगो स्वचालित रूप से जोड़ दिया जाता है — किसी आइकन की आवश्यकता नहीं।"
+
+msgid "Pick a snippet to insert"
+msgstr "डालने के लिए एक स्निपेट चुनें"
+
+msgid "Pink"
+msgstr "गुलाबी"
+
+msgid "Plugin settings"
+msgstr "प्लगइन सेटिंग्स"
+
+msgid "Policy link text (default: Policy)"
+msgstr "पॉलिसी लिंक टेक्स्ट (डिफ़ॉल्ट: पॉलिसी)"
+
+msgid "Pop"
+msgstr "पॉप"
+
+msgid "Popup"
+msgstr "पॉपअप"
+
+msgid "Post images, duplicating posts and the image lightbox."
+msgstr "पोस्ट छवियाँ, पोस्ट डुप्लिकेट करना और छवि लाइटबॉक्स।"
+
+msgid "Posts"
+msgstr "पोस्ट"
+
+msgid "Posts and pages"
+msgstr "पोस्ट और पृष्ठ"
+
+msgid "Posts only"
+msgstr "केवल पोस्ट"
+
+msgid "Preconnect to third-party hosts"
+msgstr "थर्ड-पार्टी होस्ट से प्रीकनेक्ट करें"
+
+msgid "Preload critical assets"
+msgstr "क्रिटिकal एसेट प्रीलोड करें"
+
+msgid "Previous"
+msgstr "पिछला"
+
+msgid "Print"
+msgstr "प्रिंट"
+
+msgid "Protection"
+msgstr "सुरक्षा"
+
+msgid "Prove it"
+msgstr "साबित करें"
+
+msgid "Publish FAQ schema automatically from the FAQ section in a post"
+msgstr "किसी पोस्ट के FAQ सेक्शन से स्वचालित रूप से FAQ स्कीमा प्रकाशित करें"
+
+msgid "Publishes the server configuration, paths and loaded modules."
+msgstr "सर्वर कॉन्फ़िगरेशन, पथ और लोड किए गए मॉड्यूल प्रकाशित करता है।"
+
+msgid "Pull data"
+msgstr "डेटा खींचें"
+
+msgid "Question"
+msgstr "प्रश्न"
+
+msgid "Quick guide — how the chat feature works"
+msgstr "त्वरित मार्गदर्शिका — चैट सुविधा कैसे काम करती है"
+
+msgid "Read all my content again"
+msgstr "मेरी सारी सामग्री फिर से पढ़ें"
+
+msgid "Read the records again"
+msgstr "रिकॉर्ड फिर से पढ़ें"
+
+msgid "Read these as intent, not outcome: a tap means someone opened the dialler or the chat app, not that a call connected or a message was sent. Ad blockers also stop some clicks reaching Analytics, so the real number is a little higher than the one you see."
+msgstr "इन्हें परिणाम के रूप में नहीं, आशय के रूप में पढ़ें: एक टैप का मतलब है कि किसी ने डायलर या चैट ऐप खोला, यह नहीं कि कोई कॉल जुड़ा या संदेश भेजा गया। एड ब्लॉकर भी कुछ क्लिकों को Analytics तक पहुँचने से रोकते हैं, इसलिए वास्तविक संख्या आपके द्वारा देखी जाने वाली संख्या से थोड़ी अधिक है।"
+
+msgid "Reading your content: %1$d of %2$d"
+msgstr "आपकी सामग्री पढ़ी जा रही है: %2$d में से %1$d"
+
+msgid "Reading your content…"
+msgstr "आपकी सामग्री पढ़ी जा रही है…"
+
+msgid "Reading…"
+msgstr "पढ़ रहा है…"
+
+msgid "Reads the “frequently asked questions” part your posts already have — a heading that names the section, then one heading per question with its answer below — and publishes the matching JSON-LD so Google can show them as FAQ rich results. Nothing in your posts is changed. If another SEO plugin already publishes FAQ schema for a post, Horse Tools stays out of the way."
+msgstr "आपकी पोस्टों के पहले से मौजूद \"अक्सर पूछे जाने वाले प्रश्न\" भाग को पढ़ता है — एक शीर्षक जो सेक्शन का नाम देता है, फिर नीचे उत्तर के साथ प्रति प्रश्न एक शीर्षक — और मिलान करने वाला JSON-LD प्रकाशित करता है ताकि Google उन्हें FAQ रिच रिज़ल्ट के रूप में दिखा सके। आपकी पोस्टों में कुछ भी नहीं बदला जाता। यदि कोई अन्य SEO प्लगइन पहले से ही किसी पोस्ट के लिए FAQ स्कीमा प्रकाशित करता है, तो Horse Tools दखल नहीं देता।"
+
+msgid "Record contact button clicks"
+msgstr "संपर्क बटन क्लिक रिकॉर्ड करें"
+
+msgid "Redirects (301)"
+msgstr "रीडायरेक्ट (301)"
+
+msgid "Redirects 301"
+msgstr "रीडायरेक्ट 301"
+
+msgid "Refresh daily"
+msgstr "दैनिक रीफ्रेश"
+
+msgid "Refresh hourly"
+msgstr "प्रति घंटा रीफ्रेश"
+
+msgid "Removed something from a post and it is still listed here? The lists only grow as your content is read, and a post that no longer contains something cannot say so. Read everything again and the lists will match what is actually there now."
+msgstr "किसी पोस्ट से कुछ हटाया और वह अभी भी यहाँ सूचीबद्ध है? सूचियाँ केवल आपकी सामग्री पढ़े जाने पर बढ़ती हैं, और जिस पोस्ट में कुछ नहीं रहा वह ऐसा नहीं कह सकती। सब कुछ फिर से पढ़ें और सूचियाँ उससे मेल खाएँगी जो वास्तव में अभी है।"
+
+msgid "Removes the admin icon font (Dashicons) on the front-end for logged-out visitors, who never see it. It is kept for logged-in users because the admin bar uses it."
+msgstr "लॉग-आउट विज़िटर के लिए फ्रंट-एंड पर एडमिन आइकन फ़ॉन्ट (Dashicons) हटाता है, जो इसे कभी नहीं देखते। लॉग-इन उपयोगकर्ताओं के लिए रखा गया है क्योंकि एडमिन बार इसका उपयोग करता है।"
+
+msgid "Reset all login lockouts now"
+msgstr "अभी सभी लॉगिन लॉकआउट रीसेट करें"
+
+msgid "Review the list"
+msgstr "सूची की समीक्षा करें"
+
+msgid "Rich results"
+msgstr "रिच रिज़ल्ट"
+
+msgid "Right now these would go to: %s"
+msgstr "अभी ये यहाँ जाएँगे: %s"
+
+msgid "Roles, avatars, SMTP and signing in with Google."
+msgstr "भूमिकाएँ, अवतार, SMTP और Google के साथ साइन-इन।"
+
+msgid "Rotate in"
+msgstr "अंदर घूमना"
+
+msgid "Row-number column"
+msgstr "পंक्ति-সংখ্যা कॉलम"
+
+msgid "Rows"
+msgstr "पंक्तियाँ"
+
+msgid "Rows/page"
+msgstr "पंक्तियाँ/पृष्ठ"
+
+msgid "Run this snippet as PHP"
+msgstr "इस स्निपेट को PHP के रूप में चलाएँ"
+
+msgid "SAVE FONT SETTINGS"
+msgstr "फ़ॉन्ट सेटिंग्स सहेजें"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "SMTP key"
+msgstr "SMTP कुंजी"
+
+msgid "SMTP password"
+msgstr "SMTP पासवर्ड"
+
+msgid "Save"
+msgstr "सहेजें"
+
+msgid "Save a table"
+msgstr "तालिका सहेजें"
+
+msgid "Save table"
+msgstr "तालिका सहेजें"
+
+msgid "Save these one-time backup codes somewhere safe — each works once if you lose your phone:"
+msgstr "इन एक-बारगी बैकअप कोड को कहीं सुरक्षित सहेजें — यदि आप अपना फ़ोन खो दें तो प्रत्येक एक बार काम करता है:"
+
+msgid "Save this choice"
+msgstr "यह चुनाव सहेजें"
+
+msgid "Saved tables"
+msgstr "सहेजी गई तालिकाएँ"
+
+msgid "Saved. Everything found so far is approved."
+msgstr "सहेजा गया। अब तक मिला सब कुछ स्वीकृत है।"
+
+msgid "Scan failed."
+msgstr "स्कैन विफल।"
+
+msgid "Scan the scripts running on the home page"
+msgstr "होम पेज पर चल रही स्क्रिप्ट स्कैन करें"
+
+msgid "Scan the whole site"
+msgstr "पूरी साइट स्कैन करें"
+
+msgid "Scan this with Google Authenticator, Authy or a similar app, then enter the 6-digit code it shows to turn 2FA on."
+msgstr "इसे Google Authenticator, Authy या किसी समान ऐप से स्कैन करें, फिर 2FA चालू करने के लिए जो 6-अंकीय कोड दिखाए वह दर्ज करें।"
+
+msgid "Scanning…"
+msgstr "स्कैन हो रहा है…"
+
+msgid "Scripts to exclude from defer (one per line — a script handle or part of its URL)"
+msgstr "डिफर से बहिष्कृत स्क्रिप्ट (एक प्रति पंक्ति — स्क्रिप्ट हैंडल या उसके URL का भाग)"
+
+msgid "Scripts, styles, lazy loading, image compression and WebP."
+msgstr "स्क्रिप्ट, शैलियाँ, lazy loading, छवि कम्प्रेशन और WebP।"
+
+msgid "Search all plugin features…"
+msgstr "सभी प्लगइन सुविधाएँ खोजें…"
+
+msgid "Search box"
+msgstr "खोज बॉक्स"
+
+msgid "Search by name…"
+msgstr "नाम से खोजें…"
+
+msgid "Search snippets by name, description or tag…"
+msgstr "नाम, विवरण या टैग से स्निपेट खोजें…"
+
+msgid "Search the table…"
+msgstr "तालिका खोजें…"
+
+msgid "Search: cart, gift, phone… (English name, or Vietnamese for popular icons)"
+msgstr "खोजें: cart, gift, phone… (अंग्रेज़ी नाम, या लोकप्रिय आइकन के लिए वियतनामी)"
+
+msgid "Seconds to wait, or scroll percent (used by the two options above)"
+msgstr "प्रतीक्षा सेकंड, या स्क्रॉल प्रतिशत (ऊपर दो विकल्पों द्वारा उपयोग किया जाता है)"
+
+msgid "Security question on the login form"
+msgstr "लॉगिन फ़ॉर्म पर सुरक्षा प्रश्न"
+
+msgid "Security tab → Check-in → turn on the regular message"
+msgstr "सुरक्षा टैब → चेक-इन → नियमित संदेश चालू करें"
+
+msgid "See the GitHub release page for details."
+msgstr "विवरण के लिए GitHub रिलीज़ पृष्ठ देखें।"
+
+msgid "See the banner at the top of any Horse Tools screen"
+msgstr "किसी भी Horse Tools स्क्रीन के शीर्ष पर बैनर देखें"
+
+msgid "Select a snippet"
+msgstr "एक स्निपेट चुनें"
+
+msgid "Send a Telegram code"
+msgstr "Telegram कोड भेजें"
+
+msgid "Send a test"
+msgstr "परीक्षण भेजें"
+
+msgid "Send a test message"
+msgstr "परीक्षण संदेश भेजें"
+
+msgid "Send a test message now"
+msgstr "अभी परीक्षण संदेश भेजें"
+
+msgid "Send as the same address you sign in with. This service refuses anything else."
+msgstr "उसी पते से भेजें जिससे आप साइन इन करते हैं। यह सेवा कुछ और अस्वीकार करती है।"
+
+msgid "Send me a regular check-in message"
+msgstr "मुझे नियमित चेक-इन संदेश भेजें"
+
+msgid "Send through an email service instead — then the question does not arise."
+msgstr "इसके बजाय एक ईमेल सेवा के माध्यम से भेजें — फिर यह प्रश्न उत्पन्न नहीं होता।"
+
+msgid "Send through an email service that is on the list, or add this server to it."
+msgstr "सूची में मौजूद किसी ईमेल सेवा के माध्यम से भेजें, या इस सर्वर को उसमें जोड़ें।"
+
+msgid "Send through an email service that is on the list."
+msgstr "सूची में मौजूद किसी ईमेल सेवा के माध्यम से भेजें।"
+
+msgid "Sending…"
+msgstr "भेज रहा है…"
+
+msgid "Sends one event to your analytics each time a visitor taps a contact link — phone, SMS, email, Zalo, Messenger, Telegram, WhatsApp, Viber, Line, WeChat, TikTok, Maps and the rest. Any other chat button is recorded under its own site name, so Instagram, Shopee, Signal and anything you add later are covered without waiting for an update. Phone, SMS, email and Viber links count anywhere on the site, including inside your posts; the others count inside the chat widgets, so an article full of outbound links does not flood the report. Nothing is stored on your site and no personal data is involved."
+msgstr "जब भी कोई विज़िटर किसी संपर्क लिंक — फ़ोन, SMS, ईमेल, Zalo, Messenger, Telegram, WhatsApp, Viber, Line, WeChat, TikTok, मानचित्र इत्यादि — को टैप करता है, तो आपके Analytics को एक इवेंट भेजता है। कोई भी अन्य चैट बटन अपने स्वयं के साइट नाम के अंतर्गत रिकॉर्ड किया जाता है, इसलिए Instagram, Shopee, Signal और आपके द्वारा बाद में जोड़ी जाने वाली कोई भी चीज़ अद्यतन की प्रतीक्षा किए बिना कवर हो जाती है। फ़ोन, SMS, ईमेल और Viber लिंक साइट पर कहीं भी गिने जाते हैं, जिसमें आपकी पोस्टों के अंदर भी शामिल है; अन्य चैट विजेट के अंदर गिने जाते हैं, इसलिए आउटबाउंड लिंक से भरी एक लेख रिपोर्ट को नहीं भरता। आपकी साइट पर कुछ भी संग्रहीत नहीं होता और कोई व्यक्तिगत डेटा शामिल नहीं होता।"
+
+msgid "Sent to %s. Now go and look — and do not close this page, because the useful part is what you find."
+msgstr "%s को भेजा गया। अब जाएँ और देखें — और इस पृष्ठ को बंद न करें, क्योंकि उपयोगी भाग वह है जो आप पाते हैं।"
+
+msgid "Sent. Check %s — if nothing arrives, the channel is not working even though the site thinks it is."
+msgstr "भेजा गया। %s जाँचें — यदि कुछ नहीं पहुँचता, तो चैनल काम नहीं कर रहा है भले ही साइट सोचती हो कि वह कर रहा है।"
+
+msgid "Sent: %s"
+msgstr "भेजा गया: %s"
+
+msgid "Server errors, including absolute paths."
+msgstr "सर्वर त्रुटियाँ, जिनमें पूर्ण पथ शामिल हैं।"
+
+msgid "Service"
+msgstr "सेवा"
+
+msgid "Services panel (mobile)"
+msgstr "सेवाएँ पैनल (मोबाइल)"
+
+msgid "Settings are grouped by what they do. Pick a group below, or search for a setting by name in the panel on the right."
+msgstr "सेटिंग्स उनके कार्य के अनुसार समूहीकृत की जाती हैं। नीचे एक समूह चुनें, या दाएँ पैनल में नाम से सेटिंग खोजें।"
+
+msgid "Settings → WooCommerce → “Configure order notifications to be sent to Telegram”"
+msgstr "सेटिंग्स → WooCommerce → \"ऑर्डर सूचनाओं को Telegram पर भेजने के लिए कॉन्फ़िगर करें\""
+
+msgid "Sharpen (blur to clear)"
+msgstr "तीक्ष्ण करें (धुंधले से स्पष्ट)"
+
+msgid "Show a “Decline” button"
+msgstr "\"अस्वीकार\" बटन दिखाएँ"
+
+msgid "Show columns"
+msgstr "कॉलम दिखाएँ"
+
+msgid "Show new keys to paste"
+msgstr "पेस्ट करने के लिए नई कुंजियाँ दिखाएँ"
+
+msgid "Showing the first %1$d of %2$d — keep typing to narrow it down."
+msgstr "पहले %2$d में से %1$d दिखा रहा है — दायरा संकीम करने के लिए टाइप करते रहें।"
+
+msgid "Shows a small cookie notice in the corner so your site meets privacy rules. To use: turn on the switch, type the notice and your policy-page link, then choose which side it appears on."
+msgstr "आपकी साइट को गोपनीयता नियमों को पूरा करने के लिए कोने में एक छोटी कुकी सूचना दिखाता है। उपयोग के लिए: स्विच चालू करें, सूचना और अपनी पॉलिसी-पृष्ठ लिंक टाइप करें, फिर चुनें कि वह किस तरफ दिखती है।"
+
+msgid "Shows a thin notice bar across the very top of every page — handy for a promotion, a hotline, or a delivery note. To use: turn on the switch, type your message, then choose the background colour."
+msgstr "हर पृष्ठ के बिल्कुल शीर्ष पर पतली सूचना पट्टी दिखाता है — प्रचार, हॉटline या डिलीवरी नोट के लिए उपयोगी। उपयोग के लिए: स्विच चालू करें, अपना संदेश टाइप करें, फिर पृष्ठभूमि रंग चुनें।"
+
+msgid "Shows an eye-catching popup in the middle of the screen when someone opens your site — great for a sale, an announcement or a poster. To use: turn on the switch, pick a layout below, add an image / title / content, then set how many hours before it shows again."
+msgstr "जब कोई आपकी साइट खोलता है तो स्क्रीन के मध्य में एक आकर्षक पॉपअप दिखाता है — बिक्री, घोषणा या पोस्टर के लिए बढ़िया। उपयोग के लिए: स्विच चालू करें, नीचे एक लेआउट चुनें, छवि / शीर्षक / सामग्री जोड़ें, फिर सेट करें कि वह फिर से दिखने से पहले कितने घंटे हों।"
+
+msgid "Side of the site"
+msgstr "साइट का किनारा"
+
+msgid "Signature"
+msgstr "हस्ताक्षर"
+
+msgid "Signing keys are in wp-config.php, not the database"
+msgstr "हस्ताक्षर कुंजियाँ wp-config.php में हैं, डेटाबेस में नहीं"
+
+msgid "Site"
+msgstr "साइट"
+
+msgid "Site is behind Cloudflare or a proxy (use the real visitor IP)"
+msgstr "साइट Cloudflare या प्रॉक्सी के पीछे है (वास्तविक विज़िटर IP का उपयोग करें)"
+
+msgid "Site search"
+msgstr "साइट खोज"
+
+msgid "Size"
+msgstr "आकार"
+
+msgid "Skype (service closed)"
+msgstr "Skype (सेवा बंद)"
+
+msgid "Slide"
+msgstr "स्लाइड"
+
+msgid "Slide down"
+msgstr "नीचे स्लाइड करें"
+
+msgid "Slide in from left"
+msgstr "बाएँ से स्लाइड इन"
+
+msgid "Slide in from right"
+msgstr "दाएँ से स्लाइड इन"
+
+msgid "Slide transition (GLightbox)"
+msgstr "स्लाइड ट्रांज़िशन (GLightbox)"
+
+msgid "Slide up"
+msgstr "ऊपर स्लाइड करें"
+
+msgid "Slow down to 60 seconds (safe)"
+msgstr "60 सेकंड पर धीमा करें (सुरक्षित)"
+
+msgid "Snippets"
+msgstr "स्निपेट"
+
+msgid "So this sends you a short message on a schedule, with a number on it, even when everything is fine. Numbers that skip mean messages were sent and never reached you. A message that arrives late means nothing was running the schedule. Nothing at all means something stopped it — and that is the one you can only notice from outside the site, which is why each message tells you when to expect the next."
+msgstr "तो यह आपको एक शेड्यूल पर एक छोटा संदेश भेजता है, जिस पर एक नंबर हो, even when everything is fine। जो नंबर छूट जाते हैं उनका मतलब है कि संदेश भेजे गए और आप तक नहीं पहुँचे। देर से पहुँचने वाला संदेश इसका मतलब है कि शेड्यूल को चलाने वाला कुछ नहीं था। बिल्कुल कुछ नहीं इसका मतलब है कि किसी ने इसे रोक दिया — और यह वही है जिसे आप केवल साइट के बाहर से देख सकते हैं, यही कारण है कि हर संदेश आपको बताता है कि अगला कब अपेक्षित है।"
+
+msgid "Soft pastel"
+msgstr "हल्का पेस्टल"
+
+msgid "Somebody has asked for this path %d times."
+msgstr "किसी ने इस पथ को %d बार माँगा है।"
+
+msgid "Something changed what you approved, without going through this screen."
+msgstr "कुछ आपके द्वारा स्वीकृत को बदल गया, बिना इस स्क्रीन के माध्यम से गए।"
+
+msgid "Something changed — see the notice on any Horse Tools screen"
+msgstr "कुछ बदल गया — किसी भी Horse Tools स्क्रीन पर सूचना देखें"
+
+msgid "Something went wrong. Please try again."
+msgstr "कुछ ग़लत हो गया। कृपया फिर से कोशिश करें।"
+
+msgid "Sortable columns"
+msgstr "छँटने योग्य कॉलम"
+
+msgid "Sorting, search and pagination appear on the published page."
+msgstr "छँटाई, खोज और पृष्ठांकन प्रकाशित पृष्ठ पर दिखते हैं।"
+
+msgid "Speed"
+msgstr "गति"
+
+msgid "Spots visitors who have an ad-blocker turned on and shows them a message asking to switch it off. To use: turn on the switch, type a title and message, then pick the button colours below."
+msgstr "उन विज़िटरों को पहचानता है जिन्होंने ad-blocker चालू किया हुआ है और उन्हें इसे बंद करने के लिए कहते हुए एक संदेश दिखाता है। उपयोग के लिए: स्विच चालू करें, शीर्षक और संदेश टाइप करें, फिर नीचे बटन के रंग चुनें।"
+
+msgid "Stack into cards on mobile"
+msgstr "मोबाइल पर कार्ड में ढेर लगाएँ"
+
+msgid "Start fetching a few important files immediately (the LCP image, a web font, the main CSS). The type is detected from the file extension. Do not preload many files — it competes with everything else for bandwidth."
+msgstr "तुरंत कुछ महत्वपूर्ण फ़ाइलें लाना शुरू करें (LCP छवि, एक वेब फ़ॉन्ट, मुख्य CSS)। प्रकार फ़ाइल एक्सटेंशन से पता लगाया जाता है। कई फ़ाइलें प्रीलोड न करें — यह बैंडविड्थ के लिए बाकी सब के साथ प्रतिस्पर्धा करता है।"
+
+msgid "Starting…"
+msgstr "शुरू हो रहा है…"
+
+msgid "Status"
+msgstr "स्थिति"
+
+msgid "Step 1 —"
+msgstr "चरण 1 —"
+
+msgid "Step 2 —"
+msgstr "चरण 2 —"
+
+msgid "Step 3 —"
+msgstr "चरण 3 —"
+
+msgid "Still reading your content"
+msgstr "अभी भी आपकी सामग्री पढ़ रहा है"
+
+msgid "Still reading your content. Come back in a minute."
+msgstr "अभी भी आपकी सामग्री पढ़ रहा है। एक मिनट में वापस आएँ।"
+
+msgid "Still reading your content: %1$d of %2$d. Come back in a minute."
+msgstr "अभी भी आपकी सामग्री पढ़ रहा है: %2$d में से %1$d। एक मिनट में वापस आएँ।"
+
+msgid "Striped rows"
+msgstr "धारीदार पंक्तियाँ"
+
+msgid "Style"
+msgstr "शैली"
+
+msgid "Stylesheets to keep render-blocking (one per line — a handle or part of the URL). Put your main theme CSS here if you don’t have critical CSS yet."
+msgstr "रेंडर-ब्लॉकिंग रखने के लिए स्टाइलशीट (एक प्रति पंक्ति — एक हैंडल या URL का भाग)। यदि आपके पास अभी क्रिटिकल CSS नहीं है तो अपनी मुख्य थीम CSS को यहाँ रखें।"
+
+msgid "Swing"
+msgstr "झूला"
+
+msgid "Switch on Horse Tools two-factor authentication (Security tab) before using PHP snippets."
+msgstr "PHP स्निपेट का उपयोग करने से पहले Horse Tools दो-कारक प्रमाणीकरण (सुरक्षा टैब) चालू करें।"
+
+msgid "Sync from Sheet"
+msgstr "शीट से सिंक करें"
+
+msgid "Synced"
+msgstr "सिंक हो गया"
+
+msgid "Syncing…"
+msgstr "सिंक हो रहा है…"
+
+msgid "THEY DO NOT — something changed them without going through the screens"
+msgstr "वे मेल नहीं खाते — किसी ने उन्हें स्क्रीन के माध्यम से गए बिना बदल दिया"
+
+msgid "Table"
+msgstr "तालिका"
+
+msgid "Table %d"
+msgstr "तालिका %d"
+
+msgid "Table of contents"
+msgstr "विषय सूची"
+
+msgid "Table ready — click to edit."
+msgstr "तालिका तैयार — संपादित करने के लिए क्लिक करें।"
+
+msgid "Tables"
+msgstr "तालिकाएँ"
+
+msgid "Tag Manager is installed on this site. If you already built click tags there — a trigger on tel: links, on zalo.me, on m.me — switching this on records the same click twice, once under your own event name and once as contact_phone. Open your container, check whether such tags exist, and pause either those or this setting. Keep whichever one also fires your Google Ads conversions; this setting does not."
+msgstr "इस साइट पर Tag Manager इंस्टॉल है। यदि आपने पहले से ही वहाँ क्लिक टैग बनाए हैं — tel: लिंक, zalo.me, m.me पर ट्रिगर — तो इसे चालू करने पर वही क्लिक दो बार रिकॉर्ड होता है, एक बार आपके स्वयं के इवेंट नाम के अंतर्गत और एक बार contact_phone के रूप में। अपना कंटेनर खोलें, जाँचें कि क्या ऐसे टैग मौजूद हैं, और उनमें से किसी एक को या इस सेटिंग को रोकें। जो भी आपके Google Ads रूपांतरणों को भी सक्रिय करता है उसे रखें; यह सेटिंग ऐसा नहीं करती।"
+
+msgid "Take back the ticked ones"
+msgstr "टिक किए गए को वापस लें"
+
+msgid "Take the link away, keep the words"
+msgstr "लिंक हटाएँ, शब्द रखें"
+
+msgid "Teal"
+msgstr "हरा-नीला"
+
+msgid "Telegram (chat %s — the one paired for two-factor recovery)"
+msgstr "Telegram (चैट %s — जो दो-कारक रिकवरी के लिए जोड़ी गई है)"
+
+msgid "Telegram (chat %s)"
+msgstr "Telegram (चैट %s)"
+
+msgid "Telegram chat ID for security messages (optional)"
+msgstr "सुरक्षा संदेशों के लिए Telegram चैट ID (वैकल्पिक)"
+
+msgid "Telegram recovery is ON but this site has no bot token yet, so no recovery code can be sent. Add a bot token in the %1$s module (the “Configure order notifications to be sent to Telegram” section) — it is easy to miss because it lives there, not here — then each user pastes their own chat ID on their profile."
+msgstr "Telegram रिकवरी चालू है लेकिन इस साइट पर अभी तक कोई बॉट टोकन नहीं है, इसलिए कोई रिकवरी कोड नहीं भेजा जा सकता। %1$s मॉड्यूल में एक बॉट टोकन जोड़ें (\"ऑर्डर सूचनाओं को Telegram पर भेजने के लिए कॉन्फ़िगर करें\" सेक्शन) — इसे नोट करना आसान है क्योंकि यह वहाँ रहता है, यहाँ नहीं — फिर प्रत्येक उपयोगकर्ता अपनी प्रोफ़ाइल पर अपना स्वयं का चैट ID पेस्ट करता है।"
+
+msgid "Telegram recovery is turned on but this site has no bot token yet, so no code can be sent. Add a bot token under %s, then reload this page."
+msgstr "Telegram रिकवरी चालू है लेकिन इस साइट पर अभी तक कोई बॉट टोकन नहीं है, इसलिए कोई कोड नहीं भेजा जा सकता। %s के अंतर्गत एक बॉट टोकन जोड़ें, फिर इस पृष्ठ को पुनः लोड करें।"
+
+msgid "Telegram recovery isn’t fully set up on this site yet — ask the site admin, or just use email or a backup code instead."
+msgstr "Telegram रिकवरी अभी पूरी तरह इस साइट पर सेट नहीं है — साइट व्यवस्थापक से पूछें, या बस इसके बजाय ईमेल या बैकअप कोड का उपयोग करें।"
+
+msgid "Telegram returned no updates (the bot may use a webhook, or the token is wrong)."
+msgstr "Telegram ने कोई अपडेट नहीं लौटाया (बॉट webhook का उपयोग कर सकता है, या टोकन ग़लत है)।"
+
+msgid "Tell me the site is still being watched"
+msgstr "मुझे बताएँ कि साइट अभी भी देखी जा रही है"
+
+msgid "Tell the browser to start the DNS + TCP + TLS handshake to external hosts early (fonts, CDN, analytics), so their files arrive sooner. Adds preconnect and dns-prefetch hints to the page head."
+msgstr "ब्राउज़र को बाहरी होस्ट (फ़ॉन्ट, CDN, analytics) के साथ DNS + TCP + TLS हैंडशेक जल्दी शुरू करने के लिए कहें, ताकि उनकी फ़ाइलें जल्दी पहुँचें। पृष्ठ head में preconnect और dns-prefetch संकेत जोड़ता है।"
+
+msgid "Temporarily close the site with a “under maintenance” notice while you make changes. You (and other logged-in admins) still see the site normally, so you can work in peace."
+msgstr "जब आप परिवर्तन कर रहे हों तो \"रखरखाव में है\" सूचना के साथ साइट को अस्थायी रूप से बंद करें। आप (और अन्य लॉग-इन व्यवस्थापक) सामान्य रूप से साइट देखते रहते हैं, ताकि आप शांति से काम कर सकें।"
+
+msgid "Test message from %s"
+msgstr "%s से परीक्षण संदेश"
+
+msgid "Test the site after turning this on. If something that must work before interaction breaks (a hero slider, a cookie bar), add its handle or file name to a list below. Do not use together with “Delay JS” in another optimiser."
+msgstr "इसे चालू करने के बाद साइट का परीक्षण करें। यदि कोई चीज़ जिसे बातचीत से पहले काम करना चाहिए टूट जाती है (एक हीरो स्लाइडर, एक कुकी पट्टी), तो उसके हैंडल या फ़ाइल नाम को नीचे सूची में जोड़ें। किसी अन्य ऑप्टिमाइज़र में \"Delay JS\" के साथ एक साथ उपयोग न करें।"
+
+msgid "Test these keys against Google"
+msgstr "इन कुंजियों को Google के विरुद्ध परीक्षण करें"
+
+msgid "That code is not right."
+msgstr "वह कोड सही नहीं है।"
+
+msgid "That does not look like a Google Sheets link."
+msgstr "वह Google Sheets लिंक नहीं लगता।"
+
+msgid "That is not an email address."
+msgstr "वह ईमेल पता नहीं है।"
+
+msgid "That snippet no longer exists."
+msgstr "वह स्निपेट अब मौजूद नहीं है।"
+
+msgid "That was me — line them up again"
+msgstr "वह मैं था — उन्हें फिर से क्रम में रखें"
+
+msgid "The PHP snippet \"%s\" stopped the page it ran on, so Horse Tools switched it off. Edit it and switch it back on when it is fixed."
+msgstr "PHP स्निपेट \"%s\" ने उस पृष्ठ को रोक दिया जिस पर वह चला, इसलिए Horse Tools ने इसे बंद कर दिया। जब यह ठीक हो जाए तो इसे संपादित करें और फिर से चालू करें।"
+
+msgid "The Secret key box is empty, so the check is skipped entirely and reCAPTCHA is doing nothing at all."
+msgstr "Secret कुंजी बॉक्स खाली है, इसलिए जाँच पूरी तरह छोड़ दी जाती है और reCAPTCHA बिल्कुल कुछ नहीं कर रहा है।"
+
+msgid "The Site key box is empty."
+msgstr "Site कुंजी बॉक्स खाली है।"
+
+msgid "The account name for this service is the literal word “%user%”. It is not your email address, and putting your address there is why it says the password is wrong."
+msgstr "इस सेवा के लिए खाता नाम शब्दावली \"%user%\" है। यह आपका ईमेल पता नहीं है, और वहाँ अपना पता डालना ही वह कारण है कि यह कहता है कि पासवर्ड ग़लत है।"
+
+msgid "The answer is matched ignoring case and surrounding spaces. Remember it — if you ever forget it you can still get back in by renaming the plugin folder over FTP to switch the plugin off."
+msgstr "उत्तर केस और आसपास के स्थानों को अनदेखा करते हुए मिलाया जाता है। इसे याद रखें — यदि आप इसे कभी भूल जाएँ तो भी आप प्लगइन को बंद करने के लिए FTP के माध्यम से प्लगइन फ़ोल्डर का नाम बदलकर वापस आ सकते हैं।"
+
+msgid "The check-in message is on but has never been sent. Until one arrives you do not know the channel works."
+msgstr "चेक-इन संदेश चालू है लेकिन कभी भेजा नहीं गया। जब तक एक नहीं पहुँचता तब तक आप नहीं जानते कि चैनल काम करता है।"
+
+msgid "The code is how the site tells your chat apart from everyone else’s — it finds only the chat that sent it. Recovery codes then reach your own Telegram, not the admin. (You can also type the chat ID number in manually.)"
+msgstr "कोड वह तरीका है जिससे साइट आपकी चैट को हर किसी की अलग पहचानती है — यह केवल उस चैट को ढूँढती है जिसने इसे भेजा। फिर रिकवरी कोड आपके अपने Telegram तक पहुँचते हैं, व्यवस्थापक तक नहीं। (आप चैट ID नंबर मैन्युअल रूप से भी टाइप कर सकते हैं।)"
+
+msgid "The first one goes out as soon as you save, so you find out straight away whether the channel works."
+msgstr "पहला एक तुरंत निकल जाता है जब आप सहेजते हैं, ताकि आपको तुरंत पता चले कि चैनल काम करता है या नहीं।"
+
+msgid "The form below asks eight questions. Seven of them have exactly one right answer once you know which service you are using, and the eighth is a password. Choose here and the seven fill themselves in — you are left with the one thing nothing can guess."
+msgstr "नीचे दिया गया फ़ॉर्म आठ प्रश्न पूछता है। सात का एक बार आप जान लें कि आप कौन सी सेवा का उपयोग कर रहे हैं, एक ही सही उत्तर होता है, और आठवाँ एक पासवर्ड है। यहाँ चुनें और सात स्वयं भर जाते हैं — आपके पास वह एक चीज़ रह जाती है जिसे कुछ भी अनुमान नहीं लगा सकता।"
+
+msgid "The last check-in message could not be sent: %s"
+msgstr "अंतिम चेक-इन संदेश नहीं भेजा जा सका: %s"
+
+msgid "The last check-in message went out %s ago, which is later than it should be. Nothing has been running the schedule."
+msgstr "अंतिम चेक-इन संदेश %s पहले निकला, जो जितना होना चाहिए उससे बाद में है। शेड्यूल को चलाने वाला कुछ नहीं था।"
+
+msgid "The last one could not be sent — Security tab → Check-in"
+msgstr "अंतिम नहीं भेजा जा सका — सुरक्षा टैब → चेक-इन"
+
+msgid "The link still works for a reader and stops passing any SEO value — which is the whole reason a link like that is worth paying for. Nothing in your posts is changed; only what gets printed."
+msgstr "लिंक पाठक के लिए अभी भी काम करता है और कोई SEO मान पास करना बंद कर देता है — जो इसीलिए ऐसे लिंक के लायक भुगतान करने योग्य है। आपकी पोस्टों में कुछ भी नहीं बदला जाता; केवल वह बदलता है जो प्रिंट होता है।"
+
+msgid "The most powerful but riskiest speed option. Without the Critical CSS below, the page can flash unstyled for a moment (FOUC). Paste your above-the-fold CSS, or keep the main theme stylesheet in the exclusion list. Test the front end carefully, and don’t combine it with another plugin that also optimises CSS delivery."
+msgstr "सबसे शक्तिशाली लेकिन सबसे जोख़न गति विकल्प। नीचे क्रिटिकल CSS के बिना, पृष्ठ एक क्षण के लिए बिना शैली के चमक सकता है (FOUC)। अपने above-the-fold CSS को पेस्ट करें, या मुख्य थीम स्टाइलशीट को बहिष्करण सूची में रखें। फ्रंट-एंड का सावधानी से परीक्षण करें, और इसे CSS वितरण को अनुकूलित करने वाले किसी अन्य प्लगइन के साथ संयोजित न करें।"
+
+msgid "The page carries no analytics at all yet, so there is nowhere for a click to be recorded. Install Site Kit by Google, or any GA4 plugin, and this setting starts working on its own with nothing further to configure."
+msgstr "पृष्ठ पर अभी कोई analytics बिल्कुल नहीं है, इसलिए क्लिक रिकॉर्ड करने के लिए कोई जगह नहीं है। Site Kit by Google, या कोई भी GA4 प्लगइन इंस्टॉल करें, और यह सेटिंग बिना कुछ और कॉन्फ़िगर किए अपने आप काम करना शुरू कर देती है।"
+
+msgid "The request itself failed."
+msgstr "अनुरोध ही विफल हो गया।"
+
+msgid "The security question below the password was left empty."
+msgstr "पासवर्ड के नीचे सुरक्षा प्रश्न खाली छोड़ दिया गया।"
+
+msgid "The sheet appears to be empty."
+msgstr "शीट खाली प्रतीत होती है।"
+
+msgid "The sheet is too large (over 1 MB of CSV)."
+msgstr "शीट बहुत बड़ी है (1 MB से अधिक CSV)।"
+
+msgid "The sheet must be shared as “Anyone with the link can view”. With auto-refresh on, the table updates itself from the sheet."
+msgstr "शीट को \"Anyone with the link can view\" के रूप में साझा किया जाना चाहिए। ऑटो-रिफ्रेश चालू होने पर, तालिका शीट से स्वयं अपडेट होती है।"
+
+msgid "The site handed it over successfully. That is not the same as it arriving — if the numbers you receive skip, the channel is dropping them."
+msgstr "साइट ने इसे सफलतापूर्वक सौंप दिया। यह पहुँचने जैसा नहीं है — यदि आपको प्राप्त होने वाले नंबर छूट जाते हैं, तो चैनल उन्हें छोड़ रहा है।"
+
+msgid "The username is the literal word “apikey”, not your address."
+msgstr "उपयोगकर्ता नाम शब्दावली \"apikey\" है, आपका पता नहीं।"
+
+msgid "The username is the literal word “resend”, not your address. You must add and verify your domain before it will send as you."
+msgstr "उपयोगकर्ता नाम शब्दावली \"resend\" है, आपका पता नहीं। आपको अपने डोमेन को जोड़ना और सत्यापित करना होगा इससे पहले कि यह आपके रूप में भेजे।"
+
+msgid "The username is the postmaster address Mailgun shows on your sending domain, not your login."
+msgstr "उपयोगकर्ता नाम वह postmaster पता है जो Mailgun आपके भेजने वाले डोमेन पर दिखाता है, आपका लॉगिन नहीं।"
+
+msgid "Theme colour"
+msgstr "थीम रंग"
+
+msgid "There are files in your site’s folder that anyone can download."
+msgstr "आपकी साइट के फ़ोल्डर में ऐसी फ़ाइलें हैं जिन्हें कोई भी डाउनलोड कर सकता है।"
+
+msgid "These are correct — remember them"
+msgstr "ये सही हैं — उन्हें याद रखें"
+
+msgid "These are the phone numbers, Zalo, Messenger links and email addresses currently in your settings. Check them, then confirm — after that you will be told if any of them ever change. Changing the hotline on a shop is the most direct attack there is, and the quietest."
+msgstr "ये वर्तमान में आपकी सेटिंग्स में मौजूद फ़ोन नंबर, Zalo, Messenger लिंक और ईमेल पते हैं। उन्हें जाँचें, फिर पुष्टि करें — उसके बाद यदि उनमें से कोई भी कभी बदलता है तो आपको बताया जाएगा। दुकान की हॉटline बदलना सबसे सीधा हमला है जो है, और सबसे शांत।"
+
+msgid "These contact details appear in your content. Confirm them and you will be told if a new one ever turns up in a post — which is what happens when somebody edits an old article to put their own number in it."
+msgstr "ये संपर्क विवरण आपकी सामग्री में दिखाई देते हैं। उन्हें पुष्टि करें और यदि कोई नया कभी किसी पोस्ट में दिखाई देता है तो आपको बताया जाएगा — जो तब होता है जब कोई पुराना लेख संपादित करके अपना नंबर डाल देता है।"
+
+msgid "These two addresses do not match, and that is enough to stop your mail."
+msgstr "ये दो पते मेल नहीं खाते, और यह आपका मेल रोकने के लिए पर्याप्त है।"
+
+msgid "They no longer match — see the banner at the top of any Horse Tools screen"
+msgstr "वे अब मेल नहीं खाते — किसी भी Horse Tools स्क्रीन के शीर्ष पर बैनर देखें"
+
+msgid "This account uses two-factor authentication; XML-RPC password login is disabled."
+msgstr "यह खाता दो-कारक प्रमाणीकरण का उपयोग करता है; XML-RPC पासवर्ड लॉगिन अक्षम है।"
+
+msgid "This could not be checked from here, so the instructions are shown just in case. To find out whether they apply to you: open your site, press F12, and type gtag in the console. An answer of \"function\" means you have nothing to do; \"undefined\" means follow the steps below."
+msgstr "यह यहाँ से जाँचा नहीं जा सका, इसलिए सूचना किसी भी स्थिति में दिखाई गई है। यह जानने के लिए कि क्या वे आप पर लागू होते हैं: अपनी साइट खोलें, F12 दबाएँ, और कंसोल में gtag टाइप करें। \"function\" का उत्तर इसका मतलब है कि आपको कुछ नहीं करना है; \"undefined\" का अर्थ है नीचे दिए गए चरणों का पालन करें।"
+
+msgid "This host does not let the plugin read DNS, so none of the checks below can be made. That is not the same as everything being in order."
+msgstr "यह होस्ट प्लगइन को DNS पढ़ने नहीं देता, इसलिए नीचे दी गई कोई भी जाँच नहीं की जा सकती। यह सब कुछ व्यवस्थित होने जैसा नहीं है।"
+
+msgid "This is a test message from %s."
+msgstr "यह %s से एक परीक्षण संदेश है।"
+
+msgid "This list is incomplete."
+msgstr "यह सूची अधूरी है।"
+
+msgid "This never touches what is stored. Switch it off and every link is back as it was on the next page load."
+msgstr "यह संग्रहीत को कभी नहीं छूता। इसे बंद करें और अगले पेज लोड पर हर लिंक वापस वैसा ही हो जाता है जैसा था।"
+
+msgid "This section could not be displayed. The rest of the screen still works."
+msgstr "यह सेक्शन प्रदर्शित नहीं किया जा सका। स्क्रीन का बाकी हिस्सा अभी भी काम करता है।"
+
+msgid "This server cannot reach any other mail server, so nothing it sends can ever be delivered. WordPress hands each message to a local mail program, that program accepts it — which is why every screen says “sent” — and then finds the way out closed. The message waits in a queue nobody reads, and there is no bounce, because a bounce would have to leave by the same door."
+msgstr "यह सर्वर किसी अन्य मेल सर्वर तक नहीं पहुँच सकता, इसलिए यह जो कुछ भी भेजता है वह कभी वितरित नहीं किया जा सकता। WordPress हर संदेश को एक स्थानीय मेल प्रोग्राम को सौंपता है, वह प्रोग्राम उसे स्वीकार करता है — यही कारण है कि हर स्क्रीन \"भेजा गया\" कहती है — और फिर बाहर निकलने का रास्ता बंद पाता है। संदेश एक कतार में प्रतीक्षा करता है जिसे कोई नहीं पढ़ता, और कोई बाउंस नहीं है, क्योंकि बाउंस को उसी दरवाज़े से निकलना होगा।"
+
+msgid "This server does not read .htaccess files, so nothing is hiding this one but its name. Horse Tools now stores these as .php files that stop on their first line, which works on every server."
+msgstr "यह सर्वर .htaccess फ़ाइलें नहीं पढ़ता, इसलिए इस एक को उसके नाम के अलावा कुछ नहीं छिपा रहा है। Horse Tools इन्हें अब .php फ़ाइलों के रूप में संग्रहीत करता है जो अपनी पहली पंक्ति पर रुक जाती हैं, जो हर सर्वर पर काम करती हैं।"
+
+msgid "This server sends mail from an address with no name attached to it (%s). Gmail and Yahoo both take that as the mark of a machine nobody set up to send mail, and Yahoo refuses it outright — which looks from here exactly like the message vanishing, because the refusal happens at the far end and the bounce goes somewhere you never read."
+msgstr "यह सर्वर एक पते (%s) से मेल भेजता है जिसके साथ कोई नाम नहीं जुड़ा है। Gmail और Yahoo दोनों इसे किसी मशीन का चिह्न मानते हैं जिसे किसी ने मेल भेजने के लिए सेट नहीं k किया है, और Yahoo इसे सीधे अस्वीकार कर देता है — जो यहाँ से ठीक वैसा ही दिखता है जैसे संदेश गायब हो गया, क्योंकि अस्वीकृति सुदूर छोर पर होती है और बाउंस उस स्थान पर जाता है जिसे आप कभी नहीं पढ़ते।"
+
+msgid "This site cannot see its own public address — it sits behind a proxy or a load balancer — so the checks above that depend on knowing it were skipped rather than guessed at."
+msgstr "यह साइट अपना स्वयं का सार्वजनिक पता नहीं देख सकती — यह किसी प्रॉक्सी या लोड बैलेंसर के पीछे है — इसलिए ऊपर की जाँचें जो इसे जानने पर निर्भर करती हैं, अनुमान लगाने के बजाय छोड़ दी गईं।"
+
+msgid "This site has WordPress's built-in file editor switched off (DISALLOW_FILE_EDIT) — good. PHP snippets still work, because they carry their own protections: two-factor unlock, a syntax check before saving, auto-disable on a crash, and code signing. To switch them off as well, add HORSETOOLS_NO_PHP to wp-config.php."
+msgstr "इस साइट पर WordPress का अंतर्निहित फ़ाइल एडिटर बंद है (DISALLOW_FILE_EDIT) — अच्छा। PHP स्निपेट अभी भी काम करते हैं, क्योंकि उनके पास अपनी सुरक्षा है: दो-कारक अनलॉक, सहेजने से पहले सिंटैक्स जाँच, क्रैश पर स्वतः-अक्षम, और कोड हस्ताक्षर। उन्हें भी बंद करने के लिए, wp-config.php में HORSETOOLS_NO_PHP जोड़ें।"
+
+msgid "This site has no valid admin email address."
+msgstr "इस साइट पर कोई मान्य व्यवस्थापक ईमेल पता नहीं है।"
+
+msgid "This site has no way to reach you: no Telegram bot, and no valid admin email address."
+msgstr "इस साइट के पास आप तक पहुँचने का कोई तरीका नहीं है: न तो Telegram बॉट, और न ही कोई मान्य व्यवस्थापक ईमेल पता।"
+
+msgid "This site sets DISALLOW_FILE_MODS, so running PHP from the database is not allowed."
+msgstr "यह साइट DISALLOW_FILE_MODS सेट करती है, इसलिए डेटाबेस से PHP चलाने की अनुमति नहीं है।"
+
+msgid "This site’s signing keys are stored in the database, not in wp-config.php."
+msgstr "इस साइट की हस्ताक्षर कुंजियाँ डेटाबेस में संग्रहीत हैं, wp-config.php में नहीं।"
+
+msgid "This snippet’s code no longer matches its signature — it was changed outside this screen and will not run. Review it and save again to re-sign it."
+msgstr "इस स्निपेट की कोड अब उसके हस्ताक्षर से मेल नहीं खाती — यह इस स्क्रीन के बाहर बदल दी गई थी और नहीं चलेगी। इसे समीक्षा करें और फिर से हस्ताक्षर करने के लिए फिर से सहेजें।"
+
+msgid "This user has two-factor authentication ON."
+msgstr "इस उपयोगकर्ता के पास दो-कारक प्रमाणीकरण चालू है।"
+
+msgid "This web server is not on your domain’s list of allowed senders. The list says “treat anything else as suspicious” rather than “reject it”, so mail as %s will usually arrive in the spam folder."
+msgstr "यह वेब सर्वर आपके डोमेन की अनुमत प्रेषकों की सूची में नहीं है। सूची कहती है \"बाकी सबको संदिग्ध मानें\" न कि \"अस्वीकार करें\", इसलिए %s के रूप में मेल आमतौर पर स्पैम फ़ोल्डर में पहुँचेगा।"
+
+msgid "This web server is on your domain’s list of allowed senders."
+msgstr "यह वेब सर्वर आपके डोमेन की अनुमत प्रेषकों की सूची में है।"
+
+msgid "Tick all on this page"
+msgstr "इस पृष्ठ पर सभी टिक करें"
+
+msgid "Tip: to stop one specific script from ever being delayed, add the attribute data-ht-no-delay to its tag. Logged-in users are never affected."
+msgstr "टिप: किसी एक विशिष्ट स्क्रिप्ट को कभी विलंबित होने से रोकने के लिए, उसके टैग में data-ht-no-delay विशेषता जोड़ें। लॉग-इन उपयोगकर्ता कभी प्रभावित नहीं होते।"
+
+msgid "To check it works right now rather than waiting: open your site with %s on the end of the address, tap a contact button, and watch GA4 → Admin → DebugView. Without that flag DebugView stays empty however many times you tap, because it only lists devices that identify themselves as debug devices — which is not a fault in the buttons."
+msgstr "प्रतीक्षा करने के बजाय यह अभी जाँचने के लिए कि यह काम करता है: पते के अंत में %s के साथ अपनी साइट खोलें, एक संपर्क बटन टैप करें, और GA4 → Admin → DebugView देखें। उस ध्वज के बिना DebugView खाली रहता है चाहे आप कितनी बार टैप करें, क्योंकि यह केवल उन डिवाइसों को सूचीबद्ध करता है जो स्वयं को डिबग डिवाइस के रूप में पहचानते हैं — जो बटनों में कोई दोष नहीं है।"
+
+msgid "To use PHP snippets, switch on two-factor authentication first (Horse Tools → Overview → Security)."
+msgstr "PHP स्निपेट का उपयोग करने के लिए, पहले दो-कारक प्रमाणीकरण चालू करें (Horse Tools → अवलोकन → सुरक्षा)।"
+
+msgid "To use PHP snippets, switch on two-factor authentication for your own account first (Users → Profile)."
+msgstr "PHP स्निपेट का उपयोग करने के लिए, पहले अपने खाते के लिए दो-कारक प्रमाणीकरण चालू करें (उपयोगकर्ता → प्रोफ़ाइल)।"
+
+msgid "Too many failed attempts. Try again in about %s."
+msgstr "बहुत अधिक विफल प्रयास। लगभग %s में फिर से कोशिश करें।"
+
+msgid "Tools"
+msgstr "उपकरण"
+
+msgid "Trust this device for 30 days"
+msgstr "इस डिवाइस पर 30 दिनों के लिए भरोसा करें"
+
+msgid "Turn it off (uncheck stays on)"
+msgstr "इसे बंद करें (अनटिक करना चालू रहता है)"
+
+msgid "Turn it off for this user (e.g. they lost their device)"
+msgstr "इस उपयोगकर्ता के लिए बंद करें (जैसे उनका डिवाइस खो गया)"
+
+msgid "Turn on the regular check-in message"
+msgstr "नियमित चेक-इन संदेश चालू करें"
+
+msgid "Turned on but never sent — send a test message"
+msgstr "चालू है लेकिन कभी भेजा नहीं गया — परीक्षण संदेश भेजें"
+
+msgid "Two Horse Tools protections are signed with those keys: the PHP snippet signature, which is meant to refuse code written straight into the database, and the “trusted device” cookie that skips two-factor authentication. Anyone who can read your database can read the keys, so both can be forged. Moving the keys into wp-config.php — a file — restores them."
+msgstr "दो Horse Tools सुरक्षाएँ उन कुंजियों के साथ हस्ताक्षरित हैं: PHP स्निपेट हस्ताक्षर, जो सीधे डेटाबेस में लिखी गई कोड को अस्वीकार करने के लिए है, और दो-कारक प्रमाणीकरण को छोड़ने वाली \"विश्वसनीय डिवाइस\" कुकी। आपका डेटाबेस पढ़ने वाला कोई भी व्यक्ति कुंजियाँ पढ़ सकता है, इसलिए दोनों जाली बनाई जा सकती हैं। कुंजियों को wp-config.php — एक फ़ाइल में — स्थानांतरित करना उन्हें बहाल करता है।"
+
+msgid "Two-factor authentication"
+msgstr "दो-कारक प्रमाणीकरण"
+
+msgid "Two-factor authentication (2FA)"
+msgstr "दो-कारक प्रमाणीकरण (2FA)"
+
+msgid "Two-factor authentication is ON for your account."
+msgstr "आपके खाते के लिए दो-कारक प्रमाणीकरण चालू है।"
+
+msgid "Type it in"
+msgstr "इसे टाइप करें"
+
+msgid "Unlock"
+msgstr "अनलॉक करें"
+
+msgid "Untick all"
+msgstr "सभी अनटिक करें"
+
+msgid "Upload a file"
+msgstr "फ़ाइल अपलोड करें"
+
+msgid "Upload a font on the Fonts tab first, then choose where to use it here."
+msgstr "पहले फ़ॉन्ट टैब पर एक फ़ॉन्ट अपलोड करें, फिर चुनें कि यहाँ इसका उपयोग कहाँ करना है।"
+
+msgid "Users"
+msgstr "उपयोगकर्ता"
+
+msgid "Uses the site’s Telegram bot (configured in the WooCommerce module), but each user pastes their OWN chat ID on their profile — so a recovery code always reaches that user’s Telegram, never pooled to the admin. Users without a chat ID simply don’t see the Telegram option."
+msgstr "साइट के Telegram बॉट का उपयोग करता है (WooCommerce मॉड्यूल में कॉन्फ़िगर किया गया), लेकिन प्रत्येक उपयोगकर्ता अपनी प्रोफ़ाइल पर अपना स्वयं का चैट ID पेस्ट करता है — इसलिए रिकवरी कोड हमेशा उस उपयोगकर्ता के Telegram तक पहुँचता है, व्यवस्थापक के पास कभी पूल नहीं होता। जिन उपयोगकर्ताओं के पास चैट ID नहीं है वे बस Telegram विकल्प नहीं देखते।"
+
+msgid "Usually a phpinfo page."
+msgstr "आमतौर पर एक phpinfo पृष्ठ।"
+
+msgid "Verify"
+msgstr "सत्यापित करें"
+
+msgid "Version-control metadata exposes the source."
+msgstr "संस्करण-नियंत्रण मेटाडेटा स्रोत को उजागर करता है।"
+
+msgid "Waiting for you"
+msgstr "आपकी प्रतीक्षा में"
+
+msgid "Weekly is the useful setting. Daily turns the one message that is supposed to mean something into noise within a fortnight, and once it is noise a gap in the numbering is not noticed either."
+msgstr "साप्ताहिक उपयोगी सेटिंग है। दैनिक उस एक संदेश को जिसका कुछ मतलब होना चाहिए, दो सप्ताह के भीतर शोर में बदल देता है, और एक बार जब वह शोर बन जाता है तो नंबरिंग में कोई अंतर भी नोटिस नहीं किया जाता।"
+
+msgid "What you approved is also kept outside the database"
+msgstr "आपने जिसे स्वीकृत किया वह डेटाबेस के बाहर भी रखा गया है"
+
+msgid "What you still have to paste: %secret%."
+msgstr "आपको अभी भी पेस्ट करना होगा: %secret%।"
+
+msgid "When a URL changes or an old link should point somewhere new, this sends visitors (and Google) straight to the right page instead of a “not found” error — so you don’t lose traffic."
+msgstr "जब कोई URL बदलता है या पुराना लिंक कहीं नई जगह इशारा करना चाहिए, तो यह विज़िटरों (और Google) को \"not found\" त्रुटि के बजाय सीधे सही पृष्ठ पर भेजता है — ताकि आप ट्रैफ़िक न खोएँ।"
+
+msgid "When about to leave the page"
+msgstr "पृष्ठ छोड़ने वाला होने पर"
+
+msgid "When it appears"
+msgstr "जब यह दिखाई दे"
+
+msgid "Where did it turn up?"
+msgstr "यह कहाँ दिखा?"
+
+msgid "Where it appears"
+msgstr "जहाँ यह दिखाई देता है"
+
+msgid "Where it runs"
+msgstr "जहाँ यह चलता है"
+
+msgid "Where this stands:"
+msgstr "यह कहाँ खड़ा है:"
+
+msgid "Where to get it"
+msgstr "यह कहाँ से प्राप्त करें"
+
+msgid "Where to read the numbers"
+msgstr "नंबर कहाँ पढ़ें"
+
+msgid "Where to run it"
+msgstr "इसे कहाँ चलाएँ"
+
+msgid "Where your content links to"
+msgstr "जहाँ आपकी सामग्री लिंक करती है"
+
+msgid "Which service should send your email?"
+msgstr "कौन सी सेवा आपका ईमेल भेजे?"
+
+msgid "Wiggle now and then to catch the eye"
+msgstr "ध्यान आकर्षित करने के लिए बीच-बीच में हिलाएँ"
+
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+msgid "WordPress could not hand the message to the mail server at all, so it never left the site."
+msgstr "WordPress सर्वर को संदेश बिल्कुल नहीं सौंप सका, इसलिए वह साइट से कभी नहीं निकला।"
+
+msgid "WordPress could not hand the message to the mail server."
+msgstr "WordPress सर्वर को संदेश नहीं सौंप सका।"
+
+msgid "WordPress reports a message as sent once it has handed it over. That says nothing about whether it arrived, and on a great many sites it does not — the domain names which servers may send for it, the web server is not one of them, and every notification the site sends is treated as forged. Nothing in WordPress mentions this. Below is what your domain’s own records say, read live."
+msgstr "WordPress एक संदेश को भेजा हुआ रिपोर्ट करता है एक बार उसने इसे सौंप दिया हो। यह यह नहीं कहता कि क्या वह पहुँचा, और बहुत सी साइटों पर यह नहीं पहुँचता — डोमेन नाम जिन सर्वरों के लिए भेज सकता है, वेब सर्वर उनमें से एक नहीं है, और साइट जो भी सूचना भेजती है उसे जाली माना जाता है। WordPress में इसका कहीं उल्लेख नहीं है। नीचे वह है जो आपके डोमेन के स्वयं के रिकॉर्ड कहते हैं, सीधे पढ़े गए।"
+
+msgid "WordPress “Heartbeat” pings the server every 15–60 seconds (autosave, post-lock, dashboard). Slowing or limiting it cuts admin-ajax.php load, especially with several admin tabs open."
+msgstr "WordPress \"Heartbeat\" हर 15–60 सेकंड में सर्वर को पिंग करता है (autosave, post-lock, dashboard)। इसे धीमा करने या सीमित करने से admin-ajax.php का लोड कटता है, विशेष रूप से कई एडमिन टैब खुले होने पर।"
+
+msgid "Worth a second look"
+msgstr "दूसरी नज़र के लायक"
+
+msgid "Write plain PHP — no opening tag needed. The code is checked for syntax errors before it is saved, and if it ever crashes a page Horse Tools switches it off automatically."
+msgstr "सादा PHP लिखें — कोई opening tag आवश्यक नहीं। सहेजने से पहले कोड की सिंटैक्स त्रुटियों के लिए जाँच की जाती है, और यदि वह कभी किसी पृष्ठ को क्रैश करता है तो Horse Tools स्वचालित रूप से उसे बंद कर देता है।"
+
+msgid "Write your block just like a post: type text and use the toolbar to insert links, images and formatting. Need raw HTML/CSS/JS? Switch to the “Text” tab. Placeholders like {{url}} still work in both."
+msgstr "अपना ब्लॉक ठीक वैसे ही लिखें जैसे कोई पोस्ट: टेक्स्ट टाइप करें और लिंक, छवियाँ और फ़ॉर्मेटिंग डालने के लिए टूलबार का उपयोग करें। कच्चे HTML/CSS/JS की आवश्यकता है? \"Text\" टैब पर स्विच करें। {{url}} जैसे प्लेसहोल्डर दोनों में काम करते हैं।"
+
+msgid "Wrong answer to the security question."
+msgstr "सुरक्षा प्रश्न का ग़लत उत्तर।"
+
+msgid "You are not allowed to change these settings."
+msgstr "आपको ये सेटिंग्स बदलने की अनुमति नहीं है।"
+
+msgid "You are not allowed to use PHP snippets."
+msgstr "आपको PHP स्निपेट का उपयोग करने की अनुमति नहीं है।"
+
+msgid "You may send as any address on a domain you have verified with this service. An unverified one will be refused."
+msgstr "आप उस डोमेन पर किसी भी पते से भेज सकते हैं जिसे आपने इस सेवा के साथ सत्यापित किया है। एक असत्यापित को अस्वीकार कर दिया जाएगा।"
+
+msgid "You would be told if this site went quiet"
+msgstr "आपको बताया जाता यदि यह साइट शांत हो जाती"
+
+msgid "Your Telegram chat ID (for recovery codes)"
+msgstr "आपका Telegram चैट ID (रिकवरी कोड के लिए)"
+
+msgid "Your approvals match their copy on disk"
+msgstr "आपके स्वीकृतियाँ डिस्क पर उनकी कॉपी से मेल खाती हैं"
+
+msgid "Your check-in message only got through on the backup route (%s). Your main channel is not working, and you have one left instead of two."
+msgstr "आपका चेक-इन संदेश केवल बैकअप मार्ग (%s) से गुज़रा। आपका मुख्य चैनल काम नहीं कर रहा है, और आपके पास दो के बजाय एक बचा है।"
+
+msgid "Your contact details have changed."
+msgstr "आपके संपर्क विवरण बदल गए हैं।"
+
+msgid "Your container has no GA4 tag in it, so Tag Manager has nothing to pass the click on to. It is placed in the dataLayer and stops there until you build the tag below — until then nothing reaches Analytics."
+msgstr "आपके कंटेनर में कोई GA4 टैग नहीं है, इसलिए Tag Manager के पास क्लिक को आगे भेजने के लिए कुछ नहीं है। यह dataLayer में रखा जाता है और वहीं रुक जाता है जब तक आप नीचे टैग नहीं बनाते — तब तक कुछ भी Analytics तक नहीं पहुँचता।"
+
+msgid "Your content has not been read all the way through yet (%1$d of %2$d), so nothing found in it can be trusted as complete."
+msgstr "आपकी सामग्री अभी तक पूरी तरह पढ़ी नहीं गई (%2$d में से %1$d), इसलिए इसमें मिला कुछ भी पूर्ण के रूप में विश्वसनीय नहीं है।"
+
+msgid "Your content has not been read all the way through yet."
+msgstr "आपकी सामग्री अभी तक पूरी तरह पढ़ी नहीं गई।"
+
+msgid "Your content links to %1$s domains you have not agreed to, and %2$s you have. You will be told the moment one arrives that is on neither list."
+msgstr "आपकी सामग्री %1$s डोमेन से लिंक करती है जिन पर आपने सहमति नहीं दी है, और %2$s पर दी है। जिस क्षण एक ऐसा आता है जो किसी भी सूची में नहीं है, आपको बताया जाएगा।"
+
+msgid "Your content links to %d domain you have not approved."
+msgstr "आपकी सामग्री %d डोमेन से लिंक करती है जिसे आपने स्वीकृत नहीं किया है।"
+
+msgid "Your content links to more domains than the list can hold, so it is incomplete"
+msgstr "आपकी सामग्री सूची की क्षमता से अधिक डोमेन से लिंक करती है, इसलिए यह अधूरी है"
+
+msgid "Your content links to more than %d domains, which is as many as can be held. Domains beyond that were not recorded, so this cannot tell you when one of them is new — it would say it was already there."
+msgstr "आपकी सामग्री %d से अधिक डोमेन से लिंक करती है, जितना रखा जा सकता है। उससे आगे के डोमेन रिकॉर्ड नहीं किए गए, इसलिए यह नहीं बता सकता कि जब उनमें से एक नया हो — यह कहेगा कि वह पहले से था।"
+
+msgid "Your domain already receives mail through %1$s, so choose %2$s below. Sending through the service that already handles your mail is the one most likely to work first time."
+msgstr "आपका डोमेन पहले से %1$s के माध्यम से मेल प्राप्त करता है, इसलिए नीचे %2$s चुनें। उस सेवा के माध्यम से भेजना जो पहले से आपके मेल को संभालती है, पहली बार काम करने की सबसे अधिक संभावना वाला है।"
+
+msgid "Your domain does not say which servers are allowed to send mail for it. Anyone can send mail claiming to be you, and mail you really did send has nothing to vouch for it — Gmail and Yahoo both treat that as a reason for suspicion."
+msgstr "आपका डोमेन यह नहीं कहता कि कौन से सर्वर इसके लिए मेल भेजने की अनुमति देते हैं। कोई भी आप होने का दावा करते हुए मेल भेज सकता है, और आपके द्वारा वास्तव में भेजे गए मेल के पास इसकी पुष्टि के लिए कुछ भी नहीं है — Gmail और Yahoo दोनों इसे संदेह का कारण मानते हैं।"
+
+msgid "Your domain has a list of allowed senders, but it could not be worked out from here whether this server is on it."
+msgstr "आपके डोमेन में अनुमत प्रेषकों की एक सूची है, लेकिन यहाँ से यह निर्धारित नहीं किया जा सका कि यह सर्वर उस पर है या नहीं।"
+
+msgid "Your domain has no DMARC record, so you are never told when somebody sends mail pretending to be you, and receivers have no instruction about what to do with it."
+msgstr "आपके डोमेन में कोई DMARC रिकॉर्ड नहीं है, इसलिए आपको कभी नहीं बताया जाता जब कोई आप होने का नाटक करते हुए मेल भेजता है, और प्राप्तकर्ताओं के पास यह निर्देश नहीं होता कि इसके साथ क्या करें।"
+
+msgid "Your domain receives mail through %s. Sending through the same service is the setting most likely to work, because it is already on your domain’s list of allowed senders."
+msgstr "आपका डोमेन %s के माध्यम से मेल प्राप्त करता है। उसी सेवा के माध्यम से भेजना वह सेटिंग है जिसके काम करने की सबसे अधिक संभावना है, क्योंकि वह पहले से आपके डोमेन के अनुमत प्रेषकों की सूची में है।"
+
+msgid "Your domain says which servers may send mail for it, and this site is sending straight from the web server. Whether that server is on the list could not be determined here."
+msgstr "आपका डोमेन कहता है कि कौन से सर्वर इसके लिए मेल भेज सकते हैं, और यह साइट सीधे वेब सर्वर से भेज रही है। यह कहाँ से निर्धारित नहीं किया जा सका कि वह सर्वर सूची में है या नहीं।"
+
+msgid "Your email settings changed after the last test, so what is running now has not been tried"
+msgstr "आपकी ईमेल सेटिंग्स अंतिम परीक्षण के बाद बदल गईं, इसलिए अभी जो चल रहा है उसका परीक्षण नहीं किया गया"
+
+msgid "Your host can attach a name to the address — ask them for “reverse DNS” or a “PTR record”. Or sidestep it entirely by sending through an email service, whose own servers already have one."
+msgstr "आपका होस्ट पते से एक नाम जोड़ सकता है — उनसे \"reverse DNS\" या \"PTR record\" माँगें। या ईमेल सेवा के माध्यम से भेजकर पूरी तरह दरकिनार करें, जिसके अपने सर्वरों के पास पहले से एक है।"
+
+msgid "Your last test landed in the spam folder"
+msgstr "आपका अंतिम परीक्षण स्पैम फ़ोल्डर में पहुँचा"
+
+msgid "Your last test never arrived"
+msgstr "आपका अंतिम परीक्षण कभी नहीं पहुँचा"
+
+msgid "Your login recovery code"
+msgstr "आपका लॉगिन रिकवरी कोड"
+
+msgid "Your one-time login code for %1$s is: %2$s (valid 10 minutes)."
+msgstr "आपके लिए %1$s का एक-बारगी लॉगिन कोड है: %2$s (10 मिनट मान्य)।"
+
+msgid "Your own account must have two-factor authentication switched on before you can use PHP snippets."
+msgstr "PHP स्निपेट का उपयोग करने से पहले आपके स्वयं के खाते पर दो-कारक प्रमाणीकरण चालू होना चाहिए।"
+
+msgid "Your own icon (paste an SVG)"
+msgstr "आपकी अपनी आइकन (एक SVG पेस्ट करें)"
+
+msgid "Your pages go out exactly as written."
+msgstr "आपके पृष्ठ बिल्कुल वैसे ही जाते हैं जैसे लिखे गए हैं।"
+
+msgid "Your pairing code has expired. Reload this page to get a new one."
+msgstr "आपका पेयरिंग कोड समाप्त हो गया है। नया प्राप्त करने के लिए इस पृष्ठ को पुनः लोड करें।"
+
+msgid "Your posts and pages do not link anywhere outside this site."
+msgstr "आपकी पोस्टें और पृष्ठ इस साइट के बाहर कहीं भी लिंक नहीं करते।"
+
+msgid "Your posts and pages link to %d other domain. Go through it once and confirm which ones belong there; after that, a domain that was not on the list is worth one sentence on your screen instead of two years of nobody noticing."
+msgstr "आपकी पोस्टें और पृष्ठ %d अन्य डोमेन से लिंक करते हैं। इसे एक बार देखें और पुष्टि करें कि कौन से वहाँ संबंधित हैं; उसके बाद, एक डोमेन जो सूची में नहीं था, दो साल किसी का ध्यान न जाने के बजाय आपकी स्क्रीन पर एक वाक्य के लायक है।"
+
+msgid "Your settings already look like %s, so its notes apply to you even though nothing is selected above."
+msgstr "आपकी सेटिंग्स पहले से %s जैसी दिखती हैं, इसलिए इसके नोट्स आप पर लागू होते हैं भले ही ऊपर कुछ भी चयनित न हो।"
+
+msgid "Your site has Tag Manager but no Google tag — one setup step is required"
+msgstr "आपकी साइट में Tag Manager है लेकिन कोई Google टैग नहीं — एक सेटअप चरण आवश्यक है"
+
+msgid "Your site loads the Google tag, so a click goes straight to Analytics. This is the usual case, and it includes sites where Analytics was installed through Tag Manager — a GA4 tag inside a container loads the Google tag itself."
+msgstr "आपकी साइट Google टैग लोड करती है, इसलिए एक क्लिक सीधे Analytics तक जाता है। यह सामान्य स्थिति है, और इसमें वे साइटें शामिल हैं जहाँ Analytics को Tag Manager के माध्यम से इंस्टॉल किया गया था — एक कंटेनर के अंदर एक GA4 टैग स्वयं Google टैग लोड करता है।"
+
+msgid "Zoom"
+msgstr "ज़ूम"
+
+msgid "Zoom in"
+msgstr "ज़ूम इन"
+
+msgid "Zoom out"
+msgstr "ज़ूम आउट"
+
+msgid "[!] This went by %1$s because %2$s would not send: %3$s"
+msgstr "[!] यह %1$s के माध्यम से गया क्योंकि %2$s नहीं भेजेगा: %3$s"
+
+msgid "[?] %1$d domain was approved over a year ago and is barely linked: %2$s"
+msgstr "[?] %1$d डोमेन एक वर्ष से अधिक पहले स्वीकृत किया गया था और शायद ही लिंक किया गया है: %2$s"
+
+msgid "a bar pinned to the bottom of the phone screen. Choose one of 5 styles from the grid."
+msgstr "फ़ोन स्क्रीन के नीचे पिन की गई एक पट्टी। ग्रिड से 5 शैलियों में से एक चुनें।"
+
+msgid "a greeting bubble, business hours (shows Online / Away), scan-to-open QR on desktop, and pre-filled WhatsApp / SMS messages."
+msgstr "एक स्वागत बुलबुला, व्यवसाय के घंटे (ऑनलाइन / दूर दिखाता है), डेस्कटॉप पर स्कैन-टू-ओपन QR, और पूर्व-भरे हुए WhatsApp / SMS संदेश।"
+
+msgid "a panel that slides up to show your services or articles. Pick its layout, colour and how it appears from the visual grids. To open it, point a bottom-bar item at"
+msgstr "एक पैनल जो आपकी सेवाएँ या लेख दिखाने के लिए ऊपर स्लाइड करता है। इसका लेआउट, रंग और दृश्य ग्रिड से यह कैसे दिखता है चुनें। इसे खोलने के लिए, नीचे-बार आइटम को इस पर इशारा करें"
+
+msgid "added ✓"
+msgstr "जोड़ा गया ✓"
+
+msgid "ads.txt"
+msgstr "ads.txt"
+
+msgid "an address you can open right now"
+msgstr "एक पता जिसे आप अभी खोल सकते हैं"
+
+msgid "and %d more — click to see it"
+msgstr "और %d और — देखने के लिए क्लिक करें"
+
+msgid "approved %s ago"
+msgstr "%s पहले स्वीकृत किया गया"
+
+msgid "choose how the floating button looks from the visual grid below (17 styles). What you see is what visitors get."
+msgstr "नीचे दृश्य ग्रिड से फ़्लोटिंग बटन कैसा दिखता है चुनें (17 शैलियाँ)। जो आप देखते हैं वही विज़िटरों को मिलता है।"
+
+msgid "click SAVE CONTENT at the bottom of the page. The Services panel has its own “Save services” button."
+msgstr "पृष्ठ के नीचे \"SAVE CONTENT\" पर क्लिक करें। Services पैनल का अपना \"Save services\" बटन है।"
+
+msgid "copy"
+msgstr "कॉपी करें"
+
+msgid "delayed"
+msgstr "विलंबित"
+
+msgid "e.g. Price list"
+msgstr "जैसे: मूल्य सूची"
+
+msgid "e.g. What is the shop mascot?"
+msgstr "जैसे: दुकान का शुभंकर क्या है?"
+
+msgid "e.g. fox"
+msgstr "जैसे: लोमड़ी"
+
+msgid "email"
+msgstr "ईमेल"
+
+msgid "leave empty for all categories"
+msgstr "सभी श्रेणियों के लिए खाली छोड़ें"
+
+msgid "no copy on disk yet"
+msgstr "डिस्क पर अभी तक कोई कॉपी नहीं"
+
+msgid "none"
+msgstr "कोई नहीं"
+
+msgid "not confirmed yet"
+msgstr "अभी पुष्टि नहीं हुई"
+
+msgid "not reviewed yet"
+msgstr "अभी समीक्षा नहीं की गई"
+
+msgid "nothing at all"
+msgstr "बिल्कुल कुछ नहीं"
+
+msgid "open the site’s Telegram bot (ask the site admin which bot if you’re not sure)."
+msgstr "साइट के Telegram बॉट को खोलें (यदि आप निश्चित नहीं हैं तो साइट व्यवस्थापक से पूछें कि कौन सा बॉट)।"
+
+msgid "open this site’s Telegram bot:"
+msgstr "इस साइट के Telegram बॉट को खोलें:"
+
+msgid "optional title above the table"
+msgstr "तालिका के ऊपर वैकल्पिक शीर्षक"
+
+msgid "passes SEO value"
+msgstr "SEO मान पास करता है"
+
+msgid "pick a channel (Zalo, Messenger, Phone…) and its logo is added automatically. For a custom button, choose a built-in icon or paste your own SVG."
+msgstr "एक चैनल चुनें (Zalo, Messenger, फ़ोन…) और इसका लोगो स्वचालित रूप से जोड़ दिया जाता है। कस्टम बटन के लिए, एक अंतर्निहित आइकन चुनें या अपना स्वयं का SVG पेस्ट करें।"
+
+msgid "reCAPTCHA could not load in this browser, so this form cannot be submitted. Check the site key, or switch reCAPTCHA off in Horse Tools."
+msgstr "इस ब्राउज़र में reCAPTCHA लोड नहीं हो सका, इसलिए यह फ़ॉर्म सबमिट नहीं किया जा सकता। Site कुंजी जाँचें, या Horse Tools में reCAPTCHA बंद करें।"
+
+msgid "reCAPTCHA did not run in your browser, so this form could not be submitted. This is not your password."
+msgstr "आपके ब्राउज़र में reCAPTCHA नहीं चला, इसलिए यह फ़ॉर्म सबमिट नहीं किया जा सका। यह आपका पासवर्ड नहीं है।"
+
+msgid "reCAPTCHA is switched off, so there is nothing to test."
+msgstr "reCAPTCHA बंद है, इसलिए परीक्षण करने के लिए कुछ नहीं है।"
+
+msgid "remember to press “Update profile”."
+msgstr "\"Update profile\" दबाना याद रखें।"
+
+msgid "rows"
+msgstr "पंक्तियाँ"
+
+msgid "rows loaded"
+msgstr "पंक्तियाँ लोड हुईं"
+
+msgid "runs now"
+msgstr "अभी चलता है"
+
+msgid "script or embedded frame"
+msgstr "स्क्रिप्ट या एम्बेडेड फ़्रेम"
+
+msgid "send it this code:"
+msgstr "इसे यह कोड भेजें:"
+
+msgid "still reading"
+msgstr "अभी भी पढ़ रहा है"
+
+msgid "the contact details you confirmed in your posts"
+msgstr "आपकी पोस्टों में आपके द्वारा पुष्टि किए गए संपर्क विवरण"
+
+msgid "the contact details you confirmed in your settings"
+msgstr "आपकी सेटिंग्स में आपके द्वारा पुष्टि किए गए संपर्क विवरण"
+
+msgid "the list of domains you approved"
+msgstr "आपके द्वारा स्वीकृत डोमेनों की सूची"
+
+msgid "type part of a domain…"
+msgstr "डोमेन का कुछ हिस्सा टाइप करें…"
+
+msgid "unknown error"
+msgstr "अज्ञात त्रुटि"
+
+msgid "whether the watching is switched on at all"
+msgstr "क्या देखना बिल्कुल भी चालू है"
+
+msgid "wp-content is not writable, so there is nowhere to keep the copy"
+msgstr "wp-content लिखने योग्य नहीं है, इसलिए कॉपी रखने के लिए कोई जगह नहीं है"
+
+msgid "— choose, or fill the form in yourself —"
+msgstr "— चुनें, या फ़ॉर्म स्वयं भरें —"
+
+msgid "— or paste your own SVG."
+msgstr "— या अपना स्वयं का SVG पेस्ट करें।"
+
+msgid "“All” mode — scripts to NEVER delay (one per line). A hero slider or a cookie-consent script usually belongs here."
+msgstr "\"All\" मोड — कभी विलंबित न करने वाली स्क्रिप्ट (एक प्रति पंक्ति)। एक हीरो स्लाइडर या कुकी-सहमति स्क्रिप्ट आमतौर पर यहाँ संबंधित होती है।"
+
+msgid "“Listed” mode — scripts to delay (one per line: a handle, file name or part of a URL). Leave empty to use the built-in list of common trackers."
+msgstr "\"Listed\" मोड — विलंबित करने के लिए स्क्रिप्ट (एक प्रति पंक्ति: एक हैंडल, फ़ाइल नाम या URL का भाग)। सामान्य ट्रैकर की अंतर्निहित सूची का उपयोग करने के लिए खाली छोड़ें।"
+
+msgid "← enter code and press \"Update profile\" to enable"
+msgstr "← कोड दर्ज करें और सक्षम करने के लिए \"Update profile\" दबाएँ"
+
+msgid "✓ Turned on — press SAVE to apply"
+msgstr "✓ चालू किया गया — लागू करने के लिए SAVE दबाएँ"
