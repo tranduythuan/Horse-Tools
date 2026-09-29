@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.3.45
+Stable tag: 1.3.46
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,13 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.46 =
+* **Compatibility: tested up to WordPress 7.1.** The header now reads `Tested up to: 7.1`, matching the current WordPress release; PHPCompatibilityWP against PHP 8.1–8.4 reports zero errors in the plugin's own code.
+
+Translations:
+
+* Hindi and Thai brought to full coverage — 811 strings each, added since the plugin's original translation baseline. All eleven shipped locales are now at 100%.
 
 = 1.3.45 =
 * **Fixed: the table of contents title leaked into other posts' excerpts.** The `the_content` filter that adds the TOC guarded against archives and feeds with `is_singular()`/`in_the_loop()`/`is_main_query()`, but those only describe the page's main query, not which post is actually being filtered. A "related posts" block or card list on a singular page runs its own query and calls `the_post()` on that without changing the main query's flags, so the guard still passed — and the TOC title got prepended to that other post's content before WordPress trimmed it down to an excerpt, leaving the title text stuck to the front of the summary ("Mục lục …"). The guard now also checks that the post being filtered is the one actually being viewed.
