@@ -31,3 +31,4 @@ tools/_apply-batch.php
 
 # Superpowers local state
 .superpowers/
+.agents/
