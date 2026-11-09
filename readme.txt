@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.3.46
+Stable tag: 1.3.47
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,9 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.47 =
+* **Security: enforce unfiltered_html capability on raw code and shortcode snippets (Multisite privilege escalation fix).** In WordPress Multisite networks, subsite administrators hold `manage_options` for their site but intentionally lack `unfiltered_html`. Previously, custom code settings (header, body, footer, login scripts) and shortcode snippet contents were saved verbatim with `manage_options` alone, allowing potential cross-site script injection into Super Administrator sessions. Raw script inputs are now filtered through `wp_kses_post()` unless the user explicitly holds the `unfiltered_html` capability (Network Super Admins or single-site Admins), and custom CSS blocks are stripped of HTML tags to prevent style tag break-out.
 
 = 1.3.46 =
 * **Compatibility: tested up to WordPress 7.1.** The header now reads `Tested up to: 7.1`, matching the current WordPress release; PHPCompatibilityWP against PHP 8.1–8.4 reports zero errors in the plugin's own code.

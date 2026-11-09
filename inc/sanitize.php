@@ -99,6 +99,35 @@ function horsetools_sanitize_is_raw( $key ) {
 	return false;
 }
 
+/**
+ * Sanitize an SVG string using enshrined/svg-sanitize if available, else wp_kses_post().
+ *
+ * @param string $svg Raw SVG markup.
+ * @return string Sanitized SVG markup.
+ */
+function horsetools_sanitize_svg( $svg ) {
+	$svg = (string) $svg;
+	if ( '' === trim( $svg ) ) {
+		return '';
+	}
+	$autoload = defined( 'HORSETOOLS_DIR' ) ? HORSETOOLS_DIR . 'link/svg-sanitize/vendor/autoload.php' : '';
+	if ( $autoload && file_exists( $autoload ) ) {
+		require_once $autoload;
+		if ( class_exists( '\enshrined\svgSanitize\Sanitizer' ) ) {
+			$sanitizer = new \enshrined\svgSanitize\Sanitizer();
+			$sanitizer->removeRemoteReferences( true );
+			$clean = $sanitizer->sanitize( $svg );
+			if ( false !== $clean ) {
+				if ( function_exists( 'horsetools_svg_strip_remote_refs' ) ) {
+					$clean = horsetools_svg_strip_remote_refs( $clean );
+				}
+				return $clean;
+			}
+		}
+	}
+	return wp_kses_post( $svg );
+}
+
 /* -------------------------------------------------------------------------
  * 2. Type helpers
  * ---------------------------------------------------------------------- */
@@ -310,6 +339,26 @@ function horsetools_sanitize_field( $key, $value ) {
 
 	// Intentionally raw - see horsetools_sanitize_raw_keys().
 	if ( horsetools_sanitize_is_raw( $key ) ) {
+		if ( ! current_user_can( 'unfiltered_html' ) ) {
+			// In Multisite (or when DISALLOW_UNFILTERED_HTML is set), users without
+			// unfiltered_html capability (e.g. Subsite Administrators) cannot store
+			// executable JavaScript or unescaped HTML tags.
+			$script_keys = array(
+				'code2', 'code3', 'code4', 'code5',
+				'custom-foo11',
+				'ads-sense11', 'ads-sense-p1', 'ads-sense-p2', 'ads-sense-c3',
+			);
+			if ( in_array( $key, $script_keys, true ) ) {
+				return wp_kses_post( (string) $value );
+			}
+			$css_keys = array( 'code1', 'code11', 'code12', 'speed-acss-critical' );
+			if ( in_array( $key, $css_keys, true ) ) {
+				return wp_strip_all_tags( (string) $value );
+			}
+			if ( preg_match( '/^chat-nut4\d+$/', $key ) || preg_match( '/^chat-nav1\d+$/', $key ) || 'chat-nav01' === $key ) {
+				return horsetools_sanitize_svg( $value );
+			}
+		}
 		return $value;
 	}
 

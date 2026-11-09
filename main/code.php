@@ -29,6 +29,9 @@ function horsetools_code_options_page() {
 				require_once( HORSETOOLS_DIR . 'main/completed.php'); 
 			}
 			$htnote = '<div class="htnotecode"><span><i class="ti ti-arrow-left"></i> Ctrl-Z, Cmd-Z: Undo</span><span><i class="ti ti-arrow-right"></i> Ctrl-Y, Cmd-Y: Redo</span> <span><i class="ti ti-search"></i> Ctrl-F, Cmd-F: Find</span><span><i class="ti ti-filter"></i> Ctrl-H, Cmd-H: Replace</span></div>';
+			if ( ! current_user_can( 'unfiltered_html' ) ) {
+				$htnote .= '<p class="ht-note"><i class="ti ti-bulb"></i> ' . esc_html__( 'Notice: Raw HTML/JavaScript execution is restricted because your account does not hold the unfiltered_html capability.', 'horse-tools' ) . '</p>';
+			}
 			?>
 			<form method="post" action="options.php">
 			<?php settings_fields('horsetools_code_settings_group'); ?> 

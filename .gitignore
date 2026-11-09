@@ -11,6 +11,7 @@ Thumbs.db
 *~
 .idea/
 .vscode/
+.claude/
 
 # Build and dev leftovers
 node_modules/

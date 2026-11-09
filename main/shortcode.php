@@ -457,6 +457,9 @@ function horsetools_snip_save_ajax() {
 	}
 	$title   = isset( $_POST['title'] ) ? sanitize_text_field( wp_unslash( $_POST['title'] ) ) : $slug;
 	$content = isset( $_POST['content'] ) ? wp_unslash( $_POST['content'] ) : ''; // raw by design
+	if ( ! current_user_can( 'unfiltered_html' ) ) {
+		$content = wp_kses_post( $content );
+	}
 	$on      = isset( $_POST['on'] ) && '1' === (string) $_POST['on'];
 
 	$in_list = function ( $key, $allowed ) {
@@ -554,7 +557,7 @@ function horsetools_snip_import_sc_ajax() {
 			$slug,
 			array(
 				'title'   => $row->post_title ? sanitize_text_field( $row->post_title ) : $slug,
-				'content' => (string) $row->post_content, // raw
+				'content' => current_user_can( 'unfiltered_html' ) ? (string) $row->post_content : wp_kses_post( (string) $row->post_content ),
 				'on'      => 1,
 			)
 		);
@@ -690,7 +693,9 @@ function horsetools_snip_import_json_ajax() {
 		$snip = array(
 			'title'     => sanitize_text_field( isset( $entry['title'] ) ? $entry['title'] : $slug ),
 			'desc'      => sanitize_text_field( isset( $entry['desc'] ) ? $entry['desc'] : '' ),
-			'content'   => (string) ( isset( $entry['content'] ) ? $entry['content'] : '' ),
+			'content'   => current_user_can( 'unfiltered_html' )
+				? (string) ( isset( $entry['content'] ) ? $entry['content'] : '' )
+				: wp_kses_post( (string) ( isset( $entry['content'] ) ? $entry['content'] : '' ) ),
 			'on'        => ! empty( $entry['on'] ) ? 1 : 0,
 			'no_admin'  => ! empty( $entry['no_admin'] ) ? 1 : 0,
 			'device'    => in_array( isset( $entry['device'] ) ? $entry['device'] : '', array( 'desktop', 'mobile' ), true ) ? $entry['device'] : '',
