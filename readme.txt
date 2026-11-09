@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.3.47
+Stable tag: 1.3.48
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,13 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.48 =
+* **Hardening: deterministic plugin hiding.** Replaced fragile ordinal position indexing in plugin manager concealment with exact plugin basename MD5 hash keys (`horsetools-hp-<hash>`). Existing settings are automatically migrated in background housekeeping; installing or reordering plugins no longer causes unintentional concealment of other plugins.
+* **Modernized design system presets.** Streamlined admin theme presets down to 3 clean styles: Default (Gold Brand & Warm Charcoal), WordPress Native (core WordPress scheme), and Dark Mode (pure high-contrast dark theme, aliased from legacy Black). Legacy color schemes (Bright, Girly, Coffe, Rocket, Blue) smoothly fall back to Default without injecting redundant stylesheet rules.
+* **JS & UI standardization.** Standardized legacy `ft*` functions and variables to `ht*` (`htSelectedRank()`, `htwBoxes`), while preserving global aliases for cached scripts.
+* **WooCommerce integration safeguards.** Added defensive guards (`class_exists('WooCommerce')`) in module bootstrapping and hook registrations, eliminating unnecessary memory overhead and preventing potential fatal errors on sites where WooCommerce is deactivated. Added an informative admin notice in the WooCommerce settings screen when WooCommerce is inactive.
+* **Translations:** 100% complete Vietnamese translations for all new notices and design system labels.
 
 = 1.3.47 =
 * **Security: enforce unfiltered_html capability on raw code and shortcode snippets (Multisite privilege escalation fix).** In WordPress Multisite networks, subsite administrators hold `manage_options` for their site but intentionally lack `unfiltered_html`. Previously, custom code settings (header, body, footer, login scripts) and shortcode snippet contents were saved verbatim with `manage_options` alone, allowing potential cross-site script injection into Super Administrator sessions. Raw script inputs are now filtered through `wp_kses_post()` unless the user explicitly holds the `unfiltered_html` capability (Network Super Admins or single-site Admins), and custom CSS blocks are stripped of HTML tags to prevent style tag break-out.

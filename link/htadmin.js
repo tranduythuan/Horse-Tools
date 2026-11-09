@@ -50,7 +50,7 @@ function httab(evt, tabname) {
         });
     });
 }
-function ftSelectedRank() {
+function htSelectedRank() {
   var htranksel = localStorage.getItem('htranksel');
   if (htranksel) {
     var sotab = document.querySelector('[onclick="httab(event, \'' + htranksel + '\')"]');
@@ -59,8 +59,9 @@ function ftSelectedRank() {
     }
   }
 }
+window.ftSelectedRank = htSelectedRank;
 document.addEventListener("DOMContentLoaded", function() {
-  ftSelectedRank();
+  htSelectedRank();
 });
 // display none
 function getStyle(x, styleProp) {

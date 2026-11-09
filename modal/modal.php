@@ -160,6 +160,10 @@ if (isset($horsetools_options) && is_array($horsetools_options)) {
             }
         }
         if ($wanted) {
+            // Guard WooCommerce module from loading when WooCommerce is not active.
+            if ( 'woo' === $option_key && ! class_exists( 'WooCommerce' ) ) {
+                continue;
+            }
             include(HORSETOOLS_DIR . $file_path);
         }
     }

@@ -1,5 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } 
+if ( ! class_exists( 'WooCommerce' ) ) { return; }
 global $horsetools_options;
 # thay doi nut mua hang ở trang xem sản phẩm
 if(!empty($horsetools_options['woo-text1'])){

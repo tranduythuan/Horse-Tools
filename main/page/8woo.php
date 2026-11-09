@@ -8,6 +8,11 @@ global $horsetools_options; ?>
 <label class="ht-on-right"><?php _e('ON/OFF', 'horse-tools'); ?></label>
 </div>
 <div id="play8" class="ht-card toggle-div">
+  <?php if ( ! class_exists( 'WooCommerce' ) ) : ?>
+  <div class="notice notice-warning inline" style="margin: 10px 0 20px; padding: 10px 14px; background: #fff8e5; border-left: 4px solid #dba617; border-radius: 4px;">
+    <p style="margin: 0; font-size: 13px; color: #614700;"><i class="ti ti-alert-triangle"></i> <?php esc_html_e( 'WooCommerce is not active. These settings will take effect once WooCommerce is activated.', 'horse-tools' ); ?></p>
+  </div>
+  <?php endif; ?>
   <h3><i class="ti ti-text-size"></i> <?php _e('Modify content', 'horse-tools') ?></h3>
 	<p>
 	<input class="ht-input-big" placeholder="<?php _e('Change the Buy Now text on the single product page', 'horse-tools'); ?>" name="horsetools_settings[woo-text1]" type="text" value="<?php if(!empty($horsetools_options['woo-text1'])){echo sanitize_text_field($horsetools_options['woo-text1']);} ?>"/>

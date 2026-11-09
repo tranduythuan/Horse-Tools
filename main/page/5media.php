@@ -249,10 +249,10 @@ global $horsetools_options; ?>
 	</p>
 	<script>
     document.addEventListener('DOMContentLoaded', function () {
-        const ftwBoxes = document.querySelectorAll('.ht-watermark-box');
-        ftwBoxes.forEach(box => {
+        const htwBoxes = document.querySelectorAll('.ht-watermark-box');
+        htwBoxes.forEach(box => {
             box.addEventListener('click', function () {
-                ftwBoxes.forEach(b => b.classList.remove('ht-wselected'));
+                htwBoxes.forEach(b => b.classList.remove('ht-wselected'));
                 this.classList.add('ht-wselected');
             });
         });

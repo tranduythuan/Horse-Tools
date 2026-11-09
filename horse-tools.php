@@ -3,7 +3,7 @@
  * Plugin Name: Horse Tools
  * Plugin URI: https://github.com/tranduythuan/Horse-Tools
  * Description: All-in-one WordPress toolkit: contact chat button, custom login, media optimisation, SEO index, cleanup and more.
- * Version: 1.3.47
+ * Version: 1.3.48
  * Author: Trần Duy Thuận
  * Author URI: https://tranduythuan.com/
  * Text Domain: horse-tools
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-define( 'HORSETOOLS_VERSION', '1.3.47' );
+define( 'HORSETOOLS_VERSION', '1.3.48' );
 define( 'HORSETOOLS_URL', plugin_dir_url( __FILE__ ) );
 define( 'HORSETOOLS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HORSETOOLS_BASE', plugin_basename( __FILE__ ) );
@@ -339,6 +339,28 @@ function horsetools_housekeeping() {
 		$horsetools_stale = $horsetools_dir . 'wp-config.php.horsetools.bak';
 		if ( file_exists( $horsetools_stale ) ) {
 			@unlink( $horsetools_stale ); // phpcs:ignore WordPress.PHP.NoSilencedErrors
+		}
+	}
+
+	// 1.3.48: Migrate legacy ordinal plugin hiding (horsetools-pu<N>) to
+	// deterministic basename hash (horsetools-hp-<md5>).
+	$settings = get_option( 'horsetools_settings' );
+	if ( is_array( $settings ) && function_exists( 'get_plugins' ) ) {
+		$migrated = false;
+		$all_plugins = get_plugins();
+		$plugin_keys = array_keys( $all_plugins );
+		foreach ( $settings as $k => $val ) {
+			if ( 1 === (int) $val && preg_match( '/^horsetools-pu(\d+)$/', $k, $m ) ) {
+				$idx = (int) $m[1] - 1;
+				if ( isset( $plugin_keys[ $idx ] ) ) {
+					$settings[ 'horsetools-hp-' . md5( $plugin_keys[ $idx ] ) ] = 1;
+				}
+				unset( $settings[ $k ] );
+				$migrated = true;
+			}
+		}
+		if ( $migrated ) {
+			update_option( 'horsetools_settings', $settings );
 		}
 	}
 

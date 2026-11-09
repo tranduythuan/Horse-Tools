@@ -42,24 +42,16 @@ function horsetools_hide_menuadmin(){
 }
 add_action( 'admin_menu', 'horsetools_hide_menuadmin', 999);
 } 
-# Ẩn plugin khoi quan ly plugin
+# Ẩn plugin khỏi quản lý plugin (Deterministic theo basename MD5 hash)
 function horsetools_hide_plugins($plugins) {
     global $horsetools_options;
-    $all_plugins = get_plugins(); 
-    if (is_array($horsetools_options) || is_object($horsetools_options)) {
-        foreach ($horsetools_options as $key => $value) {
-            if (preg_match('/^horsetools-pu(\d+)$/', $key, $matches)) {
-                $n = $matches[1]; 
-                if ($value == 1) {
-                    $plugin_keys = array_keys($all_plugins);
-                    if (isset($plugin_keys[$n - 1])) { 
-                        $plugin_to_hide = $plugin_keys[$n - 1]; 
-                        if (isset($plugins[$plugin_to_hide])) {
-                            unset($plugins[$plugin_to_hide]); 
-                        }
-                    }
-                }
-            }
+    if ( ! is_array( $plugins ) || empty( $plugins ) || ! is_array( $horsetools_options ) ) {
+        return $plugins;
+    }
+    foreach ( $plugins as $plugin_path => $plugin_data ) {
+        $hash_key = 'horsetools-hp-' . md5( $plugin_path );
+        if ( ! empty( $horsetools_options[ $hash_key ] ) ) {
+            unset( $plugins[ $plugin_path ] );
         }
     }
     return $plugins;

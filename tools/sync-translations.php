@@ -1476,6 +1476,13 @@ $vi = array(
 	// Notice for unfiltered_html capability restriction on Multisite (1.3.47).
 	'Notice: Raw HTML/JavaScript execution is restricted because your account does not hold the unfiltered_html capability.' => 'Lưu ý: Bạn không thể chèn mã HTML/JavaScript thô vì tài khoản của bạn không có quyền unfiltered_html.',
 
+	// Hardening, streamlined skins and WooCommerce notice (1.3.48).
+	'WooCommerce is not active. These settings will take effect once WooCommerce is activated.'
+		=> 'WooCommerce chưa được kích hoạt. Các cài đặt này sẽ có hiệu lực khi WooCommerce được kích hoạt.',
+	'Gold & Warm Charcoal' => 'Vàng ánh kim & Xám ấm',
+	'WordPress Native' => 'Gốc WordPress',
+	'Dark Mode' => 'Giao diện tối',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

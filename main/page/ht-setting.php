@@ -54,14 +54,14 @@ global $horsetools_options; ?>
   <h3><i class="ti ti-eye-off"></i> <?php _e('Hide plugins from the manager', 'horse-tools') ?></h3>	
 	<!-- tool hiden 2 -->
 	<?php
-	$all_plugins = get_plugins(); 
-	$p = 0;
+	$all_plugins = function_exists( 'get_plugins' ) ? get_plugins() : array();
 	foreach ($all_plugins as $plugin_path => $plugin_info) {
-		$p++;
+		$hp_key = 'horsetools-hp-' . md5( $plugin_path );
+		$is_hidden = ! empty( $horsetools_options[ $hp_key ] );
 		?>
 		<p>
 			<label class="nut-switch">
-				<input type="checkbox" name="horsetools_settings[horsetools-pu<?php echo $p; ?>]" value="1" <?php if ( isset($horsetools_options['horsetools-pu'. $p]) && 1 == $horsetools_options['horsetools-pu'. $p] ) echo 'checked="checked"'; ?> />
+				<input type="checkbox" name="horsetools_settings[<?php echo esc_attr( $hp_key ); ?>]" value="1" <?php checked( $is_hidden ); ?> />
 				<span class="slider"></span>
 			</label>
 			<label class="ht-label-right"><?php echo esc_html($plugin_info['Name']); ?></label>
@@ -83,17 +83,27 @@ global $horsetools_options; ?>
 	<p class="ht-note"><i class="ti ti-bulb"></i> <?php _e('If you dont want to automatically switch the language based on WordPress context, please select the language you prefer', 'horse-tools'); ?>
 	</p>
   <h3><i class="ti ti-palette"></i> <?php _e('Customize display', 'horse-tools') ?></h3>
-	<div id="ht-imgstyle" class="ht-imgstyle">
-		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/style/1.jpg'); ?>" data-value="Default" class="<?php if(isset($horsetools_options['horsetools5']) && $horsetools_options['horsetools5'] == 'Default') echo 'selected'; ?>" />
-		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/style/2.jpg'); ?>" data-value="WordPress" class="<?php if(isset($horsetools_options['horsetools5']) && $horsetools_options['horsetools5'] == 'WordPress') echo 'selected'; ?>" />
-		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/style/3.jpg'); ?>" data-value="Bright" class="<?php if(isset($horsetools_options['horsetools5']) && $horsetools_options['horsetools5'] == 'Bright') echo 'selected'; ?>" />
-		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/style/4.jpg'); ?>" data-value="Girly" class="<?php if(isset($horsetools_options['horsetools5']) && $horsetools_options['horsetools5'] == 'Girly') echo 'selected'; ?>" />
-		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/style/5.jpg'); ?>" data-value="Black" class="<?php if(isset($horsetools_options['horsetools5']) && $horsetools_options['horsetools5'] == 'Black') echo 'selected'; ?>" />
-		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/style/6.jpg'); ?>" data-value="Coffe" class="<?php if(isset($horsetools_options['horsetools5']) && $horsetools_options['horsetools5'] == 'Coffe') echo 'selected'; ?>" />
-		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/style/7.jpg'); ?>" data-value="Rocket" class="<?php if(isset($horsetools_options['horsetools5']) && $horsetools_options['horsetools5'] == 'Rocket') echo 'selected'; ?>" />
-		<img src="<?php echo esc_url(HORSETOOLS_URL .'img/style/8.jpg'); ?>" data-value="Blue" class="<?php if(isset($horsetools_options['horsetools5']) && $horsetools_options['horsetools5'] == 'Blue') echo 'selected'; ?>" />
+	<?php
+	$current_skin = ! empty( $horsetools_options['horsetools5'] ) ? $horsetools_options['horsetools5'] : 'Default';
+	if ( 'Black' === $current_skin ) {
+		$current_skin = 'Dark';
+	}
+	?>
+	<div id="ht-imgstyle" class="ht-imgstyle" style="max-width: 520px; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+		<div style="text-align: center;">
+			<img src="<?php echo esc_url(HORSETOOLS_URL .'img/style/1.jpg'); ?>" data-value="Default" class="<?php if( 'Default' === $current_skin ) echo 'selected'; ?>" style="cursor:pointer;" />
+			<p style="margin: 6px 0 0; font-size: 13px; font-weight: 500;"><?php _e('Gold & Warm Charcoal', 'horse-tools'); ?></p>
+		</div>
+		<div style="text-align: center;">
+			<img src="<?php echo esc_url(HORSETOOLS_URL .'img/style/2.jpg'); ?>" data-value="WordPress" class="<?php if( 'WordPress' === $current_skin ) echo 'selected'; ?>" style="cursor:pointer;" />
+			<p style="margin: 6px 0 0; font-size: 13px; font-weight: 500;"><?php _e('WordPress Native', 'horse-tools'); ?></p>
+		</div>
+		<div style="text-align: center;">
+			<img src="<?php echo esc_url(HORSETOOLS_URL .'img/style/5.jpg'); ?>" data-value="Dark" class="<?php if( 'Dark' === $current_skin ) echo 'selected'; ?>" style="cursor:pointer;" />
+			<p style="margin: 6px 0 0; font-size: 13px; font-weight: 500;"><?php _e('Dark Mode', 'horse-tools'); ?></p>
+		</div>
 	</div>
-	<input type="hidden" name="horsetools_settings[horsetools5]" id="horsetools5" value="<?php if(!empty($horsetools_options['horsetools5'])){echo sanitize_text_field($horsetools_options['horsetools5']);} else {echo sanitize_text_field('Default');} ?>" />
+	<input type="hidden" name="horsetools_settings[horsetools5]" id="horsetools5" value="<?php echo esc_attr( $current_skin ); ?>" />
 	<script>
 		// Clicking a thumbnail used to POST the entire form and reload the page
 		// immediately, with nothing telling the user anything had been saved.
