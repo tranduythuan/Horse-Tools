@@ -5,7 +5,7 @@
 [![Bản phát hành](https://img.shields.io/github/v/release/tranduythuan/Horse-Tools?label=release)](https://github.com/tranduythuan/Horse-Tools/releases)
 [![Giấy phép: GPL v2+](https://img.shields.io/badge/license-GPLv2%2B-blue.svg)](license.txt)
 ![WordPress 6.0+](https://img.shields.io/badge/WordPress-6.0%2B-21759b.svg)
-![PHP 8.1+](https://img.shields.io/badge/PHP-8.1%2B-777bb4.svg)
+![PHP 8.2+](https://img.shields.io/badge/PHP-8.2%2B-777bb4.svg)
 
 Bộ công cụ WordPress tất-cả-trong-một: nút chat liên hệ, shortcode & snippet, tăng cường bảo mật, riêng tư, tối ưu ảnh, SEO, dọn dẹp và hơn thế nữa — gói gọn trong **một plugin** thay vì cả chục plugin rời rạc.
 
@@ -68,7 +68,7 @@ hướng tới đúng nhóm và tab chứa cài đặt đó.
 
 > **Đang dùng Foxtool?** Horse Tools tự động nhập cài đặt của Foxtool trong lần kích hoạt đầu tiên. Sẽ không ghi đè nếu bạn đã có cài đặt Horse Tools.
 
-**Yêu cầu:** WordPress 6.0+ · PHP 8.1+
+**Yêu cầu:** WordPress 6.0+ · PHP 8.2+
 
 ## Ngôn ngữ
 

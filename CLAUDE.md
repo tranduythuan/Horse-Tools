@@ -2,7 +2,7 @@
 
 WordPress plugin by Trần Duy Thuận, forked from Foxtool 2.5.3 by Fox Theme (GPLv2, unmaintained upstream) and rebranded in full. The original authorship is credited in `readme.txt` and in the main plugin header; keep that credit in place — it is both a licence obligation and the honest description of where the code came from.
 
-Minimum PHP is **8.1**, set by the bundled Google API client.
+Minimum PHP is **8.2**, matching modern WordPress and hosting baselines (PHP 8.1 reached EOL in 2024).
 
 ## Naming conventions
 

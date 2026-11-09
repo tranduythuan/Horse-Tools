@@ -178,7 +178,7 @@ function horsetools_update_inject( $transient ) {
 		'icons'         => array(),
 		'banners'       => array(),
 		'requires'      => '6.0',
-		'requires_php'  => '8.1',
+		'requires_php'  => '8.2',
 		'compatibility' => new stdClass(),
 	);
 
@@ -225,7 +225,7 @@ function horsetools_update_details( $result, $action, $args ) {
 		'author'        => '<a href="https://tranduythuan.com/">Trần Duy Thuận</a>',
 		'homepage'      => 'https://github.com/' . horsetools_update_repo(),
 		'requires'      => '6.0',
-		'requires_php'  => '8.1',
+		'requires_php'  => '8.2',
 		'download_link' => $release['package'],
 		'sections'      => array(
 			'description' => esc_html__( 'All-in-one WordPress toolkit: contact chat, shortcodes, security & privacy, media optimisation, SEO, cleanup and more — in one plugin.', 'horse-tools' ),
@@ -234,6 +234,28 @@ function horsetools_update_details( $result, $action, $args ) {
 	);
 }
 add_filter( 'plugins_api', 'horsetools_update_details', 10, 3 );
+
+/**
+ * Resilient package download with auto-retry on transient gateway/network failure.
+ * GitHub CDN assets can take 60-120 seconds to replicate globally upon a fresh release,
+ * occasionally returning 504 Gateway Timeout on immediate update clicks.
+ */
+function horsetools_update_pre_download( $reply, $package, $upgrader ) {
+	if ( ! horsetools_update_package_ok( $package ) ) {
+		return $reply;
+	}
+	$result = download_url( $package, 300 );
+	if ( is_wp_error( $result ) ) {
+		$error_data = $result->get_error_data();
+		$code = is_array( $error_data ) && isset( $error_data['code'] ) ? (int) $error_data['code'] : 0;
+		if ( 504 === $code || 502 === $code || 503 === $code || false !== strpos( $result->get_error_message(), 'Gateway Timeout' ) ) {
+			sleep( 3 );
+			$result = download_url( $package, 300 );
+		}
+	}
+	return $result;
+}
+add_filter( 'upgrader_pre_download', 'horsetools_update_pre_download', 10, 3 );
 
 /**
  * A "Check for updates" link on the Plugins row: clears the cache, re-asks

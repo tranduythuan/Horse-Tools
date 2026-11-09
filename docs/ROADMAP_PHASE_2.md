@@ -4,7 +4,7 @@
 **Status:** Approved Architectural Blueprint  
 **Baseline Release:** v1.3.48  
 **Target Horizon:** v1.4.0 through v2.0.0  
-**Target Environments:** PHP 8.1+ | WordPress 6.2+ (with defensive WP 6.0/6.1 fallback; tested through WP 6.7+)  
+**Target Environments:** PHP 8.2+ | WordPress 6.2+ (with defensive WP 6.0/6.1 fallback; tested through WP 6.7+)  
 **Repository Working Directory:** `D:\Antigravity\Horse-tools\`  
 **Exclusive File Ownership:** `docs/ROADMAP_PHASE_2.md`  
 
@@ -17,7 +17,7 @@
    - 1.3 Target Release Milestones & Versioning Plan
    - 1.4 Core Architecture Principles
 2. [Section 2: Standards & Architectural Conventions](#section-2-standards--architectural-conventions)
-   - 2.1 PHP 8.1+ Modern Language Standard
+   - 2.1 PHP 8.2+ Modern Language Standard
    - 2.2 WordPress 6.2+ Core APIs Alignment
    - 2.3 WordPress Coding Standards (WPCS) & VIP-Go Guidelines
    - 2.4 Horse Tools Architectural & Naming Conventions
@@ -87,7 +87,7 @@ Phase 2 establishes a multi-year engineering roadmap designed to transform Horse
 |    - Pluggable AI / Gemini Vision      - O(1) Cache Group Invalidation      - 100% BC via deprecated.php |
 |                                                                                                    |
 |    ================================== FOUNDATION & INFRASTRUCTURE ==============================   |
-|    PHP 8.1+ Strict Typing | WP 6.2-6.7+ Alignment | WPCS 3.1 & VIP-Go | Dual-Layer CI & PHPUnit    |
+|    PHP 8.2+ Strict Typing | WP 6.2-6.7+ Alignment | WPCS 3.1 & VIP-Go | Dual-Layer CI & PHPUnit    |
 +----------------------------------------------------------------------------------------------------+
 ```
 
@@ -107,7 +107,7 @@ Horse Tools adheres strictly to Semantic Versioning (`MAJOR.MINOR.PATCH`):
 - **v2.0.0 (Phase 3 Enterprise & Beyond)**: Major Architecture Release. Deprecates procedural shims from `inc/deprecated.php`, introduces Multisite network policies, and provides Headless WordPress GraphQL/REST integrations.
 
 ### 1.4 Core Architecture Principles
-1. **PHP 8.1+ Language Standard**: Strict typing (`declare(strict_types=1);`), typed properties, return types, backed enums, match expressions, and readonly properties.
+1. **PHP 8.2+ Language Standard**: Strict typing (`declare(strict_types=1);`), typed properties, return types, backed enums, match expressions, readonly classes, and standalone `true`, `false`, `null` types.
 2. **WordPress 6.2+ Platform Standard**: Core baseline adoption of `WP_HTML_Tag_Processor` (with defensive compatibility fallback `if ( class_exists( 'WP_HTML_Tag_Processor' ) )` for legacy WP 6.0/6.1 hosts), `register_block_type_from_metadata()`, core script loading strategies (`defer`/`async`), and `WP_REST_Controller`.
 3. **Non-Destructive Optimization**: Performance enhancements must never break site functionality. Script delays enforce a 5-second safeguard timeout and sequential dependency restoration; image conversions retain source files indefinitely; critical CSS prevents FOUC through automated media swaps.
 4. **Zero-Telemetry & Privacy by Design**: The plugin collects zero analytics, telemetry, or remote usage metrics from client sites. Outbound calls only occur when explicitly configured by the site administrator (e.g. Google reCAPTCHA, Google Indexing, Gemini API).
@@ -118,8 +118,8 @@ Horse Tools adheres strictly to Semantic Versioning (`MAJOR.MINOR.PATCH`):
 
 ## Section 2: Standards & Architectural Conventions
 
-### 2.1 PHP 8.1+ Modern Language Standard
-Horse Tools officially declares `Requires PHP: 8.1` in `horse-tools.php`. All newly authored code under `src/` must strictly adopt modern PHP 8.1+ idioms.
+### 2.1 PHP 8.2+ Modern Language Standard
+Horse Tools officially declares `Requires PHP: 8.2` in `horse-tools.php`. All newly authored code under `src/` must strictly adopt modern PHP 8.2+ idioms.
 
 #### 2.1.1 Strict Typing & Typed Properties
 Every new PHP file must open with strict types enabled. All class properties, method parameters, and return types must be explicitly declared.
@@ -162,10 +162,10 @@ final class RestAuthenticationGuard {
 }
 ```
 
-> **PHP 8.1 Type Compatibility Rule**: Standalone `true` in union types (`true|WP_Error`) is a PHP 8.2+ feature (RFC *Add true type*) and causes fatal compile errors (`Fatal error: Type 'true' cannot be used as a standalone type`) in PHP 8.1. All boolean success/failure union returns must strictly declare `bool|WP_Error` or `bool|WP_Error|null`.
+> **PHP Type Compatibility Rule**: Standalone `true` in union types (`true|WP_Error`) is supported natively in PHP 8.2+ (RFC *Add true type*). For broad WordPress ecosystem and static analysis compatibility, boolean success/failure union returns are standardized to declare `bool|WP_Error` or `bool|WP_Error|null`.
 
 #### 2.1.2 Backed Enums
-Magic strings and integer flags are deprecated in favor of PHP 8.1 string-backed enums, ensuring static analysis validation and runtime type safety.
+Magic strings and integer flags are deprecated in favor of PHP 8.1+ string-backed enums, ensuring static analysis validation and runtime type safety.
 
 ```php
 <?php
@@ -219,7 +219,7 @@ function horsetools_resolve_skin_stylesheet( SkinPreset $preset ): string {
 ```
 
 #### 2.1.4 Readonly Properties and Value Objects (DTOs)
-Immutable data transfer objects utilize PHP 8.1 `readonly` properties to prevent unintended state mutations.
+Immutable data transfer objects utilize PHP 8.1+ `readonly` properties / PHP 8.2 `readonly` classes to prevent unintended state mutations.
 
 ```php
 <?php
@@ -343,7 +343,7 @@ To support modern PSR-4 autoloading, static analysis, coding standards enforceme
   "type": "wordpress-plugin",
   "license": "GPL-2.0-or-later",
   "require": {
-    "php": ">=8.1"
+    "php": ">=8.2"
   },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
@@ -387,12 +387,12 @@ To support modern PSR-4 autoloading, static analysis, coding standards enforceme
 ```
 
 ### 3.2 Enhanced Coding Standards Ruleset (`phpcs.xml.dist`)
-The project’s `phpcs.xml.dist` is updated to include WordPress VIP-Go sniffs and strict PHP 8.1–8.4 compatibility checks:
+The project’s `phpcs.xml.dist` is updated to include WordPress VIP-Go sniffs and strict PHP 8.2–8.4 compatibility checks:
 
 ```xml
 <?xml version="1.0"?>
 <ruleset name="HorseToolsStandard">
-    <description>WordPress VIP, Security, and PHP 8.1+ Compatibility for Horse Tools.</description>
+    <description>WordPress VIP, Security, and PHP 8.2+ Compatibility for Horse Tools.</description>
     <file>.</file>
     <exclude-pattern>*/link/google-api/*</exclude-pattern>
     <exclude-pattern>*/link/svg-sanitize/*</exclude-pattern>
@@ -415,7 +415,7 @@ The project’s `phpcs.xml.dist` is updated to include WordPress VIP-Go sniffs a
     <!-- PHP Compatibility Matrix -->
     <rule ref="PHPCompatibilityWP"/>
     <config name="minimum_supported_wp_version" value="6.2"/>
-    <config name="testVersion" value="8.1-8.4"/>
+    <config name="testVersion" value="8.2-8.4"/>
 </ruleset>
 ```
 
@@ -457,7 +457,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ ubuntu-latest, windows-latest ]
-        php: [ '8.1', '8.2', '8.3' ]
+        php: [ '8.2', '8.3', '8.4' ]
         wordpress: [ '6.2', '6.4', '6.5', '6.6', '6.7' ] # WP 6.2+ core baseline; optional legacy job checks WP 6.0/6.1 fallback guards
     steps:
       - uses: actions/checkout@v4
@@ -1337,7 +1337,7 @@ src/
 2. **Google reCAPTCHA v2 & v3 Bot Defense (Lines 266–637)**:
    - Fail-open remote verification against `siteverify` (`horsetools_recaptcha_verify`), hostname verification, score threshold filter (`horsetools_recaptcha_threshold`), diagnostic verdict evaluator (`horsetools_recaptcha_verdict`), AJAX test checker (`horsetools_recaptcha_check_ajax`), v2 script/div injection and validation, and v3 non-fatal markup with fallback warnings and action token validation.  
    → **Migrated to**: `src/Captcha/` (`RecaptchaModule.php`, `RecaptchaVerifier.php`, `RecaptchaDiagnostic.php`, `RecaptchaV2Provider.php`, `RecaptchaV3Provider.php`).  
-   *(Note: All authentication and verification method signatures strictly declare `bool|WP_Error` return types conforming to PHP 8.1 standards, avoiding illegal standalone `true|WP_Error` types).*
+   *(Note: All authentication and verification method signatures declare `bool|WP_Error` return types conforming to PHP 8.2+ standards).*
 
 #### 5.3.3 Deconstruction and Sunset of `main/code.php` (164 lines)
 `main/code.php` defines a standalone submenu page that has been commented out since v1.2.77, as custom code is now rendered inside the grouped Tools screen (`main/tools.php` tabs `tl-code1` through `tl-code5`). However, `main/code.php` is still included solely to call `register_setting()` and invalidate the cache.
@@ -1615,7 +1615,7 @@ function horsetools_code_options_page() {
 - [ ] `inc/scuri.php` (27), `inc/goo.php` (22), `main/code.php` (4), and `inc/code.php` (5) logic cleanly extracted into `src/Security/`, `src/Privacy/`, `src/Auth/`, `src/Captcha/`, and `src/CustomCode/`.
 - [ ] `inc/deprecated.php` provides backward compatibility shims for all 58 refactored legacy procedural functions emitting `_deprecated_function()` notices.
 - [ ] Standalone test runner `tools/test-phase1.php` executes and passes 100% of assertions (18/18).
-- [ ] CI matrix workflow executes across PHP 8.1, 8.2, 8.3 and WordPress 6.2 through 6.7 without failures (with WP 6.0/6.1 fallback guard testing).
+- [ ] CI matrix workflow executes across PHP 8.2, 8.3, 8.4 and WordPress 6.2 through 6.7 without failures (with WP 6.0/6.1 fallback guard testing).
 
 #### Milestone 2.2 Gate Checklist (Performance & Core Web Vitals)
 - [ ] `src/Performance/ScriptDelay.php` transforms `<script>` tags via `WP_HTML_Tag_Processor` to `type="ht/delayed"`.
@@ -1634,7 +1634,7 @@ function horsetools_code_options_page() {
 - [ ] Client hydration utilizes WP 6.5+ Interactivity API directives (`data-wp-interactive`, `data-wp-context`).
 - [ ] Block styling adapts to active block theme CSS variables (`--wp--preset--color--primary`) with brand fallbacks.
 - [ ] REST API routes registered under namespace `horse-tools/v1` inheriting from `HorseTools_REST_Controller`.
-- [ ] Every REST endpoint enforces capability authorization (`manage_options` or `edit_posts`) declaring PHP 8.1 compliant return types `bool|WP_Error` and nonce checks.
+- [ ] Every REST endpoint enforces capability authorization (`manage_options` or `edit_posts`) declaring PHP 8.2 compliant return types `bool|WP_Error` and nonce checks.
 - [ ] Every REST parameter validates and sanitizes against declarative JSON schema definitions; invalid inputs return HTTP 400 Bad Request.
 
 #### Milestone 2.4 Gate Checklist (AI Automation & Workflows)
@@ -1664,7 +1664,7 @@ To independently verify that the Phase 2 master roadmap satisfies all requiremen
    - Verify Track 2 contains complete designs for non-destructive script delay (5s timeout, passive listeners, `async = false`, module preservation, click replay, allow-list exclusions), critical CSS inlining + media swap (aspect-ratio & font metric overrides for CLS < 0.05), dual-engine WebP/AVIF conversion with 404 prevention, and 3-tier DB query caching with atomic lock & Stale-While-Revalidate from version - 1.
    - Verify Track 3 contains detailed step-by-step modularization plans for `inc/scuri.php`, `inc/goo.php`, and `main/code.php`, normalized zero-dependency autoloader, PSR-11 container, and exhaustive catalog of all 58 legacy functions in `inc/deprecated.php` backward compatibility shims.
 3. **Coding Standards & Conventions Verification**:
-   - Verify that all code examples adhere to PHP 8.1+ syntax (strict types, typed properties, `bool|WP_Error` union types, backed enums, match expressions, readonly properties).
+   - Verify that all code examples adhere to PHP 8.2+ syntax (strict types, typed properties, `bool|WP_Error` union types, backed enums, match expressions, readonly properties).
    - Verify WordPress 6.2+ baseline APIs (`WP_HTML_Tag_Processor` with defensive WP 6.0/6.1 fallback, `WP_REST_Controller`, `block.json` v3).
    - Verify Horse Tools naming conventions (`horsetools_`, `HORSETOOLS_`, `'horse-tools'`).
 4. **Workspace Integrity Verification**:

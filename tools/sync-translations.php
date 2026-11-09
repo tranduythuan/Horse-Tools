@@ -1483,6 +1483,9 @@ $vi = array(
 	'WordPress Native' => 'Gốc WordPress',
 	'Dark Mode' => 'Giao diện tối',
 
+	// Minimum PHP 8.2 bump (1.3.49).
+	'Ask your host to update PHP to 8.2 or newer.' => 'Đề nghị nhà cung cấp nâng PHP lên 8.2 trở lên.',
+
 );
 
 $viPo = $root . '/lang/horse-tools-vi.po';

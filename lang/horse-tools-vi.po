@@ -7909,3 +7909,6 @@ msgstr "Gốc WordPress"
 
 msgid "Dark Mode"
 msgstr "Giao diện tối"
+
+msgid "Ask your host to update PHP to 8.2 or newer."
+msgstr "Đề nghị nhà cung cấp nâng PHP lên 8.2 trở lên."

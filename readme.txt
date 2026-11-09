@@ -8,8 +8,8 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 7.1
-Requires PHP: 8.1
-Stable tag: 1.3.48
+Requires PHP: 8.2
+Stable tag: 1.3.49
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,10 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.49 =
+* **Requirements: raise minimum PHP version to 8.2.** PHP 8.1 reached official End-of-Life (EOL) in late 2024. The minimum supported PHP runtime is now PHP 8.2, matching modern security standards and hosting baselines. Updated site-health checks, update metadata manifests, and roadmap specifications.
+* **Auto-updater resilience:** Added automatic retry on transient HTTP 504 / gateway errors in plugin upgrade package downloads to gracefully handle CDN replication delays upon fresh releases.
 
 = 1.3.48 =
 * **Hardening: deterministic plugin hiding.** Replaced fragile ordinal position indexing in plugin manager concealment with exact plugin basename MD5 hash keys (`horsetools-hp-<hash>`). Existing settings are automatically migrated in background housekeeping; installing or reordering plugins no longer causes unintentional concealment of other plugins.

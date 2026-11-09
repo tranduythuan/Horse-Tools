@@ -5,7 +5,7 @@
 [![Latest release](https://img.shields.io/github/v/release/tranduythuan/Horse-Tools?label=release)](https://github.com/tranduythuan/Horse-Tools/releases)
 [![License: GPL v2+](https://img.shields.io/badge/license-GPLv2%2B-blue.svg)](license.txt)
 ![WordPress 6.0+](https://img.shields.io/badge/WordPress-6.0%2B-21759b.svg)
-![PHP 8.1+](https://img.shields.io/badge/PHP-8.1%2B-777bb4.svg)
+![PHP 8.2+](https://img.shields.io/badge/PHP-8.2%2B-777bb4.svg)
 
 All-in-one WordPress toolkit: a contact chat button, shortcodes & snippets, security hardening, privacy, media optimisation, SEO, cleanup and more — in one plugin, instead of a dozen separate ones.
 
@@ -69,7 +69,7 @@ group and tab that setting now lives on.
 
 > **Coming from Foxtool?** Horse Tools imports Foxtool's settings automatically the first time you activate it. Nothing is overwritten if Horse Tools settings already exist.
 
-**Requirements:** WordPress 6.0+ · PHP 8.1+
+**Requirements:** WordPress 6.0+ · PHP 8.2+
 
 ## Languages
 

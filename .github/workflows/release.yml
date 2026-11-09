@@ -105,7 +105,7 @@ jobs:
             --arg pkg "https://github.com/${GITHUB_REPOSITORY}/releases/download/${GITHUB_REF_NAME}/horse-tools-${VERSION}.zip" \
             --arg url "https://github.com/${GITHUB_REPOSITORY}/releases/tag/${GITHUB_REF_NAME}" \
             --arg n   "$NOTES" \
-            '{version:$v, package:$pkg, url:$url, requires:"6.0", requires_php:"8.1", notes:$n}' \
+            '{version:$v, package:$pkg, url:$url, requires:"6.0", requires_php:"8.2", notes:$n}' \
             > update.json
           echo "update.json ($(wc -c < update.json) bytes):"
           cat update.json | head -c 300; echo

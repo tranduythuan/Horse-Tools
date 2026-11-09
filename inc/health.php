@@ -320,9 +320,9 @@ function horsetools_health_report() {
 	);
 
 	// ---- Environment ----------------------------------------------------
-	if ( PHP_VERSION_ID >= 80100 ) {
+	if ( PHP_VERSION_ID >= 80200 ) {
 		$php_status = 'pass';
-	} elseif ( PHP_VERSION_ID >= 70400 ) {
+	} elseif ( PHP_VERSION_ID >= 80000 ) {
 		$php_status = 'warn';
 	} else {
 		$php_status = 'fail';
@@ -331,7 +331,7 @@ function horsetools_health_report() {
 		'php', $env_cat,
 		/* translators: %s: PHP version. */
 		sprintf( __( 'PHP is a supported version (%s)', 'horse-tools' ), PHP_VERSION ),
-		$php_status, 2, '', __( 'Ask your host to update PHP to 8.1 or newer.', 'horse-tools' )
+		$php_status, 2, '', __( 'Ask your host to update PHP to 8.2 or newer.', 'horse-tools' )
 	);
 
 	$https = ( 0 === strpos( strtolower( (string) home_url() ), 'https' ) );
