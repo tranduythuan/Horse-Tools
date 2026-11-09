@@ -7894,3 +7894,6 @@ msgstr "reCAPTCHA đang tắt nên không có gì để kiểm."
 
 msgid "A v2 key and a v3 key look identical and are not interchangeable. Put a v2 key in the box while the dropdown says V3 and Google refuses to load the widget, so the token is never produced and every login is rejected — which reaches whoever is trying to sign in as “wrong password”. Press the button above after changing a key; it asks Google directly."
 msgstr "Khoá v2 và khoá v3 trông y hệt nhau nhưng không dùng thay nhau được. Dán khoá v2 vào trong khi ô chọn đang để V3 thì Google từ chối nạp widget, token không bao giờ sinh ra, và mọi lần đăng nhập đều bị từ chối — đến tay người đang đăng nhập thì nó hiện ra thành \"sai mật khẩu\". Đổi khoá xong hãy bấm nút ở trên; nút đó hỏi thẳng Google."
+
+msgid "Notice: Raw HTML/JavaScript execution is restricted because your account does not hold the unfiltered_html capability."
+msgstr "Lưu ý: Bạn không thể chèn mã HTML/JavaScript thô vì tài khoản của bạn không có quyền unfiltered_html."

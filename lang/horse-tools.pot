@@ -114,7 +114,7 @@ msgstr ""
 msgid "(duplicate)"
 msgstr ""
 
-#: main/shortcode.php:596
+#: main/shortcode.php:599
 msgid "(no title)"
 msgstr ""
 
@@ -307,15 +307,15 @@ msgstr ""
 msgid "Add .html for page"
 msgstr ""
 
-#: main/code.php:49 main/section/tl-code1.php:18
+#: main/code.php:52 main/section/tl-code1.php:18
 msgid "Add CSS for mobile size"
 msgstr ""
 
-#: main/code.php:44 main/section/tl-code1.php:13
+#: main/code.php:47 main/section/tl-code1.php:13
 msgid "Add CSS for tablet size"
 msgstr ""
 
-#: main/code.php:39 main/section/tl-code1.php:8
+#: main/code.php:42 main/section/tl-code1.php:8
 msgid "Add CSS to your website"
 msgstr ""
 
@@ -363,23 +363,23 @@ msgstr ""
 msgid "Add background image link"
 msgstr ""
 
-#: main/code.php:147 main/extend.php:35
+#: main/code.php:150 main/extend.php:35
 msgid "Add code"
 msgstr ""
 
-#: main/code.php:71 main/section/tl-code3.php:8
+#: main/code.php:74 main/section/tl-code3.php:8
 msgid "Add code to WP body"
 msgstr ""
 
-#: main/code.php:82 main/section/tl-code4.php:8
+#: main/code.php:85 main/section/tl-code4.php:8
 msgid "Add code to WP footer"
 msgstr ""
 
-#: main/code.php:60 main/section/tl-code2.php:8
+#: main/code.php:63 main/section/tl-code2.php:8
 msgid "Add code to WP head"
 msgstr ""
 
-#: main/code.php:93 main/section/tl-code5.php:8
+#: main/code.php:96 main/section/tl-code5.php:8
 msgid "Add code to WP login"
 msgstr ""
 
@@ -996,7 +996,7 @@ msgstr ""
 msgid "COOKIE"
 msgstr ""
 
-#: main/code.php:19 main/code.php:37
+#: main/code.php:19 main/code.php:40
 msgid "CSS"
 msgstr ""
 
@@ -1412,7 +1412,7 @@ msgstr ""
 msgid "Contains database credentials or signing keys."
 msgstr ""
 
-#: main/admin.php:37 main/content.php:65 main/shortcode.php:799
+#: main/admin.php:37 main/content.php:65 main/shortcode.php:804
 msgid "Content"
 msgstr ""
 
@@ -1740,11 +1740,11 @@ msgstr ""
 msgid "Data"
 msgstr ""
 
-#: main/section/snippets-screen.php:502 main/shortcode.php:801
+#: main/section/snippets-screen.php:502 main/shortcode.php:806
 msgid "Data & media"
 msgstr ""
 
-#: main/shortcode.php:802
+#: main/shortcode.php:807
 msgid "Date"
 msgstr ""
 
@@ -2032,7 +2032,7 @@ msgstr ""
 msgid "Disable welcome widget"
 msgstr ""
 
-#: inc/toc.php:272
+#: inc/toc.php:287
 msgid "Disabled TOC"
 msgstr ""
 
@@ -2557,7 +2557,7 @@ msgstr ""
 msgid "Enabled"
 msgstr ""
 
-#: inc/toc.php:268
+#: inc/toc.php:283
 msgid "Enabled TOC"
 msgstr ""
 
@@ -2569,7 +2569,7 @@ msgstr ""
 msgid "Enter Adsense code here"
 msgstr ""
 
-#: main/code.php:42 main/code.php:47 main/code.php:52 main/section/tl-code1.php:11
+#: main/code.php:45 main/code.php:50 main/code.php:55 main/section/tl-code1.php:11
 #: main/section/tl-code1.php:16 main/section/tl-code1.php:21
 msgid "Enter CSS here"
 msgstr ""
@@ -2582,7 +2582,7 @@ msgstr ""
 msgid "Enter a current two-factor code to unlock PHP editing first."
 msgstr ""
 
-#: main/shortcode.php:578
+#: main/shortcode.php:581
 msgid "Enter a shortcode name to search for."
 msgstr ""
 
@@ -2598,8 +2598,8 @@ msgstr ""
 msgid "Enter button name"
 msgstr ""
 
-#: main/ads.php:109 main/code.php:63 main/code.php:74 main/code.php:85
-#: main/code.php:96 main/section/cu-ads3.php:15 main/section/tl-code2.php:11 main/section/tl-code3.php:11
+#: main/ads.php:109 main/code.php:66 main/code.php:77 main/code.php:88
+#: main/code.php:99 main/section/cu-ads3.php:15 main/section/tl-code2.php:11 main/section/tl-code3.php:11
 #: main/section/tl-code4.php:11 main/section/tl-code5.php:11
 msgid "Enter code here"
 msgstr ""
@@ -3233,7 +3233,7 @@ msgstr ""
 msgid "Horse Search"
 msgstr ""
 
-#: inc/horsetools.php:217 main/shortcode.php:754
+#: inc/horsetools.php:217 main/shortcode.php:759
 msgid "Horse Tools"
 msgstr ""
 
@@ -3269,7 +3269,7 @@ msgstr ""
 msgid "Horse Tools keeps a copy of your decisions in a file as well as in the database, precisely so that a change made straight to the database can be seen. These no longer match:"
 msgstr ""
 
-#: main/shortcode.php:758
+#: main/shortcode.php:763
 msgid "Horse Tools shortcode"
 msgstr ""
 
@@ -3693,7 +3693,7 @@ msgstr ""
 msgid "Last seen"
 msgstr ""
 
-#: main/section/snippets-screen.php:490 main/shortcode.php:800
+#: main/section/snippets-screen.php:490 main/shortcode.php:805
 msgid "Layout & interactive"
 msgstr ""
 
@@ -4258,7 +4258,7 @@ msgstr ""
 msgid "No snippet matches your search."
 msgstr ""
 
-#: main/shortcode.php:538
+#: main/shortcode.php:541
 msgid "No snippets were found for the post type \"%s\"."
 msgstr ""
 
@@ -4373,6 +4373,10 @@ msgstr ""
 
 #: inc/watch-links.php:509
 msgid "Nothing. Every domain your content points at is one you have agreed to."
+msgstr ""
+
+#: main/code.php:33
+msgid "Notice: Raw HTML/JavaScript execution is restricted because your account does not hold the unfiltered_html capability."
 msgstr ""
 
 #: main/notify.php:69 main/section/cu-notify2.php:5
@@ -5219,7 +5223,7 @@ msgstr ""
 msgid "Run “%s” now? This permanently deletes matching items and cannot be undone."
 msgstr ""
 
-#: main/ads.php:114 main/code.php:102 main/debug.php:74 main/extend.php:216
+#: main/ads.php:114 main/code.php:105 main/debug.php:74 main/extend.php:216
 #: main/font.php:137 main/gindex.php:117 main/group.php:138 main/notify.php:266
 #: main/redirects.php:202 main/search.php:207 main/shortcode.php:313 main/toc.php:279
 msgid "SAVE CONTENT"
@@ -5744,7 +5748,7 @@ msgid "Sharpen (blur to clear)"
 msgstr ""
 
 #: inc/shortcode.php:420 inc/shortcode.php:1501 main/extend.php:155 main/shortcode.php:329
-#: main/shortcode.php:756
+#: main/shortcode.php:761
 msgid "Shortcode"
 msgstr ""
 
@@ -6125,7 +6129,7 @@ msgstr ""
 msgid "TOC"
 msgstr ""
 
-#: inc/toc.php:257
+#: inc/toc.php:272
 msgid "TOC Settings"
 msgstr ""
 
@@ -6286,7 +6290,7 @@ msgstr ""
 msgid "That is not a valid Horse Tools export file."
 msgstr ""
 
-#: main/shortcode.php:672
+#: main/shortcode.php:675
 msgid "That is not a valid snippet export file."
 msgstr ""
 
@@ -6906,7 +6910,7 @@ msgstr ""
 msgid "Type it in"
 msgstr ""
 
-#: main/shortcode.php:757
+#: main/shortcode.php:762
 msgid "Type the number of the shortcode to insert:"
 msgstr ""
 
@@ -7035,19 +7039,19 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: main/code.php:21 main/code.php:69
+#: main/code.php:21 main/code.php:72
 msgid "WP BODY"
 msgstr ""
 
-#: main/code.php:22 main/code.php:80
+#: main/code.php:22 main/code.php:83
 msgid "WP FOOTER"
 msgstr ""
 
-#: main/code.php:20 main/code.php:58
+#: main/code.php:20 main/code.php:61
 msgid "WP HEAD"
 msgstr ""
 
-#: main/code.php:23 main/code.php:91
+#: main/code.php:23 main/code.php:94
 msgid "WP LOGIN"
 msgstr ""
 
@@ -7795,7 +7799,7 @@ msgstr ""
 msgid "wp-content is not writable, so there is nowhere to keep the copy"
 msgstr ""
 
-#: main/shortcode.php:755
+#: main/shortcode.php:760
 msgid "— Insert a shortcode —"
 msgstr ""
 
