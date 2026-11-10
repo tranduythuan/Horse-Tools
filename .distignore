@@ -19,8 +19,17 @@
 _*.json
 *.zip
 *.log
-# Gettext sources — only the compiled .mo is needed at runtime; .po stays in git.
+# Gettext sources — only the compiled .mo is needed at runtime; .po and .pot stay in git.
 /lang/*.po
+/lang/*.pot
+# Internal development notes, roadmap specs and AI configurations.
+/.agents
+/docs
+/.claude
+/.impeccable
+/.superpowers
+/phpcs.xml.dist
+*.ps1
 # Command-line scripts inside vendored libraries. Nothing here uses them, they
 # carry no ABSPATH guard, and a PHP file that reads $argv becomes reachable over
 # HTTP on any host with register_argc_argv on — which turns a query string into
