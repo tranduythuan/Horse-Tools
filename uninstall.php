@@ -64,6 +64,9 @@ wp_clear_scheduled_hook('horsetools_scheduled_clean');
 // Drop the 404 log table.
 $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}horsetools_404" );
 
+// Remove cached FAQ schema metadata written by inc/faq-schema.php.
+$wpdb->query( "DELETE FROM {$wpdb->postmeta} WHERE meta_key IN ('_ht_faq_ld','_ht_faq_stamp')" );
+
 // Remove the self-hosted Google Fonts downloaded into uploads.
 $horsetools_up = wp_upload_dir();
 if ( ! empty( $horsetools_up['basedir'] ) ) {

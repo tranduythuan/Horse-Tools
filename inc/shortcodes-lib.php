@@ -80,11 +80,15 @@ function horsetools_sc_accordion( $atts, $content = '' ) {
 
 	// Optional FAQ schema built from the raw item list.
 	if ( in_array( strtolower( (string) $a['faq'] ), array( '1', 'yes', 'true' ), true )
-		&& preg_match_all( '/\[ht-item[^\]]*\btitle="([^"]*)"[^\]]*\](.*?)\[\/ht-item\]/is', $content, $m, PREG_SET_ORDER ) ) {
+		&& preg_match_all( '/\[ht-item\b((?:[^\]"\']++|"[^"]*"|\'[^\']*\')*)\](.*?)\[\/ht-item\]/is', $content, $m, PREG_SET_ORDER ) ) {
 		$faqs = array();
 		foreach ( $m as $item ) {
-			$q = trim( wp_strip_all_tags( $item[1] ) );
-			$ans = trim( wp_strip_all_tags( do_shortcode( $item[2] ) ) );
+			if ( ! preg_match( '/(?:^|\s)title\s*=\s*(?:"([^"]*)"|\'([^\']*)\')/is', $item[1], $tm ) ) {
+				continue;
+			}
+			$raw_q = '' !== $tm[1] ? $tm[1] : ( isset( $tm[2] ) ? $tm[2] : '' );
+			$q     = trim( wp_strip_all_tags( html_entity_decode( $raw_q, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) ) );
+			$ans   = isset( $item[2] ) ? trim( wp_strip_all_tags( do_shortcode( $item[2] ) ) ) : '';
 			if ( '' === $q || '' === $ans ) {
 				continue;
 			}
@@ -96,7 +100,10 @@ function horsetools_sc_accordion( $atts, $content = '' ) {
 		}
 		if ( $faqs ) {
 			$schema = array( '@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => $faqs );
-			$out   .= '<script type="application/ld+json">' . wp_json_encode( $schema ) . '</script>';
+			$json   = wp_json_encode( $schema, JSON_UNESCAPED_UNICODE );
+			if ( is_string( $json ) && '' !== $json ) {
+				$out .= '<script type="application/ld+json">' . $json . '</script>';
+			}
 		}
 	}
 	return $out;

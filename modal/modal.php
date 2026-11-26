@@ -168,3 +168,8 @@ if (isset($horsetools_options) && is_array($horsetools_options)) {
         }
     }
 }
+if ( function_exists( 'wp_doing_ajax' ) && wp_doing_ajax() ) {
+    // Load FAQ AJAX handlers even when CONTENT / faq-schema1 was just toggled
+    // on in the UI before saving settings.
+    require_once HORSETOOLS_DIR . 'inc/faq-schema.php';
+}

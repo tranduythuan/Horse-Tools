@@ -18,7 +18,7 @@ global $horsetools_options; ?>
 		'tab' => 'SEO',
 		'section'     => 'FAQ schema',
 		'parent'      => 'faq-schema1',
-		'placeholder' => 'thường gặp, hỏi đáp, giải đáp, thắc mắc, FAQ, Q&A',
+		'placeholder' => 'câu hỏi thường gặp, frequently asked questions, common questions, hỏi đáp, giải đáp thắc mắc, FAQ, Q&A',
 		'description' => __( 'Comma separated. A heading containing any of these opens the FAQ section; every heading below it until the next heading of the same level is treated as a question.', 'horse-tools' ),
 	) ); ?>
 
@@ -79,22 +79,74 @@ global $horsetools_options; ?>
 				.then(function(r){return r.json();}).then(done).catch(function(){ out.textContent = I18N.fail; });
 		}
 		var out = document.getElementById('ht-faq-scanout');
-		function list(items){
-			return '<ul style="margin:4px 0 10px 18px">' + items.map(function(i){
-				return '<li><a href="'+i.link+'" target="_blank" rel="noopener">'+i.title+'</a>'+(i.n?' — '+i.n:'')+'</li>';
-			}).join('') + '</ul>';
+		function safeUrl(u){
+			if (!u || typeof u !== 'string') { return ''; }
+			var s = u.trim();
+			if (/^https?:\/\//i.test(s) || (s.charAt(0) === '/' && s.charAt(1) !== '/')) {
+				return s;
+			}
+			return '';
+		}
+		function appendLine(parent, text, bold){
+			var p = document.createElement('p');
+			if (bold) {
+				var b = document.createElement('b');
+				b.textContent = text;
+				p.appendChild(b);
+			} else {
+				p.textContent = text;
+			}
+			parent.appendChild(p);
+		}
+		function buildList(items){
+			var ul = document.createElement('ul');
+			ul.style.margin = '4px 0 10px 18px';
+			(items || []).forEach(function(i){
+				var li = document.createElement('li');
+				var url = safeUrl(i && i.link);
+				var label = (i && i.title) ? String(i.title) : ('#' + (i && i.id ? i.id : ''));
+				if (url) {
+					var a = document.createElement('a');
+					a.href = url;
+					a.target = '_blank';
+					a.rel = 'noopener';
+					a.textContent = label;
+					li.appendChild(a);
+				} else {
+					var span = document.createElement('span');
+					span.textContent = label;
+					li.appendChild(span);
+				}
+				if (i && i.n) {
+					li.appendChild(document.createTextNode(' — ' + String(parseInt(i.n, 10) || 0)));
+				}
+				ul.appendChild(li);
+			});
+			return ul;
 		}
 		document.getElementById('ht-faq-scan').addEventListener('click', function(){
 			out.style.display='block'; out.textContent = I18N.scanning;
 			post({action:'horsetools_faq_scan'}, function(res){
-				if(!res || !res.success){ out.textContent = I18N.fail; return; }
-				var d = res.data, h = '';
-				h += '<p><b>✅ ' + I18N.ok.replace('%1$d', d.ok).replace('%2$s', d.avg) + '</b></p>';
-				if (d.fewN)  { h += '<p>⚠️ ' + I18N.few.replace('%d', d.fewN) + '</p>' + list(d.few); }
-				if (d.noneN) { h += '<p>⚠️ ' + I18N.none.replace('%d', d.noneN) + '</p>' + list(d.none); }
-				if (d.foreign) { h += '<p>➖ ' + I18N.foreign.replace('%d', d.foreign) + '</p>'; }
-				h += '<p>➖ ' + I18N.skip.replace('%d', d.skip) + '</p>';
-				out.innerHTML = h;
+				if(!res || !res.success || !res.data){ out.textContent = I18N.fail; return; }
+				var d = res.data;
+				out.textContent = '';
+				var okMsg = '\u2705 ' + I18N.ok.replace('%1$d', d.ok).replace('%2$s', d.avg);
+				if (d.truncated && d.scanned && d.total) {
+					okMsg += ' (' + d.scanned + '/' + d.total + ')';
+				}
+				appendLine(out, okMsg, true);
+				if (d.fewN)  {
+					appendLine(out, '\u26A0\uFE0F ' + I18N.few.replace('%d', d.fewN), false);
+					out.appendChild(buildList(d.few));
+				}
+				if (d.noneN) {
+					appendLine(out, '\u26A0\uFE0F ' + I18N.none.replace('%d', d.noneN), false);
+					out.appendChild(buildList(d.none));
+				}
+				if (d.foreign) {
+					appendLine(out, '\u2796 ' + I18N.foreign.replace('%d', d.foreign), false);
+				}
+				appendLine(out, '\u2796 ' + I18N.skip.replace('%d', d.skip), false);
 			});
 		});
 		document.getElementById('ht-faq-flush').addEventListener('click', function(){

@@ -190,6 +190,9 @@ function horsetools_sanitize_number_keys() {
 		'tag2'             => array( 1, 1000 ),   // insert before Nth heading
 		// main/page/1speed.php — Delay JavaScript
 		'speed-delay-timeout' => array( 0, 60 ), // fall-back timer, seconds (0 = interaction only)
+		// main/section/seo-faq.php — FAQ schema
+		'faq-min'          => array( 1, 20 ),     // minimum questions
+		'faq-maxlen'       => array( 80, 5000 ),  // maximum answer length, chars
 	);
 }
 

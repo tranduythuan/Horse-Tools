@@ -9,7 +9,7 @@ Tags: all-in-one, contact-chat, shortcodes, security, seo
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.3.49
+Stable tag: 1.3.50
 
 All-in-one WordPress toolkit: contact chat, shortcodes, security &amp; privacy, media optimisation, SEO, cleanup and more — in one plugin.
 
@@ -98,6 +98,11 @@ All bundled libraries are free/open-source under GPL-compatible licences, and th
 Apache-2.0 is compatible with the GPLv3, and Horse Tools is licensed "GPLv2 or later", so the combined distribution is fully licence-compliant.
 
 == Changelog ==
+
+= 1.3.50 =
+* **SEO — Automatic FAQ Schema overhaul:** Hardened Vietnamese/Unicode accent-insensitive folding without requiring `ext/intl`, expanded English & Vietnamese default keywords (`Frequently Asked Questions`, `Q&A`, `Q/A`, `F.A.Q`), added `O(N)` stack-based paired accordion shortcode parsing and support for `<details><summary>`, `<dl><dt><dd>`, `<table>`, bold `<p><strong>` Q&As, multi-section tracking and `post_title` fallback. Added false-positive/editorial-note guards, question deduplication, UTF-8 word-boundary truncation, broader foreign-schema conflict detection, `post_password_required()` / `is_embed()` guards, cache fingerprinting (`HORSETOOLS_FAQ_RULES = 5`), `faq-cats`/`faq-pages` scope alignment, AJAX loading in `modal/modal.php`, capability-before-nonce checks, numeric bounds for `faq-min` (`1..20`) and `faq-maxlen` (`80..5000`), `[ht-item]` shortcode schema fixes, and uninstall postmeta cleanup (`_ht_faq_ld`, `_ht_faq_stamp`).
+* **Security:** Fixed Stored DOM XSS in the SEO FAQ admin scan table (`main/section/seo-faq.php`) by replacing `innerHTML` rendering with DOM node creation (`createElement`/`textContent`/`safeUrl()`).
+* **Package optimisation:** Trimmed 94 redundant files (~560 KB ZIP reduction) by refining `.distignore`, removing 5 orphaned skin preview images and vendored docs/tests, and replacing the 127 KB raster-wrapped `img/google.svg` with a pure 778-byte vector SVG.
 
 = 1.3.49 =
 * **Requirements: raise minimum PHP version to 8.2.** PHP 8.1 reached official End-of-Life (EOL) in late 2024. The minimum supported PHP runtime is now PHP 8.2, matching modern security standards and hosting baselines. Updated site-health checks, update metadata manifests, and roadmap specifications.
